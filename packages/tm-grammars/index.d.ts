@@ -1,17 +1,16 @@
 export type GrammarCategory = 'frontend' | 'backend' | 'common' | 'data' | 'other'
 
-export interface GrammarSource {
+export interface GrammarInfo {
   name: string
   displayName?: string
   category?: GrammarCategory
+  scopeName: string
   source: string
   alias?: string[]
-}
-
-export interface GrammarInfo extends GrammarSource {
   licenseUrl?: string
   license?: string
   sha?: string
+  embedded?: string[]
 }
 
 const grammars: GrammarInfo[]

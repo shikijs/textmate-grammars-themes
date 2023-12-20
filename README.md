@@ -6,10 +6,7 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-_description_
-
-> **Note**:
-> Replace `tm-grammars-themes`, `_description_` and `antfu` globally to use this template.
+Collection of TextMata [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as a npm package.
 
 ## Sponsors
 
@@ -21,7 +18,9 @@ _description_
 
 ## License
 
-[MIT](./LICENSE) License © 2023-PRESENT [Anthony Fu](https://github.com/antfu)
+The grammars included in this package are covered by their repositories’ respective licenses, which are permissive (apache-2.0, mit, etc), and made available in [Grammars NOTICE](./packages/tm-grammars/NOTICE) and [Themes NOTICE](./packages/tm-themes/NOTICE).
+
+All other files [MIT](./LICENSE) © Pine Wu & Anthony Fu
 
 <!-- Badges -->
 

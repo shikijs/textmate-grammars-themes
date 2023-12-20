@@ -2,11 +2,12 @@ import fs from 'node:fs/promises'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
 import stringify from 'json-stable-stringify'
+import type { GrammarInfo } from '../../packages/tm-grammars/index'
+import { octokit } from '../shared/octokit'
 import { sources } from './sources'
 
-import type { GrammarInfo, GrammarSource } from './types'
+import type { GrammarSource } from './types'
 import { cleanupLanguageReg, parseGitHubUrl, parseGrammar } from './utils'
-import { octokit } from './octokit'
 
 const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.url)
 
@@ -28,15 +29,28 @@ forth below.
 The following files/folders contain third party software:
 `
 
+const scopeToGrammar = new Map<string, GrammarInfo>()
+
 const resolvedInfo = await Promise.all(
   sources
     .map(source => limit(async () => {
       console.log(`Fetching ${source.name}...`)
       const { grammar, info } = await fetchGrammar(source)
+      scopeToGrammar.set(info.scopeName, grammar)
       await fs.writeFile(new URL(`${source.name}.json`, dirOutput), `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
       return info
     })),
 )
+
+resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
+
+resolvedInfo.forEach((info) => {
+  const grammar = scopeToGrammar.get(info.scopeName)!
+  const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
+  const embedded = Array.from(new Set(includes.map(i => scopeToGrammar.get(i)?.name).filter(Boolean).filter(i => i !== info.name)))
+  if (embedded.length)
+    info.embedded = embedded as string[]
+})
 
 await fs.writeFile(new URL('../index.js', dirOutput), `export default ${stringify(resolvedInfo, { space: 2 })}\n`, 'utf-8')
 await generateREADME(resolvedInfo)
@@ -49,7 +63,11 @@ async function fetchGrammar(source: GrammarSource) {
   const raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
   const url = info.source.toLowerCase()
   try {
-    const parsed = parseGrammar(url, raw)
+    let parsed = parseGrammar(url, raw)
+    // Apply custom patching function
+    parsed = source.patch?.(parsed) || parsed
+    // Update info
+    info.scopeName = parsed.scopeName
     info.displayName ||= parsed.name
     parsed.name = info.name
     parsed.displayName = info.displayName
@@ -78,7 +96,11 @@ export function getSha(repo: string, branch = 'main') {
 
 export async function resolveSource(source: GrammarSource) {
   try {
-    const info: GrammarInfo = { ...source }
+    const {
+      patch: _, // exclude keys
+      ...rest
+    } = source
+    const info = rest as GrammarInfo
     const { repo, branch, path } = parseGitHubUrl(source.source)!
 
     await Promise.all([
@@ -159,9 +181,9 @@ export async function generateREADME(resolved: GrammarInfo[]) {
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
     [
       '<!--list-start-->',
-      '| Name | Alias | Source | License |',
-      '| ---- | ----- | ------ | ------- |',
-      ...resolved.map(info => `| \`${info.name}\` | ${info.alias?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} |`),
+      '| Name | Alias | Source | License | Deps On |',
+      '| ---- | ----- | ------ | ------- | ------- |',
+      ...resolved.map(info => `| \`${info.name}\` | ${info.alias?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} |`),
       '<!--list-end-->',
     ].join('\n'),
   )

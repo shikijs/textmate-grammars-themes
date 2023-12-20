@@ -33,6 +33,7 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'coffee',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
+    alias: ['coffeescript'],
   },
   {
     name: 'c',
@@ -610,6 +611,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'mojo',
     source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
+    displayName: 'Mojo',
   },
   {
     name: 'narrat',

@@ -6,10 +6,8 @@ export interface GrammarSource {
   category?: GrammarCategory
   source: string
   alias?: string[]
-}
-
-export interface GrammarInfo extends GrammarSource {
-  licenseUrl?: string
-  license?: string
-  sha?: string
+  /**
+   * Custom patching function for the grammar.
+   */
+  patch?: (grammar: any) => any | void
 }
