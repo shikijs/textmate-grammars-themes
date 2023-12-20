@@ -1,7 +1,7 @@
 {
   "name": "tm-themes",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@8.11.0",
   "description": "Collecton of TextMate grammars in JSON",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
@@ -14,24 +14,25 @@
     "directory": "packages/tm-themes"
   },
   "bugs": "https://github.com/antfu/tm-grammars-themes/issues",
-  "keywords": [],
+  "keywords": [
+    "textmate"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "types": "./index.d.ts",
+      "import": "./index.js"
     },
     "./themes/*": "./themes/*"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
+        "./*",
+        "./index.d.ts"
       ]
     }
   },
@@ -41,9 +42,5 @@
     "LICENSE",
     "NOTICE",
     "themes"
-  ],
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub"
-  }
+  ]
 }
