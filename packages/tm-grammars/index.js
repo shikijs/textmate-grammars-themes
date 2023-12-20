@@ -2001,6 +2001,10 @@ export const grammars = [
       'yaml',
       'toml',
       'graphql',
+      'markdown-vue',
+      'vue-directives',
+      'vue-interpolations',
+      'vue-sfc-style-variable',
     ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
@@ -2193,5 +2197,61 @@ export const injections = [
     scopeName: 'documentation.injection.ts',
     sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
     source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
+  },
+  {
+    embedded: [
+      'vue',
+    ],
+    embeddedIn: [
+      'vue',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
+    name: 'markdown-vue',
+    scopeName: 'markdown.vue.codeblock',
+    sha: 'e7439aa2dad3d6735bb75b1b099bfa26b05c7576',
+    source: 'https://github.com/vuejs/language-tools/blob/e7439aa2dad3d6735bb75b1b099bfa26b05c7576/extensions/vscode/syntaxes/markdown-vue.json',
+  },
+  {
+    embedded: [
+      'vue',
+    ],
+    embeddedIn: [
+      'vue',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
+    name: 'vue-directives',
+    scopeName: 'vue.directives',
+    sha: 'e7439aa2dad3d6735bb75b1b099bfa26b05c7576',
+    source: 'https://github.com/vuejs/language-tools/blob/e7439aa2dad3d6735bb75b1b099bfa26b05c7576/extensions/vscode/syntaxes/vue-directives.json',
+  },
+  {
+    embedded: [
+      'vue',
+    ],
+    embeddedIn: [
+      'vue',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
+    name: 'vue-interpolations',
+    scopeName: 'vue.interpolations',
+    sha: 'e7439aa2dad3d6735bb75b1b099bfa26b05c7576',
+    source: 'https://github.com/vuejs/language-tools/blob/e7439aa2dad3d6735bb75b1b099bfa26b05c7576/extensions/vscode/syntaxes/vue-interpolations.json',
+  },
+  {
+    embedded: [
+      'javascript',
+    ],
+    embeddedIn: [
+      'vue',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
+    name: 'vue-sfc-style-variable',
+    scopeName: 'vue.sfc.style.variable.injection',
+    sha: 'e7439aa2dad3d6735bb75b1b099bfa26b05c7576',
+    source: 'https://github.com/vuejs/language-tools/blob/e7439aa2dad3d6735bb75b1b099bfa26b05c7576/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json',
   },
 ]

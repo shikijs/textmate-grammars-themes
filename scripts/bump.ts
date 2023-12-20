@@ -17,8 +17,7 @@ const themesChanged = files.some(i => i.startsWith('packages/tm-themes/themes'))
 async function bumpVersion(path: string) {
   const raw = await fs.readFile(path, 'utf-8')
   const json = JSON.parse(raw)
-  const version = json.version.split('.')
-  json.version = semver.inc(version, 'patch')
+  json.version = semver.inc(json.version, 'patch')
   await fs.writeFile(path, `${JSON.stringify(json, null, 2)}\n`, 'utf-8')
 }
 
