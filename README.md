@@ -20,14 +20,14 @@ Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki
   - Less than 100 columns if possible
   - Link to source in the last line, for example `# From https://poignant.guide/book/chapter-5.html`
 4. Run `pnpm run fetch` to download the grammar and verify it works
-5. 🚀 Send in the PR!
+5. Send in the PR!
 
 ### Add a new theme
 
 1. Fork this repository
 2. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
 3. Run `pnpm run fetch` to download the theme and verify it works
-4. 🚀 Send in the PR!
+4. Send in the PR!
 
 ## License
 
