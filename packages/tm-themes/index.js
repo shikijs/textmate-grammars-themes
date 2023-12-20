@@ -144,6 +144,7 @@ export const themes = [
     type: 'light',
   },
   {
+    displayName: 'Monokai',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'monokai',
@@ -170,7 +171,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    displayName: 'poimandres dark theme',
+    displayName: 'Poimandres',
     name: 'poimandres',
     sha: 'a7b8ed96b2319d44b53f755bdc8f321deb69c729',
     source: 'https://github.com/drcmda/poimandres-theme/blob/a7b8ed96b2319d44b53f755bdc8f321deb69c729/themes/poimandres-color-theme.json',
@@ -192,7 +193,7 @@ export const themes = [
     name: 'rose-pine-dawn',
     sha: '5a6d89246d58316802bf5c54bb83d6654ff6a1c5',
     source: 'https://github.com/rose-pine/vscode/blob/5a6d89246d58316802bf5c54bb83d6654ff6a1c5/themes/rose-pine-dawn-color-theme.json',
-    type: 'dark',
+    type: 'light',
   },
   {
     displayName: 'Rosé Pine Moon',
@@ -204,7 +205,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    displayName: 'Slack Theme Dark Mode',
+    displayName: 'Slack Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
     name: 'slack-dark',
@@ -213,7 +214,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    displayName: 'Slack Theme Ochin',
+    displayName: 'Slack Ochin',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
     name: 'slack-ochin',
@@ -222,7 +223,7 @@ export const themes = [
     type: 'light',
   },
   {
-    displayName: 'Solarized (dark)',
+    displayName: 'Solarized Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'solarized-dark',
@@ -231,7 +232,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    displayName: 'Solarized (light)',
+    displayName: 'Solarized Light',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'solarized-light',

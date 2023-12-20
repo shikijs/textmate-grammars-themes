@@ -1889,8 +1889,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/LICENSE.txt',
     name: 'vhdl',
     scopeName: 'source.vhdl',
-    sha: '44de74297229c633e2d89f8f2cdb4911f481bfd9',
-    source: 'https://github.com/jonasjj/awesome-vhdl/blob/44de74297229c633e2d89f8f2cdb4911f481bfd9/syntaxes/vhdl.tmLanguage',
+    sha: '8bb636dac90cc753c53d9686e175273d51bffec3',
+    source: 'https://github.com/jonasjj/awesome-vhdl/blob/8bb636dac90cc753c53d9686e175273d51bffec3/syntaxes/vhdl.tmLanguage',
   },
   {
     aliases: [
