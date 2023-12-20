@@ -805,24 +805,6 @@ export const sourcesMarketplace: GrammarSource[] = [
  */
 export const sourcesInjections: GrammarSource[] = [
   {
-    name: 'jsdoc-js',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
-    embeddedIn: ['javascript'],
-    injectTo: [
-      'source.js',
-      'source.js.jsx',
-    ],
-  },
-  {
-    name: 'jsdoc-ts',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
-    embeddedIn: ['typescript'],
-    injectTo: [
-      'source.ts',
-      'source.tsx',
-    ],
-  },
-  {
     name: 'cpp-macro',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
     embeddedIn: ['cpp'],
