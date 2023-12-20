@@ -31,9 +31,9 @@ if (themesChanged) {
   await bumpVersion('packages/tm-themes/package.json')
 }
 
-if ((grammarsChanged || themesChanged) && process.env.GITHUB_ENV) {
-  console.log('Grammars or themes changed, setting TM_CHANAGED=true...', process.env.GITHUB_ENV)
-  await fs.writeFile(process.env.GITHUB_ENV, `TM_CHANAGED=true`, 'utf-8')
+if ((grammarsChanged || themesChanged) && process.env.GITHUB_OUTPUT) {
+  console.log('Grammars or themes changed, setting CHANAGED=true...', process.env.GITHUB_OUTPUT)
+  await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANAGED=true`, 'utf-8')
 }
 
 if (!grammarsChanged && !themesChanged) {
