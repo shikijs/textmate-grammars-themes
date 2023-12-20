@@ -107,7 +107,7 @@ export async function generateREADME(resolved: GrammarInfo[]) {
       '<!--list-start-->',
       '| Name | Alias | Source | License | Deps On |',
       '| ---- | ----- | ------ | ------- | ------- |',
-      ...resolved.map(info => `| \`${info.name}\` | ${info.alias?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} |`),
+      ...resolved.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} |`),
       '<!--list-end-->',
     ].join('\n'),
   )
