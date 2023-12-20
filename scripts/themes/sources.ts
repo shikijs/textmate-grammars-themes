@@ -23,15 +23,18 @@ export const sourcesVSCode: ThemeSource[] = [
   },
   {
     name: 'monokai',
+    displayName: 'Monokai',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
   },
   {
     name: 'solarized-dark',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
+    displayName: 'Solarized Dark',
   },
   {
     name: 'solarized-light',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
+    displayName: 'Solarized Light',
   },
 ]
 
@@ -50,15 +53,18 @@ export const sourcesCommunity: ThemeSource[] = [
   },
   {
     name: 'slack-ochin',
+    displayName: 'Slack Ochin',
     source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/ochin.json',
     type: 'light',
   },
   {
     name: 'slack-dark',
+    displayName: 'Slack Dark',
     source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/dark-mode.json',
   },
   {
     name: 'poimandres',
+    displayName: 'Poimandres',
     source: 'https://github.com/drcmda/poimandres-theme/blob/main/themes/poimandres-color-theme.json',
   },
   {
@@ -68,6 +74,7 @@ export const sourcesCommunity: ThemeSource[] = [
   {
     name: 'rose-pine-dawn',
     source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-dawn-color-theme.json',
+    type: 'light',
   },
   {
     name: 'rose-pine-moon',
