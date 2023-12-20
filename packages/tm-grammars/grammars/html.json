@@ -1,0 +1,93 @@
+{
+  "displayName": "PHP",
+  "injections": {
+    "L:meta.embedded.php.blade": {
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        },
+        {
+          "include": "text.html.php.blade#blade"
+        }
+      ]
+    },
+    "text.html.php - (meta.embedded | meta.tag), L:((text.html.php meta.tag) - (meta.embedded.block.php | meta.embedded.line.php)), L:(source.js - (meta.embedded.block.php | meta.embedded.line.php)), L:(source.css - (meta.embedded.block.php | meta.embedded.line.php))": {
+      "patterns": [
+        {
+          "include": "#php-tag"
+        }
+      ]
+    }
+  },
+  "name": "html",
+  "patterns": [
+    {
+      "begin": "\\A#!",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.php"
+        }
+      },
+      "end": "$",
+      "name": "comment.line.shebang.php"
+    },
+    {
+      "include": "text.html.derivative"
+    }
+  ],
+  "repository": {
+    "php-tag": {
+      "patterns": [
+        {
+          "begin": "<\\?(?i:php|=)?(?![^?]*\\?>)",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\\?)>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            },
+            "1": {
+              "name": "source.php"
+            }
+          },
+          "name": "meta.embedded.block.php",
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        },
+        {
+          "begin": "<\\?(?i:php|=)?",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.php"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\\?)>",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.php"
+            },
+            "1": {
+              "name": "source.php"
+            }
+          },
+          "name": "meta.embedded.line.php",
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scopeName": "text.html.php"
+}
