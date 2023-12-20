@@ -37,4 +37,9 @@ if ((grammarsChanged || themesChanged) && process.env.GITHUB_ENV) {
   await fs.writeFile(process.env.GITHUB_ENV, `TM_CHANAGED=true`, 'utf-8')
 }
 
+if (!grammarsChanged && !themesChanged) {
+  console.log('Nothing changed, exiting...')
+  process.exit(0)
+}
+
 await git.add(['.'])
