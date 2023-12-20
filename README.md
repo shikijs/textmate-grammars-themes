@@ -2,6 +2,8 @@
 
 Collection of TextMate [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as npm packages.
 
+Packages are automatically updated daily and published to npm whenever there are changes.
+
 Originally ported from [Shiki](https://github.com/shikijs/shiki).
 
 ## License

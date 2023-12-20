@@ -1,24 +1,5 @@
-/**
- * Source of grammar files.
- */
-
 import type { GrammarSource } from './types'
 
-/**
- * All language grammar sources on github.com.
- *
- * To add one:
- * - Search `<lang> textmate` on GitHub
- * - Search `<lang>` on VS Code Marketplace
- * - Pick the most recently updated fork that contains the grammar
- * - Insert `[name, url]` to the list sorted by `name`
- *   - `name` should be the `name` key in the raw json/yaml/plist file
- *     - When the grammar provides an undesirable name (or no `name` key), for example `x86 and x86_64 Assembly` at
- *       https://github.com/13xforever/x86_64-assembly-vscode/blob/face834a56e416230c2d20939f9fa77c25344865/syntaxes/language-x86_64-assembly.tmLanguage#L13-L14
- *       specify the desired name, for example `asm`
- *   - `url` should be the github URL. Supported suffixes: ['json', 'yml', 'yaml', 'plist', 'cson']
- * - Run `pnpm update:grammars`, examine the changes
- */
 export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'bat',
@@ -515,7 +496,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'imba',
-    source: 'https://github.com/imba/vscode-imba/blob/master/syntaxes/imba.tmLanguage',
+    source: 'https://github.com/imba/imba/blob/master/packages/vscode-imba/syntaxes/imba.tmLanguage.json',
   },
   {
     name: 'jinja',
