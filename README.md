@@ -1,10 +1,13 @@
 # tm-grammars / tm-themes
 
+[![tm-grammars](https://img.shields.io/npm/v/tm-grammars?label=tm-grammars&labelColor=080f12&color=1fa669)](https://www.npmjs.com/package/tm-grammars)
+[![tm-themes](https://img.shields.io/npm/v/tm-themes?label=tm-themes&labelColor=080f12&color=1fa669)](https://www.npmjs.com/package/tm-themes)
+
 Collection of TextMate [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as npm packages.
 
-Packages are automatically updated daily and published to npm whenever there are changes.
+Packages are **automatically updated and published** every day (if there are changes).
 
-Originally extracted from [Shiki](https://github.com/shikijs/shiki).
+Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki).
 
 ## Contribute
 
