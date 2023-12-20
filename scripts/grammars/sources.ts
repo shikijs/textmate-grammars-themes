@@ -811,7 +811,12 @@ export const sourcesMarketplace: GrammarSource[] = [
   },
 ]
 
-export const sourceInjections: GrammarSource[] = [
+/**
+ * Injections are sub-grammars that are embedded in other grammars.
+ *
+ * Use `embeddedIn` to specify the grammars that the injection is embedded in.
+ */
+export const sourcesInjections: GrammarSource[] = [
   {
     name: 'jsdoc-js',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
@@ -832,11 +837,31 @@ export const sourceInjections: GrammarSource[] = [
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/main/syntaxes/jinja-html.tmLanguage.json',
     embeddedIn: ['jinja'],
   },
+  {
+    name: 'vue-directives',
+    source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-directives.json',
+    embeddedIn: ['vue'],
+  },
+  {
+    name: 'vue-interpolations',
+    source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-interpolations.json',
+    embeddedIn: ['vue'],
+  },
+  {
+    name: 'vue-sfc-style-variable',
+    source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json',
+    embeddedIn: ['vue'],
+  },
+  {
+    name: 'markdown-vue',
+    source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/markdown-vue.json',
+    embeddedIn: ['vue'],
+  },
 ]
 
 export const sources = [
   ...sourcesVSCode,
   ...sourcesCommunity,
   ...sourcesMarketplace,
-  ...sourceInjections,
+  ...sourcesInjections,
 ]
