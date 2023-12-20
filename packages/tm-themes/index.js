@@ -1,14 +1,5 @@
 export const themes = [
   {
-    displayName: 'Dark Modern',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'dark-modern',
-    sha: '17e30760a3bad6d91327de38ac8f2cf6a161d307',
-    source: 'https://github.com/microsoft/vscode/blob/17e30760a3bad6d91327de38ac8f2cf6a161d307/extensions/theme-defaults/themes/dark_modern.json',
-    type: 'dark',
-  },
-  {
     displayName: 'Dark Plus',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -60,15 +51,6 @@ export const themes = [
     name: 'github-light',
     sha: '38b50d41bdc6b190b7351e220956af043221d763',
     source: 'https://github.com/primer/github-vscode-theme/blob/38b50d41bdc6b190b7351e220956af043221d763/src/theme.js',
-    type: 'light',
-  },
-  {
-    displayName: 'Light Modern',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'light-modern',
-    sha: '17e30760a3bad6d91327de38ac8f2cf6a161d307',
-    source: 'https://github.com/microsoft/vscode/blob/17e30760a3bad6d91327de38ac8f2cf6a161d307/extensions/theme-defaults/themes/light_modern.json',
     type: 'light',
   },
   {
