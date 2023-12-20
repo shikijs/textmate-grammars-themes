@@ -7,9 +7,6 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   update-grammars:
@@ -29,7 +26,7 @@ jobs:
 
       - run: pnpm run fetch
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_FETCH }}
 
       - run: pnpm run bump
 
