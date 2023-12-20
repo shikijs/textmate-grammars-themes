@@ -103,6 +103,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'json',
+    displayName: 'JSON',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/json/syntaxes/JSON.tmLanguage.json',
   },
   {
@@ -162,12 +163,9 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'raku',
+    displayName: 'Raku',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl6.tmLanguage.json',
     aliases: ['perl6'],
-  },
-  {
-    name: 'html',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/php/syntaxes/html.tmLanguage.json',
   },
   {
     name: 'php',
@@ -364,11 +362,6 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/master/syntaxes/crystal.json',
   },
   {
-    name: 'csharp',
-    source: 'https://github.com/dotnet/csharp-tmLanguage/blob/main/grammars/csharp.tmLanguage',
-    aliases: ['c#', 'cs'],
-  },
-  {
     name: 'csv',
     source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/master/syntaxes/csv.tmLanguage.json',
   },
@@ -384,10 +377,6 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'd',
     source: 'https://github.com/Pure-D/code-d/blob/master/syntaxes/d.json',
-  },
-  {
-    name: 'dart',
-    source: 'https://github.com/Dart-Code/Dart-Code/blob/master/syntaxes/dart.json',
   },
   {
     name: 'dax',
@@ -519,10 +508,6 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'kusto',
     source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
     aliases: ['kql'],
-  },
-  {
-    name: 'latex',
-    source: 'https://github.com/James-Yu/LaTeX-Workshop/blob/master/syntax/LaTeX.tmLanguage.json',
   },
   {
     name: 'lisp',
@@ -712,10 +697,6 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'tcl',
     source: 'https://github.com/sleutho/tcl/blob/master/syntaxes/tcl.tmLanguage',
-  },
-  {
-    name: 'tex',
-    source: 'https://github.com/James-Yu/LaTeX-Workshop/blob/master/syntax/TeX.tmLanguage.json',
   },
   {
     name: 'toml',

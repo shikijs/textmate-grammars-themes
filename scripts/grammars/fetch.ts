@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
 import stringify from 'json-stable-stringify'
@@ -27,7 +28,10 @@ const resolvedInfo = await Promise.all(
       console.log(`Fetching ${source.name}...`)
       const { grammar, info } = await fetchGrammar(source)
       scopeToGrammar.set(info.scopeName, grammar)
-      await fs.writeFile(new URL(`${source.name}.json`, dirOutput), `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
+      const url = new URL(`${source.name}.json`, dirOutput)
+      if (existsSync(url))
+        throw new Error(`File ${url} already exists`)
+      await fs.writeFile(url, `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
       return info
     })),
 )
