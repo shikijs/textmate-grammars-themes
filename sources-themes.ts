@@ -26,6 +26,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
     displayName: 'Solarized Light',
   },
+  {
+    name: 'red',
+    displayName: 'Red Color Theme',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
+  },
 ]
 
 export const sourcesCommunity: ThemeSource[] = [
