@@ -15,4 +15,4 @@ export interface GrammarInfo {
 
 const grammars: GrammarInfo[]
 
-export default grammars
+export { grammars }

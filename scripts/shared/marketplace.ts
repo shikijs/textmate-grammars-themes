@@ -2,7 +2,9 @@ import { Buffer } from 'node:buffer'
 import { $fetch } from 'ofetch'
 import AdmZip from 'adm-zip'
 
-export async function downloadFromMarketplace(name: string) {
+const cache = new Map<string, ReturnType<typeof _downloadFromMarketplace>>()
+
+async function _downloadFromMarketplace(name: string) {
   const url = getMarketplaceLink(name)
   const binary = await $fetch(url, { responseType: 'arrayBuffer' })
   const zip = new AdmZip(Buffer.from(binary))
@@ -11,6 +13,14 @@ export async function downloadFromMarketplace(name: string) {
     json,
     zip,
   }
+}
+
+export function downloadFromMarketplace(name: string) {
+  if (cache.has(name))
+    return cache.get(name)!
+  const promise = _downloadFromMarketplace(name)
+  cache.set(name, promise)
+  return promise
 }
 
 function getMarketplaceLink(publisherDotExtId: string) {

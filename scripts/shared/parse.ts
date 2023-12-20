@@ -1,0 +1,46 @@
+import type { ParseError } from 'jsonc-parser'
+import { parse as jsoncParse } from 'jsonc-parser'
+import { parse as parsePlist } from 'fast-plist'
+import CSON from 'cson'
+import YAML from 'js-yaml'
+
+export function parseJsonc(jsonc: string) {
+  const errors: ParseError[] = []
+  const result = jsoncParse(jsonc, errors, { allowTrailingComma: true })
+  if (errors.length)
+    throw errors[0]
+  return result
+}
+
+export function parseCson(cson: string) {
+  return CSON.parse(cson)
+}
+
+export function parseYaml(yaml: string) {
+  return YAML.load(yaml)
+}
+
+export { parsePlist }
+
+export function parseFile(url: string, raw: string) {
+  if (url.endsWith('.cson')) {
+    return parseCson(raw)
+  }
+  else if (url.endsWith('.json')) {
+    return parseJsonc(raw)
+  }
+  else if (url.endsWith('.plist')) {
+    return parsePlist(raw)
+  }
+  else if (url.endsWith('.yml') || url.endsWith('.yaml')) {
+    return parseYaml(raw)
+  }
+  else {
+    if (raw[0] === '{')
+      return parseJsonc(raw)
+    else if (raw[0] === '<')
+      return parsePlist(raw)
+    else
+      return parseYaml(raw)
+  }
+}

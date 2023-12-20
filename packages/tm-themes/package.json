@@ -21,7 +21,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./themes/*": "./themes/*"
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -35,7 +36,11 @@
     }
   },
   "files": [
-    "dist"
+    "*.d.ts",
+    "*.js",
+    "LICENSE",
+    "NOTICE",
+    "themes"
   ],
   "scripts": {
     "build": "unbuild",

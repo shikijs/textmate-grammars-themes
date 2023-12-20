@@ -8,6 +8,8 @@
 
 Collection of TextMata [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as a npm package.
 
+Originally ported from [Shiki](https://github.com/shikijs/shiki).
+
 ## Sponsors
 
 <p align="center">
