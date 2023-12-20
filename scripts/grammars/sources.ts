@@ -49,6 +49,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'fsharp',
+    displayName: 'F#',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
     aliases: ['f#', 'fs'],
   },
@@ -93,6 +94,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'javascript',
+    displayName: 'JavaScript',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
     aliases: ['js'],
   },
@@ -169,6 +171,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'php',
+    displayName: 'PHP',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/php/syntaxes/php.tmLanguage.json',
   },
   {
@@ -333,6 +336,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'cadence',
+    displayName: 'Cadence',
     source: 'https://github.com/onflow/vscode-cadence/blob/master/extension/language/syntaxes/cadence.tmGrammar.json',
     aliases: [
       'cdc',
@@ -480,6 +484,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'jinja',
+    displayName: 'Jinja',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/main/syntaxes/jinja.tmLanguage.json',
   },
   {
@@ -784,6 +789,7 @@ export const sourcesCommunity: GrammarSource[] = [
 export const sourcesMarketplace: GrammarSource[] = [
   {
     name: 'mermaid',
+    displayName: 'Mermaid',
     source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/syntaxes/mermaid.tmLanguage.yaml',
     marketplace: {
       name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
