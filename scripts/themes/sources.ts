@@ -2,19 +2,9 @@ import type { ThemeSource } from './types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
-    displayName: 'Dark Modern',
-    name: 'dark-modern',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_modern.json',
-  },
-  {
     displayName: 'Dark Plus',
     name: 'dark-plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
-  },
-  {
-    displayName: 'Light Modern',
-    name: 'light-modern',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_modern.json',
   },
   {
     displayName: 'Light Plus',
