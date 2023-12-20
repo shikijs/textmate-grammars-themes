@@ -28,6 +28,7 @@ jobs:
       - run: pnpm run fetch
         env:
           GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
+        timeout-minutes: 2
 
       - id: bump
         name: Bump versions
