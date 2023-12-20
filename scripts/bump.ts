@@ -32,8 +32,8 @@ if (themesChanged) {
 }
 
 if ((grammarsChanged || themesChanged) && process.env.GITHUB_OUTPUT) {
-  console.log('Grammars or themes changed, setting CHANAGED=true...', process.env.GITHUB_OUTPUT)
-  await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANAGED=true`, 'utf-8')
+  console.log('Grammars or themes changed, setting CHANGED=true...', process.env.GITHUB_OUTPUT)
+  await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANGED=true`, 'utf-8')
 }
 
 if (!grammarsChanged && !themesChanged) {
