@@ -4,16 +4,32 @@ import type { GrammarSource } from '../grammars/types'
 import type { ThemeSource } from '../themes/types'
 import { octokit } from './octokit'
 
-export function getLicenseUrl(repo: string) {
+const _cacheGetLicenseUrl = new Map<string, ReturnType<typeof _getLicenseUrl>>()
+const _cacheGetSha = new Map<string, ReturnType<typeof _getSha>>()
+
+function _getLicenseUrl(repo: string) {
   return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] })
     .then((r) => {
       return r.data
     })
 }
 
-export function getSha(repo: string, branch = 'main') {
+function _getSha(repo: string, branch = 'main') {
   return octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', { owner: repo.split('/')[0], repo: repo.split('/')[1], ref: branch })
     .then(r => r.data.sha)
+}
+
+function getLicenseUrl(repo: string) {
+  if (!_cacheGetLicenseUrl.has(repo))
+    _cacheGetLicenseUrl.set(repo, _getLicenseUrl(repo))
+  return _cacheGetLicenseUrl.get(repo)!
+}
+
+function getSha(repo: string, branch = 'main') {
+  const key = `${repo}#${branch}`
+  if (!_cacheGetSha.has(key))
+    _cacheGetSha.set(key, _getSha(repo, branch))
+  return _cacheGetSha.get(key)!
 }
 
 export async function resolveSourceGitHub(source: GrammarSource): Promise<GrammarInfo>
