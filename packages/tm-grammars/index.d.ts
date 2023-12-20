@@ -6,7 +6,7 @@ export interface GrammarInfo {
   category?: GrammarCategory
   scopeName: string
   source: string
-  alias?: string[]
+  aliases?: string[]
   licenseUrl?: string
   license?: string
   sha?: string
