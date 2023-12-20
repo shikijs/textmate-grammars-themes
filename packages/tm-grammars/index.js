@@ -780,9 +780,6 @@ export const grammars = [
       'js',
     ],
     displayName: 'JavaScript',
-    embedded: [
-      'jsdoc-js',
-    ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'javascript',
@@ -1846,9 +1843,6 @@ export const grammars = [
       'ts',
     ],
     displayName: 'TypeScript',
-    embedded: [
-      'jsdoc-ts',
-    ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'typescript',
@@ -2095,39 +2089,6 @@ export const injections = [
     scopeName: 'text.html.jinja',
     sha: '28e422433581d92f72252f1af1f67eeaab07c812',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/28e422433581d92f72252f1af1f67eeaab07c812/syntaxes/jinja-html.tmLanguage.json',
-  },
-  {
-    embedded: [
-      'typescript',
-    ],
-    embeddedIn: [
-      'javascript',
-    ],
-    injectTo: [
-      'source.js',
-      'source.js.jsx',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsdoc-js',
-    scopeName: 'documentation.injection.js.jsx',
-    sha: '17e30760a3bad6d91327de38ac8f2cf6a161d307',
-    source: 'https://github.com/microsoft/vscode/blob/17e30760a3bad6d91327de38ac8f2cf6a161d307/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
-  },
-  {
-    embeddedIn: [
-      'typescript',
-    ],
-    injectTo: [
-      'source.ts',
-      'source.tsx',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsdoc-ts',
-    scopeName: 'documentation.injection.ts',
-    sha: '17e30760a3bad6d91327de38ac8f2cf6a161d307',
-    source: 'https://github.com/microsoft/vscode/blob/17e30760a3bad6d91327de38ac8f2cf6a161d307/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
   },
   {
     embeddedIn: [
