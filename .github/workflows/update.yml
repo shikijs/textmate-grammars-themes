@@ -28,7 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
 
-      - name: bump
+      - id: bump
+        name: Bump versions
         run: pnpm run bump
 
       - uses: EndBug/add-and-commit@v9
