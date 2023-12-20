@@ -808,11 +808,19 @@ export const sourcesInjections: GrammarSource[] = [
     name: 'jsdoc-js',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
     embeddedIn: ['javascript'],
+    injectTo: [
+      'source.js',
+      'source.js.jsx',
+    ],
   },
   {
     name: 'jsdoc-ts',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
     embeddedIn: ['typescript'],
+    injectTo: [
+      'source.ts',
+      'source.tsx',
+    ],
   },
   {
     name: 'cpp-macro',
@@ -828,21 +836,39 @@ export const sourcesInjections: GrammarSource[] = [
     name: 'vue-directives',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-directives.json',
     embeddedIn: ['vue'],
+    injectTo: [
+      'source.vue',
+      'text.html.markdown',
+      'text.html.derivative',
+      'text.pug',
+    ],
   },
   {
     name: 'vue-interpolations',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-interpolations.json',
     embeddedIn: ['vue'],
+    injectTo: [
+      'source.vue',
+      'text.html.markdown',
+      'text.html.derivative',
+      'text.pug',
+    ],
   },
   {
-    name: 'vue-sfc-style-variable',
+    name: 'vue-sfc-style-variable-injection',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json',
     embeddedIn: ['vue'],
+    injectTo: [
+      'source.vue',
+    ],
   },
   {
     name: 'markdown-vue',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/markdown-vue.json',
     embeddedIn: ['vue'],
+    injectTo: [
+      'text.html.markdown',
+    ],
   },
 ]
 

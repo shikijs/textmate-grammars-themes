@@ -88,6 +88,8 @@ async function fetchGrammar(source: GrammarSource) {
     info.displayName ||= parsed.name
     parsed.name = info.name
     parsed.displayName = info.displayName
+    if (source.injectTo)
+      parsed.injectTo = source.injectTo
     return {
       grammar: cleanupGrammar(parsed),
       info,

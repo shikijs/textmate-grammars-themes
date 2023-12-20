@@ -21,6 +21,11 @@ export interface GrammarSource {
   embeddedIn?: string[]
 
   /**
+   * @see https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide#injection-grammars
+   */
+  injectTo?: string[]
+
+  /**
    * Custom patching function for the grammar.
    */
   patch?: (grammar: any) => any | void
