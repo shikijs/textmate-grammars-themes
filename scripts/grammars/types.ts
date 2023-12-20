@@ -5,7 +5,8 @@ export interface GrammarSource {
   displayName?: string
   category?: GrammarCategory
   source: string
-  alias?: string[]
+  aliases?: string[]
+
   /**
    * Download from marketplace.
    */
@@ -13,6 +14,12 @@ export interface GrammarSource {
     name: string
     grammar: string
   }
+
+  /**
+   * The grammar is embedded in another grammar but not listed directly in the themes.
+   */
+  embeddedIn?: string[]
+
   /**
    * Custom patching function for the grammar.
    */

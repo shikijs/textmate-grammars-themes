@@ -1,0 +1,21 @@
+{
+  "injectionSelector": "L:comment.block.documentation",
+  "name": "jsdoc-ts",
+  "patterns": [
+    {
+      "include": "#jsdocbody"
+    }
+  ],
+  "repository": {
+    "jsdocbody": {
+      "begin": "(?<=/\\*\\*)([^*]|\\*(?!/))*$",
+      "patterns": [
+        {
+          "include": "source.ts#docblock"
+        }
+      ],
+      "while": "(^|\\G)\\s*\\*(?!/)(?=([^*]|[*](?!/))*$)"
+    }
+  },
+  "scopeName": "documentation.injection.ts"
+}

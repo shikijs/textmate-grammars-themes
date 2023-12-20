@@ -12,6 +12,7 @@ import { cleanupTheme } from './cleanup'
 
 const dirOutput = new URL('../../packages/tm-themes/themes/', import.meta.url)
 
+await fs.rm(dirOutput, { recursive: true })
 await fs.mkdir(dirOutput, { recursive: true })
 
 const limit = pLimit(25)

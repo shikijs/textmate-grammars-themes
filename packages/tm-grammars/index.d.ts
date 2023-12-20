@@ -11,8 +11,13 @@ export interface GrammarInfo {
   license?: string
   sha?: string
   embedded?: string[]
+  embeddedIn?: string[]
 }
 
 const grammars: GrammarInfo[]
+const injections: GrammarInfo[]
 
-export { grammars }
+export {
+  grammars,
+  injections,
+}

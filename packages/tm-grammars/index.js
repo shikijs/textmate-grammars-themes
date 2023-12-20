@@ -121,7 +121,7 @@ export const grammars = [
     source: 'https://github.com/ballerina-platform/ballerina-grammar/blob/42ddcc1c63c86bdd6ba712e86bf965f5063831d3/syntaxes/ballerina.tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'batch',
     ],
     displayName: 'Batch File',
@@ -129,8 +129,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'bat',
     scopeName: 'source.batchfile',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/bat/syntaxes/batchfile.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
     displayName: 'Beancount',
@@ -142,7 +142,7 @@ export const grammars = [
     source: 'https://github.com/Lencerf/vscode-beancount/blob/08a02ff243a7a73250f555f708f55a67a2af16c9/syntaxes/beancount.tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'be',
     ],
     displayName: 'Berry',
@@ -159,8 +159,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'bibtex',
     scopeName: 'text.bibtex',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
   },
   {
     displayName: 'Bicep',
@@ -194,11 +194,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'c',
     scopeName: 'source.c',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/cpp/syntaxes/c.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/cpp/syntaxes/c.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'cdc',
     ],
     license: 'Apache-2.0',
@@ -218,7 +218,7 @@ export const grammars = [
     source: 'https://github.com/hirosystems/clarity.tmbundle/blob/14499973360935676fcf40fa37723ec216aa3c9f/Syntaxes/clarity.JSON-tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'clj',
     ],
     displayName: 'Clojure',
@@ -226,8 +226,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'clojure',
     scopeName: 'source.clojure',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/clojure/syntaxes/clojure.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/clojure/syntaxes/clojure.tmLanguage.json',
   },
   {
     displayName: 'CMake',
@@ -253,7 +253,7 @@ export const grammars = [
     source: 'https://github.com/spgennard/vscode_cobol/blob/00f8e42ec2532cd04393b67d6ad89a81b3652c83/syntaxes/COBOL.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'ql',
     ],
     displayName: 'CodeQL',
@@ -265,7 +265,7 @@ export const grammars = [
     source: 'https://github.com/github/vscode-codeql/blob/262744e6e5bbed91a653769e7c92073127ea6ead/syntaxes/ql.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'coffeescript',
     ],
     displayName: 'CoffeeScript',
@@ -276,11 +276,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'coffee',
     scopeName: 'source.coffee',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'c++',
     ],
     displayName: 'C++',
@@ -293,22 +293,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'cpp',
     scopeName: 'source.cpp',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/cpp/syntaxes/cpp.tmLanguage.json',
-  },
-  {
-    displayName: 'C++',
-    embedded: [
-      'cpp',
-      'glsl',
-      'sql',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'cpp-macro',
-    scopeName: 'source.cpp.embedded.macro',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
     displayName: 'Crystal',
@@ -328,7 +314,7 @@ export const grammars = [
     source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/fe90eda371237dc60f158fca9977e71ce0d63aae/syntaxes/crystal.json',
   },
   {
-    alias: [
+    aliases: [
       'c#',
       'cs',
     ],
@@ -337,11 +323,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'csharp',
     scopeName: 'source.cs',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/csharp/syntaxes/csharp.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/csharp/syntaxes/csharp.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'c#',
       'cs',
     ],
@@ -359,8 +345,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'css',
     scopeName: 'source.css',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/css/syntaxes/css.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/css/syntaxes/css.tmLanguage.json',
   },
   {
     displayName: 'csv syntax',
@@ -381,7 +367,7 @@ export const grammars = [
     source: 'https://github.com/cue-sh/vscode-cue/blob/0734615a2607fe03f5d6c1816f8f7435179659fc/syntaxes/cue.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'cql',
     ],
     displayName: 'Cypher',
@@ -407,8 +393,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/dart/syntaxes/dart.tmLanguage.json',
   },
   {
     displayName: 'Dart',
@@ -432,11 +418,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'diff',
     scopeName: 'source.diff',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/diff/syntaxes/diff.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/diff/syntaxes/diff.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'dockerfile',
     ],
     displayName: 'Dockerfile',
@@ -444,8 +430,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'docker',
     scopeName: 'source.dockerfile',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/docker/syntaxes/docker.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
     displayName: 'Dream Maker',
@@ -490,7 +476,7 @@ export const grammars = [
     source: 'https://github.com/textmate/ruby.tmbundle/blob/efcb8941c701343f1b2e9fb105c678152fea6892/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'erl',
     ],
     displayName: 'Erlang',
@@ -511,7 +497,7 @@ export const grammars = [
     source: 'https://github.com/bmalehorn/vscode-fish/blob/aeb3fa5f894cb7167edcc80932ecf32fe7123c50/syntaxes/fish.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'f#',
       'fs',
     ],
@@ -523,8 +509,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'fsharp',
     scopeName: 'source.fsharp',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
     displayName: 'GDResource',
@@ -575,8 +561,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'git-commit',
     scopeName: 'text.git-commit',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/git-base/syntaxes/git-commit.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/git-base/syntaxes/git-commit.tmLanguage.json',
   },
   {
     displayName: 'Git Rebase Message',
@@ -587,11 +573,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'git-rebase',
     scopeName: 'text.git-rebase',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'gjs',
     ],
     displayName: 'Glimmer JS',
@@ -607,7 +593,7 @@ export const grammars = [
     source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/de3e1953d9e411895846da294329bacad369b9d8/glimmer-js.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'gts',
     ],
     displayName: 'Glimmer TS',
@@ -647,11 +633,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'gql',
     ],
     displayName: 'GraphQL',
@@ -674,8 +660,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'groovy',
     scopeName: 'source.groovy',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/groovy/syntaxes/groovy.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/groovy/syntaxes/groovy.tmLanguage.json',
   },
   {
     displayName: 'Hack',
@@ -709,7 +695,7 @@ export const grammars = [
     source: 'https://github.com/karuna/haml-vscode/blob/504875f60bcd474f17762b2daf97680476135f79/syntaxes/haml.json',
   },
   {
-    alias: [
+    aliases: [
       'hbs',
     ],
     displayName: 'Handlebars',
@@ -723,11 +709,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'handlebars',
     scopeName: 'text.html.handlebars',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'hs',
     ],
     displayName: 'Haskell',
@@ -762,8 +748,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'hlsl',
     scopeName: 'source.hlsl',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
   },
   {
     displayName: 'HTML',
@@ -775,8 +761,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'html',
     scopeName: 'text.html.basic',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/html/syntaxes/html.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/html/syntaxes/html.tmLanguage.json',
   },
   {
     displayName: 'PHP',
@@ -788,18 +774,23 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'html',
     scopeName: 'text.html.php',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/php/syntaxes/html.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/php/syntaxes/html.tmLanguage.json',
   },
   {
     displayName: 'Imba',
+    embedded: [
+      'typescript',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/imba/imba/master/LICENSE',
     name: 'imba',
     scopeName: 'source.imba',
-    sha: 'bdfdefe4af2a268bb15f39a9db4afa62435f21da',
-    source: 'https://github.com/imba/vscode-imba/blob/bdfdefe4af2a268bb15f39a9db4afa62435f21da/syntaxes/imba.tmLanguage',
+    sha: 'a2cc7e9bd2cc0fb0bf08daa487b7682e92202cb0',
+    source: 'https://github.com/imba/imba/blob/a2cc7e9bd2cc0fb0bf08daa487b7682e92202cb0/packages/vscode-imba/syntaxes/imba.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'properties',
     ],
     displayName: 'INI',
@@ -807,8 +798,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ini',
     scopeName: 'source.ini',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/ini/syntaxes/ini.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/ini/syntaxes/ini.tmLanguage.json',
   },
   {
     displayName: 'Java',
@@ -816,42 +807,35 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'java',
     scopeName: 'source.java',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/java/syntaxes/java.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/java/syntaxes/java.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'js',
     ],
     displayName: 'JavaScript (with React support)',
+    embedded: [
+      'jsdoc-js',
+    ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'javascript',
     scopeName: 'source.js',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
   },
   {
     displayName: 'jinja',
+    embedded: [
+      'jinja-html',
+    ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
     name: 'jinja',
     scopeName: 'source.jinja',
     sha: '28e422433581d92f72252f1af1f67eeaab07c812',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/28e422433581d92f72252f1af1f67eeaab07c812/syntaxes/jinja.tmLanguage.json',
-  },
-  {
-    displayName: 'Jinja',
-    embedded: [
-      'jinja',
-      'html',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
-    name: 'jinja-html',
-    scopeName: 'text.html.jinja',
-    sha: '28e422433581d92f72252f1af1f67eeaab07c812',
-    source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/28e422433581d92f72252f1af1f67eeaab07c812/syntaxes/jinja-html.tmLanguage.json',
   },
   {
     displayName: 'Jison',
@@ -866,35 +850,13 @@ export const grammars = [
     source: 'https://github.com/cdibbs/language-jison/blob/ce8e2c78279b242a95b87e830a60dee55357aedc/grammars/jison.cson',
   },
   {
-    embedded: [
-      'typescript',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsdoc',
-    scopeName: 'documentation.injection.js.jsx',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
-  },
-  {
-    embedded: [
-      'typescript',
-    ],
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsdoc',
-    scopeName: 'documentation.injection.ts',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
-  },
-  {
     displayName: 'JSON (Javascript Next)',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'json',
     scopeName: 'source.json',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/json/syntaxes/JSON.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/json/syntaxes/JSON.tmLanguage.json',
   },
   {
     displayName: 'JSON5',
@@ -911,8 +873,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsonc',
     scopeName: 'source.json.comments',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/json/syntaxes/JSONC.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/json/syntaxes/JSONC.tmLanguage.json',
   },
   {
     displayName: 'JSON Lines',
@@ -920,8 +882,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsonl',
     scopeName: 'source.json.lines',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/json/syntaxes/JSONL.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/json/syntaxes/JSONL.tmLanguage.json',
   },
   {
     displayName: 'Jsonnet',
@@ -933,7 +895,7 @@ export const grammars = [
     source: 'https://github.com/heptio/vscode-jsonnet/blob/0957d4235be011f2f2ac2f8af51cd7927852eeaa/syntaxes/jsonnet.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'fsl',
     ],
     displayName: 'JSSM',
@@ -950,8 +912,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsx',
     scopeName: 'source.js.jsx',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
   },
   {
     displayName: 'Julia',
@@ -966,11 +928,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'julia',
     scopeName: 'source.julia',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/julia/syntaxes/julia.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/julia/syntaxes/julia.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'kt',
       'kts',
     ],
@@ -983,7 +945,7 @@ export const grammars = [
     source: 'https://github.com/fwcd/vscode-kotlin/blob/c1371a435aedf8690d3c9cbbe4c42a215915630d/syntaxes/kotlin.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'kql',
     ],
     displayName: 'Kusto',
@@ -1016,8 +978,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
     displayName: 'LaTeX',
@@ -1052,8 +1014,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'less',
     scopeName: 'source.css.less',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/less/syntaxes/less.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/less/syntaxes/less.tmLanguage.json',
   },
   {
     displayName: 'Liquid',
@@ -1095,11 +1057,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'lua',
     scopeName: 'source.lua',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/lua/syntaxes/lua.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/lua/syntaxes/lua.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'makefile',
     ],
     displayName: 'Makefile',
@@ -1107,11 +1069,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'make',
     scopeName: 'source.makefile',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/make/syntaxes/make.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/make/syntaxes/make.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'md',
     ],
     displayName: 'Markdown',
@@ -1172,8 +1134,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'markdown',
     scopeName: 'text.html.markdown',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
   },
   {
     displayName: 'Marko',
@@ -1281,7 +1243,7 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/a2241dda06d9a20503394c3affa606114d007049/syntaxes/mojo.syntax.json',
   },
   {
-    alias: [
+    aliases: [
       'nar',
     ],
     displayName: 'Narrat Language',
@@ -1293,7 +1255,7 @@ export const grammars = [
     source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/05b57e49dbd9cd5e9b5e9e40115a4afa4c19f07e/syntaxes/narrat.tmLanguage.yaml',
   },
   {
-    alias: [
+    aliases: [
       'nf',
     ],
     displayName: 'Nextflow',
@@ -1344,7 +1306,7 @@ export const grammars = [
     source: 'https://github.com/bbenoist/vscode-nix/blob/c65af1981d951e94f010e6d35c42e9c32c7d069a/syntaxes/nix.tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'nu',
     ],
     displayName: 'nushell',
@@ -1356,7 +1318,7 @@ export const grammars = [
     source: 'https://github.com/nushell/vscode-nushell-lang/blob/25e39a9b01e12aff0fac319fce05ba1d1a60edcc/syntaxes/nushell.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'objc',
     ],
     displayName: 'Objective-C',
@@ -1364,8 +1326,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'objective-c',
     scopeName: 'source.objc',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
   },
   {
     displayName: 'Objective-C++',
@@ -1373,8 +1335,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'objective-cpp',
     scopeName: 'source.objcpp',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
   },
   {
     displayName: 'OCaml',
@@ -1407,8 +1369,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'perl',
     scopeName: 'source.perl',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/perl/syntaxes/perl.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/perl/syntaxes/perl.tmLanguage.json',
   },
   {
     embedded: [
@@ -1423,8 +1385,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'php',
     scopeName: 'source.php',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/php/syntaxes/php.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/php/syntaxes/php.tmLanguage.json',
   },
   {
     displayName: 'PL/SQL',
@@ -1454,7 +1416,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/powerquery-language/blob/b66dc932b03fd5cf03f3b20a9e83fac97d897e65/PowerQuery.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'ps',
       'ps1',
     ],
@@ -1463,8 +1425,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'powershell',
     scopeName: 'source.powershell',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/powershell/syntaxes/powershell.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/powershell/syntaxes/powershell.tmLanguage.json',
   },
   {
     displayName: 'Prisma',
@@ -1472,8 +1434,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/prisma/language-tools/main/LICENSE',
     name: 'prisma',
     scopeName: 'source.prisma',
-    sha: '7b9e0ee7f3cfeb4ba568a40bf384956d7c200d78',
-    source: 'https://github.com/prisma/language-tools/blob/7b9e0ee7f3cfeb4ba568a40bf384956d7c200d78/packages/vscode/syntaxes/prisma.tmLanguage.json',
+    sha: '6d1684c2b78b7d03d102d08767466c21f70ef1f0',
+    source: 'https://github.com/prisma/language-tools/blob/6d1684c2b78b7d03d102d08767466c21f70ef1f0/packages/vscode/syntaxes/prisma.tmLanguage.json',
   },
   {
     displayName: 'Prolog',
@@ -1494,7 +1456,7 @@ export const grammars = [
     source: 'https://github.com/zxh0/vscode-proto3/blob/445cf36606f2a6623d4b48e97e255e7272e314a8/syntaxes/proto3.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'jade',
     ],
     displayName: 'Pug',
@@ -1511,8 +1473,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'pug',
     scopeName: 'text.pug',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/pug/syntaxes/pug.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/pug/syntaxes/pug.tmLanguage.json',
   },
   {
     displayName: 'Puppet',
@@ -1533,16 +1495,16 @@ export const grammars = [
     source: 'https://github.com/nwolverson/vscode-language-purescript/blob/5364aa25ecc1ecf3e3ee67a1d7307f44894e106a/syntaxes/purescript.json',
   },
   {
-    alias: [
+    aliases: [
       'py',
     ],
-    displayName: 'MagicPython',
+    displayName: 'Python',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'python',
     scopeName: 'source.python',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/python/syntaxes/MagicPython.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/python/syntaxes/MagicPython.tmLanguage.json',
   },
   {
     displayName: 'R',
@@ -1550,11 +1512,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'r',
     scopeName: 'source.r',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/r/syntaxes/r.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'perl6',
     ],
     displayName: 'Perl 6',
@@ -1562,8 +1524,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'raku',
     scopeName: 'source.perl.6',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/perl/syntaxes/perl6.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/perl/syntaxes/perl6.tmLanguage.json',
   },
   {
     displayName: 'ASP.NET Razor',
@@ -1604,6 +1566,7 @@ export const grammars = [
     source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/9756c8c0667b60772d92f7ed2dcc237c4b85ba0a/syntaxes/riscv.tmLanguage',
   },
   {
+    displayName: 'reStructuredText',
     embedded: [
       'cpp',
       'python',
@@ -1617,11 +1580,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'rst',
     scopeName: 'source.rst',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'rb',
     ],
     displayName: 'Ruby',
@@ -1639,11 +1602,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
     scopeName: 'source.ruby',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/ruby/syntaxes/ruby.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/ruby/syntaxes/ruby.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'rs',
     ],
     displayName: 'Rust',
@@ -1651,8 +1614,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'rust',
     scopeName: 'source.rust',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/rust/syntaxes/rust.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/rust/syntaxes/rust.tmLanguage.json',
   },
   {
     displayName: 'SAS',
@@ -1702,11 +1665,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'scss',
     scopeName: 'source.css.scss',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/scss/syntaxes/scss.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/scss/syntaxes/scss.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'shader',
     ],
     displayName: 'ShaderLab',
@@ -1717,11 +1680,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shaderlab',
     scopeName: 'source.shaderlab',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'bash',
       'sh',
       'shell',
@@ -1732,11 +1695,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shellscript',
     scopeName: 'source.shell',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'console',
     ],
     displayName: 'Shell Session',
@@ -1779,7 +1742,7 @@ export const grammars = [
     source: 'https://github.com/stardog-union/stardog-vsc/blob/0ce931c26529fdaf5c6dd58d91e589bbd6944a1d/stardog-rdf-grammars/syntaxes/sparql.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'spl',
     ],
     displayName: 'Splunk Query Language',
@@ -1796,8 +1759,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'sql',
     scopeName: 'source.sql',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/sql/syntaxes/sql.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/sql/syntaxes/sql.tmLanguage.json',
   },
   {
     displayName: 'SSH Config',
@@ -1819,7 +1782,7 @@ export const grammars = [
     source: 'https://github.com/kylebarron/language-stata/blob/a25b526d271ab747e373d05fade84cd11820188b/grammars/stata.json',
   },
   {
-    alias: [
+    aliases: [
       'styl',
     ],
     displayName: 'Stylus',
@@ -1858,8 +1821,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'swift',
     scopeName: 'source.swift',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/swift/syntaxes/swift.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/swift/syntaxes/swift.tmLanguage.json',
   },
   {
     displayName: 'SystemVerilog',
@@ -1895,8 +1858,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     displayName: 'TeX',
@@ -1923,8 +1886,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tsx',
     scopeName: 'source.tsx',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
   },
   {
     displayName: 'Turtle',
@@ -1951,16 +1914,19 @@ export const grammars = [
     source: 'https://github.com/mblode/vscode-twig-language-2/blob/f62292b533e7c3628c3039214edf45869f8d16c9/src/syntaxes/twig.tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'ts',
     ],
     displayName: 'TypeScript',
+    embedded: [
+      'jsdoc-ts',
+    ],
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'typescript',
     scopeName: 'source.ts',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
   {
     displayName: 'V',
@@ -1972,16 +1938,16 @@ export const grammars = [
     source: 'https://github.com/vlang/vscode-vlang/blob/0d7778ffc6d524f867cdd72027d99ceb5687fe0f/syntaxes/v.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'cmd',
     ],
-    displayName: 'ASP vb.NET',
+    displayName: 'Visual Basic',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'vb',
     scopeName: 'source.asp.vb.net',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
   },
   {
     displayName: 'Verilog',
@@ -2002,7 +1968,7 @@ export const grammars = [
     source: 'https://github.com/jonasjj/awesome-vhdl/blob/44de74297229c633e2d89f8f2cdb4911f481bfd9/syntaxes/vhdl.tmLanguage',
   },
   {
-    alias: [
+    aliases: [
       'vim',
       'vimscript',
     ],
@@ -2057,7 +2023,7 @@ export const grammars = [
     source: 'https://github.com/vuejs/vetur/blob/96aaa707f8ca629f0883c57a47adb0e58995936d/syntaxes/vue-html.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'vy',
     ],
     displayName: 'Vyper',
@@ -2078,14 +2044,16 @@ export const grammars = [
     source: 'https://github.com/wasmerio/vscode-wasm/blob/9d0ace1ff113f4a3e95797675039cd94ec257078/syntaxes/wat.json',
   },
   {
-    alias: [
+    aliases: [
       '文言',
     ],
     displayName: 'Wenyan',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/wenyan-lang/highlight/master/LICENSE',
     name: 'wenyan',
     scopeName: 'source.wenyan',
-    sha: 'c4dd33d8195d5622bbf9bdcea5bc6e796e865c2e',
-    source: 'https://github.com/wenyan-lang/highlight/blob/c4dd33d8195d5622bbf9bdcea5bc6e796e865c2e/wenyan.tmLanguage.json',
+    sha: '998c168706c4388032166531362dca1ac419429f',
+    source: 'https://github.com/wenyan-lang/highlight/blob/998c168706c4388032166531362dca1ac419429f/wenyan.tmLanguage.json',
   },
   {
     displayName: 'WGSL',
@@ -2097,7 +2065,7 @@ export const grammars = [
     source: 'https://github.com/PolyMeilex/vscode-wgsl/blob/acf26718d7a327377641e31d8f9a9dab376efa84/syntaxes/wgsl.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'wl',
     ],
     displayName: 'Wolfram',
@@ -2117,8 +2085,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'xml',
     scopeName: 'text.xml',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/xml/syntaxes/xml.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/xml/syntaxes/xml.tmLanguage.json',
   },
   {
     displayName: 'XSL',
@@ -2129,11 +2097,11 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'xsl',
     scopeName: 'text.xml.xsl',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/xml/syntaxes/xsl.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/xml/syntaxes/xsl.tmLanguage.json',
   },
   {
-    alias: [
+    aliases: [
       'yml',
     ],
     displayName: 'YAML',
@@ -2141,8 +2109,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'yaml',
     scopeName: 'source.yaml',
-    sha: 'b7c53afaefbf519802057a0d5d8a86820465fc80',
-    source: 'https://github.com/microsoft/vscode/blob/b7c53afaefbf519802057a0d5d8a86820465fc80/extensions/yaml/syntaxes/yaml.tmLanguage.json',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/yaml/syntaxes/yaml.tmLanguage.json',
   },
   {
     displayName: 'ZenScript',
@@ -2161,5 +2129,69 @@ export const grammars = [
     scopeName: 'source.zig',
     sha: '2f93703f15615862e5e0bb6a68a95887793bb4a8',
     source: 'https://github.com/ziglang/vscode-zig/blob/2f93703f15615862e5e0bb6a68a95887793bb4a8/syntaxes/zig.tmLanguage.json',
+  },
+]
+
+export const injections = [
+  {
+    displayName: 'C++',
+    embedded: [
+      'cpp',
+      'glsl',
+      'sql',
+    ],
+    embeddedIn: [
+      'cpp',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'cpp-macro',
+    scopeName: 'source.cpp.embedded.macro',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
+  },
+  {
+    displayName: 'jinja-html',
+    embedded: [
+      'jinja',
+      'html',
+    ],
+    embeddedIn: [
+      'jinja',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
+    name: 'jinja-html',
+    scopeName: 'text.html.jinja',
+    sha: '28e422433581d92f72252f1af1f67eeaab07c812',
+    source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/28e422433581d92f72252f1af1f67eeaab07c812/syntaxes/jinja-html.tmLanguage.json',
+  },
+  {
+    embedded: [
+      'typescript',
+    ],
+    embeddedIn: [
+      'javascript',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'jsdoc-js',
+    scopeName: 'documentation.injection.js.jsx',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
+  },
+  {
+    embedded: [
+      'typescript',
+    ],
+    embeddedIn: [
+      'typescript',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'jsdoc-ts',
+    scopeName: 'documentation.injection.ts',
+    sha: 'c9631868cd2585d82bc5c1f00c235c09da2e37d8',
+    source: 'https://github.com/microsoft/vscode/blob/c9631868cd2585d82bc5c1f00c235c09da2e37d8/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
   },
 ]

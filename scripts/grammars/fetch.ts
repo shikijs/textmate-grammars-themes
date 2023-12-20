@@ -14,6 +14,7 @@ import { cleanupGrammar } from './cleanup'
 
 const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.url)
 
+await fs.rm(dirOutput, { recursive: true })
 await fs.mkdir(dirOutput, { recursive: true })
 
 const limit = pLimit(25)
@@ -36,12 +37,22 @@ resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
 resolvedInfo.forEach((info) => {
   const grammar = scopeToGrammar.get(info.scopeName)!
   const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
-  const embedded = Array.from(new Set(includes.map(i => scopeToGrammar.get(i)?.name).filter(Boolean).filter(i => i !== info.name)))
+  const embedded = Array.from(new Set([
+    ...includes.map(i => scopeToGrammar.get(i)?.name).filter(Boolean).filter(i => i !== info.name),
+    ...resolvedInfo.filter(i => i.embeddedIn?.includes(info.name)).map(i => i.name),
+  ]))
   if (embedded.length)
     info.embedded = embedded as string[]
 })
 
-await fs.writeFile(new URL('../index.js', dirOutput), `export const grammars = ${stringify(resolvedInfo, { space: 2 })}\n`, 'utf-8')
+await fs.writeFile(
+  new URL('../index.js', dirOutput),
+  [
+    `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
+    `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
+  ].join('\n'),
+  'utf-8',
+)
 await generateREADME(resolvedInfo)
 await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-grammars', resolvedInfo), 'utf-8')
 
