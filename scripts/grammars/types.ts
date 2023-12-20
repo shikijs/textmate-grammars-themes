@@ -7,6 +7,13 @@ export interface GrammarSource {
   source: string
   alias?: string[]
   /**
+   * Download from marketplace.
+   */
+  marketplace?: {
+    name: string
+    grammar: string
+  }
+  /**
    * Custom patching function for the grammar.
    */
   patch?: (grammar: any) => any | void

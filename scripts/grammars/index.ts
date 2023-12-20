@@ -4,6 +4,7 @@ import pLimit from 'p-limit'
 import stringify from 'json-stable-stringify'
 import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import { octokit } from '../shared/octokit'
+import { downloadFromMarketplace } from '../shared/marketplace'
 import { sources } from './sources'
 
 import type { GrammarSource } from './types'
@@ -14,20 +15,6 @@ const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.ur
 await fs.mkdir(dirOutput, { recursive: true })
 
 const limit = pLimit(25)
-
-const NOTICE_HEAD = `THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
-
-This project incorporates material from the project(s) listed below
-(collectively, “Third Party Code”).
-The author(s) of tm-grammars are not the original author(s) of the Third Party
-Code.
-The original copyright notice and license under which the author(s) received
-such Third Party Code are set out below.
-This Third Party Code is licensed to you under their original license terms set
-forth below.
-
-The following files/folders contain third party software:
-`
 
 const scopeToGrammar = new Map<string, GrammarInfo>()
 
@@ -57,13 +44,26 @@ await generateREADME(resolvedInfo)
 await generateLicense(resolvedInfo)
 
 async function fetchGrammar(source: GrammarSource) {
-  if (source.source.startsWith('marketplace:'))
-    throw new Error('Marketplace grammars are not supported yet')
-  const info = await resolveSource(source)
-  const raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
-  const url = info.source.toLowerCase()
+  let raw: string
+  const info = await resolveSourceGitHub(source)
+  let fileUrl = info.source.toLowerCase()
+
+  if (source.marketplace) {
+    const name = source.marketplace.grammar
+    const { json, zip } = await downloadFromMarketplace(source.marketplace.name)
+    console.log(json.contributes.grammars)
+    const grammar = json.contributes.grammars.find((i: any) => i.language === name)
+    if (!grammar)
+      throw new Error(`Failed to find grammar ${name} in ${source.marketplace.name}`)
+    raw = String(zip.getEntry(grammar.path.replace('./', 'extension/'))!.getData())
+    fileUrl = grammar.path
+  }
+  else {
+    raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
+  }
+
   try {
-    let parsed = parseGrammar(url, raw)
+    let parsed = parseGrammar(fileUrl, raw)
     // Apply custom patching function
     parsed = source.patch?.(parsed) || parsed
     // Update info
@@ -94,14 +94,15 @@ export function getSha(repo: string, branch = 'main') {
     .then(r => r.data.sha)
 }
 
-export async function resolveSource(source: GrammarSource) {
+export async function resolveSourceGitHub(source: GrammarSource) {
   try {
     const {
       patch: _, // exclude keys
+      marketplace: __,
       ...rest
     } = source
     const info = rest as GrammarInfo
-    const { repo, branch, path } = parseGitHubUrl(source.source)!
+    const { repo, branch, path } = parseGitHubUrl(source.source as string)!
 
     await Promise.all([
       getLicenseUrl(repo)
@@ -131,7 +132,19 @@ export async function resolveSource(source: GrammarSource) {
 
 export async function generateLicense(resolved: GrammarInfo[]) {
   const str = [
-    NOTICE_HEAD,
+    `THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+This project incorporates material from the project(s) listed below
+(collectively, “Third Party Code”).
+The author(s) of tm-grammars are not the original author(s) of the Third Party
+Code.
+The original copyright notice and license under which the author(s) received
+such Third Party Code are set out below.
+This Third Party Code is licensed to you under their original license terms set
+forth below.
+
+The following files/folders contain third party software:
+`,
   ]
 
   const licenses = new Map<string, {

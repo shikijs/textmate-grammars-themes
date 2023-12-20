@@ -129,8 +129,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'bat',
     scopeName: 'source.batchfile',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/bat/syntaxes/batchfile.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
     displayName: 'Beancount',
@@ -159,8 +159,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'bibtex',
     scopeName: 'text.bibtex',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
   },
   {
     displayName: 'Bicep',
@@ -194,8 +194,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'c',
     scopeName: 'source.c',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/cpp/syntaxes/c.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/cpp/syntaxes/c.tmLanguage.json',
   },
   {
     alias: [
@@ -226,8 +226,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'clojure',
     scopeName: 'source.clojure',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/clojure/syntaxes/clojure.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/clojure/syntaxes/clojure.tmLanguage.json',
   },
   {
     displayName: 'CMake',
@@ -276,8 +276,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'coffee',
     scopeName: 'source.coffee',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
   },
   {
     alias: [
@@ -293,8 +293,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'cpp',
     scopeName: 'source.cpp',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/cpp/syntaxes/cpp.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
     displayName: 'C++',
@@ -307,8 +307,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'cpp-macro',
     scopeName: 'source.cpp.embedded.macro',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
   },
   {
     displayName: 'Crystal',
@@ -337,8 +337,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'csharp',
     scopeName: 'source.cs',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/csharp/syntaxes/csharp.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/csharp/syntaxes/csharp.tmLanguage.json',
   },
   {
     alias: [
@@ -359,8 +359,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'css',
     scopeName: 'source.css',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/css/syntaxes/css.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/css/syntaxes/css.tmLanguage.json',
   },
   {
     displayName: 'csv syntax',
@@ -407,8 +407,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/dart/syntaxes/dart.tmLanguage.json',
   },
   {
     displayName: 'Dart',
@@ -416,8 +416,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/Dart-Code/Dart-Code/master/LICENSE',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: '643186afe1693d68443c0a90a2d8b120606c2f3b',
-    source: 'https://github.com/Dart-Code/Dart-Code/blob/643186afe1693d68443c0a90a2d8b120606c2f3b/syntaxes/dart.json',
+    sha: '5cf2b37ec82c3b0481c11c7fed970e015e01dee6',
+    source: 'https://github.com/Dart-Code/Dart-Code/blob/5cf2b37ec82c3b0481c11c7fed970e015e01dee6/syntaxes/dart.json',
   },
   {
     displayName: 'DAX',
@@ -432,8 +432,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'diff',
     scopeName: 'source.diff',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/diff/syntaxes/diff.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/diff/syntaxes/diff.tmLanguage.json',
   },
   {
     alias: [
@@ -444,8 +444,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'docker',
     scopeName: 'source.dockerfile',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/docker/syntaxes/docker.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
     displayName: 'Dream Maker',
@@ -523,8 +523,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'fsharp',
     scopeName: 'source.fsharp',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
     displayName: 'GDResource',
@@ -575,8 +575,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'git-commit',
     scopeName: 'text.git-commit',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/git-base/syntaxes/git-commit.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/git-base/syntaxes/git-commit.tmLanguage.json',
   },
   {
     displayName: 'Git Rebase Message',
@@ -587,8 +587,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'git-rebase',
     scopeName: 'text.git-rebase',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
     alias: [
@@ -647,8 +647,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     alias: [
@@ -674,8 +674,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'groovy',
     scopeName: 'source.groovy',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/groovy/syntaxes/groovy.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/groovy/syntaxes/groovy.tmLanguage.json',
   },
   {
     displayName: 'Hack',
@@ -723,8 +723,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'handlebars',
     scopeName: 'text.html.handlebars',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
   },
   {
     alias: [
@@ -762,8 +762,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'hlsl',
     scopeName: 'source.hlsl',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
   },
   {
     displayName: 'HTML',
@@ -775,8 +775,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'html',
     scopeName: 'text.html.basic',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/html/syntaxes/html.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/html/syntaxes/html.tmLanguage.json',
   },
   {
     displayName: 'PHP',
@@ -788,8 +788,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'html',
     scopeName: 'text.html.php',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/php/syntaxes/html.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/php/syntaxes/html.tmLanguage.json',
   },
   {
     displayName: 'Imba',
@@ -807,8 +807,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ini',
     scopeName: 'source.ini',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/ini/syntaxes/ini.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/ini/syntaxes/ini.tmLanguage.json',
   },
   {
     displayName: 'Java',
@@ -816,8 +816,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'java',
     scopeName: 'source.java',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/java/syntaxes/java.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/java/syntaxes/java.tmLanguage.json',
   },
   {
     alias: [
@@ -828,8 +828,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'javascript',
     scopeName: 'source.js',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
   },
   {
     displayName: 'jinja',
@@ -873,8 +873,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsdoc',
     scopeName: 'documentation.injection.js.jsx',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json',
   },
   {
     embedded: [
@@ -884,8 +884,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsdoc',
     scopeName: 'documentation.injection.ts',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json',
   },
   {
     displayName: 'JSON (Javascript Next)',
@@ -893,8 +893,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'json',
     scopeName: 'source.json',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/json/syntaxes/JSON.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/json/syntaxes/JSON.tmLanguage.json',
   },
   {
     displayName: 'JSON5',
@@ -911,8 +911,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsonc',
     scopeName: 'source.json.comments',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/json/syntaxes/JSONC.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/json/syntaxes/JSONC.tmLanguage.json',
   },
   {
     displayName: 'JSON Lines',
@@ -920,8 +920,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsonl',
     scopeName: 'source.json.lines',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/json/syntaxes/JSONL.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/json/syntaxes/JSONL.tmLanguage.json',
   },
   {
     displayName: 'Jsonnet',
@@ -950,8 +950,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'jsx',
     scopeName: 'source.js.jsx',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
   },
   {
     displayName: 'Julia',
@@ -966,8 +966,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'julia',
     scopeName: 'source.julia',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/julia/syntaxes/julia.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/julia/syntaxes/julia.tmLanguage.json',
   },
   {
     alias: [
@@ -1016,8 +1016,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
     displayName: 'LaTeX',
@@ -1052,8 +1052,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'less',
     scopeName: 'source.css.less',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/less/syntaxes/less.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/less/syntaxes/less.tmLanguage.json',
   },
   {
     displayName: 'Liquid',
@@ -1095,8 +1095,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'lua',
     scopeName: 'source.lua',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/lua/syntaxes/lua.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/lua/syntaxes/lua.tmLanguage.json',
   },
   {
     alias: [
@@ -1107,8 +1107,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'make',
     scopeName: 'source.makefile',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/make/syntaxes/make.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/make/syntaxes/make.tmLanguage.json',
   },
   {
     alias: [
@@ -1172,8 +1172,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'markdown',
     scopeName: 'text.html.markdown',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
   },
   {
     displayName: 'Marko',
@@ -1262,6 +1262,14 @@ export default [
     scopeName: 'source.mdx',
     sha: '11eeefed6b5b13f0bfda019972ab96405a10a8fd',
     source: 'https://github.com/wooorm/markdown-tm-language/blob/11eeefed6b5b13f0bfda019972ab96405a10a8fd/source.mdx.tmLanguage',
+  },
+  {
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/LICENSE',
+    name: 'mermaid',
+    scopeName: 'markdown.mermaid.codeblock',
+    sha: '9aae2cf8fa92927a6579bc642ed382a55df26013',
+    source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/9aae2cf8fa92927a6579bc642ed382a55df26013/syntaxes/mermaid.tmLanguage.yaml',
   },
   {
     displayName: 'Mojo',
@@ -1356,8 +1364,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'objective-c',
     scopeName: 'source.objc',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
   },
   {
     displayName: 'Objective-C++',
@@ -1365,8 +1373,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'objective-cpp',
     scopeName: 'source.objcpp',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
   },
   {
     displayName: 'OCaml',
@@ -1399,8 +1407,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'perl',
     scopeName: 'source.perl',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/perl/syntaxes/perl.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/perl/syntaxes/perl.tmLanguage.json',
   },
   {
     embedded: [
@@ -1415,8 +1423,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'php',
     scopeName: 'source.php',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/php/syntaxes/php.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/php/syntaxes/php.tmLanguage.json',
   },
   {
     displayName: 'PL/SQL',
@@ -1455,8 +1463,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'powershell',
     scopeName: 'source.powershell',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/powershell/syntaxes/powershell.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/powershell/syntaxes/powershell.tmLanguage.json',
   },
   {
     displayName: 'Prisma',
@@ -1503,8 +1511,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'pug',
     scopeName: 'text.pug',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/pug/syntaxes/pug.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/pug/syntaxes/pug.tmLanguage.json',
   },
   {
     displayName: 'Puppet',
@@ -1533,8 +1541,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'python',
     scopeName: 'source.python',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/python/syntaxes/MagicPython.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/python/syntaxes/MagicPython.tmLanguage.json',
   },
   {
     displayName: 'R',
@@ -1542,8 +1550,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'r',
     scopeName: 'source.r',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/r/syntaxes/r.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
     alias: [
@@ -1554,8 +1562,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'raku',
     scopeName: 'source.perl.6',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/perl/syntaxes/perl6.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/perl/syntaxes/perl6.tmLanguage.json',
   },
   {
     displayName: 'ASP.NET Razor',
@@ -1609,8 +1617,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'rst',
     scopeName: 'source.rst',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
   },
   {
     alias: [
@@ -1631,8 +1639,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
     scopeName: 'source.ruby',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/ruby/syntaxes/ruby.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/ruby/syntaxes/ruby.tmLanguage.json',
   },
   {
     alias: [
@@ -1643,8 +1651,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'rust',
     scopeName: 'source.rust',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/rust/syntaxes/rust.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/rust/syntaxes/rust.tmLanguage.json',
   },
   {
     displayName: 'SAS',
@@ -1694,8 +1702,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'scss',
     scopeName: 'source.css.scss',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/scss/syntaxes/scss.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/scss/syntaxes/scss.tmLanguage.json',
   },
   {
     alias: [
@@ -1709,8 +1717,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shaderlab',
     scopeName: 'source.shaderlab',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
   },
   {
     alias: [
@@ -1724,8 +1732,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shellscript',
     scopeName: 'source.shell',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
   },
   {
     alias: [
@@ -1788,8 +1796,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'sql',
     scopeName: 'source.sql',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/sql/syntaxes/sql.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/sql/syntaxes/sql.tmLanguage.json',
   },
   {
     displayName: 'SSH Config',
@@ -1850,8 +1858,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'swift',
     scopeName: 'source.swift',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/swift/syntaxes/swift.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/swift/syntaxes/swift.tmLanguage.json',
   },
   {
     displayName: 'SystemVerilog',
@@ -1887,8 +1895,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     displayName: 'TeX',
@@ -1915,8 +1923,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tsx',
     scopeName: 'source.tsx',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
   },
   {
     displayName: 'Turtle',
@@ -1951,8 +1959,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'typescript',
     scopeName: 'source.ts',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
   {
     displayName: 'V',
@@ -1972,8 +1980,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'vb',
     scopeName: 'source.asp.vb.net',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
   },
   {
     displayName: 'Verilog',
@@ -2109,8 +2117,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'xml',
     scopeName: 'text.xml',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/xml/syntaxes/xml.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/xml/syntaxes/xml.tmLanguage.json',
   },
   {
     displayName: 'XSL',
@@ -2121,8 +2129,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'xsl',
     scopeName: 'text.xml.xsl',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/xml/syntaxes/xsl.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/xml/syntaxes/xsl.tmLanguage.json',
   },
   {
     alias: [
@@ -2133,8 +2141,8 @@ export default [
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'yaml',
     scopeName: 'source.yaml',
-    sha: '75b1639461b53dc51380a61532aabdd502c4c718',
-    source: 'https://github.com/microsoft/vscode/blob/75b1639461b53dc51380a61532aabdd502c4c718/extensions/yaml/syntaxes/yaml.tmLanguage.json',
+    sha: '199216cd4864c89e49ebdd2f1c7ef79cbab33cfd',
+    source: 'https://github.com/microsoft/vscode/blob/199216cd4864c89e49ebdd2f1c7ef79cbab33cfd/extensions/yaml/syntaxes/yaml.tmLanguage.json',
   },
   {
     displayName: 'ZenScript',

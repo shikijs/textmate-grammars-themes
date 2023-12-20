@@ -879,12 +879,16 @@ export const sourcesCommunity: GrammarSource[] = [
 export const sourcesMarketplace: GrammarSource[] = [
   {
     name: 'mermaid',
-    source: 'marketplace:bpruitt-goddard.mermaid-markdown-syntax-highlighting',
+    source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/syntaxes/mermaid.tmLanguage.yaml',
+    marketplace: {
+      name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
+      grammar: 'mermaid',
+    },
   },
 ]
 
 export const sources = [
   ...sourcesVSCode,
   ...sourcesCommunity,
-  // ...sourcesMarketplace,
+  ...sourcesMarketplace,
 ]
