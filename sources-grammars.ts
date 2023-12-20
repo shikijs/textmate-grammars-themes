@@ -1,4 +1,4 @@
-import type { GrammarSource } from './types'
+import type { GrammarSource } from './scripts/grammars/types'
 
 export const sourcesVSCode: GrammarSource[] = [
   {

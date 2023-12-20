@@ -6,7 +6,7 @@ import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 import { generateLicense } from '../shared/license'
-import { sources } from './sources'
+import { sources } from '../../sources-themes'
 import type { ThemeSource } from './types'
 import { cleanupTheme } from './cleanup'
 

@@ -4,7 +4,27 @@ Collection of TextMate [grammars](./packages/tm-grammars/) and [themes](./packag
 
 Packages are automatically updated daily and published to npm whenever there are changes.
 
-Originally ported from [Shiki](https://github.com/shikijs/shiki).
+Originally extracted from [Shiki](https://github.com/shikijs/shiki).
+
+## Contribute
+
+### Add a new grammar
+
+1. Fork this repository
+2. Add grammar source and metadata to [`sources-grammars.ts`](./sources-grammars.ts)
+3. Add a code sample file `<id>.sample` for your language under [`./samples`](./samples). A sample should include a variety of language syntaxes and succinctly capture the idiosyncrasy of a language. Format requirements:
+  - Space for indentation
+  - Less than 100 columns if possible
+  - Link to source in the last line, for example `# From https://poignant.guide/book/chapter-5.html`
+4. Run `pnpm run fetch` to download the grammar and verify it works
+5. 🚀 Send in the PR!
+
+### Add a new theme
+
+1. Fork this repository
+2. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
+3. Run `pnpm run fetch` to download the theme and verify it works
+4. 🚀 Send in the PR!
 
 ## License
 

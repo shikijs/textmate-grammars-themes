@@ -1,4 +1,4 @@
-import type { ThemeSource } from './types'
+import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {

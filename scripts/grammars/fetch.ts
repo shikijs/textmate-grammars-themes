@@ -8,7 +8,7 @@ import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseGitHubUrl, resolveSourceGitHub } from '../shared/github'
 import { generateLicense } from '../shared/license'
 import { parseFile } from '../shared/parse'
-import { sources } from './sources'
+import { sources } from '../../sources-grammars'
 
 import type { GrammarSource } from './types'
 import { cleanupGrammar } from './cleanup'
