@@ -41,12 +41,13 @@ resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
 resolvedInfo.forEach((info) => {
   const grammar = scopeToGrammar.get(info.scopeName)!
   const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
-  const embedded = Array.from(new Set([
+  const embedded = new Set([
     ...includes.map(i => scopeToGrammar.get(i)?.name).filter(Boolean).filter(i => i !== info.name),
     ...resolvedInfo.filter(i => i.embeddedIn?.includes(info.name)).map(i => i.name),
-  ]))
-  if (embedded.length)
-    info.embedded = embedded as string[]
+  ])
+  info.embeddedIn?.forEach(i => embedded.delete(i))
+  if (embedded.size)
+    info.embedded = Array.from(embedded) as string[]
 })
 
 await fs.writeFile(
