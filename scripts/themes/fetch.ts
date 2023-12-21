@@ -110,13 +110,26 @@ async function fetchTheme(source: ThemeSource) {
 
 export async function generateREADME(resolved: ThemeInfo[]) {
   const original = await fs.readFile(new URL('../README.md', dirOutput), 'utf-8')
+
+  function format(info: ThemeInfo) {
+    return `| ${info.displayName} | \`${info.name}\` | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} |`
+  }
   const replaced = original.replace(
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
     [
       '<!--list-start-->',
-      '| Name | Source | License | Type |',
-      '| ---- | ------ | ------- | ---- |',
-      ...resolved.map(info => `| \`${info.name}\` | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | \`${info.type}\` |`),
+      '',
+      '## Light Themes',
+      '',
+      '| Name | ID | Source | License |',
+      '| ---- | -- | ------ | ------- |',
+      ...resolved.filter(i => i.type === 'light').map(info => format(info)),
+      '',
+      '## Dark Themes',
+      '',
+      '| Name | ID | Source | License |',
+      '| ---- | -- | ------ | ------- |',
+      ...resolved.filter(i => i.type === 'dark').map(info => format(info)),
       '<!--list-end-->',
     ].join('\n'),
   )
