@@ -1,7 +1,10 @@
 import pLimit from 'p-limit'
 import { fetch } from 'ofetch'
+import c from 'chalk'
 import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
+
+const badge = c.yellow.bold(' license ')
 
 const _cache = new Map<string, Promise<string>>()
 
@@ -49,7 +52,7 @@ The following files/folders contain third party software:
   const limit = pLimit(25)
   await Promise.all(
     [...licenses.keys()].map(url => limit(async () => {
-      console.log(`Fetching License: ${url}...`)
+      console.log(badge + c.yellow(` fetching ${url}`))
       const content = await getLicenseContent(url)
       licenses.get(url)!.content = content
     })),

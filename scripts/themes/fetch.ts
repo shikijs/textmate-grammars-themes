@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import pLimit from 'p-limit'
 import stringify from 'json-stable-stringify'
+import c from 'chalk'
 import { parseGitHubUrl, resolveSourceGitHub } from '../shared/github'
 import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
@@ -10,32 +11,53 @@ import { sources } from '../../sources-themes'
 import type { ThemeSource } from './types'
 import { cleanupTheme } from './cleanup'
 
+const badge = c.cyan.bold('  theme  ')
+
 const dirOutput = new URL('../../packages/tm-themes/themes/', import.meta.url)
 
-await fs.rm(dirOutput, { recursive: true })
 await fs.mkdir(dirOutput, { recursive: true })
+
+const oldMeta = await import('../../packages/tm-themes/index.js')
+  .then(m => m.themes)
+  .catch(() => [] as ThemeInfo[])
+
+let changed = false
 
 const limit = pLimit(25)
 
 const resolvedInfo = await Promise.all(
   sources
     .map(source => limit(async () => {
-      console.log(`Fetching ${source.name}...`)
-      const { theme, info } = await fetchTheme(source)
-      await fs.writeFile(new URL(`${source.name}.json`, dirOutput), `${stringify(theme, { space: 2 })}\n`, 'utf-8')
+      const { theme, info, skip } = await fetchTheme(source)
+      if (!skip) {
+        console.log(badge + c.gray(` Fetched ${source.name}`))
+        changed = true
+        await fs.writeFile(new URL(`${source.name}.json`, dirOutput), `${stringify(theme, { space: 2 })}\n`, 'utf-8')
+      }
+      else {
+        console.log(badge + c.gray(` Skipped ${source.name}`))
+      }
       return info
     })),
 )
 
-resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
-
-await fs.writeFile(new URL('../index.js', dirOutput), `export const themes = ${stringify(resolvedInfo, { space: 2 })}\n`, 'utf-8')
-await generateREADME(resolvedInfo)
-await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-themes', resolvedInfo), 'utf-8')
+if (changed) {
+  resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
+  await fs.writeFile(new URL('../index.js', dirOutput), `export const themes = ${stringify(resolvedInfo, { space: 2 })}\n`, 'utf-8')
+  await generateREADME(resolvedInfo)
+  await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-themes', resolvedInfo), 'utf-8')
+  console.log(badge + c.green(' Finished'))
+}
+else {
+  console.log(badge + c.green(' Finished, nothing changed'))
+}
 
 async function fetchTheme(source: ThemeSource) {
   let raw: string
-  const info = await resolveSourceGitHub(source)
+  const old = oldMeta.find(i => i.name === source.name)
+  const info = await resolveSourceGitHub(source, old)
+  if (info === old)
+    return { info, skip: true }
   let fileUrl = info.source.toLowerCase()
 
   if (source.marketplace) {

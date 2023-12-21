@@ -41,9 +41,9 @@ function getSha(repo: string, branch: string, path: string) {
   return _cacheGetSha.get(key)!
 }
 
-export async function resolveSourceGitHub(source: GrammarSource): Promise<GrammarInfo>
-export async function resolveSourceGitHub(source: ThemeSource): Promise<ThemeInfo>
-export async function resolveSourceGitHub(source: GrammarSource | ThemeSource) {
+export async function resolveSourceGitHub(source: GrammarSource, old?: GrammarInfo): Promise<GrammarInfo>
+export async function resolveSourceGitHub(source: ThemeSource, old?: ThemeInfo): Promise<ThemeInfo>
+export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, old?: GrammarInfo | ThemeInfo) {
   try {
     const {
       patch: _, // exclude keys
@@ -53,21 +53,22 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource) {
     const info = rest as any
     const { repo, branch, path } = parseGitHubUrl(source.source as string)!
 
-    await Promise.all([
-      getLicenseUrl(repo)
-        .catch(() => undefined)
-        .then((license) => {
-          if (!license)
-            return
-          info.licenseUrl = license.download_url!
-          info.license = license.license!.spdx_id!
-        }),
-      getSha(repo, branch, path)
-        .then(sha => info.sha = sha),
-    ])
-
-    if (!info.sha)
+    const sha = await getSha(repo, branch, path)
+    if (!sha)
       throw new Error(`Failed to resolve sha for ${source.name} from ${source.source}`)
+
+    if (old?.sha === sha)
+      return old
+
+    info.sha = sha
+
+    const license = await getLicenseUrl(repo)
+      .catch(() => undefined)
+
+    if (license) {
+      info.licenseUrl = license.download_url!
+      info.license = license.license!.spdx_id!
+    }
 
     info.source = `https://github.com/${repo}/blob/${info.sha || branch}/${path}`
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
-import { existsSync } from 'node:fs'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
+import c from 'chalk'
 import stringify from 'json-stable-stringify'
 import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import { downloadFromMarketplace } from '../shared/marketplace'
@@ -13,25 +13,36 @@ import { sources } from '../../sources-grammars'
 import type { GrammarSource } from './types'
 import { cleanupGrammar } from './cleanup'
 
+const badge = c.magenta.bold(' grammar ')
+
 const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.url)
 
-await fs.rm(dirOutput, { recursive: true })
 await fs.mkdir(dirOutput, { recursive: true })
 
 const limit = pLimit(25)
 
 const scopeToGrammar = new Map<string, GrammarInfo>()
 
+const oldMeta = await import('../../packages/tm-grammars/index.js')
+  .then(m => [...m.grammars, ...m.injections])
+  .catch(() => [] as GrammarInfo[])
+
+let changed = false
+
 const resolvedInfo = await Promise.all(
   sources
     .map(source => limit(async () => {
-      console.log(`Fetching ${source.name}...`)
-      const { grammar, info } = await fetchGrammar(source)
-      scopeToGrammar.set(info.scopeName, grammar)
-      const url = new URL(`${source.name}.json`, dirOutput)
-      if (existsSync(url))
-        throw new Error(`File ${url} already exists`)
-      await fs.writeFile(url, `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
+      const { grammar, info, skip } = await fetchGrammar(source)
+      if (!skip) {
+        console.log(badge + c.gray(` Fetched ${source.name}`))
+        changed = true
+        scopeToGrammar.set(info.scopeName, grammar)
+        const url = new URL(`${source.name}.json`, dirOutput)
+        await fs.writeFile(url, `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
+      }
+      else {
+        console.log(badge + c.gray(` Skipped ${source.name}`))
+      }
       return info
     })),
 )
@@ -39,10 +50,12 @@ const resolvedInfo = await Promise.all(
 resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
 
 resolvedInfo.forEach((info) => {
-  const grammar = scopeToGrammar.get(info.scopeName)!
+  const grammar = scopeToGrammar.get(info.scopeName)
+  if (!grammar)
+    return
   const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
   const embedded = new Set([
-    ...includes.map(i => scopeToGrammar.get(i)?.name).filter(Boolean).filter(i => i !== info.name),
+    ...includes.map(i => resolvedInfo.find(r => r.scopeName === i)?.name).filter(Boolean).filter(i => i !== info.name),
     ...resolvedInfo.filter(i => i.embeddedIn?.includes(info.name)).map(i => i.name),
   ])
   info.embeddedIn?.forEach(i => embedded.delete(i))
@@ -50,20 +63,30 @@ resolvedInfo.forEach((info) => {
     info.embedded = Array.from(embedded) as string[]
 })
 
-await fs.writeFile(
-  new URL('../index.js', dirOutput),
-  [
+if (changed) {
+  await fs.writeFile(
+    new URL('../index.js', dirOutput),
+    [
     `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
     `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
-  ].join('\n'),
-  'utf-8',
-)
-await generateREADME(resolvedInfo)
-await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-grammars', resolvedInfo), 'utf-8')
+    ].join('\n'),
+    'utf-8',
+  )
+  await generateREADME(resolvedInfo)
+  await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-grammars', resolvedInfo), 'utf-8')
+  console.log(badge + c.green(' Finished'))
+}
+else {
+  console.log(badge + c.green(' Finished, nothing changed'))
+}
 
 async function fetchGrammar(source: GrammarSource) {
   let raw: string
-  const info = await resolveSourceGitHub(source)
+  const old = oldMeta.find(i => i.name === source.name)
+  const info = await resolveSourceGitHub(source, old)
+  if (old === info)
+    return { info, skip: true }
+
   let fileUrl = info.source.toLowerCase()
 
   if (source.marketplace) {
