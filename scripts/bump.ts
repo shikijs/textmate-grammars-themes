@@ -11,8 +11,8 @@ const result = await git.status()
 
 const files = result.files.map(i => i.path)
 
-const grammarsChanged = files.some(i => i.startsWith('packages/tm-grammars/grammars'))
-const themesChanged = files.some(i => i.startsWith('packages/tm-themes/themes'))
+const grammarsChanged = files.some(i => i.startsWith('packages/tm-grammars/'))
+const themesChanged = files.some(i => i.startsWith('packages/tm-themes/'))
 
 async function bumpVersion(path: string) {
   const raw = await fs.readFile(path, 'utf-8')
