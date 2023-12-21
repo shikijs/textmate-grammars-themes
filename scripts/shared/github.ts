@@ -14,9 +14,18 @@ function _getLicenseUrl(repo: string) {
     })
 }
 
-function _getSha(repo: string, branch = 'main') {
-  return octokit.request('GET /repos/{owner}/{repo}/commits/{ref}', { owner: repo.split('/')[0], repo: repo.split('/')[1], ref: branch })
-    .then(r => r.data.sha)
+function _getSha(repo: string, branch: string, path: string) {
+  return octokit.request(`GET /repos/{owner}/{repo}/commits?path=${encodeURIComponent(decodeURI(path))}&per_page=1&sha=${branch}`, {
+    owner: repo.split('/')[0],
+    repo: repo.split('/')[1],
+  })
+    .then((r) => {
+      if (!r.data.length) {
+        console.error(r, path)
+        throw new Error(`Failed to resolve sha for ${JSON.stringify({ repo, branch, path })}}`)
+      }
+      return r.data[0].sha
+    })
 }
 
 function getLicenseUrl(repo: string) {
@@ -25,10 +34,10 @@ function getLicenseUrl(repo: string) {
   return _cacheGetLicenseUrl.get(repo)!
 }
 
-function getSha(repo: string, branch = 'main') {
-  const key = `${repo}#${branch}`
+function getSha(repo: string, branch: string, path: string) {
+  const key = `${repo}|${branch}|${path}`
   if (!_cacheGetSha.has(key))
-    _cacheGetSha.set(key, _getSha(repo, branch))
+    _cacheGetSha.set(key, _getSha(repo, branch, path))
   return _cacheGetSha.get(key)!
 }
 
@@ -53,7 +62,7 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource) {
           info.licenseUrl = license.download_url!
           info.license = license.license!.spdx_id!
         }),
-      getSha(repo, branch)
+      getSha(repo, branch, path)
         .then(sha => info.sha = sha),
     ])
 
