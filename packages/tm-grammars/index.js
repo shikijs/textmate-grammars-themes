@@ -1191,6 +1191,7 @@ export const grammars = [
       'md',
     ],
     categories: [
+      'web',
       'markup',
     ],
     displayName: 'Markdown',
@@ -1285,7 +1286,7 @@ export const grammars = [
       'web',
       'markup',
     ],
-    displayName: 'mdc',
+    displayName: 'MDC',
     embedded: [
       'markdown',
       'yaml',

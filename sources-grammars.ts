@@ -605,6 +605,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'mdc',
+    displayName: 'MDC',
     source: 'https://github.com/nuxtlabs/vscode-mdc/blob/main/syntaxes/mdc.tmLanguage.json',
     categories: ['web', 'markup'],
   },

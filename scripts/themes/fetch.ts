@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import process from 'node:process'
 import pLimit from 'p-limit'
 import stringify from 'json-stable-stringify'
 import c from 'chalk'
@@ -17,9 +18,11 @@ const dirOutput = new URL('../../packages/tm-themes/themes/', import.meta.url)
 
 await fs.mkdir(dirOutput, { recursive: true })
 
-const oldMeta = await import('../../packages/tm-themes/index.js')
-  .then(m => m.themes)
-  .catch(() => [] as ThemeInfo[])
+const oldMeta = process.argv.includes('--force')
+  ? []
+  : await import('../../packages/tm-themes/index.js')
+    .then(m => m.themes)
+    .catch(() => [] as ThemeInfo[])
 
 let changed = false
 

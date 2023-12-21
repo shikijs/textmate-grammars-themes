@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import process from 'node:process'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
 import c from 'chalk'
@@ -23,9 +24,11 @@ const limit = pLimit(25)
 
 const scopeToGrammar = new Map<string, GrammarInfo>()
 
-const oldMeta = await import('../../packages/tm-grammars/index.js')
-  .then(m => [...m.grammars, ...m.injections])
-  .catch(() => [] as GrammarInfo[])
+const oldMeta = process.argv.includes('--force')
+  ? []
+  : await import('../../packages/tm-grammars/index.js')
+    .then(m => [...m.grammars, ...m.injections])
+    .catch(() => [] as GrammarInfo[])
 
 let changed = false
 
