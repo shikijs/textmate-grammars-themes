@@ -160,7 +160,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    displayName: 'Red Color Theme',
+    displayName: 'Red',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'red',
