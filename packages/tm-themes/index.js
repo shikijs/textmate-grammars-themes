@@ -1,5 +1,6 @@
 export const themes = [
   {
+    byteSize: 9394,
     displayName: 'Dark Plus',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -9,6 +10,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 23517,
     displayName: 'Dracula',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE',
@@ -18,6 +20,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 23527,
     displayName: 'Dracula Soft',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE',
@@ -27,6 +30,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 11345,
     displayName: 'GitHub Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -36,6 +40,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 14334,
     displayName: 'GitHub Dark Dimmed',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -45,6 +50,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 11124,
     displayName: 'GitHub Light',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -54,6 +60,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 10290,
     displayName: 'Light Plus',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -63,6 +70,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 20565,
     displayName: 'Material Theme',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE',
@@ -72,6 +80,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 20579,
     displayName: 'Material Theme Darker',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE',
@@ -81,6 +90,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 20584,
     displayName: 'Material Theme Lighter',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE',
@@ -90,6 +100,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 20579,
     displayName: 'Material Theme Ocean',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE',
@@ -99,6 +110,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 20585,
     displayName: 'Material Theme Palenight',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE',
@@ -108,6 +120,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 6405,
     displayName: 'Min Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -117,6 +130,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 7033,
     displayName: 'Min Light',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -126,6 +140,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 8872,
     displayName: 'Monokai',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -135,6 +150,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 31930,
     displayName: 'Nord',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nordtheme/visual-studio-code/develop/license',
@@ -144,6 +160,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 41707,
     displayName: 'One Dark Pro',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
@@ -153,6 +170,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 33486,
     displayName: 'Poimandres',
     name: 'poimandres',
     sha: '574213aba50e3a46a95fa86a69025a0fae046a8a',
@@ -160,6 +178,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 6979,
     displayName: 'Red',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -169,6 +188,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 21401,
     displayName: 'Rosé Pine',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -178,6 +198,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 21412,
     displayName: 'Rosé Pine Dawn',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -187,6 +208,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 21411,
     displayName: 'Rosé Pine Moon',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -196,6 +218,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 9569,
     displayName: 'Slack Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -205,6 +228,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 10086,
     displayName: 'Slack Ochin',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -214,6 +238,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 7621,
     displayName: 'Solarized Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -223,6 +248,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 7255,
     displayName: 'Solarized Light',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -232,6 +258,7 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 13316,
     displayName: 'Vitesse Black',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE',
@@ -241,6 +268,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 13398,
     displayName: 'Vitesse Dark',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE',
@@ -250,6 +278,7 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 13255,
     displayName: 'Vitesse Light',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE',

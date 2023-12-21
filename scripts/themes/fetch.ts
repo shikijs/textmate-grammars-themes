@@ -9,6 +9,7 @@ import { parseFile } from '../shared/parse'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 import { generateLicense } from '../shared/license'
 import { sources } from '../../sources-themes'
+import { fileSizeToHuman } from '../shared/utils'
 import type { ThemeSource } from './types'
 import { cleanupTheme } from './cleanup'
 
@@ -122,8 +123,11 @@ async function fetchTheme(source: ThemeSource) {
       delete parsed.include
     }
 
+    const theme = cleanupTheme(parsed)
+    info.byteSize = new TextEncoder().encode(JSON.stringify(theme)).length
+
     return {
-      theme: cleanupTheme(parsed),
+      theme,
       info,
     }
   }
@@ -137,7 +141,7 @@ export async function generateREADME(resolved: ThemeInfo[]) {
   const original = await fs.readFile(new URL('../README.md', dirOutput), 'utf-8')
 
   function format(info: ThemeInfo) {
-    return `| ${info.displayName} | \`${info.name}\` | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} |`
+    return `| ${info.displayName} | \`${info.name}\` | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${fileSizeToHuman(info.byteSize)} |`
   }
   const replaced = original.replace(
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
@@ -146,14 +150,14 @@ export async function generateREADME(resolved: ThemeInfo[]) {
       '',
       '## Light Themes',
       '',
-      '| Name | ID | Source | License |',
-      '| ---- | -- | ------ | ------- |',
+      '| Name | ID | Source | License | File Size |',
+      '| ---- | -- | ------ | ------- | --------- |',
       ...resolved.filter(i => i.type === 'light').map(info => format(info)),
       '',
       '## Dark Themes',
       '',
-      '| Name | ID | Source | License |',
-      '| ---- | -- | ------ | ------- |',
+      '| Name | ID | Source | License | File Size |',
+      '| ---- | -- | ------ | ------- | --------- |',
       ...resolved.filter(i => i.type === 'dark').map(info => format(info)),
       '<!--list-end-->',
     ].join('\n'),

@@ -2,7 +2,7 @@ export type GrammarCategory = 'web' | 'markup' | 'general' | 'scripting' | 'data
 
 export interface GrammarInfo {
   name: string
-  displayName?: string
+  displayName: string
   categories?: GrammarCategory[]
   scopeName: string
   source: string
@@ -12,6 +12,7 @@ export interface GrammarInfo {
   sha?: string
   embedded?: string[]
   embeddedIn?: string[]
+  byteSize: number
 }
 
 const grammars: GrammarInfo[]

@@ -11,6 +11,7 @@ import { generateLicense } from '../shared/license'
 import { parseFile } from '../shared/parse'
 import { sources } from '../../sources-grammars'
 
+import { fileSizeToHuman } from '../shared/utils'
 import type { GrammarSource } from './types'
 import { cleanupGrammar } from './cleanup'
 
@@ -116,8 +117,10 @@ async function fetchGrammar(source: GrammarSource) {
     parsed.displayName = info.displayName
     if (source.injectTo)
       parsed.injectTo = source.injectTo
+    const grammar = cleanupGrammar(parsed)
+    info.byteSize = new TextEncoder().encode(JSON.stringify(grammar)).length
     return {
-      grammar: cleanupGrammar(parsed),
+      grammar,
       info,
     }
   }
@@ -133,9 +136,9 @@ export async function generateREADME(resolved: GrammarInfo[]) {
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
     [
       '<!--list-start-->',
-      '| Name | Alias | Source | License | Deps On |',
-      '| ---- | ----- | ------ | ------- | ------- |',
-      ...resolved.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} |`),
+      '| Name | Alias | Source | License | Deps On | File Size |',
+      '| ---- | ----- | ------ | ------- | ------- | --------- |',
+      ...resolved.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
       '<!--list-end-->',
     ].join('\n'),
   )

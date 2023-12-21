@@ -1,12 +1,13 @@
 export interface ThemeInfo {
   name: string
   type: 'dark' | 'light'
-  displayName?: string
+  displayName: string
   source: string
   licenseUrl?: string
   license?: string
   sha?: string
   embedded?: string[]
+  byteSize: number
 }
 
 const themes: ThemeInfo[]
