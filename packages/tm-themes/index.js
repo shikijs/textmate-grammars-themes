@@ -160,6 +160,15 @@ export const themes = [
     type: 'dark',
   },
   {
+    displayName: 'Red',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'red',
+    sha: 'f605341af6b083f2b6d9c853d882b96955c690b7',
+    source: 'https://github.com/microsoft/vscode/blob/f605341af6b083f2b6d9c853d882b96955c690b7/extensions/theme-red/themes/Red-color-theme.json',
+    type: 'dark',
+  },
+  {
     displayName: 'Rosé Pine',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
