@@ -1,4 +1,4 @@
-export type GrammarCategory = 'web' | 'markup' | 'general' | 'scripting' | 'data' | 'dsl' | 'utility' | 'config'
+import type { GrammarCategory } from '../../packages/tm-grammars'
 
 export interface GrammarSource {
   name: string

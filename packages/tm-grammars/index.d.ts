@@ -1,9 +1,9 @@
-export type GrammarCategory = 'frontend' | 'backend' | 'common' | 'data' | 'other'
+export type GrammarCategory = 'web' | 'markup' | 'general' | 'scripting' | 'data' | 'dsl' | 'utility' | 'config'
 
 export interface GrammarInfo {
   name: string
   displayName?: string
-  category?: GrammarCategory
+  categories?: GrammarCategory[]
   scopeName: string
   source: string
   aliases?: string[]
