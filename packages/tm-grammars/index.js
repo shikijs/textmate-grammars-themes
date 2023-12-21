@@ -843,6 +843,25 @@ export const grammars = [
   {
     categories: [
       'web',
+      'utility',
+    ],
+    displayName: 'HTTP',
+    embedded: [
+      'shellscript',
+      'json',
+      'xml',
+      'graphql',
+    ],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/Huachao/vscode-restclient/master/LICENSE',
+    name: 'http',
+    scopeName: 'source.http',
+    sha: 'a89f8bce1b5e3d5bd955f10916b0c101e20431d3',
+    source: 'https://github.com/Huachao/vscode-restclient/blob/a89f8bce1b5e3d5bd955f10916b0c101e20431d3/syntaxes/http.tmLanguage.json',
+  },
+  {
+    categories: [
+      'web',
     ],
     displayName: 'Imba',
     embedded: [
