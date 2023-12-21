@@ -181,7 +181,7 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'markdown',
     aliases: ['md'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
-    categories: ['markup'],
+    categories: ['web', 'markup'],
   },
   {
     name: 'objective-cpp',
