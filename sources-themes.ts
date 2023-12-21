@@ -2,13 +2,13 @@ import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
-    displayName: 'Dark Plus',
     name: 'dark-plus',
+    displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
   },
   {
-    displayName: 'Light Plus',
     name: 'light-plus',
+    displayName: 'Light Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
   },
   {
@@ -18,13 +18,13 @@ export const sourcesVSCode: ThemeSource[] = [
   },
   {
     name: 'solarized-dark',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
     displayName: 'Solarized Dark',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
   },
   {
     name: 'solarized-light',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
     displayName: 'Solarized Light',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
   },
   {
     name: 'red',

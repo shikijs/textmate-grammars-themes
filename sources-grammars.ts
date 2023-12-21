@@ -3,18 +3,18 @@ import type { GrammarSource } from './scripts/grammars/types'
 export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'bat',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/bat/syntaxes/batchfile.tmLanguage.json',
     aliases: ['batch'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
     name: 'clojure',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
     aliases: ['clj'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
   },
   {
     name: 'coffee',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
     aliases: ['coffeescript'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
   },
   {
     name: 'c',
@@ -22,13 +22,13 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'cpp',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/cpp/syntaxes/cpp.tmLanguage.json',
     aliases: ['c++'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
     name: 'csharp',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/csharp/syntaxes/csharp.tmLanguage.json',
     aliases: ['c#', 'cs'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/csharp/syntaxes/csharp.tmLanguage.json',
   },
   {
     name: 'css',
@@ -44,14 +44,14 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'docker',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/docker/syntaxes/docker.tmLanguage.json',
     aliases: ['dockerfile'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
     name: 'fsharp',
     displayName: 'F#',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
     aliases: ['f#', 'fs'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
     name: 'git-commit',
@@ -71,8 +71,8 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'handlebars',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
     aliases: ['hbs'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
   },
   {
     name: 'hlsl',
@@ -84,9 +84,9 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'ini',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/ini/syntaxes/ini.tmLanguage.json',
-    aliases: ['properties'],
     displayName: 'INI',
+    aliases: ['properties'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/ini/syntaxes/ini.tmLanguage.json',
   },
   {
     name: 'java',
@@ -95,13 +95,13 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'javascript',
     displayName: 'JavaScript',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
     aliases: ['js'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
   },
   {
     name: 'jsx',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
     displayName: 'JSX',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
   },
   {
     name: 'json',
@@ -142,13 +142,13 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'make',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/make/syntaxes/make.tmLanguage.json',
     aliases: ['makefile'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/make/syntaxes/make.tmLanguage.json',
   },
   {
     name: 'markdown',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
     aliases: ['md'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
   },
   {
     name: 'objective-cpp',
@@ -156,8 +156,8 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'objective-c',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
     aliases: ['objc'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
   },
   {
     name: 'perl',
@@ -166,8 +166,8 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'raku',
     displayName: 'Raku',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl6.tmLanguage.json',
     aliases: ['perl6'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl6.tmLanguage.json',
   },
   {
     name: 'php',
@@ -176,19 +176,19 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'powershell',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/powershell/syntaxes/powershell.tmLanguage.json',
     aliases: ['ps', 'ps1'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/powershell/syntaxes/powershell.tmLanguage.json',
   },
   {
     name: 'pug',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/pug/syntaxes/pug.tmLanguage.json',
     aliases: ['jade'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/pug/syntaxes/pug.tmLanguage.json',
   },
   {
     name: 'python',
     displayName: 'Python',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/python/syntaxes/MagicPython.tmLanguage.json',
     aliases: ['py'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/python/syntaxes/MagicPython.tmLanguage.json',
   },
   {
     name: 'r',
@@ -201,13 +201,13 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'ruby',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/ruby/syntaxes/ruby.tmLanguage.json',
     aliases: ['rb'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/ruby/syntaxes/ruby.tmLanguage.json',
   },
   {
     name: 'rust',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/rust/syntaxes/rust.tmLanguage.json',
     aliases: ['rs'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/rust/syntaxes/rust.tmLanguage.json',
   },
   {
     name: 'scss',
@@ -215,14 +215,14 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'shaderlab',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
     aliases: ['shader'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
   },
   {
     name: 'shellscript',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
-    aliases: ['bash', 'sh', 'shell', 'zsh'],
     displayName: 'Shell',
+    aliases: ['bash', 'sh', 'shell', 'zsh'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
   },
   {
     name: 'sql',
@@ -234,19 +234,19 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'typescript',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
     aliases: ['ts'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
   {
     name: 'tsx',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
     displayName: 'TSX',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
   },
   {
     name: 'vb',
     displayName: 'Visual Basic',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
     aliases: ['cmd'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
   },
   {
     name: 'xml',
@@ -258,8 +258,8 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'yaml',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/yaml/syntaxes/yaml.tmLanguage.json',
     aliases: ['yml'],
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/yaml/syntaxes/yaml.tmLanguage.json',
   },
 ]
 
@@ -282,8 +282,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'apl',
-    source: 'https://github.com/kimmolinna/vscode-apl-language/blob/master/syntaxes/apl.tmLanguage.json',
     displayName: 'APL',
+    source: 'https://github.com/kimmolinna/vscode-apl-language/blob/master/syntaxes/apl.tmLanguage.json',
   },
   {
     name: 'applescript',
@@ -291,8 +291,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'actionscript-3',
-    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/main/distribution/src/assembly/syntaxes/AS3.tmLanguage',
     displayName: 'ActionScript',
+    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/main/distribution/src/assembly/syntaxes/AS3.tmLanguage',
   },
   {
     name: 'ara',
@@ -300,8 +300,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'asm',
-    source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/master/syntaxes/language-x86_64-assembly.tmLanguage',
     displayName: 'Assembly',
+    source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/master/syntaxes/language-x86_64-assembly.tmLanguage',
   },
   {
     name: 'astro',
@@ -321,10 +321,10 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'berry',
-    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
     aliases: [
       'be',
     ],
+    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
   },
   {
     name: 'bicep',
@@ -337,15 +337,15 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'cadence',
     displayName: 'Cadence',
-    source: 'https://github.com/onflow/vscode-cadence/blob/master/extension/language/syntaxes/cadence.tmGrammar.json',
     aliases: [
       'cdc',
     ],
+    source: 'https://github.com/onflow/vscode-cadence/blob/master/extension/language/syntaxes/cadence.tmGrammar.json',
   },
   {
     name: 'clarity',
-    source: 'https://github.com/hirosystems/clarity.tmbundle/blob/main/Syntaxes/clarity.JSON-tmLanguage',
     displayName: 'Clarity',
+    source: 'https://github.com/hirosystems/clarity.tmbundle/blob/main/Syntaxes/clarity.JSON-tmLanguage',
   },
   {
     name: 'cmake',
@@ -357,9 +357,9 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'codeql',
-    source: 'https://github.com/github/vscode-codeql/blob/main/syntaxes/ql.tmLanguage.json',
-    aliases: ['ql'],
     displayName: 'CodeQL',
+    aliases: ['ql'],
+    source: 'https://github.com/github/vscode-codeql/blob/main/syntaxes/ql.tmLanguage.json',
   },
   {
     name: 'crystal',
@@ -375,8 +375,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'cypher',
-    source: 'https://github.com/adam-cowley/neo4j-vscode/blob/main/cypher/cypher.tmLanguage',
     aliases: ['cql'],
+    source: 'https://github.com/adam-cowley/neo4j-vscode/blob/main/cypher/cypher.tmLanguage',
   },
   {
     name: 'd',
@@ -384,8 +384,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'dax',
-    source: 'https://github.com/huyza/dax-language/blob/master/syntaxes/dax.grammer.json',
     displayName: 'DAX',
+    source: 'https://github.com/huyza/dax-language/blob/master/syntaxes/dax.grammer.json',
   },
   {
     name: 'dream-maker',
@@ -401,23 +401,23 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'erb',
-    source: 'https://github.com/textmate/ruby.tmbundle/blob/master/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',
     displayName: 'ERB',
+    source: 'https://github.com/textmate/ruby.tmbundle/blob/master/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',
   },
   {
     name: 'erlang',
-    source: 'https://github.com/erlang-ls/grammar/blob/main/Erlang.plist',
     aliases: ['erl'],
+    source: 'https://github.com/erlang-ls/grammar/blob/main/Erlang.plist',
   },
   {
     name: 'fish',
-    source: 'https://github.com/bmalehorn/vscode-fish/blob/master/syntaxes/fish.tmLanguage.json',
     displayName: 'Fish',
+    source: 'https://github.com/bmalehorn/vscode-fish/blob/master/syntaxes/fish.tmLanguage.json',
   },
   {
     name: 'gdresource',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDResource.tmLanguage.json',
     displayName: 'GDResource',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDResource.tmLanguage.json',
   },
   {
     name: 'gdscript',
@@ -433,13 +433,13 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'glimmer-js',
-    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-js.tmLanguage.json',
     aliases: ['gjs'],
+    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-js.tmLanguage.json',
   },
   {
     name: 'glimmer-ts',
-    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-ts.tmLanguage.json',
     aliases: ['gts'],
+    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-ts.tmLanguage.json',
   },
   {
     name: 'glsl',
@@ -447,14 +447,14 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'gnuplot',
-    source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/master/syntaxes/gnuplot.tmLanguage',
     displayName: 'Gnuplot',
+    source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/master/syntaxes/gnuplot.tmLanguage',
   },
   {
     name: 'graphql',
-    source: 'https://github.com/prisma-labs/vscode-graphql/blob/master/grammars/graphql.json',
     aliases: ['gql',
     ],
+    source: 'https://github.com/prisma-labs/vscode-graphql/blob/master/grammars/graphql.json',
   },
   {
     name: 'hack',
@@ -466,9 +466,9 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'haskell',
-    source: 'https://github.com/octref/language-haskell/blob/master/syntaxes/haskell.json',
     aliases: ['hs',
     ],
+    source: 'https://github.com/octref/language-haskell/blob/master/syntaxes/haskell.json',
   },
   {
     name: 'hcl',
@@ -501,18 +501,18 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'jssm',
-    source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
     aliases: ['fsl'],
+    source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
   },
   {
     name: 'kotlin',
-    source: 'https://github.com/fwcd/vscode-kotlin/blob/main/syntaxes/kotlin.tmLanguage.json',
     aliases: ['kt', 'kts'],
+    source: 'https://github.com/fwcd/vscode-kotlin/blob/main/syntaxes/kotlin.tmLanguage.json',
   },
   {
     name: 'kusto',
-    source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
     aliases: ['kql'],
+    source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
     name: 'lisp',
@@ -520,8 +520,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'liquid',
-    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/main/grammars/liquid.tmLanguage.json',
     displayName: 'Liquid',
+    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/main/grammars/liquid.tmLanguage.json',
   },
   {
     name: 'logo',
@@ -545,23 +545,23 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'mojo',
-    source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
     displayName: 'Mojo',
+    source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
   },
   {
     name: 'narrat',
-    source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/main/syntaxes/narrat.tmLanguage.yaml',
     aliases: ['nar'],
+    source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/main/syntaxes/narrat.tmLanguage.yaml',
   },
   {
     name: 'nextflow',
-    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/master/syntaxes/nextflow.tmLanguage.json',
     aliases: ['nf'],
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/master/syntaxes/nextflow.tmLanguage.json',
   },
   {
     name: 'nginx',
-    source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/main/src/syntax/nginx.tmLanguage',
     displayName: 'Nginx',
+    source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/main/src/syntax/nginx.tmLanguage',
   },
   {
     name: 'nim',
@@ -573,8 +573,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'nushell',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/main/syntaxes/nushell.tmLanguage.json',
     aliases: ['nu'],
+    source: 'https://github.com/nushell/vscode-nushell-lang/blob/main/syntaxes/nushell.tmLanguage.json',
   },
   {
     name: 'ocaml',
@@ -586,13 +586,13 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'plsql',
-    source: 'https://github.com/zabel-xyz/plsql-language/blob/master/syntaxes/plsql.tmLanguage',
     displayName: 'PL/SQL',
+    source: 'https://github.com/zabel-xyz/plsql-language/blob/master/syntaxes/plsql.tmLanguage',
   },
   {
     name: 'powerquery',
-    source: 'https://github.com/microsoft/powerquery-language/blob/master/PowerQuery.tmLanguage.json',
     displayName: 'PowerQuery',
+    source: 'https://github.com/microsoft/powerquery-language/blob/master/PowerQuery.tmLanguage.json',
   },
   {
     name: 'prisma',
@@ -600,8 +600,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'prolog',
-    source: 'https://github.com/arthwang/vsc-prolog/blob/master/syntaxes/prolog.swi.tmLanguage.json',
     displayName: 'Prolog',
+    source: 'https://github.com/arthwang/vsc-prolog/blob/master/syntaxes/prolog.swi.tmLanguage.json',
   },
   {
     name: 'proto',
@@ -621,8 +621,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'reg',
-    source: 'https://github.com/mihai-vlc/reg-vscode/blob/master/syntaxes/reg.tmLanguage',
     displayName: 'Windows Registry Script',
+    source: 'https://github.com/mihai-vlc/reg-vscode/blob/master/syntaxes/reg.tmLanguage',
   },
   {
     name: 'rel',
@@ -630,13 +630,13 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'riscv',
-    source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/master/syntaxes/riscv.tmLanguage',
     displayName: 'RISC-V',
+    source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/master/syntaxes/riscv.tmLanguage',
   },
   {
     name: 'sas',
-    source: 'https://github.com/rpardee/sas/blob/master/syntaxes/sas.tmLanguage',
     displayName: 'SAS',
+    source: 'https://github.com/rpardee/sas/blob/master/syntaxes/sas.tmLanguage',
   },
   {
     name: 'sass',
@@ -652,8 +652,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'shellsession',
-    source: 'https://github.com/hronro/sublime-linguist-syntax/blob/master/syntaxes/ShellSession.tmLanguage',
     aliases: ['console'],
+    source: 'https://github.com/hronro/sublime-linguist-syntax/blob/master/syntaxes/ShellSession.tmLanguage',
   },
   {
     name: 'smalltalk',
@@ -669,8 +669,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'splunk',
-    source: 'https://github.com/arcsector/vscode-splunk-search-syntax/blob/master/syntaxes/splunk_search.tmLanguage',
     aliases: ['spl'],
+    source: 'https://github.com/arcsector/vscode-splunk-search-syntax/blob/master/syntaxes/splunk_search.tmLanguage',
   },
   {
     name: 'ssh-config',
@@ -682,13 +682,13 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'stylus',
-    source: 'https://github.com/d4rkr00t/language-stylus/blob/master/syntaxes/stylus.json',
     aliases: ['styl'],
+    source: 'https://github.com/d4rkr00t/language-stylus/blob/master/syntaxes/stylus.json',
   },
   {
     name: 'svelte',
-    source: 'https://github.com/sveltejs/language-tools/blob/master/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml',
     displayName: 'Svelte',
+    source: 'https://github.com/sveltejs/language-tools/blob/master/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml',
   },
   {
     name: 'system-verilog',
@@ -696,8 +696,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'tasl',
-    source: 'https://github.com/underlay/vscode-tasl/blob/main/syntaxes/tasl.tmLanguage.json',
     displayName: 'Tasl',
+    source: 'https://github.com/underlay/vscode-tasl/blob/main/syntaxes/tasl.tmLanguage.json',
   },
   {
     name: 'tcl',
@@ -713,8 +713,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'twig',
-    source: 'https://github.com/mblode/vscode-twig-language-2/blob/master/src/syntaxes/twig.tmLanguage',
     displayName: 'Twig',
+    source: 'https://github.com/mblode/vscode-twig-language-2/blob/master/src/syntaxes/twig.tmLanguage',
   },
   {
     name: 'verilog',
@@ -726,9 +726,9 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'viml',
-    source: 'https://github.com/dunstontc/viml/blob/master/syntaxes/viml.tmLanguage.json',
-    aliases: ['vim', 'vimscript'],
     displayName: 'Vim Script',
+    aliases: ['vim', 'vimscript'],
+    source: 'https://github.com/dunstontc/viml/blob/master/syntaxes/viml.tmLanguage.json',
   },
   {
     name: 'vue',
@@ -740,8 +740,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'vyper',
-    source: 'https://github.com/tintinweb/vscode-vyper/blob/master/syntaxes/vyper.tmLanguage.json',
     aliases: ['vy'],
+    source: 'https://github.com/tintinweb/vscode-vyper/blob/master/syntaxes/vyper.tmLanguage.json',
   },
   {
     name: 'postcss',
@@ -749,8 +749,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'wasm',
-    source: 'https://github.com/wasmerio/vscode-wasm/blob/master/syntaxes/wat.json',
     displayName: 'WebAssembly',
+    source: 'https://github.com/wasmerio/vscode-wasm/blob/master/syntaxes/wat.json',
   },
   {
     name: 'wgsl',
@@ -758,14 +758,14 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'wenyan',
-    source: 'https://github.com/wenyan-lang/highlight/blob/master/wenyan.tmLanguage.json',
-    aliases: ['文言'],
     displayName: 'Wenyan',
+    aliases: ['文言'],
+    source: 'https://github.com/wenyan-lang/highlight/blob/master/wenyan.tmLanguage.json',
   },
   {
     name: 'wolfram',
-    source: 'https://github.com/WolframResearch/vscode-wolfram/blob/master/syntaxes/wolfram.tmLanguage.json',
     aliases: ['wl'],
+    source: 'https://github.com/WolframResearch/vscode-wolfram/blob/master/syntaxes/wolfram.tmLanguage.json',
   },
   {
     name: 'zenscript',
@@ -778,6 +778,11 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'zig',
     source: 'https://github.com/ziglang/vscode-zig/blob/master/syntaxes/zig.tmLanguage.json',
+  },
+  {
+    name: 'http',
+    displayName: 'HTTP',
+    source: 'https://github.com/Huachao/vscode-restclient/blob/master/syntaxes/http.tmLanguage.json',
   },
 ]
 
