@@ -28,7 +28,7 @@ export const sourcesVSCode: ThemeSource[] = [
   },
   {
     name: 'red',
-    displayName: 'Red Color Theme',
+    displayName: 'Red',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
   },
 ]
