@@ -19,6 +19,8 @@ const filesChanged = [
   ...diff.map(i => i.file),
 ]
 
+let grammarsVersion = ''
+let themesVersion = ''
 const grammarsChanged = filesChanged.filter(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
 const themesChanged = filesChanged.filter(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
 
@@ -27,16 +29,17 @@ async function bumpVersion(path: string) {
   const json = JSON.parse(raw)
   json.version = semver.inc(json.version, 'patch')
   await fs.writeFile(path, `${JSON.stringify(json, null, 2)}\n`, 'utf-8')
+  return json.version
 }
 
 if (grammarsChanged.length) {
   console.log('Grammars changed, bumping version...')
-  await bumpVersion('packages/tm-grammars/package.json')
+  grammarsVersion = await bumpVersion('packages/tm-grammars/package.json')
 }
 
 if (themesChanged.length) {
   console.log('Themes changed, bumping version...')
-  await bumpVersion('packages/tm-themes/package.json')
+  themesVersion = await bumpVersion('packages/tm-themes/package.json')
 }
 
 if ((grammarsChanged.length || themesChanged.length)) {
@@ -46,16 +49,29 @@ if ((grammarsChanged.length || themesChanged.length)) {
     await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANGED=true`, 'utf-8')
   }
   if (process.env.GITHUB_STEP_SUMMARY) {
+    const REPO = 'https://github.com/antfu/textmate-grammars-themes'
     await fs.writeFile(
       process.env.GITHUB_STEP_SUMMARY,
       [
-        `Since [last release](https://github.com/antfu/textmate-grammars-themes/commit/${lastReleaseSHA}):`,
+        `Since [last release](${REPO}/compare/${lastReleaseSHA}...main):`,
 
-        '## Grammar Changes',
-        ...grammarsChanged.map(i => `- ${i}`),
+        ...grammarsChanged.length
+          ? [
+              '## Grammar Changes',
+              ...grammarsChanged.map(i => `- ${i}`),
+              '',
+              `🚀 Released as \`v${grammarsVersion}\``,
+            ]
+          : [],
 
-        '## Theme Changes',
-        ...themesChanged.map(i => `- ${i}`),
+        ...themesChanged.length
+          ? [
+              '## Theme Changes',
+              ...themesChanged.map(i => `- ${i}`),
+              '',
+              `🚀 Released as \`v${themesVersion}\``,
+            ]
+          : [],
       ].join('\n'),
       'utf-8',
     )
