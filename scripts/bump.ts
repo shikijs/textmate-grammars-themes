@@ -9,10 +9,18 @@ await git.add(['.'])
 
 const result = await git.status()
 
-const files = result.files.map(i => i.path)
+const lastReleaseSHA = (await git.log(['-n', '1', '--pretty=format:%h', '--', 'packages/tm-grammars/package.json', 'packages/tm-themes/package.json'])).latest?.hash
+const diff = !lastReleaseSHA
+  ? []
+  : (await git.diffSummary([lastReleaseSHA!, 'HEAD']))?.files || []
 
-const grammarsChanged = files.some(i => i.startsWith('packages/tm-grammars/'))
-const themesChanged = files.some(i => i.startsWith('packages/tm-themes/'))
+const filesChanged = [
+  ...result.files.map(i => i.path),
+  ...diff.map(i => i.file),
+]
+
+const grammarsChanged = filesChanged.some(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
+const themesChanged = filesChanged.some(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
 
 async function bumpVersion(path: string) {
   const raw = await fs.readFile(path, 'utf-8')
