@@ -19,8 +19,8 @@ const filesChanged = [
   ...diff.map(i => i.file),
 ]
 
-const grammarsChanged = filesChanged.some(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
-const themesChanged = filesChanged.some(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
+const grammarsChanged = filesChanged.filter(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
+const themesChanged = filesChanged.filter(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
 
 async function bumpVersion(path: string) {
   const raw = await fs.readFile(path, 'utf-8')
@@ -29,24 +29,47 @@ async function bumpVersion(path: string) {
   await fs.writeFile(path, `${JSON.stringify(json, null, 2)}\n`, 'utf-8')
 }
 
-if (grammarsChanged) {
+if (grammarsChanged.length) {
   console.log('Grammars changed, bumping version...')
   await bumpVersion('packages/tm-grammars/package.json')
 }
 
-if (themesChanged) {
+if (themesChanged.length) {
   console.log('Themes changed, bumping version...')
   await bumpVersion('packages/tm-themes/package.json')
 }
 
-if ((grammarsChanged || themesChanged) && process.env.GITHUB_OUTPUT) {
-  console.log('Grammars or themes changed, setting CHANGED=true...', process.env.GITHUB_OUTPUT)
-  await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANGED=true`, 'utf-8')
-}
+if ((grammarsChanged.length || themesChanged.length)) {
+  console.log('Grammars or themes changed, committing...')
+  if (process.env.GITHUB_OUTPUT) {
+    console.log('Grammars or themes changed, setting CHANGED=true...', process.env.GITHUB_OUTPUT)
+    await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANGED=true`, 'utf-8')
+  }
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    await fs.writeFile(
+      process.env.GITHUB_STEP_SUMMARY,
+      [
+        `Since [last release](https://github.com/antfu/textmate-grammars-themes/commit/${lastReleaseSHA}):`,
 
-if (!grammarsChanged && !themesChanged) {
+        '## Grammar Changes',
+        ...grammarsChanged.map(i => `- ${i}`),
+
+        '## Theme Changes',
+        ...themesChanged.map(i => `- ${i}`),
+      ].join('\n'),
+      'utf-8',
+    )
+  }
+  await git.add(['.'])
+}
+else {
   console.log('Nothing changed, exiting...')
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    await fs.writeFile(
+      process.env.GITHUB_STEP_SUMMARY,
+      'Nothing changed, skipping...',
+      'utf-8',
+    )
+  }
   process.exit(0)
 }
-
-await git.add(['.'])
