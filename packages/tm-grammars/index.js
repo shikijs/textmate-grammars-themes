@@ -611,14 +611,14 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 16364,
+    byteSize: 15818,
     displayName: 'GDScript',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: 'e7e2d0439dea0fb3a568378554c81e0a17348a84',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDScript.tmLanguage.json',
+    sha: '0a794ebc1b09b334c5f77816bc708d1cc330bf8f',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/0a794ebc1b09b334c5f77816bc708d1cc330bf8f/syntaxes/GDScript.tmLanguage.json',
   },
   {
     byteSize: 6096,
