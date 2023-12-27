@@ -291,7 +291,7 @@ export const grammars = [
     source: 'https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage',
   },
   {
-    byteSize: 38394,
+    byteSize: 38458,
     displayName: 'COBOL',
     embedded: [
       'sql',
@@ -302,8 +302,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: 'f06c6efca55e00e561238f509762e73e79179ed8',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/f06c6efca55e00e561238f509762e73e79179ed8/syntaxes/COBOL.tmLanguage.json',
+    sha: 'b2fa865d91d7c39bf0b633dbb15521442b62b21e',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/b2fa865d91d7c39bf0b633dbb15521442b62b21e/syntaxes/COBOL.tmLanguage.json',
   },
   {
     aliases: [
