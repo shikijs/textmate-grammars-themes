@@ -1,7 +1,7 @@
 import { objectPick } from '../shared/utils'
 
 export function cleanupTheme(lang: any) {
-  return objectPick(
+  const cleaned = objectPick(
     lang,
     [
       'name',
@@ -10,7 +10,6 @@ export function cleanupTheme(lang: any) {
       'colors',
       'fg',
       'bg',
-      'include',
       'settings',
       'tokenColors',
       'semanticHighlighting',
@@ -18,4 +17,15 @@ export function cleanupTheme(lang: any) {
     ],
     // (_, key, value) => console.log('lang key removal', key, '|', value),
   )
+  cleaned.tokenColors ||= cleaned.settings
+  delete cleaned.settings
+
+  cleaned.tokenColors = (cleaned.tokenColors || []).map((setting: any) => {
+    return {
+      scope: setting.scope,
+      settings: setting.settings,
+    }
+  })
+
+  return cleaned
 }

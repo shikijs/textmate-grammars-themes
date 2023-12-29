@@ -97,7 +97,7 @@ export const grammars = [
     source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/15c07b12741ac75f5bb6e7701dc7c0d742add8dd/syntaxes/language-x86_64-assembly.tmLanguage',
   },
   {
-    byteSize: 10832,
+    byteSize: 10881,
     categories: [
       'web',
     ],
@@ -118,8 +118,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/withastro/language-tools/main/LICENSE',
     name: 'astro',
     scopeName: 'source.astro',
-    sha: '942f913bca2742305f8848583e9db6e91bd9958c',
-    source: 'https://github.com/withastro/language-tools/blob/942f913bca2742305f8848583e9db6e91bd9958c/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
+    sha: '37434ab5ee2149dd74a7c1e800d8c279a0617912',
+    source: 'https://github.com/withastro/language-tools/blob/37434ab5ee2149dd74a7c1e800d8c279a0617912/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
   },
   {
     byteSize: 5303,
