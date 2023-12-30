@@ -35,6 +35,10 @@ import { themes } from 'tm-themes'
 
 | Name | ID | Source | License | File Size |
 | ---- | -- | ------ | ------- | --------- |
+| Catppuccin Frappe | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/frappe.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.19 kB |
+| Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/latte.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.19 kB |
+| Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/macchiato.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.20 kB |
+| Catppuccin Mocha | `catppuccin-mocha` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/mocha.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.19 kB |
 | Dark Plus | `dark-plus` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/cc4775f55aff152db2417dfaaddc643ee90b31f9/extensions/theme-defaults/themes/dark_plus.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 8.64 kB |
 | Dracula | `dracula` | [dracula/visual-studio-code](https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml) | [MIT](https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE) | 20.51 kB |
 | Dracula Soft | `dracula-soft` | [dracula/visual-studio-code](https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml) | [MIT](https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE) | 20.52 kB |
