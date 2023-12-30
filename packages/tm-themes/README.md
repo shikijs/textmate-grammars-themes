@@ -35,6 +35,7 @@ import { themes } from 'tm-themes'
 
 | Name | ID | Source | License | File Size |
 | ---- | -- | ------ | ------- | --------- |
+| Aurora X | `Aurora X` | [marqu3ss/Aurora-X](https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json) |  | 13.28 kB |
 | Catppuccin Frappe | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/frappe.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.19 kB |
 | Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/latte.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.19 kB |
 | Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/a97886a1c95198f042d0d0010145260338e81b24/macchiato.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.20 kB |
