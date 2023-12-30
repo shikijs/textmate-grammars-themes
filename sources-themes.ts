@@ -2,7 +2,7 @@ import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
-    name: 'Aurora X',
+    name: 'aurora-x',
     displayName: 'Aurora X',
     source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',
   },
