@@ -25,8 +25,14 @@ Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki
 ### Add a new theme
 
 1. Fork this repository
-2. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
-3. Run `pnpm run fetch` to download the theme and verify it works
+2. Install the dependencies with `pnpm i`
+3. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
+4. Go to [https://github.com/settings/token](https://github.com/settings/token) to generate a Personal Access Token (PAT) as you'll need it for the next step.
+5. Create a `.env` file and past your generated PAT into the file like so:
+```bash
+GITHUB_TOKEN=your-personal-access-token
+```
+6. Run `pnpm run fetch` to download the theme and verify it works
 4. Send in the PR!
 
 ## License
