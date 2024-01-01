@@ -5,7 +5,8 @@ export interface ThemeInfo {
   source: string
   licenseUrl?: string
   license?: string
-  sha?: string
+  sha: string
+  lastUpdate: string
   embedded?: string[]
   byteSize: number
 }

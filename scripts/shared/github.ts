@@ -4,8 +4,13 @@ import type { GrammarSource } from '../grammars/types'
 import type { ThemeSource } from '../themes/types'
 import { octokit } from './octokit'
 
+interface CommitInfo {
+  sha: string
+  date: string
+}
+
 const _cacheGetLicenseUrl = new Map<string, ReturnType<typeof _getLicenseUrl>>()
-const _cacheGetSha = new Map<string, ReturnType<typeof _getSha>>()
+const _cacheGetCommit = new Map<string, Promise<CommitInfo>>()
 
 function _getLicenseUrl(repo: string) {
   return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] })
@@ -14,7 +19,7 @@ function _getLicenseUrl(repo: string) {
     })
 }
 
-function _getSha(repo: string, branch: string, path: string) {
+function _getCommit(repo: string, branch: string, path: string): Promise<CommitInfo> {
   return octokit.request(`GET /repos/{owner}/{repo}/commits?path=${encodeURIComponent(decodeURI(path))}&per_page=1&sha=${branch}`, {
     owner: repo.split('/')[0],
     repo: repo.split('/')[1],
@@ -24,7 +29,10 @@ function _getSha(repo: string, branch: string, path: string) {
         console.error(r, path)
         throw new Error(`Failed to resolve sha for ${JSON.stringify({ repo, branch, path })}}`)
       }
-      return r.data[0].sha
+      return {
+        sha: r.data[0].sha,
+        date: r.data[0].commit.author.date,
+      }
     })
 }
 
@@ -34,11 +42,11 @@ function getLicenseUrl(repo: string) {
   return _cacheGetLicenseUrl.get(repo)!
 }
 
-function getSha(repo: string, branch: string, path: string) {
+function getCommit(repo: string, branch: string, path: string) {
   const key = `${repo}|${branch}|${path}`
-  if (!_cacheGetSha.has(key))
-    _cacheGetSha.set(key, _getSha(repo, branch, path))
-  return _cacheGetSha.get(key)!
+  if (!_cacheGetCommit.has(key))
+    _cacheGetCommit.set(key, _getCommit(repo, branch, path))
+  return _cacheGetCommit.get(key)!
 }
 
 export async function resolveSourceGitHub(source: GrammarSource, old?: GrammarInfo): Promise<GrammarInfo>
@@ -53,14 +61,15 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
     const info = rest as any
     const { repo, branch, path } = parseGitHubUrl(source.source as string)!
 
-    const sha = await getSha(repo, branch, path)
-    if (!sha)
-      throw new Error(`Failed to resolve sha for ${source.name} from ${source.source}`)
+    const commit = await getCommit(repo, branch, path)
+    if (!commit)
+      throw new Error(`Failed to resolve commit for ${source.name} from ${source.source}`)
 
-    if (old?.sha === sha)
+    if (old?.sha === commit.sha)
       return old
 
-    info.sha = sha
+    info.sha = commit.sha
+    info.lastUpdate = commit.date
 
     const license = await getLicenseUrl(repo)
       .catch(() => undefined)
