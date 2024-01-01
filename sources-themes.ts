@@ -2,6 +2,11 @@ import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
+    name: 'aurora-x',
+    displayName: 'Aurora X',
+    source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',
+  },
+  {
     name: 'dark-plus',
     displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
