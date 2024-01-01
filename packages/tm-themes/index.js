@@ -2,7 +2,7 @@ export const themes = [
   {
     byteSize: 13599,
     displayName: 'Aurora X',
-    name: 'Aurora X',
+    name: 'aurora-x',
     sha: '118727efadf48872adcd81f6c00be580097d6592',
     source: 'https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json',
     type: 'dark',
