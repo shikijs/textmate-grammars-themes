@@ -10,6 +10,7 @@ import type { ThemeInfo } from '../../packages/tm-themes/index'
 import { generateLicense } from '../shared/license'
 import { sources } from '../../sources-themes'
 import { fileSizeToHuman } from '../shared/utils'
+import { COMMENT_HEAD } from '../shared/head'
 import type { ThemeSource } from './types'
 import { cleanupTheme } from './cleanup'
 
@@ -47,7 +48,11 @@ const resolvedInfo = await Promise.all(
 
 if (changed) {
   resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
-  await fs.writeFile(new URL('../index.js', dirOutput), `export const themes = ${stringify(resolvedInfo, { space: 2 })}\n`, 'utf-8')
+  await fs.writeFile(
+    new URL('../index.js', dirOutput),
+    `${COMMENT_HEAD}\nexport const themes = ${stringify(resolvedInfo, { space: 2 })}\n`,
+    'utf-8',
+  )
   await generateREADME(resolvedInfo)
   await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-themes', resolvedInfo), 'utf-8')
   console.log(badge + c.green(' Finished'))

@@ -1,3 +1,8 @@
+/**
+ * This file is generated, DO NOT MODIFY directly.
+ * Check README.md#contribute for instructions.
+ */
+
 export const grammars = [
   {
     byteSize: 17305,
@@ -657,15 +662,15 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 15818,
+    byteSize: 16220,
     displayName: 'GDScript',
-    lastUpdate: '2023-12-22T11:04:02Z',
+    lastUpdate: '2024-01-02T08:02:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: '0a794ebc1b09b334c5f77816bc708d1cc330bf8f',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/0a794ebc1b09b334c5f77816bc708d1cc330bf8f/syntaxes/GDScript.tmLanguage.json',
+    sha: '34916becd6a67af294000d15844c2daaf7f69bc2',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/34916becd6a67af294000d15844c2daaf7f69bc2/syntaxes/GDScript.tmLanguage.json',
   },
   {
     byteSize: 6096,

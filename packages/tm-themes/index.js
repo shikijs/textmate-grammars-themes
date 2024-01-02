@@ -1,3 +1,8 @@
+/**
+ * This file is generated, DO NOT MODIFY directly.
+ * Check README.md#contribute for instructions.
+ */
+
 export const themes = [
   {
     byteSize: 13599,
@@ -20,7 +25,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 43151,
+    byteSize: 43152,
     displayName: 'Catppuccin Latte',
     lastUpdate: '2024-01-01T20:53:54Z',
     license: 'MIT',
