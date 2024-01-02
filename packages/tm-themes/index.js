@@ -28,7 +28,7 @@ export const themes = [
     name: 'catppuccin-latte',
     sha: '7c79fea83b01d81bdb7c1397b95cecd01561db1f',
     source: 'https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/latte.json',
-    type: 'dark',
+    type: 'light',
   },
   {
     byteSize: 43159,
