@@ -88,12 +88,12 @@
     "dropdown.foreground": "#cdd6f4",
     "dropdown.listBackground": "#585b70",
     "editor.background": "#1e1e2e",
-    "editor.findMatchBackground": "#f38ba84d",
-    "editor.findMatchBorder": "#00000000",
-    "editor.findMatchHighlightBackground": "#89dceb4d",
-    "editor.findMatchHighlightBorder": "#00000000",
-    "editor.findRangeHighlightBackground": "#89dceb4d",
-    "editor.findRangeHighlightBorder": "#00000000",
+    "editor.findMatchBackground": "#5e3f53",
+    "editor.findMatchBorder": "#f38ba833",
+    "editor.findMatchHighlightBackground": "#3e5767",
+    "editor.findMatchHighlightBorder": "#89dceb33",
+    "editor.findRangeHighlightBackground": "#3e5767",
+    "editor.findRangeHighlightBorder": "#89dceb33",
     "editor.focusedStackFrameHighlightBackground": "#a6e3a126",
     "editor.foldBackground": "#89dceb40",
     "editor.foreground": "#cdd6f4",
@@ -1204,11 +1204,14 @@
     },
     {
       "scope": [
-        "meta.tag support.class.component"
+        "support.class.component",
+        "support.class.component.jsx",
+        "support.class.component.tsx",
+        "support.class.component.vue"
       ],
       "settings": {
         "fontStyle": "",
-        "foreground": "#89b4fa"
+        "foreground": "#f5c2e7"
       }
     },
     {
@@ -1328,22 +1331,13 @@
     },
     {
       "scope": [
-        "keyword.operator.expression.keyof.ts",
-        "keyword.operator.expression.typeof.js",
-        "keyword.operator.expression.typeof.ts",
-        "keyword.operator.expression.of.ts",
-        "keyword.operator.expression.of.js"
+        "keyword.operator.expression.in",
+        "keyword.operator.expression.instanceof",
+        "keyword.operator.expression.is",
+        "keyword.operator.expression.keyof"
       ],
       "settings": {
         "foreground": "#cba6f7"
-      }
-    },
-    {
-      "scope": [
-        "support.class.component.vue"
-      ],
-      "settings": {
-        "foreground": "#89b4fa"
       }
     },
     {
