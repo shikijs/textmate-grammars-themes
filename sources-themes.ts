@@ -103,6 +103,7 @@ export const sourcesCommunity: ThemeSource[] = [
   {
     name: 'catppuccin-latte',
     source: 'https://github.com/catppuccin/vscode/blob/compiled/latte.json',
+    type: 'light',
   },
   {
     name: 'catppuccin-macchiato',

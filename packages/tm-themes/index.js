@@ -1,3 +1,8 @@
+/**
+ * This file is generated, DO NOT MODIFY directly.
+ * Check README.md#contribute for instructions.
+ */
+
 export const themes = [
   {
     byteSize: 13599,
@@ -20,7 +25,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 43151,
+    byteSize: 43152,
     displayName: 'Catppuccin Latte',
     lastUpdate: '2024-01-01T20:53:54Z',
     license: 'MIT',
@@ -28,7 +33,7 @@ export const themes = [
     name: 'catppuccin-latte',
     sha: '7c79fea83b01d81bdb7c1397b95cecd01561db1f',
     source: 'https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/latte.json',
-    type: 'dark',
+    type: 'light',
   },
   {
     byteSize: 43159,

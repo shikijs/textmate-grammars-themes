@@ -22,6 +22,7 @@ import { themes } from 'tm-themes'
 
 | Name | ID | Source | License | File Size |
 | ---- | -- | ------ | ------- | --------- |
+| Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/latte.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.14 kB |
 | GitHub Light | `github-light` | [primer/github-vscode-theme](https://github.com/primer/github-vscode-theme/blob/f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1/src/theme.js) | [MIT](https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE) | 10.86 kB |
 | Light Plus | `light-plus` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/cc4775f55aff152db2417dfaaddc643ee90b31f9/extensions/theme-defaults/themes/light_plus.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 9.47 kB |
 | Material Theme Lighter | `material-theme-lighter` | [material-theme/vsc-material-theme](https://github.com/material-theme/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts) | [Apache-2.0](https://raw.githubusercontent.com/material-theme/vsc-material-theme/main/LICENSE) | 18.15 kB |
@@ -37,7 +38,6 @@ import { themes } from 'tm-themes'
 | ---- | -- | ------ | ------- | --------- |
 | Aurora X | `aurora-x` | [marqu3ss/Aurora-X](https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json) |  | 13.28 kB |
 | Catppuccin Frappe | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/frappe.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.14 kB |
-| Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/latte.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.14 kB |
 | Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/macchiato.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.15 kB |
 | Catppuccin Mocha | `catppuccin-mocha` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7c79fea83b01d81bdb7c1397b95cecd01561db1f/mocha.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 42.14 kB |
 | Dark Plus | `dark-plus` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/cc4775f55aff152db2417dfaaddc643ee90b31f9/extensions/theme-defaults/themes/dark_plus.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 8.64 kB |

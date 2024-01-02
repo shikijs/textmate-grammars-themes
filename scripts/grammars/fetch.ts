@@ -12,6 +12,7 @@ import { parseFile } from '../shared/parse'
 import { sources } from '../../sources-grammars'
 
 import { fileSizeToHuman } from '../shared/utils'
+import { COMMENT_HEAD } from '../shared/head'
 import type { GrammarSource } from './types'
 import { cleanupGrammar } from './cleanup'
 
@@ -71,8 +72,9 @@ if (changed) {
   await fs.writeFile(
     new URL('../index.js', dirOutput),
     [
-    `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
-    `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
+      COMMENT_HEAD,
+      `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
+      `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
     ].join('\n'),
     'utf-8',
   )
