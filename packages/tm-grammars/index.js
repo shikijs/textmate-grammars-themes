@@ -39,6 +39,25 @@ export const grammars = [
     source: 'https://github.com/AdaCore/ada_language_server/blob/75c0d0c22b3f3dbf559946331c7aca6fc5b84065/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
   {
+    byteSize: 12988,
+    categories: [
+      'web',
+    ],
+    embedded: [
+      'angular-inline-style',
+      'angular-inline-template',
+      'angular-template',
+      'angular-template-blocks',
+    ],
+    lastUpdate: '2023-11-08T17:02:59Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular',
+    scopeName: 'expression.ng',
+    sha: 'd7dab52644375e64af3deaeac045cc75f5954414',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
+  },
+  {
     byteSize: 12867,
     displayName: 'Apache Conf',
     lastUpdate: '2020-05-30T18:14:18Z',
@@ -2725,6 +2744,81 @@ export const grammars = [
 ]
 
 export const injections = [
+  {
+    byteSize: 1195,
+    embedded: [
+      'scss',
+    ],
+    embeddedIn: [
+      'angular',
+    ],
+    injectTo: [
+      'source.ts',
+    ],
+    lastUpdate: '2023-11-03T16:23:10Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-inline-style',
+    scopeName: 'inline-styles.ng',
+    sha: 'f0422f5f571f79a904510944452f06fb36beff22',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
+  },
+  {
+    byteSize: 950,
+    embedded: [
+      'angular-template',
+    ],
+    embeddedIn: [
+      'angular',
+    ],
+    injectTo: [
+      'source.ts',
+    ],
+    lastUpdate: '2020-07-06T21:15:10Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-inline-template',
+    scopeName: 'inline-template.ng',
+    sha: 'c3f3172a70b1a2bfdca3bdee85df9271cb0895cf',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/c3f3172a70b1a2bfdca3bdee85df9271cb0895cf/syntaxes/inline-template.json',
+  },
+  {
+    byteSize: 3164,
+    embeddedIn: [
+      'angular',
+    ],
+    injectTo: [
+      'text.html.derivative',
+      'source.ts',
+    ],
+    lastUpdate: '2022-04-01T23:00:39Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-template',
+    scopeName: 'template.ng',
+    sha: '38481421878d59dda0a69e508e97265c8e173fcd',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/38481421878d59dda0a69e508e97265c8e173fcd/syntaxes/template.json',
+  },
+  {
+    byteSize: 1119,
+    embedded: [
+      'angular-template',
+    ],
+    embeddedIn: [
+      'angular',
+    ],
+    injectTo: [
+      'text.html.derivative',
+      'source.ts',
+    ],
+    lastUpdate: '2023-12-05T18:19:48Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-template-blocks',
+    scopeName: 'template.blocks.ng',
+    sha: 'abfdaa7e3c1eefe0054659deb217a967d5b551b8',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/abfdaa7e3c1eefe0054659deb217a967d5b551b8/syntaxes/template-blocks.json',
+  },
   {
     byteSize: 235569,
     displayName: 'C++',

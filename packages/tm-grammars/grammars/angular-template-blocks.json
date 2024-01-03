@@ -1,0 +1,88 @@
+{
+  "injectTo": [
+    "text.html.derivative",
+    "source.ts"
+  ],
+  "injectionSelector": "L:text.html -comment -expression.ng -meta.tag -source.css -source.js",
+  "name": "angular-template-blocks",
+  "patterns": [
+    {
+      "include": "#block"
+    }
+  ],
+  "repository": {
+    "block": {
+      "begin": "(@)((?:\\w+\\s*)+)(?=\\(|\\{)",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#transition"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.control.block.kind.ng"
+        }
+      },
+      "contentName": "control.block.ng",
+      "end": "(?<=\\})",
+      "patterns": [
+        {
+          "include": "#blockExpression"
+        },
+        {
+          "include": "#blockBody"
+        }
+      ]
+    },
+    "blockBody": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.ts"
+        }
+      },
+      "contentName": "control.block.body.ng",
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.ts"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.derivative"
+        },
+        {
+          "include": "template.ng"
+        }
+      ]
+    },
+    "blockExpression": {
+      "begin": "\\(",
+      "beginCaptures": {
+        "0": {
+          "name": "meta.brace.round.ts"
+        }
+      },
+      "contentName": "control.block.expression.ng",
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.round.ts"
+        }
+      },
+      "patterns": [
+        {
+          "include": "expression.ng"
+        }
+      ]
+    },
+    "transition": {
+      "match": "@",
+      "name": "keyword.control.block.transition.ng"
+    }
+  },
+  "scopeName": "template.blocks.ng"
+}
