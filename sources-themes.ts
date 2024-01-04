@@ -98,20 +98,20 @@ export const sourcesCommunity: ThemeSource[] = [
   },
   {
     name: 'catppuccin-frappe',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/frappe.json',
+    source: 'https://esm.sh/@catppuccin/vscode/themes/frappe.json',
   },
   {
     name: 'catppuccin-latte',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/latte.json',
+    source: 'https://esm.sh/@catppuccin/vscode/themes/latte.json',
     type: 'light',
   },
   {
     name: 'catppuccin-macchiato',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/macchiato.json',
+    source: 'https://esm.sh/@catppuccin/vscode/themes/macchiato.json',
   },
   {
     name: 'catppuccin-mocha',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/mocha.json',
+    source: 'https://esm.sh/@catppuccin/vscode/themes/mocha.json',
   },
 ]
 
