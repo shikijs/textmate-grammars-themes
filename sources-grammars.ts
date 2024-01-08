@@ -327,11 +327,7 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'ada',
     source: 'https://github.com/AdaCore/ada_language_server/blob/master/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
-  {
-    name: 'angular',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/expression.json',
-    categories: ['web'],
-  },
+
   {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
@@ -896,6 +892,24 @@ export const sourcesMarketplace: GrammarSource[] = [
 ]
 
 /**
+ * Languages that extend other languages with injections with no entry language.
+ */
+export const virtualLanguages: GrammarSource[] = [
+  {
+    name: 'angular-html',
+    displayName: 'Angular HTML',
+    source: 'https://github.com/onivim/vscode-exthost/blob/master/extensions/html/syntaxes/html-derivative.tmLanguage.json',
+    categories: ['web', 'markup'],
+  },
+  {
+    name: 'angular-ts',
+    displayName: 'Angular TypeScript',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
+    categories: ['web'],
+  },
+]
+
+/**
  * Injections are sub-grammars that are embedded in other grammars.
  *
  * Use `embeddedIn` to specify the grammars that the injection is embedded in.
@@ -952,7 +966,7 @@ export const sourcesInjections: GrammarSource[] = [
   {
     name: 'angular-template-blocks',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template-blocks.json',
-    embeddedIn: ['angular'],
+    embeddedIn: ['angular-ts', 'angular-html'],
     injectTo: [
       'text.html.derivative',
       'source.ts',
@@ -961,7 +975,7 @@ export const sourcesInjections: GrammarSource[] = [
   {
     name: 'angular-template',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template.json',
-    embeddedIn: ['angular'],
+    embeddedIn: ['angular-ts', 'angular-html'],
     injectTo: [
       'text.html.derivative',
       'source.ts',
@@ -970,7 +984,7 @@ export const sourcesInjections: GrammarSource[] = [
   {
     name: 'angular-inline-style',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-styles.json',
-    embeddedIn: ['angular'],
+    embeddedIn: ['angular-ts'],
     injectTo: [
       'source.ts',
     ],
@@ -978,10 +992,15 @@ export const sourcesInjections: GrammarSource[] = [
   {
     name: 'angular-inline-template',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-template.json',
-    embeddedIn: ['angular'],
+    embeddedIn: ['angular-ts'],
     injectTo: [
       'source.ts',
     ],
+  },
+  {
+    name: 'angular-expression',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/expression.json',
+    embeddedIn: ['angular-ts', 'angular-html'],
   },
 ]
 
@@ -989,5 +1008,6 @@ export const sources = [
   ...sourcesVSCode,
   ...sourcesCommunity,
   ...sourcesMarketplace,
+  ...virtualLanguages,
   ...sourcesInjections,
 ]

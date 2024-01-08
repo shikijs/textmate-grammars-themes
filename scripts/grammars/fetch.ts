@@ -134,13 +134,26 @@ async function fetchGrammar(source: GrammarSource) {
 
 export async function generateREADME(resolved: GrammarInfo[]) {
   const original = await fs.readFile(new URL('../README.md', dirOutput), 'utf-8')
+
+  function createTable(items: GrammarInfo[]) {
+    return [
+      '| Name | Alias | Source | License | Deps On | File Size |',
+      '| ---- | ----- | ------ | ------- | ------- | --------- |',
+      ...items.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
+    ]
+  }
   const replaced = original.replace(
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
     [
       '<!--list-start-->',
-      '| Name | Alias | Source | License | Deps On | File Size |',
-      '| ---- | ----- | ------ | ------- | ------- | --------- |',
-      ...resolved.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
+      '## Grammars',
+      ...createTable(resolved.filter(i => !i.embeddedIn)),
+      '',
+      '## Injections',
+      '',
+      'Injections are grammars that are embedded in other grammars. They are used to aggregate other grammars but not used directly.',
+      '',
+      ...createTable(resolved.filter(i => i.embeddedIn)),
       '<!--list-end-->',
     ].join('\n'),
   )
