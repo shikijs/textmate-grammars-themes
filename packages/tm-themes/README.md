@@ -36,6 +36,7 @@ import { themes } from 'tm-themes'
 
 | Name | ID | Source | License | File Size |
 | ---- | -- | ------ | ------- | --------- |
+| Andromeeda | `andromeeda` | [EliverLara/Andromeda](https://github.com/EliverLara/Andromeda/blob/a05c86aec15c98d371e46eefbb2d1838b563f73c/themes/Andromeda-color-theme.json) | [MIT](https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md) | 8.57 kB |
 | Aurora X | `aurora-x` | [marqu3ss/Aurora-X](https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json) |  | 13.28 kB |
 | Catppuccin Frappé | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7a6de5035c08bce3568de9c85a47932ab4c971b1/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.25 kB |
 | Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/7a6de5035c08bce3568de9c85a47932ab4c971b1/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.26 kB |
