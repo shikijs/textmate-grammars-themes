@@ -96,23 +96,6 @@ export const sourcesCommunity: ThemeSource[] = [
     name: 'one-dark-pro',
     source: 'https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro.json',
   },
-  {
-    name: 'catppuccin-frappe',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/frappe.json',
-  },
-  {
-    name: 'catppuccin-latte',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/latte.json',
-    type: 'light',
-  },
-  {
-    name: 'catppuccin-macchiato',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/macchiato.json',
-  },
-  {
-    name: 'catppuccin-mocha',
-    source: 'https://github.com/catppuccin/vscode/blob/compiled/mocha.json',
-  },
 ]
 
 export const sourcesMarketplace: ThemeSource[] = [
@@ -144,6 +127,16 @@ export const sourcesMarketplace: ThemeSource[] = [
       'GitHub Dark Dimmed',
     ],
   ),
+  ...generateMarketplaceSource(
+    'Catppuccin.catppuccin-vsc',
+    'https://github.com/catppuccin/vscode/blob/main/packages/catppuccin-vsc/package.json',
+    [
+      'Catppuccin Mocha',
+      'Catppuccin Macchiato',
+      'Catppuccin Latte',
+      'Catppuccin Frappé',
+    ],
+  ),
 ]
 
 export const sources = [
@@ -154,7 +147,7 @@ export const sources = [
 
 function generateMarketplaceSource(name: string, source: string, themes: string[]): ThemeSource[] {
   return themes.map(theme => ({
-    name: theme.toLowerCase().trim().replace(/\s+/g, '-'),
+    name: theme.toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '').trim().replace(/\s+/g, '-'),
     displayName: theme,
     source,
     marketplace: {
