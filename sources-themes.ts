@@ -2,9 +2,19 @@ import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
+    name: 'andromeda',
+    displayName: 'Andromeda',
+    source: 'https://github.com/EliverLara/Andromeda/blob/master/themes/Andromeda-color-theme.json',
+  },
+  {
     name: 'aurora-x',
     displayName: 'Aurora X',
     source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',
+  },
+  {
+    name: 'ayu-dark',
+    displayName: 'Ayu Dark',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
   },
   {
     name: 'dark-plus',
@@ -22,6 +32,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
   },
   {
+    name: 'night-owl',
+    displayName: 'Night Owl',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
+  },
+  {
     name: 'solarized-dark',
     displayName: 'Solarized Dark',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
@@ -30,6 +45,26 @@ export const sourcesVSCode: ThemeSource[] = [
     name: 'solarized-light',
     displayName: 'Solarized Light',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
+  },
+  {
+    name: 'synthwave-84',
+    displayName: 'Synthwave \'84',
+    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
+  },
+  {
+    name: 'tokyo-night',
+    displayName: 'Tokyo Night',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-color-theme.json',
+  },
+  {
+    name: 'tokyo-night-storm',
+    displayName: 'Tokyo Night Storm',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-storm-color-theme.json',
+  },
+  {
+    name: 'tokyo-night-light',
+    displayName: 'Tokyo Night Light',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-light-color-theme.json',
   },
   {
     name: 'red',

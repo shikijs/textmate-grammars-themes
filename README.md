@@ -33,13 +33,8 @@ GITHUB_TOKEN=your-personal-access-token
 1. Fork this repository
 2. Install the dependencies with `pnpm i`
 3. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
-<<<<<<< HEAD
-4. Go to [https://github.com/settings/token](https://github.com/settings/token) to generate a Personal Access Token (PAT) as you'll need it for the next step.
-5. Create a `.env` file and past your generated PAT into the file like so:
-=======
 4. Generate a [personal access token](https://github.com/settings/tokens?type=beta), keep the default, no extra permission is needed. This token is used to query public information from GitHub API and avoid rate limits.
-5. Create a `.env` file and past your generated token into the file like so:
->>>>>>> fb30c40c2fd77e165a19639e0f3a8a00e460a01d
+5. Create a `.env` file and paste your generated token into the file like so:
 ```bash
 GITHUB_TOKEN=your-personal-access-token
 ```
