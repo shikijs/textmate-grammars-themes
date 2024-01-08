@@ -328,6 +328,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/AdaCore/ada_language_server/blob/master/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
   {
+    name: 'angular',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/expression.json',
+    categories: ['web'],
+  },
+  {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
   },
@@ -942,6 +947,40 @@ export const sourcesInjections: GrammarSource[] = [
     embeddedIn: ['vue'],
     injectTo: [
       'text.html.markdown',
+    ],
+  },
+  {
+    name: 'angular-template-blocks',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template-blocks.json',
+    embeddedIn: ['angular'],
+    injectTo: [
+      'text.html.derivative',
+      'source.ts',
+    ],
+  },
+  {
+    name: 'angular-template',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template.json',
+    embeddedIn: ['angular'],
+    injectTo: [
+      'text.html.derivative',
+      'source.ts',
+    ],
+  },
+  {
+    name: 'angular-inline-style',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-styles.json',
+    embeddedIn: ['angular'],
+    injectTo: [
+      'source.ts',
+    ],
+  },
+  {
+    name: 'angular-inline-template',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-template.json',
+    embeddedIn: ['angular'],
+    injectTo: [
+      'source.ts',
     ],
   },
 ]
