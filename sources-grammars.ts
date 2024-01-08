@@ -899,13 +899,15 @@ export const virtualLanguages: GrammarSource[] = [
     name: 'angular-html',
     displayName: 'Angular HTML',
     source: 'https://github.com/onivim/vscode-exthost/blob/master/extensions/html/syntaxes/html-derivative.tmLanguage.json',
-    categories: ['web', 'markup'],
+    categories: ['web'],
+    scopeName: 'text.html.derivative.ng',
   },
   {
     name: 'angular-ts',
     displayName: 'Angular TypeScript',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
     categories: ['web'],
+    scopeName: 'source.ts.ng',
   },
 ]
 
@@ -925,6 +927,7 @@ export const sourcesInjections: GrammarSource[] = [
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/main/syntaxes/jinja-html.tmLanguage.json',
     embeddedIn: ['jinja'],
   },
+  // ========== Vue ==========
   {
     name: 'vue-directives',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue-directives.json',
@@ -963,14 +966,19 @@ export const sourcesInjections: GrammarSource[] = [
       'text.html.markdown',
     ],
   },
+  // ========== Angular ==========
   {
     name: 'angular-template-blocks',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template-blocks.json',
     embeddedIn: ['angular-ts', 'angular-html'],
     injectTo: [
       'text.html.derivative',
-      'source.ts',
+      'text.html.derivative.ng',
+      'source.ts.ng',
     ],
+    patch(grammar) {
+      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
+    },
   },
   {
     name: 'angular-template',
@@ -978,7 +986,8 @@ export const sourcesInjections: GrammarSource[] = [
     embeddedIn: ['angular-ts', 'angular-html'],
     injectTo: [
       'text.html.derivative',
-      'source.ts',
+      'text.html.derivative.ng',
+      'source.ts.ng',
     ],
   },
   {
@@ -986,7 +995,7 @@ export const sourcesInjections: GrammarSource[] = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-styles.json',
     embeddedIn: ['angular-ts'],
     injectTo: [
-      'source.ts',
+      'source.ts.ng',
     ],
   },
   {
@@ -994,8 +1003,11 @@ export const sourcesInjections: GrammarSource[] = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-template.json',
     embeddedIn: ['angular-ts'],
     injectTo: [
-      'source.ts',
+      'source.ts.ng',
     ],
+    patch(grammar) {
+      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
+    },
   },
   {
     name: 'angular-expression',

@@ -39,10 +39,9 @@ export const grammars = [
     source: 'https://github.com/AdaCore/ada_language_server/blob/75c0d0c22b3f3dbf559946331c7aca6fc5b84065/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
   {
-    byteSize: 769,
+    byteSize: 772,
     categories: [
       'web',
-      'markup',
     ],
     displayName: 'Angular HTML',
     embedded: [
@@ -55,12 +54,12 @@ export const grammars = [
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt',
     name: 'angular-html',
-    scopeName: 'text.html.derivative',
+    scopeName: 'text.html.derivative.ng',
     sha: 'cfc2a2212de9ea10943af58ebd1817a5ad196463',
     source: 'https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
   },
   {
-    byteSize: 193129,
+    byteSize: 193132,
     categories: [
       'web',
     ],
@@ -76,7 +75,7 @@ export const grammars = [
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'angular-ts',
-    scopeName: 'source.ts',
+    scopeName: 'source.ts.ng',
     sha: 'c778cc6117ba3b243a8e2321b4cf33062546e312',
     source: 'https://github.com/microsoft/vscode/blob/c778cc6117ba3b243a8e2321b4cf33062546e312/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
@@ -161,7 +160,7 @@ export const grammars = [
     embedded: [
       'json',
       'javascript',
-      'angular-ts',
+      'typescript',
       'stylus',
       'sass',
       'css',
@@ -795,7 +794,7 @@ export const grammars = [
     byteSize: 1299,
     displayName: 'Glimmer TS',
     embedded: [
-      'angular-ts',
+      'typescript',
       'handlebars',
     ],
     lastUpdate: '2023-07-03T16:07:58Z',
@@ -854,7 +853,7 @@ export const grammars = [
     displayName: 'GraphQL',
     embedded: [
       'javascript',
-      'angular-ts',
+      'typescript',
       'jsx',
       'tsx',
     ],
@@ -1047,7 +1046,7 @@ export const grammars = [
     ],
     displayName: 'Imba',
     embedded: [
-      'angular-ts',
+      'typescript',
     ],
     lastUpdate: '2023-12-15T08:11:58Z',
     license: 'MIT',
@@ -1310,7 +1309,7 @@ export const grammars = [
       'julia',
       'ruby',
       'javascript',
-      'angular-ts',
+      'typescript',
       'python',
       'yaml',
       'rust',
@@ -1465,7 +1464,7 @@ export const grammars = [
       'rust',
       'scala',
       'shellscript',
-      'angular-ts',
+      'typescript',
       'tsx',
       'csharp',
       'fsharp',
@@ -1475,7 +1474,6 @@ export const grammars = [
       'elixir',
       'latex',
       'bibtex',
-      'angular-html',
     ],
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
@@ -1525,7 +1523,6 @@ export const grammars = [
     embedded: [
       'markdown',
       'yaml',
-      'angular-html',
     ],
     lastUpdate: '2023-09-01T11:16:46Z',
     license: 'MIT',
@@ -1584,7 +1581,7 @@ export const grammars = [
       'sql',
       'xml',
       'swift',
-      'angular-ts',
+      'typescript',
     ],
     lastUpdate: '2023-10-26T10:56:19Z',
     license: 'MIT',
@@ -2046,7 +2043,6 @@ export const grammars = [
     ],
     displayName: 'reStructuredText',
     embedded: [
-      'angular-html',
       'cpp',
       'python',
       'javascript',
@@ -2344,7 +2340,7 @@ export const grammars = [
     displayName: 'Svelte',
     embedded: [
       'javascript',
-      'angular-ts',
+      'typescript',
       'coffee',
       'stylus',
       'sass',
@@ -2580,7 +2576,7 @@ export const grammars = [
       'scss',
       'less',
       'javascript',
-      'angular-ts',
+      'typescript',
       'jsx',
       'tsx',
       'json',
@@ -2589,7 +2585,6 @@ export const grammars = [
       'yaml',
       'toml',
       'graphql',
-      'angular-html',
       'markdown-vue',
       'vue-directives',
       'vue-interpolations',
@@ -2786,7 +2781,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
   },
   {
-    byteSize: 1195,
+    byteSize: 1198,
     embedded: [
       'scss',
     ],
@@ -2794,7 +2789,7 @@ export const injections = [
       'angular-ts',
     ],
     injectTo: [
-      'source.ts',
+      'source.ts.ng',
     ],
     lastUpdate: '2023-11-03T16:23:10Z',
     license: 'MIT',
@@ -2805,7 +2800,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
   },
   {
-    byteSize: 950,
+    byteSize: 956,
     embedded: [
       'angular-html',
       'angular-template',
@@ -2814,7 +2809,7 @@ export const injections = [
       'angular-ts',
     ],
     injectTo: [
-      'source.ts',
+      'source.ts.ng',
     ],
     lastUpdate: '2020-07-06T21:15:10Z',
     license: 'MIT',
@@ -2825,7 +2820,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/c3f3172a70b1a2bfdca3bdee85df9271cb0895cf/syntaxes/inline-template.json',
   },
   {
-    byteSize: 3164,
+    byteSize: 3193,
     embedded: [
       'angular-expression',
     ],
@@ -2835,7 +2830,8 @@ export const injections = [
     ],
     injectTo: [
       'text.html.derivative',
-      'source.ts',
+      'text.html.derivative.ng',
+      'source.ts.ng',
     ],
     lastUpdate: '2022-04-01T23:00:39Z',
     license: 'MIT',
@@ -2846,7 +2842,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/38481421878d59dda0a69e508e97265c8e173fcd/syntaxes/template.json',
   },
   {
-    byteSize: 1119,
+    byteSize: 1151,
     embedded: [
       'angular-expression',
       'angular-template',
@@ -2857,7 +2853,8 @@ export const injections = [
     ],
     injectTo: [
       'text.html.derivative',
-      'source.ts',
+      'text.html.derivative.ng',
+      'source.ts.ng',
     ],
     lastUpdate: '2023-12-05T18:19:48Z',
     license: 'MIT',

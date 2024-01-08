@@ -113,6 +113,7 @@ async function fetchGrammar(source: GrammarSource) {
     // Apply custom patching function
     parsed = source.patch?.(parsed) || parsed
     // Update info
+    parsed.scopeName = info.scopeName || parsed.scopeName
     info.scopeName = parsed.scopeName
     info.displayName ||= parsed.name
     parsed.name = info.name

@@ -6,6 +6,7 @@ export interface GrammarSource {
   categories?: GrammarCategory[]
   source: string
   aliases?: string[]
+  scopeName?: string
 
   /**
    * Download from marketplace.
