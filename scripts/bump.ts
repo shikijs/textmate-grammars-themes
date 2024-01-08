@@ -9,7 +9,7 @@ await git.add(['.'])
 
 const result = await git.status()
 
-const lastReleaseSHA = (await git.log(['-n', '1', '--pretty=format:%h', '--', 'packages/tm-grammars/package.json', 'packages/tm-themes/package.json'])).latest?.hash
+const lastReleaseSHA = (await git.log(['-n', '1', '--pretty=format:%h', '--grep', 'ci skip'])).latest?.hash
 const diff = !lastReleaseSHA
   ? []
   : (await git.diffSummary([lastReleaseSHA!, 'HEAD']))?.files || []
