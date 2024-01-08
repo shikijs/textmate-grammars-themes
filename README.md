@@ -14,21 +14,32 @@ Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki
 ### Add a new grammar
 
 1. Fork this repository
-2. Add grammar source and metadata to [`sources-grammars.ts`](./sources-grammars.ts)
-3. Add a code sample file `<id>.sample` for your language under [`./samples`](./samples). A sample should include a variety of language syntaxes and succinctly capture the idiosyncrasy of a language. Format requirements:
+2. Install the dependencies with `pnpm i`
+3. Add grammar source and metadata to [`sources-grammars.ts`](./sources-grammars.ts)
+4. Add a code sample file `<id>.sample` for your language under [`./samples`](./samples). A sample should include a variety of language syntaxes and succinctly capture the idiosyncrasy of a language. Format requirements:
   - Space for indentation
   - Less than 100 columns if possible
-  - Link to source in the last line, for example `# From https://poignant.guide/book/chapter-5.html`
-4. Run `pnpm run fetch` to download the grammar and verify it works
-5. Send in the PR!
+  - Link to source in the last line, for example, `# From` https://poignant.guide/book/chapter-5.html`
+5. Generate a [personal access token](https://github.com/settings/tokens?type=beta), keep the default, no extra permission is needed. This token is used to query public information from GitHub API and avoid rate limits.
+6. Create a `.env` file and past your generated token into the file like so:
+```bash
+GITHUB_TOKEN=your-personal-access-token
+```
+7. Run `pnpm run fetch` to download the grammar and verify it works
+8. Send in the PR!
 
 ### Add a new theme
 
 1. Fork this repository
 2. Install the dependencies with `pnpm i`
 3. Add theme source and metadata to [`sources-themes.ts`](./sources-themes.ts)
+<<<<<<< HEAD
 4. Go to [https://github.com/settings/token](https://github.com/settings/token) to generate a Personal Access Token (PAT) as you'll need it for the next step.
 5. Create a `.env` file and past your generated PAT into the file like so:
+=======
+4. Generate a [personal access token](https://github.com/settings/tokens?type=beta), keep the default, no extra permission is needed. This token is used to query public information from GitHub API and avoid rate limits.
+5. Create a `.env` file and past your generated token into the file like so:
+>>>>>>> fb30c40c2fd77e165a19639e0f3a8a00e460a01d
 ```bash
 GITHUB_TOKEN=your-personal-access-token
 ```

@@ -9,7 +9,8 @@ export interface GrammarInfo {
   aliases?: string[]
   licenseUrl?: string
   license?: string
-  sha?: string
+  sha: string
+  lastUpdate: string
   embedded?: string[]
   embeddedIn?: string[]
   byteSize: number
