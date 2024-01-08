@@ -39,23 +39,46 @@ export const grammars = [
     source: 'https://github.com/AdaCore/ada_language_server/blob/75c0d0c22b3f3dbf559946331c7aca6fc5b84065/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
   {
-    byteSize: 12988,
+    byteSize: 769,
+    categories: [
+      'web',
+      'markup',
+    ],
+    displayName: 'Angular HTML',
+    embedded: [
+      'html',
+      'angular-expression',
+      'angular-template',
+      'angular-template-blocks',
+    ],
+    lastUpdate: '2018-10-04T09:01:56Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt',
+    name: 'angular-html',
+    scopeName: 'text.html.derivative',
+    sha: 'cfc2a2212de9ea10943af58ebd1817a5ad196463',
+    source: 'https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
+  },
+  {
+    byteSize: 193129,
     categories: [
       'web',
     ],
+    displayName: 'Angular TypeScript',
     embedded: [
+      'angular-expression',
       'angular-inline-style',
       'angular-inline-template',
       'angular-template',
       'angular-template-blocks',
     ],
-    lastUpdate: '2023-11-08T17:02:59Z',
+    lastUpdate: '2023-06-30T16:14:40Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular',
-    scopeName: 'expression.ng',
-    sha: 'd7dab52644375e64af3deaeac045cc75f5954414',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'angular-ts',
+    scopeName: 'source.ts',
+    sha: 'c778cc6117ba3b243a8e2321b4cf33062546e312',
+    source: 'https://github.com/microsoft/vscode/blob/c778cc6117ba3b243a8e2321b4cf33062546e312/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
   {
     byteSize: 12867,
@@ -138,7 +161,7 @@ export const grammars = [
     embedded: [
       'json',
       'javascript',
-      'typescript',
+      'angular-ts',
       'stylus',
       'sass',
       'css',
@@ -772,7 +795,7 @@ export const grammars = [
     byteSize: 1299,
     displayName: 'Glimmer TS',
     embedded: [
-      'typescript',
+      'angular-ts',
       'handlebars',
     ],
     lastUpdate: '2023-07-03T16:07:58Z',
@@ -831,7 +854,7 @@ export const grammars = [
     displayName: 'GraphQL',
     embedded: [
       'javascript',
-      'typescript',
+      'angular-ts',
       'jsx',
       'tsx',
     ],
@@ -1024,7 +1047,7 @@ export const grammars = [
     ],
     displayName: 'Imba',
     embedded: [
-      'typescript',
+      'angular-ts',
     ],
     lastUpdate: '2023-12-15T08:11:58Z',
     license: 'MIT',
@@ -1287,7 +1310,7 @@ export const grammars = [
       'julia',
       'ruby',
       'javascript',
-      'typescript',
+      'angular-ts',
       'python',
       'yaml',
       'rust',
@@ -1442,7 +1465,7 @@ export const grammars = [
       'rust',
       'scala',
       'shellscript',
-      'typescript',
+      'angular-ts',
       'tsx',
       'csharp',
       'fsharp',
@@ -1452,6 +1475,7 @@ export const grammars = [
       'elixir',
       'latex',
       'bibtex',
+      'angular-html',
     ],
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
@@ -1501,6 +1525,7 @@ export const grammars = [
     embedded: [
       'markdown',
       'yaml',
+      'angular-html',
     ],
     lastUpdate: '2023-09-01T11:16:46Z',
     license: 'MIT',
@@ -1559,7 +1584,7 @@ export const grammars = [
       'sql',
       'xml',
       'swift',
-      'typescript',
+      'angular-ts',
     ],
     lastUpdate: '2023-10-26T10:56:19Z',
     license: 'MIT',
@@ -2021,6 +2046,7 @@ export const grammars = [
     ],
     displayName: 'reStructuredText',
     embedded: [
+      'angular-html',
       'cpp',
       'python',
       'javascript',
@@ -2318,7 +2344,7 @@ export const grammars = [
     displayName: 'Svelte',
     embedded: [
       'javascript',
-      'typescript',
+      'angular-ts',
       'coffee',
       'stylus',
       'sass',
@@ -2554,7 +2580,7 @@ export const grammars = [
       'scss',
       'less',
       'javascript',
-      'typescript',
+      'angular-ts',
       'jsx',
       'tsx',
       'json',
@@ -2563,6 +2589,7 @@ export const grammars = [
       'yaml',
       'toml',
       'graphql',
+      'angular-html',
       'markdown-vue',
       'vue-directives',
       'vue-interpolations',
@@ -2745,12 +2772,26 @@ export const grammars = [
 
 export const injections = [
   {
+    byteSize: 12999,
+    embeddedIn: [
+      'angular-ts',
+      'angular-html',
+    ],
+    lastUpdate: '2023-11-08T17:02:59Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-expression',
+    scopeName: 'expression.ng',
+    sha: 'd7dab52644375e64af3deaeac045cc75f5954414',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
+  },
+  {
     byteSize: 1195,
     embedded: [
       'scss',
     ],
     embeddedIn: [
-      'angular',
+      'angular-ts',
     ],
     injectTo: [
       'source.ts',
@@ -2766,10 +2807,11 @@ export const injections = [
   {
     byteSize: 950,
     embedded: [
+      'angular-html',
       'angular-template',
     ],
     embeddedIn: [
-      'angular',
+      'angular-ts',
     ],
     injectTo: [
       'source.ts',
@@ -2784,8 +2826,12 @@ export const injections = [
   },
   {
     byteSize: 3164,
+    embedded: [
+      'angular-expression',
+    ],
     embeddedIn: [
-      'angular',
+      'angular-ts',
+      'angular-html',
     ],
     injectTo: [
       'text.html.derivative',
@@ -2802,10 +2848,12 @@ export const injections = [
   {
     byteSize: 1119,
     embedded: [
+      'angular-expression',
       'angular-template',
     ],
     embeddedIn: [
-      'angular',
+      'angular-ts',
+      'angular-html',
     ],
     injectTo: [
       'text.html.derivative',
