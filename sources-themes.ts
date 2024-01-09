@@ -2,6 +2,11 @@ import type { ThemeSource } from './scripts/themes/types'
 
 export const sourcesVSCode: ThemeSource[] = [
   {
+    name: 'andromeeda',
+    displayName: 'Andromeeda',
+    source: 'https://github.com/EliverLara/Andromeda/blob/master/themes/Andromeda-color-theme.json',
+  },
+  {
     name: 'aurora-x',
     displayName: 'Aurora X',
     source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',

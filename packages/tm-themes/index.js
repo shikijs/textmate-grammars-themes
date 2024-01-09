@@ -5,6 +5,17 @@
 
 export const themes = [
   {
+    byteSize: 8772,
+    displayName: 'Andromeeda',
+    lastUpdate: '2023-04-13T21:00:26Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
+    name: 'andromeeda',
+    sha: 'a05c86aec15c98d371e46eefbb2d1838b563f73c',
+    source: 'https://github.com/EliverLara/Andromeda/blob/a05c86aec15c98d371e46eefbb2d1838b563f73c/themes/Andromeda-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 13599,
     displayName: 'Aurora X',
     lastUpdate: '2020-08-24T08:44:55Z',
