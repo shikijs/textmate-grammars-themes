@@ -297,7 +297,7 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'vb',
     displayName: 'Visual Basic',
     aliases: ['cmd'],
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmlanguage.json',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
     categories: ['general', 'scripting'],
   },
   {
