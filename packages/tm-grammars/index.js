@@ -217,15 +217,15 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/df15c8e832a341633acd2e9bb26e1b275d09cfe0/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
-    byteSize: 11457,
+    byteSize: 11478,
     displayName: 'Beancount',
-    lastUpdate: '2020-03-10T11:55:34Z',
+    lastUpdate: '2024-01-10T20:17:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE',
     name: 'beancount',
     scopeName: 'text.beancount',
-    sha: 'c8063bf2270b5caa6f0006fea202242d9fbcd85d',
-    source: 'https://github.com/Lencerf/vscode-beancount/blob/c8063bf2270b5caa6f0006fea202242d9fbcd85d/syntaxes/beancount.tmLanguage',
+    sha: '2c0dd2128f1099e124d6dd05fe21d5a5adee39e2',
+    source: 'https://github.com/Lencerf/vscode-beancount/blob/2c0dd2128f1099e124d6dd05fe21d5a5adee39e2/syntaxes/beancount.tmLanguage',
   },
   {
     aliases: [
@@ -1533,7 +1533,7 @@ export const grammars = [
     source: 'https://github.com/nuxtlabs/vscode-mdc/blob/6294dbce9706f538a521e7dccce9609e928dc3be/syntaxes/mdc.tmLanguage.json',
   },
   {
-    byteSize: 123654,
+    byteSize: 123658,
     categories: [
       'web',
       'markup',
@@ -1583,13 +1583,13 @@ export const grammars = [
       'swift',
       'typescript',
     ],
-    lastUpdate: '2023-10-26T10:56:19Z',
+    lastUpdate: '2024-01-11T16:40:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license',
     name: 'mdx',
     scopeName: 'source.mdx',
-    sha: 'c63436f8cce0d50dc2678ea198614916c5779af4',
-    source: 'https://github.com/wooorm/markdown-tm-language/blob/c63436f8cce0d50dc2678ea198614916c5779af4/source.mdx.tmLanguage',
+    sha: '371d61df9ddc3850e12aabe61b602d02e259e8a4',
+    source: 'https://github.com/wooorm/markdown-tm-language/blob/371d61df9ddc3850e12aabe61b602d02e259e8a4/source.mdx.tmLanguage',
   },
   {
     byteSize: 20353,

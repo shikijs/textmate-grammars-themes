@@ -553,7 +553,7 @@
       "begin": "([A-Z][a-z]+)(:)",
       "beginCaptures": {
         "1": {
-          "name": "constant.language.beancount"
+          "name": "variable.language.beancount"
         },
         "2": {
           "name": "punctuation.separator.beancount"
@@ -566,7 +566,7 @@
           "begin": "(\\S+)([:]?)",
           "beginCaptures": {
             "1": {
-              "name": "variable.account.beancount"
+              "name": "variable.other.account.beancount"
             },
             "2": {
               "name": "punctuation.separator.beancount"
@@ -594,7 +594,7 @@
           "name": "constant.numeric.currency.beancount"
         },
         "3": {
-          "name": "entity.type.commodity.beancount"
+          "name": "entity.name.type.commodity.beancount"
         }
       },
       "match": "([\\-|\\+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)\\s*([A-Z][A-Z0-9\\'\\.\\_\\-]{0,22}[A-Z0-9])",
@@ -609,7 +609,7 @@
           "name": "constant.numeric.currency.beancount"
         },
         "3": {
-          "name": "entity.type.commodity.beancount"
+          "name": "entity.name.type.commodity.beancount"
         }
       },
       "match": "TRUE|FALSE"
@@ -624,7 +624,7 @@
     },
     "commodity": {
       "match": "([A-Z][A-Z0-9\\'\\.\\_\\-]{0,22}[A-Z0-9])",
-      "name": "entity.type.commodity.beancount"
+      "name": "entity.name.type.commodity.beancount"
     },
     "cost": {
       "begin": "\\{\\{?",

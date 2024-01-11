@@ -12,6 +12,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',
   },
   {
+    name: 'ayu-dark',
+    displayName: 'Ayu Dark',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
+  },
+  {
     name: 'dark-plus',
     displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',

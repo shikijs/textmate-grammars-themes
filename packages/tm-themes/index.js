@@ -25,6 +25,17 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 14889,
+    displayName: 'Ayu Dark',
+    lastUpdate: '2021-09-05T14:00:59Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
+    name: 'ayu-dark',
+    sha: '798bc07c1ac7faccab57081042ba9a16621cdde4',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/798bc07c1ac7faccab57081042ba9a16621cdde4/ayu-dark.json',
+    type: 'dark',
+  },
+  {
     byteSize: 44291,
     displayName: 'Catppuccin Frappé',
     lastUpdate: '2024-01-10T20:40:35Z',
