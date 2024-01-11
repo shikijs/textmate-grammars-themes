@@ -353,6 +353,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 33598,
+    displayName: 'Tokyo Night',
+    lastUpdate: '2023-11-10T18:00:37Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/enkia/tokyo-night-vscode-theme/master/LICENSE.txt',
+    name: 'tokyo-night',
+    sha: '26465cb6086201916e284acef1b4bcca927f30e8',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/26465cb6086201916e284acef1b4bcca927f30e8/themes/tokyo-night-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 13316,
     displayName: 'Vitesse Black',
     lastUpdate: '2023-11-25T14:05:49Z',
