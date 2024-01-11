@@ -22,6 +22,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
   },
   {
+    name: 'night-owl',
+    displayName: 'Night Owl',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
+  },
+  {
     name: 'monokai',
     displayName: 'Monokai',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
