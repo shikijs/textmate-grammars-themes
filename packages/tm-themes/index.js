@@ -375,6 +375,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 13976,
+    displayName: 'Synthwave \'84',
+    lastUpdate: '2022-07-27T08:21:45Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE',
+    name: 'synthwave-84',
+    sha: '7eaf45c07650295625e1e5ea73274fc50f9ea3c1',
+    source: 'https://github.com/robb0wen/synthwave-vscode/blob/7eaf45c07650295625e1e5ea73274fc50f9ea3c1/themes/synthwave-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 13316,
     displayName: 'Vitesse Black',
     lastUpdate: '2023-11-25T14:05:49Z',

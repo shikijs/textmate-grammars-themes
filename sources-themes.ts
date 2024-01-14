@@ -42,6 +42,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
   },
   {
+    name: 'synthwave-84',
+    displayName: 'Synthwave \'84',
+    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
+  },
+  {
     name: 'solarized-light',
     displayName: 'Solarized Light',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
