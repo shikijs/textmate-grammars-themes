@@ -9,37 +9,52 @@ await git.add(['.'])
 
 const result = await git.status()
 
+const currentSHA = (await git.log(['-n', '1', '--pretty=format:%h'])).latest?.hash
 const lastReleaseSHA = (await git.log(['-n', '1', '--pretty=format:%h', '--grep', 'ci skip'])).latest?.hash
-const diff = !lastReleaseSHA
-  ? []
-  : (await git.diffSummary([lastReleaseSHA!, 'HEAD']))?.files || []
+const diff = lastReleaseSHA ? (await git.diffSummary([lastReleaseSHA!, 'HEAD'])) : undefined
+const createdDiffRaw = lastReleaseSHA ? await git.diff([lastReleaseSHA, 'HEAD', '--summary']) : ''
+
+const filesCreated = Array.from(createdDiffRaw.match(/create mode \d+ (.+)/g) || [])
+  .map(i => i.replace(/create mode \d+ /, ''))
+  .filter(Boolean)
+
+if (lastReleaseSHA)
+  console.log('Last release:', lastReleaseSHA)
 
 const filesChanged = [
   ...result.files.map(i => i.path),
-  ...diff.map(i => i.file),
+  ...diff?.files.map(i => i.file) ?? [],
 ]
 
 let grammarsVersion = ''
 let themesVersion = ''
 const grammarsChanged = filesChanged.filter(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
+const grammarsCreated = filesCreated.filter(i => i.startsWith('packages/tm-grammars/grammars/'))
 const themesChanged = filesChanged.filter(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
+const themesCreated = filesCreated.filter(i => i.startsWith('packages/tm-themes/themes/'))
 
-async function bumpVersion(path: string) {
+async function bumpVersion(path: string, type: 'patch' | 'minor') {
   const raw = await fs.readFile(path, 'utf-8')
   const json = JSON.parse(raw)
-  json.version = semver.inc(json.version, 'patch')
+  json.version = semver.inc(json.version, type)
   await fs.writeFile(path, `${JSON.stringify(json, null, 2)}\n`, 'utf-8')
   return json.version
 }
 
 if (grammarsChanged.length) {
   console.log('Grammars changed, bumping version...')
-  grammarsVersion = await bumpVersion('packages/tm-grammars/package.json')
+  grammarsVersion = await bumpVersion(
+    'packages/tm-grammars/package.json',
+    grammarsCreated.length ? 'minor' : 'patch',
+  )
 }
 
 if (themesChanged.length) {
   console.log('Themes changed, bumping version...')
-  themesVersion = await bumpVersion('packages/tm-themes/package.json')
+  themesVersion = await bumpVersion(
+    'packages/tm-themes/package.json',
+    themesCreated.length ? 'minor' : 'patch',
+  )
 }
 
 if ((grammarsChanged.length || themesChanged.length)) {
@@ -53,12 +68,12 @@ if ((grammarsChanged.length || themesChanged.length)) {
     await fs.writeFile(
       process.env.GITHUB_STEP_SUMMARY,
       [
-        `Since [last release](${REPO}/compare/${lastReleaseSHA}...main):`,
+        `[Since last release](${REPO}/compare/${lastReleaseSHA}...${currentSHA}):`,
 
         ...grammarsChanged.length
           ? [
               '## Grammar Changes',
-              ...grammarsChanged.map(i => `- ${i}`),
+              ...grammarsChanged.map(i => `- [${i}](https://github.com/antfu/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
               '',
               `🚀 Released as \`v${grammarsVersion}\``,
             ]
@@ -67,7 +82,7 @@ if ((grammarsChanged.length || themesChanged.length)) {
         ...themesChanged.length
           ? [
               '## Theme Changes',
-              ...themesChanged.map(i => `- ${i}`),
+              ...themesChanged.map(i => `- [${i}](https://github.com/antfu/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
               '',
               `🚀 Released as \`v${themesVersion}\``,
             ]
