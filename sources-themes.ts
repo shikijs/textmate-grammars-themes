@@ -52,6 +52,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
   },
   {
+    name: 'tokyo-night',
+    displayName: 'Tokyo Night',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-color-theme.json',
+  },
+  {
     name: 'red',
     displayName: 'Red',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
