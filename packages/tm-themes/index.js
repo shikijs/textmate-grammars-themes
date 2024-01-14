@@ -234,6 +234,17 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 28693,
+    displayName: 'Night Owl',
+    lastUpdate: '2020-10-13T13:03:14Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE',
+    name: 'night-owl',
+    sha: '33ef8e835fde5df592dddeec63bc0c80d073bc24',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/33ef8e835fde5df592dddeec63bc0c80d073bc24/themes/Night%20Owl-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 26663,
     displayName: 'Nord',
     lastUpdate: '2023-04-10T15:56:38Z',
