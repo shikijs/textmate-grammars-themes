@@ -217,15 +217,15 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/df15c8e832a341633acd2e9bb26e1b275d09cfe0/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
-    byteSize: 11478,
+    byteSize: 10430,
     displayName: 'Beancount',
-    lastUpdate: '2024-01-10T20:17:30Z',
+    lastUpdate: '2024-01-11T08:43:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE',
     name: 'beancount',
     scopeName: 'text.beancount',
-    sha: '2c0dd2128f1099e124d6dd05fe21d5a5adee39e2',
-    source: 'https://github.com/Lencerf/vscode-beancount/blob/2c0dd2128f1099e124d6dd05fe21d5a5adee39e2/syntaxes/beancount.tmLanguage',
+    sha: 'ffc762e047bb09ed5d16508b302aef16a6057139',
+    source: 'https://github.com/Lencerf/vscode-beancount/blob/ffc762e047bb09ed5d16508b302aef16a6057139/syntaxes/beancount.tmLanguage',
   },
   {
     aliases: [
