@@ -19,7 +19,7 @@
     "architecture_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\t\t\t\t\t\t# The word architecture $1\n\t\t\t\t\t\t\\b((?i:architecture))\\s+\n\t\t\t\t\t\t\n\t\t\t\t\t\t# Followed up by a valid $3 or invalid identifier $4\n\t\t\t\t\t\t(([a-zA-z][a-zA-z0-9_]*)|(.+))(?=\\s)\\s+\n\n\t\t\t\t\t\t# The word of $5\n\t\t\t\t\t\t((?i:of))\\s+\n\n\t\t\t\t\t\t# Followed by a valid $7 or invalid identifier $8\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(?i:is))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n\n\\b((?i:architecture))\\s+\n\n\n(([a-zA-z][a-zA-z0-9_]*)|(.+))(?=\\s)\\s+\n\n\n((?i:of))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(?i:is))\\b\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -40,7 +40,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\n\n\t\t\t\t\t\t# Optional word architecture $3\n\t\t\t\t\t\t(\\s+((?i:architecture)))?\n\n\t\t\t\t\t\t# Optional same identifier $6 or illegal identifier $7\n\t\t\t\t\t\t(\\s+((\\3)|(.+?)))?\n\n\t\t\t\t\t\t# This will cause the previous to capture until just before the ; or $\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\n\n\n(\\s+((?i:architecture)))?\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -126,7 +126,7 @@
     "block_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t\t# Colon\n\t\t\t\t\t\t\t\\s*(:)\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t(\\s*(?i:block))\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n(\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n(\\s*(?i:block))\n",
           "beginCaptures": {
             "2": {
               "name": "meta.block.block.name"
@@ -138,7 +138,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t((?i:end\\s+block))\n\n\t\t\t\t\t\t# Optional identifier\n\t\t\t\t\t\t(\\s+((\\2)|(.+?)))?\n\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n((?i:end\\s+block))\n\n\n(\\s+((\\2)|(.+?)))?\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -181,7 +181,7 @@
     "case_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# Beginning of line ...\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# Optional identifier ... $3 or invalid identifier $4\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t ([a-zA-Z][a-zA-Z0-9_]*)\n\t\t\t\t\t\t\t\t|(.+?)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\\s*:\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# The word case $5\n\t\t\t\t\t\t\\b((?i:case))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n(\n(\n([a-zA-Z][a-zA-Z0-9_]*)\n|(.+?)\n)\n\\s*:\\s*\n)?\n\n\n\\b((?i:case))\\b\n",
           "beginCaptures": {
             "3": {
               "name": "entity.name.tag.case.begin.vhdl"
@@ -193,7 +193,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\\s*\n\n\t\t\t\t\t\t# The word case $4 or invalid word $5\n\t\t\t\t\t\t(\\s+(((?i:case))|(.*?)))\n\n\t\t\t\t\t\t# Optional identifier from before $8 or illegal $9\n\t\t\t\t\t\t(\\s+((\\2)|(.*?)))?\n\n\t\t\t\t\t\t# Ending with a semicolon\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\\s*\n\n\n(\\s+(((?i:case))|(.*?)))\n\n\n(\\s+((\\2)|(.*?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -252,7 +252,7 @@
     "component_instantiation_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line ...\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# Match a valid identifier $1\n\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t# Colon! $2\n\t\t\t\t\t\t\\s*(:)\\s*\n\n\t\t\t\t\t\t# Another valid identifier $3\n\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\\b\n\n\t\t\t\t\t\t# Make sure we are just the other word, or the beginning of\n\t\t\t\t\t\t# a generic or port mapping\n\t\t\t\t\t\t(?=\\s*($|generic|port))\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\\b\n\n\n\n(?=\\s*($|generic|port))\n",
           "beginCaptures": {
             "1": {
               "name": "entity.name.section.component_instantiation.vhdl"
@@ -284,7 +284,7 @@
     "component_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line ...\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word component $1\n\t\t\t\t\t\t\\b((?i:component))\\s+\n\n\t\t\t\t\t\t# A valid identifier $3 or invalid identifier $4\n\t\t\t\t\t\t(([a-zA-Z_][a-zA-Z0-9_]*)\\s*|(.+?))(?=\\b(?i:is|port)\\b|$|--)\n\n\t\t\t\t\t\t# Optional word is $6\n\t\t\t\t\t\t(\\b((?i:is\\b)))?\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n\\b((?i:component))\\s+\n\n\n(([a-zA-Z_][a-zA-Z0-9_]*)\\s*|(.+?))(?=\\b(?i:is|port)\\b|$|--)\n\n\n(\\b((?i:is\\b)))?\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -299,7 +299,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\\s+\n\n\t\t\t\t\t\t# The word component $3 or illegal word $4\n\t\t\t\t\t\t(((?i:component\\b))|(.+?))(?=\\s*|;)\n\t\t\t\t\t\t\n\t\t\t\t\t\t# Optional identifier $7 or illegal mismatched $8\n\t\t\t\t\t\t(\\s+((\\3)|(.+?)))?(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\\s+\n\n\n(((?i:component\\b))|(.+?))(?=\\s*|;)\n\n\n(\\s+((\\3)|(.+?)))?(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -391,7 +391,7 @@
     "entity_instantiation_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# Component identifier or illegal identifier $1\n\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t# Colon! $2\n\t\t\t\t\t\t\\s*(:)\\s*\n\n\t\t\t\t\t\t# Optional word use $4\n\t\t\t\t\t\t(((?i:use))\\s+)?\n\n\t\t\t\t\t\t# Required word entity $5\n\t\t\t\t\t\t((?i:entity))\\s+\n\n\t\t\t\t\t\t# Optional library unit identifier $8 for invalid identifier $9 followed by a dot $10\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\t\t\t\t\t\t\t(\\.)\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# Entity name reference $12 or illegal identifier $13\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n\t\t\t\t\t\t# Check to see if we are being followed by either open paren, end of line, or port or generic words\n\t\t\t\t\t\t(?=\\s*(\\(|$|(?i:port|generic)))\n\n\t\t\t\t\t\t# Optional architecture elaboration\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Open paren $16\n\t\t\t\t\t\t\t\\s*(\\()\\s*\n\n\t\t\t\t\t\t\t# Arch identifier $18 or invalid identifier $19\n\t\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*\\))\n\n\t\t\t\t\t\t\t# Close paren $21\n\t\t\t\t\t\t\t\\s*(\\))\n\t\t\t\t\t\t)?\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n\n\n(((?i:use))\\s+)?\n\n\n((?i:entity))\\s+\n\n\n(\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n(\\.)\n)?\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n\n(?=\\s*(\\(|$|(?i:port|generic)))\n\n\n(\n\n\\s*(\\()\\s*\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*\\))\n\n\n\\s*(\\))\n)?\n",
           "beginCaptures": {
             "1": {
               "name": "entity.name.section.entity_instantiation.vhdl"
@@ -453,7 +453,7 @@
     "entity_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line ...\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word entity $1\n\t\t\t\t\t\t((?i:entity\\b))\\s+\n\n\t\t\t\t\t\t# The identifier $3 or an invalid identifier $4\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))(?=\\s)\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n((?i:entity\\b))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))(?=\\s)\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -465,7 +465,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end\\b))\n\n\t\t\t\t\t\t# Optional word entity $3\n\t\t\t\t\t\t(\\s+((?i:entity)))?\n\n\t\t\t\t\t\t# Optional identifier match $6 or indentifier mismatch $7\n\t\t\t\t\t\t(\\s+((\\3)|(.+?)))?\n\t\t\t\t\t\t\n\t\t\t\t\t\t# Make sure there is a semicolon following\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:entity)))?\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -500,7 +500,7 @@
     "for_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Check for an identifier $2\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t\t# Followed by a colon $3\n\t\t\t\t\t\t\t\\s*(:)\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# Make sure the next word is not wait\n\t\t\t\t\t\t(?!(?i:wait\\s*))\n\n\t\t\t\t\t\t# The for keyword $4\n\t\t\t\t\t\t\\b((?i:for))\\b\n\n\t\t\t\t\t\t# Make sure the next word is not all\n\t\t\t\t\t\t(?!\\s*(?i:all))\n\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n(?!(?i:wait\\s*))\n\n\n\\b((?i:for))\\b\n\n\n(?!\\s*(?i:all))\n\n",
           "beginCaptures": {
             "2": {
               "name": "entity.name.tag.for.generate.begin.vhdl"
@@ -512,7 +512,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\\s+\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Followed by generate or loop $3\n\t\t\t\t\t\t\t ((?i:generate|loop))\n\n\t\t\t\t\t\t\t# But it really is required $4\n\t\t\t\t\t\t\t|(\\S+)\n\t\t\t\t\t\t)\\b\n\n\t\t\t\t\t\t# The matching identifier $7 or an invalid identifier $8\n\t\t\t\t\t\t(\\s+((\\2)|(.+?)))?\n\n\t\t\t\t\t\t# Only space and a semicolon left\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\\s+\n(\n\n((?i:generate|loop))\n\n\n|(\\S+)\n)\\b\n\n\n(\\s+((\\2)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -556,7 +556,7 @@
     "function_definition_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word function $1\n\t\t\t\t\t\t((?i:impure)?\\s*(?i:function))\\s+\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# A valid normal identifier $3\n\t\t\t\t\t\t\t ([a-zA-Z][a-zA-Z\\d_]*)\n\t\t\t\t\t\t\t# A valid string quoted identifier $4\n\t\t\t\t\t\t\t|(\"\\S+\")\n\t\t\t\t\t\t\t# A valid backslash escaped identifier $5\n\t\t\t\t\t\t\t|(\\\\.+\\\\)\n\t\t\t\t\t\t\t# An invalid identifier $5\n\t\t\t\t\t\t\t|(.+?)\n\t\t\t\t\t\t)\n\n\t\t\t\t\t\t# Check to make sure we have a list or we return\n\t\t\t\t\t\t(?=\\s*\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t \\(\n\t\t\t\t\t\t\t\t|(?i:\\breturn\\b)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t)\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n((?i:impure)?\\s*(?i:function))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(\\\\.+\\\\)\n\n|(.+?)\n)\n\n\n(?=\\s*\n(\n\\(\n|(?i:\\breturn\\b)\n)\n)\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -574,7 +574,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t((?i:end))\n\n\t\t\t\t\t\t# Optional word function $3\n\t\t\t\t\t\t(\\s+((?i:function)))?\n\n\t\t\t\t\t\t# Optional matched identifier $6 or mismatched identifier $7\n\t\t\t\t\t\t(\\s+((\\3|\\4|\\5)|(.+?)))?\n\n\t\t\t\t\t\t# Ending with whitespace and semicolon\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n^\\s*\n\n\n((?i:end))\n\n\n(\\s+((?i:function)))?\n\n\n(\\s+((\\3|\\4|\\5)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -612,7 +612,7 @@
     "function_prototype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word function $1\n\t\t\t\t\t\t((?i:impure)?\\s*(?i:function))\\s+\n\t\t\t\t\t\t\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# A valid normal identifier $3\n\t\t\t\t\t\t\t ([a-zA-Z][a-zA-Z\\d_]*)\n\t\t\t\t\t\t\t# A valid quoted identifier $4\n\t\t\t\t\t\t\t|(\"\\S+\")\n\t\t\t\t\t\t\t# A valid backslash escaped identifier $5\n\t\t\t\t\t\t\t|(\\\\.+\\\\)\n\t\t\t\t\t\t\t# An invalid identifier $6\n\t\t\t\t\t\t\t|(.+?)\n\t\t\t\t\t\t)\n\n\t\t\t\t\t\t# Check to make sure we have a list or we return\n\t\t\t\t\t\t(?=\\s*\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t \\(\n\t\t\t\t\t\t\t\t|(?i:\\breturn\\b)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t)\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n((?i:impure)?\\s*(?i:function))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(\\\\.+\\\\)\n\n|(.+?)\n)\n\n\n(?=\\s*\n(\n\\(\n|(?i:\\breturn\\b)\n)\n)\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -690,7 +690,7 @@
     "if_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Optional identifier $2\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t\t# Followed by a colon $3\n\t\t\t\t\t\t\t\\s*(:)\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# Keyword if $4\n\t\t\t\t\t\t\\b((?i:if))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n\\b((?i:if))\\b\n",
           "beginCaptures": {
             "2": {
               "name": "entity.name.tag.if.generate.begin.vhdl"
@@ -702,7 +702,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\\s+\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t# Optional generate or if keyword $4\n\t\t\t\t\t\t\t\t ((?i:generate|if))\n\n\t\t\t\t\t\t\t\t# Keyword if or generate required $5\n\t\t\t\t\t\t\t\t|(\\S+)\n\t\t\t\t\t\t\t)\\b\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t\\s+\n\t\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t\t# Optional matching identifier $8\n\t\t\t\t\t\t\t\t\t (\\2)\n\n\t\t\t\t\t\t\t\t\t# Mismatched identifier $9\n\t\t\t\t\t\t\t\t\t|(.+?)\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# Followed by a semicolon\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\\s+\n\n(\n(\n\n((?i:generate|if))\n\n\n|(\\S+)\n)\\b\n(\n\\s+\n(\n\n(\\2)\n\n\n|(.+?)\n)\n)?\n)?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -766,7 +766,7 @@
     "package_body_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# The word package $1\n\t\t\t\t\t\t\\b((?i:package))\\s+\n\n\t\t\t\t\t\t# ... but we want to be a package body $2\n\t\t\t\t\t\t((?i:body))\\s+\n\n\t\t\t\t\t\t# The valid identifier $4 or the invalid one $5\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\t\t\t\t\t\t# ... and we end it with an is $6\n\t\t\t\t\t\t((?i:is))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n\\b((?i:package))\\s+\n\n\n((?i:body))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -784,7 +784,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end\\b))\n\n\t\t\t\t\t\t# Optional word package $3 body $4\n\t\t\t\t\t\t(\\s+((?i:package))\\s+((?i:body)))?\n\n\t\t\t\t\t\t# Optional identifier $7 or mismatched identifier $8\n\t\t\t\t\t\t(\\s+((\\4)|(.+?)))?(?=\\s*;)",
+          "end": "(?x)\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:package))\\s+((?i:body)))?\n\n\n(\\s+((\\4)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -831,7 +831,7 @@
     "package_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# The word package $1\n\t\t\t\t\t\t\\b((?i:package))\\s+\n\n\t\t\t\t\t\t# ... but we do not want to be a package body\n\t\t\t\t\t\t(?!(?i:body))\n\n\t\t\t\t\t\t# The valid identifier $3 or the invalid one $4\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\t\t\t\t\t\t# ... and we end it with an is $5\n\t\t\t\t\t\t((?i:is))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n\\b((?i:package))\\s+\n\n\n(?!(?i:body))\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -846,7 +846,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end\\b))\n\n\t\t\t\t\t\t# Optional word package $3\n\t\t\t\t\t\t(\\s+((?i:package)))?\n\n\t\t\t\t\t\t# Optional identifier $6 or mismatched identifier $7\n\t\t\t\t\t\t(\\s+((\\2)|(.+?)))?(?=\\s*;)",
+          "end": "(?x)\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:package)))?\n\n\n(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -985,7 +985,7 @@
     "procedure_definition_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word function $1\n\t\t\t\t\t\t((?i:procedure))\\s+\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# A valid normal identifier $3\n\t\t\t\t\t\t\t ([a-zA-Z][a-zA-Z\\d_]*)\n\t\t\t\t\t\t\t# A valid quoted identifier $4\n\t\t\t\t\t\t\t|(\"\\S+\")\n\t\t\t\t\t\t\t# An invalid identifier $5\n\t\t\t\t\t\t\t|(.+?)\n\t\t\t\t\t\t)\n\n\t\t\t\t\t\t# Check to make sure we have a list is\n\t\t\t\t\t\t(?=\\s*(\\(|(?i:is)))\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n\n((?i:procedure))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(.+?)\n)\n\n\n(?=\\s*(\\(|(?i:is)))\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1000,7 +1000,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t((?i:end))\n\n\t\t\t\t\t\t# Optional word function $3\n\t\t\t\t\t\t(\\s+((?i:procedure)))?\n\n\t\t\t\t\t\t# Optional matched identifier $6 or mismatched identifier $7\n\t\t\t\t\t\t(\\s+((\\3|\\4)|(.+?)))?\n\n\t\t\t\t\t\t# Ending with whitespace and semicolon\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n^\\s*\n\n\n((?i:end))\n\n\n(\\s+((?i:procedure)))?\n\n\n(\\s+((\\3|\\4)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1038,7 +1038,7 @@
     "procedure_prototype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t\\b((?i:procedure))\\s+\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\t\t\t\t\t\t(?=\\s*(\\(|;))\n\t\t\t\t\t",
+          "begin": "(?x)\n\\b((?i:procedure))\\s+\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n(?=\\s*(\\(|;))\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1067,7 +1067,7 @@
     "process_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Optional identifier $2\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t\t# Colon $3\n\t\t\t\t\t\t\t\\s*(:)\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# The word process #4\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t(?:postponed\\s+)?\n\t\t\t\t\t\t\t(?i:process\\b)\n\t\t\t\t\t\t)\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n(\n(?:postponed\\s+)?\n(?i:process\\b)\n)\n",
           "beginCaptures": {
             "2": {
               "name": "entity.name.section.process.begin.vhdl"
@@ -1079,7 +1079,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t((?i:end))\n\n\t\t\t\t\t\t# Optional word process $3\n\t\t\t\t\t\t(\\s+(\n\t\t\t\t\t\t\t(?:postponed\\s+)?\n\t\t\t\t\t\t\t(?i:process)\n\t\t\t\t\t\t))\n\n\t\t\t\t\t\t# Optional identifier $6 or invalid identifier $7\n\t\t\t\t\t\t(\\s+((\\2)|(.+?)))?\n\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n((?i:end))\n\n\n(\\s+(\n(?:postponed\\s+)?\n(?i:process)\n))\n\n\n(\\s+((\\2)|(.+?)))?\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1108,7 +1108,7 @@
     "protected_body_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t\\b((?i:type))\\s+\n\n\t\t\t\t\t\t# The valid identifier $2 or the invalid one $3\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\t\t\t\t\t\t\\b((?i:is\\s+protected\\s+body))\\s+\n\t\t\t\t\t",
+          "begin": "(?x)\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\\b((?i:is\\s+protected\\s+body))\\s+\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1123,7 +1123,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t\\b((?i:end\\s+protected\\s+body))\n\n\t\t\t\t\t\t# Optional identifier\n\t\t\t\t\t\t(\\s+((\\3)|(.+?)))?\n\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t\t",
+          "end": "(?x)\n\\b((?i:end\\s+protected\\s+body))\n\n\n(\\s+((\\3)|(.+?)))?\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1161,7 +1161,7 @@
     "protected_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t\\b((?i:type))\\s+\n\n\t\t\t\t\t\t# The valid identifier $2 or the invalid one $3\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\t\t\t\t\t\t\\b((?i:is\\s+protected))\\s+\n\n\t\t\t\t\t\t# Not body\n\t\t\t\t\t\t(?!(?i:body))\n\t\t\t\t\t",
+          "begin": "(?x)\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\\b((?i:is\\s+protected))\\s+\n\n\n(?!(?i:body))\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdls"
@@ -1176,7 +1176,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t\\b((?i:end\\s+protected))\n\n\t\t\t\t\t\t# Optional identifier\n\t\t\t\t\t\t(\\s+((\\3)|(.+?)))?\n\n\t\t\t\t\t\t# Not body\n\t\t\t\t\t\t(?!(?i:body))\n\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\\b((?i:end\\s+protected))\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?!(?i:body))\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1231,7 +1231,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\n\n\t\t\t\t\t\t# The word record $2\n\t\t\t\t\t\t\\s+((?i:record))\n\n\t\t\t\t\t\t# Optional identifier $5 or invalid identifier $6\n\t\t\t\t\t\t(\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.*?)))?\n\n\t\t\t\t\t\t# Only whitespace and semicolons can be left\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\n\n\n\\s+((?i:record))\n\n\n(\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.*?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1284,7 +1284,7 @@
     "subtype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# The word subtype $1\n\t\t\t\t\t\t\\b((?i:subtype))\\s+\n\n\t\t\t\t\t\t# Valid identifier $3 or invalid identifier $4\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\\s+\n\n\t\t\t\t\t\t# The word is $5\n\t\t\t\t\t\t((?i:is))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n\\b((?i:subtype))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1403,7 +1403,7 @@
     "type_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# The word type $1\n\t\t\t\t\t\t\\b((?i:type))\\s+\n\n\t\t\t\t\t\t# Valid identifier $3 or invalid identifier $4\n\t\t\t\t\t\t(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# A semicolon is coming up if we are incomplete\n\t\t\t\t\t\t\t (?=\\s*;)\n\n\t\t\t\t\t\t\t# Or the word is comes up $7\n\t\t\t\t\t\t\t|(\\s+((?i:is)))\n\t\t\t\t\t\t)\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n(\n\n(?=\\s*;)\n\n\n|(\\s+((?i:is)))\n)\\b\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1438,7 +1438,7 @@
     "while_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t# From the beginning of the line\n\t\t\t\t\t\t^\\s*\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Check for an identifier $2\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\n\t\t\t\t\t\t\t# Followed by a colon $3\n\t\t\t\t\t\t\t\\s*(:)\\s*\n\t\t\t\t\t\t)?\n\n\t\t\t\t\t\t# The for keyword $4\n\t\t\t\t\t\t\\b((?i:while))\\b\n\t\t\t\t\t",
+          "begin": "(?x)\n\n^\\s*\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n\\b((?i:while))\\b\n",
           "beginCaptures": {
             "2": {
               "name": ""
@@ -1450,7 +1450,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\t\t\t\t\t\t# The word end $1\n\t\t\t\t\t\t\\b((?i:end))\\s+\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t# Followed by keyword loop $3\n\t\t\t\t\t\t\t ((?i:loop))\n\n\t\t\t\t\t\t\t# But it really is required $4\n\t\t\t\t\t\t\t|(\\S+)\n\t\t\t\t\t\t)\\b\n\n\t\t\t\t\t\t# The matching identifier $7 or an invalid identifier $8\n\t\t\t\t\t\t(\\s+((\\2)|(.+?)))?\n\n\t\t\t\t\t\t# Only space and a semicolon left\n\t\t\t\t\t\t(?=\\s*;)\n\t\t\t\t\t",
+          "end": "(?x)\n\n\\b((?i:end))\\s+\n(\n\n((?i:loop))\n\n\n|(\\S+)\n)\\b\n\n\n(\\s+((\\2)|(.+?)))?\n\n\n(?=\\s*;)\n",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"

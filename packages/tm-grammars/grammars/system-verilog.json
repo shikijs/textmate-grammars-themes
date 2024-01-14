@@ -1024,7 +1024,7 @@
               "name": "constant.character.escape.systemverilog"
             },
             {
-              "match": "(?x)%\n                                        (\\d+\\$)?                             # field (argument #)\n                                        [#0\\- +']*                           # flags\n                                        [,;:_]?                              # separator character (AltiVec)\n                                        ((-?\\d+)|\\*(-?\\d+\\$)?)?              # minimum field width\n                                        (\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?         # precision\n                                        (hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier\n                                        [bdiouxXhHDOUeEfFgGaACcSspnmt%]      # conversion type\n                                    ",
+              "match": "(?x)%\n(\\d+\\$)?\n[#0\\- +']*\n[,;:_]?\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?\n[bdiouxXhHDOUeEfFgGaACcSspnmt%]\n",
               "name": "constant.other.placeholder.systemverilog"
             },
             {

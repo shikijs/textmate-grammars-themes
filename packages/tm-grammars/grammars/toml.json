@@ -170,7 +170,7 @@
           ]
         },
         {
-          "begin": "(?x)\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t(?:\n\t\t\t\t\t\t\t\t\t[A-Za-z0-9_-]+\t\t\t\t# Bare key\n\t\t\t\t\t\t\t\t  | \"  (?:[^\"\\\\]|\\\\.)* \"\t\t# Double quoted key\n\t\t\t\t\t\t\t\t  | ' [^']*          '\t\t# Sindle quoted key\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t(?:\n\t\t\t\t\t\t\t\t\t\\s* \\. \\s*\t\t\t\t\t# Dot\n\t\t\t\t\t\t\t\t  | (?= \\s* =)\t\t\t\t\t#   or look-ahead for equals\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t){2,}\t\t\t\t\t\t\t\t# Ensure at least one dot\n\t\t\t\t\t\t)\n\t\t\t\t\t\t\\s*(=)\\s*\n\t\t\t\t\t",
+          "begin": "(?x)\n(\n(\n(?:\n[A-Za-z0-9_-]+\n| \"  (?:[^\"\\\\]|\\\\.)* \"\n| ' [^']*          '\n)\n(?:\n\\s* \\. \\s*\n| (?= \\s* =)\n)\n){2,}\n)\n\\s*(=)\\s*\n",
           "captures": {
             "1": {
               "name": "variable.other.key.toml",
@@ -312,11 +312,11 @@
           "name": "string.quoted.single.toml"
         },
         {
-          "match": "\\G(?x)\n\t\t\t\t\t\t[0-9]{4}\n\t\t\t\t\t\t-\n\t\t\t\t\t\t(0[1-9]|1[012])\n\t\t\t\t\t\t-\n\t\t\t\t\t\t(?!00|3[2-9])[0-3][0-9]\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\t[Tt ]\n\t\t\t\t\t\t\t(?!2[5-9])[0-2][0-9]\n\t\t\t\t\t\t\t:\n\t\t\t\t\t\t\t[0-5][0-9]\n\t\t\t\t\t\t\t:\n\t\t\t\t\t\t\t(?!6[1-9])[0-6][0-9]\n\t\t\t\t\t\t\t(\\.[0-9]+)?\n\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\tZ\n\t\t\t\t\t\t\t  | [+-](?!2[5-9])[0-2][0-9]:[0-5][0-9]\n\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t)?\n\t\t\t\t\t",
+          "match": "\\G(?x)\n[0-9]{4}\n-\n(0[1-9]|1[012])\n-\n(?!00|3[2-9])[0-3][0-9]\n(\n[Tt ]\n(?!2[5-9])[0-2][0-9]\n:\n[0-5][0-9]\n:\n(?!6[1-9])[0-6][0-9]\n(\\.[0-9]+)?\n(\nZ\n| [+-](?!2[5-9])[0-2][0-9]:[0-5][0-9]\n)?\n)?\n",
           "name": "constant.other.date.toml"
         },
         {
-          "match": "\\G(?x)\n\t\t\t\t\t\t(?!2[5-9])[0-2][0-9]\n\t\t\t\t\t\t:\n\t\t\t\t\t\t[0-5][0-9]\n\t\t\t\t\t\t:\n\t\t\t\t\t\t(?!6[1-9])[0-6][0-9]\n\t\t\t\t\t\t(\\.[0-9]+)?\n\t\t\t\t\t",
+          "match": "\\G(?x)\n(?!2[5-9])[0-2][0-9]\n:\n[0-5][0-9]\n:\n(?!6[1-9])[0-6][0-9]\n(\\.[0-9]+)?\n",
           "name": "constant.other.time.toml"
         },
         {
@@ -340,11 +340,11 @@
           "name": "constant.numeric.toml"
         },
         {
-          "match": "(?x)\n\t\t\t\t\t\t\\G\n\t\t\t\t\t\t(\n\t\t\t\t\t\t    [+-]?\n\t\t\t\t\t\t    (\n\t\t\t\t\t\t\t\t0\n\t\t\t\t\t\t\t  | ([1-9](([0-9]|_[0-9])+)?)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t)\n\t\t\t\t\t\t(?=[.eE])\n\t\t\t\t\t\t(\n\t\t\t\t\t\t    \\.\n\t\t\t\t\t\t    ([0-9](([0-9]|_[0-9])+)?)\n\t\t\t\t\t\t)?\n\t\t\t\t\t\t(\n\t\t\t\t\t\t    [eE]\n\t\t\t\t\t\t    ([+-]?[0-9](([0-9]|_[0-9])+)?)\n\t\t\t\t\t\t)?\n\t\t\t\t\t",
+          "match": "(?x)\n\\G\n(\n[+-]?\n(\n0\n| ([1-9](([0-9]|_[0-9])+)?)\n)\n)\n(?=[.eE])\n(\n\\.\n([0-9](([0-9]|_[0-9])+)?)\n)?\n(\n[eE]\n([+-]?[0-9](([0-9]|_[0-9])+)?)\n)?\n",
           "name": "constant.numeric.float.toml"
         },
         {
-          "match": "(?x)\n\t\t\t\t\t\t\\G\n\t\t\t\t\t\t(\n\t\t\t\t\t\t    [+-]?\n\t\t\t\t\t\t    (\n\t\t\t\t\t\t\t\t0\n\t\t\t\t\t\t\t  | ([1-9](([0-9]|_[0-9])+)?)\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t)\n\t\t\t\t\t",
+          "match": "(?x)\n\\G\n(\n[+-]?\n(\n0\n| ([1-9](([0-9]|_[0-9])+)?)\n)\n)\n",
           "name": "constant.numeric.integer.toml"
         },
         {

@@ -35,7 +35,7 @@
           "name": "variable.other.dm"
         }
       },
-      "match": "(?x)\n(var)[\\/ ]\n(?:(static|global|tmp|const)\\/)?\n(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?\n(?:\n\t([a-zA-Z0-9_\\-$]*)\\/\n)*\n\n([A-Za-z0-9_$]*)\\b",
+      "match": "(?x)\n(var)[\\/ ]\n(?:(static|global|tmp|const)\\/)?\n(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?\n(?:\n([a-zA-Z0-9_\\-$]*)\\/\n)*\n\n([A-Za-z0-9_$]*)\\b",
       "name": "meta.initialization.dm"
     },
     {
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+     # define\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name\n(?:\n\t(\\()\n\t\t(\n\t\t\t\\s* \\g<id> \\s*         # first argument\n\t\t\t((,) \\s* \\g<id> \\s*)*  # additional arguments\n\t\t\t(?:\\.\\.\\.)?            # varargs ellipsis?\n\t\t)\n\t(\\))\n)",
+      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.directive.define.dm"
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+     # define\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name",
+      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.directive.define.dm"
@@ -239,7 +239,7 @@
       "include": "#block"
     },
     {
-      "begin": "(?x)\n\t\t\t\t(?:  ^                                 # begin-of-line\n\t\t\t\t\t|\n\t\t\t\t\t\t (?: (?= \\s )           (?<!else|new|return) (?<=\\w)      #  or word + space before name\n\t\t\t\t\t\t\t | (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])   #  or type modifier before name\n\t\t\t\t\t\t )\n\t\t\t\t)\n\t\t\t\t(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n\t\t\t\t(\n\t\t\t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |                  # actual name\n\t\t\t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )  # if it is a C++ operator\n\t\t\t\t)\n\t\t\t\t \\s*(?=\\()",
+      "begin": "(?x)\n(?:  ^\n|\n(?: (?= \\s )           (?<!else|new|return) (?<=\\w)\n| (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])\n)\n)\n(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n(\n(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |\n(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )\n)\n\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.function.leading.dm"
@@ -311,7 +311,7 @@
               "name": "punctuation.definition.parameters.dm"
             }
           },
-          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b\n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++                  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()",
+          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n(\\b\n(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\n)\n\\s*(\\()",
           "name": "meta.function-call.dm"
         },
         {
@@ -626,7 +626,7 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "(?x)\n\\\\\n(\n\th(?:(?:er|im)self|ers|im)\n\t|([tTsS]?he) # Weird regex to match The, the, She, she and he at once.\n\t|He\n\t|[Hh]is\n\t|[aA]n?\n\t|(?:im)?proper\n\t|\\.\\.\\.\n\t|(?:icon|ref|[Rr]oman)(?=\\[) # Macros which need a [] after them.\n\t|[s<>\"n\\n \\[]\n)",
+          "match": "(?x)\n\\\\\n(\nh(?:(?:er|im)self|ers|im)\n|([tTsS]?he)\n|He\n|[Hh]is\n|[aA]n?\n|(?:im)?proper\n|\\.\\.\\.\n|(?:icon|ref|[Rr]oman)(?=\\[)\n|[s<>\"n\\n \\[]\n)",
           "name": "constant.character.escape.dm"
         },
         {

@@ -219,7 +219,7 @@
       "name": "variable.other.constant.ruby"
     },
     {
-      "begin": "(?x)\n\t\t\t         (?=def\\b)                                                      # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\s+                                              # the def keyword\n\t\t\t         ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                   # a method name prefix\n\t\t\t           (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                              # the method name\n\t\t\t           |===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )  # …or an operator method\n\t\t\t         \\s*(\\()                                                        # the openning parenthesis for arguments\n\t\t\t        ",
+      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )\n\\s*(\\()\n",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -327,7 +327,7 @@
       }
     },
     {
-      "begin": "(?x)\n\t\t\t         (?=def\\b)                                                      # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\s+                                              # the def keyword\n\t\t\t         ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                   # a method name prefix\n\t\t\t           (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                              # the method name\n\t\t\t           |===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )  # …or an operator method\n\t\t\t         [ \\t]                                                          # the space separating the arguments\n\t\t\t         (?=[ \\t]*[^\\s#;])                                              # make sure arguments and not a comment follow\n\t\t\t        ",
+      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )\n[ \\t]\n(?=[ \\t]*[^\\s#;])\n",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -379,7 +379,7 @@
         }
       },
       "comment": " the optional name is just to catch the def also without a method-name",
-      "match": "(?x)\n\t\t\t         (?=def\\b)                                                           # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\b                                                    # the def keyword\n\t\t\t         ( \\s+                                                               # an optional group of whitespace followed by…\n\t\t\t           ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                      # a method name prefix\n\t\t\t             (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                                 # the method name\n\t\t\t             |===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) ) )?  # …or an operator method\n\t\t\t        ",
+      "match": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\b\n( \\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) ) )?\n",
       "name": "meta.function.method.without-arguments.ruby"
     },
     {
@@ -515,7 +515,7 @@
       "include": "#percent_literals"
     },
     {
-      "begin": "(?x)\n\t\t\t   (?:\n\t\t\t     ^                      # beginning of line\n\t\t\t   | (?<=                   # or look-behind on:\n\t\t\t       [=>~(?:\\[,|&;]\n\t\t\t     | [\\s;]if\\s\t\t\t# keywords\n\t\t\t     | [\\s;]elsif\\s\n\t\t\t     | [\\s;]while\\s\n\t\t\t     | [\\s;]unless\\s\n\t\t\t     | [\\s;]when\\s\n\t\t\t     | [\\s;]assert_match\\s\n\t\t\t     | [\\s;]or\\s\t\t\t# boolean opperators\n\t\t\t     | [\\s;]and\\s\n\t\t\t     | [\\s;]not\\s\n\t\t\t     | [\\s.]index\\s\t\t\t# methods\n\t\t\t     | [\\s.]scan\\s\n\t\t\t     | [\\s.]sub\\s\n\t\t\t     | [\\s.]sub!\\s\n\t\t\t     | [\\s.]gsub\\s\n\t\t\t     | [\\s.]gsub!\\s\n\t\t\t     | [\\s.]match\\s\n\t\t\t     )\n\t\t\t   | (?<=                  # or a look-behind with line anchor:\n\t\t\t        ^when\\s            # duplication necessary due to limits of regex\n\t\t\t      | ^if\\s\n\t\t\t      | ^elsif\\s\n\t\t\t      | ^while\\s\n\t\t\t      | ^unless\\s\n\t\t\t      )\n\t\t\t   )\n\t\t\t   \\s*((/))(?![*+{}?])\n\t\t\t",
+      "begin": "(?x)\n(?:\n^\n| (?<=\n[=>~(?:\\[,|&;]\n| [\\s;]if\\s\n| [\\s;]elsif\\s\n| [\\s;]while\\s\n| [\\s;]unless\\s\n| [\\s;]when\\s\n| [\\s;]assert_match\\s\n| [\\s;]or\\s\n| [\\s;]and\\s\n| [\\s;]not\\s\n| [\\s.]index\\s\n| [\\s.]scan\\s\n| [\\s.]sub\\s\n| [\\s.]sub!\\s\n| [\\s.]gsub\\s\n| [\\s.]gsub!\\s\n| [\\s.]match\\s\n)\n| (?<=\n^when\\s\n| ^if\\s\n| ^elsif\\s\n| ^while\\s\n| ^unless\\s\n)\n)\n\\s*((/))(?![*+{}?])\n",
       "captures": {
         "1": {
           "name": "string.regexp.classic.ruby"

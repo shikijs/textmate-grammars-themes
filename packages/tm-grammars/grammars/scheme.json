@@ -83,31 +83,31 @@
     "language-functions": {
       "patterns": [
         {
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\(|\\[)) # preceded by space or ( \n\t\t\t\t\t\t( do|or|and|else|quasiquote|begin|if|case|set!|\n\t\t\t\t\t\t  cond|let|unquote|define|let\\*|unquote-splicing|delay|\n\t\t\t\t\t\t  letrec)\n\t\t\t\t\t\t(?=(\\s|\\())",
+          "match": "(?x)\n(?<=(\\s|\\(|\\[))\n( do|or|and|else|quasiquote|begin|if|case|set!|\ncond|let|unquote|define|let\\*|unquote-splicing|delay|\nletrec)\n(?=(\\s|\\())",
           "name": "keyword.control.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions run a test, and return a boolean\n\t\t\t\t\t\tanswer.\n\t\t\t\t\t",
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\()) # preceded by space or (\n\t\t\t\t\t\t( char-alphabetic|char-lower-case|char-numeric|\n\t\t\t\t\t\t  char-ready|char-upper-case|char-whitespace|\n\t\t\t\t\t\t  (?:char|string)(?:-ci)?(?:=|<=?|>=?)|\n\t\t\t\t\t\t  atom|boolean|bound-identifier=|char|complex|\n\t\t\t\t\t\t  identifier|integer|symbol|free-identifier=|inexact|\n\t\t\t\t\t\t  eof-object|exact|list|(?:input|output)-port|pair|\n\t\t\t\t\t\t  real|rational|zero|vector|negative|odd|null|string|\n\t\t\t\t\t\t  eq|equal|eqv|even|number|positive|procedure\n\t\t\t\t\t\t)\n\t\t\t\t\t\t(\\?)\t\t# name ends with ? sign\n\t\t\t\t\t\t(?=(\\s|\\()) # followed by space or (\n\t\t\t\t\t",
+          "match": "(?x)\n(?<=(\\s|\\())\n( char-alphabetic|char-lower-case|char-numeric|\nchar-ready|char-upper-case|char-whitespace|\n(?:char|string)(?:-ci)?(?:=|<=?|>=?)|\natom|boolean|bound-identifier=|char|complex|\nidentifier|integer|symbol|free-identifier=|inexact|\neof-object|exact|list|(?:input|output)-port|pair|\nreal|rational|zero|vector|negative|odd|null|string|\neq|equal|eqv|even|number|positive|procedure\n)\n(\\?)\n(?=(\\s|\\())\n",
           "name": "support.function.boolean-test.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions change one type into another.\n\t\t\t\t\t",
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\()) # preceded by space or (\n\t\t\t\t\t\t( char->integer|exact->inexact|inexact->exact|\n\t\t\t\t\t\t  integer->char|symbol->string|list->vector|\n\t\t\t\t\t\t  list->string|identifier->symbol|vector->list|\n\t\t\t\t\t\t  string->list|string->number|string->symbol|\n\t\t\t\t\t\t  number->string\n\t\t\t\t\t\t)\n\t\t\t\t\t\t(?=(\\s|\\()) # followed by space or (\t\t\t\t\t\n\t\t\t\t\t",
+          "match": "(?x)\n(?<=(\\s|\\())\n( char->integer|exact->inexact|inexact->exact|\ninteger->char|symbol->string|list->vector|\nlist->string|identifier->symbol|vector->list|\nstring->list|string->number|string->symbol|\nnumber->string\n)\n(?=(\\s|\\())\n",
           "name": "support.function.convert-type.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions are potentially dangerous because\n\t\t\t\t\t\tthey have side-effects which could affect other\n\t\t\t\t\t\tparts of the program.\n\t\t\t\t\t",
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\()) # preceded by space or (\n\t\t\t\t\t\t( set-(?:car|cdr)|\t\t\t\t # set car/cdr\n\t\t\t\t\t\t  (?:vector|string)-(?:fill|set) # fill/set string/vector\n\t\t\t\t\t\t)\n\t\t\t\t\t\t(!)\t\t\t# name ends with ! sign\n\t\t\t\t\t\t(?=(\\s|\\()) # followed by space or (\n\t\t\t\t\t",
+          "match": "(?x)\n(?<=(\\s|\\())\n( set-(?:car|cdr)|\n(?:vector|string)-(?:fill|set)\n)\n(!)\n(?=(\\s|\\())\n",
           "name": "support.function.with-side-effects.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\t+, -, *, /, =, >, etc. \n\t\t\t\t\t",
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\()) # preceded by space or (\n\t\t\t\t\t\t( >=?|<=?|=|[*/+-])\n\t\t\t\t\t\t(?=(\\s|\\()) # followed by space or (\n\t\t\t\t\t\t",
+          "match": "(?x)\n(?<=(\\s|\\())\n( >=?|<=?|=|[*/+-])\n(?=(\\s|\\())\n",
           "name": "keyword.operator.arithmetic.scheme"
         },
         {
-          "match": "(?x)\n\t\t\t\t\t\t(?<=(\\s|\\()) # preceded by space or (\n\t\t\t\t\t\t( append|apply|approximate|\n\t\t\t\t\t\t  call-with-current-continuation|call/cc|catch|\n\t\t\t\t\t\t  construct-identifier|define-syntax|display|foo|\n\t\t\t\t\t\t  for-each|force|format|cd|gen-counter|gen-loser|\n\t\t\t\t\t\t  generate-identifier|last-pair|length|let-syntax|\n\t\t\t\t\t\t  letrec-syntax|list|list-ref|list-tail|load|log|\n\t\t\t\t\t\t  macro|magnitude|map|map-streams|max|member|memq|\n\t\t\t\t\t\t  memv|min|newline|nil|not|peek-char|rationalize|\n\t\t\t\t\t\t  read|read-char|return|reverse|sequence|substring|\n\t\t\t\t\t\t  syntax|syntax-rules|transcript-off|transcript-on|\n\t\t\t\t\t\t  truncate|unwrap-syntax|values-list|write|write-char|\n\t\t\t\t\t\t  \n\t\t\t\t\t\t  # cons, car, cdr, etc\n\t\t\t\t\t\t  cons|c(a|d){1,4}r| \n                          \n\t\t\t\t\t\t  # unary math operators\n\t\t\t\t\t\t  abs|acos|angle|asin|assoc|assq|assv|atan|ceiling|\n\t\t\t\t\t\t  cos|floor|round|sin|sqrt|tan|\n\t\t\t\t\t\t  (?:real|imag)-part|numerator|denominator\n                          \n\t\t\t\t\t\t  # other math operators\n\t\t\t\t\t\t  modulo|exp|expt|remainder|quotient|lcm|\n                          \n\t\t\t\t\t\t  # ports / files\n\t\t\t\t\t\t  call-with-(?:input|output)-file|\n\t\t\t\t\t\t  (?:close|current)-(?:input|output)-port|\n\t\t\t\t\t\t  with-(?:input|output)-from-file|\n\t\t\t\t\t\t  open-(?:input|output)-file|\n\t\t\t\t\t\t  \n\t\t\t\t\t\t  # char-«foo»\n\t\t\t\t\t\t  char-(?:downcase|upcase|ready)|\n\t\t\t\t\t\t  \n\t\t\t\t\t\t  # make-«foo»\n\t\t\t\t\t\t  make-(?:polar|promise|rectangular|string|vector)\n\t\t\t\t\t\t  \n\t\t\t\t\t\t  # string-«foo», vector-«foo»\n\t\t\t\t\t\t  string(?:-(?:append|copy|length|ref))?|\n\t\t\t\t\t\t  vector(?:-length|-ref)\n\t\t\t\t\t\t)\n\t\t\t\t\t\t(?=(\\s|\\()) # followed by space or (\n\t\t\t\t\t",
+          "match": "(?x)\n(?<=(\\s|\\())\n( append|apply|approximate|\ncall-with-current-continuation|call/cc|catch|\nconstruct-identifier|define-syntax|display|foo|\nfor-each|force|format|cd|gen-counter|gen-loser|\ngenerate-identifier|last-pair|length|let-syntax|\nletrec-syntax|list|list-ref|list-tail|load|log|\nmacro|magnitude|map|map-streams|max|member|memq|\nmemv|min|newline|nil|not|peek-char|rationalize|\nread|read-char|return|reverse|sequence|substring|\nsyntax|syntax-rules|transcript-off|transcript-on|\ntruncate|unwrap-syntax|values-list|write|write-char|\n\n\ncons|c(a|d){1,4}r|\n\n\nabs|acos|angle|asin|assoc|assq|assv|atan|ceiling|\ncos|floor|round|sin|sqrt|tan|\n(?:real|imag)-part|numerator|denominator\n\n\nmodulo|exp|expt|remainder|quotient|lcm|\n\n\ncall-with-(?:input|output)-file|\n(?:close|current)-(?:input|output)-port|\nwith-(?:input|output)-from-file|\nopen-(?:input|output)-file|\n\n\nchar-(?:downcase|upcase|ready)|\n\n\nmake-(?:polar|promise|rectangular|string|vector)\n\n\nstring(?:-(?:append|copy|length|ref))?|\nvector(?:-length|-ref)\n)\n(?=(\\s|\\())\n",
           "name": "support.function.general.scheme"
         }
       ]
@@ -121,7 +121,7 @@
               "name": "punctuation.section.quoted.symbol.scheme"
             }
           },
-          "match": "(?x)\n\t\t\t\t\t\t(')\\s*\n\t\t\t\t\t\t([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n\t\t\t\t\t",
+          "match": "(?x)\n(')\\s*\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n",
           "name": "constant.other.symbol.scheme"
         },
         {
@@ -139,7 +139,7 @@
               "name": "punctuation.section.expression.end.scheme"
             }
           },
-          "match": "(?x)\n\t\t\t\t\t\t(')\\s*\n\t\t\t\t\t\t((\\()\\s*(\\)))\n\t\t\t\t\t",
+          "match": "(?x)\n(')\\s*\n((\\()\\s*(\\)))\n",
           "name": "constant.other.empty-list.schem"
         },
         {
@@ -231,7 +231,7 @@
           "include": "#comment"
         },
         {
-          "begin": "(?x)\n\t\t\t\t\t\t(?<=\\()       # preceded by (\n\t\t\t\t\t\t(define)\\s+   # define\n\t\t\t\t\t\t(\\()          # list of parameters\n\t\t\t\t\t\t  ([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n\t\t\t\t\t\t  ((\\s+\n\t\t\t\t\t\t    ([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n\t\t\t\t\t\t   )*\n\t\t\t\t\t\t  )\\s*\n\t\t\t\t\t\t(\\))\n\t\t\t\t\t",
+          "begin": "(?x)\n(?<=\\()\n(define)\\s+\n(\\()\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n((\\s+\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n)*\n)\\s*\n(\\))\n",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -264,7 +264,7 @@
           ]
         },
         {
-          "begin": "(?x)\n\t\t\t\t\t\t(?<=\\() # preceded by (\n\t\t\t\t\t\t(lambda)\\s+\n\t\t\t\t\t\t(\\() # opening paren\n\t\t\t\t\t\t((?:\n\t\t\t\t\t\t  ([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n\t\t\t\t\t\t  \\s+\n\t\t\t\t\t\t)*(?:\n\t\t\t\t\t\t  ([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n\t\t\t\t\t\t)?)\n\t\t\t\t\t\t(\\)) # closing paren\n\t\t\t\t\t",
+          "begin": "(?x)\n(?<=\\()\n(lambda)\\s+\n(\\()\n((?:\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n\\s+\n)*(?:\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n)?)\n(\\))\n",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"

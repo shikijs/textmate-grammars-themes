@@ -14,7 +14,7 @@
   ],
   "repository": {
     "annotated_parameter": {
-      "begin": "(?x)\n \\s* ([a-zA-Z_]\\w*) \\s* (:)\\s* ([a-zA-Z_]\\w*)? \n",
+      "begin": "(?x)\n\\s* ([a-zA-Z_]\\w*) \\s* (:)\\s* ([a-zA-Z_]\\w*)?\n",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.function.language.gdscript"
@@ -439,7 +439,7 @@
       ]
     },
     "function_call": {
-      "begin": "(?x)\n  \\b(?=\n    ([a-zA-Z_]\\w*) \\s* (\\()\n  )\n",
+      "begin": "(?x)\n\\b(?=\n([a-zA-Z_]\\w*) \\s* (\\()\n)\n",
       "beginCaptures": {
         "2": {
           "name": "punctuation.definition.arguments.begin.gdscript"
@@ -463,7 +463,7 @@
       ]
     },
     "function_declaration": {
-      "begin": "(?x) \\s*\n (func) \\s+\n ([a-zA-Z_]\\w*) \\s*\n (?=\\()",
+      "begin": "(?x) \\s*\n(func) \\s+\n([a-zA-Z_]\\w*) \\s*\n(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.language.gdscript storage.type.function.gdscript"
@@ -505,7 +505,7 @@
         },
         {
           "comment": "Some color schemas support meta.function-call.generic scope",
-          "match": "(?x)\n  \\b ([a-zA-Z_]\\w*) \\b\n",
+          "match": "(?x)\n\\b ([a-zA-Z_]\\w*) \\b\n",
           "name": "support.function.any-method.gdscript"
         }
       ]
@@ -521,7 +521,7 @@
           "match": "\\b(get):"
         },
         {
-          "begin": "(?x) \\s+\n (set) \\s*\n (?=\\()",
+          "begin": "(?x) \\s+\n(set) \\s*\n(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.gdscript"
@@ -642,7 +642,7 @@
               "name": "punctuation.separator.continuation.line.gdscript"
             }
           },
-          "end": "(?x)\n  (?=^\\s*$)\n  |\n  (?! (\\s* [rR]? (\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))\n      |\n      (\\G $)  (?# '\\G' is necessary for ST)\n  )\n",
+          "end": "(?x)\n(?=^\\s*$)\n|\n(?! (\\s* [rR]? (\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))\n|\n(\\G $)  (?# '\\G' is necessary for ST)\n)\n",
           "patterns": [
             {
               "include": "#base_expression"
@@ -782,7 +782,7 @@
               "name": "punctuation.separator.parameters.gdscript"
             }
           },
-          "match": "(?x)\n  ([a-zA-Z_]\\w*)\n    \\s* (?: (,) | (?=[)#\\n=]))\n"
+          "match": "(?x)\n([a-zA-Z_]\\w*)\n\\s* (?: (,) | (?=[)#\\n=]))\n"
         },
         {
           "include": "#comment"
@@ -823,7 +823,7 @@
       "name": "variable.language.gdscript"
     },
     "signal_declaration": {
-      "begin": "(?x) \\s*\n (signal) \\s+\n ([a-zA-Z_]\\w*) \\s*\n (?=\\()",
+      "begin": "(?x) \\s*\n(signal) \\s+\n([a-zA-Z_]\\w*) \\s*\n(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.language.gdscript storage.type.function.gdscript"
@@ -852,7 +852,7 @@
           "name": "entity.name.function.gdscript"
         }
       },
-      "match": "(?x) \\s*\n (signal) \\s+\n ([a-zA-Z_]\\w*)(?=[\\n\\s])",
+      "match": "(?x) \\s*\n(signal) \\s+\n([a-zA-Z_]\\w*)(?=[\\n\\s])",
       "name": "meta.signal.gdscript"
     },
     "statement": {
@@ -865,7 +865,7 @@
     "statement_keyword": {
       "patterns": [
         {
-          "match": "(?x)\n  \\b(?<!\\.)(\n continue | assert | break | elif | else | if | pass | return | while )\\b\n",
+          "match": "(?x)\n\\b(?<!\\.)(\ncontinue | assert | break | elif | else | if | pass | return | while )\\b\n",
           "name": "keyword.control.flow.gdscript"
         },
         {
@@ -878,7 +878,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "(?x)\n  ^\\s*(\n    case | match\n  )(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n"
+          "match": "(?x)\n^\\s*(\ncase | match\n)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n"
         }
       ]
     },
@@ -888,7 +888,7 @@
           "name": "constant.character.format.placeholder.other.gdscript"
         }
       },
-      "match": "(?x)\n  (\n % (\\([\\w\\s]*\\))?\n [-+#0 ]*\n (\\d+|\\*)? (\\.(\\d+|\\*))?\n ([hlL])?\n [diouxXeEfFgGcrsab%]\n  )\n",
+      "match": "(?x)\n(\n% (\\([\\w\\s]*\\))?\n[-+#0 ]*\n(\\d+|\\*)? (\\.(\\d+|\\*))?\n([hlL])?\n[diouxXeEfFgGcrsab%]\n)\n",
       "name": "meta.format.percent.gdscript"
     },
     "strings": {

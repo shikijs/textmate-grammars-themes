@@ -234,7 +234,7 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        # Make sure our opening js tag has word boundaries\n                        (?<=\\{\\%\\sjs\\s\\%\\}|\\{\\%\\sincludejs\\s\\%\\})\n                    ",
+      "begin": "(?ix)\n\n(?<=\\{\\%\\sjs\\s\\%\\}|\\{\\%\\sincludejs\\s\\%\\})\n",
       "comment": "Add JS support to set tags that use the pattern \"css\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendjs\\s\\%\\}|\\{\\%\\sendincludejs\\s\\%\\})",
       "name": "source.js.embedded.twig",
@@ -245,7 +245,7 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\scss\\s\\%\\}|\\{\\%\\sincludecss\\s\\%\\}|\\{\\%\\sincludehirescss\\s\\%\\})\n                        ",
+      "begin": "(?ix)\n(?<=\\{\\%\\scss\\s\\%\\}|\\{\\%\\sincludecss\\s\\%\\}|\\{\\%\\sincludehirescss\\s\\%\\})\n",
       "comment": "Add CSS support to set tags that use the pattern \"css\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendcss\\s\\%\\}|\\{\\%\\sendincludecss\\s\\%\\}|\\{\\%\\sendincludehirescss\\s\\%\\})",
       "name": "source.css.embedded.twig",
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\sscss\\s\\%\\}|\\{\\%\\sincludescss\\s\\%\\}|\\{\\%\\sincludehiresscss\\s\\%\\})\n                        ",
+      "begin": "(?ix)\n(?<=\\{\\%\\sscss\\s\\%\\}|\\{\\%\\sincludescss\\s\\%\\}|\\{\\%\\sincludehiresscss\\s\\%\\})\n",
       "comment": "Add SCSS support to set tags that use the pattern \"scss\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendscss\\s\\%\\}|\\{\\%\\sendincludescss\\s\\%\\}|\\{\\%\\sendincludehiresscss\\s\\%\\})",
       "name": "source.css.scss.embedded.twig",
@@ -993,7 +993,7 @@
       "name": "keyword.control.twig"
     },
     "twig-macros": {
-      "begin": "(?x)\n                    (?<=[\\s\\(\\[\\{:,])\n                    ([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                    (?:\n                        (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                    )?\n                    (\\()\n            ",
+      "begin": "(?x)\n(?<=[\\s\\(\\[\\{:,])\n([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(?:\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n)?\n(\\()\n",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.twig"
@@ -1198,10 +1198,10 @@
               "name": "variable.other.property.twig"
             }
           },
-          "match": "(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n                        (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                        (?=[\\.\\s\\|\\[\\)\\]\\}:,])\n                    "
+          "match": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(?=[\\.\\s\\|\\[\\)\\]\\}:,])\n"
         },
         {
-          "begin": "(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n                        (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                        (\\()\n                    ",
+          "begin": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(\\()\n",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.property.twig"
@@ -1289,7 +1289,7 @@
               "name": "punctuation.section.array.end.twig"
             }
           },
-          "match": "(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]])\n                        (?:\n                            (\\[)('[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*')(\\])\n                            |(\\[)(\"[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*\")(\\])\n                            |(\\[)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\])\n                        )\n                    "
+          "match": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]])\n(?:\n(\\[)('[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*')(\\])\n|(\\[)(\"[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*\")(\\])\n|(\\[)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\])\n)\n"
         }
       ]
     },

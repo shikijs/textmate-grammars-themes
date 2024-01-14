@@ -65,7 +65,7 @@
       "while": "(^|\\G)\\s*(>) ?"
     },
     "bold": {
-      "begin": "(?x) (?<open>(\\*\\*(?=\\w)|(?<!\\w)\\*\\*|(?<!\\w)\\b__))(?=\\S) (?=\n  (\n    <[^>]*+>              # HTML tags\n    | (?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>\n                      # Raw\n    | \\\\[\\\\`*_{}\\[\\]()#.!+\\->]?+      # Escapes\n    | \\[\n    (\n        (?<square>          # Named group\n          [^\\[\\]\\\\]        # Match most chars\n          | \\\\.            # Escaped chars\n          | \\[ \\g<square>*+ \\]    # Nested brackets\n        )*+\n      \\]\n      (\n        (              # Reference Link\n          [ ]?          # Optional space\n          \\[[^\\]]*+\\]        # Ref name\n        )\n        | (              # Inline Link\n          \\(            # Opening paren\n            [ \\t]*+        # Optional whitespace\n            <?(.*?)>?      # URL\n            [ \\t]*+        # Optional whitespace\n            (          # Optional Title\n              (?<title>['\"])\n              (.*?)\n              \\k<title>\n            )?\n          \\)\n        )\n      )\n    )\n    | (?!(?<=\\S)\\k<open>).            # Everything besides\n                      # style closer\n  )++\n  (?<=\\S)(?=__\\b|\\*\\*)\\k<open>                # Close\n)\n",
+      "begin": "(?x) (?<open>(\\*\\*(?=\\w)|(?<!\\w)\\*\\*|(?<!\\w)\\b__))(?=\\S) (?=\n(\n<[^>]*+>\n| (?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>\n\n| \\\\[\\\\`*_{}\\[\\]()#.!+\\->]?+\n| \\[\n(\n(?<square>\n[^\\[\\]\\\\]\n| \\\\.\n| \\[ \\g<square>*+ \\]\n)*+\n\\]\n(\n(\n[ ]?\n\\[[^\\]]*+\\]\n)\n| (\n\\(\n[ \\t]*+\n<?(.*?)>?\n[ \\t]*+\n(\n(?<title>['\"])\n(.*?)\n\\k<title>\n)?\n\\)\n)\n)\n)\n| (?!(?<=\\S)\\k<open>).\n\n)++\n(?<=\\S)(?=__\\b|\\*\\*)\\k<open>\n)\n",
       "captures": {
         "1": {
           "name": "punctuation.definition.bold.markdown"
@@ -2482,7 +2482,7 @@
           "name": "punctuation.definition.link.markdown"
         }
       },
-      "match": "(?x)\n  (\\!\\[)((?<square>[^\\[\\]\\\\]|\\\\.|\\[\\g<square>*+\\])*+)(\\])\n                # Match the link text.\n  (\\()            # Opening paren for url\n    # The url\n      [ \\t]*\n      (\n         (<)((?:\\\\[<>]|[^<>\\n])*)(>)\n         | ((?<url>(?>[^\\s()]+)|\\(\\g<url>*\\))*)\n      )\n      [ \\t]*\n    (?:\n        ((\\().+?(\\)))    # Match title in parens…\n      | ((\").+?(\"))    # or in double quotes…\n      | ((').+?('))    # or in single quotes.\n    )?            # Title is optional\n    \\s*            # Optional whitespace\n  (\\))\n",
+      "match": "(?x)\n(\\!\\[)((?<square>[^\\[\\]\\\\]|\\\\.|\\[\\g<square>*+\\])*+)(\\])\n\n(\\()\n\n[ \\t]*\n(\n(<)((?:\\\\[<>]|[^<>\\n])*)(>)\n| ((?<url>(?>[^\\s()]+)|\\(\\g<url>*\\))*)\n)\n[ \\t]*\n(?:\n((\\().+?(\\)))\n| ((\").+?(\"))\n| ((').+?('))\n)?\n\\s*\n(\\))\n",
       "name": "meta.image.inline.markdown"
     },
     "image-ref": {
@@ -2559,7 +2559,7 @@
       ]
     },
     "italic": {
-      "begin": "(?x) (?<open>(\\*(?=\\w)|(?<!\\w)\\*|(?<!\\w)\\b_))(?=\\S)                # Open\n  (?=\n    (\n      <[^>]*+>              # HTML tags\n      | (?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>\n                        # Raw\n      | \\\\[\\\\`*_{}\\[\\]()#.!+\\->]?+      # Escapes\n      | \\[\n      (\n          (?<square>          # Named group\n            [^\\[\\]\\\\]        # Match most chars\n            | \\\\.            # Escaped chars\n            | \\[ \\g<square>*+ \\]    # Nested brackets\n          )*+\n        \\]\n        (\n          (              # Reference Link\n            [ ]?          # Optional space\n            \\[[^\\]]*+\\]        # Ref name\n          )\n          | (              # Inline Link\n            \\(            # Opening paren\n              [ \\t]*+        # Optional whtiespace\n              <?(.*?)>?      # URL\n              [ \\t]*+        # Optional whtiespace\n              (          # Optional Title\n                (?<title>['\"])\n                (.*?)\n                \\k<title>\n              )?\n            \\)\n          )\n        )\n      )\n      | \\k<open>\\k<open>                   # Must be bold closer\n      | (?!(?<=\\S)\\k<open>).            # Everything besides\n                        # style closer\n    )++\n    (?<=\\S)(?=_\\b|\\*)\\k<open>                # Close\n  )\n",
+      "begin": "(?x) (?<open>(\\*(?=\\w)|(?<!\\w)\\*|(?<!\\w)\\b_))(?=\\S)\n(?=\n(\n<[^>]*+>\n| (?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>\n\n| \\\\[\\\\`*_{}\\[\\]()#.!+\\->]?+\n| \\[\n(\n(?<square>\n[^\\[\\]\\\\]\n| \\\\.\n| \\[ \\g<square>*+ \\]\n)*+\n\\]\n(\n(\n[ ]?\n\\[[^\\]]*+\\]\n)\n| (\n\\(\n[ \\t]*+\n<?(.*?)>?\n[ \\t]*+\n(\n(?<title>['\"])\n(.*?)\n\\k<title>\n)?\n\\)\n)\n)\n)\n| \\k<open>\\k<open>\n| (?!(?<=\\S)\\k<open>).\n\n)++\n(?<=\\S)(?=_\\b|\\*)\\k<open>\n)\n",
       "captures": {
         "1": {
           "name": "punctuation.definition.italic.markdown"
@@ -2676,7 +2676,7 @@
           "name": "string.other.link.description.title.markdown"
         }
       },
-      "match": "(?x)\n  \\s*            # Leading whitespace\n  (\\[)([^]]+?)(\\])(:)    # Reference name\n  [ \\t]*          # Optional whitespace\n  (?:(<)((?:\\\\[<>]|[^<>\\n])*)(>)|(\\S+?))      # The url\n  [ \\t]*          # Optional whitespace\n  (?:\n      ((\\().+?(\\)))    # Match title in parens…\n    | ((\").+?(\"))    # or in double quotes…\n    | ((').+?('))    # or in single quotes.\n  )?            # Title is optional\n  \\s*            # Optional whitespace\n  $\n",
+      "match": "(?x)\n\\s*\n(\\[)([^]]+?)(\\])(:)\n[ \\t]*\n(?:(<)((?:\\\\[<>]|[^<>\\n])*)(>)|(\\S+?))\n[ \\t]*\n(?:\n((\\().+?(\\)))\n| ((\").+?(\"))\n| ((').+?('))\n)?\n\\s*\n$\n",
       "name": "meta.link.reference.def.markdown"
     },
     "link-email": {
@@ -2783,7 +2783,7 @@
           "name": "punctuation.definition.link.markdown"
         }
       },
-      "match": "(?x)\n  (\\[)((?<square>[^\\[\\]\\\\]|\\\\.|\\[\\g<square>*+\\])*+)(\\])\n                # Match the link text.\n  (\\()            # Opening paren for url\n    # The url\n      [ \\t]*\n      (\n         (<)((?:\\\\[<>]|[^<>\\n])*)(>)\n         | ((?<url>(?>[^\\s()]+)|\\(\\g<url>*\\))*)\n      )\n      [ \\t]*\n    # The title  \n    (?:\n        ((\\()[^()]*(\\)))    # Match title in parens…\n      | ((\")[^\"]*(\"))    # or in double quotes…\n      | ((')[^']*('))    # or in single quotes.\n    )?            # Title is optional\n    \\s*            # Optional whitespace\n  (\\))\n",
+      "match": "(?x)\n(\\[)((?<square>[^\\[\\]\\\\]|\\\\.|\\[\\g<square>*+\\])*+)(\\])\n\n(\\()\n\n[ \\t]*\n(\n(<)((?:\\\\[<>]|[^<>\\n])*)(>)\n| ((?<url>(?>[^\\s()]+)|\\(\\g<url>*\\))*)\n)\n[ \\t]*\n\n(?:\n((\\()[^()]*(\\)))\n| ((\")[^\"]*(\"))\n| ((')[^']*('))\n)?\n\\s*\n(\\))\n",
       "name": "meta.link.inline.markdown"
     },
     "link-ref": {

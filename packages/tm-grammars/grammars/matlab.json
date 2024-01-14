@@ -376,7 +376,7 @@
     "classdef": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t(classdef)\n\t\t\t\t\t\t\t\\b\\s*\n\t\t\t\t\t\t\t(.*)\n\t\t\t\t\t",
+          "begin": "(?x)\n(^\\s*)\n(classdef)\n\\b\\s*\n(.*)\n",
           "beginCaptures": {
             "2": {
               "name": "storage.type.class.matlab"
@@ -449,7 +449,7 @@
           "name": "meta.class.matlab",
           "patterns": [
             {
-              "begin": "(?x)\n\t\t\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t\t\t(properties)\\b([^%]*)\n\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t(\t\t\t\t\t\t\t\t\t# Optional attributes\n\t\t\t\t\t\t\t\t\t\t\\( [^)]* \\)\n\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\\s*($|(?=%))\n\t\t\t\t\t\t\t\t",
+              "begin": "(?x)\n(^\\s*)\n(properties)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.properties.matlab"
@@ -494,7 +494,7 @@
               ]
             },
             {
-              "begin": "(?x)\n\t\t\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t\t\t(methods)\\b([^%]*)\n\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t(\t\t\t\t\t\t\t\t\t# Optional attributes\n\t\t\t\t\t\t\t\t\t\t\\( [^)]* \\)\n\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\\s*($|(?=%))\n\t\t\t\t\t\t\t\t",
+              "begin": "(?x)\n(^\\s*)\n(methods)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.methods.matlab"
@@ -536,7 +536,7 @@
               ]
             },
             {
-              "begin": "(?x)\n\t\t\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t\t\t(events)\\b([^%]*)\n\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t(\t\t\t\t\t\t\t\t\t# Optional attributes\n\t\t\t\t\t\t\t\t\t\t\\( [^)]* \\)\n\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\\s*($|(?=%))\n\t\t\t\t\t\t\t\t",
+              "begin": "(?x)\n(^\\s*)\n(events)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.events.matlab"
@@ -578,7 +578,7 @@
               ]
             },
             {
-              "begin": "(?x)\n\t\t\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t\t\t(enumeration)\\b([^%]*)\n\t\t\t\t\t\t\t\t\t\\s*($|(?=%))\n\t\t\t\t\t\t\t\t",
+              "begin": "(?x)\n(^\\s*)\n(enumeration)\\b([^%]*)\n\\s*($|(?=%))\n",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.enumeration.matlab"
@@ -742,7 +742,7 @@
     "function": {
       "patterns": [
         {
-          "begin": "(?x)\n\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t(function)\n\t\t\t\t\t\t\t\\s+\n\t\t\t\t\t\t\t(?:\t\t\t\t\t\t\t\t\t\t\t\t\t# Optional\n\t\t\t\t\t\t\t\t(?:\n\t\t\t\t\t\t\t\t\t(\\[) ([^\\]]*) (\\])\n\t\t\t\t\t\t\t\t  | ([a-zA-Z][a-zA-Z0-9_]*)\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t\\s* = \\s*\n\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*)\t# Function name\n\t\t\t\t\t\t\t\\s*\t\t\t\t\t\t\t\t\t\t\t\t\t# Trailing space\n\t\t\t\t\t\t",
+          "begin": "(?x)\n(^\\s*)\n(function)\n\\s+\n(?:\n(?:\n(\\[) ([^\\]]*) (\\])\n| ([a-zA-Z][a-zA-Z0-9_]*)\n)\n\\s* = \\s*\n)?\n([a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*)\n\\s*\n",
           "beginCaptures": {
             "2": {
               "name": "storage.type.function.matlab"
@@ -791,7 +791,7 @@
               ]
             },
             {
-              "begin": "(?x)\n\t\t\t\t\t\t\t\t\t(^\\s*)\t\t\t\t\t\t\t\t# Leading whitespace\n\t\t\t\t\t\t\t\t\t(arguments)\\b([^%]*)\n\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t(\t\t\t\t\t\t\t\t\t# Optional attributes\n\t\t\t\t\t\t\t\t\t\t\\( [^)]* \\)\n\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\\s*($|(?=%))\n\t\t\t\t\t\t\t\t",
+              "begin": "(?x)\n(^\\s*)\n(arguments)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.arguments.matlab"

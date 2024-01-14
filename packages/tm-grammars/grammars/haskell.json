@@ -136,7 +136,7 @@
           "name": "keyword.other.class.haskell"
         }
       },
-      "end": "(?x) # Detect end of class declaration:\n         # 'where' keyword\n   (?=(?<!')\\bwhere\\b(?!'))  \n         # Decreasing indentation\n   |(?=\\}|;)      # Explicit indentation\n   |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n       \\1\\s+\\S    # - more indented, or\n     | \\s*        # - starts with whitespace, followed by:\n       (?: $      #   - the end of the line (i.e. empty line), or\n       |\\{-[^@]   #   - the start of a block comment, or\n       |--+       #   - the start of a single-line comment.\n          (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                  # The double dash may not be followed by other operator characters\n                  # (then it would be an operator, not a comment)\n     )",
+      "end": "(?x)\n\n(?=(?<!')\\bwhere\\b(?!'))\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)",
       "name": "meta.declaration.class.haskell",
       "patterns": [
         {
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "begin": "(?x)\n  ^(\\s*)(data|newtype)(?:\\s+(instance))?\\s+\n  # Keep consuming characters until:\n  ((?:(?!\n  # the equals symbol or the start of a single-line comment, or\n    (?: \n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]) # non-symbol\n      (?:=|--+)\n      (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])  # non-symbol\n    )\n  # the \"where\" or \"deriving\" keywords, or\n  | (?:\\b(?<!')(?:where|deriving)\\b(?!'))\n  # the start of a block comment.\n  | {-\n  #\n  ).)*)\n  (?=\\b(?<!'')where\\b(?!''))",
+      "begin": "(?x)\n^(\\s*)(data|newtype)(?:\\s+(instance))?\\s+\n\n((?:(?!\n\n(?:\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:=|--+)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n)\n\n| (?:\\b(?<!')(?:where|deriving)\\b(?!'))\n\n| {-\n\n).)*)\n(?=\\b(?<!'')where\\b(?!''))",
       "beginCaptures": {
         "2": {
           "name": "keyword.other.$2.haskell"
@@ -167,14 +167,14 @@
           ]
         }
       },
-      "end": "(?x) # Detect end of data declaration:\n         # Deriving clause\n   (?=(?<!')\\bderiving\\b(?!'))  \n         # Decreasing indentation\n   |(?=\\}|;)      # Explicit indentation\n   |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n       \\1\\s+\\S    # - more indented, or\n     | \\s*        # - starts with whitespace, followed by:\n       (?: $      #   - the end of the line (i.e. empty line), or\n       |\\{-[^@]   #   - the start of a block comment, or\n       |--+       #   - the start of a single-line comment.\n          (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                  # The double dash may not be followed by other operator characters\n                  # (then it would be an operator, not a comment)\n     )\n",
+      "end": "(?x)\n\n(?=(?<!')\\bderiving\\b(?!'))\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.$2.generalized.haskell",
       "patterns": [
         {
           "include": "#comment_like"
         },
         {
-          "begin": "(?x)\n  (?<!')\\b(where)\n  \\s*(\\{)(?!-)",
+          "begin": "(?x)\n(?<!')\\b(where)\n\\s*(\\{)(?!-)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.where.haskell"
@@ -237,7 +237,7 @@
           "name": "keyword.operator.double-colon.haskell"
         }
       },
-      "end": "(?x) # Detect end of pattern type definition by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.pattern.type.haskell",
       "patterns": [
         {
@@ -252,7 +252,7 @@
           "name": "keyword.other.pattern.haskell"
         }
       },
-      "end": "(?x) # Detect end of pattern type definition by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.pattern.haskell",
       "patterns": [
         {
@@ -261,7 +261,7 @@
       ]
     },
     {
-      "begin": "(?x)\n  # Data declaration\n  ^(\\s*)(data|newtype)(?:\\s+(family|instance))?\\s+\n  # Keep consuming characters until:\n  (((?!\n  # the equals symbol or the start of a single-line comment, or\n    (?: \n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]) # non-symbol\n      (?:=|--+)\n      (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])  # non-symbol\n    )\n  # the \"where\" or \"deriving\" keywords, or\n  | (?:\\b(?<!')(?:where|deriving)\\b(?!'))\n  # the start of a block comment.\n  | {-\n  #\n  ).)*)",
+      "begin": "(?x)\n\n^(\\s*)(data|newtype)(?:\\s+(family|instance))?\\s+\n\n(((?!\n\n(?:\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:=|--+)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n)\n\n| (?:\\b(?<!')(?:where|deriving)\\b(?!'))\n\n| {-\n\n).)*)",
       "beginCaptures": {
         "2": {
           "name": "keyword.other.$2.haskell"
@@ -277,7 +277,7 @@
           ]
         }
       },
-      "end": "(?x) # Detect end of data declaration: \n     # Decreasing indentation\n   (?=\\}|;)      # Explicit indentation\n   |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n       \\1\\s+\\S    # - more indented, or\n     | \\s*        # - starts with whitespace, followed by:\n       (?: $      #   - the end of the line (i.e. empty line), or\n       |\\{-[^@]   #   - the start of a block comment, or\n       |--+       #   - the start of a single-line comment.\n          (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                  # The double dash may not be followed by other operator characters\n                  # (then it would be an operator, not a comment)\n     )",
+      "end": "(?x)\n\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)",
       "name": "meta.declaration.$2.algebraic.haskell",
       "patterns": [
         {
@@ -304,7 +304,7 @@
       ]
     },
     {
-      "begin": "(?x)\n  # Type family\n  ^(\\s*)(type)\\s+(family)\\b(?!')\n  # Keep consuming characters until:\n  (((?!\n  # the equals symbol or the start of a single-line comment, or\n    (?: \n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]) # non-symbol\n      (?:=|--+)\n      (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])  # non-symbol\n    )\n  # the \"where\" keyword, or\n  | \\b(?<!')where\\b(?!')\n  # the start of a block comment.\n  | {-\n  #\n  ).)*)",
+      "begin": "(?x)\n\n^(\\s*)(type)\\s+(family)\\b(?!')\n\n(((?!\n\n(?:\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:=|--+)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n)\n\n| \\b(?<!')where\\b(?!')\n\n| {-\n\n).)*)",
       "beginCaptures": {
         "2": {
           "name": "keyword.other.type.haskell"
@@ -326,7 +326,7 @@
           ]
         }
       },
-      "end": "(?x) # Detect end of type family by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.type.family.haskell",
       "patterns": [
         {
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "begin": "(?x)\n  # Type declaration\n  ^(\\s*)(type)(?:\\s+(instance))?\\s+\n  # Keep consuming characters until:\n  (((?!\n  # the equals symbol, the start of a single-line comment, or a type signature\n    (?: \n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]) # non-symbol\n      (?:=|--+|::|∷)\n      (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])  # non-symbol\n    )\n  # the start of a block comment.\n  | {-\n  #\n  ).)*)",
+      "begin": "(?x)\n\n^(\\s*)(type)(?:\\s+(instance))?\\s+\n\n(((?!\n\n(?:\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:=|--+|::|∷)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n)\n\n| {-\n\n).)*)",
       "beginCaptures": {
         "2": {
           "name": "keyword.other.type.haskell"
@@ -357,7 +357,7 @@
           ]
         }
       },
-      "end": "(?x) # Detect end of type definition by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.type.haskell",
       "patterns": [
         {
@@ -372,7 +372,7 @@
           "name": "keyword.other.instance.haskell"
         }
       },
-      "end": "(?x) # Detect end of instance declaration:\n  # 'where' keyword\n  (?=\\b(?<!')(where)\\b(?!'))\n  # Decreasing indentation\n  |(?=\\}|;)      # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n\n(?=\\b(?<!')(where)\\b(?!'))\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.declaration.instance.haskell",
       "patterns": [
         {
@@ -393,7 +393,7 @@
           "name": "keyword.other.import.haskell"
         }
       },
-      "end": "(?x) # Detect end of import\n  # 'where' keyword\n  (?=\\b(?<!')(where)\\b(?!'))\n  # Decreasing indentation\n  |(?=\\}|;)      # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n\n(?=\\b(?<!')(where)\\b(?!'))\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.import.haskell",
       "patterns": [
         {
@@ -562,7 +562,7 @@
           "include": "#comment_like"
         },
         {
-          "begin": "(?x)\n  (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]) # non-symbol\n  (?:(=)|(\\|))\n  (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])  # non-symbol",
+          "begin": "(?x)\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:(=)|(\\|))\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.eq.haskell"
@@ -571,7 +571,7 @@
               "name": "keyword.operator.pipe.haskell"
             }
           },
-          "end": "(?x)\n  (?:\\G|^)\\s* # Enforce starting condition to avoid catastrophic backtracking (https://github.com/JustusAdam/language-haskell/issues/161)\n  (?: # Infix data constructor\n    # First argument\n    (?:\n    # Simple type\n      (?<!')\\b((?:[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'\\.])+)\n    # Type inside balanced parentheses\n    | ('? # Optional promotion tick\n        (?<paren>\n          \\(          # Opening parenthesis\n          (?:\n            [^\\(\\)]*  # Match non-parentheses\n          | \\g<paren> # or recurse into further depth\n          )*\n          \\)          # Closing parenthesis\n        )\n      )\n    # Type inside balanced brackets\n    | ('? # Optional promotion tick\n        (?<brac>\n          \\(          # Opening bracket\n          (?:\n            [^\\[\\]]*  # Match non-brackets\n          | \\g<brac>  # or recurse into further depth\n          )*\n          \\]          # Closing bracket\n        )\n      )\n    )        \n    # Then either\n    \\s*\n      # - a symbolic infix constructor, or\n    (?:(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\n      # - an alphabetic infix constructor\n    | (`)([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)(`)\n    )\n\n  ) # Otherwise, prefix data constructor, either:\n  | # - an alphabetic data constructor e.g. \"Cons_123\"\n    (?:(?<!')\\b([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*))\n  | # - a symbolic (prefix) data constructor\n    (\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))",
+          "end": "(?x)\n(?:\\G|^)\\s*\n(?:\n\n(?:\n\n(?<!')\\b((?:[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'\\.])+)\n\n| ('?\n(?<paren>\n\\(\n(?:\n[^\\(\\)]*\n| \\g<paren>\n)*\n\\)\n)\n)\n\n| ('?\n(?<brac>\n\\(\n(?:\n[^\\[\\]]*\n| \\g<brac>\n)*\n\\]\n)\n)\n)\n\n\\s*\n\n(?:(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\n\n| (`)([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)(`)\n)\n\n)\n|\n(?:(?<!')\\b([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*))\n|\n(\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))",
           "endCaptures": {
             "1": {
               "patterns": [
@@ -676,7 +676,7 @@
           "name": "punctuation.definition.string.end.haskell"
         }
       },
-      "match": "(?x)\n  (?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'])\n  (')\n  (?:\n    [\\ -\\[\\]-~]                         # Basic Char\n  | (\\\\(?:NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE\n       |DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS\n       |US|SP|DEL|[abfnrtv\\\\\\\"'\\\\&]))   # Escapes\n  | (\\\\o[0-7]+)                         # Octal Escapes\n  | (\\\\x[0-9A-Fa-f]+)                   # Hexadecimal Escapes\n  | (\\\\\\^[A-Z@\\[\\]\\\\\\^_])                 # Control Chars\n  )\n  (')\n",
+      "match": "(?x)\n(?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'])\n(')\n(?:\n[\\ -\\[\\]-~]\n| (\\\\(?:NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE\n|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS\n|US|SP|DEL|[abfnrtv\\\\\\\"'\\\\&]))\n| (\\\\o[0-7]+)\n| (\\\\x[0-9A-Fa-f]+)\n| (\\\\\\^[A-Z@\\[\\]\\\\\\^_])\n)\n(')\n",
       "name": "string.quoted.single.haskell"
     },
     "comma": {
@@ -777,7 +777,7 @@
           "name": "keyword.operator.big-arrow.haskell"
         }
       },
-      "match": "(?x)\n  (.*)\n  (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n  (=>|⇒)\n  (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n"
+      "match": "(?x)\n(.*)\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(=>|⇒)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n"
     },
     "cpp": {
       "captures": {
@@ -805,7 +805,7 @@
               "name": "keyword.other.deriving.strategy.$3.haskell"
             }
           },
-          "end": "(?x) # Detect end of deriving statement\n  # Decreasing indentation\n   (?=\\}|;)      # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )",
+          "end": "(?x)\n\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)",
           "name": "meta.deriving.haskell",
           "patterns": [
             {
@@ -880,7 +880,7 @@
               ]
             }
           },
-          "match": "(?x)\n  (deriving)(?:\\s+(stock|newtype|anyclass))?\\s+\n    ([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n    (\\s+(via)\\s+(.*)$)?\n",
+          "match": "(?x)\n(deriving)(?:\\s+(stock|newtype|anyclass))?\\s+\n([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n(\\s+(via)\\s+(.*)$)?\n",
           "name": "meta.deriving.haskell"
         },
         {
@@ -909,7 +909,7 @@
               "name": "keyword.other.pattern.haskell"
             }
           },
-          "end": "(?x)\n   # Data constructor\n   ([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n   # Prefix form of symbolic constructor\n   | (\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))",
+          "end": "(?x)\n\n([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n\n| (\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))",
           "endCaptures": {
             "1": {
               "name": "constant.other.haskell"
@@ -937,7 +937,7 @@
               "name": "keyword.other.type.haskell"
             }
           },
-          "end": "(?x)\n   # Type name\n   ([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n   # Prefix form of type operator\n   | (\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))",
+          "end": "(?x)\n\n([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n\n| (\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))",
           "endCaptures": {
             "1": {
               "name": "storage.type.haskell"
@@ -987,7 +987,7 @@
           "name": "keyword.other.$3.haskell"
         }
       },
-      "end": "(?x) # Detect end of FFI block by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.$3.foreign.haskell",
       "patterns": [
         {
@@ -1028,7 +1028,7 @@
                   "name": "entity.name.function.infix.haskell"
                 }
               },
-              "match": "(?x)\n  \\b(?<!')(safe|unsafe|interruptible)\\b(?!')\n  \\s*\n  (\"(?:\\\\\"|[^\"])*\")?\n  \\s*\n  (?:\n    (?:\\b(?<!'')([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\\b(?!'))\n   |(?:\\(\\s*(?!--+\\))([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*\\))\n  )\n"
+              "match": "(?x)\n\\b(?<!')(safe|unsafe|interruptible)\\b(?!')\n\\s*\n(\"(?:\\\\\"|[^\"])*\")?\n\\s*\n(?:\n(?:\\b(?<!'')([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\\b(?!'))\n|(?:\\(\\s*(?!--+\\))([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*\\))\n)\n"
             },
             {
               "captures": {
@@ -1044,7 +1044,7 @@
                   ]
                 }
               },
-              "match": "(?x)\n  \\b(?<!')(safe|unsafe|interruptible)\\b(?!')\n  \\s*\n  (\"(?:\\\\\"|[^\"])*\")?\n  \\s*$\n"
+              "match": "(?x)\n\\b(?<!')(safe|unsafe|interruptible)\\b(?!')\n\\s*\n(\"(?:\\\\\"|[^\"])*\")?\n\\s*$\n"
             },
             {
               "captures": {
@@ -1057,7 +1057,7 @@
                   ]
                 }
               },
-              "match": "(?x)\n  \"(?:\\\\\"|[^\"])*\""
+              "match": "(?x)\n\"(?:\\\\\"|[^\"])*\""
             },
             {
               "captures": {
@@ -1074,7 +1074,7 @@
                   "name": "punctuation.paren.haskell"
                 }
               },
-              "match": "(?x)\n   (?:\\b(?<!'')([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\\b(?!'))\n  |(?:(\\()\\s*(?!--+\\))([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\)))\n"
+              "match": "(?x)\n(?:\\b(?<!'')([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\\b(?!'))\n|(?:(\\()\\s*(?!--+\\))([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\)))\n"
             }
           ]
         },
@@ -1096,7 +1096,7 @@
         }
       },
       "comment": "Floats are decimal or hexadecimal",
-      "match": "(?x)\n  \\b(?<!')\n  (?:  # Decimal\n    ([0-9][_0-9]*\\.[0-9][_0-9]*(?:[eE][-+]?[0-9][_0-9]*)?\n    |[0-9][_0-9]*[eE][-+]?[0-9][_0-9]*\n    )\n  |    # Hexadecimal\n    (0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*\\.[0-9a-fA-F][_0-9a-fA-F]*(?:[pP][-+]?[0-9][_0-9]*)?\n    |0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*[pP][-+]?[0-9][_0-9]*\n    )\n  )\\b(?!')"
+      "match": "(?x)\n\\b(?<!')\n(?:\n([0-9][_0-9]*\\.[0-9][_0-9]*(?:[eE][-+]?[0-9][_0-9]*)?\n|[0-9][_0-9]*[eE][-+]?[0-9][_0-9]*\n)\n|\n(0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*\\.[0-9a-fA-F][_0-9a-fA-F]*(?:[pP][-+]?[0-9][_0-9]*)?\n|0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*[pP][-+]?[0-9][_0-9]*\n)\n)\\b(?!')"
     },
     "forall": {
       "begin": "\\b(?<!')(forall|∀)\\b(?!')",
@@ -1127,7 +1127,7 @@
       ]
     },
     "fun_decl": {
-      "begin": "(?x)^(\\s*)\n  (?<fn>\n    (?:\n      [\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\#*\n    | \\(\\s*\n        (?!--+\\))\n        [\\p{S}\\p{P}&&[^(),:;\\[\\]`{}_\"']]\n        [\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*\n      \\s*\\)\n    )\n    (?:\\s*,\\s*\\g<fn>)?\n  )\n  \\s*(?<![\\p{S}\\p{P}&&[^\\),;\\]`}_\"']])(::|∷)(?![\\p{S}\\p{P}&&[^\\(,;\\[`{_\"']])\n",
+      "begin": "(?x)^(\\s*)\n(?<fn>\n(?:\n[\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\#*\n| \\(\\s*\n(?!--+\\))\n[\\p{S}\\p{P}&&[^(),:;\\[\\]`{}_\"']]\n[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*\n\\s*\\)\n)\n(?:\\s*,\\s*\\g<fn>)?\n)\n\\s*(?<![\\p{S}\\p{P}&&[^\\),;\\]`}_\"']])(::|∷)(?![\\p{S}\\p{P}&&[^\\(,;\\[`{_\"']])\n",
       "beginCaptures": {
         "2": {
           "name": "entity.name.function.haskell",
@@ -1144,7 +1144,7 @@
           "name": "keyword.operator.double-colon.haskell"
         }
       },
-      "end": "(?x)\n  # End of type annotation:\n    # To the left of a reserved symbolic keyword such as = or <-\n  (?= \n      # non-symbolic character\n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n      # symbolic keyword except (->)\n      ((<-|←)|(=)|(-<|↢)|(-<<|⤛))\n      # non-symbolic character\n      ([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n  )\n  # Decreasing indentation:\n  |(?=\\}|;)      # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+      "end": "(?x)\n\n\n(?=\n\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n\n((<-|←)|(=)|(-<|↢)|(-<<|⤛))\n\n([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n)\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
       "name": "meta.function.type-declaration.haskell",
       "patterns": [
         {
@@ -1155,7 +1155,7 @@
     "gadt_constructor": {
       "patterns": [
         {
-          "begin": "(?x)\n   ^(\\s*)\n      (?:\n        (\\b(?<!')[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n      |(\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))\n      )",
+          "begin": "(?x)\n^(\\s*)\n(?:\n(\\b(?<!')[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n|(\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))\n)",
           "beginCaptures": {
             "2": {
               "name": "constant.other.haskell"
@@ -1170,7 +1170,7 @@
               "name": "punctuation.paren.haskell"
             }
           },
-          "end": "(?x)\n  # GADT constructor ends\n  (?=\\b(?<!'')deriving\\b(?!'))  \n        # Decreasing indentation\n  |(?=\\}|;)      # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )\n",
+          "end": "(?x)\n\n(?=\\b(?<!'')deriving\\b(?!'))\n\n|(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n",
           "patterns": [
             {
               "include": "#comment_like"
@@ -1190,7 +1190,7 @@
           ]
         },
         {
-          "begin": "(?x)\n  (\\b(?<!')[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}]*) # named constructor\n |(\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))    # prefix operator",
+          "begin": "(?x)\n(\\b(?<!')[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}]*)\n|(\\()\\s*(:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]*)\\s*(\\))",
           "beginCaptures": {
             "1": {
               "name": "constant.other.haskell"
@@ -1241,7 +1241,7 @@
             }
           },
           "comment": "In case this regex seems overly general, note that Haskell permits  the definition of new operators which can be nearly any string of  punctuation characters, such as $%^&*.\n",
-          "match": "(?x)\n  ((?:(?<!'')('')?[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'']*\\.)*)\n    (\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))"
+          "match": "(?x)\n((?:(?<!'')('')?[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'']*\\.)*)\n(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))"
         },
         {
           "captures": {
@@ -1311,7 +1311,7 @@
           "name": "constant.numeric.integral.binary.haskell"
         }
       },
-      "match": "(?x)\n  \\b(?<!')\n  (?:\n    ([0-9][_0-9]*)                    # Decimal integer\n  | (0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*) # Hexadecimal integer\n  | (0[oO]_*[0-7][_0-7]*)             # Octal integer\n  | (0[bB]_*[01][_01]*)               # Binary integer\n  )\n  \\b(?!')"
+      "match": "(?x)\n\\b(?<!')\n(?:\n([0-9][_0-9]*)\n| (0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*)\n| (0[oO]_*[0-7][_0-7]*)\n| (0[bB]_*[01][_01]*)\n)\n\\b(?!')"
     },
     "keyword": {
       "captures": {
@@ -1325,7 +1325,7 @@
       "match": "\\b(?<!')(?:(where|let|in|default)|(m?do|if|then|else|case|of|proc|rec))\\b(?!')"
     },
     "layout_herald": {
-      "begin": "(?x)\n  (?<!')\\b(?:(where|let|m?do)|(of))\n  \\s*(\\{)(?!-)",
+      "begin": "(?x)\n(?<!')\\b(?:(where|let|m?do)|(of))\n\\s*(\\{)(?!-)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.$1.haskell"
@@ -1455,7 +1455,7 @@
               ]
             }
           },
-          "match": "(?x) \n  (?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^(,;\\[`{]]) # Disallow closing characters\n  (\\#)\n    (?:\n    # String\n    (\"(?:\\\\\"|[^\"])*\")\n    # Sequence of allowed label identifiers\n    |[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'\\.]+\n    )",
+          "match": "(?x)\n(?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^(,;\\[`{]])\n(\\#)\n(?:\n\n(\"(?:\\\\\"|[^\"])*\")\n\n|[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'\\.]+\n)",
           "name": "entity.name.label.haskell"
         }
       ]
@@ -1475,7 +1475,7 @@
           "end": "(?=#-\\})",
           "patterns": [
             {
-              "match": "(?x)\n  (?:No)?\n  (?:AutoDeriveTypeable|DatatypeContexts|DoRec|IncoherentInstances|MonadFailDesugaring|MonoPatBinds|NullaryTypeClasses|OverlappingInstances|PatternSignatures|RecordPuns|RelaxedPolyRec)",
+              "match": "(?x)\n(?:No)?\n(?:AutoDeriveTypeable|DatatypeContexts|DoRec|IncoherentInstances|MonadFailDesugaring|MonoPatBinds|NullaryTypeClasses|OverlappingInstances|PatternSignatures|RecordPuns|RelaxedPolyRec)",
               "name": "invalid.deprecated"
             },
             {
@@ -1484,7 +1484,7 @@
                   "name": "keyword.other.preprocessor.extension.haskell"
                 }
               },
-              "match": "(?x)\n  (\n  (?:No)?\n  (?:AllowAmbiguousTypes|AlternativeLayoutRule|AlternativeLayoutRuleTransitional|Arrows|BangPatterns|BinaryLiterals|CApiFFI|CPP|CUSKs|ConstrainedClassMethods|ConstraintKinds|DataKinds|DefaultSignatures|DeriveAnyClass|DeriveDataTypeable|DeriveFoldable|DeriveFunctor|DeriveGeneric|DeriveLift|DeriveTraversable|DerivingStrategies|DerivingVia|DisambiguateRecordFields|DoAndIfThenElse|BlockArguments|DuplicateRecordFields|EmptyCase|EmptyDataDecls|EmptyDataDeriving|ExistentialQuantification|ExplicitForAll|ExplicitNamespaces|ExtendedDefaultRules|FlexibleContexts|FlexibleInstances|ForeignFunctionInterface|FunctionalDependencies|GADTSyntax|GADTs|GHCForeignImportPrim|Generali(?:s|z)edNewtypeDeriving|ImplicitParams|ImplicitPrelude|ImportQualifiedPost|ImpredicativeTypes|TypeFamilyDependencies|InstanceSigs|ApplicativeDo|InterruptibleFFI|JavaScriptFFI|KindSignatures|LambdaCase|LiberalTypeSynonyms|MagicHash|MonadComprehensions|MonoLocalBinds|MonomorphismRestriction|MultiParamTypeClasses|MultiWayIf|NumericUnderscores|NPlusKPatterns|NamedFieldPuns|NamedWildCards|NegativeLiterals|HexFloatLiterals|NondecreasingIndentation|NumDecimals|OverloadedLabels|OverloadedLists|OverloadedStrings|PackageImports|ParallelArrays|ParallelListComp|PartialTypeSignatures|PatternGuards|PatternSynonyms|PolyKinds|PolymorphicComponents|QuantifiedConstraints|PostfixOperators|QuasiQuotes|Rank2Types|RankNTypes|RebindableSyntax|RecordWildCards|RecursiveDo|RelaxedLayout|RoleAnnotations|ScopedTypeVariables|StandaloneDeriving|StarIsType|StaticPointers|Strict|StrictData|TemplateHaskell|TemplateHaskellQuotes|StandaloneKindSignatures|TraditionalRecordSyntax|TransformListComp|TupleSections|TypeApplications|TypeInType|TypeFamilies|TypeOperators|TypeSynonymInstances|UnboxedTuples|UnboxedSums|UndecidableInstances|UndecidableSuperClasses|UnicodeSyntax|UnliftedFFITypes|UnliftedNewtypes|ViewPatterns)\n  )"
+              "match": "(?x)\n(\n(?:No)?\n(?:AllowAmbiguousTypes|AlternativeLayoutRule|AlternativeLayoutRuleTransitional|Arrows|BangPatterns|BinaryLiterals|CApiFFI|CPP|CUSKs|ConstrainedClassMethods|ConstraintKinds|DataKinds|DefaultSignatures|DeriveAnyClass|DeriveDataTypeable|DeriveFoldable|DeriveFunctor|DeriveGeneric|DeriveLift|DeriveTraversable|DerivingStrategies|DerivingVia|DisambiguateRecordFields|DoAndIfThenElse|BlockArguments|DuplicateRecordFields|EmptyCase|EmptyDataDecls|EmptyDataDeriving|ExistentialQuantification|ExplicitForAll|ExplicitNamespaces|ExtendedDefaultRules|FlexibleContexts|FlexibleInstances|ForeignFunctionInterface|FunctionalDependencies|GADTSyntax|GADTs|GHCForeignImportPrim|Generali(?:s|z)edNewtypeDeriving|ImplicitParams|ImplicitPrelude|ImportQualifiedPost|ImpredicativeTypes|TypeFamilyDependencies|InstanceSigs|ApplicativeDo|InterruptibleFFI|JavaScriptFFI|KindSignatures|LambdaCase|LiberalTypeSynonyms|MagicHash|MonadComprehensions|MonoLocalBinds|MonomorphismRestriction|MultiParamTypeClasses|MultiWayIf|NumericUnderscores|NPlusKPatterns|NamedFieldPuns|NamedWildCards|NegativeLiterals|HexFloatLiterals|NondecreasingIndentation|NumDecimals|OverloadedLabels|OverloadedLists|OverloadedStrings|PackageImports|ParallelArrays|ParallelListComp|PartialTypeSignatures|PatternGuards|PatternSynonyms|PolyKinds|PolymorphicComponents|QuantifiedConstraints|PostfixOperators|QuasiQuotes|Rank2Types|RankNTypes|RebindableSyntax|RecordWildCards|RecursiveDo|RelaxedLayout|RoleAnnotations|ScopedTypeVariables|StandaloneDeriving|StarIsType|StaticPointers|Strict|StrictData|TemplateHaskell|TemplateHaskellQuotes|StandaloneKindSignatures|TraditionalRecordSyntax|TransformListComp|TupleSections|TypeApplications|TypeInType|TypeFamilies|TypeOperators|TypeSynonymInstances|UnboxedTuples|UnboxedSums|UndecidableInstances|UndecidableSuperClasses|UnicodeSyntax|UnliftedFFITypes|UnliftedNewtypes|ViewPatterns)\n)"
             },
             {
               "include": "#comma"
@@ -1492,7 +1492,7 @@
           ]
         },
         {
-          "begin": "(?xi)\n  \\b(?<!')(SPECIALI(?:S|Z)E)\n  (?:\n  \\s*( \\[ [^\\[\\]]* \\])?\\s*\n  |\\s+\n  )\n  (instance)\\b(?!')",
+          "begin": "(?xi)\n\\b(?<!')(SPECIALI(?:S|Z)E)\n(?:\n\\s*( \\[ [^\\[\\]]* \\])?\\s*\n|\\s+\n)\n(instance)\\b(?!')",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.preprocessor.pragma.haskell"
@@ -1516,7 +1516,7 @@
           ]
         },
         {
-          "begin": "(?xi)\n  \\b(?<!')(SPECIALI(?:S|Z)E)\\b(?!')\n  (?:\\s+(INLINE)\\b(?!'))?\n  (?:\\s*(\\[ [^\\[\\]]* \\])?)\n  \\s*",
+          "begin": "(?xi)\n\\b(?<!')(SPECIALI(?:S|Z)E)\\b(?!')\n(?:\\s+(INLINE)\\b(?!'))?\n(?:\\s*(\\[ [^\\[\\]]* \\])?)\n\\s*",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.preprocessor.pragma.haskell"
@@ -1540,7 +1540,7 @@
           ]
         },
         {
-          "match": "(?xi) \\b(?<!')\n  (LANGUAGE|OPTIONS_GHC|INCLUDE\n  |MINIMAL|UNPACK|OVERLAPS|INCOHERENT\n  |NOUNPACK|SOURCE|OVERLAPPING|OVERLAPPABLE|INLINE\n  |NOINLINE|INLINE?ABLE|CONLIKE|LINE|COLUMN|RULES\n  |COMPLETE)\\b(?!')",
+          "match": "(?xi) \\b(?<!')\n(LANGUAGE|OPTIONS_GHC|INCLUDE\n|MINIMAL|UNPACK|OVERLAPS|INCOHERENT\n|NOUNPACK|SOURCE|OVERLAPPING|OVERLAPPABLE|INLINE\n|NOINLINE|INLINE?ABLE|CONLIKE|LINE|COLUMN|RULES\n|COMPLETE)\\b(?!')",
           "name": "keyword.other.preprocessor.haskell"
         },
         {
@@ -1574,7 +1574,7 @@
             }
           },
           "comment": "An operator cannot be composed entirely of '-' characters;  instead, it should be matched as a comment.\n",
-          "match": "(?x)\n  (\\()\\s*(?!(?:--+|\\.\\.)\\))(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))\\s*(\\))"
+          "match": "(?x)\n(\\()\\s*(?!(?:--+|\\.\\.)\\))(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))\\s*(\\))"
         }
       ]
     },
@@ -1585,7 +1585,7 @@
     "quasi_quote": {
       "patterns": [
         {
-          "begin": "(?x)\n  (\\[)\n  (e|d|p)?\n  (\\|\\|?)",
+          "begin": "(?x)\n(\\[)\n(e|d|p)?\n(\\|\\|?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.quasi-quotation.begin.haskell"
@@ -1611,7 +1611,7 @@
           ]
         },
         {
-          "begin": "(?x)\n  (\\[)\n  (t)\n  (\\|\\|?)",
+          "begin": "(?x)\n(\\[)\n(t)\n(\\|\\|?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.quasi-quotation.begin.haskell"
@@ -1637,7 +1637,7 @@
           ]
         },
         {
-          "begin": "(?x)\n  (\\[)\n  (?:(\\$\\$)|(\\$))?\n  ((?:[^\\s\\p{S}\\p{P}]|[\\.'_])*)\n  (\\|\\|?)",
+          "begin": "(?x)\n(\\[)\n(?:(\\$\\$)|(\\$))?\n((?:[^\\s\\p{S}\\p{P}]|[\\.'_])*)\n(\\|\\|?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.quasi-quotation.begin.haskell"
@@ -1717,7 +1717,7 @@
       ]
     },
     "record_decl_field": {
-      "begin": "(?x)\n  (?:([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n    |(\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))\n  )\n",
+      "begin": "(?x)\n(?:([\\p{Ll}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n|(\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))\n)\n",
       "beginCaptures": {
         "1": {
           "name": "variable.other.member.definition.haskell"
@@ -1759,7 +1759,7 @@
     "record_field": {
       "patterns": [
         {
-          "begin": "(?x)\n  (?:([\\p{Ll}\\p{Lu}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\.']*)\n    |(\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))\n  )\n",
+          "begin": "(?x)\n(?:([\\p{Ll}\\p{Lu}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\.']*)\n|(\\()\\s*([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\\s*(\\))\n)\n",
           "beginCaptures": {
             "1": {
               "name": "variable.other.member.haskell",
@@ -1808,7 +1808,7 @@
           "name": "variable.other.member.wildcard.haskell"
         }
       },
-      "match": "(?x)\n  (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n  (\\.\\.)\n  (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])"
+      "match": "(?x)\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(\\.\\.)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])"
     },
     "reserved_symbol": {
       "patterns": [
@@ -1851,7 +1851,7 @@
               "name": "keyword.operator.arrow.left.tail.double.haskell"
             }
           },
-          "match": "(?x)\n  (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"'']])\n  (?:\n     (\\.\\.)\n    |(:)\n    |(=)\n    |(\\\\)     # λ not reserved as it is a letter\n    |(\\|)\n    |(<-|←)\n    |(->|→)\n    |(-<|↢)\n    |(-<<|⤛)\n    |(>-|⤚)\n    |(>>-|⤜)\n    |(∀)\n  )\n  (?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"'']])"
+          "match": "(?x)\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"'']])\n(?:\n(\\.\\.)\n|(:)\n|(=)\n|(\\\\)\n|(\\|)\n|(<-|←)\n|(->|→)\n|(-<|↢)\n|(-<<|⤛)\n|(>-|⤚)\n|(>>-|⤜)\n|(∀)\n)\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"'']])"
         },
         {
           "captures": {
@@ -1859,7 +1859,7 @@
               "name": "keyword.operator.postfix.hash.haskell"
             }
           },
-          "match": "(?x)\n  (?<=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^\\#,;\\[`{]]) # Require closing characters\n  (\\#+)\n  (?![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^),;\\]`}]])   # Disallow opening character"
+          "match": "(?x)\n(?<=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^\\#,;\\[`{]])\n(\\#+)\n(?![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^),;\\]`}]])"
         },
         {
           "captures": {
@@ -1867,7 +1867,7 @@
               "name": "keyword.operator.infix.tight.at.haskell"
             }
           },
-          "match": "(?x)\n  (?<=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\)\\}\\]]) # Require closing characters\n  (@)\n  (?=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\(\\[\\{]) # Require opening character"
+          "match": "(?x)\n(?<=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\)\\}\\]])\n(@)\n(?=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\(\\[\\{])"
         },
         {
           "captures": {
@@ -1887,7 +1887,7 @@
               "name": "keyword.operator.prefix.double-dollar.haskell"
             }
           },
-          "match": "(?x)\n  (?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^(,;\\[`{]])  # Disallow closing characters\n  (?:(~)|(!)|(-)|(\\$)|(\\$\\$))\n  (?=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\(\\{\\[]) # Require opening character (non operator symbol)"
+          "match": "(?x)\n(?<![\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\p{S}\\p{P}&&[^(,;\\[`{]])\n(?:(~)|(!)|(-)|(\\$)|(\\$\\$))\n(?=[\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\\(\\{\\[])"
         }
       ]
     },
@@ -1903,7 +1903,7 @@
               "name": "keyword.other.role.haskell"
             }
           },
-          "end": "(?x) # Detect end of block by decreasing indentation:\n  (?=\\}|;)       # Explicit indentation\n  |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n      \\1\\s+\\S    # - more indented, or\n    | \\s*        # - starts with whitespace, followed by:\n      (?: $      #   - the end of the line (i.e. empty line), or\n      |\\{-[^@]   #   - the start of a block comment, or\n      |--+       #   - the start of a single-line comment.\n         (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                 # The double dash may not be followed by other operator characters\n                 # (then it would be an operator, not a comment)\n    )",
+          "end": "(?x)\n(?=\\}|;)\n|^(?!\n\\1\\s+\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)",
           "name": "meta.role-annotation.haskell",
           "patterns": [
             {
@@ -1933,7 +1933,7 @@
               "name": "keyword.operator.double-colon.haskell"
             }
           },
-          "end": "(?x)\n  # End type annotation when seeing one of:\n  (?=\n    \\#?\\)                             # closing parenthesis\n    |\\]                               # closing bracket\n    |,                                # comma\n    |(?<!')\\b(in|then|else|of)\\b(?!') # keyword\n    |                                 # symbolic keyword except (->)\n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n      (?:\n         (\\\\|λ)\n        |(<-|←)\n        |(=)\n        |(-<|↢)\n        |(-<<|⤛)\n      )\n      ([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n    |(\\#|@)-\\}                             # End of annotation block (LiquidHaskell or pragma)\n    # Decreasing indentation:\n    | (?=\\}|;)     # Explicit indentation\n    |^(?!          # Implicit indentation: end match on newline *unless* the new line is either:\n        \\1\\s*\\S    # - equally indented, or\n      | \\s*        # - starts with whitespace, followed by:\n        (?: $      #   - the end of the line (i.e. empty line), or\n        |\\{-[^@]   #   - the start of a block comment, or\n        |--+       #   - the start of a single-line comment.\n           (?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$) # non-symbol\n                   # The double dash may not be followed by other operator characters\n                   # (then it would be an operator, not a comment)\n      )\n  )",
+          "end": "(?x)\n\n(?=\n\\#?\\)\n|\\]\n|,\n|(?<!')\\b(in|then|else|of)\\b(?!')\n|\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:\n(\\\\|λ)\n|(<-|←)\n|(=)\n|(-<|↢)\n|(-<<|⤛)\n)\n([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n|(\\#|@)-\\}\n\n| (?=\\}|;)\n|^(?!\n\\1\\s*\\S\n| \\s*\n(?: $\n|\\{-[^@]\n|--+\n(?![\\p{S}\\p{P}&&[^(),;\\[\\]{}`_\"']]).*$)\n\n\n)\n)",
           "name": "meta.type-declaration.haskell",
           "patterns": [
             {
@@ -1948,7 +1948,7 @@
               "name": "keyword.operator.double-colon.haskell"
             }
           },
-          "end": "(?x)\n  # End type annotation when seeing one of:\n  (?=\n    \\#?\\)                             # closing parenthesis\n    |\\]                               # closing bracket\n    |,                                # comma\n    |\\b(?<!')(in|then|else|of)\\b(?!') # keyword\n    |(\\#|@)-\\}                        # End of annotation block (LiquidHaskell or pragma)\n    |                                 # symbolic keyword except (->)\n      (?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n      (?:\n         (\\\\|λ)\n        |(<-|←)\n        |(=)\n        |(-<|↢)\n        |(-<<|⤛)\n      )\n      ([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n    # Indentation \n    |(?=\\}|;)      # Explicit indentation\n    |$             # End of line\n  )",
+          "end": "(?x)\n\n(?=\n\\#?\\)\n|\\]\n|,\n|\\b(?<!')(in|then|else|of)\\b(?!')\n|(\\#|@)-\\}\n|\n(?<![\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']])\n(?:\n(\\\\|λ)\n|(<-|←)\n|(=)\n|(-<|↢)\n|(-<<|⤛)\n)\n([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])\n\n|(?=\\}|;)\n|$\n)",
           "patterns": [
             {
               "include": "#type_signature"
@@ -2106,7 +2106,7 @@
               "name": "storage.type.haskell"
             }
           },
-          "match": "(?x)\n  # Optional promotion tick\n    (')?\n  # Optional qualified name\n    ((?:\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n  # Type constructor proper\n    (\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)"
+          "match": "(?x)\n\n(')?\n\n((?:\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n\n(\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)"
         },
         {
           "captures": {
@@ -2126,7 +2126,7 @@
               "name": "punctuation.paren.haskell"
             }
           },
-          "match": "(?x)\n  # Optional promotion tick\n    (')?\n  # Opening parenthesis\n    (\\()\\s*\n  # Optional qualified name\n    ((?:[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n  # Type operator proper\n    ([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\n  # Closing parenthesis\n    \\s*(\\))"
+          "match": "(?x)\n\n(')?\n\n(\\()\\s*\n\n((?:[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n\n([\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+)\n\n\\s*(\\))"
         }
       ]
     },
@@ -2144,7 +2144,7 @@
               "name": "storage.type.operator.infix.haskell"
             }
           },
-          "match": "(?x)\n  # Optional promotion tick\n    (?:(?<!')('))?\n  # Optional qualified name\n    ((?:\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n  # Type operator proper\n    (?![#@]?-})(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))\n    #((?:[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']&&[^#@]]|[@#](?!-}))+)"
+          "match": "(?x)\n\n(?:(?<!')('))?\n\n((?:\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n\n(?![#@]?-})(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))\n"
         },
         {
           "captures": {
@@ -2164,7 +2164,7 @@
               "name": "punctuation.backtick.haskell"
             }
           },
-          "match": "(?x)\n  # Optional promotion tick\n    (')?\n  # Opening backtick\n    (\\`)\n  # Optional qualified name\n    ((?:[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n  # Type constructor proper\n    ([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n  # Closing backtick\n    (`)"
+          "match": "(?x)\n\n(')?\n\n(\\`)\n\n((?:[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*\\.)*)\n\n([\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}']*)\n\n(`)"
         }
       ]
     },
@@ -2395,7 +2395,7 @@
     "where": {
       "patterns": [
         {
-          "begin": "(?x)\n  (?<!')\\b(where)\n  \\s*(\\{)(?!-)",
+          "begin": "(?x)\n(?<!')\\b(where)\n\\s*(\\{)(?!-)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.where.haskell"

@@ -179,7 +179,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?x:                # turn on extended mode\n                     \\\\                # a literal backslash\n                     (?:               # ...followed by...\n                       [\"\\\\/bfnrt]     # one of these characters\n                       |               # ...or...\n                       u               # a u\n                       [0-9a-fA-F]{4}  # and four hex digits\n                     )\n                   )",
+          "match": "(?x:\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4}\n)\n)",
           "name": "constant.character.escape.json5"
         },
         {
@@ -204,7 +204,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?x:                # turn on extended mode\n                     \\\\                # a literal backslash\n                     (?:               # ...followed by...\n                       [\"\\\\/bfnrt]     # one of these characters\n                       |               # ...or...\n                       u               # a u\n                       [0-9a-fA-F]{4}  # and four hex digits\n                     )\n                   )",
+          "match": "(?x:\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4}\n)\n)",
           "name": "constant.character.escape.json5"
         },
         {

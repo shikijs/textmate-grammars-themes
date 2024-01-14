@@ -119,11 +119,11 @@
           "name": "variable.value.narrat"
         },
         {
-          "match": "(?x)                  # Ignore comments\n  ^\\w+                # Find label name\n  (?=(\\s|\\w)*:)       # Positive lookahead for ':'\n",
+          "match": "(?x)\n^\\w+\n(?=(\\s|\\w)*:)\n",
           "name": "entity.name.function.narrat"
         },
         {
-          "match": "(?x)                  # Ignore comments\n  ^\\w+                # Find label name\n  (?!(\\s|\\w)*:)        # Negative lookahead for ':'\n",
+          "match": "(?x)\n^\\w+\n(?!(\\s|\\w)*:)\n",
           "name": "invalid.label.narrat"
         },
         {

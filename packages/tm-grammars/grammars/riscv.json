@@ -161,7 +161,7 @@
       "name": "comment.line.double-slash"
     },
     {
-      "begin": "(?x)\n          ^\\s*\\#\\s*(define)\\s+             # define\n          ((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name\n          (?:                              # and optionally:\n          (\\()                         # an open parenthesis\n          (\n          \\s* \\g<id> \\s*       # first argument\n          ((,) \\s* \\g<id> \\s*)*  # additional arguments\n          (?:\\.\\.\\.)?          # varargs ellipsis?\n          )\n          (\\))                         # a close parenthesis\n          )?\n        ",
+      "begin": "(?x)\n^\\s*\\#\\s*(define)\\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?\n",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.import.define.c"

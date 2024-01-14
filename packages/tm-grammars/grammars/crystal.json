@@ -260,7 +260,7 @@
       "name": "variable.other.constant.crystal"
     },
     {
-      "begin": "(?x)\n(?=def\\b)                          # optimization to help Oniguruma fail fast\n(?<=^|\\s)(def)\\s+\n(\n  (?>[a-zA-Z_]\\w*(?>\\.|::))?      # method prefix\n  (?>                               # method name\n    [a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n    |\n    \\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n  )\n)\n\\s*(\\()",
+      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n(\n(?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>\n[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|\n\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n)\n)\n\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.crystal"
@@ -319,7 +319,7 @@
         }
       },
       "comment": " the optional name is just to catch the def also without a method-name",
-      "match": "(?x)\n(?=def\\b)                            # optimization to help Oniguruma fail fast\n(?<=^|\\s)(def)\\b\n(\n  \\s+\n  (\n    (?>[a-zA-Z_]\\w*(?>\\.|::))?      # method prefix\n    (?>                               # method name\n      [a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n      |\n      \\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n    )\n  )\n)?",
+      "match": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\b\n(\n\\s+\n(\n(?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>\n[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|\n\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n)\n)\n)?",
       "name": "meta.function.method.without-arguments.crystal"
     },
     {

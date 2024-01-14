@@ -885,7 +885,7 @@
     },
     "methods": {
       "applyEndPatternLast": 1,
-      "begin": "(?x:(?<=;|^|{)(?=\\s*\n                (?:\n                    (?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final) # visibility/modifier\n                        |\n                    (?:def)\n                        |\n                    (?:\n                        (?:\n                            (?:void|boolean|byte|char|short|int|float|long|double)\n                                |\n                            (?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*) # object type\n                        )\n                        [\\[\\]]*\n                        (?:<.*>)?\n                    ) \n                    \n                )\n                \\s+\n                ([^=]+\\s+)?\\w+\\s*\\(\n\t\t\t))",
+      "begin": "(?x:(?<=;|^|{)(?=\\s*\n(?:\n(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)\n|\n(?:def)\n|\n(?:\n(?:\n(?:void|boolean|byte|char|short|int|float|long|double)\n|\n(?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*)\n)\n[\\[\\]]*\n(?:<.*>)?\n)\n\n)\n\\s+\n([^=]+\\s+)?\\w+\\s*\\(\n))",
       "end": "}|(?=[^{])",
       "name": "meta.definition.method.groovy",
       "patterns": [
@@ -1270,7 +1270,7 @@
           "name": "support.function.print.groovy"
         },
         {
-          "match": "(?x)\\b(?:shouldFail|fail(?:NotEquals)?|ass(?:ume|ert(?:S(?:cript|ame)|N(?:ot(?:Same|\n\t\t\t\t\tNull)|ull)|Contains|T(?:hat|oString|rue)|Inspect|Equals|False|Length|\n\t\t\t\t\tArrayEquals)))\\b",
+          "match": "(?x)\\b(?:shouldFail|fail(?:NotEquals)?|ass(?:ume|ert(?:S(?:cript|ame)|N(?:ot(?:Same|\nNull)|ull)|Contains|T(?:hat|oString|rue)|Inspect|Equals|False|Length|\nArrayEquals)))\\b",
           "name": "support.function.testing.groovy"
         }
       ]
@@ -1321,7 +1321,7 @@
       "applyEndPatternLast": 1,
       "patterns": [
         {
-          "begin": "(?x:(?=\n                        (?:\n                            (?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final) # visibility/modifier\n                                |\n                            (?:def)\n                                |\n                            (?:void|boolean|byte|char|short|int|float|long|double)\n                                |\n                            (?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*) # object type\n                        )\n                        \\s+\n                        [\\w\\d_<>\\[\\],\\s]+\n                        (?:=|$)\n                        \n        \t\t\t))",
+          "begin": "(?x:(?=\n(?:\n(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)\n|\n(?:def)\n|\n(?:void|boolean|byte|char|short|int|float|long|double)\n|\n(?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*)\n)\n\\s+\n[\\w\\d_<>\\[\\],\\s]+\n(?:=|$)\n\n))",
           "end": ";|$",
           "name": "meta.definition.variable.groovy",
           "patterns": [

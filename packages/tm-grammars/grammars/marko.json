@@ -803,7 +803,7 @@
           ]
         },
         {
-          "begin": "(?x)\\s*(?:\n\t\t\t\t\t\t\t\t(?:\\b(?:new|typeof|instanceof|in)\\b)| # Keyword operators\n\t\t\t\t\t\t\t\t\\&\\&|\\|\\|| # Logical operators\n\t\t\t\t\t\t\t\t[\\^|&]| # Bitwise operators\n\t\t\t\t\t\t\t\t[!=]=|[!=]==|<|<[=<]|=>| # Comparison operators (Note you cannot use * or ? here)\n\t\t\t\t\t\t\t\t[?:]| # Ternary operators\n\t\t\t\t\t\t\t\t[-+*%](?!-) # Arithmetic operators\n\t\t\t\t\t\t\t)",
+          "begin": "(?x)\\s*(?:\n(?:\\b(?:new|typeof|instanceof|in)\\b)|\n\\&\\&|\\|\\||\n[\\^|&]|\n[!=]=|[!=]==|<|<[=<]|=>|\n[?:]|\n[-+*%](?!-)\n)",
           "captures": {
             "0": {
               "patterns": [

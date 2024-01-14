@@ -73,7 +73,7 @@
       "name": "constant.language.json.comments"
     },
     "number": {
-      "match": "(?x)        # turn on extended mode\n  -?        # an optional minus\n  (?:\n    0       # a zero\n    |       # ...or...\n    [1-9]   # a 1-9 character\n    \\d*     # followed by zero or more digits\n  )\n  (?:\n    (?:\n      \\.    # a period\n      \\d+   # followed by one or more digits\n    )?\n    (?:\n      [eE]  # an e character\n      [+-]? # followed by an option +/-\n      \\d+   # followed by one or more digits\n    )?      # make exponent optional\n  )?        # make decimal portion optional",
+      "match": "(?x)\n-?\n(?:\n0\n|\n[1-9]\n\\d*\n)\n(?:\n(?:\n\\.\n\\d+\n)?\n(?:\n[eE]\n[+-]?\n\\d+\n)?\n)?",
       "name": "constant.numeric.json.comments"
     },
     "object": {
@@ -172,7 +172,7 @@
     "stringcontent": {
       "patterns": [
         {
-          "match": "(?x)                # turn on extended mode\n  \\\\                # a literal backslash\n  (?:               # ...followed by...\n    [\"\\\\/bfnrt]     # one of these characters\n    |               # ...or...\n    u               # a u\n    [0-9a-fA-F]{4}) # and four hex digits",
+          "match": "(?x)\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4})",
           "name": "constant.character.escape.json.comments"
         },
         {

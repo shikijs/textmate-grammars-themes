@@ -319,7 +319,7 @@
           "include": "#string_escaped_char"
         },
         {
-          "match": "(?x)%\n\t\t\t\t\t\t(\\d+\\$)?                             # field (argument #)\n\t\t\t\t\t\t[#0\\- +']*                          # flags\n\t\t\t\t\t\t((-?\\d+)|\\*(-?\\d+\\$)?)?              # minimum field width\n\t\t\t\t\t\t(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?         # precision\n\t\t\t\t\t\t[@]                                  # conversion type\n\t\t\t\t\t",
+          "match": "(?x)%\n(\\d+\\$)?\n[#0\\- +']*\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n[@]\n",
           "name": "constant.other.placeholder.objcpp"
         },
         {
@@ -575,7 +575,7 @@
               "name": "punctuation.definition.parameters.objcpp"
             }
           },
-          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n            \t\t\t(\\b \n            \t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++                  # actual name\n            \t\t\t)\n            \t\t\t \\s*(\\()",
+          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n(\\b\n(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\n)\n\\s*(\\()",
           "name": "meta.function-call.objcpp"
         }
       ]
@@ -645,7 +645,7 @@
           "include": "#special_variables"
         },
         {
-          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\t# define\n((?<id>[a-zA-Z_$][\\w$]*))\t  # macro name\n(?:\n  (\\()\n\t(\n\t  \\s* \\g<id> \\s*\t\t # first argument\n\t  ((,) \\s* \\g<id> \\s*)*  # additional arguments\n\t  (?:\\.\\.\\.)?\t\t\t# varargs ellipsis?\n\t)\n  (\\))\n)?",
+          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_$][\\w$]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.directive.define.objcpp"
@@ -3318,7 +3318,7 @@
           "name": "storage.modifier.objcpp"
         },
         {
-          "begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3341,7 +3341,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3837,7 +3837,7 @@
           "name": "storage.modifier.objcpp"
         },
         {
-          "begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.destructor.objcpp"
@@ -3860,7 +3860,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3918,7 +3918,7 @@
           "include": "#strings-c"
         },
         {
-          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\t# define\n((?<id>[a-zA-Z_$][\\w$]*))\t  # macro name\n(?:\n  (\\()\n\t(\n\t  \\s* \\g<id> \\s*\t\t # first argument\n\t  ((,) \\s* \\g<id> \\s*)*  # additional arguments\n\t  (?:\\.\\.\\.)?\t\t\t# varargs ellipsis?\n\t)\n  (\\))\n)?",
+          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_$][\\w$]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.directive.define.objcpp"
@@ -7224,7 +7224,7 @@
     "string_placeholder": {
       "patterns": [
         {
-          "match": "(?x) %\n(\\d+\\$)?\t\t\t\t\t\t   # field (argument #)\n[#0\\- +']*\t\t\t\t\t\t  # flags\n[,;:_]?\t\t\t\t\t\t\t  # separator character (AltiVec)\n((-?\\d+)|\\*(-?\\d+\\$)?)?\t\t  # minimum field width\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\t# precision\n(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier\n[diouxXDOUeEfFgGaACcSspn%]\t\t   # conversion type",
+          "match": "(?x) %\n(\\d+\\$)?\n[#0\\- +']*\n[,;:_]?\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?\n[diouxXDOUeEfFgGaACcSspn%]",
           "name": "constant.other.placeholder.objcpp"
         },
         {

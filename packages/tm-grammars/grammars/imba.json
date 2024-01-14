@@ -337,7 +337,7 @@
           ]
         },
         {
-          "begin": "(?xi) (?<![\\w-])\n(\n  (?:-webkit-|-moz-|-o-)?    # Accept prefixed/historical variants\n  (?:repeating-)?            # \"Repeating\"-type gradient\n  (?:linear|radial|conic)    # Shape\n  -gradient\n)\n(\\()",
+          "begin": "(?xi) (?<![\\w-])\n(\n(?:-webkit-|-moz-|-o-)?\n(?:repeating-)?\n(?:linear|radial|conic)\n-gradient\n)\n(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.gradient.css"
@@ -537,7 +537,7 @@
               "name": "keyword.other.unit.${2:/downcase}.css"
             }
           },
-          "match": "(?xi) (?<![\\w-])\n[-+]?                               # Sign indicator\n\n(?:                                 # Numerals\n    [0-9]+ (?:\\.[0-9]+)?           # Integer/float with leading digits\n  | \\.[0-9]+                       # Float without leading digits\n)\n\n(?:                                 # Scientific notation\n  (?<=[0-9])                        # Exponent must follow a digit\n  E                                 # Exponent indicator\n  [-+]?                             # Possible sign indicator\n  [0-9]+                            # Exponent value\n)?\n\n(?:                                 # Possible unit for data-type:\n  (%)                               # - Percentage\n  | ( deg|grad|rad|turn             # - Angle\n    | Hz|kHz                        # - Frequency\n    | ch|cm|em|ex|fr|in|mm|mozmm|   # - Length\n      pc|pt|px|q|rem|vh|vmax|vmin|\n      vw\n    | dpi|dpcm|dppx                 # - Resolution\n    | s|ms                          # - Time\n    )\n  \\b                               # Boundary checking intentionally lax to\n)?                                  # facilitate embedding in CSS-like grammars",
+          "match": "(?xi) (?<![\\w-])\n[-+]?\n\n(?:\n[0-9]+ (?:\\.[0-9]+)?\n| \\.[0-9]+\n)\n\n(?:\n(?<=[0-9])\nE\n[-+]?\n[0-9]+\n)?\n\n(?:\n(%)\n| ( deg|grad|rad|turn\n| Hz|kHz\n| ch|cm|em|ex|fr|in|mm|mozmm|\npc|pt|px|q|rem|vh|vmax|vmin|\nvw\n| dpi|dpcm|dppx\n| s|ms\n)\n\\b\n)?",
           "name": "constant.numeric.css"
         }
       ]
@@ -580,7 +580,7 @@
           "name": "invalid.illegal.colon.css"
         }
       },
-      "match": "(?xi)\n(:)(:*)\n(?: active|any-link|checked|default|defined|disabled|empty|enabled|first\n  | (?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within\n  | fullscreen|host|hover|in-range|indeterminate|invalid|left|link\n  | optional|out-of-range|placeholder-shown|read-only|read-write\n  | required|right|root|scope|target|unresolved\n  | valid|visited\n)(?![\\w-]|\\s*[;}])",
+      "match": "(?xi)\n(:)(:*)\n(?: active|any-link|checked|default|defined|disabled|empty|enabled|first\n| (?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within\n| fullscreen|host|hover|in-range|indeterminate|invalid|left|link\n| optional|out-of-range|placeholder-shown|read-only|read-write\n| required|right|root|scope|target|unresolved\n| valid|visited\n)(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-class.css"
     },
     "css-pseudo-elements": {
@@ -592,7 +592,7 @@
           "name": "punctuation.definition.entity.css"
         }
       },
-      "match": "(?xi)\n(?:\n  (::?)                       # Elements using both : and :: notation\n  (?: after\n    | before\n    | first-letter\n    | first-line\n    | (?:-(?:ah|apple|atsc|epub|hp|khtml|moz\n            |ms|o|rim|ro|tc|wap|webkit|xv)\n        | (?:mso|prince))\n      -[a-z-]+\n  )\n  |\n  (::)                        # Double-colon only\n  (?: backdrop\n    | content\n    | grammar-error\n    | marker\n    | placeholder\n    | selection\n    | shadow\n    | spelling-error\n  )\n)\n(?![\\w-]|\\s*[;}])",
+      "match": "(?xi)\n(?:\n(::?)\n(?: after\n| before\n| first-letter\n| first-line\n| (?:-(?:ah|apple|atsc|epub|hp|khtml|moz\n|ms|o|rim|ro|tc|wap|webkit|xv)\n| (?:mso|prince))\n-[a-z-]+\n)\n|\n(::)\n(?: backdrop\n| content\n| grammar-error\n| marker\n| placeholder\n| selection\n| shadow\n| spelling-error\n)\n)\n(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-element.css"
     },
     "css-selector": {
@@ -680,7 +680,7 @@
                   "name": "entity.other.namespace-prefix.css"
                 }
               },
-              "match": "(?x)\n# Qualified namespace prefix\n( -?(?!\\d)(?:[\\w-]|[^\\\\x00-\\\\x7F]|\\\\(?:[0-9a-fA-F]{1,6}|.))+\n| \\*\n)\n# Lookahead to ensure there's a valid identifier ahead\n(?=\n  \\| (?!\\s|=|$|\\])\n  (?: -?(?!\\d)\n   |   [\\\\\\w-]\n   |   [^\\\\x00-\\\\x7F]\n   )\n)"
+              "match": "(?x)\n# Qualified namespace prefix\n( -?(?!\\d)(?:[\\w-]|[^\\\\x00-\\\\x7F]|\\\\(?:[0-9a-fA-F]{1,6}|.))+\n| \\*\n)\n# Lookahead to ensure there's a valid identifier ahead\n(?=\n\\| (?!\\s|=|$|\\])\n(?: -?(?!\\d)\n|   [\\\\\\w-]\n|   [^\\\\x00-\\\\x7F]\n)\n)"
             },
             {
               "captures": {
@@ -828,7 +828,7 @@
               "name": "punctuation.definition.bracket.angle.end.jsdoc"
             }
           },
-          "match": "(?x)\n((@)author)\n\\s+\n(\n  [^@\\s<>*/]\n  (?:[^@<>*/]|\\*[^/])*\n)\n(?:\n  \\s*\n  (<)\n  ([^>\\s]+)\n  (>)\n)?"
+          "match": "(?x)\n((@)author)\n\\s+\n(\n[^@\\s<>*/]\n(?:[^@<>*/]|\\*[^/])*\n)\n(?:\n\\s*\n(<)\n([^>\\s]+)\n(>)\n)?"
         },
         {
           "captures": {
@@ -848,7 +848,7 @@
               "name": "entity.name.type.instance.jsdoc"
             }
           },
-          "match": "(?x)\n((@)borrows) \\s+\n((?:[^@\\s*/]|\\*[^/])+)    # <that namepath>\n\\s+ (as) \\s+              # as\n((?:[^@\\s*/]|\\*[^/])+)    # <this namepath>"
+          "match": "(?x)\n((@)borrows) \\s+\n((?:[^@\\s*/]|\\*[^/])+)\n\\s+ (as) \\s+\n((?:[^@\\s*/]|\\*[^/])+)"
         },
         {
           "begin": "((@)example)\\s+",
@@ -932,7 +932,7 @@
               "name": "entity.name.type.instance.jsdoc"
             }
           },
-          "match": "(?x)\n((@)see)\n\\s+\n(?:\n  # URL\n  (\n    (?=https?://)\n    (?:[^\\s*]|\\*[^/])+\n  )\n  |\n  # JSDoc namepath\n  (\n    (?!\n      # Avoid matching bare URIs (also acceptable as links)\n      https?://\n      |\n      # Avoid matching {@inline tags}; we match those below\n      (?:\\[[^\\[\\]]*\\])? # Possible description [preceding]{@tag}\n      {@(?:link|linkcode|linkplain|tutorial)\\b\n    )\n    # Matched namepath\n    (?:[^@\\s*/]|\\*[^/])+\n  )\n)"
+          "match": "(?x)\n((@)see)\n\\s+\n(?:\n\n(\n(?=https?://)\n(?:[^\\s*]|\\*[^/])+\n)\n|\n\n(\n(?!\n\nhttps?://\n|\n\n(?:\\[[^\\[\\]]*\\])?\n{@(?:link|linkcode|linkplain|tutorial)\\b\n)\n\n(?:[^@\\s*/]|\\*[^/])+\n)\n)"
         },
         {
           "captures": {
@@ -946,7 +946,7 @@
               "name": "variable.other.jsdoc"
             }
           },
-          "match": "(?x)\n((@)template)\n\\s+\n# One or more valid identifiers\n(\n  [A-Za-z_$]         # First character: non-numeric word character\n  [\\w$.\\[\\]]*        # Rest of identifier\n  (?:                # Possible list of additional identifiers\n    \\s* , \\s*\n    [A-Za-z_$]\n    [\\w$.\\[\\]]*\n  )*\n)"
+          "match": "(?x)\n((@)template)\n\\s+\n# One or more valid identifiers\n(\n[A-Za-z_$]\n[\\w$.\\[\\]]*\n(?:\n\\s* , \\s*\n[A-Za-z_$]\n[\\w$.\\[\\]]*\n)*\n)"
         },
         {
           "captures": {
@@ -960,7 +960,7 @@
               "name": "variable.other.jsdoc"
             }
           },
-          "match": "(?x)\n(\n  (@)\n  (?:arg|argument|const|constant|member|namespace|param|var)\n)\n\\s+\n(\n  [A-Za-z_$]\n  [\\w$.\\[\\]]*\n)"
+          "match": "(?x)\n(\n(@)\n(?:arg|argument|const|constant|member|namespace|param|var)\n)\n\\s+\n(\n[A-Za-z_$]\n[\\w$.\\[\\]]*\n)"
         },
         {
           "begin": "((@)typedef)\\s+(?={)",
@@ -1020,13 +1020,13 @@
                   "name": "invalid.illegal.syntax.jsdoc"
                 }
               },
-              "match": "(?x)\n(\\[)\\s*\n[\\w$]+\n(?:\n  (?:\\[\\])?                                        # Foo[ ].bar properties within an array\n  \\.                                                # Foo.Bar namespaced parameter\n  [\\w$]+\n)*\n(?:\n  \\s*\n  (=)                                                # [foo=bar] Default parameter value\n  \\s*\n  (\n    # The inner regexes are to stop the match early at */ and to not stop at escaped quotes\n    (?>\n      \"(?:(?:\\*(?!/))|(?:\\\\(?!\"))|[^*\\\\])*?\" |                      # [foo=\"bar\"] Double-quoted\n      '(?:(?:\\*(?!/))|(?:\\\\(?!'))|[^*\\\\])*?' |                      # [foo='bar'] Single-quoted\n      \\[ (?:(?:\\*(?!/))|[^*])*? \\] |                                # [foo=[1,2]] Array literal\n      (?:(?:\\*(?!/))|\\s(?!\\s*\\])|\\[.*?(?:\\]|(?=\\*/))|[^*\\s\\[\\]])*   # Everything else\n    )*\n  )\n)?\n\\s*(?:(\\])((?:[^*\\s]|\\*[^\\s/])+)?|(?=\\*/))",
+              "match": "(?x)\n(\\[)\\s*\n[\\w$]+\n(?:\n(?:\\[\\])?\n\\.\n[\\w$]+\n)*\n(?:\n\\s*\n(=)\n\\s*\n(\n\n(?>\n\"(?:(?:\\*(?!/))|(?:\\\\(?!\"))|[^*\\\\])*?\" |\n'(?:(?:\\*(?!/))|(?:\\\\(?!'))|[^*\\\\])*?' |\n\\[ (?:(?:\\*(?!/))|[^*])*? \\] |\n(?:(?:\\*(?!/))|\\s(?!\\s*\\])|\\[.*?(?:\\]|(?=\\*/))|[^*\\s\\[\\]])*\n)*\n)\n)?\n\\s*(?:(\\])((?:[^*\\s]|\\*[^\\s/])+)?|(?=\\*/))",
               "name": "variable.other.jsdoc"
             }
           ]
         },
         {
-          "begin": "(?x)\n(\n  (@)\n  (?:define|enum|exception|export|extends|lends|implements|modifies\n  |namespace|private|protected|returns?|suppress|this|throws|type\n  |yields?)\n)\n\\s+(?={)",
+          "begin": "(?x)\n(\n(@)\n(?:define|enum|exception|export|extends|lends|implements|modifies\n|namespace|private|protected|returns?|suppress|this|throws|type\n|yields?)\n)\n\\s+(?={)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.jsdoc"
@@ -1054,7 +1054,7 @@
               "name": "entity.name.type.instance.jsdoc"
             }
           },
-          "match": "(?x)\n(\n  (@)\n  (?:alias|augments|callback|constructs|emits|event|fires|exports?\n  |extends|external|function|func|host|lends|listens|interface|memberof!?\n  |method|module|mixes|mixin|name|requires|see|this|typedef|uses)\n)\n\\s+\n(\n  (?:\n    [^{}@\\s*] | \\*[^/]\n  )+\n)"
+          "match": "(?x)\n(\n(@)\n(?:alias|augments|callback|constructs|emits|event|fires|exports?\n|extends|external|function|func|host|lends|listens|interface|memberof!?\n|method|module|mixes|mixin|name|requires|see|this|typedef|uses)\n)\n\\s+\n(\n(?:\n[^{}@\\s*] | \\*[^/]\n)+\n)"
         },
         {
           "begin": "((@)(?:default(?:value)?|license|version))\\s+(([''\"]))",
@@ -1781,7 +1781,7 @@
               "name": "storage.type.numeric.bigint.imba"
             }
           },
-          "match": "(?x)\n(?<!\\$)(?:\n  (?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)| # 1.1E+3\n  (?:\\b[0-9][0-9_]*(\\.)[eE][+-]?[0-9][0-9_]*(n)?\\b)|             # 1.E+3\n  (?:\\B(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|             # .1E+3\n  (?:\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|                 # 1E+3\n  (?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*(n)?\\b)|                      # 1.1\n  (?:\\b[0-9][0-9_]*(\\.)(n)?\\B)|                                  # 1.\n  (?:\\B(\\.)[0-9][0-9_]*(n)?\\b)|                                  # .1\n  (?:\\b[0-9][0-9_]*(n)?\\b)                                 # 1\n)(?!\\$)"
+          "match": "(?x)\n(?<!\\$)(?:\n(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|\n(?:\\b[0-9][0-9_]*(\\.)[eE][+-]?[0-9][0-9_]*(n)?\\b)|\n(?:\\B(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|\n(?:\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|\n(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*(n)?\\b)|\n(?:\\b[0-9][0-9_]*(\\.)(n)?\\B)|\n(?:\\B(\\.)[0-9][0-9_]*(n)?\\b)|\n(?:\\b[0-9][0-9_]*(n)?\\b)\n)(?!\\$)"
         }
       ]
     },

@@ -83,7 +83,7 @@
       ]
     },
     "array-creation-expression": {
-      "begin": "(?x)\n\\b(new)\\b\\s*\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)?\\s*\n(?=\\[)",
+      "begin": "(?x)\n\\b(new)\\b\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)?\\s*\n(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.new.apex"
@@ -195,7 +195,7 @@
           "name": "punctuation.parenthesis.close.apex"
         }
       },
-      "match": "(?x)\n(\\()\\s*\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s*\n(\\))(?=\\s*@?[_[:alnum:]\\(])"
+      "match": "(?x)\n(\\()\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s*\n(\\))(?=\\s*@?[_[:alnum:]\\(])"
     },
     "catch-clause": {
       "begin": "(?<!\\.)\\b(catch)\\b",
@@ -236,7 +236,7 @@
                   "name": "entity.name.variable.local.apex"
                 }
               },
-              "match": "(?x)\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s*\n(?:(\\g<identifier>)\\b)?"
+              "match": "(?x)\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s*\n(?:(\\g<identifier>)\\b)?"
             }
           ]
         },
@@ -528,7 +528,7 @@
       ]
     },
     "element-access-expression": {
-      "begin": "(?x)\n(?:(\\??\\.)\\s*)?                       # safe navigator or accessor\n(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*)? # property name\n(?:(\\?)\\s*)?                          # null-conditional operator?\n(?=\\[)                                # open bracket of argument list",
+      "begin": "(?x)\n(?:(\\??\\.)\\s*)?\n(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*)?\n(?:(\\?)\\s*)?\n(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -784,7 +784,7 @@
       "end": "(?={|implements)"
     },
     "field-declaration": {
-      "begin": "(?x)\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s+\n(\\g<identifier>)\\s* # first field name\n(?!=>|==)(?=,|;|=|$)",
+      "begin": "(?x)\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?!=>|==)(?=,|;|=|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1004,7 +1004,7 @@
       "end": "(?={|extends)"
     },
     "indexer-declaration": {
-      "begin": "(?x)\n(?<return_type>\n  (?<type_name>\n    (?:\n      (?:ref\\s+)?   # ref return\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n    )\n  )\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<indexer_name>this)\\s*\n(?=\\[)",
+      "begin": "(?x)\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<indexer_name>this)\\s*\n(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1145,7 +1145,7 @@
       ]
     },
     "invocation-expression": {
-      "begin": "(?x)\n(?:(\\??\\.)\\s*)?                                  # safe navigator or accessor\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*                 # method name\n(?<type_args>\\s*<([^<>]|\\g<type_args>)+>\\s*)?\\s* # type arguments\n(?=\\()                                           # open paren of argument list",
+      "begin": "(?x)\n(?:(\\??\\.)\\s*)?\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*\n(?<type_args>\\s*<([^<>]|\\g<type_args>)+>\\s*)?\\s*\n(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1247,7 +1247,7 @@
       ]
     },
     "local-constant-declaration": {
-      "begin": "(?x)\n(?<const_keyword>\\b(?:const)\\b)\\s*\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s+\n(\\g<identifier>)\\s*\n(?=,|;|=)",
+      "begin": "(?x)\n(?<const_keyword>\\b(?:const)\\b)\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?=,|;|=)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1291,7 +1291,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?x)\n(?:\n  (?:(\\bref)\\s+)?(\\bvar\\b)| # ref local\n  (?<type_name>\n    (?:\n      (?:ref\\s+)?   # ref local\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n    )\n  )\n)\\s+\n(\\g<identifier>)\\s*\n(?=,|;|=|\\))",
+      "begin": "(?x)\n(?:\n(?:(\\bref)\\s+)?(\\bvar\\b)|\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?=,|;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1348,7 +1348,7 @@
               "name": "variable.other.object.property.apex"
             }
           },
-          "match": "(?x)\n(\\??\\.)\\s*                       # safe navigator or accessor\n(@?[_[:alpha:]][_[:alnum:]]*)\\s* # property name\n(?![_[:alnum:]]|\\(|(\\?)?\\[|<)    # next character is not alpha-numeric, nor a (, [, or <. Also, test for ?["
+          "match": "(?x)\n(\\??\\.)\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*\n(?![_[:alnum:]]|\\(|(\\?)?\\[|<)"
         },
         {
           "captures": {
@@ -1373,7 +1373,7 @@
               ]
             }
           },
-          "match": "(?x)\n(\\??\\.)?\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)\n(?=\n  (\\s*\\?)?\n  \\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
+          "match": "(?x)\n(\\??\\.)?\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)\n(?=\n(\\s*\\?)?\n\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
         },
         {
           "captures": {
@@ -1381,7 +1381,7 @@
               "name": "variable.other.object.apex"
             }
           },
-          "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?=\n  (\\s*\\?)?\n  \\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
+          "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?=\n(\\s*\\?)?\n\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
         }
       ]
     },
@@ -1423,7 +1423,7 @@
       "match": "([_[:alpha:]]*)\\b\\s+([_[:alpha:]]*)\\b\\s*(\\;)"
     },
     "method-declaration": {
-      "begin": "(?x)\n(?<return_type>\n  (?<type_name>\n    (?:\n      (?:ref\\s+)?   # ref return\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n    )\n  )\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(\\g<identifier>)\\s*\n(<([^<>]+)>)?\\s*\n(?=\\()",
+      "begin": "(?x)\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(\\g<identifier>)\\s*\n(<([^<>]+)>)?\\s*\n(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1576,10 +1576,10 @@
           ]
         }
       },
-      "match": "(?x)\n(delete|insert|undelete|update|upsert)?\n\\s*(new)\\s+\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s*\n(?=\\{|$)"
+      "match": "(?x)\n(delete|insert|undelete|update|upsert)?\n\\s*(new)\\s+\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s*\n(?=\\{|$)"
     },
     "object-creation-expression-with-parameters": {
-      "begin": "(?x)\n(delete|insert|undelete|update|upsert)?\n\\s*(new)\\s+\n(?<type_name>\n  (?:\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s*\n(?=\\()",
+      "begin": "(?x)\n(delete|insert|undelete|update|upsert)?\n\\s*(new)\\s+\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s*\n(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.apex"
@@ -1670,7 +1670,7 @@
           "name": "entity.name.variable.parameter.apex"
         }
       },
-      "match": "(?x)\n(?:(?:\\b(this)\\b)\\s+)?\n(?<type_name>\n  (?:\n    (?:ref\\s+)?   # ref return\n    (?:\n      (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n      (?<name_and_type_args> # identifier + type arguments (if any)\n        \\g<identifier>\\s*\n        (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n      )\n      (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n    )\n    (?:\\s*\\?\\s*)? # nullable suffix?\n    (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n  )\n)\\s+\n(\\g<identifier>)"
+      "match": "(?x)\n(?:(?:\\b(this)\\b)\\s+)?\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n(\\g<identifier>)"
     },
     "parenthesized-expression": {
       "begin": "\\(",
@@ -1760,7 +1760,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?x)\n(?!.*\\b(?:class|interface|enum)\\b)\\s*\n(?<return_type>\n  (?<type_name>\n    (?:\n      (?:ref\\s+)?   # ref return\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)*\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)* # array suffix?\n    )\n  )\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<property_name>\\g<identifier>)\\s*\n(?=\\{|=>|$)",
+      "begin": "(?x)\n(?!.*\\b(?:class|interface|enum)\\b)\\s*\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)*\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<property_name>\\g<identifier>)\\s*\n(?=\\{|=>|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2228,7 +2228,7 @@
       "match": "\\b(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)\\b"
     },
     "support-expression": {
-      "begin": "(?x)\n(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)(?=\\.|\\s) # supported apex namespaces",
+      "begin": "(?x)\n(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)(?=\\.|\\s)",
       "beginCaptures": {
         "1": {
           "name": "support.class.apex"
@@ -3049,7 +3049,7 @@
               "name": "punctuation.separator.equals.apex"
             }
           },
-          "match": "(?x)\n(?:^|\\s+)\n(\n  (?:\n    ([-_[:alnum:]]+)\n    (:)\n  )?\n  ([-_[:alnum:]]+)\n)\n(=)"
+          "match": "(?x)\n(?:^|\\s+)\n(\n(?:\n([-_[:alnum:]]+)\n(:)\n)?\n([-_[:alnum:]]+)\n)\n(=)"
         },
         {
           "include": "#xml-string"
@@ -3082,7 +3082,7 @@
               "name": "punctuation.definition.constant.apex"
             }
           },
-          "match": "(?x)\n(&)\n(\n  (?:[[:alpha:]:_][[:alnum:]:_.-]*)|\n  (?:\\#[[:digit:]]+)|\n  (?:\\#x[[:xdigit:]]+)\n)\n(;)",
+          "match": "(?x)\n(&)\n(\n(?:[[:alpha:]:_][[:alnum:]:_.-]*)|\n(?:\\#[[:digit:]]+)|\n(?:\\#x[[:xdigit:]]+)\n)\n(;)",
           "name": "constant.character.entity.apex"
         },
         {
@@ -3167,7 +3167,7 @@
       ]
     },
     "xml-tag": {
-      "begin": "(?x)\n(</?)\n(\n  (?:\n    ([-_[:alnum:]]+)\n    (:)\n  )?\n  ([-_[:alnum:]]+)\n)",
+      "begin": "(?x)\n(</?)\n(\n(?:\n([-_[:alnum:]]+)\n(:)\n)?\n([-_[:alnum:]]+)\n)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.apex"
