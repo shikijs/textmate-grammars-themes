@@ -1267,18 +1267,18 @@ export const grammars = [
       'kt',
       'kts',
     ],
-    byteSize: 8459,
+    byteSize: 8421,
     categories: [
       'general',
     ],
     displayName: 'Kotlin',
-    lastUpdate: '2023-10-11T19:11:45Z',
+    lastUpdate: '2024-01-15T16:41:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/fwcd/vscode-kotlin/main/LICENSE',
     name: 'kotlin',
     scopeName: 'source.kotlin',
-    sha: 'c1371a435aedf8690d3c9cbbe4c42a215915630d',
-    source: 'https://github.com/fwcd/vscode-kotlin/blob/c1371a435aedf8690d3c9cbbe4c42a215915630d/syntaxes/kotlin.tmLanguage.json',
+    sha: 'bb71d917dd97b756d45f2594346efe3d70a15060',
+    source: 'https://github.com/fwcd/vscode-kotlin/blob/bb71d917dd97b756d45f2594346efe3d70a15060/syntaxes/kotlin.tmLanguage.json',
   },
   {
     aliases: [

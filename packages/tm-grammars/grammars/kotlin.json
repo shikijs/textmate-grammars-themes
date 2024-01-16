@@ -107,13 +107,13 @@
           "include": "#class-declaration"
         },
         {
-          "include": "#object-declaration"
+          "include": "#object"
         },
         {
           "include": "#type-alias"
         },
         {
-          "include": "#function-declaration"
+          "include": "#function"
         },
         {
           "include": "#variable-declaration"
@@ -264,22 +264,7 @@
       "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?((e|E)\\d+)?(u|U)?(L|F|f)?\\b",
       "name": "constant.numeric.decimal.kotlin"
     },
-    "function-call": {
-      "captures": {
-        "1": {
-          "name": "entity.name.function.call.kotlin"
-        },
-        "2": {
-          "patterns": [
-            {
-              "include": "#type-parameter"
-            }
-          ]
-        }
-      },
-      "match": "\\??\\.?(\\b\\w+\\b|`[^`]+`)\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?\\s*(?=[({])"
-    },
-    "function-declaration": {
+    "function": {
       "captures": {
         "1": {
           "name": "storage.type.function.kotlin"
@@ -298,7 +283,22 @@
           "name": "entity.name.function.declaration.kotlin"
         }
       },
-      "match": "\\b(fun)\\b\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?\\s*(?:(\\w+)\\.)?(\\b\\w+\\b|`[^`]+`)"
+      "match": "\\b(fun)\\b\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?\\s*(?:(?:(\\w+)\\.)?(\\b\\w+\\b|`[^`]+`))?"
+    },
+    "function-call": {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.call.kotlin"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#type-parameter"
+            }
+          ]
+        }
+      },
+      "match": "\\??\\.?(\\b\\w+\\b|`[^`]+`)\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?\\s*(?=[({])"
     },
     "hard-keywords": {
       "match": "\\b(as|typeof|is|in)\\b",
@@ -377,7 +377,7 @@
       "match": "\\bnull\\b",
       "name": "constant.language.null.kotlin"
     },
-    "object-declaration": {
+    "object": {
       "captures": {
         "1": {
           "name": "storage.type.object.kotlin"
@@ -386,7 +386,7 @@
           "name": "entity.name.type.object.kotlin"
         }
       },
-      "match": "\\b(object)\\s+(\\b\\w+\\b|`[^`]+`)"
+      "match": "\\b(object)(?:\\s+(\\b\\w+\\b|`[^`]+`))?"
     },
     "operators": {
       "patterns": [
