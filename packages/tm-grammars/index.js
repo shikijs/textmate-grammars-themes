@@ -360,20 +360,20 @@ export const grammars = [
     source: 'https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage',
   },
   {
-    byteSize: 38726,
+    byteSize: 39108,
     displayName: 'COBOL',
     embedded: [
       'sql',
       'html',
       'java',
     ],
-    lastUpdate: '2024-01-13T16:19:57Z',
+    lastUpdate: '2024-01-16T20:50:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: '8c6771e1c567842024895bd7092a15984a7dd1da',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/8c6771e1c567842024895bd7092a15984a7dd1da/syntaxes/COBOL.tmLanguage.json',
+    sha: 'a01a70bf6107b180422100af1e56151991205b6b',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/a01a70bf6107b180422100af1e56151991205b6b/syntaxes/COBOL.tmLanguage.json',
   },
   {
     aliases: [
