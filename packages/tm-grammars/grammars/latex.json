@@ -149,7 +149,7 @@
       ]
     },
     {
-      "begin": "(^\\s*)?\\\\begin\\{(lstlisting|minted|pyglist)\\}(?=\\[|\\{)",
+      "begin": "(?:^\\s*)?\\\\begin\\{(lstlisting|minted|pyglist)\\}(?=\\[|\\{)",
       "captures": {
         "0": {
           "patterns": [
@@ -159,7 +159,7 @@
           ]
         }
       },
-      "end": "\\\\end\\{(?:minted|lstlisting|pyglist)\\}",
+      "end": "\\\\end\\{\\1\\}",
       "patterns": [
         {
           "include": "#multiline-optional-arg-no-highlight"
@@ -1058,9 +1058,9 @@
       ]
     },
     {
-      "begin": "((?:\\s*)\\\\begin\\{([a-zA-Z]*code|lstlisting|minted|pyglist)(?:\\*)?\\}(?:\\[.*\\])?(?:\\{.*\\})?)",
+      "begin": "\\s*\\\\begin\\{([a-zA-Z]*code|lstlisting|minted|pyglist)\\*?\\}(?:\\[.*\\])?(?:\\{.*\\})?",
       "captures": {
-        "1": {
+        "0": {
           "patterns": [
             {
               "include": "#begin-env-tokenizer"
@@ -1069,8 +1069,43 @@
         }
       },
       "contentName": "meta.function.embedded.latex",
-      "end": "(\\\\end\\{\\2\\}(?:\\s*\\n)?)",
+      "end": "\\\\end\\{\\1\\}(?:\\s*\\n)?",
       "name": "meta.embedded.block.generic.latex"
+    },
+    {
+      "begin": "(?:^\\s*)?\\\\begin\\{(terminal\\*?)\\}(?=\\[|\\{)",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#begin-env-tokenizer"
+            }
+          ]
+        }
+      },
+      "end": "\\\\end\\{\\1\\}",
+      "patterns": [
+        {
+          "include": "#multiline-optional-arg-no-highlight"
+        },
+        {
+          "begin": "(?:\\G|(?<=\\]))(\\{)([a-zA-Z]*)(\\})",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.arguments.begin.latex"
+            },
+            "2": {
+              "name": "variable.parameter.function.latex"
+            },
+            "3": {
+              "name": "punctuation.definition.arguments.end.latex"
+            }
+          },
+          "contentName": "meta.function.embedded.latex",
+          "end": "^\\s*(?=\\\\end\\{terminal\\*?\\})",
+          "name": "meta.embedded.block.generic.latex"
+        }
+      ]
     },
     {
       "begin": "((\\\\)addplot)(?:\\+?)((?:\\[[^\\[]*\\]))*\\s*(gnuplot)\\s*((?:\\[[^\\[]*\\]))*\\s*(\\{)",

@@ -40,6 +40,9 @@
     },
     {
       "include": "#symbol"
+    },
+    {
+      "include": "#punctuation"
     }
   ],
   "repository": {
@@ -285,6 +288,10 @@
           "name": "keyword.control.export.julia"
         },
         {
+          "match": "\\b(?<![:_])(?:public)\\b",
+          "name": "keyword.control.public.julia"
+        },
+        {
           "match": "\\b(?<![:_])(?:import)\\b",
           "name": "keyword.control.import.julia"
         },
@@ -463,6 +470,18 @@
         }
       ]
     },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.julia"
+        },
+        {
+          "match": ";",
+          "name": "punctuation.separator.semicolon.julia"
+        }
+      ]
+    },
     "self_no_for_block": {
       "comment": "Same as $self, but does not contain #for_block. 'outer' is not valid in some contexts (e.g. generators, comprehensions, indexing), so use this when matching those in begin/end patterns. Keep this up-to-date with $self!",
       "patterns": [
@@ -501,6 +520,9 @@
         },
         {
           "include": "#symbol"
+        },
+        {
+          "include": "#punctuation"
         }
       ]
     },

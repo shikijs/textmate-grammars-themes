@@ -2341,12 +2341,15 @@
       ]
     },
     "import-export-assert-clause": {
-      "begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(assert)\\s*(\\{)",
+      "begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(with)|(assert))\\s*(\\{)",
       "beginCaptures": {
         "1": {
-          "name": "keyword.control.assert.js.jsx"
+          "name": "keyword.control.with.js.jsx"
         },
         "2": {
+          "name": "keyword.control.assert.js.jsx"
+        },
+        "3": {
           "name": "punctuation.definition.block.js.jsx"
         }
       },
