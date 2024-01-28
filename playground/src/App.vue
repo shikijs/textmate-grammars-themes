@@ -14,6 +14,8 @@ const output = ref('')
 
 async function run() {
   error.value = null
+  // @ts-expect-error: <title> element does exist.
+  document.querySelector('head title').textContent = themes.find(({ name }) => name === theme.value)?.displayName
   try {
     const themeObject = await import(`../../packages/tm-themes/themes/${theme.value}.json`).then(m => m.default)
     const langs = new Map<string, any>()
@@ -56,8 +58,8 @@ watch([theme, grammar], run, { immediate: true })
 </script>
 
 <template>
-  <div h-100vh w-full grid="~ cols-[200px_200px_5fr] gap-4" px4>
-    <div h-full border="x base" of-auto flex="~ col">
+  <div h-100vh w-full grid="~ cols-[200px_200px_5fr] gap-4" p4>
+    <div h-full border="x base y base" of-auto flex="~ col">
       <button
         v-for="t of themes"
         :key="t.name"
@@ -68,7 +70,7 @@ watch([theme, grammar], run, { immediate: true })
         {{ t.displayName }}
       </button>
     </div>
-    <div h-full border="x base" of-auto flex="~ col">
+    <div h-full border="x base y base" of-auto flex="~ col">
       <button
         v-for="g of grammars"
         :key="g.name"
@@ -84,7 +86,7 @@ watch([theme, grammar], run, { immediate: true })
       <div v-if="error" text-red bg-red:10 p6 rounded>
         {{ error }}
       </div>
-      <div my4 v-html="output" />
+      <div v-html="output" />
     </div>
   </div>
 </template>
@@ -95,5 +97,11 @@ watch([theme, grammar], run, { immediate: true })
   line-height: 1.5;
   padding: 10px;
   --uno: border border-base rounded p4;
+}
+:root {
+    color-scheme: light;
+}
+:root.dark {
+    color-scheme: dark;
 }
 </style>
