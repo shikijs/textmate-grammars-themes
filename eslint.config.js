@@ -16,6 +16,7 @@ export default antfu(
     ignores: [
       'packages/tm-grammars/grammars/**',
     ],
+    vue: true,
   },
   {
     files: ['sources-grammars.ts', 'sources-themes.ts'],

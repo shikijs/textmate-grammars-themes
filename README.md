@@ -25,7 +25,7 @@ Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki
 ```bash
 GITHUB_TOKEN=your-personal-access-token
 ```
-7. Run `pnpm run fetch` to download the grammar and verify it works
+7. Run `pnpm run fetch` to download the grammar and verify it works via `pnpm run play`
 8. Send in the PR!
 
 ### Add a new theme
@@ -38,7 +38,7 @@ GITHUB_TOKEN=your-personal-access-token
 ```bash
 GITHUB_TOKEN=your-personal-access-token
 ```
-6. Run `pnpm run fetch` to download the theme and verify it works
+6. Run `pnpm run fetch` to download the theme and verify it works via `pnpm run play`
 4. Send in the PR!
 
 ## License
