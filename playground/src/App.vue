@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { getHighlighterCore } from 'shiki/core'
+import type { ThemeInfo } from '../../packages/tm-themes/index'
 import { themes } from '../../packages/tm-themes/index'
 import { grammars } from '../../packages/tm-grammars/index'
 
 useDark()
 
-const theme = useStorage('tm-theme', 'vitest-dark')
+const theme = useStorage('tm-theme', themes.find(t => t.name === 'vitest-dark') as ThemeInfo)
 const grammar = useStorage('tm-grammar', 'javascript')
 const error = ref<any>(null)
 
@@ -15,9 +16,9 @@ const output = ref('')
 async function run() {
   error.value = null
   // @ts-expect-error: <title> element does exist.
-  document.querySelector('head title').textContent = themes.find(({ name }) => name === theme.value)?.displayName
+  document.querySelector('head title').textContent = theme.value.displayName
   try {
-    const themeObject = await import(`../../packages/tm-themes/themes/${theme.value}.json`).then(m => m.default)
+    const themeObject = await import(`../../packages/tm-themes/themes/${theme.value.name}.json`).then(m => m.default)
     const langs = new Map<string, any>()
 
     input.value = await import(`../../samples/${grammar.value}.sample?raw`).then(m => m.default)
@@ -44,7 +45,7 @@ async function run() {
 
     const result = highlighter.codeToHtml(input.value, {
       lang: grammar.value,
-      theme: theme.value,
+      theme: theme.value.name,
     })
     output.value = result
   }
@@ -64,8 +65,8 @@ watch([theme, grammar], run, { immediate: true })
         v-for="t of themes"
         :key="t.name"
         border="b base" px3 py1 text-left
-        :class="t.name === theme ? 'bg-active text-primary' : 'text-faded'"
-        @click="theme = t.name"
+        :class="t.name === theme.name ? 'bg-active text-primary' : 'text-faded'"
+        @click="theme = t"
       >
         {{ t.displayName }}
       </button>
