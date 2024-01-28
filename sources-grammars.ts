@@ -493,12 +493,12 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'glimmer-js',
     aliases: ['gjs'],
-    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-js.tmLanguage.json',
+    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/master/syntaxes/source.gjs.json',
   },
   {
     name: 'glimmer-ts',
     aliases: ['gts'],
-    source: 'https://github.com/IgnaceMaes/glimmer-textmate-grammar/blob/main/glimmer-ts.tmLanguage.json',
+    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/master/syntaxes/source.gts.json',
   },
   {
     name: 'glsl',
