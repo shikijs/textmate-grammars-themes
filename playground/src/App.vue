@@ -10,6 +10,14 @@ const grammar = useStorage('tm-grammar', 'javascript')
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
 
+const clipboard = useClipboard()
+const params = useUrlSearchParams('history')
+
+if (params.theme && themes.some(t => t.name === params.theme))
+  theme.value = params.theme as string
+if (params.grammar && grammars.some(t => t.name === params.grammar))
+  grammar.value = params.grammar as string
+
 const input = ref('console.log("Hello World")')
 const output = ref('')
 
@@ -89,8 +97,14 @@ function random() {
   theme.value = t.name
 }
 
-watch([theme, grammar], run, { immediate: true })
+function share() {
+  clipboard.copy(new URL(`?${new URLSearchParams({
+    theme: theme.value,
+    grammar: grammar.value,
+  })}`, location.href).href)
+}
 
+watch([theme, grammar], run, { immediate: true })
 useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
 
 if (import.meta.hot) {
@@ -112,6 +126,9 @@ if (import.meta.hot) {
       </a>
       <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
         Random
+      </button>
+      <button border="~ base rounded" px4 py1 hover="bg-active" @click="share()">
+        Share
       </button>
       <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
         Dark
