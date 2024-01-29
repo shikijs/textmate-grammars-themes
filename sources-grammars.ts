@@ -474,6 +474,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['scripting'],
   },
   {
+    name: 'fortran-free-form',
+    displayName: 'Fortran (Free Form)',
+    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/main/syntaxes/fortran_free-form.tmLanguage.json',
+  },
+  {
     name: 'gdresource',
     displayName: 'GDResource',
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDResource.tmLanguage.json',
