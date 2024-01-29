@@ -58,16 +58,28 @@ async function run() {
   }
 }
 
+function openFile(filename: string) {
+  if (import.meta.hot) {
+    fetch(`/__open-in-editor?file=${filename}`)
+  }
+  else {
+    const a = document.createElement('a')
+    a.href = new URL(filename, 'https://github.com/shikijs/textmate-grammars-themes/tree/main/playground/').href
+    a.target = '_blank'
+    a.click()
+  }
+}
+
 function openSample() {
-  fetch(`/__open-in-editor?file=../samples/${grammar.value}.sample`)
+  openFile(`../samples/${grammar.value}.sample`)
 }
 
 function openGrammar(name = grammar.value) {
-  fetch(`/__open-in-editor?file=../packages/tm-grammars/grammars/${name}.json`)
+  openFile(`../packages/tm-grammars/grammars/${name}.json`)
 }
 
 function openTheme() {
-  fetch(`/__open-in-editor?file=../packages/tm-themes/themes/${theme.value}.json`)
+  openFile(`../packages/tm-themes/themes/${theme.value}.json`)
 }
 
 function random() {
@@ -89,79 +101,88 @@ if (import.meta.hot) {
 </script>
 
 <template>
-  <div h-100vh w-full grid="~ cols-[200px_200px_5fr] gap-4" p4>
-    <div h-full border="x base y rounded" of-auto flex="~ col">
-      <button
-        v-for="g of grammars"
-        :key="g.name"
-        border="b base" px3 py1 text-left
-        :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
-        @click="grammar = g.name"
-      >
-        {{ g.displayName }}
+  <div h-100vh w-full grid="~ rows-[max-content_1fr]">
+    <div flex="~ items-center gap-2" px4 pt-4>
+      <a href="https://github.com/shikijs/textmate-grammars-themes" target="_blank" text-lg hover="text-primary">
+        Shiki TextMate Grammar & Theme Playground
+      </a>
+      <div flex-auto />
+      <a border="~ base rounded" px4 py1 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
+        GitHub
+      </a>
+      <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
+        Random
+      </button>
+      <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
+        Dark
       </button>
     </div>
+    <div grid="~ cols-[200px_200px_5fr] gap-4" p4 of-hidden>
+      <div h-full border="x base y rounded" of-auto flex="~ col">
+        <button
+          v-for="g of grammars"
+          :key="g.name"
+          border="b base" px3 py1 text-left
+          :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
+          @click="grammar = g.name"
+        >
+          {{ g.displayName }}
+        </button>
+      </div>
 
-    <div h-full border="x base y rounded" of-auto flex="~ col">
-      <button
-        v-for="t of themes"
-        :key="t.name"
-        border="b base" px3 py1 text-left
-        :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
-        @click="theme = t.name"
-      >
-        {{ t.displayName }}
-      </button>
-    </div>
+      <div h-full border="x base y rounded" of-auto flex="~ col">
+        <button
+          v-for="t of themes"
+          :key="t.name"
+          border="b base" px3 py1 text-left
+          :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
+          @click="theme = t.name"
+        >
+          {{ t.displayName }}
+        </button>
+      </div>
 
-    <div flex="~ col gap-4">
-      <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
-        <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
-          <div text-right op50>
-            Grammar
-          </div>
-          <div>
-            <button text-left @click="openGrammar()">
-              <code>{{ grammar }}</code>
-            </button>
-            <div flex="~ col" ml-2 border="l base">
-              <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
-                <div w-4 border="t base" h-1px flex-none />
-                <button text-left op75 @click="openGrammar(e)">
-                  <code>{{ e }}</code>
-                </button>
+      <div flex="~ col gap-4">
+        <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
+          <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
+            <div text-right op50>
+              Grammar
+            </div>
+            <div>
+              <button text-left @click="openGrammar()">
+                <code>{{ grammar }}</code>
+              </button>
+              <div flex="~ col" ml-2 border="l base">
+                <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
+                  <div w-4 border="t base" h-1px flex-none />
+                  <button text-left op75 @click="openGrammar(e)">
+                    <code>{{ e }}</code>
+                  </button>
+                </div>
               </div>
             </div>
+            <div text-right op50>
+              Theme
+            </div>
+            <button text-left @click="openTheme()">
+              <code>{{ theme }}</code>
+            </button>
+            <div text-right op50>
+              Sample
+            </div>
+            <button text-left @click="openSample()">
+              <code>
+                {{ grammar }}.sample
+              </code>
+            </button>
           </div>
-          <div text-right op50>
-            Theme
-          </div>
-          <button text-left @click="openTheme()">
-            <code>{{ theme }}</code>
-          </button>
-          <div text-right op50>
-            Sample
-          </div>
-          <button text-left @click="openSample()">
-            <code>
-              {{ grammar }}.sample
-            </code>
-          </button>
         </div>
-        <div flex="~ gap-2 items-start">
-          <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
-            Random
-          </button>
-          <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
-            Dark
-          </button>
-        </div>
-      </div>
 
-      <div v-if="error" text-red bg-red:10 p6 rounded>
-        {{ error }}
+        <div v-if="error" text-red bg-red:10 p6 rounded>
+          {{ error }}
+        </div>
+        <div v-html="output" />
       </div>
-      <div v-html="output" />
     </div>
   </div>
 </template>
