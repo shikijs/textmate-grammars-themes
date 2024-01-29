@@ -1,45 +1,33 @@
 <script setup>
 import { ref } from 'vue'
-import TreeItem from './TreeItem.vue'
 
-const treeData = ref({
-  name: 'My Tree',
-  children: [
-    { name: 'hello' },
-    { name: 'world' },
-    {
-      name: 'child folder',
-      children: [
-        {
-          name: 'child folder',
-          children: [{ name: 'hello' }, { name: 'world' }]
-        },
-        { name: 'hello' },
-        { name: 'world' },
-        {
-          name: 'child folder',
-          children: [{ name: 'hello' }, { name: 'world' }]
-        }
-      ]
-    }
-  ]
-})
+const message = ref('Hello World!')
+
+function reverseMessage() {
+  // Access/mutate the value of a ref via
+  // its .value property.
+  message.value = message.value.split('').reverse().join('')
+}
+
+function notify() {
+  alert('navigation was prevented.')
+}
 </script>
 
 <template>
-  <ul>
-    <TreeItem class="item" :model="treeData"></TreeItem>
-  </ul>
+  <h1>{{ message }}</h1>
+  <button @click="reverseMessage">Reverse Message</button>
+  <button @click="message += '!'">Append "!"</button>
+  <a href="https://vuejs.org" @click.prevent="notify">
+    A link with e.preventDefault()
+  </a>
 </template>
 
 <style>
-.item {
-  cursor: pointer;
-  line-height: 1.5;
-}
-.bold {
-  font-weight: bold;
+button, a {
+  display: block;
+  margin-bottom: 1em;
 }
 </style>
 
-// From https://vuejs.org/examples/#tree
+<!-- from https://vuejs.org/examples/#handling-input -->

@@ -667,6 +667,17 @@ export const grammars = [
     source: 'https://github.com/bmalehorn/vscode-fish/blob/2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718/syntaxes/fish.tmLanguage.json',
   },
   {
+    byteSize: 95147,
+    displayName: 'Fortran (Free Form)',
+    lastUpdate: '2023-05-09T01:04:12Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
+    name: 'fortran-free-form',
+    scopeName: 'source.fortran.free',
+    sha: 'f7fb41579770a0d8c75b9f295d167b31147b4f33',
+    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/f7fb41579770a0d8c75b9f295d167b31147b4f33/syntaxes/fortran_free-form.tmLanguage.json',
+  },
+  {
     aliases: [
       'f#',
       'fs',
