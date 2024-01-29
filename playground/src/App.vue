@@ -3,7 +3,7 @@ import { getHighlighterCore } from 'shiki/core'
 import { themes } from '../../packages/tm-themes/index'
 import { grammars } from '../../packages/tm-grammars/index'
 
-useDark()
+const isDark = useDark()
 
 const theme = useStorage('tm-theme', 'vitesse-dark')
 const grammar = useStorage('tm-grammar', 'javascript')
@@ -12,6 +12,9 @@ const error = ref<any>(null)
 
 const input = ref('console.log("Hello World")')
 const output = ref('')
+
+const grammarObject = computed(() => grammars.find(g => g.name === grammar.value))
+const themeObject = computed(() => themes.find(t => t.name === theme.value))
 
 async function run() {
   error.value = null
@@ -76,6 +79,8 @@ function random() {
 
 watch([theme, grammar], run, { immediate: true })
 
+useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
+
 if (import.meta.hot) {
   import.meta.hot.accept(() => {
     run()
@@ -84,8 +89,8 @@ if (import.meta.hot) {
 </script>
 
 <template>
-  <div h-100vh w-full grid="~ cols-[200px_200px_5fr] gap-4" px4>
-    <div h-full border="x base" of-auto flex="~ col">
+  <div h-100vh w-full grid="~ cols-[200px_200px_5fr] gap-4" p4>
+    <div h-full border="x base y rounded" of-auto flex="~ col">
       <button
         v-for="g of grammars"
         :key="g.name"
@@ -97,7 +102,7 @@ if (import.meta.hot) {
       </button>
     </div>
 
-    <div h-full border="x base" of-auto flex="~ col">
+    <div h-full border="x base y rounded" of-auto flex="~ col">
       <button
         v-for="t of themes"
         :key="t.name"
@@ -109,7 +114,7 @@ if (import.meta.hot) {
       </button>
     </div>
 
-    <div py4>
+    <div flex="~ col gap-4">
       <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
         <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
           <div text-right op50>
@@ -143,9 +148,12 @@ if (import.meta.hot) {
             </code>
           </button>
         </div>
-        <div>
+        <div flex="~ gap-2 items-start">
           <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
             Random
+          </button>
+          <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
+            Dark
           </button>
         </div>
       </div>
@@ -153,19 +161,24 @@ if (import.meta.hot) {
       <div v-if="error" text-red bg-red:10 p6 rounded>
         {{ error }}
       </div>
-      <div my4 v-html="output" />
+      <div v-html="output" />
     </div>
   </div>
 </template>
 
 <style>
+:root {
+  color-scheme: light;
+}
+:root.dark {
+  color-scheme: dark;
+}
 .shiki {
   font-size: 14px;
   line-height: 1.5;
   padding: 10px;
   --uno: border border-base rounded p4;
 }
-
 .panel-info button {
   --uno: hover-text-primary hover-underline hover:op100;
 }
