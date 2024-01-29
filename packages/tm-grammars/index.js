@@ -667,6 +667,20 @@ export const grammars = [
     source: 'https://github.com/bmalehorn/vscode-fish/blob/2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718/syntaxes/fish.tmLanguage.json',
   },
   {
+    byteSize: 905,
+    displayName: 'Fortran (Fixed Form)',
+    embedded: [
+      'fortran-free-form',
+    ],
+    lastUpdate: '2021-11-09T22:09:17Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
+    name: 'fortran-fixed-form',
+    scopeName: 'source.fortran.fixed',
+    sha: 'e642012094fc0a7379f204bb4e61243005afb1da',
+    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/e642012094fc0a7379f204bb4e61243005afb1da/syntaxes/fortran_fixed-form.tmLanguage.json',
+  },
+  {
     byteSize: 95147,
     displayName: 'Fortran (Free Form)',
     lastUpdate: '2023-05-09T01:04:12Z',
