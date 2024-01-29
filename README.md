@@ -3,11 +3,11 @@
 [![tm-grammars](https://img.shields.io/npm/v/tm-grammars?label=tm-grammars&labelColor=080f12&color=1fa669)](https://www.npmjs.com/package/tm-grammars)
 [![tm-themes](https://img.shields.io/npm/v/tm-themes?label=tm-themes&labelColor=080f12&color=1fa669)](https://www.npmjs.com/package/tm-themes)
 
-Collection of TextMate [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as npm packages.
+Collection of TextMate [grammars](./packages/tm-grammars/) and [themes](./packages/tm-themes/), converted in JSON format and re-distributed as npm packages. Extracted from Shiki, available for general usage.
 
 Packages are **automatically updated and published** every day (if there are changes).
 
-Scripts are extracted and modified from [Shiki](https://github.com/shikijs/shiki).
+[Preview Playground](https://textmate-grammars-themes.netlify.app/)
 
 ## Contribute
 
