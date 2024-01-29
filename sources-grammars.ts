@@ -479,6 +479,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/main/syntaxes/fortran_free-form.tmLanguage.json',
   },
   {
+    name: 'fortran-fixed-form',
+    displayName: 'Fortran (Fixed Form)',
+    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/main/syntaxes/fortran_fixed-form.tmLanguage.json',
+  },
+  {
     name: 'gdresource',
     displayName: 'GDResource',
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDResource.tmLanguage.json',
