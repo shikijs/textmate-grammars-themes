@@ -64,7 +64,7 @@ if ((grammarsChanged.length || themesChanged.length)) {
     await fs.writeFile(process.env.GITHUB_OUTPUT, `CHANGED=true`, 'utf-8')
   }
   if (process.env.GITHUB_STEP_SUMMARY) {
-    const REPO = 'https://github.com/antfu/textmate-grammars-themes'
+    const REPO = 'https://github.com/shikijs/textmate-grammars-themes'
     await fs.writeFile(
       process.env.GITHUB_STEP_SUMMARY,
       [
@@ -73,7 +73,7 @@ if ((grammarsChanged.length || themesChanged.length)) {
         ...grammarsChanged.length
           ? [
               '## Grammar Changes',
-              ...grammarsChanged.map(i => `- [${i}](https://github.com/antfu/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
+              ...grammarsChanged.map(i => `- [${i}](https://github.com/shikijs/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
               '',
               `🚀 Released as \`v${grammarsVersion}\``,
             ]
@@ -82,7 +82,7 @@ if ((grammarsChanged.length || themesChanged.length)) {
         ...themesChanged.length
           ? [
               '## Theme Changes',
-              ...themesChanged.map(i => `- [${i}](https://github.com/antfu/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
+              ...themesChanged.map(i => `- [${i}](https://github.com/shikijs/textmate-grammars-themes/blob/${currentSHA}/${i}) ${filesCreated.includes(i) ? '🆕' : ''}`),
               '',
               `🚀 Released as \`v${themesVersion}\``,
             ]
