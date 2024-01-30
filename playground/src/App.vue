@@ -10,6 +10,7 @@ const grammar = useStorage('tm-grammar', 'javascript')
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
 
+const copied = ref(false)
 const clipboard = useClipboard()
 const params = useUrlSearchParams('history')
 
@@ -102,6 +103,10 @@ function share() {
     theme: theme.value,
     grammar: grammar.value,
   })}`, location.href).href)
+  copied.value = true
+  setTimeout(() => {
+    copied.value = false
+  }, 1000)
 }
 
 watch([theme, grammar], run, { immediate: true })
@@ -114,6 +119,31 @@ if (import.meta.hot) {
 }
 </script>
 
+<script lang="ts">
+export default {
+  data() {
+    return {
+      grammarSearchInput: '',
+      themeSearchInput: '',
+    }
+  },
+  computed: {
+    filteredGrammars() {
+      const searchTerm = this.grammarSearchInput.toLowerCase()
+      return grammars.filter(g =>
+        g.displayName.toLowerCase().includes(searchTerm),
+      )
+    },
+    filteredThemes() {
+      const searchTerm = this.themeSearchInput.toLowerCase()
+      return themes.filter(t =>
+        t.displayName.toLowerCase().includes(searchTerm),
+      )
+    },
+  },
+}
+</script>
+
 <template>
   <div h-100vh w-full grid="~ rows-[max-content_1fr]">
     <div flex="~ items-center gap-2" px4 pt-4>
@@ -121,42 +151,62 @@ if (import.meta.hot) {
         Shiki TextMate Grammar & Theme Playground
       </a>
       <div flex-auto />
-      <a border="~ base rounded" px4 py1 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
-        GitHub
+      <a border="~ base rounded" p2 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
+        <div class="i-carbon-logo-github" />
       </a>
-      <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
-        Random
+      <button border="~ base rounded" p2 hover="bg-active" @click="random()">
+        <div class="i-carbon-shuffle" />
       </button>
-      <button border="~ base rounded" px4 py1 hover="bg-active" @click="share()">
-        Share
+      <button border="~ base rounded" p2 hover="bg-active" @click="share()">
+        <div v-if="copied" class="i-carbon-checkmark" />
+        <div v-else class="i-carbon-link" />
       </button>
-      <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
-        Dark
+      <button border="~ base rounded" p2 hover="bg-active" @click="isDark = !isDark">
+        <div v-if="isDark" class="i-carbon-sun" />
+        <div v-else class="i-carbon-moon" />
       </button>
     </div>
     <div grid="~ cols-[200px_200px_5fr] gap-4" p4 of-hidden>
       <div h-full border="x base y rounded" of-auto flex="~ col">
-        <button
-          v-for="g of grammars"
-          :key="g.name"
-          border="b base" px3 py1 text-left
-          :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
-          @click="grammar = g.name"
+        <input
+          v-model="grammarSearchInput"
+          placeholder="Search" border="b base" px3
+          py1
+          class="bg-active sticky top-0"
         >
-          {{ g.displayName }}
-        </button>
+        <div h-full of-auto flex="~ col">
+          <button
+            v-for="g of filteredGrammars"
+            :key="g.name"
+            border="b base" px3
+            py1
+            text-left
+            :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
+            @click="grammar = g.name"
+          >
+            {{ g.displayName }}
+          </button>
+        </div>
       </div>
 
       <div h-full border="x base y rounded" of-auto flex="~ col">
-        <button
-          v-for="t of themes"
-          :key="t.name"
-          border="b base" px3 py1 text-left
-          :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
-          @click="theme = t.name"
+        <input
+          v-model="themeSearchInput"
+          placeholder="Search" border="b base" px3
+          py1
+          class="bg-active z-1 sticky top-0"
         >
-          {{ t.displayName }}
-        </button>
+        <div h-full of-auto flex="~ col">
+          <button
+            v-for="t of filteredThemes"
+            :key="t.name"
+            border="b base" px3 py1 text-left
+            :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
+            @click="theme = t.name"
+          >
+            {{ t.displayName }}
+          </button>
+        </div>
       </div>
 
       <div flex="~ col gap-4">
