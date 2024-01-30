@@ -13,6 +13,22 @@ const error = ref<any>(null)
 const copied = ref(false)
 const clipboard = useClipboard()
 const params = useUrlSearchParams('history')
+const searchInputGrammar = ref('')
+const searchInputTheme = ref('')
+
+const filteredGrammars = computed(() => {
+  const searchTerm = searchInputGrammar.value.trim().toLowerCase()
+  return grammars.filter(g =>
+    g.displayName.toLowerCase().includes(searchTerm),
+  )
+})
+
+const filteredThemes = computed(() => {
+  const searchTerm = searchInputTheme.value.trim().toLowerCase()
+  return themes.filter(t =>
+    t.displayName.toLowerCase().includes(searchTerm),
+  )
+})
 
 if (params.theme && themes.some(t => t.name === params.theme))
   theme.value = params.theme as string
@@ -109,38 +125,25 @@ function share() {
   }, 1000)
 }
 
-watch([theme, grammar], run, { immediate: true })
+watch(
+  [theme, grammar],
+  run,
+  { immediate: true },
+)
+watch(
+  [theme, grammar],
+  () => {
+    params.theme = theme.value
+    params.grammar = grammar.value
+  },
+)
+
 useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
 
 if (import.meta.hot) {
   import.meta.hot.accept(() => {
     run()
   })
-}
-</script>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      grammarSearchInput: '',
-      themeSearchInput: '',
-    }
-  },
-  computed: {
-    filteredGrammars() {
-      const searchTerm = this.grammarSearchInput.toLowerCase()
-      return grammars.filter(g =>
-        g.displayName.toLowerCase().includes(searchTerm),
-      )
-    },
-    filteredThemes() {
-      const searchTerm = this.themeSearchInput.toLowerCase()
-      return themes.filter(t =>
-        t.displayName.toLowerCase().includes(searchTerm),
-      )
-    },
-  },
 }
 </script>
 
@@ -152,35 +155,35 @@ export default {
       </a>
       <div flex-auto />
       <a border="~ base rounded" p2 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
-        <div class="i-carbon-logo-github" />
+        <div i-carbon-logo-github />
       </a>
       <button border="~ base rounded" p2 hover="bg-active" @click="random()">
-        <div class="i-carbon-shuffle" />
+        <div i-carbon-shuffle />
       </button>
       <button border="~ base rounded" p2 hover="bg-active" @click="share()">
-        <div v-if="copied" class="i-carbon-checkmark" />
-        <div v-else class="i-carbon-link" />
+        <div v-if="copied" i-carbon-checkmark />
+        <div v-else i-carbon-link />
       </button>
       <button border="~ base rounded" p2 hover="bg-active" @click="isDark = !isDark">
-        <div v-if="isDark" class="i-carbon-sun" />
-        <div v-else class="i-carbon-moon" />
+        <div dark:i-carbon-moon i-carbon-sun />
       </button>
     </div>
     <div grid="~ cols-[200px_200px_5fr] gap-4" p4 of-hidden>
-      <div h-full border="x base y rounded" of-auto flex="~ col">
-        <input
-          v-model="grammarSearchInput"
-          placeholder="Search" border="b base" px3
-          py1
-          class="bg-active sticky top-0"
-        >
-        <div h-full of-auto flex="~ col">
+      <div h-full of-auto flex="~ col gap-4">
+        <div relative border="~ base rounded">
+          <input
+            v-model="searchInputGrammar"
+            placeholder="Search" px3
+            py1 pl8 bg-transparent sticky top-0 w-full
+          >
+          <div i-carbon-search absolute left-2 top-2 op40 z--1 />
+        </div>
+        <div h-full of-auto flex="~ col" border="~ base rounded">
           <button
             v-for="g of filteredGrammars"
             :key="g.name"
             border="b base" px3
-            py1
-            text-left
+            py1 text-left
             :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
             @click="grammar = g.name"
           >
@@ -189,14 +192,16 @@ export default {
         </div>
       </div>
 
-      <div h-full border="x base y rounded" of-auto flex="~ col">
-        <input
-          v-model="themeSearchInput"
-          placeholder="Search" border="b base" px3
-          py1
-          class="bg-active z-1 sticky top-0"
-        >
-        <div h-full of-auto flex="~ col">
+      <div h-full of-auto flex="~ col gap-4">
+        <div relative border="~ base rounded">
+          <input
+            v-model="searchInputTheme"
+            placeholder="Search" px3
+            py1 pl8 bg-transparent sticky top-0 w-full
+          >
+          <div i-carbon-search absolute left-2 top-2 op40 z--1 />
+        </div>
+        <div h-full of-auto flex="~ col" border="~ base rounded">
           <button
             v-for="t of filteredThemes"
             :key="t.name"
@@ -209,7 +214,7 @@ export default {
         </div>
       </div>
 
-      <div flex="~ col gap-4">
+      <div flex="~ col gap-4" of-auto>
         <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
           <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
             <div text-right op50>
