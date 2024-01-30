@@ -10,6 +10,31 @@ const grammar = useStorage('tm-grammar', 'javascript')
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
 
+const copied = ref(false)
+const clipboard = useClipboard()
+const params = useUrlSearchParams('history')
+const searchInputGrammar = ref('')
+const searchInputTheme = ref('')
+
+const filteredGrammars = computed(() => {
+  const searchTerm = searchInputGrammar.value.trim().toLowerCase()
+  return grammars.filter(g =>
+    g.displayName.toLowerCase().includes(searchTerm),
+  )
+})
+
+const filteredThemes = computed(() => {
+  const searchTerm = searchInputTheme.value.trim().toLowerCase()
+  return themes.filter(t =>
+    t.displayName.toLowerCase().includes(searchTerm),
+  )
+})
+
+if (params.theme && themes.some(t => t.name === params.theme))
+  theme.value = params.theme as string
+if (params.grammar && grammars.some(t => t.name === params.grammar))
+  grammar.value = params.grammar as string
+
 const input = ref('console.log("Hello World")')
 const output = ref('')
 
@@ -89,7 +114,29 @@ function random() {
   theme.value = t.name
 }
 
-watch([theme, grammar], run, { immediate: true })
+function share() {
+  clipboard.copy(new URL(`?${new URLSearchParams({
+    theme: theme.value,
+    grammar: grammar.value,
+  })}`, location.href).href)
+  copied.value = true
+  setTimeout(() => {
+    copied.value = false
+  }, 1000)
+}
+
+watch(
+  [theme, grammar],
+  run,
+  { immediate: true },
+)
+watch(
+  [theme, grammar],
+  () => {
+    params.theme = theme.value
+    params.grammar = grammar.value
+  },
+)
 
 useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
 
@@ -107,42 +154,67 @@ if (import.meta.hot) {
         Shiki TextMate Grammar & Theme Playground
       </a>
       <div flex-auto />
-      <a border="~ base rounded" px4 py1 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
-        GitHub
+      <a border="~ base rounded" p2 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
+        <div i-carbon-logo-github />
       </a>
-      <button border="~ base rounded" px4 py1 hover="bg-active" @click="random()">
-        Random
+      <button border="~ base rounded" p2 hover="bg-active" @click="random()">
+        <div i-carbon-shuffle />
       </button>
-      <button border="~ base rounded" px4 py1 hover="bg-active" @click="isDark = !isDark">
-        Dark
+      <button border="~ base rounded" p2 hover="bg-active" @click="share()">
+        <div v-if="copied" i-carbon-checkmark />
+        <div v-else i-carbon-link />
+      </button>
+      <button border="~ base rounded" p2 hover="bg-active" @click="isDark = !isDark">
+        <div dark:i-carbon-moon i-carbon-sun />
       </button>
     </div>
     <div grid="~ cols-[200px_200px_5fr] gap-4" p4 of-hidden>
-      <div h-full border="x base y rounded" of-auto flex="~ col">
-        <button
-          v-for="g of grammars"
-          :key="g.name"
-          border="b base" px3 py1 text-left
-          :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
-          @click="grammar = g.name"
-        >
-          {{ g.displayName }}
-        </button>
+      <div h-full of-auto flex="~ col gap-4">
+        <div relative border="~ base rounded">
+          <input
+            v-model="searchInputGrammar"
+            placeholder="Search" px3
+            py1 pl8 bg-transparent sticky top-0 w-full
+          >
+          <div i-carbon-search absolute left-2 top-2 op40 z--1 />
+        </div>
+        <div h-full of-auto flex="~ col" border="~ base rounded">
+          <button
+            v-for="g of filteredGrammars"
+            :key="g.name"
+            border="b base" px3
+            py1 text-left
+            :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
+            @click="grammar = g.name"
+          >
+            {{ g.displayName }}
+          </button>
+        </div>
       </div>
 
-      <div h-full border="x base y rounded" of-auto flex="~ col">
-        <button
-          v-for="t of themes"
-          :key="t.name"
-          border="b base" px3 py1 text-left
-          :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
-          @click="theme = t.name"
-        >
-          {{ t.displayName }}
-        </button>
+      <div h-full of-auto flex="~ col gap-4">
+        <div relative border="~ base rounded">
+          <input
+            v-model="searchInputTheme"
+            placeholder="Search" px3
+            py1 pl8 bg-transparent sticky top-0 w-full
+          >
+          <div i-carbon-search absolute left-2 top-2 op40 z--1 />
+        </div>
+        <div h-full of-auto flex="~ col" border="~ base rounded">
+          <button
+            v-for="t of filteredThemes"
+            :key="t.name"
+            border="b base" px3 py1 text-left
+            :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
+            @click="theme = t.name"
+          >
+            {{ t.displayName }}
+          </button>
+        </div>
       </div>
 
-      <div flex="~ col gap-4">
+      <div flex="~ col gap-4" of-auto>
         <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
           <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
             <div text-right op50>
