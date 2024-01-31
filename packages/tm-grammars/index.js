@@ -667,6 +667,11 @@ export const grammars = [
     source: 'https://github.com/bmalehorn/vscode-fish/blob/2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718/syntaxes/fish.tmLanguage.json',
   },
   {
+    aliases: [
+      'f',
+      'for',
+      'f77',
+    ],
     byteSize: 905,
     displayName: 'Fortran (Fixed Form)',
     embedded: [
@@ -681,6 +686,13 @@ export const grammars = [
     source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/e642012094fc0a7379f204bb4e61243005afb1da/syntaxes/fortran_fixed-form.tmLanguage.json',
   },
   {
+    aliases: [
+      'f90',
+      'f95',
+      'f03',
+      'f08',
+      'f18',
+    ],
     byteSize: 95147,
     displayName: 'Fortran (Free Form)',
     lastUpdate: '2023-05-09T01:04:12Z',
