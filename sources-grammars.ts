@@ -476,11 +476,23 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'fortran-free-form',
     displayName: 'Fortran (Free Form)',
+    aliases: [
+      'f90',
+      'f95',
+      'f03',
+      'f08',
+      'f18',
+    ],
     source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/main/syntaxes/fortran_free-form.tmLanguage.json',
   },
   {
     name: 'fortran-fixed-form',
     displayName: 'Fortran (Fixed Form)',
+    aliases: [
+      'f',
+      'for',
+      'f77',
+    ],
     source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/main/syntaxes/fortran_fixed-form.tmLanguage.json',
   },
   {
