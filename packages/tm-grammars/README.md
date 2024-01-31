@@ -1,6 +1,6 @@
 # tm-grammars
 
-Collection of TextMata grammars, converted in JSON format and re-distributed as a npm package.
+Collection of TextMate grammars, converted in JSON format and re-distributed as a npm package.
 
 ## Usage
 
