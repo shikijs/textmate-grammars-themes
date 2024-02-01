@@ -1,6 +1,6 @@
 # tm-themes
 
-Collection of TextMata Themes, converted in JSON format and re-distributed as a npm package.
+Collection of TextMate themes, converted in JSON format and re-distributed as a npm package.
 
 ## Usage
 
