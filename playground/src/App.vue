@@ -306,7 +306,7 @@ if (import.meta.hot) {
           <textarea
             id="input"
             v-model="input"
-            class="absolute top-0 left-0 w-full h-full p4 bg-transparent z-1 font-mono text-transparent"
+            class="absolute top-0 left-0 inset-0 w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
           />
         </div>
       </div>
