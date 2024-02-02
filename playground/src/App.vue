@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { HighlighterCore } from 'shiki/core'
 import { getHighlighterCore } from 'shiki/core'
 import { themes } from '../../packages/tm-themes/index'
 import { grammars } from '../../packages/tm-grammars/index'
@@ -15,6 +16,9 @@ const clipboard = useClipboard()
 const params = useUrlSearchParams('history')
 const searchInputGrammar = ref('')
 const searchInputTheme = ref('')
+const input = ref('')
+const output = ref('')
+const example = ref('')
 
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
@@ -34,20 +38,23 @@ if (params.theme && themes.some(t => t.name === params.theme))
   theme.value = params.theme as string
 if (params.grammar && grammars.some(t => t.name === params.grammar))
   grammar.value = params.grammar as string
-
-const input = ref('console.log("Hello World")')
-const output = ref('')
+if (params.code?.length)
+  input.value = params.code as string
 
 const grammarObject = computed(() => grammars.find(g => g.name === grammar.value))
 const themeObject = computed(() => themes.find(t => t.name === theme.value))
 
-async function run() {
+let highlighter: HighlighterCore | null = null
+
+async function run(fetchInput = true) {
+  highlighter = null
   error.value = null
   try {
     const themeObject = await import(`../../packages/tm-themes/themes/${theme.value}.json`).then(m => m.default)
     const langs = new Map<string, any>()
 
-    input.value = await import(`../../samples/${grammar.value}.sample?raw`).then(m => m.default)
+    if (fetchInput)
+      example.value = input.value = await import(`../../samples/${grammar.value}.sample?raw`).then(m => m.default)
 
     async function loadLangs(lang: string) {
       if (langs.has(lang))
@@ -63,7 +70,7 @@ async function run() {
     embedded.value = Array.from(langs.keys())
       .filter(l => l !== grammar.value)
 
-    const highlighter = await getHighlighterCore({
+    highlighter = await getHighlighterCore({
       themes: [
         themeObject,
       ],
@@ -71,15 +78,21 @@ async function run() {
       loadWasm: () => import('shiki/wasm'),
     })
 
+    highlight()
+  }
+  catch (e) {
+    error.value = e
+    throw e
+  }
+}
+
+function highlight() {
+  if (highlighter) {
     const result = highlighter.codeToHtml(input.value, {
       lang: grammar.value,
       theme: theme.value,
     })
     output.value = result
-  }
-  catch (e) {
-    error.value = e
-    throw e
   }
 }
 
@@ -127,15 +140,27 @@ function share() {
 
 watch(
   [theme, grammar],
-  run,
-  { immediate: true },
-)
-watch(
-  [theme, grammar],
-  () => {
+  (n, o) => {
     params.theme = theme.value
     params.grammar = grammar.value
+    const grammarChanged = o[1] !== n[1]
+    const isFirstTime = !o[0]
+    // Fetch example when grammar changes, or the first load without params
+    run(isFirstTime ? !input.value : grammarChanged)
   },
+  { immediate: true },
+)
+
+watch(
+  input,
+  () => {
+    highlight()
+    if (input.value !== example.value)
+      params.code = input.value
+    else
+      delete params.code
+  },
+  { flush: 'post' },
 )
 
 useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
@@ -157,7 +182,10 @@ if (import.meta.hot) {
       <a border="~ base rounded" p2 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
         <div i-carbon-logo-github />
       </a>
-      <button border="~ base rounded" p2 hover="bg-active" @click="random()">
+      <button border="~ base rounded" p2 hover="bg-active" title="Reset" @click="run()">
+        <div i-carbon-reset />
+      </button>
+      <button border="~ base rounded" p2 hover="bg-active" title="Random" @click="random()">
         <div i-carbon-shuffle />
       </button>
       <button border="~ base rounded" p2 hover="bg-active" @click="share()">
@@ -247,13 +275,30 @@ if (import.meta.hot) {
                 {{ grammar }}.sample
               </code>
             </button>
+            <template v-if="grammarObject?.aliases?.length">
+              <div text-right op50>
+                Aliases
+              </div>
+              <div>
+                <code v-for="a in grammarObject?.aliases" :key="a">
+                  {{ a }}
+                </code>
+              </div>
+            </template>
           </div>
         </div>
 
         <div v-if="error" text-red bg-red:10 p6 rounded>
           {{ error }}
         </div>
-        <div v-html="output" />
+        <div relative of-scroll>
+          <div v-html="output" />
+          <textarea
+            id="input"
+            v-model="input"
+            class="absolute top-0 left-0 w-full h-full p4 bg-transparent z-1 font-mono text-transparent"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -266,10 +311,12 @@ if (import.meta.hot) {
 :root.dark {
   color-scheme: dark;
 }
-.shiki {
+.shiki, #input {
   font-size: 14px;
   line-height: 1.5;
   padding: 10px;
+  min-height: 4em;
+  white-space: pre;
   --uno: border border-base rounded p4;
 }
 .panel-info button {

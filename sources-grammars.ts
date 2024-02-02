@@ -424,6 +424,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'csv',
+    displayName: 'CSV',
     source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/master/syntaxes/csv.tmLanguage.json',
     categories: ['data'],
   },
