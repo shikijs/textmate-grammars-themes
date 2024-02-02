@@ -53,15 +53,20 @@ async function run(fetchInput = true) {
     const themeObject = await import(`../../packages/tm-themes/themes/${theme.value}.json`).then(m => m.default)
     const langs = new Map<string, any>()
 
-    if (fetchInput)
-      example.value = input.value = await import(`../../samples/${grammar.value}.sample?raw`).then(m => m.default)
+    if (fetchInput) {
+      const sample = await import(`../../samples/${grammar.value}.sample?raw`)
+        .then(m => m.default)
+        .catch(() => `// No sample available for ${grammar.value}`)
+      example.value = sample
+      input.value = sample
+    }
 
     async function loadLangs(lang: string) {
       if (langs.has(lang))
         return langs.get(lang)
       const info = grammars.find(g => g.name === lang)
-      info?.embedded?.forEach(loadLangs)
       langs.set(lang, import(`../../packages/tm-grammars/grammars/${lang}.json`).then(m => m.default))
+      info?.embedded?.forEach(loadLangs)
       return langs.get(lang)
     }
 
@@ -242,8 +247,8 @@ if (import.meta.hot) {
         </div>
       </div>
 
-      <div flex="~ col gap-4" of-auto>
-        <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info">
+      <div flex="~ col gap-4" of-auto max-h-full>
+        <div p4 border="~ base rounded" flex="~ gap-4" class="panel-info" flex-none>
           <div grid="~ cols-[max-content_1fr] gap-x-3" flex-auto>
             <div text-right op50>
               Grammar
@@ -252,13 +257,18 @@ if (import.meta.hot) {
               <button text-left @click="openGrammar()">
                 <code>{{ grammar }}</code>
               </button>
-              <div flex="~ col" ml-2 border="l base">
+              <div v-if="embedded.length < 15" flex="~ col" ml-2 border="l base">
                 <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
                   <div w-4 border="t base" h-1px flex-none />
                   <button text-left op75 @click="openGrammar(e)">
                     <code>{{ e }}</code>
                   </button>
                 </div>
+              </div>
+              <div v-else flex="~ wrap gap-x-2 gap-y-1" ml-2 border="l base" px4 py1 pb2>
+                <button v-for="e in embedded" :key="e" text-left op75 @click="openGrammar(e)">
+                  <code>{{ e }}</code>
+                </button>
               </div>
             </div>
             <div text-right op50>
@@ -288,10 +298,10 @@ if (import.meta.hot) {
           </div>
         </div>
 
-        <div v-if="error" text-red bg-red:10 p6 rounded>
+        <div v-if="error" text-red bg-red:10 p6 rounded flex-none>
           {{ error }}
         </div>
-        <div relative of-scroll>
+        <div relative of-scroll flex-none>
           <div v-html="output" />
           <textarea
             id="input"
