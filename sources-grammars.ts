@@ -101,6 +101,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'html-derivative',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/html/syntaxes/html-derivative.tmLanguage.json',
+    categories: ['web', 'markup'],
+  },
+  {
     name: 'ini',
     displayName: 'INI',
     aliases: ['properties'],

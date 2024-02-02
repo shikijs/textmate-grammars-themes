@@ -434,7 +434,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
-    byteSize: 32152,
+    byteSize: 32151,
     displayName: 'Crystal',
     embedded: [
       'html',
@@ -444,13 +444,13 @@ export const grammars = [
       'javascript',
       'shellscript',
     ],
-    lastUpdate: '2023-06-17T14:29:37Z',
+    lastUpdate: '2023-12-02T04:16:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/crystal-lang-tools/vscode-crystal-lang/master/LICENSE',
     name: 'crystal',
     scopeName: 'source.crystal',
-    sha: 'b3d6d92335f52c36a57839944c3dc84d33fd1e09',
-    source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/b3d6d92335f52c36a57839944c3dc84d33fd1e09/syntaxes/crystal.json',
+    sha: '3fc307078e1cfb44247eae890253f09fbc0816e2',
+    source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/3fc307078e1cfb44247eae890253f09fbc0816e2/syntaxes/crystal.json',
   },
   {
     aliases: [
@@ -485,11 +485,11 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/ae23e73ba0690ae82614d585e10a88d608ccdda0/extensions/css/syntaxes/css.tmLanguage.json',
   },
   {
-    byteSize: 1104,
+    byteSize: 1097,
     categories: [
       'data',
     ],
-    displayName: 'csv syntax',
+    displayName: 'CSV',
     lastUpdate: '2019-01-31T01:50:13Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
@@ -1060,6 +1060,24 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/45324363153075dab0482312ae24d8c068d81e4f/extensions/html/syntaxes/html.tmLanguage.json',
   },
   {
+    byteSize: 777,
+    categories: [
+      'web',
+      'markup',
+    ],
+    displayName: 'HTML (Derivative)',
+    embedded: [
+      'html',
+    ],
+    lastUpdate: '2018-10-04T09:01:56Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    name: 'html-derivative',
+    scopeName: 'text.html.derivative',
+    sha: 'cfc2a2212de9ea10943af58ebd1817a5ad196463',
+    source: 'https://github.com/microsoft/vscode/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
+  },
+  {
     byteSize: 4054,
     categories: [
       'web',
@@ -1515,6 +1533,7 @@ export const grammars = [
       'elixir',
       'latex',
       'bibtex',
+      'html-derivative',
     ],
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
@@ -1564,6 +1583,7 @@ export const grammars = [
     embedded: [
       'markdown',
       'yaml',
+      'html-derivative',
     ],
     lastUpdate: '2023-09-01T11:16:46Z',
     license: 'MIT',
@@ -2084,6 +2104,7 @@ export const grammars = [
     ],
     displayName: 'reStructuredText',
     embedded: [
+      'html-derivative',
       'cpp',
       'python',
       'javascript',
@@ -2626,6 +2647,7 @@ export const grammars = [
       'yaml',
       'toml',
       'graphql',
+      'html-derivative',
       'markdown-vue',
       'vue-directives',
       'vue-interpolations',
@@ -2861,7 +2883,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/c3f3172a70b1a2bfdca3bdee85df9271cb0895cf/syntaxes/inline-template.json',
   },
   {
-    byteSize: 3193,
+    byteSize: 471,
     embedded: [
       'angular-expression',
     ],
@@ -2874,13 +2896,13 @@ export const injections = [
       'text.html.derivative.ng',
       'source.ts.ng',
     ],
-    lastUpdate: '2022-04-01T23:00:39Z',
+    lastUpdate: '2024-02-02T18:05:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-template',
     scopeName: 'template.ng',
-    sha: '38481421878d59dda0a69e508e97265c8e173fcd',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/38481421878d59dda0a69e508e97265c8e173fcd/syntaxes/template.json',
+    sha: '28739e438742bee69faceda5fd15445682451397',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json',
   },
   {
     byteSize: 1151,

@@ -301,12 +301,12 @@ if (import.meta.hot) {
         <div v-if="error" text-red bg-red:10 p6 rounded flex-none>
           {{ error }}
         </div>
-        <div relative of-scroll flex-none>
+        <div relative of-x-scroll flex-none>
           <div v-html="output" />
           <textarea
             id="input"
             v-model="input"
-            class="absolute top-0 left-0 inset-0 w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
+            class="absolute top-0 left-0 inset-0 caret-gray w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
           />
         </div>
       </div>
