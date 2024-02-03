@@ -649,6 +649,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
   },
   {
+    name: 'move',
+    displayName: 'Move',
+    source: 'https://github.com/damirka/move-syntax/blob/main/syntaxes/move.tmLanguage.json',
+  },
+  {
     name: 'narrat',
     aliases: ['nar'],
     source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/main/syntaxes/narrat.tmLanguage.yaml',

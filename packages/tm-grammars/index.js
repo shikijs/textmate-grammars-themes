@@ -810,7 +810,7 @@ export const grammars = [
     aliases: [
       'gjs',
     ],
-    byteSize: 19536,
+    byteSize: 19543,
     displayName: 'Glimmer JS',
     embedded: [
       'javascript',
@@ -818,19 +818,19 @@ export const grammars = [
       'css',
       'html',
     ],
-    lastUpdate: '2024-01-18T05:06:13Z',
+    lastUpdate: '2024-02-03T14:28:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
     name: 'glimmer-js',
     scopeName: 'source.gjs',
-    sha: 'f031ed7df2eeced760f4469fc9fe06f8688c531a',
-    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/f031ed7df2eeced760f4469fc9fe06f8688c531a/syntaxes/source.gjs.json',
+    sha: '312fb20cc04374eb8768369ebccabd12143edbe4',
+    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/312fb20cc04374eb8768369ebccabd12143edbe4/syntaxes/source.gjs.json',
   },
   {
     aliases: [
       'gts',
     ],
-    byteSize: 19536,
+    byteSize: 19543,
     displayName: 'Glimmer TS',
     embedded: [
       'typescript',
@@ -838,13 +838,13 @@ export const grammars = [
       'javascript',
       'html',
     ],
-    lastUpdate: '2024-01-18T05:06:13Z',
+    lastUpdate: '2024-02-03T14:28:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
     name: 'glimmer-ts',
     scopeName: 'source.gts',
-    sha: 'f031ed7df2eeced760f4469fc9fe06f8688c531a',
-    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/f031ed7df2eeced760f4469fc9fe06f8688c531a/syntaxes/source.gts.json',
+    sha: '312fb20cc04374eb8768369ebccabd12143edbe4',
+    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/312fb20cc04374eb8768369ebccabd12143edbe4/syntaxes/source.gts.json',
   },
   {
     byteSize: 3774,
@@ -1673,6 +1673,17 @@ export const grammars = [
     scopeName: 'source.mojo',
     sha: 'a2241dda06d9a20503394c3affa606114d007049',
     source: 'https://github.com/modularml/mojo-syntax/blob/a2241dda06d9a20503394c3affa606114d007049/syntaxes/mojo.syntax.json',
+  },
+  {
+    byteSize: 14150,
+    displayName: 'Move',
+    lastUpdate: '2023-05-22T07:53:33Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
+    name: 'move',
+    scopeName: 'source.move',
+    sha: 'de9244e81505ff9154dc9422dbce434ac86fb981',
+    source: 'https://github.com/damirka/move-syntax/blob/de9244e81505ff9154dc9422dbce434ac86fb981/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
