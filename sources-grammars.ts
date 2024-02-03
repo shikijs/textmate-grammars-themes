@@ -891,6 +891,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'zig',
+    displayName: 'Zig',
     source: 'https://github.com/ziglang/vscode-zig/blob/master/syntaxes/zig.tmLanguage.json',
     categories: ['general'],
   },
