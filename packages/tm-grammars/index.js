@@ -870,18 +870,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 42183,
+    byteSize: 43529,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-01-26T12:06:22Z',
+    lastUpdate: '2024-02-07T13:33:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '35d97bc7e439fce0f50f42074041ab2d8571b20a',
-    source: 'https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'fc771c597f7e15500921e7965f999338f2dccbd1',
+    source: 'https://github.com/microsoft/vscode/blob/fc771c597f7e15500921e7965f999338f2dccbd1/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [

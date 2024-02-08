@@ -8,33 +8,29 @@
   ],
   "repository": {
     "after_control_variables": {
-      "patterns": [
-        {
-          "captures": {
-            "1": {
-              "patterns": [
-                {
-                  "include": "#type-declarations-without-brackets"
-                },
-                {
-                  "match": "\\[",
-                  "name": "punctuation.definition.begin.bracket.square.go"
-                },
-                {
-                  "match": "\\]",
-                  "name": "punctuation.definition.end.bracket.square.go"
-                },
-                {
-                  "match": "(?:\\w+)",
-                  "name": "variable.other.go"
-                }
-              ]
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#type-declarations-without-brackets"
+            },
+            {
+              "match": "\\[",
+              "name": "punctuation.definition.begin.bracket.square.go"
+            },
+            {
+              "match": "\\]",
+              "name": "punctuation.definition.end.bracket.square.go"
+            },
+            {
+              "match": "(?:\\w+)",
+              "name": "variable.other.go"
             }
-          },
-          "comment": "After control variables, to not highlight as a struct/interface",
-          "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)([[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
+          ]
         }
-      ]
+      },
+      "comment": "After control variables, to not highlight as a struct/interface (before formatting with gofmt)",
+      "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)([[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
     },
     "brackets": {
       "patterns": [
@@ -177,7 +173,7 @@
             }
           },
           "comment": "make keyword",
-          "match": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*\\[\\]\\{\\}]+)(?:\\[(?:[^\\]]+)?\\])?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?)?((?:\\,\\s*[\\w\\.\\(\\)]+)+)?(\\))))"
+          "match": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?(?:\\[(?:[^\\]]+)?\\])?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?)?((?:\\,\\s*(?:[\\w\\.\\(\\)]+)?)+)?(\\))))"
         }
       ]
     },
@@ -614,7 +610,7 @@
         }
       },
       "comment": "functions in-line with multi return types",
-      "match": "(?:(\\bfunc\\b)((?:\\((?:.*)\\))(?:\\s+)(?:\\((?:.*)\\)))(?:\\s+)(?=\\{))"
+      "match": "(?:(\\bfunc\\b)((?:\\((?:[^/]*)\\))(?:\\s+)(?:\\((?:[^/]*)\\)))(?:\\s+)(?=\\{))"
     },
     "generic_param_types": {
       "comment": "generic parameter variables and types",
@@ -1028,148 +1024,112 @@
       "match": "\\b(true|false|nil|iota)\\b",
       "name": "constant.language.go"
     },
-    "map_other_types": {
+    "map_types": {
+      "begin": "(?:(\\bmap\\b)(\\[))",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.map.go"
+        },
+        "2": {
+          "name": "punctuation.definition.begin.bracket.square.go"
+        }
+      },
+      "comment": "map types",
+      "end": "(?:(\\])((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?\\b(?:func|struct|map)\\b)[\\w\\.\\[\\]\\*]+)?)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.end.bracket.square.go"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#type-declarations-without-brackets"
+            },
+            {
+              "match": "\\[",
+              "name": "punctuation.definition.begin.bracket.square.go"
+            },
+            {
+              "match": "\\]",
+              "name": "punctuation.definition.end.bracket.square.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
+        }
+      },
       "patterns": [
         {
-          "captures": {
-            "1": {
-              "name": "keyword.map.go"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "include": "#type-declarations-without-brackets"
-                },
-                {
-                  "match": "\\[",
-                  "name": "punctuation.definition.begin.bracket.square.go"
-                },
-                {
-                  "match": "\\]",
-                  "name": "punctuation.definition.end.bracket.square.go"
-                },
-                {
-                  "match": "\\{",
-                  "name": "punctuation.definition.begin.bracket.curly.go"
-                },
-                {
-                  "match": "\\}",
-                  "name": "punctuation.definition.end.bracket.curly.go"
-                },
-                {
-                  "match": "\\(",
-                  "name": "punctuation.definition.begin.bracket.round.go"
-                },
-                {
-                  "match": "\\)",
-                  "name": "punctuation.definition.end.bracket.round.go"
-                },
-                {
-                  "match": "\\w+",
-                  "name": "entity.name.type.go"
-                }
-              ]
-            },
-            "3": {
-              "patterns": [
-                {
-                  "include": "#type-declarations"
-                },
-                {
-                  "match": "\\w+",
-                  "name": "entity.name.type.go"
-                }
-              ]
-            }
-          },
-          "comment": "Other map type names (struct/interface)",
-          "match": "(?:(\\bmap\\b)(\\[(?:.*)\\])?((?!\\bfunc\\b|\\bstruct\\b)[\\w\\.\\*]+)?)"
+          "include": "#type-declarations-without-brackets"
+        },
+        {
+          "include": "#generic_types"
+        },
+        {
+          "include": "#functions"
+        },
+        {
+          "match": "\\[",
+          "name": "punctuation.definition.begin.bracket.square.go"
+        },
+        {
+          "match": "\\]",
+          "name": "punctuation.definition.end.bracket.square.go"
+        },
+        {
+          "match": "\\{",
+          "name": "punctuation.definition.begin.bracket.curly.go"
+        },
+        {
+          "match": "\\}",
+          "name": "punctuation.definition.end.bracket.curly.go"
+        },
+        {
+          "match": "\\(",
+          "name": "punctuation.definition.begin.bracket.round.go"
+        },
+        {
+          "match": "\\)",
+          "name": "punctuation.definition.end.bracket.round.go"
+        },
+        {
+          "match": "\\w+",
+          "name": "entity.name.type.go"
         }
       ]
     },
     "multi_types": {
+      "begin": "(\\btype\\b)\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.type.go"
+        },
+        "2": {
+          "name": "punctuation.definition.begin.bracket.round.go"
+        }
+      },
+      "comment": "multi type declaration",
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.end.bracket.round.go"
+        }
+      },
       "patterns": [
         {
-          "begin": "(\\btype\\b)\\s*(\\()",
-          "beginCaptures": {
-            "1": {
-              "name": "keyword.type.go"
-            },
-            "2": {
-              "name": "punctuation.definition.begin.bracket.round.go"
-            }
-          },
-          "comment": "multi type declaration",
-          "end": "\\)",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.definition.end.bracket.round.go"
-            }
-          },
-          "patterns": [
-            {
-              "include": "#struct_variables_types"
-            },
-            {
-              "include": "#type-declarations-without-brackets"
-            },
-            {
-              "include": "#parameter-variable-types"
-            },
-            {
-              "match": "(?:\\w+)",
-              "name": "entity.name.type.go"
-            }
-          ]
+          "include": "#struct_variables_types"
         },
         {
-          "begin": "(?:(?:^|\\s+)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?=\\[))",
-          "beginCaptures": {
-            "1": {
-              "name": "keyword.type.go"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "include": "#type-declarations-without-brackets"
-                },
-                {
-                  "match": "(?:\\w+)",
-                  "name": "entity.name.type.go"
-                }
-              ]
-            }
-          },
-          "comment": "single type declaration with multi-lines generics",
-          "end": "(?:(?<=\\])((?:\\s+)(?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b|\\bfunc\\b))[\\w\\.\\-\\*\\[\\]]+))?)",
-          "endCaptures": {
-            "1": {
-              "patterns": [
-                {
-                  "include": "#type-declarations-without-brackets"
-                },
-                {
-                  "match": "(?:\\w+)",
-                  "name": "entity.name.type.go"
-                }
-              ]
-            }
-          },
-          "patterns": [
-            {
-              "include": "#struct_variables_types"
-            },
-            {
-              "include": "#type-declarations-without-brackets"
-            },
-            {
-              "include": "#parameter-variable-types"
-            },
-            {
-              "match": "(?:\\w+)",
-              "name": "entity.name.type.go"
-            }
-          ]
+          "include": "#type-declarations-without-brackets"
+        },
+        {
+          "include": "#parameter-variable-types"
+        },
+        {
+          "match": "(?:\\w+)",
+          "name": "entity.name.type.go"
         }
       ]
     },
@@ -1563,6 +1523,7 @@
       "comment": "struct and interface expression in-line (before curly bracket)",
       "patterns": [
         {
+          "comment": "after control variables must be added exactly here, do not move it! (changing may not affect tests, so be careful!)",
           "include": "#after_control_variables"
         },
         {
@@ -1853,38 +1814,12 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             },
             "3": {
-              "patterns": [
-                {
-                  "begin": "\\[",
-                  "beginCaptures": {
-                    "0": {
-                      "name": "punctuation.definition.begin.bracket.square.go"
-                    }
-                  },
-                  "end": "\\]",
-                  "endCaptures": {
-                    "0": {
-                      "name": "punctuation.definition.end.bracket.square.go"
-                    }
-                  },
-                  "patterns": [
-                    {
-                      "include": "#generic_param_types"
-                    },
-                    {
-                      "include": "$self"
-                    }
-                  ]
-                }
-              ]
-            },
-            "4": {
               "patterns": [
                 {
                   "begin": "\\(",
@@ -1915,14 +1850,95 @@
                   "include": "#generic_types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
           "comment": "single type declaration",
-          "match": "(?:(?:^|\\s+)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(\\[(?:.*)\\])?(?:\\s+)((?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b))([\\s\\S]+)))"
+          "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?:\\s+)(?!(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b)([\\s\\S]+))"
+        },
+        {
+          "begin": "(?:(?:^|\\s+)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?=\\[))",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.type.go"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            }
+          },
+          "comment": "single type declaration with generics",
+          "end": "(?:(?<=\\])((?:\\s+)(?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b|\\bfunc\\b))[\\w\\.\\-\\*\\[\\]]+))?)",
+          "endCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "match": "\\[",
+                  "name": "punctuation.definition.begin.bracket.square.go"
+                },
+                {
+                  "match": "\\]",
+                  "name": "punctuation.definition.end.bracket.square.go"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            }
+          },
+          "patterns": [
+            {
+              "include": "#struct_variables_types"
+            },
+            {
+              "include": "#type-declarations-without-brackets"
+            },
+            {
+              "include": "#parameter-variable-types"
+            },
+            {
+              "match": "\\[",
+              "name": "punctuation.definition.begin.bracket.square.go"
+            },
+            {
+              "match": "\\]",
+              "name": "punctuation.definition.end.bracket.square.go"
+            },
+            {
+              "match": "\\{",
+              "name": "punctuation.definition.begin.bracket.curly.go"
+            },
+            {
+              "match": "\\}",
+              "name": "punctuation.definition.end.bracket.curly.go"
+            },
+            {
+              "match": "\\(",
+              "name": "punctuation.definition.begin.bracket.round.go"
+            },
+            {
+              "match": "\\)",
+              "name": "punctuation.definition.end.bracket.round.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
         }
       ]
     },
@@ -2057,40 +2073,17 @@
         "2": {
           "patterns": [
             {
+              "include": "#type-declarations"
+            },
+            {
               "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
-        },
-        "3": {
-          "patterns": [
-            {
-              "begin": "\\[",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.begin.bracket.square.go"
-                }
-              },
-              "end": "\\]",
-              "endCaptures": {
-                "0": {
-                  "name": "punctuation.definition.end.bracket.square.go"
-                }
-              },
-              "patterns": [
-                {
-                  "include": "#generic_param_types"
-                },
-                {
-                  "include": "$self"
-                }
-              ]
-            }
-          ]
         }
       },
-      "comment": "struct, interface type declarations",
-      "match": "(?:(?:^|\\s+)(\\btype\\b)(?:\\s+)([\\w\\.]+)(\\[(?:.*)\\])?)"
+      "comment": "struct, interface type declarations (related to: struct_variables_types, interface_variables_types)",
+      "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.]+))"
     },
     "struct_variable_types_fields_multi": {
       "patterns": [
@@ -2328,14 +2321,22 @@
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\{",
+              "name": "punctuation.definition.begin.bracket.curly.go"
+            },
+            {
+              "match": "\\}",
+              "name": "punctuation.definition.end.bracket.curly.go"
+            },
+            {
+              "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
         }
       },
       "comment": "Support Functions",
-      "match": "(?:(?:((?<=\\.)\\w+)|(\\w+))(\\[(?:.*)?\\])?(?=\\())"
+      "match": "(?:(?:((?<=\\.)\\w+)|(\\w+))(\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}\"\\']+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?(?=\\())"
     },
     "switch_select_case_variables": {
       "captures": {
@@ -2483,7 +2484,7 @@
           "include": "#comments"
         },
         {
-          "include": "#map_other_types"
+          "include": "#map_types"
         },
         {
           "include": "#brackets"
@@ -2527,7 +2528,7 @@
           "include": "#comments"
         },
         {
-          "include": "#map_other_types"
+          "include": "#map_types"
         },
         {
           "include": "#delimiters"
@@ -2589,7 +2590,7 @@
                   "include": "#delimiters"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "variable.other.assignment.go"
                 }
               ]
@@ -2597,20 +2598,36 @@
             "2": {
               "patterns": [
                 {
-                  "include": "#type-declarations"
+                  "include": "#type-declarations-without-brackets"
                 },
                 {
                   "include": "#generic_types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\(",
+                  "name": "punctuation.definition.begin.bracket.round.go"
+                },
+                {
+                  "match": "\\)",
+                  "name": "punctuation.definition.end.bracket.round.go"
+                },
+                {
+                  "match": "\\[",
+                  "name": "punctuation.definition.begin.bracket.square.go"
+                },
+                {
+                  "match": "\\]",
+                  "name": "punctuation.definition.end.bracket.square.go"
+                },
+                {
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
           "comment": "var and const with single type assignment",
-          "match": "(?:(?<=\\bvar\\b|\\bconst\\b)(?:\\s*)([\\w\\.]+(?:(?:\\,\\s*[\\w\\.]+)+)?)(?:\\s*)(?:((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:(?:[\\[\\]\\*]+)?\\bstruct\\b\\s*\\{)|(?:(?:[\\[\\]\\*]+)?\\bfunc\\b))(?:(?:(?:[\\w\\.\\*]+)?(?:\\[(?:.*)\\])?(?:[\\w\\.\\*]+)?))?\\s*(?:\\=)?))?)"
+          "match": "(?:(?<=\\bvar\\b|\\bconst\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
         },
         {
           "begin": "(?:(?<=\\bvar\\b|\\bconst\\b)(?:\\s*)(\\())",
@@ -2635,7 +2652,7 @@
                       "include": "#delimiters"
                     },
                     {
-                      "match": "(?:\\w+)",
+                      "match": "\\w+",
                       "name": "variable.other.assignment.go"
                     }
                   ]
@@ -2643,19 +2660,35 @@
                 "2": {
                   "patterns": [
                     {
-                      "include": "#type-declarations"
+                      "include": "#type-declarations-without-brackets"
                     },
                     {
                       "include": "#generic_types"
                     },
                     {
-                      "match": "(?:\\w+)",
+                      "match": "\\(",
+                      "name": "punctuation.definition.begin.bracket.round.go"
+                    },
+                    {
+                      "match": "\\)",
+                      "name": "punctuation.definition.end.bracket.round.go"
+                    },
+                    {
+                      "match": "\\[",
+                      "name": "punctuation.definition.begin.bracket.square.go"
+                    },
+                    {
+                      "match": "\\]",
+                      "name": "punctuation.definition.end.bracket.square.go"
+                    },
+                    {
+                      "match": "\\w+",
                       "name": "entity.name.type.go"
                     }
                   ]
                 }
               },
-              "match": "(?:(?:^\\s+)([\\w\\.]+(?:(?:\\,\\s*[\\w\\.]+)+)?)(?:\\s*)((?:((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:(?:[\\[\\]\\*]+)?\\bstruct\\b\\s*\\{)|(?:(?:[\\[\\]\\*]+)?\\bfunc\\b))(?:(?:(?:[\\w\\.\\*]+)?(?:\\[(?:.*)\\])?(?:[\\w\\.\\*]+)?))?\\s*(?:\\=)?))?))"
+              "match": "(?:(?:^\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
             },
             {
               "include": "$self"
