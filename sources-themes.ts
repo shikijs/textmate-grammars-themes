@@ -121,6 +121,12 @@ export const sourcesCommunity: ThemeSource[] = [
     name: 'one-dark-pro',
     source: 'https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro.json',
   },
+  {
+    name: "vesper",
+    displayName: "Vesper",
+    type: "dark",
+    source: "https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json",
+  },
 ]
 
 export const sourcesMarketplace: ThemeSource[] = [
