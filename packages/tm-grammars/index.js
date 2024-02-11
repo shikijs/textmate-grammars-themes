@@ -1675,6 +1675,17 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/a2241dda06d9a20503394c3affa606114d007049/syntaxes/mojo.syntax.json',
   },
   {
+    byteSize: 14150,
+    displayName: 'Move',
+    lastUpdate: '2023-05-22T07:53:33Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
+    name: 'move',
+    scopeName: 'source.move',
+    sha: 'de9244e81505ff9154dc9422dbce434ac86fb981',
+    source: 'https://github.com/damirka/move-syntax/blob/de9244e81505ff9154dc9422dbce434ac86fb981/syntaxes/move.tmLanguage.json',
+  },
+  {
     aliases: [
       'nar',
     ],
