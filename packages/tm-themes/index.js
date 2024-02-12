@@ -397,6 +397,17 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 12603,
+    displayName: 'Vesper',
+    lastUpdate: '2023-05-24T03:15:20Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md',
+    name: 'vesper',
+    sha: 'ef652b41ec5303892b1172d90fa4184ae6399a04',
+    source: 'https://github.com/raunofreiberg/vesper/blob/ef652b41ec5303892b1172d90fa4184ae6399a04/themes/Vesper-dark-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 13316,
     displayName: 'Vitesse Black',
     lastUpdate: '2023-11-25T14:05:49Z',
