@@ -818,6 +818,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'terraform',
+    displayName: 'Terraform',
     aliases: ['tf', 'tfvars'],
     source: 'https://github.com/hashicorp/syntax/blob/main/syntaxes/terraform.tmGrammar.json',
   },
