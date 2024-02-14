@@ -2478,6 +2478,21 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
+    aliases: [
+      'tf',
+      'tfvars',
+    ],
+    byteSize: 12693,
+    displayName: 'HashiCorp Terraform',
+    lastUpdate: '2023-06-22T13:43:10Z',
+    license: 'MPL-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE',
+    name: 'terraform',
+    scopeName: 'source.hcl.terraform',
+    sha: '13b5b4f2832a27901f1391ce0264199065c01169',
+    source: 'https://github.com/hashicorp/syntax/blob/13b5b4f2832a27901f1391ce0264199065c01169/syntaxes/terraform.tmGrammar.json',
+  },
+  {
     byteSize: 8039,
     categories: [
       'markup',

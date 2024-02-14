@@ -817,6 +817,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/sleutho/tcl/blob/master/syntaxes/tcl.tmLanguage',
   },
   {
+    name: 'terraform',
+    aliases: ['tf', 'tfvars'],
+    source: 'https://github.com/hashicorp/syntax/blob/main/syntaxes/terraform.tmGrammar.json',
+  },
+  {
     name: 'toml',
     source: 'https://github.com/textmate/toml.tmbundle/blob/master/Syntaxes/TOML.tmLanguage',
     categories: ['data'],
