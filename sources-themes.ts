@@ -65,6 +65,11 @@ export const sourcesVSCode: ThemeSource[] = [
 
 export const sourcesCommunity: ThemeSource[] = [
   {
+    name: 'lucy',
+    displayName: 'Lucy',
+    source: 'https://github.com/dai-shi/waku/blob/main/packages/website/src/theme.json',
+  },
+  {
     name: 'nord',
     source: 'https://github.com/arcticicestudio/nord-visual-studio-code/blob/develop/themes/nord-color-theme.json',
   },
