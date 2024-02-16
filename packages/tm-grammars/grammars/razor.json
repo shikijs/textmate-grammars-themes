@@ -314,6 +314,15 @@
         },
         {
           "include": "#using-directive"
+        },
+        {
+          "include": "#rendermode-directive"
+        },
+        {
+          "include": "#preservewhitespace-directive"
+        },
+        {
+          "include": "#typeparam-directive"
         }
       ]
     },
@@ -1184,6 +1193,29 @@
       "match": "(@)(page)\\s+([^$]+)?",
       "name": "meta.directive"
     },
+    "preservewhitespace-directive": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#transition"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.control.razor.directive.preservewhitespace"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "source.cs#boolean-literal"
+            }
+          ]
+        }
+      },
+      "match": "(@)(preservewhitespace)\\s+([^$]+)?",
+      "name": "meta.directive"
+    },
     "razor-codeblock": {
       "begin": "(@)(\\{)",
       "beginCaptures": {
@@ -1325,6 +1357,29 @@
         }
       },
       "match": "(@)(removeTagHelper)\\s+([^$]+)?",
+      "name": "meta.directive"
+    },
+    "rendermode-directive": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#transition"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.control.razor.directive.rendermode"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "source.cs#type"
+            }
+          ]
+        }
+      },
+      "match": "(@)(rendermode)\\s+([^$]+)?",
       "name": "meta.directive"
     },
     "section-directive": {
@@ -1605,6 +1660,29 @@
           "include": "#finally-clause"
         }
       ]
+    },
+    "typeparam-directive": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#transition"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.control.razor.directive.typeparam"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "source.cs#type"
+            }
+          ]
+        }
+      },
+      "match": "(@)(typeparam)\\s+([^$]+)?",
+      "name": "meta.directive"
     },
     "unquoted-string-argument": {
       "match": "[^$]+",
