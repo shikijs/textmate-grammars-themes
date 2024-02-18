@@ -289,7 +289,7 @@ if (import.meta.hot) {
               <div text-right op50>
                 Aliases
               </div>
-              <div>
+              <div flex="~ gap-2">
                 <code v-for="a in grammarObject?.aliases" :key="a">
                   {{ a }}
                 </code>
