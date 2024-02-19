@@ -837,6 +837,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/mblode/vscode-twig-language-2/blob/master/src/syntaxes/twig.tmLanguage',
   },
   {
+    name: 'typst',
+    displayName: 'Typst',
+    aliases: ['typ'],
+    source: 'https://github.com/nvarner/typst-lsp/blob/master/editors/vscode/typst.tmLanguage.json',
+  },
+  {
     name: 'verilog',
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/main/syntaxes/verilog.tmLanguage.json',
   },
