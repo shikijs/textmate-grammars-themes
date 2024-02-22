@@ -155,6 +155,9 @@
           "include": "#self"
         },
         {
+          "include": "#func"
+        },
+        {
           "include": "#letter"
         },
         {
@@ -380,6 +383,10 @@
         }
       },
       "match": "(extends)\\s+([a-zA-Z_]\\w*\\.[a-zA-Z_]\\w*)?"
+    },
+    "func": {
+      "match": "\\bfunc\\b",
+      "name": "keyword.language.gdscript"
     },
     "function_arguments": {
       "begin": "(\\()",
@@ -929,6 +936,20 @@
       "end": "$|;",
       "name": "meta.variable.gdscript",
       "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.separator.annotation.gdscript"
+            },
+            "2": {
+              "name": "keyword.language.gdscript storage.type.const.gdscript"
+            },
+            "3": {
+              "name": "entity.name.function.gdscript"
+            }
+          },
+          "match": "(:)?\\s*(set|get)\\s+=\\s+([a-zA-Z_]\\w*)"
+        },
         {
           "match": ":=|=(?!=)",
           "name": "keyword.operator.assignment.gdscript"

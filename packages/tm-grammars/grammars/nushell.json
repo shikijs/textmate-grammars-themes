@@ -153,6 +153,9 @@
           "name": "meta.record-entry.nushell"
         },
         {
+          "include": "#spread"
+        },
+        {
           "include": "source.nushell"
         }
       ]
@@ -229,6 +232,12 @@
       "end": "(?=\\||\\)|\\}|;)|$",
       "name": "meta.command.nushell",
       "patterns": [
+        {
+          "include": "#parameters"
+        },
+        {
+          "include": "#spread"
+        },
         {
           "include": "#value"
         }
@@ -494,7 +503,12 @@
     "function-parameter": {
       "patterns": [
         {
-          "match": "((?:-{0,2}|\\.{3})[\\w-]+)(?:\\((-[\\w?])\\))?",
+          "captures": {
+            "1": {
+              "name": "keyword.control.nushell"
+            }
+          },
+          "match": "(-{0,2}|\\.{3})[\\w-]+(?:\\((-[\\w?])\\))?",
           "name": "variable.parameter.nushell"
         },
         {
@@ -611,7 +625,12 @@
       "name": "keyword.control.nushell"
     },
     "parameters": {
-      "match": "\\b-{1,2}[\\w-]*",
+      "captures": {
+        "1": {
+          "name": "keyword.control.nushell"
+        }
+      },
+      "match": "(?<=\\s)(-{1,2})[\\w-]+",
       "name": "variable.parameter.nushell"
     },
     "paren-expression": {
@@ -656,7 +675,11 @@
       ]
     },
     "ranges": {
-      "match": "\\.\\.<?|:",
+      "match": "\\.\\.<?",
+      "name": "keyword.control.nushell"
+    },
+    "spread": {
+      "match": "\\.\\.\\.(?=[^\\s\\]}])",
       "name": "keyword.control.nushell"
     },
     "string": {
@@ -805,14 +828,14 @@
       "name": "meta.table.nushell",
       "patterns": [
         {
+          "include": "#spread"
+        },
+        {
           "include": "#value"
         },
         {
           "match": ",",
           "name": "punctuation.separator.nushell"
-        },
-        {
-          "include": "#comment"
         }
       ]
     },
@@ -998,9 +1021,6 @@
         },
         {
           "include": "#table"
-        },
-        {
-          "include": "#parameters"
         },
         {
           "include": "#operators"
