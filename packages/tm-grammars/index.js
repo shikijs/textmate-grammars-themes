@@ -2270,7 +2270,7 @@ export const grammars = [
       'shell',
       'zsh',
     ],
-    byteSize: 33623,
+    byteSize: 33650,
     categories: [
       'scripting',
     ],

@@ -105,7 +105,7 @@
               ]
             }
           },
-          "match": "[ \\t]*+([^\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>))"
+          "match": "[ \\t]*+([^ \\t\\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>))"
         },
         {
           "include": "#normal_statement_context"
@@ -1755,7 +1755,7 @@
           ]
         }
       },
-      "match": "(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?:[ \\t]*+([^\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>)))?(?:(?:\\$\")|\")",
+      "match": "(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?:[ \\t]*+([^ \\t\\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>)))?(?:(?:\\$\")|\")",
       "name": "meta.statement.command.name.quoted.shell string.quoted.double.shell punctuation.definition.string.begin.shell entity.name.function.call.shell entity.name.command.shell"
     },
     "start_of_single_quoted_command_name": {
@@ -1784,7 +1784,7 @@
           ]
         }
       },
-      "match": "(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?:[ \\t]*+([^\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>)))?(?:(?:\\$')|')",
+      "match": "(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?:[ \\t]*+([^ \\t\\n'&;<>\\(\\)\\$`\\\\\"\\|]+(?!>)))?(?:(?:\\$')|')",
       "name": "meta.statement.command.name.quoted.shell string.quoted.single.shell punctuation.definition.string.begin.shell entity.name.function.call.shell entity.name.command.shell"
     },
     "string": {

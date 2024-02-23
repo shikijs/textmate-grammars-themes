@@ -24,12 +24,19 @@ export function cleanupGrammar(lang: any) {
     // (_, key, value) => console.log('lang key removal', key, '|', value),
   )
 
+  const reGrammarComment = /\s#.*$/
   function cleanupMatch(match: string) {
-    const lines = match.split(/\n/g)
+    // https://github.com/shikijs/shiki/issues/591#issuecomment-1961637557
+    // It seems the `shellscript` grammars has a selector that missing the backslash escape, we patched them here
+    if (lang.name === 'shellscript')
+      match = match.replace(/\[\^ \t\n/g, '[^ \\t\\n')
+
+    const lines = match
+      .split(/\n/g)
     if (lines.length === 1)
       return match
     return lines
-      .map(i => i.replace(/\s#.*$/, '').trim())
+      .map(i => i.replace(reGrammarComment, '').trim())
       .join('\n')
   }
   function cleanupPattern(a: any) {
