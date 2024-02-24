@@ -146,6 +146,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 14057,
+    displayName: 'GitHub Light Default',
+    lastUpdate: '2023-01-06T02:19:35Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    name: 'github-light-default',
+    sha: 'f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1',
+    source: 'https://github.com/primer/github-vscode-theme/blob/f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1/src/theme.js',
+    type: 'light',
+  },
+  {
     byteSize: 9698,
     displayName: 'Light Plus',
     lastUpdate: '2023-09-12T10:37:49Z',
