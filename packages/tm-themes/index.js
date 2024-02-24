@@ -124,6 +124,17 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 14336,
+    displayName: 'GitHub Dark Default',
+    lastUpdate: '2023-01-06T02:19:35Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    name: 'github-dark-default',
+    sha: 'f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1',
+    source: 'https://github.com/primer/github-vscode-theme/blob/f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1/src/theme.js',
+    type: 'dark',
+  },
+  {
     byteSize: 14334,
     displayName: 'GitHub Dark Dimmed',
     lastUpdate: '2023-01-06T02:19:35Z',
