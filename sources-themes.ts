@@ -154,6 +154,7 @@ export const sourcesMarketplace: ThemeSource[] = [
     'https://github.com/primer/github-vscode-theme/blob/main/src/theme.js',
     [
       'GitHub Dark',
+      'GitHub Dark Default',
       'GitHub Light',
       'GitHub Dark Dimmed',
     ],
