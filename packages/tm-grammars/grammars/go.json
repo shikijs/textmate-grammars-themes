@@ -30,7 +30,7 @@
         }
       },
       "comment": "After control variables, to not highlight as a struct/interface (before formatting with gofmt)",
-      "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)([[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
+      "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)((?![\\[\\]]+)[[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
     },
     "brackets": {
       "patterns": [
@@ -173,7 +173,7 @@
             }
           },
           "comment": "make keyword",
-          "match": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?(?:\\[(?:[^\\]]+)?\\])?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?)?((?:\\,\\s*(?:[\\w\\.\\(\\)]+)?)+)?(\\))))"
+          "match": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?(?:\\[(?:[^\\]]+)?\\])?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?)?((?:\\,\\s*(?:[\\w\\.\\(\\)/\\+\\-\\<\\>\\&\\|\\%\\*]+)?)+)?(\\))))"
         }
       ]
     },
@@ -253,7 +253,7 @@
         }
       },
       "comment": "double parentheses types",
-      "match": "(?:(\\((?:[\\w\\.\\[\\]\\*\\&]+)\\))(?=\\())"
+      "match": "(?:(?<!\\w)(\\((?:[\\w\\.\\[\\]\\*\\&]+)\\))(?=\\())"
     },
     "function_declaration": {
       "begin": "(?:^(\\bfunc\\b)(?:\\s*(\\([^\\)]+\\)\\s*)?(?:(\\w+)(?=\\(|\\[))?))",
@@ -317,12 +317,7 @@
               "name": "entity.name.function.go"
             }
           ]
-        },
-        "patterns": [
-          {
-            "include": "#type-declarations"
-          }
-        ]
+        }
       },
       "comment": "Function declarations",
       "end": "(?:(?<=\\))\\s*((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b))[\\w\\.\\-\\*\\[\\]]+)?\\s*(?=\\{))",
@@ -403,14 +398,14 @@
                   "include": "#parameter-variable-types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
           "comment": "single function as a type returned type(s) declaration",
-          "match": "(?:(?<=\\))\\s+((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\*\\.\\[\\]\\<\\>\\-]+(?:\\s*)(?:\\/(?:\\/|\\*).*)?)$)"
+          "match": "(?:(?<=\\))(?:\\s*)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\*\\.\\[\\]\\<\\>\\-]+(?:\\s*)(?:\\/(?:\\/|\\*).*)?)$)"
         },
         {
           "include": "$self"
@@ -610,7 +605,7 @@
         }
       },
       "comment": "functions in-line with multi return types",
-      "match": "(?:(\\bfunc\\b)((?:\\((?:[^/]*)\\))(?:\\s+)(?:\\((?:[^/]*)\\)))(?:\\s+)(?=\\{))"
+      "match": "(?:(\\bfunc\\b)((?:\\((?:[^/]*?)\\))(?:\\s+)(?:\\((?:[^/]*?)\\)))(?:\\s+)(?=\\{))"
     },
     "generic_param_types": {
       "comment": "generic parameter variables and types",
@@ -906,6 +901,42 @@
           },
           "patterns": [
             {
+              "include": "#support_functions"
+            },
+            {
+              "include": "#type-declarations-without-brackets"
+            },
+            {
+              "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+              "beginCaptures": {
+                "1": {
+                  "patterns": [
+                    {
+                      "include": "#type-declarations"
+                    },
+                    {
+                      "match": "(?:\\w+)",
+                      "name": "entity.name.type.go"
+                    }
+                  ]
+                },
+                "2": {
+                  "name": "punctuation.definition.begin.bracket.square.go"
+                }
+              },
+              "end": "\\]",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.end.bracket.square.go"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#generic_param_types"
+                }
+              ]
+            },
+            {
               "begin": "\\(",
               "beginCaptures": {
                 "0": {
@@ -921,14 +952,8 @@
               "patterns": [
                 {
                   "include": "#function_param_types"
-                },
-                {
-                  "include": "$self"
                 }
               ]
-            },
-            {
-              "include": "#support_functions"
             },
             {
               "captures": {
@@ -938,17 +963,14 @@
                       "include": "#type-declarations"
                     },
                     {
-                      "include": "#generic_types"
-                    },
-                    {
-                      "match": "(?:\\w+)",
+                      "match": "\\w+",
                       "name": "entity.name.type.go"
                     }
                   ]
                 }
               },
-              "comment": "single declaration | with or declarations",
-              "match": "((?:\\s+\\|)?(?:[\\w\\.\\[\\]\\*]+)(?:\\s+\\|)?)"
+              "comment": "other types",
+              "match": "([\\w\\.]+)"
             },
             {
               "include": "$self"
@@ -1478,7 +1500,7 @@
       "comment": "Note that the order here is very important!",
       "patterns": [
         {
-          "match": "((?:\\*|&)+)(?:(?!\\d)(?=(?:[\\w\\[\\]])|(?:\\<\\-)))",
+          "match": "((?:\\*|\\&)+)(?:(?!\\d)(?=(?:[\\w\\[\\]])|(?:\\<\\-)))",
           "name": "keyword.operator.address.go"
         },
         {
@@ -1575,16 +1597,9 @@
       ]
     },
     "other_variables": {
-      "match": "(?:\\w+)",
-      "name": "variable.other.go",
-      "patterns": [
-        {
-          "include": "#storage_types"
-        },
-        {
-          "include": "$self"
-        }
-      ]
+      "comment": "all other variables",
+      "match": "\\w+",
+      "name": "variable.other.go"
     },
     "package_name": {
       "patterns": [
@@ -2088,11 +2103,18 @@
     "struct_variable_types_fields_multi": {
       "patterns": [
         {
-          "begin": "(?:\\s*)?([\\s\\,\\w]+)(?:\\s+)(?:(?:[\\[\\]\\*])+)?(\\bstruct\\b)\\s*(\\{)",
+          "begin": "(?:(\\w+(?:\\,\\s*\\w+)*)(?:\\s+)(?:(?:[\\[\\]\\*])+)?(\\bstruct\\b)(?:\\s*)(\\{))",
           "beginCaptures": {
             "1": {
-              "match": "(?:\\w+)",
-              "name": "variable.other.property.go"
+              "patterns": [
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.property.go"
+                }
+              ]
             },
             "2": {
               "name": "keyword.struct.go"
@@ -2336,7 +2358,7 @@
         }
       },
       "comment": "Support Functions",
-      "match": "(?:(?:((?<=\\.)\\w+)|(\\w+))(\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}\"\\']+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?(?=\\())"
+      "match": "(?:(?:((?<=\\.)\\b\\w+)|(\\b\\w+))(\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}\"\\']+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?(?=\\())"
     },
     "switch_select_case_variables": {
       "captures": {
@@ -2352,13 +2374,16 @@
               "include": "#support_functions"
             },
             {
+              "include": "#variable_assignment"
+            },
+            {
               "match": "\\w+",
               "name": "variable.other.go"
             }
           ]
         }
       },
-      "comment": "variables after case control keyword in switch/select expression",
+      "comment": "variables after case control keyword in switch/select expression, to not scope them as property variables",
       "match": "(?:(?:^\\s*(\\bcase\\b))(?:\\s+)([\\s\\S]+(?:\\:)\\s*(?:/(?:/|\\*).*)?)$)"
     },
     "switch_types": {
@@ -2370,7 +2395,7 @@
               "include": "#operators"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "variable.other.assignment.go"
             }
           ]
@@ -2384,7 +2409,7 @@
               "include": "#type-declarations"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "variable.other.go"
             }
           ]
@@ -2407,6 +2432,7 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
+      "comment": "switch type assertions, only highlights types after case keyword",
       "end": "(?:\\})",
       "endCaptures": {
         "0": {
@@ -2414,9 +2440,6 @@
         }
       },
       "patterns": [
-        {
-          "include": "#type-declarations"
-        },
         {
           "captures": {
             "1": {
@@ -2444,7 +2467,32 @@
               ]
             }
           },
+          "comment": "types after case keyword with single line",
           "match": "(?:^\\s*(\\bcase\\b))(?:\\s+)([\\w\\.\\,\\*\\=\\<\\>\\!\\s]+)(:)(\\s*/(?:/|\\*)\\s*.*)?$"
+        },
+        {
+          "begin": "\\bcase\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control.go"
+            }
+          },
+          "comment": "types after case keyword with multi lines",
+          "end": "\\:",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.other.colon.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#type-declarations"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
         },
         {
           "include": "$self"

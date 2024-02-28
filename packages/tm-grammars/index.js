@@ -535,18 +535,18 @@ export const grammars = [
     source: 'https://github.com/Pure-D/code-d/blob/466ac04dcc1f6d3fea50ef5ae7a920a121efd09c/syntaxes/d.json',
   },
   {
-    byteSize: 6866,
+    byteSize: 6940,
     categories: [
       'general',
     ],
     displayName: 'Dart',
-    lastUpdate: '2023-12-13T12:08:01Z',
+    lastUpdate: '2024-02-27T11:14:40Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: '3c86ede5f554f6e196c832394e126b291a1de606',
-    source: 'https://github.com/microsoft/vscode/blob/3c86ede5f554f6e196c832394e126b291a1de606/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sha: 'e9a8b6add5329f8124f23ff7143d95c22ce39f76',
+    source: 'https://github.com/microsoft/vscode/blob/e9a8b6add5329f8124f23ff7143d95c22ce39f76/extensions/dart/syntaxes/dart.tmLanguage.json',
   },
   {
     byteSize: 5498,
@@ -870,18 +870,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 43529,
+    byteSize: 44298,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-02-07T13:33:31Z',
+    lastUpdate: '2024-02-27T11:14:40Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: 'fc771c597f7e15500921e7965f999338f2dccbd1',
-    source: 'https://github.com/microsoft/vscode/blob/fc771c597f7e15500921e7965f999338f2dccbd1/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'e9a8b6add5329f8124f23ff7143d95c22ce39f76',
+    source: 'https://github.com/microsoft/vscode/blob/e9a8b6add5329f8124f23ff7143d95c22ce39f76/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
