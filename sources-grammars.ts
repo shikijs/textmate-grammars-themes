@@ -148,6 +148,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'julia',
+    aliases: ['jl'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/julia/syntaxes/julia.tmLanguage.json',
     categories: ['web', 'data'],
   },
