@@ -1714,7 +1714,7 @@ export const grammars = [
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/7eeb9be8d01556b7c51c59307275c2f720f2ddf4/syntaxes/nextflow.tmLanguage.json',
   },
   {
-    byteSize: 33617,
+    byteSize: 34956,
     categories: [
       'config',
     ],
@@ -1722,13 +1722,13 @@ export const grammars = [
     embedded: [
       'lua',
     ],
-    lastUpdate: '2021-11-18T16:10:10Z',
+    lastUpdate: '2024-02-28T17:19:46Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-nginx-conf-hint/main/LICENSE',
     name: 'nginx',
     scopeName: 'source.nginx',
-    sha: '0582d5b71a31ff893b3587996b233f22239fba57',
-    source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/0582d5b71a31ff893b3587996b233f22239fba57/src/syntax/nginx.tmLanguage',
+    sha: '49159c02fd09dce264ded7802c9499a0f09646f5',
+    source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/49159c02fd09dce264ded7802c9499a0f09646f5/src/syntax/nginx.tmLanguage',
   },
   {
     byteSize: 22343,
