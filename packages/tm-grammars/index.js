@@ -3019,7 +3019,7 @@ export const injections = [
     source: 'https://github.com/vuejs/language-tools/blob/ce5623e52a31c99797052727a817d422266f210d/extensions/vscode/syntaxes/markdown-vue.json',
   },
   {
-    byteSize: 349,
+    byteSize: 366,
     embeddedIn: [
       'vue',
     ],
@@ -3029,13 +3029,13 @@ export const injections = [
       'text.html.derivative',
       'text.pug',
     ],
-    lastUpdate: '2023-10-23T14:34:03Z',
+    lastUpdate: '2024-02-29T13:15:16Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
     name: 'vue-directives',
     scopeName: 'vue.directives',
-    sha: 'ce5623e52a31c99797052727a817d422266f210d',
-    source: 'https://github.com/vuejs/language-tools/blob/ce5623e52a31c99797052727a817d422266f210d/extensions/vscode/syntaxes/vue-directives.json',
+    sha: 'd5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1',
+    source: 'https://github.com/vuejs/language-tools/blob/d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1/extensions/vscode/syntaxes/vue-directives.json',
   },
   {
     byteSize: 349,
