@@ -434,7 +434,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
-    byteSize: 32352,
+    byteSize: 32359,
     displayName: 'Crystal',
     embedded: [
       'html',
@@ -444,13 +444,13 @@ export const grammars = [
       'javascript',
       'shellscript',
     ],
-    lastUpdate: '2024-02-20T17:46:33Z',
+    lastUpdate: '2024-02-26T14:51:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/crystal-lang-tools/vscode-crystal-lang/master/LICENSE',
     name: 'crystal',
     scopeName: 'source.crystal',
-    sha: '592999d041bdc59b0127dee68bd225330eb9bc41',
-    source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/592999d041bdc59b0127dee68bd225330eb9bc41/syntaxes/crystal.json',
+    sha: 'c920b0931ec5f05b78447dbff31b172c64f1d734',
+    source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/c920b0931ec5f05b78447dbff31b172c64f1d734/syntaxes/crystal.json',
   },
   {
     aliases: [
