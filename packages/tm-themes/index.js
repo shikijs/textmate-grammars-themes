@@ -303,6 +303,8 @@ export const themes = [
     byteSize: 33434,
     displayName: 'Poimandres',
     lastUpdate: '2022-09-25T11:26:55Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/drcmda/poimandres-theme/main/LICENSE',
     name: 'poimandres',
     sha: '574213aba50e3a46a95fa86a69025a0fae046a8a',
     source: 'https://github.com/drcmda/poimandres-theme/blob/574213aba50e3a46a95fa86a69025a0fae046a8a/themes/poimandres-color-theme.json',

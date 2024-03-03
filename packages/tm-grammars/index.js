@@ -1300,6 +1300,9 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
   },
   {
+    aliases: [
+      'jl',
+    ],
     byteSize: 31564,
     categories: [
       'web',
@@ -2270,7 +2273,7 @@ export const grammars = [
       'shell',
       'zsh',
     ],
-    byteSize: 33650,
+    byteSize: 33638,
     categories: [
       'scripting',
     ],
