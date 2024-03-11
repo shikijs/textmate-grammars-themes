@@ -1,4 +1,4 @@
-import type { ThemeSource } from './scripts/themes/types'
+import type { ThemeSource } from "./scripts/themes/types";
 
 export const sourcesVSCode: ThemeSource[] = [
   {
@@ -12,9 +12,9 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/marqu3ss/Aurora-X/blob/master/themes/Aurora%20X-color-theme.json',
   },
   {
-    name: 'ayu-dark',
-    displayName: 'Ayu Dark',
-    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
+    name: "ayu-dark",
+    displayName: "Ayu Dark",
+    source: "https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json",
   },
   {
     name: 'dark-plus',
@@ -127,7 +127,14 @@ export const sourcesCommunity: ThemeSource[] = [
     source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
     type: 'dark',
   },
-]
+  {
+    name: "houston",
+    displayName: "Houston",
+    source:
+      "https://github.com/withastro/houston-vscode/blob/main/themes/houston.json",
+    type: "dark",
+  },
+];
 
 export const sourcesMarketplace: ThemeSource[] = [
   ...generateMarketplaceSource(
@@ -170,13 +177,13 @@ export const sourcesMarketplace: ThemeSource[] = [
       'Catppuccin Frappé',
     ],
   ),
-]
+];
 
 export const sources = [
   ...sourcesVSCode,
   ...sourcesCommunity,
   ...sourcesMarketplace,
-]
+];
 
 function generateMarketplaceSource(name: string, source: string, themes: string[]): ThemeSource[] {
   return themes.map(theme => ({
@@ -187,5 +194,5 @@ function generateMarketplaceSource(name: string, source: string, themes: string[
       name,
       theme,
     },
-  }))
+  }));
 }
