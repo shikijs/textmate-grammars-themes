@@ -168,6 +168,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 4360,
+    displayName: 'Houston',
+    lastUpdate: '2022-12-13T22:07:25Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/withastro/houston-vscode/main/LICENSE',
+    name: 'houston',
+    sha: '0a68af94b8b04d070bf8f5aacadd8ec17278ecad',
+    source: 'https://github.com/withastro/houston-vscode/blob/0a68af94b8b04d070bf8f5aacadd8ec17278ecad/src/extension.ts',
+    type: 'dark',
+  },
+  {
     byteSize: 9698,
     displayName: 'Light Plus',
     lastUpdate: '2023-09-12T10:37:49Z',
