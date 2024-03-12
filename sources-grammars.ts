@@ -520,9 +520,8 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/master/gclient/syntaxes/feature.tmLanguage',
   },
   {
-    name: "gleam",
-    source:
-      "https://github.com/gleam-lang/vscode-gleam/blob/main/syntaxes/gleam.tmLanguage.json",
+    name: 'gleam',
+    source: 'https://github.com/gleam-lang/vscode-gleam/blob/main/syntaxes/gleam.tmLanguage.json',
   },
   {
     name: 'glimmer-js',
