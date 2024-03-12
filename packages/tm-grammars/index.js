@@ -807,6 +807,17 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
+    byteSize: 3890,
+    displayName: 'Gleam',
+    lastUpdate: '2023-09-02T13:11:38Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
+    name: 'gleam',
+    scopeName: 'source.gleam',
+    sha: 'b81cf9a415d6e7b5a3d5ba3ac2cead313c1e53e9',
+    source: 'https://github.com/gleam-lang/vscode-gleam/blob/b81cf9a415d6e7b5a3d5ba3ac2cead313c1e53e9/syntaxes/gleam.tmLanguage.json',
+  },
+  {
     aliases: [
       'gjs',
     ],
