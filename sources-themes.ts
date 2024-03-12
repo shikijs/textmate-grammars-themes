@@ -127,6 +127,12 @@ export const sourcesCommunity: ThemeSource[] = [
     source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
     type: 'dark',
   },
+  {
+    name: 'houston',
+    displayName: 'Houston',
+    source: 'https://github.com/withastro/houston-vscode/blob/main/themes/houston.json',
+    type: 'dark',
+  },
 ]
 
 export const sourcesMarketplace: ThemeSource[] = [
