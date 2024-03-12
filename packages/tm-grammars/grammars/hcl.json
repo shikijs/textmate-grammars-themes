@@ -281,12 +281,16 @@
       ]
     },
     "functions": {
-      "begin": "(\\w+)(\\()",
+      "begin": "([:\\-\\w]+)(\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
             {
-              "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+              "match": "\\b[[:alpha:]][\\w_-]*::([[:alpha:]][\\w_-]*::)?[[:alpha:]][\\w_-]*\\b",
+              "name": "support.function.namespaced.hcl"
+            },
+            {
+              "match": "\\b[[:alpha:]][\\w_-]*\\b",
               "name": "support.function.builtin.hcl"
             }
           ]
