@@ -152,7 +152,7 @@ export const grammars = [
     source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/15c07b12741ac75f5bb6e7701dc7c0d742add8dd/syntaxes/language-x86_64-assembly.tmLanguage',
   },
   {
-    byteSize: 10881,
+    byteSize: 23427,
     categories: [
       'web',
     ],
@@ -169,13 +169,13 @@ export const grammars = [
       'postcss',
       'tsx',
     ],
-    lastUpdate: '2023-12-29T02:14:17Z',
+    lastUpdate: '2024-03-13T17:14:29Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/withastro/language-tools/main/LICENSE',
     name: 'astro',
     scopeName: 'source.astro',
-    sha: '37434ab5ee2149dd74a7c1e800d8c279a0617912',
-    source: 'https://github.com/withastro/language-tools/blob/37434ab5ee2149dd74a7c1e800d8c279a0617912/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
+    sha: 'db49ff7cbeb2910ddac6ce0b15f3973b72827ccd',
+    source: 'https://github.com/withastro/language-tools/blob/db49ff7cbeb2910ddac6ce0b15f3973b72827ccd/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
   },
   {
     byteSize: 5303,
@@ -1489,7 +1489,7 @@ export const grammars = [
     aliases: [
       'md',
     ],
-    byteSize: 53837,
+    byteSize: 53842,
     categories: [
       'web',
       'markup',
@@ -1549,13 +1549,13 @@ export const grammars = [
       'bibtex',
       'html-derivative',
     ],
-    lastUpdate: '2023-12-13T12:08:01Z',
+    lastUpdate: '2024-03-13T17:25:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'markdown',
     scopeName: 'text.html.markdown',
-    sha: '3c86ede5f554f6e196c832394e126b291a1de606',
-    source: 'https://github.com/microsoft/vscode/blob/3c86ede5f554f6e196c832394e126b291a1de606/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
+    sha: '6b0a582e595fab7da09fcd267f4f8248e7ec437e',
+    source: 'https://github.com/microsoft/vscode/blob/6b0a582e595fab7da09fcd267f4f8248e7ec437e/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
   },
   {
     byteSize: 18747,
@@ -1689,15 +1689,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/a2241dda06d9a20503394c3affa606114d007049/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 14150,
+    byteSize: 16667,
     displayName: 'Move',
-    lastUpdate: '2023-05-22T07:53:33Z',
+    lastUpdate: '2024-03-13T20:37:02Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: 'de9244e81505ff9154dc9422dbce434ac86fb981',
-    source: 'https://github.com/damirka/move-syntax/blob/de9244e81505ff9154dc9422dbce434ac86fb981/syntaxes/move.tmLanguage.json',
+    sha: 'ec2884fdaee236db42d8999e5f9cd2923e317f8b',
+    source: 'https://github.com/damirka/move-syntax/blob/ec2884fdaee236db42d8999e5f9cd2923e317f8b/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [

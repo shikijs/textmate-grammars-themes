@@ -5,14 +5,14 @@
 
 export const themes = [
   {
-    byteSize: 8772,
+    byteSize: 8801,
     displayName: 'Andromeeda',
-    lastUpdate: '2023-04-13T21:00:26Z',
+    lastUpdate: '2024-03-13T01:26:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
     name: 'andromeeda',
-    sha: 'a05c86aec15c98d371e46eefbb2d1838b563f73c',
-    source: 'https://github.com/EliverLara/Andromeda/blob/a05c86aec15c98d371e46eefbb2d1838b563f73c/themes/Andromeda-color-theme.json',
+    sha: '94008ecde515dd2306e51d60fbb965bca2a516ad',
+    source: 'https://github.com/EliverLara/Andromeda/blob/94008ecde515dd2306e51d60fbb965bca2a516ad/themes/Andromeda-color-theme.json',
     type: 'dark',
   },
   {
@@ -300,14 +300,14 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 33267,
+    byteSize: 33321,
     displayName: 'One Dark Pro',
-    lastUpdate: '2023-07-04T03:17:49Z',
+    lastUpdate: '2024-03-13T03:10:53Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
     name: 'one-dark-pro',
-    sha: '2cb4ae735fc0482e0486b52cd873128eb5249900',
-    source: 'https://github.com/Binaryify/OneDark-Pro/blob/2cb4ae735fc0482e0486b52cd873128eb5249900/themes/OneDark-Pro.json',
+    sha: '37492751be5cb02bed4c3bf4f1938f075bc6ce6b',
+    source: 'https://github.com/Binaryify/OneDark-Pro/blob/37492751be5cb02bed4c3bf4f1938f075bc6ce6b/themes/OneDark-Pro.json',
     type: 'dark',
   },
   {
