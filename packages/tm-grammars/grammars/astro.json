@@ -177,6 +177,9 @@
     },
     {
       "include": "#frontmatter"
+    },
+    {
+      "include": "#text"
     }
   ],
   "repository": {
@@ -558,16 +561,6 @@
         },
         {
           "include": "#entities"
-        },
-        {
-          "begin": "(?<=^|>|})",
-          "end": "(?=<|{|$)",
-          "name": "text.astro",
-          "patterns": [
-            {
-              "include": "#entities"
-            }
-          ]
         }
       ]
     },
@@ -823,6 +816,20 @@
       "patterns": [
         {
           "include": "#attributes"
+        }
+      ]
+    },
+    "text": {
+      "patterns": [
+        {
+          "begin": "(?<=^|---|>|})",
+          "end": "(?=<|{|$)",
+          "name": "text.astro",
+          "patterns": [
+            {
+              "include": "#entities"
+            }
+          ]
         }
       ]
     }
