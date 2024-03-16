@@ -1,8 +1,6 @@
 {
   "displayName": "Gleam",
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "gleam",
-  "fileTypes": ["gleam"],
   "patterns": [
     {
       "include": "#comments"
@@ -21,74 +19,23 @@
     }
   ],
   "repository": {
-    "keywords": {
+    "binary_number": {
+      "match": "\\b0b[0-1]+\\b",
+      "name": "constant.numeric.binary.gleam",
       "patterns": [
-        {
-          "name": "keyword.control.gleam",
-          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic)\\b"
-        },
-        {
-          "name": "keyword.operator.arrow.gleam",
-          "match": "(<\\-|\\->)"
-        },
-        {
-          "name": "keyword.operator.pipe.gleam",
-          "match": "\\|>"
-        },
-        {
-          "name": "keyword.operator.splat.gleam",
-          "match": "\\.\\."
-        },
-        {
-          "name": "keyword.operator.comparison.float.gleam",
-          "match": "(<=\\.|>=\\.|==\\.|!=\\.|<\\.|>\\.)"
-        },
-        {
-          "name": "keyword.operator.comparison.int.gleam",
-          "match": "(<=|>=|==|!=|<|>)"
-        },
-        {
-          "name": "keyword.operator.logical.gleam",
-          "match": "(&&|\\|\\|)"
-        },
-        {
-          "name": "keyword.operator.string.gleam",
-          "match": "<>"
-        },
-        {
-          "name": "keyword.operator.other.gleam",
-          "match": "\\|"
-        },
-        {
-          "name": "keyword.operator.arithmetic.float.gleam",
-          "match": "(\\+\\.|\\-\\.|/\\.|\\*\\.|%\\.)"
-        },
-        {
-          "name": "keyword.operator.arithmetic.int.gleam",
-          "match": "(\\+|\\-|/|\\*|%)"
-        },
-        {
-          "name": "keyword.operator.assignment.gleam",
-          "match": "="
-        }
       ]
     },
-    "strings": {
-      "name": "string.quoted.double.gleam",
-      "begin": "\"",
-      "end": "\"",
+    "boolean": {
+      "match": "\\b(True|False)\\b",
+      "name": "constant.language.boolean.gleam",
       "patterns": [
-        {
-          "name": "constant.character.escape.gleam",
-          "match": "\\\\."
-        }
       ]
     },
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.gleam",
-          "match": "//.*"
+          "match": "//.*",
+          "name": "comment.line.gleam"
         }
       ]
     },
@@ -110,59 +57,115 @@
           "include": "#boolean"
         },
         {
-          "name": "entity.name.type.gleam",
-          "match": "[[:upper:]][[:word:]]*"
+          "match": "[[:upper:]][[:word:]]*",
+          "name": "entity.name.type.gleam"
         }
       ]
     },
-    "binary_number": {
-      "name": "constant.numeric.binary.gleam",
-      "match": "\\b0b[0-1]+\\b",
-      "patterns": []
-    },
-    "octal_number": {
-      "name": "constant.numeric.octal.gleam",
-      "match": "\\b0o[0-7]+\\b",
-      "patterns": []
-    },
     "decimal_number": {
+      "match": "\\b[[:digit:]]+(_?[[:digit:]])*(\\.[[:digit:]]*)?(e-?[[:digit:]]*)?\\b",
       "name": "constant.numeric.decimal.gleam",
-      "match": "\\b[[:digit:]][[:digit:]_]*(\\.[[:digit:]]*)?\\b",
-      "patterns": []
-    },
-    "hexadecimal_number": {
-      "name": "constant.numeric.hexadecimal.gleam",
-      "match": "\\b0x[[:xdigit:]]+\\b",
-      "patterns": []
-    },
-    "boolean": {
-      "name": "constant.language.boolean.gleam",
-      "match": "\\b(True|False)\\b",
-      "patterns": []
+      "patterns": [
+      ]
     },
     "entity": {
       "patterns": [
         {
           "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.gleam"
+            }
+          },
           "end": "\\)",
           "patterns": [
             {
               "include": "$self"
             }
-          ],
-          "captures": {
-            "1": {
-              "name": "entity.name.function.gleam"
-            }
-          }
+          ]
         },
         {
-          "name": "variable.parameter.gleam",
-          "match": "\\b([[:lower:]][[:word:]]*):\\s"
+          "match": "\\b([[:lower:]][[:word:]]*):\\s",
+          "name": "variable.parameter.gleam"
         },
         {
-          "name": "entity.name.namespace.gleam",
-          "match": "\\b([[:lower:]][[:word:]]*):"
+          "match": "\\b([[:lower:]][[:word:]]*):",
+          "name": "entity.name.namespace.gleam"
+        }
+      ]
+    },
+    "hexadecimal_number": {
+      "match": "\\b0x[[:xdigit:]]+\\b",
+      "name": "constant.numeric.hexadecimal.gleam",
+      "patterns": [
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic)\\b",
+          "name": "keyword.control.gleam"
+        },
+        {
+          "match": "(<\\-|\\->)",
+          "name": "keyword.operator.arrow.gleam"
+        },
+        {
+          "match": "\\|>",
+          "name": "keyword.operator.pipe.gleam"
+        },
+        {
+          "match": "\\.\\.",
+          "name": "keyword.operator.splat.gleam"
+        },
+        {
+          "match": "(<=\\.|>=\\.|==\\.|!=\\.|<\\.|>\\.)",
+          "name": "keyword.operator.comparison.float.gleam"
+        },
+        {
+          "match": "(<=|>=|==|!=|<|>)",
+          "name": "keyword.operator.comparison.int.gleam"
+        },
+        {
+          "match": "(&&|\\|\\|)",
+          "name": "keyword.operator.logical.gleam"
+        },
+        {
+          "match": "<>",
+          "name": "keyword.operator.string.gleam"
+        },
+        {
+          "match": "\\|",
+          "name": "keyword.operator.other.gleam"
+        },
+        {
+          "match": "(\\+\\.|\\-\\.|/\\.|\\*\\.|%\\.)",
+          "name": "keyword.operator.arithmetic.float.gleam"
+        },
+        {
+          "match": "(\\+|\\-|/|\\*|%)",
+          "name": "keyword.operator.arithmetic.int.gleam"
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.gleam"
+        }
+      ]
+    },
+    "octal_number": {
+      "match": "\\b0o[0-7]+\\b",
+      "name": "constant.numeric.octal.gleam",
+      "patterns": [
+      ]
+    },
+    "strings": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.gleam",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.gleam"
         }
       ]
     }
