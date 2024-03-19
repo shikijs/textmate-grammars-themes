@@ -1058,9 +1058,6 @@
           "include": "#backticks"
         },
         {
-          "include": "#illegal-anno"
-        },
-        {
           "include": "#literal"
         },
         {
@@ -1813,7 +1810,7 @@
       "name": "meta.function.python",
       "patterns": [
         {
-          "include": "#raises-modifier"
+          "include": "#function-modifier"
         },
         {
           "include": "#function-def-name"
@@ -1845,6 +1842,10 @@
           "name": "entity.name.function.python"
         }
       ]
+    },
+    "function-modifier": {
+      "match": "(raises|capturing)",
+      "name": "storage.modifier"
     },
     "function-name": {
       "patterns": [
@@ -1878,20 +1879,19 @@
         }
       ]
     },
-    "illegal-anno": {
-      "match": "->",
-      "name": "invalid.illegal.annotation.python"
-    },
     "illegal-names": {
       "captures": {
         "1": {
           "name": "keyword.control.flow.python"
         },
         "2": {
+          "name": "storage.type.function.python"
+        },
+        "3": {
           "name": "keyword.control.import.python"
         }
       },
-      "match": "(?x)\n\\b(?:\n(\nand | assert | async | await | break | class | struct | trait | continue | def\n| fn\n| del | elif | else | except | finally | for | from | global\n| if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])\n| nonlocal | not | or | pass | raise | return | try | while | with\n| yield\n) | (\nas | import\n)\n)\\b\n"
+      "match": "(?x)\n\\b(?:\n(\nand | assert | async | await | break | class | struct | trait | continue | del | elif | else | except | finally | for | from | global\n| if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])\n| nonlocal | not | or | pass | raise | return | try | while | with\n| yield\n) | (def | fn | capturing | raises) | (\nas | import\n)\n)\\b\n"
     },
     "illegal-object-name": {
       "comment": "It's illegal to name class or function \"True\"",
@@ -2110,9 +2110,6 @@
             },
             {
               "include": "#backticks"
-            },
-            {
-              "include": "#illegal-anno"
             },
             {
               "include": "#lambda-parameter-with-default"
@@ -2589,10 +2586,6 @@
           "name": "punctuation.separator.element.python"
         }
       ]
-    },
-    "raises-modifier": {
-      "match": "(raises)",
-      "name": "storage.modifier"
     },
     "regexp": {
       "patterns": [
@@ -3582,7 +3575,7 @@
     "statement-keyword": {
       "patterns": [
         {
-          "match": "\\b((async\\s+)?\\s*def)\\b",
+          "match": "\\b((async\\s+)?\\s*(def|fn))\\b",
           "name": "storage.type.function.python"
         },
         {
