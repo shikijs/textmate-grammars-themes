@@ -545,17 +545,11 @@
               "name": "meta.mapping.key.hcl variable.other.readwrite.hcl"
             },
             "2": {
-              "name": "keyword.operator.assignment.hcl",
-              "patterns": [
-                {
-                  "match": "\\=\\>",
-                  "name": "storage.type.function.hcl"
-                }
-              ]
+              "name": "keyword.operator.assignment.hcl"
             }
           },
           "comment": "Literal, named object key",
-          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\=\\>?)\\s*"
+          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\=(?!=))\\s*"
         },
         {
           "captures": {
@@ -573,7 +567,7 @@
             }
           },
           "comment": "String object key",
-          "match": "\\b((\").*(\"))\\s*(\\=)\\s*"
+          "match": "^\\s*((\").*(\"))\\s*(\\=)\\s*"
         },
         {
           "begin": "^\\s*\\(",
@@ -674,7 +668,8 @@
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\:"
+          "match": "\\:",
+          "name": "keyword.operator.hcl"
         }
       ]
     },

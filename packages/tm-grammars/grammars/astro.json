@@ -183,6 +183,19 @@
     }
   ],
   "repository": {
+    "attribute-literal": {
+      "begin": "(`)",
+      "end": "\\1",
+      "name": "string.template.astro",
+      "patterns": [
+        {
+          "include": "source.tsx#template-substitution-element"
+        },
+        {
+          "include": "source.tsx#string-character-escape"
+        }
+      ]
+    },
     "attributes": {
       "patterns": [
         {
@@ -220,6 +233,12 @@
           },
           "end": "(?<=[^\\s=])(?!\\s*=)|(?=/?>)",
           "patterns": [
+            {
+              "include": "#interpolation"
+            },
+            {
+              "include": "#attribute-literal"
+            },
             {
               "begin": "(?=[^\\s=<>`/]|/(?!>))",
               "end": "(?!\\G)",
@@ -421,17 +440,7 @@
           "name": "string.quoted.astro"
         },
         {
-          "begin": "(`)",
-          "end": "\\1",
-          "name": "string.template.astro",
-          "patterns": [
-            {
-              "include": "source.tsx#template-substitution-element"
-            },
-            {
-              "include": "source.tsx#string-character-escape"
-            }
-          ]
+          "include": "#attribute-literal"
         }
       ]
     },

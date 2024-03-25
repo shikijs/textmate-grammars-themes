@@ -24,7 +24,7 @@
     "abilities": {
       "comment": "Ability",
       "match": "\\b(store|key|drop|copy)\\b",
-      "name": "entity.name.type.ability.move"
+      "name": "support.type.ability.move"
     },
     "address": {
       "begin": "\\b(address)\\b",
@@ -105,6 +105,11 @@
           "name": "comment.block.move"
         }
       ]
+    },
+    "capitalized": {
+      "comment": "MyType - capitalized type name",
+      "match": "\\b([A-Z][a-zA-Z_0-9]*)\\b",
+      "name": "entity.name.type.use.move"
     },
     "comments": {
       "name": "meta.comments.move",
@@ -307,6 +312,16 @@
           "name": "variable.other.meta.move"
         },
         {
+          "comment": "ALL_CONST_CAPS",
+          "match": "\\b([A-Z][A-Z_]+)\\b",
+          "name": "constant.other.move"
+        },
+        {
+          "comment": "CustomType",
+          "match": "\\b([A-Z][a-zA-Z_0-9]*)\\b",
+          "name": "entity.name.type.move"
+        },
+        {
           "include": "#paren"
         },
         {
@@ -325,6 +340,9 @@
         },
         {
           "include": "#types"
+        },
+        {
+          "include": "#capitalized"
         },
         {
           "include": "#expr_generic"
@@ -436,6 +454,9 @@
           "include": "#module_access"
         },
         {
+          "include": "#capitalized"
+        },
+        {
           "include": "#types"
         },
         {
@@ -475,7 +496,16 @@
               "include": "#self_access"
             },
             {
+              "include": "#expr_generic"
+            },
+            {
+              "include": "#escaped_identifier"
+            },
+            {
               "include": "#module_access"
+            },
+            {
+              "include": "#capitalized"
             },
             {
               "include": "#types"
@@ -815,7 +845,7 @@
     },
     "packed_field": {
       "comment": "[ident]: ",
-      "match": "[a-z][a-z0-9_]+\\s*:\\s[^:]",
+      "match": "[a-z][a-z0-9_]+\\s*:\\s*(?=\\s)",
       "name": "meta.struct.field.move"
     },
     "paren": {
@@ -1103,6 +1133,9 @@
                   "include": "#comments"
                 },
                 {
+                  "include": "#capitalized"
+                },
+                {
                   "include": "#types"
                 }
               ]
@@ -1139,7 +1172,16 @@
               "include": "#self_access"
             },
             {
+              "include": "#escaped_identifier"
+            },
+            {
               "include": "#module_access"
+            },
+            {
+              "include": "#expr_generic"
+            },
+            {
+              "include": "#capitalized"
             },
             {
               "include": "#types"
@@ -1172,6 +1214,9 @@
           "include": "#phantom"
         },
         {
+          "include": "#capitalized"
+        },
+        {
           "include": "#module_access"
         },
         {
@@ -1188,16 +1233,6 @@
         },
         {
           "include": "#vector"
-        },
-        {
-          "comment": "Capitalized type names",
-          "match": "\\b([A-Z][A-Za-z_]*)\\b",
-          "name": "entity.name.type"
-        },
-        {
-          "comment": "All-uppercase const literal",
-          "match": "\\b([A-Z_]+)\\b",
-          "name": "constant.other.move"
         }
       ]
     },
@@ -1216,7 +1251,9 @@
           "include": "#comments"
         },
         {
-          "include": "#as-import"
+          "comment": "as keyword",
+          "match": "\\b(as)\\b",
+          "name": "keyword.control.as.move"
         },
         {
           "comment": "Self keyword",
@@ -1225,8 +1262,17 @@
         },
         {
           "comment": "Function name",
-          "match": "\\b([a-z][a-z_0-9]+)\\b",
+          "match": "\\b(_______[a-z][a-z_0-9]+)\\b",
           "name": "entity.name.function.use.move"
+        },
+        {
+          "include": "#types"
+        },
+        {
+          "include": "#escaped_identifier"
+        },
+        {
+          "include": "#capitalized"
         }
       ]
     },
