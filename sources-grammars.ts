@@ -294,6 +294,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web', 'scripting', 'general'],
   },
   {
+    name: 'tsv',
+    displayName: 'TSV',
+    source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/master/syntaxes/tsv.tmLanguage.json',
+    categories: ['data'],
+  },
+  {
     name: 'tsx',
     displayName: 'TSX',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
