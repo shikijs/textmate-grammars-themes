@@ -2536,6 +2536,20 @@ export const grammars = [
     source: 'https://github.com/textmate/toml.tmbundle/blob/e82b64c1e86396220786846201e9aa3f0a2d9ca2/Syntaxes/TOML.tmLanguage',
   },
   {
+    byteSize: 633,
+    categories: [
+      'data',
+    ],
+    displayName: 'TSV',
+    lastUpdate: '2018-06-05T03:29:03Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
+    name: 'tsv',
+    scopeName: 'text.tsv',
+    sha: '00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3',
+    source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3/syntaxes/tsv.tmLanguage.json',
+  },
+  {
     byteSize: 175266,
     categories: [
       'web',
