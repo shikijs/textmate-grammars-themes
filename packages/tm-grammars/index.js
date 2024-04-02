@@ -2886,13 +2886,13 @@ export const grammars = [
       'general',
     ],
     displayName: 'Zig',
-    lastUpdate: '2024-03-24T10:39:45Z',
+    lastUpdate: '2024-04-01T00:42:12Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE',
     name: 'zig',
     scopeName: 'source.zig',
-    sha: '5a806c116fa1f940b68ba3064e77cbd3239985a3',
-    source: 'https://github.com/ziglang/vscode-zig/blob/5a806c116fa1f940b68ba3064e77cbd3239985a3/syntaxes/zig.tmLanguage.json',
+    sha: 'f6a1959a2ae122ee9f5aefc950904bb072f09688',
+    source: 'https://github.com/ziglang/vscode-zig/blob/f6a1959a2ae122ee9f5aefc950904bb072f09688/syntaxes/zig.tmLanguage.json',
   },
 ]
 

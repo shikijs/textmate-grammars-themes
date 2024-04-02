@@ -202,7 +202,7 @@ import { grammars } from 'tm-grammars'
 | `xsl` |  | [microsoft/vscode](https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/xml/syntaxes/xsl.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | `xml` | 1.20 kB |
 | `yaml` | `yml` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/772aaf777a2e6b50c5c2e53da1a0955d2cb73a4d/extensions/yaml/syntaxes/yaml.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) |  | 10.58 kB |
 | `zenscript` |  | [CraftTweaker/ZenScript-tmLanguage](https://github.com/CraftTweaker/ZenScript-tmLanguage/blob/5a7bcb775a6fb37470e56f904e70d8b8b9e6b047/zenscript.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/CraftTweaker/ZenScript-tmLanguage/master/LICENSE) |  | 4.08 kB |
-| `zig` |  | [ziglang/vscode-zig](https://github.com/ziglang/vscode-zig/blob/5a806c116fa1f940b68ba3064e77cbd3239985a3/syntaxes/zig.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE) |  | 4.69 kB |
+| `zig` |  | [ziglang/vscode-zig](https://github.com/ziglang/vscode-zig/blob/f6a1959a2ae122ee9f5aefc950904bb072f09688/syntaxes/zig.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE) |  | 4.69 kB |
 
 ## Injections
 
