@@ -1672,36 +1672,23 @@
             "10": {
               "name": "punctuation.separator.placeholder-parts.erlang"
             },
-            "12": {
-              "name": "punctuation.separator.placeholder-parts.erlang"
-            },
-            "3": {
-              "name": "punctuation.separator.placeholder-parts.erlang"
-            },
-            "4": {
-              "name": "punctuation.separator.placeholder-parts.erlang"
-            },
             "6": {
-              "name": "punctuation.separator.placeholder-parts.erlang"
-            },
-            "8": {
               "name": "punctuation.separator.placeholder-parts.erlang"
             }
           },
-          "match": "(~)((\\-)?\\d++|(\\*))?((\\.)(\\d++|(\\*)))?((\\.)((\\*)|.))?[~cfegswpWPBX#bx\\+ni]",
-          "name": "constant.other.placeholder.erlang"
+          "comment": "io:fwrite format contorl sequence",
+          "match": "(~)((\\-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[tlkK]*[~cfegswpWPBX#bx\\+ni]",
+          "name": "constant.character.format.placeholder.other.erlang"
         },
         {
           "captures": {
             "1": {
               "name": "punctuation.definition.placeholder.erlang"
-            },
-            "2": {
-              "name": "punctuation.separator.placeholder-parts.erlang"
             }
           },
-          "match": "(~)(\\*)?(\\d++)?[~du\\-#fsacl]",
-          "name": "constant.other.placeholder.erlang"
+          "comment": "io:fread format contorl sequence",
+          "match": "(~)(\\*)?(\\d++)?(t)?[~du\\-#fsacl]",
+          "name": "constant.character.format.placeholder.other.erlang"
         },
         {
           "match": "~[^\"]?",
