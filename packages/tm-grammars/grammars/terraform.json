@@ -361,22 +361,23 @@
       ]
     },
     "inline_for_expression": {
-      "begin": "(for)\\b",
-      "beginCaptures": {
+      "captures": {
         "1": {
           "name": "keyword.control.hcl"
+        },
+        "2": {
+          "patterns": [
+            {
+              "match": "\\=\\>",
+              "name": "storage.type.function.hcl"
+            },
+            {
+              "include": "#for_expression_body"
+            }
+          ]
         }
       },
-      "end": "\\n",
-      "patterns": [
-        {
-          "match": "\\=\\>",
-          "name": "storage.type.function.hcl"
-        },
-        {
-          "include": "#for_expression_body"
-        }
-      ]
+      "match": "(for)\\b(.*)\\n"
     },
     "inline_if_expression": {
       "begin": "(if)\\b",
