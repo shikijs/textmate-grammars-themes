@@ -414,6 +414,14 @@
           "name": "comment.line.sql"
         },
         {
+          "match": "(--.*$)",
+          "name": "comment.line.sql"
+        },
+        {
+          "match": "(\\*>.*$)",
+          "name": "comment.line.modern"
+        },
+        {
           "match": "(\\:([0-9a-zA-Z\\-_])*)",
           "name": "variable.cobol"
         },
@@ -494,6 +502,10 @@
       "name": "keyword.verb.cobol",
       "patterns": [
         {
+          "match": "(\\*>.*$)",
+          "name": "comment.line.modern"
+        },
+        {
           "match": "(\\:([a-zA-Z\\-])*)",
           "name": "variable.cobol"
         },
@@ -508,6 +520,14 @@
       "end": "(?i:end\\-exec)",
       "name": "keyword.verb.cobol",
       "patterns": [
+        {
+          "match": "(--.*$)",
+          "name": "comment.line.sql"
+        },
+        {
+          "match": "(\\*>.*$)",
+          "name": "comment.line.modern"
+        },
         {
           "match": "(\\:([a-zA-Z\\-])*)",
           "name": "variable.cobol"
