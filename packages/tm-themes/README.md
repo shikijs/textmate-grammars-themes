@@ -22,7 +22,7 @@ import { themes } from 'tm-themes'
 
 | Name | ID | Source | License | File Size |
 | ---- | -- | ------ | ------- | --------- |
-| Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/d7b96ccac36fd29929bd97bc9357413cc4e0240c/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
+| Catppuccin Latte | `catppuccin-latte` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/eead26917ad2f00c32145975cb04340c8bc5e91e/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
 | GitHub Light | `github-light` | [primer/github-vscode-theme](https://github.com/primer/github-vscode-theme/blob/f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1/src/theme.js) | [MIT](https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE) | 10.86 kB |
 | GitHub Light Default | `github-light-default` | [primer/github-vscode-theme](https://github.com/primer/github-vscode-theme/blob/f47b83f1acebb7fba4a3ec0bdb9385f85e6e8aa1/src/theme.js) | [MIT](https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE) | 13.73 kB |
 | Light Plus | `light-plus` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/cc4775f55aff152db2417dfaaddc643ee90b31f9/extensions/theme-defaults/themes/light_plus.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 9.47 kB |
@@ -31,7 +31,7 @@ import { themes } from 'tm-themes'
 | Rosé Pine Dawn | `rose-pine-dawn` | [rose-pine/vscode](https://github.com/rose-pine/vscode/blob/a36bb5866f161d5346d16fbe33f5ad8136ef6a1b/themes/rose-pine-dawn-color-theme.json) | [MIT](https://raw.githubusercontent.com/rose-pine/vscode/main/license) | 20.91 kB |
 | Slack Ochin | `slack-ochin` | [slack-theme/visual-studio-code](https://github.com/slack-theme/visual-studio-code/blob/572452d0da20d384858b28ad14e110ee5daac411/themes/ochin.json) | [MIT](https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License) | 9.15 kB |
 | Solarized Light | `solarized-light` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/f605341af6b083f2b6d9c853d882b96955c690b7/extensions/theme-solarized-light/themes/solarized-light-color-theme.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 6.23 kB |
-| Vitesse Light | `vitesse-light` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/da24459c69a05b51de024d02a6166aa7ad30fae9/themes/vitesse-light.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 12.94 kB |
+| Vitesse Light | `vitesse-light` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/3ed3411dc7dd209cd765b8ab856045efb2d097b9/themes/vitesse-light.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 12.94 kB |
 
 ## Dark Themes
 
@@ -40,9 +40,9 @@ import { themes } from 'tm-themes'
 | Andromeeda | `andromeeda` | [EliverLara/Andromeda](https://github.com/EliverLara/Andromeda/blob/94008ecde515dd2306e51d60fbb965bca2a516ad/themes/Andromeda-color-theme.json) | [MIT](https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md) | 8.59 kB |
 | Aurora X | `aurora-x` | [marqu3ss/Aurora-X](https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json) |  | 13.28 kB |
 | Ayu Dark | `ayu-dark` | [ayu-theme/vscode-ayu](https://github.com/ayu-theme/vscode-ayu/blob/798bc07c1ac7faccab57081042ba9a16621cdde4/ayu-dark.json) | [MIT](https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE) | 14.54 kB |
-| Catppuccin Frappé | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/d7b96ccac36fd29929bd97bc9357413cc4e0240c/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
-| Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/d7b96ccac36fd29929bd97bc9357413cc4e0240c/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.52 kB |
-| Catppuccin Mocha | `catppuccin-mocha` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/d7b96ccac36fd29929bd97bc9357413cc4e0240c/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
+| Catppuccin Frappé | `catppuccin-frappe` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/eead26917ad2f00c32145975cb04340c8bc5e91e/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
+| Catppuccin Macchiato | `catppuccin-macchiato` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/eead26917ad2f00c32145975cb04340c8bc5e91e/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.52 kB |
+| Catppuccin Mocha | `catppuccin-mocha` | [catppuccin/vscode](https://github.com/catppuccin/vscode/blob/eead26917ad2f00c32145975cb04340c8bc5e91e/packages/catppuccin-vsc/package.json) | [MIT](https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE) | 43.51 kB |
 | Dark Plus | `dark-plus` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/cc4775f55aff152db2417dfaaddc643ee90b31f9/extensions/theme-defaults/themes/dark_plus.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 8.64 kB |
 | Dracula | `dracula` | [dracula/visual-studio-code](https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml) | [MIT](https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE) | 20.51 kB |
 | Dracula Soft | `dracula-soft` | [dracula/visual-studio-code](https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml) | [MIT](https://raw.githubusercontent.com/dracula/visual-studio-code/master/LICENSE) | 20.52 kB |
@@ -68,8 +68,8 @@ import { themes } from 'tm-themes'
 | Synthwave '84 | `synthwave-84` | [robb0wen/synthwave-vscode](https://github.com/robb0wen/synthwave-vscode/blob/7eaf45c07650295625e1e5ea73274fc50f9ea3c1/themes/synthwave-color-theme.json) | [MIT](https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE) | 13.65 kB |
 | Tokyo Night | `tokyo-night` | [enkia/tokyo-night-vscode-theme](https://github.com/enkia/tokyo-night-vscode-theme/blob/26465cb6086201916e284acef1b4bcca927f30e8/themes/tokyo-night-color-theme.json) | [MIT](https://raw.githubusercontent.com/enkia/tokyo-night-vscode-theme/master/LICENSE.txt) | 32.81 kB |
 | Vesper | `vesper` | [raunofreiberg/vesper](https://github.com/raunofreiberg/vesper/blob/ef652b41ec5303892b1172d90fa4184ae6399a04/themes/Vesper-dark-color-theme.json) | [MIT](https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md) | 12.31 kB |
-| Vitesse Black | `vitesse-black` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/da24459c69a05b51de024d02a6166aa7ad30fae9/themes/vitesse-black.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.00 kB |
-| Vitesse Dark | `vitesse-dark` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/da24459c69a05b51de024d02a6166aa7ad30fae9/themes/vitesse-dark.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.08 kB |
+| Vitesse Black | `vitesse-black` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/3ed3411dc7dd209cd765b8ab856045efb2d097b9/themes/vitesse-black.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.00 kB |
+| Vitesse Dark | `vitesse-dark` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/3ed3411dc7dd209cd765b8ab856045efb2d097b9/themes/vitesse-dark.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.08 kB |
 <!--list-end-->
 
 ## License
