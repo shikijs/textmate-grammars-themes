@@ -122,6 +122,12 @@ export const sourcesCommunity: ThemeSource[] = [
     source: 'https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro.json',
   },
   {
+    name: 'one-light',
+    displayName: 'One Light',
+    source: 'https://github.com/akamud/vscode-theme-onelight/blob/master/themes/OneLight.json',
+    type: 'light',
+  },
+  {
     name: 'vesper',
     displayName: 'Vesper',
     source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
@@ -132,6 +138,12 @@ export const sourcesCommunity: ThemeSource[] = [
     displayName: 'Houston',
     source: 'https://github.com/withastro/houston-vscode/blob/main/themes/houston.json',
     type: 'dark',
+  },
+  {
+    name: 'snazzy-light',
+    displayName: 'Snazzy Light',
+    source: 'https://github.com/loilo/vscode-snazzy-light/blob/master/themes/Snazzy-Light-color-theme.json',
+    type: 'light',
   },
 ]
 
