@@ -2075,19 +2075,19 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/perl/syntaxes/perl6.tmLanguage.json',
   },
   {
-    byteSize: 24836,
+    byteSize: 25089,
     displayName: 'ASP.NET Razor',
     embedded: [
       'html',
       'csharp',
     ],
-    lastUpdate: '2024-02-16T00:01:48Z',
+    lastUpdate: '2024-04-18T22:08:48Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dotnet/razor/main/LICENSE.txt',
     name: 'razor',
     scopeName: 'text.aspnetcorerazor',
-    sha: 'f01e110af179981942987384d2b5d4e489eab014',
-    source: 'https://github.com/dotnet/razor/blob/f01e110af179981942987384d2b5d4e489eab014/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
+    sha: '39159764277f3c80a786d8872eba7730da3d7ef0',
+    source: 'https://github.com/dotnet/razor/blob/39159764277f3c80a786d8872eba7730da3d7ef0/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
   },
   {
     byteSize: 2255,
