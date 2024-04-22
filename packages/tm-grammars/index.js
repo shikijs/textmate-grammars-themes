@@ -1836,18 +1836,18 @@ export const grammars = [
     source: 'https://github.com/reasonml-editor/vscode-reasonml/blob/14af625ec50ed9968b957b4d6336c5338d81af45/syntaxes/ocaml.json',
   },
   {
-    byteSize: 3944,
+    byteSize: 3996,
     categories: [
       'general',
     ],
     displayName: 'Pascal',
-    lastUpdate: '2023-07-08T13:48:57Z',
+    lastUpdate: '2024-04-14T00:32:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/LICENSE.md',
     name: 'pascal',
     scopeName: 'source.pascal',
-    sha: 'd5a15b7d68942a1ebe59e00173feefb799f52e68',
-    source: 'https://github.com/alefragnani/vscode-language-pascal/blob/d5a15b7d68942a1ebe59e00173feefb799f52e68/syntaxes/pascal.tmLanguage',
+    sha: 'b364f43ef1747a22872cf98d1844d976576f9df0',
+    source: 'https://github.com/alefragnani/vscode-language-pascal/blob/b364f43ef1747a22872cf98d1844d976576f9df0/syntaxes/pascal.tmLanguage',
   },
   {
     byteSize: 42982,
