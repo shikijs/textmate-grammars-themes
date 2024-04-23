@@ -1690,15 +1690,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 17215,
+    byteSize: 17473,
     displayName: 'Move',
-    lastUpdate: '2024-03-22T21:38:47Z',
+    lastUpdate: '2024-04-22T17:43:01Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: 'afdbb23b3360581c13e3ff60d514d0e4888b1aaa',
-    source: 'https://github.com/damirka/move-syntax/blob/afdbb23b3360581c13e3ff60d514d0e4888b1aaa/syntaxes/move.tmLanguage.json',
+    sha: '6f8ae1a8a5edb63283a6f89284f8158e4544b16c',
+    source: 'https://github.com/damirka/move-syntax/blob/6f8ae1a8a5edb63283a6f89284f8158e4544b16c/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
@@ -1780,15 +1780,15 @@ export const grammars = [
     aliases: [
       'nu',
     ],
-    byteSize: 18790,
+    byteSize: 18816,
     displayName: 'nushell',
-    lastUpdate: '2024-03-26T20:23:04Z',
+    lastUpdate: '2024-04-22T15:44:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
     name: 'nushell',
     scopeName: 'source.nushell',
-    sha: '92faaf74f87bcdff8eb70e0aab7c9118e64189f4',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/92faaf74f87bcdff8eb70e0aab7c9118e64189f4/syntaxes/nushell.tmLanguage.json',
+    sha: '359e3a69c516c996e5bcd7161290f78feaebbbfb',
+    source: 'https://github.com/nushell/vscode-nushell-lang/blob/359e3a69c516c996e5bcd7161290f78feaebbbfb/syntaxes/nushell.tmLanguage.json',
   },
   {
     aliases: [

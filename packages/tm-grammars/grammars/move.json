@@ -16,6 +16,12 @@
     },
     {
       "include": "#attributes"
+    },
+    {
+      "begin": "\\b(while)\\b",
+      "comment": "While experiment",
+      "name": "keyword.control.while.whaaat.move",
+      "while": "[a-z]"
     }
   ],
   "repository": {
@@ -271,6 +277,9 @@
           "include": "#let"
         },
         {
+          "include": "#types"
+        },
+        {
           "include": "#literals"
         },
         {
@@ -463,7 +472,7 @@
           "include": "#mut"
         },
         {
-          "begin": "(?<=fun)",
+          "begin": "(?<=\\bfun)",
           "comment": "Function name",
           "end": "(?=[<(])",
           "name": "meta.function_name.move",
@@ -526,6 +535,24 @@
       "comment": "Has Abilities",
       "match": "\\b(has)\\b",
       "name": "keyword.control.ability.has.move"
+    },
+    "has_ability": {
+      "begin": "(?<=[})])\\s+(has)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.type.move"
+        }
+      },
+      "end": ";",
+      "name": "meta.has.ability.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#abilities"
+        }
+      ]
     },
     "ident": {
       "match": "\\b([a-zA-Z][A-Z_a-z0-9]*)\\b",
@@ -747,7 +774,7 @@
               "include": "#escaped_identifier"
             },
             {
-              "begin": "(?<=(module|spec))",
+              "begin": "(?<=\\b(module|spec))",
               "comment": "Module namespace / address",
               "end": "(?=[(::){])",
               "name": "constant.other.move"
@@ -797,6 +824,9 @@
               "include": "#struct"
             },
             {
+              "include": "#has_ability"
+            },
+            {
               "include": "#enum"
             },
             {
@@ -807,9 +837,6 @@
             },
             {
               "include": "#spec"
-            },
-            {
-              "include": "#block"
             }
           ]
         }
@@ -879,7 +906,7 @@
       "name": "storage.modifier.visibility.public.move"
     },
     "public-scope": {
-      "begin": "(?<=(public))\\s*\\(",
+      "begin": "(?<=\\b(public))\\s*\\(",
       "comment": "public (friend/script/package)",
       "end": "\\)",
       "name": "meta.public.scoped.move",
@@ -1063,7 +1090,7 @@
           "include": "#types"
         },
         {
-          "begin": "(?<=define)",
+          "begin": "(?<=\\bdefine)",
           "comment": "Function name",
           "end": "(?=[(])",
           "patterns": [
@@ -1094,61 +1121,50 @@
           "name": "storage.modifier.type.move"
         }
       },
-      "end": "(?<=[};])",
+      "end": "(?<=[};\\)])",
       "name": "meta.struct.move",
       "patterns": [
         {
           "include": "#comments"
         },
         {
-          "begin": "(?<=struct)",
-          "comment": "Struct definition",
-          "end": "(?=[;{])",
-          "name": "meta.struct.definition.move",
+          "include": "#escaped_identifier"
+        },
+        {
+          "include": "#has"
+        },
+        {
+          "include": "#abilities"
+        },
+        {
+          "comment": "Struct name (ident)",
+          "match": "\\b[A-Z][a-zA-Z_0-9]*\\b",
+          "name": "entity.name.type.struct.move"
+        },
+        {
+          "begin": "\\(",
+          "comment": "Positional fields",
+          "end": "\\)",
+          "name": "meta.struct.paren.move",
           "patterns": [
             {
               "include": "#comments"
             },
             {
-              "include": "#escaped_identifier"
+              "include": "#capitalized"
             },
             {
-              "include": "#has"
-            },
-            {
-              "include": "#abilities"
-            },
-            {
-              "comment": "Struct name (ident)",
-              "match": "\\b[A-Z][a-zA-Z_0-9]*\\b",
-              "name": "entity.name.type.struct.move"
-            },
-            {
-              "begin": "\\(",
-              "comment": "Simple struct",
-              "end": "\\)",
-              "name": "meta.struct.paren.move",
-              "patterns": [
-                {
-                  "include": "#comments"
-                },
-                {
-                  "include": "#capitalized"
-                },
-                {
-                  "include": "#types"
-                }
-              ]
-            },
-            {
-              "include": "#type_param"
+              "include": "#types"
             }
           ]
         },
         {
+          "include": "#type_param"
+        },
+        {
           "begin": "\\(",
           "comment": "Simple struct",
-          "end": "\\)",
+          "end": "(?<=[)])",
           "name": "meta.struct.paren.move",
           "patterns": [
             {
@@ -1187,6 +1203,9 @@
               "include": "#types"
             }
           ]
+        },
+        {
+          "include": "#has_ability"
         }
       ]
     },
