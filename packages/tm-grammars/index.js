@@ -558,6 +558,20 @@ export const grammars = [
     source: 'https://github.com/huyza/dax-language/blob/7fd39aa84552617daa258189b2550dcdbd14149a/syntaxes/dax.grammer.json',
   },
   {
+    byteSize: 1855,
+    categories: [
+      'config',
+    ],
+    displayName: 'Desktop',
+    lastUpdate: '2021-07-19T18:36:02Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/nico-castell/desktop-file-support/main/LICENSE',
+    name: 'desktop',
+    scopeName: 'source.desktop',
+    sha: '63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e',
+    source: 'https://github.com/nico-castell/desktop-file-support/blob/63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e/syntaxes/desktop.tmLanguage.json',
+  },
+  {
     byteSize: 2506,
     categories: [
       'utility',
@@ -1444,6 +1458,20 @@ export const grammars = [
     source: 'https://github.com/mattn/vscode-lisp/blob/c3672d9a1877d15a2472a3e58c96c123c44f1473/syntaxes/Lisp.tmLanguage',
   },
   {
+    byteSize: 2573,
+    categories: [
+      'utility',
+    ],
+    displayName: 'Log file',
+    lastUpdate: '2024-01-28T12:15:03Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/LICENSE',
+    name: 'log',
+    scopeName: 'text.log',
+    sha: 'eb50e785c27b4b4f7dbf6c0e801c58fe91baef5d',
+    source: 'https://github.com/emilast/vscode-logfile-highlighter/blob/eb50e785c27b4b4f7dbf6c0e801c58fe91baef5d/syntaxes/log.tmLanguage',
+  },
+  {
     byteSize: 3098,
     displayName: 'Logo',
     lastUpdate: '2011-11-14T07:42:34Z',
@@ -1903,6 +1931,22 @@ export const grammars = [
     scopeName: 'source.plsql.oracle',
     sha: '256a6b8f04f2bdc5e60ce921646a5068957078d7',
     source: 'https://github.com/zabel-xyz/plsql-language/blob/256a6b8f04f2bdc5e60ce921646a5068957078d7/syntaxes/plsql.tmLanguage',
+  },
+  {
+    aliases: [
+      'pot',
+      'potx',
+    ],
+    byteSize: 3165,
+    categories: [
+      'utility',
+    ],
+    displayName: 'Gettext PO',
+    lastUpdate: '2014-11-13T07:01:18Z',
+    name: 'po',
+    scopeName: 'source.po',
+    sha: '08bb69558d82ada8d4f36b8869f871ce69014749',
+    source: 'https://github.com/textmate/gettext.tmbundle/blob/08bb69558d82ada8d4f36b8869f871ce69014749/Syntaxes/Gettext.tmLanguage',
   },
   {
     byteSize: 6260,
@@ -2471,6 +2515,23 @@ export const grammars = [
     scopeName: 'source.systemverilog',
     sha: '8d7c8f5f3232f63d43830143afc034318832291e',
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/8d7c8f5f3232f63d43830143afc034318832291e/syntaxes/systemverilog.tmLanguage.json',
+  },
+  {
+    byteSize: 8209,
+    categories: [
+      'config',
+    ],
+    displayName: 'Systemd Units',
+    embedded: [
+      'jinja',
+    ],
+    lastUpdate: '2024-03-10T15:06:17Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-systemd/main/LICENSE',
+    name: 'systemd',
+    scopeName: 'source.systemd',
+    sha: '822b0d61bab1a7b58c6f8db3d5f21803dea7d665',
+    source: 'https://github.com/hangxingliu/vscode-systemd/blob/822b0d61bab1a7b58c6f8db3d5f21803dea7d665/src/syntax/systemd.tmLanguage',
   },
   {
     byteSize: 3282,
