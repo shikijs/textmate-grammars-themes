@@ -491,6 +491,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/erlang-ls/grammar/blob/main/Erlang.plist',
   },
   {
+    name: 'fennel',
+    source: 'https://github.com/kongeor/vsc-fennel/blob/master/syntaxes/fennel.tmLanguage.json',
+    categories: ['lisp'],
+  },
+  {
     name: 'fish',
     displayName: 'Fish',
     source: 'https://github.com/bmalehorn/vscode-fish/blob/master/syntaxes/fish.tmLanguage.json',
@@ -588,6 +593,12 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'hjson',
     source: 'https://github.com/hjson/textmate-hjson/blob/master/Syntaxes/Hjson.tmLanguage',
     categories: ['data'],
+  },
+  {
+    name: 'hy',
+    displayName: 'Hy',
+    source: 'https://github.com/hylang/vscode-hy/blob/master/syntaxes/hy.tmLanguage.json',
+    categories: ['lisp'],
   },
   {
     name: 'imba',
@@ -738,6 +749,11 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'purescript',
     source: 'https://github.com/nwolverson/vscode-language-purescript/blob/master/syntaxes/purescript.json',
+  },
+  {
+    name: 'racket',
+    source: 'https://github.com/Eugleo/magic-racket/blob/master/syntaxes/racket.tmLanguage.json',
+    categories: ['lisp'],
   },
   {
     name: 'razor',
