@@ -459,6 +459,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/huyza/dax-language/blob/master/syntaxes/dax.grammer.json',
   },
   {
+    name: 'desktop',
+    source: 'https://github.com/nico-castell/desktop-file-support/blob/main/syntaxes/desktop.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'dream-maker',
     source: 'https://github.com/gbasood/vscode-atomic-dreams/blob/master/syntaxes/dm.tmLanguage.json',
   },
@@ -631,6 +636,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/main/grammars/liquid.tmLanguage.json',
   },
   {
+    name: 'log',
+    displayName: 'Log file',
+    source: 'https://github.com/emilast/vscode-logfile-highlighter/blob/master/syntaxes/log.tmLanguage',
+    categories: ['utility'],
+  },
+  {
     name: 'logo',
     source: 'https://github.com/textmate/logo.tmbundle/blob/master/Syntaxes/Logo.tmLanguage',
   },
@@ -707,6 +718,13 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'plsql',
     displayName: 'PL/SQL',
     source: 'https://github.com/zabel-xyz/plsql-language/blob/master/syntaxes/plsql.tmLanguage',
+  },
+  {
+    name: 'po',
+    displayName: 'Gettext PO',
+    aliases: ['pot', 'potx'],
+    source: 'https://github.com/textmate/gettext.tmbundle/blob/master/Syntaxes/Gettext.tmLanguage',
+    categories: ['utility'],
   },
   {
     name: 'powerquery',
@@ -817,6 +835,12 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'system-verilog',
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/main/syntaxes/systemverilog.tmLanguage.json',
+  },
+  {
+    name: 'systemd',
+    displayName: 'Systemd Units',
+    source: 'https://github.com/hangxingliu/vscode-systemd/blob/main/src/syntax/systemd.tmLanguage',
+    categories: ['config'],
   },
   {
     name: 'tasl',
