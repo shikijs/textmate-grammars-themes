@@ -434,6 +434,13 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/github/vscode-codeql/blob/main/syntaxes/ql.tmLanguage.json',
   },
   {
+    name: 'common-lisp',
+    displayName: 'Common Lisp',
+    aliases: ['lisp'],
+    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/master/syntaxes/commonlisp.tmLanguage.json',
+    categories: ['general', 'lisp'],
+  },
+  {
     name: 'crystal',
     source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/master/syntaxes/crystal.json',
   },
@@ -622,11 +629,6 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'kusto',
     aliases: ['kql'],
     source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
-  },
-  {
-    name: 'lisp',
-    source: 'https://github.com/mattn/vscode-lisp/blob/master/syntaxes/Lisp.tmLanguage',
-    categories: ['general'],
   },
   {
     name: 'liquid',
