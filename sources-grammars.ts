@@ -11,7 +11,7 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'clojure',
     aliases: ['clj'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
-    categories: ['general'],
+    categories: ['general', 'lisp'],
   },
   {
     name: 'coffee',
@@ -414,6 +414,9 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'clarity',
     displayName: 'Clarity',
     source: 'https://github.com/hirosystems/clarity.tmbundle/blob/main/Syntaxes/clarity.JSON-tmLanguage',
+    // It calls itself "a LISP language":
+    // https://github.com/clarity-lang/reference/blob/master/reference.md#design
+    categories: ['lisp'],
   },
   {
     name: 'cmake',
@@ -770,6 +773,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'scheme',
     source: 'https://github.com/sjhuangx/vscode-scheme/blob/master/syntaxes/scheme.tmLanguage',
+    categories: ['general', 'lisp'],
   },
   {
     name: 'shellsession',
