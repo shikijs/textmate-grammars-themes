@@ -1,4 +1,13 @@
-export type GrammarCategory = 'web' | 'markup' | 'general' | 'scripting' | 'data' | 'dsl' | 'utility' | 'config'
+export type GrammarCategory =
+  | 'web'
+  | 'markup'
+  | 'general'
+  | 'scripting'
+  | 'data'
+  | 'dsl'
+  | 'utility'
+  | 'config'
+  | 'lisp'
 
 export interface GrammarInfo {
   name: string
