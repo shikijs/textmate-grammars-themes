@@ -319,6 +319,9 @@ export const grammars = [
   },
   {
     byteSize: 14105,
+    categories: [
+      'lisp',
+    ],
     displayName: 'Clarity',
     lastUpdate: '2023-06-16T13:06:14Z',
     license: 'MIT',
@@ -335,6 +338,7 @@ export const grammars = [
     byteSize: 6515,
     categories: [
       'general',
+      'lisp',
     ],
     displayName: 'Clojure',
     lastUpdate: '2022-01-31T15:49:23Z',
@@ -410,6 +414,24 @@ export const grammars = [
     scopeName: 'source.coffee',
     sha: 'ff58f5083f57b50e6a100ab60454dfb72fe21e80',
     source: 'https://github.com/microsoft/vscode/blob/ff58f5083f57b50e6a100ab60454dfb72fe21e80/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
+  },
+  {
+    aliases: [
+      'lisp',
+    ],
+    byteSize: 23992,
+    categories: [
+      'general',
+      'lisp',
+    ],
+    displayName: 'Common Lisp',
+    lastUpdate: '2022-06-28T15:20:40Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/qingpeng9802/vscode-common-lisp/master/LICENSE',
+    name: 'common-lisp',
+    scopeName: 'source.commonlisp',
+    sha: '854e24985d84a809c24cee02afd2932a5bb319cd',
+    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/854e24985d84a809c24cee02afd2932a5bb319cd/syntaxes/commonlisp.tmLanguage.json',
   },
   {
     aliases: [
@@ -665,6 +687,20 @@ export const grammars = [
     scopeName: 'source.erlang',
     sha: 'cf532fa16db0f106c50db4bcad38f862210f6d14',
     source: 'https://github.com/erlang-ls/grammar/blob/cf532fa16db0f106c50db4bcad38f862210f6d14/Erlang.plist',
+  },
+  {
+    byteSize: 4663,
+    categories: [
+      'lisp',
+    ],
+    displayName: 'Fennel',
+    lastUpdate: '2021-05-05T22:44:42Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/kongeor/vsc-fennel/master/LICENSE',
+    name: 'fennel',
+    scopeName: 'source.fnl',
+    sha: '664148923d7bd72531120d0cba712c6dba6f698d',
+    source: 'https://github.com/kongeor/vsc-fennel/blob/664148923d7bd72531120d0cba712c6dba6f698d/syntaxes/fennel.tmLanguage.json',
   },
   {
     byteSize: 5184,
@@ -1124,6 +1160,20 @@ export const grammars = [
     source: 'https://github.com/Huachao/vscode-restclient/blob/a89f8bce1b5e3d5bd955f10916b0c101e20431d3/syntaxes/http.tmLanguage.json',
   },
   {
+    byteSize: 3125,
+    categories: [
+      'lisp',
+    ],
+    displayName: 'Hy',
+    lastUpdate: '2023-09-11T00:57:08Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/hylang/vscode-hy/master/LICENSE.md',
+    name: 'hy',
+    scopeName: 'source.hy',
+    sha: 'cc97e60245af508c5c81fe4cda51ac6bc9083082',
+    source: 'https://github.com/hylang/vscode-hy/blob/cc97e60245af508c5c81fe4cda51ac6bc9083082/syntaxes/hy.tmLanguage.json',
+  },
+  {
     byteSize: 50177,
     categories: [
       'web',
@@ -1444,20 +1494,6 @@ export const grammars = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/909aab5b1d8be374585bd02ef46e0e38d65f2f89/grammars/liquid.tmLanguage.json',
   },
   {
-    byteSize: 13781,
-    categories: [
-      'general',
-    ],
-    displayName: 'Lisp',
-    lastUpdate: '2021-10-14T13:24:48Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mattn/vscode-lisp/master/LICENSE',
-    name: 'lisp',
-    scopeName: 'source.lisp',
-    sha: 'c3672d9a1877d15a2472a3e58c96c123c44f1473',
-    source: 'https://github.com/mattn/vscode-lisp/blob/c3672d9a1877d15a2472a3e58c96c123c44f1473/syntaxes/Lisp.tmLanguage',
-  },
-  {
     byteSize: 2573,
     categories: [
       'utility',
@@ -1572,6 +1608,7 @@ export const grammars = [
       'fsharp',
       'dart',
       'handlebars',
+      'log',
       'erlang',
       'elixir',
       'latex',
@@ -1696,7 +1733,7 @@ export const grammars = [
     source: 'https://github.com/wooorm/markdown-tm-language/blob/371d61df9ddc3850e12aabe61b602d02e259e8a4/source.mdx.tmLanguage',
   },
   {
-    byteSize: 20353,
+    byteSize: 24036,
     displayName: 'Mermaid',
     lastUpdate: '2022-06-10T19:46:22Z',
     license: 'MIT',
@@ -2102,6 +2139,20 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/fa22e9ac36d5d37ef096679927179091ba7f6966/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
+    byteSize: 103356,
+    categories: [
+      'lisp',
+    ],
+    displayName: 'Racket',
+    lastUpdate: '2022-10-19T22:21:49Z',
+    license: 'GPL-3.0',
+    licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
+    name: 'racket',
+    scopeName: 'source.racket',
+    sha: 'efda8ccdeaaf3b935a75b967ed13943f4151a6dd',
+    source: 'https://github.com/Eugleo/magic-racket/blob/efda8ccdeaaf3b935a75b967ed13943f4151a6dd/syntaxes/racket.tmLanguage.json',
+  },
+  {
     aliases: [
       'perl6',
     ],
@@ -2276,6 +2327,10 @@ export const grammars = [
   },
   {
     byteSize: 8548,
+    categories: [
+      'general',
+      'lisp',
+    ],
     displayName: 'Scheme',
     lastUpdate: '2018-12-25T09:02:00Z',
     license: 'MIT',

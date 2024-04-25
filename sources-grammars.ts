@@ -11,7 +11,7 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'clojure',
     aliases: ['clj'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
-    categories: ['general'],
+    categories: ['general', 'lisp'],
   },
   {
     name: 'coffee',
@@ -414,6 +414,9 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'clarity',
     displayName: 'Clarity',
     source: 'https://github.com/hirosystems/clarity.tmbundle/blob/main/Syntaxes/clarity.JSON-tmLanguage',
+    // It calls itself "a LISP language":
+    // https://github.com/clarity-lang/reference/blob/master/reference.md#design
+    categories: ['lisp'],
   },
   {
     name: 'cmake',
@@ -429,6 +432,13 @@ export const sourcesCommunity: GrammarSource[] = [
     displayName: 'CodeQL',
     aliases: ['ql'],
     source: 'https://github.com/github/vscode-codeql/blob/main/syntaxes/ql.tmLanguage.json',
+  },
+  {
+    name: 'common-lisp',
+    displayName: 'Common Lisp',
+    aliases: ['lisp'],
+    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/master/syntaxes/commonlisp.tmLanguage.json',
+    categories: ['general', 'lisp'],
   },
   {
     name: 'crystal',
@@ -484,6 +494,11 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'erlang',
     aliases: ['erl'],
     source: 'https://github.com/erlang-ls/grammar/blob/main/Erlang.plist',
+  },
+  {
+    name: 'fennel',
+    source: 'https://github.com/kongeor/vsc-fennel/blob/master/syntaxes/fennel.tmLanguage.json',
+    categories: ['lisp'],
   },
   {
     name: 'fish',
@@ -585,6 +600,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['data'],
   },
   {
+    name: 'hy',
+    displayName: 'Hy',
+    source: 'https://github.com/hylang/vscode-hy/blob/master/syntaxes/hy.tmLanguage.json',
+    categories: ['lisp'],
+  },
+  {
     name: 'imba',
     source: 'https://github.com/imba/imba/blob/master/packages/vscode-imba/syntaxes/imba.tmLanguage.json',
     categories: ['web'],
@@ -624,11 +645,6 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'kusto',
     aliases: ['kql'],
     source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
-  },
-  {
-    name: 'lisp',
-    source: 'https://github.com/mattn/vscode-lisp/blob/master/syntaxes/Lisp.tmLanguage',
-    categories: ['general'],
   },
   {
     name: 'liquid',
@@ -753,6 +769,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/nwolverson/vscode-language-purescript/blob/master/syntaxes/purescript.json',
   },
   {
+    name: 'racket',
+    source: 'https://github.com/Eugleo/magic-racket/blob/master/syntaxes/racket.tmLanguage.json',
+    categories: ['lisp'],
+  },
+  {
     name: 'razor',
     source: 'https://github.com/dotnet/razor/blob/main/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
   },
@@ -788,6 +809,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'scheme',
     source: 'https://github.com/sjhuangx/vscode-scheme/blob/master/syntaxes/scheme.tmLanguage',
+    categories: ['general', 'lisp'],
   },
   {
     name: 'shellsession',
