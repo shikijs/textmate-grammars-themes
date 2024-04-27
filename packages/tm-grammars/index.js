@@ -557,18 +557,18 @@ export const grammars = [
     source: 'https://github.com/Pure-D/code-d/blob/466ac04dcc1f6d3fea50ef5ae7a920a121efd09c/syntaxes/d.json',
   },
   {
-    byteSize: 6940,
+    byteSize: 7116,
     categories: [
       'general',
     ],
     displayName: 'Dart',
-    lastUpdate: '2024-02-27T11:14:40Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: 'e9a8b6add5329f8124f23ff7143d95c22ce39f76',
-    source: 'https://github.com/microsoft/vscode/blob/e9a8b6add5329f8124f23ff7143d95c22ce39f76/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/dart/syntaxes/dart.tmLanguage.json',
   },
   {
     byteSize: 5498,
@@ -931,18 +931,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 46222,
+    byteSize: 46339,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-04-09T10:20:39Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
@@ -1378,7 +1378,7 @@ export const grammars = [
     aliases: [
       'jl',
     ],
-    byteSize: 33620,
+    byteSize: 33609,
     categories: [
       'web',
       'data',
@@ -1391,13 +1391,13 @@ export const grammars = [
       'r',
       'sql',
     ],
-    lastUpdate: '2024-04-09T10:20:39Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'julia',
     scopeName: 'source.julia',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/julia/syntaxes/julia.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/julia/syntaxes/julia.tmLanguage.json',
   },
   {
     aliases: [
@@ -1430,7 +1430,7 @@ export const grammars = [
     source: 'https://github.com/rosshamish/kuskus/blob/638b8a9249c2c423bc263726661cde534b25adc7/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
-    byteSize: 54540,
+    byteSize: 55169,
     categories: [
       'markup',
     ],
@@ -1454,27 +1454,27 @@ export const grammars = [
       'yaml',
       'scala',
     ],
-    lastUpdate: '2024-04-09T10:20:39Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
-    byteSize: 81466,
+    byteSize: 81480,
     categories: [
       'web',
     ],
     displayName: 'Less',
-    lastUpdate: '2023-12-05T14:17:02Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'less',
     scopeName: 'source.css.less',
-    sha: 'b0d60e8e2e90bc9d7913611c176d14b8eb91b532',
-    source: 'https://github.com/microsoft/vscode/blob/b0d60e8e2e90bc9d7913611c176d14b8eb91b532/extensions/less/syntaxes/less.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/less/syntaxes/less.tmLanguage.json',
   },
   {
     byteSize: 15680,
@@ -1517,7 +1517,7 @@ export const grammars = [
     source: 'https://github.com/textmate/logo.tmbundle/blob/3205e987ed2a2aa11accdd55a7d094832441f89c/Syntaxes/Logo.tmLanguage',
   },
   {
-    byteSize: 14739,
+    byteSize: 14754,
     categories: [
       'scripting',
     ],
@@ -1525,13 +1525,13 @@ export const grammars = [
     embedded: [
       'c',
     ],
-    lastUpdate: '2023-12-13T12:08:01Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'lua',
     scopeName: 'source.lua',
-    sha: '3c86ede5f554f6e196c832394e126b291a1de606',
-    source: 'https://github.com/microsoft/vscode/blob/3c86ede5f554f6e196c832394e126b291a1de606/extensions/lua/syntaxes/lua.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json',
   },
   {
     aliases: [
@@ -2384,18 +2384,18 @@ export const grammars = [
       'shell',
       'zsh',
     ],
-    byteSize: 39910,
+    byteSize: 40993,
     categories: [
       'scripting',
     ],
     displayName: 'Shell',
-    lastUpdate: '2024-04-09T10:20:39Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shellscript',
     scopeName: 'source.shell',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
   },
   {
     aliases: [
@@ -2624,7 +2624,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/c693badea4d460d1c05b8d2ab0c88bad143da3f1/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 8555,
+    byteSize: 8651,
     categories: [
       'markup',
     ],
@@ -2632,13 +2632,13 @@ export const grammars = [
     embedded: [
       'r',
     ],
-    lastUpdate: '2024-04-09T10:20:39Z',
+    lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
+    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     byteSize: 6411,

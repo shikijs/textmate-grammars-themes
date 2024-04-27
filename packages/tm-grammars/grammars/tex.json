@@ -3,22 +3,22 @@
   "name": "tex",
   "patterns": [
     {
-      "begin": "(\\\\)iffalse",
+      "begin": "(?<=^\\s*)((\\\\)iffalse)",
       "beginCaptures": {
-        "0": {
+        "1": {
           "name": "keyword.control.tex"
         },
-        "1": {
+        "2": {
           "name": "punctuation.definition.keyword.tex"
         }
       },
       "contentName": "comment.line.percentage.tex",
-      "end": "(\\\\)(else|fi)",
+      "end": "(?<=^\\s*)((\\\\)(?:else|fi))",
       "endCaptures": {
-        "0": {
+        "1": {
           "name": "keyword.control.tex"
         },
-        "1": {
+        "2": {
           "name": "punctuation.definition.keyword.tex"
         }
       },
@@ -102,7 +102,7 @@
           "name": "punctuation.definition.function.tex"
         }
       },
-      "match": "(\\\\)(?:[\\p{Alphabetic}@]+|[,;])",
+      "match": "(\\\\)(?:[,;]|(?:[\\p{Alphabetic}@]+(?:(?:_[\\p{Alphabetic}@]+)*:[NncVvoxefTFpwD]*)?))",
       "name": "support.function.general.tex"
     },
     {
@@ -168,8 +168,8 @@
       ]
     },
     "conditionals": {
-      "begin": "\\\\(if[a-z]*)",
-      "end": "\\\\fi",
+      "begin": "(?<=^\\s*)\\\\if[a-z]*",
+      "end": "(?<=^\\s*)\\\\fi",
       "patterns": [
         {
           "include": "#comment"

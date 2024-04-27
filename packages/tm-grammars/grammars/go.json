@@ -1072,9 +1072,19 @@
       "match": "((?:^\\s*\\w+:\\s*$)|(?:^\\s*(?:\\bbreak\\b|\\bgoto\\b|\\bcontinue\\b)\\s+\\w+(?:\\s*/(?:/|\\*)\\s*.*)?$))"
     },
     "language_constants": {
+      "captures": {
+        "1": {
+          "name": "constant.language.boolean.go"
+        },
+        "2": {
+          "name": "constant.language.null.go"
+        },
+        "3": {
+          "name": "constant.language.iota.go"
+        }
+      },
       "comment": "Language constants",
-      "match": "\\b(true|false|nil|iota)\\b",
-      "name": "constant.language.go"
+      "match": "\\b(?:(true|false)|(nil)|(iota))\\b"
     },
     "map_types": {
       "begin": "(?:(\\bmap\\b)(\\[))",

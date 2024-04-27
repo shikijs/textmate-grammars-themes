@@ -2898,6 +2898,32 @@
       "name": "meta.function.verb.latex"
     },
     {
+      "begin": "((\\\\)(?:directlua|luadirect))(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.verb.latex"
+        },
+        "2": {
+          "name": "punctuation.definition.function.latex"
+        },
+        "3": {
+          "name": "punctuation.definition.arguments.begin.latex"
+        }
+      },
+      "contentName": "source.lua",
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.arguments.end.latex"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.lua"
+        }
+      ]
+    },
+    {
       "match": "\\\\(?:newline|pagebreak|clearpage|linebreak|pause)(?:\\b)",
       "name": "keyword.control.layout.latex"
     },
@@ -3009,6 +3035,15 @@
       },
       "match": "(\\\\)(text(s(terling|ixoldstyle|urd|e(ction|venoldstyle|rvicemark))|yen|n(ineoldstyle|umero|aira)|c(ircledP|o(py(left|right)|lonmonetary)|urrency|e(nt(oldstyle)?|lsius))|t(hree(superior|oldstyle|quarters(emdash)?)|i(ldelow|mes)|w(o(superior|oldstyle)|elveudash)|rademark)|interrobang(down)?|zerooldstyle|o(hm|ne(superior|half|oldstyle|quarter)|penbullet|rd(feminine|masculine))|d(i(scount|ed|v(orced)?)|o(ng|wnarrow|llar(oldstyle)?)|egree|agger(dbl)?|blhyphen(char)?)|uparrow|p(ilcrow|e(so|r(t(housand|enthousand)|iodcentered))|aragraph|m)|e(stimated|ightoldstyle|uro)|quotes(traight(dblbase|base)|ingle)|f(iveoldstyle|ouroldstyle|lorin|ractionsolidus)|won|l(not|ira|e(ftarrow|af)|quill|angle|brackdbl)|a(s(cii(caron|dieresis|acute|grave|macron|breve)|teriskcentered)|cutedbl)|r(ightarrow|e(cipe|ferencemark|gistered)|quill|angle|brackdbl)|g(uarani|ravedbl)|m(ho|inus|u(sicalnote)?|arried)|b(igcircle|orn|ullet|lank|a(ht|rdbl)|rokenbar)))\\b",
       "name": "constant.character.latex"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.variable.latex"
+        }
+      },
+      "match": "(\\\\)[cgl](?:[_\\p{Alphabetic}@]+)+_(?:bitset|clist|dim|fp|int|muskip|str|tl|bool|box|coffin|flag|fparray|intarray|ior|iow|prop|regex|seq)",
+      "name": "variable.other.latex3.latex"
     },
     {
       "captures": {
