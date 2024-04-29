@@ -369,6 +369,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/ara-lang/highlighting/blob/main/syntaxes/ara.json',
   },
   {
+    name: 'asciidoc',
+    aliases: ['adoc'],
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/Asciidoctor.json',
+    categories: ['markup'],
+  },
+  {
     name: 'asm',
     displayName: 'Assembly',
     source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/master/syntaxes/language-x86_64-assembly.tmLanguage',
