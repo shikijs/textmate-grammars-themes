@@ -718,6 +718,20 @@ export const grammars = [
   },
   {
     aliases: [
+      'ftl',
+    ],
+    byteSize: 3472,
+    displayName: 'Fluent',
+    lastUpdate: '2022-07-23T20:00:33Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/macabeus/vscode-fluent/master/LICENSE',
+    name: 'fluent',
+    scopeName: 'source.ftl',
+    sha: '8544ea296a7769a359f43ddff4dc4b6c61f5cf59',
+    source: 'https://github.com/macabeus/vscode-fluent/blob/8544ea296a7769a359f43ddff4dc4b6c61f5cf59/syntaxes/fluent.tmLanguage.json',
+  },
+  {
+    aliases: [
       'f',
       'for',
       'f77',
@@ -1733,7 +1747,7 @@ export const grammars = [
     source: 'https://github.com/wooorm/markdown-tm-language/blob/371d61df9ddc3850e12aabe61b602d02e259e8a4/source.mdx.tmLanguage',
   },
   {
-    byteSize: 24036,
+    byteSize: 25371,
     displayName: 'Mermaid',
     lastUpdate: '2022-06-10T19:46:22Z',
     license: 'MIT',

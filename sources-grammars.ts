@@ -501,6 +501,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['lisp'],
   },
   {
+    name: 'fluent',
+    displayName: 'Fluent',
+    aliases: ['ftl'],
+    source: 'https://github.com/macabeus/vscode-fluent/blob/master/syntaxes/fluent.tmLanguage.json',
+  },
+  {
     name: 'fish',
     displayName: 'Fish',
     source: 'https://github.com/bmalehorn/vscode-fish/blob/master/syntaxes/fish.tmLanguage.json',
