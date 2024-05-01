@@ -893,11 +893,14 @@ export const sourcesCommunity: GrammarSource[] = [
     displayName: 'Twig',
     source: 'https://github.com/mblode/vscode-twig-language-2/blob/master/src/syntaxes/twig.tmLanguage',
   },
+
   {
     name: 'typst',
     displayName: 'Typst',
     aliases: ['typ'],
     source: 'https://github.com/nvarner/typst-lsp/blob/master/editors/vscode/typst.tmLanguage.json',
+  },
+  { name: 'vein', displayName: 'Vein', source: 'https://github.com/vein-lang/vscode-extension/blob/master/syntaxes/c.tmLanguage.json',
   },
   {
     name: 'verilog',

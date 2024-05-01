@@ -2768,6 +2768,17 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
   },
   {
+    byteSize: 68397,
+    displayName: 'Vein',
+    lastUpdate: '2021-10-04T13:57:56Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vein-lang/vscode-extension/master/LICENSE',
+    name: 'vein',
+    scopeName: 'source.c',
+    sha: '615abbeefc64208cd8da97eb82dbfb20790b8e79',
+    source: 'https://github.com/vein-lang/vscode-extension/blob/615abbeefc64208cd8da97eb82dbfb20790b8e79/syntaxes/c.tmLanguage.json',
+  },
+  {
     byteSize: 5686,
     displayName: 'Verilog',
     lastUpdate: '2022-11-26T06:23:35Z',
