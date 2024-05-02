@@ -1,5 +1,6 @@
 import type { ThemeSource } from './scripts/themes/types'
 
+// @keep-sorted { "keys": ["name"] }
 export const sourcesVSCode: ThemeSource[] = [
   {
     name: 'andromeeda',
@@ -27,14 +28,19 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
   },
   {
+    name: 'monokai',
+    displayName: 'Monokai',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
+  },
+  {
     name: 'night-owl',
     displayName: 'Night Owl',
     source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
   },
   {
-    name: 'monokai',
-    displayName: 'Monokai',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
+    name: 'red',
+    displayName: 'Red',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
   },
   {
     name: 'solarized-dark',
@@ -42,80 +48,41 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
   },
   {
-    name: 'synthwave-84',
-    displayName: 'Synthwave \'84',
-    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
-  },
-  {
     name: 'solarized-light',
     displayName: 'Solarized Light',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
+  },
+  {
+    name: 'synthwave-84',
+    displayName: 'Synthwave \'84',
+    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
   },
   {
     name: 'tokyo-night',
     displayName: 'Tokyo Night',
     source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-color-theme.json',
   },
-  {
-    name: 'red',
-    displayName: 'Red',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
-  },
 ]
 
+// @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
   {
-    name: 'nord',
-    source: 'https://github.com/arcticicestudio/nord-visual-studio-code/blob/develop/themes/nord-color-theme.json',
-  },
-  {
-    name: 'min-light',
-    source: 'https://github.com/misolori/min-theme/blob/master/themes/min-light.json',
+    name: 'houston',
+    displayName: 'Houston',
+    source: 'https://github.com/withastro/houston-vscode/blob/main/themes/houston.json',
+    type: 'dark',
   },
   {
     name: 'min-dark',
     source: 'https://github.com/misolori/min-theme/blob/master/themes/min-dark.json',
   },
   {
-    name: 'slack-ochin',
-    displayName: 'Slack Ochin',
-    source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/ochin.json',
-    type: 'light',
+    name: 'min-light',
+    source: 'https://github.com/misolori/min-theme/blob/master/themes/min-light.json',
   },
   {
-    name: 'slack-dark',
-    displayName: 'Slack Dark',
-    source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/dark-mode.json',
-  },
-  {
-    name: 'poimandres',
-    displayName: 'Poimandres',
-    source: 'https://github.com/drcmda/poimandres-theme/blob/main/themes/poimandres-color-theme.json',
-  },
-  {
-    name: 'rose-pine',
-    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-color-theme.json',
-  },
-  {
-    name: 'rose-pine-dawn',
-    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-dawn-color-theme.json',
-    type: 'light',
-  },
-  {
-    name: 'rose-pine-moon',
-    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-moon-color-theme.json',
-  },
-  {
-    name: 'vitesse-light',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-light.json',
-  },
-  {
-    name: 'vitesse-dark',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-dark.json',
-  },
-  {
-    name: 'vitesse-black',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-black.json',
+    name: 'nord',
+    source: 'https://github.com/arcticicestudio/nord-visual-studio-code/blob/develop/themes/nord-color-theme.json',
   },
   {
     name: 'one-dark-pro',
@@ -128,22 +95,57 @@ export const sourcesCommunity: ThemeSource[] = [
     type: 'light',
   },
   {
-    name: 'vesper',
-    displayName: 'Vesper',
-    source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
-    type: 'dark',
+    name: 'poimandres',
+    displayName: 'Poimandres',
+    source: 'https://github.com/drcmda/poimandres-theme/blob/main/themes/poimandres-color-theme.json',
   },
   {
-    name: 'houston',
-    displayName: 'Houston',
-    source: 'https://github.com/withastro/houston-vscode/blob/main/themes/houston.json',
-    type: 'dark',
+    name: 'rose-pine-dawn',
+    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-dawn-color-theme.json',
+    type: 'light',
+  },
+  {
+    name: 'rose-pine-moon',
+    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-moon-color-theme.json',
+  },
+  {
+    name: 'rose-pine',
+    source: 'https://github.com/rose-pine/vscode/blob/main/themes/rose-pine-color-theme.json',
+  },
+  {
+    name: 'slack-dark',
+    displayName: 'Slack Dark',
+    source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/dark-mode.json',
+  },
+  {
+    name: 'slack-ochin',
+    displayName: 'Slack Ochin',
+    source: 'https://github.com/slack-theme/visual-studio-code/blob/master/themes/ochin.json',
+    type: 'light',
   },
   {
     name: 'snazzy-light',
     displayName: 'Snazzy Light',
     source: 'https://github.com/loilo/vscode-snazzy-light/blob/master/themes/Snazzy-Light-color-theme.json',
     type: 'light',
+  },
+  {
+    name: 'vesper',
+    displayName: 'Vesper',
+    source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
+    type: 'dark',
+  },
+  {
+    name: 'vitesse-black',
+    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-black.json',
+  },
+  {
+    name: 'vitesse-dark',
+    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-dark.json',
+  },
+  {
+    name: 'vitesse-light',
+    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/main/themes/vitesse-light.json',
   },
 ]
 
