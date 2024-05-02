@@ -556,6 +556,10 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDShader.tmLanguage.json',
   },
   {
+    name: 'genie',
+    source: 'https://github.com/vala-lang/vala-vscode/blob/master/syntaxes/genie.YAML-tmLanguage',
+  },
+  {
     name: 'gherkin',
     source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/master/gclient/syntaxes/feature.tmLanguage',
   },
@@ -605,6 +609,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'haxe',
+    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/master/haxe.YAML-tmLanguage',
+    categories: ['general'],
+  },
+  {
     name: 'hcl',
     source: 'https://github.com/hashicorp/syntax/blob/main/syntaxes/hcl.tmGrammar.json',
   },
@@ -618,6 +627,12 @@ export const sourcesCommunity: GrammarSource[] = [
     displayName: 'HTTP',
     source: 'https://github.com/Huachao/vscode-restclient/blob/master/syntaxes/http.tmLanguage.json',
     categories: ['web', 'utility'],
+  },
+  {
+    name: 'hxml',
+    displayName: 'HXML',
+    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/master/hxml.YAML-tmLanguage',
+    categories: ['dsl'],
   },
   {
     name: 'hy',
@@ -794,6 +809,24 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/nwolverson/vscode-language-purescript/blob/master/syntaxes/purescript.json',
   },
   {
+    name: 'qml',
+    displayName: 'QML',
+    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/master/syntaxes/qml.tmLanguage.json',
+    categories: ['dsl'],
+  },
+  {
+    name: 'qmldir',
+    displayName: 'QML Directory',
+    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/master/syntaxes/qmldir.tmLanguage.json',
+    categories: ['dsl'],
+  },
+  {
+    name: 'qss',
+    displayName: 'Qt Style Sheets',
+    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/master/syntaxes/qss.tmLanguage.json',
+    categories: ['dsl'],
+  },
+  {
     name: 'racket',
     source: 'https://github.com/Eugleo/magic-racket/blob/master/syntaxes/racket.tmLanguage.json',
     categories: ['lisp'],
@@ -849,6 +882,13 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'solidity',
     source: 'https://github.com/juanfranblanco/vscode-solidity/blob/master/syntaxes/solidity.json',
+  },
+  {
+    name: 'soy',
+    aliases: ['closure-templates'],
+    // There's also Medium/soy-sublime, but this one is a bit newer and is what
+    // Linguist uses
+    source: 'https://github.com/mthadley/language-closure-templates/blob/master/grammars/closure-templates.json',
   },
   {
     name: 'sparql',
@@ -929,6 +969,10 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/vlang/vscode-vlang/blob/master/syntaxes/v.tmLanguage.json',
   },
   {
+    name: 'vala',
+    source: 'https://github.com/vala-lang/vala-vscode/blob/master/syntaxes/vala.YAML-tmLanguage',
+  },
+  {
     name: 'verilog',
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/main/syntaxes/verilog.tmLanguage.json',
   },
@@ -973,6 +1017,12 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'wgsl',
     source: 'https://github.com/PolyMeilex/vscode-wgsl/blob/master/syntaxes/wgsl.tmLanguage.json',
     categories: ['web'],
+  },
+  {
+    name: 'wikitext',
+    aliases: ['mediawiki', 'wiki'],
+    source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/master/syntaxes/wikitext.tmLanguage.yaml',
+    categories: ['markup'],
   },
   {
     name: 'wolfram',
