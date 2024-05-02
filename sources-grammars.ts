@@ -900,7 +900,7 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['typ'],
     source: 'https://github.com/nvarner/typst-lsp/blob/master/editors/vscode/typst.tmLanguage.json',
   },
-  { name: 'vein', displayName: 'Vein', source: 'https://github.com/vein-lang/vscode-extension/blob/master/syntaxes/c.tmLanguage.json',
+  { name: 'vein', displayName: 'Vein', source: 'https://github.com/vein-lang/tmLanguage/blob/master/grammars/vein.tmLanguage.json',
   },
   {
     name: 'verilog',
