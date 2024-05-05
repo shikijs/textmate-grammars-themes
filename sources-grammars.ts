@@ -959,6 +959,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/mblode/vscode-twig-language-2/blob/master/src/syntaxes/twig.tmLanguage',
   },
   {
+    name: 'typespec',
+    displayName: 'TypeSpec',
+    aliases: ['tsp'],
+    source: 'https://github.com/microsoft/typespec/blob/main/grammars/typespec.json',
+  },
+  {
     name: 'typst',
     displayName: 'Typst',
     aliases: ['typ'],
