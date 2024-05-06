@@ -722,6 +722,23 @@ export const grammars = [
     source: 'https://github.com/elm-tooling/elm-language-client-vscode/blob/c70351314682c2e0fae8a402ebb301da79821c37/syntaxes/elm-syntax.json',
   },
   {
+    aliases: [
+      'elisp',
+    ],
+    byteSize: 814804,
+    categories: [
+      'lisp',
+    ],
+    displayName: 'Emacs Lisp',
+    lastUpdate: '2023-09-07T13:17:43Z',
+    license: 'ISC',
+    licenseUrl: 'https://raw.githubusercontent.com/Alhadis/language-emacs-lisp/master/LICENSE.md',
+    name: 'emacs-lisp',
+    scopeName: 'source.emacs.lisp',
+    sha: '07ef9e419b80478a0976acbc6ef9d190b07e508e',
+    source: 'https://github.com/Alhadis/language-emacs-lisp/blob/07ef9e419b80478a0976acbc6ef9d190b07e508e/grammars/emacs-lisp.cson',
+  },
+  {
     byteSize: 1942,
     displayName: 'ERB',
     embedded: [
