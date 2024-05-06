@@ -494,6 +494,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/elm-tooling/elm-language-client-vscode/blob/main/syntaxes/elm-syntax.json',
   },
   {
+    name: 'emacs-lisp',
+    aliases: ['elisp'],
+    source: 'https://github.com/Alhadis/language-emacs-lisp/blob/master/grammars/emacs-lisp.cson',
+    categories: ['lisp'],
+  },
+  {
     name: 'erb',
     displayName: 'ERB',
     source: 'https://github.com/textmate/ruby.tmbundle/blob/master/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',
