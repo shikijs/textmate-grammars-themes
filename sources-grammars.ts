@@ -436,6 +436,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/spgennard/vscode_cobol/blob/main/syntaxes/COBOL.tmLanguage.json',
   },
   {
+    name: 'codeowners',
+    displayName: 'CODEOWNERS',
+    source: 'https://github.com/jasonnutter/vscode-codeowners/blob/master/syntaxes/codeowners.tmLanguage.json',
+  },
+  {
     name: 'codeql',
     displayName: 'CodeQL',
     aliases: ['ql'],

@@ -440,6 +440,17 @@ export const grammars = [
     source: 'https://github.com/spgennard/vscode_cobol/blob/e23b4cda2772a4fbc985407167412edcd47f528a/syntaxes/COBOL.tmLanguage.json',
   },
   {
+    byteSize: 471,
+    displayName: 'CODEOWNERS',
+    lastUpdate: '2018-12-19T21:50:43Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/jasonnutter/vscode-codeowners/master/LICENSE.txt',
+    name: 'codeowners',
+    scopeName: 'text.codeowners',
+    sha: '219dee0ab25c1bfad0b9de84180117e71221a653',
+    source: 'https://github.com/jasonnutter/vscode-codeowners/blob/219dee0ab25c1bfad0b9de84180117e71221a653/syntaxes/codeowners.tmLanguage.json',
+  },
+  {
     aliases: [
       'ql',
     ],
