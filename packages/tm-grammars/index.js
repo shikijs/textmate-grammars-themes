@@ -2934,15 +2934,15 @@ export const grammars = [
     aliases: [
       'tsp',
     ],
-    byteSize: 22817,
+    byteSize: 26790,
     displayName: 'TypeSpec',
-    lastUpdate: '2024-03-27T17:12:29Z',
+    lastUpdate: '2024-05-08T20:06:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
     name: 'typespec',
     scopeName: 'source.tsp',
-    sha: 'ce9c567e5bfb441bb6415699a6b6fa797bc08f2e',
-    source: 'https://github.com/microsoft/typespec/blob/ce9c567e5bfb441bb6415699a6b6fa797bc08f2e/grammars/typespec.json',
+    sha: '7ec17161b78117737660506b424b8a133e477cfc',
+    source: 'https://github.com/microsoft/typespec/blob/7ec17161b78117737660506b424b8a133e477cfc/grammars/typespec.json',
   },
   {
     aliases: [

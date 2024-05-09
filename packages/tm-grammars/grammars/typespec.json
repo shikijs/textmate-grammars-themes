@@ -10,29 +10,44 @@
     }
   ],
   "repository": {
+    "alias-id": {
+      "begin": "(=)\\s*",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.assignment.tsp"
+        }
+      },
+      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "name": "meta.alias-id.typespec",
+      "patterns": [
+        {
+          "include": "#expression"
+        }
+      ]
+    },
     "alias-statement": {
-      "begin": "\\b(alias)\\b",
+      "begin": "\\b(alias)\\b\\s+(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.tsp"
+        },
+        "2": {
+          "name": "entity.name.type.tsp"
         }
       },
       "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.alias-statement.typespec",
       "patterns": [
         {
+          "include": "#alias-id"
+        },
+        {
           "include": "#type-parameters"
-        },
-        {
-          "include": "#operator-assignment"
-        },
-        {
-          "include": "#expression"
         }
       ]
     },
     "augment-decorator-statement": {
-      "begin": "((@@)\\b[_$[:alpha:]]([_$[:alnum:]]|\\.[_$[:alpha:]])*\\b)",
+      "begin": "((@@)\\b[_$[:alpha:]](?:[_$[:alnum:]]|\\.[_$[:alpha:]])*\\b)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.tsp"
@@ -61,8 +76,61 @@
       "match": "\\b(true|false)\\b",
       "name": "constant.language.tsp"
     },
+    "callExpression": {
+      "begin": "(\\b[_$[:alpha:]](?:[_$[:alnum:]]|\\.[_$[:alpha:]])*\\b)\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.tsp"
+        },
+        "2": {
+          "name": "punctuation.parenthesis.open.tsp"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.parenthesis.close.tsp"
+        }
+      },
+      "name": "meta.callExpression.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#expression"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "const-statement": {
+      "begin": "\\b(const)\\b\\s+(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.tsp"
+        },
+        "2": {
+          "name": "variable.name.tsp"
+        }
+      },
+      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "name": "meta.const-statement.typespec",
+      "patterns": [
+        {
+          "include": "#type-annotation"
+        },
+        {
+          "include": "#operator-assignment"
+        },
+        {
+          "include": "#expression"
+        }
+      ]
+    },
     "decorator": {
-      "begin": "((@)\\b[_$[:alpha:]]([_$[:alnum:]]|\\.[_$[:alpha:]])*\\b)",
+      "begin": "((@)\\b[_$[:alpha:]](?:[_$[:alnum:]]|\\.[_$[:alpha:]])*\\b)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.tsp"
@@ -328,13 +396,25 @@
           "include": "#valueof"
         },
         {
+          "include": "#typeof"
+        },
+        {
           "include": "#type-arguments"
+        },
+        {
+          "include": "#object-literal"
+        },
+        {
+          "include": "#tuple-literal"
         },
         {
           "include": "#tuple-expression"
         },
         {
           "include": "#model-expression"
+        },
+        {
+          "include": "#callExpression"
         },
         {
           "include": "#identifier-expression"
@@ -692,6 +772,59 @@
       "match": "(?:\\b(?<!\\$)0(?:x|X)[0-9a-fA-F][0-9a-fA-F_]*(n)?\\b(?!\\$)|\\b(?<!\\$)0(?:b|B)[01][01_]*(n)?\\b(?!\\$)|(?<!\\$)(?:(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\B(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)(n)?\\B)|(?:\\B(\\.)[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(n)?\\b(?!\\.)))(?!\\$))",
       "name": "constant.numeric.tsp"
     },
+    "object-literal": {
+      "begin": "#\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.hashcurlybrace.open.tsp"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.curlybrace.close.tsp"
+        }
+      },
+      "name": "meta.object-literal.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#object-literal-property"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#spread-operator"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "object-literal-property": {
+      "begin": "(?:(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)\\s*(:))",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.name.tsp"
+        },
+        "2": {
+          "name": "keyword.operator.type.annotation.tsp"
+        }
+      },
+      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "name": "meta.object-literal-property.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#expression"
+        }
+      ]
+    },
     "operation-heritage": {
       "begin": "\\b(is)\\b",
       "beginCaptures": {
@@ -951,6 +1084,56 @@
       "match": ";",
       "name": "punctuation.terminator.statement.tsp"
     },
+    "scalar-body": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.curlybrace.open.tsp"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.curlybrace.close.tsp"
+        }
+      },
+      "name": "meta.scalar-body.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#directive"
+        },
+        {
+          "include": "#scalar-constructor"
+        },
+        {
+          "include": "#punctuation-semicolon"
+        }
+      ]
+    },
+    "scalar-constructor": {
+      "begin": "\\b(init)\\b\\s+(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.tsp"
+        },
+        "2": {
+          "name": "entity.name.function.tsp"
+        }
+      },
+      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "name": "meta.scalar-constructor.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#operation-parameters"
+        }
+      ]
+    },
     "scalar-extends": {
       "begin": "\\b(extends)\\b",
       "beginCaptures": {
@@ -970,13 +1153,16 @@
       ]
     },
     "scalar-statement": {
-      "begin": "\\b(scalar)\\b",
+      "begin": "\\b(scalar)\\b\\s+(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.tsp"
+        },
+        "2": {
+          "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.scalar-statement.typespec",
       "patterns": [
         {
@@ -989,7 +1175,7 @@
           "include": "#scalar-extends"
         },
         {
-          "include": "#expression"
+          "include": "#scalar-body"
         }
       ]
     },
@@ -1039,6 +1225,9 @@
         },
         {
           "include": "#alias-statement"
+        },
+        {
+          "include": "#const-statement"
         },
         {
           "include": "#namespace-statement"
@@ -1157,6 +1346,29 @@
         }
       ]
     },
+    "tuple-literal": {
+      "begin": "#\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.hashsquarebracket.open.tsp"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.squarebracket.close.tsp"
+        }
+      },
+      "name": "meta.tuple-literal.typespec",
+      "patterns": [
+        {
+          "include": "#expression"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
     "type-annotation": {
       "begin": "\\s*(\\??)\\s*(:)",
       "beginCaptures": {
@@ -1172,6 +1384,35 @@
       "patterns": [
         {
           "include": "#expression"
+        }
+      ]
+    },
+    "type-argument": {
+      "begin": "(?:(\\b[_$[:alpha:]][_$[:alnum:]]*\\b|`(?:[^`\\\\]|\\\\.)*`)\\s*(=))",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.type.tsp"
+        },
+        "2": {
+          "name": "keyword.operator.assignment.tsp"
+        }
+      },
+      "end": "=",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.operator.assignment.tsp"
+        }
+      },
+      "name": "meta.type-argument.typespec",
+      "patterns": [
+        {
+          "include": "#token"
+        },
+        {
+          "include": "#expression"
+        },
+        {
+          "include": "#punctuation-comma"
         }
       ]
     },
@@ -1191,10 +1432,7 @@
       "name": "meta.type-arguments.typespec",
       "patterns": [
         {
-          "include": "#identifier-expression"
-        },
-        {
-          "include": "#operator-assignment"
+          "include": "#type-argument"
         },
         {
           "include": "#expression"
@@ -1275,6 +1513,21 @@
         },
         {
           "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "typeof": {
+      "begin": "\\b(typeof)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.tsp"
+        }
+      },
+      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "name": "meta.typeof.typespec",
+      "patterns": [
+        {
+          "include": "#expression"
         }
       ]
     },
