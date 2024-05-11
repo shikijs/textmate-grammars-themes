@@ -490,19 +490,19 @@ export const grammars = [
     aliases: [
       'lisp',
     ],
-    byteSize: 23992,
+    byteSize: 24062,
     categories: [
       'general',
       'lisp',
     ],
     displayName: 'Common Lisp',
-    lastUpdate: '2022-06-28T15:20:40Z',
+    lastUpdate: '2024-05-10T18:29:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/qingpeng9802/vscode-common-lisp/master/LICENSE',
     name: 'common-lisp',
     scopeName: 'source.commonlisp',
-    sha: '854e24985d84a809c24cee02afd2932a5bb319cd',
-    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/854e24985d84a809c24cee02afd2932a5bb319cd/syntaxes/commonlisp.tmLanguage.json',
+    sha: '79d04dc9ca80d98e65c4f28b3d67a24a7829b18f',
+    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json',
   },
   {
     aliases: [
