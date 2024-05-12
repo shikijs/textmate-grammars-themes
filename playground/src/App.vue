@@ -307,6 +307,7 @@ if (import.meta.hot) {
             id="input"
             v-model="input"
             class="absolute top-0 left-0 inset-0 caret-gray w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
+            spellcheck="false"
           />
         </div>
       </div>
