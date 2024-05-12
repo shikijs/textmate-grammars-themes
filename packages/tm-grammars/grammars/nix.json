@@ -257,7 +257,7 @@
       "end": "(?=([\\])};]|\\b(else|then)\\b))",
       "patterns": [
         {
-          "begin": "(?=(\\s*\\}|\\\"|\\binherit\\b|\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*(\\s*\\.|\\s*=[^=])))",
+          "begin": "(?=(\\s*\\}|\\\"|\\binherit\\b|\\$\\{|\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*(\\s*\\.|\\s*=[^=])))",
           "end": "(?=([\\])};,]|\\b(else|then)\\b))",
           "patterns": [
             {
@@ -355,7 +355,7 @@
       ]
     },
     "bad-reserved": {
-      "match": "\\b(if|then|else|assert|with|let|in|rec|inherit)\\b",
+      "match": "(?<![\\w'-])(if|then|else|assert|with|let|in|rec|inherit)(?![\\w'-])",
       "name": "invalid.illegal.reserved.nix"
     },
     "comment": {
@@ -891,7 +891,7 @@
           "name": "punctuation.section.embedded.end.nix"
         }
       },
-      "name": "markup.italic",
+      "name": "meta.embedded",
       "patterns": [
         {
           "include": "#expression"
@@ -1111,7 +1111,7 @@
           ]
         },
         {
-          "begin": "([a-zA-Z0-9\\.\\_\\-\\+]*(\\/[a-zA-Z0-9\\.\\_\\-\\+]+)+)",
+          "begin": "(~?[a-zA-Z0-9\\.\\_\\-\\+]*(\\/[a-zA-Z0-9\\.\\_\\-\\+]+)+)",
           "beginCaptures": {
             "0": {
               "name": "string.unquoted.path.nix"
@@ -1182,7 +1182,7 @@
       "match": "\\s+"
     },
     "with-assert": {
-      "begin": "\\b(with|assert)\\b",
+      "begin": "(?<![\\w'-])(with|assert)(?![\\w'-])",
       "beginCaptures": {
         "0": {
           "name": "keyword.other.nix"

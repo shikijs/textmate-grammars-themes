@@ -759,7 +759,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'nix',
-    source: 'https://github.com/bbenoist/vscode-nix/blob/master/syntaxes/nix.tmLanguage',
+    displayName: 'Nix',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/syntaxes/nix.YAML-tmLanguage',
   },
   {
     name: 'nushell',
