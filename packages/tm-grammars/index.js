@@ -1975,15 +1975,15 @@ export const grammars = [
     source: 'https://github.com/pragmagic/vscode-nim/blob/0272a0544ddf147fde98f8a8f2b624b7dcb19eb3/syntaxes/nim.json',
   },
   {
-    byteSize: 14665,
+    byteSize: 14708,
     displayName: 'Nix',
-    lastUpdate: '2015-12-03T18:27:32Z',
+    lastUpdate: '2022-04-17T09:05:16Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/bbenoist/vscode-nix/master/LICENSE.md',
+    licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
     name: 'nix',
     scopeName: 'source.nix',
-    sha: '9a7c81109624431e032d9b02c8029b13bc2000c8',
-    source: 'https://github.com/bbenoist/vscode-nix/blob/9a7c81109624431e032d9b02c8029b13bc2000c8/syntaxes/nix.tmLanguage',
+    sha: 'cd420d0bcea26cf1cf650f47c738bd1b6658a80c',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/cd420d0bcea26cf1cf650f47c738bd1b6658a80c/syntaxes/nix.YAML-tmLanguage',
   },
   {
     aliases: [
