@@ -2388,6 +2388,20 @@ export const grammars = [
     source: 'https://github.com/mihai-vlc/reg-vscode/blob/896096fc6756329d82c71a913663a1c0ac678f74/syntaxes/reg.tmLanguage',
   },
   {
+    aliases: [
+      'regex',
+    ],
+    byteSize: 7900,
+    displayName: 'RegExp',
+    lastUpdate: '2020-02-16T01:06:09Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/MagicStack/MagicPython/master/LICENSE',
+    name: 'regexp',
+    scopeName: 'source.regexp.python',
+    sha: 'c9b3409deb69acec31bbf7913830e93a046b30cc',
+    source: 'https://github.com/MagicStack/MagicPython/blob/c9b3409deb69acec31bbf7913830e93a046b30cc/grammars/MagicRegExp.tmLanguage',
+  },
+  {
     byteSize: 3260,
     displayName: 'Rel',
     lastUpdate: '2021-08-25T10:18:43Z',

@@ -854,6 +854,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['dsl'],
   },
   {
+    name: 'regexp',
+    displayName: 'RegExp',
+    aliases: ['regex'],
+    source: 'https://github.com/MagicStack/MagicPython/blob/master/grammars/MagicRegExp.tmLanguage',
+  },
+  {
     name: 'rel',
     source: 'https://github.com/relationalai-oss/rel_vscode/blob/master/syntaxes/rel.tmLanguage.json',
   },
