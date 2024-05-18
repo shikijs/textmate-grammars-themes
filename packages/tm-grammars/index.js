@@ -3402,7 +3402,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json',
   },
   {
-    byteSize: 1151,
+    byteSize: 1212,
     embedded: [
       'angular-expression',
       'angular-template',
@@ -3416,13 +3416,13 @@ export const injections = [
       'text.html.derivative.ng',
       'source.ts.ng',
     ],
-    lastUpdate: '2023-12-05T18:19:48Z',
+    lastUpdate: '2024-05-17T17:00:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-template-blocks',
     scopeName: 'template.blocks.ng',
-    sha: 'abfdaa7e3c1eefe0054659deb217a967d5b551b8',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/abfdaa7e3c1eefe0054659deb217a967d5b551b8/syntaxes/template-blocks.json',
+    sha: 'dceedb686d45f19a65a50398be3dbce2526e7d11',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/dceedb686d45f19a65a50398be3dbce2526e7d11/syntaxes/template-blocks.json',
   },
   {
     byteSize: 235569,
