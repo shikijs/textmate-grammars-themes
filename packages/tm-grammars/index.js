@@ -39,6 +39,23 @@ export const grammars = [
     source: 'https://github.com/AdaCore/ada_language_server/blob/75c0d0c22b3f3dbf559946331c7aca6fc5b84065/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
   {
+    aliases: [
+      'ak',
+    ],
+    byteSize: 2252,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'Aiken',
+    lastUpdate: '2024-03-17T01:09:54Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/aiken-lang/vscode-aiken/main/LICENSE',
+    name: 'aiken',
+    scopeName: 'source.aiken',
+    sha: '4bc51a52a20c3591cc7387548d6ad781a0f318a3',
+    source: 'https://github.com/aiken-lang/vscode-aiken/blob/4bc51a52a20c3591cc7387548d6ad781a0f318a3/syntaxes/aiken.tmLanguage.json',
+  },
+  {
     byteSize: 772,
     categories: [
       'web',

@@ -347,7 +347,12 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'ada',
     source: 'https://github.com/AdaCore/ada_language_server/blob/master/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
-
+  {
+    name: 'aiken',
+    aliases: ['ak'],
+    source: 'https://github.com/aiken-lang/vscode-aiken/blob/main/syntaxes/aiken.tmLanguage.json',
+    categories: ['dsl'],
+  },
   {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
