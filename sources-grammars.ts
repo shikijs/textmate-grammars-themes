@@ -572,7 +572,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'gherkin',
-    source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/master/gclient/syntaxes/feature.tmLanguage',
+    source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/master/syntaxes/feature.tmLanguage.json',
   },
   {
     name: 'gleam',

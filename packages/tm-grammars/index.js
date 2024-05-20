@@ -927,13 +927,13 @@ export const grammars = [
   {
     byteSize: 12425,
     displayName: 'Gherkin',
-    lastUpdate: '2022-07-03T18:01:28Z',
+    lastUpdate: '2024-05-18T13:15:07Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alexkrechik/VSCucumberAutoComplete/master/LICENSE',
     name: 'gherkin',
     scopeName: 'text.gherkin.feature',
-    sha: 'fc8da969b1c83e13ef5124b1ec90ba5211bc1e5f',
-    source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/fc8da969b1c83e13ef5124b1ec90ba5211bc1e5f/gclient/syntaxes/feature.tmLanguage',
+    sha: 'fbb554addf81e8961b58b1577924af10fecf9694',
+    source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/fbb554addf81e8961b58b1577924af10fecf9694/syntaxes/feature.tmLanguage.json',
   },
   {
     byteSize: 1397,
