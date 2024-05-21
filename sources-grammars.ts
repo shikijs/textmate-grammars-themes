@@ -491,6 +491,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/gbasood/vscode-atomic-dreams/blob/master/syntaxes/dm.tmLanguage.json',
   },
   {
+    name: 'edge',
+    source: 'https://github.com/edge-js/edge-vscode/blob/main/syntaxes/edge.tmLanguage.json',
+    categories: ['web'],
+  },
+  {
     name: 'elixir',
     source: 'https://github.com/elixir-editors/elixir-tmbundle/blob/master/Syntaxes/Elixir.tmLanguage',
   },
