@@ -970,15 +970,15 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
-    byteSize: 2446,
+    byteSize: 2567,
     displayName: 'Gleam',
-    lastUpdate: '2024-03-15T09:36:06Z',
+    lastUpdate: '2024-05-17T16:00:53Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
     name: 'gleam',
     scopeName: 'source.gleam',
-    sha: '755b168864d3ae92bab27cbfd80788ec021a36e7',
-    source: 'https://github.com/gleam-lang/vscode-gleam/blob/755b168864d3ae92bab27cbfd80788ec021a36e7/syntaxes/gleam.tmLanguage.json',
+    sha: '5898983fc1c012b4ee3dd0edf0abd69e531831d4',
+    source: 'https://github.com/gleam-lang/vscode-gleam/blob/5898983fc1c012b4ee3dd0edf0abd69e531831d4/syntaxes/gleam.tmLanguage.json',
   },
   {
     aliases: [
@@ -3310,18 +3310,18 @@ export const grammars = [
     source: 'https://github.com/CraftTweaker/ZenScript-tmLanguage/blob/5a7bcb775a6fb37470e56f904e70d8b8b9e6b047/zenscript.tmLanguage.json',
   },
   {
-    byteSize: 4804,
+    byteSize: 5184,
     categories: [
       'general',
     ],
     displayName: 'Zig',
-    lastUpdate: '2024-04-01T00:42:12Z',
+    lastUpdate: '2024-05-19T23:52:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE',
     name: 'zig',
     scopeName: 'source.zig',
-    sha: 'f6a1959a2ae122ee9f5aefc950904bb072f09688',
-    source: 'https://github.com/ziglang/vscode-zig/blob/f6a1959a2ae122ee9f5aefc950904bb072f09688/syntaxes/zig.tmLanguage.json',
+    sha: '8ba9f01e5d7fdce08704ea8b5cbe9efed4afb4ef',
+    source: 'https://github.com/ziglang/vscode-zig/blob/8ba9f01e5d7fdce08704ea8b5cbe9efed4afb4ef/syntaxes/zig.tmLanguage.json',
   },
 ]
 

@@ -19,6 +19,9 @@
       "include": "#operators"
     },
     {
+      "include": "#punctuation"
+    },
+    {
       "include": "#numbers"
     },
     {
@@ -178,6 +181,34 @@
         {
           "match": "(==|\\+\\+|\\*\\*|->)",
           "name": "keyword.operator.special.zig"
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.zig"
+        },
+        {
+          "match": "\\?",
+          "name": "keyword.operator.question.zig"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": "\\.",
+          "name": "punctuation.accessor.zig"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.comma.zig"
+        },
+        {
+          "match": ":",
+          "name": "punctuation.separator.key-value.zig"
+        },
+        {
+          "match": ";",
+          "name": "punctuation.terminator.statement.zig"
         }
       ]
     },
