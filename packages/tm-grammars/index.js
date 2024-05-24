@@ -3050,7 +3050,7 @@ export const grammars = [
     source: 'https://github.com/dunstontc/viml/blob/8762570fc7d6f1009a3c93efd2a337330d88b88e/syntaxes/viml.tmLanguage.json',
   },
   {
-    byteSize: 17178,
+    byteSize: 17211,
     categories: [
       'web',
     ],
@@ -3081,13 +3081,13 @@ export const grammars = [
       'vue-interpolations',
       'vue-sfc-style-variable-injection',
     ],
-    lastUpdate: '2024-05-13T17:43:43Z',
+    lastUpdate: '2024-05-23T21:19:27Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
     name: 'vue',
     scopeName: 'source.vue',
-    sha: '3fea0639cec1cf7414ef94c27c9b7416206fd101',
-    source: 'https://github.com/vuejs/language-tools/blob/3fea0639cec1cf7414ef94c27c9b7416206fd101/extensions/vscode/syntaxes/vue.tmLanguage.json',
+    sha: 'ff2788d4084895a2c4cfa526668dc642e86de6fd',
+    source: 'https://github.com/vuejs/language-tools/blob/ff2788d4084895a2c4cfa526668dc642e86de6fd/extensions/vscode/syntaxes/vue.tmLanguage.json',
   },
   {
     byteSize: 8255,
