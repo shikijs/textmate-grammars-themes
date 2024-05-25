@@ -670,6 +670,27 @@
               "include": "#Escapes"
             }
           ]
+        },
+        {
+          "begin": "([@h]?```)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.kusto"
+            }
+          },
+          "comment": "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/string#multi-line-string-literals",
+          "end": "```",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.kusto"
+            }
+          },
+          "name": "string.quoted.multi.kusto",
+          "patterns": [
+            {
+              "include": "#Escapes"
+            }
+          ]
         }
       ]
     },

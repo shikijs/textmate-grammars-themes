@@ -121,6 +121,9 @@
       "name": "meta.comments.move",
       "patterns": [
         {
+          "include": "#doc-comments"
+        },
+        {
           "include": "#line-comments"
         },
         {
@@ -157,6 +160,23 @@
       "comment": "Control flow",
       "match": "\\b(return|while|loop|if|else|break|continue|abort)\\b",
       "name": "keyword.control.move"
+    },
+    "doc-comments": {
+      "begin": "///",
+      "comment": "Documentation comment",
+      "end": "$",
+      "name": "comment.block.documentation.move",
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "markup.underline.link.move"
+            }
+          },
+          "comment": "Escaped member / link",
+          "match": "`(\\w+)`"
+        }
+      ]
     },
     "entry": {
       "comment": "entry",
@@ -656,6 +676,11 @@
           "end": "\"",
           "name": "meta.vector.literal.ascii.move",
           "patterns": [
+            {
+              "comment": "character escape",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
             {
               "comment": "Special symbol escape",
               "match": "\\\\[nrt\\0\"]",

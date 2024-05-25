@@ -1565,13 +1565,13 @@ export const grammars = [
     aliases: [
       'kql',
     ],
-    byteSize: 19702,
+    byteSize: 20074,
     displayName: 'Kusto',
-    lastUpdate: '2024-05-13T03:27:46Z',
+    lastUpdate: '2024-05-24T06:19:58Z',
     name: 'kusto',
     scopeName: 'source.kusto',
-    sha: '0470269a8381eb43b6e54eb5b5ab6b39e44ebfb8',
-    source: 'https://github.com/rosshamish/kuskus/blob/0470269a8381eb43b6e54eb5b5ab6b39e44ebfb8/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
+    sha: '6e6deead4af243432902869e1767df8a612cffe1',
+    source: 'https://github.com/rosshamish/kuskus/blob/6e6deead4af243432902869e1767df8a612cffe1/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
     byteSize: 55169,
@@ -1899,15 +1899,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 17473,
+    byteSize: 17828,
     displayName: 'Move',
-    lastUpdate: '2024-04-22T17:43:01Z',
+    lastUpdate: '2024-05-24T08:48:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '6f8ae1a8a5edb63283a6f89284f8158e4544b16c',
-    source: 'https://github.com/damirka/move-syntax/blob/6f8ae1a8a5edb63283a6f89284f8158e4544b16c/syntaxes/move.tmLanguage.json',
+    sha: '7909b9096669930da1c9c08a2202e991c7187bfe',
+    source: 'https://github.com/damirka/move-syntax/blob/7909b9096669930da1c9c08a2202e991c7187bfe/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
