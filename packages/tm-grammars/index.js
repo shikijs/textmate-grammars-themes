@@ -2328,18 +2328,18 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/fa22e9ac36d5d37ef096679927179091ba7f6966/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
-    byteSize: 103356,
+    byteSize: 103359,
     categories: [
       'lisp',
     ],
     displayName: 'Racket',
-    lastUpdate: '2022-10-19T22:21:49Z',
+    lastUpdate: '2024-05-29T13:14:07Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
     name: 'racket',
     scopeName: 'source.racket',
-    sha: 'efda8ccdeaaf3b935a75b967ed13943f4151a6dd',
-    source: 'https://github.com/Eugleo/magic-racket/blob/efda8ccdeaaf3b935a75b967ed13943f4151a6dd/syntaxes/racket.tmLanguage.json',
+    sha: '6a4d9934b3ec523162ab0243b5cb0e785316507a',
+    source: 'https://github.com/Eugleo/magic-racket/blob/6a4d9934b3ec523162ab0243b5cb0e785316507a/syntaxes/racket.tmLanguage.json',
   },
   {
     aliases: [

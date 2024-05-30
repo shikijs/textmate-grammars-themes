@@ -279,8 +279,8 @@
     "character": {
       "patterns": [
         {
-          "match": "(?x) \\#\\\\\n(?:\n(?: [0-7]{3}) |\n(?: u[0-9a-fA-F]{1,4}) |\n(?: U[0-9a-fA-F]{1,6}) |\n(?:\n(?:\nnull? | newline | linefeed | backspace | vtab | page |\nreturn | space | rubout | (?: [^\\w\\s] | \\d)\n)\n(?![a-zA-Z])\n) |\n(?: [^\\W\\d](?=[\\W\\d]) | \\W )\n)\n",
-          "name": "constant.character.racket"
+          "match": "(?x) \\#\\\\\n(?:\n(?: [0-7]{3}) |\n(?: u[0-9a-fA-F]{1,4}) |\n(?: U[0-9a-fA-F]{1,6}) |\n(?:\n(?:\nnull? | newline | linefeed | backspace | v?tab | page |\nreturn | space | rubout | (?: [^\\w\\s] | \\d)\n)\n(?![a-zA-Z])\n) |\n(?: [^\\W\\d](?=[\\W\\d]) | \\W )\n)\n",
+          "name": "string.quoted.single.racket"
         }
       ]
     },
