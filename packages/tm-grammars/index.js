@@ -1044,18 +1044,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 46339,
+    byteSize: 46789,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-05-31T13:09:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'b8e3432a0b7dd11ffd0c832fad6a6c51e809013c',
+    source: 'https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
@@ -2841,7 +2841,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/c693badea4d460d1c05b8d2ab0c88bad143da3f1/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 8651,
+    byteSize: 8978,
     categories: [
       'markup',
     ],
@@ -2849,13 +2849,13 @@ export const grammars = [
     embedded: [
       'r',
     ],
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-05-31T13:09:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: 'b8e3432a0b7dd11ffd0c832fad6a6c51e809013c',
+    source: 'https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     byteSize: 6411,
