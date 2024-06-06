@@ -14,18 +14,18 @@ export const grammars = [
     source: 'https://github.com/pvl/abap.tmbundle/blob/a9b2efff4f4afa469d984353384f09e4ebd24055/Syntaxes/ABAP.tmLanguage',
   },
   {
-    byteSize: 14070,
+    byteSize: 14144,
     categories: [
       'scripting',
     ],
     displayName: 'ActionScript',
-    lastUpdate: '2022-10-05T17:33:28Z',
+    lastUpdate: '2024-06-05T14:26:29Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE',
     name: 'actionscript-3',
     scopeName: 'source.actionscript.3',
-    sha: 'cb683a4cb4b5cac1126be203d4f081d8bfda57f5',
-    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/cb683a4cb4b5cac1126be203d4f081d8bfda57f5/distribution/src/assembly/syntaxes/AS3.tmLanguage',
+    sha: '77075cd9a439ecd87815cecb1f1c2bb1ff44a2e5',
+    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/77075cd9a439ecd87815cecb1f1c2bb1ff44a2e5/distribution/src/assembly/syntaxes/AS3.tmLanguage',
   },
   {
     byteSize: 46822,
