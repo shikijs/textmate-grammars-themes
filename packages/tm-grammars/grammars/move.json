@@ -15,13 +15,58 @@
       "include": "#script"
     },
     {
-      "include": "#attributes"
+      "include": "#annotation"
     },
     {
       "begin": "\\b(while)\\b",
       "comment": "While experiment",
       "name": "keyword.control.while.whaaat.move",
       "while": "[a-z]"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#annotation"
+    },
+    {
+      "include": "#entry"
+    },
+    {
+      "include": "#public-scope"
+    },
+    {
+      "include": "#public"
+    },
+    {
+      "include": "#native"
+    },
+    {
+      "include": "#import"
+    },
+    {
+      "include": "#friend"
+    },
+    {
+      "include": "#const"
+    },
+    {
+      "include": "#struct"
+    },
+    {
+      "include": "#has_ability"
+    },
+    {
+      "include": "#enum"
+    },
+    {
+      "include": "#macro"
+    },
+    {
+      "include": "#fun"
+    },
+    {
+      "include": "#spec"
     }
   ],
   "repository": {
@@ -70,6 +115,29 @@
         }
       ]
     },
+    "annotation": {
+      "begin": "#\\[",
+      "end": "\\]",
+      "name": "support.constant.annotation.move",
+      "patterns": [
+        {
+          "comment": "Annotation name",
+          "match": "\\b(\\w+)\\s*(?=\\=)",
+          "name": "meta.annotation.name.move"
+        },
+        {
+          "begin": "=",
+          "comment": "Annotation value",
+          "end": "(?=[,\\]])",
+          "name": "meta.annotation.value.move",
+          "patterns": [
+            {
+              "include": "#literals"
+            }
+          ]
+        }
+      ]
+    },
     "as": {
       "comment": "Keyword as (highlighted)",
       "match": "\\b(as)\\b",
@@ -79,10 +147,6 @@
       "comment": "Keyword as in import statement; not highlighted",
       "match": "\\b(as)\\b",
       "name": "meta.import.as.move"
-    },
-    "attributes": {
-      "match": "#\\[(?:[\\w0-9=,_\\(\\)\\s\"\\:=]+)\\]",
-      "name": "support.constant.attribute.move"
     },
     "block": {
       "begin": "{",
@@ -96,7 +160,6 @@
       ]
     },
     "block-comments": {
-      "comment": "Supported since https://github.com/diem/diem/pull/3714",
       "patterns": [
         {
           "begin": "/\\*[\\*!](?![\\*/])",
@@ -781,7 +844,7 @@
         }
       },
       "comment": "Module definition",
-      "end": "(?<=})",
+      "end": "(?<=[;}])",
       "name": "meta.module.move",
       "patterns": [
         {
@@ -790,7 +853,7 @@
         {
           "begin": "(?<=(module|spec))",
           "comment": "Module name",
-          "end": "(?={)",
+          "end": "(?=[;{])",
           "patterns": [
             {
               "include": "#comments"
@@ -802,13 +865,29 @@
               "begin": "(?<=\\b(module|spec))",
               "comment": "Module namespace / address",
               "end": "(?=[(::){])",
-              "name": "constant.other.move"
+              "name": "constant.other.move",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#escaped_identifier"
+                }
+              ]
             },
             {
               "begin": "(?<=::)",
               "comment": "Module name",
-              "end": "(?=[\\s{])",
-              "name": "entity.name.type.move"
+              "end": "(?=[\\s;{])",
+              "name": "entity.name.type.move",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#escaped_identifier"
+                }
+              ]
             }
           ]
         },
@@ -822,7 +901,7 @@
               "include": "#comments"
             },
             {
-              "include": "#attributes"
+              "include": "#annotation"
             },
             {
               "include": "#entry"
@@ -879,6 +958,32 @@
       "comment": "Use of module type or method",
       "match": "\\b(\\w+)::(\\w+)\\b",
       "name": "meta.module_access.move"
+    },
+    "module_label": {
+      "begin": "^\\s*(module)\\b",
+      "comment": "Module label, inline module definition",
+      "end": ";\\s*$",
+      "name": "meta.module.label.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#escaped_identifier"
+        },
+        {
+          "begin": "(?<=\\b(module|spec))",
+          "comment": "Module namespace / address",
+          "end": "(?=[(::){])",
+          "name": "constant.other.move"
+        },
+        {
+          "begin": "(?<=::)",
+          "comment": "Module name",
+          "end": "(?=[\\s{])",
+          "name": "entity.name.type.move"
+        }
+      ]
     },
     "move_copy": {
       "comment": "Keywords move and copy",

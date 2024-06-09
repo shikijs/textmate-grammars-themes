@@ -1899,15 +1899,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 17828,
+    byteSize: 18899,
     displayName: 'Move',
-    lastUpdate: '2024-05-24T08:48:59Z',
+    lastUpdate: '2024-06-08T23:07:51Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '7909b9096669930da1c9c08a2202e991c7187bfe',
-    source: 'https://github.com/damirka/move-syntax/blob/7909b9096669930da1c9c08a2202e991c7187bfe/syntaxes/move.tmLanguage.json',
+    sha: '4a9b54dbbebf6156ae987d4b9710191dd5952a7d',
+    source: 'https://github.com/damirka/move-syntax/blob/4a9b54dbbebf6156ae987d4b9710191dd5952a7d/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
