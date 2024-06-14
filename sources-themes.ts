@@ -23,6 +23,12 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
   },
   {
+    name: 'laserwave',
+    displayName: 'LaserWave',
+    source: 'https://github.com/Jaredk3nt/laserwave/blob/master/themes/LaserWave-color-theme.json',
+    type: 'dark',
+  },
+  {
     name: 'light-plus',
     displayName: 'Light Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
