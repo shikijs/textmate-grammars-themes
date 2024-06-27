@@ -957,6 +957,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/sleutho/tcl/blob/master/syntaxes/tcl.tmLanguage',
   },
   {
+    name: 'templ',
+    displayName: 'Templ',
+    source: 'https://github.com/templ-go/templ-vscode/blob/main/syntaxes/templ.tmLanguage.json',
+  },
+  {
     name: 'terraform',
     displayName: 'Terraform',
     aliases: ['tf', 'tfvars'],
