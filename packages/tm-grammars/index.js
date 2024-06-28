@@ -1678,6 +1678,17 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json',
   },
   {
+    byteSize: 12296,
+    displayName: 'Luau',
+    lastUpdate: '2024-06-22T10:31:37Z',
+    license: 'NOASSERTION',
+    licenseUrl: 'https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md',
+    name: 'luau',
+    scopeName: 'source.luau',
+    sha: '5febad569516f7a3a587b59389fc2cdc40bff972',
+    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/5febad569516f7a3a587b59389fc2cdc40bff972/Luau.tmLanguage',
+  },
+  {
     aliases: [
       'makefile',
     ],

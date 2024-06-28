@@ -708,6 +708,10 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/textmate/logo.tmbundle/blob/master/Syntaxes/Logo.tmLanguage',
   },
   {
+    name: 'luau',
+    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/main/Luau.tmLanguage',
+  },
+  {
     name: 'marko',
     source: 'https://github.com/marko-js/marko-tmbundle/blob/master/Syntaxes/marko.tmLanguage',
     categories: ['web', 'markup'],
