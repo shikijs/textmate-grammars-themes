@@ -705,6 +705,25 @@ export const grammars = [
     source: 'https://github.com/gbasood/vscode-atomic-dreams/blob/22d2bf0325f65697ea542856280f66e9e098f4a2/syntaxes/dm.tmLanguage.json',
   },
   {
+    byteSize: 2018,
+    categories: [
+      'web',
+    ],
+    displayName: 'Edge',
+    embedded: [
+      'typescript',
+      'html',
+      'html-derivative',
+    ],
+    lastUpdate: '2024-02-05T08:06:04Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/edge-js/edge-vscode/main/LICENSE.md',
+    name: 'edge',
+    scopeName: 'text.html.edge',
+    sha: '04352c41981ca664598674556afa63bd393a10f3',
+    source: 'https://github.com/edge-js/edge-vscode/blob/04352c41981ca664598674556afa63bd393a10f3/syntaxes/edge.tmLanguage.json',
+  },
+  {
     byteSize: 17372,
     displayName: 'Elixir',
     embedded: [
