@@ -713,6 +713,10 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/textmate/logo.tmbundle/blob/master/Syntaxes/Logo.tmLanguage',
   },
   {
+    name: 'luau',
+    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/main/Luau.tmLanguage',
+  },
+  {
     name: 'marko',
     source: 'https://github.com/marko-js/marko-tmbundle/blob/master/Syntaxes/marko.tmLanguage',
     categories: ['web', 'markup'],
@@ -960,6 +964,11 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'tcl',
     source: 'https://github.com/sleutho/tcl/blob/master/syntaxes/tcl.tmLanguage',
+  },
+  {
+    name: 'templ',
+    displayName: 'Templ',
+    source: 'https://github.com/templ-go/templ-vscode/blob/main/syntaxes/templ.tmLanguage.json',
   },
   {
     name: 'terraform',

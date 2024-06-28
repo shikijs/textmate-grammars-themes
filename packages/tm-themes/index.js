@@ -179,6 +179,17 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 11439,
+    displayName: 'LaserWave',
+    lastUpdate: '2022-11-07T01:48:57Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/Jaredk3nt/laserwave/master/LICENSE',
+    name: 'laserwave',
+    sha: 'f768285c659425fbb6ec5642085df4902f8a8d92',
+    source: 'https://github.com/Jaredk3nt/laserwave/blob/f768285c659425fbb6ec5642085df4902f8a8d92/themes/LaserWave-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 9698,
     displayName: 'Light Plus',
     lastUpdate: '2023-09-12T10:37:49Z',

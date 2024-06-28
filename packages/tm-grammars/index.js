@@ -14,18 +14,18 @@ export const grammars = [
     source: 'https://github.com/pvl/abap.tmbundle/blob/a9b2efff4f4afa469d984353384f09e4ebd24055/Syntaxes/ABAP.tmLanguage',
   },
   {
-    byteSize: 14070,
+    byteSize: 14144,
     categories: [
       'scripting',
     ],
     displayName: 'ActionScript',
-    lastUpdate: '2022-10-05T17:33:28Z',
+    lastUpdate: '2024-06-05T14:26:29Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE',
     name: 'actionscript-3',
     scopeName: 'source.actionscript.3',
-    sha: 'cb683a4cb4b5cac1126be203d4f081d8bfda57f5',
-    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/cb683a4cb4b5cac1126be203d4f081d8bfda57f5/distribution/src/assembly/syntaxes/AS3.tmLanguage',
+    sha: '77075cd9a439ecd87815cecb1f1c2bb1ff44a2e5',
+    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/77075cd9a439ecd87815cecb1f1c2bb1ff44a2e5/distribution/src/assembly/syntaxes/AS3.tmLanguage',
   },
   {
     byteSize: 46822,
@@ -911,15 +911,15 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 16475,
+    byteSize: 17624,
     displayName: 'GDScript',
-    lastUpdate: '2024-02-21T20:07:05Z',
+    lastUpdate: '2024-06-24T20:48:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: '0c9c2554fb6eb25d8e30fa32cc31d1eba0941bba',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/0c9c2554fb6eb25d8e30fa32cc31d1eba0941bba/syntaxes/GDScript.tmLanguage.json',
+    sha: 'c07fe37f30c33bc0e99629c24ffb0e8d346eca5e',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/c07fe37f30c33bc0e99629c24ffb0e8d346eca5e/syntaxes/GDScript.tmLanguage.json',
   },
   {
     byteSize: 6096,
@@ -1063,18 +1063,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 46339,
+    byteSize: 46789,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-05-31T13:09:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'b8e3432a0b7dd11ffd0c832fad6a6c51e809013c',
+    source: 'https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
@@ -1584,13 +1584,13 @@ export const grammars = [
     aliases: [
       'kql',
     ],
-    byteSize: 19702,
+    byteSize: 20074,
     displayName: 'Kusto',
-    lastUpdate: '2024-05-13T03:27:46Z',
+    lastUpdate: '2024-05-24T06:19:58Z',
     name: 'kusto',
     scopeName: 'source.kusto',
-    sha: '0470269a8381eb43b6e54eb5b5ab6b39e44ebfb8',
-    source: 'https://github.com/rosshamish/kuskus/blob/0470269a8381eb43b6e54eb5b5ab6b39e44ebfb8/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
+    sha: '6e6deead4af243432902869e1767df8a612cffe1',
+    source: 'https://github.com/rosshamish/kuskus/blob/6e6deead4af243432902869e1767df8a612cffe1/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
     byteSize: 55169,
@@ -1695,6 +1695,17 @@ export const grammars = [
     scopeName: 'source.lua',
     sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
     source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json',
+  },
+  {
+    byteSize: 12296,
+    displayName: 'Luau',
+    lastUpdate: '2024-06-22T10:31:37Z',
+    license: 'NOASSERTION',
+    licenseUrl: 'https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md',
+    name: 'luau',
+    scopeName: 'source.luau',
+    sha: '5febad569516f7a3a587b59389fc2cdc40bff972',
+    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/5febad569516f7a3a587b59389fc2cdc40bff972/Luau.tmLanguage',
   },
   {
     aliases: [
@@ -1918,15 +1929,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 17473,
+    byteSize: 18899,
     displayName: 'Move',
-    lastUpdate: '2024-04-22T17:43:01Z',
+    lastUpdate: '2024-06-08T23:07:51Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '6f8ae1a8a5edb63283a6f89284f8158e4544b16c',
-    source: 'https://github.com/damirka/move-syntax/blob/6f8ae1a8a5edb63283a6f89284f8158e4544b16c/syntaxes/move.tmLanguage.json',
+    sha: '4a9b54dbbebf6156ae987d4b9710191dd5952a7d',
+    source: 'https://github.com/damirka/move-syntax/blob/4a9b54dbbebf6156ae987d4b9710191dd5952a7d/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
@@ -2064,18 +2075,18 @@ export const grammars = [
     source: 'https://github.com/reasonml-editor/vscode-reasonml/blob/14af625ec50ed9968b957b4d6336c5338d81af45/syntaxes/ocaml.json',
   },
   {
-    byteSize: 3996,
+    byteSize: 4004,
     categories: [
       'general',
     ],
     displayName: 'Pascal',
-    lastUpdate: '2024-04-14T00:32:39Z',
+    lastUpdate: '2024-05-29T12:09:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/LICENSE.md',
     name: 'pascal',
     scopeName: 'source.pascal',
-    sha: 'b364f43ef1747a22872cf98d1844d976576f9df0',
-    source: 'https://github.com/alefragnani/vscode-language-pascal/blob/b364f43ef1747a22872cf98d1844d976576f9df0/syntaxes/pascal.tmLanguage',
+    sha: '61eeb938406a9ea13cee804b054d83457a5aa104',
+    source: 'https://github.com/alefragnani/vscode-language-pascal/blob/61eeb938406a9ea13cee804b054d83457a5aa104/syntaxes/pascal.tmLanguage',
   },
   {
     byteSize: 42982,
@@ -2347,18 +2358,18 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/fa22e9ac36d5d37ef096679927179091ba7f6966/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
-    byteSize: 103356,
+    byteSize: 103359,
     categories: [
       'lisp',
     ],
     displayName: 'Racket',
-    lastUpdate: '2022-10-19T22:21:49Z',
+    lastUpdate: '2024-05-29T13:14:07Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
     name: 'racket',
     scopeName: 'source.racket',
-    sha: 'efda8ccdeaaf3b935a75b967ed13943f4151a6dd',
-    source: 'https://github.com/Eugleo/magic-racket/blob/efda8ccdeaaf3b935a75b967ed13943f4151a6dd/syntaxes/racket.tmLanguage.json',
+    sha: '6a4d9934b3ec523162ab0243b5cb0e785316507a',
+    source: 'https://github.com/Eugleo/magic-racket/blob/6a4d9934b3ec523162ab0243b5cb0e785316507a/syntaxes/racket.tmLanguage.json',
   },
   {
     aliases: [
@@ -2845,6 +2856,22 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
+    byteSize: 23242,
+    displayName: 'Templ',
+    embedded: [
+      'go',
+      'javascript',
+      'css',
+    ],
+    lastUpdate: '2024-05-30T10:17:28Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
+    name: 'templ',
+    scopeName: 'source.templ',
+    sha: '4f85ade86dba0ecabd80fe6e845653a0a4aed5bf',
+    source: 'https://github.com/templ-go/templ-vscode/blob/4f85ade86dba0ecabd80fe6e845653a0a4aed5bf/syntaxes/templ.tmLanguage.json',
+  },
+  {
     aliases: [
       'tf',
       'tfvars',
@@ -2860,7 +2887,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/c693badea4d460d1c05b8d2ab0c88bad143da3f1/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 8651,
+    byteSize: 8978,
     categories: [
       'markup',
     ],
@@ -2868,13 +2895,13 @@ export const grammars = [
     embedded: [
       'r',
     ],
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-05-31T13:09:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: 'b8e3432a0b7dd11ffd0c832fad6a6c51e809013c',
+    source: 'https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     byteSize: 6411,
@@ -2967,15 +2994,15 @@ export const grammars = [
     aliases: [
       'tsp',
     ],
-    byteSize: 26790,
+    byteSize: 26795,
     displayName: 'TypeSpec',
-    lastUpdate: '2024-05-08T20:06:28Z',
+    lastUpdate: '2024-06-11T19:22:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
     name: 'typespec',
     scopeName: 'source.tsp',
-    sha: '7ec17161b78117737660506b424b8a133e477cfc',
-    source: 'https://github.com/microsoft/typespec/blob/7ec17161b78117737660506b424b8a133e477cfc/grammars/typespec.json',
+    sha: '7912e8c9c7fff5c727608830d4ccb98ca86a2369',
+    source: 'https://github.com/microsoft/typespec/blob/7912e8c9c7fff5c727608830d4ccb98ca86a2369/grammars/typespec.json',
   },
   {
     aliases: [
@@ -3069,7 +3096,7 @@ export const grammars = [
     source: 'https://github.com/dunstontc/viml/blob/8762570fc7d6f1009a3c93efd2a337330d88b88e/syntaxes/viml.tmLanguage.json',
   },
   {
-    byteSize: 17178,
+    byteSize: 17392,
     categories: [
       'web',
     ],
@@ -3100,13 +3127,13 @@ export const grammars = [
       'vue-interpolations',
       'vue-sfc-style-variable-injection',
     ],
-    lastUpdate: '2024-05-13T17:43:43Z',
+    lastUpdate: '2024-06-21T11:14:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
     name: 'vue',
     scopeName: 'source.vue',
-    sha: '3fea0639cec1cf7414ef94c27c9b7416206fd101',
-    source: 'https://github.com/vuejs/language-tools/blob/3fea0639cec1cf7414ef94c27c9b7416206fd101/extensions/vscode/syntaxes/vue.tmLanguage.json',
+    sha: '07f1f1d5a64e780b6dd768012102225e1b35f68c',
+    source: 'https://github.com/vuejs/language-tools/blob/07f1f1d5a64e780b6dd768012102225e1b35f68c/extensions/vscode/syntaxes/vue.tmLanguage.json',
   },
   {
     byteSize: 8255,

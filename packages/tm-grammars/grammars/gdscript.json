@@ -23,7 +23,7 @@
           "name": "punctuation.separator.annotation.gdscript"
         },
         "3": {
-          "name": "entity.name.type.class.builtin.gdscript"
+          "name": "entity.name.type.class.gdscript"
         }
       },
       "end": "(,)|(?=\\))",
@@ -76,7 +76,7 @@
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
-      "match": "->|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\*|/|%|\\+|-|<<|>>|&|\\||\\^|~|!",
+      "match": "->|\\+=|-=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|\\*|/|%|\\+|-",
       "name": "keyword.operator.arithmetic.gdscript"
     },
     "assignment_operator": {
@@ -98,19 +98,16 @@
           "include": "#strings"
         },
         {
+          "include": "#builtin_classes"
+        },
+        {
           "include": "#const_vars"
         },
         {
           "include": "#keywords"
         },
         {
-          "include": "#logic_operator"
-        },
-        {
-          "include": "#compare_operator"
-        },
-        {
-          "include": "#arithmetic_operator"
+          "include": "#operators"
         },
         {
           "include": "#lambda_declaration"
@@ -164,15 +161,20 @@
           "include": "#numbers"
         },
         {
-          "include": "#builtin_classes"
-        },
-        {
           "include": "#pascal_case_class"
         },
         {
           "include": "#line_continuation"
         }
       ]
+    },
+    "bitwise_operator": {
+      "match": "&|\\||<<=|>>=|<<|>>|\\^|~",
+      "name": "keyword.operator.bitwise.gdscript"
+    },
+    "boolean_operator": {
+      "match": "(&&|\\|\\|)",
+      "name": "keyword.operator.boolean.gdscript"
     },
     "builtin_classes": {
       "match": "(?<![^.]\\.|:)\\b(OS|GDScript|Vector2|Vector2i|Vector3|Vector3i|Color|Rect2|Rect2i|Array|Basis|Dictionary|Plane|Quat|RID|Rect3|Transform|Transform2D|Transform3D|AABB|String|Color|NodePath|Object|PoolByteArray|PoolIntArray|PoolRealArray|PoolStringArray|PoolVector2Array|PoolVector3Array|PoolColorArray|bool|int|float|StringName|Quaternion|PackedByteArray|PackedInt32Array|PackedInt64Array|PackedFloat32Array|PackedFloat64Array|PackedStringArray|PackedVector2Array|PackedVector2iArray|PackedVector3Array|PackedVector3iArray|PackedColorArray|super)\\b",
@@ -318,11 +320,11 @@
           "name": "punctuation.definition.comment.number-sign.gdscript"
         }
       },
-      "match": "(#).*$\\n?",
+      "match": "(##|#).*$\\n?",
       "name": "comment.line.number-sign.gdscript"
     },
     "compare_operator": {
-      "match": "<=|>=|==|<|>|!=",
+      "match": "<=|>=|==|<|>|!=|!",
       "name": "keyword.operator.comparison.gdscript"
     },
     "const_vars": {
@@ -330,7 +332,7 @@
       "name": "constant.language.gdscript"
     },
     "control_flow": {
-      "match": "\\b(?:if|elif|else|while|break|continue|pass|return|match|yield|await)\\b",
+      "match": "\\b(?:if|elif|else|while|break|continue|pass|return|match|when|yield|await)\\b",
       "name": "keyword.control.gdscript"
     },
     "expression": {
@@ -580,7 +582,7 @@
       ]
     },
     "keywords": {
-      "match": "\\b(?:class|class_name|is|onready|tool|static|export|as|void|enum|preload|assert|breakpoint|rpc|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace)\\b",
+      "match": "\\b(?:class|class_name|is|onready|tool|static|export|as|void|enum|preload|assert|breakpoint|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace)\\b",
       "name": "keyword.language.gdscript"
     },
     "lambda_declaration": {
@@ -657,10 +659,6 @@
           ]
         }
       ]
-    },
-    "logic_operator": {
-      "match": "\\b(and|or|not|!)\\b",
-      "name": "keyword.operator.wordlike.gdscript"
     },
     "loose_default": {
       "begin": "(=)",
@@ -762,6 +760,25 @@
         }
       ]
     },
+    "operators": {
+      "patterns": [
+        {
+          "include": "#wordlike_operator"
+        },
+        {
+          "include": "#boolean_operator"
+        },
+        {
+          "include": "#arithmetic_operator"
+        },
+        {
+          "include": "#bitwise_operator"
+        },
+        {
+          "include": "#compare_operator"
+        }
+      ]
+    },
     "parameters": {
       "begin": "(\\()",
       "beginCaptures": {
@@ -800,7 +817,7 @@
       ]
     },
     "pascal_case_class": {
-      "match": "\\b([A-Z][a-z_0-9]*([A-Z]?[a-z_0-9]+)*[A-Z]?)\\b",
+      "match": "\\b([A-Z]+[a-z_0-9]*([A-Z]?[a-z_0-9]+)*[A-Z]?)\\b",
       "name": "entity.name.type.class.gdscript"
     },
     "round_braces": {
@@ -889,7 +906,41 @@
         }
       ]
     },
-    "string_formatting": {
+    "string_bracket_placeholders": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "constant.character.format.placeholder.other.gdscript"
+            },
+            "3": {
+              "name": "storage.type.format.gdscript"
+            },
+            "4": {
+              "name": "storage.type.format.gdscript"
+            }
+          },
+          "match": "(?x)\n(\n{{ | }}\n| (?:\n{\n\\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n(![rsa])?\n( : \\w? [<>=^]? [-+ ]? \\#?\n\\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?\n})\n)\n",
+          "name": "meta.format.brace.gdscript"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "constant.character.format.placeholder.other.gdscript"
+            },
+            "3": {
+              "name": "storage.type.format.gdscript"
+            },
+            "4": {
+              "name": "storage.type.format.gdscript"
+            }
+          },
+          "match": "(?x)\n(\n{\n\\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n(![rsa])?\n(:)\n[^'\"{}\\n]* (?:\n\\{ [^'\"}\\n]*? \\} [^'\"{}\\n]*\n)*\n}\n)\n",
+          "name": "meta.format.brace.gdscript"
+        }
+      ]
+    },
+    "string_percent_placeholders": {
       "captures": {
         "1": {
           "name": "constant.character.format.placeholder.other.gdscript"
@@ -913,7 +964,10 @@
           "name": "constant.character.escape.gdscript"
         },
         {
-          "include": "#string_formatting"
+          "include": "#string_percent_placeholders"
+        },
+        {
+          "include": "#string_bracket_placeholders"
         }
       ]
     },
@@ -995,6 +1049,10 @@
           "include": "#keywords"
         }
       ]
+    },
+    "wordlike_operator": {
+      "match": "\\b(and|or|not)\\b",
+      "name": "keyword.operator.wordlike.gdscript"
     }
   },
   "scopeName": "source.gdscript"

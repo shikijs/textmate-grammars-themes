@@ -140,7 +140,8 @@
           ]
         },
         {
-          "captures": {
+          "begin": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\[\\]\\*]+)?(?:(?!\\bmap\\b)(?:[\\w\\.]+))?(\\[(?:(?:[\\S]+)(?:(?:\\,\\s*(?:[\\S]+))*))?\\])?(?:\\,)?)?))",
+          "beginCaptures": {
             "1": {
               "name": "entity.name.function.support.builtin.go"
             },
@@ -160,20 +161,20 @@
                   "name": "entity.name.type.go"
                 }
               ]
-            },
-            "4": {
-              "patterns": [
-                {
-                  "include": "$self"
-                }
-              ]
-            },
-            "5": {
-              "name": "punctuation.definition.end.bracket.round.go"
             }
           },
           "comment": "make keyword",
-          "match": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?(?:\\[(?:[^\\]]+)?\\])?(?:[\\w\\.\\*\\[\\]\\{\\}]+)?)?((?:\\,\\s*(?:[\\w\\.\\(\\)/\\+\\-\\<\\>\\&\\|\\%\\*]+)?)+)?(\\))))"
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.round.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
         }
       ]
     },
@@ -254,6 +255,38 @@
       },
       "comment": "double parentheses types",
       "match": "(?:(?<!\\w)(\\((?:[\\w\\.\\[\\]\\*\\&]+)\\))(?=\\())"
+    },
+    "field_hover": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#type-declarations"
+            },
+            {
+              "match": "\\w+",
+              "name": "variable.other.property.go"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#type-declarations"
+            },
+            {
+              "match": "\\binvalid\\b\\s+\\btype\\b",
+              "name": "invalid.field.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
+        }
+      },
+      "comment": "struct field property and types when hovering with the mouse",
+      "match": "(?:(?<=^\\bfield\\b)\\s+([\\w\\*\\.]+)\\s+([\\s\\S]+))"
     },
     "function_declaration": {
       "begin": "(?:^(\\bfunc\\b)(?:\\s*(\\([^\\)]+\\)\\s*)?(?:(\\w+)(?=\\(|\\[))?))",
@@ -2033,6 +2066,9 @@
         },
         {
           "include": "#group-variables"
+        },
+        {
+          "include": "#field_hover"
         }
       ]
     },
