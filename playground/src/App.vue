@@ -215,8 +215,9 @@ if (import.meta.hot) {
           <button
             v-for="g of filteredGrammars"
             :key="g.name"
-            border="b base" px3
-            py1 text-left
+            :data-testid="g.name" border="b base"
+            px3 py1
+            text-left
             :class="g.name === grammar ? 'bg-active text-primary' : 'text-faded'"
             @click="grammar = g.name"
           >
@@ -238,6 +239,7 @@ if (import.meta.hot) {
           <button
             v-for="t of filteredThemes"
             :key="t.name"
+            :data-testid="t.name"
             border="b base" px3 py1 text-left
             :class="t.name === theme ? 'bg-active text-purple' : 'text-faded'"
             @click="theme = t.name"
@@ -302,7 +304,7 @@ if (import.meta.hot) {
           {{ error }}
         </div>
         <div relative of-x-scroll flex-none>
-          <div v-html="output" />
+          <div id="code-output" v-html="output" />
           <textarea
             id="input"
             v-model="input"
