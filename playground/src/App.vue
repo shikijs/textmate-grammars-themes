@@ -19,6 +19,7 @@ const searchInputTheme = ref('')
 const input = ref('')
 const output = ref('')
 const example = ref('')
+const isFetching = ref(false)
 
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
@@ -46,9 +47,16 @@ const themeObject = computed(() => themes.find(t => t.name === theme.value))
 
 let highlighter: HighlighterCore | null = null
 
+let fetchingTimer: ReturnType<typeof setTimeout> | undefined
+
 async function run(fetchInput = true) {
   highlighter = null
   error.value = null
+  if (fetchingTimer)
+    clearTimeout(fetchingTimer)
+  fetchingTimer = setTimeout(() => {
+    isFetching.value = true
+  }, 300)
   try {
     const themeObject = await import(`../../packages/tm-themes/themes/${theme.value}.json`).then(m => m.default)
     const langs = new Map<string, any>()
@@ -88,6 +96,11 @@ async function run(fetchInput = true) {
   catch (e) {
     error.value = e
     throw e
+  }
+  finally {
+    if (fetchingTimer)
+      clearTimeout(fetchingTimer)
+    isFetching.value = false
   }
 }
 
@@ -298,8 +311,16 @@ if (import.meta.hot) {
           </div>
         </div>
 
-        <div v-if="error" text-red bg-red:10 p6 rounded flex-none>
+        <div v-if="error" text-red bg-red:10 p4 rounded flex-none>
           {{ error }}
+        </div>
+        <div
+          v-if="isFetching"
+          text-amber bg-amber:10 px4 py3 border="~ amber/50 rounded" animate-pulse
+          flex="~ items-center gap-2 none"
+        >
+          <div i-svg-spinners-270-ring-with-bg />
+          Loading...
         </div>
         <div relative of-x-scroll flex-none>
           <div v-html="output" />

@@ -515,6 +515,7 @@ export const grammars = [
     displayName: 'C++',
     embedded: [
       'cpp-macro',
+      'regexp',
       'glsl',
       'sql',
     ],
@@ -706,9 +707,6 @@ export const grammars = [
   },
   {
     byteSize: 2018,
-    categories: [
-      'web',
-    ],
     displayName: 'Edge',
     embedded: [
       'typescript',
@@ -1773,6 +1771,7 @@ export const grammars = [
       'powershell',
       'python',
       'julia',
+      'regexp',
       'rust',
       'scala',
       'shellscript',
@@ -1907,7 +1906,7 @@ export const grammars = [
     source: 'https://github.com/wooorm/markdown-tm-language/blob/371d61df9ddc3850e12aabe61b602d02e259e8a4/source.mdx.tmLanguage',
   },
   {
-    byteSize: 25371,
+    byteSize: 28661,
     displayName: 'Mermaid',
     lastUpdate: '2022-06-10T19:46:22Z',
     license: 'MIT',
@@ -3474,6 +3473,7 @@ export const injections = [
     byteSize: 235569,
     displayName: 'C++',
     embedded: [
+      'regexp',
       'glsl',
       'sql',
     ],

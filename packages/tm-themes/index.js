@@ -201,7 +201,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 18563,
+    byteSize: 18555,
     displayName: 'Material Theme',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -212,7 +212,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 18577,
+    byteSize: 18569,
     displayName: 'Material Theme Darker',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -223,7 +223,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 18582,
+    byteSize: 18574,
     displayName: 'Material Theme Lighter',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -234,7 +234,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 18577,
+    byteSize: 18569,
     displayName: 'Material Theme Ocean',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -245,7 +245,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 18583,
+    byteSize: 18575,
     displayName: 'Material Theme Palenight',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
