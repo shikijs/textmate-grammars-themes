@@ -2826,6 +2826,22 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
+    byteSize: 23242,
+    displayName: 'Templ',
+    embedded: [
+      'go',
+      'javascript',
+      'css',
+    ],
+    lastUpdate: '2024-05-30T10:17:28Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
+    name: 'templ',
+    scopeName: 'source.templ',
+    sha: '4f85ade86dba0ecabd80fe6e845653a0a4aed5bf',
+    source: 'https://github.com/templ-go/templ-vscode/blob/4f85ade86dba0ecabd80fe6e845653a0a4aed5bf/syntaxes/templ.tmLanguage.json',
+  },
+  {
     aliases: [
       'tf',
       'tfvars',
