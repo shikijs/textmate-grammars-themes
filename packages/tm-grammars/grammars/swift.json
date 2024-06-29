@@ -53,7 +53,7 @@
                   "name": "constant.numeric.swift"
                 }
               },
-              "match": "\\b(swift|(?:iOS|macOS|OSX|watchOS|tvOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))?"
+              "match": "\\b(swift|(?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))?"
             },
             {
               "begin": "\\b(introduced|deprecated|obsoleted)\\s*(:)\\s*",
@@ -587,7 +587,7 @@
                   "name": "punctuation.definition.parameters.end.swift"
                 }
               },
-              "match": "\\b(os)\\s*(\\()\\s*(?:(macOS|OSX|iOS|tvOS|watchOS|Android|Linux|FreeBSD|Windows|PS4)|\\w+)\\s*(\\))"
+              "match": "\\b(os)\\s*(\\()\\s*(?:(macOS|OSX|iOS|tvOS|watchOS|visionOS|Android|Linux|FreeBSD|Windows|PS4)|\\w+)\\s*(\\))"
             },
             {
               "captures": {
@@ -2587,7 +2587,7 @@
               "name": "constant.numeric.swift"
             }
           },
-          "match": "\\s*\\b((?:iOS|macOS|OSX|watchOS|tvOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))"
+          "match": "\\s*\\b((?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))"
         },
         {
           "captures": {
