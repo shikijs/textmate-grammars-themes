@@ -140,6 +140,15 @@
           "include": "#control_flow"
         },
         {
+          "include": "#match_keyword"
+        },
+        {
+          "include": "#curly_braces"
+        },
+        {
+          "include": "#square_braces"
+        },
+        {
           "include": "#round_braces"
         },
         {
@@ -332,8 +341,30 @@
       "name": "constant.language.gdscript"
     },
     "control_flow": {
-      "match": "\\b(?:if|elif|else|while|break|continue|pass|return|match|when|yield|await)\\b",
+      "match": "\\b(?:if|elif|else|while|break|continue|pass|return|when|yield|await)\\b",
       "name": "keyword.control.gdscript"
+    },
+    "curly_braces": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.dict.begin.gdscript"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.dict.end.gdscript"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#base_expression"
+        },
+        {
+          "include": "#any_variable"
+        }
+      ]
     },
     "expression": {
       "patterns": [
@@ -679,6 +710,14 @@
         }
       ]
     },
+    "match_keyword": {
+      "captures": {
+        "1": {
+          "name": "keyword.control.gdscript"
+        }
+      },
+      "match": "^\n\\s*(match)"
+    },
     "nodepath_function": {
       "begin": "(get_node_or_null|has_node|has_node_and_resource|find_node|get_node)\\s*(\\()",
       "beginCaptures": {
@@ -689,12 +728,14 @@
           "name": "punctuation.definition.parameters.begin.gdscript"
         }
       },
+      "contentName": "meta.function.parameters.gdscript",
       "end": "(\\))",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.parameters.end.gdscript"
         }
       },
+      "name": "meta.function.gdscript",
       "patterns": [
         {
           "begin": "(\"|')",
@@ -706,6 +747,9 @@
               "name": "keyword.control.flow"
             }
           ]
+        },
+        {
+          "include": "#base_expression"
         }
       ]
     },
@@ -878,6 +922,28 @@
       },
       "match": "(?x) \\s*\n(signal) \\s+\n([a-zA-Z_]\\w*)(?=[\\n\\s])",
       "name": "meta.signal.gdscript"
+    },
+    "square_braces": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.list.begin.gdscript"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.list.end.gdscript"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#base_expression"
+        },
+        {
+          "include": "#any_variable"
+        }
+      ]
     },
     "statement": {
       "patterns": [
