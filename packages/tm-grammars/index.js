@@ -909,15 +909,15 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 18440,
+    byteSize: 18259,
     displayName: 'GDScript',
-    lastUpdate: '2024-06-29T20:08:24Z',
+    lastUpdate: '2024-07-02T18:04:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: 'cca25099c4a154137de962a60dcf2fba74c6cc31',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/cca25099c4a154137de962a60dcf2fba74c6cc31/syntaxes/GDScript.tmLanguage.json',
+    sha: '9750f8dfc6e4eeba96f7df62432751930af95337',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/9750f8dfc6e4eeba96f7df62432751930af95337/syntaxes/GDScript.tmLanguage.json',
   },
   {
     byteSize: 6096,
@@ -3405,10 +3405,11 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
   },
   {
-    byteSize: 956,
+    byteSize: 1049,
     embedded: [
       'angular-html',
       'angular-template',
+      'angular-template-blocks',
     ],
     embeddedIn: [
       'angular-ts',
@@ -3416,13 +3417,13 @@ export const injections = [
     injectTo: [
       'source.ts.ng',
     ],
-    lastUpdate: '2020-07-06T21:15:10Z',
+    lastUpdate: '2024-07-02T16:10:13Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-inline-template',
     scopeName: 'inline-template.ng',
-    sha: 'c3f3172a70b1a2bfdca3bdee85df9271cb0895cf',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/c3f3172a70b1a2bfdca3bdee85df9271cb0895cf/syntaxes/inline-template.json',
+    sha: '888875fef753416c464d1433f05caf8d53c9dd10',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/888875fef753416c464d1433f05caf8d53c9dd10/syntaxes/inline-template.json',
   },
   {
     byteSize: 471,
