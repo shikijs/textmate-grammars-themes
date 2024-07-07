@@ -28,9 +28,9 @@ const filesChanged = [
 
 let grammarsVersion = ''
 let themesVersion = ''
-const grammarsChanged = filesChanged.filter(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.'))
+const grammarsChanged = filesChanged.filter(i => i.startsWith('packages/tm-grammars/grammars/') || i.startsWith('packages/tm-grammars/index.') || i.startsWith('sources-grammars.ts'))
 const grammarsCreated = filesCreated.filter(i => i.startsWith('packages/tm-grammars/grammars/'))
-const themesChanged = filesChanged.filter(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.'))
+const themesChanged = filesChanged.filter(i => i.startsWith('packages/tm-themes/themes/') || i.startsWith('packages/tm-themes/index.') || i.startsWith('sources-themes.ts'))
 const themesCreated = filesCreated.filter(i => i.startsWith('packages/tm-themes/themes/'))
 
 async function bumpVersion(path: string, type: 'patch' | 'minor') {
