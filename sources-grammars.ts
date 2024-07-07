@@ -323,13 +323,6 @@ export const sourcesVSCode: GrammarSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/xml/syntaxes/xsl.tmLanguage.json',
     categories: ['markup'],
   },
-  {
-    name: 'yaml',
-    displayName: 'YAML',
-    aliases: ['yml'],
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/yaml/syntaxes/yaml.tmLanguage.json',
-    categories: ['data'],
-  },
 ]
 
 // @keep-sorted { "keys": ["name"] }
@@ -1066,6 +1059,14 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'wolfram',
     aliases: ['wl'],
     source: 'https://github.com/WolframResearch/vscode-wolfram/blob/master/syntaxes/wolfram.tmLanguage.json',
+  },
+
+  {
+    name: 'yaml',
+    displayName: 'YAML',
+    aliases: ['yml'],
+    source: 'https://github.com/RedCMD/YAML-Syntax-Highlighter/blob/main/syntaxes/yaml-1.2.tmLanguage.json',
+    categories: ['data'],
   },
   {
     name: 'zenscript',
