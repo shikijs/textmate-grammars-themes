@@ -3330,18 +3330,16 @@ export const grammars = [
     aliases: [
       'yml',
     ],
-    byteSize: 29230,
+    byteSize: 10966,
     categories: [
       'data',
     ],
     displayName: 'YAML',
-    lastUpdate: '2024-07-05T01:17:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/RedCMD/YAML-Syntax-Highlighter/main/LICENSE',
+    lastUpdate: '2017-08-24T17:48:19Z',
     name: 'yaml',
-    scopeName: 'source.yaml.1.2',
-    sha: '60e2e6e24c63d5a703cb04577678a2e416edd956',
-    source: 'https://github.com/RedCMD/YAML-Syntax-Highlighter/blob/60e2e6e24c63d5a703cb04577678a2e416edd956/syntaxes/yaml-1.2.tmLanguage.json',
+    scopeName: 'source.yaml',
+    sha: 'e54ceae3b719506dba7e481a77cea4a8b576ae46',
+    source: 'https://github.com/textmate/yaml.tmbundle/blob/e54ceae3b719506dba7e481a77cea4a8b576ae46/Syntaxes/YAML.tmLanguage',
   },
   {
     byteSize: 4173,

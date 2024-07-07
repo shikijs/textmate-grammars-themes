@@ -1065,7 +1065,7 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'yaml',
     displayName: 'YAML',
     aliases: ['yml'],
-    source: 'https://github.com/RedCMD/YAML-Syntax-Highlighter/blob/main/syntaxes/yaml-1.2.tmLanguage.json',
+    source: 'https://github.com/textmate/yaml.tmbundle/blob/master/Syntaxes/YAML.tmLanguage',
     categories: ['data'],
   },
   {
