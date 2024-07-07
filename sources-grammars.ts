@@ -325,6 +325,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'yaml',
+    displayName: 'YAML',
     aliases: ['yml'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/yaml/syntaxes/yaml.tmLanguage.json',
     categories: ['data'],
