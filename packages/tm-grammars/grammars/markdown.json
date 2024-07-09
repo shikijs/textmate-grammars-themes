@@ -2185,12 +2185,32 @@
       ]
     },
     "frontMatter": {
-      "begin": "\\A-{3}\\s*$",
-      "contentName": "meta.embedded.block.frontmatter",
-      "end": "(^|\\G)-{3}|\\.{3}\\s*$",
+      "applyEndPatternLast": 1,
+      "begin": "\\A(?=(-{3,}))",
+      "end": "^ {,3}\\1-*[ \\t]*$|^[ \\t]*\\.{3}$",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.end.frontmatter"
+        }
+      },
       "patterns": [
         {
-          "include": "source.yaml"
+          "begin": "\\A(-{3,})(.*)$",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.begin.frontmatter"
+            },
+            "2": {
+              "name": "comment.frontmatter"
+            }
+          },
+          "contentName": "meta.embedded.block.frontmatter",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ],
+          "while": "^(?! {,3}\\1-*[ \\t]*$|[ \\t]*\\.{3}$)"
         }
       ]
     },
