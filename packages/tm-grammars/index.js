@@ -1847,7 +1847,7 @@ export const grammars = [
     source: 'https://github.com/nuxtlabs/vscode-mdc/blob/6294dbce9706f538a521e7dccce9609e928dc3be/syntaxes/mdc.tmLanguage.json',
   },
   {
-    byteSize: 123658,
+    byteSize: 132856,
     categories: [
       'web',
       'markup',
@@ -1897,13 +1897,13 @@ export const grammars = [
       'swift',
       'typescript',
     ],
-    lastUpdate: '2024-01-11T16:40:19Z',
+    lastUpdate: '2024-07-09T10:22:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license',
     name: 'mdx',
     scopeName: 'source.mdx',
-    sha: '371d61df9ddc3850e12aabe61b602d02e259e8a4',
-    source: 'https://github.com/wooorm/markdown-tm-language/blob/371d61df9ddc3850e12aabe61b602d02e259e8a4/source.mdx.tmLanguage',
+    sha: '3f11836d11ca5ed41431ecd53dca7710c2c823ce',
+    source: 'https://github.com/wooorm/markdown-tm-language/blob/3f11836d11ca5ed41431ecd53dca7710c2c823ce/source.mdx.tmLanguage',
   },
   {
     byteSize: 28661,
@@ -3403,7 +3403,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
   },
   {
-    byteSize: 1049,
+    byteSize: 1033,
     embedded: [
       'angular-html',
       'angular-template',
@@ -3415,13 +3415,13 @@ export const injections = [
     injectTo: [
       'source.ts.ng',
     ],
-    lastUpdate: '2024-07-02T16:10:13Z',
+    lastUpdate: '2024-07-09T18:10:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-inline-template',
     scopeName: 'inline-template.ng',
-    sha: '888875fef753416c464d1433f05caf8d53c9dd10',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/888875fef753416c464d1433f05caf8d53c9dd10/syntaxes/inline-template.json',
+    sha: 'f4a258cf7e3a4290fbcf36506e7b65743ec6599f',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/f4a258cf7e3a4290fbcf36506e7b65743ec6599f/syntaxes/inline-template.json',
   },
   {
     byteSize: 471,
