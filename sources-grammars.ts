@@ -691,6 +691,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/rosshamish/kuskus/blob/master/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
+    name: 'lean',
+    aliases: ['lean4'],
+    source: 'https://github.com/leanprover/vscode-lean4/blob/master/vscode-lean4/syntaxes/lean4.json',
+    categories: ['general'],
+  },
+  {
     name: 'liquid',
     displayName: 'Liquid',
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/main/grammars/liquid.tmLanguage.json',
