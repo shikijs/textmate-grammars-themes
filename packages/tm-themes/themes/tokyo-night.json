@@ -6,6 +6,8 @@
     "activityBar.inactiveForeground": "#3b3e52",
     "activityBarBadge.background": "#3d59a1",
     "activityBarBadge.foreground": "#fff",
+    "activityBarTop.foreground": "#787c99",
+    "activityBarTop.inactiveForeground": "#3b3e52",
     "badge.background": "#7e83b230",
     "badge.foreground": "#acb0d0",
     "breadcrumb.activeSelectionForeground": "#a9b1d6",
@@ -51,6 +53,7 @@
     "diffEditor.insertedTextBackground": "#41a6b520",
     "diffEditor.removedLineBackground": "#db4b4b22",
     "diffEditor.removedTextBackground": "#db4b4b22",
+    "diffEditor.unchangedCodeBackground": "#282a3b66",
     "diffEditorGutter.insertedLineBackground": "#41a6b525",
     "diffEditorGutter.removedLineBackground": "#db4b4b22",
     "diffEditorOverview.insertedForeground": "#41a6b525",
@@ -105,8 +108,8 @@
     "editorHint.foreground": "#0da0ba",
     "editorHoverWidget.background": "#16161e",
     "editorHoverWidget.border": "#101014",
-    "editorIndentGuide.activeBackground": "#363b54",
-    "editorIndentGuide.background": "#1e202e",
+    "editorIndentGuide.activeBackground1": "#363b54",
+    "editorIndentGuide.background1": "#232433",
     "editorInfo.foreground": "#0da0ba",
     "editorLightBulb.foreground": "#e0af68",
     "editorLightBulbAutoFix.foreground": "#e0af68",
@@ -216,6 +219,8 @@
     "minimapGutter.addedBackground": "#1C5957",
     "minimapGutter.deletedBackground": "#944449",
     "minimapGutter.modifiedBackground": "#425882",
+    "multiDiffEditor.border": "#1a1b26",
+    "multiDiffEditor.headerBackground": "#1a1b26",
     "notebook.cellBorderColor": "#101014",
     "notebook.cellEditorBackground": "#16161e",
     "notebook.cellStatusBarItemHoverBackground": "#1c1d29",
@@ -364,7 +369,11 @@
         "meta.directive.vue entity.other.attribute-name.html",
         "tag.decorator.js entity.name.tag.js",
         "tag.decorator.js punctuation.definition.tag.js",
-        "storage.modifier"
+        "storage.modifier",
+        "string.quoted.docstring.multi",
+        "string.quoted.docstring.multi.python punctuation.definition.string.begin",
+        "string.quoted.docstring.multi.python punctuation.definition.string.end",
+        "string.quoted.docstring.multi.python constant.character.escape"
       ],
       "settings": {
         "fontStyle": "italic"
@@ -384,7 +393,11 @@
         "comment",
         "comment.block.documentation",
         "punctuation.definition.comment",
-        "comment.block.documentation punctuation"
+        "comment.block.documentation punctuation",
+        "string.quoted.docstring.multi",
+        "string.quoted.docstring.multi.python punctuation.definition.string.begin",
+        "string.quoted.docstring.multi.python punctuation.definition.string.end",
+        "string.quoted.docstring.multi.python constant.character.escape"
       ],
       "settings": {
         "foreground": "#51597d"
