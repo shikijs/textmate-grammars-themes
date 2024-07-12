@@ -3403,11 +3403,10 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
   },
   {
-    byteSize: 1033,
+    byteSize: 970,
     embedded: [
       'angular-html',
       'angular-template',
-      'angular-template-blocks',
     ],
     embeddedIn: [
       'angular-ts',
@@ -3415,13 +3414,13 @@ export const injections = [
     injectTo: [
       'source.ts.ng',
     ],
-    lastUpdate: '2024-07-09T18:10:35Z',
+    lastUpdate: '2024-07-11T14:44:50Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-inline-template',
     scopeName: 'inline-template.ng',
-    sha: 'f4a258cf7e3a4290fbcf36506e7b65743ec6599f',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/f4a258cf7e3a4290fbcf36506e7b65743ec6599f/syntaxes/inline-template.json',
+    sha: 'a18c61752e65ddcbeb31217f47f29fa38fe26c42',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json',
   },
   {
     byteSize: 471,
