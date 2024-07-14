@@ -1624,6 +1624,23 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/ed4e6eda599f37bac9a11952403a6e63fd4f5a4d/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
+    aliases: [
+      'lean4',
+    ],
+    byteSize: 4057,
+    categories: [
+      'general',
+    ],
+    displayName: 'Lean 4',
+    lastUpdate: '2024-04-19T14:33:46Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/leanprover/vscode-lean4/master/LICENSE',
+    name: 'lean',
+    scopeName: 'source.lean4',
+    sha: '2255bc20c9d28d868d04fb91428652a95cc87a92',
+    source: 'https://github.com/leanprover/vscode-lean4/blob/2255bc20c9d28d868d04fb91428652a95cc87a92/vscode-lean4/syntaxes/lean4.json',
+  },
+  {
     byteSize: 84048,
     categories: [
       'web',
