@@ -169,7 +169,7 @@ export const sourcesMarketplace: ThemeSource[] = [
   ),
   ...generateMarketplaceSource(
     'dracula-theme.theme-dracula',
-    'https://github.com/dracula/visual-studio-code/blob/master/src/dracula.yml',
+    'https://github.com/dracula/visual-studio-code/blob/main/src/dracula.yml',
     [
       'Dracula',
       'Dracula Soft',
