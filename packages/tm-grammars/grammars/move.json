@@ -396,6 +396,9 @@
           "include": "#path_access"
         },
         {
+          "include": "#match_expression"
+        },
+        {
           "match": "\\$(?=[a-z])",
           "name": "keyword.operator.macro.dollar.move"
         },
@@ -825,6 +828,47 @@
       "comment": "Macro fun call",
       "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)!",
       "name": "meta.macro.call"
+    },
+    "match_expression": {
+      "begin": "\\b(match)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.match.move"
+        }
+      },
+      "comment": "enum pattern matching",
+      "end": "(?<=})",
+      "name": "meta.match.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#escaped_identifier"
+        },
+        {
+          "include": "#types"
+        },
+        {
+          "begin": "{",
+          "comment": "Block expression or definition",
+          "end": "}",
+          "name": "meta.match.block.move",
+          "patterns": [
+            {
+              "comment": "arrow operator",
+              "match": "\\b(=>)\\b",
+              "name": "operator.match.move"
+            },
+            {
+              "include": "#expr"
+            }
+          ]
+        },
+        {
+          "include": "#expr"
+        }
+      ]
     },
     "method_call": {
       "captures": {
