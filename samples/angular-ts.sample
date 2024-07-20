@@ -7,19 +7,19 @@ import { CartService } from './cart.service';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <button
-      type="button"
-      [routerLink]="'/cart'"
-    >
+    <button type="button" [routerLink]="'/cart'">
       @if (cartService.length > 0) {
         <div>
+          @let hello = "world";
           {{ cartService.length }}
         </div>
       }
       Cart
     </button>
   `,
-  styles: `div {display: block;}`,
+  styles: `
+    div { display: block; }
+  `,
 })
 export class CartButtonComponent {
   protected cartService = inject(CartService);

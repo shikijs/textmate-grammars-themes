@@ -1195,6 +1195,19 @@ export const sourcesInjections: GrammarSource[] = [
     },
   },
   {
+    name: 'angular-let-declaration',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/let-declaration.json',
+    embeddedIn: ['angular-ts', 'angular-html'],
+    injectTo: [
+      'text.html.derivative',
+      'text.html.derivative.ng',
+      'source.ts.ng',
+    ],
+    patch(grammar) {
+      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
+    },
+  },
+  {
     name: 'angular-template',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template.json',
     embeddedIn: ['angular-ts', 'angular-html'],
@@ -1203,25 +1216,21 @@ export const sourcesInjections: GrammarSource[] = [
       'text.html.derivative.ng',
       'source.ts.ng',
     ],
+    patch(grammar) {
+      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
+    },
   },
   {
     name: 'angular-inline-style',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-styles.json',
     embeddedIn: ['angular-ts'],
-    injectTo: [
-      'source.ts.ng',
-    ],
+    injectTo: ['source.ts.ng'],
   },
   {
     name: 'angular-inline-template',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/inline-template.json',
     embeddedIn: ['angular-ts'],
-    injectTo: [
-      'source.ts.ng',
-    ],
-    patch(grammar) {
-      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
-    },
+    injectTo: ['source.ts.ng'],
   },
   {
     name: 'angular-expression',
