@@ -47,6 +47,7 @@ export const grammars = [
     embedded: [
       'html',
       'angular-expression',
+      'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
     ],
@@ -68,6 +69,7 @@ export const grammars = [
       'angular-expression',
       'angular-inline-style',
       'angular-inline-template',
+      'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
     ],
@@ -3438,6 +3440,28 @@ export const injections = [
     scopeName: 'inline-template.ng',
     sha: 'a18c61752e65ddcbeb31217f47f29fa38fe26c42',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json',
+  },
+  {
+    byteSize: 879,
+    embedded: [
+      'angular-expression',
+    ],
+    embeddedIn: [
+      'angular-ts',
+      'angular-html',
+    ],
+    injectTo: [
+      'text.html.derivative',
+      'text.html.derivative.ng',
+      'source.ts.ng',
+    ],
+    lastUpdate: '2024-06-25T18:10:01Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-let-declaration',
+    scopeName: 'template.let.ng',
+    sha: '4ab348120e4fb499bb12560dc039e0c7b5b418b8',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/4ab348120e4fb499bb12560dc039e0c7b5b418b8/syntaxes/let-declaration.json',
   },
   {
     byteSize: 471,
