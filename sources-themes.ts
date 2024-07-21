@@ -171,8 +171,8 @@ export const sourcesMarketplace: ThemeSource[] = [
     'dracula-theme.theme-dracula',
     'https://github.com/dracula/visual-studio-code/blob/main/src/dracula.yml',
     [
-      'Dracula',
-      'Dracula Soft',
+      ['Dracula Theme', 'dracula'],
+      ['Dracula Theme Soft', 'dracula-soft'],
     ],
   ),
   ...generateMarketplaceSource(
@@ -204,14 +204,26 @@ export const sources = [
   ...sourcesMarketplace,
 ]
 
-function generateMarketplaceSource(name: string, source: string, themes: string[]): ThemeSource[] {
-  return themes.map(theme => ({
-    name: theme.toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '').trim().replace(/\s+/g, '-'),
-    displayName: theme,
-    source,
-    marketplace: {
+function generateMarketplaceSource(
+  pkg: string,
+  source: string,
+  themes: (string | [string, string])[],
+): ThemeSource[] {
+  return themes.map((theme): ThemeSource => {
+    const name = Array.isArray(theme)
+      ? theme[1]
+      : theme.toLowerCase().normalize('NFD').replace(/[\u0300-\u036F]/g, '').trim().replace(/\s+/g, '-')
+    const themeName = Array.isArray(theme)
+      ? theme[0]
+      : theme
+    return {
       name,
-      theme,
-    },
-  }))
+      displayName: themeName,
+      source,
+      marketplace: {
+        name: pkg,
+        theme: themeName,
+      },
+    }
+  })
 }

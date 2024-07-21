@@ -14,7 +14,7 @@ const _cacheGetCommit = new Map<string, Promise<CommitInfo>>()
 
 function _getLicenseUrl(repo: string) {
   return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] })
-    .then((r) => {
+    .then((r: any) => {
       return r.data
     })
 }
@@ -24,7 +24,7 @@ function _getCommit(repo: string, branch: string, path: string): Promise<CommitI
     owner: repo.split('/')[0],
     repo: repo.split('/')[1],
   })
-    .then((r) => {
+    .then((r: any) => {
       if (!r.data.length) {
         console.error(r, path)
         throw new Error(`Failed to resolve sha for ${JSON.stringify({ repo, branch, path })}}`)
