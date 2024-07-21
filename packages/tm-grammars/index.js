@@ -3545,20 +3545,20 @@ export const injections = [
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/64ad369cd167bba2e614944db6d925b7dc6483b4/syntaxes/jinja-html.tmLanguage.json',
   },
   {
-    byteSize: 670,
+    byteSize: 684,
     embeddedIn: [
       'vue',
     ],
     injectTo: [
       'text.html.markdown',
     ],
-    lastUpdate: '2023-10-23T14:34:03Z',
+    lastUpdate: '2024-07-20T08:14:06Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
     name: 'markdown-vue',
     scopeName: 'markdown.vue.codeblock',
-    sha: 'ce5623e52a31c99797052727a817d422266f210d',
-    source: 'https://github.com/vuejs/language-tools/blob/ce5623e52a31c99797052727a817d422266f210d/extensions/vscode/syntaxes/markdown-vue.json',
+    sha: 'e23ff4d13001ffe78d893bb707d839ead29e0e40',
+    source: 'https://github.com/vuejs/language-tools/blob/e23ff4d13001ffe78d893bb707d839ead29e0e40/extensions/vscode/syntaxes/markdown-vue.json',
   },
   {
     byteSize: 366,
