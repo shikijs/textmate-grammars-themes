@@ -47,9 +47,9 @@ export const grammars = [
     embedded: [
       'html',
       'angular-expression',
+      'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
-      'angular-let-declaration',
     ],
     lastUpdate: '2018-10-04T09:01:56Z',
     license: 'MIT',
@@ -69,9 +69,9 @@ export const grammars = [
       'angular-expression',
       'angular-inline-style',
       'angular-inline-template',
+      'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
-      'angular-let-declaration',
     ],
     lastUpdate: '2024-01-26T12:06:22Z',
     license: 'MIT',
@@ -3403,7 +3403,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
   },
   {
-    byteSize: 1195,
+    byteSize: 1198,
     embedded: [
       'scss',
     ],
@@ -3422,7 +3422,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
   },
   {
-    byteSize: 961,
+    byteSize: 970,
     embedded: [
       'angular-html',
       'angular-template',
@@ -3442,7 +3442,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json',
   },
   {
-    byteSize: 850,
+    byteSize: 879,
     embedded: [
       'angular-expression',
     ],
@@ -3464,7 +3464,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/4ab348120e4fb499bb12560dc039e0c7b5b418b8/syntaxes/let-declaration.json',
   },
   {
-    byteSize: 442,
+    byteSize: 471,
     embedded: [
       'angular-expression',
     ],
@@ -3486,7 +3486,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json',
   },
   {
-    byteSize: 1173,
+    byteSize: 1205,
     embedded: [
       'angular-expression',
       'angular-template',
