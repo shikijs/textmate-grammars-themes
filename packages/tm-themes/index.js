@@ -168,6 +168,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 3854,
+    displayName: 'Grapes',
+    lastUpdate: '2024-07-23T11:03:29Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/felixgirault/grapes-theme/master/LICENSE',
+    name: 'grapes',
+    sha: '26725bfa0acbe67fb183c32208c4e60c3f5b31aa',
+    source: 'https://github.com/felixgirault/grapes-theme/blob/26725bfa0acbe67fb183c32208c4e60c3f5b31aa/themes/Grapes-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 35362,
     displayName: 'Houston',
     lastUpdate: '2023-11-10T11:20:23Z',

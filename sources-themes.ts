@@ -73,6 +73,12 @@ export const sourcesVSCode: ThemeSource[] = [
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
   {
+    name: 'grapes',
+    displayName: 'Grapes',
+    source: 'https://github.com/felixgirault/grapes-theme/blob/master/themes/Grapes-color-theme.json',
+    type: 'dark',
+  },
+  {
     name: 'houston',
     displayName: 'Houston',
     source: 'https://github.com/withastro/houston-vscode/blob/main/themes/houston.json',
