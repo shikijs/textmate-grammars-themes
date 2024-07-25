@@ -352,6 +352,24 @@ export const grammars = [
     source: 'https://github.com/spatie/shiki-php/blob/e985c3ab6b13252ad4521b7edb8ff91a9da3dd46/languages/blade.tmLanguage.json',
   },
   {
+    aliases: [
+      'buildoutcfg',
+      'zc-buildout',
+    ],
+    byteSize: 1112,
+    categories: [
+      'config',
+    ],
+    displayName: 'Buildout',
+    lastUpdate: '2022-05-05T12:41:29Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/perrinjerome/vscode-zc-buildout/main/LICENSE.txt',
+    name: 'buildout',
+    scopeName: 'source.zc-buildout',
+    sha: 'b162a734fe7d3c6eb89dea05d2a40a4fa6055ae3',
+    source: 'https://github.com/perrinjerome/vscode-zc-buildout/blob/b162a734fe7d3c6eb89dea05d2a40a4fa6055ae3/syntaxes/zc.buildout.tmGrammar.json',
+  },
+  {
     byteSize: 71370,
     categories: [
       'general',
@@ -1218,6 +1236,23 @@ export const grammars = [
     scopeName: 'source.hcl',
     sha: 'ab1d9da794f06ae91afa06a590727cbf836939b0',
     source: 'https://github.com/hashicorp/syntax/blob/ab1d9da794f06ae91afa06a590727cbf836939b0/syntaxes/hcl.tmGrammar.json',
+  },
+  {
+    aliases: [
+      'helm-template',
+    ],
+    byteSize: 14113,
+    categories: [
+      'config',
+    ],
+    displayName: 'Helm Template',
+    lastUpdate: '2020-01-30T21:00:29Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/vscode-kubernetes-tools/vscode-kubernetes-tools/master/LICENSE',
+    name: 'helm',
+    scopeName: 'source.helm',
+    sha: '78f5d9987ef46d877d0c5303678242ce61df99f4',
+    source: 'https://github.com/vscode-kubernetes-tools/vscode-kubernetes-tools/blob/78f5d9987ef46d877d0c5303678242ce61df99f4/syntaxes/helm.tmLanguage.json',
   },
   {
     byteSize: 12496,

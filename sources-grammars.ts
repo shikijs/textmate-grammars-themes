@@ -407,6 +407,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'buildout',
+    displayName: 'Buildout',
+    aliases: ['buildoutcfg', 'zc-buildout'],
+    source: 'https://github.com/perrinjerome/vscode-zc-buildout/blob/main/syntaxes/zc.buildout.tmGrammar.json',
+    categories: ['config'],
+  },
+  {
     name: 'cadence',
     displayName: 'Cadence',
     aliases: ['cdc'],
@@ -625,6 +632,13 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'hcl',
     source: 'https://github.com/hashicorp/syntax/blob/main/syntaxes/hcl.tmGrammar.json',
+  },
+  {
+    name: 'helm',
+    displayName: 'Helm Template',
+    aliases: ['helm-template'],
+    source: 'https://github.com/vscode-kubernetes-tools/vscode-kubernetes-tools/blob/master/syntaxes/helm.tmLanguage.json',
+    categories: ['config'],
   },
   {
     name: 'hjson',

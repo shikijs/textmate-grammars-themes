@@ -1,0 +1,70 @@
+{
+  "displayName": "Buildout",
+  "name": "buildout",
+  "patterns": [
+    {
+      "captures": {
+        "1": {
+          "name": "comment.line.number-sign.zc-buildout"
+        }
+      },
+      "match": "^([#;].*)\n"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "keyword.other.definition.zc-buildout"
+        },
+        "2": {
+          "name": "punctuation.separator.key-value.zc-buildout"
+        }
+      },
+      "match": "\\b(^[a-zA-Z0-9_.-]+)\\b\\s*(=)"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.entity.zc-buildout"
+        },
+        "2": {
+          "name": "entity.name.type.section-name.zc-buildout"
+        },
+        "3": {
+          "name": "variable.parameter.section-condition.zc-buildout"
+        },
+        "4": {
+          "name": "punctuation.definition.entity.zc-buildout"
+        }
+      },
+      "match": "^(\\[)([^:\n]*?)(:.*)?(\\])",
+      "name": "entity.name.type.section-name.zc-buildout"
+    },
+    {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.zc-buildout"
+        }
+      },
+      "end": "[\"\n]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.zc-buildout"
+        }
+      },
+      "name": "string.quoted.double.zc-buildout"
+    },
+    {
+      "captures": {
+        "0": {
+          "name": "variable.language.section-reference.zc-buildout"
+        },
+        "1": {
+          "name": "variable.parameter.option-reference.zc-buildout"
+        }
+      },
+      "match": "(\\$\\{[a-zA-Z0-9_.-]*):([a-zA-Z0-9_.-]+\\})"
+    }
+  ],
+  "scopeName": "source.zc-buildout"
+}

@@ -1,0 +1,19 @@
+[buildout]
+extends = versions.cfg
+show-picked-versions = true
+update-versions-file = versions.cfg
+
+parts = bobo server
+
+[bobo]
+recipe = zc.recipe.egg
+eggs = bobo
+
+[server]
+recipe = zc.zdaemonrecipe
+program =
+  ${buildout:bin-directory}/bobo
+    --static /=${buildout:directory}
+    --port 8200
+
+# From https://www.buildout.org/en/latest/getting-started.html
