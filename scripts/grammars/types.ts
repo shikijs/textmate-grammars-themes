@@ -1,10 +1,12 @@
 import type { GrammarCategory } from '../../packages/tm-grammars'
 
+type Awaitable<T> = Promise<T> | T
+
 export interface GrammarSource {
   name: string
   displayName?: string
   categories?: GrammarCategory[]
-  source: string
+  source: string | (() => Awaitable<object>)
   aliases?: string[]
   scopeName?: string
 

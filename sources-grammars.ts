@@ -1123,6 +1123,20 @@ export const virtualLanguages: GrammarSource[] = [
     categories: ['web'],
     scopeName: 'source.ts.ng',
   },
+  {
+    name: 'ts-embed',
+    displayName: 'TypeScript with Embeds',
+    aliases: ['lit'],
+    source: () => ({
+      patterns: [
+        {
+          include: 'source.ts',
+        },
+      ],
+      scopeName: 'source.ts.embeds',
+    }),
+    categories: ['web'],
+  },
 ]
 
 /**
@@ -1242,6 +1256,37 @@ export const sourcesInjections: GrammarSource[] = [
     name: 'angular-expression',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/expression.json',
     embeddedIn: ['angular-ts', 'angular-html'],
+  },
+  // ========== Lit ==========
+  {
+    name: 'es-tag-html',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-html.json',
+    embeddedIn: ['ts-embed'],
+    injectTo: ['source.ts', 'source.js'],
+  },
+  {
+    name: 'es-tag-css',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-css.json',
+    embeddedIn: ['ts-embed'],
+    injectTo: ['source.ts', 'source.js'],
+  },
+  {
+    name: 'es-tag-glsl',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-glsl.json',
+    embeddedIn: ['ts-embed'],
+    injectTo: ['source.ts', 'source.js'],
+  },
+  {
+    name: 'es-tag-sql',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-sql.json',
+    embeddedIn: ['ts-embed'],
+    injectTo: ['source.ts', 'source.js'],
+  },
+  {
+    name: 'es-tag-xml',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-xml.json',
+    embeddedIn: ['ts-embed'],
+    injectTo: ['source.ts', 'source.js'],
   },
 ]
 

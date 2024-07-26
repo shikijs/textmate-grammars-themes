@@ -2934,6 +2934,21 @@ export const grammars = [
     source: 'https://github.com/textmate/toml.tmbundle/blob/e82b64c1e86396220786846201e9aa3f0a2d9ca2/Syntaxes/TOML.tmLanguage',
   },
   {
+    aliases: [
+      'lit',
+    ],
+    byteSize: 126,
+    categories: [
+      'web',
+    ],
+    displayName: 'TypeScript with Embeds',
+    embedded: [
+      'typescript',
+    ],
+    name: 'ts-embed',
+    scopeName: 'source.ts.embeds',
+  },
+  {
     byteSize: 633,
     categories: [
       'data',
@@ -3526,6 +3541,113 @@ export const injections = [
     scopeName: 'source.cpp.embedded.macro',
     sha: '6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
+  },
+  {
+    byteSize: 1712,
+    embedded: [
+      'typescript',
+      'css',
+      'javascript',
+    ],
+    embeddedIn: [
+      'ts-tags',
+    ],
+    injectTo: [
+      'source.ts',
+      'source.js',
+    ],
+    lastUpdate: '2024-05-10T19:00:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    name: 'es-tag-css',
+    scopeName: 'inline.es6-css',
+    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-css.json',
+  },
+  {
+    byteSize: 1591,
+    embedded: [
+      'typescript',
+      'glsl',
+      'javascript',
+    ],
+    embeddedIn: [
+      'ts-tags',
+    ],
+    injectTo: [
+      'source.ts',
+      'source.js',
+    ],
+    lastUpdate: '2024-05-10T19:00:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    name: 'es-tag-glsl',
+    scopeName: 'inline.es6-glsl',
+    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-glsl.json',
+  },
+  {
+    byteSize: 1902,
+    embedded: [
+      'typescript',
+      'html',
+      'javascript',
+    ],
+    embeddedIn: [
+      'ts-tags',
+    ],
+    injectTo: [
+      'source.ts',
+      'source.js',
+    ],
+    lastUpdate: '2024-05-10T19:00:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    name: 'es-tag-html',
+    scopeName: 'inline.es6-html',
+    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-html.json',
+  },
+  {
+    byteSize: 1510,
+    embedded: [
+      'typescript',
+      'sql',
+    ],
+    embeddedIn: [
+      'ts-tags',
+    ],
+    injectTo: [
+      'source.ts',
+      'source.js',
+    ],
+    lastUpdate: '2024-05-10T19:00:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    name: 'es-tag-sql',
+    scopeName: 'inline.es6-sql',
+    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-sql.json',
+  },
+  {
+    byteSize: 1098,
+    embedded: [
+      'xml',
+    ],
+    embeddedIn: [
+      'ts-tags',
+    ],
+    injectTo: [
+      'source.ts',
+      'source.js',
+    ],
+    lastUpdate: '2024-05-10T19:00:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    name: 'es-tag-xml',
+    scopeName: 'inline.es6-xml',
+    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-xml.json',
   },
   {
     byteSize: 470,

@@ -88,28 +88,37 @@ else {
 
 async function fetchGrammar(source: GrammarSource) {
   let raw: string
-  const old = oldMeta.find(i => i.name === source.name)
-  const info = await resolveSourceGitHub(source, old)
-  if (old === info)
-    return { info, skip: true }
-
-  let fileUrl = info.source.toLowerCase()
-
-  if (source.marketplace) {
-    const name = source.marketplace.grammar
-    const { json, zip } = await downloadFromMarketplace(source.marketplace.name)
-    const grammar = json.contributes.grammars.find((i: any) => i.language === name)
-    if (!grammar)
-      throw new Error(`Failed to find grammar ${name} in ${source.marketplace.name}`)
-    raw = String(zip.getEntry(grammar.path.replace('./', 'extension/'))!.getData())
-    fileUrl = grammar.path
+  let parsed: any
+  let info: GrammarInfo = source as GrammarInfo
+  if (typeof source.source === 'function') {
+    parsed = await source.source()
   }
   else {
-    raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
+    const old = process.argv.includes(source.name)
+      ? undefined
+      : oldMeta.find(i => i.name === source.name)
+    info = await resolveSourceGitHub(source, old)
+    if (old === info)
+      return { info, skip: true }
+
+    let fileUrl = info.source.toLowerCase()
+
+    if (source.marketplace) {
+      const name = source.marketplace.grammar
+      const { json, zip } = await downloadFromMarketplace(source.marketplace.name)
+      const grammar = json.contributes.grammars.find((i: any) => i.language === name)
+      if (!grammar)
+        throw new Error(`Failed to find grammar ${name} in ${source.marketplace.name}`)
+      raw = String(zip.getEntry(grammar.path.replace('./', 'extension/'))!.getData())
+      fileUrl = grammar.path
+    }
+    else {
+      raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
+    }
+    parsed = parseFile(fileUrl, raw)
   }
 
   try {
-    let parsed = parseFile(fileUrl, raw)
     // Apply custom patching function
     parsed = source.patch?.(parsed) || parsed
     // Update info
@@ -140,7 +149,7 @@ export async function generateREADME(resolved: GrammarInfo[]) {
     return [
       '| Name | Alias | Source | License | Deps On | File Size |',
       '| ---- | ----- | ------ | ------- | ------- | --------- |',
-      ...items.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
+      ...items.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | ${typeof info.source === 'string' ? `[${[parseGitHubUrl(info.source).repo]}](${info.source})` : '-'} | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
     ]
   }
   const replaced = original.replace(
