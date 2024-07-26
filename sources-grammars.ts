@@ -1124,8 +1124,8 @@ export const virtualLanguages: GrammarSource[] = [
     scopeName: 'source.ts.ng',
   },
   {
-    name: 'ts-embed',
-    displayName: 'TypeScript with Embeds',
+    name: 'ts-tags',
+    displayName: 'TypeScript with Tags',
     aliases: ['lit'],
     source: () => ({
       patterns: [
@@ -1133,7 +1133,7 @@ export const virtualLanguages: GrammarSource[] = [
           include: 'source.ts',
         },
       ],
-      scopeName: 'source.ts.embeds',
+      scopeName: 'source.ts.tags',
     }),
     categories: ['web'],
   },
@@ -1261,31 +1261,31 @@ export const sourcesInjections: GrammarSource[] = [
   {
     name: 'es-tag-html',
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-html.json',
-    embeddedIn: ['ts-embed'],
+    embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
   {
     name: 'es-tag-css',
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-css.json',
-    embeddedIn: ['ts-embed'],
+    embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
   {
     name: 'es-tag-glsl',
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-glsl.json',
-    embeddedIn: ['ts-embed'],
+    embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
   {
     name: 'es-tag-sql',
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-sql.json',
-    embeddedIn: ['ts-embed'],
+    embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
   {
     name: 'es-tag-xml',
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-xml.json',
-    embeddedIn: ['ts-embed'],
+    embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
 ]

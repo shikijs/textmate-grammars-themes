@@ -203,7 +203,7 @@ import { grammars } from 'tm-grammars'
 | `terraform` | `tf` `tfvars` | [hashicorp/syntax](https://github.com/hashicorp/syntax/blob/c693badea4d460d1c05b8d2ab0c88bad143da3f1/syntaxes/terraform.tmGrammar.json) | [MPL-2.0](https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE) |  | 12.58 kB |
 | `tex` |  | [microsoft/vscode](https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/latex/syntaxes/TeX.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | `r` | 8.77 kB |
 | `toml` |  | [textmate/toml.tmbundle](https://github.com/textmate/toml.tmbundle/blob/e82b64c1e86396220786846201e9aa3f0a2d9ca2/Syntaxes/TOML.tmLanguage) |  |  | 6.26 kB |
-| `ts-embed` | `lit` | - |  | `typescript` | 126.00 B |
+| `ts-tags` | `lit` | - |  | `typescript` | 126.00 B |
 | `tsv` |  | [mechatroner/vscode_rainbow_csv](https://github.com/mechatroner/vscode_rainbow_csv/blob/00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3/syntaxes/tsv.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE) |  | 633.00 B |
 | `tsx` |  | [microsoft/vscode](https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) |  | 171.16 kB |
 | `turtle` |  | [stardog-union/stardog-vsc](https://github.com/stardog-union/stardog-vsc/blob/3f1364b08bdbf4b4d77f123682db7d2b708b2f6e/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json) |  |  | 3.50 kB |

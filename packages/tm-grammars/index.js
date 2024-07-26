@@ -2945,7 +2945,7 @@ export const grammars = [
     embedded: [
       'typescript',
     ],
-    name: 'ts-embed',
+    name: 'ts-tags',
     scopeName: 'source.ts.embeds',
   },
   {
