@@ -2,7 +2,7 @@
 import type { HighlighterCore } from 'shiki/core'
 import { getHighlighterCore } from 'shiki/core'
 import { themes } from '../../packages/tm-themes/index'
-import { grammars } from '../../packages/tm-grammars/index'
+import { grammars, injections } from '../../packages/tm-grammars/index'
 
 const isDark = useDark()
 
@@ -72,7 +72,7 @@ async function run(fetchInput = true) {
     async function loadLangs(lang: string) {
       if (langs.has(lang))
         return langs.get(lang)
-      const info = grammars.find(g => g.name === lang)
+      const info = grammars.find(g => g.name === lang) || injections.find(g => g.name === lang)
       langs.set(lang, import(`../../packages/tm-grammars/grammars/${lang}.json`).then(m => m.default))
       info?.embedded?.forEach(loadLangs)
       return langs.get(lang)
@@ -314,6 +314,18 @@ if (import.meta.hot) {
         <div v-if="error" text-red bg-red:10 p4 rounded flex-none>
           {{ error }}
         </div>
+        <div v-if="output" relative of-x-scroll flex-none>
+          <div
+            transition-all duration-500 :class="isFetching ? 'blur-3px' : ''"
+            v-html="output"
+          />
+          <textarea
+            id="input"
+            v-model="input"
+            class="absolute top-0 left-0 inset-0 caret-gray w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
+            spellcheck="false"
+          />
+        </div>
         <div
           v-if="isFetching"
           text-amber bg-amber:10 px4 py3 border="~ amber/50 rounded" animate-pulse
@@ -321,15 +333,6 @@ if (import.meta.hot) {
         >
           <div i-svg-spinners-270-ring-with-bg />
           Loading...
-        </div>
-        <div relative of-x-scroll flex-none>
-          <div v-html="output" />
-          <textarea
-            id="input"
-            v-model="input"
-            class="absolute top-0 left-0 inset-0 caret-gray w-full h-full resize-none of-hidden p4 bg-transparent z-1 font-mono text-transparent"
-            spellcheck="false"
-          />
         </div>
       </div>
     </div>
