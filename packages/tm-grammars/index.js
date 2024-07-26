@@ -2937,16 +2937,21 @@ export const grammars = [
     aliases: [
       'lit',
     ],
-    byteSize: 126,
+    byteSize: 121,
     categories: [
       'web',
     ],
-    displayName: 'TypeScript with Embeds',
+    displayName: 'TypeScript with Tags',
     embedded: [
       'typescript',
+      'es-tag-css',
+      'es-tag-glsl',
+      'es-tag-html',
+      'es-tag-sql',
+      'es-tag-xml',
     ],
     name: 'ts-tags',
-    scopeName: 'source.ts.embeds',
+    scopeName: 'source.ts.tags',
   },
   {
     byteSize: 633,
