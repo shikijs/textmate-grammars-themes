@@ -1561,7 +1561,7 @@
           "include": "#subshell_dollar"
         },
         {
-          "begin": "(?<![^ \\t])({)",
+          "begin": "(?<![^ \\t])({)(?!\\w|\\$)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.group.shell"

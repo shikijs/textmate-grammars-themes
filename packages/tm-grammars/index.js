@@ -887,13 +887,13 @@ export const grammars = [
     embedded: [
       'markdown',
     ],
-    lastUpdate: '2024-06-28T09:56:38Z',
+    lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'fsharp',
     scopeName: 'source.fsharp',
-    sha: 'ed4e6eda599f37bac9a11952403a6e63fd4f5a4d',
-    source: 'https://github.com/microsoft/vscode/blob/ed4e6eda599f37bac9a11952403a6e63fd4f5a4d/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
+    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
+    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
     byteSize: 5014,
@@ -1541,7 +1541,7 @@ export const grammars = [
     aliases: [
       'jl',
     ],
-    byteSize: 33609,
+    byteSize: 33611,
     categories: [
       'web',
       'data',
@@ -1554,13 +1554,13 @@ export const grammars = [
       'r',
       'sql',
     ],
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'julia',
     scopeName: 'source.julia',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/julia/syntaxes/julia.tmLanguage.json',
+    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
+    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/julia/syntaxes/julia.tmLanguage.json',
   },
   {
     aliases: [
@@ -1593,7 +1593,7 @@ export const grammars = [
     source: 'https://github.com/rosshamish/kuskus/blob/6e6deead4af243432902869e1767df8a612cffe1/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
-    byteSize: 55093,
+    byteSize: 56067,
     categories: [
       'markup',
     ],
@@ -1617,13 +1617,13 @@ export const grammars = [
       'yaml',
       'scala',
     ],
-    lastUpdate: '2024-06-28T09:56:38Z',
+    lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: 'ed4e6eda599f37bac9a11952403a6e63fd4f5a4d',
-    source: 'https://github.com/microsoft/vscode/blob/ed4e6eda599f37bac9a11952403a6e63fd4f5a4d/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
+    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
     aliases: [
@@ -1643,18 +1643,18 @@ export const grammars = [
     source: 'https://github.com/leanprover/vscode-lean4/blob/2255bc20c9d28d868d04fb91428652a95cc87a92/vscode-lean4/syntaxes/lean4.json',
   },
   {
-    byteSize: 84048,
+    byteSize: 90787,
     categories: [
       'web',
     ],
     displayName: 'Less',
-    lastUpdate: '2024-07-08T13:04:25Z',
+    lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'less',
     scopeName: 'source.css.less',
-    sha: '2b9ebd6897fb57f2f3dc9dc04957288c50717190',
-    source: 'https://github.com/microsoft/vscode/blob/2b9ebd6897fb57f2f3dc9dc04957288c50717190/extensions/less/syntaxes/less.tmLanguage.json',
+    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
+    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/less/syntaxes/less.tmLanguage.json',
   },
   {
     byteSize: 15680,
@@ -2635,18 +2635,18 @@ export const grammars = [
       'shell',
       'zsh',
     ],
-    byteSize: 40993,
+    byteSize: 41004,
     categories: [
       'scripting',
     ],
     displayName: 'Shell',
-    lastUpdate: '2024-04-26T11:52:52Z',
+    lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'shellscript',
     scopeName: 'source.shell',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
+    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
+    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
   },
   {
     aliases: [
