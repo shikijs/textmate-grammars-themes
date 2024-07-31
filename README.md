@@ -13,6 +13,11 @@ Packages are **automatically updated and published** every day (if there are cha
 
 ### Add a new grammar
 
+> [!NOTE]
+> For new grammars to be accepted, we typically require the language to be popular and have a significant number of users. Usually we see [GitHub's linguist](https://github.com/github-linguist/linguist) repo as a marker for this. If you language is not in linguist, we would recommend adding it there first.
+>
+> Meanwhile, to use a grammar with Shiki, you can always [provide a custom grammar](https://shiki.style/guide/load-lang) locally.
+
 1. Fork this repository.
 2. Install dependencies with `pnpm install`.
 3. Add grammar source and metadata to [`sources-grammars.ts`](./sources-grammars.ts).
@@ -30,6 +35,11 @@ GITHUB_TOKEN=your-personal-access-token
 9. Send in the PR!
 
 ### Add a new theme
+
+> [!NOTE]
+> For new themes to be accepted, we typically require the theme to be popular and have a significant number of users. Like over `50K downloads` on VS Code marketplace, or over `300 stars` on GitHub.
+>
+> Meanwhile, to use a theme with Shiki, you can always [provide a custom theme](https://shiki.style/guide/load-theme) locally.
 
 1. Fork this repository.
 2. Install dependencies with `pnpm install`.
