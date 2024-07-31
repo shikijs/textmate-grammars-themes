@@ -72,6 +72,19 @@ export const sourcesVSCode: ThemeSource[] = [
 
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
+
+  {
+    name: 'everforest-dark',
+    displayName: 'Everforest Dark',
+    source: 'https://github.com/sainnhe/everforest-vscode/blob/master/themes/everforest-dark.json',
+    type: 'dark',
+  },
+  {
+    name: 'everforest-light',
+    displayName: 'Everforest Light',
+    source: 'https://github.com/sainnhe/everforest-vscode/blob/master/themes/everforest-light.json',
+    type: 'light',
+  },
   {
     name: 'houston',
     displayName: 'Houston',
