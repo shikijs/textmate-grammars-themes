@@ -699,6 +699,20 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
+    aliases: [
+      'dotEnv',
+    ],
+    byteSize: 2531,
+    displayName: 'dotENV',
+    lastUpdate: '2022-10-05T17:09:37Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/zaynali53/DotENV/master/LICENSE',
+    name: 'dotenv',
+    scopeName: 'source.env',
+    sha: '46ed61d1d06109ae9675ba6267350e58c1230193',
+    source: 'https://github.com/zaynali53/DotENV/blob/46ed61d1d06109ae9675ba6267350e58c1230193/DotENV.tmLanguage',
+  },
+  {
     byteSize: 10234,
     displayName: 'Dream Maker',
     lastUpdate: '2017-01-06T06:55:48Z',
