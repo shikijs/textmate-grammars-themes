@@ -481,6 +481,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['config'],
   },
   {
+    name: 'dotenv',
+    displayName: 'dotEnv',
+    aliases: ['dotEnv'],
+    source: 'https://github.com/dotenv-org/dotenv-vscode/blob/master/syntaxes/dotenv.tmLanguage.json',
+  },
+  {
     name: 'dream-maker',
     source: 'https://github.com/gbasood/vscode-atomic-dreams/blob/master/syntaxes/dm.tmLanguage.json',
   },
