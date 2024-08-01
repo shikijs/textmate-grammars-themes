@@ -483,7 +483,6 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'dotenv',
     displayName: 'dotEnv',
-    aliases: ['dotEnv'],
     source: 'https://github.com/dotenv-org/dotenv-vscode/blob/master/syntaxes/dotenv.tmLanguage.json',
   },
   {
