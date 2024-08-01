@@ -699,9 +699,6 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
-    aliases: [
-      'dotEnv',
-    ],
     byteSize: 1604,
     displayName: 'dotEnv',
     lastUpdate: '2023-06-15T08:23:24Z',
