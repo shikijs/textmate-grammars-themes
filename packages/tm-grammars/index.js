@@ -146,7 +146,7 @@ export const grammars = [
     aliases: [
       'adoc',
     ],
-    byteSize: 89598,
+    byteSize: 89606,
     categories: [
       'markup',
     ],
@@ -194,13 +194,13 @@ export const grammars = [
       'typescript',
       'xml',
     ],
-    lastUpdate: '2024-02-11T14:41:45Z',
+    lastUpdate: '2024-08-06T12:13:07Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/asciidoctor/asciidoctor-vscode/master/LICENSE',
     name: 'asciidoc',
     scopeName: 'text.asciidoc',
-    sha: '40183f69a560e1a0f5b859468308a016692ae2d8',
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/40183f69a560e1a0f5b859468308a016692ae2d8/syntaxes/Asciidoctor.json',
+    sha: '076b687537188b4fab45db3624b4210d982a87b8',
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/076b687537188b4fab45db3624b4210d982a87b8/syntaxes/Asciidoctor.json',
   },
   {
     byteSize: 39512,

@@ -6400,14 +6400,14 @@
     "table-psv": {
       "patterns": [
         {
-          "begin": "^(\\|===)$",
+          "begin": "^(\\|===)\\s*$",
           "beginCaptures": {
             "0": {
               "name": "markup.table.delimiter.asciidoc"
             }
           },
           "contentName": "markup.table.content.asciidoc",
-          "end": "^(\\1)$",
+          "end": "^(\\1)\\s*$",
           "endCaptures": {
             "0": {
               "name": "markup.table.delimiter.asciidoc"
