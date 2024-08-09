@@ -170,8 +170,10 @@ export const sourcesCommunity: ThemeSource[] = [
 
 export const sourcesMarketplace: ThemeSource[] = [
   ...generateMarketplaceSource(
-    'equinusocio.vsc-material-theme',
-    'https://github.com/material-theme/vsc-material-theme/blob/main/src/material.theme.config.ts',
+    // Currently switched to Anthony's Fork, as the original repo is corrupted
+    // https://x.com/antfu7/status/1821971204342984740
+    'antfu.antfu-material-theme',
+    'https://github.com/antfu/vsc-material-theme/blob/main/src/material.theme.config.ts',
     [
       'Material Theme',
       'Material Theme Darker',
