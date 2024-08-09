@@ -31,6 +31,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web', 'scripting', 'general'],
   },
   {
+    name: 'coq',
+    source: 'https://github.com/coq-community/vscoq/blob/main/client/syntax/coq.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'cpp',
     aliases: ['c++'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/cpp/syntaxes/cpp.tmLanguage.json',
