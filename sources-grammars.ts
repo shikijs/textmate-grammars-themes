@@ -828,6 +828,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'proto',
+    aliases: ['protobuf'],
     source: 'https://github.com/zxh0/vscode-proto3/blob/master/syntaxes/proto3.tmLanguage.json',
   },
   {
