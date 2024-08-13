@@ -196,9 +196,11 @@ export const sourcesMarketplace: ThemeSource[] = [
     [
       'GitHub Dark',
       'GitHub Dark Default',
+      'GitHub Dark Dimmed',
+      'GitHub Dark High Contrast',
       'GitHub Light',
       'GitHub Light Default',
-      'GitHub Dark Dimmed',
+      'GitHub Light High Contrast',
     ],
   ),
   ...generateMarketplaceSource(
