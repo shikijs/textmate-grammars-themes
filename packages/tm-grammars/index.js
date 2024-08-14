@@ -2265,6 +2265,9 @@ export const grammars = [
     source: 'https://github.com/arthwang/vsc-prolog/blob/5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7/syntaxes/prolog.swi.tmLanguage.json',
   },
   {
+    aliases: [
+      'protobuf',
+    ],
     byteSize: 6280,
     displayName: 'Protocol Buffer 3',
     lastUpdate: '2022-02-08T19:51:15Z',
