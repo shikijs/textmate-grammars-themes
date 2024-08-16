@@ -35,7 +35,7 @@ import { themes } from 'tm-themes'
 | Slack Ochin | `slack-ochin` | [slack-theme/visual-studio-code](https://github.com/slack-theme/visual-studio-code/blob/572452d0da20d384858b28ad14e110ee5daac411/themes/ochin.json) | [MIT](https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License) | 9.15 kB |
 | Snazzy Light | `snazzy-light` | [loilo/vscode-snazzy-light](https://github.com/loilo/vscode-snazzy-light/blob/516646af7e1a114871698ce9090182c582899c71/themes/Snazzy-Light-color-theme.json) | [MIT](https://raw.githubusercontent.com/loilo/vscode-snazzy-light/master/LICENSE) | 20.23 kB |
 | Solarized Light | `solarized-light` | [microsoft/vscode](https://github.com/microsoft/vscode/blob/f605341af6b083f2b6d9c853d882b96955c690b7/extensions/theme-solarized-light/themes/solarized-light-color-theme.json) | [MIT](https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt) | 6.23 kB |
-| Vitesse Light | `vitesse-light` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/e20b62150ce48782c41b7df540c036288a535ed8/themes/vitesse-light.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.24 kB |
+| Vitesse Light | `vitesse-light` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-light.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md) | 13.24 kB |
 
 ## Dark Themes
 
@@ -75,8 +75,8 @@ import { themes } from 'tm-themes'
 | Synthwave '84 | `synthwave-84` | [robb0wen/synthwave-vscode](https://github.com/robb0wen/synthwave-vscode/blob/7eaf45c07650295625e1e5ea73274fc50f9ea3c1/themes/synthwave-color-theme.json) | [MIT](https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE) | 13.65 kB |
 | Tokyo Night | `tokyo-night` | [enkia/tokyo-night-vscode-theme](https://github.com/enkia/tokyo-night-vscode-theme/blob/7849fd3c21687e5861f83e3de6091164332de019/themes/tokyo-night-color-theme.json) | [MIT](https://raw.githubusercontent.com/tokyo-night/tokyo-night-vscode-theme/master/LICENSE.txt) | 33.50 kB |
 | Vesper | `vesper` | [raunofreiberg/vesper](https://github.com/raunofreiberg/vesper/blob/ef652b41ec5303892b1172d90fa4184ae6399a04/themes/Vesper-dark-color-theme.json) | [MIT](https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md) | 12.31 kB |
-| Vitesse Black | `vitesse-black` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/e20b62150ce48782c41b7df540c036288a535ed8/themes/vitesse-black.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.30 kB |
-| Vitesse Dark | `vitesse-dark` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/e20b62150ce48782c41b7df540c036288a535ed8/themes/vitesse-dark.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE) | 13.38 kB |
+| Vitesse Black | `vitesse-black` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-black.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md) | 13.30 kB |
+| Vitesse Dark | `vitesse-dark` | [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-dark.json) | [MIT](https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md) | 13.38 kB |
 <!--list-end-->
 
 ## License
