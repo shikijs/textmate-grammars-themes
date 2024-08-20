@@ -114,12 +114,6 @@ export const sourcesCommunity: ThemeSource[] = [
     type: 'light',
   },
   {
-    name: 'plastic-deprioritised-punctuation',
-    displayName: 'Plastic - deprioritised punctuation',
-    source: 'https://github.com/will-stone/plastic/blob/main/themes/deprioritised-punctuation.json',
-    type: 'dark',
-  },
-  {
     name: 'plastic',
     displayName: 'Plastic',
     source: 'https://github.com/will-stone/plastic/blob/main/themes/main.json',
