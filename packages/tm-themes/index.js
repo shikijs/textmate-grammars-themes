@@ -377,6 +377,17 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 9235,
+    displayName: 'Plastic',
+    lastUpdate: '2024-03-31T09:02:26Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
+    name: 'plastic',
+    sha: '30eaf248a3ee319c85ddf254dd0cb64a443d1571',
+    source: 'https://github.com/will-stone/plastic/blob/30eaf248a3ee319c85ddf254dd0cb64a443d1571/themes/main.json',
+    type: 'dark',
+  },
+  {
     byteSize: 33434,
     displayName: 'Poimandres',
     lastUpdate: '2022-09-25T11:26:55Z',

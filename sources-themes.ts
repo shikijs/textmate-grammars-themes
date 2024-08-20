@@ -114,6 +114,12 @@ export const sourcesCommunity: ThemeSource[] = [
     type: 'light',
   },
   {
+    name: 'plastic',
+    displayName: 'Plastic',
+    source: 'https://github.com/will-stone/plastic/blob/main/themes/main.json',
+    type: 'dark',
+  },
+  {
     name: 'poimandres',
     displayName: 'Poimandres',
     source: 'https://github.com/drcmda/poimandres-theme/blob/main/themes/poimandres-color-theme.json',
