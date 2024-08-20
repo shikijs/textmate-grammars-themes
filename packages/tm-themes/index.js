@@ -389,7 +389,7 @@ export const themes = [
   },
   {
     byteSize: 9289,
-    displayName: 'Plastic (deprioritised punctuation)',
+    displayName: 'Plastic - deprioritised punctuation',
     lastUpdate: '2024-03-31T09:02:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
