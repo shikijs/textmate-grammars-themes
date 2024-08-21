@@ -1972,15 +1972,15 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 19432,
+    byteSize: 19438,
     displayName: 'Move',
-    lastUpdate: '2024-07-16T20:33:13Z',
+    lastUpdate: '2024-08-20T09:34:05Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '1b57eb84b85cb21835f83a50f988091afa926fdf',
-    source: 'https://github.com/damirka/move-syntax/blob/1b57eb84b85cb21835f83a50f988091afa926fdf/syntaxes/move.tmLanguage.json',
+    sha: 'ff3b79424638c8904787cd388b9823b546f5dd79',
+    source: 'https://github.com/damirka/move-syntax/blob/ff3b79424638c8904787cd388b9823b546f5dd79/syntaxes/move.tmLanguage.json',
   },
   {
     aliases: [
