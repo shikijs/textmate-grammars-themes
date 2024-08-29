@@ -22,8 +22,8 @@ export default antfu(
     files: ['sources-grammars.ts', 'sources-themes.ts'],
     rules: {
       'perfectionist/sort-objects': ['error', {
-        'groups': keysOrders,
-        'custom-groups': Object.fromEntries(keysOrders.map(key => [key, [key]])),
+        groups: keysOrders,
+        customGroups: Object.fromEntries(keysOrders.map(key => [key, [key]])),
       }],
     },
   },
