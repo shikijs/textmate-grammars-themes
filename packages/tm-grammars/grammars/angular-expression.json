@@ -163,7 +163,7 @@
               "name": "keyword.operator.arithmetic.ts"
             }
           },
-          "match": "(?<=[_$[:alnum:]])\\s*(\\/)(?![\\/*])"
+          "match": "(?<=[_$0-9A-Za-z])\\s*(\\/)(?![\\/*])"
         },
         {
           "include": "#typeofOperator"
@@ -171,8 +171,8 @@
       ]
     },
     "functionCall": {
-      "begin": "(?=(\\??\\.\\s*)?([_$[:alpha:]][_$[:alnum:]]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
-      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$[:alpha:]][_$[:alnum:]]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
+      "begin": "(?=(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
+      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
       "patterns": [
         {
           "match": "\\?",
@@ -183,7 +183,7 @@
           "name": "punctuation.accessor.ts"
         },
         {
-          "match": "([_$[:alpha:]][_$[:alnum:]]*)",
+          "match": "([_$A-Za-z][_$0-9A-Za-z]*)",
           "name": "entity.name.function.ts"
         },
         {
@@ -247,7 +247,7 @@
     "identifiers": {
       "patterns": [
         {
-          "match": "([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*\\.\\s*prototype\\b(?!\\$))",
+          "match": "([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*\\.\\s*prototype\\b(?!\\$))",
           "name": "support.class.ts"
         },
         {
@@ -262,7 +262,7 @@
               "name": "variable.other.object.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*(?:([[:upper:]][_$[:digit:][:upper:]]*)|([_$[:alpha:]][_$[:alnum:]]*))(?=\\s*\\.\\s*[_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "([?!]?\\.)\\s*(?:([A-Z][_$0-9A-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
         },
         {
           "captures": {
@@ -273,7 +273,7 @@
               "name": "entity.name.function.ts"
             }
           },
-          "match": "(?:([?!]?\\.)\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
+          "match": "(?:([?!]?\\.)\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
         },
         {
           "captures": {
@@ -284,7 +284,7 @@
               "name": "constant.other.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*([[:upper:]][_$[:digit:][:upper:]]*)(?![_$[:alnum:]])"
+          "match": "([?!]?\\.)\\s*([A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])"
         },
         {
           "captures": {
@@ -295,7 +295,7 @@
               "name": "variable.other.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*([_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "([?!]?\\.)\\s*([_$A-Za-z][_$0-9A-Za-z]*)"
         },
         {
           "captures": {
@@ -306,14 +306,14 @@
               "name": "variable.other.object.ts"
             }
           },
-          "match": "(?:([[:upper:]][_$[:digit:][:upper:]]*)|([_$[:alpha:]][_$[:alnum:]]*))(?=\\s*\\.\\s*[_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "(?:([A-Z][_$0-9A-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
         },
         {
-          "match": "([[:upper:]][_$[:digit:][:upper:]]*)(?![_$[:alnum:]])",
+          "match": "([A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])",
           "name": "constant.character.other"
         },
         {
-          "match": "[_$[:alpha:]][_$[:alnum:]]*",
+          "match": "[_$A-Za-z][_$0-9A-Za-z]*",
           "name": "variable.other.readwrite.ts"
         }
       ]
@@ -454,7 +454,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|([)]\\s*=>))))))))"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))))"
         },
         {
           "captures": {
@@ -474,7 +474,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)"
         }
       ]
     },
@@ -573,7 +573,7 @@
       "name": "constant.character.escape.ts"
     },
     "ternaryExpression": {
-      "begin": "(?!\\?\\.\\s*[^[:digit:]])(\\?)(?!\\?)",
+      "begin": "(?!\\?\\.\\s*[^0-9])(\\?)(?!\\?)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.ternary.ts"
@@ -634,7 +634,7 @@
           "name": "keyword.operator.type.annotation.ts"
         }
       },
-      "end": "(?=$|[,);\\}\\]]|\\/\\/|\")|(?==[^>])|(?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)",
+      "end": "(?=$|[,);\\}\\]]|\\/\\/|\")|(?==[^>])|(?<=[\\}>\\]\\)]|[_$A-Za-z])\\s*(?=\\{)",
       "name": "meta.type.annotation.ts",
       "patterns": [
         {
@@ -684,7 +684,7 @@
           ]
         },
         {
-          "begin": "((?=[(]\\s*(([)])|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|([)]\\s*=>))))))",
+          "begin": "((?=[(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))",
           "end": "(?<=\\))",
           "name": "meta.type.function.ts",
           "patterns": [
@@ -706,10 +706,10 @@
               "name": "punctuation.accessor.ts"
             }
           },
-          "match": "([_$[:alpha:]][_$[:alnum:]]*)\\s*([?!]?\\.)"
+          "match": "([_$A-Za-z][_$0-9A-Za-z]*)\\s*([?!]?\\.)"
         },
         {
-          "match": "[_$[:alpha:]][_$[:alnum:]]*",
+          "match": "[_$A-Za-z][_$0-9A-Za-z]*",
           "name": "entity.name.type.ts"
         }
       ]

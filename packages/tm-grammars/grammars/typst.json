@@ -10,7 +10,7 @@
     "arguments": {
       "patterns": [
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*(?=:)",
+          "match": "\\b[A-Za-z_][0-9A-Za-z_-]*(?=:)",
           "name": "variable.parameter.typst"
         },
         {
@@ -84,7 +84,7 @@
           "name": "keyword.operator.assignment.typst"
         },
         {
-          "match": "\\+|\\*|/|(?<![[:alpha:]_][[:alnum:]_-]*)-(?![:alnum:]_-]*[[:alpha:]_])",
+          "match": "\\+|\\*|/|(?<![A-Za-z_][0-9A-Za-z_-]*)-(?![0-9A-Za-z]_-]*[A-Za-z_])",
           "name": "keyword.operator.arithmetic.typst"
         },
         {
@@ -116,16 +116,16 @@
         },
         {
           "comment": "Function name",
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*!?(?=\\[|\\()",
+          "match": "\\b[A-Za-z_][0-9A-Za-z_-]*!?(?=\\[|\\()",
           "name": "entity.name.function.typst"
         },
         {
           "comment": "Function name",
-          "match": "(?<=\\bshow\\s*)\\b[[:alpha:]_][[:alnum:]_-]*(?=\\s*[:.])",
+          "match": "(?<=\\bshow\\s*)\\b[A-Za-z_][0-9A-Za-z_-]*(?=\\s*[:.])",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=\\b[[:alpha:]_][[:alnum:]_-]*!?)\\(",
+          "begin": "(?<=\\b[A-Za-z_][0-9A-Za-z_-]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -140,7 +140,7 @@
           ]
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*\\b",
+          "match": "\\b[A-Za-z_][0-9A-Za-z_-]*\\b",
           "name": "variable.other.typst"
         },
         {
@@ -409,7 +409,7 @@
               "name": "punctuation.definition.label.typst"
             }
           },
-          "match": "<[[:alpha:]_][[:alnum:]_-]*>",
+          "match": "<[A-Za-z_][0-9A-Za-z_-]*>",
           "name": "entity.other.label.typst"
         },
         {
@@ -418,7 +418,7 @@
               "name": "punctuation.definition.reference.typst"
             }
           },
-          "match": "(@)[[:alpha:]_][[:alnum:]_-]*",
+          "match": "(@)[A-Za-z_][0-9A-Za-z_-]*",
           "name": "entity.other.reference.typst"
         },
         {
@@ -533,11 +533,11 @@
             }
           },
           "comment": "Function name",
-          "match": "((#)[[:alpha:]_][[:alnum:]_-]*!?)(?=\\[|\\()",
+          "match": "((#)[A-Za-z_][0-9A-Za-z_-]*!?)(?=\\[|\\()",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=#[[:alpha:]_][[:alnum:]_-]*!?)\\(",
+          "begin": "(?<=#[A-Za-z_][0-9A-Za-z_-]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -557,7 +557,7 @@
               "name": "punctuation.definition.variable.typst"
             }
           },
-          "match": "(#)[[:alpha:]_][.[:alnum:]_-]*",
+          "match": "(#)[A-Za-z_][.0-9A-Za-z_-]*",
           "name": "entity.other.interpolated.typst"
         },
         {

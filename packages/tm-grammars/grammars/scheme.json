@@ -121,7 +121,7 @@
               "name": "punctuation.section.quoted.symbol.scheme"
             }
           },
-          "match": "(')\\s*([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)",
+          "match": "(')\\s*([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*)",
           "name": "constant.other.symbol.scheme"
         },
         {
@@ -231,7 +231,7 @@
           "include": "#comment"
         },
         {
-          "begin": "(?<=\\()(define)\\s+(\\()([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)((\\s+([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._]))*)\\s*(\\))",
+          "begin": "(?<=\\()(define)\\s+(\\()([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*)((\\s+([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*|[._]))*)\\s*(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -264,7 +264,7 @@
           ]
         },
         {
-          "begin": "(?<=\\()(lambda)\\s+(\\()((?:([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\\s+)*(?:([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._]))?)(\\))",
+          "begin": "(?<=\\()(lambda)\\s+(\\()((?:([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*|[._])\\s+)*(?:([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*|[._]))?)(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -295,7 +295,7 @@
           ]
         },
         {
-          "begin": "(?<=\\()(define)\\s([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\\s*.*?",
+          "begin": "(?<=\\()(define)\\s([0-9A-Za-z][0-9A-Za-z!$%&*+-./:<=>?@^_~]*)\\s*.*?",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"

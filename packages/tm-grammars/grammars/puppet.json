@@ -312,13 +312,13 @@
     "heredoc": {
       "patterns": [
         {
-          "begin": "@\\([[:blank:]]*\"([^:\\/) \\t]+)\"[[:blank:]]*(:[[:blank:]]*[a-z][a-zA-Z0-9_+]*[[:blank:]]*)?(\\/[[:blank:]]*[tsrnL$]*)?[[:blank:]]*\\)",
+          "begin": "@\\([ \\t]*\"([^:\\/) \\t]+)\"[ \\t]*(:[ \\t]*[a-z][a-zA-Z0-9_+]*[ \\t]*)?(\\/[ \\t]*[tsrnL$]*)?[ \\t]*\\)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.puppet"
             }
           },
-          "end": "^[[:blank:]]*(\\|[[:blank:]]*-|\\||-)?[[:blank:]]*\\1",
+          "end": "^[ \\t]*(\\|[ \\t]*-|\\||-)?[ \\t]*\\1",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.puppet"
@@ -335,13 +335,13 @@
           ]
         },
         {
-          "begin": "@\\([[:blank:]]*([^:\\/) \\t]+)[[:blank:]]*(:[[:blank:]]*[a-z][a-zA-Z0-9_+]*[[:blank:]]*)?(\\/[[:blank:]]*[tsrnL$]*)?[[:blank:]]*\\)",
+          "begin": "@\\([ \\t]*([^:\\/) \\t]+)[ \\t]*(:[ \\t]*[a-z][a-zA-Z0-9_+]*[ \\t]*)?(\\/[ \\t]*[tsrnL$]*)?[ \\t]*\\)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.puppet"
             }
           },
-          "end": "^[[:blank:]]*(\\|[[:blank:]]*-|\\||-)?[[:blank:]]*\\1",
+          "end": "^[ \\t]*(\\|[ \\t]*-|\\||-)?[ \\t]*\\1",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.puppet"

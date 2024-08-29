@@ -1,6 +1,6 @@
-import { expect } from 'chai'
 import { objectPick } from '../shared/utils'
 import { highlight } from './highlight'
+import { regexpReprint } from './reprint'
 
 export async function cleanupGrammar(lang: any, verify = true) {
   const before = verify ? await highlight(lang) : null
@@ -55,6 +55,8 @@ export async function cleanupGrammar(lang: any, verify = true) {
         .replace(/\(\?x:/g, '(?:')
     }
 
+    regex = regexpReprint(regex)
+
     // if (original !== regex) {
     //   console.log({ original, regex })
     // }
@@ -85,7 +87,7 @@ export async function cleanupGrammar(lang: any, verify = true) {
   const after = verify ? await highlight(picked) : null
 
   if (verify && before !== after) {
-    expect(before).to.equal(after)
+    throw new Error(`cleanup failed for ${lang.name}`)
   }
 
   return picked

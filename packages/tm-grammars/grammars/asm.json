@@ -84,19 +84,19 @@
           "name": "constant.numeric.decimal.packed-bcd.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[xh](?:[[:xdigit:]][[:xdigit:]_]*)\\.(?:(?:[[:xdigit:]][[:xdigit:]_]*)?(?:p[+-]?(?:[0-9][0-9_]*))?\\b)?",
+          "match": "(?i)\\b0[xh](?:[0-9A-Fa-f][0-9A-Fa-f_]*)\\.(?:(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?(?:p[+-]?(?:[0-9][0-9_]*))?\\b)?",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[xh](?:[[:xdigit:]][[:xdigit:]_]*)(?:p[+-]?(?:[0-9][0-9_]*))\\b",
+          "match": "(?i)\\b0[xh](?:[0-9A-Fa-f][0-9A-Fa-f_]*)(?:p[+-]?(?:[0-9][0-9_]*))\\b",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$[0-9]\\_?(?:[[:xdigit:]][[:xdigit:]_]*)?\\.(?:(?:[[:xdigit:]][[:xdigit:]_]*)?(?:p[+-]?(?:[0-9][0-9_]*))?\\b)?",
+          "match": "(?i)\\$[0-9]\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?\\.(?:(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?(?:p[+-]?(?:[0-9][0-9_]*))?\\b)?",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$[0-9]\\_?(?:[[:xdigit:]][[:xdigit:]_]*)(?:p[+-]?(?:[0-9][0-9_]*))\\b",
+          "match": "(?i)\\$[0-9]\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)(?:p[+-]?(?:[0-9][0-9_]*))\\b",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
@@ -112,11 +112,11 @@
           "name": "constant.numeric.decimal.asm.x86_64"
         },
         {
-          "match": "(?i)(?:\\$[0-9]\\_?(?:[[:xdigit:]][[:xdigit:]_]*)?)\\b",
+          "match": "(?i)(?:\\$[0-9]\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?)\\b",
           "name": "constant.numeric.hex.asm.x86_64"
         },
         {
-          "match": "(?i)\\b(?:(?:0[xh](?:[[:xdigit:]][[:xdigit:]_]*))|(?:(?:[[:xdigit:]][[:xdigit:]_]*)[hxHX]))\\b",
+          "match": "(?i)\\b(?:(?:0[xh](?:[0-9A-Fa-f][0-9A-Fa-f_]*))|(?:(?:[0-9A-Fa-f][0-9A-Fa-f_]*)[hxHX]))\\b",
           "name": "constant.numeric.hex.asm.x86_64"
         }
       ]
@@ -147,7 +147,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.\\.@)((?:[[:alpha:]_?](?:[[:alnum:]_$#@~.?]*)))(?:(\\:)?|\\b)",
+          "match": "(\\.\\.@)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(\\:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -162,7 +162,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)((?:[[:alpha:]_?](?:[[:alnum:]_$#@~.?]*)))(?:(\\:))",
+          "match": "(?:(\\.)?|\\b)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(\\:))",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -177,7 +177,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.)([0-9]+(?:[[:alnum:]_$#@~.?]*))(?:(\\:)?|\\b)",
+          "match": "(\\.)([0-9]+(?:[0-9A-Za-z_$#@~.?]*))(?:(\\:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -192,7 +192,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)([0-9$@~](?:[[:alnum:]_$#@~.?]*))(?:(\\:))",
+          "match": "(?:(\\.)?|\\b)([0-9$@~](?:[0-9A-Za-z_$#@~.?]*))(?:(\\:))",
           "name": "invalid.illegal.entity.name.function.asm.x86_64"
         }
       ]

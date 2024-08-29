@@ -59,7 +59,7 @@
   ],
   "repository": {
     "abstract_definition": {
-      "begin": "\\b(static)?\\s+(abstract)\\s+(member)?(\\s+\\[\\<.*\\>\\])?\\s*([_[:alpha:]0-9,\\._`\\s]+)(<)?",
+      "begin": "\\b(static)?\\s+(abstract)\\s+(member)?(\\s+\\[\\<.*\\>\\])?\\s*([_A-Za-z0-9,\\._`\\s]+)(<)?",
       "beginCaptures": {
         "1": {
           "name": "keyword.fsharp"
@@ -106,7 +106,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\?{0,1})([[:alpha:]0-9'`^._ ]+)\\s*(:)((?!with\\b)\\b([\\w0-9'`^._ ]+)){0,1}"
+          "match": "(\\?{0,1})([A-Za-z0-9'`^._ ]+)\\s*(:)((?!with\\b)\\b([\\w0-9'`^._ ]+)){0,1}"
         },
         {
           "captures": {
@@ -188,7 +188,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "match": "[[:alpha:]0-9'`^_ ]+(:)"
+          "match": "[A-Za-z0-9'`^_ ]+(:)"
         },
         {
           "captures": {
@@ -196,7 +196,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "([[:alpha:]0-9'`^_ ]+)"
+          "match": "([A-Za-z0-9'`^_ ]+)"
         },
         {
           "include": "#anonymous_record_declaration"
@@ -367,7 +367,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(\\^[[:alpha:]0-9'._]+)"
+              "match": "(\\^[A-Za-z0-9'._]+)"
             },
             {
               "include": "#variables"
@@ -387,7 +387,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "end": "(\\)\\s*(([?[:alpha:]0-9'`^._ ]*)))",
+          "end": "(\\)\\s*(([?A-Za-z0-9'`^._ ]*)))",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -403,7 +403,7 @@
           ]
         },
         {
-          "begin": "(:)\\s*(\\^[[:alpha:]0-9'._]+)\\s*(when)",
+          "begin": "(:)\\s*(\\^[A-Za-z0-9'._]+)\\s*(when)",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -433,7 +433,7 @@
                 }
               },
               "comment": "Because we first capture the keywords, we can capture what looks like a word and assume it's an entity definition",
-              "match": "([[:alpha:]0-9'^._]+)"
+              "match": "([A-Za-z0-9'^._]+)"
             },
             {
               "match": "(\\(|\\))",
@@ -450,7 +450,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(:)\\s*([?[:alpha:]0-9'`^._ ]+)"
+          "match": "(:)\\s*([?A-Za-z0-9'`^._ ]+)"
         },
         {
           "captures": {
@@ -464,7 +464,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(->)\\s*(\\()?\\s*([?[:alpha:]0-9'`^._ ]+)*"
+          "match": "(->)\\s*(\\()?\\s*([?A-Za-z0-9'`^._ ]+)*"
         },
         {
           "begin": "(\\*)\\s*(\\()",
@@ -476,7 +476,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "end": "(\\)\\s*(([?[:alpha:]0-9'`^._ ]+))*)",
+          "end": "(\\)\\s*(([?A-Za-z0-9'`^._ ]+))*)",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -492,7 +492,7 @@
           ]
         },
         {
-          "begin": "(\\*)(\\s*([?[:alpha:]0-9'`^._ ]+))*",
+          "begin": "(\\*)(\\s*([?A-Za-z0-9'`^._ ]+))*",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -514,7 +514,7 @@
           ]
         },
         {
-          "begin": "(<+(?![[:space:]]*\\)))",
+          "begin": "(<+(?![\\s]*\\)))",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -570,7 +570,7 @@
     "common_declaration": {
       "patterns": [
         {
-          "begin": "\\s*(->)\\s*([[:alpha:]0-9'`^._ ]+)(<)",
+          "begin": "\\s*(->)\\s*([A-Za-z0-9'`^._ ]+)(<)",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.arrow.fsharp"
@@ -595,7 +595,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([[:alpha:]0-9'`^._ ]+)"
+              "match": "([A-Za-z0-9'`^._ ]+)"
             },
             {
               "include": "#keywords"
@@ -617,7 +617,7 @@
           "include": "#anonymous_record_declaration"
         },
         {
-          "begin": "(\\?{0,1})([[:alpha:]0-9'`^._ ]+)\\s*(:)(\\s*([?[:alpha:]0-9'`^._ ]+)(<))",
+          "begin": "(\\?{0,1})([A-Za-z0-9'`^._ ]+)\\s*(:)(\\s*([?A-Za-z0-9'`^._ ]+)(<))",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -648,7 +648,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([[:alpha:]0-9'`^._ ]+)"
+              "match": "([A-Za-z0-9'`^._ ]+)"
             },
             {
               "include": "#keywords"
@@ -694,7 +694,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -729,7 +729,7 @@
           ]
         },
         {
-          "begin": "\\b(use|use!|and|and!)\\s+(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(use|use!|and|and!)\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -749,7 +749,7 @@
           ]
         },
         {
-          "begin": "(?<=with|and)\\s*\\b((get|set)\\s*(?=\\())(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "(?<=with|and)\\s*\\b((get|set)\\s*(?=\\())(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "4": {
               "name": "variable.fsharp"
@@ -769,7 +769,7 @@
           ]
         },
         {
-          "begin": "\\b(static val mutable|val mutable|val inline|val)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9,\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9,\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(static val mutable|val mutable|val inline|val)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9,\\._]+)*|``[_A-Za-z]([_A-Za-z0-9,\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -871,7 +871,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([[:alpha:]0-9'`<>^._]+|``[[:alpha:]0-9' <>^._]+``)\\s*(:)\\s*([[:alpha:]0-9'`<>^._]+|``[[:alpha:]0-9' <>^._]+``)"
+              "match": "([A-Za-z0-9'`<>^._]+|``[A-Za-z0-9' <>^._]+``)\\s*(:)\\s*([A-Za-z0-9'`<>^._]+|``[A-Za-z0-9' <>^._]+``)"
             },
             {
               "captures": {
@@ -879,7 +879,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(``([[:alpha:]0-9'^._ ]+)``|[[:alpha:]0-9'`^._]+)"
+              "match": "(``([A-Za-z0-9'^._ ]+)``|[A-Za-z0-9'`^._]+)"
             },
             {
               "include": "#anonymous_record_declaration"
@@ -939,7 +939,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(('|\\^)[[:alpha:]0-9'._]+)"
+              "match": "(('|\\^)[A-Za-z0-9'._]+)"
             },
             {
               "include": "#variables"
@@ -966,7 +966,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(('|\\^)[[:alpha:]0-9'._]+)"
+          "match": "(('|\\^)[A-Za-z0-9'._]+)"
         },
         {
           "begin": "(<)",
@@ -988,7 +988,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(('|\\^)[[:alpha:]0-9'._]+)"
+              "match": "(('|\\^)[A-Za-z0-9'._]+)"
             },
             {
               "include": "#tuple_signature"
@@ -1018,7 +1018,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(([?[:alpha:]0-9'`^._ ]+))+"
+              "match": "(([?A-Za-z0-9'`^._ ]+))+"
             },
             {
               "include": "#tuple_signature"
@@ -1126,7 +1126,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(\\^[[:alpha:]0-9'._]+)"
+              "match": "(\\^[A-Za-z0-9'._]+)"
             },
             {
               "include": "#variables"
@@ -1142,7 +1142,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\^[[:alpha:]0-9'._]+)"
+          "match": "(\\^[A-Za-z0-9'._]+)"
         },
         {
           "match": "\\b(and|when|or)\\b",
@@ -1167,7 +1167,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\?{0,1})([[:alpha:]0-9'`^._]+|``[[:alpha:]0-9'`^:,._ ]+``)\\s*(:{0,1})(\\s*([?[:alpha:]0-9'`<>._ ]+)){0,1}"
+          "match": "(\\?{0,1})([A-Za-z0-9'`^._]+|``[A-Za-z0-9'`^:,._ ]+``)\\s*(:{0,1})(\\s*([?A-Za-z0-9'`<>._ ]+)){0,1}"
         },
         {
           "include": "#keywords"
@@ -1177,7 +1177,7 @@
     "modules": {
       "patterns": [
         {
-          "begin": "\\b(namespace global)|\\b(namespace|module)\\s*(public|internal|private|rec)?\\s+([[:alpha:]|``][[:alpha:]0-9'_. ]*)",
+          "begin": "\\b(namespace global)|\\b(namespace|module)\\s*(public|internal|private|rec)?\\s+([A-Za-z|``][A-Za-z0-9'_. ]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -1209,13 +1209,13 @@
                   "name": "entity.name.section.fsharp"
                 }
               },
-              "match": "(\\.)([A-Z][[:alpha:]0-9'_]*)",
+              "match": "(\\.)([A-Z][A-Za-z0-9'_]*)",
               "name": "entity.name.section.fsharp"
             }
           ]
         },
         {
-          "begin": "\\b(open type|open)\\s+([[:alpha:]|``][[:alpha:]0-9'_]*)(?=(\\.[A-Z][[:alpha:]0-9_]*)*)",
+          "begin": "\\b(open type|open)\\s+([A-Za-z|``][A-Za-z0-9'_]*)(?=(\\.[A-Z][A-Za-z0-9_]*)*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -1236,7 +1236,7 @@
                   "name": "entity.name.section.fsharp"
                 }
               },
-              "match": "(\\.)([[:alpha:]][[:alpha:]0-9'_]*)",
+              "match": "(\\.)([A-Za-z][A-Za-z0-9'_]*)",
               "name": "entity.name.section.fsharp"
             },
             {
@@ -1245,7 +1245,7 @@
           ]
         },
         {
-          "begin": "^\\s*(module)\\s+([A-Z][[:alpha:]0-9'_]*)\\s*(=)\\s*([A-Z][[:alpha:]0-9'_]*)",
+          "begin": "^\\s*(module)\\s+([A-Z][A-Za-z0-9'_]*)\\s*(=)\\s*([A-Z][A-Za-z0-9'_]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -1272,7 +1272,7 @@
                   "name": "entity.name.section.fsharp"
                 }
               },
-              "match": "(\\.)([A-Z][[:alpha:]0-9'_]*)",
+              "match": "(\\.)([A-Z][A-Za-z0-9'_]*)",
               "name": "entity.name.section.fsharp"
             }
           ]
@@ -1294,7 +1294,7 @@
               "include": "#comments"
             },
             {
-              "begin": "(((mutable)\\s[[:alpha:]]+)|[[:alpha:]0-9'`<>^._]*)\\s*((?<!:):(?!:))\\s*",
+              "begin": "(((mutable)\\s[A-Za-z]+)|[A-Za-z0-9'`<>^._]*)\\s*((?<!:):(?!:))\\s*",
               "beginCaptures": {
                 "3": {
                   "name": "keyword.fsharp"
@@ -1319,7 +1319,7 @@
                       "name": "entity.name.type.fsharp"
                     }
                   },
-                  "match": "([[:alpha:]0-9'`^_ ]+)"
+                  "match": "([A-Za-z0-9'`^_ ]+)"
                 },
                 {
                   "include": "#keywords"
@@ -1374,7 +1374,7 @@
               "name": "variable.parameter.fsharp"
             }
           },
-          "match": "[[:alpha:]0-9'`^_ ]+(=)([[:alpha:]0-9'`^_ ]+)"
+          "match": "[A-Za-z0-9'`^_ ]+(=)([A-Za-z0-9'`^_ ]+)"
         },
         {
           "begin": "({)",
@@ -1399,7 +1399,7 @@
                   "name": "variable.parameter.fsharp"
                 }
               },
-              "match": "[[:alpha:]0-9'`^_ ]+(=)([[:alpha:]0-9'`^_ ]+)"
+              "match": "[A-Za-z0-9'`^_ ]+(=)([A-Za-z0-9'`^_ ]+)"
             },
             {
               "include": "#record_signature"
@@ -1423,7 +1423,7 @@
               "name": "storage.modifier.fsharp"
             }
           },
-          "end": "\\s*((with)|((as)\\s+([[:alpha:]0-9']+))|(=)|[\\n=]|(\\(\\)))",
+          "end": "\\s*((with)|((as)\\s+([A-Za-z0-9']+))|(=)|[\\n=]|(\\(\\)))",
           "endCaptures": {
             "2": {
               "name": "keyword.fsharp"
@@ -1458,7 +1458,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([[:alpha:]0-9'^._]+|``[[:alpha:]0-9'`^:,._ ]+``)"
+              "match": "([A-Za-z0-9'^._]+|``[A-Za-z0-9'`^:,._ ]+``)"
             },
             {
               "begin": "(<)",
@@ -1480,7 +1480,7 @@
                       "name": "entity.name.type.fsharp"
                     }
                   },
-                  "match": "(('|\\^)``[[:alpha:]0-9`^:,._ ]+``|('|\\^)[[:alpha:]0-9`^:._]+)"
+                  "match": "(('|\\^)``[A-Za-z0-9`^:,._ ]+``|('|\\^)[A-Za-z0-9`^:._]+)"
                 },
                 {
                   "match": "\\b(interface|with|abstract|and|when|or|not|struct|equality|comparison|unmanaged|delegate|enum)\\b",
@@ -1688,7 +1688,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\^[[:alpha:]0-9'._]+)"
+          "match": "(\\^[A-Za-z0-9'._]+)"
         },
         {
           "match": "\\b(and|when|or)\\b",
@@ -1725,7 +1725,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "match": "(static member|member)\\s*([[:alpha:]0-9'`<>^._]+|``[[:alpha:]0-9' <>^._]+``)\\s*(:)"
+          "match": "(static member|member)\\s*([A-Za-z0-9'`<>^._]+|``[A-Za-z0-9' <>^._]+``)\\s*(:)"
         },
         {
           "include": "#compiler_directives"
@@ -1781,7 +1781,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(([?[:alpha:]0-9'`^._ ]+))+"
+          "match": "(([?A-Za-z0-9'`^._ ]+))+"
         },
         {
           "begin": "(\\()",
@@ -1803,7 +1803,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(([?[:alpha:]0-9'`^._ ]+))+"
+              "match": "(([?A-Za-z0-9'`^._ ]+))+"
             },
             {
               "include": "#tuple_signature"
@@ -1830,7 +1830,7 @@
               "name": "variable.parameter.fsharp"
             }
           },
-          "match": "(\\?{0,1})(``[[:alpha:]0-9'`^:,._ ]+``|(?!private|struct\\b)\\b[\\w[:alpha:]0-9'`<>^._ ]+)"
+          "match": "(\\?{0,1})(``[A-Za-z0-9'`^:,._ ]+``|(?!private|struct\\b)\\b[\\wA-Za-z0-9'`<>^._ ]+)"
         }
       ]
     }

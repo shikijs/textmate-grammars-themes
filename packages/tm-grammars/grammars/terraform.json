@@ -28,7 +28,7 @@
         }
       },
       "comment": "Matches traversal attribute access such as .attr",
-      "end": "[[:alpha:]][\\w-]*|\\d*",
+      "end": "[A-Za-z][\\w-]*|\\d*",
       "endCaptures": {
         "0": {
           "patterns": [
@@ -62,7 +62,7 @@
         }
       },
       "comment": "Identifier \"=\" with optional parens",
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)[[:alpha:]][[:alnum:]_-]*)(\\))?\\s*(\\=(?!\\=|\\>))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)[A-Za-z][0-9A-Za-z_-]*)(\\))?\\s*(\\=(?!\\=|\\>))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -431,7 +431,7 @@
     },
     "local_identifiers": {
       "comment": "Local Identifiers",
-      "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+      "match": "\\b(?!null|false|true)[A-Za-z][0-9A-Za-z_-]*\\b",
       "name": "variable.other.readwrite.hcl"
     },
     "named_value_references": {
@@ -565,7 +565,7 @@
             }
           },
           "comment": "Literal, named object key",
-          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\=\\>?)\\s*"
+          "match": "\\b((?!null|false|true)[A-Za-z][0-9A-Za-z_-]*)\\s*(\\=\\>?)\\s*"
         },
         {
           "captures": {

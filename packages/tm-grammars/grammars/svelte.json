@@ -231,7 +231,7 @@
       ]
     },
     "attributes-directives": {
-      "begin": "(?<!<)(on|use|bind|transition|in|out|animate|let|class|style)(:)(?:((?:--)?[_$[:alpha:]][_\\-$[:alnum:]]*(?=\\s*=))|((?:--)?[_$[:alpha:]][_\\-$[:alnum:]]*))((\\|\\w+)*)",
+      "begin": "(?<!<)(on|use|bind|transition|in|out|animate|let|class|style)(:)(?:((?:--)?[_$A-Za-z][_\\-$0-9A-Za-z]*(?=\\s*=))|((?:--)?[_$A-Za-z][_\\-$0-9A-Za-z]*))((\\|\\w+)*)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -394,7 +394,7 @@
       ]
     },
     "attributes-keyvalue": {
-      "begin": "((?:--)?[_$[:alpha:]][_\\-$[:alnum:]]*)",
+      "begin": "((?:--)?[_$A-Za-z][_\\-$0-9A-Za-z]*)",
       "beginCaptures": {
         "0": {
           "patterns": [
@@ -755,7 +755,7 @@
               "include": "#destructuring-const"
             },
             {
-              "begin": "\\G\\s*([_$[:alpha:]][_$[:alnum:]]+)\\s*",
+              "begin": "\\G\\s*([_$A-Za-z][_$0-9A-Za-z]+)\\s*",
               "beginCaptures": {
                 "1": {
                   "name": "variable.other.constant.svelte"
@@ -827,7 +827,7 @@
                       ]
                     }
                   },
-                  "match": "(\\s*([_$[:alpha:]][_$[:alnum:]]*)\\s*)"
+                  "match": "(\\s*([_$A-Za-z][_$0-9A-Za-z]*)\\s*)"
                 },
                 {
                   "match": ",",
@@ -883,7 +883,7 @@
                   ]
                 }
               },
-              "match": "[_$[:alpha:]][_$[:alnum:]]*"
+              "match": "[_$A-Za-z][_$0-9A-Za-z]*"
             },
             {
               "match": ",",
@@ -1151,7 +1151,7 @@
           "include": "source.ts#comment"
         },
         {
-          "match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(extends|in|out|const)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(extends|in|out|const)(?![_$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "storage.modifier.ts"
         },
         {

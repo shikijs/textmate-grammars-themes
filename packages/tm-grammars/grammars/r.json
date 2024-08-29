@@ -292,7 +292,7 @@
               "name": "keyword.control.r"
             }
           },
-          "match": "((?:`[^`\\\\]*(?:\\\\.[^`\\\\]*)*`)|(?:[[:alpha:].][[:alnum:]._]*))\\s*(<?<-|=(?!=))\\s*(function|\\\\)(?!\\w)",
+          "match": "((?:`[^`\\\\]*(?:\\\\.[^`\\\\]*)*`)|(?:[A-Za-z.][0-9A-Za-z._]*))\\s*(<?<-|=(?!=))\\s*(function|\\\\)(?!\\w)",
           "name": "meta.function.r",
           "patterns": [
             {
@@ -341,7 +341,7 @@
               "name": "keyword.operator.assignment.r"
             }
           },
-          "match": "([[:alpha:].][[:alnum:]._]*)\\s*(=)(?=[^=])"
+          "match": "([A-Za-z.][0-9A-Za-z._]*)\\s*(=)(?=[^=])"
         },
         {
           "captures": {
@@ -355,15 +355,15 @@
           "match": "(`[^`]+`)\\s*(=)(?=[^=])"
         },
         {
-          "match": "\\b([\\d_][[:alnum:]._]+)\\b",
+          "match": "\\b([\\d_][0-9A-Za-z._]+)\\b",
           "name": "invalid.illegal.variable.other.r"
         },
         {
-          "match": "\\b([[:alnum:]_]+)(?=::)",
+          "match": "\\b([0-9A-Za-z_]+)(?=::)",
           "name": "entity.namespace.r"
         },
         {
-          "match": "\\b([[:alnum:]._]+)\\b",
+          "match": "\\b([0-9A-Za-z._]+)\\b",
           "name": "variable.other.r"
         },
         {

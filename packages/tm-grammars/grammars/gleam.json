@@ -54,7 +54,7 @@
           "include": "#boolean"
         },
         {
-          "match": "[[:upper:]][[:alnum:]]*",
+          "match": "[A-Z][0-9A-Za-z]*",
           "name": "entity.name.type.gleam"
         }
       ]
@@ -66,13 +66,13 @@
       ]
     },
     "discards": {
-      "match": "\\b_(?:[[:word:]]+)?\\b",
+      "match": "\\b_(?:[\\w]+)?\\b",
       "name": "comment.unused.gleam"
     },
     "entity": {
       "patterns": [
         {
-          "begin": "\\b([[:lower:]][[:word:]]*)\\b[[:space:]]*\\(",
+          "begin": "\\b([a-z][\\w]*)\\b[\\s]*\\(",
           "captures": {
             "1": {
               "name": "entity.name.function.gleam"
@@ -86,11 +86,11 @@
           ]
         },
         {
-          "match": "\\b([[:lower:]][[:word:]]*):\\s",
+          "match": "\\b([a-z][\\w]*):\\s",
           "name": "variable.parameter.gleam"
         },
         {
-          "match": "\\b([[:lower:]][[:word:]]*):",
+          "match": "\\b([a-z][\\w]*):",
           "name": "entity.name.namespace.gleam"
         }
       ]

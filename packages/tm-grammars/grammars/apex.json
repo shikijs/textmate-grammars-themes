@@ -25,7 +25,7 @@
   ],
   "repository": {
     "annotation-declaration": {
-      "begin": "([@][_[:alpha:]]+)\\b",
+      "begin": "([@][_A-Za-z]+)\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.type.annotation.apex"
@@ -83,7 +83,7 @@
       ]
     },
     "array-creation-expression": {
-      "begin": "\\b(new)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))?\\s*(?=\\[)",
+      "begin": "\\b(new)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))?\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.new.apex"
@@ -195,7 +195,7 @@
           "name": "punctuation.parenthesis.close.apex"
         }
       },
-      "match": "(\\()\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(\\))(?=\\s*@?[_[:alnum:]\\(])"
+      "match": "(\\()\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(\\))(?=\\s*@?[_0-9A-Za-z\\(])"
     },
     "catch-clause": {
       "begin": "(?<!\\.)\\b(catch)\\b",
@@ -236,7 +236,7 @@
                   "name": "entity.name.variable.local.apex"
                 }
               },
-              "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?:(\\g<identifier>)\\b)?"
+              "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?:(\\g<identifier>)\\b)?"
             }
           ]
         },
@@ -253,7 +253,7 @@
       "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "\\b(class)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)\\s*",
+          "begin": "\\b(class)\\b\\s+(@?[_A-Za-z][_0-9A-Za-z]*)\\s*",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.class.apex"
@@ -427,7 +427,7 @@
       ]
     },
     "constructor-declaration": {
-      "begin": "(?=@?[_[:alpha:]][_[:alnum:]]*\\s*\\()",
+      "begin": "(?=@?[_A-Za-z][_0-9A-Za-z]*\\s*\\()",
       "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
@@ -436,7 +436,7 @@
               "name": "entity.name.function.apex"
             }
           },
-          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\b"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\b"
         },
         {
           "begin": "(:)",
@@ -528,7 +528,7 @@
       ]
     },
     "element-access-expression": {
-      "begin": "(?:(\\??\\.)\\s*)?(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*)?(?:(\\?)\\s*)?(?=\\[)",
+      "begin": "(?:(\\??\\.)\\s*)?(?:(@?[_A-Za-z][_0-9A-Za-z]*)\\s*)?(?:(\\?)\\s*)?(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -591,7 +591,7 @@
                   "name": "entity.name.type.enum.apex"
                 }
               },
-              "match": "(enum)\\s+(@?[_[:alpha:]][_[:alnum:]]*)"
+              "match": "(enum)\\s+(@?[_A-Za-z][_0-9A-Za-z]*)"
             }
           ]
         },
@@ -619,7 +619,7 @@
               "include": "#punctuation-comma"
             },
             {
-              "begin": "@?[_[:alpha:]][_[:alnum:]]*",
+              "begin": "@?[_A-Za-z][_0-9A-Za-z]*",
               "beginCaptures": {
                 "0": {
                   "name": "entity.name.variable.enum-member.apex"
@@ -772,7 +772,7 @@
       ]
     },
     "extends-class": {
-      "begin": "(extends)\\b\\s+([_[:alpha:]][_[:alnum:]]*)",
+      "begin": "(extends)\\b\\s+([_A-Za-z][_0-9A-Za-z]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.extends.apex"
@@ -784,7 +784,7 @@
       "end": "(?={|implements)"
     },
     "field-declaration": {
-      "begin": "(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>|==)(?=,|;|=|$)",
+      "begin": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>|==)(?=,|;|=|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -803,7 +803,7 @@
       "end": "(?=;)",
       "patterns": [
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "@?[_A-Za-z][_0-9A-Za-z]*",
           "name": "entity.name.variable.field.apex"
         },
         {
@@ -856,7 +856,7 @@
           "name": "keyword.operator.iterator.colon.apex"
         }
       },
-      "match": "([_.[:alpha:]][_.[:alnum:]]+)\\s+([_.[:alpha:]][_.[:alnum:]]*)\\s*(\\:)"
+      "match": "([_.A-Za-z][_.0-9A-Za-z]+)\\s+([_.A-Za-z][_.0-9A-Za-z]*)\\s*(\\:)"
     },
     "for-statement": {
       "begin": "(?<!\\.)\\b(for)\\b\\s*(?=\\()",
@@ -915,7 +915,7 @@
           "name": "storage.type.apex"
         }
       },
-      "match": "(FROM)\\b\\s*([_\\.[:alnum:]]+\\b)?"
+      "match": "(FROM)\\b\\s*([_\\.0-9A-Za-z]+\\b)?"
     },
     "goto-statement": {
       "begin": "(?<!\\.)\\b(goto)\\b",
@@ -949,13 +949,13 @@
           "match": "\\b(default)\\b"
         },
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "@?[_A-Za-z][_0-9A-Za-z]*",
           "name": "entity.name.label.apex"
         }
       ]
     },
     "identifier": {
-      "match": "@?[_[:alpha:]][_[:alnum:]]*",
+      "match": "@?[_A-Za-z][_0-9A-Za-z]*",
       "name": "variable.other.readwrite.apex"
     },
     "if-statement": {
@@ -992,7 +992,7 @@
       ]
     },
     "implements-class": {
-      "begin": "(implements)\\b\\s+([_[:alpha:]][_[:alnum:]]*)",
+      "begin": "(implements)\\b\\s+([_A-Za-z][_0-9A-Za-z]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.implements.apex"
@@ -1004,7 +1004,7 @@
       "end": "(?={|extends)"
     },
     "indexer-declaration": {
-      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1070,7 +1070,7 @@
       "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "(interface)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
+          "begin": "(interface)\\b\\s+(@?[_A-Za-z][_0-9A-Za-z]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.interface.apex"
@@ -1145,7 +1145,7 @@
       ]
     },
     "invocation-expression": {
-      "begin": "(?:(\\??\\.)\\s*)?(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?<type_args>\\s*<([^<>]|\\g<type_args>)+>\\s*)?\\s*(?=\\()",
+      "begin": "(?:(\\??\\.)\\s*)?(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(?<type_args>\\s*<([^<>]|\\g<type_args>)+>\\s*)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1247,7 +1247,7 @@
       ]
     },
     "local-constant-declaration": {
-      "begin": "(?<const_keyword>\\b(?:const)\\b)\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=)",
+      "begin": "(?<const_keyword>\\b(?:const)\\b)\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1266,7 +1266,7 @@
       "end": "(?=;)",
       "patterns": [
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "@?[_A-Za-z][_0-9A-Za-z]*",
           "name": "entity.name.variable.local.apex"
         },
         {
@@ -1291,7 +1291,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*)))\\s+(\\g<identifier>)\\s*(?=,|;|=|\\))",
+      "begin": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*)))\\s+(\\g<identifier>)\\s*(?=,|;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1316,7 +1316,7 @@
       "end": "(?=;|\\))",
       "patterns": [
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "@?[_A-Za-z][_0-9A-Za-z]*",
           "name": "entity.name.variable.local.apex"
         },
         {
@@ -1348,7 +1348,7 @@
               "name": "variable.other.object.property.apex"
             }
           },
-          "match": "(\\??\\.)\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?![_[:alnum:]]|\\(|(\\?)?\\[|<)"
+          "match": "(\\??\\.)\\s*(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(?![_0-9A-Za-z]|\\(|(\\?)?\\[|<)"
         },
         {
           "captures": {
@@ -1373,7 +1373,7 @@
               ]
             }
           },
-          "match": "(\\??\\.)?\\s*(@?[_[:alpha:]][_[:alnum:]]*)(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)(?=(\\s*\\?)?\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*)"
+          "match": "(\\??\\.)?\\s*(@?[_A-Za-z][_0-9A-Za-z]*)(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)(?=(\\s*\\?)?\\s*\\.\\s*@?[_A-Za-z][_0-9A-Za-z]*)"
         },
         {
           "captures": {
@@ -1381,7 +1381,7 @@
               "name": "variable.other.object.apex"
             }
           },
-          "match": "(@?[_[:alpha:]][_[:alnum:]]*)(?=(\\s*\\?)?\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*)"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)(?=(\\s*\\?)?\\s*\\.\\s*@?[_A-Za-z][_0-9A-Za-z]*)"
         }
       ]
     },
@@ -1420,10 +1420,10 @@
           "name": "punctuation.terminator.statement.apex"
         }
       },
-      "match": "([_[:alpha:]]*)\\b\\s+([_[:alpha:]]*)\\b\\s*(\\;)"
+      "match": "([_A-Za-z]*)\\b\\s+([_A-Za-z]*)\\b\\s*(\\;)"
     },
     "method-declaration": {
-      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1480,11 +1480,11 @@
       ]
     },
     "method-name-custom": {
-      "match": "@?[_[:alpha:]][_[:alnum:]]*",
+      "match": "@?[_A-Za-z][_0-9A-Za-z]*",
       "name": "entity.name.function.apex"
     },
     "named-argument": {
-      "begin": "(@?[_[:alpha:]][_[:alnum:]]*)\\s*(:)",
+      "begin": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.variable.parameter.apex"
@@ -1576,10 +1576,10 @@
           ]
         }
       },
-      "match": "(delete|insert|undelete|update|upsert)?\\s*(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?=\\{|$)"
+      "match": "(delete|insert|undelete|update|upsert)?\\s*(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?=\\{|$)"
     },
     "object-creation-expression-with-parameters": {
-      "begin": "(delete|insert|undelete|update|upsert)?\\s*(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?=\\()",
+      "begin": "(delete|insert|undelete|update|upsert)?\\s*(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.apex"
@@ -1670,7 +1670,7 @@
           "name": "entity.name.variable.parameter.apex"
         }
       },
-      "match": "(?:(?:\\b(this)\\b)\\s+)?(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)"
+      "match": "(?:(?:\\b(this)\\b)\\s+)?(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+(\\g<identifier>)"
     },
     "parenthesized-expression": {
       "begin": "\\(",
@@ -1760,7 +1760,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?!.*\\b(?:class|interface|enum)\\b)\\s*(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|$)",
+      "begin": "(?!.*\\b(?:class|interface|enum)\\b)\\s*(?<return_type>(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1854,7 +1854,7 @@
       "name": "sharing.modifier.apex"
     },
     "soql-colon-method-statement": {
-      "begin": "(:?\\.)?([_[:alpha:]][_[:alnum:]]*)(?=\\()",
+      "begin": "(:?\\.)?([_A-Za-z][_0-9A-Za-z]*)(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.accessor.apex"
@@ -1896,7 +1896,7 @@
           "name": "keyword.operator.conditional.colon.apex"
         }
       },
-      "end": "(?![_[:alnum:]]|\\(|(\\?)?\\[|<)",
+      "end": "(?![_0-9A-Za-z]|\\(|(\\?)?\\[|<)",
       "patterns": [
         {
           "include": "#trigger-context-declaration"
@@ -1917,13 +1917,13 @@
               ]
             }
           },
-          "match": "([_[:alpha:]][_[:alnum:]]*)(\\??\\.)"
+          "match": "([_A-Za-z][_0-9A-Za-z]*)(\\??\\.)"
         },
         {
           "include": "#soql-colon-method-statement"
         },
         {
-          "match": "[_[:alpha:]][_[:alnum:]]*",
+          "match": "[_A-Za-z][_0-9A-Za-z]*",
           "name": "entity.name.variable.local.apex"
         }
       ]
@@ -1955,7 +1955,7 @@
           "include": "#soql-functions"
         },
         {
-          "match": "[_.[:alpha:]][_.[:alnum:]]*",
+          "match": "[_.A-Za-z][_.0-9A-Za-z]*",
           "name": "keyword.query.field.apex"
         }
       ]
@@ -2005,7 +2005,7 @@
           "include": "#using-scope"
         },
         {
-          "match": "[_.[:alpha:]][_.[:alnum:]]*",
+          "match": "[_.A-Za-z][_.0-9A-Za-z]*",
           "name": "keyword.query.field.apex"
         }
       ]
@@ -2092,7 +2092,7 @@
               "name": "punctuation.separator.comma.apex"
             }
           },
-          "match": "([_.[:alpha:]][_.[:alnum:]]*)\\s*(\\,)?"
+          "match": "([_.A-Za-z][_.0-9A-Za-z]*)\\s*(\\,)?"
         }
       ]
     },
@@ -2248,7 +2248,7 @@
               "name": "support.function.apex"
             }
           },
-          "match": "(?:(\\.))([[:alpha:]]*)(?=\\()"
+          "match": "(?:(\\.))([A-Za-z]*)(?=\\()"
         },
         {
           "captures": {
@@ -2259,7 +2259,7 @@
               "name": "support.type.apex"
             }
           },
-          "match": "(?:(\\.))([[:alpha:]]+)"
+          "match": "(?:(\\.))([A-Za-z]+)"
         },
         {
           "begin": "\\(",
@@ -2310,7 +2310,7 @@
               "name": "support.function.apex"
             }
           },
-          "match": "(\\.)\\s*([[:alpha:]]*)(?=\\()"
+          "match": "(\\.)\\s*([A-Za-z]*)(?=\\()"
         },
         {
           "begin": "\\(",
@@ -2343,7 +2343,7 @@
               "name": "support.type.apex"
             }
           },
-          "match": "(\\.)\\s*([_[:alpha:]]*)"
+          "match": "(\\.)\\s*([_A-Za-z]*)"
         }
       ]
     },
@@ -2365,7 +2365,7 @@
       ]
     },
     "switch-statement": {
-      "begin": "(switch)\\b\\s+(on)\\b\\s+(?:([_.?\\'\\(\\)[:alnum:]]+)\\s*)?(\\{)",
+      "begin": "(switch)\\b\\s+(on)\\b\\s+(?:([_.?\\'\\(\\)0-9A-Za-z]+)\\s*)?(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.apex"
@@ -2482,7 +2482,7 @@
               "name": "support.function.trigger.apex"
             }
           },
-          "match": "(?:(\\??\\.))([[:alpha:]]+)(?=\\()"
+          "match": "(?:(\\??\\.))([A-Za-z]+)(?=\\()"
         },
         {
           "begin": "\\(",
@@ -2522,7 +2522,7 @@
       "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "\\b(trigger)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)\\s*\\b(on)\\b\\s+([_[:alpha:]][_[:alnum:]]*)\\s*",
+          "begin": "\\b(trigger)\\b\\s+(@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\b(on)\\b\\s+([_A-Za-z][_0-9A-Za-z]*)\\s*",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.trigger.apex"
@@ -2776,7 +2776,7 @@
               "name": "punctuation.accessor.apex"
             }
           },
-          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\s*(\\.)"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(\\.)"
         },
         {
           "captures": {
@@ -2787,10 +2787,10 @@
               "name": "storage.type.apex"
             }
           },
-          "match": "(\\.)\\s*(@?[_[:alpha:]][_[:alnum:]]*)"
+          "match": "(\\.)\\s*(@?[_A-Za-z][_0-9A-Za-z]*)"
         },
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "@?[_A-Za-z][_0-9A-Za-z]*",
           "name": "storage.type.apex"
         }
       ]
@@ -2823,7 +2823,7 @@
               "name": "entity.name.type.type-parameter.apex"
             }
           },
-          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\b"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\b"
         },
         {
           "include": "#comment"
@@ -2893,7 +2893,7 @@
       ]
     },
     "when-sobject-statement": {
-      "begin": "(when)\\b\\s+([_[:alnum:]]+)\\s+([_[:alnum:]]+)\\s*",
+      "begin": "(when)\\b\\s+([_0-9A-Za-z]+)\\s+([_0-9A-Za-z]+)\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.when.apex"
@@ -2916,7 +2916,7 @@
       ]
     },
     "when-statement": {
-      "begin": "(when)\\b\\s+([\\'_\\-[:alnum:]]+)\\s*",
+      "begin": "(when)\\b\\s+([\\'_\\-0-9A-Za-z]+)\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.when.apex"
@@ -2940,7 +2940,7 @@
       ]
     },
     "when-string": {
-      "begin": "(when)(\\b\\s*)((\\')[_.\\,\\'\\s*[:alnum:]]+)",
+      "begin": "(when)(\\b\\s*)((\\')[_.\\,\\'\\s*0-9A-Za-z]+)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.when.apex"
@@ -3049,7 +3049,7 @@
               "name": "punctuation.separator.equals.apex"
             }
           },
-          "match": "(?:^|\\s+)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))(=)"
+          "match": "(?:^|\\s+)((?:([-_0-9A-Za-z]+)(:))?([-_0-9A-Za-z]+))(=)"
         },
         {
           "include": "#xml-string"
@@ -3082,7 +3082,7 @@
               "name": "punctuation.definition.constant.apex"
             }
           },
-          "match": "(&)((?:[[:alpha:]:_][[:alnum:]:_.-]*)|(?:\\#[[:digit:]]+)|(?:\\#x[[:xdigit:]]+))(;)",
+          "match": "(&)((?:[A-Za-z:_][0-9A-Za-z:_.-]*)|(?:\\#[0-9]+)|(?:\\#x[0-9A-Fa-f]+))(;)",
           "name": "constant.character.entity.apex"
         },
         {
@@ -3167,7 +3167,7 @@
       ]
     },
     "xml-tag": {
-      "begin": "(</?)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))",
+      "begin": "(</?)((?:([-_0-9A-Za-z]+)(:))?([-_0-9A-Za-z]+))",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.apex"

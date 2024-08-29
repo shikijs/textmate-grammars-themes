@@ -271,7 +271,7 @@
       },
       "patterns": [
         {
-          "begin": "\\b([[:alpha:]]\\w*)(?:\\s|\\s*:)",
+          "begin": "\\b([A-Za-z]\\w*)(?:\\s|\\s*:)",
           "beginCaptures": {
             "1": {
               "name": "meta.preprocessor.pragma.nim"
@@ -285,7 +285,7 @@
           ]
         },
         {
-          "begin": "\\b([[:alpha:]]\\w*)\\(",
+          "begin": "\\b([A-Za-z]\\w*)\\(",
           "beginCaptures": {
             "1": {
               "name": "meta.preprocessor.pragma.nim"
@@ -304,10 +304,10 @@
               "name": "meta.preprocessor.pragma.nim"
             }
           },
-          "match": "\\b([[:alpha:]]\\w*)(?=\\.?\\}|,)"
+          "match": "\\b([A-Za-z]\\w*)(?=\\.?\\}|,)"
         },
         {
-          "begin": "\\b([[:alpha:]]\\w*)(\"\"\")",
+          "begin": "\\b([A-Za-z]\\w*)(\"\"\")",
           "beginCaptures": {
             "1": {
               "name": "meta.preprocessor.pragma.nim"
@@ -325,7 +325,7 @@
           "name": "string.quoted.triple.raw.nim"
         },
         {
-          "begin": "\\b([[:alpha:]]\\w*)(\")",
+          "begin": "\\b([A-Za-z]\\w*)(\")",
           "beginCaptures": {
             "1": {
               "name": "meta.preprocessor.pragma.nim"

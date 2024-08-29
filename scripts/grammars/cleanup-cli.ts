@@ -17,8 +17,9 @@ for (const file of files) {
   try {
     console.log('Processing', name)
     const data = JSON.parse(await fs.readFile(file, 'utf-8'))
-    await cleanupGrammar(data)
-    await fs.writeFile(file, `${stringify(data, { space: 2 })}\n`, 'utf-8')
+    const result = await cleanupGrammar(data)
+    console.log('Writing', name)
+    await fs.writeFile(file, `${stringify(result, { space: 2 })}\n`, 'utf-8')
   }
   catch (e) {
     errors.push([name, e])
