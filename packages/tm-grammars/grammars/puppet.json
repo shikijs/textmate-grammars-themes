@@ -44,7 +44,7 @@
       ]
     },
     {
-      "begin": "\\b(class)\\s+((?#Qualified Resource Name)(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+|(?#Bareword Resource Name)[a-z][a-z0-9_]*)\\s*",
+      "begin": "\\b(class)\\s+((?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+|[a-z][a-z0-9_]*)\\s*",
       "captures": {
         "1": {
           "name": "storage.type.puppet"
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "begin": "^\\s*(plan)\\s+((?#Qualified Resource Name)(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+|(?#Bareword Resource Name)[a-z][a-z0-9_]*)\\s*",
+      "begin": "^\\s*(plan)\\s+((?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+|[a-z][a-z0-9_]*)\\s*",
       "captures": {
         "1": {
           "name": "storage.type.puppet"
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "begin": "^\\s*(define|function)\\s+((?#Bareword Resource Name)[a-z][a-z0-9_]*|(?#Qualified Resource Name)(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+)\\s*(\\()",
+      "begin": "^\\s*(define|function)\\s+([a-z][a-z0-9_]*|(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+)\\s*(\\()",
       "captures": {
         "1": {
           "name": "storage.type.function.puppet"
@@ -654,7 +654,7 @@
       "name": "string.regexp.literal.puppet"
     },
     "resource-definition": {
-      "begin": "(?:^|\\b)((?#Toplevel Bareword)::[a-z][a-z0-9_]*|(?#Bareword Resource Name)[a-z][a-z0-9_]*|(?#Qualified Resource Name)(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+)\\s*({)\\s*",
+      "begin": "(?:^|\\b)(::[a-z][a-z0-9_]*|[a-z][a-z0-9_]*|(?:[a-z][a-z0-9_]*)?(?:::[a-z][a-z0-9_]*)+)\\s*({)\\s*",
       "beginCaptures": {
         "1": {
           "name": "meta.definition.resource.puppet storage.type.puppet"

@@ -179,7 +179,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?x:\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4}\n)\n)",
+          "match": "(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))",
           "name": "constant.character.escape.json5"
         },
         {
@@ -204,7 +204,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?x:\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4}\n)\n)",
+          "match": "(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))",
           "name": "constant.character.escape.json5"
         },
         {

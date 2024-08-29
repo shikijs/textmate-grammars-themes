@@ -337,7 +337,7 @@
           ]
         },
         {
-          "begin": "(?xi) (?<![\\w-])\n(\n(?:-webkit-|-moz-|-o-)?\n(?:repeating-)?\n(?:linear|radial|conic)\n-gradient\n)\n(\\()",
+          "begin": "(?xi) (?<![\\w-])\n(\n  (?:-webkit-|-moz-|-o-)?    # Accept prefixed/historical variants\n  (?:repeating-)?            # \"Repeating\"-type gradient\n  (?:linear|radial|conic)    # Shape\n  -gradient\n)\n(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.gradient.css"
@@ -537,7 +537,7 @@
               "name": "keyword.other.unit.${2:/downcase}.css"
             }
           },
-          "match": "(?xi) (?<![\\w-])\n[-+]?\n\n(?:\n[0-9]+ (?:\\.[0-9]+)?\n| \\.[0-9]+\n)\n\n(?:\n(?<=[0-9])\nE\n[-+]?\n[0-9]+\n)?\n\n(?:\n(%)\n| ( deg|grad|rad|turn\n| Hz|kHz\n| ch|cm|em|ex|fr|in|mm|mozmm|\npc|pt|px|q|rem|vh|vmax|vmin|\nvw\n| dpi|dpcm|dppx\n| s|ms\n)\n\\b\n)?",
+          "match": "(?xi) (?<![\\w-])\n[-+]?                               # Sign indicator\n\n(?:                                 # Numerals\n    [0-9]+ (?:\\.[0-9]+)?           # Integer/float with leading digits\n  | \\.[0-9]+                       # Float without leading digits\n)\n\n(?:                                 # Scientific notation\n  (?<=[0-9])                        # Exponent must follow a digit\n  E                                 # Exponent indicator\n  [-+]?                             # Possible sign indicator\n  [0-9]+                            # Exponent value\n)?\n\n(?:                                 # Possible unit for data-type:\n  (%)                               # - Percentage\n  | ( deg|grad|rad|turn             # - Angle\n    | Hz|kHz                        # - Frequency\n    | ch|cm|em|ex|fr|in|mm|mozmm|   # - Length\n      pc|pt|px|q|rem|vh|vmax|vmin|\n      vw\n    | dpi|dpcm|dppx                 # - Resolution\n    | s|ms                          # - Time\n    )\n  \\b                               # Boundary checking intentionally lax to\n)?                                  # facilitate embedding in CSS-like grammars",
           "name": "constant.numeric.css"
         }
       ]
@@ -580,7 +580,7 @@
           "name": "invalid.illegal.colon.css"
         }
       },
-      "match": "(?xi)\n(:)(:*)\n(?: active|any-link|checked|default|defined|disabled|empty|enabled|first\n| (?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within\n| fullscreen|host|hover|in-range|indeterminate|invalid|left|link\n| optional|out-of-range|placeholder-shown|read-only|read-write\n| required|right|root|scope|target|unresolved\n| valid|visited\n)(?![\\w-]|\\s*[;}])",
+      "match": "(?xi)\n(:)(:*)\n(?: active|any-link|checked|default|defined|disabled|empty|enabled|first\n  | (?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within\n  | fullscreen|host|hover|in-range|indeterminate|invalid|left|link\n  | optional|out-of-range|placeholder-shown|read-only|read-write\n  | required|right|root|scope|target|unresolved\n  | valid|visited\n)(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-class.css"
     },
     "css-pseudo-elements": {
@@ -592,7 +592,7 @@
           "name": "punctuation.definition.entity.css"
         }
       },
-      "match": "(?xi)\n(?:\n(::?)\n(?: after\n| before\n| first-letter\n| first-line\n| (?:-(?:ah|apple|atsc|epub|hp|khtml|moz\n|ms|o|rim|ro|tc|wap|webkit|xv)\n| (?:mso|prince))\n-[a-z-]+\n)\n|\n(::)\n(?: backdrop\n| content\n| grammar-error\n| marker\n| placeholder\n| selection\n| shadow\n| spelling-error\n)\n)\n(?![\\w-]|\\s*[;}])",
+      "match": "(?xi)\n(?:\n  (::?)                       # Elements using both : and :: notation\n  (?: after\n    | before\n    | first-letter\n    | first-line\n    | (?:-(?:ah|apple|atsc|epub|hp|khtml|moz\n            |ms|o|rim|ro|tc|wap|webkit|xv)\n        | (?:mso|prince))\n      -[a-z-]+\n  )\n  |\n  (::)                        # Double-colon only\n  (?: backdrop\n    | content\n    | grammar-error\n    | marker\n    | placeholder\n    | selection\n    | shadow\n    | spelling-error\n  )\n)\n(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-element.css"
     },
     "css-selector": {
@@ -1020,7 +1020,7 @@
                   "name": "invalid.illegal.syntax.jsdoc"
                 }
               },
-              "match": "(\\[)\\s*[\\w$]+(?:(?:\\[\\])?\\.[\\w$]+)*(?:\\s*(=)\\s*((?>\"(?:(?:\\*(?!/))|(?:\\\\(?!\"))|[^*\\\\])*?\"|'(?:(?:\\*(?!/))|(?:\\\\(?!'))|[^*\\\\])*?'|\\[\\s(?:(?:\\*(?!/))|[^*])*?\\]|(?:(?:\\*(?!/))|\\s(?!\\s*\\])|\\[.*?(?:\\]|(?=\\*/))|[^*\\s\\[\\]])*)*))?\\s*(?:(\\])((?:[^*\\s]|\\*[^\\s/])+)?|(?=\\*/))",
+              "match": "(\\[)\\s*[\\w$]+(?:(?:\\[\\])?\\.[\\w$]+)*(?:\\s*(=)\\s*((?>\"(?:(?:\\*(?!/))|(?:\\\\(?!\"))|[^*\\\\])*?\"|'(?:(?:\\*(?!/))|(?:\\\\(?!'))|[^*\\\\])*?'|\\[(?:(?:\\*(?!/))|[^*])*?\\]|(?:(?:\\*(?!/))|\\s(?!\\s*\\])|\\[.*?(?:\\]|(?=\\*/))|[^*\\s\\[\\]])*)*))?\\s*(?:(\\])((?:[^*\\s]|\\*[^\\s/])+)?|(?=\\*/))",
               "name": "variable.other.jsdoc"
             }
           ]

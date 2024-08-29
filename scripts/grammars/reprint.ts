@@ -23,6 +23,9 @@ export function regexpReprint(input: string) {
 
   // Stack of open brackets
   const stack: string[] = []
+  const wsEscapeLocal: number[] = []
+
+  let wsEscapeGlobal = false
 
   let i = 0
 
@@ -37,25 +40,68 @@ export function regexpReprint(input: string) {
         continue
       }
 
+      while (wsEscapeLocal.length && wsEscapeLocal[0] > stack.length) {
+        wsEscapeLocal.shift()
+      }
+
+      const head = stack[0]
+      const wsEscape = wsEscapeGlobal || wsEscapeLocal.length
+
+      // Comments
+      if (char === '#' && wsEscape && input[i - 1].match(/\s/) && head !== '[') {
+        for (let j = i + 1; j <= input.length; j++) {
+          if (input[j] === '\n' || j === input.length) {
+            i = j
+            break
+          }
+        }
+        continue
+      }
+
       // Open bracket
-      if (char === '(' && stack[0] !== '[') {
-        stack.unshift(char)
-        output += char
+      if (char === '(' && head !== '[') {
         // Group modifiers
         if (input[i + 1] === '?') {
-          output += input[i + 1] + input[i + 2]
+          // (?#...) comment
+          if (input[i + 2] === '#') {
+            for (let j = i + 3; j < input.length; j++) {
+              if (input[j] === ')' && input[j - 1] !== '\\') {
+                i = j + 1
+                break
+              }
+            }
+            continue
+          }
+
+          if (input[i + 2] === 'x') {
+            if (input[i + 3] === ')') {
+              i += 4
+              wsEscapeGlobal = true
+              continue
+            }
+            else if (input[i + 3] === ':') {
+              i += 4
+              stack.unshift(char)
+              wsEscapeLocal.unshift(stack.length)
+              output += '(?:'
+              continue
+            }
+          }
+          stack.unshift(char)
+          output += char + input[i + 1] + input[i + 2]
           i += 3
         }
         else {
+          stack.unshift(char)
+          output += char
           i += 1
         }
         continue
       }
 
       // Close bracket
-      if (char === ')' && stack[0] !== '[') {
-        const end = stack[0]
-        if (end === '(')
+      if (char === ')' && head !== '[') {
+        if (head === '(')
           stack.shift()
         output += char
         i += 1
@@ -89,7 +135,7 @@ export function regexpReprint(input: string) {
               throw new Error(`Unknown posix class "${name}"`)
             if (negated)
               resolved = `^${resolved}`
-            if (stack[0] === '[')
+            if (head === '[')
               output += resolved
             else
               output += `[${resolved}]`
@@ -98,7 +144,7 @@ export function regexpReprint(input: string) {
         }
 
         // Prepend to the stack when not in a character class
-        if (stack[0] !== '[') {
+        if (head !== '[') {
           stack.unshift(char)
         }
 
@@ -109,16 +155,17 @@ export function regexpReprint(input: string) {
 
       // Alternation close bracket
       if (char === ']') {
-        const end = stack[0]
-        if (end === '[')
+        if (head === '[')
           stack.shift()
         output += char
         i += 1
         continue
       }
 
-      // Literals
-      output += char
+      if (!(wsEscape && head !== '[' && char.match(/\s/))) {
+        // Literals
+        output += char
+      }
       i += 1
     }
   }

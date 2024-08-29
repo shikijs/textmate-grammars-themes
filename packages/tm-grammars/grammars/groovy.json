@@ -885,7 +885,7 @@
     },
     "methods": {
       "applyEndPatternLast": 1,
-      "begin": "(?x:(?<=;|^|{)(?=\\s*\n(?:\n(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)\n|\n(?:def)\n|\n(?:\n(?:\n(?:void|boolean|byte|char|short|int|float|long|double)\n|\n(?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*)\n)\n[\\[\\]]*\n(?:<.*>)?\n)\n\n)\n\\s+\n([^=]+\\s+)?\\w+\\s*\\(\n))",
+      "begin": "(?:(?<=;|^|{)(?=\\s*(?:(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)|(?:def)|(?:(?:(?:void|boolean|byte|char|short|int|float|long|double)|(?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*))[\\[\\]]*(?:<.*>)?))\\s+([^=]+\\s+)?\\w+\\s*\\())",
       "end": "}|(?=[^{])",
       "name": "meta.definition.method.groovy",
       "patterns": [
@@ -1321,7 +1321,7 @@
       "applyEndPatternLast": 1,
       "patterns": [
         {
-          "begin": "(?x:(?=\n(?:\n(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)\n|\n(?:def)\n|\n(?:void|boolean|byte|char|short|int|float|long|double)\n|\n(?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*)\n)\n\\s+\n[\\w\\d_<>\\[\\],\\s]+\n(?:=|$)\n\n))",
+          "begin": "(?:(?=(?:(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)|(?:def)|(?:void|boolean|byte|char|short|int|float|long|double)|(?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*))\\s+[\\w\\d_<>\\[\\],\\s]+(?:=|$)))",
           "end": ";|$",
           "name": "meta.definition.variable.groovy",
           "patterns": [

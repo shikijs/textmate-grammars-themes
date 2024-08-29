@@ -35,7 +35,7 @@
           "name": "variable.other.dm"
         }
       },
-      "match": "(var)[\\/\\s](?:(static|global|tmp|const)\\/)?(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?(?:([a-zA-Z0-9_\\-$]*)\\/)*([A-Za-z0-9_$]*)\\b",
+      "match": "(var)[\\/ ](?:(static|global|tmp|const)\\/)?(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?(?:([a-zA-Z0-9_\\-$]*)\\/)*([A-Za-z0-9_$]*)\\b",
       "name": "meta.initialization.dm"
     },
     {
@@ -626,7 +626,7 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "\\\\(h(?:(?:er|im)self|ers|im)|([tTsS]?he)|He|[Hh]is|[aA]n?|(?:im)?proper|\\.\\.\\.|(?:icon|ref|[Rr]oman)(?=\\[)|[s<>\"n\\n\\s\\[])",
+          "match": "\\\\(h(?:(?:er|im)self|ers|im)|([tTsS]?he)|He|[Hh]is|[aA]n?|(?:im)?proper|\\.\\.\\.|(?:icon|ref|[Rr]oman)(?=\\[)|[s<>\"n\\n \\[])",
           "name": "constant.character.escape.dm"
         },
         {

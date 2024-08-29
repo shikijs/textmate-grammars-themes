@@ -96,7 +96,7 @@
       ]
     },
     "builtin-types": {
-      "match": "(?<!\\.)\\b(bool|bytearray|bytes|classmethod|complex|dict|float|frozenset|int|list|object|property|set|slice|staticmethod|str|tuple|type(?#Although'super'isnotatype,it'srelatedtotypes,andisspecialenoughtobehighlighteddifferentlyfromotherbuilt-ins)|super)\\b",
+      "match": "(?<!\\.)\\b(bool|bytearray|bytes|classmethod|complex|dict|float|frozenset|int|list|object|property|set|slice|staticmethod|str|tuple|type|super)\\b",
       "name": "support.type.python"
     },
     "call-wrapper-inheritance": {
@@ -232,7 +232,7 @@
     "comments": {
       "patterns": [
         {
-          "begin": "(?:\\#\\s*(type:)\\s*+(?#wewant`\\s*+`whichispossessivequantifiersincewedonotactuallywanttobacktrackwhenmatchingwhitespacehere)(?!$|\\#))",
+          "begin": "(?:\\#\\s*(type:)\\s*+(?!$|\\#))",
           "beginCaptures": {
             "0": {
               "name": "meta.typehint.comment.python"
@@ -529,7 +529,7 @@
           "name": "keyword.control.flow.python"
         }
       },
-      "match": "(?:(?:^|\\G)\\s*(?#'\\G'isnecessaryforST)((?:>>>|\\.\\.\\.)\\s)(?=\\s*\\S))"
+      "match": "(?:(?:^|\\G)\\s*((?:>>>|\\.\\.\\.)\\s)(?=\\s*\\S))"
     },
     "docstring-statement": {
       "begin": "^(?=\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))",
@@ -544,7 +544,7 @@
     "double-one-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\s\\^?\\s\\](?!.*?\\])"
+          "match": "\\[\\^?\\](?!.*?\\])"
         },
         {
           "begin": "(\\[)(\\^)?(\\])?",
@@ -845,7 +845,7 @@
     "double-three-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\s\\^?\\s\\](?!.*?\\])"
+          "match": "\\[\\^?\\](?!.*?\\])"
         },
         {
           "begin": "(\\[)(\\^)?(\\])?",
@@ -1513,7 +1513,7 @@
       ]
     },
     "fstring-multi-core": {
-      "match": "(.+?)((?#.*and.*?inmulti-linematchneedspecialhandlingofnewlinesotherwiseSublimeTextandAtomwillmatchslightlydifferently.Theguardfornewlineshastobeseparatefromthelookaheadbecauseofspecial$matchingrule.)($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))(?#duetohowmultilineregexpsarematchedweneedaspecialcaseformatchinganewlinecharacter)|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.multi.python"
     },
     "fstring-normf-quoted-multi-line": {
@@ -1603,7 +1603,7 @@
       ]
     },
     "fstring-raw-multi-core": {
-      "match": "(.+?)((?#.*and.*?inmulti-linematchneedspecialhandlingofnewlinesotherwiseSublimeTextandAtomwillmatchslightlydifferently.Theguardfornewlineshastobeseparatefromthelookaheadbecauseofspecial$matchingrule.)($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))(?#duetohowmultilineregexpsarematchedweneedaspecialcaseformatchinganewlinecharacter)|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.raw.multi.python"
     },
     "fstring-raw-quoted-multi-line": {
@@ -1677,7 +1677,7 @@
       ]
     },
     "fstring-raw-single-core": {
-      "match": "(.+?)((?#.*and.*?inmulti-linematchneedspecialhandlingofnewlinesotherwiseSublimeTextandAtomwillmatchslightlydifferently.Theguardfornewlineshastobeseparatefromthelookaheadbecauseofspecial$matchingrule.)($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))(?#duetohowmultilineregexpsarematchedweneedaspecialcaseformatchinganewlinecharacter)|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.raw.single.python"
     },
     "fstring-single-brace": {
@@ -1704,7 +1704,7 @@
       ]
     },
     "fstring-single-core": {
-      "match": "(.+?)((?#.*and.*?inmulti-linematchneedspecialhandlingofnewlinesotherwiseSublimeTextandAtomwillmatchslightlydifferently.Theguardfornewlineshastobeseparatefromthelookaheadbecauseofspecial$matchingrule.)($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))(?#duetohowmultilineregexpsarematchedweneedaspecialcaseformatchinganewlinecharacter)|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.single.python"
     },
     "fstring-terminator-multi": {
@@ -1726,7 +1726,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+\\s]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-multi-tail"
@@ -1804,7 +1804,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+\\s]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-single-tail"
@@ -2317,7 +2317,7 @@
               "name": "punctuation.separator.continuation.line.python"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))|(\\G$)(?#'\\G'isnecessaryforST))",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))|(\\G$))",
           "patterns": [
             {
               "include": "#regexp"
@@ -2596,7 +2596,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)(?#1)|(for|if|else|await|(?:yield(?:\\s+from)?))(?#2))(?!\\s*:)\\b|(<<|>>|&|\\||\\^|~)(?#3)|(\\*\\*|\\*|\\+|-|%|//|/|@)(?#4)|(!=|==|>=|<=|<|>)(?#5)|(:=)(?#6)"
+      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|(?:yield(?:\\s+from)?)))(?!\\s*:)\\b|(<<|>>|&|\\||\\^|~)|(\\*\\*|\\*|\\+|-|%|//|/|@)|(!=|==|>=|<=|<|>)|(:=)"
     },
     "parameter-special": {
       "captures": {
@@ -3000,7 +3000,7 @@
     "single-one-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\s\\^?\\s\\](?!.*?\\])"
+          "match": "\\[\\^?\\](?!.*?\\])"
         },
         {
           "begin": "(\\[)(\\^)?(\\])?",
@@ -3301,7 +3301,7 @@
     "single-three-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\s\\^?\\s\\](?!.*?\\])"
+          "match": "\\[\\^?\\](?!.*?\\])"
         },
         {
           "begin": "(\\[)(\\^)?(\\])?",
@@ -3822,7 +3822,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "({{|}}|(?:{\\w*(\\.[A-Za-z_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+\\s]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
+          "match": "({{|}}|(?:{\\w*(\\.[A-Za-z_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
           "name": "meta.format.brace.python"
         },
         {
@@ -3864,7 +3864,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[-+#0\\s]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.python"
     },
     "string-line-continuation": {

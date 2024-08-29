@@ -1043,7 +1043,7 @@
           "name": "punctuation.definition.identifier.swift"
         }
       },
-      "end": "(?<=\\})|$(?# functions in protocol declarations or generated interfaces have no body)",
+      "end": "(?<=\\})|$",
       "name": "meta.definition.function.swift",
       "patterns": [
         {
@@ -1088,7 +1088,7 @@
       ]
     },
     "declarations-function-initializer": {
-      "begin": "(?<!\\.)\\b(init[?!]*(?# only one is valid, but we want the in⇥ snippet to produce something that looks good))\\s*(?=\\(|<)",
+      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift",
@@ -1233,7 +1233,7 @@
           "name": "punctuation.separator.generic-parameter-clause.begin.swift"
         }
       },
-      "end": ">|(?=[^\\w\\d:<>\\s,=&`])(?# characters besides these are never valid in a generic param list -- even if it's not really a valid clause, we should stop trying to parse it if we see one of them.)",
+      "end": ">|(?=[^\\w\\d:<>\\s,=&`])",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.generic-parameter-clause.end.swift"
@@ -1931,7 +1931,7 @@
       ]
     },
     "declarations-protocol-protocol-initializer": {
-      "begin": "(?<!\\.)\\b(init[?!]*(?# only one is valid, but we want the in⇥ snippet to produce something that looks good))\\s*(?=\\(|<)",
+      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift",
@@ -3091,7 +3091,7 @@
             }
           },
           "comment": "Single-line regular expression literals must be matched all in one go\n in order to avoid ambiguities with operators, and to adhere to certain\n parsing rules in SE-0354/SE-0355, such as:\n - A regex literal will not be parsed if it contains an unbalanced ).\n - A regex may end with a space only if it began with an escaped space",
-          "match": "(((\\#+)?)/)(?(3)|(?!/))(?(3)|(?!\\s))(\\\\\\s)?(?<guts>(?>(?:\\\\Q(?:(?!\\\\E)(?!/\\2).)*+(?:\\\\E|(?(3)|(?<!\\s))(?=/\\2))|\\\\.|\\(\\?\\#[^)]*\\)|\\(\\?\\{(?<g1>\\{)?+(?<g2>\\{)?+(?<g3>\\{)?+(?<g4>\\{)?+(?<g5>\\{)?+.+?\\}(?(<g1>)\\})(?(<g2>)\\})(?(<g3>)\\})(?(<g4>)\\})(?(<g5>)\\})(?:\\[(?!\\d)\\w+\\])?[X<>]?\\)|(?<class>\\[\\s(?:\\\\.\\s|\\s[^\\[\\]]|\\g<class>)+\\])|\\(\\g<guts>?+\\)|(?:(?!/\\2)[^()\\[\\\\])+)+))?+(?(3)|(?(5)(?<!\\s)))(/\\2)|\\#+/.+(\\n)",
+          "match": "(((\\#+)?)/)(?(3)|(?!/))(?(3)|(?!\\s))(\\\\\\s)?(?<guts>(?>(?:\\\\Q(?:(?!\\\\E)(?!/\\2).)*+(?:\\\\E|(?(3)|(?<!\\s))(?=/\\2))|\\\\.|\\(\\?\\#[^)]*\\)|\\(\\?\\{(?<g1>\\{)?+(?<g2>\\{)?+(?<g3>\\{)?+(?<g4>\\{)?+(?<g5>\\{)?+.+?\\}(?(<g1>)\\})(?(<g2>)\\})(?(<g3>)\\})(?(<g4>)\\})(?(<g5>)\\})(?:\\[(?!\\d)\\w+\\])?[X<>]?\\)|(?<class>\\[(?:\\\\.|[^\\[\\]]|\\g<class>)+\\])|\\(\\g<guts>?+\\)|(?:(?!/\\2)[^()\\[\\\\])+)+))?+(?(3)|(?(5)(?<!\\s)))(/\\2)|\\#+/.+(\\n)",
           "name": "string.regexp.line.swift"
         }
       ]
@@ -3369,7 +3369,7 @@
           "name": "punctuation.definition.character-class.regexp"
         }
       },
-      "match": "\\\\[pP]\\{([\\s\\w-]+(?:=[\\s\\w-]+)?)\\}|(\\[:)\\s([\\s\\w-]+(?:=[\\s\\w-]+)?)(:\\])",
+      "match": "\\\\[pP]\\{([\\s\\w-]+(?:=[\\s\\w-]+)?)\\}|(\\[:)([\\s\\w-]+(?:=[\\s\\w-]+)?)(:\\])",
       "name": "constant.other.character-class.set.regexp"
     },
     "literals-regular-expression-literal-custom-char-class": {

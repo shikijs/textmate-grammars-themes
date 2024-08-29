@@ -29,7 +29,6 @@ export async function cleanupGrammar(lang: any, verify = true) {
     // (_, key, value) => console.log('lang key removal', key, '|', value),
   )
 
-  const reGrammarComment = /(\s|^)#.*$/
   function cleanupMatch(regex: string) {
     // const original = regex
 
@@ -37,23 +36,6 @@ export async function cleanupGrammar(lang: any, verify = true) {
     // It seems the `shellscript` grammars has a selector that missing the backslash escape, we patched them here
     if (lang.name === 'shellscript')
       regex = regex.replace(/\[\^ \t\n/g, '[^ \\t\\n')
-
-    const lines = regex.split(/\n/g)
-
-    if (lines.length !== 1) {
-      regex = lines
-        .map(i => i.replace(reGrammarComment, '').trim())
-        .join('\n')
-    }
-
-    if (regex.startsWith('(?x)')) {
-      regex = regex
-        .slice(4)
-        .replace(/\n/g, '')
-        .replace(/\[([^\]]+)\]/g, _ => _.replace(/\s/g, '\\s'))
-        .replace(/\s+/g, '')
-        .replace(/\(\?x:/g, '(?:')
-    }
 
     regex = regexpReprint(regex)
 
