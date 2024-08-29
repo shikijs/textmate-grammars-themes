@@ -1,0 +1,92 @@
+#758575DD      // File : tb_top.sv
+#CB7676        module
+#DBD7CACC       
+#5DA994        tb_top
+#DBD7CACC       ();
+#DBD7CACC          
+#4D9375        reg
+#DBD7CACC       clk;
+#DBD7CACC          
+#4D9375        reg
+#DBD7CACC       resetn;
+#DBD7CACC          
+#4D9375        reg
+#DBD7CACC       d;
+#DBD7CACC          
+#4D9375        wire
+#DBD7CACC       q;
+#444444            
+#758575DD      // Instantiate the design
+#DBD7CACC          
+#4D9375        d_ff
+#DBD7CACC        
+#4D9375        d_ff0
+#DBD7CACC       (   .clk (clk),
+#DBD7CACC                  .resetn (resetn),
+#DBD7CACC                  .d (d),
+#DBD7CACC                  .q (q))
+#444444        ;
+#444444            
+#758575DD      // Create a clock
+#DBD7CACC          
+#4D9375        always
+#DBD7CACC       
+#4C9A91        #10
+#DBD7CACC       clk 
+#CB7676        <=
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC      clk;
+#DBD7CACC          
+#4D9375        initial
+#DBD7CACC       
+#4D9375        begin
+#DBD7CACC          resetn 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          d 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#4C9A91        #10
+#DBD7CACC       resetn 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#4C9A91        #5
+#DBD7CACC            d 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#4C9A91        #8
+#DBD7CACC            d 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#4C9A91        #2
+#DBD7CACC            d 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#4C9A91        #10
+#DBD7CACC           d 
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        end
+#CB7676        endmodule
+#758575DD      // From https://www.chipverify.com/tutorials/systemverilog

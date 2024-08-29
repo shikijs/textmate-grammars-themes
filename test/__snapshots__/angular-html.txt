@@ -1,0 +1,40 @@
+#FDAEB7        <
+#DBD7CACC      h2>Hero List
+#FDAEB7        <
+#DBD7CACC      /h2>
+#FDAEB7        <
+#DBD7CACC      p>
+#FDAEB7        <
+#DBD7CACC      em>Select a hero from the list to see details.
+#FDAEB7        <
+#DBD7CACC      /em>
+#FDAEB7        <
+#DBD7CACC      /p>
+#DBD7CACC      @if (heroes.length > 0) {
+#DBD7CACC        
+#FDAEB7        <
+#DBD7CACC      ul>
+#DBD7CACC          
+#FDAEB7        <
+#DBD7CACC      li *ngFor="let hero of heroes">
+#DBD7CACC            @let isSelected = hero === selectedHero;
+#DBD7CACC            
+#FDAEB7        <
+#DBD7CACC      button type="button" (click)="selectHero(hero)" [class.selected]="isSelected">
+#DBD7CACC              {{hero.name}}
+#DBD7CACC            
+#FDAEB7        <
+#DBD7CACC      /button>
+#DBD7CACC          
+#FDAEB7        <
+#DBD7CACC      /li>
+#DBD7CACC        
+#FDAEB7        <
+#DBD7CACC      /ul>
+#DBD7CACC      }
+#FDAEB7        <
+#DBD7CACC      app-hero-detail *ngIf="selectedHero" [hero]="selectedHero">
+#FDAEB7        <
+#DBD7CACC      /app-hero-detail>
+#FDAEB7        <
+#DBD7CACC      !-- from https://angular.io/guide/architecture-components -->

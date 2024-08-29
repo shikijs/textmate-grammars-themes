@@ -1,0 +1,122 @@
+#4D9375        import
+#DBD7CACC       org
+#444444        .
+#DBD7CACC      mortbay
+#444444        .
+#DBD7CACC      jetty
+#444444        .
+#DBD7CACC      Server
+#4D9375        import
+#DBD7CACC       org
+#444444        .
+#DBD7CACC      mortbay
+#444444        .
+#DBD7CACC      jetty
+#444444        .
+#DBD7CACC      servlet
+#444444        .
+#DBD7CACC      *
+#4D9375        import
+#DBD7CACC       groovy
+#444444        .
+#DBD7CACC      servlet
+#444444        .
+#DBD7CACC      *
+#CB7676        @Grab
+#444444        (
+#C99076        group
+#444444        =
+#C98A7D77      '
+#C98A7D        org.mortbay.jetty
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       
+#C99076        module
+#444444        =
+#C98A7D77      '
+#C98A7D        jetty-embedded
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       
+#C99076        version
+#444444        =
+#C98A7D77      '
+#C98A7D        6.1.14
+#C98A7D77      '
+#444444        )
+#CB7676        def
+#DBD7CACC       
+#80A665        startJetty
+#DBD7CACC      () {
+#DBD7CACC          
+#CB7676        def
+#DBD7CACC       jetty 
+#444444        =
+#DBD7CACC       
+#4D9375        new
+#DBD7CACC       
+#CB7676        Server
+#DBD7CACC      (
+#4C9A91        9090
+#DBD7CACC      )
+#DBD7CACC          
+#CB7676        def
+#DBD7CACC       context 
+#444444        =
+#DBD7CACC       
+#4D9375        new
+#DBD7CACC       
+#CB7676        Context
+#DBD7CACC      (jetty, 
+#C98A7D77      '
+#C98A7D        /
+#C98A7D77      '
+#DBD7CACC      , 
+#CB7676        Context.
+#C99076        SESSIONS
+#DBD7CACC      )
+#DBD7CACC          context
+#CB7676        .
+#DBD7CACC      setWelcomeFiles
+#444444        ([
+#C98A7D77      "
+#C98A7D        webserverIndex.groovy
+#C98A7D77      "
+#444444        ]
+#DBD7CACC       
+#CB7676        as
+#DBD7CACC       
+#CB7676        String
+#444444        [])
+#DBD7CACC          context
+#CB7676        .
+#DBD7CACC      resourceBase 
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        .
+#C98A7D77      '
+#DBD7CACC          context
+#CB7676        .
+#DBD7CACC      addServlet
+#444444        (
+#CB7676        GroovyServlet
+#444444        ,
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        *.groovy
+#C98A7D77      '
+#444444        )
+#DBD7CACC          jetty
+#CB7676        .
+#DBD7CACC      start
+#444444        ()
+#DBD7CACC      }
+#B8A965        println
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Starting Jetty on port 9090, press Ctrl+C to stop.
+#C98A7D77      "
+#DBD7CACC      startJetty
+#444444        ()
+#758575DD      // From https://gist.github.com/saltnlight5/3756240

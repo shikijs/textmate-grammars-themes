@@ -1,0 +1,248 @@
+#444444        (
+#4D9375        impl-trait
+#DBD7CACC       
+#C99076        .sip010-ft-trait.sip010-ft-trait
+#444444        )
+#758575DD      ;; SIP010 trait on mainnet
+#758575DD      ;; (impl-trait 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.sip-010-trait)
+#444444        (
+#4D9375        define-constant
+#DBD7CACC       
+#BD976A        contract-owner
+#DBD7CACC       
+#4D9375        tx-sender
+#444444        )
+#444444        (
+#4D9375        define-constant
+#DBD7CACC       
+#BD976A        err-owner-only
+#DBD7CACC       
+#444444        (
+#4D9375        err
+#DBD7CACC       
+#4C9A91        u100
+#444444        ))
+#444444        (
+#4D9375        define-constant
+#DBD7CACC       
+#BD976A        err-not-token-owner
+#DBD7CACC       
+#444444        (
+#4D9375        err
+#DBD7CACC       
+#4C9A91        u101
+#444444        ))
+#758575DD      ;; No maximum supply!
+#444444        (
+#4D9375        define-fungible-token
+#DBD7CACC       
+#BD976A        clarity-coin
+#DBD7CACC      )
+#444444        (
+#4D9375        define-public
+#DBD7CACC       
+#444444        (
+#80A665        transfer
+#DBD7CACC       
+#444444        (
+#BD976A        amount
+#DBD7CACC       
+#5DA994        uint
+#444444        )
+#DBD7CACC       
+#444444        (
+#BD976A        sender
+#DBD7CACC       
+#5DA994        principal
+#444444        )
+#DBD7CACC       
+#444444        (
+#BD976A        recipient
+#DBD7CACC       
+#5DA994        principal
+#444444        )
+#DBD7CACC       
+#444444        (
+#BD976A        memo
+#DBD7CACC       
+#444444        (
+#CB7676        optional
+#DBD7CACC       
+#444444        (
+#5DA994        buff
+#DBD7CACC       
+#4C9A91        34
+#444444        ))))
+#DBD7CACC        
+#444444        (
+#4D9375        begin
+#DBD7CACC          
+#444444        (
+#4D9375        asserts!
+#DBD7CACC       
+#444444        (
+#4D9375        is-eq
+#DBD7CACC       
+#4D9375        tx-sender
+#DBD7CACC       sender
+#444444        )
+#DBD7CACC       err-owner-only
+#444444        )
+#DBD7CACC          
+#444444        (
+#4D9375        try!
+#DBD7CACC       
+#444444        (
+#4D9375        ft-transfer?
+#DBD7CACC       clarity-coin amount sender recipient
+#444444        ))
+#DBD7CACC          
+#444444        (
+#4D9375        match
+#DBD7CACC       memo to-print 
+#444444        (
+#4D9375        print
+#DBD7CACC       to-print
+#444444        )
+#DBD7CACC       
+#4C9A91        0x
+#444444        )
+#DBD7CACC          
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#4D9375        true
+#444444        )
+#DBD7CACC        
+#444444        )
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-name
+#444444        )
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Clarity Coin"
+#444444        )
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-symbol
+#444444        )
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        CC"
+#444444        )
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-decimals
+#444444        )
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#4C9A91        u0
+#444444        )
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-balance
+#DBD7CACC       
+#444444        (
+#BD976A        who
+#DBD7CACC       
+#5DA994        principal
+#444444        ))
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#444444        (
+#4D9375        ft-get-balance
+#DBD7CACC       clarity-coin who
+#444444        ))
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-total-supply
+#444444        )
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#444444        (
+#4D9375        ft-get-supply
+#DBD7CACC       clarity-coin
+#444444        ))
+#444444        )
+#444444        (
+#4D9375        define-read-only
+#DBD7CACC       
+#444444        (
+#80A665        get-token-uri
+#444444        )
+#DBD7CACC        
+#444444        (
+#4D9375        ok
+#DBD7CACC       
+#4D9375        none
+#444444        )
+#444444        )
+#444444        (
+#4D9375        define-public
+#DBD7CACC       
+#444444        (
+#80A665        mint
+#DBD7CACC       
+#444444        (
+#BD976A        amount
+#DBD7CACC       
+#5DA994        uint
+#444444        )
+#DBD7CACC       
+#444444        (
+#BD976A        recipient
+#DBD7CACC       
+#5DA994        principal
+#444444        ))
+#DBD7CACC        
+#444444        (
+#4D9375        begin
+#DBD7CACC          
+#444444        (
+#4D9375        asserts!
+#DBD7CACC       
+#444444        (
+#4D9375        is-eq
+#DBD7CACC       
+#4D9375        tx-sender
+#DBD7CACC       contract-owner
+#444444        )
+#DBD7CACC       err-owner-only
+#444444        )
+#DBD7CACC          
+#444444        (
+#4D9375        ft-mint?
+#DBD7CACC       clarity-coin amount recipient
+#444444        )
+#DBD7CACC        
+#444444        )
+#444444        )
+#758575DD      ;; From https://github.com/clarity-lang/book/blob/main/projects/sip010-ft/contracts/clarity-coin.clar

@@ -1,0 +1,111 @@
+#758575DD      // posts will be populated at build time by getStaticProps()
+#CB7676        function
+#DBD7CACC       
+#80A665        Blog
+#444444        ({
+#DBD7CACC       
+#BD976A        posts
+#DBD7CACC       
+#444444        })
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#444444        (
+#DBD7CACC          
+#444444        <
+#4D9375        ul
+#444444        >
+#DBD7CACC            
+#444444        {
+#BD976A        posts
+#444444        .
+#80A665        map
+#444444        ((
+#BD976A        post
+#444444        )
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#444444        (
+#DBD7CACC              
+#444444        <
+#4D9375        li
+#444444        >{
+#BD976A        post
+#444444        .
+#BD976A        title
+#444444        }</
+#4D9375        li
+#444444        >
+#DBD7CACC            
+#444444        ))}
+#DBD7CACC          
+#444444        </
+#4D9375        ul
+#444444        >
+#DBD7CACC        
+#444444        )
+#444444        }
+#758575DD      // This function gets called at build time on server-side.
+#4D9375        export
+#DBD7CACC       
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        getStaticProps
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        res
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#80A665        fetch
+#444444        (
+#C98A7D77      '
+#C98A7D        https://.../posts
+#C98A7D77      '
+#444444        )
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        posts
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#BD976A        res
+#444444        .
+#80A665        json
+#444444        ()
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        props
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#BD976A        posts
+#DBD7CACC          
+#444444        }
+#DBD7CACC        
+#444444        }
+#444444        }
+#4D9375        export
+#DBD7CACC       
+#4D9375        default
+#DBD7CACC       
+#BD976A        Blog
+#758575DD      // From https://nextjs.org/docs/basic-features/data-fetching

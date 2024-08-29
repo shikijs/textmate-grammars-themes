@@ -1,0 +1,47 @@
+#444444        !!!
+#DBD7CACC       5
+#444444        %
+#4D9375        html
+#DBD7CACC      	
+#444444        %
+#4D9375        head
+#DBD7CACC      		
+#444444        %
+#4D9375        title
+#DBD7CACC       Example HAML
+#444444        		
+#758575DD      /[if IE]
+#DBD7CACC      			
+#444444        %
+#4D9375        link
+#DBD7CACC      { :rel => "stylesheet", :href => "/css/ie.css" }
+#DBD7CACC      	%body
+#DBD7CACC      		#container
+#DBD7CACC      			%header
+#DBD7CACC      				%h1 Our Awesome HTML5 Template
+#DBD7CACC      			#main
+#DBD7CACC      				Did we mention this was awesome?
+#DBD7CACC      				/ Only this line will be wrapped in a comment
+#DBD7CACC      				%blockquote
+#DBD7CACC      					%p Roads? Where we're going we don't need roads
+#DBD7CACC      				/
+#DBD7CACC      					Now the whole block will be commented out
+#DBD7CACC      					%blockquote
+#DBD7CACC      						%p Roads? Where we're going we don't need roads
+#DBD7CACC      				%p The line below won't appear in the HTML
+#DBD7CACC      				-
+#758575DD      # The rest of this line is a comment
+#DBD7CACC      				%p The line above won't appear in the HTML, nor will the lines underneath
+#DBD7CACC      				-
+#758575DD      #
+#DBD7CACC      					None of this text will appear in our
+#DBD7CACC      					rendered output
+#DBD7CACC      				%p= Time.now
+#DBD7CACC      			%footer
+#DBD7CACC      				%address
+#DBD7CACC      					.hcard
+#DBD7CACC      						.fn Ian Oxley
+#DBD7CACC      						.adr
+#DBD7CACC      							.locality Newcastle-upon-Tyne
+#DBD7CACC      							.country-name England
+#DBD7CACC      / From https://gist.github.com/ianoxley/1147666

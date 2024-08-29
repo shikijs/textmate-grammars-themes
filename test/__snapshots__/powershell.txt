@@ -1,0 +1,82 @@
+#758575DD      ## Define the service name in a variable
+#444444        $
+#BD976A        ServiceName
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        EventLog
+#C98A7D77      '
+#758575DD      ## Read the service from Windows to return a service object
+#444444        $
+#BD976A        ServiceInfo
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        Get-Service
+#DBD7CACC       
+#444444        -
+#DBD7CACC      Name 
+#444444        $
+#BD976A        ServiceName
+#758575DD      ## If the server is not running (ne)
+#4D9375        if
+#DBD7CACC       
+#444444        ($
+#BD976A        ServiceInfo.Status
+#DBD7CACC       
+#CB7676        -ne
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Running
+#C98A7D77      '
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#758575DD      ## Write to the console that the service is not running
+#DBD7CACC      	
+#B8A965        Write-Host
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Service is not started, starting service
+#C98A7D77      '
+#DBD7CACC      	
+#758575DD      ## Start the service
+#DBD7CACC      	
+#B8A965        Start-Service
+#DBD7CACC       
+#444444        -
+#DBD7CACC      Name 
+#444444        $
+#BD976A        ServiceName
+#DBD7CACC      	
+#758575DD      ## Update the $ServiceInfo object to reflect the new state
+#DBD7CACC      	
+#444444        $
+#BD976A        ServiceInfo.Refresh
+#444444        ()
+#DBD7CACC      	
+#758575DD      ## Write to the console the Status property which indicates the state of the service
+#DBD7CACC      	
+#B8A965        Write-Host
+#DBD7CACC       
+#444444        $
+#BD976A        ServiceInfo.Status
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#758575DD      ## If the Status is anything but Running
+#DBD7CACC      	
+#758575DD      ## Write to the console the service is already running
+#DBD7CACC      	
+#B8A965        Write-Host
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        The service is already running.
+#C98A7D77      '
+#444444        }
+#758575DD      ## From https://adamtheautomator.com/powershell-script-examples/

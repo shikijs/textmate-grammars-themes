@@ -1,0 +1,124 @@
+#CB7676        enum
+#DBD7CACC       
+#5DA994        LogLevel
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        ERROR
+#444444        ,
+#DBD7CACC        
+#BD976A        WARN
+#444444        ,
+#DBD7CACC        
+#BD976A        INFO
+#444444        ,
+#DBD7CACC        
+#BD976A        DEBUG
+#444444        ,
+#444444        }
+#758575DD      /**
+#758575DD       * This is equivalent to:
+#758575DD       * type LogLevelStrings = 'ERROR' | 'WARN' | 'INFO' | 'DEBUG';
+#758575DD       */
+#CB7676        type
+#DBD7CACC       
+#5DA994        LogLevelStrings
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        keyof
+#DBD7CACC       
+#CB7676        typeof
+#DBD7CACC       
+#BD976A        LogLevel
+#444444        ;
+#CB7676        function
+#DBD7CACC       
+#80A665        printImportant
+#444444        (
+#BD976A        key
+#444444        : 
+#5DA994        LogLevelStrings
+#444444        ,
+#DBD7CACC       
+#BD976A        message
+#444444        : 
+#5DA994        string
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const 
+#BD976A        num
+#CB7676         
+#444444        =
+#CB7676         
+#BD976A        LogLevel
+#444444        [
+#BD976A        key
+#444444        ];
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#BD976A        num
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#BD976A        LogLevel
+#444444        .
+#BD976A        WARN
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#C98A7D77      "
+#C98A7D        Log level key is:
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        key
+#444444        );
+#DBD7CACC          
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#C98A7D77      "
+#C98A7D        Log level value is:
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        num
+#444444        );
+#DBD7CACC          
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#C98A7D77      "
+#C98A7D        Log level message is:
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        message
+#444444        );
+#DBD7CACC        
+#444444        }
+#444444        }
+#80A665        printImportant
+#444444        (
+#C98A7D77      "
+#C98A7D        ERROR
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        This is a message
+#C98A7D77      "
+#444444        );
+#758575DD      // From https://www.typescriptlang.org/docs/handbook/enums.html

@@ -100,7 +100,7 @@
       "name": "keyword.operator.actionscript.3"
     },
     "class": {
-      "begin": "(?x) (^|\\s+|;) (\\b(dynamic|final|abstract)\\b\\s+)? (\\b(internal|public)\\b\\s+)? (\\b(dynamic|final|abstract)\\b\\s+)? (?=\\bclass\\b)",
+      "begin": "(^|\\s+|;)(\\b(dynamic|final|abstract)\\b\\s+)?(\\b(internal|public)\\b\\s+)?(\\b(dynamic|final|abstract)\\b\\s+)?(?=\\bclass\\b)",
       "beginCaptures": {
         "3": {
           "name": "storage.modifier.actionscript.3"
@@ -187,7 +187,7 @@
       ]
     },
     "class_declaration": {
-      "begin": "(?x) \\b(class)\\b \\s+ ([\\.\\w]+|\\*)",
+      "begin": "\\b(class)\\b\\s+([\\.\\w]+|\\*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.class.actionscript.3"
@@ -341,7 +341,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "(?x) \\b(extends)\\b \\s+ ([\\.\\w]+) \\s* (?:, \\s* ([\\.\\w]+))* \\s*",
+      "match": "\\b(extends)\\b\\s+([\\.\\w]+)\\s*(?:,\\s*([\\.\\w]+))*\\s*",
       "name": "meta.extends.actionscript.3"
     },
     "function_arguments": {
@@ -358,7 +358,7 @@
       ]
     },
     "functions": {
-      "begin": "(?x) \\b(function)\\b (?:\\s+\\b(get|set)\\b\\s+)? \\s* ([a-zA-Z0-9_\\$]+\\b)?",
+      "begin": "\\b(function)\\b(?:\\s+\\b(get|set)\\b\\s+)?\\s*([a-zA-Z0-9_\\$]+\\b)?",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.actionscript.3"
@@ -414,7 +414,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "(?x) \\b(implements)\\b \\s+ ([\\.\\w]+) \\s* (?:, \\s* ([\\.\\w]+))* \\s*",
+      "match": "\\b(implements)\\b\\s+([\\.\\w]+)\\s*(?:,\\s*([\\.\\w]+))*\\s*",
       "name": "meta.implements.actionscript.3"
     },
     "import": {
@@ -426,11 +426,11 @@
           "name": "support.type.actionscript.3"
         }
       },
-      "match": "(?x) (^|\\s+|;) \\b(import)\\b \\s+ ([A-Za-z0-9\\$_\\.]+(?:\\.\\*)?) \\s* (?=;|$)",
+      "match": "(^|\\s+|;)\\b(import)\\b\\s+([A-Za-z0-9\\$_\\.]+(?:\\.\\*)?)\\s*(?=;|$)",
       "name": "meta.import.actionscript.3"
     },
     "interface": {
-      "begin": "(?x) (^|\\s+|;) (\\b(internal|public)\\b\\s+)? (?=\\binterface\\b)",
+      "begin": "(^|\\s+|;)(\\b(internal|public)\\b\\s+)?(?=\\binterface\\b)",
       "beginCaptures": {
         "3": {
           "name": "storage.modifier.actionscript.3"
@@ -454,7 +454,7 @@
       ]
     },
     "interface_declaration": {
-      "begin": "(?x) \\b(interface)\\b \\s+ ([\\.\\w]+)",
+      "begin": "\\b(interface)\\b\\s+([\\.\\w]+)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.interface.actionscript.3"
@@ -522,7 +522,7 @@
       ]
     },
     "method": {
-      "begin": "(?x) (^|\\s+) ((\\w+)\\s+)? ((\\w+)\\s+)? ((\\w+)\\s+)? ((\\w+)\\s+)? (?=\\bfunction\\b)",
+      "begin": "(^|\\s+)((\\w+)\\s+)?((\\w+)\\s+)?((\\w+)\\s+)?((\\w+)\\s+)?(?=\\bfunction\\b)",
       "beginCaptures": {
         "3": {
           "name": "storage.modifier.actionscript.3"
@@ -642,7 +642,7 @@
           "name": "storage.modifier.actionscript.3"
         }
       },
-      "match": "(?x) ((\\w+)\\s+)? (namespace) \\s+ (?:[A-Za-z0-9_\\$]+)",
+      "match": "((\\w+)\\s+)?(namespace)\\s+(?:[A-Za-z0-9_\\$]+)",
       "name": "meta.namespace_declaration.actionscript.3"
     },
     "numbers": {
@@ -924,7 +924,7 @@
           "name": "storage.modifier.actionscript.3"
         }
       },
-      "match": "(?x) (^|\\s+|;) (use\\s+)? (namespace) \\s+ (\\w+) \\s* (;|$)"
+      "match": "(^|\\s+|;)(use\\s+)?(namespace)\\s+(\\w+)\\s*(;|$)"
     },
     "variable_declaration": {
       "captures": {
@@ -944,7 +944,7 @@
           "name": "keyword.operator.actionscript.3"
         }
       },
-      "match": "(?x) ((static)\\s+)? ((\\w+)\\s+)? ((static)\\s+)? (const|var) \\s+ (?:[A-Za-z0-9_\\$]+)(?:\\s*(:))?",
+      "match": "((static)\\s+)?((\\w+)\\s+)?((static)\\s+)?(const|var)\\s+(?:[A-Za-z0-9_\\$]+)(?:\\s*(:))?",
       "name": "meta.variable_declaration.actionscript.3"
     },
     "vector_creation_operators": {

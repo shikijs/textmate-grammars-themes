@@ -1,0 +1,63 @@
+#DBD7CACC      {-# 
+#4D9375        LANGUAGE
+#DBD7CACC       
+#4D9375        OverloadedStrings
+#DBD7CACC       #-}
+#DBD7CACC      {-# 
+#4D9375        LANGUAGE
+#DBD7CACC       
+#4D9375        TypeFamilies
+#DBD7CACC       #-}
+#DBD7CACC      {-# 
+#4D9375        LANGUAGE
+#DBD7CACC       
+#4D9375        QuasiQuotes
+#DBD7CACC       #-}
+#DBD7CACC      {-# 
+#4D9375        LANGUAGE
+#DBD7CACC       
+#4D9375        TemplateHaskell
+#DBD7CACC       #-}
+#DBD7CACC      {-# 
+#4D9375        LANGUAGE
+#DBD7CACC       
+#4D9375        MultiParamTypeClasses
+#DBD7CACC       #-}
+#4D9375        import
+#DBD7CACC       
+#80A665        Yesod
+#4D9375        data
+#DBD7CACC       
+#CB7676        WebApp
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        WebApp
+#4D9375        instance
+#DBD7CACC       
+#CB7676        Yesod
+#DBD7CACC       
+#CB7676        WebApp
+#DBD7CACC      mkYesod 
+#C98A7D77      "
+#C98A7D        WebApp
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        [
+#80A665        parseRoutes
+#CB7676        |
+#DBD7CACC        / HomeR GET
+#CB7676        |]
+#DBD7CACC      getHomeR 
+#CB7676        =
+#DBD7CACC       defaultLayout 
+#CB7676        [
+#80A665        whamlet
+#CB7676        |
+#DBD7CACC        <div>Hello, world!
+#CB7676        |]
+#DBD7CACC      main 
+#CB7676        =
+#DBD7CACC       warpEnv 
+#C99076        WebApp
+#DBD7CACC      {-# From https://www.schoolofhaskell.com/user/eriks/Simple%20examples }

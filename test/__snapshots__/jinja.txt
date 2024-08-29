@@ -1,0 +1,50 @@
+#80A665        {#
+#758575DD       templates/results.html 
+#80A665        #}
+#DBD7CACC      <!DOCTYPE html>
+#DBD7CACC      <html lang="en">
+#DBD7CACC      <head>
+#DBD7CACC        <meta charset="utf-8">
+#DBD7CACC        <title>Results</title>
+#DBD7CACC      </head>
+#DBD7CACC      <body>
+#DBD7CACC        <h1>
+#BD976A        {{ test_name }}
+#DBD7CACC       Results</h1>
+#DBD7CACC        <ul>
+#DBD7CACC        
+#80A665        {%
+#DBD7CACC       
+#4D9375        for
+#DBD7CACC       
+#BD976A        student
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        students
+#DBD7CACC       
+#80A665        %}
+#DBD7CACC          <li>
+#DBD7CACC            <em>
+#BD976A        {{ student
+#444444        .
+#BD976A        name }}
+#DBD7CACC      :</em> 
+#BD976A        {{ student
+#444444        .
+#BD976A        score }}
+#DBD7CACC      /
+#BD976A        {{ max_score }}
+#DBD7CACC          </li>
+#DBD7CACC        
+#80A665        {%
+#DBD7CACC       
+#4D9375        endfor
+#DBD7CACC       
+#80A665        %}
+#DBD7CACC        </ul>
+#DBD7CACC      </body>
+#DBD7CACC      </html>
+#80A665        {#
+#758575DD       From https://realpython.com/primer-on-jinja-templating/#use-if-statements 
+#80A665        #}

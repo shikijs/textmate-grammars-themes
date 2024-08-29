@@ -1,0 +1,97 @@
+#4D9375        machine_name      :
+#DBD7CACC       
+#4D9375        "BGP"
+#DBD7CACC      ;
+#4D9375        machine_reference
+#DBD7CACC       : 
+#4D9375        "http://www.inetdaemon.com/tutorials/internet/ip/routing/bgp/operation/finite_state_model.shtml"
+#DBD7CACC      ;
+#4D9375        machine_version   :
+#DBD7CACC       
+#4C9A91        1.0.0
+#DBD7CACC      ;
+#4D9375        machine_author
+#DBD7CACC          : 
+#4D9375        "John Haugeland <stonecypher@gmail.com>"
+#DBD7CACC      ;
+#4D9375        machine_license
+#DBD7CACC         : 
+#4D9375        MIT
+#DBD7CACC      ;
+#4D9375        jssm_version      :
+#DBD7CACC       >= 
+#4C9A91        5.0.0
+#DBD7CACC      ;
+#DBD7CACC             
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        Connect
+#DBD7CACC      ];
+#DBD7CACC          
+#4D9375        Connect
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        Connect
+#DBD7CACC       
+#4D9375        OpenSent
+#DBD7CACC       
+#4D9375        Active
+#DBD7CACC      ];
+#DBD7CACC           
+#4D9375        Active
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        Connect
+#DBD7CACC       
+#4D9375        OpenSent
+#DBD7CACC       
+#4D9375        Active
+#DBD7CACC      ];
+#DBD7CACC         
+#4D9375        OpenSent
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        Active
+#DBD7CACC       
+#4D9375        OpenConfirm
+#DBD7CACC      ];
+#4D9375        OpenConfirm
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        OpenSent
+#DBD7CACC       
+#4D9375        OpenConfirm
+#DBD7CACC       
+#4D9375        Established
+#DBD7CACC      ];
+#4D9375        Established
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       [
+#4D9375        Idle
+#DBD7CACC       
+#4D9375        Established
+#DBD7CACC      ];
+#4D9375        #
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#4D9375        https
+#DBD7CACC      :
+#758575DD      //github.com/StoneCypher/jssm/blob/main/src/machines/linguist/bgp.fsl

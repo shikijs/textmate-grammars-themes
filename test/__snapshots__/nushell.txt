@@ -1,0 +1,550 @@
+#758575DD      #!/usr/bin/env nu
+#80A665        def
+#DBD7CACC       
+#5DA994        query-week-span
+#DBD7CACC       
+#444444        []
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        site_table
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#444444        [
+#DBD7CACC          
+#444444        [
+#C98A7D        site
+#DBD7CACC       
+#C98A7D        repo
+#444444        ]
+#C98A7D        ;
+#DBD7CACC          
+#444444        [
+#C98A7D        Nushell
+#DBD7CACC       
+#C98A7D        nushell
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        Extension
+#DBD7CACC       
+#C98A7D        vscode-nushell-lang
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        Documentation
+#DBD7CACC       
+#C98A7D        nushell.github.io
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        Wasm
+#DBD7CACC       
+#C98A7D        demo
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        Nu_Scripts
+#DBD7CACC       
+#C98A7D        nu_scripts
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        RFCs
+#DBD7CACC       
+#C98A7D        rfcs
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        reedline
+#DBD7CACC       
+#C98A7D        reedline
+#444444        ]
+#DBD7CACC          
+#444444        [
+#C98A7D        Nana
+#DBD7CACC       
+#C98A7D        nana
+#444444        ]
+#DBD7CACC          
+#758575DD      # ] [Jupyter jupyter]
+#DBD7CACC        
+#444444        ]
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        query_prefix
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        https://api.github.com/search/issues?q=repo:nushell/
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        query_date
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#444444        (
+#4D9375        seq date
+#DBD7CACC       
+#4D9375        --
+#BD976A        days
+#DBD7CACC       
+#4C9A91        7
+#DBD7CACC       
+#4D9375        -
+#BD976A        r
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        get
+#DBD7CACC       
+#4C9A91        6
+#444444        )
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        per_page
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        100
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        page_num
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1
+#C98A7D77      "
+#DBD7CACC       
+#758575DD      # need to implement iterating pages
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        colon
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        %3A
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        gt
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        %3E
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        eq
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        %3D
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        amp
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        %26
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        query_suffix
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      $"
+#C98A7D        +is
+#444444        (
+#C98A7D        $colon
+#444444        )
+#C98A7D        pr+is
+#444444        (
+#C98A7D        $colon
+#444444        )
+#C98A7D        merged+merged
+#444444        (
+#C98A7D        $colon
+#444444        )(
+#C98A7D        $gt
+#444444        )(
+#C98A7D        $eq
+#444444        )(
+#C98A7D        $query_date
+#444444        )
+#C98A7D        &per_page=100&page=1
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        for
+#DBD7CACC       
+#BD976A        repo
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        $site_table
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        let
+#DBD7CACC       
+#BD976A        query_string
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#C98A7D77      $"
+#444444        (
+#C98A7D        $query_prefix
+#444444        )(
+#C98A7D        $repo.repo
+#444444        )(
+#C98A7D        $query_suffix
+#444444        )
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        let
+#DBD7CACC       
+#BD976A        site_json
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#444444        (
+#DBD7CACC            
+#4D9375        http get
+#DBD7CACC       
+#4D9375        -
+#BD976A        u
+#DBD7CACC       
+#C99076        $env
+#BD976A        .GITHUB_USERNAME
+#DBD7CACC       
+#4D9375        -
+#BD976A        p
+#DBD7CACC       
+#C99076        $env
+#BD976A        .GITHUB_PASSWORD
+#DBD7CACC       
+#BD976A        $query_string
+#DBD7CACC              
+#4D9375        |
+#DBD7CACC       
+#4D9375        get
+#DBD7CACC       
+#C98A7D        items
+#DBD7CACC              
+#4D9375        |
+#DBD7CACC       
+#4D9375        select
+#DBD7CACC       
+#C98A7D        html_url
+#DBD7CACC       
+#C98A7D        user.login
+#DBD7CACC       
+#C98A7D        title
+#DBD7CACC          
+#444444        )
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#4D9375        not
+#DBD7CACC       
+#444444        (
+#BD976A        $site_json
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        all
+#DBD7CACC       
+#444444        {
+#DBD7CACC       |
+#BD976A        it
+#DBD7CACC      | 
+#BD976A        $it
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        is-empty
+#DBD7CACC       
+#444444        })
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      $"
+#444444        (
+#4D9375        char nl
+#444444        )
+#C98A7D        ## 
+#444444        (
+#C98A7D        $repo.site
+#444444        )(
+#4D9375        char nl
+#444444        )
+#C98A7D77      "
+#DBD7CACC            
+#4D9375        for
+#DBD7CACC       
+#BD976A        user
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#444444        (
+#BD976A        $site_json
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        group-by
+#DBD7CACC       
+#C98A7D        user_login
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        transpose
+#DBD7CACC       
+#C98A7D        user
+#DBD7CACC       
+#C98A7D        prs
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       
+#BD976A        user_name
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#BD976A        $user.user
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       
+#BD976A        pr_count
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#444444        (
+#BD976A        $user.prs
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        length
+#444444        )
+#DBD7CACC              
+#4D9375        print
+#DBD7CACC       
+#4D9375        -
+#BD976A        n
+#DBD7CACC       
+#C98A7D77      $"
+#C98A7D        - 
+#444444        (
+#C98A7D        $user_name
+#444444        )
+#C98A7D         created 
+#C98A7D77      "
+#DBD7CACC              
+#4D9375        for
+#DBD7CACC       
+#BD976A        pr
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#444444        (
+#BD976A        $user.prs
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        enumerate
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                
+#4D9375        if
+#DBD7CACC       
+#BD976A        $pr_count
+#DBD7CACC       
+#4D9375        ==
+#DBD7CACC       
+#444444        (
+#BD976A        $pr.index
+#DBD7CACC       
+#4D9375        +
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#4D9375        print
+#DBD7CACC       
+#4D9375        -
+#BD976A        n
+#DBD7CACC       
+#C98A7D77      $"
+#C98A7D        [
+#444444        (
+#C98A7D        $pr.item.title
+#444444        )
+#C98A7D        ]
+#444444        (
+#4D9375        char lparen
+#444444        )(
+#C98A7D        $pr.item.html_url
+#444444        )(
+#4D9375        char rparen
+#444444        )
+#C98A7D77      "
+#DBD7CACC                
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#4D9375        print
+#DBD7CACC       
+#4D9375        -
+#BD976A        n
+#DBD7CACC       
+#C98A7D77      $"
+#C98A7D        [
+#444444        (
+#C98A7D        $pr.item.title
+#444444        )
+#C98A7D        ]
+#444444        (
+#4D9375        char lparen
+#444444        )(
+#C98A7D        $pr.item.html_url
+#444444        )(
+#4D9375        char rparen
+#444444        )
+#C98A7D        , and 
+#C98A7D77      "
+#DBD7CACC                
+#444444        }
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      ""
+#DBD7CACC            
+#444444        }
+#DBD7CACC          
+#444444        }
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      # 2019-08-23 was the release of 0.2.0, the first public release
+#4D9375        let
+#DBD7CACC       
+#BD976A        week_num
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC       
+#444444        ((
+#4D9375        seq date
+#DBD7CACC       
+#4D9375        -
+#BD976A        b
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        2019-08-23
+#C98A7D77      '
+#DBD7CACC       
+#4D9375        -
+#BD976A        n
+#DBD7CACC       
+#4C9A91        7
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        length
+#444444        )
+#DBD7CACC       
+#4D9375        -
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      $"
+#C98A7D        # This week in Nushell #
+#444444        (
+#C98A7D        $week_num
+#444444        )(
+#4D9375        char nl
+#444444        )
+#C98A7D77      "
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#C99076        $env
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        select
+#DBD7CACC       
+#C98A7D        GITHUB_USERNAME
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        is-empty
+#444444        )
+#DBD7CACC       
+#4D9375        or
+#DBD7CACC       
+#444444        (
+#C99076        $env
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        select
+#DBD7CACC       
+#C98A7D        GITHUB_PASSWORD
+#DBD7CACC       
+#4D9375        |
+#DBD7CACC       
+#4D9375        is-empty
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Please set GITHUB_USERNAME and GITHUB_PASSWORD in $env to use this script
+#C98A7D77      '
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#5DA994        query-week-span
+#444444        }
+#758575DD      # From https://github.com/nushell/nu_scripts/blob/main/make_release/this_week_in_nu_weekly.nu

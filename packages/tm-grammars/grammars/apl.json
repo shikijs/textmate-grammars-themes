@@ -143,7 +143,7 @@
     "class": {
       "patterns": [
         {
-          "begin": "(?x)\n(?<=\\s|^)\n((:)Class)\n\\s+\n(\n'[^']*'?\n|\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)\n\\s*\n(\n(:)\n\\s*\n(?:\n(\n'[^']*'?\n|\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)\n\\s*\n)?\n)?\n(.*?)$",
+          "begin": "(?<=\\s|^)((:)Class)\\s+('[^']*'?|[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)\\s*((:)\\s*(?:('[^']*'?|[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)\\s*)?)?(.*?)$",
           "beginCaptures": {
             "0": {
               "name": "meta.class.apl"
@@ -249,7 +249,7 @@
                       ]
                     }
                   },
-                  "match": "(?x)\n(\n'[^']*'?\n|\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)",
+                  "match": "('[^']*'?|[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)",
                   "name": "entity.name.type.apl"
                 }
               ]
@@ -278,7 +278,7 @@
     "command-switches": {
       "patterns": [
         {
-          "begin": "(?x)\n(?<=\\s)(-)\n(\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)\n(=)",
+          "begin": "(?<=\\s)(-)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)(=)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.delimiter.switch.apl"
@@ -307,7 +307,7 @@
               "name": "entity.name.switch.apl"
             }
           },
-          "match": "(?x)\n(?<=\\s)(-)\n(\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)\n(?!=)",
+          "match": "(?<=\\s)(-)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)(?!=)",
           "name": "variable.parameter.switch.apl"
         }
       ]
@@ -340,7 +340,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "(?x) ^\\s*? (?# 1: keyword.operator.nabla.apl) (∇) (?: \\s* (?: (?# 2: entity.function.return-value.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* ) | \\s* (?# 3: entity.function.return-value.shy.apl) ( (\\{)             (?# 4: punctuation.definition.return-value.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\})             (?# 5: punctuation.definition.return-value.end.apl) | (\\()             (?# 6: punctuation.definition.return-value.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\))             (?# 7: punctuation.definition.return-value.end.apl) | (\\(\\s*\\{)      (?# 8: punctuation.definition.return-value.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\}\\s*\\))      (?# 9: punctuation.definition.return-value.end.apl) | (\\{\\s*\\()      (?# 10: punctuation.definition.return-value.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\)\\s*\\})      (?# 11: punctuation.definition.return-value.end.apl) ) \\s* ) \\s* (?# 12: keyword.operator.assignment.apl) (←) )? \\s* (?: (?# MONADIC) (?: (?# 13: entity.function.name.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* ) \\s* (?# 14: entity.function.axis.apl) ( (?# 15: punctuation.definition.axis.begin.apl) (\\[) \\s* (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* (?# 16: invalid.illegal.extra-characters.apl) (.*?) | (?# 17: invalid.illegal.apl) ([^\\]]*) ) \\s* (?# 18: punctuation.definition.axis.end.apl) (\\]) )? \\s*? (?# 19: entity.function.arguments.right.apl) ( (?<=\\s|\\]) [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* | (\\()   (?# 20: punctuation.definition.arguments.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\))   (?# 21: punctuation.definition.arguments.end.apl) ) \\s* (?=;|$) ) | (?# DYADIC/AMBIVALENT) (?#==================) (?: (?# 22: entity.function.arguments.left.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s+ ) | (?# 23: entity.function.arguments.left.optional.apl) ( (\\{)          (?# 24: punctuation.definition.arguments.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\})          (?# 25: punctuation.definition.arguments.end.apl) | (\\(\\s*\\{)   (?# 26: punctuation.definition.arguments.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\}\\s*\\))   (?# 27: punctuation.definition.arguments.end.apl) | (\\{\\s*\\()   (?# 28: punctuation.definition.arguments.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\)\\s*\\})   (?# 29: punctuation.definition.arguments.end.apl) ) )? \\s* (?: (?# 30: entity.function.name.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* ) \\s* (?# 31: entity.function.axis.apl) ( (?# 32: punctuation.definition.axis.begin.apl) (\\[) \\s* (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* (?# 33: invalid.illegal.extra-characters.apl) (.*?) | (?# 34: invalid.illegal.apl) ([^\\]]*) ) \\s* (?# 35: punctuation.definition.axis.end.apl) (\\]) )? | (?# 36: entity.function.operands.apl) ( (?# 37: punctuation.definition.operands.begin.apl) (\\() (?# 38: entity.function.operands.left.apl) ( \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* )? \\s* (?# 39: entity.function.name.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* ) \\s*? (?# 40: entity.function.axis.apl) ( (?# 41: punctuation.definition.axis.begin.apl) (\\[) \\s* (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* (?# 42: invalid.illegal.extra-characters.apl) (.*?) | (?# 43: invalid.illegal.apl) ([^\\]]*) ) \\s* (?# 44: punctuation.definition.axis.end.apl) (\\]) )? \\s* (?# 45: entity.function.operands.right.apl) ( [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )? (?# 46: punctuation.definition.operands.end.apl) (\\)) ) ) \\s* (?# 47: entity.function.arguments.right.apl) ( (?<=\\s|\\]) [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* | \\s* (\\()   (?# 48: punctuation.definition.arguments.begin.apl) (?: \\s* [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )* (\\))   (?# 49: punctuation.definition.arguments.end.apl) )? (?#==================) ) \\s* (?# 50: invalid.illegal.arguments.right.apl) ([^;]+)? (?# 51: entity.function.local-variables.apl) ( (?# 52: Include “;”) ( (?> \\s* ; (?: \\s* [⎕A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ] [A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]* \\s* )+ )+ ) | (?# 53: invalid.illegal.local-variables.apl) ([^⍝]+) )? \\s* (?# 54: comment.line.apl) (⍝.*)? $",
+          "begin": "^\\s*?(?#1:keyword.operator.nabla.apl)(∇)(?:\\s*(?:(?#2:entity.function.return-value.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)|\\s*(?#3:entity.function.return-value.shy.apl)((\\{)(?#4:punctuation.definition.return-value.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\})(?#5:punctuation.definition.return-value.end.apl)|(\\()(?#6:punctuation.definition.return-value.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\))(?#7:punctuation.definition.return-value.end.apl)|(\\(\\s*\\{)(?#8:punctuation.definition.return-value.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\}\\s*\\))(?#9:punctuation.definition.return-value.end.apl)|(\\{\\s*\\()(?#10:punctuation.definition.return-value.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\)\\s*\\})(?#11:punctuation.definition.return-value.end.apl))\\s*)\\s*(?#12:keyword.operator.assignment.apl)(←))?\\s*(?:(?#MONADIC)(?:(?#13:entity.function.name.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)\\s*(?#14:entity.function.axis.apl)((?#15:punctuation.definition.axis.begin.apl)(\\[)\\s\\s*\\s(?:\\s\\s*\\s[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*(?#16:invalid.illegal.extra-characters.apl)(.*?)|(?#17:invalid.illegal.apl)([^\\]]*))\\s*(?#18:punctuation.definition.axis.end.apl)(\\]))?\\s*?(?#19:entity.function.arguments.right.apl)((?<=\\s|\\])[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*|(\\()(?#20:punctuation.definition.arguments.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\))(?#21:punctuation.definition.arguments.end.apl))\\s*(?=;|$))|(?#DYADIC/AMBIVALENT)(?#==================)(?:(?#22:entity.function.arguments.left.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s+)|(?#23:entity.function.arguments.left.optional.apl)((\\{)(?#24:punctuation.definition.arguments.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\})(?#25:punctuation.definition.arguments.end.apl)|(\\(\\s*\\{)(?#26:punctuation.definition.arguments.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\}\\s*\\))(?#27:punctuation.definition.arguments.end.apl)|(\\{\\s*\\()(?#28:punctuation.definition.arguments.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\)\\s*\\})(?#29:punctuation.definition.arguments.end.apl)))?\\s*(?:(?#30:entity.function.name.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)\\s*(?#31:entity.function.axis.apl)((?#32:punctuation.definition.axis.begin.apl)(\\[)\\s\\s*\\s(?:\\s\\s*\\s[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*(?#33:invalid.illegal.extra-characters.apl)(.*?)|(?#34:invalid.illegal.apl)([^\\]]*))\\s*(?#35:punctuation.definition.axis.end.apl)(\\]))?|(?#36:entity.function.operands.apl)((?#37:punctuation.definition.operands.begin.apl)(\\()(?#38:entity.function.operands.left.apl)(\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)?\\s*(?#39:entity.function.name.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)\\s*?(?#40:entity.function.axis.apl)((?#41:punctuation.definition.axis.begin.apl)(\\[)\\s\\s*\\s(?:\\s\\s*\\s[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*(?#42:invalid.illegal.extra-characters.apl)(.*?)|(?#43:invalid.illegal.apl)([^\\]]*))\\s*(?#44:punctuation.definition.axis.end.apl)(\\]))?\\s*(?#45:entity.function.operands.right.apl)([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)?(?#46:punctuation.definition.operands.end.apl)(\\))))\\s*(?#47:entity.function.arguments.right.apl)((?<=\\s|\\])[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*|\\s*(\\()(?#48:punctuation.definition.arguments.begin.apl)(?:\\s*[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)*(\\))(?#49:punctuation.definition.arguments.end.apl))?(?#==================))\\s*(?#50:invalid.illegal.arguments.right.apl)([^;]+)?(?#51:entity.function.local-variables.apl)((?#52:Include“;”)((?>\\s*;(?:\\s*[⎕A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)+)+)|(?#53:invalid.illegal.local-variables.apl)([^⍝]+))?\\s*(?#54:comment.line.apl)(⍝.*)?$",
           "beginCaptures": {
             "0": {
               "name": "entity.function.definition.apl"
@@ -556,7 +556,7 @@
                   ]
                 }
               },
-              "match": "(?x)\n^\\s*\n(\n(?>\n;\n(?:\n\\s*\n[⎕A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n\\s*\n)+\n)+\n)",
+              "match": "^\\s*((?>;(?:\\s*[⎕A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\\s*)+)+)",
               "name": "entity.function.definition.apl"
             },
             {
@@ -802,7 +802,7 @@
               "name": "punctuation.definition.label.end.apl"
             }
           },
-          "match": "(?x)\n^\\s*\n(\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*\n)\n(:)",
+          "match": "^\\s*([A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*)(:)",
           "name": "meta.label.apl"
         }
       ]
@@ -906,7 +906,7 @@
     "name": {
       "patterns": [
         {
-          "match": "(?x)\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ]\n[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*",
+          "match": "[A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýßà-öø-üþ∆⍙Ⓐ-Ⓩ¯0-9]*",
           "name": "variable.other.readwrite.apl"
         }
       ]

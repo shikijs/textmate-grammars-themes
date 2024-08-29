@@ -1,0 +1,112 @@
+#444444        <<
+#BD976A        __EntryPoint
+#444444        >>
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        my_example
+#444444        ():
+#DBD7CACC       
+#B8A965        Awaitable
+#DBD7CACC      <
+#B8A965        void
+#DBD7CACC      > 
+#444444        {
+#DBD7CACC        
+#444444        $
+#BD976A        user_ids
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        vec
+#444444        [
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        2
+#DBD7CACC      , 
+#4C9A91        3
+#444444        ];
+#444444          
+#758575DD      // Initiate all the database requests together,
+#444444          
+#758575DD      // so we spend less time waiting.
+#DBD7CACC        
+#444444        $
+#BD976A        user_names
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#B8A965        Vec
+#444444        \
+#80A665        map_async
+#DBD7CACC      (
+#DBD7CACC          
+#444444        $
+#BD976A        user_ids
+#DBD7CACC      ,
+#DBD7CACC          
+#80A665        async
+#DBD7CACC       (
+#444444        $
+#BD976A        id
+#DBD7CACC      ) 
+#CB7676        ==>
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#80A665        fetch_user_name
+#DBD7CACC      (
+#444444        $
+#BD976A        id
+#DBD7CACC      ),
+#DBD7CACC        )
+#444444        ;
+#444444          
+#758575DD      // Execution continues after requests complete.
+#DBD7CACC        
+#B8A965        echo
+#DBD7CACC       
+#5DA994        Str
+#444444        \
+#80A665        join
+#DBD7CACC      (
+#444444        $
+#BD976A        user_names
+#DBD7CACC      , 
+#C98A7D77      "
+#C98A7D        , 
+#C98A7D77      "
+#DBD7CACC      )
+#444444        ;
+#444444        }
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        fetch_user_name
+#444444        (
+#DBD7CACC        
+#B8A965        int
+#DBD7CACC       
+#444444        $
+#BD976A        _
+#DBD7CACC      ,
+#444444        ):
+#DBD7CACC       
+#B8A965        Awaitable
+#DBD7CACC      <
+#B8A965        string
+#DBD7CACC      > 
+#444444        {
+#444444          
+#758575DD      // This could be a database request.
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#C98A7D77      ""
+#444444        ;
+#444444        }
+#758575DD      // From hacklang.org

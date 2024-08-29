@@ -1,0 +1,178 @@
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter/material.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/about_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/home_demo_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/home_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/product_detail_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/product_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/random_words_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:flutter_workshop/screens/unknown_screen.dart'
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        'package:device_simulator/device_simulator.dart'
+#444444        ;
+#CB7676        void
+#DBD7CACC       
+#80A665        main
+#DBD7CACC      () 
+#CB7676        =>
+#DBD7CACC       
+#80A665        runApp
+#DBD7CACC      (
+#B8A965        MyApp
+#DBD7CACC      ())
+#444444        ;
+#4D9375        class
+#DBD7CACC       
+#B8A965        MyApp
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#B8A965        StatelessWidget
+#DBD7CACC       {
+#DBD7CACC        
+#CB7676        @override
+#DBD7CACC        
+#B8A965        Widget
+#DBD7CACC       
+#80A665        build
+#DBD7CACC      (
+#B8A965        BuildContext
+#DBD7CACC       context) {
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#B8A965        MaterialApp
+#DBD7CACC      (
+#DBD7CACC              initialRoute
+#CB7676        :
+#DBD7CACC       
+#C98A7D        '/'
+#444444        ,
+#DBD7CACC              routes
+#CB7676        :
+#DBD7CACC       {
+#DBD7CACC                
+#B8A965        HomeScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        DeviceSimulator
+#DBD7CACC      (
+#DBD7CACC                    brightness
+#CB7676        :
+#DBD7CACC       
+#B8A965        Brightness
+#444444        .
+#DBD7CACC      dark
+#444444        ,
+#DBD7CACC       enable
+#CB7676        :
+#DBD7CACC       
+#4D9375        true
+#444444        ,
+#DBD7CACC       child
+#CB7676        :
+#DBD7CACC       
+#B8A965        HomeScreen
+#DBD7CACC      ())
+#444444        ,
+#DBD7CACC                
+#B8A965        ProductScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        ProductScreen
+#DBD7CACC      ()
+#444444        ,
+#DBD7CACC                
+#B8A965        ProductDetailScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        ProductDetailScreen
+#DBD7CACC      ()
+#444444        ,
+#DBD7CACC                
+#B8A965        RandomWordsScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        RandomWordsScreen
+#DBD7CACC      ()
+#444444        ,
+#DBD7CACC                
+#B8A965        HomeDemoScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        HomeDemoScreen
+#DBD7CACC      ()
+#444444        ,
+#DBD7CACC                
+#B8A965        AboutScreen
+#444444        .
+#DBD7CACC      routeName
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        AboutScreen
+#DBD7CACC      ()
+#DBD7CACC              }
+#444444        ,
+#DBD7CACC              onUnknownRoute
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC                  
+#B8A965        MaterialPageRoute
+#DBD7CACC      (builder
+#CB7676        :
+#DBD7CACC       (_) 
+#CB7676        =>
+#DBD7CACC       
+#B8A965        UnknownScreen
+#DBD7CACC      ()))
+#444444        ;
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // From https://github.com/Jadhielv/flutter-workshop/blob/master/lib/main.dart

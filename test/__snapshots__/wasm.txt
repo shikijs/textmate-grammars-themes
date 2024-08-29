@@ -1,0 +1,333 @@
+#DBD7CACC      (
+#CB7676        module
+#DBD7CACC      	
+#758575DD      ;; add the $even_check function to the top of the module
+#DBD7CACC      	(
+#5DA994        func
+#DBD7CACC       
+#80A665        $even_check
+#DBD7CACC       (
+#CB7676        param
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      ) (
+#CB7676        result
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      )
+#DBD7CACC      		
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .rem_u
+#DBD7CACC       
+#758575DD      ;; if you take the remainder of a division by 2
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#758575DD      ;; even numbers will have a remainder 0
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .eq
+#DBD7CACC       
+#758575DD      ;; $n % 2 == 0
+#DBD7CACC      	)
+#DBD7CACC      	
+#758575DD      ;; add the $eq_2 function after $even_check
+#DBD7CACC      	(
+#5DA994        func
+#DBD7CACC       
+#80A665        $eq_2
+#DBD7CACC       (
+#CB7676        param
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      ) (
+#CB7676        result
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      )
+#DBD7CACC      		
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .eq
+#DBD7CACC       
+#758575DD      ;; returns 1 if $n == 2
+#DBD7CACC      	)
+#DBD7CACC      	
+#758575DD      ;; add $multiple_check after $eq_2
+#DBD7CACC      	(
+#5DA994        func
+#DBD7CACC       
+#80A665        $multiple_check
+#DBD7CACC       (
+#CB7676        param
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      ) (
+#CB7676        param
+#DBD7CACC       
+#BD976A        $m
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      ) (
+#CB7676        result
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      )
+#DBD7CACC      		
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      		
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $m
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .rem_u
+#DBD7CACC       
+#758575DD      ;; get the remainder of $n / $m
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#758575DD      ;; I want to know if the remainder is 0
+#DBD7CACC      		
+#B8A965        i32
+#CB7676        .eq
+#DBD7CACC       
+#758575DD      ;; that will tell us if $n is a multiple of $m
+#DBD7CACC      	)
+#DBD7CACC      	
+#758575DD      ;; add the is_prime exported function after $multiple_check
+#DBD7CACC      	(
+#5DA994        func
+#DBD7CACC       (
+#CB7676        export
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        is_prime
+#C98A7D77      "
+#DBD7CACC      ) (
+#CB7676        param
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      ) (
+#CB7676        result
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      )
+#DBD7CACC      		(
+#CB7676        local
+#DBD7CACC       
+#BD976A        $i
+#DBD7CACC       
+#5DA994        i32
+#DBD7CACC      )
+#DBD7CACC      		(
+#4D9375        if
+#DBD7CACC       (
+#B8A965        i32
+#CB7676        .eq
+#DBD7CACC       (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      ) (
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      )) 
+#758575DD      ;; 1 is not prime
+#DBD7CACC      		(
+#4D9375        then
+#DBD7CACC      			
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      			
+#4D9375        return
+#DBD7CACC      		))
+#DBD7CACC      		(
+#4D9375        if
+#DBD7CACC       (
+#4D9375        call
+#DBD7CACC       
+#80A665        $eq_2
+#DBD7CACC       (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      )) 
+#758575DD      ;; check to see if $n is 2
+#DBD7CACC      		(
+#4D9375        then
+#DBD7CACC      			
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#758575DD      ;; 2 is prime
+#DBD7CACC      			
+#4D9375        return
+#DBD7CACC      		)
+#DBD7CACC      	)
+#DBD7CACC      	(
+#4D9375        block
+#DBD7CACC       
+#BD976A        $not_prime
+#DBD7CACC      		(
+#4D9375        call
+#DBD7CACC       
+#80A665        $even_check
+#DBD7CACC       (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      ))
+#DBD7CACC      		
+#4D9375        br_if
+#DBD7CACC       
+#BD976A        $not_prime
+#DBD7CACC       
+#758575DD      ;; even numbers are not prime (except 2)
+#DBD7CACC      		(
+#B8A965        local
+#CB7676        .set
+#DBD7CACC       
+#BD976A        $i
+#DBD7CACC       (
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ))
+#DBD7CACC      		(
+#4D9375        loop
+#DBD7CACC       
+#BD976A        $prime_test_loop
+#DBD7CACC      			(
+#B8A965        local
+#CB7676        .tee
+#DBD7CACC       
+#BD976A        $i
+#DBD7CACC       (
+#B8A965        i32
+#CB7676        .add
+#DBD7CACC       (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $i
+#DBD7CACC      ) (
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC      ) ) ) 
+#758575DD      ;; $i += 2
+#DBD7CACC      			
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC       
+#758575DD      ;; stack = [$n, $i]
+#DBD7CACC      			
+#B8A965        i32
+#CB7676        .ge_u
+#DBD7CACC       
+#758575DD      ;; $i >= $n
+#DBD7CACC      			
+#4D9375        if
+#DBD7CACC       
+#758575DD      ;; if $i >= $n, $n is prime
+#DBD7CACC      				
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      			
+#4D9375        return
+#DBD7CACC      			
+#4D9375        end
+#DBD7CACC      			(
+#4D9375        call
+#DBD7CACC       
+#80A665        $multiple_check
+#DBD7CACC       (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $n
+#DBD7CACC      ) (
+#B8A965        local
+#CB7676        .get
+#DBD7CACC       
+#BD976A        $i
+#DBD7CACC      ))
+#DBD7CACC      			
+#4D9375        br_if
+#DBD7CACC       
+#BD976A        $not_prime
+#DBD7CACC       
+#758575DD      ;; if $n is a multiple of $i this is not prime
+#DBD7CACC      			
+#4D9375        br
+#DBD7CACC       
+#BD976A        $prime_test_loop
+#DBD7CACC       
+#758575DD      ;; branch back to top of loop
+#DBD7CACC      			) 
+#758575DD      ;; end of $prime_test_loop loop
+#DBD7CACC      		) 
+#758575DD      ;; end of $not_prime block
+#B8A965        i32
+#CB7676        .const
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#758575DD      ;; return false
+#DBD7CACC       )
+#DBD7CACC      ) 
+#758575DD      ;; end of module
+#758575DD      ;; From https://github.com/battlelinegames/ArtOfWasm/blob/main/Chapter3/is_prime.wat

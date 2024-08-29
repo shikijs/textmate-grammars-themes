@@ -1,0 +1,716 @@
+#4D9375        shader_type
+#DBD7CACC       
+#80A665        spatial
+#444444        ;
+#4D9375        render_mode
+#DBD7CACC       
+#80A665        wireframe
+#444444        ;
+#CB7676        const
+#DBD7CACC       
+#CB7676        lowp
+#DBD7CACC       
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC      [
+#4C9A91        1
+#DBD7CACC      ] 
+#CB7676        =
+#DBD7CACC       
+#CB7676        lowp
+#DBD7CACC       
+#B8A965        vec3
+#DBD7CACC      [
+#4C9A91        1
+#DBD7CACC      ] 
+#444444        (
+#DBD7CACC       
+#B8A965        vec3
+#444444        (
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#444444        );
+#B8A965        void
+#DBD7CACC       
+#80A665        fn
+#444444        ()
+#DBD7CACC       {
+#DBD7CACC        
+#758575DD      // The required amount of scalars
+#DBD7CACC        
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        a0
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC        
+#758575DD      // Complementary vectors and/or scalars
+#DBD7CACC        
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        a1
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#B8A965        vec2
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ),
+#DBD7CACC       
+#B8A965        vec2
+#444444        (
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        ));
+#DBD7CACC        
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        a2
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#B8A965        vec3
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ),
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC        
+#758575DD      // A single scalar for the whole vector
+#DBD7CACC        
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        a3
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        );
+#DBD7CACC        
+#B8A965        mat2
+#DBD7CACC       
+#BD976A        m2
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat2
+#444444        (
+#B8A965        vec2
+#444444        (
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ),
+#DBD7CACC       
+#B8A965        vec2
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ));
+#DBD7CACC        
+#B8A965        mat3
+#DBD7CACC       
+#BD976A        m3
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat3
+#444444        (
+#B8A965        vec3
+#444444        (
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ),
+#DBD7CACC       
+#B8A965        vec3
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ),
+#DBD7CACC       
+#B8A965        vec3
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ));
+#DBD7CACC        
+#B8A965        mat4
+#DBD7CACC       
+#BD976A        identity
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat4
+#444444        (
+#4C9A91        1.0
+#444444        );
+#DBD7CACC        
+#B8A965        mat3
+#DBD7CACC       
+#BD976A        basis
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat3
+#444444        (
+#BD976A        identity
+#444444        );
+#DBD7CACC        
+#B8A965        mat4
+#DBD7CACC       
+#BD976A        m4
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat4
+#444444        (
+#BD976A        basis
+#444444        );
+#DBD7CACC        
+#B8A965        mat2
+#DBD7CACC       
+#BD976A        m2a
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        mat2
+#444444        (
+#BD976A        m4
+#444444        );
+#DBD7CACC        
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        a
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        b
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        rgb
+#444444        ;
+#DBD7CACC       
+#758575DD      // Creates a vec3 with vec4 components.
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        b1
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        ggg
+#444444        ;
+#DBD7CACC       
+#758575DD      // Also valid; creates a vec3 and fills it with a single vec4 component.
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        b2
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        bgr
+#444444        ;
+#DBD7CACC       
+#758575DD      // "b" will be vec3(2.0, 1.0, 0.0).
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        b3
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        xyz
+#444444        ;
+#DBD7CACC       
+#758575DD      // Also rgba, xyzw are equivalent.
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#BD976A        b4
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        stp
+#444444        ;
+#DBD7CACC       
+#758575DD      // And stpq (for texture coordinates).
+#DBD7CACC        
+#BD976A        b
+#444444        .
+#BD976A        bgr
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        a
+#444444        .
+#BD976A        rgb
+#444444        ;
+#DBD7CACC       
+#758575DD      // Valid assignment. "b"'s "blue" component will be "a"'s "red" and vice versa.
+#DBD7CACC        
+#CB7676        lowp
+#DBD7CACC       
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        v0
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC       
+#758575DD      // low precision, usually 8 bits per component mapped to 0-1
+#DBD7CACC        
+#CB7676        mediump
+#DBD7CACC       
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        v1
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC       
+#758575DD      // medium precision, usually 16 bits or half float
+#DBD7CACC        
+#CB7676        highp
+#DBD7CACC       
+#B8A965        vec4
+#DBD7CACC       
+#BD976A        v2
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec4
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        2.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        3.0
+#444444        );
+#DBD7CACC       
+#758575DD      // high precision, uses full float or integer range (default)
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#B8A965        vec2
+#DBD7CACC       
+#BD976A        aa
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec2
+#444444        (
+#4C9A91        0.0
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        );
+#DBD7CACC        
+#B8A965        vec2
+#DBD7CACC       
+#BD976A        bb
+#444444        ;
+#DBD7CACC        
+#BD976A        bb
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        aa
+#444444        ;
+#DBD7CACC       
+#758575DD      // valid
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#B8A965        vec2
+#DBD7CACC       
+#C99076        V1
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec2
+#444444        (
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#4C9A91        1
+#444444        ),
+#DBD7CACC       
+#C99076        V2
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        vec2
+#444444        (
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#4C9A91        2
+#444444        );
+#DBD7CACC        
+#B8A965        float
+#DBD7CACC       
+#BD976A        fa
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ;
+#DBD7CACC        
+#B8A965        float
+#DBD7CACC       
+#BD976A        fb
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        1.0f
+#444444        ;
+#DBD7CACC        
+#B8A965        float
+#DBD7CACC       
+#BD976A        fc
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        1e-1
+#444444        ;
+#DBD7CACC        
+#B8A965        uint
+#DBD7CACC       
+#BD976A        ua
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        1u
+#444444        ;
+#DBD7CACC        
+#B8A965        uint
+#DBD7CACC       
+#BD976A        ub
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#B8A965        uint
+#444444        (
+#4C9A91        1
+#444444        );
+#DBD7CACC        
+#DBD7CACC        
+#B8A965        bool
+#DBD7CACC       
+#BD976A        cond
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        false
+#444444        ;
+#DBD7CACC        
+#758575DD      // `if` and `else`.
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#BD976A        cond
+#444444        )
+#DBD7CACC       {
+#DBD7CACC        } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      // Ternary operator.
+#DBD7CACC        
+#758575DD      // This is an expression that behaves like `if`/`else` and returns the value.
+#DBD7CACC        
+#758575DD      // If `cond` evaluates to `true`, `result` will be `9`.
+#DBD7CACC        
+#758575DD      // Otherwise, `result` will be `5`.
+#DBD7CACC        
+#B8A965        int
+#DBD7CACC       
+#BD976A        i
+#444444        ,
+#DBD7CACC       
+#BD976A        result
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        cond
+#DBD7CACC       ? 
+#4C9A91        9
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#4C9A91        5
+#444444        ;
+#DBD7CACC        
+#758575DD      // `switch`.
+#DBD7CACC        
+#4D9375        switch
+#DBD7CACC       
+#444444        (
+#BD976A        i
+#444444        )
+#DBD7CACC       { 
+#758575DD      // `i` should be a signed integer expression.
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       
+#CB7676        -
+#4C9A91        1
+#444444        :
+#DBD7CACC            
+#4D9375        break
+#444444        ;
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       
+#4C9A91        0
+#444444        :
+#DBD7CACC            
+#4D9375        return
+#444444        ;
+#DBD7CACC       
+#758575DD      // `break` or `return` to avoid running the next `case`.
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       
+#4C9A91        1
+#444444        :
+#DBD7CACC       
+#758575DD      // Fallthrough (no `break` or `return`): will run the next `case`.
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       
+#4C9A91        2
+#444444        :
+#DBD7CACC            
+#4D9375        break
+#444444        ;
+#DBD7CACC          
+#758575DD      //...
+#DBD7CACC          
+#4D9375        default
+#444444        :
+#DBD7CACC       
+#758575DD      // Only run if no `case` above matches. Optional.
+#DBD7CACC            
+#4D9375        break
+#444444        ;
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      // `for` loop. Best used when the number of elements to iterate on
+#DBD7CACC        
+#758575DD      // is known in advance.
+#DBD7CACC        
+#4D9375        for
+#DBD7CACC       
+#444444        (
+#B8A965        int
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#4C9A91        10
+#444444        ;
+#DBD7CACC       
+#BD976A        i
+#CB7676        ++
+#444444        )
+#DBD7CACC       {
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      // `while` loop. Best used when the number of elements to iterate on
+#DBD7CACC        
+#758575DD      // is not known in advance.
+#DBD7CACC        
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#BD976A        cond
+#444444        )
+#DBD7CACC       {
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      // `do while`. Like `while`, but always runs at least once even if `cond`
+#DBD7CACC        
+#758575DD      // never evaluates to `true`.
+#DBD7CACC        
+#4D9375        do
+#DBD7CACC       {
+#DBD7CACC        } 
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#BD976A        cond
+#444444        );
+#DBD7CACC      }
+#CB7676        const
+#DBD7CACC       
+#B8A965        float
+#DBD7CACC       
+#C99076        PI_
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        3.14159265358979323846
+#444444        ;
+#4D9375        struct
+#DBD7CACC       
+#5DA994        PointLight
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#80A665        position
+#444444        ;
+#DBD7CACC        
+#B8A965        vec3
+#DBD7CACC       
+#80A665        color
+#444444        ;
+#DBD7CACC        
+#B8A965        float
+#DBD7CACC       
+#80A665        intensity
+#444444        ;
+#444444        };
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Scene
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#5DA994        PointLight
+#DBD7CACC       
+#80A665        lights
+#444444        [
+#4C9A91        2
+#444444        ];
+#444444        };
+#758575DD      // from https://github.com/godotengine/godot-vscode-plugin/blob/cdc550a412dfffd26dfe7351e429b73c819d68d0/syntaxes/examples/example2.gdshader

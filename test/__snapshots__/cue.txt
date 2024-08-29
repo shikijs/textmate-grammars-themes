@@ -1,0 +1,640 @@
+#4D9375        package
+#DBD7CACC       
+#80A665        kube
+#BD976A        service
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        apiVersion
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        v1
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        kind
+#444444        :
+#DBD7CACC             
+#C98A7D77      "
+#C98A7D        Service
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      		
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        ID
+#DBD7CACC      		
+#BD976A        labels
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      			
+#BD976A        app
+#444444        :
+#DBD7CACC             
+#BD976A        ID
+#DBD7CACC               
+#758575DD      // by convention
+#DBD7CACC      			
+#BD976A        domain
+#444444        :
+#DBD7CACC          
+#C98A7D77      "
+#C98A7D        prod
+#C98A7D77      "
+#DBD7CACC           
+#758575DD      // always the same in the given files
+#DBD7CACC      			
+#BD976A        component
+#444444        :
+#DBD7CACC       
+#BD976A        #Component
+#DBD7CACC       
+#758575DD      // varies per directory
+#DBD7CACC      		
+#444444        }
+#DBD7CACC      	
+#444444        }
+#DBD7CACC      	
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      		
+#758575DD      // Any port has the following properties.
+#DBD7CACC      		
+#BD976A        ports
+#444444        :
+#DBD7CACC       
+#444444        [...{
+#DBD7CACC      			
+#BD976A        port
+#444444        :
+#DBD7CACC           
+#B8A965        int
+#DBD7CACC      			
+#BD976A        protocol
+#444444        :
+#DBD7CACC       
+#CB7676        *
+#C98A7D77      "
+#C98A7D        TCP
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        UDP
+#C98A7D77      "
+#DBD7CACC       
+#758575DD      // from the Kubernetes definition
+#DBD7CACC      			
+#BD976A        name
+#444444        :
+#DBD7CACC           
+#B8A965        string
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#CB7676        *
+#C98A7D77      "
+#C98A7D        client
+#C98A7D77      "
+#DBD7CACC      		
+#444444        }]
+#DBD7CACC      		
+#BD976A        selector
+#444444        :
+#DBD7CACC       
+#BD976A        metadata
+#444444        .
+#BD976A        labels
+#DBD7CACC       
+#758575DD      // we want those to be the same
+#DBD7CACC      	
+#444444        }
+#444444        }
+#BD976A        deployment
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        apiVersion
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        apps/v1
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        kind
+#444444        :
+#DBD7CACC             
+#C98A7D77      "
+#C98A7D        Deployment
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        ID
+#DBD7CACC      	
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      		
+#758575DD      // 1 is the default, but we allow any number
+#DBD7CACC      		
+#BD976A        replicas
+#444444        :
+#DBD7CACC       
+#CB7676        *
+#4C9A91        1
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        int
+#DBD7CACC      		
+#BD976A        template
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      			
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        labels
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      				
+#BD976A        app
+#444444        :
+#DBD7CACC             
+#BD976A        ID
+#DBD7CACC      				
+#BD976A        domain
+#444444        :
+#DBD7CACC          
+#C98A7D77      "
+#C98A7D        prod
+#C98A7D77      "
+#DBD7CACC      				
+#BD976A        component
+#444444        :
+#DBD7CACC       
+#BD976A        #Component
+#DBD7CACC      			
+#444444        }
+#DBD7CACC      			
+#758575DD      // we always have one namesake container
+#DBD7CACC      			
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        containers
+#444444        :
+#DBD7CACC       
+#444444        [{
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        ID
+#444444        }]
+#DBD7CACC      		
+#444444        }
+#DBD7CACC      	
+#444444        }
+#444444        }
+#BD976A        #Component
+#444444        :
+#DBD7CACC       
+#B8A965        string
+#BD976A        daemonSet
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#BD976A        _spec
+#DBD7CACC       
+#CB7676        &
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        apiVersion
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        apps/v1
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        kind
+#444444        :
+#DBD7CACC             
+#C98A7D77      "
+#C98A7D        DaemonSet
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        _name
+#444444        :
+#DBD7CACC            
+#BD976A        ID
+#444444        }
+#BD976A        statefulSet
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#BD976A        _spec
+#DBD7CACC       
+#CB7676        &
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        apiVersion
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        apps/v1
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        kind
+#444444        :
+#DBD7CACC             
+#C98A7D77      "
+#C98A7D        StatefulSet
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        _name
+#444444        :
+#DBD7CACC            
+#BD976A        ID
+#444444        }
+#BD976A        deployment
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#BD976A        _spec
+#DBD7CACC       
+#CB7676        &
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        apiVersion
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        apps/v1
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        kind
+#444444        :
+#DBD7CACC             
+#C98A7D77      "
+#C98A7D        Deployment
+#C98A7D77      "
+#DBD7CACC      	
+#BD976A        _name
+#444444        :
+#DBD7CACC            
+#BD976A        ID
+#DBD7CACC      	
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        replicas
+#444444        :
+#DBD7CACC       
+#CB7676        *
+#4C9A91        1
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        int
+#444444        }
+#BD976A        configMap
+#444444        :
+#DBD7CACC       
+#444444        [
+#BD976A        ID
+#444444        =
+#4D9375        _
+#444444        ]:
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        ID
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        labels
+#444444        :
+#DBD7CACC       
+#BD976A        component
+#444444        :
+#DBD7CACC       
+#BD976A        #Component
+#444444        }
+#BD976A        _spec
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        _name
+#444444        :
+#DBD7CACC       
+#B8A965        string
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        _name
+#DBD7CACC      	
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        labels
+#444444        :
+#DBD7CACC       
+#BD976A        component
+#444444        :
+#DBD7CACC       
+#BD976A        #Component
+#DBD7CACC      	
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        selector
+#444444        :
+#DBD7CACC       
+#444444        {}
+#DBD7CACC      	
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        template
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      		
+#BD976A        metadata
+#444444        :
+#DBD7CACC       
+#BD976A        labels
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      			
+#BD976A        app
+#444444        :
+#DBD7CACC             
+#BD976A        _name
+#DBD7CACC      			
+#BD976A        component
+#444444        :
+#DBD7CACC       
+#BD976A        #Component
+#DBD7CACC      			
+#BD976A        domain
+#444444        :
+#DBD7CACC          
+#C98A7D77      "
+#C98A7D        prod
+#C98A7D77      "
+#DBD7CACC      		
+#444444        }
+#DBD7CACC      		
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        containers
+#444444        :
+#DBD7CACC       
+#444444        [{
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        _name
+#444444        }]
+#DBD7CACC      	
+#444444        }
+#444444        }
+#758575DD      // Define the _export option and set the default to true
+#758575DD      // for all ports defined in all containers.
+#BD976A        _spec
+#444444        :
+#DBD7CACC       
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        template
+#444444        :
+#DBD7CACC       
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        containers
+#444444        :
+#DBD7CACC       
+#444444        [...{
+#DBD7CACC      	
+#BD976A        ports
+#444444        :
+#DBD7CACC       
+#444444        [...{
+#DBD7CACC      		
+#BD976A        _export
+#444444        :
+#DBD7CACC       
+#CB7676        *
+#4D9375        true
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#4D9375        false
+#DBD7CACC       
+#758575DD      // include the port in the service
+#DBD7CACC      	
+#444444        }]
+#444444        }]
+#4D9375        for
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#444444        [
+#BD976A        deployment
+#444444        ,
+#DBD7CACC       
+#BD976A        daemonSet
+#444444        ,
+#DBD7CACC       
+#BD976A        statefulSet
+#444444        ]
+#DBD7CACC       
+#4D9375        for
+#DBD7CACC       
+#BD976A        k
+#444444        ,
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#444444        {
+#DBD7CACC      	
+#BD976A        service
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#444444        \(
+#C98A7D        k
+#444444        )
+#C98A7D77      "
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC      		
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        selector
+#444444        :
+#DBD7CACC       
+#BD976A        v
+#444444        .
+#BD976A        spec
+#444444        .
+#BD976A        template
+#444444        .
+#BD976A        metadata
+#444444        .
+#BD976A        labels
+#DBD7CACC      		
+#BD976A        spec
+#444444        :
+#DBD7CACC       
+#BD976A        ports
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC      			
+#4D9375        for
+#DBD7CACC       
+#BD976A        c
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        v
+#444444        .
+#BD976A        spec
+#444444        .
+#BD976A        template
+#444444        .
+#BD976A        spec
+#444444        .
+#BD976A        containers
+#DBD7CACC      			
+#4D9375        for
+#DBD7CACC       
+#BD976A        p
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        c
+#444444        .
+#BD976A        ports
+#DBD7CACC      			
+#4D9375        if
+#DBD7CACC       
+#BD976A        p
+#444444        .
+#BD976A        _export
+#DBD7CACC       
+#444444        {
+#DBD7CACC      				
+#4D9375        let
+#DBD7CACC       
+#BD976A        Port
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        p
+#444444        .
+#BD976A        containerPort
+#DBD7CACC       
+#758575DD      // Port is an alias
+#DBD7CACC      				
+#BD976A        port
+#444444        :
+#DBD7CACC             
+#CB7676        *
+#BD976A        Port
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        int
+#DBD7CACC      				
+#BD976A        targetPort
+#444444        :
+#DBD7CACC       
+#CB7676        *
+#BD976A        Port
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        int
+#DBD7CACC      			
+#444444        },
+#DBD7CACC      		
+#444444        ]
+#DBD7CACC      	
+#444444        }
+#444444        }

@@ -1,0 +1,305 @@
+#758575DD      %% File: person.hrl
+#758575DD      %%-----------------------------------------------------------
+#758575DD      %% Data Type: person
+#758575DD      %% where:
+#758575DD      %%    name:  A string (default is undefined).
+#758575DD      %%    age:   An integer (default is undefined).
+#758575DD      %%    phone: A list of integers (default is []).
+#758575DD      %%    dict:  A dictionary containing various information 
+#758575DD      %%           about the person. 
+#758575DD      %%           A {Key, Value} list (default is the empty list).
+#758575DD      %%------------------------------------------------------------
+#444444        -
+#4D9375        record
+#444444        (
+#5DA994        person
+#444444        ,
+#DBD7CACC       
+#444444        {
+#BD976A        name
+#444444        ,
+#DBD7CACC       
+#BD976A        age
+#444444        ,
+#DBD7CACC       
+#BD976A        phone
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [],
+#DBD7CACC       
+#BD976A        dict
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        []}).
+#444444        -
+#4D9375        module
+#444444        (
+#5DA994        person
+#444444        ).
+#444444        -
+#4D9375        include
+#444444        (
+#C98A7D77      "
+#C98A7D        person.hrl
+#C98A7D77      "
+#444444        ).
+#444444        -
+#4D9375        compile
+#444444        (
+#C99076        export_all
+#444444        ).
+#DBD7CACC       
+#758575DD      % For test purposes only.
+#758575DD      %% This creates an instance of a person.
+#758575DD      %%   Note: The phone number is not supplied so the
+#758575DD      %%         default value [] will be used.
+#80A665        make_hacker_without_phone
+#444444        (
+#BD976A        Name
+#DBD7CACC      , 
+#BD976A        Age
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC         
+#CB7676        #
+#5DA994        person
+#444444        {
+#BD976A        name
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Name
+#444444        ,
+#DBD7CACC       
+#BD976A        age
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Age
+#444444        ,
+#DBD7CACC       
+#DBD7CACC                 
+#BD976A        dict
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [{
+#C99076        computer_knowledge
+#444444        ,
+#DBD7CACC       
+#C99076        excellent
+#444444        },
+#DBD7CACC       
+#DBD7CACC                         
+#444444        {
+#C99076        drinks
+#444444        ,
+#DBD7CACC       
+#C99076        coke
+#444444        }]}.
+#758575DD      %% This demonstrates matching in arguments
+#80A665        print
+#444444        (
+#CB7676        #
+#5DA994        person
+#444444        {
+#BD976A        name
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Name
+#444444        ,
+#DBD7CACC       
+#BD976A        age
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Age
+#444444        ,
+#DBD7CACC                    
+#BD976A        phone
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Phone
+#444444        ,
+#DBD7CACC       
+#BD976A        dict
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Dict
+#444444        })
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC        
+#5DA994        io
+#444444        :
+#80A665        format
+#444444        (
+#C98A7D77      "
+#C98A7D        Name: 
+#444444        ~
+#C99076        s
+#C98A7D        , Age: 
+#444444        ~
+#C99076        w
+#C98A7D        , Phone: 
+#444444        ~
+#C99076        w
+#C98A7D         
+#444444        ~
+#C99076        n
+#C98A7D77      "
+#DBD7CACC       
+#DBD7CACC                  
+#C98A7D77      "
+#C98A7D        Dictionary: 
+#444444        ~
+#C99076        w
+#C98A7D        .
+#444444        ~
+#C99076        n
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#444444        [
+#BD976A        Name
+#444444        ,
+#DBD7CACC       
+#BD976A        Age
+#444444        ,
+#DBD7CACC       
+#BD976A        Phone
+#444444        ,
+#DBD7CACC       
+#BD976A        Dict
+#444444        ]).
+#758575DD      %% Demonstrates type testing, selector, updating.
+#80A665        birthday
+#444444        (
+#BD976A        P
+#444444        )
+#DBD7CACC       
+#4D9375        when
+#DBD7CACC       
+#80A665        is_record
+#444444        (
+#BD976A        P
+#444444        ,
+#DBD7CACC       
+#C99076        person
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#DBD7CACC         
+#BD976A        P
+#CB7676        #
+#5DA994        person
+#444444        {
+#BD976A        age
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        P
+#CB7676        #
+#5DA994        person
+#444444        .
+#BD976A        age
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#444444        }.
+#80A665        register_two_hackers
+#444444        ()
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC         
+#BD976A        Hacker1
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        make_hacker_without_phone
+#444444        (
+#C98A7D77      "
+#C98A7D        Joe
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#4C9A91        29
+#444444        ),
+#DBD7CACC         
+#BD976A        OldHacker
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        birthday
+#444444        (
+#BD976A        Hacker1
+#444444        ),
+#444444           
+#758575DD      % The central_register_server should have 
+#444444           
+#758575DD      % an interface function for this.
+#DBD7CACC         
+#C99076        central_register_server
+#DBD7CACC       
+#CB7676        !
+#DBD7CACC       
+#444444        {
+#C99076        register_person
+#444444        ,
+#DBD7CACC       
+#BD976A        Hacker1
+#444444        },
+#DBD7CACC         
+#C99076        central_register_server
+#DBD7CACC       
+#CB7676        !
+#DBD7CACC       
+#444444        {
+#C99076        register_person
+#444444        ,
+#DBD7CACC       
+#DBD7CACC                   
+#BD976A        OldHacker
+#CB7676        #
+#5DA994        person
+#444444        {
+#BD976A        name
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Robert
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#DBD7CACC                                    
+#BD976A        phone
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [
+#4C9A91        0
+#444444        ,
+#4C9A91        8
+#444444        ,
+#4C9A91        3
+#444444        ,
+#4C9A91        2
+#444444        ,
+#4C9A91        4
+#444444        ,
+#4C9A91        5
+#444444        ,
+#4C9A91        3
+#444444        ,
+#4C9A91        1
+#444444        ]}}.
+#758575DD      %% From https://erlang.org/doc/programming_examples/records.html#a-longer-example

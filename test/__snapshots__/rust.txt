@@ -1,0 +1,203 @@
+#758575DD      // Unlike C/C++, there's no restriction on the order of function definitions
+#4D9375        fn
+#DBD7CACC       
+#80A665        main
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#758575DD      // We can use this function here, and define it somewhere later
+#DBD7CACC          
+#80A665        fizzbuzz_to
+#444444        (
+#4C9A91        100
+#444444        );
+#444444        }
+#758575DD      // Function that returns a boolean value
+#4D9375        fn
+#DBD7CACC       
+#80A665        is_divisible_by
+#444444        (
+#BD976A        lhs
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        ,
+#DBD7CACC       
+#BD976A        rhs
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        bool
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#758575DD      // Corner case, early return
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#BD976A        rhs
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        return
+#DBD7CACC       
+#4D9375        false
+#444444        ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#758575DD      // This is an expression, the `return` keyword is not necessary here
+#DBD7CACC          
+#BD976A        lhs
+#DBD7CACC       
+#CB7676        %
+#DBD7CACC       
+#BD976A        rhs
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#4C9A91        0
+#444444        }
+#758575DD      // Functions that "don't" return a value, actually return the unit type `()`
+#4D9375        fn
+#DBD7CACC       
+#80A665        fizzbuzz
+#444444        (
+#BD976A        n
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#80A665        is_divisible_by
+#444444        (
+#BD976A        n
+#444444        ,
+#DBD7CACC       
+#4C9A91        15
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#80A665        println!
+#444444        (
+#C98A7D77      "
+#C98A7D        fizzbuzz
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#80A665        is_divisible_by
+#444444        (
+#BD976A        n
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#80A665        println!
+#444444        (
+#C98A7D77      "
+#C98A7D        fizz
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#80A665        is_divisible_by
+#444444        (
+#BD976A        n
+#444444        ,
+#DBD7CACC       
+#4C9A91        5
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#80A665        println!
+#444444        (
+#C98A7D77      "
+#C98A7D        buzz
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#80A665        println!
+#444444        (
+#C98A7D77      "
+#444444        {}
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        n
+#444444        );
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // When a function returns `()`, the return type can be omitted from the
+#758575DD      // signature
+#4D9375        fn
+#DBD7CACC       
+#80A665        fizzbuzz_to
+#444444        (
+#BD976A        n
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        for
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#4C9A91        1
+#CB7676        ..=
+#BD976A        n
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#80A665        fizzbuzz
+#444444        (
+#BD976A        n
+#444444        );
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://doc.rust-lang.org/rust-by-example/fn.html

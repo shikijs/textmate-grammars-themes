@@ -1,0 +1,200 @@
+#4D9375        program
+#DBD7CACC       
+#80A665        mandel
+#DBD7CACC          
+#4D9375        implicit
+#DBD7CACC       
+#4D9375        none
+#DBD7CACC          
+#CB7676        integer
+#444444        ,
+#DBD7CACC       
+#CB7676        parameter
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       N 
+#444444        =
+#DBD7CACC       
+#4C9A91        99
+#DBD7CACC        
+#758575DD      ! smaller than half of terminal width
+#DBD7CACC          
+#CB7676        character
+#444444        (
+#4C9A91        3
+#444444        )
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       N_str
+#DBD7CACC          
+#CB7676        complex
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       c
+#444444        (
+#DBD7CACC      N,N
+#444444        )
+#DBD7CACC        
+#758575DD      ! coordinates
+#DBD7CACC          
+#CB7676        complex
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       z
+#444444        (
+#DBD7CACC      N,N
+#444444        )
+#DBD7CACC        
+#758575DD      ! values for iteration
+#DBD7CACC          
+#CB7676        integer
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       i, j
+#DBD7CACC          c 
+#444444        =
+#DBD7CACC       
+#4C9A91        0.0
+#DBD7CACC          z 
+#444444        =
+#DBD7CACC       
+#4C9A91        0.0
+#DBD7CACC          
+#4D9375        do
+#DBD7CACC       i 
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      , N
+#DBD7CACC              c
+#444444        (
+#DBD7CACC      :, i
+#444444        )
+#DBD7CACC       
+#444444        =
+#DBD7CACC       c
+#444444        (
+#DBD7CACC      :, i
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#444444        [(
+#B8A965        cmplx
+#444444        (
+#4C9A91        3.
+#CB7676        *
+#DBD7CACC      j/
+#444444        (
+#DBD7CACC      N
+#4C9A91        -1
+#444444        )
+#4C9A91        -2
+#DBD7CACC      , 
+#4C9A91        0.
+#444444        )
+#DBD7CACC      ,j
+#444444        =
+#4C9A91        0
+#DBD7CACC      ,N
+#4C9A91        -1
+#444444        )]
+#DBD7CACC              c
+#444444        (
+#DBD7CACC      i, :
+#444444        )
+#DBD7CACC       
+#444444        =
+#DBD7CACC       c
+#444444        (
+#DBD7CACC      i, :
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#444444        [(
+#B8A965        cmplx
+#444444        (
+#4C9A91        0.
+#DBD7CACC      , 
+#4C9A91        3.
+#CB7676        *
+#DBD7CACC      j/
+#444444        (
+#DBD7CACC      N
+#4C9A91        -1
+#444444        )
+#4C9A91        -1.5
+#444444        )
+#DBD7CACC      ,j
+#444444        =
+#4C9A91        0
+#DBD7CACC      ,N
+#4C9A91        -1
+#444444        )]
+#DBD7CACC          
+#4D9375        end do
+#DBD7CACC          
+#4D9375        do
+#DBD7CACC       i 
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        100
+#DBD7CACC              z 
+#444444        =
+#DBD7CACC       z
+#CB7676        **
+#4C9A91        2
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       c
+#DBD7CACC          
+#4D9375        end do
+#DBD7CACC          
+#4D9375        write
+#444444        (
+#DBD7CACC      N_str, 
+#C98A7D77      "
+#C98A7D        (i3)
+#C98A7D77      "
+#444444        )
+#DBD7CACC       N
+#DBD7CACC          
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        (
+#C98A7D77      "
+#4D9375        //
+#B8A965        trim
+#444444        (
+#DBD7CACC      N_str
+#444444        )
+#4D9375        //
+#C98A7D77      "
+#C98A7D        (a))
+#C98A7D77      "
+#DBD7CACC      , 
+#B8A965        merge
+#444444        (
+#C98A7D77      '
+#C98A7D        ##
+#C98A7D77      '
+#DBD7CACC      , 
+#C98A7D77      '
+#C98A7D          
+#C98A7D77      '
+#DBD7CACC      , 
+#B8A965        abs
+#444444        (
+#DBD7CACC      z
+#444444        )
+#4D9375        <
+#4C9A91        2
+#444444        )
+#4D9375        end program
+#DBD7CACC       
+#80A665        mandel
+#758575DD      ! From https://fortran-lang.discourse.group/t/modern-fortran-sample-code/2019/14

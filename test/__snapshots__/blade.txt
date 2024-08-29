@@ -1,0 +1,225 @@
+#DBD7CACC      <x-app-layout :title="$post->title">
+#DBD7CACC          <x-ad/>
+#DBD7CACC          <x-post-header :post="$post" class="mb-8">
+#DBD7CACC              
+#B8A965        {!!
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        html
+#DBD7CACC       
+#B8A965        !!}
+#DBD7CACC              
+#4D9375        @unless
+#DBD7CACC      (
+#444444        $
+#BD976A        post
+#CB7676        ->
+#80A665        isTweet
+#444444        ()
+#DBD7CACC      )
+#DBD7CACC                  
+#4D9375        @if
+#DBD7CACC      (
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        external_url
+#DBD7CACC      )
+#DBD7CACC                      <p class="mt-6">
+#DBD7CACC                          <a href="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        external_url
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      ">
+#DBD7CACC                              Read more</a>
+#DBD7CACC                          <span class="text-xs text-gray-700">[
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        external_url_host
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      ]</span>
+#DBD7CACC                      </p>
+#DBD7CACC                  
+#4D9375        @endif
+#DBD7CACC              
+#4D9375        @endunless
+#DBD7CACC          </x-post-header>
+#DBD7CACC          
+#4D9375        @include
+#DBD7CACC      (
+#C98A7D77      '
+#C98A7D        front.newsletter.partials.block
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        class
+#C98A7D77      '
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        mb-8
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#444444        ]
+#DBD7CACC      )
+#DBD7CACC          <div class="mb-8">
+#DBD7CACC              
+#4D9375        @include
+#DBD7CACC      (
+#C98A7D77      '
+#C98A7D        front.posts.partials.comments
+#C98A7D77      '
+#DBD7CACC      )
+#DBD7CACC          </div>
+#DBD7CACC          <x-slot name="seo">
+#DBD7CACC              <meta property="og:title" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        title
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC       | freek.dev"/>
+#DBD7CACC              <meta property="og:description" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        plain_text_excerpt
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              <meta name="og:image" content="
+#B8A965        {{
+#DBD7CACC       
+#80A665        url
+#444444        ($
+#BD976A        post
+#CB7676        ->
+#80A665        getFirstMediaUrl
+#444444        (
+#C98A7D77      '
+#C98A7D        ogImage
+#C98A7D77      '
+#444444        ))
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              
+#4D9375        @foreach
+#DBD7CACC      (
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        tags
+#DBD7CACC       
+#CB7676        as
+#DBD7CACC       
+#444444        $
+#BD976A        tag
+#DBD7CACC      )
+#DBD7CACC                  <meta property="article:tag" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        tag
+#CB7676        ->
+#BD976A        name
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              
+#4D9375        @endforeach
+#DBD7CACC              <meta property="article:published_time" content="
+#B8A965        {{
+#DBD7CACC       
+#80A665        optional
+#444444        ($
+#BD976A        post
+#CB7676        ->
+#BD976A        publish_date
+#444444        )
+#CB7676        ->
+#80A665        toIso8601String
+#444444        ()
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              <meta property="og:updated_time" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        updated_at
+#CB7676        ->
+#80A665        toIso8601String
+#444444        ()
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              <meta name="twitter:card" content="summary_large_image"/>
+#DBD7CACC              <meta name="twitter:description" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        plain_text_excerpt
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              <meta name="twitter:title" content="
+#B8A965        {{
+#DBD7CACC       
+#444444        $
+#BD976A        post
+#CB7676        ->
+#BD976A        title
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC       | freek.dev"/>
+#DBD7CACC              <meta name="twitter:site" content="
+#80A665        @freekmurze
+#DBD7CACC      "/>
+#DBD7CACC              <meta name="twitter:image" content="
+#B8A965        {{
+#DBD7CACC       
+#80A665        url
+#444444        ($
+#BD976A        post
+#CB7676        ->
+#80A665        getFirstMediaUrl
+#444444        (
+#C98A7D77      '
+#C98A7D        ogImage
+#C98A7D77      '
+#444444        ))
+#DBD7CACC       
+#B8A965        }}
+#DBD7CACC      "/>
+#DBD7CACC              <meta name="twitter:creator" content="
+#80A665        @freekmurze
+#DBD7CACC      "/>
+#DBD7CACC          </x-slot>
+#DBD7CACC      </x-app-layout>
+#DBD7CACC      #From https://freek.dev/2024-how-to-render-markdown-with-perfectly-highlighted-code-snippets

@@ -1,0 +1,172 @@
+#444444        #
+#4D9375        set
+#DBD7CACC       
+#80A665        page
+#444444        (
+#BD976A        width
+#444444        :
+#DBD7CACC       
+#4C9A91        10cm
+#444444        ,
+#DBD7CACC       
+#BD976A        height
+#444444        :
+#DBD7CACC       
+#4D9375        auto
+#444444        )
+#444444        #
+#4D9375        set
+#DBD7CACC       
+#80A665        heading
+#444444        (
+#BD976A        numbering
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1.
+#C98A7D77      "
+#444444        )
+#444444        = 
+#4D9375        Fibonacci sequence
+#DBD7CACC      The Fibonacci sequence is defined through the
+#DBD7CACC      recurrence relation 
+#C98A7D77      $
+#C98A7D        F_n = F_(n-1) + F_(n-2)
+#C98A7D77      $
+#DBD7CACC      .
+#DBD7CACC      It can also be expressed in 
+#444444        _
+#DBD7CACC      closed form:
+#444444        _
+#C98A7D77      $
+#C98A7D         F_n = round(1 / sqrt(5) phi.alt^n), quad
+#C98A7D          phi.alt = (1 + sqrt(5)) / 2 
+#C98A7D77      $
+#444444        #
+#4D9375        let
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        8
+#444444        #
+#4D9375        let
+#DBD7CACC       
+#BD976A        nums
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        range
+#444444        (
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#444444        #
+#4D9375        let
+#DBD7CACC       
+#80A665        fib
+#444444        (
+#BD976A        n
+#444444        )
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        (
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#4D9375        else
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#80A665        fib
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#80A665        fib
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        2
+#444444        )
+#DBD7CACC       
+#444444        }
+#444444        )
+#DBD7CACC      The first 
+#444444        #
+#80A665        count
+#DBD7CACC       numbers of the sequence are:
+#444444        #
+#80A665        align
+#444444        (
+#BD976A        center
+#444444        ,
+#DBD7CACC       
+#80A665        table
+#444444        (
+#DBD7CACC        
+#BD976A        columns
+#444444        :
+#DBD7CACC       
+#BD976A        count
+#444444        ,
+#DBD7CACC        
+#CB7676        ..
+#BD976A        nums
+#DBD7CACC      .
+#80A665        map
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      $
+#C98A7D        F_#n
+#C98A7D77      $
+#444444        ),
+#DBD7CACC        
+#CB7676        ..
+#BD976A        nums
+#DBD7CACC      .
+#80A665        map
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#80A665        str
+#444444        (
+#80A665        fib
+#444444        (
+#BD976A        n
+#444444        ))),
+#444444        ))
+#758575DD      // https://github.com/typst/typst/blob/main/README.md

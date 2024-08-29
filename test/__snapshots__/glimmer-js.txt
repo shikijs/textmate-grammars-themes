@@ -1,0 +1,62 @@
+#DBD7CACC      import { helper } from '@ember/component/helper';
+#DBD7CACC      import { modifier } from 'ember-modifier';
+#DBD7CACC      const plusOne = helper(([num]) => num + 1);
+#DBD7CACC      const setScrollPosition = modifier((element, [position]) => {
+#DBD7CACC        element.scrollTop = position
+#DBD7CACC      });
+#444444        <
+#4D9375        template
+#444444        >
+#DBD7CACC        
+#444444        <
+#4D9375        div
+#DBD7CACC       
+#BD976A        class
+#444444        =
+#C98A7D77      "
+#C98A7D        scroll-container
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        {{
+#4D9375        setScrollPosition
+#CB7676         
+#C99076        @
+#B8A965        scrollPos
+#CB7676        }}
+#444444        >
+#DBD7CACC          
+#444444        {{#
+#4D9375        each
+#80A665         
+#C99076        @
+#B8A965        items
+#4D9375         as
+#80A665         
+#C99076        |
+#B8A965        item
+#4D9375         
+#B8A965        index
+#C99076        |
+#444444        }}
+#DBD7CACC            Item #
+#CB7676        {{
+#4D9375        plusOne
+#CB7676         
+#B8A965        index
+#CB7676        }}
+#DBD7CACC      : 
+#CB7676        {{
+#B8A965        item
+#CB7676        }}
+#DBD7CACC          
+#444444        {{/
+#4D9375        each
+#444444        }}
+#DBD7CACC        
+#444444        </
+#4D9375        div
+#444444        >
+#444444        </
+#4D9375        template
+#444444        >
+#DBD7CACC      // From https://github.com/ember-template-imports/ember-template-imports

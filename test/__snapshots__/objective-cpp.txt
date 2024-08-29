@@ -1,0 +1,138 @@
+#444444        #
+#4D9375        include
+#DBD7CACC       
+#C98A7D77      <
+#C98A7D        stdio.h
+#C98A7D77      >
+#444444        #
+#4D9375        include
+#DBD7CACC       
+#C98A7D77      <
+#C98A7D        Block.h
+#C98A7D77      >
+#4D9375        typedef
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#444444        (
+#CB7676        ^
+#DBD7CACC      IntBlock
+#444444        )();
+#DBD7CACC      IntBlock 
+#80A665        MakeCounter
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        start
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        increment
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        __block
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       i 
+#444444        =
+#DBD7CACC       start
+#444444        ;
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#80A665        Block_copy
+#444444        (
+#DBD7CACC       
+#CB7676        ^
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#CB7676        int
+#DBD7CACC       ret 
+#444444        =
+#DBD7CACC       i
+#444444        ;
+#DBD7CACC          i 
+#CB7676        +=
+#DBD7CACC       increment
+#444444        ;
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       ret
+#444444        ;
+#DBD7CACC        
+#444444        });
+#444444        }
+#CB7676        int
+#DBD7CACC       
+#80A665        main
+#444444        (
+#CB7676        void
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        IntBlock mycounter 
+#444444        =
+#DBD7CACC       
+#80A665        MakeCounter
+#444444        (
+#4C9A91        5
+#444444        ,
+#DBD7CACC       
+#4C9A91        2
+#444444        );
+#DBD7CACC        
+#80A665        printf
+#444444        (
+#C98A7D77      "
+#C98A7D        First call: 
+#C99076        %d\n
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#80A665        mycounter
+#444444        ());
+#DBD7CACC        
+#80A665        printf
+#444444        (
+#C98A7D77      "
+#C98A7D        Second call: 
+#C99076        %d\n
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#80A665        mycounter
+#444444        ());
+#DBD7CACC        
+#80A665        printf
+#444444        (
+#C98A7D77      "
+#C98A7D        Third call: 
+#C99076        %d\n
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#80A665        mycounter
+#444444        ());
+#DBD7CACC        
+#758575DD      /* because it was copied, it must also be released */
+#DBD7CACC        
+#80A665        Block_release
+#444444        (
+#DBD7CACC      mycounter
+#444444        );
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#444444        }
+#758575DD      /* Output:
+#758575DD        First call: 5
+#758575DD        Second call: 7
+#758575DD        Third call: 9
+#758575DD      */
+#758575DD      // From https://en.wikipedia.org/wiki/Objective-C

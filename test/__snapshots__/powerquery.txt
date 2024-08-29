@@ -1,0 +1,151 @@
+#758575DD      // Transforms a table into markdown syntax
+#444444        (
+#80A665        Table
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#CB7676        table
+#444444        )
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC          
+#4D9375        let
+#DBD7CACC          
+#80A665        Source
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        Table
+#444444        ,
+#DBD7CACC          
+#80A665        TableValues
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        Table
+#DBD7CACC      .AddColumn
+#444444        (
+#DBD7CACC              
+#80A665        Source
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Custom
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#4D9375        each
+#DBD7CACC       
+#80A665        Text
+#DBD7CACC      .Combine
+#444444        (
+#80A665        Record
+#DBD7CACC      .FieldValues
+#444444        (
+#CB7676        _
+#444444        ),
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D         | 
+#C98A7D77      "
+#444444        )
+#DBD7CACC          
+#444444        ),
+#DBD7CACC          
+#80A665        HyphenLine
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        Text
+#DBD7CACC      .Combine
+#444444        (
+#DBD7CACC            
+#80A665        List
+#DBD7CACC      .Transform
+#444444        (
+#DBD7CACC              
+#80A665        Table
+#DBD7CACC      .ColumnNames
+#444444        (
+#80A665        Source
+#444444        ),
+#DBD7CACC       
+#4D9375        each
+#DBD7CACC       
+#80A665        Text
+#DBD7CACC      .Repeat
+#444444        (
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#80A665        Text
+#DBD7CACC      .Length
+#444444        (
+#CB7676        _
+#444444        ))
+#DBD7CACC            
+#444444        ),
+#DBD7CACC            
+#C98A7D77      "
+#C98A7D         | 
+#C98A7D77      "
+#DBD7CACC          
+#444444        ),
+#DBD7CACC          
+#80A665        CombineList
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        List
+#DBD7CACC      .Combine
+#444444        (
+#DBD7CACC            
+#444444        {{
+#80A665        Text
+#DBD7CACC      .Combine
+#444444        (
+#80A665        Table
+#DBD7CACC      .ColumnNames
+#444444        (
+#80A665        Source
+#444444        ),
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D         | 
+#C98A7D77      "
+#444444        )},
+#DBD7CACC            
+#444444        {
+#80A665        HyphenLine
+#444444        },
+#DBD7CACC       
+#80A665        TableValues
+#444444        [
+#80A665        Custom
+#444444        ]}
+#DBD7CACC          
+#444444        ),
+#DBD7CACC          
+#80A665        TransferToMarkdown
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        Text
+#DBD7CACC      .Combine
+#444444        (
+#80A665        CombineList
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#444444        #(
+#C99076        lf
+#444444        )
+#C98A7D77      "
+#444444        )
+#DBD7CACC        
+#4D9375        in
+#DBD7CACC          
+#80A665        TransferToMarkdown
+#758575DD      // From https://github.com/mogulargmbh/powerquerysnippets/blob/main/snippets/Table_ToMarkdown.pq

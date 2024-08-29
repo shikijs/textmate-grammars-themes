@@ -1,0 +1,221 @@
+#758575DD      // This file is written in JSON5 syntax, naturally, but npm needs a regular
+#758575DD      // JSON file, so compile via `npm run build`. Be sure to keep both in sync!
+#444444        {
+#DBD7CACC          
+#C98A7D        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        json5
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        version
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        0.5.0
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        description
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        JSON for the ES5 era.
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        keywords
+#444444        :
+#DBD7CACC       
+#444444        [
+#C98A7D77      '
+#C98A7D        json
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        es5
+#C98A7D77      '
+#444444        ],
+#DBD7CACC          
+#C98A7D        author
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Aseem Kishore <aseem.kishore@gmail.com>
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        contributors
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#758575DD      // TODO: Should we remove this section in favor of GitHub's list?
+#DBD7CACC              
+#758575DD      // https://github.com/aseemk/json5/contributors
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        Max Nanasy <max.nanasy@gmail.com>
+#C98A7D77      '
+#444444        ,
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        Andrew Eisenberg <andrew@eisenberg.as>
+#C98A7D77      '
+#444444        ,
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        Jordan Tucker <jordanbtucker@gmail.com>
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#444444        ],
+#DBD7CACC          
+#C98A7D        main
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        lib/json5.js
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        bin
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        lib/cli.js
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        files
+#444444        :
+#DBD7CACC       
+#444444        [
+#C98A7D77      "
+#C98A7D        lib/
+#C98A7D77      "
+#444444        ],
+#DBD7CACC          
+#C98A7D        dependencies
+#444444        :
+#DBD7CACC       
+#444444        {},
+#DBD7CACC          
+#C98A7D        devDependencies
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#C98A7D        gulp
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ^3.9.1
+#C98A7D77      "
+#444444        ,
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        gulp-jshint
+#C98A7D77      '
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ^2.0.0
+#C98A7D77      "
+#444444        ,
+#DBD7CACC              
+#C98A7D        jshint
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ^2.9.1
+#C98A7D77      "
+#444444        ,
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        jshint-stylish
+#C98A7D77      '
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ^2.1.0
+#C98A7D77      "
+#444444        ,
+#DBD7CACC              
+#C98A7D        mocha
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ^2.4.5
+#C98A7D77      "
+#DBD7CACC          
+#444444        },
+#DBD7CACC          
+#C98A7D        scripts
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#C98A7D        build
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        node ./lib/cli.js -c package.json5
+#C98A7D77      '
+#444444        ,
+#DBD7CACC              
+#C98A7D        test
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        mocha --ui exports --reporter spec
+#C98A7D77      '
+#444444        ,
+#DBD7CACC                  
+#758575DD      // TODO: Would it be better to define these in a mocha.opts file?
+#DBD7CACC          
+#444444        },
+#DBD7CACC          
+#C98A7D        homepage
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        http://json5.org/
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        license
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        MIT
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#C98A7D        repository
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#C98A7D        type
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        git
+#C98A7D77      '
+#444444        ,
+#DBD7CACC              
+#C98A7D        url
+#444444        :
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        https://github.com/aseemk/json5.git
+#C98A7D77      '
+#444444        ,
+#DBD7CACC          
+#444444        },
+#444444        }
+#758575DD      // From https://github.com/mrmlnc/vscode-json5/blob/master/syntaxes/json5.json

@@ -1,0 +1,240 @@
+#758575DD      # [] can be used, first match returned
+#4C9A91        1
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ][:
+#C99076        a
+#444444        ]
+#758575DD      # [] missing value is nil
+#4D9375        nil
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ][:
+#C99076        c
+#444444        ]
+#758575DD      # Keyword get also works
+#4C9A91        1
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Keyword
+#444444        .
+#80A665        get
+#444444        ([
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ],
+#DBD7CACC       
+#444444        :
+#C99076        a
+#444444        )
+#758575DD      # missing value is nil
+#4D9375        nil
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Keyword
+#444444        .
+#80A665        get
+#444444        ([
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ],
+#DBD7CACC       
+#444444        :
+#C99076        c
+#444444        )
+#758575DD      # an optional default value can be specified
+#758575DD      # for missing keys
+#C98A7D77      "
+#C98A7D        missing
+#C98A7D77      "
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Keyword
+#444444        .
+#80A665        get
+#444444        ([
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ],
+#DBD7CACC       
+#444444        :
+#C99076        c
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        missing
+#C98A7D77      "
+#444444        )
+#758575DD      # Keyword.take returns a list of matching pairs
+#444444        [
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Keyword
+#444444        .
+#80A665        take
+#444444        ([
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ],
+#DBD7CACC       
+#444444        [:
+#C99076        a
+#444444        ])
+#444444        []
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Keyword
+#444444        .
+#80A665        take
+#444444        ([
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ],
+#DBD7CACC       
+#444444        [:
+#C99076        c
+#444444        ])
+#758575DD      # dot syntax does NOT work
+#758575DD      # results in compile error
+#444444        [
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#C99076        b
+#444444        :
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#C99076        a
+#444444        :
+#DBD7CACC       
+#4C9A91        3
+#444444        ].
+#DBD7CACC      a
+#758575DD      # From https://elixir-examples.github.io/single-page

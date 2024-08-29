@@ -1,0 +1,380 @@
+#444444        #
+#4D9375        include
+#DBD7CACC       
+#C98A7D77      <
+#C98A7D        stdio.h
+#C98A7D77      >
+#444444        #
+#4D9375        define
+#DBD7CACC       
+#80A665        ARR_LEN
+#DBD7CACC       
+#4C9A91        7
+#CB7676        void
+#DBD7CACC       
+#80A665        qsort
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        left
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        right
+#444444        );
+#CB7676        void
+#DBD7CACC       
+#80A665        printArr
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        len
+#444444        );
+#CB7676        int
+#DBD7CACC       
+#80A665        main
+#444444        ()
+#444444        {
+#DBD7CACC      	
+#CB7676        int
+#DBD7CACC       i
+#444444        ;
+#DBD7CACC      	
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#444444        [
+#DBD7CACC      ARR_LEN
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#4C9A91        4
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        ,
+#DBD7CACC       
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#4C9A91        7
+#444444        ,
+#DBD7CACC       
+#4C9A91        9
+#444444        ,
+#DBD7CACC       
+#4C9A91        6
+#444444        ,
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#444444        };
+#DBD7CACC      	
+#80A665        printArr
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       ARR_LEN
+#444444        );
+#DBD7CACC      	
+#80A665        qsort
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       ARR_LEN
+#CB7676        -
+#4C9A91        1
+#444444        );
+#DBD7CACC      	
+#80A665        printArr
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       ARR_LEN
+#444444        );
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#444444        }
+#CB7676        void
+#DBD7CACC       
+#80A665        qsort
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        left
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        right
+#444444        )
+#444444        {
+#DBD7CACC      	
+#CB7676        int
+#DBD7CACC       i
+#444444        ,
+#DBD7CACC       last
+#444444        ;
+#DBD7CACC      	
+#CB7676        void
+#DBD7CACC       
+#80A665        swap
+#444444        (
+#CB7676        int
+#DBD7CACC       v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       i
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       j
+#444444        );
+#DBD7CACC      	
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#DBD7CACC      left 
+#CB7676        >=
+#DBD7CACC       right
+#444444        )
+#DBD7CACC      		
+#4D9375        return
+#444444        ;
+#DBD7CACC      	
+#80A665        swap
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       left
+#444444        ,
+#DBD7CACC       
+#444444        (
+#DBD7CACC      left 
+#CB7676        +
+#DBD7CACC       right
+#444444        )
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#4C9A91        2
+#444444        );
+#DBD7CACC      	last 
+#444444        =
+#DBD7CACC       left
+#444444        ;
+#DBD7CACC      	
+#4D9375        for
+#DBD7CACC       
+#444444        (
+#DBD7CACC      i 
+#444444        =
+#DBD7CACC       left
+#CB7676        +
+#4C9A91        1
+#444444        ;
+#DBD7CACC       i 
+#CB7676        <=
+#DBD7CACC       right
+#444444        ;
+#DBD7CACC       i
+#CB7676        ++
+#444444        )
+#DBD7CACC      		
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#BD976A        v
+#444444        [
+#DBD7CACC      i
+#444444        ]
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        v
+#444444        [
+#DBD7CACC      left
+#444444        ])
+#DBD7CACC      			
+#80A665        swap
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       
+#CB7676        ++
+#DBD7CACC      last
+#444444        ,
+#DBD7CACC       i
+#444444        );
+#DBD7CACC      	
+#80A665        swap
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       left
+#444444        ,
+#DBD7CACC       last
+#444444        );
+#DBD7CACC      	
+#80A665        qsort
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       left
+#444444        ,
+#DBD7CACC       last
+#CB7676        -
+#4C9A91        1
+#444444        );
+#DBD7CACC      	
+#80A665        qsort
+#444444        (
+#DBD7CACC      v
+#444444        ,
+#DBD7CACC       last
+#CB7676        +
+#4C9A91        1
+#444444        ,
+#DBD7CACC       right
+#444444        );
+#444444        }
+#CB7676        void
+#DBD7CACC       
+#80A665        swap
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        i
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        j
+#444444        )
+#444444        {
+#DBD7CACC      	
+#CB7676        int
+#DBD7CACC       temp
+#444444        ;
+#DBD7CACC      	temp 
+#444444        =
+#DBD7CACC       
+#BD976A        v
+#444444        [
+#DBD7CACC      i
+#444444        ];
+#DBD7CACC      	
+#BD976A        v
+#444444        [
+#DBD7CACC      i
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        v
+#444444        [
+#DBD7CACC      j
+#444444        ];
+#DBD7CACC      	
+#BD976A        v
+#444444        [
+#DBD7CACC      j
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       temp
+#444444        ;
+#444444        }
+#CB7676        void
+#DBD7CACC       
+#80A665        printArr
+#444444        (
+#CB7676        int
+#DBD7CACC       
+#BD976A        v
+#CB7676        []
+#444444        ,
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#BD976A        len
+#444444        )
+#444444        {
+#DBD7CACC      	
+#CB7676        int
+#DBD7CACC       i
+#444444        ;
+#DBD7CACC      	
+#4D9375        for
+#DBD7CACC       
+#444444        (
+#DBD7CACC      i 
+#444444        =
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#DBD7CACC       i 
+#CB7676        <
+#DBD7CACC       len
+#444444        ;
+#DBD7CACC       i
+#CB7676        ++
+#444444        )
+#DBD7CACC      		
+#80A665        printf
+#444444        (
+#C98A7D77      "
+#C99076        %d
+#C98A7D         
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        v
+#444444        [
+#DBD7CACC      i
+#444444        ]);
+#DBD7CACC      	
+#80A665        printf
+#444444        (
+#C98A7D77      "
+#C99076        \n
+#C98A7D77      "
+#444444        );
+#444444        }
+#758575DD      // From https://github.com/Heatwave/The-C-Programming-Language-2nd-Edition/blob/master/chapter-4-functions-and-program-structure/8.qsort.c

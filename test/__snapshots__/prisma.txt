@@ -1,0 +1,154 @@
+#CB7676        datasource
+#DBD7CACC       
+#5DA994        db
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        provider
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D        "postgresql"
+#DBD7CACC        
+#BD976A        url
+#DBD7CACC            
+#CB7676        =
+#DBD7CACC       
+#B8A965        env
+#444444        (
+#C98A7D        "DATABASE_URL"
+#444444        )
+#DBD7CACC      }
+#CB7676        generator
+#DBD7CACC       
+#5DA994        client
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        provider
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D        "prisma-client-js"
+#DBD7CACC      }
+#758575DD      /// Post including an author and content.
+#CB7676        model
+#DBD7CACC       
+#5DA994        Post
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        id
+#DBD7CACC              
+#5DA994        Int
+#DBD7CACC               
+#80A665        @default
+#444444        (
+#B8A965        autoincrement
+#444444        ())
+#DBD7CACC       
+#80A665        @id
+#DBD7CACC        
+#BD976A        content
+#DBD7CACC         
+#5DA994        String
+#CB7676        ?
+#DBD7CACC        
+#BD976A        published
+#DBD7CACC       
+#5DA994        Boolean
+#DBD7CACC           
+#80A665        @default
+#444444        (
+#4D9375        false
+#444444        )
+#DBD7CACC        
+#BD976A        author
+#DBD7CACC          
+#C99076        User
+#CB7676        ?
+#DBD7CACC             
+#80A665        @relation
+#444444        (
+#BD976A        fields
+#444444        :
+#DBD7CACC       [
+#C99076        authorId
+#DBD7CACC      ], 
+#BD976A        references
+#444444        :
+#DBD7CACC       [
+#C99076        id
+#DBD7CACC      ]
+#444444        )
+#DBD7CACC        
+#BD976A        authorId
+#DBD7CACC        
+#5DA994        Int
+#CB7676        ?
+#444444        }
+#758575DD      // Documentation for this model.
+#CB7676        model
+#DBD7CACC       
+#5DA994        User
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        id
+#DBD7CACC          
+#5DA994        Int
+#DBD7CACC           
+#80A665        @default
+#444444        (
+#B8A965        autoincrement
+#444444        ())
+#DBD7CACC       
+#80A665        @id
+#DBD7CACC        
+#BD976A        email
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC        
+#80A665        @unique
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC        
+#5DA994        String
+#CB7676        ?
+#DBD7CACC        
+#BD976A        posts
+#DBD7CACC       
+#C99076        Post
+#CB7676        []
+#DBD7CACC        
+#BD976A        specialName
+#DBD7CACC       
+#C99076        UserName
+#DBD7CACC        
+#BD976A        test
+#DBD7CACC       
+#C99076        Test
+#444444        }
+#758575DD      /// This is an enum specifying the UserName.
+#CB7676        enum
+#DBD7CACC       
+#5DA994        UserName
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        Fred
+#DBD7CACC          
+#BD976A        Eric
+#444444        }
+#758575DD      // This is a test enum.
+#CB7676        enum
+#DBD7CACC       
+#5DA994        Test
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        TestUno
+#DBD7CACC        
+#BD976A        TestDue
+#444444        }
+#758575DD      // taken from https://github.com/prisma/language-tools/blob/master/packages/vscode/testFixture/hover.prisma

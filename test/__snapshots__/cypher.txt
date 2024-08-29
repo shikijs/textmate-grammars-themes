@@ -1,0 +1,180 @@
+#4D9375        UNWIND
+#DBD7CACC       [
+#DBD7CACC          
+#4D9375        {
+#DBD7CACC       
+#BD976A        title
+#4D9375        :
+#DBD7CACC       
+#C98A7D        "Cypher Basics I"
+#4D9375        ,
+#DBD7CACC            
+#BD976A        created
+#4D9375        :
+#DBD7CACC       
+#BD976A        datetime
+#DBD7CACC      (
+#C98A7D        "2019-06-01T18:40:32.142+0100"
+#DBD7CACC      )
+#4D9375        ,
+#DBD7CACC            
+#BD976A        datePublished
+#4D9375        :
+#DBD7CACC       
+#BD976A        date
+#DBD7CACC      (
+#C98A7D        "2019-06-01"
+#DBD7CACC      )
+#4D9375        ,
+#DBD7CACC            
+#BD976A        readingTime
+#4D9375        :
+#DBD7CACC       {
+#BD976A        minutes
+#4D9375        :
+#DBD7CACC       
+#4C9A91        2
+#4D9375        ,
+#DBD7CACC       
+#BD976A        seconds
+#4D9375        :
+#DBD7CACC       
+#4C9A91        15
+#4D9375        }
+#DBD7CACC       },
+#DBD7CACC          
+#4D9375        {
+#DBD7CACC       
+#BD976A        title
+#4D9375        :
+#DBD7CACC       
+#C98A7D        "Cypher Basics II"
+#4D9375        ,
+#DBD7CACC            
+#BD976A        created
+#4D9375        :
+#DBD7CACC       
+#BD976A        datetime
+#DBD7CACC      (
+#C98A7D        "2019-06-02T10:23:32.122+0100"
+#DBD7CACC      )
+#4D9375        ,
+#DBD7CACC            
+#BD976A        datePublished
+#4D9375        :
+#DBD7CACC       
+#BD976A        date
+#DBD7CACC      (
+#C98A7D        "2019-06-02"
+#DBD7CACC      )
+#4D9375        ,
+#DBD7CACC            
+#BD976A        readingTime
+#4D9375        :
+#DBD7CACC       {
+#BD976A        minutes
+#4D9375        :
+#DBD7CACC       
+#4C9A91        2
+#4D9375        ,
+#DBD7CACC       
+#BD976A        seconds
+#4D9375        :
+#DBD7CACC       
+#4C9A91        30
+#4D9375        }
+#DBD7CACC       },
+#DBD7CACC          
+#4D9375        {
+#DBD7CACC       
+#BD976A        title
+#4D9375        :
+#DBD7CACC       
+#C98A7D        "Dates, Datetimes, and Durations in Neo4j"
+#4D9375        ,
+#DBD7CACC            
+#BD976A        created
+#4D9375        :
+#DBD7CACC       
+#BD976A        datetime
+#DBD7CACC      ()
+#4D9375        ,
+#DBD7CACC            
+#BD976A        datePublished
+#4D9375        :
+#DBD7CACC       
+#BD976A        date
+#DBD7CACC      ()
+#4D9375        ,
+#DBD7CACC            
+#BD976A        readingTime
+#4D9375        :
+#DBD7CACC       {
+#BD976A        minutes
+#4D9375        :
+#DBD7CACC       
+#4C9A91        3
+#4D9375        ,
+#DBD7CACC       
+#BD976A        seconds
+#4D9375        :
+#DBD7CACC       
+#4C9A91        30
+#4D9375        }
+#DBD7CACC       }
+#DBD7CACC      ] 
+#4D9375        AS
+#DBD7CACC       
+#BD976A        articleProperties
+#4D9375        CREATE
+#DBD7CACC       (
+#BD976A        article
+#DBD7CACC      :
+#BD976A        Article
+#DBD7CACC       
+#4D9375        {
+#BD976A        title
+#4D9375        :
+#DBD7CACC       
+#BD976A        articleProperties
+#DBD7CACC      .
+#BD976A        title
+#4D9375        }
+#DBD7CACC      )
+#4D9375        SET
+#DBD7CACC       
+#BD976A        article
+#DBD7CACC      .
+#BD976A        created
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        articleProperties
+#DBD7CACC      .
+#BD976A        created
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        article
+#DBD7CACC      .
+#BD976A        datePublished
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        articleProperties
+#DBD7CACC      .
+#BD976A        datePublished
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        article
+#DBD7CACC      .
+#BD976A        readingTime
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        duration
+#DBD7CACC      (
+#BD976A        articleProperties
+#DBD7CACC      .
+#BD976A        readingTime
+#DBD7CACC      )
+#758575DD      // https://neo4j.com/developer/cypher/dates-datetimes-durations/

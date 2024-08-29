@@ -1,0 +1,277 @@
+#4D9375        capture
+#DBD7CACC       
+#CB7676        program
+#DBD7CACC       
+#CB7676        drop 
+#80A665        exit_message
+#CB7676        program
+#DBD7CACC       
+#80A665        exit_message
+#DBD7CACC          
+#4D9375        syntax
+#444444        ,
+#DBD7CACC       
+#5DA994        rc
+#CB7676        (
+#B8A965        int
+#CB7676        )
+#DBD7CACC       
+#5DA994        progname
+#CB7676        (
+#B8A965        str
+#CB7676        )
+#DBD7CACC       
+#5DA994        start_time
+#CB7676        (
+#B8A965        str
+#CB7676        )
+#DBD7CACC       
+#FDAEB7        [
+#5DA994        CAPture
+#FDAEB7        ]
+#DBD7CACC          
+#4D9375        local
+#DBD7CACC       
+#5DA994        end_time
+#DBD7CACC       
+#C98A7D77      "$
+#5DA994        S_TIME
+#C98A7D         
+#C98A7D77      $
+#5DA994        S_DATE
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        local
+#DBD7CACC       
+#5DA994        time
+#DBD7CACC           
+#C98A7D77      "
+#C98A7D        Start: 
+#C98A7D77      `
+#5DA994        start_time
+#C98A7D77      '"
+#DBD7CACC       
+#B8A965        _n
+#444444        (
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        End: 
+#C98A7D77      `
+#5DA994        end_time
+#C98A7D77      '"
+#DBD7CACC          
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      ""
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#CB7676        (
+#C98A7D77      `
+#5DA994        rc
+#C98A7D77      '
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#4C9A91        0
+#CB7676        )
+#DBD7CACC       
+#4D9375        {
+#DBD7CACC              
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        End: 
+#C98A7D77      $
+#5DA994        S_TIME
+#C98A7D         
+#C98A7D77      $
+#5DA994        S_DATE
+#C98A7D77      "
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        paux
+#DBD7CACC            ran
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        message
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         finished running
+#C98A7D77      "
+#DBD7CACC       
+#B8A965        _n
+#444444        (
+#4C9A91        2
+#444444        )
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        time
+#C98A7D77      '"
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        subject
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         
+#C98A7D77      `
+#5DA994        paux
+#C98A7D77      '"
+#DBD7CACC          
+#4D9375        }
+#DBD7CACC          
+#4D9375        else if
+#DBD7CACC       
+#CB7676        (
+#C98A7D77      "`
+#5DA994        capture
+#C98A7D77      '"
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#C98A7D77      ""
+#CB7676        )
+#DBD7CACC       
+#4D9375        {
+#DBD7CACC              
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        WARNING: 
+#C98A7D77      $
+#5DA994        S_TIME
+#C98A7D         
+#C98A7D77      $
+#5DA994        S_DATE
+#C98A7D77      "
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        paux
+#DBD7CACC       ran with non
+#CB7676        -
+#4C9A91        0
+#DBD7CACC       
+#4D9375        exit
+#DBD7CACC       status
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        message
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         ran but Stata gave error code r(
+#C98A7D77      `
+#5DA994        rc
+#C98A7D77      '
+#C98A7D        )
+#C98A7D77      "
+#DBD7CACC       
+#B8A965        _n
+#444444        (
+#4C9A91        2
+#444444        )
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        time
+#C98A7D77      '"
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        subject
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         
+#C98A7D77      `
+#5DA994        paux
+#C98A7D77      '"
+#DBD7CACC          
+#4D9375        }
+#DBD7CACC          
+#4D9375        else
+#DBD7CACC       
+#4D9375        {
+#DBD7CACC              
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ERROR: 
+#C98A7D77      $
+#5DA994        S_TIME
+#C98A7D         
+#C98A7D77      $
+#5DA994        S_DATE
+#C98A7D77      "
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        paux
+#DBD7CACC       ran with errors
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        message
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         stopped with error code r(
+#C98A7D77      `
+#5DA994        rc
+#C98A7D77      '
+#C98A7D        )
+#C98A7D77      "
+#DBD7CACC       
+#B8A965        _n
+#444444        (
+#4C9A91        2
+#444444        )
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        time
+#C98A7D77      '"
+#DBD7CACC              
+#4D9375        local
+#DBD7CACC       
+#5DA994        subject
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        progname
+#C98A7D77      '
+#C98A7D         
+#C98A7D77      `
+#5DA994        paux
+#C98A7D77      '"
+#DBD7CACC          
+#4D9375        }
+#DBD7CACC          
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        subject
+#C98A7D77      '"
+#DBD7CACC          
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      ""
+#DBD7CACC          
+#4D9375        di
+#DBD7CACC       
+#C98A7D77      "`
+#5DA994        message
+#C98A7D77      '"
+#4D9375        end
+#758575DD      * From https://github.com/mcaceresb/stata-gtools/blob/fad519ef0454936d450802ac732728ba953957ac/src/test/gtools_tests.do

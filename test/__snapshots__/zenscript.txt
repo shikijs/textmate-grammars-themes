@@ -1,0 +1,223 @@
+#4D9375        import
+#DBD7CACC       
+#CB7676        crafttweaker
+#4D9375        .
+#DBD7CACC      api
+#4D9375        .
+#DBD7CACC      BracketHandlers;
+#CB7676        val
+#DBD7CACC       air = 
+#4D9375        <item:
+#BD976A        minecraft:air
+#4D9375        >
+#DBD7CACC      ;
+#CB7676        val
+#DBD7CACC       diamond = 
+#4D9375        <item:
+#BD976A        minecraft:diamond
+#4D9375        >
+#DBD7CACC      ;
+#CB7676        var
+#DBD7CACC       woodTypes = [
+#C98A7D77      "
+#C98A7D        oak
+#C98A7D77      "
+#DBD7CACC      ,
+#C98A7D77      "
+#C98A7D        spruce
+#C98A7D77      "
+#DBD7CACC      ,
+#C98A7D77      "
+#C98A7D        birch
+#C98A7D77      "
+#DBD7CACC      ,
+#C98A7D77      "
+#C98A7D        jungle
+#C98A7D77      "
+#DBD7CACC      ,
+#C98A7D77      "
+#C98A7D        acacia
+#C98A7D77      "
+#DBD7CACC      ,
+#C98A7D77      "
+#C98A7D        dark_oak
+#C98A7D77      "
+#DBD7CACC      ];
+#4D9375        for
+#DBD7CACC       name 
+#4D9375        in
+#DBD7CACC       woodTypes {
+#DBD7CACC          
+#CB7676        val
+#DBD7CACC       thing = 
+#CB7676        BracketHandlers
+#4D9375        .
+#DBD7CACC      getItem(
+#C98A7D77      "
+#C98A7D        minecraft:
+#C98A7D77      "
+#DBD7CACC       + name + 
+#C98A7D77      "
+#C98A7D        _planks
+#C98A7D77      "
+#DBD7CACC      );
+#DBD7CACC          
+#CB7676        craftingTable
+#4D9375        .
+#DBD7CACC      addShaped(name + 
+#C98A7D77      "
+#C98A7D        _diamond
+#C98A7D77      "
+#DBD7CACC      , diamond, [[air, thing], [thing, air]]);
+#DBD7CACC      }
+#CB7676        function 
+#80A665        checkLeapYear
+#DBD7CACC      (year 
+#4D9375        as
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC      ) 
+#4D9375        as
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC      (year % 
+#4C9A91        4
+#DBD7CACC       == 
+#4C9A91        0
+#DBD7CACC      ) {
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC      (year % 
+#4C9A91        100
+#DBD7CACC       == 
+#4C9A91        0
+#DBD7CACC      ) {
+#DBD7CACC                  
+#4D9375        if
+#DBD7CACC      (year % 
+#4C9A91        400
+#DBD7CACC       == 
+#4C9A91        0
+#DBD7CACC      ) {
+#DBD7CACC                      
+#4D9375        return
+#DBD7CACC       
+#4D9375        true
+#DBD7CACC      ;
+#DBD7CACC                  } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC                      
+#4D9375        return
+#DBD7CACC       
+#4D9375        false
+#DBD7CACC      ;
+#DBD7CACC                  }
+#DBD7CACC              } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC                  
+#4D9375        return
+#DBD7CACC       
+#4D9375        true
+#DBD7CACC      ;
+#DBD7CACC              }
+#DBD7CACC          } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        return
+#DBD7CACC       
+#4D9375        false
+#DBD7CACC      ;
+#DBD7CACC          }
+#DBD7CACC      }
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2000 a leap year: 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear(
+#4C9A91        2000
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2004 a leap year: 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear(
+#4C9A91        2004
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2100 a leap year: 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear(
+#4C9A91        2100
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2012 a leap year: 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear(
+#4C9A91        2012
+#DBD7CACC      ));
+#758575DD      //Note: this is a cleaner way
+#CB7676        function 
+#80A665        checkLeapYear2
+#DBD7CACC      (year 
+#4D9375        as
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC      ) 
+#4D9375        as
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       year % 
+#4C9A91        4
+#DBD7CACC       == 
+#4C9A91        0
+#DBD7CACC       && (year % 
+#4C9A91        100
+#DBD7CACC       != 
+#4C9A91        0
+#DBD7CACC       || year % 
+#4C9A91        400
+#DBD7CACC       == 
+#4C9A91        0
+#DBD7CACC      );
+#DBD7CACC      }
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2000 a leap year (2nd function): 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear2(
+#4C9A91        2000
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2004 a leap year (2nd function): 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear2(
+#4C9A91        2004
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2100 a leap year (2nd function): 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear2(
+#4C9A91        2100
+#DBD7CACC      ));
+#DBD7CACC      print(
+#C98A7D77      "
+#C98A7D        Is 2012 a leap year (2nd function): 
+#C98A7D77      "
+#DBD7CACC       ~ checkLeapYear2(
+#4C9A91        2012
+#DBD7CACC      ));
+#DBD7CACC      # From https:
+#758575DD      //github.com/CraftTweaker/CraftTweaker-Examples

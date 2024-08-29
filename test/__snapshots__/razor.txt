@@ -1,0 +1,53 @@
+#4D9375        @{
+#DBD7CACC          string message = "foreignObject example with Scalable Vector Graphics (SVG)";
+#4D9375        }
+#DBD7CACC      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+#DBD7CACC          <rect x="0" y="0" rx="10" ry="10" width="200" height="200" stroke="black"
+#DBD7CACC              fill="none" />
+#DBD7CACC          <foreignObject x="20" y="20" width="160" height="160">
+#DBD7CACC              <p>
+#4D9375        @
+#BD976A        message
+#DBD7CACC      </p>
+#DBD7CACC          </foreignObject>
+#DBD7CACC      </svg>
+#DBD7CACC      <!-- 
+#4D9375        @do
+#DBD7CACC       while -->
+#4D9375        @{
+#DBD7CACC       var i = 0; 
+#4D9375        }
+#4D9375        @do
+#444444        {
+#DBD7CACC          var person = people[i];
+#DBD7CACC          
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      Name: 
+#4D9375        @
+#BD976A        person
+#DBD7CACC      .
+#BD976A        Name
+#444444        </
+#4D9375        p
+#444444        >
+#DBD7CACC          
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      Age: 
+#4D9375        @
+#BD976A        person
+#DBD7CACC      .
+#BD976A        Age
+#444444        </
+#4D9375        p
+#444444        >
+#DBD7CACC          i++;
+#444444        }
+#DBD7CACC       
+#4D9375        while
+#DBD7CACC       (i < people.Length)
+#444444        ;
+#DBD7CACC      <!-- From https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-7.0 -->

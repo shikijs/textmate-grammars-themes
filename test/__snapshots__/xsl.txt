@@ -1,0 +1,92 @@
+#DBD7CACC      <?xml version="1.0"?>
+#DBD7CACC      <xsl:stylesheet version="1.0"
+#DBD7CACC                         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+#DBD7CACC                         xmlns:myNS="http://devedge.netscape.com/2002/de">
+#DBD7CACC        <xsl:output method="html" />
+#DBD7CACC        
+#444444        <
+#4D9375        xsl
+#444444        :
+#4D9375        template
+#DBD7CACC       
+#BD976A        match
+#DBD7CACC      =
+#C98A7D77      "
+#C98A7D        /
+#C98A7D77      "
+#444444        >
+#DBD7CACC          <html>
+#DBD7CACC            <head>
+#DBD7CACC              <title>
+#DBD7CACC                <xsl:value-of select="/myNS:Article/myNS:Title"/>
+#DBD7CACC              </title>
+#DBD7CACC              <style>
+#DBD7CACC                .myBox {margin:10px 155px 0 50px; border: 1px dotted #639ACE; padding:0 5px 0 5px;}
+#DBD7CACC              </style>
+#DBD7CACC            </head>
+#DBD7CACC            <body>
+#DBD7CACC              <p class="myBox">
+#DBD7CACC                <span class="title">
+#DBD7CACC                  <xsl:value-of select="/myNS:Article/myNS:Title"/>
+#DBD7CACC                </span> <br />
+#DBD7CACC                Authors:   <br />
+#DBD7CACC                  <xsl:apply-templates select="/myNS:Article/myNS:Authors/myNS:Author"/>
+#DBD7CACC                </p>
+#DBD7CACC              <p class="myBox">
+#DBD7CACC                <xsl:apply-templates select="//myNS:Body"/>
+#DBD7CACC              </p>
+#DBD7CACC            </body>
+#DBD7CACC          </html>
+#DBD7CACC        </xsl:template>
+#DBD7CACC        
+#444444        <
+#4D9375        xsl
+#444444        :
+#4D9375        template
+#DBD7CACC       
+#BD976A        match
+#DBD7CACC      =
+#C98A7D77      "
+#C98A7D        myNS:Author
+#C98A7D77      "
+#444444        >
+#DBD7CACC           --   <xsl:value-of select="." />
+#DBD7CACC          <xsl:if test="@company">
+#DBD7CACC           ::   <b>  <xsl:value-of select="@company" />  </b>
+#DBD7CACC          </xsl:if>
+#DBD7CACC          <br />
+#DBD7CACC        </xsl:template>
+#DBD7CACC        
+#444444        <
+#4D9375        xsl
+#444444        :
+#4D9375        template
+#DBD7CACC       
+#BD976A        match
+#DBD7CACC      =
+#C98A7D77      "
+#C98A7D        myNS:Body
+#C98A7D77      "
+#444444        >
+#DBD7CACC          <xsl:copy>
+#DBD7CACC            <xsl:apply-templates select="@*|node()"/>
+#DBD7CACC          </xsl:copy>
+#DBD7CACC        </xsl:template>
+#DBD7CACC        
+#444444        <
+#4D9375        xsl
+#444444        :
+#4D9375        template
+#DBD7CACC       
+#BD976A        match
+#DBD7CACC      =
+#C98A7D77      "
+#C98A7D        @*|node()
+#C98A7D77      "
+#444444        >
+#DBD7CACC            <xsl:copy>
+#DBD7CACC              <xsl:apply-templates select="@*|node()"/>
+#DBD7CACC            </xsl:copy>
+#DBD7CACC        </xsl:template>
+#DBD7CACC      </xsl:stylesheet>
+#DBD7CACC      <!-- https://developer.mozilla.org/en-US/docs/Web/XSLT/XSLT_JS_interface_in_Gecko/Basic_Example -->

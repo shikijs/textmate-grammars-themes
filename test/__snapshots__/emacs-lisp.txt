@@ -1,0 +1,156 @@
+#758575DD      ;;; cdl.el --- Common Data Language (CDL) utility functions for GNU Emacs 
+#444444        -*-
+#758575DD       
+#BD976A        lexical-binding
+#444444        :
+#758575DD       
+#C98A7D        t
+#758575DD       
+#444444        -*-
+#758575DD      ;; Copyright (C) 1993, 2001-2024 Free Software Foundation, Inc.
+#758575DD      ;; Author: Ata Etemadi <ATAE@spva.physics.imperial.ac.uk>
+#758575DD      ;; Maintainer: emacs-devel@gnu.org
+#758575DD      ;; Keywords: data
+#758575DD      ;;; Commentary:
+#758575DD      ;;; Code:
+#444444        (
+#CB7676        defun
+#DBD7CACC       
+#80A665        cdl-get-file
+#444444         (
+#BD976A        filename
+#444444        )
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        Run file through ncdump and insert result into buffer after point.
+#C98A7D77      "
+#DBD7CACC        
+#444444        (
+#CB7676        interactive
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        fCDF file: 
+#C98A7D77      "
+#444444        )
+#DBD7CACC        
+#444444        (
+#B8A965        message
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ncdump in progress...
+#C98A7D77      "
+#444444        )
+#DBD7CACC        
+#444444        (
+#CB7676        let
+#DBD7CACC       
+#444444        ((
+#DBD7CACC      start 
+#444444        (
+#B8A965        point
+#444444        )))
+#DBD7CACC          
+#444444        (
+#B8A965        call-process
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        ncdump
+#C98A7D77      "
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC       
+#C99076        t
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC       
+#444444        (
+#B8A965        expand-file-name
+#DBD7CACC       filename
+#444444        ))
+#DBD7CACC          
+#444444        (
+#B8A965        goto-char
+#DBD7CACC       start
+#444444        ))
+#DBD7CACC        
+#444444        (
+#B8A965        message
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ncdump in progress...done
+#C98A7D77      "
+#444444        )
+#444444        )
+#444444        (
+#CB7676        defun
+#DBD7CACC       
+#80A665        cdl-put-region
+#444444         (
+#BD976A        filename
+#DBD7CACC       
+#BD976A        start
+#DBD7CACC       
+#BD976A        end
+#444444        )
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        Run region through ncgen and write results into a file.
+#C98A7D77      "
+#DBD7CACC        
+#444444        (
+#CB7676        interactive
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        FNew CDF file: 
+#444444        \
+#C99076        n
+#C98A7D        r
+#C98A7D77      "
+#444444        )
+#DBD7CACC        
+#444444        (
+#B8A965        message
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ncgen in progress...
+#C98A7D77      "
+#444444        )
+#DBD7CACC        
+#444444        (
+#B8A965        call-process-region
+#DBD7CACC       start end 
+#C98A7D77      "
+#C98A7D        ncgen
+#C98A7D77      "
+#DBD7CACC                             
+#4D9375        nil
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        -o
+#C98A7D77      "
+#DBD7CACC       
+#444444        (
+#B8A965        expand-file-name
+#DBD7CACC       filename
+#444444        ))
+#DBD7CACC        
+#444444        (
+#B8A965        message
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ncgen in progress...done
+#C98A7D77      "
+#444444        )
+#444444        )
+#444444        (
+#B8A965        provide
+#DBD7CACC       
+#444444        '
+#C99076        cdl
+#444444        )
+#758575DD      ;;; cdl.el ends here
+#758575DD      ;; From https://git.savannah.gnu.org/cgit/emacs.git/tree/lisp/cdl.el

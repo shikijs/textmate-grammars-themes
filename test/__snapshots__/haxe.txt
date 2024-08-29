@@ -1,0 +1,222 @@
+#758575DD      // Game.hx
+#CB7676        class
+#DBD7CACC       
+#5DA994        Game
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#758575DD      // Haxe applications have a static entry point called main
+#DBD7CACC        
+#CB7676        static
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        main
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#758575DD      // Anonymous structures.
+#DBD7CACC          
+#CB7676        var
+#DBD7CACC       
+#BD976A        playerA
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        name
+#DBD7CACC      : 
+#C98A7D77      "
+#C98A7D        Simon
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        move
+#DBD7CACC      : 
+#5DA994        Paper
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#CB7676        var
+#DBD7CACC       
+#BD976A        playerB
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        name
+#DBD7CACC      : 
+#C98A7D77      "
+#C98A7D        Nicolas
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        move
+#DBD7CACC      : 
+#5DA994        Rock
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#758575DD      // Array pattern matching. A switch can return a value.
+#DBD7CACC          
+#CB7676        var
+#DBD7CACC       
+#BD976A        result
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        switch
+#DBD7CACC       
+#444444        [
+#BD976A        playerA
+#444444        .
+#BD976A        move
+#444444        ,
+#DBD7CACC       
+#BD976A        playerB
+#444444        .
+#BD976A        move
+#444444        ]
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#4D9375        case
+#DBD7CACC       
+#444444        [
+#5DA994        Rock
+#444444        ,
+#DBD7CACC       
+#5DA994        Scissors
+#444444        ]
+#DBD7CACC       |
+#DBD7CACC                 
+#444444        [
+#5DA994        Paper
+#444444        ,
+#DBD7CACC       
+#5DA994        Rock
+#444444        ]
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC                 
+#444444        [
+#5DA994        Scissors
+#444444        ,
+#DBD7CACC       
+#5DA994        Paper
+#444444        ]
+#DBD7CACC      : 
+#5DA994        Winner
+#444444        (
+#BD976A        playerA
+#444444        );
+#DBD7CACC            
+#4D9375        case
+#DBD7CACC       
+#444444        [
+#5DA994        Rock
+#444444        ,
+#DBD7CACC       
+#5DA994        Paper
+#444444        ]
+#DBD7CACC       |
+#DBD7CACC                 
+#444444        [
+#5DA994        Paper
+#444444        ,
+#DBD7CACC       
+#5DA994        Scissors
+#444444        ]
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC                 
+#444444        [
+#5DA994        Scissors
+#444444        ,
+#DBD7CACC       
+#5DA994        Rock
+#444444        ]
+#DBD7CACC      : 
+#5DA994        Winner
+#444444        (
+#BD976A        playerB
+#444444        );
+#DBD7CACC            
+#4D9375        case
+#DBD7CACC       
+#BD976A        _
+#DBD7CACC      : 
+#5DA994        Draw
+#444444        ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#758575DD      // Paper vs Rock, who wins?
+#DBD7CACC          
+#4D9375        trace
+#DBD7CACC      (
+#C98A7D77      '
+#C98A7D        result: 
+#444444        $
+#BD976A        result
+#C98A7D77      '
+#444444        );
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // Allow anonymous structure named as type.
+#CB7676        typedef
+#DBD7CACC       
+#5DA994        Player
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        name
+#DBD7CACC      : 
+#B8A965        String
+#444444        ,
+#DBD7CACC       
+#BD976A        move
+#DBD7CACC      : 
+#5DA994        Move
+#DBD7CACC       
+#444444        }
+#758575DD      // Define multiple enum values.
+#CB7676        enum
+#DBD7CACC       
+#5DA994        Move
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#5DA994        Rock
+#444444        ;
+#DBD7CACC       
+#5DA994        Paper
+#444444        ;
+#DBD7CACC       
+#5DA994        Scissors
+#444444        ;
+#DBD7CACC       
+#444444        }
+#758575DD      // Enums in Haxe are algebraic data type (ADT), so they can hold data.
+#CB7676        enum
+#DBD7CACC       
+#5DA994        Result
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#5DA994        Winner
+#444444        (
+#BD976A        player
+#DBD7CACC      :
+#5DA994        Player
+#444444        );
+#DBD7CACC        
+#5DA994        Draw
+#444444        ;
+#444444        }
+#758575DD      // From https://haxe.org/

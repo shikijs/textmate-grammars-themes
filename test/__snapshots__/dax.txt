@@ -1,0 +1,56 @@
+#758575DD      --  COALESCE returns the first non-blank of its arguments
+#758575DD      --  It is commonly used to provide default values to expressions
+#758575DD      --  that might result in a blank
+#4D9375        EVALUATE
+#C99076        SELECTCOLUMNS
+#DBD7CACC       (
+#DBD7CACC          
+#C99076        TOPN
+#DBD7CACC       ( 
+#4C9A91        10
+#DBD7CACC      , 
+#BD976A        Store
+#DBD7CACC       ),
+#DBD7CACC          
+#C98A7D        "Store name"
+#DBD7CACC      , 
+#BD976A        Store
+#B8A965        [Store Name]
+#DBD7CACC      ,
+#DBD7CACC          
+#C98A7D        "Manager"
+#DBD7CACC      ,
+#DBD7CACC              
+#C99076        COALESCE
+#DBD7CACC       ( 
+#BD976A        Store
+#B8A965        [Area Manager]
+#DBD7CACC      , 
+#C98A7D        "** Not Assigned **"
+#DBD7CACC       ),
+#DBD7CACC          
+#C98A7D        "Years open"
+#DBD7CACC      ,
+#DBD7CACC              
+#C99076        DATEDIFF
+#DBD7CACC       (
+#DBD7CACC                  
+#BD976A        Store
+#B8A965        [Open Date]
+#DBD7CACC      ,
+#DBD7CACC                  
+#C99076        COALESCE
+#DBD7CACC       ( 
+#BD976A        Store
+#B8A965        [Close Date]
+#DBD7CACC      , 
+#C99076        TODAY
+#DBD7CACC       () ),
+#DBD7CACC                  
+#C99076        YEAR
+#DBD7CACC              )
+#DBD7CACC      )
+#4D9375        ORDER BY
+#DBD7CACC       
+#B8A965        [Manager]
+#758575DD      -- From https://dax.guide/coalesce/

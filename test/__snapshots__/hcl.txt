@@ -1,0 +1,67 @@
+#BD976A        io_mode 
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        async
+#C98A7D77      "
+#5DA994        service
+#DBD7CACC       
+#BD976A        "http"
+#DBD7CACC       
+#BD976A        "web_proxy"
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        listen_addr 
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        127.0.0.1:8080
+#C98A7D77      "
+#DBD7CACC        
+#DBD7CACC        
+#5DA994        process
+#DBD7CACC       
+#BD976A        "main"
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        command 
+#444444        =
+#BD976A         
+#444444        [
+#C98A7D77      "
+#C98A7D        /usr/local/bin/awesome-app
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        server
+#C98A7D77      "
+#444444        ]
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#5DA994        process
+#DBD7CACC       
+#BD976A        "mgmt"
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        command 
+#444444        =
+#BD976A         
+#444444        [
+#C98A7D77      "
+#C98A7D        /usr/local/bin/awesome-app
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        mgmt
+#C98A7D77      "
+#444444        ]
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      # From: https://github.com/hashicorp/hcl/blob/main/README.md

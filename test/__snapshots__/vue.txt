@@ -1,0 +1,52 @@
+#444444        <
+#4D9375        script
+#DBD7CACC       setup
+#444444        >
+#DBD7CACC      import { ref } from 'vue'
+#DBD7CACC      const message = ref('Hello World!')
+#DBD7CACC      function reverseMessage() {
+#DBD7CACC        // Access/mutate the value of a ref via
+#DBD7CACC        // its .value property.
+#DBD7CACC        message.value = message.value.split('').reverse().join('')
+#DBD7CACC      }
+#DBD7CACC      function notify() {
+#DBD7CACC        alert('navigation was prevented.')
+#DBD7CACC      }
+#444444        </
+#4D9375        script
+#444444        >
+#444444        <
+#4D9375        template
+#444444        >
+#DBD7CACC        <h1>{{ message }}</h1>
+#DBD7CACC        <button @click="reverseMessage">Reverse Message</button>
+#DBD7CACC        <button @click="message += '!'">Append "!"</button>
+#DBD7CACC        <a href="https://vuejs.org" @click.prevent="notify">
+#DBD7CACC          A link with e.preventDefault()
+#DBD7CACC        </a>
+#444444        </
+#4D9375        template
+#444444        >
+#444444        <
+#4D9375        style
+#444444        >
+#DBD7CACC      button, a {
+#DBD7CACC        display: block;
+#DBD7CACC        margin-bottom: 1em;
+#DBD7CACC      }
+#444444        </
+#4D9375        style
+#444444        >
+#444444        <
+#DBD7CACC      !
+#4D9375        --
+#DBD7CACC       from https
+#444444        :
+#DBD7CACC      //vuejs
+#444444        .
+#80A665        org
+#DBD7CACC      /examples/
+#444444        #
+#80A665        handling-input
+#DBD7CACC       --
+#444444        >

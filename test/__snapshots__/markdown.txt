@@ -1,0 +1,180 @@
+#DBD7CACC      An h1 header
+#4D9375        ============
+#DBD7CACC      Paragraphs are separated by a blank line.
+#DBD7CACC      2nd paragraph. 
+#444444        *
+#DBD7CACC      Italic
+#444444        *
+#DBD7CACC      , 
+#444444        **
+#DBD7CACC      bold
+#444444        **
+#DBD7CACC      , and 
+#444444        `
+#DBD7CACC      monospace
+#444444        `
+#DBD7CACC      . Itemized lists
+#DBD7CACC      look like:
+#DBD7CACC        
+#D4976C        *
+#DBD7CACC       this one
+#DBD7CACC        
+#D4976C        *
+#DBD7CACC       that one
+#DBD7CACC        
+#D4976C        *
+#DBD7CACC       the other one
+#DBD7CACC      Note that --- not considering the asterisk --- the actual text
+#DBD7CACC      content starts at 4-columns in.
+#444444        >
+#5D99A9         Block quotes are
+#444444        >
+#5D99A9         written like so.
+#444444        >
+#444444        >
+#5D99A9         They can span multiple paragraphs,
+#444444        >
+#5D99A9         if you like.
+#DBD7CACC      Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
+#DBD7CACC      in chapters 12--14"). Three dots ... will be converted to an ellipsis.
+#DBD7CACC      Unicode is supported. ☺
+#DBD7CACC      An h2 header
+#4D9375        ------------
+#DBD7CACC      Here's a numbered list:
+#DBD7CACC       
+#D4976C        1.
+#DBD7CACC       first item
+#DBD7CACC       
+#D4976C        2.
+#DBD7CACC       second item
+#DBD7CACC       
+#D4976C        3.
+#DBD7CACC       third item
+#DBD7CACC      Note again how the actual text starts at 4 columns in (4 characters
+#DBD7CACC      from the left side). Here's a code sample:
+#DBD7CACC          # Let me re-iterate ...
+#DBD7CACC          for i in 1 .. 10 { do-something(i) }
+#DBD7CACC      As you probably guessed, indented 4 spaces. By the way, instead of
+#DBD7CACC      indenting the block, you can use delimited blocks, if you like:
+#444444        ~~~
+#DBD7CACC      define foobar() {
+#DBD7CACC          print "Welcome to flavor country!";
+#DBD7CACC      }
+#444444        ~~~
+#DBD7CACC      (which makes copying & pasting easier). You can optionally mark the
+#DBD7CACC      delimited block for Pandoc to syntax highlight it:
+#444444        ~~~
+#DBD7CACC      python
+#DBD7CACC      import time
+#DBD7CACC      # Quick, count to ten!
+#DBD7CACC      for i in range(10):
+#DBD7CACC          # (but not *too* quick)
+#DBD7CACC          time.sleep(0.5)
+#DBD7CACC          print(i)
+#444444        ~~~
+#444444        ###
+#4D9375         An h3 header 
+#444444        ###
+#DBD7CACC      Now a nested list:
+#DBD7CACC       
+#D4976C        1.
+#DBD7CACC       First, get these ingredients:
+#DBD7CACC            
+#D4976C        *
+#DBD7CACC       carrots
+#DBD7CACC            
+#D4976C        *
+#DBD7CACC       celery
+#DBD7CACC            
+#D4976C        *
+#DBD7CACC       lentils
+#DBD7CACC       
+#D4976C        2.
+#DBD7CACC       Boil some water.
+#DBD7CACC       
+#D4976C        3.
+#DBD7CACC       Dump everything in the pot and follow
+#DBD7CACC          this algorithm:
+#DBD7CACC              find wooden spoon
+#DBD7CACC              uncover pot
+#DBD7CACC              stir
+#DBD7CACC              cover pot
+#DBD7CACC              balance wooden spoon precariously on pot handle
+#DBD7CACC              wait 10 minutes
+#DBD7CACC              goto first step (or shut off burner when done)
+#DBD7CACC          Do not bump wooden spoon or it will fall.
+#DBD7CACC      Notice again how text always lines up on 4-space indents (including
+#DBD7CACC      that last line which continues item 3 above).
+#DBD7CACC      Here's a link to 
+#444444        [
+#C98A7D        a website
+#444444        ](
+#DEDCD590      http://foo.bar
+#444444        )
+#DBD7CACC      , to a [local
+#DBD7CACC      doc](local-doc.html), and to a [section heading in the current
+#DBD7CACC      doc](#an-h2-header). Here's a footnote 
+#444444        [
+#C98A7D        ^1
+#444444        ]
+#DBD7CACC      .
+#444444        [
+#C98A7D        ^1
+#444444        ]
+#DBD7CACC      : Some footnote text.
+#DBD7CACC      Tables can look like this:
+#DBD7CACC      Name           Size  Material      Color
+#79B8FF        ------------- -----  ------------  ------------
+#DBD7CACC      All Business      9  leather       brown
+#DBD7CACC      Roundabout       10  hemp canvas   natural
+#DBD7CACC      Cinderella       11  glass         transparent
+#DBD7CACC      Table: Shoes sizes, materials, and colors.
+#DBD7CACC      (The above is the caption for the table.) Pandoc also supports
+#DBD7CACC      multi-line tables:
+#79B8FF        --------  -----------------------
+#DBD7CACC      Keyword   Text
+#79B8FF        --------  -----------------------
+#DBD7CACC      red       Sunsets, apples, and
+#DBD7CACC                other red or reddish
+#DBD7CACC                things.
+#DBD7CACC      green     Leaves, grass, frogs
+#DBD7CACC                and other things it's
+#DBD7CACC                not easy being.
+#79B8FF        --------  -----------------------
+#DBD7CACC      A horizontal rule follows.
+#79B8FF        ***
+#DBD7CACC      Here's a definition list:
+#DBD7CACC      apples
+#DBD7CACC        : Good for making applesauce.
+#DBD7CACC      oranges
+#DBD7CACC        : Citrus!
+#DBD7CACC      tomatoes
+#DBD7CACC        : There's no "e" in tomatoe.
+#DBD7CACC      Again, text is indented 4 spaces. (Put a blank line between each
+#DBD7CACC      term and  its definition to spread things out more.)
+#DBD7CACC      Here's a "line block" (note how whitespace is honored):
+#DBD7CACC      | Line one
+#DBD7CACC      |   Line too
+#DBD7CACC      | Line tree
+#DBD7CACC      and images can be specified like so:
+#444444        ![
+#C98A7D        example image
+#444444        ](
+#DEDCD590      example-image.jpg
+#DBD7CACC       
+#C98A7D        "An exemplary image"
+#444444        )
+#DBD7CACC      Inline math equation: $\omega = d\phi / dt$. Display
+#DBD7CACC      math should get its own line like so:
+#DBD7CACC      $$I = \int \rho R^{2} dV$$
+#DBD7CACC      And note that you can backslash-escape any punctuation characters
+#DBD7CACC      which you wish to be displayed literally, ex.: 
+#C99076        \`
+#DBD7CACC      foo
+#C99076        \`
+#DBD7CACC      , 
+#C99076        \*
+#DBD7CACC      bar
+#C99076        \*
+#DBD7CACC      , etc.
+#758575DD      <!--- From http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html -->

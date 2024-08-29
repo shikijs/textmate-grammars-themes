@@ -1,0 +1,46 @@
+#4D9375        Windows Registry Editor Version 5.00
+#758575DD      ; WARNING: before run replace PATH_TO_APP with correct value
+#758575DD      ; Example: C:\\Anaconda3
+#444444        [
+#80A665        HKEY_CLASSES_ROOT\Directory\shell\AnacondaJupyterNotebook
+#444444        ]
+#758575DD      ; This will make it appear when you right click ON a folder
+#758575DD      ; The "Icon" line can be removed if you don't want the icon to appear
+#B8A965        @
+#444444        ="
+#C98A7D        &Jupyter Notebook There
+#444444        "
+#444444        "
+#B8A965        Icon
+#444444        "="
+#C98A7D        \"PATH_TO_APP\\Menu\\jupyter.ico"
+#444444        "
+#444444        [
+#80A665        HKEY_CLASSES_ROOT\Directory\shell\AnacondaJupyterNotebook\command
+#444444        ]
+#B8A965        @
+#444444        ="
+#C98A7D        cmd /K pushd \"%1\" && \"PATH_TO_APP\\Scripts\\activate.bat\" && jupyter-notebook
+#444444        "
+#444444        [
+#80A665        HKEY_CLASSES_ROOT\Directory\Background\shell\AnacondaJupyterNotebook
+#444444        ]
+#758575DD      ; This will make it appear when you right click INSIDE a folder
+#758575DD      ; The "Icon" line can be removed if you don't want the icon to appear
+#B8A965        @
+#444444        ="
+#C98A7D        &Jupyter Notebook Here
+#444444        "
+#444444        "
+#B8A965        Icon
+#444444        "="
+#C98A7D        \"PATH_TO_APP\\Menu\\jupyter.ico\"
+#444444        "
+#444444        [
+#80A665        HKEY_CLASSES_ROOT\Directory\Background\shell\AnacondaJupyterNotebook\command
+#444444        ]
+#B8A965        @
+#444444        ="
+#C98A7D        cmd /K \"PATH_TO_APP\\Scripts\\activate.bat\" && jupyter-notebook
+#444444        "
+#758575DD      ; From https://github.com/NickVeld/win-registry-snippets/blob/main/AnacondaJupyterNotebookHere.reg

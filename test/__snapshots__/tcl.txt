@@ -1,0 +1,329 @@
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'contains
+#DBD7CACC       {
+#4D9375        set
+#DBD7CACC       el} {
+#4D9375        expr
+#DBD7CACC       {[
+#4D9375        lsearch
+#DBD7CACC       -exact 
+#444444        $
+#B8A965        set
+#DBD7CACC       
+#444444        $
+#B8A965        el
+#DBD7CACC      ]>=
+#4C9A91        0
+#DBD7CACC      }}
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'contains {A B C} A} -> 
+#4C9A91        1
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'contains {A B C} D} -> 
+#4C9A91        0
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'add
+#DBD7CACC       {_set args} {
+#DBD7CACC         
+#4D9375        upvar
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#444444        $
+#B8A965        _set
+#DBD7CACC       set
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        args
+#DBD7CACC       {
+#DBD7CACC             
+#4D9375        if
+#DBD7CACC       {![
+#4D9375        set
+#DBD7CACC      'contains 
+#444444        $
+#B8A965        set
+#DBD7CACC       
+#444444        $
+#B8A965        el
+#DBD7CACC      ]} {
+#4D9375        lappend
+#DBD7CACC       set 
+#444444        $
+#B8A965        el
+#DBD7CACC      }
+#DBD7CACC         }
+#DBD7CACC         
+#4D9375        set
+#DBD7CACC       set
+#DBD7CACC      }
+#4D9375        set
+#DBD7CACC       example {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC      }
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'add example 
+#4C9A91        4
+#DBD7CACC      } -> {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      }
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'add example 
+#4C9A91        4
+#DBD7CACC      } -> {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      }
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'remove
+#DBD7CACC       {_set args} {
+#DBD7CACC         
+#4D9375        upvar
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#444444        $
+#B8A965        _set
+#DBD7CACC       set
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        args
+#DBD7CACC       {
+#DBD7CACC             
+#4D9375        set
+#DBD7CACC       pos [
+#4D9375        lsearch
+#DBD7CACC       -exact 
+#444444        $
+#B8A965        set
+#DBD7CACC       
+#444444        $
+#B8A965        el
+#DBD7CACC      ]
+#DBD7CACC             
+#4D9375        set
+#DBD7CACC       set [
+#4D9375        lreplace
+#DBD7CACC       
+#444444        $
+#B8A965        set
+#DBD7CACC       
+#444444        $
+#B8A965        pos
+#DBD7CACC       
+#444444        $
+#B8A965        pos
+#DBD7CACC      ]
+#DBD7CACC         }
+#DBD7CACC         
+#4D9375        set
+#DBD7CACC       set
+#DBD7CACC      }
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'remove example 
+#4C9A91        3
+#DBD7CACC      } -> {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      }
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'intersection
+#DBD7CACC       {a b} {
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        a
+#DBD7CACC       {
+#4D9375        set
+#DBD7CACC       arr(
+#444444        $
+#B8A965        el
+#DBD7CACC      ) 
+#C98A7D77      ""
+#DBD7CACC      }
+#DBD7CACC         
+#4D9375        set
+#DBD7CACC       res {}
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        b
+#DBD7CACC       {
+#4D9375        if
+#DBD7CACC       {[
+#4D9375        info
+#DBD7CACC       exists arr(
+#444444        $
+#B8A965        el
+#DBD7CACC      )]} {
+#4D9375        lappend
+#DBD7CACC       res 
+#444444        $
+#B8A965        el
+#DBD7CACC      }}
+#DBD7CACC         
+#4D9375        set
+#DBD7CACC       res
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'intersection {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      } {
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC       
+#4C9A91        8
+#DBD7CACC      }} -> {
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      }
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'union
+#DBD7CACC       {a b} {
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        a
+#DBD7CACC       {
+#4D9375        set
+#DBD7CACC       arr(
+#444444        $
+#B8A965        el
+#DBD7CACC      ) 
+#C98A7D77      ""
+#DBD7CACC      }
+#DBD7CACC         
+#4D9375        foreach
+#DBD7CACC       el 
+#444444        $
+#B8A965        b
+#DBD7CACC       {
+#4D9375        set
+#DBD7CACC       arr(
+#444444        $
+#B8A965        el
+#DBD7CACC      ) 
+#C98A7D77      ""
+#DBD7CACC      }
+#DBD7CACC         
+#4D9375        lsort
+#DBD7CACC       [
+#4D9375        array
+#DBD7CACC       names arr]
+#DBD7CACC      }
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'union {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       
+#4C9A91        7
+#DBD7CACC      } {
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC       
+#4C9A91        8
+#DBD7CACC      }} -> {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC       
+#4C9A91        7
+#DBD7CACC       
+#4C9A91        8
+#DBD7CACC      }
+#4D9375        proc
+#DBD7CACC       
+#80A665        set'difference
+#DBD7CACC       {a b} {
+#DBD7CACC         
+#4D9375        eval
+#DBD7CACC       set'remove a 
+#444444        $
+#B8A965        b
+#DBD7CACC      }
+#DBD7CACC      e.g. {
+#4D9375        set
+#DBD7CACC      'difference {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC      } {
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC      }} -> {
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC      }
+#758575DD      # https://en.wikibooks.org/wiki/Tcl_Programming/Examples

@@ -1,0 +1,59 @@
+#758575DD      /* This CSS will print because %message-shared is extended. */
+#80A665        %message-shared
+#DBD7CACC        
+#B8A965        border
+#DBD7CACC      : 
+#4C9A91        1
+#4D9375        px
+#DBD7CACC       
+#C99076        solid
+#DBD7CACC       
+#4D9375        #ccc
+#DBD7CACC        
+#B8A965        padding
+#DBD7CACC      : 
+#4C9A91        10
+#4D9375        px
+#DBD7CACC        
+#B8A965        color
+#DBD7CACC      : 
+#4D9375        #333
+#758575DD      // This CSS won't print because %equal-heights is never extended.
+#80A665        %equal-heights
+#DBD7CACC        
+#B8A965        display
+#DBD7CACC      : 
+#C99076        flex
+#DBD7CACC        
+#B8A965        flex-wrap
+#DBD7CACC      : 
+#C99076        wrap
+#BD976A        .message
+#DBD7CACC        
+#4D9375        @extend 
+#80A665        %message-shared
+#BD976A        .success
+#DBD7CACC        
+#4D9375        @extend 
+#80A665        %message-shared
+#DBD7CACC        
+#B8A965        border-color
+#DBD7CACC      : 
+#C99076        green
+#BD976A        .error
+#DBD7CACC        
+#4D9375        @extend 
+#80A665        %message-shared
+#DBD7CACC        
+#B8A965        border-color
+#DBD7CACC      : 
+#C99076        red
+#BD976A        .warning
+#DBD7CACC        
+#4D9375        @extend 
+#80A665        %message-shared
+#DBD7CACC        
+#B8A965        border-color
+#DBD7CACC      : 
+#C99076        yellow
+#758575DD      // From https://sass-lang.com/guide/

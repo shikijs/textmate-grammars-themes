@@ -1,0 +1,292 @@
+#4D9375        extends
+#DBD7CACC       
+#5DA994        Node
+#4D9375        class_name
+#DBD7CACC       
+#5DA994        TestClass2
+#80A665        @icon
+#444444        (
+#C98A7D        "res://path/to/icon.png"
+#444444        )
+#758575DD      # ******************************************************************************
+#80A665        @export
+#DBD7CACC       
+#CB7676        var
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#5DA994        int
+#80A665        @export
+#DBD7CACC       
+#CB7676        var
+#DBD7CACC       
+#BD976A        y
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#5DA994        int
+#80A665        @export
+#DBD7CACC       
+#CB7676        var
+#DBD7CACC       
+#BD976A        z
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#80A665        @export_node_path
+#444444        (
+#5DA994        Resource
+#444444        )
+#DBD7CACC       
+#CB7676        var
+#DBD7CACC       
+#BD976A        resource_name
+#CB7676        var
+#DBD7CACC       
+#BD976A        array_a
+#444444        :
+#DBD7CACC       
+#5DA994        Array
+#444444        [
+#5DA994        int
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        2
+#DBD7CACC      , 
+#4C9A91        3
+#444444        ]
+#CB7676        var
+#DBD7CACC       
+#BD976A        array_b
+#444444        :
+#DBD7CACC       
+#5DA994        Array
+#444444        [
+#5DA994        String
+#444444        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#C98A7D        '1'
+#DBD7CACC      , 
+#C98A7D        '2'
+#DBD7CACC      , 
+#C98A7D        '3'
+#444444        ]
+#80A665        @rpc
+#CB7676        func
+#DBD7CACC       
+#80A665        remote_function_a
+#444444        ()
+#DBD7CACC      :
+#DBD7CACC      	
+#4D9375        pass
+#80A665        @rpc
+#444444        (
+#BD976A        any_peer
+#DBD7CACC      , 
+#BD976A        call_local
+#DBD7CACC      , 
+#BD976A        unreliable
+#444444        )
+#CB7676        func
+#DBD7CACC       
+#80A665        remote_function_b
+#444444        ()
+#DBD7CACC      :
+#DBD7CACC      	
+#4D9375        pass
+#758575DD      # ------------------------------------------------------------------------------
+#CB7676        func
+#DBD7CACC       
+#80A665        f
+#444444        ()
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        await
+#DBD7CACC       
+#4D9375        $
+#C99076        Button
+#444444        .
+#BD976A        button_up
+#DBD7CACC          
+#5DA994        super
+#444444        ()
+#DBD7CACC          
+#5DA994        super
+#DBD7CACC      .
+#80A665        some_function
+#444444        ()
+#DBD7CACC          
+#4D9375        for
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#80A665        range
+#444444        (
+#4C9A91        1
+#444444        )
+#DBD7CACC      : 
+#758575DD      # `in` is a control keyword
+#DBD7CACC              
+#80A665        print
+#444444        (
+#BD976A        i
+#DBD7CACC       
+#CB7676        in
+#DBD7CACC       
+#80A665        range
+#444444        (
+#4C9A91        1
+#444444        ))
+#DBD7CACC       
+#758575DD      # `in` is an operator keyword
+#CB7676        func
+#DBD7CACC       
+#80A665        lambda_test
+#444444        ()
+#DBD7CACC      :
+#DBD7CACC      	
+#CB7676        var
+#DBD7CACC       
+#BD976A        lambda_a
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        func
+#444444        (
+#DBD7CACC      param1
+#444444        ,
+#DBD7CACC       param2
+#444444        ,
+#DBD7CACC       param3
+#444444        )
+#DBD7CACC      :
+#DBD7CACC      		
+#4D9375        pass
+#DBD7CACC      	
+#CB7676        var
+#DBD7CACC       
+#BD976A        lambda_b
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        func
+#444444        (
+#DBD7CACC      param1
+#444444        ,
+#DBD7CACC       param2
+#CB7676        =
+#80A665        func_a
+#444444        (
+#4C9A91        10
+#444444        ,
+#DBD7CACC       
+#4C9A91        1.0
+#444444        ,
+#DBD7CACC       
+#C98A7D        'test'
+#444444        ))
+#DBD7CACC      :
+#DBD7CACC      		
+#4D9375        pass
+#DBD7CACC      	
+#CB7676        var
+#DBD7CACC       
+#BD976A        lambda_c
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        func
+#444444        (
+#DBD7CACC      param1 
+#CB7676        =
+#DBD7CACC       
+#4D9375        false
+#444444        ,
+#DBD7CACC       param2
+#444444        :
+#DBD7CACC       
+#5DA994        bool
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        false
+#444444        ,
+#DBD7CACC       param3 
+#444444        :=
+#DBD7CACC       
+#4D9375        false
+#444444        )
+#DBD7CACC      :
+#DBD7CACC      		
+#4D9375        pass
+#DBD7CACC      	
+#BD976A        lambda_a
+#DBD7CACC      .
+#80A665        call
+#444444        ()
+#DBD7CACC      	
+#BD976A        lambda_b
+#DBD7CACC      .
+#80A665        call
+#444444        ()
+#DBD7CACC      	
+#BD976A        lambda_c
+#DBD7CACC      .
+#80A665        call
+#444444        ()
+#758575DD      # ------------------------------------------------------------------------------
+#CB7676        signal
+#DBD7CACC       
+#80A665        changed
+#444444        (
+#DBD7CACC      new_value
+#444444        )
+#CB7676        var
+#DBD7CACC       
+#BD976A        warns_when_changed
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D        "some value"
+#444444        :
+#DBD7CACC      	
+#80A665        get
+#DBD7CACC      :
+#DBD7CACC      		
+#4D9375        return
+#DBD7CACC       
+#BD976A        warns_when_changed
+#DBD7CACC      	
+#80A665        set
+#444444        (
+#DBD7CACC      value
+#444444        )
+#DBD7CACC      :
+#DBD7CACC      		
+#BD976A        changed
+#DBD7CACC      .
+#80A665        emit
+#444444        (
+#BD976A        value
+#444444        )
+#DBD7CACC      		
+#BD976A        warns_when_changed
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        value
+#758575DD      # ------------------------------------------------------------------------------
+#758575DD      # from https://github.com/godotengine/godot-vscode-plugin/blob/cdc550a412dfffd26dfe7351e429b73c819d68d0/syntaxes/examples/gdscript2.gd

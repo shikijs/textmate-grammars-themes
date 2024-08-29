@@ -1,0 +1,110 @@
+#4D9375        import
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        Component
+#444444        ,
+#DBD7CACC       
+#BD976A        inject
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        @angular/core
+#C98A7D77      '
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        RouterLink
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        @angular/router
+#C98A7D77      '
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        CartService
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        ./cart.service
+#C98A7D77      '
+#444444        ;
+#444444        @
+#80A665        Component
+#444444        ({
+#444444          
+#B8A965        selector
+#444444        : 
+#C98A7D77      '
+#C98A7D        app-cart-button
+#C98A7D77      '
+#444444        ,
+#444444          
+#B8A965        standalone
+#444444        : 
+#4D9375        true
+#444444        ,
+#444444          
+#B8A965        imports
+#444444        : [
+#BD976A        RouterLink
+#444444        ],
+#444444          
+#B8A965        template
+#444444        : 
+#C98A7D77      `
+#C98A7D            <button type="button" [routerLink]="'/cart'">
+#C98A7D              @if (cartService.length > 0) {
+#C98A7D                <div>
+#C98A7D                  @let hello = "world";
+#C98A7D                  {{ cartService.length }}
+#C98A7D                </div>
+#C98A7D              }
+#C98A7D              Cart
+#C98A7D            </button>
+#C98A7D          
+#C98A7D77      `
+#444444        ,
+#444444          
+#B8A965        styles
+#444444        : 
+#C98A7D77      `
+#C98A7D            div { display: block; }
+#C98A7D          
+#C98A7D77      `
+#444444        ,
+#444444        })
+#4D9375        export
+#DBD7CACC       
+#CB7676        class
+#DBD7CACC       
+#5DA994        CartButtonComponent
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        protected
+#DBD7CACC       
+#BD976A        cartService
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        inject
+#444444        (
+#BD976A        CartService
+#444444        );
+#444444        }
+#758575DD      // From https://github.com/niklas-wortmann/signals-observable-example/blob/main/src/app/cart/cart-button.component.ts

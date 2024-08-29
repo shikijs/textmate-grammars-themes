@@ -1,0 +1,59 @@
+#CB7676        struct
+#DBD7CACC       VS_OUTPUT
+#DBD7CACC      {
+#DBD7CACC          
+#CB7676        float4
+#DBD7CACC       Position   : 
+#B8A965        SV_POSITION
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        float4
+#DBD7CACC       Diffuse    : 
+#B8A965        COLOR0
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        float2
+#DBD7CACC       TextureUV  : 
+#B8A965        TEXCOORD0
+#DBD7CACC      ;
+#DBD7CACC      };
+#DBD7CACC      VS_OUTPUT 
+#B8A965        RenderSceneVS
+#DBD7CACC      ( 
+#CB7676        float4
+#DBD7CACC       vPos : 
+#B8A965        POSITION
+#DBD7CACC      ,
+#DBD7CACC                               
+#CB7676        float3
+#DBD7CACC       vNormal : 
+#B8A965        NORMAL
+#DBD7CACC      ,
+#DBD7CACC                               
+#CB7676        float2
+#DBD7CACC       vTexCoord0 : 
+#B8A965        TEXCOORD
+#DBD7CACC      ,
+#DBD7CACC                               
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       nNumLights,
+#DBD7CACC                               
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC       bTexture,
+#DBD7CACC                               
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC       bAnimate )
+#DBD7CACC      {
+#DBD7CACC          VS_OUTPUT Output;
+#DBD7CACC          ...
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       Output;
+#DBD7CACC      }
+#758575DD      // From https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-function-syntax

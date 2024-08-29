@@ -1,0 +1,240 @@
+#4D9375        module
+#DBD7CACC       person
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       ssn 
+#4D9375        =
+#DBD7CACC       123
+#4D9375        -
+#DBD7CACC      45
+#4D9375        -
+#DBD7CACC      6789
+#DBD7CACC          
+#4D9375        module
+#DBD7CACC       name
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       first 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "John"
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       middle 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "Q"
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       last 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "Public"
+#4D9375            end
+#DBD7CACC          
+#4D9375        module
+#DBD7CACC       birth
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       city 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "Pittsburg"
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       state 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "PA"
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       country 
+#4D9375        =
+#DBD7CACC       
+#C98A7D        "USA"
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       date 
+#4D9375        =
+#DBD7CACC       parse_date[
+#C98A7D        "2000-01-01"
+#DBD7CACC      , 
+#C98A7D        "Y-m-d"
+#DBD7CACC      ]
+#4D9375            end
+#4D9375        end
+#4D9375        module
+#DBD7CACC       mymodule
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       R 
+#4D9375        =
+#DBD7CACC       {1; 2}
+#DBD7CACC          
+#4D9375        ic
+#DBD7CACC       {count[R] 
+#4D9375        =
+#DBD7CACC       2}
+#4D9375        end
+#4D9375        @inline
+#4D9375        module
+#DBD7CACC       my_stats[R]
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       my_minmax 
+#4D9375        =
+#DBD7CACC       (min[R], max[R])
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       my_mean 
+#4D9375        =
+#DBD7CACC       mean[R]
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       my_median 
+#4D9375        =
+#DBD7CACC       median[R]
+#4D9375        end
+#4D9375        @inline
+#4D9375        module
+#DBD7CACC       BipartiteGraph[M, N]
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       node 
+#4D9375        =
+#DBD7CACC       M; N
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       edge 
+#4D9375        =
+#DBD7CACC       M, N
+#4D9375        end
+#4D9375        @inline
+#4D9375        module
+#DBD7CACC       CycleGraph[N]
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       node 
+#4D9375        =
+#DBD7CACC       N
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       edge(a 
+#4D9375        in
+#DBD7CACC       N, b 
+#4D9375        in
+#DBD7CACC       N) 
+#4D9375        =
+#DBD7CACC                  sort[N](x, a)
+#DBD7CACC              
+#4D9375        and
+#DBD7CACC       sort[N](y, b)
+#DBD7CACC              
+#4D9375        and
+#DBD7CACC       y 
+#4D9375        =
+#DBD7CACC       x
+#4D9375        %
+#DBD7CACC      count[N] 
+#4D9375        +
+#DBD7CACC       1
+#DBD7CACC              
+#4D9375        from
+#DBD7CACC       x, y
+#4D9375        end
+#4D9375        @inline
+#4D9375        module
+#DBD7CACC       GraphProperties[G]
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       outdegree[v 
+#4D9375        in
+#DBD7CACC       G
+#BD976A        :node
+#DBD7CACC      ] 
+#4D9375        =
+#DBD7CACC       count[v1 : G
+#BD976A        :edge
+#DBD7CACC      (v, v1)] 
+#4D9375        <++
+#DBD7CACC       0
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       indegree[v 
+#4D9375        in
+#DBD7CACC       G
+#BD976A        :node
+#DBD7CACC      ] 
+#4D9375        =
+#DBD7CACC       count[v1 : G
+#BD976A        :edge
+#DBD7CACC      (v1, v)] 
+#4D9375        <++
+#DBD7CACC       0
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       edge_count 
+#4D9375        =
+#DBD7CACC       count[G
+#BD976A        :edge
+#DBD7CACC      ] 
+#4D9375        <++
+#DBD7CACC       0
+#4D9375        end
+#4D9375        def
+#DBD7CACC       cg 
+#4D9375        =
+#DBD7CACC       CompleteGraph[range[1 ,5, 1]]
+#4D9375        def
+#DBD7CACC       cg_props 
+#4D9375        =
+#DBD7CACC       GraphProperties[cg]
+#4D9375        def
+#DBD7CACC       bg 
+#4D9375        =
+#DBD7CACC       BipartiteGraph[{1; 2}, {3; 4; 5}]
+#4D9375        def
+#DBD7CACC       bg_props 
+#4D9375        =
+#DBD7CACC       GraphProperties[bg]
+#4D9375        def
+#DBD7CACC       cycleg 
+#4D9375        =
+#DBD7CACC       CycleGraph[{
+#C98A7D        "a"
+#DBD7CACC      ; 
+#C98A7D        "b"
+#DBD7CACC      ; 
+#C98A7D        "c"
+#DBD7CACC      ; 
+#C98A7D        "d"
+#DBD7CACC       ; 
+#C98A7D        "e"
+#DBD7CACC      }]
+#4D9375        def
+#DBD7CACC       cycleg_props 
+#4D9375        =
+#DBD7CACC       GraphProperties[cycleg]
+#4D9375        module
+#DBD7CACC       output
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       complete_edge_count 
+#4D9375        =
+#DBD7CACC       cg_props
+#BD976A        :edge_count
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       bipartite_edge_count 
+#4D9375        =
+#DBD7CACC       bg_props
+#BD976A        :edge_count
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       cycle_edge_count 
+#4D9375        =
+#DBD7CACC       cycleg_props
+#BD976A        :edge_count
+#4D9375        end
+#DBD7CACC      # From https:
+#758575DD      //docs.relational.ai/rel/concepts/modules/

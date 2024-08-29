@@ -1,0 +1,121 @@
+#758575DD      ### default for all ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        *
+#DBD7CACC           
+#4D9375        ForwardAgent
+#DBD7CACC       
+#4D9375        no
+#DBD7CACC           
+#4D9375        ForwardX11
+#DBD7CACC       
+#4D9375        no
+#DBD7CACC           
+#4D9375        ForwardX11Trusted
+#DBD7CACC       
+#4D9375        yes
+#DBD7CACC           
+#4D9375        User
+#DBD7CACC       nixcraft
+#DBD7CACC           
+#4D9375        Port
+#DBD7CACC       
+#4C9A91        22
+#DBD7CACC           
+#4D9375        Protocol
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC           
+#4D9375        ServerAliveInterval
+#DBD7CACC       
+#4C9A91        60
+#DBD7CACC           
+#4D9375        ServerAliveCountMax
+#DBD7CACC       
+#4C9A91        30
+#758575DD      ## override as per host ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        server1
+#DBD7CACC           
+#4D9375        HostName
+#DBD7CACC       server1.cyberciti.biz
+#DBD7CACC           
+#4D9375        User
+#DBD7CACC       nixcraft
+#DBD7CACC           
+#4D9375        Port
+#DBD7CACC       
+#4C9A91        4242
+#DBD7CACC           
+#4D9375        IdentityFile
+#DBD7CACC       /nfs/shared/users/nixcraft/keys/server1/id_rsa
+#758575DD      ## Home nas server ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        nas01
+#DBD7CACC           
+#4D9375        HostName
+#DBD7CACC       
+#4C9A91        192.168.1.100
+#DBD7CACC           
+#4D9375        User
+#DBD7CACC       root
+#DBD7CACC           
+#4D9375        IdentityFile
+#DBD7CACC       ~/.ssh/nas01.key
+#758575DD      ## Login AWS Cloud ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        aws.apache
+#DBD7CACC           
+#4D9375        HostName
+#DBD7CACC       
+#4C9A91        1.2.3.4
+#DBD7CACC           
+#4D9375        User
+#DBD7CACC       wwwdata
+#DBD7CACC           
+#4D9375        IdentityFile
+#DBD7CACC       ~/.ssh/aws.apache.key
+#758575DD      ## Login to internal lan server at 192.168.0.251 via our public uk office ssh based gateway using ##
+#758575DD      ## $ ssh uk.gw.lan ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        uk.gw.lan uk.lan
+#DBD7CACC           
+#4D9375        HostName
+#DBD7CACC       
+#4C9A91        192.168.0.251
+#DBD7CACC           
+#4D9375        User
+#DBD7CACC       nixcraft
+#DBD7CACC           
+#4D9375        ProxyCommand
+#DBD7CACC        ssh nixcraft@gateway.uk.cyberciti.biz nc %h %p 
+#4C9A91        2
+#DBD7CACC      > /dev/null
+#758575DD      ## Our Us Proxy Server ##
+#758575DD      ## Forward all local port 3128 traffic to port 3128 on the remote vps1.cyberciti.biz server ##
+#758575DD      ## $ ssh -f -N  proxyus ##
+#CB7676        Host
+#DBD7CACC       
+#80A665        proxyus
+#DBD7CACC          
+#4D9375        HostName
+#DBD7CACC       vps1.cyberciti.biz
+#DBD7CACC          
+#4D9375        User
+#DBD7CACC       breakfree
+#DBD7CACC          
+#4D9375        IdentityFile
+#DBD7CACC       ~/.ssh/vps1.cyberciti.biz.key
+#DBD7CACC          
+#4D9375        LocalForward
+#DBD7CACC       
+#4C9A91        3128
+#DBD7CACC       
+#4C9A91        127.0.0.1
+#DBD7CACC      :
+#4C9A91        3128
+#758575DD      ## From https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/

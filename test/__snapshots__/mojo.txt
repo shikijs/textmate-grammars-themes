@@ -1,0 +1,96 @@
+#CB7676        def
+#DBD7CACC       
+#80A665        softmax
+#444444        (
+#DBD7CACC      lst
+#444444        ):
+#DBD7CACC        norm 
+#444444        =
+#DBD7CACC       np
+#444444        .
+#DBD7CACC      exp
+#444444        (
+#DBD7CACC      lst 
+#CB7676        -
+#DBD7CACC       np
+#444444        .
+#DBD7CACC      max
+#444444        (
+#DBD7CACC      lst
+#444444        ))
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       norm 
+#CB7676        /
+#DBD7CACC       norm
+#444444        .
+#DBD7CACC      sum
+#444444        ()
+#CB7676        struct
+#DBD7CACC       
+#5DA994        NDArray
+#444444        :
+#DBD7CACC        
+#CB7676        def
+#DBD7CACC       
+#B8A965        max
+#444444        (
+#DBD7CACC      self
+#444444        )
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       NDArray
+#444444        :
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#C99076        self
+#444444        .
+#DBD7CACC      pmap
+#444444        (
+#C99076        SIMD
+#444444        .
+#DBD7CACC      max
+#444444        )
+#CB7676        struct
+#DBD7CACC       
+#C99076        SIMD
+#444444        [
+#B8A965        type
+#444444        :
+#DBD7CACC       DType
+#444444        ,
+#DBD7CACC       width
+#444444        :
+#DBD7CACC       Int
+#444444        ]:
+#DBD7CACC        
+#CB7676        def
+#DBD7CACC       
+#B8A965        max
+#444444        (
+#DBD7CACC      self
+#444444        ,
+#DBD7CACC       rhs
+#444444        :
+#DBD7CACC       Self
+#444444        )
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       Self
+#444444        :
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#444444        (
+#C99076        self
+#DBD7CACC       
+#CB7676        >=
+#DBD7CACC       rhs
+#444444        ).
+#DBD7CACC      select
+#444444        (
+#C99076        self
+#444444        ,
+#DBD7CACC       rhs
+#444444        )

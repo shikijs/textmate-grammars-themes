@@ -1,0 +1,109 @@
+#444444        (
+#4D9375        define
+#DBD7CACC       
+#BD976A        WINDOW-WIDTH
+#DBD7CACC       150
+#444444        )
+#444444        (
+#4D9375        define
+#DBD7CACC       
+#BD976A        WINDOW-HEIGHT
+#DBD7CACC       180
+#444444        )
+#758575DD      ; A world is a number.
+#758575DD      ; Its display is a blue disk of that size.
+#758575DD      ; show-world : world -> image
+#444444        (
+#4D9375        define
+#DBD7CACC       
+#444444        (
+#80A665        show-world
+#DBD7CACC       diameter
+#444444        )
+#DBD7CACC        
+#444444        (
+#DBD7CACC      circle diameter 
+#C98A7D77      "
+#C98A7D        solid
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        blue
+#C98A7D77      "
+#444444        ))
+#C98A7D77      "
+#C98A7D        Examples of show-world:
+#C98A7D77      "
+#444444        (
+#DBD7CACC      show-world 
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        should be a blue dot
+#C98A7D77      "
+#444444        (
+#DBD7CACC      show-world 
+#4C9A91        20
+#444444        )
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        should be
+#C98A7D77      "
+#DBD7CACC       
+#444444        (
+#DBD7CACC      circle 
+#4C9A91        20
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        solid
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        blue
+#C98A7D77      "
+#444444        )
+#758575DD      ; The next world is one larger.
+#758575DD      ; next-world : world -> world
+#444444        (
+#4D9375        define
+#DBD7CACC       
+#444444        (
+#80A665        next-world
+#DBD7CACC       diameter
+#444444        )
+#DBD7CACC        
+#444444        (
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       diameter
+#444444        ))
+#C98A7D77      "
+#C98A7D        Examples of next-world:
+#C98A7D77      "
+#444444        (
+#DBD7CACC      next-world 
+#4C9A91        7
+#444444        )
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        should be
+#C98A7D77      "
+#DBD7CACC       8
+#C98A7D77      "
+#C98A7D        Now let's start the animation!
+#C98A7D77      "
+#444444        (
+#DBD7CACC      big-bang WINDOW-WIDTH WINDOW-HEIGHT 
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#444444        (
+#DBD7CACC      on-update-event show-world
+#444444        )
+#444444        (
+#DBD7CACC      on-tick-event next-world
+#444444        )
+#758575DD      ; From https://home.adelphi.edu/sbloch/class/archive/160/spring2005/examples/

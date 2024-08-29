@@ -1,0 +1,90 @@
+#758575DD      -- available online in file 'examp1'
+#4D9375        DECLARE
+#DBD7CACC         qty_on_hand  
+#CB7676        NUMBER
+#DBD7CACC      (
+#4C9A91        5
+#DBD7CACC      );
+#4D9375        BEGIN
+#DBD7CACC         
+#4D9375        SELECT
+#DBD7CACC       quantity 
+#4D9375        INTO
+#DBD7CACC       qty_on_hand 
+#4D9375        FROM
+#DBD7CACC       inventory
+#DBD7CACC            
+#4D9375        WHERE
+#DBD7CACC       product 
+#CB7676        =
+#DBD7CACC       
+#C98A7D        'TENNIS RACKET'
+#DBD7CACC            
+#4D9375        FOR
+#DBD7CACC       
+#4D9375        UPDATE
+#DBD7CACC       
+#4D9375        OF
+#DBD7CACC       quantity;
+#DBD7CACC         
+#4D9375        IF
+#DBD7CACC       qty_on_hand 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#4D9375        THEN
+#DBD7CACC        
+#758575DD      -- check quantity
+#DBD7CACC            
+#4D9375        UPDATE
+#DBD7CACC       inventory 
+#4D9375        SET
+#DBD7CACC       quantity 
+#CB7676        =
+#DBD7CACC       quantity 
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC               
+#4D9375        WHERE
+#DBD7CACC       product 
+#CB7676        =
+#DBD7CACC       
+#C98A7D        'TENNIS RACKET'
+#DBD7CACC      ;
+#DBD7CACC            
+#4D9375        INSERT
+#DBD7CACC       
+#4D9375        INTO
+#DBD7CACC       purchase_record
+#DBD7CACC               
+#4D9375        VALUES
+#DBD7CACC       (
+#C98A7D        'Tennis racket purchased'
+#DBD7CACC      , 
+#B8A965        SYSDATE
+#DBD7CACC      );
+#DBD7CACC         
+#4D9375        ELSE
+#DBD7CACC            
+#4D9375        INSERT
+#DBD7CACC       
+#4D9375        INTO
+#DBD7CACC       purchase_record
+#DBD7CACC               
+#4D9375        VALUES
+#DBD7CACC       (
+#C98A7D        'Out of tennis rackets'
+#DBD7CACC      , 
+#B8A965        SYSDATE
+#DBD7CACC      );
+#DBD7CACC         
+#4D9375        END IF
+#DBD7CACC      ;
+#DBD7CACC         
+#B8A965        COMMIT
+#DBD7CACC      ;
+#4D9375        END
+#DBD7CACC      ;
+#758575DD      -- From https://docs.oracle.com/cd/B10500_01/appdev.920/a96624/01_oview.htm#7106

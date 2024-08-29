@@ -1,0 +1,89 @@
+#758575DD      # This is a tasl schema!
+#4D9375        namespace
+#DBD7CACC       
+#80A665        s
+#DBD7CACC       http://schema.org/
+#758575DD      # classes are like tables, except they
+#758575DD      # can be arbitrary algebraic data types,
+#758575DD      # not just columns of primitives.
+#4D9375        class
+#DBD7CACC       
+#80A665        s:Person
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#80A665        s:name
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC        
+#80A665        s:email
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#CB7676        ?
+#DBD7CACC       
+#BD976A        uri
+#DBD7CACC        
+#80A665        s:spouse
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#CB7676        ?
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#80A665        s:Person
+#DBD7CACC        
+#80A665        s:gender
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#444444        [
+#DBD7CACC          
+#80A665        s:Male
+#DBD7CACC          
+#80A665        s:Female
+#DBD7CACC          
+#80A665        s:value
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC        
+#444444        ]
+#444444        }
+#758575DD      # references are a primitive type that
+#758575DD      # point to other classes in the schema,
+#758575DD      # just like foreign keys.
+#4D9375        class
+#DBD7CACC       
+#80A665        s:Book
+#DBD7CACC       
+#CB7676        ::
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#80A665        s:name
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC        
+#80A665        s:isbn
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#BD976A        uri
+#DBD7CACC        
+#80A665        s:author
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#80A665        s:Person
+#444444        }

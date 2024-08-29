@@ -19,7 +19,7 @@
     "architecture_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\n\\b((?i:architecture))\\s+\n\n\n(([a-zA-z][a-zA-z0-9_]*)|(.+))(?=\\s)\\s+\n\n\n((?i:of))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(?i:is))\\b\n",
+          "begin": "\\b((?i:architecture))\\s+(([a-zA-z][a-zA-z0-9_]*)|(.+))(?=\\s)\\s+((?i:of))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(?i:is))\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -40,7 +40,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\n\n\n(\\s+((?i:architecture)))?\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))(\\s+((?i:architecture)))?(\\s+((\\3)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -126,7 +126,7 @@
     "block_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n(\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n(\\s*(?i:block))\n",
+          "begin": "^\\s*(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?(\\s*(?i:block))",
           "beginCaptures": {
             "2": {
               "name": "meta.block.block.name"
@@ -138,7 +138,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n((?i:end\\s+block))\n\n\n(\\s+((\\2)|(.+?)))?\n\n(?=\\s*;)\n",
+          "end": "((?i:end\\s+block))(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -181,7 +181,7 @@
     "case_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n(\n(\n([a-zA-Z][a-zA-Z0-9_]*)\n|(.+?)\n)\n\\s*:\\s*\n)?\n\n\n\\b((?i:case))\\b\n",
+          "begin": "^\\s*((([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\\s*:\\s*)?\\b((?i:case))\\b",
           "beginCaptures": {
             "3": {
               "name": "entity.name.tag.case.begin.vhdl"
@@ -193,7 +193,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\\s*\n\n\n(\\s+(((?i:case))|(.*?)))\n\n\n(\\s+((\\2)|(.*?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s*(\\s+(((?i:case))|(.*?)))(\\s+((\\2)|(.*?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -252,7 +252,7 @@
     "component_instantiation_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\\b\n\n\n\n(?=\\s*($|generic|port))\n",
+          "begin": "^\\s*([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*([a-zA-Z][a-zA-Z0-9_]*)\\b(?=\\s*($|generic|port))",
           "beginCaptures": {
             "1": {
               "name": "entity.name.section.component_instantiation.vhdl"
@@ -284,7 +284,7 @@
     "component_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n\\b((?i:component))\\s+\n\n\n(([a-zA-Z_][a-zA-Z0-9_]*)\\s*|(.+?))(?=\\b(?i:is|port)\\b|$|--)\n\n\n(\\b((?i:is\\b)))?\n",
+          "begin": "^\\s*\\b((?i:component))\\s+(([a-zA-Z_][a-zA-Z0-9_]*)\\s*|(.+?))(?=\\b(?i:is|port)\\b|$|--)(\\b((?i:is\\b)))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -299,7 +299,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\\s+\n\n\n(((?i:component\\b))|(.+?))(?=\\s*|;)\n\n\n(\\s+((\\3)|(.+?)))?(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s+(((?i:component\\b))|(.+?))(?=\\s*|;)(\\s+((\\3)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -391,7 +391,7 @@
     "entity_instantiation_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n\n\n(((?i:use))\\s+)?\n\n\n((?i:entity))\\s+\n\n\n(\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n(\\.)\n)?\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n\n(?=\\s*(\\(|$|(?i:port|generic)))\n\n\n(\n\n\\s*(\\()\\s*\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*\\))\n\n\n\\s*(\\))\n)?\n",
+          "begin": "^\\s*([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*(((?i:use))\\s+)?((?i:entity))\\s+((([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(\\.))?(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(\\(|$|(?i:port|generic)))(\\s*(\\()\\s*(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*\\))\\s*(\\)))?",
           "beginCaptures": {
             "1": {
               "name": "entity.name.section.entity_instantiation.vhdl"
@@ -453,7 +453,7 @@
     "entity_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n((?i:entity\\b))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))(?=\\s)\n",
+          "begin": "^\\s*((?i:entity\\b))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))(?=\\s)",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -465,7 +465,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:entity)))?\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end\\b))(\\s+((?i:entity)))?(\\s+((\\3)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -500,7 +500,7 @@
     "for_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n(?!(?i:wait\\s*))\n\n\n\\b((?i:for))\\b\n\n\n(?!\\s*(?i:all))\n\n",
+          "begin": "^\\s*(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?(?!(?i:wait\\s*))\\b((?i:for))\\b(?!\\s*(?i:all))",
           "beginCaptures": {
             "2": {
               "name": "entity.name.tag.for.generate.begin.vhdl"
@@ -512,7 +512,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\\s+\n(\n\n((?i:generate|loop))\n\n\n|(\\S+)\n)\\b\n\n\n(\\s+((\\2)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s+(((?i:generate|loop))|(\\S+))\\b(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -556,7 +556,7 @@
     "function_definition_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n((?i:impure)?\\s*(?i:function))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(\\\\.+\\\\)\n\n|(.+?)\n)\n\n\n(?=\\s*\n(\n\\(\n|(?i:\\breturn\\b)\n)\n)\n",
+          "begin": "^\\s*((?i:impure)?\\s*(?i:function))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(\"\\S+\")|(\\\\.+\\\\)|(.+?))(?=\\s*(\\(|(?i:\\breturn\\b)))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -574,7 +574,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\n^\\s*\n\n\n((?i:end))\n\n\n(\\s+((?i:function)))?\n\n\n(\\s+((\\3|\\4|\\5)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "^\\s*((?i:end))(\\s+((?i:function)))?(\\s+((\\3|\\4|\\5)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -612,7 +612,7 @@
     "function_prototype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n((?i:impure)?\\s*(?i:function))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(\\\\.+\\\\)\n\n|(.+?)\n)\n\n\n(?=\\s*\n(\n\\(\n|(?i:\\breturn\\b)\n)\n)\n",
+          "begin": "^\\s*((?i:impure)?\\s*(?i:function))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(\"\\S+\")|(\\\\.+\\\\)|(.+?))(?=\\s*(\\(|(?i:\\breturn\\b)))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -690,7 +690,7 @@
     "if_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n\\b((?i:if))\\b\n",
+          "begin": "(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?\\b((?i:if))\\b",
           "beginCaptures": {
             "2": {
               "name": "entity.name.tag.if.generate.begin.vhdl"
@@ -702,7 +702,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\\s+\n\n(\n(\n\n((?i:generate|if))\n\n\n|(\\S+)\n)\\b\n(\n\\s+\n(\n\n(\\2)\n\n\n|(.+?)\n)\n)?\n)?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s+((((?i:generate|if))|(\\S+))\\b(\\s+((\\2)|(.+?)))?)?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -766,7 +766,7 @@
     "package_body_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\\b((?i:package))\\s+\n\n\n((?i:body))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
+          "begin": "\\b((?i:package))\\s+((?i:body))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+((?i:is))\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -784,7 +784,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:package))\\s+((?i:body)))?\n\n\n(\\s+((\\4)|(.+?)))?(?=\\s*;)",
+          "end": "\\b((?i:end\\b))(\\s+((?i:package))\\s+((?i:body)))?(\\s+((\\4)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -831,7 +831,7 @@
     "package_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\\b((?i:package))\\s+\n\n\n(?!(?i:body))\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
+          "begin": "\\b((?i:package))\\s+(?!(?i:body))(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+((?i:is))\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -846,7 +846,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end\\b))\n\n\n(\\s+((?i:package)))?\n\n\n(\\s+((\\2)|(.+?)))?(?=\\s*;)",
+          "end": "\\b((?i:end\\b))(\\s+((?i:package)))?(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -985,7 +985,7 @@
     "procedure_definition_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n\n((?i:procedure))\\s+\n\n(\n\n([a-zA-Z][a-zA-Z\\d_]*)\n\n|(\"\\S+\")\n\n|(.+?)\n)\n\n\n(?=\\s*(\\(|(?i:is)))\n",
+          "begin": "^\\s*((?i:procedure))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(\"\\S+\")|(.+?))(?=\\s*(\\(|(?i:is)))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1000,7 +1000,7 @@
               "name": "invalid.illegal.invalid.identifier.vhdl"
             }
           },
-          "end": "(?x)\n\n^\\s*\n\n\n((?i:end))\n\n\n(\\s+((?i:procedure)))?\n\n\n(\\s+((\\3|\\4)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "^\\s*((?i:end))(\\s+((?i:procedure)))?(\\s+((\\3|\\4)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1038,7 +1038,7 @@
     "procedure_prototype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\\b((?i:procedure))\\s+\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n(?=\\s*(\\(|;))\n",
+          "begin": "\\b((?i:procedure))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(\\(|;))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1067,7 +1067,7 @@
     "process_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n(\n(?:postponed\\s+)?\n(?i:process\\b)\n)\n",
+          "begin": "^\\s*(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?((?:postponed\\s+)?(?i:process\\b))",
           "beginCaptures": {
             "2": {
               "name": "entity.name.section.process.begin.vhdl"
@@ -1079,7 +1079,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n((?i:end))\n\n\n(\\s+(\n(?:postponed\\s+)?\n(?i:process)\n))\n\n\n(\\s+((\\2)|(.+?)))?\n\n(?=\\s*;)\n",
+          "end": "((?i:end))(\\s+((?:postponed\\s+)?(?i:process)))(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1108,7 +1108,7 @@
     "protected_body_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\\b((?i:is\\s+protected\\s+body))\\s+\n",
+          "begin": "\\b((?i:type))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\\b((?i:is\\s+protected\\s+body))\\s+",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1123,7 +1123,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\\b((?i:end\\s+protected\\s+body))\n\n\n(\\s+((\\3)|(.+?)))?\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end\\s+protected\\s+body))(\\s+((\\3)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1161,7 +1161,7 @@
     "protected_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\n\n\\b((?i:is\\s+protected))\\s+\n\n\n(?!(?i:body))\n",
+          "begin": "\\b((?i:type))\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.+?))\\s+\\b((?i:is\\s+protected))\\s+(?!(?i:body))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdls"
@@ -1176,7 +1176,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\\b((?i:end\\s+protected))\n\n\n(\\s+((\\3)|(.+?)))?\n\n\n(?!(?i:body))\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end\\s+protected))(\\s+((\\3)|(.+?)))?(?!(?i:body))(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1231,7 +1231,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\n\n\n\\s+((?i:record))\n\n\n(\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.*?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s+((?i:record))(\\s+(([a-zA-Z][a-zA-Z\\d_]*)|(.*?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1284,7 +1284,7 @@
     "subtype_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\\b((?i:subtype))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\\s+\n\n\n((?i:is))\\b\n",
+          "begin": "\\b((?i:subtype))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\\s+((?i:is))\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1403,7 +1403,7 @@
     "type_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n\\b((?i:type))\\s+\n\n\n(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))\n\n(\n\n(?=\\s*;)\n\n\n|(\\s+((?i:is)))\n)\\b\n",
+          "begin": "\\b((?i:type))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))((?=\\s*;)|(\\s+((?i:is))))\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1438,7 +1438,7 @@
     "while_pattern": {
       "patterns": [
         {
-          "begin": "(?x)\n\n^\\s*\n(\n\n([a-zA-Z][a-zA-Z0-9_]*)\n\n\n\\s*(:)\\s*\n)?\n\n\n\\b((?i:while))\\b\n",
+          "begin": "^\\s*(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?\\b((?i:while))\\b",
           "beginCaptures": {
             "2": {
               "name": ""
@@ -1450,7 +1450,7 @@
               "name": "keyword.language.vhdl"
             }
           },
-          "end": "(?x)\n\n\\b((?i:end))\\s+\n(\n\n((?i:loop))\n\n\n|(\\S+)\n)\\b\n\n\n(\\s+((\\2)|(.+?)))?\n\n\n(?=\\s*;)\n",
+          "end": "\\b((?i:end))\\s+(((?i:loop))|(\\S+))\\b(\\s+((\\2)|(.+?)))?(?=\\s*;)",
           "endCaptures": {
             "1": {
               "name": "keyword.language.vhdl"

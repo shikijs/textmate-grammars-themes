@@ -1,0 +1,163 @@
+#4D9375        syntax
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D        "proto3"
+#444444        ;
+#4D9375        package
+#DBD7CACC       
+#C98A7D        mypackage.books.v1
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        "google/protobuf/empty.proto"
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        "google/api/field_behavior.proto"
+#444444        ;
+#4D9375        import
+#DBD7CACC       
+#C98A7D        "google/api/annotations.proto"
+#444444        ;
+#4D9375        option
+#DBD7CACC       
+#B8A965        go_package
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D        "mypackage.books.v1/books"
+#444444        ;
+#758575DD      // Book service
+#4D9375        service
+#DBD7CACC       
+#80A665        BooksService
+#DBD7CACC       {
+#DBD7CACC      	
+#758575DD      // Get a book.
+#DBD7CACC      	
+#4D9375        rpc
+#DBD7CACC       
+#80A665        GetBook
+#DBD7CACC      (
+#80A665        GetBookRequest
+#DBD7CACC      ) 
+#4D9375        returns
+#DBD7CACC       (
+#80A665        Book
+#DBD7CACC      ) {
+#DBD7CACC      		
+#4D9375        option
+#DBD7CACC       
+#B8A965        (google.api.http)
+#DBD7CACC       
+#444444        =
+#DBD7CACC       {
+#DBD7CACC      			
+#4D9375        get
+#444444        :
+#DBD7CACC       
+#C98A7D        "/resources/store/v1/{name=books/*}"
+#DBD7CACC      		}
+#444444        ;
+#DBD7CACC      	}
+#DBD7CACC      }
+#758575DD      // The definition of a book resource.
+#4D9375        message
+#DBD7CACC       
+#80A665        Book
+#DBD7CACC       {
+#DBD7CACC      	
+#758575DD      // The name of the book.
+#DBD7CACC      	
+#758575DD      // Format: books/{book}.
+#DBD7CACC      	
+#CB7676        string
+#DBD7CACC       
+#BD976A        name
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       [
+#B8A965        (google.api.field_behavior)
+#DBD7CACC       = 
+#4D9375        OUTPUT_ONLY
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC      	
+#758575DD      // The display name of the book.
+#DBD7CACC      	
+#CB7676        string
+#DBD7CACC       
+#BD976A        display_name
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       [
+#B8A965        (google.api.field_behavior)
+#DBD7CACC       = 
+#4D9375        REQUIRED
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC      	
+#758575DD      // The authors of the book.
+#DBD7CACC      	
+#CB7676        repeated
+#DBD7CACC       
+#CB7676        string
+#DBD7CACC       
+#BD976A        authors
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       [
+#B8A965        (google.api.field_behavior)
+#DBD7CACC       = 
+#4D9375        REQUIRED
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC      	
+#758575DD      // The publisher of the book
+#DBD7CACC      	
+#CB7676        string
+#DBD7CACC       
+#BD976A        publisher
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       [
+#B8A965        (google.api.field_behavior)
+#DBD7CACC       = 
+#4D9375        OPTIONAL
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC      }
+#758575DD      // Request message for [play.me.resources.books.v1.BooksService.GetBook].
+#4D9375        message
+#DBD7CACC       
+#80A665        GetBookRequest
+#DBD7CACC       {
+#DBD7CACC      	
+#758575DD      // The book name is the unique identifier across organisations.
+#DBD7CACC      	
+#758575DD      // Format: books/{book}
+#DBD7CACC      	
+#CB7676        string
+#DBD7CACC       
+#BD976A        name
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       [
+#B8A965        (google.api.field_behavior)
+#DBD7CACC       = 
+#4D9375        REQUIRED
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC      }
+#758575DD      // From https://alis.build/guides/how-to-guides/make-your-first-request.html#book-repository-example

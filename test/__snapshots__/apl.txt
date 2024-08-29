@@ -1,0 +1,255 @@
+#BD976A        CND
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        X
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4D9375        ⍵
+#DBD7CACC          
+#BD976A        a
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        0.31938153
+#DBD7CACC       
+#4C9A91        ¯0.356563782
+#DBD7CACC       
+#4C9A91        1.781477937
+#DBD7CACC       
+#4C9A91        ¯1.821255978
+#DBD7CACC       
+#4C9A91        1.330274429
+#DBD7CACC          
+#BD976A        l
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#CB7676        |
+#BD976A        X
+#DBD7CACC          
+#BD976A        k
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#CB7676        ÷
+#4C9A91        1
+#CB7676        +
+#4C9A91        0.2316419
+#CB7676        ×
+#BD976A        l
+#DBD7CACC          
+#BD976A        w
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       (
+#CB7676        ÷
+#DBD7CACC      ((
+#4C9A91        2
+#CB7676        ×
+#DBD7CACC      (
+#CB7676        ○
+#4C9A91        1
+#DBD7CACC      ))
+#CB7676        *
+#4C9A91        0.5
+#DBD7CACC      )) 
+#CB7676        ×
+#DBD7CACC       (
+#CB7676        *-
+#DBD7CACC      (
+#BD976A        l
+#CB7676        ×
+#BD976A        l
+#DBD7CACC      )
+#CB7676        ÷
+#4C9A91        2
+#DBD7CACC      ) 
+#CB7676        ×
+#DBD7CACC       (
+#BD976A        a
+#DBD7CACC       
+#CB7676        +.×
+#DBD7CACC       (
+#BD976A        k
+#CB7676        *⍳
+#4C9A91        5
+#DBD7CACC      ))
+#DBD7CACC          ((
+#CB7676        |
+#4C9A91        0
+#CB7676        ⌊×
+#BD976A        X
+#DBD7CACC      )
+#CB7676        ×
+#DBD7CACC      (
+#4C9A91        1
+#CB7676        -
+#BD976A        w
+#DBD7CACC      ))
+#CB7676        +
+#DBD7CACC      (
+#4C9A91        1
+#CB7676        -|
+#4C9A91        0
+#CB7676        ⌊×
+#BD976A        X
+#DBD7CACC      )
+#CB7676        ×
+#BD976A        w
+#444444        }
+#758575DD      ⍝ S - current price
+#758575DD      ⍝ X - strike price
+#758575DD      ⍝ T - expiry in years
+#758575DD      ⍝ r - riskless interest rate
+#758575DD      ⍝ v - volatility
+#BD976A        S
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        60
+#BD976A        X
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        65
+#BD976A        T
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        1
+#BD976A        r
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        0.1
+#BD976A        v
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#4C9A91        0.2
+#BD976A        d1
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#444444        {
+#DBD7CACC       ((
+#CB7676        ⍟
+#BD976A        S
+#CB7676        ÷
+#BD976A        X
+#DBD7CACC      )
+#CB7676        +
+#DBD7CACC      (
+#BD976A        r
+#CB7676        +
+#DBD7CACC      (
+#BD976A        v
+#CB7676        *
+#4C9A91        2
+#DBD7CACC      )
+#CB7676        ÷
+#4C9A91        2
+#DBD7CACC      )
+#CB7676        ×
+#4D9375        ⍵
+#DBD7CACC      )
+#CB7676        ÷
+#DBD7CACC      (
+#BD976A        v
+#CB7676        ×
+#4D9375        ⍵
+#CB7676        *
+#4C9A91        0.5
+#DBD7CACC      ) 
+#444444        }
+#BD976A        d2
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#444444        {
+#DBD7CACC       (
+#BD976A        d1
+#DBD7CACC       
+#4D9375        ⍵
+#DBD7CACC      ) 
+#CB7676        -
+#BD976A        v
+#CB7676        ×
+#4D9375        ⍵
+#CB7676        *
+#4C9A91        0.5
+#DBD7CACC       
+#444444        }
+#758575DD      ⍝ Call price
+#BD976A        callPrice
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#444444        {
+#DBD7CACC       (
+#BD976A        S
+#CB7676        ×
+#BD976A        CND
+#DBD7CACC      (
+#BD976A        d1
+#DBD7CACC       
+#4D9375        ⍵
+#DBD7CACC      ))
+#CB7676        -
+#DBD7CACC      (
+#BD976A        X
+#CB7676        ×*-
+#BD976A        r
+#CB7676        ×
+#4D9375        ⍵
+#DBD7CACC      )
+#CB7676        ×
+#BD976A        CND
+#DBD7CACC      (
+#BD976A        d2
+#DBD7CACC       
+#4D9375        ⍵
+#DBD7CACC      ) 
+#444444        }
+#BD976A        avg
+#DBD7CACC       
+#4D9375        ←
+#DBD7CACC       
+#444444        {
+#DBD7CACC       (
+#CB7676        +/
+#4D9375        ⍵
+#DBD7CACC      ) 
+#CB7676        ÷
+#DBD7CACC       
+#CB7676        ⊃⍴
+#DBD7CACC       
+#4D9375        ⍵
+#DBD7CACC       
+#444444        }
+#444444        ⎕←
+#BD976A        avg
+#DBD7CACC       
+#BD976A        callPrice
+#CB7676        ¨
+#DBD7CACC       
+#444444        (
+#CB7676        ⍳
+#DBD7CACC       
+#4C9A91        100000
+#444444        )
+#DBD7CACC       
+#CB7676        ÷
+#DBD7CACC       
+#4C9A91        10000
+#758575DD      ⍝ Put price (not tested)
+#758575DD      ⍝ putPrice ← { (X×*-r×⍵)×CND(-d2 ⍵)-S×CND(-d1 ⍵) }
+#758575DD      ⍝ From https://github.com/melsman/apltail/blob/master/tests/blacksch.apl

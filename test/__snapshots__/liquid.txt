@@ -1,0 +1,78 @@
+#DBD7CACC      <h3>Recommended Products</h3>
+#DBD7CACC      <ul class="recommended_products">
+#DBD7CACC        
+#444444        {%
+#DBD7CACC       
+#4D9375        assign
+#DBD7CACC       
+#BD976A        recommended_products
+#DBD7CACC       =  
+#C99076        product
+#444444        .
+#BD976A        metafields
+#444444        .
+#BD976A        my_fields
+#444444        .
+#BD976A        rec_products
+#444444        .
+#BD976A        value
+#DBD7CACC       
+#444444        %}
+#DBD7CACC        
+#444444        {%
+#DBD7CACC       
+#4D9375        for
+#DBD7CACC       
+#C99076        product
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        recommended_products
+#DBD7CACC        
+#444444        %}
+#DBD7CACC          <li>
+#DBD7CACC            <a href="
+#444444        {{
+#DBD7CACC       
+#C99076        product
+#444444        .
+#BD976A        url
+#DBD7CACC       
+#444444        }}
+#DBD7CACC      ">
+#DBD7CACC              
+#444444        {{
+#DBD7CACC       
+#C99076        product
+#444444        .
+#BD976A        featured_image
+#DBD7CACC       | 
+#B8A965        image_url:
+#DBD7CACC       
+#BD976A        width:
+#DBD7CACC       
+#4C9A91        400
+#DBD7CACC       | 
+#B8A965        image_tag:
+#DBD7CACC       
+#BD976A        loading:
+#DBD7CACC       
+#C98A7D        'lazy'
+#DBD7CACC       
+#444444        }}
+#DBD7CACC              
+#444444        {{
+#C99076        product
+#444444        .
+#BD976A        title
+#444444        }}
+#DBD7CACC            </a>
+#DBD7CACC          </li>
+#DBD7CACC        
+#444444        {%
+#DBD7CACC       
+#4D9375        endfor
+#DBD7CACC       
+#444444        %}
+#DBD7CACC      </ul>
+#758575DD      {%- comment -%} From https://www.codeshopify.com/blog_posts/related-products-with-product_list-sections-metafields {%- endcomment -%}

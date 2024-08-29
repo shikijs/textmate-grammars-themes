@@ -1,0 +1,99 @@
+#4D9375        package
+#DBD7CACC       
+#5DA994        main
+#4D9375        import
+#DBD7CACC       
+#444444        (
+#DBD7CACC          
+#C98A7D77      "
+#80A665        fmt
+#C98A7D77      "
+#DBD7CACC          
+#C98A7D77      "
+#80A665        log
+#C98A7D77      "
+#DBD7CACC          
+#C98A7D77      "
+#80A665        net/http
+#C98A7D77      "
+#444444        )
+#4D9375        func
+#DBD7CACC       
+#80A665        handler
+#444444        (
+#BD976A        w
+#DBD7CACC       
+#5DA994        http
+#444444        .
+#5DA994        ResponseWriter
+#444444        ,
+#DBD7CACC       
+#BD976A        r
+#DBD7CACC       
+#CB7676        *
+#5DA994        http
+#444444        .
+#5DA994        Request
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        fmt
+#444444        .
+#80A665        Fprintf
+#444444        (
+#BD976A        w
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Hi there, I love 
+#C99076        %s
+#C98A7D        !
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        r
+#444444        .
+#BD976A        URL
+#444444        .
+#BD976A        Path
+#444444        [
+#4C9A91        1
+#444444        :])
+#444444        }
+#4D9375        func
+#DBD7CACC       
+#80A665        main
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        http
+#444444        .
+#80A665        HandleFunc
+#444444        (
+#C98A7D77      "
+#C98A7D        /
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        handler
+#444444        )
+#DBD7CACC          
+#BD976A        log
+#444444        .
+#80A665        Fatal
+#444444        (
+#BD976A        http
+#444444        .
+#80A665        ListenAndServe
+#444444        (
+#C98A7D77      "
+#C98A7D        :8080
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#CB7676        nil
+#444444        ))
+#444444        }
+#758575DD      // From https://golang.org/doc/articles/wiki/#tmp_3

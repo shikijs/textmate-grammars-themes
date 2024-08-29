@@ -1,0 +1,60 @@
+#4D9375        report
+#DBD7CACC       zldbread 
+#4D9375        no standard
+#DBD7CACC       
+#4D9375        page
+#DBD7CACC       
+#4D9375        heading
+#DBD7CACC      .
+#4D9375        tables
+#DBD7CACC      : lfa1.
+#4D9375        data
+#DBD7CACC      : 
+#4D9375        begin of
+#B8A965         t
+#DBD7CACC       
+#4D9375        occurs
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ,
+#DBD7CACC      linfr
+#4D9375         like
+#DBD7CACC       lfa1-lifnr,
+#DBD7CACC      name1
+#4D9375         like
+#DBD7CACC       lfa1-name1,
+#4D9375        end of
+#B8A965         t
+#DBD7CACC      .
+#4D9375        start-of-selection
+#DBD7CACC      .
+#4D9375        get
+#DBD7CACC       lfa1.
+#4D9375        clear
+#B8A965         t
+#DBD7CACC      .
+#4D9375        move-corresponding
+#DBD7CACC       lfa1
+#4D9375         to
+#B8A965         t
+#DBD7CACC      .
+#4D9375        append
+#B8A965         t
+#DBD7CACC      .
+#4D9375        end-of-selection
+#DBD7CACC      .
+#4D9375        sort
+#B8A965         t
+#DBD7CACC       
+#4D9375        by
+#DBD7CACC       name1.
+#4D9375        loop at
+#B8A965         t
+#DBD7CACC      .
+#4D9375        write
+#DBD7CACC      : 
+#4D9375        /
+#DBD7CACC       t-name1, t-lifnr.
+#4D9375        endloop
+#DBD7CACC      .
+#758575DD      *- From https://sapbrainsonline.com/abap-tutorial/codes/reading-logical-database-using-abap-program.html -*

@@ -1,0 +1,77 @@
+#758575DD      #!/bin/awk -f
+#4D9375        BEGIN
+#DBD7CACC       {
+#758575DD      # How many lines
+#DBD7CACC          lines
+#444444        =
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          total
+#444444        =
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC      }
+#DBD7CACC      {
+#758575DD      # this code is executed once for each line
+#758575DD      # increase the number of files
+#DBD7CACC          lines
+#444444        ++
+#DBD7CACC      ;
+#758575DD      # increase the total size, which is field #1
+#DBD7CACC          total
+#444444        +=
+#C99076        $1
+#DBD7CACC      ;
+#DBD7CACC      }
+#4D9375        END
+#DBD7CACC       {
+#758575DD      # end, now output the total
+#DBD7CACC          
+#4D9375        print
+#DBD7CACC       lines 
+#C98A7D77      "
+#C98A7D         lines read
+#C98A7D77      "
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        total is 
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       total;
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#DBD7CACC      lines 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#444444        )
+#DBD7CACC       {
+#DBD7CACC      	
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        average is 
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       total
+#CB7676        /
+#DBD7CACC      lines;
+#DBD7CACC          } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC      	
+#4D9375        print
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        average is 0
+#C98A7D77      "
+#DBD7CACC      ;
+#DBD7CACC          }
+#DBD7CACC      }
+#758575DD      #From https://www.grymoire.com/Unix/Awk.html

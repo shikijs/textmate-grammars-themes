@@ -1,0 +1,38 @@
+#758575DD      # Almost all CMake files should start with this
+#758575DD      # You should always specify a range with the newest
+#758575DD      # and oldest tested versions of CMake. This will ensure
+#758575DD      # you pick up the best policies.
+#4D9375        cmake_minimum_required
+#DBD7CACC      (
+#80A665        VERSION
+#DBD7CACC       3.1...3.23)
+#758575DD      # This is your project statement. You should always list languages;
+#758575DD      # Listing the version is nice here since it sets lots of useful variables
+#4D9375        project
+#DBD7CACC      (
+#DBD7CACC        ModernCMakeExample
+#DBD7CACC        
+#80A665        VERSION
+#DBD7CACC       1.0
+#DBD7CACC        LANGUAGES CXX)
+#758575DD      # If you set any CMAKE_ variables, that can go here.
+#758575DD      # (But usually don't do this, except maybe for C++ standard)
+#758575DD      # Find packages go here.
+#758575DD      # You should usually split this into folders, but this is a simple example
+#758575DD      # This is a "default" library, and will match the *** variable setting.
+#758575DD      # Other common choices are STATIC, SHARED, and MODULE
+#758575DD      # Including header files here helps IDEs but is not required.
+#758575DD      # Output libname matches target name, with the usual extensions on your system
+#4D9375        add_library
+#DBD7CACC      (MyLibExample simple_lib.cpp simple_lib.hpp)
+#758575DD      # Link each target with other targets or add options, etc.
+#758575DD      # Adding something we can run - Output name matches target name
+#4D9375        add_executable
+#DBD7CACC      (MyExample simple_example.cpp)
+#758575DD      # Make sure you link your targets with this command. It can also link libraries and
+#758575DD      # even flags, so linking a target that does not exist will not give a configure-time error.
+#4D9375        target_link_libraries
+#DBD7CACC      (MyExample 
+#80A665        PRIVATE
+#DBD7CACC       MyLibExample)
+#758575DD      # From https://cliutils.gitlab.io/modern-cmake/chapters/basics/example.html

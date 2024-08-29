@@ -1,0 +1,198 @@
+#DBD7CACC      (with-test (
+#80A665        :name
+#DBD7CACC       
+#80A665        :aprof-instance
+#DBD7CACC       
+#80A665        :skipped-on
+#DBD7CACC       (
+#B8A965        not
+#DBD7CACC       
+#80A665        :immobile-space
+#DBD7CACC      ))
+#DBD7CACC        (
+#4D9375        let
+#DBD7CACC       (seen-this seen-that)
+#DBD7CACC          (
+#CB7676        dolist
+#DBD7CACC       (line (split-string
+#DBD7CACC                         (
+#CB7676        with-output-to-string
+#DBD7CACC       (s)
+#DBD7CACC                           (
+#B8A965        sb-aprof
+#DBD7CACC      :aprof-run 
+#BD976A        #'
+#DBD7CACC      make-structs 
+#80A665        :stream
+#DBD7CACC       s))
+#DBD7CACC                         
+#C99076        #\newline
+#DBD7CACC      ))
+#DBD7CACC            (
+#CB7676        when
+#DBD7CACC       (
+#B8A965        search
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        THIS-STRUCT
+#C98A7D77      "
+#DBD7CACC       line) (
+#CB7676        setq
+#DBD7CACC       seen-this 
+#4D9375        t
+#DBD7CACC      ))
+#DBD7CACC            (
+#CB7676        when
+#DBD7CACC       (
+#B8A965        search
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        THAT-STRUCT
+#C98A7D77      "
+#DBD7CACC       line) (
+#CB7676        setq
+#DBD7CACC       seen-that 
+#4D9375        t
+#DBD7CACC      )))
+#DBD7CACC          (
+#CB7676        assert
+#DBD7CACC       (
+#CB7676        and
+#DBD7CACC       seen-this seen-that))))
+#DBD7CACC      (
+#CB7676        defun
+#DBD7CACC       
+#80A665        my-list
+#DBD7CACC       (
+#4D9375        &rest
+#DBD7CACC       x)
+#DBD7CACC        (
+#CB7676        declare
+#DBD7CACC       (
+#CB7676        optimize
+#DBD7CACC       
+#B8A965        sb-c
+#DBD7CACC      ::instrument-consing))
+#DBD7CACC        x)
+#DBD7CACC      (
+#B8A965        compile
+#DBD7CACC       
+#BD976A        '
+#DBD7CACC      my-list)
+#BD976A        #+
+#DBD7CACC      nil
+#DBD7CACC      (
+#4D9375        let
+#DBD7CACC       ((l (
+#B8A965        sb-impl
+#DBD7CACC      ::%hash-table-alist 
+#B8A965        sb-c
+#DBD7CACC      ::
+#C4704F        *checkgen-used-types*
+#DBD7CACC      )))
+#DBD7CACC        (
+#B8A965        format
+#DBD7CACC       
+#4D9375        t
+#DBD7CACC       
+#C98A7D77      "
+#80A665        ~&
+#C98A7D        Types needed by checkgen: ('+' = has internal error number)
+#80A665        ~%
+#C98A7D77      "
+#DBD7CACC      )
+#DBD7CACC        (
+#CB7676        setq
+#DBD7CACC       l (
+#B8A965        sort
+#DBD7CACC       l 
+#BD976A        #'
+#B8A965        >
+#DBD7CACC       
+#80A665        :key
+#DBD7CACC       
+#BD976A        #'
+#B8A965        cadr
+#DBD7CACC      ))
+#DBD7CACC        (
+#CB7676        loop
+#DBD7CACC       for (type-spec 
+#BD976A        .
+#DBD7CACC       (
+#B8A965        count
+#DBD7CACC       
+#BD976A        .
+#DBD7CACC       interr-p)) in l
+#DBD7CACC              
+#CB7676        do
+#DBD7CACC       (
+#B8A965        format
+#DBD7CACC       
+#4D9375        t
+#DBD7CACC       
+#C98A7D77      "
+#CB7676        ~:[
+#C98A7D         
+#CB7676        ~;
+#C98A7D        +
+#CB7676        ~]
+#C98A7D         
+#80A665        ~
+#C98A7D        5
+#80A665        D
+#C98A7D         
+#80A665        ~S~%
+#C98A7D77      "
+#DBD7CACC       interr-p 
+#B8A965        count
+#DBD7CACC       type-spec))
+#DBD7CACC        (
+#B8A965        format
+#DBD7CACC       
+#4D9375        t
+#DBD7CACC       
+#C98A7D77      "
+#80A665        ~&
+#C98A7D        Error numbers not used by checkgen:
+#80A665        ~%
+#C98A7D77      "
+#DBD7CACC      )
+#DBD7CACC        (
+#CB7676        loop
+#DBD7CACC       for (spec 
+#B8A965        symbol
+#DBD7CACC      ) across 
+#B8A965        sb-c
+#DBD7CACC      :
+#BD976A        +backend-internal-errors+
+#DBD7CACC              
+#CB7676        when
+#DBD7CACC       (
+#CB7676        and
+#DBD7CACC       (
+#B8A965        not
+#DBD7CACC       (
+#B8A965        stringp
+#DBD7CACC       spec))
+#DBD7CACC                        (
+#B8A965        not
+#DBD7CACC       (
+#B8A965        gethash
+#DBD7CACC       spec 
+#B8A965        sb-c
+#DBD7CACC      ::
+#C4704F        *checkgen-used-types*
+#DBD7CACC      )))
+#DBD7CACC                
+#CB7676        do
+#DBD7CACC       (
+#B8A965        format
+#DBD7CACC       
+#4D9375        t
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D               
+#80A665        ~S~%
+#C98A7D77      "
+#DBD7CACC       spec)))
+#758575DD      ;; From https://github.com/qingpeng9802/vscode-common-lisp/blob/master/syntaxes/fixtures/cases/demo.lsp

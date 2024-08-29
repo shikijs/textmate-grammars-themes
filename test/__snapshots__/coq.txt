@@ -1,0 +1,195 @@
+#4D9375        From
+#DBD7CACC       Coq 
+#4D9375        Require
+#DBD7CACC       
+#4D9375        Import
+#DBD7CACC       ssreflect.
+#758575DD      (* ensure proofs are well-structured *)
+#4D9375        Set
+#DBD7CACC       Default 
+#4D9375        Goal
+#DBD7CACC       
+#80A665        Selector
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        !
+#C98A7D77      "
+#DBD7CACC      .
+#DBD7CACC      #[global] 
+#4D9375        Open Scope
+#DBD7CACC       general_if_scope.
+#4D9375        Module
+#DBD7CACC       list_playground.
+#DBD7CACC        
+#758575DD      (* Let's do a typical proof by induction: we'll define [list] as an inductive,
+#758575DD           [app] (list append) as a recursive function, and prove that [app] is
+#758575DD           associative. *)
+#DBD7CACC        
+#4D9375        Inductive
+#DBD7CACC       
+#5DA994        list
+#DBD7CACC       (A
+#CB7676        :
+#DBD7CACC       
+#B8A965        Type
+#DBD7CACC      ) 
+#CB7676        :=
+#DBD7CACC        
+#CB7676        |
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC        
+#CB7676        |
+#DBD7CACC       
+#4D9375        cons
+#DBD7CACC       (x
+#CB7676        :
+#DBD7CACC       A) (l
+#CB7676        :
+#DBD7CACC       
+#B8A965        list
+#DBD7CACC       A).
+#DBD7CACC        
+#758575DD      (* Fix up implicit arguments. *)
+#DBD7CACC        
+#4D9375        Arguments
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC       
+#CB7676        {
+#DBD7CACC      A
+#CB7676        }
+#DBD7CACC      .
+#DBD7CACC        
+#4D9375        Arguments
+#DBD7CACC       
+#4D9375        cons
+#DBD7CACC       
+#CB7676        {
+#DBD7CACC      A
+#CB7676        }
+#DBD7CACC       x l.
+#DBD7CACC        
+#4D9375        Notation
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        []
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4D9375        nil
+#DBD7CACC      .
+#DBD7CACC        
+#4D9375        Infix
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4D9375        cons
+#DBD7CACC      .
+#DBD7CACC        
+#4D9375        Fixpoint
+#DBD7CACC       
+#80A665        app
+#DBD7CACC       
+#CB7676        {
+#DBD7CACC      A
+#CB7676        }
+#DBD7CACC       (l1 l2
+#CB7676        :
+#DBD7CACC       
+#B8A965        list
+#DBD7CACC       A)
+#CB7676        :
+#DBD7CACC       
+#B8A965        list
+#DBD7CACC       A 
+#CB7676        :=
+#DBD7CACC          
+#4D9375        match
+#DBD7CACC       l1 
+#4D9375        with
+#DBD7CACC          
+#CB7676        |
+#DBD7CACC       [] 
+#CB7676        =>
+#DBD7CACC       l2
+#DBD7CACC          
+#CB7676        |
+#DBD7CACC       x 
+#CB7676        ::
+#DBD7CACC       l1 
+#CB7676        =>
+#DBD7CACC       x 
+#CB7676        ::
+#DBD7CACC       app l1 l2
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC      .
+#DBD7CACC        
+#4D9375        Infix
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ++
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       app.
+#DBD7CACC        
+#4D9375        Theorem
+#DBD7CACC       
+#80A665        app_assoc
+#DBD7CACC       
+#CB7676        {
+#DBD7CACC      A
+#CB7676        }
+#DBD7CACC       (l1 l2 l3
+#CB7676        :
+#DBD7CACC       
+#B8A965        list
+#DBD7CACC       A) 
+#CB7676        :
+#DBD7CACC          (l1 
+#CB7676        ++
+#DBD7CACC       l2) 
+#CB7676        ++
+#DBD7CACC       l3 
+#CB7676        =
+#DBD7CACC       l1 
+#CB7676        ++
+#DBD7CACC       (l2 
+#CB7676        ++
+#DBD7CACC       l3).
+#DBD7CACC        
+#4D9375        Proof
+#DBD7CACC      .
+#DBD7CACC          
+#B8A965        induction
+#DBD7CACC       l1 
+#4D9375        as
+#DBD7CACC       [
+#CB7676        |
+#DBD7CACC      x l1]; 
+#B8A965        simpl
+#DBD7CACC      .
+#DBD7CACC          
+#CB7676        -
+#DBD7CACC       
+#B8A965        reflexivity
+#DBD7CACC      .
+#DBD7CACC          
+#CB7676        -
+#DBD7CACC       
+#4D9375        by
+#DBD7CACC       
+#B8A965        rewrite
+#DBD7CACC       IHl1.
+#DBD7CACC        
+#4D9375        Qed
+#DBD7CACC      .
+#4D9375        End
+#DBD7CACC       list_playground.

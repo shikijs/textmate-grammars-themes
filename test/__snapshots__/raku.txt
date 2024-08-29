@@ -1,0 +1,174 @@
+#4D9375        use
+#DBD7CACC       v6;
+#758575DD      # start by printing out the header.
+#B8A965        say
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Tournament Results:
+#C99076        \n
+#C98A7D77      "
+#DBD7CACC      ;
+#CB7676        my
+#DBD7CACC       
+#BD976A        $file
+#DBD7CACC        = 
+#B8A965        open
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        scores.txt
+#C98A7D77      '
+#DBD7CACC      ; 
+#758575DD      # get filehandle and...
+#CB7676        my
+#DBD7CACC       
+#BD976A        @names
+#DBD7CACC       = 
+#BD976A        $file
+#DBD7CACC      .get.words;   
+#758575DD      # ... get players.
+#CB7676        my
+#DBD7CACC       
+#BD976A        %matches
+#DBD7CACC      ;
+#CB7676        my
+#DBD7CACC       
+#BD976A        %sets
+#DBD7CACC      ;
+#4D9375        for
+#DBD7CACC       
+#BD976A        $file
+#DBD7CACC      .
+#B8A965        lines
+#DBD7CACC       -> 
+#BD976A        $line
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        next
+#DBD7CACC       
+#4D9375        unless
+#DBD7CACC       
+#BD976A        $line
+#DBD7CACC      ; 
+#758575DD      # ignore any empty lines
+#DBD7CACC          
+#CB7676        my
+#DBD7CACC       (
+#BD976A        $pairing
+#DBD7CACC      , 
+#BD976A        $result
+#DBD7CACC      ) = 
+#BD976A        $line
+#DBD7CACC      .
+#B8A965        split
+#DBD7CACC      (' | 
+#C98A7D77      '
+#C98A7D        );
+#C98A7D            my ($p1, $p2)          = $pairing.words;
+#C98A7D            my ($r1, $r2)          = $result.split(
+#C98A7D77      '
+#DBD7CACC      :');
+#DBD7CACC          
+#BD976A        %sets
+#DBD7CACC      {
+#BD976A        $p1
+#DBD7CACC      } += 
+#BD976A        $r1
+#DBD7CACC      ;
+#DBD7CACC          
+#BD976A        %sets
+#DBD7CACC      {
+#BD976A        $p2
+#DBD7CACC      } += 
+#BD976A        $r2
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#BD976A        $r1
+#DBD7CACC       > 
+#BD976A        $r2
+#DBD7CACC       {
+#DBD7CACC              
+#BD976A        %matches
+#DBD7CACC      {
+#BD976A        $p1
+#DBD7CACC      }++;
+#DBD7CACC          } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC              
+#BD976A        %matches
+#DBD7CACC      {
+#BD976A        $p2
+#DBD7CACC      }++;
+#DBD7CACC          }
+#DBD7CACC      }
+#CB7676        my
+#DBD7CACC       
+#BD976A        @sorted
+#DBD7CACC       = 
+#BD976A        @names
+#DBD7CACC      .
+#B8A965        sort
+#DBD7CACC      ({ 
+#BD976A        %sets
+#DBD7CACC      {
+#BD976A        $_
+#DBD7CACC      } }).
+#B8A965        sort
+#DBD7CACC      ({ 
+#BD976A        %matches
+#DBD7CACC      {
+#BD976A        $_
+#DBD7CACC      } }).
+#B8A965        reverse
+#DBD7CACC      ;
+#4D9375        for
+#DBD7CACC       
+#BD976A        @sorted
+#DBD7CACC       -> 
+#BD976A        $n
+#DBD7CACC       {
+#DBD7CACC          
+#CB7676        my
+#DBD7CACC       
+#BD976A        $match-noun
+#DBD7CACC       = 
+#BD976A        %matches
+#DBD7CACC      {
+#BD976A        $n
+#DBD7CACC      } == 1 ?? 
+#C98A7D77      '
+#C98A7D        match
+#C98A7D77      '
+#DBD7CACC       !! 
+#C98A7D77      '
+#C98A7D        matches
+#C98A7D77      '
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        my
+#DBD7CACC       
+#BD976A        $set-noun
+#DBD7CACC         = 
+#BD976A        %sets
+#DBD7CACC      {
+#BD976A        $n
+#DBD7CACC      } == 1 ?? 
+#C98A7D77      '
+#C98A7D        set
+#C98A7D77      '
+#DBD7CACC       !! 
+#C98A7D77      '
+#C98A7D        sets
+#C98A7D77      '
+#DBD7CACC      ;
+#DBD7CACC          
+#B8A965        say
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        $n has won %matches{$n} $match-noun and %sets{$n} $set-noun
+#C98A7D77      "
+#DBD7CACC      ;
+#DBD7CACC      }
+#758575DD      # From https://docs.raku.org/language/101-basics

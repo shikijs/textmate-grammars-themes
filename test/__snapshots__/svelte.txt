@@ -1,0 +1,127 @@
+#444444        <
+#4D9375        script
+#444444        >
+#DBD7CACC      	let files;
+#DBD7CACC      	$: if (files) {
+#DBD7CACC      		// Note that `files` is of type `FileList`, not an Array:
+#DBD7CACC      		// https://developer.mozilla.org/en-US/docs/Web/API/FileList
+#DBD7CACC      		console.log(files);
+#DBD7CACC      		for (const file of files) {
+#DBD7CACC      			console.log(`${file.name}: ${file.size} bytes`);
+#DBD7CACC      		}
+#DBD7CACC      	}
+#444444        </
+#4D9375        script
+#444444        >
+#444444        <
+#4D9375        label
+#DBD7CACC       
+#BD976A        for
+#444444        =
+#DBD7CACC      "
+#BD976A        avatar
+#DBD7CACC      "
+#444444        >
+#DBD7CACC      Upload a picture:
+#444444        </
+#4D9375        label
+#444444        >
+#444444        <
+#4D9375        input
+#DBD7CACC       
+#BD976A        accept
+#444444        =
+#DBD7CACC      "
+#BD976A        image
+#DBD7CACC      /
+#BD976A        png
+#DBD7CACC      , 
+#BD976A        image
+#DBD7CACC      /
+#BD976A        jpeg
+#DBD7CACC      " 
+#4D9375        bind
+#444444        :
+#BD976A        files
+#DBD7CACC       
+#BD976A        id
+#444444        =
+#DBD7CACC      "
+#BD976A        avatar
+#DBD7CACC      " 
+#BD976A        name
+#444444        =
+#DBD7CACC      "
+#BD976A        avatar
+#DBD7CACC      " 
+#BD976A        type
+#444444        =
+#DBD7CACC      "
+#BD976A        file
+#DBD7CACC      " 
+#444444        />
+#444444        <
+#4D9375        label
+#DBD7CACC       
+#BD976A        for
+#444444        =
+#DBD7CACC      "
+#BD976A        many
+#DBD7CACC      "
+#444444        >
+#DBD7CACC      Upload multiple files of any type:
+#444444        </
+#4D9375        label
+#444444        >
+#444444        <
+#4D9375        input
+#DBD7CACC       
+#4D9375        bind
+#444444        :
+#BD976A        files
+#DBD7CACC       
+#BD976A        id
+#444444        =
+#DBD7CACC      "
+#BD976A        many
+#DBD7CACC      " 
+#BD976A        multiple
+#DBD7CACC       
+#BD976A        type
+#444444        =
+#DBD7CACC      "
+#BD976A        file
+#DBD7CACC      " 
+#444444        />
+#444444        {#
+#4D9375        if
+#DBD7CACC       files
+#444444        }
+#DBD7CACC      	
+#444444        <
+#4D9375        h2
+#444444        >
+#DBD7CACC      Selected files:
+#444444        </
+#4D9375        h2
+#444444        >
+#DBD7CACC      	
+#444444        {#
+#4D9375        each
+#DBD7CACC       Array.from(files) 
+#4D9375        as
+#DBD7CACC       file
+#444444        }
+#DBD7CACC      		
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      {file.name} ({file.size} bytes)</p>
+#DBD7CACC      	
+#444444        {/
+#4D9375        each
+#444444        }
+#444444        {/
+#4D9375        if
+#444444        }
+#DBD7CACC      // From https://svelte.dev/examples/file-inputs

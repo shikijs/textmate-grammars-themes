@@ -1,0 +1,163 @@
+#5DA994        resource
+#DBD7CACC       
+#BD976A        "aws_iam_role"
+#DBD7CACC       
+#BD976A        "example"
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        name 
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        example
+#C98A7D77      "
+#DBD7CACC        
+#758575DD      # assume_role_policy is omitted for brevity in this example. Refer to the
+#DBD7CACC        
+#758575DD      # documentation for aws_iam_role for a complete example.
+#DBD7CACC        
+#BD976A        assume_role_policy 
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        ...
+#C98A7D77      "
+#444444        }
+#5DA994        resource
+#DBD7CACC       
+#BD976A        "aws_iam_instance_profile"
+#DBD7CACC       
+#BD976A        "example"
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#758575DD      # Because this expression refers to the role, Terraform can infer
+#DBD7CACC        
+#758575DD      # automatically that the role must be created first.
+#DBD7CACC        
+#BD976A        role 
+#444444        =
+#BD976A         
+#DBD7CACC      aws_iam_role
+#CB7676        .
+#BD976A        example
+#CB7676        .
+#BD976A        name
+#444444        }
+#5DA994        resource
+#DBD7CACC       
+#BD976A        "aws_iam_role_policy"
+#DBD7CACC       
+#BD976A        "example"
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        name   
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        example
+#C98A7D77      "
+#DBD7CACC        
+#BD976A        role   
+#444444        =
+#BD976A         
+#DBD7CACC      aws_iam_role
+#CB7676        .
+#BD976A        example
+#CB7676        .
+#BD976A        name
+#DBD7CACC        
+#BD976A        policy 
+#444444        =
+#BD976A         
+#B8A965        jsonencode
+#444444        ({
+#DBD7CACC          
+#C98A7D77      "
+#C98A7D        Statement
+#C98A7D77      "
+#DBD7CACC       = [
+#444444        {
+#DBD7CACC            
+#758575DD      # This policy allows software running on the EC2 instance to
+#DBD7CACC            
+#758575DD      # access the S3 API.
+#DBD7CACC            
+#C98A7D77      "
+#C98A7D        Action
+#C98A7D77      "
+#DBD7CACC       = 
+#C98A7D77      "
+#C98A7D        s3:*
+#C98A7D77      "
+#DBD7CACC      ,
+#DBD7CACC            
+#C98A7D77      "
+#C98A7D        Effect
+#C98A7D77      "
+#DBD7CACC       = 
+#C98A7D77      "
+#C98A7D        Allow
+#C98A7D77      "
+#DBD7CACC      ,
+#DBD7CACC          
+#444444        }
+#DBD7CACC      ],
+#DBD7CACC        
+#444444        })
+#444444        }
+#5DA994        resource
+#DBD7CACC       
+#BD976A        "aws_instance"
+#DBD7CACC       
+#BD976A        "example"
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        ami           
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        ami-a1b2c3d4
+#C98A7D77      "
+#DBD7CACC        
+#BD976A        instance_type 
+#444444        =
+#BD976A         
+#C98A7D77      "
+#C98A7D        t2.micro
+#C98A7D77      "
+#DBD7CACC        
+#758575DD      # Terraform can infer from this that the instance profile must
+#DBD7CACC        
+#758575DD      # be created before the EC2 instance.
+#DBD7CACC        
+#BD976A        iam_instance_profile 
+#444444        =
+#BD976A         
+#DBD7CACC      aws_iam_instance_profile
+#CB7676        .
+#BD976A        example
+#DBD7CACC        
+#758575DD      # However, if software running in this EC2 instance needs access
+#DBD7CACC        
+#758575DD      # to the S3 API in order to boot properly, there is also a "hidden"
+#DBD7CACC        
+#758575DD      # dependency on the aws_iam_role_policy that Terraform cannot
+#DBD7CACC        
+#758575DD      # automatically infer, so it must be declared explicitly:
+#DBD7CACC        
+#BD976A        depends_on 
+#444444        =
+#BD976A         
+#444444        [
+#DBD7CACC          
+#BD976A        aws_iam_role_policy
+#CB7676        .
+#BD976A        example
+#DBD7CACC        
+#444444        ]
+#444444        }
+#758575DD      // From https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on

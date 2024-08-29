@@ -1,0 +1,62 @@
+#DBD7CACC      ---
+#DBD7CACC      // Your component script here!
+#DBD7CACC      import Banner from '../components/Banner.astro';
+#DBD7CACC      import ReactPokemonComponent from '../components/ReactPokemonComponent.jsx';
+#DBD7CACC      const myFavoritePokemon = [/* ... */];
+#DBD7CACC      const { title } = Astro.props;
+#DBD7CACC      ---
+#758575DD      <!-- HTML comments supported! -->
+#DBD7CACC      {/* JS comment syntax is also valid! */}
+#444444        <
+#B8A965        Banner
+#DBD7CACC       
+#444444        />
+#444444        <
+#4D9375        h1
+#444444        >
+#DBD7CACC      Hello, world!
+#444444        </
+#4D9375        h1
+#444444        >
+#758575DD      <!-- Use props and other variables from the component script: -->
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      {title}</p>
+#758575DD      <!-- Include other UI framework components with a `client:` directive to hydrate: -->
+#444444        <
+#B8A965        ReactPokemonComponent
+#DBD7CACC       
+#BD976A        client:visible
+#DBD7CACC       
+#444444        />
+#758575DD      <!-- Mix HTML with JavaScript expressions, similar to JSX: -->
+#444444        <
+#4D9375        ul
+#444444        >
+#DBD7CACC        {myFavoritePokemon.map((data) => 
+#444444        <
+#4D9375        li
+#444444        >
+#DBD7CACC      {data.name}</li>)}
+#444444        </
+#4D9375        ul
+#444444        >
+#758575DD      <!-- Use a template directive to build class names from multiple strings or even objects! -->
+#444444        <
+#4D9375        p
+#DBD7CACC       
+#BD976A        class:list
+#444444        =
+#C98A7D        {[
+#DBD7CACC      "
+#BD976A        add
+#DBD7CACC      ", "
+#BD976A        dynamic
+#DBD7CACC      ", {
+#BD976A        classNames:
+#DBD7CACC       
+#BD976A        true
+#DBD7CACC      }]} 
+#444444        />
+#758575DD      <!-- From https://docs.astro.build/en/core-concepts/astro-components/ -->

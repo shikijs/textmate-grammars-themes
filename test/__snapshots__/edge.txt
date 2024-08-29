@@ -1,0 +1,24 @@
+#DBD7CACC      <!DOCTYPE html>
+#DBD7CACC      <html lang="en">
+#DBD7CACC      <head>
+#DBD7CACC      	<meta charset="UTF-8">
+#DBD7CACC      	<title></title>
+#DBD7CACC        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+#DBD7CACC      </head>
+#DBD7CACC      <body>
+#DBD7CACC        {{ inspect(state.user) }}
+#DBD7CACC      	@set('time', 'afternoon')
+#DBD7CACC      	@component('components/modal', title = 'foo', title = 'bar')
+#DBD7CACC      		@slot('body')
+#DBD7CACC      			<p>hello</p>
+#DBD7CACC      		
+#B8A965        @endslot
+#DBD7CACC      		@slot('actions')
+#DBD7CACC      			@include('partials/button')
+#DBD7CACC      		
+#B8A965        @endslot
+#DBD7CACC      	
+#B8A965        @endcomponent
+#DBD7CACC      </body>
+#DBD7CACC      </html>
+#758575DD      {{-- From https://github.com/edge-js/edge/blob/develop/examples/views/welcome.edge --}

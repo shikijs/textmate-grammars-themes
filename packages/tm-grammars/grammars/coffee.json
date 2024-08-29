@@ -182,7 +182,7 @@
       "name": "keyword.reserved.coffee"
     },
     {
-      "begin": "(?x)\n(?<=\\s|^)((@)?[a-zA-Z_$][\\w$]*)\n\\s*([:=])\\s*\n(?=(\\([^\\(\\)]*\\)\\s*)?[=-]>)",
+      "begin": "(?<=\\s|^)((@)?[a-zA-Z_$][\\w$]*)\\s*([:=])\\s*(?=(\\([^\\(\\)]*\\)\\s*)?[=-]>)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.coffee"
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "begin": "(?x)\n(?<=\\s|^)(?:((')([^']*?)('))|((\")([^\"]*?)(\")))\n\\s*([:=])\\s*\n(?=(\\([^\\(\\)]*\\)\\s*)?[=-]>)",
+      "begin": "(?<=\\s|^)(?:((')([^']*?)('))|((\")([^\"]*?)(\")))\\s*([:=])\\s*(?=(\\([^\\(\\)]*\\)\\s*)?[=-]>)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.single.coffee"
@@ -626,7 +626,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(@)?([\\w$]+)\n\\s*\n(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@?[\\w$]+|[=-]>|\\-\\d|\\[|{|\"|')))",
+          "begin": "(@)?([\\w$]+)\\s*(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@?[\\w$]+|[=-]>|\\-\\d|\\[|{|\"|')))",
           "beginCaptures": {
             "1": {
               "name": "variable.other.readwrite.instance.coffee"
@@ -652,7 +652,7 @@
     "function_names": {
       "patterns": [
         {
-          "match": "(?x)\n\\b(isNaN|isFinite|eval|uneval|parseInt|parseFloat|decodeURI|\ndecodeURIComponent|encodeURI|encodeURIComponent|escape|unescape|\nrequire|set(Interval|Timeout)|clear(Interval|Timeout))\\b",
+          "match": "\\b(isNaN|isFinite|eval|uneval|parseInt|parseFloat|decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|unescape|require|set(Interval|Timeout)|clear(Interval|Timeout))\\b",
           "name": "support.function.coffee"
         },
         {
@@ -1012,15 +1012,15 @@
     "method_names": {
       "patterns": [
         {
-          "match": "(?x)\n\\bon(Rowsinserted|Rowsdelete|Rowenter|Rowexit|Resize|Resizestart|Resizeend|Reset|\nReadystatechange|Mouseout|Mouseover|Mousedown|Mouseup|Mousemove|\nBefore(cut|deactivate|unload|update|paste|print|editfocus|activate)|\nBlur|Scrolltop|Submit|Select|Selectstart|Selectionchange|Hover|Help|\nChange|Contextmenu|Controlselect|Cut|Cellchange|Clock|Close|Deactivate|\nDatasetchanged|Datasetcomplete|Dataavailable|Drop|Drag|Dragstart|Dragover|\nDragdrop|Dragenter|Dragend|Dragleave|Dblclick|Unload|Paste|Propertychange|Error|\nErrorupdate|Keydown|Keyup|Keypress|Focus|Load|Activate|Afterupdate|Afterprint|Abort)\\b",
+          "match": "\\bon(Rowsinserted|Rowsdelete|Rowenter|Rowexit|Resize|Resizestart|Resizeend|Reset|Readystatechange|Mouseout|Mouseover|Mousedown|Mouseup|Mousemove|Before(cut|deactivate|unload|update|paste|print|editfocus|activate)|Blur|Scrolltop|Submit|Select|Selectstart|Selectionchange|Hover|Help|Change|Contextmenu|Controlselect|Cut|Cellchange|Clock|Close|Deactivate|Datasetchanged|Datasetcomplete|Dataavailable|Drop|Drag|Dragstart|Dragover|Dragdrop|Dragenter|Dragend|Dragleave|Dblclick|Unload|Paste|Propertychange|Error|Errorupdate|Keydown|Keyup|Keypress|Focus|Load|Activate|Afterupdate|Afterprint|Abort)\\b",
           "name": "support.function.event-handler.coffee"
         },
         {
-          "match": "(?x)\n\\b(shift|showModelessDialog|showModalDialog|showHelp|scroll|scrollX|scrollByPages|\nscrollByLines|scrollY|scrollTo|stop|strike|sizeToContent|sidebar|signText|sort|\nsup|sub|substr|substring|splice|split|send|set(Milliseconds|Seconds|Minutes|Hours|\nMonth|Year|FullYear|Date|UTC(Milliseconds|Seconds|Minutes|Hours|Month|FullYear|Date)|\nTime|Hotkeys|Cursor|ZOptions|Active|Resizable|RequestHeader)|search|slice|\nsavePreferences|small|home|handleEvent|navigate|char|charCodeAt|charAt|concat|\ncontextual|confirm|compile|clear|captureEvents|call|createStyleSheet|createPopup|\ncreateEventObject|to(GMTString|UTCString|String|Source|UpperCase|LowerCase|LocaleString)|\ntest|taint|taintEnabled|indexOf|italics|disableExternalCapture|dump|detachEvent|unshift|\nuntaint|unwatch|updateCommands|join|javaEnabled|pop|push|plugins.refresh|paddings|parse|\nprint|prompt|preference|enableExternalCapture|exec|execScript|valueOf|UTC|find|file|\nfileModifiedDate|fileSize|fileCreatedDate|fileUpdatedDate|fixed|fontsize|fontcolor|\nforward|fromCharCode|watch|link|load|lastIndexOf|anchor|attachEvent|atob|apply|alert|\nabort|routeEvents|resize|resizeBy|resizeTo|recalc|returnValue|replace|reverse|reload|\nreleaseCapture|releaseEvents|go|get(Milliseconds|Seconds|Minutes|Hours|Month|Day|Year|FullYear|\nTime|Date|TimezoneOffset|UTC(Milliseconds|Seconds|Minutes|Hours|Day|Month|FullYear|Date)|\nAttention|Selection|ResponseHeader|AllResponseHeaders)|moveBy|moveBelow|moveTo|\nmoveToAbsolute|moveAbove|mergeAttributes|match|margins|btoa|big|bold|borderWidths|blink|back)\\b",
+          "match": "\\b(shift|showModelessDialog|showModalDialog|showHelp|scroll|scrollX|scrollByPages|scrollByLines|scrollY|scrollTo|stop|strike|sizeToContent|sidebar|signText|sort|sup|sub|substr|substring|splice|split|send|set(Milliseconds|Seconds|Minutes|Hours|Month|Year|FullYear|Date|UTC(Milliseconds|Seconds|Minutes|Hours|Month|FullYear|Date)|Time|Hotkeys|Cursor|ZOptions|Active|Resizable|RequestHeader)|search|slice|savePreferences|small|home|handleEvent|navigate|char|charCodeAt|charAt|concat|contextual|confirm|compile|clear|captureEvents|call|createStyleSheet|createPopup|createEventObject|to(GMTString|UTCString|String|Source|UpperCase|LowerCase|LocaleString)|test|taint|taintEnabled|indexOf|italics|disableExternalCapture|dump|detachEvent|unshift|untaint|unwatch|updateCommands|join|javaEnabled|pop|push|plugins.refresh|paddings|parse|print|prompt|preference|enableExternalCapture|exec|execScript|valueOf|UTC|find|file|fileModifiedDate|fileSize|fileCreatedDate|fileUpdatedDate|fixed|fontsize|fontcolor|forward|fromCharCode|watch|link|load|lastIndexOf|anchor|attachEvent|atob|apply|alert|abort|routeEvents|resize|resizeBy|resizeTo|recalc|returnValue|replace|reverse|reload|releaseCapture|releaseEvents|go|get(Milliseconds|Seconds|Minutes|Hours|Month|Day|Year|FullYear|Time|Date|TimezoneOffset|UTC(Milliseconds|Seconds|Minutes|Hours|Day|Month|FullYear|Date)|Attention|Selection|ResponseHeader|AllResponseHeaders)|moveBy|moveBelow|moveTo|moveToAbsolute|moveAbove|mergeAttributes|match|margins|btoa|big|bold|borderWidths|blink|back)\\b",
           "name": "support.function.coffee"
         },
         {
-          "match": "(?x)\n\\b(acceptNode|add|addEventListener|addTextTrack|adoptNode|after|animate|append|\nappendChild|appendData|before|blur|canPlayType|captureStream|\ncaretPositionFromPoint|caretRangeFromPoint|checkValidity|clear|click|\ncloneContents|cloneNode|cloneRange|close|closest|collapse|\ncompareBoundaryPoints|compareDocumentPosition|comparePoint|contains|\nconvertPointFromNode|convertQuadFromNode|convertRectFromNode|createAttribute|\ncreateAttributeNS|createCaption|createCDATASection|createComment|\ncreateContextualFragment|createDocument|createDocumentFragment|\ncreateDocumentType|createElement|createElementNS|createEntityReference|\ncreateEvent|createExpression|createHTMLDocument|createNodeIterator|\ncreateNSResolver|createProcessingInstruction|createRange|createShadowRoot|\ncreateTBody|createTextNode|createTFoot|createTHead|createTreeWalker|delete|\ndeleteCaption|deleteCell|deleteContents|deleteData|deleteRow|deleteTFoot|\ndeleteTHead|detach|disconnect|dispatchEvent|elementFromPoint|elementsFromPoint|\nenableStyleSheetsForSet|entries|evaluate|execCommand|exitFullscreen|\nexitPointerLock|expand|extractContents|fastSeek|firstChild|focus|forEach|get|\ngetAll|getAnimations|getAttribute|getAttributeNames|getAttributeNode|\ngetAttributeNodeNS|getAttributeNS|getBoundingClientRect|getBoxQuads|\ngetClientRects|getContext|getDestinationInsertionPoints|getElementById|\ngetElementsByClassName|getElementsByName|getElementsByTagName|\ngetElementsByTagNameNS|getItem|getNamedItem|getSelection|getStartDate|\ngetVideoPlaybackQuality|has|hasAttribute|hasAttributeNS|hasAttributes|\nhasChildNodes|hasFeature|hasFocus|importNode|initEvent|insertAdjacentElement|\ninsertAdjacentHTML|insertAdjacentText|insertBefore|insertCell|insertData|\ninsertNode|insertRow|intersectsNode|isDefaultNamespace|isEqualNode|\nisPointInRange|isSameNode|item|key|keys|lastChild|load|lookupNamespaceURI|\nlookupPrefix|matches|move|moveAttribute|moveAttributeNode|moveChild|\nmoveNamedItem|namedItem|nextNode|nextSibling|normalize|observe|open|\nparentNode|pause|play|postMessage|prepend|preventDefault|previousNode|\npreviousSibling|probablySupportsContext|queryCommandEnabled|\nqueryCommandIndeterm|queryCommandState|queryCommandSupported|queryCommandValue|\nquerySelector|querySelectorAll|registerContentHandler|registerElement|\nregisterProtocolHandler|releaseCapture|releaseEvents|remove|removeAttribute|\nremoveAttributeNode|removeAttributeNS|removeChild|removeEventListener|\nremoveItem|replace|replaceChild|replaceData|replaceWith|reportValidity|\nrequestFullscreen|requestPointerLock|reset|scroll|scrollBy|scrollIntoView|\nscrollTo|seekToNextFrame|select|selectNode|selectNodeContents|set|setAttribute|\nsetAttributeNode|setAttributeNodeNS|setAttributeNS|setCapture|\nsetCustomValidity|setEnd|setEndAfter|setEndBefore|setItem|setNamedItem|\nsetRangeText|setSelectionRange|setSinkId|setStart|setStartAfter|setStartBefore|\nslice|splitText|stepDown|stepUp|stopImmediatePropagation|stopPropagation|\nsubmit|substringData|supports|surroundContents|takeRecords|terminate|toBlob|\ntoDataURL|toggle|toString|values|write|writeln)\\b",
+          "match": "\\b(acceptNode|add|addEventListener|addTextTrack|adoptNode|after|animate|append|appendChild|appendData|before|blur|canPlayType|captureStream|caretPositionFromPoint|caretRangeFromPoint|checkValidity|clear|click|cloneContents|cloneNode|cloneRange|close|closest|collapse|compareBoundaryPoints|compareDocumentPosition|comparePoint|contains|convertPointFromNode|convertQuadFromNode|convertRectFromNode|createAttribute|createAttributeNS|createCaption|createCDATASection|createComment|createContextualFragment|createDocument|createDocumentFragment|createDocumentType|createElement|createElementNS|createEntityReference|createEvent|createExpression|createHTMLDocument|createNodeIterator|createNSResolver|createProcessingInstruction|createRange|createShadowRoot|createTBody|createTextNode|createTFoot|createTHead|createTreeWalker|delete|deleteCaption|deleteCell|deleteContents|deleteData|deleteRow|deleteTFoot|deleteTHead|detach|disconnect|dispatchEvent|elementFromPoint|elementsFromPoint|enableStyleSheetsForSet|entries|evaluate|execCommand|exitFullscreen|exitPointerLock|expand|extractContents|fastSeek|firstChild|focus|forEach|get|getAll|getAnimations|getAttribute|getAttributeNames|getAttributeNode|getAttributeNodeNS|getAttributeNS|getBoundingClientRect|getBoxQuads|getClientRects|getContext|getDestinationInsertionPoints|getElementById|getElementsByClassName|getElementsByName|getElementsByTagName|getElementsByTagNameNS|getItem|getNamedItem|getSelection|getStartDate|getVideoPlaybackQuality|has|hasAttribute|hasAttributeNS|hasAttributes|hasChildNodes|hasFeature|hasFocus|importNode|initEvent|insertAdjacentElement|insertAdjacentHTML|insertAdjacentText|insertBefore|insertCell|insertData|insertNode|insertRow|intersectsNode|isDefaultNamespace|isEqualNode|isPointInRange|isSameNode|item|key|keys|lastChild|load|lookupNamespaceURI|lookupPrefix|matches|move|moveAttribute|moveAttributeNode|moveChild|moveNamedItem|namedItem|nextNode|nextSibling|normalize|observe|open|parentNode|pause|play|postMessage|prepend|preventDefault|previousNode|previousSibling|probablySupportsContext|queryCommandEnabled|queryCommandIndeterm|queryCommandState|queryCommandSupported|queryCommandValue|querySelector|querySelectorAll|registerContentHandler|registerElement|registerProtocolHandler|releaseCapture|releaseEvents|remove|removeAttribute|removeAttributeNode|removeAttributeNS|removeChild|removeEventListener|removeItem|replace|replaceChild|replaceData|replaceWith|reportValidity|requestFullscreen|requestPointerLock|reset|scroll|scrollBy|scrollIntoView|scrollTo|seekToNextFrame|select|selectNode|selectNodeContents|set|setAttribute|setAttributeNode|setAttributeNodeNS|setAttributeNS|setCapture|setCustomValidity|setEnd|setEndAfter|setEndBefore|setItem|setNamedItem|setRangeText|setSelectionRange|setSinkId|setStart|setStartAfter|setStartBefore|slice|splitText|stepDown|stepUp|stopImmediatePropagation|stopPropagation|submit|substringData|supports|surroundContents|takeRecords|terminate|toBlob|toDataURL|toggle|toString|values|write|writeln)\\b",
           "name": "support.function.dom.coffee"
         },
         {
@@ -1071,7 +1071,7 @@
               "name": "punctuation.separator.decimal.period.coffee"
             }
           },
-          "match": "(?x)\n(?<!\\$)(?:\n(?:\\b[0-9]+(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|\n(?:\\b[0-9]+(\\.)[eE][+-]?[0-9]+\\b)|\n(?:\\B(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|\n(?:\\b[0-9]+[eE][+-]?[0-9]+\\b)|\n(?:\\b[0-9]+(\\.)[0-9]+\\b)|\n(?:\\b[0-9]+(?=\\.{2,3}))|\n(?:\\b[0-9]+(\\.)\\B)|\n(?:\\B(\\.)[0-9]+\\b)|\n(?:\\b[0-9]+\\b(?!\\.))\n)(?!\\$)"
+          "match": "(?<!\\$)(?:(?:\\b[0-9]+(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|(?:\\b[0-9]+(\\.)[eE][+-]?[0-9]+\\b)|(?:\\B(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|(?:\\b[0-9]+[eE][+-]?[0-9]+\\b)|(?:\\b[0-9]+(\\.)[0-9]+\\b)|(?:\\b[0-9]+(?=\\.{2,3}))|(?:\\b[0-9]+(\\.)\\B)|(?:\\B(\\.)[0-9]+\\b)|(?:\\b[0-9]+\\b(?!\\.)))(?!\\$)"
         }
       ]
     },
@@ -1178,7 +1178,7 @@
               "name": "keyword.operator.comparison.coffee"
             }
           },
-          "match": "(?x)\n\\b(?<![\\.\\$])\n(?:\n(and|or|not)\n|\n(is|isnt)\n)\n(?!\\s*:)\\b"
+          "match": "\\b(?<![\\.\\$])(?:(and|or|not)|(is|isnt))(?!\\s*:)\\b"
         }
       ]
     },

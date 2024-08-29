@@ -1,0 +1,184 @@
+#4D9375        import
+#DBD7CACC       
+#C98A7D        "@typespec/http"
+#444444        ;
+#4D9375        using
+#DBD7CACC       
+#5DA994        TypeSpec
+#444444        .
+#5DA994        Http
+#444444        ;
+#4D9375        @service
+#444444        ({
+#DBD7CACC        
+#BD976A        title
+#444444        :
+#DBD7CACC       
+#C98A7D        "Widget Service"
+#DBD7CACC      ,
+#444444        })
+#4D9375        namespace
+#DBD7CACC       
+#5DA994        DemoService
+#444444        ;
+#4D9375        model
+#DBD7CACC       
+#5DA994        Widget
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        @visibility
+#444444        (
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "update"
+#444444        )
+#DBD7CACC        
+#4D9375        @path
+#DBD7CACC        
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#5DA994        string
+#444444        ;
+#DBD7CACC        
+#BD976A        weight
+#444444        :
+#DBD7CACC       
+#5DA994        int32
+#444444        ;
+#DBD7CACC        
+#BD976A        color
+#444444        :
+#DBD7CACC       
+#C98A7D        "red"
+#DBD7CACC       | 
+#C98A7D        "blue"
+#444444        ;
+#444444        }
+#4D9375        @error
+#4D9375        model
+#DBD7CACC       
+#5DA994        Error
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        code
+#444444        :
+#DBD7CACC       
+#5DA994        int32
+#444444        ;
+#DBD7CACC        
+#BD976A        message
+#444444        :
+#DBD7CACC       
+#5DA994        string
+#444444        ;
+#444444        }
+#4D9375        @route
+#444444        (
+#C98A7D        "/widgets"
+#444444        )
+#4D9375        @tag
+#444444        (
+#C98A7D        "Widgets"
+#444444        )
+#4D9375        interface
+#DBD7CACC       
+#5DA994        Widgets
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        @get
+#DBD7CACC       
+#80A665        list
+#444444        ():
+#DBD7CACC       
+#5DA994        Widget
+#444444        []
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#DBD7CACC        
+#4D9375        @get
+#DBD7CACC       
+#80A665        read
+#444444        (
+#4D9375        @path
+#DBD7CACC       
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#5DA994        string
+#444444        ):
+#DBD7CACC       
+#5DA994        Widget
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#DBD7CACC        
+#4D9375        @post
+#DBD7CACC       
+#80A665        create
+#444444        (...
+#5DA994        Widget
+#444444        ):
+#DBD7CACC       
+#5DA994        Widget
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#DBD7CACC        
+#4D9375        @patch
+#DBD7CACC       
+#80A665        update
+#444444        (...
+#5DA994        Widget
+#444444        ):
+#DBD7CACC       
+#5DA994        Widget
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#DBD7CACC        
+#4D9375        @delete
+#DBD7CACC       
+#80A665        delete
+#444444        (
+#4D9375        @path
+#DBD7CACC       
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#5DA994        string
+#444444        ):
+#DBD7CACC       
+#5DA994        void
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#DBD7CACC        
+#4D9375        @route
+#444444        (
+#C98A7D        "{id}/analyze"
+#444444        )
+#DBD7CACC       
+#4D9375        @post
+#DBD7CACC       
+#80A665        analyze
+#444444        (
+#4D9375        @path
+#DBD7CACC       
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#5DA994        string
+#444444        ):
+#DBD7CACC       
+#5DA994        string
+#DBD7CACC       | 
+#5DA994        Error
+#444444        ;
+#444444        }
+#758575DD      // From https://typespec.io/playground

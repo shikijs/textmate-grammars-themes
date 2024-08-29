@@ -1,0 +1,30 @@
+#80A665        [Unit]
+#4D9375        Description
+#444444        =
+#DBD7CACC      Emacs text editor
+#4D9375        Documentation
+#444444        =
+#DBD7CACC      info:emacs man:emacs(1) https://gnu.org/software/emacs/
+#80A665        [Service]
+#4D9375        Type
+#444444        =
+#4D9375        notify
+#4D9375        ExecStart
+#444444        =
+#DBD7CACC      /usr/bin/emacs --fg-daemon
+#758575DD      # Emacs will exit with status 15 after having received SIGTERM, which
+#758575DD      # is the default "KillSignal" value systemd uses to stop services.
+#4D9375        SuccessExitStatus
+#444444        =
+#4C9A91        15
+#758575DD      # The location of the SSH auth socket varies by distribution, and some
+#758575DD      # set it from PAM, so don't override by default.
+#758575DD      # Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+#4D9375        Restart
+#444444        =
+#4D9375        on-failure
+#80A665        [Install]
+#4D9375        WantedBy
+#444444        =
+#DBD7CACC      default.target
+#758575DD      # From https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/emacs.service

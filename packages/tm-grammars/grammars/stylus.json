@@ -316,7 +316,7 @@
       "name": "meta.property-list.css",
       "patterns": [
         {
-          "match": "(?x) (?<![\\w-])\n--\n(?:[-a-zA-Z_]    | [^\\x00-\\x7F])\n(?:[-a-zA-Z0-9_] | [^\\x00-\\x7F]\n|\\\\(?:[0-9a-fA-F]{1,6}|.)\n)*",
+          "match": "(?<![\\w-])--(?:[-a-zA-Z_]|[^\\x00-\\x7F])(?:[-a-zA-Z0-9_]|[^\\x00-\\x7F]|\\\\(?:[0-9a-fA-F]{1,6}|.))*",
           "name": "variable.css"
         },
         {
@@ -709,7 +709,7 @@
           "name": "meta.function.stylus",
           "patterns": [
             {
-              "match": "(?x)\n--\n(?:[-a-zA-Z_]    | [^\\x00-\\x7F])\n(?:[-a-zA-Z0-9_] | [^\\x00-\\x7F]\n|\\\\(?:[0-9a-fA-F]{1,6}|.)\n)*",
+              "match": "--(?:[-a-zA-Z_]|[^\\x00-\\x7F])(?:[-a-zA-Z0-9_]|[^\\x00-\\x7F]|\\\\(?:[0-9a-fA-F]{1,6}|.))*",
               "name": "variable.argument.stylus"
             },
             {
@@ -787,7 +787,7 @@
               "name": "keyword.other.unit.css"
             }
           },
-          "match": "(?x) (?<!\\w|-)(?:(?:-|\\+)?(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+)) ((?:px|pt|ch|cm|mm|in|r?em|ex|pc|deg|g?rad|dpi|dpcm|dppx|fr|ms|s|turn|vh|vmax|vmin|vw)\\b|%)?",
+          "match": "(?<!\\w|-)(?:(?:-|\\+)?(?:[0-9]+(?:\\.[0-9]+)?)|(?:\\.[0-9]+))((?:px|pt|ch|cm|mm|in|r?em|ex|pc|deg|g?rad|dpi|dpcm|dppx|fr|ms|s|turn|vh|vmax|vmin|vw)\\b|%)?",
           "name": "constant.numeric.css"
         }
       ]

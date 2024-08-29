@@ -478,7 +478,7 @@
       ]
     },
     "backslash_escapes": {
-      "match": "(?x)\\\\ (\n\\\\\t\t\t |\n[abefnprtv'\"?]   |\n[0-3][0-7]{,2}\t |\n[4-7]\\d?\t\t|\nx[a-fA-F0-9]{,2} |\nu[a-fA-F0-9]{,4} |\nU[a-fA-F0-9]{,8} )",
+      "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3][0-7]{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})",
       "name": "constant.character.escape"
     },
     "block": {
@@ -13155,7 +13155,7 @@
     "string_escapes_context_c": {
       "patterns": [
         {
-          "match": "(?x)\\\\ (\n\\\\\t\t\t |\n[abefnprtv'\"?]   |\n[0-3][0-7]{,2}\t |\n[4-7]\\d?\t\t|\nx[a-fA-F0-9]{,2} |\nu[a-fA-F0-9]{,4} |\nU[a-fA-F0-9]{,8} )",
+          "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3][0-7]{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})",
           "name": "constant.character.escape"
         },
         {
@@ -13163,7 +13163,7 @@
           "name": "invalid.illegal.unknown-escape"
         },
         {
-          "match": "(?x) (?!%')(?!%\")%\n(\\d+\\$)?\n[#0\\- +']*\n[,;:_]?\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?\n[diouxXDOUeEfFgGaACcSspn%]",
+          "match": "(?!%')(?!%\")%(\\d+\\$)?[#0\\-\\s+']*[,;:_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?[diouxXDOUeEfFgGaACcSspn%]",
           "name": "constant.other.placeholder"
         }
       ]

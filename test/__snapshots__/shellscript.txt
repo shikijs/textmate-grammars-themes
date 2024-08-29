@@ -1,0 +1,88 @@
+#758575DD      #!/bin/bash
+#758575DD      # weather.sh
+#758575DD      # Copyright 2018 computer-geek64. All rights reserved.
+#BD976A        program
+#444444        =
+#C98A7D        Weather
+#BD976A        version
+#444444        =
+#C98A7D        1.1
+#BD976A        year
+#444444        =
+#C98A7D        2018
+#BD976A        developer
+#444444        =
+#C98A7D        computer-geek64
+#4D9375        case
+#DBD7CACC       
+#BD976A        $1
+#DBD7CACC       
+#4D9375        in
+#C4704F        -h
+#DBD7CACC       
+#444444        |
+#DBD7CACC       
+#C4704F        --help
+#CB7676        )
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        $program $version
+#C98A7D77      "
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Copyright $year $developer. All rights reserved.
+#C98A7D77      "
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Usage: weather [options]
+#C98A7D77      "
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Option          Long Option             Description
+#C98A7D77      "
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        -h              --help                  Show the help screen
+#C98A7D77      "
+#DBD7CACC      	
+#B8A965        echo
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        -l [location]   --location [location]   Specifies the location
+#C98A7D77      "
+#DBD7CACC      	
+#444444        ;;
+#C4704F        -l
+#DBD7CACC       
+#444444        |
+#DBD7CACC       
+#C4704F        --location
+#CB7676        )
+#DBD7CACC      	
+#80A665        curl
+#DBD7CACC       
+#C98A7D        https://wttr.in/
+#BD976A        $2
+#DBD7CACC      	
+#444444        ;;
+#CB7676        *)
+#DBD7CACC      	
+#80A665        curl
+#DBD7CACC       
+#C98A7D        https://wttr.in
+#DBD7CACC      	
+#444444        ;;
+#4D9375        esac
+#758575DD      # From https://github.com/ruanyf/simple-bash-scripts/blob/master/scripts/weather.sh

@@ -1,0 +1,202 @@
+#4D9375        const
+#DBD7CACC       
+#BD976A        std
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        @import
+#DBD7CACC      (
+#C98A7D        "std"
+#DBD7CACC      )
+#444444        ;
+#4D9375        const
+#DBD7CACC       
+#BD976A        parseInt
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        std
+#444444        .
+#BD976A        fmt
+#444444        .
+#BD976A        parseInt
+#444444        ;
+#4D9375        test
+#DBD7CACC       
+#C98A7D        "parse integers"
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        const
+#DBD7CACC       
+#BD976A        input
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D        "123 67 89,99"
+#444444        ;
+#DBD7CACC          
+#4D9375        const
+#DBD7CACC       
+#BD976A        ally
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        std
+#444444        .
+#BD976A        testing
+#444444        .
+#BD976A        allocator
+#444444        ;
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC       
+#BD976A        list
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        std
+#444444        .
+#5DA994        ArrayList
+#DBD7CACC      (
+#4D9375        u32
+#DBD7CACC      )
+#444444        .
+#80A665        init
+#DBD7CACC      (
+#BD976A        ally
+#DBD7CACC      )
+#444444        ;
+#DBD7CACC          
+#758575DD      // Ensure the list is freed at scope exit.
+#DBD7CACC          
+#758575DD      // Try commenting out this line!
+#DBD7CACC          
+#4D9375        defer
+#DBD7CACC       
+#BD976A        list
+#444444        .
+#80A665        deinit
+#DBD7CACC      ()
+#444444        ;
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC       
+#BD976A        it
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        std
+#444444        .
+#BD976A        mem
+#444444        .
+#80A665        tokenize
+#DBD7CACC      (
+#4D9375        u8
+#444444        ,
+#DBD7CACC       
+#BD976A        input
+#444444        ,
+#DBD7CACC       
+#C98A7D        " ,"
+#DBD7CACC      )
+#444444        ;
+#DBD7CACC          
+#4D9375        while
+#DBD7CACC       (
+#BD976A        it
+#444444        .
+#80A665        next
+#DBD7CACC      ()) 
+#CB7676        |
+#BD976A        num
+#CB7676        |
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        const
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        try
+#DBD7CACC       
+#80A665        parseInt
+#DBD7CACC      (
+#4D9375        u32
+#444444        ,
+#DBD7CACC       
+#BD976A        num
+#444444        ,
+#DBD7CACC       
+#4C9A91        10
+#DBD7CACC      )
+#444444        ;
+#DBD7CACC              
+#4D9375        try
+#DBD7CACC       
+#BD976A        list
+#444444        .
+#80A665        append
+#DBD7CACC      (
+#BD976A        n
+#DBD7CACC      )
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC          
+#4D9375        const
+#DBD7CACC       
+#BD976A        expected
+#DBD7CACC       
+#444444        =
+#DBD7CACC       [
+#BD976A        _
+#DBD7CACC      ]
+#4D9375        u32
+#DBD7CACC      { 
+#4C9A91        123
+#444444        ,
+#DBD7CACC       
+#4C9A91        67
+#444444        ,
+#DBD7CACC       
+#4C9A91        89
+#444444        ,
+#DBD7CACC       
+#4C9A91        99
+#DBD7CACC       }
+#444444        ;
+#DBD7CACC          
+#4D9375        for
+#DBD7CACC       (
+#BD976A        expected
+#444444        ,
+#DBD7CACC       
+#BD976A        list
+#444444        .
+#BD976A        items
+#DBD7CACC      ) 
+#CB7676        |
+#BD976A        exp
+#444444        ,
+#DBD7CACC       
+#BD976A        actual
+#CB7676        |
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        try
+#DBD7CACC       
+#BD976A        std
+#444444        .
+#BD976A        testing
+#444444        .
+#80A665        expectEqual
+#DBD7CACC      (
+#BD976A        exp
+#444444        ,
+#DBD7CACC       
+#BD976A        actual
+#DBD7CACC      )
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC      }
+#758575DD      // from https://ziglang.org

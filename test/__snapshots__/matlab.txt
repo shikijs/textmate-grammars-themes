@@ -1,0 +1,54 @@
+#DBD7CACC      clear
+#DBD7CACC      number = input(
+#C98A7D77      '
+#C98A7D        Give an integer: 
+#C98A7D77      '
+#DBD7CACC      );
+#DBD7CACC      remainder2 = rem(number,
+#4C9A91        2
+#DBD7CACC      );
+#DBD7CACC      remainder3 = rem(number,
+#4C9A91        3
+#DBD7CACC      );
+#4D9375        if
+#DBD7CACC       remainder2==
+#4C9A91        0
+#DBD7CACC       
+#CB7676        &
+#DBD7CACC       remainder3==
+#4C9A91        0
+#DBD7CACC          
+#C98A7D77      '
+#C98A7D        Your number is divisible by both 2 and 3
+#C98A7D77      '
+#4D9375        else
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       remainder2==
+#4C9A91        0
+#DBD7CACC              
+#C98A7D77      '
+#C98A7D        Your number is divisble by 2 but not by 3
+#C98A7D77      '
+#DBD7CACC          
+#4D9375        else
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       remainder3==
+#4C9A91        0
+#DBD7CACC                  
+#C98A7D77      '
+#C98A7D        Your number is divisible by 3 but not by 2
+#C98A7D77      '
+#DBD7CACC              
+#4D9375        else
+#DBD7CACC                  
+#C98A7D77      '
+#C98A7D        Your number is not divisible by either 2 or 3
+#C98A7D77      '
+#DBD7CACC              
+#4D9375        end
+#DBD7CACC          
+#4D9375        end
+#4D9375        end
+#758575DD      % From https://www.math.colostate.edu/~yzhou/course/matlab_doc/matlab_programming_intro.html

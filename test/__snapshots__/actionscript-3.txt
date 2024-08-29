@@ -1,0 +1,193 @@
+#DBD7CACC      private 
+#CB7676        function
+#DBD7CACC       
+#80A665        createParticles
+#DBD7CACC      ( 
+#BD976A        count
+#DBD7CACC       )
+#CB7676        :
+#B8A965        void
+#DBD7CACC      {
+#DBD7CACC          
+#CB7676        var
+#DBD7CACC       anchorPoint 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        for
+#DBD7CACC      (
+#CB7676        var
+#DBD7CACC       i
+#CB7676        :
+#B8A965        uint
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ; i 
+#CB7676        <
+#DBD7CACC       count; i
+#CB7676        ++
+#DBD7CACC      ){
+#DBD7CACC           
+#DBD7CACC              
+#CB7676        var
+#DBD7CACC       particle
+#CB7676        :
+#B8A965        Object
+#DBD7CACC      ;
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC      ( inactiveFireParticles
+#CB7676        .
+#DBD7CACC      length 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       ){ 
+#DBD7CACC                  particle 
+#CB7676        =
+#DBD7CACC       inactiveFireParticles
+#CB7676        .
+#DBD7CACC      shift();
+#DBD7CACC              }
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC                  particle 
+#CB7676        =
+#DBD7CACC       
+#4D9375        new
+#DBD7CACC       
+#B8A965        Object
+#DBD7CACC      (); 
+#DBD7CACC                  fireParticles
+#CB7676        .
+#DBD7CACC      push( particle );                 
+#DBD7CACC              }               
+#DBD7CACC               
+#DBD7CACC              particle
+#CB7676        .
+#DBD7CACC      x 
+#CB7676        =
+#DBD7CACC       
+#B8A965        uint
+#DBD7CACC      ( 
+#B8A965        Math
+#CB7676        .
+#DBD7CACC      random() 
+#CB7676        *
+#DBD7CACC       frame
+#CB7676        .
+#DBD7CACC      width 
+#CB7676        *
+#DBD7CACC       
+#4C9A91        0.1
+#DBD7CACC       ) 
+#CB7676        +
+#DBD7CACC       anchors
+#CB7676        [
+#DBD7CACC      anchorPoint
+#CB7676        ]
+#DBD7CACC      ;
+#DBD7CACC              particle
+#CB7676        .
+#DBD7CACC      y 
+#CB7676        =
+#DBD7CACC       frame
+#CB7676        .
+#DBD7CACC      bottom;
+#DBD7CACC              particle
+#CB7676        .
+#DBD7CACC      life 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        70
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#B8A965        uint
+#DBD7CACC      ( 
+#B8A965        Math
+#CB7676        .
+#DBD7CACC      random() 
+#CB7676        *
+#DBD7CACC       
+#4C9A91        30
+#DBD7CACC       ); 
+#DBD7CACC              particle
+#CB7676        .
+#DBD7CACC      size 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#B8A965        uint
+#DBD7CACC      ( 
+#B8A965        Math
+#CB7676        .
+#DBD7CACC      random() 
+#CB7676        *
+#DBD7CACC       
+#4C9A91        10
+#DBD7CACC       );
+#DBD7CACC               
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC      (particle
+#CB7676        .
+#DBD7CACC      size 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        12
+#DBD7CACC      ){
+#DBD7CACC                  particle
+#CB7676        .
+#DBD7CACC      size 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        10
+#DBD7CACC      ;
+#DBD7CACC              }
+#DBD7CACC              particle
+#CB7676        .
+#DBD7CACC      anchor 
+#CB7676        =
+#DBD7CACC       anchors
+#CB7676        [
+#DBD7CACC      anchorPoint
+#CB7676        ]
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#B8A965        uint
+#DBD7CACC      ( 
+#B8A965        Math
+#CB7676        .
+#DBD7CACC      random() 
+#CB7676        *
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       );
+#DBD7CACC               
+#DBD7CACC              anchorPoint 
+#CB7676        =
+#DBD7CACC       (anchorPoint 
+#CB7676        ==
+#DBD7CACC       
+#4C9A91        9
+#DBD7CACC      )
+#CB7676        ?
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       : anchorPoint 
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          }       
+#DBD7CACC      }
+#758575DD      // From https://code.tutsplus.com/tutorials/actionscript-30-optimization-a-practical-example--active-11295

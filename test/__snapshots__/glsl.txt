@@ -1,0 +1,240 @@
+#DBD7CACC      #version 330
+#CB7676        const
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       PI = 3.1415926535897932384626433832795;
+#CB7676        const
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       waveLength = 20.0;
+#CB7676        const
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       waveAmplitude = 1.0;
+#CB7676        const
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       specularReflectivity = 0.4;
+#CB7676        const
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       shineDamper = 20.0;
+#DBD7CACC      layout(location = 0) 
+#CB7676        in
+#DBD7CACC       
+#CB7676        vec2
+#DBD7CACC       in_position;
+#DBD7CACC      layout(location = 1) 
+#CB7676        in
+#DBD7CACC       
+#CB7676        vec4
+#DBD7CACC       in_indicators;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec4
+#DBD7CACC       pass_clipSpaceGrid;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec4
+#DBD7CACC       pass_clipSpaceReal;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       pass_normal;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       pass_toCameraVector;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       pass_specular;
+#CB7676        out
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       pass_diffuse;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       height;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       cameraPos;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        float
+#DBD7CACC       waveTime;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       lightDirection;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        vec3
+#DBD7CACC       lightColour;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        vec2
+#DBD7CACC       lightBias;
+#CB7676        uniform
+#DBD7CACC       
+#CB7676        mat4
+#DBD7CACC       projectionViewMatrix;
+#CB7676        vec3
+#DBD7CACC       calcSpecularLighting(
+#CB7676        vec3
+#DBD7CACC       toCamVector, 
+#CB7676        vec3
+#DBD7CACC       toLightVector, 
+#CB7676        vec3
+#DBD7CACC       normal){
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       reflectedLightDirection = 
+#B8A965        reflect
+#DBD7CACC      (-toLightVector, normal);
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       specularFactor = 
+#B8A965        dot
+#DBD7CACC      (reflectedLightDirection , toCamVector);
+#DBD7CACC      	specularFactor = 
+#B8A965        max
+#DBD7CACC      (specularFactor,0.0);
+#DBD7CACC      	specularFactor = 
+#B8A965        pow
+#DBD7CACC      (specularFactor, shineDamper);
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       specularFactor * specularReflectivity * lightColour;
+#DBD7CACC      }
+#CB7676        vec3
+#DBD7CACC       calculateDiffuseLighting(
+#CB7676        vec3
+#DBD7CACC       toLightVector, 
+#CB7676        vec3
+#DBD7CACC       normal){
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       brightness = 
+#B8A965        max
+#DBD7CACC      (
+#B8A965        dot
+#DBD7CACC      (toLightVector, normal), 0.0);
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       (lightColour * lightBias.x) + (brightness * lightColour * lightBias.y);
+#DBD7CACC      }
+#CB7676        vec3
+#DBD7CACC       calcNormal(
+#CB7676        vec3
+#DBD7CACC       vertex0, 
+#CB7676        vec3
+#DBD7CACC       vertex1, 
+#CB7676        vec3
+#DBD7CACC       vertex2){
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       tangent = vertex1 - vertex0;
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       bitangent = vertex2 - vertex0;
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       
+#B8A965        normalize
+#DBD7CACC      (
+#B8A965        cross
+#DBD7CACC      (tangent, bitangent));
+#DBD7CACC      }
+#CB7676        float
+#DBD7CACC       generateOffset(
+#CB7676        float
+#DBD7CACC       x, 
+#CB7676        float
+#DBD7CACC       z){
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       radiansX = (x / waveLength + waveTime) * 2.0 * PI;
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       radiansZ = (z / waveLength + waveTime) * 2.0 * PI;
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       waveAmplitude * 0.5 * (
+#B8A965        sin
+#DBD7CACC      (radiansZ) + 
+#B8A965        cos
+#DBD7CACC      (radiansX));
+#DBD7CACC      }
+#CB7676        vec3
+#DBD7CACC       applyDistortion(
+#CB7676        vec3
+#DBD7CACC       vertex){
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       xDistortion = generateOffset(vertex.x, vertex.z);
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       yDistortion = generateOffset(vertex.x, vertex.z);
+#DBD7CACC      	
+#CB7676        float
+#DBD7CACC       zDistortion = generateOffset(vertex.x, vertex.z);
+#DBD7CACC      	
+#4D9375        return
+#DBD7CACC       vertex + 
+#CB7676        vec3
+#DBD7CACC      (xDistortion, yDistortion, zDistortion);
+#DBD7CACC      }
+#CB7676        void
+#DBD7CACC       main(
+#CB7676        void
+#DBD7CACC      ){
+#DBD7CACC      	
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       currentVertex = 
+#CB7676        vec3
+#DBD7CACC      (in_position.x, height, in_position.y);
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       vertex1 = currentVertex + 
+#CB7676        vec3
+#DBD7CACC      (in_indicators.x, 0.0, in_indicators.y);
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       vertex2 = currentVertex + 
+#CB7676        vec3
+#DBD7CACC      (in_indicators.z, 0.0, in_indicators.w);
+#DBD7CACC      	
+#DBD7CACC      	pass_clipSpaceGrid = projectionViewMatrix * 
+#CB7676        vec4
+#DBD7CACC      (currentVertex, 1.0);
+#DBD7CACC      	
+#DBD7CACC      	currentVertex = applyDistortion(currentVertex);
+#DBD7CACC      	vertex1 = applyDistortion(vertex1);
+#DBD7CACC      	vertex2 = applyDistortion(vertex2);
+#DBD7CACC      	
+#DBD7CACC      	pass_normal = calcNormal(currentVertex, vertex1, vertex2);
+#DBD7CACC      	
+#DBD7CACC      	pass_clipSpaceReal = projectionViewMatrix * 
+#CB7676        vec4
+#DBD7CACC      (currentVertex, 1.0);
+#DBD7CACC      	
+#B8A965        gl_Position
+#DBD7CACC       = pass_clipSpaceReal;
+#DBD7CACC      	
+#DBD7CACC      	pass_toCameraVector = 
+#B8A965        normalize
+#DBD7CACC      (cameraPos - currentVertex);
+#DBD7CACC      	
+#DBD7CACC      	
+#CB7676        vec3
+#DBD7CACC       toLightVector = -
+#B8A965        normalize
+#DBD7CACC      (lightDirection);
+#DBD7CACC      	pass_specular = calcSpecularLighting(pass_toCameraVector, toLightVector, pass_normal);
+#DBD7CACC      	pass_diffuse = calculateDiffuseLighting(toLightVector, pass_normal);
+#DBD7CACC      }
+#DBD7CACC      // From https://github.com/TheThinMatrix/WaterStep10/blob/master/water/waterRendering/waterVertex.glsl

@@ -1,0 +1,94 @@
+#DBD7CACC      require "erb"
+#DBD7CACC      # Build template data class.
+#DBD7CACC      class Product
+#DBD7CACC        def initialize( code, name, desc, cost )
+#DBD7CACC          @code = code
+#DBD7CACC          @name = name
+#DBD7CACC          @desc = desc
+#DBD7CACC          @cost = cost
+#DBD7CACC          @features = [ ]
+#DBD7CACC        end
+#DBD7CACC        def add_feature( feature )
+#DBD7CACC          @features << feature
+#DBD7CACC        end
+#DBD7CACC        # Support templating of member data.
+#DBD7CACC        def get_binding
+#DBD7CACC          binding
+#DBD7CACC        end
+#DBD7CACC        # ...
+#DBD7CACC      end
+#DBD7CACC      # Create template.
+#DBD7CACC      template = %{
+#DBD7CACC        <html>
+#DBD7CACC          <head><title>Ruby Toys -- 
+#444444        <%=
+#DBD7CACC       @name 
+#444444        %>
+#DBD7CACC      </title></head>
+#DBD7CACC          <body>
+#DBD7CACC            <h1>
+#444444        <%=
+#DBD7CACC       @name 
+#444444        %>
+#DBD7CACC       (
+#444444        <%=
+#DBD7CACC       @code 
+#444444        %>
+#DBD7CACC      )</h1>
+#DBD7CACC            <p>
+#444444        <%=
+#DBD7CACC       @desc 
+#444444        %>
+#DBD7CACC      </p>
+#DBD7CACC            <ul>
+#DBD7CACC              
+#444444        <%
+#DBD7CACC       @features.each do |f| 
+#444444        %>
+#DBD7CACC                <li><b>
+#444444        <%=
+#DBD7CACC       f 
+#444444        %>
+#DBD7CACC      </b></li>
+#DBD7CACC              
+#444444        <%
+#DBD7CACC       end 
+#444444        %>
+#DBD7CACC            </ul>
+#DBD7CACC            <p>
+#DBD7CACC              
+#444444        <%
+#DBD7CACC       if @cost < 10 
+#444444        %>
+#DBD7CACC                <b>Only 
+#444444        <%=
+#DBD7CACC       @cost 
+#444444        %>
+#DBD7CACC      !!!</b>
+#DBD7CACC              
+#444444        <%
+#DBD7CACC       else 
+#444444        %>
+#DBD7CACC                 Call for a price, today!
+#DBD7CACC              
+#444444        <%
+#DBD7CACC       end 
+#444444        %>
+#DBD7CACC            </p>
+#DBD7CACC          </body>
+#DBD7CACC        </html>
+#DBD7CACC      }.gsub(/^  /, '')
+#DBD7CACC      rhtml = ERB.new(template)
+#DBD7CACC      # Set up template data.
+#DBD7CACC      toy = Product.new( "TZ-1002",
+#DBD7CACC                         "Rubysapien",
+#DBD7CACC                         "Geek's Best Friend!  Responds to Ruby commands...",
+#DBD7CACC                         999.95 )
+#DBD7CACC      toy.add_feature("Listens for verbal commands in the Ruby language!")
+#DBD7CACC      toy.add_feature("Ignores Perl, Java, and all C variants.")
+#DBD7CACC      toy.add_feature("Karate-Chop Action!!!")
+#DBD7CACC      toy.add_feature("Matz signature on left leg.")
+#DBD7CACC      toy.add_feature("Gem studded eyes... Rubies, of course!")
+#DBD7CACC      # Produce result.
+#DBD7CACC      rhtml.run(toy.get_binding)
+#DBD7CACC      # From https://docs.ruby-lang.org/en/2.3.0/ERB.html#class-ERB-label-Examples

@@ -1,0 +1,798 @@
+#DBD7CACC      #!/usr/bin/swipl
+#758575DD      % vim: ft=prolog textwidth=80 tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+#80A665        map_size
+#444444        (
+#4C9A91        78
+#DBD7CACC      , 
+#4C9A91        23
+#444444        )
+#4D9375        .
+#80A665        map_upper_bound
+#444444        (
+#BD976A        XMax
+#DBD7CACC      , 
+#BD976A        YMax
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          map_size(
+#BD976A        XSize
+#DBD7CACC      , 
+#BD976A        YSize
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        XMax
+#CB7676         is 
+#BD976A        XSize
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        YMax
+#CB7676         is 
+#BD976A        YSize
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#4D9375        .
+#80A665        in_map
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          
+#BD976A        X
+#DBD7CACC       
+#CB7676        >=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        Y
+#DBD7CACC       
+#CB7676        >=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ,
+#DBD7CACC          map_size(
+#BD976A        XSize
+#DBD7CACC      , 
+#BD976A        YSize
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        X
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        XSize
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        Y
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        YSize
+#4D9375        .
+#80A665        tile
+#444444        (
+#C99076        wall
+#DBD7CACC      , 
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       
+#CB7676        \+
+#DBD7CACC       in_map(
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      )
+#4D9375        .
+#80A665        tile
+#444444        (
+#C99076        floor
+#DBD7CACC      , 
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       in_map(
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      )
+#4D9375        .
+#758575DD      % tile(wall, 0, _).
+#758575DD      % tile(wall, _, 0).
+#758575DD      % tile(wall, X, _) :- map_upper_bound(X, _).
+#758575DD      % tile(wall, _, Y) :- map_upper_bound(_, Y).
+#DBD7CACC      :- 
+#4D9375        dynamic
+#DBD7CACC      (
+#C99076        player
+#DBD7CACC      /2, 
+#C99076        messages
+#DBD7CACC      /1)
+#4D9375        .
+#80A665        player
+#444444        (
+#4C9A91        2
+#DBD7CACC      ,
+#4C9A91        3
+#444444        )
+#4D9375        .
+#80A665        messages
+#444444        (
+#DBD7CACC      [
+#C98A7D        ""
+#DBD7CACC      , 
+#C98A7D        ""
+#DBD7CACC      ]
+#444444        )
+#4D9375        .
+#80A665        message_lines
+#444444        (
+#4C9A91        2
+#444444        )
+#4D9375        .
+#80A665        msg
+#444444        (
+#BD976A        Message
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          messages(
+#BD976A        Tail
+#DBD7CACC      ),
+#DBD7CACC          
+#B8A965        retractall
+#DBD7CACC      (messages(
+#C99076        _
+#DBD7CACC      )),
+#DBD7CACC          
+#B8A965        assertz
+#DBD7CACC      (messages([
+#BD976A        Message
+#DBD7CACC      |
+#BD976A        Tail
+#DBD7CACC      ]))
+#4D9375        .
+#758575DD      %%%%%%%%%%%%%%%%
+#758575DD      % drawing code %
+#758575DD      %%%%%%%%%%%%%%%%
+#80A665        draw_char
+#444444        (
+#C99076        _
+#DBD7CACC      X, 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          
+#B8A965        tty_size
+#DBD7CACC      (
+#BD976A        YSize
+#DBD7CACC      , 
+#C99076        _
+#DBD7CACC      ),
+#DBD7CACC          
+#758575DD      % map_size(_, YSize),
+#DBD7CACC          
+#BD976A        Y
+#DBD7CACC       
+#CB7676        >=
+#DBD7CACC       
+#BD976A        YSize
+#4D9375        .
+#80A665        draw_char
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          
+#B8A965        tty_size
+#DBD7CACC      (
+#C99076        _
+#DBD7CACC      , 
+#BD976A        XSize
+#DBD7CACC      ),
+#DBD7CACC          
+#758575DD      % map_size(XSize, _),
+#DBD7CACC          
+#BD976A        X
+#DBD7CACC       
+#CB7676        >=
+#DBD7CACC       
+#BD976A        XSize
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        NY
+#CB7676         is 
+#BD976A        Y
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ,
+#DBD7CACC          
+#758575DD      %nl,
+#DBD7CACC          draw_char(
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        NY
+#DBD7CACC      )
+#4D9375        .
+#80A665        draw_char
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          ( 
+#BD976A        X
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC          
+#4D9375        ->
+#B8A965        tty_goto
+#DBD7CACC      (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        ;
+#DBD7CACC       
+#C99076        true
+#DBD7CACC          ),
+#DBD7CACC          message_lines(
+#BD976A        YMsgs
+#DBD7CACC      ),
+#DBD7CACC          (  
+#BD976A        Y
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        YMsgs
+#DBD7CACC          
+#4D9375        ->
+#DBD7CACC       
+#B8A965        write
+#DBD7CACC      (
+#C99076        ' '
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        ;
+#DBD7CACC       display_offset(
+#BD976A        XOff
+#DBD7CACC      , 
+#BD976A        YOff
+#DBD7CACC      ),
+#DBD7CACC            
+#BD976A        XMap
+#CB7676         is 
+#BD976A        X
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        XOff
+#DBD7CACC      ,
+#DBD7CACC            
+#BD976A        YMap
+#CB7676         is 
+#BD976A        Y
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        YOff
+#DBD7CACC      ,
+#DBD7CACC            get_character(
+#BD976A        XMap
+#DBD7CACC      , 
+#BD976A        YMap
+#DBD7CACC      , 
+#BD976A        C
+#DBD7CACC      ),
+#DBD7CACC            
+#B8A965        format
+#DBD7CACC      (
+#C99076        '~s'
+#DBD7CACC      , [
+#BD976A        C
+#DBD7CACC      ])
+#DBD7CACC          ),
+#DBD7CACC          
+#BD976A        NX
+#CB7676         is 
+#BD976A        X
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ,
+#DBD7CACC          draw_char(
+#BD976A        NX
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      )
+#4D9375        .
+#80A665        display_offset
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          player(
+#BD976A        XPos
+#DBD7CACC      , 
+#BD976A        YPos
+#DBD7CACC      ),
+#DBD7CACC          
+#B8A965        tty_size
+#DBD7CACC      (
+#BD976A        YSize
+#DBD7CACC      , 
+#BD976A        XSize
+#DBD7CACC      ),
+#DBD7CACC          message_lines(
+#BD976A        YMsgs
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        X
+#CB7676         is 
+#BD976A        XPos
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#B8A965        floor
+#DBD7CACC      (
+#BD976A        XSize
+#DBD7CACC       / 
+#4C9A91        2
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        Y
+#CB7676         is 
+#BD976A        YPos
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#B8A965        floor
+#DBD7CACC      ((
+#BD976A        YSize
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#BD976A        YMsgs
+#DBD7CACC      ) / 
+#4C9A91        2
+#DBD7CACC      )
+#4D9375        .
+#80A665        display_msgs
+#444444        (
+#BD976A        Line
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       message_lines(
+#BD976A        Line
+#DBD7CACC      )
+#4D9375        .
+#80A665        display_msgs
+#444444        (
+#BD976A        Line
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          message_lines(
+#BD976A        LineCount
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        MsgId
+#CB7676         is 
+#BD976A        LineCount
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#BD976A        Line
+#DBD7CACC      ,
+#DBD7CACC          messages(
+#BD976A        Messages
+#DBD7CACC      ),
+#DBD7CACC          nth1(
+#BD976A        MsgId
+#DBD7CACC      , 
+#BD976A        Messages
+#DBD7CACC      , 
+#BD976A        Message
+#DBD7CACC      ),
+#DBD7CACC          
+#B8A965        tty_goto
+#DBD7CACC      (
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        Line
+#DBD7CACC      ),
+#DBD7CACC          
+#B8A965        format
+#DBD7CACC      (
+#C99076        '~s'
+#DBD7CACC      , [
+#BD976A        Message
+#DBD7CACC      ]),
+#DBD7CACC          
+#BD976A        NextLine
+#CB7676         is 
+#BD976A        Line
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ,
+#DBD7CACC          display_msgs(
+#BD976A        NextLine
+#DBD7CACC      )
+#4D9375        .
+#80A665        draw
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          once(draw_char(
+#4C9A91        0
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC      )),
+#DBD7CACC          map_size(
+#C99076        _
+#DBD7CACC      , 
+#BD976A        YSize
+#DBD7CACC      ),
+#DBD7CACC          display_msgs(
+#4C9A91        0
+#DBD7CACC      ),
+#DBD7CACC          
+#B8A965        tty_goto
+#DBD7CACC      (
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        YSize
+#DBD7CACC      )
+#4D9375        .
+#758575DD      % character displayed for a position on map
+#80A665        get_character
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      , 
+#C98A7D        "@"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       player(
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      )
+#4D9375        .
+#80A665        get_character
+#444444        (
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      , 
+#BD976A        C
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          tile(
+#BD976A        Tile
+#DBD7CACC      , 
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      ),
+#DBD7CACC          tile_display(
+#BD976A        Tile
+#DBD7CACC      , 
+#BD976A        C
+#DBD7CACC      )
+#4D9375        .
+#80A665        tile_display
+#444444        (
+#C99076        wall
+#DBD7CACC      , 
+#C98A7D        "#"
+#444444        )
+#4D9375        .
+#80A665        tile_display
+#444444        (
+#C99076        floor
+#DBD7CACC      , 
+#C98A7D        "."
+#444444        )
+#4D9375        .
+#80A665        tile_passable
+#444444        (
+#C99076        floor
+#444444        )
+#4D9375        .
+#758575DD      % % get line of a map to display as a string into aggregator, starting from XCur
+#758575DD      % % as rightmost character
+#758575DD      % get_line(Y, XCur, Trail, Agg) :-
+#758575DD      %     (  XCur < 0
+#758575DD      %     -> Trail = Agg
+#758575DD      %     ;  XPrev is XCur - 1,
+#758575DD      %        get_character(XCur, Y, C),
+#758575DD      %        get_line(Y, XPrev, [C|Trail], Agg)
+#758575DD      %     ).
+#758575DD      % get_screen(YCur, Trail, Agg) :-
+#758575DD      %     (  YCur < 0
+#758575DD      %     -> Trail = Agg
+#758575DD      %     ;  YPrev is YCur - 1,
+#758575DD      %        map_size(XSize, _),
+#758575DD      %        XLast is XSize - 1,
+#758575DD      %        get_line(YCur, XLast, [], Line),
+#758575DD      %        get_screen(YPrev, [Line|Trail], Agg)
+#758575DD      %     ).
+#758575DD      % get_screen(Lines) :-
+#758575DD      %    map_size(_, YSize),
+#758575DD      %    YLast is YSize - 1,
+#758575DD      %    get_screen(YLast, [], Lines).
+#758575DD      % % draw a list of lines on screen
+#758575DD      % draw_lines([]).
+#758575DD      % draw_lines([Line|Rest]) :-
+#758575DD      %     name(LineAtom, Line),
+#758575DD      %     write(LineAtom),
+#758575DD      %     nl,
+#758575DD      %     draw_lines(Rest).
+#758575DD      % % draw current map
+#758575DD      % draw :- get_screen(Lines), draw_lines(Lines).
+#758575DD      %%%%%%%%%%%%%%%%%%%%
+#758575DD      % interaction code %
+#758575DD      %%%%%%%%%%%%%%%%%%%%
+#DBD7CACC      move_player(
+#BD976A        X
+#DBD7CACC      , 
+#BD976A        Y
+#DBD7CACC      ) :
+#CB7676        -
+#DBD7CACC          player(
+#BD976A        XCur
+#DBD7CACC      , 
+#BD976A        YCur
+#DBD7CACC      ),
+#DBD7CACC          
+#BD976A        XNew
+#CB7676         is 
+#BD976A        XCur
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        X
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        YNew
+#CB7676         is 
+#BD976A        YCur
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        Y
+#DBD7CACC      ,
+#DBD7CACC          (  tile(
+#BD976A        Tile
+#DBD7CACC      , 
+#BD976A        XNew
+#DBD7CACC      , 
+#BD976A        YNew
+#DBD7CACC      ),
+#DBD7CACC             tile_passable(
+#BD976A        Tile
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        ->
+#DBD7CACC       
+#B8A965        retractall
+#DBD7CACC      (player(
+#C99076        _
+#DBD7CACC      , 
+#C99076        _
+#DBD7CACC      )),
+#DBD7CACC             
+#80A665        asserta
+#444444        (
+#DBD7CACC      player(
+#BD976A        XNew
+#DBD7CACC      , 
+#BD976A        YNew
+#DBD7CACC      ))
+#DBD7CACC          ;  print(
+#C99076        'Bump!'
+#DBD7CACC      ), 
+#C99076        nl
+#DBD7CACC          
+#444444        )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "\n"
+#444444        )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "\r"
+#444444        )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "h"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       msg(
+#C98A7D        "left"
+#DBD7CACC      ),  move_player(
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      ,  
+#4C9A91        0
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "j"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       msg(
+#C98A7D        "down"
+#DBD7CACC      ),  move_player( 
+#4C9A91        0
+#DBD7CACC      ,  
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "k"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       msg(
+#C98A7D        "up"
+#DBD7CACC      ),    move_player( 
+#4C9A91        0
+#DBD7CACC      , 
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "l"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       msg(
+#C98A7D        "right"
+#DBD7CACC      ), move_player( 
+#4C9A91        1
+#DBD7CACC      ,  
+#4C9A91        0
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "y"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       move_player(
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      , 
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "u"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       move_player( 
+#4C9A91        1
+#DBD7CACC      , 
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "b"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       move_player(
+#CB7676        -
+#4C9A91        1
+#DBD7CACC      ,  
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        act
+#444444        (
+#C98A7D        "n"
+#444444        )
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       move_player( 
+#4C9A91        1
+#DBD7CACC      ,  
+#4C9A91        1
+#DBD7CACC      )
+#4D9375        .
+#80A665        mainloop
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC          
+#C99076        draw
+#DBD7CACC      ,
+#DBD7CACC          
+#B8A965        get_single_char
+#DBD7CACC      (
+#BD976A        C
+#DBD7CACC      ),
+#DBD7CACC          (  act([
+#BD976A        C
+#DBD7CACC      ])
+#DBD7CACC          
+#4D9375        ->
+#DBD7CACC       
+#C99076        true
+#DBD7CACC          
+#4D9375        ;
+#DBD7CACC        
+#B8A965        format
+#DBD7CACC      (codes(
+#BD976A        Msg
+#DBD7CACC      ), 
+#C99076        'unknown character code: ~d'
+#DBD7CACC      , [
+#BD976A        C
+#DBD7CACC      ]),
+#DBD7CACC             msg(
+#BD976A        Msg
+#DBD7CACC      )
+#DBD7CACC          ),
+#DBD7CACC          
+#C99076        mainloop
+#4D9375        .
+#80A665        main
+#DBD7CACC       
+#4D9375        :-
+#DBD7CACC       
+#C99076        mainloop
+#4D9375        .
+#758575DD      % From https://github.com/Anniepoo/prolog-examples/blob/master/roguelike.pl

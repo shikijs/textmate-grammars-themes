@@ -1,0 +1,56 @@
+#4D9375        rem
+#4D9375        rem
+#758575DD        Alternate form of if-elseif-else structure with goto for else
+#4D9375        rem
+#758575DD        case.  That way, you can group code together in a "more logical"
+#4D9375        rem
+#758575DD        or "more natural" manner.
+#4D9375        rem
+#4D9375        if
+#DBD7CACC       .
+#444444        %
+#BD976A        1
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       .1 
+#4D9375        goto
+#DBD7CACC       
+#4C9A91        1
+#4D9375        if
+#DBD7CACC       .
+#444444        %
+#BD976A        1
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       .2 
+#4D9375        goto
+#DBD7CACC       
+#4C9A91        2
+#4D9375        goto
+#DBD7CACC       
+#4D9375        else
+#444444        :
+#4D9375        1
+#4D9375        echo
+#DBD7CACC       You selected 
+#4C9A91        1
+#4D9375        goto
+#DBD7CACC       endif
+#444444        :
+#4D9375        2
+#4D9375        echo
+#DBD7CACC       You selected 
+#4C9A91        2
+#4D9375        goto
+#DBD7CACC       endif
+#444444        :
+#4D9375        else
+#4D9375        echo
+#DBD7CACC       else (neither 
+#4C9A91        1
+#DBD7CACC       nor 2)
+#4D9375        goto
+#DBD7CACC       endif
+#444444        :
+#4D9375        endif
+#758575DD      :: From https://github.com/Archive-projects/Batch-File-examples/blob/master/files/tf5.bat

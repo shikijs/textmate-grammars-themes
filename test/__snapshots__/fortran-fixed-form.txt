@@ -1,0 +1,59 @@
+#758575DD      *     euclid.f (FORTRAN 77)
+#758575DD      *     Find greatest common divisor using the Euclidean algorithm
+#4C9A91              
+#DBD7CACC      PROGRAM EUCLID
+#4C9A91              
+#DBD7CACC        PRINT *, 'A?'
+#4C9A91              
+#DBD7CACC        READ *, NA
+#4C9A91              
+#DBD7CACC        IF (NA.LE.0) THEN
+#4C9A91              
+#DBD7CACC          PRINT *, 'A must be a positive integer.'
+#4C9A91              
+#DBD7CACC          STOP
+#4C9A91              
+#DBD7CACC        END IF
+#4C9A91              
+#DBD7CACC        PRINT *, 'B?'
+#4C9A91              
+#DBD7CACC        READ *, NB
+#4C9A91              
+#DBD7CACC        IF (NB.LE.0) THEN
+#4C9A91              
+#DBD7CACC          PRINT *, 'B must be a positive integer.'
+#4C9A91              
+#DBD7CACC          STOP
+#4C9A91              
+#DBD7CACC        END IF
+#4C9A91              
+#DBD7CACC        PRINT *, 'The GCD of', NA, ' and', NB, ' is', NGCD(NA, NB), '.'
+#4C9A91              
+#DBD7CACC        STOP
+#4C9A91              
+#DBD7CACC      END
+#4C9A91              
+#DBD7CACC      FUNCTION NGCD(NA, NB)
+#4C9A91              
+#DBD7CACC        IA = NA
+#4C9A91              
+#DBD7CACC        IB = NB
+#4C9A91            1 
+#DBD7CACC        IF (IB.NE.0) THEN
+#4C9A91              
+#DBD7CACC          ITEMP = IA
+#4C9A91              
+#DBD7CACC          IA = IB
+#4C9A91              
+#DBD7CACC          IB = MOD(ITEMP, IB)
+#4C9A91              
+#DBD7CACC          GOTO 1
+#4C9A91              
+#DBD7CACC        END IF
+#4C9A91              
+#DBD7CACC        NGCD = IA
+#4C9A91              
+#DBD7CACC        RETURN
+#4C9A91              
+#DBD7CACC      END
+#758575DD      *     From https://en.wikibooks.org/wiki/Fortran/Fortran_examples#Greatest_common_divisor

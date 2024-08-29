@@ -1,0 +1,306 @@
+#80A665        quest_demo
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       shopButton 
+#4D9375        true
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       parkButton greyed
+#DBD7CACC        
+#4D9375        jump
+#DBD7CACC       bread_quest
+#80A665        bread_quest
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        choice
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Can you get 2 pieces of bread for me?"
+#DBD7CACC          
+#C98A7D        "Yes"
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Thanks, that's very nice!"
+#DBD7CACC            
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "I'll be waiting for you at the park"
+#DBD7CACC            
+#4D9375        jump
+#DBD7CACC       bread_start
+#DBD7CACC          
+#C98A7D        "No"
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Oh, okay"
+#DBD7CACC            
+#4D9375        jump
+#DBD7CACC       quest_demo
+#80A665        bread_start
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        start_quest
+#DBD7CACC       breadShopping
+#DBD7CACC        
+#4D9375        talk
+#DBD7CACC       inner idle 
+#C98A7D        "Time to go to the shop to buy some bread then."
+#DBD7CACC        
+#4D9375        set_screen
+#DBD7CACC       map
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       shopButton 
+#4D9375        true
+#80A665        shopButton
+#DBD7CACC      :
+#DBD7CACC        
+#758575DD      // set_screen default
+#DBD7CACC        
+#C98A7D        "You visit the bread shop"
+#DBD7CACC        
+#4D9375        talk
+#DBD7CACC       shopkeeper idle 
+#C98A7D        "Hello, I'm a little baker selling bread and drinks!"
+#DBD7CACC        
+#4D9375        set
+#DBD7CACC       data.breadPrice 
+#4C9A91        5
+#DBD7CACC        
+#4D9375        jump
+#DBD7CACC       shop_menu
+#80A665        parkButton
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        choice
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Ah, so do you have my bread?"
+#DBD7CACC          
+#C98A7D        "Yes!"
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        >= 
+#BD976A        $items.bread.amount
+#DBD7CACC       
+#4C9A91        2
+#444444        )
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Thanks a lot!"
+#DBD7CACC            
+#4D9375        add_item
+#DBD7CACC       bread -
+#4C9A91        2
+#DBD7CACC            
+#4D9375        complete_objective
+#DBD7CACC       breadShopping delivery
+#DBD7CACC            
+#4D9375        complete_quest
+#DBD7CACC       breadShopping
+#DBD7CACC            
+#4D9375        set_button
+#DBD7CACC       parkButton 
+#4D9375        false
+#DBD7CACC            
+#4D9375        jump
+#DBD7CACC       demo_end
+#DBD7CACC          
+#C98A7D        "No :("
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        talk
+#DBD7CACC       helper idle 
+#C98A7D        "Oh okay"
+#80A665        shop_menu
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        choice
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        talk
+#DBD7CACC       shopkeeper idle 
+#C98A7D        "So, do you want some bread?"
+#DBD7CACC          
+#C98A7D        "Buy bread (costs 
+#444444        %{
+#C98A7D        $$data.breadPrice
+#444444        }
+#C98A7D        )"
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        >= 
+#BD976A        $stats.money.value
+#DBD7CACC       
+#BD976A        $data.breadPrice
+#444444        )
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        add_item
+#DBD7CACC       bread 
+#4C9A91        1
+#DBD7CACC            
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        == 
+#BD976A        $data.breadPrice
+#DBD7CACC       
+#4C9A91        5
+#444444        )
+#DBD7CACC      :
+#DBD7CACC              
+#4D9375        add_stat
+#DBD7CACC       money -
+#4C9A91        5
+#DBD7CACC            
+#4D9375        else
+#DBD7CACC      :
+#DBD7CACC              
+#4D9375        add_stat
+#DBD7CACC       money -
+#4C9A91        4
+#DBD7CACC            
+#4D9375        jump
+#DBD7CACC       map_update
+#DBD7CACC          
+#4D9375        roll
+#DBD7CACC       bread_haggle haggling 
+#4C9A91        50
+#DBD7CACC       
+#C98A7D        "Try to haggle for bread"
+#DBD7CACC       hideAfterRoll:
+#DBD7CACC            success 
+#C98A7D        "You explain that helper cat needs bread to feed his poor family"
+#DBD7CACC      :
+#DBD7CACC              
+#4D9375        add_xp
+#DBD7CACC       haggling 
+#4C9A91        10
+#DBD7CACC              
+#4D9375        set
+#DBD7CACC       data.breadPrice 
+#4C9A91        4
+#DBD7CACC              
+#4D9375        talk
+#DBD7CACC       shopkeeper idle 
+#C98A7D        "I guess I can sell you bread for 4 coins"
+#DBD7CACC              
+#4D9375        jump
+#DBD7CACC       shop_menu
+#DBD7CACC            failure 
+#C98A7D        "You try to pity trip the shopkeeper but he won't bulge"
+#DBD7CACC      :
+#DBD7CACC              
+#4D9375        add_xp
+#DBD7CACC       haggling 
+#4C9A91        5
+#DBD7CACC              
+#4D9375        talk
+#DBD7CACC       shopkeeper idle 
+#C98A7D        "The price is 5 coins, nothing less, nothing more."
+#DBD7CACC              
+#4D9375        jump
+#DBD7CACC       shop_menu
+#DBD7CACC          
+#C98A7D        "Exit"
+#DBD7CACC      :
+#DBD7CACC            
+#4D9375        jump
+#DBD7CACC       map_update
+#80A665        show_map
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       parkButton 
+#4D9375        false
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       shopButton 
+#4D9375        true
+#DBD7CACC        
+#4D9375        set_screen
+#DBD7CACC       map
+#80A665        map_update
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       parkButton 
+#4D9375        false
+#DBD7CACC        
+#4D9375        set_button
+#DBD7CACC       shopButton 
+#4D9375        true
+#DBD7CACC        
+#4D9375        log
+#DBD7CACC       
+#BD976A        $items.bread
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        >= 
+#BD976A        $items.bread.amount
+#DBD7CACC       
+#4C9A91        2
+#444444        )
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        complete_objective
+#DBD7CACC       breadShopping bread
+#DBD7CACC          
+#4D9375        talk
+#DBD7CACC       inner idle 
+#C98A7D        "I've got enough bread now, I'm going to go to the park."
+#DBD7CACC          
+#4D9375        start_objective
+#DBD7CACC       breadShopping delivery
+#DBD7CACC          
+#4D9375        set_screen
+#DBD7CACC       map
+#DBD7CACC          
+#4D9375        set_button
+#DBD7CACC       parkButton 
+#4D9375        true
+#DBD7CACC          
+#4D9375        set_button
+#DBD7CACC       shopButton 
+#4D9375        false
+#DBD7CACC        
+#4D9375        else
+#DBD7CACC      :
+#DBD7CACC          
+#4D9375        talk
+#DBD7CACC       inner idle 
+#C98A7D        "Hmm, I still need to buy more bread for helper cat."
+#DBD7CACC          
+#4D9375        set_screen
+#DBD7CACC       map
+#80A665        eat_bread
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        talk
+#DBD7CACC       player idle 
+#C98A7D        "hmm, bread"
+#80A665        read_book
+#DBD7CACC      :
+#DBD7CACC        
+#4D9375        talk
+#DBD7CACC       inner idle 
+#C98A7D        "It's full of ocult rituals. I'm not sure what they are, but I'm sure they are useful."
+#758575DD      // From: https://github.com/liana-p/narrat-engine/blob/main/packages/narrat/examples/games/demo/data/quest.narrat

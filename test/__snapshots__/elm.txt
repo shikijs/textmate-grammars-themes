@@ -1,0 +1,193 @@
+#4D9375        module
+#DBD7CACC       
+#B8A965        Main
+#444444         
+#4D9375        exposing
+#444444         (..)
+#758575DD      -- Press buttons to increment and decrement a counter.
+#758575DD      --
+#758575DD      -- Read how it works:
+#758575DD      --   https://guide.elm-lang.org/architecture/buttons.html
+#758575DD      --
+#4D9375        import
+#DBD7CACC       
+#B8A965        Browser
+#4D9375        import
+#DBD7CACC       
+#B8A965        Html
+#444444         
+#4D9375        exposing
+#444444         (
+#CB7676        Html
+#444444        , 
+#80A665        button
+#444444        , 
+#80A665        div
+#444444        , 
+#80A665        text
+#444444        )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Html
+#4D9375        .
+#B8A965        Events
+#444444         
+#4D9375        exposing
+#444444         (
+#80A665        onClick
+#444444        )
+#758575DD      -- MAIN
+#80A665        main
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC        
+#B8A965        Browser
+#4D9375        .
+#DBD7CACC      sandbox 
+#444444        {
+#DBD7CACC       
+#80A665        init
+#DBD7CACC       
+#444444        =
+#DBD7CACC       init
+#444444        ,
+#DBD7CACC       
+#80A665        update
+#DBD7CACC       
+#444444        =
+#DBD7CACC       update
+#444444        ,
+#DBD7CACC       
+#80A665        view
+#DBD7CACC       
+#444444        =
+#DBD7CACC       view 
+#444444        }
+#758575DD      -- MODEL
+#4D9375        type alias 
+#CB7676        Model
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        Int
+#80A665        init
+#DBD7CACC       
+#4D9375        :
+#444444         
+#CB7676        Model
+#80A665        init
+#DBD7CACC       
+#4D9375        =
+#DBD7CACC        
+#4C9A91        0
+#758575DD      -- UPDATE
+#4D9375        type 
+#CB7676        Msg
+#444444          =
+#DBD7CACC       
+#C99076        Increment
+#444444          |
+#DBD7CACC       
+#C99076        Decrement
+#80A665        update
+#DBD7CACC       
+#4D9375        :
+#444444         
+#CB7676        Msg
+#444444         
+#CB7676        ->
+#444444         
+#CB7676        Model
+#444444         
+#CB7676        ->
+#444444         
+#CB7676        Model
+#80A665        update
+#DBD7CACC       msg model 
+#4D9375        =
+#DBD7CACC        
+#4D9375        case 
+#DBD7CACC      msg 
+#4D9375        of
+#DBD7CACC          
+#C99076        Increment
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC            model 
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC          
+#C99076        Decrement
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC            model 
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#758575DD      -- VIEW
+#80A665        view
+#DBD7CACC       
+#4D9375        :
+#444444         
+#CB7676        Model
+#444444         
+#CB7676        ->
+#444444         
+#CB7676        Html
+#444444         
+#CB7676        Msg
+#80A665        view
+#DBD7CACC       model 
+#4D9375        =
+#DBD7CACC        div 
+#444444        []
+#DBD7CACC          
+#444444        [
+#DBD7CACC       button 
+#444444        [
+#DBD7CACC       onClick 
+#C99076        Decrement
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#444444        [
+#DBD7CACC       text 
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#DBD7CACC       
+#444444        ]
+#DBD7CACC          
+#444444        ,
+#DBD7CACC       div 
+#444444        []
+#DBD7CACC       
+#444444        [
+#DBD7CACC       text 
+#444444        (
+#B8A965        String
+#4D9375        .
+#DBD7CACC      fromInt model
+#444444        )
+#DBD7CACC       
+#444444        ]
+#DBD7CACC          
+#444444        ,
+#DBD7CACC       button 
+#444444        [
+#DBD7CACC       onClick 
+#C99076        Increment
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#444444        [
+#DBD7CACC       text 
+#C98A7D77      "
+#C98A7D        +
+#C98A7D77      "
+#DBD7CACC       
+#444444        ]
+#DBD7CACC          
+#444444        ]
+#758575DD      -- From https://elm-lang.org/examples/buttons

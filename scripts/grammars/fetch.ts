@@ -129,16 +129,22 @@ async function fetchGrammar(source: GrammarSource) {
     parsed.displayName = info.displayName
     if (source.injectTo)
       parsed.injectTo = source.injectTo
-    const grammar = cleanupGrammar(parsed)
-    info.byteSize = new TextEncoder().encode(JSON.stringify(grammar)).length
-    return {
-      grammar,
-      info,
-    }
   }
   catch (e) {
     console.error(`Failed to parse ${info.name} from ${info.source}`)
     throw e
+  }
+
+  const grammar = await cleanupGrammar(parsed)
+    .catch((e) => {
+      console.error(`Failed to cleanup ${info.name} from ${info.source}`)
+      console.error(e)
+      return parsed
+    })
+  info.byteSize = new TextEncoder().encode(JSON.stringify(grammar)).length
+  return {
+    grammar,
+    info,
   }
 }
 

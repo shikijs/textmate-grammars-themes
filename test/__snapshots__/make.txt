@@ -1,0 +1,54 @@
+#80A665        edit
+#DBD7CACC       
+#444444        :
+#DBD7CACC       main.o kbd.o command.o display.o 
+#C99076        \
+#DBD7CACC             insert.o search.o files.o utils.o
+#DBD7CACC              cc -o edit main.o kbd.o command.o display.o \
+#DBD7CACC                         insert.o search.o files.o utils.o
+#80A665        main.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       main.c defs.h
+#DBD7CACC              cc -c main.c
+#80A665        kbd.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       kbd.c defs.h command.h
+#DBD7CACC              cc -c kbd.c
+#80A665        command.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       command.c defs.h command.h
+#DBD7CACC              cc -c command.c
+#80A665        display.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       display.c defs.h buffer.h
+#DBD7CACC              cc -c display.c
+#80A665        insert.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       insert.c defs.h buffer.h
+#DBD7CACC              cc -c insert.c
+#80A665        search.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       search.c defs.h buffer.h
+#DBD7CACC              cc -c search.c
+#80A665        files.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       files.c defs.h buffer.h command.h
+#DBD7CACC              cc -c files.c
+#80A665        utils.o
+#DBD7CACC       
+#444444        :
+#DBD7CACC       utils.c defs.h
+#DBD7CACC              cc -c utils.c
+#80A665        clean
+#DBD7CACC       
+#444444        :
+#DBD7CACC              rm edit main.o kbd.o command.o display.o \
+#DBD7CACC                 insert.o search.o files.o utils.o
+#758575DD      # From https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html

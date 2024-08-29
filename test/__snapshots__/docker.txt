@@ -1,0 +1,31 @@
+#758575DD      # syntax=docker/dockerfile:1
+#4D9375        FROM
+#DBD7CACC       mcr.microsoft.com/dotnet/sdk:5.0 
+#4D9375        AS
+#DBD7CACC       build-env
+#4D9375        WORKDIR
+#DBD7CACC       /app
+#758575DD      # Copy csproj and restore as distinct layers
+#4D9375        COPY
+#DBD7CACC       *.csproj ./
+#4D9375        RUN
+#DBD7CACC       dotnet restore
+#758575DD      # Copy everything else and build
+#4D9375        COPY
+#DBD7CACC       ../engine/examples ./
+#4D9375        RUN
+#DBD7CACC       dotnet publish -c Release -o out
+#758575DD      # Build runtime image
+#4D9375        FROM
+#DBD7CACC       mcr.microsoft.com/dotnet/aspnet:3.1
+#4D9375        WORKDIR
+#DBD7CACC       /app
+#4D9375        COPY
+#DBD7CACC       --from=build-env /app/out .
+#4D9375        ENTRYPOINT
+#DBD7CACC       [
+#C98A7D        "dotnet"
+#DBD7CACC      , 
+#C98A7D        "aspnetapp.dll"
+#DBD7CACC      ]
+#758575DD      # From https://docs.docker.com/samples/dotnetcore/

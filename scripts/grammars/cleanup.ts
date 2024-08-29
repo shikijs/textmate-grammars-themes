@@ -1,6 +1,11 @@
+import { expect } from 'chai'
 import { objectPick } from '../shared/utils'
+import { highlight } from './highlight'
 
-export function cleanupGrammar(lang: any) {
+export async function cleanupGrammar(lang: any, verify = true) {
+  const before = verify ? await highlight(lang) : null
+
+  lang = structuredClone(lang)
   const picked = objectPick(
     lang,
     [
@@ -24,21 +29,39 @@ export function cleanupGrammar(lang: any) {
     // (_, key, value) => console.log('lang key removal', key, '|', value),
   )
 
-  const reGrammarComment = /\s#.*$/
-  function cleanupMatch(match: string) {
+  const reGrammarComment = /(\s|^)#.*$/
+  function cleanupMatch(regex: string) {
+    // const original = regex
+
     // https://github.com/shikijs/shiki/issues/591#issuecomment-1961637557
     // It seems the `shellscript` grammars has a selector that missing the backslash escape, we patched them here
     if (lang.name === 'shellscript')
-      match = match.replace(/\[\^ \t\n/g, '[^ \\t\\n')
+      regex = regex.replace(/\[\^ \t\n/g, '[^ \\t\\n')
 
-    const lines = match
-      .split(/\n/g)
-    if (lines.length === 1)
-      return match
-    return lines
-      .map(i => i.replace(reGrammarComment, '').trim())
-      .join('\n')
+    const lines = regex.split(/\n/g)
+
+    if (lines.length !== 1) {
+      regex = lines
+        .map(i => i.replace(reGrammarComment, '').trim())
+        .join('\n')
+    }
+
+    if (regex.startsWith('(?x)')) {
+      regex = regex
+        .slice(4)
+        .replace(/\n/g, '')
+        .replace(/\[([^\]]+)\]/g, _ => _.replace(/\s/g, '\\s'))
+        .replace(/\s+/g, '')
+        .replace(/\(\?x:/g, '(?:')
+    }
+
+    // if (original !== regex) {
+    //   console.log({ original, regex })
+    // }
+
+    return regex
   }
+
   function cleanupPattern(a: any) {
     if (a.match)
       a.match = cleanupMatch(a.match)
@@ -58,6 +81,12 @@ export function cleanupGrammar(lang: any) {
   Object.values(picked.repository || {}).forEach((i: any) => {
     cleanupPattern(i)
   })
+
+  const after = verify ? await highlight(picked) : null
+
+  if (verify && before !== after) {
+    expect(before).to.equal(after)
+  }
 
   return picked
 }

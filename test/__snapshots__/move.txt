@@ -1,0 +1,92 @@
+#CB7676        module
+#C99076         0xCAFE
+#DBD7CACC      ::
+#5DA994        BasicCoin
+#DBD7CACC       {
+#DBD7CACC           
+#758575DD      // Only included in compilation for testing. Similar to #[cfg(testing)]
+#DBD7CACC          
+#758575DD      // in Rust. Imports the `Signer` module from the MoveStdlib package.
+#DBD7CACC          
+#C99076        #[test_only]
+#DBD7CACC          
+#CB7676        use
+#DBD7CACC       std::signer;
+#DBD7CACC          
+#CB7676        struct
+#DBD7CACC       
+#5DA994        Coin
+#DBD7CACC       
+#4D9375        has
+#DBD7CACC       
+#B8A965        key
+#DBD7CACC       {
+#DBD7CACC              value: 
+#B8A965        u64
+#DBD7CACC      ,
+#DBD7CACC          }
+#DBD7CACC          
+#CB7676        public
+#DBD7CACC       
+#CB7676        fun
+#DBD7CACC       
+#80A665        mint
+#DBD7CACC      (account: 
+#B8A965        signer
+#DBD7CACC      , value: 
+#B8A965        u64
+#DBD7CACC      ) {
+#DBD7CACC              
+#B8A965        move_to
+#DBD7CACC      (&account, 
+#5DA994        Coin
+#DBD7CACC       { value })
+#DBD7CACC          }
+#DBD7CACC          
+#758575DD      // Declare a unit test. It takes a signer called `account` with an
+#DBD7CACC          
+#758575DD      // address value of `0xC0FFEE`.
+#DBD7CACC          
+#C99076        #[test(account = @0xC0FFEE)]
+#DBD7CACC          
+#CB7676        fun
+#DBD7CACC       
+#80A665        test_mint_10
+#DBD7CACC      (account: 
+#B8A965        signer
+#DBD7CACC      ) 
+#CB7676        acquires
+#DBD7CACC       
+#5DA994        Coin
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       addr = 
+#B8A965        signer
+#DBD7CACC      ::
+#80A665        address_of
+#DBD7CACC      (&account);
+#DBD7CACC              
+#80A665        mint
+#DBD7CACC      (account, 
+#4C9A91        10
+#DBD7CACC      );
+#DBD7CACC              
+#758575DD      // Make sure there is a `Coin` resource under `addr` with a value of `10`.
+#DBD7CACC              
+#758575DD      // We can access this resource and its value since we are in the
+#DBD7CACC              
+#758575DD      // same module that defined the `Coin` resource.
+#DBD7CACC              
+#B8A965        assert
+#DBD7CACC      !(
+#B8A965        borrow_global
+#DBD7CACC      <
+#5DA994        Coin
+#DBD7CACC      >(addr).value == 
+#4C9A91        10
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC      );
+#DBD7CACC          }
+#DBD7CACC      }

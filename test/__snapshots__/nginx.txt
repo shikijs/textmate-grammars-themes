@@ -1,0 +1,239 @@
+#4D9375        user 
+#DBD7CACC            www www
+#444444        ;
+#DBD7CACC        
+#758575DD      ## Default: nobody
+#4D9375        worker_processes 
+#DBD7CACC       
+#4C9A91        5
+#444444        ;
+#DBD7CACC        
+#758575DD      ## Default: 1
+#4D9375        error_log 
+#DBD7CACC       logs/error.log
+#444444        ;
+#4D9375        pid 
+#DBD7CACC             logs/nginx.pid
+#444444        ;
+#4D9375        worker_rlimit_nofile 
+#4C9A91        8192
+#444444        ;
+#CB7676        events
+#DBD7CACC       {
+#DBD7CACC       
+#4D9375         worker_connections 
+#DBD7CACC       
+#4C9A91        4096
+#444444        ;
+#DBD7CACC        
+#758575DD      ## Default: 1024
+#DBD7CACC      }
+#CB7676        http
+#DBD7CACC       {
+#DBD7CACC       
+#4D9375         include 
+#DBD7CACC         conf/mime.types
+#444444        ;
+#DBD7CACC       
+#4D9375         include 
+#DBD7CACC         /etc/nginx/proxy.conf
+#444444        ;
+#DBD7CACC       
+#4D9375         include 
+#DBD7CACC         /etc/nginx/fastcgi.conf
+#444444        ;
+#DBD7CACC       
+#4D9375         index 
+#DBD7CACC         index.html index.htm index.php
+#444444        ;
+#DBD7CACC       
+#4D9375         default_type 
+#DBD7CACC      application/octet-stream
+#444444        ;
+#DBD7CACC       
+#4D9375         log_format 
+#DBD7CACC        
+#4D9375        main
+#DBD7CACC       
+#C98A7D        '
+#444444        $
+#C98A7D        remote_addr - 
+#444444        $
+#C98A7D        remote_user [
+#444444        $
+#C98A7D        time_local]  
+#444444        $
+#C98A7D        status '
+#DBD7CACC          
+#C98A7D        '"
+#444444        $
+#C98A7D        request" 
+#444444        $
+#C98A7D        body_bytes_sent "
+#444444        $
+#C98A7D        http_referer" '
+#DBD7CACC          
+#C98A7D        '"
+#444444        $
+#C98A7D        http_user_agent" "
+#444444        $
+#C98A7D        http_x_forwarded_for"'
+#444444        ;
+#DBD7CACC       
+#4D9375         access_log 
+#DBD7CACC        logs/access.log  
+#4D9375        main
+#444444        ;
+#DBD7CACC       
+#4D9375         sendfile 
+#DBD7CACC          
+#4D9375        on
+#444444        ;
+#DBD7CACC       
+#4D9375         tcp_nopush 
+#DBD7CACC        
+#4D9375        on
+#444444        ;
+#DBD7CACC       
+#4D9375         server_names_hash_bucket_size 
+#4C9A91        128
+#444444        ;
+#DBD7CACC       
+#758575DD      # this seems to be required for some vhosts
+#DBD7CACC        
+#CB7676        server
+#DBD7CACC       { 
+#758575DD      # php/fastcgi
+#DBD7CACC         
+#4D9375         listen 
+#DBD7CACC            
+#4C9A91        80
+#444444        ;
+#DBD7CACC         
+#4D9375         server_name 
+#DBD7CACC       domain1.com www.domain1.com
+#444444        ;
+#DBD7CACC         
+#4D9375         access_log 
+#DBD7CACC        logs/domain1.access.log  
+#4D9375        main
+#444444        ;
+#DBD7CACC         
+#4D9375         root 
+#DBD7CACC              html
+#444444        ;
+#DBD7CACC          
+#CB7676        location
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#C4704F        \.php$ 
+#DBD7CACC      {
+#DBD7CACC           
+#4D9375         fastcgi_pass 
+#DBD7CACC        127.0.0.1:1025
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC        }
+#DBD7CACC        
+#CB7676        server
+#DBD7CACC       { 
+#758575DD      # simple reverse-proxy
+#DBD7CACC         
+#4D9375         listen 
+#DBD7CACC            
+#4C9A91        80
+#444444        ;
+#DBD7CACC         
+#4D9375         server_name 
+#DBD7CACC       domain2.com www.domain2.com
+#444444        ;
+#DBD7CACC         
+#4D9375         access_log 
+#DBD7CACC        logs/domain2.access.log  
+#4D9375        main
+#444444        ;
+#DBD7CACC          
+#758575DD      # serve static files
+#DBD7CACC          
+#CB7676        location
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#C4704F        ^/(images|javascript|js|css|flash|media|static)/  
+#DBD7CACC      {
+#DBD7CACC           
+#4D9375         root 
+#DBD7CACC         /var/www/virtual/big.server.com/htdocs
+#444444        ;
+#DBD7CACC           
+#4D9375         expires 
+#4C9A91        30d
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC          
+#758575DD      # pass requests for dynamic content to rails/turbogears/zope, et al
+#DBD7CACC          
+#CB7676        location
+#DBD7CACC       
+#80A665        / 
+#DBD7CACC      {
+#DBD7CACC           
+#4D9375         proxy_pass 
+#DBD7CACC           http://127.0.0.1:8080
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC        }
+#DBD7CACC        
+#CB7676        upstream
+#DBD7CACC       
+#80A665        big_server_com 
+#DBD7CACC      {
+#DBD7CACC          
+#4D9375        server
+#DBD7CACC       127.0.0.3:8000 
+#BD976A        weight
+#CB7676        =
+#4C9A91        5
+#DBD7CACC      ;
+#DBD7CACC          server 127.0.0.3:8001 
+#BD976A        weight
+#CB7676        =
+#4C9A91        5
+#DBD7CACC      ;
+#DBD7CACC          server 192.168.0.1:8000;
+#DBD7CACC          
+#4D9375        server
+#DBD7CACC       192.168.0.1:8001;
+#DBD7CACC        }
+#DBD7CACC        
+#CB7676        server
+#DBD7CACC       { 
+#758575DD      # simple load balancing
+#DBD7CACC         
+#4D9375         listen 
+#DBD7CACC               
+#4C9A91        80
+#444444        ;
+#DBD7CACC         
+#4D9375         server_name 
+#DBD7CACC          big.server.com
+#444444        ;
+#DBD7CACC         
+#4D9375         access_log 
+#DBD7CACC           logs/big.server.access.log 
+#4D9375        main
+#444444        ;
+#DBD7CACC          
+#CB7676        location
+#DBD7CACC       
+#80A665        / 
+#DBD7CACC      {
+#DBD7CACC           
+#4D9375         proxy_pass 
+#DBD7CACC           http://big_server_com
+#444444        ;
+#DBD7CACC          }
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      # From https://www.nginx.com/resources/wiki/start/topics/examples/full/

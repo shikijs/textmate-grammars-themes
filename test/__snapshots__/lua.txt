@@ -1,0 +1,73 @@
+#BD976A        ball
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       {
+#DBD7CACC        
+#BD976A        xpos
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        60
+#DBD7CACC      ,
+#DBD7CACC        
+#BD976A        ypos
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        60
+#DBD7CACC      ,
+#444444          
+#758575DD      -- without the colon syntax, must mention self argument explicitly
+#DBD7CACC        
+#80A665        move
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        function
+#444444        (
+#DBD7CACC      self
+#444444        ,
+#DBD7CACC       newx
+#444444        ,
+#DBD7CACC       newy
+#444444        )
+#DBD7CACC          
+#C99076        self
+#DBD7CACC      .
+#80A665        xpos
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        newx
+#DBD7CACC          
+#C99076        self
+#DBD7CACC      .
+#80A665        ypos
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        newy
+#DBD7CACC        
+#4D9375        end
+#DBD7CACC      }
+#758575DD      -- using the colon, ball is passed as self automatically
+#80A665        ball
+#DBD7CACC      :
+#B8A965        move
+#DBD7CACC      (
+#4C9A91        100
+#DBD7CACC      , 
+#4C9A91        120
+#DBD7CACC      )
+#758575DD      -- using the dot, must pass self explicitly
+#BD976A        ball
+#DBD7CACC      .
+#B8A965        move
+#DBD7CACC      (
+#BD976A        ball
+#DBD7CACC      , 
+#4C9A91        100
+#DBD7CACC      , 
+#4C9A91        120
+#DBD7CACC      )
+#758575DD      -- From https://pico-8.fandom.com/wiki/Lua

@@ -14,7 +14,7 @@
   ],
   "repository": {
     "annotated_parameter": {
-      "begin": "(?x)\n\\s* ([a-zA-Z_]\\w*) \\s* (:)\\s* ([a-zA-Z_]\\w*)?\n",
+      "begin": "\\s*([a-zA-Z_]\\w*)\\s*(:)\\s*([a-zA-Z_]\\w*)?",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.function.language.gdscript"
@@ -498,7 +498,7 @@
       ]
     },
     "function_declaration": {
-      "begin": "(?x) \\s*\n(func) \\s+\n([a-zA-Z_]\\w*) \\s*\n(?=\\()",
+      "begin": "\\s*(func)\\s+([a-zA-Z_]\\w*)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.language.gdscript storage.type.function.gdscript"
@@ -560,7 +560,7 @@
           "match": "\\b(get):"
         },
         {
-          "begin": "(?x) \\s+\n(set) \\s*\n(?=\\()",
+          "begin": "\\s+(set)\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.gdscript"
@@ -681,7 +681,7 @@
               "name": "punctuation.separator.continuation.line.gdscript"
             }
           },
-          "end": "(?x)\n(?=^\\s*$)\n|\n(?! (\\s* [rR]? (\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))\n|\n(\\G $)  (?# '\\G' is necessary for ST)\n)\n",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))|(\\G$)(?#'\\G'isnecessaryforST))",
           "patterns": [
             {
               "include": "#base_expression"
@@ -849,7 +849,7 @@
               "name": "punctuation.separator.parameters.gdscript"
             }
           },
-          "match": "(?x)\n([a-zA-Z_]\\w*)\n\\s* (?: (,) | (?=[)#\\n=]))\n"
+          "match": "([a-zA-Z_]\\w*)\\s*(?:(,)|(?=[)#\\n=]))"
         },
         {
           "include": "#comment"
@@ -890,7 +890,7 @@
       "name": "variable.language.gdscript"
     },
     "signal_declaration": {
-      "begin": "(?x) \\s*\n(signal) \\s+\n([a-zA-Z_]\\w*) \\s*\n(?=\\()",
+      "begin": "\\s*(signal)\\s+([a-zA-Z_]\\w*)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.language.gdscript storage.type.function.gdscript"
@@ -919,7 +919,7 @@
           "name": "entity.name.function.gdscript"
         }
       },
-      "match": "(?x) \\s*\n(signal) \\s+\n([a-zA-Z_]\\w*)(?=[\\n\\s])",
+      "match": "\\s*(signal)\\s+([a-zA-Z_]\\w*)(?=[\\n\\s])",
       "name": "meta.signal.gdscript"
     },
     "square_braces": {
@@ -954,7 +954,7 @@
     "statement_keyword": {
       "patterns": [
         {
-          "match": "(?x)\n\\b(?<!\\.)(\ncontinue | assert | break | elif | else | if | pass | return | while )\\b\n",
+          "match": "\\b(?<!\\.)(continue|assert|break|elif|else|if|pass|return|while)\\b",
           "name": "keyword.control.flow.gdscript"
         },
         {
@@ -967,7 +967,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "(?x)\n^\\s*(\ncase | match\n)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n"
+          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
         }
       ]
     },
@@ -985,7 +985,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "(?x)\n(\n{{ | }}\n| (?:\n{\n\\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n(![rsa])?\n( : \\w? [<>=^]? [-+ ]? \\#?\n\\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?\n})\n)\n",
+          "match": "({{|}}|(?:{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+\\s]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
           "name": "meta.format.brace.gdscript"
         },
         {
@@ -1000,7 +1000,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "(?x)\n(\n{\n\\w* (\\.[[:alpha:]_]\\w* | \\[[^\\]'\"]+\\])*\n(![rsa])?\n(:)\n[^'\"{}\\n]* (?:\n\\{ [^'\"}\\n]*? \\} [^'\"{}\\n]*\n)*\n}\n)\n",
+          "match": "({\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?\\}[^'\"{}\\n]*)*})",
           "name": "meta.format.brace.gdscript"
         }
       ]
@@ -1011,7 +1011,7 @@
           "name": "constant.character.format.placeholder.other.gdscript"
         }
       },
-      "match": "(?x)\n(\n% (\\([\\w\\s]*\\))?\n[-+#0 ]*\n(\\d+|\\*)? (\\.(\\d+|\\*))?\n([hlL])?\n[diouxXeEfFgGcrsab%]\n)\n",
+      "match": "(%(\\([\\w\\s]*\\))?[-+#0\\s]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.gdscript"
     },
     "strings": {

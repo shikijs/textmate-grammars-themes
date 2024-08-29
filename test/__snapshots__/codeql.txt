@@ -1,0 +1,687 @@
+#758575DD      /**
+#758575DD       *
+#4D9375         @name
+#758575DD       LDAP query built from user-controlled sources
+#758575DD       *
+#4D9375         @description
+#758575DD       Building an LDAP query from user-controlled sources is vulnerable to insertion of
+#758575DD       *              malicious LDAP code by the user.
+#758575DD       *
+#4D9375         @kind
+#758575DD       path-problem
+#758575DD       *
+#4D9375         @problem.severity
+#758575DD       error
+#758575DD       *
+#4D9375         @id
+#758575DD       py/ldap-injection
+#758575DD       *
+#4D9375         @tags
+#758575DD       experimental
+#758575DD       *       security
+#758575DD       *       external/cwe/cwe-090
+#758575DD       */
+#4D9375        import
+#DBD7CACC       
+#5DA994        python
+#4D9375        import
+#DBD7CACC       
+#5DA994        experimental
+#444444        .
+#5DA994        semmle
+#444444        .
+#5DA994        python
+#444444        .
+#5DA994        security
+#444444        .
+#5DA994        injection
+#444444        .
+#5DA994        LDAP
+#4D9375        import
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        PathGraph
+#4D9375        from
+#DBD7CACC       
+#5DA994        LDAPInjectionFlowConfig
+#DBD7CACC       
+#BD976A        config
+#444444        ,
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        PathNode
+#DBD7CACC       
+#BD976A        source
+#444444        ,
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        PathNode
+#DBD7CACC       
+#BD976A        sink
+#4D9375        where
+#DBD7CACC       
+#BD976A        config
+#444444        .
+#80A665        hasFlowPath
+#444444        (
+#BD976A        source
+#444444        ,
+#DBD7CACC       
+#BD976A        sink
+#444444        )
+#4D9375        select
+#DBD7CACC       
+#BD976A        sink
+#444444        .
+#80A665        getNode
+#444444        (),
+#DBD7CACC       
+#BD976A        source
+#444444        ,
+#DBD7CACC       
+#BD976A        sink
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        $@ LDAP query parameter comes from $@.
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        sink
+#444444        .
+#80A665        getNode
+#444444        (),
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        This
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#80A665        source
+#444444        .
+#80A665        getNode
+#444444        (),
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        a user-provided value
+#C98A7D77      "
+#758575DD      // a concept
+#4D9375        module
+#DBD7CACC       
+#5DA994        LDAPEscape
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        abstract
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Range
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        abstract
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#80A665        getAnInput
+#444444        ();
+#DBD7CACC        
+#444444        }
+#444444        }
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAPEscape
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#5DA994        LDAPEscape
+#DBD7CACC      ::
+#5DA994        Range
+#DBD7CACC       
+#BD976A        range
+#444444        ;
+#DBD7CACC        
+#5DA994        LDAPEscape
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        this
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        range
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#80A665        getAnInput
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        result
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        range
+#444444        .
+#80A665        getAnInput
+#444444        ()
+#DBD7CACC       
+#444444        }
+#444444        }
+#758575DD      // a library modeling
+#CB7676        private
+#DBD7CACC       
+#4D9375        module
+#DBD7CACC       
+#5DA994        LDAP2
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        private
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAP2QueryMethods
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#4D9375        string
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#5DA994        LDAP2QueryMethods
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#C99076        this
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#444444        [
+#C98A7D77      "
+#C98A7D        search
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        search_s
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        search_st
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        search_ext
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        search_ext_s
+#C98A7D77      "
+#444444        ]
+#DBD7CACC          
+#444444        }
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#CB7676        private
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAP2Query
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        CallCfgNode
+#444444        ,
+#DBD7CACC       
+#5DA994        LDAPQuery
+#DBD7CACC      ::
+#5DA994        Range
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#BD976A        ldapQuery
+#444444        ;
+#DBD7CACC          
+#5DA994        LDAP2Query
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#4D9375        exists
+#444444        (
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        AttrRead
+#DBD7CACC       
+#BD976A        searchMethod
+#DBD7CACC       
+#444444        |
+#DBD7CACC              
+#C99076        this
+#444444        .
+#80A665        getFunction
+#444444        ()
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        searchMethod
+#DBD7CACC       
+#4D9375        and
+#DBD7CACC              
+#5DA994        API
+#DBD7CACC      ::
+#80A665        moduleImport
+#444444        (
+#C98A7D77      "
+#C98A7D        ldap
+#C98A7D77      "
+#444444        ).
+#80A665        getMember
+#444444        (
+#C98A7D77      "
+#C98A7D        initialize
+#C98A7D77      "
+#444444        ).
+#80A665        getACall
+#444444        ()
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC                
+#BD976A        searchMethod
+#444444        .
+#80A665        getObject
+#444444        ().
+#80A665        getALocalSource
+#444444        ()
+#DBD7CACC       
+#4D9375        and
+#DBD7CACC              
+#BD976A        searchMethod
+#444444        .
+#80A665        getAttributeName
+#444444        ()
+#DBD7CACC       
+#4D9375        instanceof
+#DBD7CACC       
+#5DA994        LDAP2QueryMethods
+#DBD7CACC       
+#4D9375        and
+#DBD7CACC              
+#444444        (
+#DBD7CACC                
+#BD976A        ldapQuery
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        this
+#444444        .
+#80A665        getArg
+#444444        (
+#4C9A91        0
+#444444        )
+#DBD7CACC                
+#4D9375        or
+#DBD7CACC                
+#444444        (
+#DBD7CACC                  
+#BD976A        ldapQuery
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        this
+#444444        .
+#80A665        getArg
+#444444        (
+#4C9A91        2
+#444444        )
+#DBD7CACC       
+#4D9375        or
+#DBD7CACC                  
+#BD976A        ldapQuery
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        this
+#444444        .
+#80A665        getArgByName
+#444444        (
+#C98A7D77      "
+#C98A7D        filterstr
+#C98A7D77      "
+#444444        )
+#DBD7CACC                
+#444444        )
+#DBD7CACC              
+#444444        )
+#DBD7CACC            
+#444444        )
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#80A665        getQuery
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        result
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        ldapQuery
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#CB7676        private
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAP2EscapeDNCall
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        CallCfgNode
+#444444        ,
+#DBD7CACC       
+#5DA994        LDAPEscape
+#DBD7CACC      ::
+#5DA994        Range
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#5DA994        LDAP2EscapeDNCall
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#C99076        this
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#5DA994        API
+#DBD7CACC      ::
+#80A665        moduleImport
+#444444        (
+#C98A7D77      "
+#C98A7D        ldap
+#C98A7D77      "
+#444444        ).
+#80A665        getMember
+#444444        (
+#C98A7D77      "
+#C98A7D        dn
+#C98A7D77      "
+#444444        ).
+#80A665        getMember
+#444444        (
+#C98A7D77      "
+#C98A7D        escape_dn_chars
+#C98A7D77      "
+#444444        ).
+#80A665        getACall
+#444444        ()
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#80A665        getAnInput
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        result
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        this
+#444444        .
+#80A665        getArg
+#444444        (
+#4C9A91        0
+#444444        )
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#CB7676        private
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAP2EscapeFilterCall
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        CallCfgNode
+#444444        ,
+#DBD7CACC       
+#5DA994        LDAPEscape
+#DBD7CACC      ::
+#5DA994        Range
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#5DA994        LDAP2EscapeFilterCall
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#C99076        this
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC              
+#5DA994        API
+#DBD7CACC      ::
+#80A665        moduleImport
+#444444        (
+#C98A7D77      "
+#C98A7D        ldap
+#C98A7D77      "
+#444444        ).
+#80A665        getMember
+#444444        (
+#C98A7D77      "
+#C98A7D        filter
+#C98A7D77      "
+#444444        ).
+#80A665        getMember
+#444444        (
+#C98A7D77      "
+#C98A7D        escape_filter_chars
+#C98A7D77      "
+#444444        ).
+#80A665        getACall
+#444444        ()
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#80A665        getAnInput
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        result
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C99076        this
+#444444        .
+#80A665        getArg
+#444444        (
+#4C9A91        0
+#444444        )
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // a taint flow config
+#4D9375        class
+#DBD7CACC       
+#5DA994        LDAPInjectionFlowConfig
+#DBD7CACC       
+#4D9375        extends
+#DBD7CACC       
+#5DA994        TaintTracking
+#DBD7CACC      ::
+#5DA994        Configuration
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#5DA994        LDAPInjectionFlowConfig
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C99076        this
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        LDAPInjectionFlowConfig
+#C98A7D77      "
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#CB7676        override
+#DBD7CACC       
+#4D9375        predicate
+#DBD7CACC       
+#80A665        isSource
+#444444        (
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#BD976A        source
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        source
+#DBD7CACC       
+#4D9375        instanceof
+#DBD7CACC       
+#5DA994        RemoteFlowSource
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#CB7676        override
+#DBD7CACC       
+#4D9375        predicate
+#DBD7CACC       
+#80A665        isSink
+#444444        (
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#BD976A        sink
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        sink
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        any
+#444444        (
+#5DA994        LDAPQuery
+#DBD7CACC       
+#BD976A        ldapQuery
+#444444        ).
+#80A665        getQuery
+#444444        ()
+#DBD7CACC       
+#444444        }
+#DBD7CACC        
+#CB7676        override
+#DBD7CACC       
+#4D9375        predicate
+#DBD7CACC       
+#80A665        isSanitizer
+#444444        (
+#5DA994        DataFlow
+#DBD7CACC      ::
+#5DA994        Node
+#DBD7CACC       
+#BD976A        sanitizer
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        sanitizer
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        any
+#444444        (
+#5DA994        LDAPEscape
+#DBD7CACC       
+#BD976A        ldapEsc
+#444444        ).
+#80A665        getAnInput
+#444444        ()
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/github/codeql/pull/5443/files

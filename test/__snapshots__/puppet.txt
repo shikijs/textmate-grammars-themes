@@ -1,0 +1,87 @@
+#CB7676        class
+#DBD7CACC       
+#5DA994        ntp::service
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       ! (
+#444444        $
+#BD976A        ntp::service_ensure
+#DBD7CACC       in 
+#444444        [
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        running
+#C98A7D77      '
+#DBD7CACC      , 
+#C98A7D77      '
+#C98A7D        stopped
+#C98A7D77      '
+#DBD7CACC       
+#444444        ]
+#DBD7CACC      ) {
+#DBD7CACC          
+#B8A965        fail
+#DBD7CACC      (
+#C98A7D77      '
+#C98A7D        service_ensure parameter must be running or stopped
+#C98A7D77      '
+#DBD7CACC      )
+#DBD7CACC        }
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        $
+#BD976A        ntp::service_manage
+#DBD7CACC       == 
+#CB7676        true
+#DBD7CACC       {
+#80A665            service { 
+#C98A7D77      '
+#C98A7D        ntp
+#C98A7D77      '
+#DBD7CACC      :
+#DBD7CACC            
+#C99076        ensure     
+#444444        =>
+#DBD7CACC       
+#444444        $
+#BD976A        ntp::service_ensure
+#DBD7CACC      ,
+#DBD7CACC            
+#C99076        enable     
+#444444        =>
+#DBD7CACC       
+#444444        $
+#BD976A        ntp::service_enable
+#DBD7CACC      ,
+#DBD7CACC            
+#C99076        name       
+#444444        =>
+#DBD7CACC       
+#444444        $
+#BD976A        ntp::service_name
+#DBD7CACC      ,
+#DBD7CACC            
+#C99076        provider   
+#444444        =>
+#DBD7CACC       
+#444444        $
+#BD976A        ntp::service_provider
+#DBD7CACC      ,
+#DBD7CACC            
+#C99076        hasstatus  
+#444444        =>
+#DBD7CACC       
+#4D9375        true
+#DBD7CACC      ,
+#DBD7CACC            
+#C99076        hasrestart 
+#444444        =>
+#DBD7CACC       
+#4D9375        true
+#DBD7CACC      ,
+#DBD7CACC          }
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      # From https://www.puppet.com/docs/puppet/8/bgtm.html

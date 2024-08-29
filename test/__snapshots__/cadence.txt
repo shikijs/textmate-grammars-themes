@@ -1,0 +1,61 @@
+#4D9375        pub
+#DBD7CACC       
+#CB7676        contract
+#DBD7CACC       
+#5DA994        HelloWorld
+#DBD7CACC       
+#444444        {
+#444444            
+#758575DD      // Declare a public field of type String.
+#444444            
+#758575DD      //
+#444444            
+#758575DD      // All fields must be initialized in the init() function.
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#CB7676        let
+#DBD7CACC       
+#5DA994        greeting
+#DBD7CACC      : 
+#CB7676        String
+#444444            
+#758575DD      // The init() function is required if the contract contains any fields.
+#DBD7CACC          
+#CB7676        init
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#C99076        self
+#DBD7CACC      .greeting 
+#444444        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Hello, World!
+#C98A7D77      "
+#DBD7CACC          
+#444444        }
+#444444            
+#758575DD      // Public function that returns our friendly greeting!
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#CB7676        fun
+#DBD7CACC       
+#80A665        hello
+#444444        ()
+#CB7676        :
+#DBD7CACC       
+#CB7676        String
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        return
+#DBD7CACC       
+#C99076        self
+#DBD7CACC      .greeting
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://docs.onflow.org/cadence/tutorial/02-hello-world/

@@ -1,0 +1,175 @@
+#4D9375        using
+#DBD7CACC       
+#5DA994        KCTest
+#444444        .
+#5DA994        Infrastructure
+#444444        .
+#5DA994        Database
+#444444        ;
+#4D9375        using
+#DBD7CACC       
+#5DA994        Microsoft
+#444444        .
+#5DA994        AspNetCore
+#444444        .
+#5DA994        Hosting
+#444444        ;
+#4D9375        using
+#DBD7CACC       
+#5DA994        Microsoft
+#444444        .
+#5DA994        EntityFrameworkCore
+#444444        ;
+#4D9375        using
+#DBD7CACC       
+#5DA994        Microsoft
+#444444        .
+#5DA994        Extensions
+#444444        .
+#5DA994        DependencyInjection
+#444444        ;
+#4D9375        using
+#DBD7CACC       
+#5DA994        Microsoft
+#444444        .
+#5DA994        Extensions
+#444444        .
+#5DA994        Hosting
+#444444        ;
+#CB7676        namespace
+#DBD7CACC       
+#5DA994        KCTest
+#444444        .
+#5DA994        API
+#444444        {
+#DBD7CACC          
+#CB7676        public
+#DBD7CACC       
+#CB7676        class
+#DBD7CACC       
+#5DA994        Program
+#DBD7CACC          
+#444444        {
+#DBD7CACC              
+#CB7676        public
+#DBD7CACC       
+#CB7676        static
+#DBD7CACC       
+#4D9375        void
+#DBD7CACC       
+#80A665        Main
+#444444        (
+#4D9375        string
+#444444        []
+#DBD7CACC       
+#80A665        args
+#444444        )
+#DBD7CACC              
+#444444        {
+#DBD7CACC                  
+#CB7676        var
+#DBD7CACC       
+#80A665        host
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        CreateHostBuilder
+#444444        (
+#BD976A        args
+#444444        ).
+#80A665        Build
+#444444        ();
+#DBD7CACC                  
+#4D9375        using
+#DBD7CACC       
+#444444        (
+#CB7676        var
+#DBD7CACC       
+#80A665        scope
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        host
+#444444        .
+#BD976A        Services
+#444444        .
+#80A665        CreateScope
+#444444        ())
+#DBD7CACC                  
+#444444        {
+#DBD7CACC                      
+#CB7676        var
+#DBD7CACC       
+#80A665        db
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        scope
+#444444        .
+#BD976A        ServiceProvider
+#444444        .
+#80A665        GetRequiredService
+#444444        <
+#5DA994        KCTestContext
+#444444        >();
+#DBD7CACC                      
+#BD976A        db
+#444444        .
+#BD976A        Database
+#444444        .
+#80A665        Migrate
+#444444        ();
+#DBD7CACC                  
+#444444        }
+#DBD7CACC                  
+#BD976A        host
+#444444        .
+#80A665        Run
+#444444        ();
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#CB7676        public
+#DBD7CACC       
+#CB7676        static
+#DBD7CACC       
+#5DA994        IHostBuilder
+#DBD7CACC       
+#80A665        CreateHostBuilder
+#444444        (
+#4D9375        string
+#444444        []
+#DBD7CACC       
+#80A665        args
+#444444        )
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC                  
+#BD976A        Host
+#444444        .
+#80A665        CreateDefaultBuilder
+#444444        (
+#BD976A        args
+#444444        )
+#DBD7CACC                      
+#444444        .
+#80A665        ConfigureWebHostDefaults
+#444444        (
+#80A665        webBuilder
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC                      
+#444444        {
+#DBD7CACC                          
+#BD976A        webBuilder
+#444444        .
+#80A665        UseStartup
+#444444        <
+#5DA994        Startup
+#444444        >();
+#DBD7CACC                      
+#444444        });
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/Jadhielv/KCTest/blob/master/Backend/src/KCTest.API/Program.cs

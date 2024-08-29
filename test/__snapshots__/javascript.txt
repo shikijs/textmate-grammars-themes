@@ -1,0 +1,194 @@
+#CB7676        function
+#DBD7CACC       
+#80A665        resolveAfter2Seconds
+#444444        (
+#BD976A        x
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#CB7676        new
+#DBD7CACC       
+#B8A965        Promise
+#444444        ((
+#BD976A        resolve
+#444444        )
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#80A665        setTimeout
+#444444        (()
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#80A665        resolve
+#444444        (
+#BD976A        x
+#444444        );
+#DBD7CACC          
+#444444        },
+#DBD7CACC       
+#4C9A91        2000
+#444444        );
+#DBD7CACC        
+#444444        });
+#444444        }
+#758575DD      // async function expression assigned to a variable
+#CB7676        const
+#DBD7CACC       
+#80A665        add
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#444444        (
+#BD976A        x
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        a
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#80A665        resolveAfter2Seconds
+#444444        (
+#4C9A91        20
+#444444        );
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        b
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#80A665        resolveAfter2Seconds
+#444444        (
+#4C9A91        30
+#444444        );
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        a
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        b
+#444444        ;
+#444444        };
+#80A665        add
+#444444        (
+#4C9A91        10
+#444444        ).
+#80A665        then
+#444444        ((
+#BD976A        v
+#444444        )
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        v
+#444444        );
+#DBD7CACC       
+#758575DD      // prints 60 after 4 seconds.
+#444444        });
+#758575DD      // async function expression used as an IIFE
+#444444        (
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#444444        (
+#BD976A        x
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        p1
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        resolveAfter2Seconds
+#444444        (
+#4C9A91        20
+#444444        );
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        p2
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        resolveAfter2Seconds
+#444444        (
+#4C9A91        30
+#444444        );
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#444444        (
+#4D9375        await
+#DBD7CACC       
+#BD976A        p1
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#444444        (
+#4D9375        await
+#DBD7CACC       
+#BD976A        p2
+#444444        );
+#444444        })(
+#4C9A91        10
+#444444        ).
+#80A665        then
+#444444        ((
+#BD976A        v
+#444444        )
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        v
+#444444        );
+#DBD7CACC       
+#758575DD      // prints 60 after 2 seconds.
+#444444        });
+#758575DD      // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function

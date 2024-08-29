@@ -1,0 +1,30 @@
+#DBD7CACC      $ cat file1.txt                                                                                                                            
+#DBD7CACC      cat                                                                                                                                              
+#DBD7CACC      mv                                                                                                                                               
+#DBD7CACC      comm                                                                                                                                             
+#DBD7CACC      cp 
+#DBD7CACC      $ cat file2.txt
+#DBD7CACC      cat                                                                                                                                              
+#DBD7CACC      cp                                                                                                                                               
+#DBD7CACC      diff                                                                                                                                             
+#DBD7CACC      comm
+#DBD7CACC                                                                                                         
+#DBD7CACC      $ diff -c file1.txt file2.txt                                                                                                              
+#444444        ***
+#FDAEB7         file1.txt   Thu Jan 11 08:52:37 2018                                                                                                         
+#444444        ---
+#FDAEB7         file2.txt   Thu Jan 11 08:53:01 2018                                                                                                         
+#DBD7CACC      ***************                                                                                                                                  
+#444444        ***
+#FDAEB7         1,4 ****                                                                                                                                     
+#DBD7CACC        cat                                                                                                                                            
+#FDAEB7        - mv                                                                                                                                             
+#FDAEB7        - comm                                                                                                                                           
+#DBD7CACC        cp                                                                                                                                             
+#444444        ---
+#FDAEB7         1,4 ----                                                                                                                                     
+#DBD7CACC        cat                                                                                                                                            
+#DBD7CACC        cp                                                                                                                                             
+#85E89D        + diff                                                                                                                                           
+#85E89D        + comm
+#758575DD      # From https://www.geeksforgeeks.org/diff-command-linux-examples/

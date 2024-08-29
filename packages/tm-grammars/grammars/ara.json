@@ -220,7 +220,7 @@
               "name": "punctuation.separator.decimal.period.ara"
             }
           },
-          "match": "(?x)\n(?:\n(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|\n[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|\n[0-9]+(?:_[0-9]+)*[eE][+-]?[0-9]+(?:_[0-9]+)*\n)",
+          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+-]?[0-9]+(?:_[0-9]+)*)",
           "name": "constant.numeric.decimal.ara"
         },
         {
@@ -285,27 +285,27 @@
         },
         {
           "comment": "arrow method call, arrow property access",
-          "match": "(?x)\n(?:\n-> | \\?->\n)",
+          "match": "(?:->|\\?->)",
           "name": "keyword.operator.arrow.ara"
         },
         {
           "comment": "double arrow key-value pair",
-          "match": "(?x)\n(?:\n=>\n)",
+          "match": "(?:=>)",
           "name": "keyword.operator.double-arrow.ara"
         },
         {
           "comment": "static method call, static property access",
-          "match": "(?x)\n(?:\n::\n)",
+          "match": "(?:::)",
           "name": "keyword.operator.static.ara"
         },
         {
           "comment": "closure creation",
-          "match": "(?x)\n(?:\n\\(\\.\\.\\.\\)\n)",
+          "match": "(?:\\(\\.\\.\\.\\))",
           "name": "keyword.operator.closure.ara"
         },
         {
           "comment": "spread operator",
-          "match": "(?x)\n(?:\n\\.\\.\\.\n)",
+          "match": "(?:\\.\\.\\.)",
           "name": "keyword.operator.spread.ara"
         },
         {

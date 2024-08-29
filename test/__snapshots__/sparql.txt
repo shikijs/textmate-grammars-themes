@@ -1,0 +1,57 @@
+#DBD7CACC      PREFIX foaf: 
+#B8A965        <
+#DBD7CACC      http:
+#B8A965        //
+#DBD7CACC      xmlns.com
+#B8A965        /
+#DBD7CACC      foaf
+#B8A965        /
+#DBD7CACC      0.1
+#B8A965        />
+#4D9375        SELECT
+#DBD7CACC       
+#C99076        ?name
+#DBD7CACC       (
+#B8A965        COUNT
+#DBD7CACC      (
+#C99076        ?friend
+#DBD7CACC      ) 
+#4D9375        AS
+#DBD7CACC       
+#C99076        ?count
+#DBD7CACC      )
+#4D9375        WHERE
+#DBD7CACC       { 
+#DBD7CACC          
+#C99076        ?person
+#DBD7CACC       foaf:name 
+#C99076        ?name
+#DBD7CACC       . 
+#DBD7CACC          
+#C99076        ?person
+#DBD7CACC       foaf:knows 
+#C99076        ?friend
+#DBD7CACC       . 
+#DBD7CACC      } 
+#4D9375        GROUP
+#DBD7CACC       
+#4D9375        BY
+#DBD7CACC       
+#C99076        ?person
+#DBD7CACC       
+#C99076        ?name
+#DBD7CACC      # 
+#4D9375        From
+#DBD7CACC       https:
+#B8A965        //
+#DBD7CACC      www.w3.org
+#B8A965        /
+#DBD7CACC      TR
+#B8A965        /
+#DBD7CACC      sparql11
+#B8A965        -
+#DBD7CACC      overview
+#B8A965        /
+#DBD7CACC      #sparql11
+#B8A965        -
+#DBD7CACC      query

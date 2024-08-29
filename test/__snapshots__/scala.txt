@@ -1,0 +1,90 @@
+#4D9375        class
+#DBD7CACC       
+#80A665        Date
+#DBD7CACC      (
+#BD976A        y
+#DBD7CACC      : 
+#80A665        Int
+#DBD7CACC      , 
+#BD976A        m
+#DBD7CACC      : 
+#80A665        Int
+#DBD7CACC      , 
+#BD976A        d
+#DBD7CACC      : 
+#80A665        Int
+#DBD7CACC      ) 
+#4D9375        extends
+#DBD7CACC       
+#80A665        Ord
+#CB7676        :
+#444444          
+#758575DD      // previous decls here
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        <
+#DBD7CACC      (
+#BD976A        that
+#DBD7CACC      : 
+#80A665        Any
+#DBD7CACC      )
+#CB7676        :
+#DBD7CACC       
+#80A665        Boolean
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       that 
+#4D9375        match
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       
+#BD976A        d
+#DBD7CACC      : 
+#80A665        Date
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC            (year 
+#CB7676        <
+#DBD7CACC       d.year) 
+#CB7676        ||
+#DBD7CACC            (year 
+#CB7676        ==
+#DBD7CACC       d.year 
+#CB7676        &&
+#DBD7CACC       (month 
+#CB7676        <
+#DBD7CACC       d.month 
+#CB7676        ||
+#DBD7CACC                               (month 
+#CB7676        ==
+#DBD7CACC       d.month 
+#CB7676        &&
+#DBD7CACC       day 
+#CB7676        <
+#DBD7CACC       d.day)))
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       _ 
+#CB7676        =>
+#DBD7CACC       sys.error(
+#C98A7D77      "
+#C98A7D        cannot compare 
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       that 
+#CB7676        +
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D         and a Date
+#C98A7D77      "
+#DBD7CACC      )
+#DBD7CACC        
+#4D9375        end
+#DBD7CACC       
+#80A665        <
+#4D9375        end
+#DBD7CACC       
+#5DA994        Date
+#758575DD      // From https://docs.scala-lang.org/tutorials/scala-for-java-programmers.html

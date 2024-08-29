@@ -1,0 +1,95 @@
+#758575DD      #!/usr/bin/perl
+#4D9375        use
+#DBD7CACC       strict;
+#4D9375        use
+#DBD7CACC       warnings;
+#758575DD      # first, create your message
+#4D9375        use
+#DBD7CACC       Email::MIME;
+#CB7676        my
+#DBD7CACC       
+#444444        $
+#BD976A        message
+#DBD7CACC       = Email::MIME
+#CB7676        ->
+#DBD7CACC      create(
+#DBD7CACC        
+#C99076        header_str
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       [
+#DBD7CACC          
+#C99076        From
+#DBD7CACC          
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        you@example.com
+#C98A7D77      '
+#DBD7CACC      ,
+#DBD7CACC          
+#C99076        To
+#DBD7CACC            
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        friend@example.com
+#C98A7D77      '
+#DBD7CACC      ,
+#DBD7CACC          
+#C99076        Subject
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Happy birthday!
+#C98A7D77      '
+#DBD7CACC      ,
+#DBD7CACC        ],
+#DBD7CACC        
+#C99076        attributes
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       {
+#DBD7CACC          
+#C99076        encoding
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        quoted-printable
+#C98A7D77      '
+#DBD7CACC      ,
+#DBD7CACC          
+#C99076        charset
+#DBD7CACC        
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        ISO-8859-1
+#C98A7D77      '
+#DBD7CACC      ,
+#DBD7CACC        },
+#DBD7CACC        
+#C99076        body_str
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Happy birthday to you!
+#C99076        \n
+#C98A7D77      "
+#DBD7CACC      ,
+#DBD7CACC      );
+#758575DD      # send the message
+#4D9375        use
+#DBD7CACC       Email::Sender::Simple 
+#C98A7D77      qw(
+#C98A7D        sendmail
+#C98A7D77      )
+#DBD7CACC      ;
+#DBD7CACC      sendmail(
+#444444        $
+#BD976A        message
+#DBD7CACC      );
+#758575DD      # From https://learn.perl.org/examples/email.html

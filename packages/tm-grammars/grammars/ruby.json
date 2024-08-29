@@ -219,7 +219,7 @@
       "name": "variable.other.constant.ruby"
     },
     {
-      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )\n\\s*(\\()\n",
+      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?))\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -327,7 +327,7 @@
       }
     },
     {
-      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )\n[ \\t]\n(?=[ \\t]*[^\\s#;])\n",
+      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?))[\\s\\t](?=[\\s\\t]*[^\\s#;])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -379,7 +379,7 @@
         }
       },
       "comment": " the optional name is just to catch the def also without a method-name",
-      "match": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\b\n( \\s+\n( (?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) ) )?\n",
+      "match": "(?=def\\b)(?<=^|\\s)(def)\\b(\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|!~|>[>=]?|<=>|<[<=]?|[%&`/\\|^]|\\*\\*?|=?~|[-+]@?|\\[\\]=?)))?",
       "name": "meta.function.method.without-arguments.ruby"
     },
     {
@@ -515,7 +515,7 @@
       "include": "#percent_literals"
     },
     {
-      "begin": "(?x)\n(?:\n^\n| (?<=\n[=>~(?:\\[,|&;]\n| [\\s;]if\\s\n| [\\s;]elsif\\s\n| [\\s;]while\\s\n| [\\s;]unless\\s\n| [\\s;]when\\s\n| [\\s;]assert_match\\s\n| [\\s;]or\\s\n| [\\s;]and\\s\n| [\\s;]not\\s\n| [\\s.]index\\s\n| [\\s.]scan\\s\n| [\\s.]sub\\s\n| [\\s.]sub!\\s\n| [\\s.]gsub\\s\n| [\\s.]gsub!\\s\n| [\\s.]match\\s\n)\n| (?<=\n^when\\s\n| ^if\\s\n| ^elsif\\s\n| ^while\\s\n| ^unless\\s\n)\n)\n\\s*((/))(?![*+{}?])\n",
+      "begin": "(?:^|(?<=[=>~(?:\\[,|&;]|[\\s;]if\\s|[\\s;]elsif\\s|[\\s;]while\\s|[\\s;]unless\\s|[\\s;]when\\s|[\\s;]assert_match\\s|[\\s;]or\\s|[\\s;]and\\s|[\\s;]not\\s|[\\s.]index\\s|[\\s.]scan\\s|[\\s.]sub\\s|[\\s.]sub!\\s|[\\s.]gsub\\s|[\\s.]gsub!\\s|[\\s.]match\\s)|(?<=^when\\s|^if\\s|^elsif\\s|^while\\s|^unless\\s))\\s*((/))(?![*+{}?])",
       "captures": {
         "1": {
           "name": "string.regexp.classic.ruby"

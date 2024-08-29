@@ -83,31 +83,31 @@
     "language-functions": {
       "patterns": [
         {
-          "match": "(?x)\n(?<=(\\s|\\(|\\[))\n( do|or|and|else|quasiquote|begin|if|case|set!|\ncond|let|unquote|define|let\\*|unquote-splicing|delay|\nletrec)\n(?=(\\s|\\())",
+          "match": "(?<=(\\s|\\(|\\[))(do|or|and|else|quasiquote|begin|if|case|set!|cond|let|unquote|define|let\\*|unquote-splicing|delay|letrec)(?=(\\s|\\())",
           "name": "keyword.control.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions run a test, and return a boolean\n\t\t\t\t\t\tanswer.\n\t\t\t\t\t",
-          "match": "(?x)\n(?<=(\\s|\\())\n( char-alphabetic|char-lower-case|char-numeric|\nchar-ready|char-upper-case|char-whitespace|\n(?:char|string)(?:-ci)?(?:=|<=?|>=?)|\natom|boolean|bound-identifier=|char|complex|\nidentifier|integer|symbol|free-identifier=|inexact|\neof-object|exact|list|(?:input|output)-port|pair|\nreal|rational|zero|vector|negative|odd|null|string|\neq|equal|eqv|even|number|positive|procedure\n)\n(\\?)\n(?=(\\s|\\())\n",
+          "match": "(?<=(\\s|\\())(char-alphabetic|char-lower-case|char-numeric|char-ready|char-upper-case|char-whitespace|(?:char|string)(?:-ci)?(?:=|<=?|>=?)|atom|boolean|bound-identifier=|char|complex|identifier|integer|symbol|free-identifier=|inexact|eof-object|exact|list|(?:input|output)-port|pair|real|rational|zero|vector|negative|odd|null|string|eq|equal|eqv|even|number|positive|procedure)(\\?)(?=(\\s|\\())",
           "name": "support.function.boolean-test.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions change one type into another.\n\t\t\t\t\t",
-          "match": "(?x)\n(?<=(\\s|\\())\n( char->integer|exact->inexact|inexact->exact|\ninteger->char|symbol->string|list->vector|\nlist->string|identifier->symbol|vector->list|\nstring->list|string->number|string->symbol|\nnumber->string\n)\n(?=(\\s|\\())\n",
+          "match": "(?<=(\\s|\\())(char->integer|exact->inexact|inexact->exact|integer->char|symbol->string|list->vector|list->string|identifier->symbol|vector->list|string->list|string->number|string->symbol|number->string)(?=(\\s|\\())",
           "name": "support.function.convert-type.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\tThese functions are potentially dangerous because\n\t\t\t\t\t\tthey have side-effects which could affect other\n\t\t\t\t\t\tparts of the program.\n\t\t\t\t\t",
-          "match": "(?x)\n(?<=(\\s|\\())\n( set-(?:car|cdr)|\n(?:vector|string)-(?:fill|set)\n)\n(!)\n(?=(\\s|\\())\n",
+          "match": "(?<=(\\s|\\())(set-(?:car|cdr)|(?:vector|string)-(?:fill|set))(!)(?=(\\s|\\())",
           "name": "support.function.with-side-effects.scheme"
         },
         {
           "comment": "\n\t\t\t\t\t\t+, -, *, /, =, >, etc. \n\t\t\t\t\t",
-          "match": "(?x)\n(?<=(\\s|\\())\n( >=?|<=?|=|[*/+-])\n(?=(\\s|\\())\n",
+          "match": "(?<=(\\s|\\())(>=?|<=?|=|[*/+-])(?=(\\s|\\())",
           "name": "keyword.operator.arithmetic.scheme"
         },
         {
-          "match": "(?x)\n(?<=(\\s|\\())\n( append|apply|approximate|\ncall-with-current-continuation|call/cc|catch|\nconstruct-identifier|define-syntax|display|foo|\nfor-each|force|format|cd|gen-counter|gen-loser|\ngenerate-identifier|last-pair|length|let-syntax|\nletrec-syntax|list|list-ref|list-tail|load|log|\nmacro|magnitude|map|map-streams|max|member|memq|\nmemv|min|newline|nil|not|peek-char|rationalize|\nread|read-char|return|reverse|sequence|substring|\nsyntax|syntax-rules|transcript-off|transcript-on|\ntruncate|unwrap-syntax|values-list|write|write-char|\n\n\ncons|c(a|d){1,4}r|\n\n\nabs|acos|angle|asin|assoc|assq|assv|atan|ceiling|\ncos|floor|round|sin|sqrt|tan|\n(?:real|imag)-part|numerator|denominator\n\n\nmodulo|exp|expt|remainder|quotient|lcm|\n\n\ncall-with-(?:input|output)-file|\n(?:close|current)-(?:input|output)-port|\nwith-(?:input|output)-from-file|\nopen-(?:input|output)-file|\n\n\nchar-(?:downcase|upcase|ready)|\n\n\nmake-(?:polar|promise|rectangular|string|vector)\n\n\nstring(?:-(?:append|copy|length|ref))?|\nvector(?:-length|-ref)\n)\n(?=(\\s|\\())\n",
+          "match": "(?<=(\\s|\\())(append|apply|approximate|call-with-current-continuation|call/cc|catch|construct-identifier|define-syntax|display|foo|for-each|force|format|cd|gen-counter|gen-loser|generate-identifier|last-pair|length|let-syntax|letrec-syntax|list|list-ref|list-tail|load|log|macro|magnitude|map|map-streams|max|member|memq|memv|min|newline|nil|not|peek-char|rationalize|read|read-char|return|reverse|sequence|substring|syntax|syntax-rules|transcript-off|transcript-on|truncate|unwrap-syntax|values-list|write|write-char|cons|c(a|d){1,4}r|abs|acos|angle|asin|assoc|assq|assv|atan|ceiling|cos|floor|round|sin|sqrt|tan|(?:real|imag)-part|numerator|denominatormodulo|exp|expt|remainder|quotient|lcm|call-with-(?:input|output)-file|(?:close|current)-(?:input|output)-port|with-(?:input|output)-from-file|open-(?:input|output)-file|char-(?:downcase|upcase|ready)|make-(?:polar|promise|rectangular|string|vector)string(?:-(?:append|copy|length|ref))?|vector(?:-length|-ref))(?=(\\s|\\())",
           "name": "support.function.general.scheme"
         }
       ]
@@ -121,7 +121,7 @@
               "name": "punctuation.section.quoted.symbol.scheme"
             }
           },
-          "match": "(?x)\n(')\\s*\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n",
+          "match": "(')\\s*([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)",
           "name": "constant.other.symbol.scheme"
         },
         {
@@ -139,7 +139,7 @@
               "name": "punctuation.section.expression.end.scheme"
             }
           },
-          "match": "(?x)\n(')\\s*\n((\\()\\s*(\\)))\n",
+          "match": "(')\\s*((\\()\\s*(\\)))",
           "name": "constant.other.empty-list.schem"
         },
         {
@@ -231,7 +231,7 @@
           "include": "#comment"
         },
         {
-          "begin": "(?x)\n(?<=\\()\n(define)\\s+\n(\\()\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)\n((\\s+\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n)*\n)\\s*\n(\\))\n",
+          "begin": "(?<=\\()(define)\\s+(\\()([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*)((\\s+([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._]))*)\\s*(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -264,7 +264,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(?<=\\()\n(lambda)\\s+\n(\\()\n((?:\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n\\s+\n)*(?:\n([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\n)?)\n(\\))\n",
+          "begin": "(?<=\\()(lambda)\\s+(\\()((?:([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._])\\s+)*(?:([[:alnum:]][[:alnum:]!$%&*+-./:<=>?@^_~]*|[._]))?)(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"

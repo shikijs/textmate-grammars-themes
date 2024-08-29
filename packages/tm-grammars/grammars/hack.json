@@ -1009,7 +1009,7 @@
           ]
         },
         {
-          "begin": "(?x)\n\\s*((?:(?:final|abstract|public|private|protected|internal|static|async)\\s+)*)\n(function)\n(?:\\s+)\n(?:\n(__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic|dispose|disposeAsync)(?=[^a-zA-Z0-9_\\x7f-\\xff]))\n|\n([a-zA-Z0-9_]+)\n)",
+          "begin": "\\s*((?:(?:final|abstract|public|private|protected|internal|static|async)\\s+)*)(function)(?:\\s+)(?:(__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic|dispose|disposeAsync)(?=[^a-zA-Z0-9_\\x7f-\\xff]))|([a-zA-Z0-9_]+))",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -1074,7 +1074,7 @@
         },
         {
           "begin": "(?xi)\n\\s*\n(?=\n[a-z_0-9$\\\\]+(::)\n(?:\n([a-z_][a-z_0-9]*)\\s*\\(\n|\n((\\$+)[a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)\n|\n([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)\n)?\n)",
-          "end": "(?x)\n(::)\n(?:\n([A-Za-z_][A-Za-z_0-9]*)\\s*\\(\n|\n((\\$+)[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n|\n([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n)?",
+          "end": "(::)(?:([A-Za-z_][A-Za-z_0-9]*)\\s*\\(|((\\$+)[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)|([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.class.php"
@@ -1392,7 +1392,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?x)\n(->)\n(?:\n([A-Za-z_][A-Za-z_0-9]*)\\s*\\(\n|\n((\\$+)?[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n)?"
+          "match": "(->)(?:([A-Za-z_][A-Za-z_0-9]*)\\s*\\(|((\\$+)?[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?"
         }
       ]
     },
@@ -1488,7 +1488,7 @@
       ]
     },
     "regex-double-quoted": {
-      "begin": "(?x)\n(?<=re)\"/ (?=(\\\\.|[^\"/])++/[imsxeADSUXu]*\")",
+      "begin": "(?<=re)\"/(?=(\\\\.|[^\"/])++/[imsxeADSUXu]*\")",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.php"
@@ -1544,7 +1544,7 @@
       ]
     },
     "regex-single-quoted": {
-      "begin": "(?x)\n(?<=re)'/ (?=(\\\\.|[^'/])++/[imsxeADSUXu]*')",
+      "begin": "(?<=re)'/(?=(\\\\.|[^'/])++/[imsxeADSUXu]*')",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.php"
@@ -2281,7 +2281,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?x)\n(\\$+)\n[a-zA-Z_\\x{7f}-\\x{ff}]\n[a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\n\\b",
+          "match": "(\\$+)[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b",
           "name": "variable.other.php"
         }
       ]
@@ -2346,7 +2346,7 @@
             }
           },
           "comment": "Simple syntax: $foo, $foo[0], $foo[$bar], $foo->bar",
-          "match": "(?x)\n((\\$)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))\n(?:\n(->)(\\g<name>)\n|\n(\\[)\n(?:(\\d+)|((\\$)\\g<name>)|(\\w+))\n(\\])\n)?"
+          "match": "((\\$)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))(?:(->)(\\g<name>)|(\\[)(?:(\\d+)|((\\$)\\g<name>)|(\\w+))(\\]))?"
         },
         {
           "captures": {
@@ -2361,7 +2361,7 @@
             }
           },
           "comment": "Simple syntax with braces: \"foo${bar}baz\"",
-          "match": "(?x)\n((\\$\\{)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\}))"
+          "match": "((\\$\\{)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\}))"
         }
       ]
     },

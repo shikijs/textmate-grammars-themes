@@ -1,0 +1,72 @@
+#80A665        segment .text
+#DBD7CACC      	   
+#758575DD      ;code segment
+#DBD7CACC         global_start    
+#758575DD      ;must be declared for linker 
+#DBD7CACC      	
+#80A665        _start
+#444444        :
+#DBD7CACC      	           
+#758575DD      ;tell linker entry point
+#DBD7CACC         
+#CB7676        mov
+#DBD7CACC       
+#4D9375        edx
+#DBD7CACC      ,len	   
+#758575DD      ;message length
+#DBD7CACC         
+#CB7676        mov
+#DBD7CACC       
+#4D9375        ecx
+#DBD7CACC      ,msg     
+#758575DD      ;message to write
+#DBD7CACC         
+#CB7676        mov
+#DBD7CACC       
+#4D9375        ebx
+#DBD7CACC      ,
+#4C9A91        1
+#DBD7CACC      	   
+#758575DD      ;file descriptor (stdout)
+#DBD7CACC         
+#CB7676        mov
+#DBD7CACC       
+#4D9375        eax
+#DBD7CACC      ,
+#4C9A91        4
+#DBD7CACC      	   
+#758575DD      ;system call number (sys_write)
+#DBD7CACC         
+#CB7676        int
+#DBD7CACC       
+#4C9A91        0x80
+#DBD7CACC      	   
+#758575DD      ;call kernel
+#DBD7CACC         
+#CB7676        mov
+#DBD7CACC       
+#4D9375        eax
+#DBD7CACC      ,
+#4C9A91        1
+#DBD7CACC             
+#758575DD      ;system call number (sys_exit)
+#DBD7CACC         
+#CB7676        int
+#DBD7CACC       
+#4C9A91        0x80
+#DBD7CACC      	   
+#758575DD      ;call kernel
+#80A665        segment .data
+#DBD7CACC            
+#758575DD      ;data segment
+#DBD7CACC      msg	
+#CB7676        db
+#DBD7CACC       'Hello, world!',
+#4C9A91        0xa
+#DBD7CACC         
+#758575DD      ;our dear string
+#DBD7CACC      len	
+#B8A965        equ
+#DBD7CACC      	$ - msg          
+#758575DD      ;length of our dear string
+#758575DD      ;From https://www.tutorialspoint.com/assembly_programming/assembly_memory_segments.htm

@@ -1,0 +1,73 @@
+#4D9375        USE
+#DBD7CACC       AdventureWorks2022;
+#4D9375        GO
+#4D9375        IF
+#DBD7CACC       
+#B8A965        OBJECT_ID
+#DBD7CACC      (
+#C98A7D77      '
+#C98A7D        dbo.NewProducts
+#C98A7D77      '
+#DBD7CACC      , 
+#C98A7D77      '
+#C98A7D        U
+#C98A7D77      '
+#DBD7CACC      ) 
+#4D9375        IS NOT NULL
+#DBD7CACC          
+#4D9375        DROP
+#DBD7CACC       
+#4D9375        TABLE
+#DBD7CACC       
+#C99076        dbo
+#DBD7CACC      .
+#C99076        NewProducts
+#DBD7CACC      ;
+#4D9375        GO
+#4D9375        ALTER
+#DBD7CACC       
+#4D9375        DATABASE
+#DBD7CACC       AdventureWorks2022 
+#4D9375        SET
+#DBD7CACC       
+#4D9375        RECOVERY
+#DBD7CACC       
+#4D9375        BULK_LOGGED
+#DBD7CACC      ;
+#4D9375        GO
+#4D9375        SELECT
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4D9375        INTO
+#DBD7CACC       
+#C99076        dbo
+#DBD7CACC      .
+#C99076        NewProducts
+#4D9375        FROM
+#DBD7CACC       
+#C99076        Production
+#DBD7CACC      .
+#C99076        Product
+#4D9375        WHERE
+#DBD7CACC       ListPrice 
+#CB7676        >
+#DBD7CACC       $
+#4C9A91        25
+#4D9375        AND
+#DBD7CACC       ListPrice 
+#CB7676        <
+#DBD7CACC       $
+#4C9A91        100
+#DBD7CACC      ;
+#4D9375        GO
+#4D9375        ALTER
+#DBD7CACC       
+#4D9375        DATABASE
+#DBD7CACC       AdventureWorks2022 
+#4D9375        SET
+#DBD7CACC       
+#4D9375        RECOVERY
+#DBD7CACC       FULL;
+#4D9375        GO
+#758575DD      -- From https://learn.microsoft.com/en-us/sql/t-sql/queries/select-examples-transact-sql

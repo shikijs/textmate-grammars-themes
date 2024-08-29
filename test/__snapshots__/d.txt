@@ -1,0 +1,132 @@
+#CB7676        void
+#DBD7CACC       
+#80A665        main
+#DBD7CACC      ()
+#DBD7CACC      {
+#DBD7CACC          
+#4D9375        import
+#DBD7CACC       
+#BD976A        std.datetime.stopwatch
+#DBD7CACC       : 
+#BD976A        benchmark
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        import
+#DBD7CACC       
+#BD976A        std.math
+#CB7676        ,
+#DBD7CACC       
+#BD976A        std.parallelism
+#CB7676        ,
+#DBD7CACC       
+#BD976A        std.stdio
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        auto
+#DBD7CACC       
+#BD976A        logs
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        new 
+#CB7676        double
+#DBD7CACC      [
+#4C9A91        100_000
+#DBD7CACC      ];
+#DBD7CACC          
+#CB7676        auto
+#DBD7CACC       
+#BD976A        bm
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        benchmark
+#DBD7CACC      !({
+#DBD7CACC              
+#4D9375        foreach
+#DBD7CACC       (
+#BD976A        i
+#CB7676        ,
+#DBD7CACC       
+#CB7676        ref
+#DBD7CACC       
+#BD976A        elem
+#CB7676        ;
+#DBD7CACC       
+#BD976A        logs
+#DBD7CACC      )
+#DBD7CACC                  
+#BD976A        elem
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        log
+#DBD7CACC      (
+#4C9A91        1.0
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC      );
+#DBD7CACC          }
+#CB7676        ,
+#DBD7CACC       {
+#DBD7CACC              
+#80A665        foreach 
+#DBD7CACC      (
+#BD976A        i
+#CB7676        ,
+#DBD7CACC       
+#4D9375        ref
+#DBD7CACC       
+#BD976A        elem
+#DBD7CACC      ; 
+#BD976A        logs.parallel
+#DBD7CACC      )
+#DBD7CACC                  
+#BD976A        elem
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        log
+#DBD7CACC      (
+#4C9A91        1.0
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC      );
+#DBD7CACC          })(
+#4C9A91        100
+#DBD7CACC      ); 
+#758575DD      // number of executions of each tested function
+#DBD7CACC          
+#80A665        writefln
+#DBD7CACC      (
+#C98A7D        "Linear init: %s msecs"
+#CB7676        ,
+#DBD7CACC       
+#BD976A        bm
+#DBD7CACC      [
+#4C9A91        0
+#DBD7CACC      ].
+#BD976A        total
+#CB7676        !
+#C98A7D        "msecs"
+#DBD7CACC      );
+#DBD7CACC          
+#80A665        writefln
+#DBD7CACC      (
+#C98A7D        "Parallel init: %s msecs"
+#CB7676        ,
+#DBD7CACC       
+#BD976A        bm
+#DBD7CACC      [
+#4C9A91        1
+#DBD7CACC      ].
+#BD976A        total
+#CB7676        !
+#C98A7D        "msecs"
+#DBD7CACC      );
+#DBD7CACC      }
+#758575DD      // From https://dlang.org/

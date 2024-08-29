@@ -1,0 +1,40 @@
+#DBD7CACC      import {LitElement, html, customElement, property} from 'lit-element';
+#DBD7CACC      const style = /* css */`
+#DBD7CACC        .foo {
+#DBD7CACC          display: block;
+#DBD7CACC          border: 1px solid black;
+#DBD7CACC          padding: 16px;
+#DBD7CACC          max-width: 800px;
+#DBD7CACC          margin: 0 auto;
+#DBD7CACC        }
+#DBD7CACC      `;
+#DBD7CACC      @customElement('my-element')
+#DBD7CACC      class MyElement extends LitElement {
+#DBD7CACC        // Declare observed properties
+#DBD7CACC        @property()
+#DBD7CACC        adjective = 'awesome';
+#DBD7CACC        // Define the element's template
+#DBD7CACC        render() {
+#DBD7CACC          return html`
+#DBD7CACC            <!-- text binding -->
+#DBD7CACC            <div>${this.prop1}</div>
+#DBD7CACC            <!-- attribute binding -->
+#DBD7CACC            <div id="${this.prop2}">attribute binding</div>
+#DBD7CACC            <!-- boolean attribute binding -->
+#DBD7CACC            <div>
+#DBD7CACC              boolean attribute binding
+#DBD7CACC              <input type="text" ?disabled="${this.prop3}"/>
+#DBD7CACC            </div>
+#DBD7CACC            <!-- property binding -->
+#DBD7CACC            <div>
+#DBD7CACC              property binding
+#DBD7CACC              <input type="text" .value="${this.prop4}"/>
+#DBD7CACC            </div>
+#DBD7CACC            <!-- event handler binding -->
+#DBD7CACC            <div>event handler binding
+#DBD7CACC              <button @click="${this.clickHandler}">click</button>
+#DBD7CACC            </div>
+#DBD7CACC          `;
+#DBD7CACC        }
+#DBD7CACC      }
+#DBD7CACC      // from: https://lit.dev/docs/v1/components/decorators/

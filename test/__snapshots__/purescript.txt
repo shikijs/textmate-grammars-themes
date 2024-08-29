@@ -1,0 +1,552 @@
+#4D9375        module
+#DBD7CACC       
+#B8A965        Main
+#DBD7CACC       
+#4D9375        where
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.Either
+#DBD7CACC       (
+#5DA994        Either
+#80A665        (..)
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.Eq
+#DBD7CACC       (
+#80A665        class
+#DBD7CACC       
+#5DA994        Eq
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.Function.Uncurried
+#DBD7CACC       (
+#5DA994        Fn2
+#444444        ,
+#DBD7CACC       
+#80A665        mkFn2
+#444444        ,
+#DBD7CACC       
+#80A665        runFn2
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.List
+#DBD7CACC       (
+#5DA994        List
+#80A665        (..)
+#444444        ,
+#DBD7CACC       
+#80A665        filter
+#444444        ,
+#DBD7CACC       
+#80A665        (:)
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.Maybe
+#DBD7CACC       (
+#5DA994        Maybe
+#80A665        (..)
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Data.String.Regex
+#DBD7CACC       (
+#5DA994        Regex
+#444444        ,
+#DBD7CACC       
+#80A665        parseFlags
+#444444        ,
+#DBD7CACC       
+#80A665        regex
+#444444        ,
+#DBD7CACC       
+#80A665        replace
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Effect
+#DBD7CACC       (
+#5DA994        Effect
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Effect.Console
+#DBD7CACC       (
+#80A665        log
+#444444        ,
+#DBD7CACC       
+#80A665        logShow
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Partial.Unsafe
+#DBD7CACC       (
+#80A665        unsafePartial
+#DBD7CACC      )
+#4D9375        import
+#DBD7CACC       
+#B8A965        Prelude
+#DBD7CACC       (
+#5DA994        Unit
+#444444        ,
+#DBD7CACC       
+#80A665        discard
+#444444        ,
+#DBD7CACC       
+#80A665        map
+#444444        ,
+#DBD7CACC       
+#80A665        mod
+#444444        ,
+#DBD7CACC       
+#80A665        show
+#444444        ,
+#DBD7CACC       
+#80A665        (+)
+#444444        ,
+#DBD7CACC       
+#80A665        (==)
+#444444        ,
+#DBD7CACC       
+#80A665        ($)
+#444444        ,
+#DBD7CACC       
+#80A665        (/=)
+#444444        ,
+#DBD7CACC       
+#80A665        (<>)
+#DBD7CACC      )
+#CB7676        type
+#DBD7CACC       
+#5DA994        Dict
+#DBD7CACC       
+#BD976A        key
+#DBD7CACC       
+#BD976A        value
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        key
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#5DA994        Maybe
+#DBD7CACC       
+#BD976A        value
+#80A665        emptyDict
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#4D9375        ∀
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC      . 
+#5DA994        Dict
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC      emptyDict _ 
+#CB7676        =
+#DBD7CACC       
+#4D9375        Nothing
+#80A665        insertDict
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#4D9375        ∀
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC      . (
+#5DA994        Eq
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC      ) 
+#4D9375        =>
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#5DA994        Dict
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#5DA994        Dict
+#DBD7CACC       
+#BD976A        k
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC      insertDict key value dict 
+#CB7676        =
+#DBD7CACC        
+#CB7676        \
+#DBD7CACC      key' 
+#CB7676        →
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       key 
+#CB7676        ==
+#DBD7CACC       key'
+#DBD7CACC                  
+#4D9375        then
+#DBD7CACC       (
+#4D9375        Just
+#DBD7CACC       value)
+#DBD7CACC                  
+#4D9375        else
+#DBD7CACC       dict key'
+#758575DD      -- | Take a look at src/Main.js to see how we curry arguments
+#758575DD      -- | in Javascript
+#4D9375        foreign
+#DBD7CACC       
+#4D9375        import
+#DBD7CACC       
+#80A665        myAdd
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        →
+#DBD7CACC       
+#5DA994        Int
+#758575DD      -- | When performance is critical then use Data.Function.Uncurried
+#80A665        myAddFast
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Fn2
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC      myAddFast 
+#CB7676        =
+#DBD7CACC       mkFn2 
+#CB7676        \
+#DBD7CACC      x y 
+#CB7676        →
+#DBD7CACC       x 
+#CB7676        +
+#DBD7CACC       y
+#80A665        add10
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC      add10 
+#CB7676        =
+#DBD7CACC       myAdd 
+#4C9A91        10
+#80A665        modulo
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC      modulo dvr dvd 
+#CB7676        =
+#DBD7CACC       dvd 
+#444444        `
+#CB7676        mod
+#444444        `
+#DBD7CACC       dvr
+#80A665        isOdd
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC      isOdd 
+#CB7676        =
+#DBD7CACC       modulo 
+#4C9A91        2
+#80A665        getAllOdds
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        List
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        List
+#DBD7CACC       
+#5DA994        Int
+#DBD7CACC      getAllOdds 
+#CB7676        =
+#DBD7CACC       filter (
+#CB7676        \
+#DBD7CACC      x 
+#4D9375        ->
+#DBD7CACC       isOdd x 
+#CB7676        /=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      )
+#80A665        regexString
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Regex
+#DBD7CACC      regexString 
+#CB7676        =
+#DBD7CACC        unsafePartial
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       (regex 
+#C98A7D77      "
+#C98A7D        [aeiou]
+#C98A7D77      "
+#DBD7CACC       (parseFlags 
+#C98A7D77      "
+#C98A7D        ig
+#C98A7D77      "
+#DBD7CACC      )) 
+#4D9375        of
+#DBD7CACC            
+#4D9375        Right
+#DBD7CACC       r 
+#4D9375        ->
+#DBD7CACC       r
+#80A665        censor
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC      censor 
+#CB7676        =
+#DBD7CACC       replace regexString 
+#C98A7D77      "
+#C98A7D        *
+#C98A7D77      "
+#80A665        censorAll
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Array
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC       
+#4D9375        ->
+#DBD7CACC       
+#5DA994        Array
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC      censorAll 
+#CB7676        =
+#DBD7CACC       map censor
+#80A665        main
+#DBD7CACC       
+#4D9375        ::
+#DBD7CACC       
+#5DA994        Effect
+#DBD7CACC       
+#5DA994        Unit
+#DBD7CACC      main 
+#CB7676        =
+#DBD7CACC       
+#4D9375        do
+#DBD7CACC        log 
+#C98A7D77      "
+#C98A7D        Build curried functions
+#C98A7D77      "
+#DBD7CACC        log 
+#C98A7D77      "
+#C99076        \n
+#C98A7D        Advantage 1: Partially applying functions
+#C98A7D77      "
+#DBD7CACC        log     
+#CB7676        $
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        myAdd: 
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        <>
+#DBD7CACC       (show 
+#CB7676        $
+#DBD7CACC       myAdd 
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC      )
+#DBD7CACC        log 
+#C98A7D77      "
+#C99076        \n
+#C98A7D        Advantage 2: function types
+#C98A7D77      "
+#444444          
+#758575DD      -- notice key' == key ('a' == 'a'), so return Just 1
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       (insertDict 
+#C98A7D77      '
+#C98A7D        a
+#C98A7D77      '
+#DBD7CACC       (
+#4C9A91        1
+#4D9375        ::
+#5DA994        Int
+#DBD7CACC      ) emptyDict) 
+#C98A7D77      '
+#C98A7D        a
+#C98A7D77      '
+#444444          
+#758575DD      -- search for 'a' in Dict and return its value
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       insertDict 
+#C98A7D77      '
+#C98A7D        b
+#C98A7D77      '
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       (insertDict 
+#C98A7D77      '
+#C98A7D        a
+#C98A7D77      '
+#DBD7CACC       (
+#4C9A91        1
+#4D9375        ::
+#5DA994        Int
+#DBD7CACC      ) emptyDict) 
+#C98A7D77      '
+#C98A7D        a
+#C98A7D77      '
+#444444          
+#758575DD      -- the 'x' key is not in Dict, so fall back to Nothing
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       insertDict 
+#C98A7D77      '
+#C98A7D        b
+#C98A7D77      '
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       (insertDict 
+#C98A7D77      '
+#C98A7D        a
+#C98A7D77      '
+#DBD7CACC       (
+#4C9A91        1
+#4D9375        ::
+#5DA994        Int
+#DBD7CACC      ) emptyDict) 
+#C98A7D77      '
+#C98A7D        x
+#C98A7D77      '
+#DBD7CACC        log 
+#C98A7D77      "
+#C99076        \n
+#C98A7D        Currying Examples: add10, isOdd, isOdd21, getAllOdds
+#C98A7D77      "
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       add10 
+#4C9A91        2
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       isOdd 
+#4C9A91        2
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       isOdd 
+#4C9A91        21
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       getAllOdds (
+#4C9A91        1
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#4D9375        Nil
+#DBD7CACC      )
+#DBD7CACC        log 
+#C98A7D77      "
+#C99076        \n
+#C98A7D        Build up predicate functions
+#C98A7D77      "
+#DBD7CACC        log 
+#CB7676        $
+#DBD7CACC       censor 
+#C98A7D77      "
+#C98A7D        hello world
+#C98A7D77      "
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       censorAll [
+#C98A7D77      "
+#C98A7D        hello
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        world
+#C98A7D77      "
+#DBD7CACC      ]
+#DBD7CACC        log 
+#C98A7D77      "
+#C99076        \n
+#C98A7D        Use Data.Function.Uncurried when performance is critical
+#C98A7D77      "
+#DBD7CACC        logShow 
+#CB7676        $
+#DBD7CACC       runFn2 myAddFast 
+#4C9A91        10
+#DBD7CACC       
+#4C9A91        10
+#758575DD      -- From https://github.com/adkelley/javascript-to-purescript/blob/master/tut17/src/Main.purs

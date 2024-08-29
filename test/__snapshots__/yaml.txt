@@ -1,0 +1,158 @@
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        Check dist/
+#4D9375        on
+#444444        :
+#DBD7CACC        
+#B8A965        push
+#444444        :
+#DBD7CACC          
+#B8A965        branches
+#444444        :
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#C98A7D        main
+#DBD7CACC          
+#B8A965        paths-ignore
+#444444        :
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        **.md
+#C98A7D77      '
+#DBD7CACC        
+#B8A965        pull_request
+#444444        :
+#DBD7CACC          
+#B8A965        paths-ignore
+#444444        :
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        **.md
+#C98A7D77      '
+#B8A965        jobs
+#444444        :
+#DBD7CACC        
+#B8A965        check-dist
+#444444        :
+#DBD7CACC          
+#B8A965        runs-on
+#444444        :
+#DBD7CACC       
+#C98A7D        ubuntu-latest
+#DBD7CACC          
+#B8A965        steps
+#444444        :
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        uses
+#444444        :
+#DBD7CACC       
+#C98A7D        actions/checkout@v3
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        Set Node.js 16.x
+#DBD7CACC              
+#B8A965        uses
+#444444        :
+#DBD7CACC       
+#C98A7D        actions/setup-node@v3
+#DBD7CACC              
+#B8A965        with
+#444444        :
+#DBD7CACC                
+#B8A965        node-version
+#444444        :
+#DBD7CACC       
+#C98A7D        16.x
+#DBD7CACC                
+#B8A965        cache
+#444444        :
+#DBD7CACC       
+#C98A7D        npm
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        Install dependencies
+#DBD7CACC              
+#B8A965        run
+#444444        :
+#DBD7CACC       
+#C98A7D        npm ci
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        Rebuild the dist/ directory
+#DBD7CACC              
+#B8A965        run
+#444444        :
+#DBD7CACC       
+#4D9375        |
+#C98A7D                  npm run build:compile
+#C98A7D                  npm run build:package
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        Compare the expected and actual dist/ directories
+#DBD7CACC              
+#B8A965        run
+#444444        :
+#DBD7CACC       
+#4D9375        |
+#C98A7D                  if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+#C98A7D                    echo "Detected uncommitted changes after build.  See status below:"
+#C98A7D                    git diff
+#C98A7D                    exit 1
+#C98A7D                  fi
+#DBD7CACC              
+#B8A965        id
+#444444        :
+#DBD7CACC       
+#C98A7D        diff
+#444444              
+#758575DD      # If index.js was different than expected, upload the expected version as an artifact
+#DBD7CACC            
+#444444        -
+#DBD7CACC       
+#B8A965        uses
+#444444        :
+#DBD7CACC       
+#C98A7D        actions/upload-artifact@v3
+#DBD7CACC              
+#B8A965        if
+#444444        :
+#DBD7CACC       
+#C98A7D        ${{ failure() && steps.diff.conclusion == 'failure' }}
+#DBD7CACC              
+#B8A965        with
+#444444        :
+#DBD7CACC                
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D        dist
+#DBD7CACC                
+#B8A965        path
+#444444        :
+#DBD7CACC       
+#C98A7D        dist/
+#758575DD      # From https://github.com/actions/add-to-project/blob/main/.github/workflows/check-dist.yml

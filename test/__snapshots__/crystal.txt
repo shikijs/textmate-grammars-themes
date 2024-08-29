@@ -1,0 +1,132 @@
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Foo
+#444444        (
+#B8A965        T
+#444444        )
+#4D9375        end
+#B8A965        Foo
+#444444        (
+#B8A965        Int32
+#444444        )
+#758575DD      # ---
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Foo
+#4D9375        end
+#758575DD      # struct Bar < Foo
+#758575DD      # end
+#758575DD      # Error in ./struct/struct.cr:10: can't extend non-abstract struct Foo
+#4D9375        abstract
+#DBD7CACC       
+#4D9375        struct
+#DBD7CACC       
+#5DA994        AbstractFoo
+#4D9375        end
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Bar
+#80A665         
+#444444        <
+#80A665         AbstractFoo
+#4D9375        end
+#758575DD      # ---
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Test
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        initialize
+#444444        (@
+#BD976A        test
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#B8A965        String
+#444444        )
+#DBD7CACC        
+#4D9375        end
+#4D9375        end
+#B8A965        Test
+#444444        .
+#80A665        new
+#444444        (
+#C98A7D77      "
+#C98A7D        foo
+#C98A7D77      "
+#444444        )
+#758575DD      # ---
+#4D9375        struct
+#DBD7CACC       
+#5DA994        User
+#DBD7CACC        
+#B8A965        property
+#DBD7CACC       
+#BD976A        name
+#444444        ,
+#DBD7CACC       age
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        initialize
+#444444        (@
+#BD976A        name
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#B8A965        String
+#DBD7CACC      , 
+#444444        @
+#BD976A        age
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#B8A965        Int32
+#444444        )
+#DBD7CACC        
+#4D9375        end
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        print
+#DBD7CACC          
+#B8A965        puts
+#DBD7CACC       
+#C98A7D77      "
+#444444        #{
+#C98A7D        age}
+#C98A7D         - 
+#444444        #{
+#C98A7D        name}
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        end
+#4D9375        end
+#B8A965        puts
+#DBD7CACC       
+#B8A965        User
+#444444        .
+#80A665        new
+#444444        (
+#C98A7D77      "
+#C98A7D        osman
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        ).
+#DBD7CACC      name
+#B8A965        User
+#444444        .
+#80A665        new
+#444444        (
+#C98A7D77      "
+#C98A7D        ali
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#4C9A91        9
+#444444        ).
+#DBD7CACC      print
+#758575DD      # From https://github.com/askn/crystal-by-example/blob/master/struct/struct.cr

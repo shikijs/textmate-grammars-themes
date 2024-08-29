@@ -1,0 +1,71 @@
+#758575DD      /*
+#758575DD          SPDX-FileCopyrightText: 2019 Dan Leinir Turthra Jensen <admin@leinir.dk>
+#758575DD          SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+#758575DD      */
+#4D9375        import
+#DBD7CACC       
+#BD976A        QtQuick
+#DBD7CACC       
+#4C9A91        2.7
+#4D9375        import
+#DBD7CACC       
+#BD976A        org
+#DBD7CACC      .
+#BD976A        kde
+#DBD7CACC      .
+#BD976A        newstuff
+#DBD7CACC       
+#4C9A91        1.62
+#DBD7CACC       
+#4D9375        as
+#5DA994         NewStuff
+#DBD7CACC      NewStuff.
+#5DA994        Dialog
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        id
+#DBD7CACC      : 
+#BD976A        component
+#DBD7CACC          
+#BD976A        configFile
+#DBD7CACC      : 
+#BD976A        knsrcfile
+#DBD7CACC          
+#5DA994        Component
+#DBD7CACC      .
+#4D9375        onCompleted
+#DBD7CACC      : {
+#DBD7CACC              
+#BD976A        open
+#DBD7CACC      ();
+#DBD7CACC              
+#BD976A        if
+#DBD7CACC       (
+#BD976A        typeof
+#DBD7CACC      (
+#BD976A        knsProviderId
+#DBD7CACC      ) !== "
+#BD976A        undefined
+#DBD7CACC      " && 
+#BD976A        typeof
+#DBD7CACC      (
+#BD976A        knsEntryId
+#DBD7CACC      ) !== "
+#BD976A        undefined
+#DBD7CACC      ") {
+#DBD7CACC                  
+#BD976A        showEntryDetails
+#DBD7CACC      (
+#BD976A        knsProviderId
+#DBD7CACC      , 
+#BD976A        knsEntryId
+#DBD7CACC      );
+#DBD7CACC              }
+#DBD7CACC          }
+#DBD7CACC          onVisibleChanged: {
+#DBD7CACC              if (visible === false) {
+#DBD7CACC                  Qt.quit();
+#DBD7CACC              }
+#DBD7CACC          }
+#DBD7CACC      }
+#758575DD      // From https://invent.kde.org/frameworks/knewstuff/-/blob/master/src/tools/knewstuff-dialog/qml/dialog.qml

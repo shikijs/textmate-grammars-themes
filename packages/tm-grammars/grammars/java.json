@@ -34,7 +34,7 @@
           "name": "invalid.deprecated.package_name_not_lowercase.java"
         },
         {
-          "match": "(?x)\\b(?<!\\$)\n(abstract|assert|boolean|break|byte|case|catch|char|class|\nconst|continue|default|do|double|else|enum|extends|final|\nfinally|float|for|goto|if|implements|import|instanceof|int|\ninterface|long|native|new|non-sealed|package|permits|private|protected|public|\nreturn|sealed|short|static|strictfp|super|switch|syncronized|this|\nthrow|throws|transient|try|void|volatile|while|yield|\ntrue|false|null)\\b",
+          "match": "\\b(?<!\\$)(abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|non-sealed|package|permits|private|protected|public|return|sealed|short|static|strictfp|super|switch|syncronized|this|throw|throws|transient|try|void|volatile|while|yield|true|false|null)\\b",
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
@@ -78,7 +78,7 @@
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
-          "match": "(?x)\\b(?<!\\$)\n(abstract|assert|boolean|break|byte|case|catch|char|class|\nconst|continue|default|do|double|else|enum|extends|final|\nfinally|float|for|goto|if|implements|import|instanceof|int|\ninterface|long|native|new|non-sealed|package|permits|private|protected|public|\nreturn|sealed|short|static|strictfp|super|switch|syncronized|this|\nthrow|throws|transient|try|void|volatile|while|yield|\ntrue|false|null)\\b",
+          "match": "\\b(?<!\\$)(abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|non-sealed|package|permits|private|protected|public|return|sealed|short|static|strictfp|super|switch|syncronized|this|throw|throws|transient|try|void|volatile|while|yield|true|false|null)\\b",
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
@@ -1144,7 +1144,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "(?x)\n\\b(?<!\\$)\n0(x|X)\n(\n(?<!\\.)[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?[Ll]?(?!\\.)\n|\n(\n[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\\.?\n|\n([0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?)?\\.[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\n)\n[Pp][+-]?[0-9]([0-9_]*[0-9])?[FfDd]?\n)\n\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(x|X)((?<!\\.)[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?[Ll]?(?!\\.)|([0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\\.?|([0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?)?\\.[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?)[Pp][+-]?[0-9]([0-9_]*[0-9])?[FfDd]?)\\b(?!\\$)",
           "name": "constant.numeric.hex.java"
         },
         {
@@ -1156,7 +1156,7 @@
           "name": "constant.numeric.octal.java"
         },
         {
-          "match": "(?x)\n(?<!\\$)\n(\n\\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)\n|\n\\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n|\n\\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n|\n\\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n|\n(?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n|\n\\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n|\n\\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n|\n\\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b\n)\n(?!\\$)",
+          "match": "(?<!\\$)(\\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)|\\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b|\\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b|\\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b|(?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b|\\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b|\\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b|\\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b)(?!\\$)",
           "name": "constant.numeric.decimal.java"
         }
       ]
@@ -1838,7 +1838,7 @@
       ]
     },
     "variables": {
-      "begin": "(?x)\n(?=\n\\b\n(\n(void|boolean|byte|char|short|int|float|long|double)\n|\n(?>(\\w+\\.)*[A-Z_]+\\w*)\n)\n\\b\n\\s*\n(\n<[\\w<>,\\.?\\s\\[\\]]*>\n)?\n\\s*\n(\n(\\[\\])*\n)?\n\\s+\n[A-Za-z_$][\\w$]*\n([\\w\\[\\],$][\\w\\[\\],\\s]*)?\n\\s*(=|:|;)\n)",
+      "begin": "(?=\\b((void|boolean|byte|char|short|int|float|long|double)|(?>(\\w+\\.)*[A-Z_]+\\w*))\\b\\s*(<[\\w<>,\\.?\\s\\[\\]]*>)?\\s*((\\[\\])*)?\\s+[A-Za-z_$][\\w$]*([\\w\\[\\],$][\\w\\[\\],\\s]*)?\\s*(=|:|;))",
       "end": "(?=\\=|:|;)",
       "name": "meta.definition.variable.java",
       "patterns": [

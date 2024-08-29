@@ -1,0 +1,673 @@
+#4D9375        package
+#DBD7CACC       
+#80A665        com.example.kotlin
+#4D9375        import
+#DBD7CACC       
+#80A665        java.util.Random 
+#4D9375        as
+#80A665         Rand
+#4D9375        import
+#DBD7CACC       
+#80A665        android.support.v7.app.AppCompatActivity
+#4D9375        import
+#DBD7CACC       
+#80A665        org.amshove.kluent.`should equal` 
+#4D9375        as
+#80A665         Type
+#4D9375        fun
+#DBD7CACC       
+#80A665        main
+#DBD7CACC      (
+#5DA994        @NonNull
+#DBD7CACC       args: 
+#5DA994        Array
+#DBD7CACC      <
+#5DA994        String
+#DBD7CACC      >) {
+#DBD7CACC          
+#80A665        println
+#DBD7CACC      (
+#C98A7D        "Hello Kotlin! 
+#4D9375        ${
+#758575DD      /*test*/
+#4D9375        }
+#C98A7D        "
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       map 
+#444444        =
+#DBD7CACC       
+#80A665        mutableMapOf
+#DBD7CACC      (
+#C98A7D        "A"
+#DBD7CACC       to 
+#C98A7D        "B"
+#DBD7CACC      )
+#DBD7CACC          thing.
+#80A665        apply
+#DBD7CACC      (
+#C98A7D        "random string here 
+#C99076        \n\t\r
+#C98A7D        "
+#DBD7CACC      )
+#DBD7CACC          thing.
+#80A665        let
+#DBD7CACC       { test: ->    }
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       string 
+#444444        =
+#DBD7CACC       
+#C98A7D        "
+#4D9375        ${
+#80A665        getThing
+#C98A7D        ()
+#4D9375        }
+#C98A7D        "
+#DBD7CACC      }
+#4D9375        val
+#DBD7CACC       items 
+#444444        =
+#DBD7CACC       
+#80A665        listOf
+#DBD7CACC      (
+#C98A7D        "apple"
+#DBD7CACC      , 
+#C98A7D        "banana"
+#DBD7CACC      , 
+#C98A7D        "kiwifruit"
+#DBD7CACC      )
+#4D9375        var
+#DBD7CACC       x 
+#444444        =
+#DBD7CACC       
+#4C9A91        9
+#CB7676        const
+#DBD7CACC       
+#4D9375        val
+#DBD7CACC       CONSTANT 
+#444444        =
+#DBD7CACC       
+#4C9A91        99
+#5DA994        @get
+#DBD7CACC      :
+#5DA994        Rule
+#4D9375        val
+#DBD7CACC       activityRule 
+#444444        =
+#DBD7CACC       
+#80A665        ActivityTestRule
+#DBD7CACC      (SplashActivity::
+#80A665        class
+#DBD7CACC      .java)
+#4D9375        val
+#DBD7CACC       oneMillion 
+#444444        =
+#DBD7CACC       
+#4C9A91        1_000_000
+#4D9375        val
+#DBD7CACC       creditCardNumber 
+#444444        =
+#DBD7CACC       
+#4C9A91        1234_5678_9012_3456L
+#4D9375        val
+#DBD7CACC       socialSecurityNumber 
+#444444        =
+#DBD7CACC       
+#4C9A91        999_99_9999L
+#4D9375        val
+#DBD7CACC       hexBytes 
+#444444        =
+#DBD7CACC       
+#4C9A91        0xFF_EC_DE_5E
+#4D9375        val
+#DBD7CACC       float 
+#444444        =
+#DBD7CACC       
+#4C9A91        0.043_331F
+#4D9375        val
+#DBD7CACC       bytes 
+#444444        =
+#DBD7CACC       
+#4C9A91        0b11010010_01101001_10010100_10010010
+#4D9375        if
+#DBD7CACC      (test 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        ""
+#DBD7CACC      ) {
+#DBD7CACC          
+#4C9A91        1
+#DBD7CACC       and 
+#4C9A91        2
+#DBD7CACC       not 
+#4C9A91        3
+#DBD7CACC      } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC          
+#DBD7CACC      }
+#4D9375        fun
+#DBD7CACC       <
+#5DA994        T
+#DBD7CACC      > 
+#80A665        foo
+#DBD7CACC      () {
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       x  
+#444444        =
+#DBD7CACC       Bar::
+#80A665        class
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       y 
+#444444        =
+#DBD7CACC       hello?.test
+#DBD7CACC      }
+#CB7676        suspend
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC       <
+#5DA994        T
+#DBD7CACC      , 
+#5DA994        U
+#DBD7CACC      > 
+#80A665        SequenceBuilder
+#CB7676        <
+#DBD7CACC      Int
+#CB7676        >
+#DBD7CACC      .
+#80A665        yieldIfOdd
+#DBD7CACC      (x: 
+#5DA994        Int
+#DBD7CACC      ) {
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       (x 
+#CB7676        %
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ) 
+#80A665        yield
+#DBD7CACC      (x)
+#DBD7CACC      }
+#4D9375        val
+#DBD7CACC       function 
+#444444        =
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC      (
+#5DA994        @Inject
+#DBD7CACC       x: 
+#5DA994        Int
+#DBD7CACC      , y: 
+#5DA994        Int
+#DBD7CACC      , lamda: (
+#5DA994        A
+#DBD7CACC      , 
+#5DA994        B
+#DBD7CACC      ) -> 
+#5DA994        Unit
+#DBD7CACC      ): 
+#5DA994        Int
+#DBD7CACC       {
+#DBD7CACC          test.
+#80A665        test
+#DBD7CACC      ()
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       x 
+#CB7676        +
+#DBD7CACC       y;
+#DBD7CACC      }
+#CB7676        abstract
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC       
+#80A665        onCreate
+#DBD7CACC      (savedInstanceState: 
+#5DA994        Bundle
+#DBD7CACC      ?)
+#4D9375        fun
+#DBD7CACC       
+#80A665        isOdd
+#DBD7CACC      (x: 
+#5DA994        Int
+#DBD7CACC      ) 
+#444444        =
+#DBD7CACC       x 
+#CB7676        %
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        0
+#4D9375        fun
+#DBD7CACC       
+#80A665        isOdd
+#DBD7CACC      (s: 
+#5DA994        String
+#DBD7CACC      ) 
+#444444        =
+#DBD7CACC       s 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "brillig"
+#DBD7CACC       
+#CB7676        ||
+#DBD7CACC       s 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "slithy"
+#DBD7CACC       
+#CB7676        ||
+#DBD7CACC       s 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "tove"
+#4D9375        val
+#DBD7CACC       numbers 
+#444444        =
+#DBD7CACC       
+#80A665        listOf
+#DBD7CACC      (
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        2
+#DBD7CACC      , 
+#4C9A91        3
+#DBD7CACC      )
+#80A665        println
+#DBD7CACC      (numbers.
+#80A665        filter
+#DBD7CACC      (::
+#80A665        isOdd
+#DBD7CACC      ))
+#4D9375        fun
+#DBD7CACC       
+#80A665        foo
+#DBD7CACC      (node: 
+#5DA994        Node
+#DBD7CACC      ?): 
+#5DA994        String
+#DBD7CACC      ? {
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       parent 
+#444444        =
+#DBD7CACC       node.
+#80A665        getParent
+#DBD7CACC      () ?: 
+#4D9375        return
+#DBD7CACC       
+#CB7676        null
+#DBD7CACC      }
+#4D9375        interface
+#DBD7CACC       
+#5DA994        Greetable
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        fun
+#DBD7CACC       
+#80A665        greet
+#DBD7CACC      ()
+#DBD7CACC      }
+#CB7676        open
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Greeter
+#DBD7CACC      : 
+#5DA994        Greetable
+#DBD7CACC       {
+#DBD7CACC          
+#CB7676        companion
+#DBD7CACC       
+#4D9375        object
+#DBD7CACC       {
+#DBD7CACC              
+#CB7676        private
+#DBD7CACC       
+#CB7676        const
+#DBD7CACC       
+#4D9375        val
+#DBD7CACC       GREETING 
+#444444        =
+#DBD7CACC       
+#C98A7D        "Hello, World!"
+#DBD7CACC          }
+#DBD7CACC          
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC       
+#80A665        greet
+#DBD7CACC      () {
+#DBD7CACC              
+#80A665        println
+#DBD7CACC      (GREETING)
+#DBD7CACC          }
+#DBD7CACC      }
+#DBD7CACC      expect 
+#4D9375        class
+#DBD7CACC       
+#5DA994        Foo
+#DBD7CACC      (bar: 
+#5DA994        String
+#DBD7CACC      ) {
+#DBD7CACC          
+#4D9375        fun
+#DBD7CACC       
+#80A665        frob
+#DBD7CACC      () 
+#DBD7CACC      }
+#DBD7CACC      actual 
+#4D9375        class
+#DBD7CACC       
+#5DA994        Foo
+#DBD7CACC       actual 
+#80A665        constructor
+#DBD7CACC      (
+#4D9375        val
+#DBD7CACC       bar: 
+#5DA994        String
+#DBD7CACC      ) {
+#DBD7CACC          actual 
+#4D9375        fun
+#DBD7CACC       
+#80A665        frob
+#DBD7CACC      () {
+#DBD7CACC              
+#80A665        println
+#DBD7CACC      (
+#C98A7D        "Frobbing the $bar"
+#DBD7CACC      )
+#DBD7CACC          }
+#DBD7CACC      }
+#DBD7CACC      expect 
+#4D9375        fun
+#DBD7CACC       
+#80A665        formatString
+#DBD7CACC      (source: 
+#5DA994        String
+#DBD7CACC      , 
+#CB7676        vararg
+#DBD7CACC       args: 
+#5DA994        Any
+#DBD7CACC      ): 
+#5DA994        String
+#DBD7CACC      expect 
+#CB7676        annotation
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Test
+#DBD7CACC      actual 
+#4D9375        fun
+#DBD7CACC       
+#80A665        formatString
+#DBD7CACC      (source: 
+#5DA994        String
+#DBD7CACC      , 
+#CB7676        vararg
+#DBD7CACC       args: 
+#5DA994        Any
+#DBD7CACC      ) 
+#444444        =
+#DBD7CACC       String.
+#80A665        format
+#DBD7CACC      (source, args)
+#DBD7CACC      actual 
+#4D9375        typealias
+#DBD7CACC       
+#5DA994        Test
+#DBD7CACC       
+#444444        =
+#DBD7CACC       org.junit.Test
+#CB7676        sealed
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Expr
+#CB7676        data
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Const
+#DBD7CACC      (
+#4D9375        val
+#DBD7CACC       number: 
+#5DA994        Double
+#DBD7CACC      ) : 
+#5DA994        Expr
+#DBD7CACC      ()
+#CB7676        data
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Sum
+#DBD7CACC      (
+#4D9375        val
+#DBD7CACC       e1: 
+#5DA994        Expr
+#DBD7CACC      , 
+#4D9375        val
+#DBD7CACC       e2: 
+#5DA994        Expr
+#DBD7CACC      ) : 
+#5DA994        Expr
+#DBD7CACC      ()
+#4D9375        object
+#DBD7CACC       
+#5DA994        NotANumber
+#DBD7CACC       : 
+#5DA994        Expr
+#DBD7CACC      ()
+#5DA994        @file
+#DBD7CACC      :
+#5DA994        JvmName
+#DBD7CACC      ("
+#5DA994        Foo
+#DBD7CACC      ")
+#CB7676        private
+#DBD7CACC       
+#CB7676        sealed
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        InjectedClass
+#DBD7CACC      <
+#5DA994        T
+#DBD7CACC      , 
+#5DA994        U
+#DBD7CACC      > 
+#5DA994        @Inject
+#DBD7CACC       
+#80A665        constructor
+#DBD7CACC      (
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       test: 
+#5DA994        Int
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        50
+#DBD7CACC      , 
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC       anotherVar: 
+#5DA994        String
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D        "hello world"
+#DBD7CACC      ) : 
+#5DA994        SomeSuperClass
+#DBD7CACC      (
+#5DA994        test
+#DBD7CACC      , 
+#5DA994        anotherVar
+#DBD7CACC      ) {
+#DBD7CACC          
+#4D9375        init
+#DBD7CACC       {
+#DBD7CACC              
+#758575DD      //
+#DBD7CACC          }
+#DBD7CACC          
+#80A665        constructor
+#DBD7CACC      (param1: 
+#5DA994        String
+#DBD7CACC      , param2: 
+#5DA994        Int
+#DBD7CACC      ): 
+#5DA994        this
+#DBD7CACC      (
+#5DA994        param1
+#DBD7CACC      , 
+#5DA994        param2
+#DBD7CACC      ) {
+#DBD7CACC              
+#758575DD      //
+#DBD7CACC          }
+#DBD7CACC          
+#CB7676        companion
+#DBD7CACC       
+#4D9375        object
+#DBD7CACC       {
+#DBD7CACC              
+#758575DD      //
+#DBD7CACC          }
+#DBD7CACC      }
+#CB7676        annotation
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Suspendable
+#4D9375        val
+#DBD7CACC       f 
+#444444        =
+#DBD7CACC       
+#5DA994        @Suspendable
+#DBD7CACC       { Fiber.
+#80A665        sleep
+#DBD7CACC      (
+#4C9A91        10
+#DBD7CACC      ) }
+#CB7676        private
+#DBD7CACC       
+#CB7676        data
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Foo
+#DBD7CACC      (
+#DBD7CACC          
+#758575DD      /**
+#758575DD           * ```
+#758575DD           * ($)
+#758575DD           * ```
+#758575DD           */
+#DBD7CACC          
+#4D9375        val
+#DBD7CACC       variables: 
+#5DA994        Map
+#DBD7CACC      <
+#5DA994        String
+#DBD7CACC      , 
+#5DA994        String
+#DBD7CACC      >
+#DBD7CACC      )
+#CB7676        data
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Response
+#DBD7CACC      (
+#5DA994        @SerializedName
+#DBD7CACC      (
+#C98A7D        "param1"
+#DBD7CACC      ) 
+#4D9375        val
+#DBD7CACC       param1: 
+#5DA994        String
+#DBD7CACC      ,
+#DBD7CACC                          
+#5DA994        @SerializedName
+#DBD7CACC      (
+#C98A7D        "param2"
+#DBD7CACC      ) 
+#4D9375        val
+#DBD7CACC       param2: 
+#5DA994        String
+#DBD7CACC      ,
+#DBD7CACC                          
+#5DA994        @SerializedName
+#DBD7CACC      (
+#C98A7D        "param3"
+#DBD7CACC      ) 
+#4D9375        val
+#DBD7CACC       param3: 
+#5DA994        String
+#DBD7CACC      ) {
+#DBD7CACC      }
+#4D9375        object
+#DBD7CACC       
+#5DA994        DefaultListener
+#DBD7CACC       : 
+#5DA994        MouseAdapter
+#DBD7CACC      () {
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC       
+#80A665        mouseClicked
+#DBD7CACC      (e: 
+#5DA994        MouseEvent
+#DBD7CACC      ) { }
+#DBD7CACC          
+#CB7676        override
+#DBD7CACC       
+#4D9375        fun
+#DBD7CACC       
+#80A665        mouseEntered
+#DBD7CACC      (e: 
+#5DA994        MouseEvent
+#DBD7CACC      ) { }
+#DBD7CACC      }
+#4D9375        class
+#DBD7CACC       
+#5DA994        Feature
+#DBD7CACC       : 
+#5DA994        Node
+#DBD7CACC      (
+#C98A7D        "Title"
+#DBD7CACC      , 
+#C98A7D        "Content"
+#DBD7CACC      , 
+#C98A7D        "Description"
+#DBD7CACC      ) {
+#DBD7CACC      }
+#4D9375        class
+#DBD7CACC       
+#5DA994        Outer
+#DBD7CACC       {
+#DBD7CACC          
+#CB7676        inner
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        Inner
+#DBD7CACC       {}
+#DBD7CACC      }
+#758575DD      // From: https://github.com/nishtahir/language-kotlin/blob/master/snapshots/corpus.kt

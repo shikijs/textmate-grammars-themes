@@ -1,0 +1,55 @@
+#444444        <
+#B8A965        await
+#DBD7CACC      (
+#4D9375        slowPromise
+#DBD7CACC      ) 
+#BD976A        timeout
+#DBD7CACC      =5000
+#444444        >
+#DBD7CACC        
+#444444        <
+#BD976A        @then
+#444444        >
+#C98A7D        Done
+#444444        </
+#BD976A        @then
+#444444        >
+#DBD7CACC        
+#444444        <
+#BD976A        @catch
+#DBD7CACC      |
+#4D9375        err
+#DBD7CACC      |
+#444444        >
+#DBD7CACC          
+#444444        <
+#B8A965        if
+#DBD7CACC      (
+#4D9375        err
+#BD976A        .name
+#DBD7CACC       === "
+#4D9375        TimeoutError
+#DBD7CACC      ")
+#444444        >
+#C98A7D              Took too long to fetch the data!
+#DBD7CACC          
+#444444        </
+#B8A965        if
+#444444        >
+#DBD7CACC          
+#444444        <
+#B8A965        else
+#444444        >
+#C98A7D              Promise failed with ${err.message}.
+#DBD7CACC          
+#444444        </
+#B8A965        else
+#444444        >
+#DBD7CACC        
+#444444        </
+#BD976A        @catch
+#444444        >
+#444444        </
+#B8A965        await
+#444444        >
+#758575DD      <!-- from https://markojs.com/docs/core-tags/ -->

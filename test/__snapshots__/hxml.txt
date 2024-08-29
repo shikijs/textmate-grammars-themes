@@ -1,0 +1,10 @@
+#758575DD      # @install: lix --silent download "haxelib:/hxnodejs#12.1.0" into hxnodejs/12.1.0/haxelib
+#4D9375        -cp
+#DBD7CACC       ${HAXE_LIBCACHE}/hxnodejs/12.1.0/haxelib/src
+#4D9375        -D
+#DBD7CACC       hxnodejs=12.1.0
+#DBD7CACC      --macro allowPackage('sys')
+#758575DD      # should behave like other target defines and not be defined in macro context
+#DBD7CACC      --macro define('nodejs')
+#DBD7CACC      --macro _internal.SuppressDeprecated.run()
+#758575DD      # From https://github.com/vshaxe/vscode-checkstyle/blob/master/haxe_libraries/hxnodejs.hxml

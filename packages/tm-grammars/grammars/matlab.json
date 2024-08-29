@@ -376,7 +376,7 @@
     "classdef": {
       "patterns": [
         {
-          "begin": "(?x)\n(^\\s*)\n(classdef)\n\\b\\s*\n(.*)\n",
+          "begin": "(^\\s*)(classdef)\\b\\s*(.*)",
           "beginCaptures": {
             "2": {
               "name": "storage.type.class.matlab"
@@ -449,7 +449,7 @@
           "name": "meta.class.matlab",
           "patterns": [
             {
-              "begin": "(?x)\n(^\\s*)\n(properties)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
+              "begin": "(^\\s*)(properties)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.properties.matlab"
@@ -494,7 +494,7 @@
               ]
             },
             {
-              "begin": "(?x)\n(^\\s*)\n(methods)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
+              "begin": "(^\\s*)(methods)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.methods.matlab"
@@ -536,7 +536,7 @@
               ]
             },
             {
-              "begin": "(?x)\n(^\\s*)\n(events)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
+              "begin": "(^\\s*)(events)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.events.matlab"
@@ -578,7 +578,7 @@
               ]
             },
             {
-              "begin": "(?x)\n(^\\s*)\n(enumeration)\\b([^%]*)\n\\s*($|(?=%))\n",
+              "begin": "(^\\s*)(enumeration)\\b([^%]*)\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.enumeration.matlab"
@@ -742,7 +742,7 @@
     "function": {
       "patterns": [
         {
-          "begin": "(?x)\n(^\\s*)\n(function)\n\\s+\n(?:\n(?:\n(\\[) ([^\\]]*) (\\])\n| ([a-zA-Z][a-zA-Z0-9_]*)\n)\n\\s* = \\s*\n)?\n([a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*)\n\\s*\n",
+          "begin": "(^\\s*)(function)\\s+(?:(?:(\\[)\\s([^\\]]*)(\\])|([a-zA-Z][a-zA-Z0-9_]*))\\s*=\\s*)?([a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*)\\s*",
           "beginCaptures": {
             "2": {
               "name": "storage.type.function.matlab"
@@ -791,7 +791,7 @@
               ]
             },
             {
-              "begin": "(?x)\n(^\\s*)\n(arguments)\\b([^%]*)\n\\s*\n(\n\\( [^)]* \\)\n)?\n\\s*($|(?=%))\n",
+              "begin": "(^\\s*)(arguments)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.arguments.matlab"

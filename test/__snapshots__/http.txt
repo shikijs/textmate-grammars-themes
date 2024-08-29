@@ -1,0 +1,27 @@
+#758575DD      // Basic authentication
+#4D9375        GET
+#DBD7CACC       http://example.com
+#4D9375        Authorization:
+#DBD7CACC       
+#C98A7D        Basic username password
+#758575DD      ###
+#758575DD      // Digest authentication
+#4D9375        GET
+#DBD7CACC       http://example.com
+#4D9375        Authorization:
+#DBD7CACC       
+#C98A7D        Digest username password
+#758575DD      // The request body is provided in place
+#4D9375        POST
+#DBD7CACC       https://example.com:8080/api/html/post 
+#4D9375        HTTP
+#DBD7CACC      /
+#4C9A91        1.1
+#4D9375        Content-Type:
+#DBD7CACC       
+#C98A7D        application/json
+#4D9375        Cookie:
+#DBD7CACC       
+#C98A7D        key=first-value
+#DBD7CACC      { "key" : "value", "list": [1, 2, 3] }
+#758575DD      // From https://www.jetbrains.com/help/idea/exploring-http-syntax.html#use-multipart-form-data

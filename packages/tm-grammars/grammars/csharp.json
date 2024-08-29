@@ -115,7 +115,7 @@
     "anonymous-method-expression": {
       "patterns": [
         {
-          "begin": "(?x)\n((?:\\b(?:async|static)\\b\\s*)*)\n(?:\n(@?[_[:alpha:]][_[:alnum:]]*)\\b|\n(\\()\n(?<tuple>(?:[^()]|\\(\\g<tuple>\\))*)\n(\\))\n)\\s*\n(=>)",
+          "begin": "((?:\\b(?:async|static)\\b\\s*)*)(?:(@?[_[:alpha:]][_[:alnum:]]*)\\b|(\\()(?<tuple>(?:[^()]|\\(\\g<tuple>\\))*)(\\)))\\s*(=>)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -191,7 +191,7 @@
           ]
         },
         {
-          "begin": "(?x)\n((?:\\b(?:async|static)\\b\\s*)*)\n\\b(delegate)\\b\\s*",
+          "begin": "((?:\\b(?:async|static)\\b\\s*)*)\\b(delegate)\\b\\s*",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -313,7 +313,7 @@
       ]
     },
     "array-creation-expression": {
-      "begin": "(?x)\n\\b(new|stackalloc)\\b\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)?\\s*\n(?=\\[)",
+      "begin": "\\b(new|stackalloc)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.$1.cs"
@@ -346,7 +346,7 @@
           ]
         }
       },
-      "match": "(?x)\n(?<!\\.)\\b(as)\\b\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?(?!\\?))?\n(?:\\s*\n\\[\n\\s*(?:,\\s*)*\n\\]\n(?:\\s*\\?(?!\\?))?\n)*\n)\n)?"
+      "match": "(?<!\\.)\\b(as)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?(?!\\?))?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?(?!\\?))?)*))?"
     },
     "assignment-expression": {
       "begin": "(?:\\*|/|%|\\+|-|\\?\\?|\\&|\\^|<<|>>>?|\\|)?=(?!=|>)",
@@ -638,10 +638,10 @@
           "name": "punctuation.parenthesis.close.cs"
         }
       },
-      "match": "(?x)\n(\\()\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n(\\))(?=\\s*-*!*@?[_[:alnum:]\\(])"
+      "match": "(\\()\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(\\))(?=\\s*-*!*@?[_[:alnum:]\\(])"
     },
     "casted-constant-pattern": {
-      "begin": "(?x)\n(\\()\n([\\s.:@_[:alnum:]]+)\n(\\))\n(?=[\\s+\\-!~]*@?[_[:alnum:]('\"]+)",
+      "begin": "(\\()([\\s.:@_[:alnum:]]+)(\\))(?=[\\s+\\-!~]*@?[_[:alnum:]('\"]+)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.parenthesis.open.cs"
@@ -751,7 +751,7 @@
                   "name": "entity.name.variable.local.cs"
                 }
               },
-              "match": "(?x)\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n(?:(\\g<identifier>)\\b)?"
+              "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?:(\\g<identifier>)\\b)?"
             }
           ]
         },
@@ -798,7 +798,7 @@
       "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
-          "begin": "(?x)\n(\\b(record)\\b\\s+)?\n\\b(class)\\b\\s+\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*",
+          "begin": "(\\b(record)\\b\\s+)?\\b(class)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)\\s*",
           "beginCaptures": {
             "2": {
               "name": "storage.type.record.cs"
@@ -1116,7 +1116,7 @@
       "name": "keyword.control.context.$1.cs"
     },
     "conversion-operator-declaration": {
-      "begin": "(?x)\n(?<explicit_or_implicit_keyword>(?:\\b(?:explicit|implicit)))\\s*\n(?<operator_keyword>(?:\\b(?:operator)))\\s*\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n(?=\\()",
+      "begin": "(?<explicit_or_implicit_keyword>(?:\\b(?:explicit|implicit)))\\s*(?<operator_keyword>(?:\\b(?:operator)))\\s*(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1181,7 +1181,7 @@
           "name": "entity.name.variable.local.cs"
         }
       },
-      "match": "(?x)\n(?:\n\\b(var)\\b|\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\n)\\s+\n(\\g<identifier>)\\b\\s*\n(?=[,)\\]])"
+      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)\\]])"
     },
     "declaration-expression-tuple": {
       "captures": {
@@ -1199,7 +1199,7 @@
           "name": "entity.name.variable.tuple-element.cs"
         }
       },
-      "match": "(?x)\n(?:\n\\b(var)\\b|\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\n)\\s+\n(\\g<identifier>)\\b\\s*\n(?=[,)])"
+      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)])"
     },
     "declarations": {
       "patterns": [
@@ -1237,7 +1237,7 @@
       "match": "\\b(default)\\b"
     },
     "delegate-declaration": {
-      "begin": "(?x)\n(?:\\b(delegate)\\b)\\s+\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n(\\g<identifier>)\\s*\n(<([^<>]+)>)?\\s*\n(?=\\()",
+      "begin": "(?:\\b(delegate)\\b)\\s+(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.delegate.cs"
@@ -1389,7 +1389,7 @@
       ]
     },
     "element-access-expression": {
-      "begin": "(?x)\n(?:\n(?:(\\?)\\s*)?\n(\\.)\\s*|\n(->)\\s*\n)?\n(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*)?\n(?:(\\?)\\s*)?\n(?=\\[)",
+      "begin": "(?:(?:(\\?)\\s*)?(\\.)\\s*|(->)\\s*)?(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*)?(?:(\\?)\\s*)?(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.null-conditional.cs"
@@ -1556,7 +1556,7 @@
       ]
     },
     "event-declaration": {
-      "begin": "(?x)\n\\b(event)\\b\\s*\n(?<return_type>\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(\\g<identifier>)\\s*\n(?=\\{|;|,|=|//|/\\*|$)",
+      "begin": "\\b(event)\\b\\s*(?<return_type>(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(?=\\{|;|,|=|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.event.cs"
@@ -1632,7 +1632,7 @@
           "name": "entity.name.variable.parameter.cs"
         }
       },
-      "match": "(?x)\n(?:\\b(ref|params|out|in)\\b\\s*)?\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args><(?:[^<>]|\\g<type_args>)*>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)*\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n\\b(\\g<identifier>)\\b"
+      "match": "(?:\\b(ref|params|out|in)\\b\\s*)?(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args><(?:[^<>]|\\g<type_args>)*>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)*\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(\\g<identifier>)\\b"
     },
     "expression": {
       "patterns": [
@@ -1839,7 +1839,7 @@
       ]
     },
     "field-declaration": {
-      "begin": "(?x)\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?!=>|==)(?=,|;|=|$)",
+      "begin": "(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>|==)(?=,|;|=|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2033,7 +2033,7 @@
                   "name": "keyword.control.loop.in.cs"
                 }
               },
-              "match": "(?x)\n(?:\n(?:(\\bref)\\s+)?(\\bvar\\b)|\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\n)\\s+\n(\\g<identifier>)\\s+\n\\b(in)\\b"
+              "match": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s+\\b(in)\\b"
             },
             {
               "captures": {
@@ -2051,7 +2051,7 @@
                   "name": "keyword.control.loop.in.cs"
                 }
               },
-              "match": "(?x)\n(?:\\b(var)\\b\\s*)?\n(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s+\n\\b(in)\\b"
+              "match": "(?:\\b(var)\\b\\s*)?(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s+\\b(in)\\b"
             },
             {
               "include": "#expression"
@@ -2197,7 +2197,7 @@
           "name": "entity.name.variable.range-variable.cs"
         }
       },
-      "match": "(?x)\n\\b(into)\\b\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*"
+      "match": "\\b(into)\\b\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*"
     },
     "identifier": {
       "match": "@?[_[:alpha:]][_[:alnum:]]*",
@@ -2241,7 +2241,7 @@
       "name": "entity.name.variable.parameter.cs"
     },
     "indexer-declaration": {
-      "begin": "(?x)\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<indexer_name>this)\\s*\n(?=\\[)",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2310,7 +2310,7 @@
       "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "(?x)\n(interface)\\b\\s+\n(@?[_[:alpha:]][_[:alnum:]]*)",
+          "begin": "(interface)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.interface.cs"
@@ -2456,7 +2456,7 @@
       ]
     },
     "invocation-expression": {
-      "begin": "(?x)\n(?:\n(?:(\\?)\\s*)?\n(\\.)\\s*|\n(->)\\s*\n)?\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*\n(\n<\n(?<type_args>\n[^<>()]++|\n<\\g<type_args>*+>|\n\\(\\g<type_args>*+\\)\n)*+\n>\\s*\n)?\n(?=\\()",
+      "begin": "(?:(?:(\\?)\\s*)?(\\.)\\s*|(->)\\s*)?(@?[_[:alpha:]][_[:alnum:]]*)\\s*(<(?<type_args>[^<>()]++|<\\g<type_args>*+>|\\(\\g<type_args>*+\\))*+>\\s*)?(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.null-conditional.cs"
@@ -2500,7 +2500,7 @@
       ]
     },
     "join-clause": {
-      "begin": "(?x)\n\\b(join)\\b\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)?\n\\s+(\\g<identifier>)\\b\\s*\n\\b(in)\\b\\s*",
+      "begin": "\\b(join)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.join.cs"
@@ -2555,7 +2555,7 @@
           "name": "entity.name.variable.range-variable.cs"
         }
       },
-      "match": "(?x)\n\\b(into)\\b\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*"
+      "match": "\\b(into)\\b\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*"
     },
     "join-on": {
       "captures": {
@@ -2589,7 +2589,7 @@
       ]
     },
     "let-clause": {
-      "begin": "(?x)\n\\b(let)\\b\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*\n(=)\\s*",
+      "begin": "\\b(let)\\b\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*(=)\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.let.cs"
@@ -2680,7 +2680,7 @@
       ]
     },
     "local-constant-declaration": {
-      "begin": "(?x)\n(?<const_keyword>\\b(?:const)\\b)\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?=,|;|=)",
+      "begin": "(?<const_keyword>\\b(?:const)\\b)\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.const.cs"
@@ -2730,7 +2730,7 @@
       ]
     },
     "local-function-declaration": {
-      "begin": "(?x)\n\\b((?:(?:async|unsafe|static|extern)\\s+)*)\n(?<type_name>\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?)?\n(?:\\s*\n\\[\n\\s*(?:,\\s*)*\n\\]\n(?:\\s*\\?)?\n)*\n)\\s+\n(\\g<identifier>)\\s*\n(<[^<>]+>)?\\s*\n(?=\\()",
+      "begin": "\\b((?:(?:async|unsafe|static|extern)\\s+)*)(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?)?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?)?)*)\\s+(\\g<identifier>)\\s*(<[^<>]+>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2777,7 +2777,7 @@
       ]
     },
     "local-tuple-var-deconstruction": {
-      "begin": "(?x)\n(?:\\b(var)\\b\\s*)\n(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*\n(?=;|=|\\))",
+      "begin": "(?:\\b(var)\\b\\s*)(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*(?=;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.type.var.cs"
@@ -2801,7 +2801,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?x)\n(?:\n(?:(\\bref)\\s+(?:(\\breadonly)\\s+)?)?(\\bvar\\b)|\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*[?*]\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\n)\\s+\n(\\g<identifier>)\\s*\n(?!=>)\n(?=,|;|=|\\))",
+      "begin": "(?:(?:(\\bref)\\s+(?:(\\breadonly)\\s+)?)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*[?*]\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s*(?!=>)(?=,|;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.ref.cs"
@@ -2893,7 +2893,7 @@
               "name": "variable.other.object.property.cs"
             }
           },
-          "match": "(?x)\n(?:\n(?:(\\?)\\s*)?\n(\\.)\\s*|\n(->)\\s*\n)\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*\n(?![_[:alnum:]]|\\(|(\\?)?\\[|<)"
+          "match": "(?:(?:(\\?)\\s*)?(\\.)\\s*|(->)\\s*)(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?![_[:alnum:]]|\\(|(\\?)?\\[|<)"
         },
         {
           "captures": {
@@ -2911,7 +2911,7 @@
               ]
             }
           },
-          "match": "(?x)\n(\\.)?\\s*\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)\n(?=\n(\\s*\\?)?\n\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
+          "match": "(\\.)?\\s*(@?[_[:alpha:]][_[:alnum:]]*)(?<type_params>\\s*<([^<>]|\\g<type_params>)+>\\s*)(?=(\\s*\\?)?\\s*\\.\\s*@?[_[:alpha:]][_[:alnum:]]*)"
         },
         {
           "captures": {
@@ -2919,12 +2919,12 @@
               "name": "variable.other.object.cs"
             }
           },
-          "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\n(?=\n\\s*(?:(?:\\?\\s*)?\\.|->)\n\\s*@?[_[:alpha:]][_[:alnum:]]*\n)"
+          "match": "(@?[_[:alpha:]][_[:alnum:]]*)(?=\\s*(?:(?:\\?\\s*)?\\.|->)\\s*@?[_[:alpha:]][_[:alnum:]]*)"
         }
       ]
     },
     "method-declaration": {
-      "begin": "(?x)\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(\\g<identifier>)\\s*\n(<([^<>]+)>)?\\s*\n(?=\\()",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3219,10 +3219,10 @@
           ]
         }
       },
-      "match": "(?x)\n(new)\\s+\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n(?=\\{|//|/\\*|$)"
+      "match": "(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\{|//|/\\*|$)"
     },
     "object-creation-expression-with-parameters": {
-      "begin": "(?x)\n(new)(?:\\s+\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n))?\\s*\n(?=\\()",
+      "begin": "(new)(?:\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.new.cs"
@@ -3247,7 +3247,7 @@
       "name": "keyword.operator.assignment.cs"
     },
     "operator-declaration": {
-      "begin": "(?x)\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s*\n\\b(?<operator_keyword>operator)\\b\\s*\n(?<operator>[+\\-*/%&|\\^!=~<>]+|true|false)\\s*\n(?=\\()",
+      "begin": "(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[+\\-*/%&|\\^!=~<>]+|true|false)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3326,7 +3326,7 @@
           "name": "entity.name.variable.parameter.cs"
         }
       },
-      "match": "(?x)\n(?:(?:\\b(ref|params|out|in|this)\\b)\\s+)?\n(?<type_name>\n(?:\n(?:ref\\s+)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n(\\g<identifier>)"
+      "match": "(?:(?:\\b(ref|params|out|in|this)\\b)\\s+)?(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)"
     },
     "parenthesized-expression": {
       "begin": "\\(",
@@ -3815,7 +3815,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?x)\n\n# The negative lookahead below ensures that we don't match nested types\n# or other declarations as properties.\n(?![[:word:][:space:]]*\\b(?:class|interface|struct|enum|event)\\b)\n\n(?<return_type>\n(?<type_name>\n(?:\n(?:ref\\s+(?:readonly\\s+)?)?\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<property_name>\\g<identifier>)\\s*\n(?=\\{|=>|//|/\\*|$)",
+      "begin": "(?![[:word:][:space:]]*\\b(?:class|interface|struct|enum|event)\\b)(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3932,7 +3932,7 @@
       ]
     },
     "query-expression": {
-      "begin": "(?x)\n\\b(from)\\b\\s*\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)?\n\\s+(\\g<identifier>)\\b\\s*\n\\b(in)\\b\\s*",
+      "begin": "\\b(from)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.from.cs"
@@ -4183,7 +4183,7 @@
       "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
-          "begin": "(?x)\n(record)\\b\\s+\n(@?[_[:alpha:]][_[:alnum:]]*)",
+          "begin": "(record)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.record.cs"
@@ -4436,7 +4436,7 @@
       "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
-          "begin": "(?x)\n(\\b(record)\\b\\s+)?\n(struct)\\b\\s+\n(@?[_[:alpha:]][_[:alnum:]]*)",
+          "begin": "(\\b(record)\\b\\s+)?(struct)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
           "beginCaptures": {
             "2": {
               "name": "storage.type.record.cs"
@@ -4779,7 +4779,7 @@
               "name": "entity.name.variable.tuple-element.cs"
             }
           },
-          "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*\n(?=[,)])"
+          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*(?=[,)])"
         }
       ]
     },
@@ -4793,7 +4793,7 @@
           ]
         }
       },
-      "match": "(?x)\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*\n(?!=>|==)(?==)"
+      "match": "(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*(?!=>|==)(?==)"
     },
     "tuple-deconstruction-element-list": {
       "begin": "\\(",
@@ -4827,7 +4827,7 @@
               "name": "variable.other.readwrite.cs"
             }
           },
-          "match": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*\n(?=[,)])"
+          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\b\\s*(?=[,)])"
         }
       ]
     },
@@ -4844,7 +4844,7 @@
           "name": "entity.name.variable.tuple-element.cs"
         }
       },
-      "match": "(?x)\n(?<type_name>\n(?:\n(?:\n(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?\n(?<name_and_type_args>\n\\g<identifier>\\s*\n(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n)\n(?:\\s*\\.\\s*\\g<name_and_type_args>)* |\n(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n)\n(?:\\s*\\?\\s*)?\n(?:\\s*\n\\[\n(?:\\s*,\\s*)*\n\\]\n\\s*\n(?:\\?)?\n\\s*\n)*\n)\n)\n(?:(?<tuple_name>\\g<identifier>)\\b)?"
+      "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))(?:(?<tuple_name>\\g<identifier>)\\b)?"
     },
     "tuple-literal": {
       "begin": "(\\()(?=.*[:,])",
@@ -4875,7 +4875,7 @@
       ]
     },
     "tuple-literal-element": {
-      "begin": "(?x)\n(@?[_[:alpha:]][_[:alnum:]]*)\\s*\n(?=:)",
+      "begin": "(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?=:)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.variable.tuple-element.cs"
@@ -5465,7 +5465,7 @@
       ]
     },
     "where-clause": {
-      "begin": "(?x)\n\\b(where)\\b\\s*",
+      "begin": "\\b(where)\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.where.cs"
@@ -5551,7 +5551,7 @@
               "name": "punctuation.separator.equals.cs"
             }
           },
-          "match": "(?x)\n(?:^|\\s+)\n(\n(?:\n([-_[:alnum:]]+)\n(:)\n)?\n([-_[:alnum:]]+)\n)\n(=)"
+          "match": "(?:^|\\s+)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))(=)"
         },
         {
           "include": "#xml-string"
@@ -5584,7 +5584,7 @@
               "name": "punctuation.definition.constant.cs"
             }
           },
-          "match": "(?x)\n(&)\n(\n(?:[[:alpha:]:_][[:alnum:]:_.-]*)|\n(?:\\#[[:digit:]]+)|\n(?:\\#x[[:xdigit:]]+)\n)\n(;)",
+          "match": "(&)((?:[[:alpha:]:_][[:alnum:]:_.-]*)|(?:\\#[[:digit:]]+)|(?:\\#x[[:xdigit:]]+))(;)",
           "name": "constant.character.entity.cs"
         },
         {
@@ -5669,7 +5669,7 @@
       ]
     },
     "xml-tag": {
-      "begin": "(?x)\n(</?)\n(\n(?:\n([-_[:alnum:]]+)\n(:)\n)?\n([-_[:alnum:]]+)\n)",
+      "begin": "(</?)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.cs"

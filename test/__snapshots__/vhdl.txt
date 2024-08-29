@@ -1,0 +1,187 @@
+#758575DD      -- dual_port_RAM_visualTest.vhd
+#758575DD      -- created by   :   Meher Krishna Patel
+#758575DD      -- date         :   26-Dec-16
+#758575DD      -- Functionality:
+#DBD7CACC        
+#758575DD      -- store and retrieve data from dual port RAM
+#758575DD      -- ports:
+#DBD7CACC         
+#758575DD      -- Write Enable (we) : SW[16]
+#DBD7CACC          
+#758575DD      -- Address (addr_wr)    : SW[15-14]
+#DBD7CACC          
+#758575DD      -- Address (addr_rd)    : SW[13-12]
+#DBD7CACC          
+#758575DD      -- din                      : SW[2:0]
+#DBD7CACC          
+#758575DD      -- dout                 : LEDR
+#4D9375        use
+#DBD7CACC       ieee
+#444444        .
+#DBD7CACC      numeric_std
+#444444        .
+#4D9375        all
+#444444        ;
+#4D9375        library
+#DBD7CACC       ieee
+#444444        ;
+#4D9375        use
+#DBD7CACC       ieee
+#444444        .
+#DBD7CACC      std_logic_1164
+#444444        .
+#4D9375        all
+#444444        ;
+#4D9375        use
+#DBD7CACC       ieee
+#444444        .
+#DBD7CACC      numeric_std
+#444444        .
+#4D9375        all
+#444444        ;
+#4D9375        entity
+#DBD7CACC       
+#5DA994        dual_port_RAM_visualTest
+#DBD7CACC       
+#4D9375        is
+#DBD7CACC          
+#4D9375        generic
+#DBD7CACC       
+#444444        (
+#DBD7CACC              ADDR_WIDTH 
+#444444        :
+#DBD7CACC       
+#B8A965        integer
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        2
+#444444        ;
+#DBD7CACC              DATA_WIDTH 
+#444444        :
+#DBD7CACC       
+#B8A965        integer
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC          
+#444444        );
+#DBD7CACC          
+#4D9375        port
+#444444        (
+#DBD7CACC              CLOCK_50
+#444444        :
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#B8A965        std_logic
+#444444        ;
+#DBD7CACC              SW 
+#444444        :
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#B8A965        std_logic_vector
+#444444        (
+#4C9A91        16
+#DBD7CACC       
+#4D9375        downto
+#DBD7CACC       
+#4C9A91        0
+#444444        );
+#DBD7CACC              LEDR 
+#444444        :
+#DBD7CACC       
+#4D9375        out
+#DBD7CACC       
+#B8A965        std_logic_vector
+#444444        (
+#DBD7CACC      DATA_WIDTH
+#CB7676        -
+#4C9A91        1
+#DBD7CACC       
+#4D9375        downto
+#DBD7CACC       
+#4C9A91        0
+#444444        )
+#DBD7CACC              
+#444444        );
+#4D9375        end
+#DBD7CACC       
+#5DA994        dual_port_RAM_visualTest
+#444444        ;
+#4D9375        architecture
+#B8A965         
+#5DA994        arch
+#B8A965         
+#4D9375        of
+#B8A965         
+#5DA994        dual_port_RAM_visualTest
+#B8A965         
+#4D9375        is
+#4D9375        begin
+#B8A965            
+#80A665        dual_port_RAM_test
+#444444        :
+#B8A965         
+#4D9375        entity
+#B8A965         
+#4D9375        work
+#444444        .
+#4D9375        dual_port_RAM
+#B8A965            
+#4D9375        port
+#B8A965         
+#4D9375        map
+#B8A965         
+#444444        (
+#B8A965        clk
+#CB7676        =>
+#B8A965        CLOCK_50
+#444444        ,
+#B8A965         we
+#CB7676        =>
+#B8A965        SW
+#444444        (
+#4C9A91        16
+#444444        ),
+#B8A965                            addr_wr 
+#CB7676        =>
+#B8A965         SW
+#444444        (
+#4C9A91        15
+#B8A965         
+#4D9375        downto
+#B8A965         
+#4C9A91        14
+#444444        ),
+#B8A965                            addr_rd 
+#CB7676        =>
+#B8A965         SW
+#444444        (
+#4C9A91        13
+#B8A965         
+#4D9375        downto
+#B8A965         
+#4C9A91        12
+#444444        ),
+#B8A965                            din 
+#CB7676        =>
+#B8A965         SW
+#444444        (
+#4C9A91        2
+#B8A965         
+#4D9375        downto
+#B8A965         
+#4C9A91        0
+#444444        ),
+#B8A965                            dout 
+#CB7676        =>
+#B8A965        LEDR
+#444444        );
+#4D9375        end
+#B8A965         
+#5DA994        arch
+#444444        ;
+#758575DD      -- From https://vhdlguide.readthedocs.io/en/latest/vhdl/dex.html

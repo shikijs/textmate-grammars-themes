@@ -1,0 +1,147 @@
+#DBD7CACC      # CPU/Memory usage
+#DBD7CACC      `
+#80A665        dmc_set_index_introspection
+#DBD7CACC      ` 
+#BD976A        sourcetype
+#CB7676        =
+#DBD7CACC      splunk_resource_usage 
+#BD976A        component
+#CB7676        =
+#DBD7CACC      Hostwide 
+#BD976A        host
+#CB7676        =
+#DBD7CACC      *  |
+#B8A965         eval
+#DBD7CACC       
+#BD976A        CPU_Usage
+#CB7676        =
+#DBD7CACC      (
+#BD976A        'data.cpu_system_pct' + 'data.cpu_user_pct'
+#DBD7CACC      )   |
+#B8A965         timechart
+#DBD7CACC       
+#B8A965        avg
+#DBD7CACC      (
+#BD976A        CPU_Usage
+#DBD7CACC      ) 
+#4D9375        by
+#DBD7CACC        host
+#BD976A        index
+#CB7676        =
+#DBD7CACC      _introspection 
+#BD976A        host
+#CB7676        =
+#DBD7CACC      * 
+#BD976A        sourcetype
+#CB7676        =
+#DBD7CACC      splunk_resource_usage 
+#BD976A        component
+#CB7676        =
+#DBD7CACC      Hostwide
+#DBD7CACC      | `
+#80A665        drop_dm_object_name
+#DBD7CACC      (
+#C98A7D        "data"
+#DBD7CACC      )`
+#DBD7CACC      |
+#B8A965         timechart
+#DBD7CACC       
+#BD976A        limit
+#CB7676        =
+#4C9A91        0
+#DBD7CACC       
+#BD976A        useother
+#CB7676        =
+#DBD7CACC      f 
+#BD976A        span
+#CB7676        =
+#DBD7CACC      30s 
+#B8A965        avg
+#DBD7CACC      (
+#BD976A        cpu_user_pct
+#DBD7CACC      ) 
+#4D9375        AS
+#DBD7CACC       
+#B8A965        avg
+#DBD7CACC      ,
+#B8A965        max
+#DBD7CACC      (
+#BD976A        cpu_user_pct
+#DBD7CACC      ) 
+#4D9375        AS
+#DBD7CACC       
+#B8A965        max
+#DBD7CACC       
+#4D9375        by
+#DBD7CACC       host
+#BD976A        index
+#CB7676        =
+#DBD7CACC      _introspection 
+#BD976A        host
+#CB7676        =
+#DBD7CACC      * 
+#BD976A        sourcetype
+#CB7676        =
+#DBD7CACC      splunk_resource_usage 
+#BD976A        component
+#CB7676        =
+#DBD7CACC      Hostwide
+#DBD7CACC      | `
+#80A665        drop_dm_object_name
+#DBD7CACC      (
+#C98A7D        "data"
+#DBD7CACC      )`
+#DBD7CACC      |
+#B8A965         eval
+#DBD7CACC       
+#BD976A        used_pct
+#CB7676        =
+#B8A965        round
+#DBD7CACC      ((
+#BD976A        mem_used/mem
+#DBD7CACC      )*
+#4C9A91        100
+#DBD7CACC      ,
+#4C9A91        2
+#DBD7CACC      )
+#DBD7CACC      |
+#B8A965         eval
+#DBD7CACC       
+#BD976A        swap_used_pct
+#CB7676        =
+#B8A965        round
+#DBD7CACC      ((
+#BD976A        swap_used/swap
+#DBD7CACC      )*
+#4C9A91        100
+#DBD7CACC      ,
+#4C9A91        2
+#DBD7CACC      )
+#DBD7CACC      |
+#B8A965         timechart
+#DBD7CACC       
+#BD976A        limit
+#CB7676        =
+#4C9A91        0
+#DBD7CACC       
+#BD976A        useother
+#CB7676        =
+#DBD7CACC      f 
+#BD976A        span
+#CB7676        =
+#DBD7CACC      1m 
+#B8A965        max
+#DBD7CACC      (
+#BD976A        used_pct
+#DBD7CACC      ) 
+#4D9375        AS
+#DBD7CACC       max_used,
+#B8A965        max
+#DBD7CACC      (
+#BD976A        swap_used_pct
+#DBD7CACC      ) 
+#4D9375        AS
+#DBD7CACC       max_swap_used 
+#4D9375        by
+#DBD7CACC       host
+#DBD7CACC      # https://github.com/getkub/SplunkScriplets/blob/master/docs/splunk_tips/searches/cpu_memory.txt

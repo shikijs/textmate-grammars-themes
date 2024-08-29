@@ -1,0 +1,147 @@
+#CB7676        public
+#DBD7CACC       
+#4D9375        class
+#DBD7CACC       
+#5DA994        EmailManager
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#CB7676        public
+#DBD7CACC       
+#CB7676        static
+#DBD7CACC       
+#4D9375        void
+#DBD7CACC       
+#80A665        sendMail
+#444444        (
+#4D9375        String
+#DBD7CACC       
+#80A665        address
+#444444        ,
+#DBD7CACC       
+#4D9375        String
+#DBD7CACC       
+#80A665        subject
+#444444        ,
+#DBD7CACC       
+#4D9375        String
+#DBD7CACC       
+#80A665        body
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#CB7676        Messaging
+#444444        .
+#CB7676        SingleEmailMessage
+#DBD7CACC       
+#80A665        mail
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        new
+#DBD7CACC       
+#CB7676        Messaging
+#444444        .
+#CB7676        SingleEmailMessage
+#444444        ();
+#DBD7CACC              
+#4D9375        String
+#444444        []
+#DBD7CACC       
+#80A665        toAddresses
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        new
+#DBD7CACC       
+#4D9375        String
+#444444        []
+#DBD7CACC       
+#444444        {
+#BD976A        address
+#444444        };
+#DBD7CACC              
+#BD976A        mail
+#444444        .
+#80A665        setToAddresses
+#444444        (
+#BD976A        toAddresses
+#444444        );
+#DBD7CACC              
+#BD976A        mail
+#444444        .
+#80A665        setSubject
+#444444        (
+#BD976A        subject
+#444444        );
+#DBD7CACC              
+#BD976A        mail
+#444444        .
+#80A665        setPlainTextBody
+#444444        (
+#BD976A        body
+#444444        );
+#DBD7CACC              
+#BD976A        Messaging
+#444444        .
+#80A665        sendEmail
+#444444        (
+#4D9375        new
+#DBD7CACC       
+#CB7676        Messaging
+#444444        .
+#CB7676        SingleEmailMessage
+#444444        []
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        mail
+#DBD7CACC       
+#444444        });
+#DBD7CACC          
+#444444        }
+#444444        }
+#4D9375        String
+#DBD7CACC       
+#80A665        address
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        YOUR_EMAIL_ADDRESS
+#C98A7D77      '
+#444444        ;
+#4D9375        String
+#DBD7CACC       
+#80A665        subject
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Speaker Confirmation
+#C98A7D77      '
+#444444        ;
+#4D9375        String
+#DBD7CACC       
+#80A665        body
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Thank you for speaking at the conference.
+#C98A7D77      '
+#444444        ;
+#BD976A        EmailManager
+#444444        .
+#80A665        sendMail
+#444444        (
+#BD976A        address
+#444444        ,
+#DBD7CACC       
+#BD976A        subject
+#444444        ,
+#DBD7CACC       
+#BD976A        body
+#444444        );
+#758575DD      // From http://ccoenraets.github.io/salesforce-developer-workshop/Creating-an-Apex-Class.html

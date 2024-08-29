@@ -1,0 +1,63 @@
+#758575DD      # Apache httpd v2.4 minimal configuration
+#758575DD      # see https://wiki.apache.org/httpd/Minimal_Config for documentation
+#4D9375        ServerRoot
+#DBD7CACC       ${GITPOD_REPO_ROOT}
+#4D9375        PidFile
+#DBD7CACC       ${APACHE_PID_FILE}
+#4D9375        User
+#DBD7CACC       ${APACHE_RUN_USER}
+#4D9375        Group
+#DBD7CACC       ${APACHE_RUN_GROUP}
+#758575DD      # Modules as installed/activated via apt-get
+#4D9375        IncludeOptional
+#DBD7CACC       /etc/apache2/mods-enabled/*.load
+#4D9375        IncludeOptional
+#DBD7CACC       /etc/apache2/mods-enabled/*.conf
+#758575DD      # Configure hostname and port for server
+#4D9375        ServerName
+#DBD7CACC       ${APACHE_SERVER_NAME}
+#4D9375        Listen
+#DBD7CACC       *:
+#4C9A91        8080
+#758575DD      # Configure Logging
+#4D9375        LogFormat
+#DBD7CACC       "%h %l %u %t \"%r\" %>s %b" common
+#4D9375        CustomLog
+#DBD7CACC       ${APACHE_LOG_DIR}/access.log common
+#4D9375        ErrorLog
+#DBD7CACC       ${APACHE_LOG_DIR}/error.log
+#758575DD      # Never change this block
+#444444        <
+#80A665        Directory
+#DBD7CACC       
+#C98A7D        /
+#444444        >
+#DBD7CACC          
+#4D9375        AllowOverride
+#DBD7CACC       None
+#DBD7CACC          
+#4D9375        Require
+#DBD7CACC       all denied
+#444444        </
+#80A665        Directory
+#444444        >
+#758575DD      # Direcrory and files to be served
+#4D9375        DirectoryIndex
+#DBD7CACC       index.html
+#4D9375        DocumentRoot
+#DBD7CACC       "${GITPOD_REPO_ROOT}/www"
+#444444        <
+#80A665        Directory
+#DBD7CACC       
+#C98A7D        "${GITPOD_REPO_ROOT}/www"
+#444444        >
+#DBD7CACC          
+#4D9375        Require
+#DBD7CACC       all granted
+#444444        </
+#80A665        Directory
+#444444        >
+#758575DD      # Include conf installed via apt-get
+#4D9375        IncludeOptional
+#DBD7CACC       /etc/apache2/conf-enabled/*.conf
+#758575DD      # https://github.com/gitpod-io/apache-example/blob/master/apache/apache.conf

@@ -161,7 +161,7 @@
       "name": "comment.line.double-slash"
     },
     {
-      "begin": "(?x)\n^\\s*\\#\\s*(define)\\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?\n",
+      "begin": "^\\s*\\#\\s*(define)\\s+((?<id>[a-zA-Z_][a-zA-Z0-9_]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))?",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.import.define.c"

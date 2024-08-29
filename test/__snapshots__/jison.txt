@@ -1,0 +1,133 @@
+#758575DD      /* description: Parses end executes mathematical expressions. */
+#758575DD      /* lexical grammar */
+#FDAEB7        %lex
+#79B8FF        %%
+#DBD7CACC      \
+#C99076        s
+#DBD7CACC      +                   
+#758575DD      /* skip whitespace */
+#DBD7CACC      [0-9]+("."[0-9]+)?\b  return 'NUMBER'
+#444444        ;
+#DBD7CACC      "*"                   
+#C99076        return
+#DBD7CACC       '*'
+#444444        ;
+#DBD7CACC      "/"                   
+#C99076        return
+#DBD7CACC       '/'
+#444444        ;
+#DBD7CACC      "-"                   
+#C99076        return
+#DBD7CACC       '-'
+#444444        ;
+#DBD7CACC      "+"                   
+#C99076        return
+#DBD7CACC       '+'
+#444444        ;
+#DBD7CACC      "^"                   
+#C99076        return
+#DBD7CACC       '^'
+#444444        ;
+#DBD7CACC      "("                   
+#C99076        return
+#DBD7CACC       '('
+#444444        ;
+#DBD7CACC      ")"                   
+#C99076        return
+#DBD7CACC       ')'
+#444444        ;
+#DBD7CACC      "
+#C99076        PI
+#DBD7CACC      "                  return 'PI'
+#444444        ;
+#DBD7CACC      "
+#C99076        E
+#DBD7CACC      "                   return 'E'
+#444444        ;
+#DBD7CACC      <<
+#C99076        EOF
+#DBD7CACC      >>               return 'EOF'
+#444444        ;
+#DBD7CACC      /
+#C99076        lex
+#758575DD      /* operator associations and precedence */
+#DBD7CACC      %left '+' '-'
+#DBD7CACC      %left '*' '/'
+#DBD7CACC      %left '^'
+#DBD7CACC      %left UMINUS
+#DBD7CACC      %start expressions
+#DBD7CACC      %% 
+#758575DD      /* language grammar */
+#DBD7CACC      expressions
+#DBD7CACC          
+#CB7676        :
+#DBD7CACC       e 
+#4D9375        EOF
+#DBD7CACC              {print($1)
+#444444        ;
+#DBD7CACC       
+#C99076        return
+#DBD7CACC       $1
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          ;
+#C99076        e
+#DBD7CACC          
+#CB7676        :
+#DBD7CACC       e '+' e
+#DBD7CACC              {$$ = $1+$3
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        e
+#DBD7CACC       '-' e
+#DBD7CACC              {$$ = $1-$3
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        e
+#DBD7CACC       '*' e
+#DBD7CACC              {$$ = $1*$3
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        e
+#DBD7CACC       '/' e
+#DBD7CACC              {$$ = $1/$3
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        e
+#DBD7CACC       '^' e
+#DBD7CACC              {$$ = Math.pow($1, $3)
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | '-' 
+#C99076        e
+#DBD7CACC       %prec UMINUS
+#DBD7CACC              {$$ = -$2
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | '(' 
+#C99076        e
+#DBD7CACC       ')'
+#DBD7CACC              {$$ = $2
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        NUMBER
+#DBD7CACC              {$$ = Number(yytext)
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        E
+#DBD7CACC              {$$ = Math.E
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          | 
+#C99076        PI
+#DBD7CACC              {$$ = Math.PI
+#444444        ;
+#DBD7CACC      }
+#DBD7CACC          ;
+#758575DD      /* From https://gerhobbelt.github.io/jison/docs/#specifying-a-language */

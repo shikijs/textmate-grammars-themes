@@ -1,0 +1,272 @@
+#BD976A        Year.Release
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#BD976A        game
+#4D9375        $
+#BD976A        Year.Release
+#BD976A        counts
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#B8A965        data.frame
+#DBD7CACC      (
+#B8A965        table
+#DBD7CACC      (
+#BD976A        Year.Release
+#DBD7CACC      ))
+#BD976A        p
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#BD976A        game
+#DBD7CACC       
+#CB7676        %>%
+#DBD7CACC        
+#BD976A        select
+#444444        (
+#BD976A        Year.Release
+#444444        ,
+#DBD7CACC       
+#BD976A        Global.Sales
+#444444        )
+#DBD7CACC       
+#CB7676        %>%
+#DBD7CACC        
+#BD976A        group_by
+#444444        (
+#BD976A        Year.Release
+#444444        )
+#DBD7CACC       
+#CB7676        %>%
+#DBD7CACC        
+#BD976A        summarise
+#444444        (
+#BD976A        Total.Sales
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        sum
+#DBD7CACC      (
+#BD976A        Global.Sales
+#444444        )
+#DBD7CACC      )
+#BD976A        q
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#B8A965        cbind.data.frame
+#DBD7CACC      (
+#BD976A        p
+#DBD7CACC      , 
+#BD976A        counts
+#444444        [
+#4C9A91        2
+#444444        ]
+#DBD7CACC      )  
+#758575DD      # Add counts to data frame
+#B8A965        names
+#DBD7CACC      (
+#BD976A        q
+#DBD7CACC      )
+#444444        [
+#4C9A91        3
+#444444        ]
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        count
+#C98A7D77      "
+#BD976A        q
+#4D9375        $
+#BD976A        count
+#DBD7CACC       
+#444444        <-
+#DBD7CACC       
+#B8A965        as.numeric
+#DBD7CACC      (
+#BD976A        q
+#4D9375        $
+#BD976A        count
+#DBD7CACC      )
+#BD976A        ggplot
+#444444        (
+#BD976A        q
+#444444        ,
+#DBD7CACC       
+#BD976A        aes
+#444444        (
+#BD976A        x
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        Year.Release
+#444444        ,
+#DBD7CACC       
+#BD976A        y
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        Total.Sales
+#444444        ,
+#DBD7CACC       
+#BD976A        label
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        q
+#4D9375        $
+#BD976A        count
+#444444        ))
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC        
+#BD976A        geom_col
+#444444        (
+#BD976A        fill
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        green
+#C98A7D77      "
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC        
+#BD976A        geom_point
+#444444        (
+#BD976A        y
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        q
+#4D9375        $
+#BD976A        count
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4C9A91        500000
+#444444        ,
+#DBD7CACC       
+#BD976A        size
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        3
+#444444        ,
+#DBD7CACC       
+#BD976A        shape
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        21
+#444444        ,
+#DBD7CACC       
+#BD976A        fill
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Yellow
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC        
+#BD976A        geom_text
+#444444        (
+#BD976A        y
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        (
+#BD976A        q
+#4D9375        $
+#BD976A        count
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        50
+#444444        )
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4C9A91        500000
+#444444        )
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC        
+#758575DD      # Position of the text: count of games each year
+#DBD7CACC        
+#BD976A        theme
+#444444        (
+#BD976A        axis.text.x
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        element_text
+#444444        (
+#BD976A        angle
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        90
+#444444        ),
+#DBD7CACC              
+#BD976A        panel.background
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        element_rect
+#444444        (
+#BD976A        fill
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        purple
+#C98A7D77      "
+#444444        ),
+#DBD7CACC              
+#BD976A        panel.grid.major
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        element_blank
+#444444        (),
+#DBD7CACC              
+#BD976A        panel.grid.minor
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        element_blank
+#444444        ())
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC        
+#BD976A        scale_x_discrete
+#444444        (
+#C98A7D77      "
+#C98A7D        Year.Release
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        labels
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        as.character
+#DBD7CACC      (
+#BD976A        Year.Release
+#444444        )
+#DBD7CACC      , 
+#BD976A        breaks
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        Year.Release
+#DBD7CACC      )
+#758575DD      # From https://gexijin.github.io/learnR/the-game-sales-dataset.html#analysis-of-sales

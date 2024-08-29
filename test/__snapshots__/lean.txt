@@ -1,0 +1,289 @@
+#4D9375        structure
+#DBD7CACC       
+#80A665        Point
+#DBD7CACC       (α : 
+#CB7676        Type
+#DBD7CACC       u) 
+#4D9375        where
+#DBD7CACC        mk :: (x : α) (y : α)
+#DBD7CACC        
+#4D9375        deriving
+#DBD7CACC       Repr
+#4D9375        #check
+#DBD7CACC       Point       -- a 
+#CB7676        Type
+#4D9375        #check
+#DBD7CACC       @Point.rec  -- the eliminator
+#4D9375        #check
+#DBD7CACC       @Point.mk   -- the constructor
+#4D9375        #check
+#DBD7CACC       @Point.x    -- a projection
+#4D9375        #check
+#DBD7CACC       @Point.y    -- a projection
+#4D9375        #eval
+#DBD7CACC       Point.x (Point.mk 
+#4C9A91        10
+#DBD7CACC       
+#4C9A91        20
+#DBD7CACC      )
+#4D9375        #eval
+#DBD7CACC       Point.y (Point.mk 
+#4C9A91        10
+#DBD7CACC       
+#4C9A91        20
+#DBD7CACC      )
+#4D9375        open
+#DBD7CACC       Point
+#4D9375        example
+#DBD7CACC       (a b : α) : x (mk a b) = a :=
+#DBD7CACC        rfl
+#4D9375        example
+#DBD7CACC       (a b : α) : y (mk a b) = b :=
+#DBD7CACC        rfl
+#4D9375        def
+#DBD7CACC       
+#80A665        p
+#DBD7CACC       := Point.mk 
+#4C9A91        10
+#DBD7CACC       
+#4C9A91        20
+#4D9375        def
+#DBD7CACC       
+#80A665        Point.smul
+#DBD7CACC       (n : Nat) (p : Point Nat) :=
+#DBD7CACC        Point.mk (n * p.x) (n * p.y)
+#4D9375        def
+#DBD7CACC       
+#80A665        xs
+#DBD7CACC       : List Nat := [
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        2
+#DBD7CACC      , 
+#4C9A91        3
+#DBD7CACC      ]
+#4D9375        def
+#DBD7CACC       
+#80A665        f
+#DBD7CACC       : Nat → Nat := 
+#4D9375        fun
+#DBD7CACC       x => x * x
+#4D9375        #eval
+#DBD7CACC       xs.map f  -- [
+#4C9A91        1
+#DBD7CACC      , 
+#4C9A91        4
+#DBD7CACC      , 
+#4C9A91        9
+#DBD7CACC      ]
+#4D9375        structure
+#DBD7CACC       
+#80A665        MyStruct
+#DBD7CACC       
+#4D9375        where
+#DBD7CACC          {α : 
+#CB7676        Type
+#DBD7CACC       u}
+#DBD7CACC          {β : 
+#CB7676        Type
+#DBD7CACC       v}
+#DBD7CACC          a : α
+#DBD7CACC          b : β
+#4D9375        #check
+#DBD7CACC       { a := 
+#4C9A91        10
+#DBD7CACC      , b := 
+#4D9375        true
+#DBD7CACC       : MyStruct }
+#4D9375        structure
+#DBD7CACC       
+#80A665        Point
+#DBD7CACC       (α : 
+#CB7676        Type
+#DBD7CACC       u) 
+#4D9375        where
+#DBD7CACC        x : α
+#DBD7CACC        y : α
+#DBD7CACC        z : α
+#4D9375        structure
+#DBD7CACC       
+#80A665        RGBValue
+#DBD7CACC       
+#4D9375        where
+#DBD7CACC        red : Nat
+#DBD7CACC        green : Nat
+#DBD7CACC        blue : Nat
+#4D9375        structure
+#DBD7CACC       
+#80A665        RedGreenPoint
+#DBD7CACC       (α : 
+#CB7676        Type
+#DBD7CACC       u) 
+#4D9375        extends
+#DBD7CACC       Point α, RGBValue 
+#4D9375        where
+#DBD7CACC        no_blue : blue = 
+#4C9A91        0
+#4D9375        def
+#DBD7CACC       
+#80A665        p
+#DBD7CACC       : Point Nat :=
+#DBD7CACC        { x := 
+#4C9A91        10
+#DBD7CACC      , y := 
+#4C9A91        10
+#DBD7CACC      , z := 
+#4C9A91        20
+#DBD7CACC       }
+#4D9375        def
+#DBD7CACC       
+#80A665        rgp
+#DBD7CACC       : RedGreenPoint Nat :=
+#DBD7CACC        { p 
+#4D9375        with
+#DBD7CACC       red := 
+#4C9A91        200
+#DBD7CACC      , green := 
+#4C9A91        40
+#DBD7CACC      , blue := 
+#4C9A91        0
+#DBD7CACC      , no_blue := rfl }
+#4D9375        example
+#DBD7CACC       : rgp.x   = 
+#4C9A91        10
+#DBD7CACC       := rfl
+#4D9375        example
+#DBD7CACC       : rgp.red = 
+#4C9A91        200
+#DBD7CACC       := rfl
+#4D9375        class
+#DBD7CACC       
+#80A665        Add
+#DBD7CACC       (a : 
+#CB7676        Type
+#DBD7CACC      ) 
+#4D9375        where
+#DBD7CACC        add : a → a → a
+#4D9375        instance
+#DBD7CACC       [Add a] : Add (Array a) 
+#4D9375        where
+#DBD7CACC        add x y := Array.zipWith x y (· + ·)
+#4D9375        instance
+#DBD7CACC       [Inhabited a] [Inhabited b] : Inhabited (a × b) 
+#4D9375        where
+#DBD7CACC        default := (default, default)
+#4D9375        #print
+#DBD7CACC       inferInstance
+#4D9375        def
+#DBD7CACC       
+#80A665        foo
+#DBD7CACC       : Inhabited (Nat × Nat) :=
+#DBD7CACC        inferInstance
+#4D9375        theorem
+#DBD7CACC       
+#80A665        ex
+#DBD7CACC       : foo.default = (default, default) :=
+#DBD7CACC        rfl
+#4D9375        structure
+#DBD7CACC       
+#80A665        Rational
+#DBD7CACC       
+#4D9375        where
+#DBD7CACC        num : Int
+#DBD7CACC        den : Nat
+#DBD7CACC        inv : den ≠ 
+#4C9A91        0
+#4D9375        instance
+#DBD7CACC       : OfNat Rational n 
+#4D9375        where
+#DBD7CACC        ofNat := { num := n, den := 
+#4C9A91        1
+#DBD7CACC      , inv := 
+#4D9375        by
+#DBD7CACC       decide }
+#4D9375        instance
+#DBD7CACC       : ToString Rational 
+#4D9375        where
+#DBD7CACC        toString r := 
+#4D9375        s!
+#C98A7D        "
+#4D9375        {
+#C98A7D        r.num
+#4D9375        }
+#C98A7D        /
+#4D9375        {
+#C98A7D        r.den
+#4D9375        }
+#C98A7D        "
+#4D9375        #eval
+#DBD7CACC       (
+#4C9A91        2
+#DBD7CACC       : Rational) -- 
+#4C9A91        2
+#DBD7CACC      /
+#4C9A91        1
+#4D9375        #check
+#DBD7CACC       (
+#4C9A91        2
+#DBD7CACC       : Rational) -- Rational
+#4D9375        #check
+#DBD7CACC       (
+#4C9A91        2
+#DBD7CACC       : Nat)      -- Nat
+#4D9375        class
+#DBD7CACC       
+#80A665        HMul
+#DBD7CACC       (α : 
+#CB7676        Type
+#DBD7CACC       u) (β : 
+#CB7676        Type
+#DBD7CACC       v) (γ : outParam (
+#CB7676        Type
+#DBD7CACC       w)) 
+#4D9375        where
+#DBD7CACC        hMul : α → β → γ
+#4D9375        export
+#DBD7CACC       HMul (hMul)
+#CB7676        @[default_instance]
+#4D9375        instance
+#DBD7CACC       : HMul Int Int Int 
+#4D9375        where
+#DBD7CACC        hMul := Int.mul
+#CB7676        local
+#DBD7CACC       
+#4D9375        instance
+#DBD7CACC       : Add Point 
+#4D9375        where
+#DBD7CACC        add a b := { x := a.x + b.x, y := a.y + b.y }
+#CB7676        attribute [-instance]
+#DBD7CACC       addPoint
+#4D9375        namespace
+#DBD7CACC       Point
+#CB7676        scoped
+#DBD7CACC       
+#4D9375        instance
+#DBD7CACC       : Add Point 
+#4D9375        where
+#DBD7CACC        add a b := { x := a.x + b.x, y := a.y + b.y }
+#4D9375        def
+#DBD7CACC       
+#80A665        double
+#DBD7CACC       (p : Point) :=
+#DBD7CACC        p + p
+#4D9375        end
+#DBD7CACC       Point
+#4D9375        open
+#DBD7CACC       Classical
+#CB7676        noncomputable
+#DBD7CACC       
+#CB7676        scoped
+#4D9375        instance
+#DBD7CACC       (priority := low) propDecidable (a : 
+#CB7676        Prop
+#DBD7CACC      ) : Decidable a :=
+#DBD7CACC        choice <| 
+#4D9375        match
+#DBD7CACC       em a 
+#4D9375        with
+#DBD7CACC          | Or.inl h => ⟨isTrue h⟩
+#DBD7CACC          | Or.inr h => ⟨isFalse h⟩

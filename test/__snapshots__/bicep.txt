@@ -1,0 +1,148 @@
+#DBD7CACC      @
+#80A665        description
+#DBD7CACC      (
+#C98A7D        'Name of the eventhub namespace'
+#DBD7CACC      )
+#4D9375        param
+#DBD7CACC       
+#BD976A        eventHubNamespaceName
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC      @
+#80A665        description
+#DBD7CACC      (
+#C98A7D        'Name of the eventhub name'
+#DBD7CACC      )
+#4D9375        param
+#DBD7CACC       
+#BD976A        eventHubName
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC      @
+#80A665        description
+#DBD7CACC      (
+#C98A7D        'The service principal'
+#DBD7CACC      )
+#4D9375        param
+#DBD7CACC       
+#BD976A        principalId
+#DBD7CACC       
+#BD976A        string
+#758575DD      // Create an event hub namespace
+#4D9375        resource
+#DBD7CACC       
+#BD976A        eventHubNamespace
+#DBD7CACC       
+#C98A7D        'Microsoft.EventHub/namespaces@2021-01-01-preview'
+#DBD7CACC       = {
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC      : 
+#BD976A        eventHubNamespaceName
+#DBD7CACC        
+#BD976A        location
+#DBD7CACC      : 
+#80A665        resourceGroup
+#DBD7CACC      ().
+#BD976A        location
+#DBD7CACC        
+#BD976A        sku
+#DBD7CACC      : {
+#DBD7CACC          
+#BD976A        name
+#DBD7CACC      : 
+#C98A7D        'Standard'
+#DBD7CACC          
+#BD976A        tier
+#DBD7CACC      : 
+#C98A7D        'Standard'
+#DBD7CACC          
+#BD976A        capacity
+#DBD7CACC      : 
+#4C9A91        1
+#DBD7CACC        }
+#DBD7CACC        
+#BD976A        properties
+#DBD7CACC      : {
+#DBD7CACC          
+#BD976A        zoneRedundant
+#DBD7CACC      : 
+#4D9375        true
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // Create an event hub inside the namespace
+#4D9375        resource
+#DBD7CACC       
+#BD976A        eventHub
+#DBD7CACC       
+#C98A7D        'Microsoft.EventHub/namespaces/eventhubs@2021-01-01-preview'
+#DBD7CACC       = {
+#DBD7CACC        
+#BD976A        parent
+#DBD7CACC      : 
+#BD976A        eventHubNamespace
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC      : 
+#BD976A        eventHubName
+#DBD7CACC        
+#BD976A        properties
+#DBD7CACC      : {
+#DBD7CACC          
+#BD976A        messageRetentionInDays
+#DBD7CACC      : 
+#4C9A91        7
+#DBD7CACC          
+#BD976A        partitionCount
+#DBD7CACC      : 
+#4C9A91        1
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // give Azure Pipelines Service Principal permissions against the event hub 
+#4D9375        var
+#DBD7CACC       
+#BD976A        roleDefinitionAzureEventHubsDataOwner
+#DBD7CACC       = 
+#80A665        subscriptionResourceId
+#DBD7CACC      (
+#C98A7D        'Microsoft.Authorization/roleDefinitions'
+#DBD7CACC      , 
+#C98A7D        'f526a384-b230-433a-b45c-95f59c4a2dec'
+#DBD7CACC      )
+#4D9375        resource
+#DBD7CACC       
+#BD976A        integrationTestEventHubReceiverNamespaceRoleAssignment
+#DBD7CACC       
+#C98A7D        'Microsoft.Authorization/roleAssignments@2018-01-01-preview'
+#DBD7CACC       = {
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC      : 
+#80A665        guid
+#DBD7CACC      (
+#BD976A        principalId
+#DBD7CACC      , 
+#BD976A        eventHub
+#DBD7CACC      .
+#BD976A        id
+#DBD7CACC      , 
+#BD976A        roleDefinitionAzureEventHubsDataOwner
+#DBD7CACC      )
+#DBD7CACC        
+#BD976A        scope
+#DBD7CACC      : 
+#BD976A        eventHubNamespace
+#DBD7CACC        
+#BD976A        properties
+#DBD7CACC      : {
+#DBD7CACC          
+#BD976A        roleDefinitionId
+#DBD7CACC      : 
+#BD976A        roleDefinitionAzureEventHubsDataOwner
+#DBD7CACC          
+#BD976A        principalId
+#DBD7CACC      : 
+#BD976A        principalId
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // From https://dev.azure.com/johnnyreilly/blog-demos/_git/permissioning-azure-pipelines-bicep-role-assignments?path=/infra/main.bicep

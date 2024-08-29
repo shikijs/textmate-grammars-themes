@@ -1,0 +1,117 @@
+#CB7676        struct
+#DBD7CACC       
+#5DA994        CoolMaterial
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        color
+#DBD7CACC      : 
+#CB7676        vec4
+#444444        <
+#CB7676        f32
+#444444        >,
+#444444        };
+#CB7676        @
+#80A665        group
+#444444        (
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#CB7676        @
+#80A665        binding
+#444444        (
+#4C9A91        0
+#444444        )
+#CB7676        var
+#444444        <
+#4D9375        uniform
+#444444        >
+#DBD7CACC       
+#BD976A        material
+#DBD7CACC      : 
+#5DA994        CoolMaterial
+#444444        ;
+#CB7676        @
+#80A665        group
+#444444        (
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#CB7676        @
+#80A665        binding
+#444444        (
+#4C9A91        1
+#444444        )
+#CB7676        var
+#DBD7CACC       
+#BD976A        color_texture
+#DBD7CACC      : 
+#BD976A        texture_2d
+#444444        <
+#CB7676        f32
+#444444        >;
+#CB7676        @
+#80A665        group
+#444444        (
+#4C9A91        1
+#444444        )
+#DBD7CACC       
+#CB7676        @
+#80A665        binding
+#444444        (
+#4C9A91        2
+#444444        )
+#CB7676        var
+#DBD7CACC       
+#BD976A        color_sampler
+#DBD7CACC      : 
+#BD976A        sampler
+#444444        ;
+#CB7676        @
+#80A665        fragment
+#4D9375        fn
+#DBD7CACC       
+#80A665        fragment
+#444444        (
+#DBD7CACC          #
+#BD976A        import
+#DBD7CACC       
+#BD976A        bevy_pbr
+#DBD7CACC      ::
+#BD976A        mesh_vertex_output
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#CB7676        @
+#80A665        location
+#444444        (
+#4C9A91        0
+#444444        )
+#DBD7CACC       
+#CB7676        vec4
+#444444        <
+#CB7676        f32
+#444444        >
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#BD976A        material
+#CB7676        .
+#DBD7CACC      color 
+#CB7676        *
+#DBD7CACC       
+#80A665        textureSample
+#444444        (
+#BD976A        color_texture
+#444444        ,
+#DBD7CACC       
+#BD976A        color_sampler
+#444444        ,
+#DBD7CACC       
+#BD976A        uv
+#444444        );
+#444444        }
+#758575DD      // From https://bevyengine.org/news/bevy-0-8/

@@ -1,0 +1,89 @@
+#758575DD      #
+#758575DD      # Risc-V Assembler program to print "Hello World!"
+#758575DD      # to stdout.
+#758575DD      #
+#758575DD      # a0-a2 - parameters to linux function services
+#758575DD      # a7 - linux function number
+#758575DD      #
+#CB7676        .global
+#DBD7CACC       _start      
+#758575DD      # Provide program starting address to linker
+#758575DD      # Setup the parameters to print hello world
+#758575DD      # and then call Linux to do it.
+#80A665        _start
+#DBD7CACC      : 
+#B8A965        addi
+#DBD7CACC        
+#444444        a0
+#DBD7CACC      , 
+#444444        x0
+#DBD7CACC      , 
+#4C9A91        1
+#DBD7CACC            
+#758575DD      # 1 = StdOut
+#DBD7CACC              
+#B8A965        la
+#DBD7CACC          
+#444444        a1
+#DBD7CACC      , helloworld 
+#758575DD      # load address of helloworld
+#DBD7CACC              
+#B8A965        addi
+#DBD7CACC        
+#444444        a2
+#DBD7CACC      , 
+#444444        x0
+#DBD7CACC      , 
+#4C9A91        13
+#DBD7CACC           
+#758575DD      # length of our string
+#DBD7CACC              
+#B8A965        addi
+#DBD7CACC        
+#444444        a7
+#DBD7CACC      , 
+#444444        x0
+#DBD7CACC      , 
+#4C9A91        64
+#DBD7CACC           
+#758575DD      # linux write system call
+#DBD7CACC              
+#B8A965        ecall
+#DBD7CACC                      
+#758575DD      # Call linux to output the string
+#758575DD      # Setup the parameters to exit the program
+#758575DD      # and then call Linux to do it.
+#DBD7CACC              
+#B8A965        addi
+#DBD7CACC          
+#444444        a0
+#DBD7CACC      , 
+#444444        x0
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC         
+#758575DD      # Use 0 return code
+#DBD7CACC              
+#B8A965        addi
+#DBD7CACC          
+#444444        a7
+#DBD7CACC      , 
+#444444        x0
+#DBD7CACC      , 
+#4C9A91        93
+#DBD7CACC        
+#758575DD      # Service command code 93 terminates
+#DBD7CACC              
+#B8A965        ecall
+#DBD7CACC                     
+#758575DD      # Call linux to terminate the program
+#CB7676        .data
+#80A665        helloworld
+#DBD7CACC      :      
+#CB7676        .ascii
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Hello World!
+#C99076        \n
+#C98A7D77      "
+#758575DD      # From https://smist08.wordpress.com/2019/09/07/risc-v-assembly-language-hello-world/

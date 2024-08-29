@@ -1,0 +1,293 @@
+#4C9A91              
+#758575DD      ******************************************************************
+#4C9A91              
+#758575DD      * Author: Bryan Flood
+#4C9A91              
+#758575DD      * Date: 25/10/2018
+#4C9A91              
+#758575DD      * Purpose: Compute Fibonacci Numbers
+#4C9A91              
+#758575DD      * Tectonics: cobc
+#4C9A91              
+#758575DD      ******************************************************************
+#DBD7CACC             
+#4D9375        IDENTIFICATION DIVISION
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        PROGRAM-ID
+#DBD7CACC      . 
+#80A665        FIB
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        DATA DIVISION
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        FILE SECTION
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        WORKING-STORAGE SECTION
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        N0             
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        N1             
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        SWAP           
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        RESULT         
+#CB7676        PIC Z
+#DBD7CACC      (
+#4C9A91        20
+#DBD7CACC      )
+#4C9A91        9
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        I              
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        I-MAX          
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      .
+#DBD7CACC             
+#4C9A91        01
+#DBD7CACC        LARGEST-N      
+#CB7676        BINARY-C-LONG
+#DBD7CACC       
+#4D9375        VALUE
+#DBD7CACC       
+#4C9A91        92
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        PROCEDURE DIVISION
+#DBD7CACC      .
+#4C9A91              
+#758575DD      *>  THIS IS WHERE THE LABELS GET CALLED
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       MAIN
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       ENDFIB
+#DBD7CACC                 
+#4D9375        GOBACK
+#DBD7CACC      .
+#4C9A91              
+#758575DD      *>  THIS ACCEPTS INPUT AND DETERMINES THE OUTPUT USING A EVAL STMT
+#DBD7CACC             MAIN.
+#DBD7CACC                  
+#4D9375        DISPLAY
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ENTER N TO GENERATE THE FIBONACCI SEQUENCE
+#C98A7D77      "
+#DBD7CACC                  
+#4D9375        ACCEPT
+#DBD7CACC       I-MAX.
+#DBD7CACC                  
+#4D9375        EVALUATE
+#DBD7CACC       
+#4D9375        TRUE
+#DBD7CACC                    
+#4D9375        WHEN
+#DBD7CACC       I-MAX 
+#CB7676        >
+#DBD7CACC       LARGEST-N
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       INVALIDN
+#DBD7CACC                    
+#4D9375        WHEN
+#DBD7CACC       I-MAX 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       CASEGREATERTHAN2
+#DBD7CACC                    
+#4D9375        WHEN
+#DBD7CACC       I-MAX 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       CASE2
+#DBD7CACC                    
+#4D9375        WHEN
+#DBD7CACC       I-MAX 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       CASE1
+#DBD7CACC                    
+#4D9375        WHEN
+#DBD7CACC       I-MAX 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       CASE0
+#DBD7CACC                    
+#4D9375        WHEN OTHER
+#DBD7CACC                       
+#4D9375        PERFORM
+#DBD7CACC       INVALIDN
+#DBD7CACC                  
+#4D9375        END-EVALUATE
+#DBD7CACC      .
+#DBD7CACC                  
+#4D9375        STOP RUN
+#DBD7CACC      .
+#DBD7CACC             
+#758575DD      *>  THE CASE FOR WHEN N = 0
+#DBD7CACC             CASE0.
+#DBD7CACC                 
+#4D9375        MOVE
+#DBD7CACC       N0 
+#4D9375        TO
+#DBD7CACC       RESULT.
+#DBD7CACC                 
+#4D9375        DISPLAY
+#DBD7CACC       RESULT.
+#4C9A91              
+#758575DD      *>  THE CASE FOR WHEN N = 1
+#DBD7CACC             CASE1.
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       CASE0
+#DBD7CACC                 
+#4D9375        MOVE
+#DBD7CACC       N1 
+#4D9375        TO
+#DBD7CACC       RESULT.
+#DBD7CACC                 
+#4D9375        DISPLAY
+#DBD7CACC       RESULT.
+#4C9A91              
+#758575DD      *>  THE CASE FOR WHEN N = 2
+#DBD7CACC             CASE2.
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       CASE1
+#DBD7CACC                 
+#4D9375        MOVE
+#DBD7CACC       N1 
+#4D9375        TO
+#DBD7CACC       RESULT.
+#DBD7CACC                 
+#4D9375        DISPLAY
+#DBD7CACC       RESULT.
+#4C9A91              
+#758575DD      *>  THE CASE FOR WHEN N > 2
+#DBD7CACC             CASEGREATERTHAN2.
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       CASE1
+#DBD7CACC                 
+#4D9375        PERFORM
+#DBD7CACC       
+#4D9375        VARYING
+#DBD7CACC       I 
+#4D9375        FROM
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4D9375        BY
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4D9375        UNTIL
+#DBD7CACC       I 
+#CB7676        =
+#DBD7CACC       I-MAX
+#DBD7CACC                         
+#4D9375        ADD
+#DBD7CACC       N0 
+#4D9375        TO
+#DBD7CACC       N1 
+#4D9375        GIVING
+#DBD7CACC       SWAP
+#DBD7CACC                         
+#4D9375        MOVE
+#DBD7CACC       N1 
+#4D9375        TO
+#DBD7CACC       N0
+#DBD7CACC                         
+#4D9375        MOVE
+#DBD7CACC       SWAP 
+#4D9375        TO
+#DBD7CACC       N1
+#DBD7CACC                         
+#4D9375        MOVE
+#DBD7CACC       SWAP 
+#4D9375        TO
+#DBD7CACC       RESULT
+#DBD7CACC                         
+#4D9375        DISPLAY
+#DBD7CACC       RESULT
+#DBD7CACC                  
+#4D9375        END-PERFORM
+#DBD7CACC      .
+#4C9A91              
+#758575DD      *>  PROVIDE ERROR FOR INVALID INPUT
+#DBD7CACC             INVALIDN.
+#DBD7CACC                 
+#4D9375        DISPLAY
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        INVALID N VALUE. THE PROGRAM WILL NOW END
+#C98A7D77      '
+#DBD7CACC      .
+#4C9A91              
+#758575DD      *>  END THE PROGRAM WITH A MESSAGE
+#DBD7CACC             ENDFIB.
+#DBD7CACC                 
+#4D9375        DISPLAY
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        THE PROGRAM HAS COMPLETED AND WILL NOW END
+#C98A7D77      "
+#DBD7CACC      .
+#DBD7CACC             
+#4D9375        END PROGRAM
+#DBD7CACC       
+#80A665        FIB
+#DBD7CACC      .
+#758575DD      *> From https://github.com/KnowledgePending/COBOL-Fibonacci-Sequence/blob/master/fib.cbl

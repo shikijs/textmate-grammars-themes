@@ -1,0 +1,106 @@
+#CB7676        <?
+#C99076        php
+#4D9375        namespace
+#DBD7CACC       
+#5DA994        App
+#444444        \
+#5DA994        Console
+#444444        ;
+#4D9375        use
+#DBD7CACC       
+#B8A965        Illuminate
+#444444        \
+#B8A965        Console
+#444444        \
+#B8A965        Scheduling
+#444444        \
+#B8A965        Schedule
+#444444        ;
+#4D9375        use
+#DBD7CACC       
+#B8A965        Illuminate
+#444444        \
+#B8A965        Foundation
+#444444        \
+#B8A965        Console
+#444444        \
+#B8A965        Kernel
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#80A665        ConsoleKernel
+#444444        ;
+#CB7676        class
+#DBD7CACC       
+#5DA994        Kernel
+#DBD7CACC       
+#CB7676        extends
+#DBD7CACC       
+#80A665        ConsoleKernel
+#444444        {
+#DBD7CACC          
+#758575DD      /**
+#758575DD           * Define the application's command schedule.
+#758575DD           */
+#DBD7CACC          
+#CB7676        protected
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        schedule
+#444444        (
+#B8A965        Schedule
+#DBD7CACC       
+#444444        $
+#BD976A        schedule
+#444444        )
+#CB7676        :
+#DBD7CACC       
+#4D9375        void
+#DBD7CACC          
+#444444        {
+#444444                
+#758575DD      // $schedule->command('inspire')->hourly();
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#758575DD      /**
+#758575DD           * Register the commands for the application.
+#758575DD           */
+#DBD7CACC          
+#CB7676        protected
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        commands
+#444444        ()
+#CB7676        :
+#DBD7CACC       
+#4D9375        void
+#DBD7CACC          
+#444444        {
+#DBD7CACC              
+#444444        $
+#C99076        this
+#CB7676        ->
+#80A665        load
+#444444        (
+#4D9375        __DIR__
+#CB7676        .
+#C98A7D77      '
+#C98A7D        /Commands
+#C98A7D77      '
+#444444        );
+#DBD7CACC              
+#4D9375        require
+#DBD7CACC       
+#80A665        base_path
+#444444        (
+#C98A7D77      '
+#C98A7D        routes/console.php
+#C98A7D77      '
+#444444        );
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/laravel/laravel/blob/10.x/app/Console/Kernel.php

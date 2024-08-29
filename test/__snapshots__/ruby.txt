@@ -1,0 +1,115 @@
+#4D9375        class
+#DBD7CACC       
+#5DA994        LotteryTicket
+#DBD7CACC        
+#BD976A        NUMERIC_RANGE
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#444444        ..
+#4C9A91        25
+#DBD7CACC        
+#4D9375        attr_reader
+#DBD7CACC       
+#444444        :
+#C99076        picks
+#444444        ,
+#DBD7CACC       
+#444444        :
+#C99076        purchased
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        initialize
+#444444        (
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC      picks 
+#444444        )
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       picks
+#444444        .
+#DBD7CACC      length 
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC            
+#4D9375        raise
+#DBD7CACC       
+#BD976A        ArgumentError
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        three numbers must be picked
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        elsif
+#DBD7CACC       picks
+#444444        .
+#DBD7CACC      uniq
+#444444        .
+#DBD7CACC      length 
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC            
+#4D9375        raise
+#DBD7CACC       
+#BD976A        ArgumentError
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        the three picks must be different numbers
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        elsif
+#DBD7CACC       picks
+#444444        .
+#DBD7CACC      detect 
+#444444        {
+#DBD7CACC       
+#444444        |
+#B8A965        p
+#444444        |
+#DBD7CACC       
+#CB7676        not
+#DBD7CACC       
+#BD976A        NUMERIC_RANGE
+#DBD7CACC       
+#CB7676        ===
+#DBD7CACC       
+#B8A965        p
+#DBD7CACC       
+#444444        }
+#DBD7CACC            
+#4D9375        raise
+#DBD7CACC       
+#BD976A        ArgumentError
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        the three picks must be numbers between 1 and 25
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC          
+#444444        @
+#BD976A        picks
+#DBD7CACC       
+#444444        =
+#DBD7CACC       picks
+#DBD7CACC          
+#444444        @
+#BD976A        purchased
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        Time
+#444444        .
+#DBD7CACC      now
+#DBD7CACC        
+#4D9375        end
+#4D9375        end
+#758575DD      # From https://poignant.guide/book/chapter-5.html

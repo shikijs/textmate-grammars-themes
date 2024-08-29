@@ -1,0 +1,201 @@
+#444444        {
+#DBD7CACC        
+#758575DD      # dependencies
+#DBD7CACC        stdenv
+#CB7676        ,
+#DBD7CACC       fetchurl
+#CB7676        ,
+#DBD7CACC       nix-gitignore
+#CB7676        ,
+#DBD7CACC       buildGoModule
+#CB7676        ,
+#DBD7CACC        
+#758575DD      # args
+#DBD7CACC        localFiles 
+#CB7676        ?
+#DBD7CACC       
+#4D9375        false
+#444444        }:
+#BD976A        buildGoModule
+#DBD7CACC       
+#4D9375        rec
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        pname
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        hello
+#C98A7D77      "
+#444444        ;
+#DBD7CACC        
+#BD976A        version
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1.0
+#C98A7D77      "
+#444444        ;
+#DBD7CACC        
+#BD976A        src
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        (
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#BD976A        localFiles
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC            
+#BD976A        nix-gitignore
+#CB7676        .
+#BD976A        gitignoreSource
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        result
+#C98A7D77      "
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D        ./.
+#DBD7CACC          
+#4D9375        else
+#DBD7CACC            
+#BD976A        fetchurl
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        url
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        https://example.com
+#C98A7D77      "
+#444444        ;
+#DBD7CACC              
+#BD976A        sha256
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        stdenv
+#CB7676        .
+#BD976A        lib
+#CB7676        .
+#BD976A        fakeSha256
+#444444        ;
+#DBD7CACC            
+#444444        }
+#DBD7CACC        
+#444444        );
+#DBD7CACC        
+#BD976A        modSha256
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1ggp6xhhlixihjx37v5j9gd3sa1gymqrglf9c3j1pwfnym1k99y3
+#C98A7D77      "
+#444444        ;
+#DBD7CACC        
+#BD976A        subPackages
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#444444        ];
+#DBD7CACC        
+#BD976A        passthru
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        executable
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        main
+#C98A7D77      "
+#444444        ;
+#DBD7CACC        
+#444444        };
+#DBD7CACC        
+#BD976A        meta
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        with
+#DBD7CACC       
+#BD976A        stdenv
+#CB7676        .
+#BD976A        lib
+#DBD7CACC      ; 
+#444444        {
+#DBD7CACC          
+#BD976A        description
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Hello world example in Go
+#C98A7D77      "
+#444444        ;
+#DBD7CACC          
+#BD976A        longDescription
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      ''
+#C98A7D              Long description for Hello world example in Go.
+#C98A7D            
+#C98A7D77      ''
+#444444        ;
+#DBD7CACC          
+#BD976A        homepage
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D        https://blog.golang.org/using-go-modules
+#444444        ;
+#DBD7CACC          
+#BD976A        license
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        licenses
+#CB7676        .
+#BD976A        asl20
+#444444        ;
+#DBD7CACC          
+#BD976A        maintainers
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [];
+#DBD7CACC          
+#BD976A        platforms
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        platforms
+#CB7676        .
+#BD976A        all
+#444444        ;
+#DBD7CACC        
+#444444        };
+#444444        }
+#758575DD      # From https://github.com/vlktomas/nix-examples/tree/master/desktop/Go/hello

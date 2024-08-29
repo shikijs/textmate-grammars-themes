@@ -1,0 +1,40 @@
+#4D9375        function
+#DBD7CACC       fish_prompt
+#DBD7CACC          
+#758575DD      # A simple prompt. Displays the current directory
+#DBD7CACC          
+#758575DD      # (which fish stores in the $PWD variable)
+#DBD7CACC          
+#758575DD      # and then a user symbol - a '►' for a normal user and a '#' for root.
+#DBD7CACC          
+#B8A965        set
+#DBD7CACC       -l user_char 
+#C98A7D77      '
+#C98A7D        ►
+#C98A7D77      '
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#B8A965        fish_is_root_user
+#DBD7CACC              
+#B8A965        set
+#DBD7CACC       user_char 
+#C98A7D77      '
+#C98A7D        #
+#C98A7D77      '
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC          
+#B8A965        echo
+#DBD7CACC       (
+#B8A965        set_color
+#DBD7CACC       yellow)
+#444444        $
+#BD976A        PWD
+#DBD7CACC       (
+#B8A965        set_color
+#DBD7CACC       purple)
+#444444        $
+#BD976A        user_char
+#4D9375        end
+#758575DD      # From https://fishshell.com/docs/current/language.html#functions

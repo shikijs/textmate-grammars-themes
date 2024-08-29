@@ -1,0 +1,182 @@
+#DBD7CACC      [
+#BD976A        indent
+#DBD7CACC      =
+#4C9A91        4
+#DBD7CACC      ]
+#4D9375        namespace
+#DBD7CACC       
+#5DA994        Entitas
+#DBD7CACC          
+#4D9375        delegate
+#DBD7CACC       
+#5DA994        OnEntityChanged
+#DBD7CACC      (
+#BD976A        e
+#DBD7CACC       : 
+#5DA994        IEntity
+#DBD7CACC      , 
+#BD976A        index
+#DBD7CACC       : 
+#4D9375        int
+#DBD7CACC      , 
+#BD976A        component
+#DBD7CACC       : 
+#5DA994        IComponent
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        class
+#DBD7CACC       
+#5DA994        EntityChanged
+#DBD7CACC       : 
+#5DA994        Object
+#DBD7CACC              
+#4D9375        class
+#DBD7CACC       
+#5DA994        Listener
+#DBD7CACC       : 
+#5DA994        Object
+#DBD7CACC                  
+#4D9375        prop
+#DBD7CACC       
+#4D9375        event
+#DBD7CACC       : 
+#4D9375        unowned
+#DBD7CACC       
+#5DA994        OnEntityChanged
+#DBD7CACC                  
+#4D9375        construct
+#DBD7CACC      (
+#4D9375        event
+#DBD7CACC       : 
+#5DA994        OnEntityChanged
+#DBD7CACC      )
+#DBD7CACC                      
+#BD976A        _event
+#DBD7CACC       = 
+#4D9375        event
+#DBD7CACC              
+#BD976A        _listeners
+#DBD7CACC       : 
+#4D9375        list
+#DBD7CACC       
+#4D9375        of
+#DBD7CACC       
+#5DA994        Listener
+#DBD7CACC       = 
+#4D9375        new
+#DBD7CACC       
+#4D9375        list
+#DBD7CACC       
+#4D9375        of
+#DBD7CACC       
+#5DA994        Listener
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       
+#80A665        add
+#DBD7CACC      (
+#4D9375        event
+#DBD7CACC       : 
+#5DA994        OnEntityChanged
+#DBD7CACC      )
+#DBD7CACC                  
+#BD976A        _listeners
+#DBD7CACC      .
+#80A665        add
+#DBD7CACC      (
+#4D9375        new
+#DBD7CACC       
+#5DA994        Listener
+#DBD7CACC      (
+#4D9375        event
+#DBD7CACC      ))
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       
+#80A665        remove
+#DBD7CACC      (
+#4D9375        event
+#DBD7CACC       : 
+#5DA994        OnEntityChanged
+#DBD7CACC      )
+#DBD7CACC                  
+#4D9375        for
+#DBD7CACC       
+#4D9375        var
+#DBD7CACC       
+#BD976A        listener
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        _listeners
+#DBD7CACC                      
+#4D9375        if
+#DBD7CACC       
+#BD976A        listener
+#DBD7CACC      .
+#BD976A        event
+#DBD7CACC       == 
+#4D9375        event
+#DBD7CACC                          
+#BD976A        _listeners
+#DBD7CACC      .
+#80A665        remove
+#DBD7CACC      (
+#BD976A        listener
+#DBD7CACC      )
+#DBD7CACC                          
+#4D9375        return
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       
+#80A665        clear
+#DBD7CACC      ()
+#DBD7CACC                  
+#BD976A        _listeners
+#DBD7CACC       = 
+#4D9375        new
+#DBD7CACC       
+#4D9375        list
+#DBD7CACC       
+#4D9375        of
+#DBD7CACC       
+#5DA994        Listener
+#DBD7CACC              
+#4D9375        def
+#DBD7CACC       
+#80A665        dispatch
+#DBD7CACC      (
+#BD976A        e
+#DBD7CACC       : 
+#5DA994        IEntity
+#DBD7CACC      , 
+#BD976A        index
+#DBD7CACC       : 
+#4D9375        int
+#DBD7CACC      , 
+#BD976A        component
+#DBD7CACC       : 
+#5DA994        IComponent
+#DBD7CACC      )
+#DBD7CACC                  
+#4D9375        for
+#DBD7CACC       
+#4D9375        var
+#DBD7CACC       
+#BD976A        listener
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        _listeners
+#DBD7CACC                      
+#BD976A        listener
+#DBD7CACC      .
+#80A665        event
+#DBD7CACC      (
+#BD976A        e
+#DBD7CACC      , 
+#BD976A        index
+#DBD7CACC      , 
+#BD976A        component
+#DBD7CACC      )
+#758575DD      // From https://github.com/darkoverlordofdata/libentitas/blob/master/src/Events/EntityChanged.gs

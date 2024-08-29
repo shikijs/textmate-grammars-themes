@@ -1,0 +1,136 @@
+#758575DD      // File : tb_top.sv
+#4D9375        module
+#DBD7CACC       
+#5DA994        tb_top
+#DBD7CACC       ()
+#444444        ;
+#CB7676            reg
+#DBD7CACC       
+#BD976A        clk
+#DBD7CACC      ;
+#CB7676            reg
+#DBD7CACC       
+#BD976A        resetn
+#DBD7CACC      ;
+#CB7676            reg
+#DBD7CACC       
+#BD976A        d
+#DBD7CACC      ;
+#CB7676            wire
+#DBD7CACC       
+#BD976A        q
+#DBD7CACC      ;
+#DBD7CACC          
+#758575DD      // Instantiate the design
+#DBD7CACC          
+#5DA994        d_ff
+#DBD7CACC        
+#BD976A        d_ff0
+#DBD7CACC       (   .
+#B8A965        clk
+#DBD7CACC       (
+#BD976A        clk
+#DBD7CACC      ),
+#DBD7CACC                  .
+#B8A965        resetn
+#DBD7CACC       (
+#BD976A        resetn
+#DBD7CACC      ),
+#DBD7CACC                  .
+#B8A965        d
+#DBD7CACC       (
+#BD976A        d
+#DBD7CACC      ),
+#DBD7CACC                  .
+#B8A965        q
+#DBD7CACC       (
+#BD976A        q
+#DBD7CACC      ))
+#444444        ;
+#DBD7CACC          
+#758575DD      // Create a clock
+#DBD7CACC          
+#4D9375        always
+#DBD7CACC       
+#CB7676        #
+#4C9A91        10
+#DBD7CACC       
+#BD976A        clk
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#CB7676        ~
+#BD976A        clk
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        initial
+#DBD7CACC       
+#4D9375        begin
+#DBD7CACC          
+#BD976A        resetn
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#BD976A        d
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        #
+#4C9A91        10
+#DBD7CACC       
+#BD976A        resetn
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        #
+#4C9A91        5
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        #
+#4C9A91        8
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        #
+#4C9A91        2
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        #
+#4C9A91        10
+#DBD7CACC           
+#BD976A        d
+#DBD7CACC       
+#444444        <=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        end
+#4D9375        endmodule
+#758575DD      // From https://www.chipverify.com/tutorials/systemverilog

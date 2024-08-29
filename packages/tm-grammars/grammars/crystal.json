@@ -41,7 +41,7 @@
           "name": "punctuation.separator.crystal"
         }
       },
-      "match": "(?x)^\\s*(abstract)?\\s*(class|struct|union|annotation|enum)\\s+(([.A-Z_:\\x{80}-\\x{10FFFF}][.\\w:\\x{80}-\\x{10FFFF}]*(\\(([,\\s.a-zA-Z0-9_:\\x{80}-\\x{10FFFF}]+)\\))?(\\s*(<)\\s*[.:A-Z\\x{80}-\\x{10FFFF}][.:\\w\\x{80}-\\x{10FFFF}]*(\\(([.a-zA-Z0-9_:]+\\s,)\\))?)?)|((<<)\\s*[.A-Z0-9_:\\x{80}-\\x{10FFFF}]+))",
+      "match": "^\\s*(abstract)?\\s*(class|struct|union|annotation|enum)\\s+(([.A-Z_:\\x{80}-\\x{10FFFF}][.\\w:\\x{80}-\\x{10FFFF}]*(\\(([,\\s.a-zA-Z0-9_:\\x{80}-\\x{10FFFF}]+)\\))?(\\s*(<)\\s*[.:A-Z\\x{80}-\\x{10FFFF}][.:\\w\\x{80}-\\x{10FFFF}]*(\\(([.a-zA-Z0-9_:]+\\s,)\\))?)?)|((<<)\\s*[.A-Z0-9_:\\x{80}-\\x{10FFFF}]+))",
       "name": "meta.class.crystal"
     },
     {
@@ -265,7 +265,7 @@
       "name": "variable.other.constant.crystal"
     },
     {
-      "begin": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\s+\n(\n(?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>\n[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|\n\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n)\n)\n\\s*(\\()",
+      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?))\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.crystal"
@@ -324,7 +324,7 @@
         }
       },
       "comment": " the optional name is just to catch the def also without a method-name",
-      "match": "(?x)\n(?=def\\b)\n(?<=^|\\s)(def)\\b\n(\n\\s+\n(\n(?>[a-zA-Z_]\\w*(?>\\.|::))?\n(?>\n[a-zA-Z_]\\w*(?>[?!]|=(?!>))?\n|\n\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?\n)\n)\n)?",
+      "match": "(?=def\\b)(?<=^|\\s)(def)\\b(\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?)))?",
       "name": "meta.function.method.without-arguments.crystal"
     },
     {
@@ -616,7 +616,7 @@
       ]
     },
     {
-      "begin": "(?x) (?: ^| (?<=[=>~(?:\\[,|&;] | [\\s;]if\\s| [\\s;]elsif\\s | [\\s;]while\\s | [\\s;]unless\\s | [\\s;]when\\s | [\\s;]assert_match\\s | [\\s;]or\\s| [\\s;]and\\s | [\\s;]not\\s | [\\s.]index\\s| [\\s.]scan\\s | [\\s.]sub\\s | [\\s.]sub!\\s | [\\s.]gsub\\s | [\\s.]gsub!\\s | [\\s.]match\\s ) | (?<=^when\\s| ^if\\s | ^elsif\\s | ^while\\s | ^unless\\s ) ) \\s*((/))(?![*+{}?])",
+      "begin": "(?:^|(?<=[=>~(?:\\[,|&;]|[\\s;]if\\s|[\\s;]elsif\\s|[\\s;]while\\s|[\\s;]unless\\s|[\\s;]when\\s|[\\s;]assert_match\\s|[\\s;]or\\s|[\\s;]and\\s|[\\s;]not\\s|[\\s.]index\\s|[\\s.]scan\\s|[\\s.]sub\\s|[\\s.]sub!\\s|[\\s.]gsub\\s|[\\s.]gsub!\\s|[\\s.]match\\s)|(?<=^when\\s|^if\\s|^elsif\\s|^while\\s|^unless\\s))\\s*((/))(?![*+{}?])",
       "captures": {
         "1": {
           "name": "string.regexp.classic.crystal"

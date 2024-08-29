@@ -73,7 +73,7 @@
       "name": "constant.language.json.lines"
     },
     "number": {
-      "match": "(?x)\n-?\n(?:\n0\n|\n[1-9]\n\\d*\n)\n(?:\n(?:\n\\.\n\\d+\n)?\n(?:\n[eE]\n[+-]?\n\\d+\n)?\n)?",
+      "match": "-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)?",
       "name": "constant.numeric.json.lines"
     },
     "object": {
@@ -172,7 +172,7 @@
     "stringcontent": {
       "patterns": [
         {
-          "match": "(?x)\n\\\\\n(?:\n[\"\\\\/bfnrt]\n|\nu\n[0-9a-fA-F]{4})",
+          "match": "\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4})",
           "name": "constant.character.escape.json.lines"
         },
         {

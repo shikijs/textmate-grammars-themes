@@ -993,7 +993,7 @@
       "name": "keyword.control.twig"
     },
     "twig-macros": {
-      "begin": "(?x)\n(?<=[\\s\\(\\[\\{:,])\n([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(?:\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n)?\n(\\()\n",
+      "begin": "(?<=[\\s\\(\\[\\{:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?(\\()",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.twig"
@@ -1198,10 +1198,10 @@
               "name": "variable.other.property.twig"
             }
           },
-          "match": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(?=[\\.\\s\\|\\[\\)\\]\\}:,])\n"
+          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\.\\s\\|\\[\\)\\]\\}:,])"
         },
         {
-          "begin": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n(\\()\n",
+          "begin": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.property.twig"
@@ -1289,7 +1289,7 @@
               "name": "punctuation.section.array.end.twig"
             }
           },
-          "match": "(?x)\n(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]])\n(?:\n(\\[)('[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*')(\\])\n|(\\[)(\"[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*\")(\\])\n|(\\[)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\])\n)\n"
+          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]])(?:(\\[)('[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*')(\\])|(\\[)(\"[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*\")(\\])|(\\[)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\]))"
         }
       ]
     },

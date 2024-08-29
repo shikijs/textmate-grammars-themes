@@ -35,7 +35,7 @@
       ]
     },
     "fregexp-quantifier": {
-      "match": "(?x)\n\\{\\{(\n\\d+ | \\d+,(\\d+)? | ,\\d+\n)\\}\\}\n",
+      "match": "\\{\\{(\\d+|\\d+,(\\d+)?|,\\d+)\\}\\}",
       "name": "keyword.operator.quantifier.regexp"
     },
     "fstring-formatting-braces": {
@@ -73,7 +73,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.backreference.named.end.regexp"
         }
       },
-      "match": "(?x)\n(\\()  (\\?P= \\w+(?:\\s+[[:alnum:]]+)?)  (\\))\n",
+      "match": "(\\()(\\?P=\\w+(?:\\s+[[:alnum:]]+)?)(\\))",
       "name": "meta.backreference.named.regexp"
     },
     "regexp-backreference-number": {
@@ -125,7 +125,7 @@
     "regexp-character-set": {
       "patterns": [
         {
-          "match": "(?x)\n\\[ \\^? \\] (?! .*?\\])\n"
+          "match": "\\[\\s\\^?\\s\\](?!.*?\\])"
         },
         {
           "begin": "(\\[)(\\^)?(\\])?",
@@ -239,7 +239,7 @@
       "name": "constant.character.escape.regexp"
     },
     "regexp-escape-character": {
-      "match": "(?x)\n\\\\ (\nx[0-9A-Fa-f]{2}\n| 0[0-7]{1,2}\n| [0-7]{3}\n)\n",
+      "match": "\\\\(x[0-9A-Fa-f]{2}|0[0-7]{1,2}|[0-7]{3})",
       "name": "constant.character.escape.regexp"
     },
     "regexp-escape-sequence": {
@@ -266,7 +266,7 @@
       "name": "support.other.escape.special.regexp"
     },
     "regexp-escape-unicode": {
-      "match": "(?x)\n\\\\ (\nu[0-9A-Fa-f]{4}\n| U[0-9A-Fa-f]{8}\n)\n",
+      "match": "\\\\(u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})",
       "name": "constant.character.unicode.regexp"
     },
     "regexp-expression": {
@@ -417,7 +417,7 @@
       ]
     },
     "regexp-named-group": {
-      "begin": "(?x)\n(\\()  (\\?P <\\w+(?:\\s+[[:alnum:]]+)?>)\n",
+      "begin": "(\\()(\\?P<\\w+(?:\\s+[[:alnum:]]+)?>)",
       "beginCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp"
@@ -487,7 +487,7 @@
       ]
     },
     "regexp-quantifier": {
-      "match": "(?x)\n\\{(\n\\d+ | \\d+,(\\d+)? | ,\\d+\n)\\}\n",
+      "match": "\\{(\\d+|\\d+,(\\d+)?|,\\d+)\\}",
       "name": "keyword.operator.quantifier.regexp"
     }
   },

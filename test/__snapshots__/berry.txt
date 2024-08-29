@@ -1,0 +1,279 @@
+#4D9375        class
+#DBD7CACC       
+#BD976A        node
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC       v, l, r
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        init
+#CB7676        (
+#DBD7CACC      v, l, r
+#CB7676        )
+#DBD7CACC              
+#4D9375        self
+#BD976A        .v
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       v
+#DBD7CACC              
+#4D9375        self
+#BD976A        .l
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       l
+#DBD7CACC              
+#4D9375        self
+#BD976A        .r
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       r
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        insert
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       v 
+#CB7676        <
+#DBD7CACC       
+#4D9375        self
+#BD976A        .v
+#DBD7CACC                  
+#4D9375        if
+#DBD7CACC       
+#4D9375        self
+#BD976A        .l
+#DBD7CACC                      
+#4D9375        self
+#BD976A        .l.insert
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC                  
+#4D9375        else
+#DBD7CACC                      
+#4D9375        self
+#BD976A        .l
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        node
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC                  
+#4D9375        end
+#DBD7CACC              
+#4D9375        else
+#DBD7CACC                  
+#4D9375        if
+#DBD7CACC       
+#4D9375        self
+#BD976A        .r
+#DBD7CACC                      
+#4D9375        self
+#BD976A        .r.insert
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC                  
+#4D9375        else
+#DBD7CACC                      
+#4D9375        self
+#BD976A        .r
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        node
+#DBD7CACC       
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC                  
+#4D9375        end
+#DBD7CACC              
+#4D9375        end
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        sort
+#CB7676        (
+#DBD7CACC      l
+#CB7676        )
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       
+#CB7676        (
+#4D9375        self
+#BD976A        .l
+#CB7676        )
+#DBD7CACC       
+#4D9375        self
+#BD976A        .l.sort
+#CB7676        (
+#DBD7CACC      l
+#CB7676        )
+#DBD7CACC       
+#4D9375        end
+#DBD7CACC              l
+#BD976A        .push
+#CB7676        (
+#4D9375        self
+#BD976A        .v
+#CB7676        )
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       
+#CB7676        (
+#4D9375        self
+#BD976A        .r
+#CB7676        )
+#DBD7CACC       
+#4D9375        self
+#BD976A        .r.sort
+#CB7676        (
+#DBD7CACC      l
+#CB7676        )
+#DBD7CACC       
+#4D9375        end
+#DBD7CACC          
+#4D9375        end
+#4D9375        end
+#4D9375        class
+#DBD7CACC       
+#BD976A        btree
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC       
+#BD976A        root
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        insert
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       
+#4D9375        self
+#BD976A        .root
+#DBD7CACC                  
+#4D9375        self
+#BD976A        .root.insert
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC              
+#4D9375        else
+#DBD7CACC                  
+#4D9375        self
+#BD976A        .root
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        node
+#CB7676        (
+#DBD7CACC      v
+#CB7676        )
+#DBD7CACC              
+#4D9375        end
+#DBD7CACC          
+#4D9375        end
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        sort
+#CB7676        ()
+#DBD7CACC              
+#4D9375        var
+#DBD7CACC       l 
+#CB7676        =
+#DBD7CACC       
+#CB7676        []
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       
+#4D9375        self
+#BD976A        .root
+#DBD7CACC                  
+#4D9375        self
+#BD976A        .root.sort
+#CB7676        (
+#DBD7CACC      l
+#CB7676        )
+#DBD7CACC              
+#4D9375        end
+#DBD7CACC              
+#4D9375        return
+#DBD7CACC       l
+#DBD7CACC          
+#4D9375        end
+#4D9375        end
+#4D9375        var
+#DBD7CACC       
+#BD976A        tree
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        btree
+#CB7676        ()
+#BD976A        tree.insert
+#CB7676        (-
+#4C9A91        100
+#CB7676        )
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        5
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        3
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        9
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        10
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        10000000
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (
+#4C9A91        1
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (-
+#4C9A91        1
+#CB7676        )
+#DBD7CACC      ;
+#BD976A        tree.insert
+#CB7676        (-
+#4C9A91        10
+#CB7676        )
+#DBD7CACC      ;
+#80A665        print
+#CB7676        (
+#BD976A        tree.sort
+#CB7676        ())
+#DBD7CACC      ;
+#758575DD      # From https://github.com/berry-lang/berry/blob/master/examples/bintree.be

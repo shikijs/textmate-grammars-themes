@@ -1,0 +1,103 @@
+#758575DD      /**
+#758575DD       * Private helper for demoCallWithoutParams, demoCallWithParams, and demoCallWithParamBlock.
+#758575DD       * Reports on a trip.
+#758575DD       */
+#DBD7CACC      {
+#CB7676        template
+#DBD7CACC       
+#80A665        tripReport_
+#DBD7CACC       
+#CB7676        visibility
+#DBD7CACC      =
+#C98A7D        "private"
+#DBD7CACC       
+#CB7676        kind
+#DBD7CACC      =
+#C98A7D        "text"
+#DBD7CACC      }
+#DBD7CACC        {
+#4D9375        @param
+#CB7676        ?
+#DBD7CACC       
+#BD976A        name:
+#DBD7CACC       
+#B8A965        string
+#DBD7CACC      |
+#B8A965        null
+#DBD7CACC      }           
+#758575DD      /** The name of the person who took a trip (optional). */
+#DBD7CACC        {
+#4D9375        @param
+#CB7676        ?
+#DBD7CACC       
+#BD976A        destination:
+#DBD7CACC       
+#B8A965        string
+#DBD7CACC      |
+#B8A965        null
+#DBD7CACC      }    
+#758575DD      /** The destination of the trip (optional). */
+#758575DD        // Note: The template name demonstrates the good practice of adding a trailing underscore to
+#758575DD        // private templates (template that should never be called from hand-written code).
+#DBD7CACC        {
+#4D9375        if
+#DBD7CACC       !
+#BD976A        $name
+#DBD7CACC      }
+#758575DD          // Note: The message below demonstrates that the 'desc' attribute can be left empty. However,
+#758575DD          // this is not recommended except for the simplest messages, otherwise you risk confusing some
+#758575DD          // translators and getting poor translations.
+#DBD7CACC          {
+#4D9375        msg
+#DBD7CACC       
+#CB7676        desc
+#DBD7CACC      =
+#C98A7D        ""
+#DBD7CACC      }
+#DBD7CACC            A trip was taken.
+#DBD7CACC          {/
+#4D9375        msg
+#DBD7CACC      }
+#DBD7CACC        {
+#4D9375        elseif
+#DBD7CACC       !
+#BD976A        $destination
+#DBD7CACC      }
+#DBD7CACC          {
+#4D9375        msg
+#DBD7CACC       
+#CB7676        desc
+#DBD7CACC      =
+#C98A7D        "Example: Alice took a trip."
+#DBD7CACC      }
+#DBD7CACC            {
+#BD976A        $name
+#DBD7CACC      } took a trip.
+#DBD7CACC          {/
+#4D9375        msg
+#DBD7CACC      }
+#DBD7CACC        {
+#4D9375        else
+#DBD7CACC      }
+#DBD7CACC          {
+#4D9375        msg
+#DBD7CACC       
+#CB7676        desc
+#DBD7CACC      =
+#C98A7D        "Example: Alice took a trip to wonderland."
+#DBD7CACC      }
+#DBD7CACC            {
+#BD976A        $name
+#DBD7CACC      } took a trip to {
+#BD976A        $destination
+#DBD7CACC      }.
+#DBD7CACC          {/
+#4D9375        msg
+#DBD7CACC      }
+#DBD7CACC        {/
+#4D9375        if
+#DBD7CACC      }
+#DBD7CACC      {
+#CB7676        /template
+#DBD7CACC      }
+#758575DD      // From https://github.com/google/closure-templates/blob/master/examples/features.soy

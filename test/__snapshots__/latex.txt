@@ -1,0 +1,83 @@
+#DBD7CACC      % This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+#444444        \
+#4D9375        documentclass
+#444444        {
+#B8A965        article
+#444444        }
+#DBD7CACC       % 
+#444444        \
+#4D9375        documentclass
+#444444        {}
+#DBD7CACC       is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+#444444        \
+#4D9375        usepackage
+#444444        {
+#B8A965        amsmath
+#444444        }
+#DBD7CACC       % \usepackage is a command that allows you to add functionality to your LaTeX code
+#DBD7CACC      \title{Simple Sample} % Sets article title
+#DBD7CACC      \author{My Name} % Sets authors name
+#DBD7CACC      \date{\today} % Sets date for date compiled
+#DBD7CACC      % The preamble ends with the command 
+#444444        \
+#B8A965        begin
+#444444        {
+#DBD7CACC      document
+#444444        }
+#444444        \
+#B8A965        begin
+#444444        {
+#DBD7CACC      document
+#444444        }
+#DBD7CACC       % All begin commands must be paired with an end command somewhere
+#DBD7CACC          \maketitle % creates title using information in preamble (title, author, date)
+#DBD7CACC          
+#444444        \
+#B8A965        section
+#444444        {
+#80A665        Hello World!
+#444444        }
+#DBD7CACC       % creates a section
+#DBD7CACC          
+#444444        \
+#B8A965        textbf
+#444444        {
+#DBD7CACC      Hello World!
+#444444        }
+#DBD7CACC       Today I am learning \LaTeX. %notice how the command will end at the first non-alphabet charecter such as the . after \LaTeX
+#DBD7CACC           \LaTeX{} is a great program for writing math. I can write in line math such as 
+#C98A7D77      $
+#B8A965        a^2+b^2=c^2
+#C98A7D77      $
+#DBD7CACC       %
+#C98A7D77      $
+#B8A965         tells LaTexX to compile as math
+#B8A965             . I can also give equations their own space:
+#B8A965            
+#444444        \
+#B8A965        begin
+#444444        {
+#DBD7CACC      equation
+#444444        }
+#B8A965         % Creates an equation environment and is compiled as math
+#B8A965            \gamma^2+\theta^2=\omega^2
+#B8A965            
+#444444        \
+#B8A965        end
+#444444        {
+#DBD7CACC      equation
+#444444        }
+#B8A965            If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).
+#B8A965            Also notice how even though I hit enter after that sentence and here 
+#C98A7D77      $
+#DBD7CACC      \downarrow
+#C98A7D77      $
+#B8A965             \LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+#B8A965            For a new paragraph I can leave a blank space in my code.
+#444444        \
+#B8A965        end
+#444444        {
+#DBD7CACC      document
+#444444        }
+#B8A965         % This is the end of the document
+#B8A965        % From https://guides.nyu.edu/LaTeX/sample-document

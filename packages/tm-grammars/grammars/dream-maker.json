@@ -35,7 +35,7 @@
           "name": "variable.other.dm"
         }
       },
-      "match": "(?x)\n(var)[\\/ ]\n(?:(static|global|tmp|const)\\/)?\n(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?\n(?:\n([a-zA-Z0-9_\\-$]*)\\/\n)*\n\n([A-Za-z0-9_$]*)\\b",
+      "match": "(var)[\\/\\s](?:(static|global|tmp|const)\\/)?(?:(datum|atom(?:\\/movable)?|obj|mob|turf|area|savefile|list|client|sound|image|database|matrix|regex|exception)\\/)?(?:([a-zA-Z0-9_\\-$]*)\\/)*([A-Za-z0-9_$]*)\\b",
       "name": "meta.initialization.dm"
     },
     {
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)",
+      "begin": "^\\s*((\\#)\\s*define)\\s+((?<id>[a-zA-Z_][a-zA-Z0-9_]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.directive.define.dm"
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_][a-zA-Z0-9_]*))",
+      "begin": "^\\s*((\\#)\\s*define)\\s+((?<id>[a-zA-Z_][a-zA-Z0-9_]*))",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.directive.define.dm"
@@ -239,7 +239,7 @@
       "include": "#block"
     },
     {
-      "begin": "(?x)\n(?:  ^\n|\n(?: (?= \\s )           (?<!else|new|return) (?<=\\w)\n| (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])\n)\n)\n(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n(\n(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |\n(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )\n)\n\\s*(?=\\()",
+      "begin": "(?:^|(?:(?=\\s)(?<!else|new|return)(?<=\\w)|(?=\\s*[A-Za-z_])(?<!&&)(?<=[*&>])))(\\s*)(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\])))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.function.leading.dm"
@@ -311,7 +311,7 @@
               "name": "punctuation.definition.parameters.dm"
             }
           },
-          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n(\\b\n(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\n)\n\\s*(\\()",
+          "match": "(?:(?=\\s)(?:(?<=else|new|return)|(?<!\\w))(\\s+))?(\\b(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b|::)++)\\s*(\\()",
           "name": "meta.function-call.dm"
         },
         {
@@ -626,7 +626,7 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "(?x)\n\\\\\n(\nh(?:(?:er|im)self|ers|im)\n|([tTsS]?he)\n|He\n|[Hh]is\n|[aA]n?\n|(?:im)?proper\n|\\.\\.\\.\n|(?:icon|ref|[Rr]oman)(?=\\[)\n|[s<>\"n\\n \\[]\n)",
+          "match": "\\\\(h(?:(?:er|im)self|ers|im)|([tTsS]?he)|He|[Hh]is|[aA]n?|(?:im)?proper|\\.\\.\\.|(?:icon|ref|[Rr]oman)(?=\\[)|[s<>\"n\\n\\s\\[])",
           "name": "constant.character.escape.dm"
         },
         {

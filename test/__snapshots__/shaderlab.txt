@@ -1,0 +1,79 @@
+#CB7676        Shader
+#DBD7CACC       
+#C98A7D        "Unlit/NewUnlitShader"
+#DBD7CACC      {
+#DBD7CACC          
+#CB7676        Properties
+#DBD7CACC          {
+#DBD7CACC              
+#B8A965        _MainTex (
+#C98A7D        "Texture"
+#DBD7CACC      , 
+#B8A965        2D
+#DBD7CACC      ) = 
+#C98A7D        "white"
+#DBD7CACC       {}
+#DBD7CACC          }
+#DBD7CACC          
+#CB7676        SubShader
+#DBD7CACC          {
+#DBD7CACC              
+#B8A965        Tags
+#DBD7CACC       { 
+#C98A7D        "RenderType"
+#DBD7CACC      =
+#C98A7D        "Opaque"
+#DBD7CACC       }
+#DBD7CACC              
+#B8A965        LOD
+#DBD7CACC       
+#4C9A91        100
+#DBD7CACC              
+#CB7676        Pass
+#DBD7CACC              {
+#DBD7CACC                  
+#4D9375        CGPROGRAM
+#DBD7CACC                  #pragma vertex vert
+#DBD7CACC                  #pragma fragment frag
+#DBD7CACC                  // make fog work
+#DBD7CACC                  #pragma multi_compile_fog
+#DBD7CACC                  #include "UnityCG.cginc"
+#DBD7CACC                  struct appdata
+#DBD7CACC                  {
+#DBD7CACC                      float4 vertex : POSITION;
+#DBD7CACC                      float2 uv : TEXCOORD0;
+#DBD7CACC                  };
+#DBD7CACC                  struct v2f
+#DBD7CACC                  {
+#DBD7CACC                      float2 uv : TEXCOORD0;
+#DBD7CACC                      UNITY_FOG_COORDS(1)
+#DBD7CACC                      float4 vertex : SV_POSITION;
+#DBD7CACC                  };
+#DBD7CACC                  sampler2D _MainTex;
+#DBD7CACC                  float4 _MainTex_ST;
+#DBD7CACC                  v2f vert (appdata v)
+#DBD7CACC                  {
+#DBD7CACC                      v2f o;
+#DBD7CACC                      o.vertex = UnityObjectToClipPos(v.vertex);
+#DBD7CACC                      o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+#DBD7CACC                      UNITY_TRANSFER_FOG(o,o.vertex);
+#DBD7CACC                      return o;
+#DBD7CACC                  }
+#DBD7CACC                  
+#CB7676        fixed4
+#DBD7CACC       frag (v2f i) : SV_Target
+#DBD7CACC                  {
+#DBD7CACC                      // sample the texture
+#DBD7CACC                      
+#CB7676        fixed4
+#DBD7CACC       col = tex2D(_MainTex, i.uv);
+#DBD7CACC                      // apply fog
+#DBD7CACC                      UNITY_APPLY_FOG(i.fogCoord, col);
+#DBD7CACC                      return col;
+#DBD7CACC                  }
+#DBD7CACC                  
+#4D9375        ENDCG
+#DBD7CACC              }
+#DBD7CACC          }
+#DBD7CACC      }
+#758575DD      // From https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html

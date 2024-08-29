@@ -319,7 +319,7 @@
           "include": "#string_escaped_char"
         },
         {
-          "match": "(?x)%\n(\\d+\\$)?\n[#0\\- +']*\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n[@]\n",
+          "match": "%(\\d+\\$)?[#0\\-\\s+']*((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?[@]",
           "name": "constant.other.placeholder.objcpp"
         },
         {
@@ -575,7 +575,7 @@
               "name": "punctuation.definition.parameters.objcpp"
             }
           },
-          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n(\\b\n(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\n)\n\\s*(\\()",
+          "match": "(?:(?=\\s)(?:(?<=else|new|return)|(?<!\\w))(\\s+))?(\\b(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b|::)++)\\s*(\\()",
           "name": "meta.function-call.objcpp"
         }
       ]
@@ -645,7 +645,7 @@
           "include": "#special_variables"
         },
         {
-          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_$][\\w$]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?",
+          "begin": "^\\s*((\\#)\\s*define)\\s+((?<id>[a-zA-Z_$][\\w$]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.directive.define.objcpp"
@@ -879,7 +879,7 @@
           "name": "support.type.pthread.objcpp"
         },
         {
-          "match": "(?x) \\b\n(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t\n|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t\n|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t\n|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t\n|uintmax_t|uintmax_t)\n\\b",
+          "match": "\\b(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t|uintmax_t|uintmax_t)\\b",
           "name": "support.type.stdint.objcpp"
         },
         {
@@ -887,7 +887,7 @@
           "name": "support.constant.mac-classic.objcpp"
         },
         {
-          "match": "(?x) \\b\n(AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam\n|ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr\n|Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber\n|ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64\n|SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32\n|UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr\n|UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)\n\\b",
+          "match": "\\b(AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam|ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr|Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber|ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64|SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32|UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr|UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)\\b",
           "name": "support.type.mac-classic.objcpp"
         },
         {
@@ -3318,7 +3318,7 @@
           "name": "storage.modifier.objcpp"
         },
         {
-          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
+          "begin": "(?:^|(?:(?<!else|new|=)))((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3341,7 +3341,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
+          "begin": "(?:^|(?:(?<!else|new|=)))((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3837,7 +3837,7 @@
           "name": "storage.modifier.objcpp"
         },
         {
-          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
+          "begin": "(?:^|(?:(?<!else|new|=)))((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.destructor.objcpp"
@@ -3860,7 +3860,7 @@
           ]
         },
         {
-          "begin": "(?x)\n(?:\n^ |\n(?:(?<!else|new|=))\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\n\\s*(\\()",
+          "begin": "(?:^|(?:(?<!else|new|=)))((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.objcpp"
@@ -3918,7 +3918,7 @@
           "include": "#strings-c"
         },
         {
-          "begin": "(?x)\n^\\s* ((\\#)\\s*define) \\s+\n((?<id>[a-zA-Z_$][\\w$]*))\n(?:\n(\\()\n(\n\\s* \\g<id> \\s*\n((,) \\s* \\g<id> \\s*)*\n(?:\\.\\.\\.)?\n)\n(\\))\n)?",
+          "begin": "^\\s*((\\#)\\s*define)\\s+((?<id>[a-zA-Z_$][\\w$]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.directive.define.objcpp"
@@ -4152,7 +4152,7 @@
           "name": "support.type.pthread.objcpp"
         },
         {
-          "match": "(?x) \\b\n(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t\n|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t\n|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t\n|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t\n|uintmax_t|uintmax_t)\n\\b",
+          "match": "\\b(int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t|int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t|uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t|uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t|uintmax_t|uintmax_t)\\b",
           "name": "support.type.stdint.objcpp"
         },
         {
@@ -7212,7 +7212,7 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "(?x)\\\\ (\n\\\\\t\t\t |\n[abefnprtv'\"?]   |\n[0-3]\\d{,2}\t |\n[4-7]\\d?\t\t|\nx[a-fA-F0-9]{,2} |\nu[a-fA-F0-9]{,4} |\nU[a-fA-F0-9]{,8} )",
+          "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})",
           "name": "constant.character.escape.objcpp"
         },
         {
@@ -7224,7 +7224,7 @@
     "string_placeholder": {
       "patterns": [
         {
-          "match": "(?x) %\n(\\d+\\$)?\n[#0\\- +']*\n[,;:_]?\n((-?\\d+)|\\*(-?\\d+\\$)?)?\n(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?\n(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?\n[diouxXDOUeEfFgGaACcSspn%]",
+          "match": "%(\\d+\\$)?[#0\\-\\s+']*[,;:_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?[diouxXDOUeEfFgGaACcSspn%]",
           "name": "constant.other.placeholder.objcpp"
         },
         {

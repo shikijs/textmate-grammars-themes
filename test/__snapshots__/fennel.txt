@@ -1,0 +1,120 @@
+#758575DD      ;; Sample: read the state of the keyboard and move the player accordingly
+#444444        (
+#4D9375        local
+#DBD7CACC       
+#BD976A        dirs
+#DBD7CACC       
+#444444        {
+#C99076        :up
+#DBD7CACC       
+#444444        [
+#4C9A91        0
+#DBD7CACC       
+#4C9A91        -1
+#444444        ]
+#DBD7CACC       
+#C99076        :down
+#DBD7CACC       
+#444444        [
+#4C9A91        0
+#DBD7CACC       
+#4C9A91        1
+#444444        ]
+#DBD7CACC       
+#C99076        :left
+#DBD7CACC       
+#444444        [
+#4C9A91        -1
+#DBD7CACC       
+#4C9A91        0
+#444444        ]
+#DBD7CACC       
+#C99076        :right
+#DBD7CACC       
+#444444        [
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        0
+#444444        ]})
+#444444        (
+#4D9375        each
+#DBD7CACC       
+#444444        [
+#BD976A        key
+#DBD7CACC       
+#444444        [
+#BD976A        dx
+#DBD7CACC       
+#BD976A        dy
+#444444        ]
+#DBD7CACC       
+#444444        (
+#B8A965        pairs
+#DBD7CACC       
+#BD976A        dirs
+#444444        )]
+#DBD7CACC        
+#444444        (
+#4D9375        when
+#DBD7CACC       
+#444444        (
+#80A665        love.keyboard.isDown
+#DBD7CACC       
+#BD976A        key
+#444444        )
+#DBD7CACC          
+#444444        (
+#4D9375        let
+#DBD7CACC       
+#444444        [[
+#BD976A        px
+#DBD7CACC       
+#BD976A        py
+#444444        ]
+#DBD7CACC       
+#BD976A        player
+#DBD7CACC                
+#BD976A        x
+#DBD7CACC       
+#444444        (
+#4D9375        +
+#DBD7CACC       
+#BD976A        px
+#DBD7CACC       
+#444444        (
+#4D9375        *
+#DBD7CACC       
+#BD976A        dx
+#DBD7CACC       
+#80A665        player.speed
+#DBD7CACC       
+#BD976A        dt
+#444444        ))
+#DBD7CACC                
+#BD976A        y
+#DBD7CACC       
+#444444        (
+#4D9375        +
+#DBD7CACC       
+#BD976A        py
+#DBD7CACC       
+#444444        (
+#4D9375        *
+#DBD7CACC       
+#BD976A        dy
+#DBD7CACC       
+#80A665        player.speed
+#DBD7CACC       
+#BD976A        dt
+#444444        ))]
+#DBD7CACC            
+#444444        (
+#80A665        world:move
+#DBD7CACC       
+#BD976A        player
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#BD976A        y
+#444444        ))))
+#758575DD      ;; From https://fennel-lang.org/
