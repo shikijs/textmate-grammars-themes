@@ -1121,7 +1121,7 @@
       ]
     },
     "literalCharacterEscape": {
-      "match": "\\\\(?:[\\\\\"'ntbr]|\\d\\d\\d|x[0-9A-Fa-f][0-9A-Fa-f]|o[0-3][0-7][0-7])"
+      "match": "\\\\(?:[\\\\\"'ntbr]|[\\d][\\d][\\d]|x[0-9A-Fa-f][0-9A-Fa-f]|o[0-3][0-7][0-7])"
     },
     "literalClassType": {
       "patterns": [
@@ -1203,7 +1203,7 @@
       ]
     },
     "literalNumber": {
-      "match": "(?<![A-Za-z])\\d\\d*(\\.\\d\\d*)?",
+      "match": "(?<![A-Za-z])[\\d][\\d]*(\\.[\\d][\\d]*)?",
       "name": "constant.numeric"
     },
     "literalObjectTerm": {
@@ -1385,7 +1385,7 @@
       ]
     },
     "literalStringEscape": {
-      "match": "\\\\(?:[\\\\\"ntbr]|\\d\\d\\d|x[0-9A-Fa-f][0-9A-Fa-f]|o[0-3][0-7][0-7])"
+      "match": "\\\\(?:[\\\\\"ntbr]|[\\d][\\d][\\d]|x[0-9A-Fa-f][0-9A-Fa-f]|o[0-3][0-7][0-7])"
     },
     "literalUnit": {
       "match": "\\(\\)",

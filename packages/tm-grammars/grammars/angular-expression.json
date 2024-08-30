@@ -262,7 +262,7 @@
               "name": "variable.other.object.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*(?:([A-Z][_$0-9A-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "([?!]?\\.)\\s*(?:([A-Z][_$\\dA-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
         },
         {
           "captures": {
@@ -284,7 +284,7 @@
               "name": "constant.other.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*([A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])"
+          "match": "([?!]?\\.)\\s*([A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])"
         },
         {
           "captures": {
@@ -306,10 +306,10 @@
               "name": "variable.other.object.ts"
             }
           },
-          "match": "(?:([A-Z][_$0-9A-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "(?:([A-Z][_$\\dA-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
         },
         {
-          "match": "([A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])",
+          "match": "([A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])",
           "name": "constant.character.other"
         },
         {
@@ -569,11 +569,11 @@
       ]
     },
     "stringCharacterEscape": {
-      "match": "\\\\(x\\h{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
+      "match": "\\\\(x[ \\t]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
       "name": "constant.character.escape.ts"
     },
     "ternaryExpression": {
-      "begin": "(?!\\?\\.\\s*[^0-9])(\\?)(?!\\?)",
+      "begin": "(?!\\?\\.\\s*[^\\d])(\\?)(?!\\?)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.ternary.ts"

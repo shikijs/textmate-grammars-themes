@@ -80,7 +80,7 @@
       "name": "constant.character.escapesequence.powerquery",
       "patterns": [
         {
-          "match": "(#|\\h{4}|\\h{8}|cr|lf|tab)(?:,(#|\\h{4}|\\h{8}|cr|lf|tab))*"
+          "match": "(#|[ \\t]{4}|[ \\t]{8}|cr|lf|tab)(?:,(#|[ \\t]{4}|[ \\t]{8}|cr|lf|tab))*"
         },
         {
           "match": "[^\\)]",
@@ -93,7 +93,7 @@
       "name": "constant.numeric.float.powerquery"
     },
     "HexNumber": {
-      "match": "0(x|X)\\h+",
+      "match": "0(x|X)[ \\t]+",
       "name": "constant.numeric.integer.hexadecimal.powerquery"
     },
     "Identifier": {

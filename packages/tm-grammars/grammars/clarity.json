@@ -658,7 +658,7 @@
           "name": "constant.language.bool.clarity"
         },
         "list-literal": {
-          "begin": "(?x) (\\() \\s* (list) \\s+",
+          "begin": "(\\()\\s*(list)\\s+",
           "beginCaptures": {
             "1": {
               "name": "punctuation.list.start.clarity"
@@ -709,7 +709,7 @@
               "name": "constant.language.none.clarity"
             },
             {
-              "begin": "(?x) (\\() \\s* (some) \\s+",
+              "begin": "(\\()\\s*(some)\\s+",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.some.start.clarity"
@@ -734,11 +734,11 @@
           ]
         },
         "principal-literal": {
-          "match": "(?x)  \\'[0-9A-Z]{28,41}(:?\\.[a-zA-Z][a-zA-Z0-9\\-]+){0,2} | (\\.[a-zA-Z][a-zA-Z0-9\\-]*){1,2} (?=[\\s(){},]|$)",
+          "match": "\\'[0-9A-Z]{28,41}(:?\\.[a-zA-Z][a-zA-Z0-9\\-]+){0,2}|(\\.[a-zA-Z][a-zA-Z0-9\\-]*){1,2}(?=[\\s(){},]|$)",
           "name": "constant.other.principal.clarity"
         },
         "response-literal": {
-          "begin": "(?x) (\\() \\s* (ok|err) \\s+",
+          "begin": "(\\()\\s*(ok|err)\\s+",
           "beginCaptures": {
             "1": {
               "name": "punctuation.response.start.clarity"

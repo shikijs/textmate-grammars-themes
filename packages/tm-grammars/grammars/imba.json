@@ -1282,7 +1282,7 @@
               "name": "entity.name.function.property.imba"
             }
           },
-          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)(?=\\s*={{functionOrArrowLookup}})"
+          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)(?=\\s*={{functionOrArrowLookup}})"
         },
         {
           "captures": {
@@ -1296,7 +1296,7 @@
               "name": "variable.other.constant.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))\\s*(\\#?[A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))\\s*(\\#?[A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])"
         },
         {
           "captures": {
@@ -1310,7 +1310,7 @@
               "name": "variable.other.class.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))([A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))([A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?)"
         },
         {
           "captures": {
@@ -1324,7 +1324,7 @@
               "name": "variable.other.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
         },
         {
           "match": "(for own|for|if|unless|when)\\b",
@@ -1903,7 +1903,7 @@
     "plain-identifiers": {
       "patterns": [
         {
-          "match": "([A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])",
+          "match": "([A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])",
           "name": "variable.other.constant.imba"
         },
         {
@@ -1949,7 +1949,7 @@
           "name": "punctuation.accessor.optional.imba"
         }
       },
-      "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))"
+      "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))"
     },
     "punctuation-comma": {
       "match": ",",

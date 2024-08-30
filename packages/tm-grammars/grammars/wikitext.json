@@ -346,33 +346,33 @@
           ],
           "repository": {
             "behavior-switches": {
-              "match": "(?x)    # turn on extended mode\n(?i)    # ignore case\n  (__)  # start: __\n    (\n      NOTOC|FORCETOC|TOC|NOEDITSECTION|NEWSECTIONLINK|NOGALLERY|\n      HIDDENCAT|EXPECTUNUSEDCATEGORY|NOCONTENTCONVERT|NOCC|\n      NOTITLECONVERT|NOTC|INDEX|NOINDEX|STATICREDIRECT|NOGLOBAL|\n      DISAMBIG\n    )\n  (__)",
+              "match": "(?i)(__)(NOTOC|FORCETOC|TOC|NOEDITSECTION|NEWSECTIONLINK|NOGALLERY|HIDDENCAT|EXPECTUNUSEDCATEGORY|NOCONTENTCONVERT|NOCC|NOTITLECONVERT|NOTC|INDEX|NOINDEX|STATICREDIRECT|NOGLOBAL|DISAMBIG)(__)",
               "name": "constant.language.behavior-switcher.wikitext"
             },
             "outdated-behavior-switches": {
-              "match": "(?x)\n(?i)\n  (__)\n    (\n      START|END\n    )\n  (__)",
+              "match": "(?i)(__)(START|END)(__)",
               "name": "invalid.deprecated.behavior-switcher.wikitext"
             },
             "variables": {
               "patterns": [
                 {
-                  "match": "(?x)\n(?i)\n  (\\{\\{)\n    (\n      CURRENTYEAR|CURRENTMONTH|CURRENTMONTH1|CURRENTMONTHNAME|\n      CURRENTMONTHNAMEGEN|CURRENTMONTHABBREV|CURRENTDAY|\n      CURRENTDAY2|CURRENTDOW|CURRENTDAYNAME|CURRENTTIME|\n      CURRENTHOUR|CURRENTWEEK|CURRENTTIMESTAMP|LOCALYEAR|\n      LOCALMONTH|LOCALMONTH1|LOCALMONTHNAME|LOCALMONTHNAMEGEN|\n      LOCALMONTHABBREV|LOCALDAY|LOCALDAY2|LOCALDOW|\n      LOCALDAYNAME|LOCALTIME|LOCALHOUR|LOCALWEEK|\n      LOCALTIMESTAMP\n    )\n  (\\}\\})",
+                  "match": "(?i)(\\{\\{)(CURRENTYEAR|CURRENTMONTH|CURRENTMONTH1|CURRENTMONTHNAME|CURRENTMONTHNAMEGEN|CURRENTMONTHABBREV|CURRENTDAY|CURRENTDAY2|CURRENTDOW|CURRENTDAYNAME|CURRENTTIME|CURRENTHOUR|CURRENTWEEK|CURRENTTIMESTAMP|LOCALYEAR|LOCALMONTH|LOCALMONTH1|LOCALMONTHNAME|LOCALMONTHNAMEGEN|LOCALMONTHABBREV|LOCALDAY|LOCALDAY2|LOCALDOW|LOCALDAYNAME|LOCALTIME|LOCALHOUR|LOCALWEEK|LOCALTIMESTAMP)(\\}\\})",
                   "name": "constant.language.variables.time.wikitext"
                 },
                 {
-                  "match": "(?x)\n(?i)\n  (\\{\\{)\n    (\n      SITENAME|SERVER|SERVERNAME|DIRMARK|DIRECTIONMARK|\n      SCRIPTPATH|STYLEPATH|CURRENTVERSION|CONTENTLANGUAGE|\n      CONTENTLANG|PAGEID|PAGELANGUAGE|CASCADINGSOURCES|\n      REVISIONID|REVISIONDAY|REVISIONDAY2|REVISIONMONTH|\n      REVISIONMONTH1|REVISIONYEAR|REVISIONTIMESTAMP|\n      REVISIONUSER|REVISIONSIZE\n    )\n  (\\}\\})",
+                  "match": "(?i)(\\{\\{)(SITENAME|SERVER|SERVERNAME|DIRMARK|DIRECTIONMARK|SCRIPTPATH|STYLEPATH|CURRENTVERSION|CONTENTLANGUAGE|CONTENTLANG|PAGEID|PAGELANGUAGE|CASCADINGSOURCES|REVISIONID|REVISIONDAY|REVISIONDAY2|REVISIONMONTH|REVISIONMONTH1|REVISIONYEAR|REVISIONTIMESTAMP|REVISIONUSER|REVISIONSIZE)(\\}\\})",
                   "name": "constant.language.variables.metadata.wikitext"
                 },
                 {
-                  "match": "ISBN\\s+((9[\\-\\s]?7[\\-\\s]?[89][\\-\\s]?)?([0-9][\\-\\s]?){10})",
+                  "match": "ISBN\\s+((9[\\-\\s]?7[\\-\\s]?[89][\\-\\s]?)?(\\d[\\-\\s]?){10})",
                   "name": "constant.language.variables.isbn.wikitext"
                 },
                 {
-                  "match": "RFC\\s+[0-9]+",
+                  "match": "RFC\\s+\\d+",
                   "name": "constant.language.variables.rfc.wikitext"
                 },
                 {
-                  "match": "PMID\\s+[0-9]+",
+                  "match": "PMID\\s+\\d+",
                   "name": "constant.language.variables.pmid.wikitext"
                 }
               ]

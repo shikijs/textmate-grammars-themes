@@ -1729,7 +1729,7 @@
           "name": "constant.other.character-class.regexp"
         },
         {
-          "match": "\\\\([0-7]{3}|x\\h\\h|u\\h\\h\\h\\h)",
+          "match": "\\\\([0-7]{3}|x[ \\t][ \\t]|u[ \\t][ \\t][ \\t][ \\t])",
           "name": "constant.character.numeric.regexp"
         },
         {
@@ -1851,7 +1851,7 @@
                   "name": "constant.character.escape.backslash.regexp"
                 }
               },
-              "match": "(?:.|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))\\-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))",
+              "match": "(?:.|(\\\\(?:[0-7]{3}|x[ \\t][ \\t]|u[ \\t][ \\t][ \\t][ \\t]))|(\\\\c[A-Z])|(\\\\.))\\-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x[ \\t][ \\t]|u[ \\t][ \\t][ \\t][ \\t]))|(\\\\c[A-Z])|(\\\\.))",
               "name": "constant.other.character-class.range.regexp"
             },
             {
