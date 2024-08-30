@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { HighlighterCore } from 'shiki/core'
-import { getHighlighterCore } from 'shiki/core'
+import type { HighlighterCore } from '@shikijs/core'
+import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
 import { themes } from '../../packages/tm-themes/index'
 import { grammars, injections } from '../../packages/tm-grammars/index'
+import { dependencies } from '../package.json'
+import SegmentControl from './SegmentControl.vue'
+import { engine, grammar, isDark, theme } from './state'
+import Badge from './Badge.vue'
 
-const isDark = useDark()
-
-const theme = useStorage('tm-theme', 'vitesse-dark')
-const grammar = useStorage('tm-grammar', 'javascript')
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
 
@@ -20,6 +20,10 @@ const input = ref('')
 const output = ref('')
 const example = ref('')
 const isFetching = ref(false)
+const duration = ref(0)
+
+const jsEngine = createJavaScriptRegexEngine()
+const wasmEngine = createWasmOnigEngine(() => import('@shikijs/core/wasm-inlined'))
 
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
@@ -50,8 +54,10 @@ let highlighter: HighlighterCore | null = null
 let fetchingTimer: ReturnType<typeof setTimeout> | undefined
 
 async function run(fetchInput = true) {
+  highlighter?.dispose()
   highlighter = null
   error.value = null
+  duration.value = 0
   if (fetchingTimer)
     clearTimeout(fetchingTimer)
   fetchingTimer = setTimeout(() => {
@@ -83,18 +89,19 @@ async function run(fetchInput = true) {
     embedded.value = Array.from(langs.keys())
       .filter(l => l !== grammar.value)
 
-    highlighter = await getHighlighterCore({
+    highlighter = await createHighlighterCore({
       themes: [
         themeObject,
       ],
       langs: await Promise.all(Array.from(langs.values())),
-      loadWasm: () => import('shiki/wasm'),
+      engine: engine.value === 'js' ? jsEngine : wasmEngine,
     })
 
     highlight()
   }
   catch (e) {
     error.value = e
+    duration.value = 0
     throw e
   }
   finally {
@@ -106,10 +113,13 @@ async function run(fetchInput = true) {
 
 function highlight() {
   if (highlighter) {
+    const start = performance.now()
     const result = highlighter.codeToHtml(input.value, {
       lang: grammar.value,
       theme: theme.value,
     })
+    const end = performance.now()
+    duration.value = end - start
     output.value = result
   }
 }
@@ -157,7 +167,7 @@ function share() {
 }
 
 watch(
-  [theme, grammar],
+  [theme, grammar, engine],
   (n, o) => {
     params.theme = theme.value
     params.grammar = grammar.value
@@ -196,7 +206,15 @@ if (import.meta.hot) {
       <a href="https://github.com/shikijs/textmate-grammars-themes" target="_blank" text-lg hover="text-primary">
         Shiki TextMate Grammar & Theme Playground
       </a>
+      <Badge :text="`Shiki v${dependencies['@shikijs/core'].replace('^', '')}`" text-sm :color="160" />
       <div flex-auto />
+      <SegmentControl
+        v-model:modelValue="engine"
+        :options="[
+          { label: 'Oniguruma', value: 'wasm' },
+          { label: 'JavaScript', value: 'js' },
+        ]"
+      />
       <a border="~ base rounded" p2 hover="bg-active" href="https://github.com/shikijs/textmate-grammars-themes" target="_blank">
         <div i-carbon-logo-github />
       </a>
@@ -333,6 +351,9 @@ if (import.meta.hot) {
         >
           <div i-svg-spinners-270-ring-with-bg />
           Loading...
+        </div>
+        <div v-else-if="duration" op50 text-sm text-right mr-1>
+          Highlighting finished in <code font-bold>{{ duration.toFixed(2) }}ms</code>
         </div>
       </div>
     </div>
