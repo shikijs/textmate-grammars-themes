@@ -2130,7 +2130,7 @@
               "name": "constant.character.escape.ansi-c.shell"
             },
             {
-              "match": "\\\\[0-9]{3}\"",
+              "match": "\\\\\\d{3}\"",
               "name": "constant.character.escape.octal.shell"
             },
             {
@@ -2233,7 +2233,7 @@
               "name": "variable.parameter.positional.shell"
             }
           },
-          "match": "(?:(\\$)([0-9](?!\\w)))"
+          "match": "(?:(\\$)(\\d(?!\\w)))"
         },
         {
           "captures": {
@@ -2271,7 +2271,7 @@
               "include": "#array_access_inline"
             },
             {
-              "match": "[0-9]+",
+              "match": "\\d+",
               "name": "variable.parameter.positional.shell"
             },
             {

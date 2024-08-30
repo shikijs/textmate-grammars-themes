@@ -230,7 +230,7 @@
           "name": "support.constant.color.w3c-standard-color-name.css"
         },
         {
-          "match": "(?xi) (?<![\\w-])\n(aliceblue|antiquewhite|aquamarine|azure|beige|bisque|blanchedalmond|blueviolet|brown|burlywood\n|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan\n|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange\n|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise\n|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen\n|gainsboro|ghostwhite|gold|goldenrod|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki\n|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow\n|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray\n|lightslategrey|lightsteelblue|lightyellow|limegreen|linen|magenta|mediumaquamarine|mediumblue\n|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise\n|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|oldlace|olivedrab|orangered\n|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum\n|powderblue|rebeccapurple|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell\n|sienna|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|thistle|tomato\n|transparent|turquoise|violet|wheat|whitesmoke|yellowgreen)\n(?![\\w-])",
+          "match": "(?i)(?<![\\w-])(aliceblue|antiquewhite|aquamarine|azure|beige|bisque|blanchedalmond|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|gainsboro|ghostwhite|gold|goldenrod|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|limegreen|linen|magenta|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|oldlace|olivedrab|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|rebeccapurple|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|thistle|tomato|transparent|turquoise|violet|wheat|whitesmoke|yellowgreen)(?![\\w-])",
           "name": "support.constant.color.w3c-extended-color-name.css"
         },
         {
@@ -337,7 +337,7 @@
           ]
         },
         {
-          "begin": "(?xi) (?<![\\w-])\n(\n  (?:-webkit-|-moz-|-o-)?    # Accept prefixed/historical variants\n  (?:repeating-)?            # \"Repeating\"-type gradient\n  (?:linear|radial|conic)    # Shape\n  -gradient\n)\n(\\()",
+          "begin": "(?i)(?<![\\w-])((?:-webkit-|-moz-|-o-)?(?:repeating-)?(?:linear|radial|conic)-gradient)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.gradient.css"
@@ -409,7 +409,7 @@
           ]
         },
         {
-          "begin": "(?xi) (?<![\\w-])\n(annotation|attr|blur|brightness|character-variant|contrast|counters?\n|cross-fade|drop-shadow|element|fit-content|format|grayscale|hue-rotate\n|image-set|invert|local|minmax|opacity|ornaments|repeat|saturate|sepia\n|styleset|stylistic|swash|symbols)\n(\\()",
+          "begin": "(?i)(?<![\\w-])(annotation|attr|blur|brightness|character-variant|contrast|counters?|cross-fade|drop-shadow|element|fit-content|format|grayscale|hue-rotate|image-set|invert|local|minmax|opacity|ornaments|repeat|saturate|sepia|styleset|stylistic|swash|symbols)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.misc.css"
@@ -494,7 +494,7 @@
           ]
         },
         {
-          "begin": "(?xi) (?<![\\w-])\n( (?:translate|scale|rotate)(?:[XYZ]|3D)?\n| matrix(?:3D)?\n| skew[XY]?\n| perspective\n)\n(\\()",
+          "begin": "(?i)(?<![\\w-])((?:translate|scale|rotate)(?:[XYZ]|3D)?|matrix(?:3D)?|skew[XY]?|perspective)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.transform.css"
@@ -537,7 +537,7 @@
               "name": "keyword.other.unit.${2:/downcase}.css"
             }
           },
-          "match": "(?xi) (?<![\\w-])\n[-+]?                               # Sign indicator\n\n(?:                                 # Numerals\n    [0-9]+ (?:\\.[0-9]+)?           # Integer/float with leading digits\n  | \\.[0-9]+                       # Float without leading digits\n)\n\n(?:                                 # Scientific notation\n  (?<=[0-9])                        # Exponent must follow a digit\n  E                                 # Exponent indicator\n  [-+]?                             # Possible sign indicator\n  [0-9]+                            # Exponent value\n)?\n\n(?:                                 # Possible unit for data-type:\n  (%)                               # - Percentage\n  | ( deg|grad|rad|turn             # - Angle\n    | Hz|kHz                        # - Frequency\n    | ch|cm|em|ex|fr|in|mm|mozmm|   # - Length\n      pc|pt|px|q|rem|vh|vmax|vmin|\n      vw\n    | dpi|dpcm|dppx                 # - Resolution\n    | s|ms                          # - Time\n    )\n  \\b                               # Boundary checking intentionally lax to\n)?                                  # facilitate embedding in CSS-like grammars",
+          "match": "(?i)(?<![\\w-])[-+]?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:(?<=\\d)E[-+]?\\d+)?(?:(%)|(deg|grad|rad|turn|Hz|kHz|ch|cm|em|ex|fr|in|mm|mozmm|pc|pt|px|q|rem|vh|vmax|vmin|vw|dpi|dpcm|dppx|s|ms)\\b)?",
           "name": "constant.numeric.css"
         }
       ]
@@ -580,7 +580,7 @@
           "name": "invalid.illegal.colon.css"
         }
       },
-      "match": "(?xi)\n(:)(:*)\n(?: active|any-link|checked|default|defined|disabled|empty|enabled|first\n  | (?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within\n  | fullscreen|host|hover|in-range|indeterminate|invalid|left|link\n  | optional|out-of-range|placeholder-shown|read-only|read-write\n  | required|right|root|scope|target|unresolved\n  | valid|visited\n)(?![\\w-]|\\s*[;}])",
+      "match": "(?i)(:)(:*)(?:active|any-link|checked|default|defined|disabled|empty|enabled|first|(?:first|last|only)-(?:child|of-type)|focus|focus-visible|focus-within|fullscreen|host|hover|in-range|indeterminate|invalid|left|link|optional|out-of-range|placeholder-shown|read-only|read-write|required|right|root|scope|target|unresolved|valid|visited)(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-class.css"
     },
     "css-pseudo-elements": {
@@ -592,7 +592,7 @@
           "name": "punctuation.definition.entity.css"
         }
       },
-      "match": "(?xi)\n(?:\n  (::?)                       # Elements using both : and :: notation\n  (?: after\n    | before\n    | first-letter\n    | first-line\n    | (?:-(?:ah|apple|atsc|epub|hp|khtml|moz\n            |ms|o|rim|ro|tc|wap|webkit|xv)\n        | (?:mso|prince))\n      -[a-z-]+\n  )\n  |\n  (::)                        # Double-colon only\n  (?: backdrop\n    | content\n    | grammar-error\n    | marker\n    | placeholder\n    | selection\n    | shadow\n    | spelling-error\n  )\n)\n(?![\\w-]|\\s*[;}])",
+      "match": "(?i)(?:(::?)(?:after|before|first-letter|first-line|(?:-(?:ah|apple|atsc|epub|hp|khtml|moz|ms|o|rim|ro|tc|wap|webkit|xv)|(?:mso|prince))-[a-z-]+)|(::)(?:backdrop|content|grammar-error|marker|placeholder|selection|shadow|spelling-error))(?![\\w-]|\\s*[;}])",
       "name": "entity.other.attribute-name.pseudo-element.css"
     },
     "css-selector": {
@@ -1282,7 +1282,7 @@
               "name": "entity.name.function.property.imba"
             }
           },
-          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*[0-9]|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)(?=\\s*={{functionOrArrowLookup}})"
+          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)(?=\\s*={{functionOrArrowLookup}})"
         },
         {
           "captures": {
@@ -1296,7 +1296,7 @@
               "name": "variable.other.constant.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*[0-9]|\\s+)))\\s*(\\#?[A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))\\s*(\\#?[A-Z][_$0-9A-Z]*)(?![_$0-9A-Za-z])"
         },
         {
           "captures": {
@@ -1310,7 +1310,7 @@
               "name": "variable.other.class.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*[0-9]|\\s+)))([A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))([A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?)"
         },
         {
           "captures": {
@@ -1324,7 +1324,7 @@
               "name": "variable.other.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*[0-9]|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
         },
         {
           "match": "(for own|for|if|unless|when)\\b",
@@ -1689,7 +1689,7 @@
               "name": "keyword.other.unit.imba"
             }
           },
-          "match": "([0-9]+)([a-z]+|\\%)"
+          "match": "(\\d+)([a-z]+|\\%)"
         },
         {
           "captures": {
@@ -1700,7 +1700,7 @@
               "name": "keyword.other.unit.imba"
             }
           },
-          "match": "([0-9]*\\.[0-9]+(?:[eE][\\-+]?[0-9]+)?)([a-z]+|\\%)"
+          "match": "(\\d*\\.\\d+(?:[eE][\\-+]?\\d+)?)([a-z]+|\\%)"
         }
       ]
     },
@@ -1781,7 +1781,7 @@
               "name": "storage.type.numeric.bigint.imba"
             }
           },
-          "match": "(?<!\\$)(?:(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\B(\\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(\\.)(n)?\\B)|(?:\\B(\\.)[0-9][0-9_]*(n)?\\b)|(?:\\b[0-9][0-9_]*(n)?\\b))(?!\\$)"
+          "match": "(?<!\\$)(?:(?:\\b\\d[0-9_]*(\\.)\\d[0-9_]*[eE][+-]?\\d[0-9_]*(n)?\\b)|(?:\\b\\d[0-9_]*(\\.)[eE][+-]?\\d[0-9_]*(n)?\\b)|(?:\\B(\\.)\\d[0-9_]*[eE][+-]?\\d[0-9_]*(n)?\\b)|(?:\\b\\d[0-9_]*[eE][+-]?\\d[0-9_]*(n)?\\b)|(?:\\b\\d[0-9_]*(\\.)\\d[0-9_]*(n)?\\b)|(?:\\b\\d[0-9_]*(\\.)(n)?\\B)|(?:\\B(\\.)\\d[0-9_]*(n)?\\b)|(?:\\b\\d[0-9_]*(n)?\\b))(?!\\$)"
         }
       ]
     },
@@ -1949,7 +1949,7 @@
           "name": "punctuation.accessor.optional.imba"
         }
       },
-      "match": "(?:(\\.)|(\\.\\.(?!\\s*[0-9]|\\s+)))"
+      "match": "(?:(\\.)|(\\.\\.(?!\\s*\\d|\\s+)))"
     },
     "punctuation-comma": {
       "match": ",",
@@ -2370,7 +2370,7 @@
               "name": "keyword.other.unit.css"
             }
           },
-          "match": "(\\b[0-9][0-9_]*)(\\w+|%)?"
+          "match": "(\\b\\d[0-9_]*)(\\w+|%)?"
         },
         {
           "match": "--[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
@@ -2426,7 +2426,7 @@
               "name": "support.type.property-name.variable.css"
             },
             {
-              "match": "\\@[\\!\\<\\>]?[0-9]+",
+              "match": "\\@[\\!\\<\\>]?\\d+",
               "name": "support.type.property-name.modifier.breakpoint.css"
             },
             {

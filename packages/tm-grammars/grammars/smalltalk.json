@@ -164,7 +164,7 @@
       "name": "meta.array.byte.smalltalk",
       "patterns": [
         {
-          "match": "[0-9]+(r[a-zA-Z0-9]+)?",
+          "match": "\\d+(r[a-zA-Z0-9]+)?",
           "name": "constant.numeric.integer.smalltalk"
         },
         {
@@ -213,19 +213,19 @@
     "numeric": {
       "patterns": [
         {
-          "match": "(?<!\\w)[0-9]+\\.[0-9]+s[0-9]*",
+          "match": "(?<!\\w)\\d+\\.\\d+s\\d*",
           "name": "constant.numeric.float.scaled.smalltalk"
         },
         {
-          "match": "(?<!\\w)[0-9]+\\.[0-9]+([edq]-?[0-9]+)?",
+          "match": "(?<!\\w)\\d+\\.\\d+([edq]-?\\d+)?",
           "name": "constant.numeric.float.smalltalk"
         },
         {
-          "match": "(?<!\\w)-?[0-9]+r[a-zA-Z0-9]+",
+          "match": "(?<!\\w)-?\\d+r[a-zA-Z0-9]+",
           "name": "constant.numeric.integer.radix.smalltalk"
         },
         {
-          "match": "(?<!\\w)-?[0-9]+([edq]-?[0-9]+)?",
+          "match": "(?<!\\w)-?\\d+([edq]-?\\d+)?",
           "name": "constant.numeric.integer.smalltalk"
         }
       ]

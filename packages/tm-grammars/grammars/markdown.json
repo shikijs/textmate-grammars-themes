@@ -12,7 +12,7 @@
   "repository": {
     "ampersand": {
       "comment": "Markdown will convert this for us. We match it so that the HTML grammar will not mark it up as invalid.",
-      "match": "&(?!([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+);)",
+      "match": "&(?!([a-zA-Z0-9]+|#\\d+|#x[0-9a-fA-F]+);)",
       "name": "meta.other.valid-ampersand.markdown"
     },
     "block": {
@@ -2884,7 +2884,7 @@
       "name": "meta.link.reference.markdown"
     },
     "list_paragraph": {
-      "begin": "(^|\\G)(?=\\S)(?![*+->]\\s|[0-9]+\\.\\s)",
+      "begin": "(^|\\G)(?=\\S)(?![*+->]\\s|\\d+\\.\\s)",
       "name": "meta.paragraph.markdown",
       "patterns": [
         {
@@ -2921,7 +2921,7 @@
           "while": "((^|\\G)([ ]{2,4}|\\t))|(^[ \\t]*$)"
         },
         {
-          "begin": "(^|\\G)([ ]{0,3})([0-9]+[\\.\\)])([ \\t])",
+          "begin": "(^|\\G)([ ]{0,3})(\\d+[\\.\\)])([ \\t])",
           "beginCaptures": {
             "3": {
               "name": "punctuation.definition.list.begin.markdown"

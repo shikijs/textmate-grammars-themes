@@ -619,7 +619,7 @@
     "html_entity": {
       "patterns": [
         {
-          "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
+          "match": "(&)([a-zA-Z0-9]+|#\\d+|#x[0-9a-fA-F]+)(;)",
           "name": "constant.character.entity.html.text.pug"
         },
         {
@@ -1007,7 +1007,7 @@
       ]
     },
     "unbuffered_code": {
-      "begin": "(-|(([a-zA-Z0-9_]+)\\s+=))",
+      "begin": "(-|((\\w+)\\s+=))",
       "beginCaptures": {
         "3": {
           "name": "variable.parameter.javascript.embedded.pug"

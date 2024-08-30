@@ -3633,7 +3633,7 @@
               "name": "constant.numeric.decimal.cs"
             }
           },
-          "match": "[0-9]+"
+          "match": "\\d+"
         },
         {
           "captures": {
@@ -3714,7 +3714,7 @@
           ]
         }
       },
-      "match": "\\b(pragma)\\b\\s*\\b(warning)\\b\\s*\\b(?:(disable)|(restore))\\b(\\s*[0-9]+(?:\\s*,\\s*[0-9]+)?)?"
+      "match": "\\b(pragma)\\b\\s*\\b(warning)\\b\\s*\\b(?:(disable)|(restore))\\b(\\s*\\d+(?:\\s*,\\s*\\d+)?)?"
     },
     "preprocessor-r": {
       "begin": "\\b(r)\\b",
@@ -5584,7 +5584,7 @@
               "name": "punctuation.definition.constant.cs"
             }
           },
-          "match": "(&)((?:[A-Za-z:_][0-9A-Za-z:_.-]*)|(?:\\#[0-9]+)|(?:\\#x[0-9A-Fa-f]+))(;)",
+          "match": "(&)((?:[A-Za-z:_][0-9A-Za-z:_.-]*)|(?:\\#\\d+)|(?:\\#x[0-9A-Fa-f]+))(;)",
           "name": "constant.character.entity.cs"
         },
         {

@@ -1527,7 +1527,7 @@
           "name": "constant.numeric.binary.apex"
         },
         {
-          "match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F|f|D|d|M|m)?\\b",
+          "match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)\\d+)?(F|f|D|d|M|m)?\\b",
           "name": "constant.numeric.decimal.apex"
         },
         {
@@ -3082,7 +3082,7 @@
               "name": "punctuation.definition.constant.apex"
             }
           },
-          "match": "(&)((?:[A-Za-z:_][0-9A-Za-z:_.-]*)|(?:\\#[0-9]+)|(?:\\#x[0-9A-Fa-f]+))(;)",
+          "match": "(&)((?:[A-Za-z:_][0-9A-Za-z:_.-]*)|(?:\\#\\d+)|(?:\\#x[0-9A-Fa-f]+))(;)",
           "name": "constant.character.entity.apex"
         },
         {

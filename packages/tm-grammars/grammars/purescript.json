@@ -323,7 +323,7 @@
           "name": "meta.delimiter.decimal.period.purescript"
         }
       },
-      "match": "(?<!\\$)(?:(?:\\b[0-9]+(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|(?:\\b[0-9]+[eE][+-]?[0-9]+\\b)|(?:\\b[0-9]+(\\.)[0-9]+\\b)|(?:\\b[0-9]+\\b(?!\\.)))(?!\\$)",
+      "match": "(?<!\\$)(?:(?:\\b\\d+(\\.)\\d+[eE][+-]?\\d+\\b)|(?:\\b\\d+[eE][+-]?\\d+\\b)|(?:\\b\\d+(\\.)\\d+\\b)|(?:\\b\\d+\\b(?!\\.)))(?!\\$)",
       "name": "constant.numeric.decimal.purescript"
     },
     {
@@ -331,7 +331,7 @@
       "name": "constant.language.boolean.purescript"
     },
     {
-      "match": "\\b(([0-9]+_?)*[0-9]+|0([xX][0-9a-fA-F]+|[oO][0-7]+))\\b",
+      "match": "\\b((\\d+_?)*\\d+|0([xX][0-9a-fA-F]+|[oO][0-7]+))\\b",
       "name": "constant.numeric.purescript"
     },
     {

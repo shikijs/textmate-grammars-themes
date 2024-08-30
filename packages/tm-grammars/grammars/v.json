@@ -599,11 +599,11 @@
     "numbers": {
       "patterns": [
         {
-          "match": "([0-9]+(_?))+(\\.)([0-9]+[eE][-+]?[0-9]+)",
+          "match": "(\\d+(_?))+(\\.)(\\d+[eE][-+]?\\d+)",
           "name": "constant.numeric.exponential.v"
         },
         {
-          "match": "([0-9]+(_?))+(\\.)([0-9]+)",
+          "match": "(\\d+(_?))+(\\.)(\\d+)",
           "name": "constant.numeric.float.v"
         },
         {
@@ -619,7 +619,7 @@
           "name": "constant.numeric.hex.v"
         },
         {
-          "match": "(?:(?:[0-9]+)(?:[_]?))+",
+          "match": "(?:(?:\\d+)(?:[_]?))+",
           "name": "constant.numeric.integer.v"
         }
       ]

@@ -166,7 +166,7 @@
     "constants": {
       "patterns": [
         {
-          "begin": "(?xi)\n(?=\n  (\n    (\\\\[a-z_][a-z_0-9]*\\\\[a-z_][a-z_0-9\\\\]*)\n    |\n    ([a-z_][a-z_0-9]*\\\\[a-z_][a-z_0-9\\\\]*)\n  )\n  [^a-z_0-9\\\\]\n)",
+          "begin": "(?i)(?=((\\\\[a-z_][a-z_0-9]*\\\\[a-z_][a-z_0-9\\\\]*)|([a-z_][a-z_0-9]*\\\\[a-z_][a-z_0-9\\\\]*))[^a-z_0-9\\\\])",
           "end": "(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\\\])",
           "endCaptures": {
             "1": {
@@ -244,7 +244,7 @@
           "include": "#type-annotation"
         },
         {
-          "begin": "(?xi)((\\$+)[a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)  # The variable name",
+          "begin": "(?i)((\\$+)[a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)",
           "beginCaptures": {
             "1": {
               "name": "variable.other.php"
@@ -253,7 +253,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "end": "(?xi)\n\\s*(?=,|\\)|$) # A closing parentheses (end of argument list) or a comma",
+          "end": "(?i)\\s*(?=,|\\)|$)",
           "patterns": [
             {
               "begin": "(=)",
@@ -374,7 +374,7 @@
     "heredoc": {
       "patterns": [
         {
-          "begin": "<<<\\s*(\"?)([a-zA-Z_]+[a-zA-Z0-9_]*)(\\1)\\s*$",
+          "begin": "<<<\\s*(\"?)([a-zA-Z_]+\\w*)(\\1)\\s*$",
           "beginCaptures": {
             "2": {
               "name": "keyword.operator.heredoc.php"
@@ -394,7 +394,7 @@
           ]
         },
         {
-          "begin": "<<<\\s*('?)([a-zA-Z_]+[a-zA-Z0-9_]*)(\\1)\\s*$",
+          "begin": "<<<\\s*('?)([a-zA-Z_]+\\w*)(\\1)\\s*$",
           "beginCaptures": {
             "2": {
               "name": "keyword.operator.heredoc.php"
@@ -541,7 +541,7 @@
         },
         {
           "comment": "Interpolating simple variables, e.g. $x, $x->y, $x[z] but not $x->y->z.",
-          "match": "(\\$[a-zA-Z_][a-zA-Z0-9_]*((->[a-zA-Z_][a-zA-Z0-9_]*)|(\\[[a-zA-Z0-9_]+\\]))?)",
+          "match": "(\\$[a-zA-Z_]\\w*((->[a-zA-Z_]\\w*)|(\\[\\w+\\]))?)",
           "name": "variable.other.php"
         }
       ]
@@ -579,7 +579,7 @@
           "include": "#interface"
         },
         {
-          "begin": "(?xi)\n^\\s*\n(?:(module)\\s*)?(type|newtype)\n\\s+\n([a-z0-9_]+)",
+          "begin": "(?i)^\\s*(?:(module)\\s*)?(type|newtype)\\s+([a-z0-9_]+)",
           "beginCaptures": {
             "1": {
               "name": "storage.modifier.php"
@@ -764,7 +764,7 @@
             },
             {
               "begin": "(?i)\\s*(?=[a-z_0-9\\\\])",
-              "end": "(?xi)\n(?:\n  (?:\\s*(as)\\b\\s*([a-z_0-9]*)\\s*(?=,|;|$))|\n  (?=,|;|$)\n)",
+              "end": "(?i)(?:(?:\\s*(as)\\b\\s*([a-z_0-9]*)\\s*(?=,|;|$))|(?=,|;|$))",
               "endCaptures": {
                 "1": {
                   "name": "keyword.other.use-as.php"
@@ -931,7 +931,7 @@
                   "name": "punctuation.definition.variable.php"
                 }
               },
-              "match": "(?xi)\n([a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)                 # Exception class\n((?:\\s*\\|\\s*[a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)*) # Optional additional exception classes\n\\s*\n((\\$+)[a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)           # Variable"
+              "match": "(?i)([a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)((?:\\s*\\|\\s*[a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)*)\\s*((\\$+)[a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)"
             }
           ]
         },
@@ -1009,7 +1009,7 @@
           ]
         },
         {
-          "begin": "\\s*((?:(?:final|abstract|public|private|protected|internal|static|async)\\s+)*)(function)(?:\\s+)(?:(__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic|dispose|disposeAsync)(?=[^a-zA-Z0-9_\\x7f-\\xff]))|([a-zA-Z0-9_]+))",
+          "begin": "\\s*((?:(?:final|abstract|public|private|protected|internal|static|async)\\s+)*)(function)(?:\\s+)(?:(__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic|dispose|disposeAsync)(?=[^a-zA-Z0-9_\\x7f-\\xff]))|(\\w+))",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -1073,7 +1073,7 @@
           "include": "#invoke-call"
         },
         {
-          "begin": "(?xi)\n\\s*\n  (?=\n    [a-z_0-9$\\\\]+(::)\n    (?:\n      ([a-z_][a-z_0-9]*)\\s*\\(\n      |\n      ((\\$+)[a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)\n      |\n      ([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)\n    )?\n  )",
+          "begin": "(?i)\\s*(?=[a-z_0-9$\\\\]+(::)(?:([a-z_][a-z_0-9]*)\\s*\\(|((\\$+)[a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)|([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*))?)",
           "end": "(::)(?:([A-Za-z_][A-Za-z_0-9]*)\\s*\\(|((\\$+)[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)|([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?",
           "endCaptures": {
             "1": {
@@ -1350,7 +1350,7 @@
       ]
     },
     "numbers": {
-      "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
+      "match": "\\b((0(x|X)[0-9a-fA-F]*)|((\\d+\\.?\\d*)|(\\.\\d+))((e|E)(\\+|-)?\\d+)?)\\b",
       "name": "constant.numeric.php"
     },
     "object": {
@@ -1419,7 +1419,7 @@
           "include": "#instantiation"
         },
         {
-          "begin": "(?xi)\n\\s*\n(?=\n  [a-z_0-9\\\\]+(::)\n  ([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)?\n)",
+          "begin": "(?i)\\s*(?=[a-z_0-9\\\\]+(::)([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)?)",
           "end": "(?i)(::)([a-z_\\x{7f}-\\x{ff}][a-z0-9_\\x{7f}-\\x{ff}]*)?",
           "endCaptures": {
             "1": {
@@ -2453,7 +2453,7 @@
             }
           },
           "comment": "Embeded HTML entities &blah",
-          "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)"
+          "match": "(&)([a-zA-Z0-9]+|#\\d+|#x[0-9a-fA-F]+)(;)"
         },
         {
           "comment": "Entity with & and invalid name",

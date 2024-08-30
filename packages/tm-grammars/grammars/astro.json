@@ -483,7 +483,7 @@
               "name": "punctuation.definition.entity.astro"
             }
           },
-          "match": "(&)#[0-9]+(;)",
+          "match": "(&)#\\d+(;)",
           "name": "constant.character.entity.numeric.decimal.astro"
         },
         {
@@ -737,7 +737,7 @@
     "tags-name": {
       "patterns": [
         {
-          "match": "[A-Z][a-zA-Z0-9_]*",
+          "match": "[A-Z]\\w*",
           "name": "support.class.component.astro"
         },
         {

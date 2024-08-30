@@ -234,9 +234,9 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        # Make sure our opening js tag has word boundaries\n                        (?<=\\{\\%\\sjs\\s\\%\\}|\\{\\%\\sincludejs\\s\\%\\})\n                    ",
+      "begin": "(?i)(?<=\\{\\%\\sjs\\s\\%\\}|\\{\\%\\sincludejs\\s\\%\\})",
       "comment": "Add JS support to set tags that use the pattern \"css\" in their name",
-      "end": "(?ix)(?=\\{\\%\\sendjs\\s\\%\\}|\\{\\%\\sendincludejs\\s\\%\\})",
+      "end": "(?i)(?=\\{\\%\\sendjs\\s\\%\\}|\\{\\%\\sendincludejs\\s\\%\\})",
       "name": "source.js.embedded.twig",
       "patterns": [
         {
@@ -245,9 +245,9 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\scss\\s\\%\\}|\\{\\%\\sincludecss\\s\\%\\}|\\{\\%\\sincludehirescss\\s\\%\\})\n                        ",
+      "begin": "(?i)(?<=\\{\\%\\scss\\s\\%\\}|\\{\\%\\sincludecss\\s\\%\\}|\\{\\%\\sincludehirescss\\s\\%\\})",
       "comment": "Add CSS support to set tags that use the pattern \"css\" in their name",
-      "end": "(?ix)(?=\\{\\%\\sendcss\\s\\%\\}|\\{\\%\\sendincludecss\\s\\%\\}|\\{\\%\\sendincludehirescss\\s\\%\\})",
+      "end": "(?i)(?=\\{\\%\\sendcss\\s\\%\\}|\\{\\%\\sendincludecss\\s\\%\\}|\\{\\%\\sendincludehirescss\\s\\%\\})",
       "name": "source.css.embedded.twig",
       "patterns": [
         {
@@ -256,9 +256,9 @@
       ]
     },
     {
-      "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\sscss\\s\\%\\}|\\{\\%\\sincludescss\\s\\%\\}|\\{\\%\\sincludehiresscss\\s\\%\\})\n                        ",
+      "begin": "(?i)(?<=\\{\\%\\sscss\\s\\%\\}|\\{\\%\\sincludescss\\s\\%\\}|\\{\\%\\sincludehiresscss\\s\\%\\})",
       "comment": "Add SCSS support to set tags that use the pattern \"scss\" in their name",
-      "end": "(?ix)(?=\\{\\%\\sendscss\\s\\%\\}|\\{\\%\\sendincludescss\\s\\%\\}|\\{\\%\\sendincludehiresscss\\s\\%\\})",
+      "end": "(?i)(?=\\{\\%\\sendscss\\s\\%\\}|\\{\\%\\sendincludescss\\s\\%\\}|\\{\\%\\sendincludehiresscss\\s\\%\\})",
       "name": "source.css.scss.embedded.twig",
       "patterns": [
         {
@@ -408,7 +408,7 @@
               "name": "punctuation.definition.entity.html"
             }
           },
-          "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
+          "match": "(&)([a-zA-Z0-9]+|#\\d+|#x[0-9a-fA-F]+)(;)",
           "name": "constant.character.entity.html"
         },
         {
@@ -715,7 +715,7 @@
           "name": "constant.language.twig"
         },
         {
-          "match": "(?<=[\\s\\[\\(\\{:,]|\\.\\.|\\*\\*)[0-9]+(?:\\.[0-9]+)?(?=[\\s\\)\\]\\}\\,]|\\.\\.|\\*\\*)",
+          "match": "(?<=[\\s\\[\\(\\{:,]|\\.\\.|\\*\\*)\\d+(?:\\.\\d+)?(?=[\\s\\)\\]\\}\\,]|\\.\\.|\\*\\*)",
           "name": "constant.numeric.twig"
         }
       ]

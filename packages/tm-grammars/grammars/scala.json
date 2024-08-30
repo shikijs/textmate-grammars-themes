@@ -277,11 +277,11 @@
           "name": "constant.numeric.scala"
         },
         {
-          "match": "\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
+          "match": "\\b((\\d[0-9_]*(\\.\\d[0-9_]*)?)([eE](\\+|-)?\\d[0-9_]*)?|\\d[0-9_]*)[LlFfDd]?\\b",
           "name": "constant.numeric.scala"
         },
         {
-          "match": "(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
+          "match": "(\\.\\d[0-9_]*)([eE](\\+|-)?\\d[0-9_]*)?[LlFfDd]?\\b",
           "name": "constant.numeric.scala"
         },
         {
@@ -858,7 +858,7 @@
           "name": "keyword.type.scala"
         }
       },
-      "match": "\\.(type)(?![A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?|[0-9])"
+      "match": "\\.(type)(?![A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?|\\d)"
     },
     "storage-modifiers": {
       "patterns": [
@@ -1224,7 +1224,7 @@
           "name": "punctuation.definition.constant.xml"
         }
       },
-      "match": "(&)([:a-zA-Z_][:a-zA-Z0-9_.-]*|#[0-9]+|#x[0-9a-fA-F]+)(;)",
+      "match": "(&)([:a-zA-Z_][:a-zA-Z0-9_.-]*|#\\d+|#x[0-9a-fA-F]+)(;)",
       "name": "constant.character.entity.xml"
     },
     "xml-literal": {

@@ -239,7 +239,7 @@
           "name": "keyword.operator.cast.systemverilog"
         }
       },
-      "match": "[ \\t\\r\\n]*([0-9]+|[a-zA-Z_][a-zA-Z0-9_$]*)(')(?=\\()",
+      "match": "[ \\t\\r\\n]*(\\d+|[a-zA-Z_][a-zA-Z0-9_$]*)(')(?=\\()",
       "name": "meta.cast.systemverilog"
     },
     "class-declaration": {
@@ -427,7 +427,7 @@
     "constants": {
       "patterns": [
         {
-          "match": "(\\b[1-9][0-9_]*)?'([sS]?[bB][ \\t\\r\\n]*[0-1xXzZ?][0-1_xXzZ?]*|[sS]?[oO][ \\t\\r\\n]*[0-7xXzZ?][0-7_xXzZ?]*|[sS]?[dD][ \\t\\r\\n]*[0-9xXzZ?][0-9_xXzZ?]*|[sS]?[hH][ \\t\\r\\n]*[0-9a-fA-FxXzZ?][0-9a-fA-F_xXzZ?]*)((e|E)(\\+|-)?[0-9]+)?(?!'|\\w)",
+          "match": "(\\b[1-9][0-9_]*)?'([sS]?[bB][ \\t\\r\\n]*[0-1xXzZ?][0-1_xXzZ?]*|[sS]?[oO][ \\t\\r\\n]*[0-7xXzZ?][0-7_xXzZ?]*|[sS]?[dD][ \\t\\r\\n]*[0-9xXzZ?][0-9_xXzZ?]*|[sS]?[hH][ \\t\\r\\n]*[0-9a-fA-FxXzZ?][0-9a-fA-F_xXzZ?]*)((e|E)(\\+|-)?\\d+)?(?!'|\\w)",
           "name": "constant.numeric.systemverilog"
         },
         {
@@ -435,7 +435,7 @@
           "name": "constant.numeric.bit.systemverilog"
         },
         {
-          "match": "\\b(?:\\d[\\d_\\.]*(?<!\\.)(?:e|E)(?:\\+|-)?[0-9]+)\\b",
+          "match": "\\b(?:\\d[\\d_\\.]*(?<!\\.)(?:e|E)(?:\\+|-)?\\d+)\\b",
           "name": "constant.numeric.exp.systemverilog"
         },
         {

@@ -18,7 +18,11 @@ export async function cleanupGrammar(grammar: any, verify = true) {
 
         // Rewrite Oniguruma patterns to more JS-friendly syntax
         // Also it would "compress" the regex to save some bytes
-        return syntaxLowering(pattern)
+        const result = syntaxLowering(pattern, { preserveFlags: true }).pattern
+
+        return result
+          .replace(/\[0-9\]/g, '\\d')
+          .replace(/\[a-zA-Z0-9_\]/g, '\\w')
       },
     },
   )

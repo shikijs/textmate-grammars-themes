@@ -329,22 +329,22 @@
     },
     {
       "comment": "Floating point literal (fraction)",
-      "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b",
+      "match": "\\b\\d[0-9_]*\\.\\d[0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
       "comment": "Floating point literal (exponent)",
-      "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?[eE][+-]?[0-9_]+(f32|f64)?\\b",
+      "match": "\\b\\d[0-9_]*(\\.\\d[0-9_]*)?[eE][+-]?[0-9_]+(f32|f64)?\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
       "comment": "Floating point literal (typed)",
-      "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9_]+)?(f32|f64)\\b",
+      "match": "\\b\\d[0-9_]*(\\.\\d[0-9_]*)?([eE][+-]?[0-9_]+)?(f32|f64)\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
       "comment": "Integer literal (decimal)",
-      "match": "\\b(?!0[0-9])[0-9][0-9_]*([ui](8|16|32|64|128))?\\b",
+      "match": "\\b(?!0\\d)\\d[0-9_]*([ui](8|16|32|64|128))?\\b",
       "name": "constant.numeric.integer.decimal.crystal"
     },
     {
