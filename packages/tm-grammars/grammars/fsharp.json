@@ -694,7 +694,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member val|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -1067,7 +1067,7 @@
           "name": "keyword.symbol.arrow.fsharp"
         },
         {
-          "match": "(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~\\-|<<<|>>>|\\|>|:>|:\\?>|:|\\[|\\]|\\;|<>|=|@|\\|\\||&&|&|%|{|}|\\||_|\\.\\.|\\,|\\+|\\-|\\*|\\/|\\^|\\!|\\>|\\>\\=|\\>\\>|\\<|\\<\\=|\\(|\\)|\\<\\<)",
+          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~\\-|<<<|>>>|\\|>|:>|:\\?>|:|\\[|\\]|\\;|<>|=|@|\\|\\||&&|&|%|{|}|\\||_|\\.\\.|\\,|\\+|\\-|\\*|\\/|\\^|\\!|\\>|\\>\\=|\\>\\>|\\<|\\<\\=|\\(|\\)|\\<\\<)[.?]*",
           "name": "keyword.symbol.fsharp"
         }
       ]

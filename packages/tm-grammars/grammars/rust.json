@@ -475,10 +475,13 @@
             }
           },
           "comment": "function definition",
-          "end": "\\{|;",
+          "end": "(\\{)|(;)",
           "endCaptures": {
-            "0": {
+            "1": {
               "name": "punctuation.brackets.curly.rust"
+            },
+            "2": {
+              "name": "punctuation.semi.rust"
             }
           },
           "name": "meta.function.definition.rust",
@@ -840,7 +843,7 @@
         },
         {
           "comment": "dashrocket, skinny arrow",
-          "match": "->",
+          "match": "->|<-",
           "name": "keyword.operator.arrow.skinny.rust"
         },
         {

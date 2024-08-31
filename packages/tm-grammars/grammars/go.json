@@ -2235,29 +2235,6 @@
           ]
         },
         {
-          "begin": "(?:((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?<!\\,\\s*)(?:[\\w\\.\\*]+)\\s*)(?=\\`))",
-          "beginCaptures": {
-            "1": {
-              "patterns": [
-                {
-                  "include": "#type-declarations"
-                },
-                {
-                  "match": "\\w+",
-                  "name": "entity.name.type.go"
-                }
-              ]
-            }
-          },
-          "comment": "one type only with multi line raw string",
-          "end": "(?=\\`)",
-          "patterns": [
-            {
-              "include": "#raw_string_literals"
-            }
-          ]
-        },
-        {
           "include": "#parameter-variable-types"
         }
       ]
@@ -2391,7 +2368,7 @@
             }
           },
           "comment": "one type only",
-          "match": "(?:((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?<!\\,\\s*)(?:[\\w\\.\\*]+)\\s*(?:(?:(?:\".*\")|(?:\\`.*\\`))\\s*)?(?:/(?:/|\\*).*)?)$)"
+          "match": "(?:((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*]+)\\s*)(?:(?=\\`|\\/|\")|$))"
         },
         {
           "captures": {
@@ -2422,7 +2399,7 @@
             }
           },
           "comment": "property variables and types",
-          "match": "(?:((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))([^\\`]+))"
+          "match": "(?:((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))([^\\`\"\\/]+))"
         }
       ]
     },
