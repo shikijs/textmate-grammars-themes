@@ -1071,7 +1071,7 @@
           "name": "constant.character.escape.escape.nim"
         },
         {
-          "match": "\\\\[xX][ \\t][ \\t]",
+          "match": "\\\\[xX][0-9A-Fa-f][0-9A-Fa-f]",
           "name": "constant.character.escape.hex.nim"
         },
         {
@@ -1128,7 +1128,7 @@
           "name": "constant.numeric.float.decimal.nim"
         },
         {
-          "match": "\\b0[xX][ \\t][_ \\t]*'([fF](32|64|128)|[fFdD])",
+          "match": "\\b0[xX][0-9A-Fa-f][_0-9A-Fa-f]*'([fF](32|64|128)|[fFdD])",
           "name": "constant.numeric.float.hexadecimal.nim"
         },
         {
@@ -1317,7 +1317,7 @@
     "integer_literal": {
       "patterns": [
         {
-          "match": "\\b(0[xX][ \\t][_ \\t]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(0[xX][0-9A-Fa-f][_0-9A-Fa-f]*)('(([iIuU](8|16|32|64))|[uU]))?",
           "name": "constant.numeric.integer.hexadecimal.nim"
         },
         {
@@ -1367,11 +1367,11 @@
           "name": "constant.character.escape.newline.nim"
         },
         {
-          "match": "\\\\[uU][ \\t][ \\t][ \\t][ \\t]",
+          "match": "\\\\[uU][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]",
           "name": "constant.character.escape.hex.nim"
         },
         {
-          "match": "\\\\[uU]\\{[ \\t]+\\}",
+          "match": "\\\\[uU]\\{[0-9A-Fa-f]+\\}",
           "name": "constant.character.escape.hex.nim"
         },
         {
