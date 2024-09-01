@@ -391,7 +391,7 @@
       "name": "constant.numeric.integer.ruby"
     },
     {
-      "match": "\\b0[xX][0-9A-Fa-f](?>_?[0-9A-Fa-f])*r?i?\\b",
+      "match": "\\b0[xX]\\h(?>_?\\h)*r?i?\\b",
       "name": "constant.numeric.hex.ruby"
     },
     {
@@ -577,7 +577,7 @@
     },
     {
       "comment": "\n\t\t\tmatches questionmark-letters.\n\n\t\t\texamples (1st alternation = hex):\n\t\t\t?\\x1     ?\\x61\n\n\t\t\texamples (2nd alternation = octal):\n\t\t\t?\\0      ?\\07     ?\\017\n\n\t\t\texamples (3rd alternation = escaped):\n\t\t\t?\\n      ?\\b\n\n\t\t\texamples (4th alternation = meta-ctrl):\n\t\t\t?\\C-a    ?\\M-a    ?\\C-\\M-\\C-\\M-a\n\n\t\t\texamples (4th alternation = normal):\n\t\t\t?a       ?A       ?0 \n\t\t\t?*       ?\"       ?( \n\t\t\t?.       ?#\n\t\t\t\n\t\t\t\n\t\t\tthe negative lookbehind prevents against matching\n\t\t\tp(42.tainted?)\n\t\t\t",
-      "match": "(?<!\\w)\\?(\\\\(x[0-9A-Fa-f]{1,2}(?![0-9A-Fa-f])\\b|0[0-7]{0,2}(?![0-7])\\b|[^x0MC])|(\\\\[MC]-)+\\w|[^\\s\\\\])",
+      "match": "(?<!\\w)\\?(\\\\(x\\h{1,2}(?!\\h)\\b|0[0-7]{0,2}(?![0-7])\\b|[^x0MC])|(\\\\[MC]-)+\\w|[^\\s\\\\])",
       "name": "constant.numeric.ruby"
     },
     {
