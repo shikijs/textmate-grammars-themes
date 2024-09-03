@@ -15,6 +15,8 @@ export default antfu(
   {
     ignores: [
       'packages/tm-grammars/grammars/**',
+      'packages/tm-grammars/raw/**',
+      'packages/tm-themes/themes/**',
     ],
     vue: true,
   },
