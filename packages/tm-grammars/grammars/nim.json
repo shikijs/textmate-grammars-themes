@@ -76,7 +76,7 @@
       "name": "meta.proc.nim",
       "patterns": [
         {
-          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+\\`?([^\\:\\{\\s\\`\\*\\(]*)\\`?(\\s*\\*)?\\s*(?=\\(|\\=|:|\\[|\\n|\\{)",
+          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+\\`?([^:{\\s\\`\\*(]*)\\`?(\\s*\\*)?\\s*(?=\\(|=|:|\\[|\\n|\\{)",
           "captures": {
             "1": {
               "name": "keyword.other"
@@ -1124,7 +1124,7 @@
     "float_literal": {
       "patterns": [
         {
-          "match": "\\b\\d[_\\d]*((\\.\\d[_\\d]*([eE][\\+\\-]?\\d[_\\d]*)?)|([eE][\\+\\-]?\\d[_\\d]*))('([fF](32|64|128)|[fFdD]))?",
+          "match": "\\b\\d[_\\d]*((\\.\\d[_\\d]*([eE][+\\-]?\\d[_\\d]*)?)|([eE][+\\-]?\\d[_\\d]*))('([fF](32|64|128)|[fFdD]))?",
           "name": "constant.numeric.float.decimal.nim"
         },
         {

@@ -13,27 +13,25 @@ const _cacheGetLicenseUrl = new Map<string, ReturnType<typeof _getLicenseUrl>>()
 const _cacheGetCommit = new Map<string, Promise<CommitInfo>>()
 
 function _getLicenseUrl(repo: string) {
-  return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] })
-    .then((r: any) => {
-      return r.data
-    })
+  return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] }).then((r: any) => {
+    return r.data
+  })
 }
 
 function _getCommit(repo: string, branch: string, path: string): Promise<CommitInfo> {
   return octokit.request(`GET /repos/{owner}/{repo}/commits?path=${encodeURIComponent(decodeURI(path))}&per_page=1&sha=${branch}`, {
     owner: repo.split('/')[0],
     repo: repo.split('/')[1],
+  }).then((r: any) => {
+    if (!r.data.length) {
+      console.error(r, path)
+      throw new Error(`Failed to resolve sha for ${JSON.stringify({ repo, branch, path })}}`)
+    }
+    return {
+      sha: r.data[0].sha,
+      date: r.data[0].commit.author.date,
+    }
   })
-    .then((r: any) => {
-      if (!r.data.length) {
-        console.error(r, path)
-        throw new Error(`Failed to resolve sha for ${JSON.stringify({ repo, branch, path })}}`)
-      }
-      return {
-        sha: r.data[0].sha,
-        date: r.data[0].commit.author.date,
-      }
-    })
 }
 
 function getLicenseUrl(repo: string) {

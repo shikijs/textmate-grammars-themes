@@ -62,7 +62,7 @@
         }
       },
       "comment": "Identifier \"=\" with optional parens",
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)[A-Za-z][0-9A-Za-z_-]*)(\\))?\\s*(\\=(?!\\=|\\>))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)[A-Za-z][0-9A-Za-z_-]*)(\\))?\\s*(=(?!=|>))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -264,7 +264,7 @@
           "name": "keyword.control.conditional.hcl"
         },
         {
-          "match": "\\:",
+          "match": ":",
           "name": "keyword.operator.hcl"
         },
         {
@@ -337,7 +337,7 @@
       "name": "storage.type.hcl"
     },
     "heredoc": {
-      "begin": "(\\<\\<\\-?)\\s*(\\w+)\\s*$",
+      "begin": "(<<-?)\\s*(\\w+)\\s*$",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.heredoc.hcl"
@@ -489,7 +489,7 @@
       },
       "patterns": [
         {
-          "match": "\\=\\>",
+          "match": "=>",
           "name": "storage.type.function.hcl"
         },
         {
@@ -565,7 +565,7 @@
             }
           },
           "comment": "Literal, named object key",
-          "match": "\\b((?!null|false|true)[A-Za-z][0-9A-Za-z_-]*)\\s*(\\=\\>?)\\s*"
+          "match": "\\b((?!null|false|true)[A-Za-z][0-9A-Za-z_-]*)\\s*(=>?)\\s*"
         },
         {
           "captures": {
@@ -590,7 +590,7 @@
             }
           },
           "comment": "String object key",
-          "match": "\\b((\").*(\"))\\s*(\\=)\\s*"
+          "match": "\\b((\").*(\"))\\s*(=)\\s*"
         },
         {
           "begin": "^\\s*\\(",
@@ -627,19 +627,19 @@
     "operators": {
       "patterns": [
         {
-          "match": "\\>\\=",
+          "match": ">=",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\<\\=",
+          "match": "<=",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\=\\=",
+          "match": "==",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\!\\=",
+          "match": "!=",
           "name": "keyword.operator.hcl"
         },
         {
@@ -647,7 +647,7 @@
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
-          "match": "\\-",
+          "match": "-",
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
@@ -671,15 +671,15 @@
           "name": "keyword.operator.logical.hcl"
         },
         {
-          "match": "\\!",
+          "match": "!",
           "name": "keyword.operator.logical.hcl"
         },
         {
-          "match": "\\>",
+          "match": ">",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\<",
+          "match": "<",
           "name": "keyword.operator.hcl"
         },
         {
@@ -691,11 +691,11 @@
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\:",
+          "match": ":",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\=\\>",
+          "match": "=>",
           "name": "keyword.operator.hcl"
         }
       ]

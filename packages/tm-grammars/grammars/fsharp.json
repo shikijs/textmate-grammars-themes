@@ -59,7 +59,7 @@
   ],
   "repository": {
     "abstract_definition": {
-      "begin": "\\b(static)?\\s+(abstract)\\s+(member)?(\\s+\\[\\<.*\\>\\])?\\s*([_A-Za-z0-9,\\._`\\s]+)(<)?",
+      "begin": "\\b(static)?\\s+(abstract)\\s+(member)?(\\s+\\[<.*>\\])?\\s*([_A-Za-z0-9,\\._`\\s]+)(<)?",
       "beginCaptures": {
         "1": {
           "name": "keyword.fsharp"
@@ -209,8 +209,8 @@
     "attributes": {
       "patterns": [
         {
-          "begin": "\\[\\<",
-          "end": "\\>\\]|\\]",
+          "begin": "\\[<",
+          "end": ">\\]|\\]",
           "name": "support.function.attribute.fsharp",
           "patterns": [
             {
@@ -354,7 +354,7 @@
             }
           },
           "comments": "SRTP syntax support",
-          "end": "(\\))\\s*((?=,)|(?=\\=))",
+          "end": "(\\))\\s*((?=,)|(?==))",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -694,7 +694,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member val|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member val|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[<.*>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9\\._]+)*|``[_A-Za-z]([_A-Za-z0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -712,7 +712,7 @@
               "name": "variable.fsharp"
             }
           },
-          "end": "\\s*((with\\b)|(=|\\n+=|(?<=\\=)))",
+          "end": "\\s*((with\\b)|(=|\\n+=|(?<==)))",
           "endCaptures": {
             "2": {
               "name": "keyword.fsharp"
@@ -755,7 +755,7 @@
               "name": "variable.fsharp"
             }
           },
-          "end": "\\s*(=|\\n+=|(?<=\\=))",
+          "end": "\\s*(=|\\n+=|(?<==))",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -769,7 +769,7 @@
           ]
         },
         {
-          "begin": "\\b(static val mutable|val mutable|val inline|val)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9,\\._]+)*|``[_A-Za-z]([_A-Za-z0-9,\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(static val mutable|val mutable|val inline|val)(\\s+rec|mutable)?(\\s+\\[<.*>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_A-Za-z]([_A-Za-z0-9,\\._]+)*|``[_A-Za-z]([_A-Za-z0-9,\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -950,7 +950,7 @@
           ]
         },
         {
-          "match": "\\b(private|to|public|internal|function|yield!|yield|class|exception|match|delegate|of|new|in|as|if|then|else|elif|for|begin|end|inherit|do|let\\!|return\\!|return|interface|with|abstract|enum|member|try|finally|and|when|or|use|use\\!|struct|while|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
+          "match": "\\b(private|to|public|internal|function|yield!|yield|class|exception|match|delegate|of|new|in|as|if|then|else|elif|for|begin|end|inherit|do|let!|return!|return|interface|with|abstract|enum|member|try|finally|and|when|or|use|use!|struct|while|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
           "name": "keyword.fsharp"
         },
         {
@@ -1055,7 +1055,7 @@
           "name": "storage.modifier"
         },
         {
-          "match": "\\b(private|to|public|internal|function|class|exception|delegate|of|new|as|begin|end|inherit|let!|interface|abstract|enum|member|and|when|or|use|use\\!|struct|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
+          "match": "\\b(private|to|public|internal|function|class|exception|delegate|of|new|as|begin|end|inherit|let!|interface|abstract|enum|member|and|when|or|use|use!|struct|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
           "name": "keyword.fsharp"
         },
         {
@@ -1063,11 +1063,11 @@
           "name": "keyword.control"
         },
         {
-          "match": "(\\->|\\<\\-)",
+          "match": "(->|<-)",
           "name": "keyword.symbol.arrow.fsharp"
         },
         {
-          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~\\-|<<<|>>>|\\|>|:>|:\\?>|:|\\[|\\]|\\;|<>|=|@|\\|\\||&&|&|%|{|}|\\||_|\\.\\.|\\,|\\+|\\-|\\*|\\/|\\^|\\!|\\>|\\>\\=|\\>\\>|\\<|\\<\\=|\\(|\\)|\\<\\<)[.?]*",
+          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~-|<<<|>>>|\\|>|:>|:\\?>|:|\\[|\\]|\\;|<>|=|@|\\|\\||&&|&|%|{|}|\\||_|\\.\\.|\\,|\\+|-|\\*|\\/|\\^|!|>|>=|>>|<|<=|\\(|\\)|<<)[.?]*",
           "name": "keyword.symbol.fsharp"
         }
       ]
@@ -1094,7 +1094,7 @@
             }
           },
           "comments": "SRTP syntax support",
-          "end": "(\\))\\s*((?=,)|(?=\\=))",
+          "end": "(\\))\\s*((?=,)|(?==))",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"

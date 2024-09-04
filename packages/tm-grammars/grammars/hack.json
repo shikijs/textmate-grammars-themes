@@ -531,7 +531,7 @@
         },
         {
           "comment": "Escaped characters in double-quoted strings e.g. \\n or \\t.",
-          "match": "\\\\[nrt\\\\\\$\\\"]",
+          "match": "\\\\[nrt\\\\$\\\"]",
           "name": "constant.character.escape.php"
         },
         {
@@ -1196,7 +1196,7 @@
           "name": "keyword.operator.comparison.php"
         },
         {
-          "match": "=|\\+=|\\-=|\\*=|/=|%=|&=|\\|=|\\^=|<<=|>>=",
+          "match": "=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=|<<=|>>=",
           "name": "keyword.operator.assignment.php"
         },
         {
@@ -1204,11 +1204,11 @@
           "name": "keyword.operator.comparison.php"
         },
         {
-          "match": "(\\-\\-|\\+\\+)",
+          "match": "(--|\\+\\+)",
           "name": "keyword.operator.increment-decrement.php"
         },
         {
-          "match": "(\\-|\\+|\\*|/|%)",
+          "match": "(-|\\+|\\*|/|%)",
           "name": "keyword.operator.arithmetic.php"
         },
         {
@@ -2567,7 +2567,7 @@
     "xhp-tag-element-name": {
       "patterns": [
         {
-          "begin": "\\s*(<)([_\\p{L}](?:[:\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}-])*+)(?=[/>\\s])(?<![\\:])",
+          "begin": "\\s*(<)([_\\p{L}](?:[:\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}-])*+)(?=[/>\\s])(?<![:])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.xhp"

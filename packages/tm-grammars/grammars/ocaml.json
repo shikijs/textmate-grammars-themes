@@ -54,7 +54,7 @@
       "patterns": [
         {
           "begin": "(?:(?<=(?:[^#\\-:!?.@*/&%^+<=>|~$]%|^%))(?![#\\-:!?.@*/&%^+<=>|~$]))",
-          "end": "((?<![#\\-:!?.@*/&%^+<=>|~$])[:\\?](?![#\\-:!?.@*/&%^+<=>|~$]))|(?<=[\\s])|(?=\\])",
+          "end": "((?<![#\\-:!?.@*/&%^+<=>|~$])[:?](?![#\\-:!?.@*/&%^+<=>|~$]))|(?<=[\\s])|(?=\\])",
           "endCaptures": {
             "1": {
               "name": "variable.other.class.js message.error variable.interpolation string.regexp"
@@ -731,7 +731,7 @@
       ]
     },
     "commentBlock": {
-      "begin": "\\(\\*(?!\\*[^\\)])",
+      "begin": "\\(\\*(?!\\*[^)])",
       "contentName": "emphasis",
       "end": "\\*\\)",
       "name": "comment constant.regexp meta.separator.markdown",

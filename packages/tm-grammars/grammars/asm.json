@@ -47,8 +47,8 @@
           "name": "comment.block"
         },
         {
-          "begin": "^\\s*[\\#%]\\s*if\\s+0\\b",
-          "end": "^\\s*[\\#%]\\s*endif\\b",
+          "begin": "^\\s*[#%]\\s*if\\s+0\\b",
+          "end": "^\\s*[#%]\\s*endif\\b",
           "name": "comment.preprocessor"
         }
       ]
@@ -92,11 +92,11 @@
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$\\d\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?\\.(?:(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?(?:p[+-]?(?:\\d[0-9_]*))?\\b)?",
+          "match": "(?i)\\$\\d_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?\\.(?:(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?(?:p[+-]?(?:\\d[0-9_]*))?\\b)?",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$\\d\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)(?:p[+-]?(?:\\d[0-9_]*))\\b",
+          "match": "(?i)\\$\\d_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)(?:p[+-]?(?:\\d[0-9_]*))\\b",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
@@ -112,7 +112,7 @@
           "name": "constant.numeric.decimal.asm.x86_64"
         },
         {
-          "match": "(?i)(?:\\$\\d\\_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?)\\b",
+          "match": "(?i)(?:\\$\\d_?(?:[0-9A-Fa-f][0-9A-Fa-f_]*)?)\\b",
           "name": "constant.numeric.hex.asm.x86_64"
         },
         {
@@ -147,7 +147,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.\\.@)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(\\:)?|\\b)",
+          "match": "(\\.\\.@)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -162,7 +162,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(\\:))",
+          "match": "(?:(\\.)?|\\b)((?:[A-Za-z_?](?:[0-9A-Za-z_$#@~.?]*)))(?:(:))",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -177,7 +177,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.)(\\d+(?:[0-9A-Za-z_$#@~.?]*))(?:(\\:)?|\\b)",
+          "match": "(\\.)(\\d+(?:[0-9A-Za-z_$#@~.?]*))(?:(:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -192,7 +192,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)([0-9$@~](?:[0-9A-Za-z_$#@~.?]*))(?:(\\:))",
+          "match": "(?:(\\.)?|\\b)([0-9$@~](?:[0-9A-Za-z_$#@~.?]*))(?:(:))",
           "name": "invalid.illegal.entity.name.function.asm.x86_64"
         }
       ]

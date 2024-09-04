@@ -176,7 +176,7 @@
           "name": "keyword.control.flow.stata"
         }
       },
-      "end": "\\s*(=)\\s*([^\\{]+)\\s*|(?=\\n)",
+      "end": "\\s*(=)\\s*([^{]+)\\s*|(?=\\n)",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.assignment.stata"
@@ -704,7 +704,7 @@
           "name": "storage.type.orgtype.mata"
         },
         {
-          "match": "\\!|\\+\\+|\\-\\-|\\&|\\'|\\?|\\\\|\\:\\:|\\,|\\.\\.|\\||\\=|\\=\\=|\\>\\=|\\<\\=|\\<|\\>|\\!\\=|\\#|\\+|\\-|\\*|\\^|\\/",
+          "match": "!|\\+\\+|--|\\&|\\'|\\?|\\\\|::|\\,|\\.\\.|\\||=|==|>=|<=|<|>|!=|\\#|\\+|-|\\*|\\^|\\/",
           "name": "keyword.operator.mata"
         },
         {
@@ -761,7 +761,7 @@
     "ascii-regex-character-class": {
       "patterns": [
         {
-          "match": "\\\\[\\*\\+\\?\\-\\.\\^\\$\\|\\[\\]\\(\\)\\\\]",
+          "match": "\\\\[\\*+?\\-\\.\\^$\\|\\[\\]()\\\\]",
           "name": "constant.character.escape.backslash.stata"
         },
         {
@@ -802,7 +802,7 @@
                   "name": "constant.character.escape.backslash.stata"
                 }
               },
-              "match": "((\\\\.)|.)\\-((\\\\.)|[^\\]])",
+              "match": "((\\\\.)|.)-((\\\\.)|[^\\]])",
               "name": "constant.other.character-class.range.stata"
             }
           ]
@@ -1016,7 +1016,7 @@
             }
           },
           "comment": "color regexr with regular quotes i.e. \" ",
-          "match": "\\b(regexr)(\\()([^,]+)(,)\\s*(\")([^\"]+)(\"(')?)\\s*([^\\)]*)(\\))"
+          "match": "\\b(regexr)(\\()([^,]+)(,)\\s*(\")([^\"]+)(\"(')?)\\s*([^)]*)(\\))"
         },
         {
           "captures": {
@@ -1103,7 +1103,7 @@
             }
           },
           "comment": "color regexr with compound quotes i.e. `\"text\"' ",
-          "match": "\\b(regexr)(\\()([^,]+)(,)\\s*(`\")([^\"]+)(\"')\\s*([^\\)]*)(\\))"
+          "match": "\\b(regexr)(\\()([^,]+)(,)\\s*(`\")([^\"]+)(\"')\\s*([^)]*)(\\))"
         }
       ]
     },
@@ -1115,11 +1115,11 @@
         },
         {
           "comment": "matched when not a global, but must be ascii",
-          "match": "\\$(?![a-zA-Z_\\{])",
+          "match": "\\$(?![a-zA-Z_{])",
           "name": "keyword.control.anchor.stata"
         },
         {
-          "match": "[\\?\\+\\*]",
+          "match": "[?+\\*]",
           "name": "keyword.control.quantifier.stata"
         },
         {
@@ -1197,7 +1197,7 @@
             }
           },
           "comment": "correct with nothing else on the line but whitespace; before and after; before; after; correct",
-          "end": "^\\s*(\\})\\s*$|^\\s*([^\\*\"\\}]+)\\s+(\\})\\s*([^\\*\"\\}/\\n]+)|^\\s*([^\"\\*\\}]+)\\s+(\\})|\\s*(\\})\\s*([^\"\\*\\}/\\n]+)|(\\})$",
+          "end": "^\\s*(\\})\\s*$|^\\s*([^\\*\"}]+)\\s+(\\})\\s*([^\\*\"}/\\n]+)|^\\s*([^\"\\*}]+)\\s+(\\})|\\s*(\\})\\s*([^\"\\*}/\\n]+)|(\\})$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.block.end.stata"
@@ -1405,15 +1405,15 @@
           "include": "#factorvariables"
         },
         {
-          "match": "\\b(?i:(\\d+\\.\\d*(e[\\-\\+]?\\d+)?))(?=[^a-zA-Z_])",
+          "match": "\\b(?i:(\\d+\\.\\d*(e[\\-+]?\\d+)?))(?=[^a-zA-Z_])",
           "name": "constant.numeric.float.stata"
         },
         {
-          "match": "(?<=[^0-9a-zA-Z_])(?i:(\\.\\d+(e[\\-\\+]?\\d+)?))",
+          "match": "(?<=[^0-9a-zA-Z_])(?i:(\\.\\d+(e[\\-+]?\\d+)?))",
           "name": "constant.numeric.float.stata"
         },
         {
-          "match": "\\b(?i:(\\d+e[\\-\\+]?\\d+))",
+          "match": "\\b(?i:(\\d+e[\\-+]?\\d+))",
           "name": "constant.numeric.float.stata"
         },
         {
@@ -1707,7 +1707,7 @@
     "macro-commands": {
       "patterns": [
         {
-          "begin": "\\b(loc(al|a)?)\\s+([\\w'`\\$\\(\\)\\{\\}]+)\\s*(?=:|=)",
+          "begin": "\\b(loc(al|a)?)\\s+([\\w'`$(){}]+)\\s*(?=:|=)",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1759,7 +1759,7 @@
           ]
         },
         {
-          "begin": "\\b(gl(obal|oba|ob|o)?)\\s+(?=[\\w`\\$])",
+          "begin": "\\b(gl(obal|oba|ob|o)?)\\s+(?=[\\w`$])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1783,7 +1783,7 @@
           ]
         },
         {
-          "begin": "\\b(loc(al|a)?)\\s+(\\+\\+|\\-\\-)?(?=[\\w`\\$])",
+          "begin": "\\b(loc(al|a)?)\\s+(\\+\\+|--)?(?=[\\w`$])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1923,7 +1923,7 @@
               "name": "entity.name.type.class.stata"
             }
           },
-          "match": "\\b(list)\\s+(\\w{1,32})\\s+(\\||&|\\-|===|==|in)\\s+(\\w{1,32})"
+          "match": "\\b(list)\\s+(\\w{1,32})\\s+(\\||&|-|===|==|in)\\s+(\\w{1,32})"
         },
         {
           "captures": {
@@ -2267,7 +2267,7 @@
           },
           "patterns": [
             {
-              "match": "\\+\\+|\\-\\-",
+              "match": "\\+\\+|--",
               "name": "keyword.operator.arithmetic.stata"
             },
             {
@@ -2326,7 +2326,7 @@
     "macro-local-identifiers": {
       "patterns": [
         {
-          "match": "[^\\w'`\\$\\(\\)\\s]",
+          "match": "[^\\w'`$()\\s]",
           "name": "invalid.illegal.name.stata"
         },
         {
@@ -2343,7 +2343,7 @@
       "patterns": [
         {
           "comment": "++ and -- must come first to support ligatures",
-          "match": "\\+\\+|\\-\\-|\\+|\\-|\\*|\\^",
+          "match": "\\+\\+|--|\\+|-|\\*|\\^",
           "name": "keyword.operator.arithmetic.stata"
         },
         {
@@ -2409,7 +2409,7 @@
           "name": "invalid.illegal.name.stata"
         },
         {
-          "match": "[^\\w'`\\$\\(\\)\\s]",
+          "match": "[^\\w'`$()\\s]",
           "name": "invalid.illegal.name.stata"
         },
         {
@@ -2592,7 +2592,7 @@
                   "name": "constant.character.escape.backslash.stata"
                 }
               },
-              "match": "((\\\\.)|.)\\-((\\\\.)|[^\\]])",
+              "match": "((\\\\.)|.)-((\\\\.)|[^\\]])",
               "name": "constant.other.character-class.range.stata"
             }
           ]
@@ -2831,7 +2831,7 @@
             }
           },
           "comment": "color regexr with regular quotes i.e. \" ",
-          "match": "\\b(ustrregexrf|ustrregexra)(\\()([^,]+)(,)\\s*(\")([^\"]+)(\"(')?)\\s*([^\\)]*)(\\))"
+          "match": "\\b(ustrregexrf|ustrregexra)(\\()([^,]+)(,)\\s*(\")([^\"]+)(\"(')?)\\s*([^)]*)(\\))"
         },
         {
           "captures": {
@@ -2921,7 +2921,7 @@
             }
           },
           "comment": "color regexr with compound quotes i.e. `\"text\"' ",
-          "match": "\\b(ustrregexrf|ustrregexra)(\\()([^,]+)(,)\\s*(`\")([^\"]+)(\"')\\s*([^\\)]*)(\\))"
+          "match": "\\b(ustrregexrf|ustrregexra)(\\()([^,]+)(,)\\s*(`\")([^\"]+)(\"')\\s*([^)]*)(\\))"
         }
       ]
     },

@@ -168,7 +168,7 @@
           "include": "#string_interpolation"
         },
         {
-          "match": "([\\w\\-\\/\\._\\\\%@:\\?=]+)",
+          "match": "([\\w\\-\\/\\._\\\\%@:?=]+)",
           "name": "string.quoted.double.prisma"
         }
       ]
@@ -250,7 +250,7 @@
               "name": "invalid.illegal.required_type.prisma"
             }
           },
-          "match": "^\\s*(\\w+)(\\s*:)?\\s+((?!(?:Int|BigInt|String|DateTime|Bytes|Decimal|Float|Json|Boolean)\\b)\\b\\w+)?(Int|BigInt|String|DateTime|Bytes|Decimal|Float|Json|Boolean)?(\\[\\])?(\\?)?(\\!)?"
+          "match": "^\\s*(\\w+)(\\s*:)?\\s+((?!(?:Int|BigInt|String|DateTime|Bytes|Decimal|Float|Json|Boolean)\\b)\\b\\w+)?(Int|BigInt|String|DateTime|Bytes|Decimal|Float|Json|Boolean)?(\\[\\])?(\\?)?(!)?"
         },
         {
           "include": "#attribute_with_arguments"

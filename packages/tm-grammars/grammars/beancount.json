@@ -523,7 +523,7 @@
           "name": "entity.name.type.commodity.beancount"
         }
       },
-      "match": "([\\-|\\+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)\\s*([A-Z][A-Z0-9\\'\\.\\_\\-]{0,22}[A-Z0-9])",
+      "match": "([\\-|+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)\\s*([A-Z][A-Z0-9\\'\\._\\-]{0,22}[A-Z0-9])",
       "name": "meta.amount.beancount"
     },
     "bool": {
@@ -549,7 +549,7 @@
       "match": "(;.*)$"
     },
     "commodity": {
-      "match": "([A-Z][A-Z0-9\\'\\.\\_\\-]{0,22}[A-Z0-9])",
+      "match": "([A-Z][A-Z0-9\\'\\._\\-]{0,22}[A-Z0-9])",
       "name": "entity.name.type.commodity.beancount"
     },
     "cost": {
@@ -676,10 +676,10 @@
           "name": "constant.numeric.currency.beancount"
         }
       },
-      "match": "([\\-|\\+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)"
+      "match": "([\\-|+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)"
     },
     "posting": {
-      "begin": "^\\s+(?=([A-Z\\!]))",
+      "begin": "^\\s+(?=([A-Z!]))",
       "end": "(?=(^\\s*$|^\\S|^\\s*[A-Z]))",
       "name": "meta.posting.beancount",
       "patterns": [

@@ -68,7 +68,7 @@
       ]
     },
     "component-tag": {
-      "begin": "(<\\/?)(@|this.)?([a-zA-Z0-9-_\\$:\\.]+)\\b",
+      "begin": "(<\\/?)(@|this.)?([a-zA-Z0-9-_$:\\.]+)\\b",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -179,7 +179,7 @@
       ]
     },
     "glimmer-block": {
-      "begin": "({{~?)(#|/)(([@\\$a-zA-Z0-9_/.-]+))",
+      "begin": "({{~?)(#|/)(([@$a-zA-Z0-9_/.-]+))",
       "captures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -709,8 +709,8 @@
           "name": "meta.js.embeddedTemplateWithArgs",
           "patterns": [
             {
-              "begin": "(?<=\\<template)",
-              "end": "(?=\\>)",
+              "begin": "(?<=<template)",
+              "end": "(?=>)",
               "patterns": [
                 {
                   "include": "#tag-like-content"

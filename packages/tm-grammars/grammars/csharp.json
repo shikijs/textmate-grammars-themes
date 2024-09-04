@@ -313,7 +313,7 @@
       ]
     },
     "array-creation-expression": {
-      "begin": "\\b(new|stackalloc)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s*(?=\\[)",
+      "begin": "\\b(new|stackalloc)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.$1.cs"
@@ -346,7 +346,7 @@
           ]
         }
       },
-      "match": "(?<!\\.)\\b(as)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?(?!\\?))?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?(?!\\?))?)*))?"
+      "match": "(?<!\\.)\\b(as)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?(?!\\?))?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?(?!\\?))?)*))?"
     },
     "assignment-expression": {
       "begin": "(?:\\*|/|%|\\+|-|\\?\\?|\\&|\\^|<<|>>>?|\\|)?=(?!=|>)",
@@ -359,7 +359,7 @@
           ]
         }
       },
-      "end": "(?=[,\\)\\];}])",
+      "end": "(?=[,)\\];}])",
       "patterns": [
         {
           "include": "#ref-modifier"
@@ -380,7 +380,7 @@
           "name": "keyword.operator.assignment.compound.bitwise.cs"
         },
         {
-          "match": "\\=",
+          "match": "=",
           "name": "keyword.operator.assignment.cs"
         }
       ]
@@ -441,7 +441,7 @@
       ]
     },
     "attribute-section": {
-      "begin": "(\\[)(assembly|module|field|event|method|param|property|return|type)?(\\:)?",
+      "begin": "(\\[)(assembly|module|field|event|method|param|property|return|type)?(:)?",
       "beginCaptures": {
         "1": {
           "name": "punctuation.squarebracket.open.cs"
@@ -638,7 +638,7 @@
           "name": "punctuation.parenthesis.close.cs"
         }
       },
-      "match": "(\\()\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(\\))(?=\\s*-*!*@?[_0-9A-Za-z\\(])"
+      "match": "(\\()\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(\\))(?=\\s*-*!*@?[_0-9A-Za-z(])"
     },
     "casted-constant-pattern": {
       "begin": "(\\()([\\s.:@_0-9A-Za-z]+)(\\))(?=[\\s+\\-!~]*@?[_0-9A-Za-z('\"]+)",
@@ -696,7 +696,7 @@
               "name": "punctuation.separator.coloncolon.cs"
             }
           },
-          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(\\:\\:)"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(::)"
         },
         {
           "captures": {
@@ -751,7 +751,7 @@
                   "name": "entity.name.variable.local.cs"
                 }
               },
-              "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?:(\\g<identifier>)\\b)?"
+              "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?:(\\g<identifier>)\\b)?"
             }
           ]
         },
@@ -1116,7 +1116,7 @@
       "name": "keyword.control.context.$1.cs"
     },
     "conversion-operator-declaration": {
-      "begin": "(?<explicit_or_implicit_keyword>(?:\\b(?:explicit|implicit)))\\s*(?<operator_keyword>(?:\\b(?:operator)))\\s*(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\()",
+      "begin": "(?<explicit_or_implicit_keyword>(?:\\b(?:explicit|implicit)))\\s*(?<operator_keyword>(?:\\b(?:operator)))\\s*(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1181,7 +1181,7 @@
           "name": "entity.name.variable.local.cs"
         }
       },
-      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)\\]])"
+      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)\\]])"
     },
     "declaration-expression-tuple": {
       "captures": {
@@ -1199,7 +1199,7 @@
           "name": "entity.name.variable.tuple-element.cs"
         }
       },
-      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)])"
+      "match": "(?:\\b(var)\\b|(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\b\\s*(?=[,)])"
     },
     "declarations": {
       "patterns": [
@@ -1237,7 +1237,7 @@
       "match": "\\b(default)\\b"
     },
     "delegate-declaration": {
-      "begin": "(?:\\b(delegate)\\b)\\s+(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
+      "begin": "(?:\\b(delegate)\\b)\\s+(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.delegate.cs"
@@ -1366,7 +1366,7 @@
       ]
     },
     "double-raw-interpolation": {
-      "begin": "(?<=[^\\{][^\\{]|^)((?:\\{)*)(\\{\\{)(?=[^\\{])",
+      "begin": "(?<=[^{][^{]|^)((?:\\{)*)(\\{\\{)(?=[^{])",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -1556,7 +1556,7 @@
       ]
     },
     "event-declaration": {
-      "begin": "\\b(event)\\b\\s*(?<return_type>(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(?=\\{|;|,|=|//|/\\*|$)",
+      "begin": "\\b(event)\\b\\s*(?<return_type>(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(?=\\{|;|,|=|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.event.cs"
@@ -1632,7 +1632,7 @@
           "name": "entity.name.variable.parameter.cs"
         }
       },
-      "match": "(?:\\b(ref|params|out|in)\\b\\s*)?(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args><(?:[^<>]|\\g<type_args>)*>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)*\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(\\g<identifier>)\\b"
+      "match": "(?:\\b(ref|params|out|in)\\b\\s*)?(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args><(?:[^<>]|\\g<type_args>)*>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)*\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(\\g<identifier>)\\b"
     },
     "expression": {
       "patterns": [
@@ -1744,7 +1744,7 @@
           "name": "keyword.operator.arrow.cs"
         }
       },
-      "end": "(?=[,\\);}])",
+      "end": "(?=[,);}])",
       "patterns": [
         {
           "include": "#ref-modifier"
@@ -1791,7 +1791,7 @@
           "name": "keyword.operator.relational.cs"
         },
         {
-          "match": "\\!|&&|\\|\\|",
+          "match": "!|&&|\\|\\|",
           "name": "keyword.operator.logical.cs"
         },
         {
@@ -1839,7 +1839,7 @@
       ]
     },
     "field-declaration": {
-      "begin": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>|==)(?=,|;|=|$)",
+      "begin": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>|==)(?=,|;|=|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1949,7 +1949,7 @@
           },
           "patterns": [
             {
-              "begin": "(?=[^;\\)])",
+              "begin": "(?=[^;)])",
               "end": "(?=;|\\))",
               "patterns": [
                 {
@@ -2033,7 +2033,7 @@
                   "name": "keyword.control.loop.in.cs"
                 }
               },
-              "match": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s+\\b(in)\\b"
+              "match": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s+\\b(in)\\b"
             },
             {
               "captures": {
@@ -2051,7 +2051,7 @@
                   "name": "keyword.control.loop.in.cs"
                 }
               },
-              "match": "(?:\\b(var)\\b\\s*)?(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s+\\b(in)\\b"
+              "match": "(?:\\b(var)\\b\\s*)?(?<tuple>\\((?:[^()]|\\g<tuple>)+\\))\\s+\\b(in)\\b"
             },
             {
               "include": "#expression"
@@ -2241,7 +2241,7 @@
       "name": "entity.name.variable.parameter.cs"
     },
     "indexer-declaration": {
-      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2423,7 +2423,7 @@
       ]
     },
     "interpolation": {
-      "begin": "(?<=[^\\{]|^)((?:\\{\\{)*)(\\{)(?=[^\\{])",
+      "begin": "(?<=[^{]|^)((?:\\{\\{)*)(\\{)(?=[^{])",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -2500,7 +2500,7 @@
       ]
     },
     "join-clause": {
-      "begin": "\\b(join)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
+      "begin": "\\b(join)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.join.cs"
@@ -2680,7 +2680,7 @@
       ]
     },
     "local-constant-declaration": {
-      "begin": "(?<const_keyword>\\b(?:const)\\b)\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=)",
+      "begin": "(?<const_keyword>\\b(?:const)\\b)\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.const.cs"
@@ -2730,7 +2730,7 @@
       ]
     },
     "local-function-declaration": {
-      "begin": "\\b((?:(?:async|unsafe|static|extern)\\s+)*)(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?)?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?)?)*)\\s+(\\g<identifier>)\\s*(<[^<>]+>)?\\s*(?=\\()",
+      "begin": "\\b((?:(?:async|unsafe|static|extern)\\s+)*)(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?)?(?:\\s*\\[\\s*(?:,\\s*)*\\](?:\\s*\\?)?)*)\\s+(\\g<identifier>)\\s*(<[^<>]+>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2777,7 +2777,7 @@
       ]
     },
     "local-tuple-var-deconstruction": {
-      "begin": "(?:\\b(var)\\b\\s*)(?<tuple>\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*(?=;|=|\\))",
+      "begin": "(?:\\b(var)\\b\\s*)(?<tuple>\\((?:[^()]|\\g<tuple>)+\\))\\s*(?=;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.type.var.cs"
@@ -2801,7 +2801,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?:(?:(\\bref)\\s+(?:(\\breadonly)\\s+)?)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*[?*]\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s*(?!=>)(?=,|;|=|\\))",
+      "begin": "(?:(?:(\\bref)\\s+(?:(\\breadonly)\\s+)?)?(\\bvar\\b)|(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*[?*]\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))\\s+(\\g<identifier>)\\s*(?!=>)(?=,|;|=|\\))",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.ref.cs"
@@ -2924,7 +2924,7 @@
       ]
     },
     "method-declaration": {
-      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
+      "begin": "(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(\\g<identifier>)\\s*(<([^<>]+)>)?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3219,10 +3219,10 @@
           ]
         }
       },
-      "match": "(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\{|//|/\\*|$)"
+      "match": "(new)\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*(?=\\{|//|/\\*|$)"
     },
     "object-creation-expression-with-parameters": {
-      "begin": "(new)(?:\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))?\\s*(?=\\()",
+      "begin": "(new)(?:\\s+(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*)))?\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.new.cs"
@@ -3247,7 +3247,7 @@
       "name": "keyword.operator.assignment.cs"
     },
     "operator-declaration": {
-      "begin": "(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[+\\-*/%&|\\^!=~<>]+|true|false)\\s*(?=\\()",
+      "begin": "(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[+\\-*/%&|\\^!=~<>]+|true|false)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3326,7 +3326,7 @@
           "name": "entity.name.variable.parameter.cs"
         }
       },
-      "match": "(?:(?:\\b(ref|params|out|in|this)\\b)\\s+)?(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)"
+      "match": "(?:(?:\\b(ref|params|out|in|this)\\b)\\s+)?(?<type_name>(?:(?:ref\\s+)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+(\\g<identifier>)"
     },
     "parenthesized-expression": {
       "begin": "\\(",
@@ -3583,7 +3583,7 @@
               "name": "keyword.operator.logical.cs"
             }
           },
-          "match": "(==|!=)|(\\!|&&|\\|\\|)"
+          "match": "(==|!=)|(!|&&|\\|\\|)"
         }
       ]
     },
@@ -3815,7 +3815,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?![\\w\\s]*\\b(?:class|interface|struct|enum|event)\\b)(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|//|/\\*|$)",
+      "begin": "(?![\\w\\s]*\\b(?:class|interface|struct|enum|event)\\b)(?<return_type>(?<type_name>(?:(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3932,7 +3932,7 @@
       ]
     },
     "query-expression": {
-      "begin": "\\b(from)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
+      "begin": "\\b(from)\\b\\s*(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))?\\s+(\\g<identifier>)\\b\\s*\\b(in)\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.query.from.cs"
@@ -4094,7 +4094,7 @@
       ]
     },
     "raw-interpolation": {
-      "begin": "(?<=[^\\{]|^)((?:\\{)*)(\\{)(?=[^\\{])",
+      "begin": "(?<=[^{]|^)((?:\\{)*)(\\{)(?=[^{])",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -4793,7 +4793,7 @@
           ]
         }
       },
-      "match": "(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\\s*(?!=>|==)(?==)"
+      "match": "(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\))\\s*(?!=>|==)(?==)"
     },
     "tuple-deconstruction-element-list": {
       "begin": "\\(",
@@ -4844,7 +4844,7 @@
           "name": "entity.name.variable.tuple-element.cs"
         }
       },
-      "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*\\:\\:\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))(?:(?<tuple_name>\\g<identifier>)\\b)?"
+      "match": "(?<type_name>(?:(?:(?:(?<identifier>@?[_A-Za-z][_0-9A-Za-z]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*\\]\\s*(?:\\?)?\\s*)*))(?:(?<tuple_name>\\g<identifier>)\\b)?"
     },
     "tuple-literal": {
       "begin": "(\\()(?=.*[:,])",
@@ -5044,7 +5044,7 @@
               "name": "punctuation.separator.coloncolon.cs"
             }
           },
-          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(\\:\\:)"
+          "match": "(@?[_A-Za-z][_0-9A-Za-z]*)\\s*(::)"
         },
         {
           "captures": {
@@ -5101,13 +5101,13 @@
       ]
     },
     "type-parameter-list": {
-      "begin": "\\<",
+      "begin": "<",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.typeparameters.begin.cs"
         }
       },
-      "end": "\\>",
+      "end": ">",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.typeparameters.end.cs"
@@ -5139,7 +5139,7 @@
       "patterns": [
         {
           "begin": "\\G",
-          "end": "(?!\\G[@_A-Za-z])(?=[\\({@_A-Za-z)}\\],;:=&|^]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
+          "end": "(?!\\G[@_A-Za-z])(?=[({@_A-Za-z)}\\],;:=&|^]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5150,7 +5150,7 @@
           ]
         },
         {
-          "begin": "(?=[\\({@_A-Za-z])",
+          "begin": "(?=[({@_A-Za-z])",
           "end": "(?=[)}\\],;:?=&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
@@ -5188,7 +5188,7 @@
               "name": "punctuation.separator.coloncolon.cs"
             }
           },
-          "end": "(?<=[_0-9A-Za-z])|(?=[.<\\[\\({)}\\],;:?=&|^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_0-9A-Za-z])|(?=[.<\\[({)}\\],;:?=&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5210,7 +5210,7 @@
               "name": "punctuation.accessor.cs"
             }
           },
-          "end": "(?<=[_0-9A-Za-z])|(?=[<\\[\\({)}\\],;:?=&|^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_0-9A-Za-z])|(?=[<\\[({)}\\],;:?=&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5382,7 +5382,7 @@
           "name": "keyword.operator.assignment.cs"
         }
       },
-      "end": "(?=[,\\)\\];}])",
+      "end": "(?=[,)\\];}])",
       "patterns": [
         {
           "include": "#ref-modifier"

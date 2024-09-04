@@ -69,10 +69,10 @@
           "name": "variable.other.property.gdscript"
         }
       },
-      "match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])"
+      "match": "\\b(\\.)\\s*(?<![@$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])"
     },
     "any_variable": {
-      "match": "\\b(?<![@\\$#%])([A-Za-z_]\\w*)\\b(?![(])",
+      "match": "\\b(?<![@$#%])([A-Za-z_]\\w*)\\b(?![(])",
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
@@ -786,15 +786,15 @@
           "name": "constant.numeric.integer.hexadecimal.gdscript"
         },
         {
-          "match": "[-]?(\\d[0-9_]+\\.[0-9_]*(e[\\-\\+]?[0-9_]+)?)",
+          "match": "[-]?(\\d[0-9_]+\\.[0-9_]*(e[\\-+]?[0-9_]+)?)",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?(\\.\\d[0-9_]*(e[\\-\\+]?[0-9_]+)?)",
+          "match": "[-]?(\\.\\d[0-9_]*(e[\\-+]?[0-9_]+)?)",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?(\\d[0-9_]*e[\\-\\+]?\\[0-9_])",
+          "match": "[-]?(\\d[0-9_]*e[\\-+]?\\[0-9_])",
           "name": "constant.numeric.float.gdscript"
         },
         {

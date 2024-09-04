@@ -368,7 +368,7 @@
           "include": "#printed_expression"
         },
         {
-          "begin": "\\G(?=(#[^\\{\\w-])|[^\\w.#])",
+          "begin": "\\G(?=(#[^{\\w-])|[^\\w.#])",
           "comment": "Line starting with characters incompatible with tag name/id/class is standalone text.",
           "end": "$",
           "patterns": [
@@ -834,7 +834,7 @@
       "match": "(mixin\\s+)([\\w-]+)(?:(\\()\\s*((?:[a-zA-Z_]\\w*\\s*)(?:,\\s*[a-zA-Z_]\\w*\\s*)*)(\\)))?$"
     },
     "printed_expression": {
-      "begin": "(!?\\=)\\s*",
+      "begin": "(!?=)\\s*",
       "captures": {
         "1": {
           "name": "constant"

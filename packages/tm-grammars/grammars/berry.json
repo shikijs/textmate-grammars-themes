@@ -35,8 +35,8 @@
   ],
   "repository": {
     "comment-block": {
-      "begin": "\\#\\-",
-      "end": "\\-#",
+      "begin": "\\#-",
+      "end": "-#",
       "name": "comment.berry",
       "patterns": [
         {
@@ -107,7 +107,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "\\(|\\)|\\[|\\]|\\.|-|\\!|~|\\*|/|%|\\+|&|\\^|\\||<|>|=|:",
+          "match": "\\(|\\)|\\[|\\]|\\.|-|!|~|\\*|/|%|\\+|&|\\^|\\||<|>|=|:",
           "name": "keyword.operator.berry"
         }
       ]
@@ -135,7 +135,7 @@
               "name": "constant.character.escape.berry"
             },
             {
-              "match": "\\{\\{[^\\}]*\\}\\}",
+              "match": "\\{\\{[^}]*\\}\\}",
               "name": "string.quoted.other.berry"
             },
             {

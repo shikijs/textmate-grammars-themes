@@ -80,7 +80,7 @@
     },
     "abstract-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([\\{;])",
+      "end": "([{;])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -98,7 +98,7 @@
           "include": "#type"
         },
         {
-          "match": "[\\(\\)]",
+          "match": "[()]",
           "name": "punctuation.definition.other.hx"
         }
       ]
@@ -398,7 +398,7 @@
     },
     "class-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([\\{;])",
+      "end": "([{;])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -699,7 +699,7 @@
     },
     "enum-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([\\{;])",
+      "end": "([{;])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -945,7 +945,7 @@
     },
     "interface-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([\\{;])",
+      "end": "([{;])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -1156,7 +1156,7 @@
           "name": "keyword.other.type.hx"
         },
         {
-          "match": "\\__(global|this)__\\b",
+          "match": "__(global|this)__\\b",
           "name": "keyword.other.untyped-property.hx"
         },
         {
@@ -1300,7 +1300,7 @@
     },
     "method": {
       "begin": "(?=\\bfunction\\b)",
-      "end": "(?<=[\\};])",
+      "end": "(?<=[};])",
       "name": "meta.method.hx",
       "patterns": [
         {
@@ -1497,11 +1497,11 @@
           "name": "keyword.operator.logical.hx"
         },
         {
-          "match": "(\\-\\-|\\+\\+)",
+          "match": "(--|\\+\\+)",
           "name": "keyword.operator.increment-decrement.hx"
         },
         {
-          "match": "(\\-|\\+|\\*|\\/|%)",
+          "match": "(-|\\+|\\*|\\/|%)",
           "name": "keyword.operator.arithmetic.hx"
         },
         {
@@ -1851,7 +1851,7 @@
                   "name": "constant.character.escape.backslash.regexp"
                 }
               },
-              "match": "(?:.|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))\\-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))",
+              "match": "(?:.|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))",
               "name": "constant.other.character-class.range.regexp"
             },
             {

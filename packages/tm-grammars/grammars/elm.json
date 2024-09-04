@@ -94,7 +94,7 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(\\|)\\s+([a-z]\\w*)\\s+(\\=)",
+      "match": "(\\|)\\s+([a-z]\\w*)\\s+(=)",
       "name": "meta.record.field.update.elm"
     },
     {
@@ -121,7 +121,7 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(\\{)\\s+([a-z]\\w*)\\s+(\\=)",
+      "match": "(\\{)\\s+([a-z]\\w*)\\s+(=)",
       "name": "meta.record.field.elm"
     },
     {
@@ -136,7 +136,7 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(,)\\s+([a-z]\\w*)\\s+(\\=)",
+      "match": "(,)\\s+([a-z]\\w*)\\s+(=)",
       "name": "meta.record.field.elm"
     },
     {
@@ -160,7 +160,7 @@
       "include": "#infix_op"
     },
     {
-      "match": "(\\=|\\:|\\||\\\\)",
+      "match": "(=|:|\\||\\\\)",
       "name": "keyword.other.elm"
     },
     {
@@ -533,7 +533,7 @@
           "name": "punctuation.spaces.elm"
         },
         {
-          "match": "\\=",
+          "match": "=",
           "name": "keyword.operator.assignment.elm"
         },
         {
@@ -590,15 +590,15 @@
               "name": "constant.type-constructor.elm"
             }
           },
-          "match": "(\\=|\\|)\\s+([A-Z]\\w*)\\b",
+          "match": "(=|\\|)\\s+([A-Z]\\w*)\\b",
           "name": "meta.record.field.elm"
         },
         {
-          "match": "\\=",
+          "match": "=",
           "name": "keyword.operator.assignment.elm"
         },
         {
-          "match": "\\-\\>",
+          "match": "->",
           "name": "keyword.operator.arrow.elm"
         },
         {
@@ -652,7 +652,7 @@
               "name": "keyword.other.elm"
             }
           },
-          "match": "([a-z]\\w*)\\s+(\\:)",
+          "match": "([a-z]\\w*)\\s+(:)",
           "name": "meta.record.field.elm"
         },
         {
@@ -679,7 +679,7 @@
       ]
     },
     "type-signature": {
-      "begin": "^(port\\s+)?([a-z_][a-zA-Z0-9_']*)\\s+(\\:)",
+      "begin": "^(port\\s+)?([a-z_][a-zA-Z0-9_']*)\\s+(:)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.port.elm"

@@ -631,7 +631,7 @@
       ]
     },
     "twig-arrays": {
-      "begin": "(?<=[\\s\\(\\{\\[:,])\\[",
+      "begin": "(?<=[\\s({\\[:,])\\[",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.array.begin.twig"
@@ -711,11 +711,11 @@
     "twig-constants": {
       "patterns": [
         {
-          "match": "(?i)(?<=[\\s\\[\\(\\{:,])(?:true|false|null|none)(?=[\\s\\)\\]\\}\\,])",
+          "match": "(?i)(?<=[\\s\\[({:,])(?:true|false|null|none)(?=[\\s)\\]}\\,])",
           "name": "constant.language.twig"
         },
         {
-          "match": "(?<=[\\s\\[\\(\\{:,]|\\.\\.|\\*\\*)\\d+(?:\\.\\d+)?(?=[\\s\\)\\]\\}\\,]|\\.\\.|\\*\\*)",
+          "match": "(?<=[\\s\\[({:,]|\\.\\.|\\*\\*)\\d+(?:\\.\\d+)?(?=[\\s)\\]}\\,]|\\.\\.|\\*\\*)",
           "name": "constant.numeric.twig"
         }
       ]
@@ -726,7 +726,7 @@
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)"
+      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\])\\'\\\"]\\|)|\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[\\s\\|\\]}):,]|\\.\\.|\\*\\*)"
     },
     "twig-filters-ud": {
       "captures": {
@@ -734,10 +734,10 @@
           "name": "meta.function-call.other.twig"
         }
       },
-      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)"
+      "match": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\])\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)"
     },
     "twig-filters-warg": {
-      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\\()",
+      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\])\\'\\\"]\\|)|\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -799,7 +799,7 @@
       ]
     },
     "twig-filters-warg-ud": {
-      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",
+      "begin": "(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\])\\'\\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.other.twig"
@@ -866,7 +866,7 @@
       "match": "(?<=is\\s)(defined|empty|even|iterable|odd)"
     },
     "twig-functions-warg": {
-      "begin": "(?<=[\\s\\(\\[\\{:,])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\\()",
+      "begin": "(?<=[\\s(\\[{:,])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -922,7 +922,7 @@
       ]
     },
     "twig-hashes": {
-      "begin": "(?<=[\\s\\(\\{\\[:,])\\{",
+      "begin": "(?<=[\\s({\\[:,])\\{",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.hash.begin.twig"
@@ -993,7 +993,7 @@
       "name": "keyword.control.twig"
     },
     "twig-macros": {
-      "begin": "(?<=[\\s\\(\\[\\{:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?(\\()",
+      "begin": "(?<=[\\s(\\[{:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))?(\\()",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.twig"
@@ -1066,7 +1066,7 @@
           "name": "variable.other.twig"
         }
       },
-      "match": "(?<=[\\s\\{\\[\\(:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\s\\}\\[\\]\\(\\)\\.\\|,:])"
+      "match": "(?<=[\\s{\\[(:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\s}\\[\\]()\\.\\|,:])"
     },
     "twig-operators": {
       "patterns": [
@@ -1116,7 +1116,7 @@
               "name": "keyword.operator.other.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)'\"])\\.\\.(?=[a-zA-Z0-9_\\x{7f}-\\x{ff}'\"])"
+          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\])'\"])\\.\\.(?=[a-zA-Z0-9_\\x{7f}-\\x{ff}'\"])"
         },
         {
           "captures": {
@@ -1124,7 +1124,7 @@
               "name": "keyword.operator.other.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\}\\)'\"])\\|(?=[a-zA-Z_\\x{7f}-\\x{ff}])"
+          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]})'\"])\\|(?=[a-zA-Z_\\x{7f}-\\x{ff}])"
         }
       ]
     },
@@ -1198,7 +1198,7 @@
               "name": "variable.other.property.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\.\\s\\|\\[\\)\\]\\}:,])"
+          "match": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\.\\s\\|\\[)\\]}:,])"
         },
         {
           "begin": "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()",

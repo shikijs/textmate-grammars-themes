@@ -86,8 +86,7 @@ async function run(fetchInput = true) {
 
     loadLangs(grammar.value)
 
-    embedded.value = Array.from(langs.keys())
-      .filter(l => l !== grammar.value)
+    embedded.value = Array.from(langs.keys()).filter(l => l !== grammar.value)
 
     highlighter = await createHighlighterCore({
       themes: [
@@ -209,7 +208,7 @@ if (import.meta.hot) {
       <Badge :text="`Shiki v${dependencies['@shikijs/core'].replace('^', '')}`" text-sm :color="160" />
       <div flex-auto />
       <SegmentControl
-        v-model:modelValue="engine"
+        v-model:model-value="engine"
         :options="[
           { label: 'Oniguruma', value: 'wasm' },
           { label: 'JavaScript', value: 'js' },

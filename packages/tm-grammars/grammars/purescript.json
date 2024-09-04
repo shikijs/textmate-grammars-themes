@@ -180,7 +180,7 @@
       ]
     },
     {
-      "begin": "^(\\s)*(data|newtype)\\s+(.+?)\\s*(?=\\=|$)",
+      "begin": "^(\\s)*(data|newtype)\\s+(.+?)\\s*(?==|$)",
       "beginCaptures": {
         "2": {
           "name": "storage.type.data.purescript"
@@ -242,7 +242,7 @@
       ]
     },
     {
-      "begin": "^(\\s)*(type)\\s+(.+?)\\s*(?=\\=|$)",
+      "begin": "^(\\s)*(type)\\s+(.+?)\\s*(?==|$)",
       "beginCaptures": {
         "2": {
           "name": "storage.type.data.purescript"
@@ -462,7 +462,7 @@
       "include": "#infix_op"
     },
     {
-      "match": "\\<-|-\\>",
+      "match": "<-|->",
       "name": "keyword.other.arrow.purescript"
     },
     {

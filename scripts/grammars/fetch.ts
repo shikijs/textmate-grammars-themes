@@ -135,7 +135,7 @@ async function fetchGrammar(source: GrammarSource) {
     throw e
   }
 
-  await fs.writeFile(new URL(`../../../packages/tm-grammars/raw/${info.name}.json`, import.meta.url), `${stringify(parsed, { space: 2 })}\n`, 'utf-8')
+  await fs.writeFile(new URL(`../../packages/tm-grammars/raw/${info.name}.json`, import.meta.url), `${stringify(parsed, { space: 2 })}\n`, 'utf-8')
   const grammar = await cleanupGrammar(parsed)
     .catch((e) => {
       console.error(`Failed to cleanup ${info.name} from ${info.source}`)

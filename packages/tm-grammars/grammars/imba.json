@@ -89,11 +89,11 @@
     "boolean-literal": {
       "patterns": [
         {
-          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(true|yes)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(true|yes)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "constant.language.boolean.true.imba"
         },
         {
-          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(false|no)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(false|no)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "constant.language.boolean.false.imba"
         }
       ]
@@ -596,8 +596,8 @@
       "name": "entity.other.attribute-name.pseudo-element.css"
     },
     "css-selector": {
-      "begin": "(?<=css\\s)(?!(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])",
-      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])|\\s*$|(?=\\s+\\#\\s))",
+      "begin": "(?<=css\\s)(?!(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])",
+      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])|\\s*$|(?=\\s+\\#\\s))",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1118,7 +1118,7 @@
               "name": "punctuation.definition.block.tag.jsdoc"
             }
           },
-          "match": "((@)(?:[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?))(?=\\s+)"
+          "match": "((@)(?:[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?))(?=\\s+)"
         }
       ]
     },
@@ -1245,13 +1245,13 @@
       ]
     },
     "generics-literal": {
-      "begin": "(?<=[\\w\\]\\)])\\<",
+      "begin": "(?<=[\\w\\])])<",
       "beginCaptures": {
         "1": {
           "name": "meta.generics.annotation.open.imba"
         }
       },
-      "end": "\\>",
+      "end": ">",
       "endCaptures": {
         "0": {
           "name": "meta.generics.annotation.close.imba"
@@ -1282,7 +1282,7 @@
               "name": "entity.name.function.property.imba"
             }
           },
-          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)(?=\\s*={{functionOrArrowLookup}})"
+          "match": "(?:(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))\\s*)?([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)(?=\\s*={{functionOrArrowLookup}})"
         },
         {
           "captures": {
@@ -1310,7 +1310,7 @@
               "name": "variable.other.class.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))([A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))([A-Z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[!]?)"
         },
         {
           "captures": {
@@ -1324,7 +1324,7 @@
               "name": "variable.other.property.imba"
             }
           },
-          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
+          "match": "(?:(\\.)|(\\.\\.(?!\\s*[\\d]|\\s+)))(\\#?[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)"
         },
         {
           "match": "(for own|for|if|unless|when)\\b",
@@ -1346,8 +1346,8 @@
       ]
     },
     "inline-css-selector": {
-      "begin": "(^\\t+)(?!(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=]))",
-      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])|\\)|\\])|\\s*$)",
+      "begin": "(^\\t+)(?!(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=]))",
+      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])|\\)|\\])|\\s*$)",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1437,7 +1437,7 @@
     "invalid-indentation": {
       "patterns": [
         {
-          "match": "^[\\ ]+",
+          "match": "^[ ]+",
           "name": "invalid.whitespace"
         },
         {
@@ -1483,15 +1483,15 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(if|elif|else|unless|switch|when|then|do|import|export|for own|for|while|until|return|yield|try|catch|await|rescue|finally|throw|as|continue|break|extend|augment)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(if|elif|else|unless|switch|when|then|do|import|export|for own|for|while|until|return|yield|try|catch|await|rescue|finally|throw|as|continue|break|extend|augment)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "keyword.control.imba"
         },
         {
-          "match": "(?<=export)\\s+(default)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<=export)\\s+(default)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "keyword.control.imba"
         },
         {
-          "match": "(?<=import)\\s+(type)(?=\\s+[\\w\\{\\$\\_])",
+          "match": "(?<=import)\\s+(type)(?=\\s+[\\w{$_])",
           "name": "keyword.control.imba"
         },
         {
@@ -1499,11 +1499,11 @@
           "name": "keyword.control.imba"
         },
         {
-          "match": "(?<=[\\*\\}\\w\\$])\\s+(from)(?=\\s+[\\\"\\'])",
+          "match": "(?<=[\\*}\\w$])\\s+(from)(?=\\s+[\\\"\\'])",
           "name": "keyword.control.imba"
         },
         {
-          "match": "(def|get|set)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(def|get|set)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "storage.type.function.imba"
         },
         {
@@ -1511,15 +1511,15 @@
           "name": "keyword.control.imba"
         },
         {
-          "match": "(tag|class|struct|mixin|interface)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(tag|class|struct|mixin|interface)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "storage.type.class.imba"
         },
         {
-          "match": "(let|const|constructor)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(let|const|constructor)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "storage.type.imba"
         },
         {
-          "match": "(prop|attr)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(prop|attr)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "storage.type.imba"
         },
         {
@@ -1534,15 +1534,15 @@
           "include": "#ops"
         },
         {
-          "match": "(=|\\|\\|=|\\?\\?=|\\&\\&=|\\+=|\\-=|\\*=|\\^=|\\%=)",
+          "match": "(=|\\|\\|=|\\?\\?=|\\&\\&=|\\+=|-=|\\*=|\\^=|\\%=)",
           "name": "keyword.operator.assignment.imba"
         },
         {
-          "match": "(\\>\\=?|\\<\\=?)",
+          "match": "(>=?|<=?)",
           "name": "keyword.operator.imba"
         },
         {
-          "match": "(of|delete|\\!?isa|typeof|\\!?in|new|\\!?is|isnt)(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(of|delete|!?isa|typeof|!?in|new|!?is|isnt)(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "keyword.operator.imba"
         }
       ]
@@ -1594,7 +1594,7 @@
           "name": "entity.other.attribute-name.mixin.css"
         }
       },
-      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])|\\s*$|(?=\\s+\\#\\s))",
+      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])|\\s*$|(?=\\s+\\#\\s))",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1608,8 +1608,8 @@
       ]
     },
     "mixin-css-selector-after": {
-      "begin": "(?<=%[\\w\\-]+)(?!(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])",
-      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])|\\s*$|(?=\\s+\\#\\s))",
+      "begin": "(?<=%[\\w\\-]+)(?!(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])",
+      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])|\\s*$|(?=\\s+\\#\\s))",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1647,8 +1647,8 @@
       ]
     },
     "nested-css-selector": {
-      "begin": "(^\\t+)(?!(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])",
-      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=])[^\\:])|\\s*$|(?=\\s+\\#\\s))",
+      "begin": "(^\\t+)(?!(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])",
+      "end": "(\\s*(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=])[^:])|\\s*$|(?=\\s+\\#\\s))",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1675,7 +1675,7 @@
       ]
     },
     "null-literal": {
-      "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))null(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+      "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))null(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
       "name": "constant.language.null.imba"
     },
     "number-with-unit-literal": {
@@ -1788,11 +1788,11 @@
     "numericConstant-literal": {
       "patterns": [
         {
-          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))NaN(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))NaN(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "constant.language.nan.imba"
         },
         {
-          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))Infinity(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))Infinity(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
           "name": "constant.language.infinity.imba"
         }
       ]
@@ -1800,7 +1800,7 @@
     "object-keys": {
       "patterns": [
         {
-          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?\\:",
+          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?:",
           "name": "meta.object-literal.key"
         }
       ]
@@ -1812,7 +1812,7 @@
           "name": "keyword.operator.spread.imba"
         },
         {
-          "match": "\\*=|(?<!\\()/=|%=|\\+=|\\-=|\\?=|\\?\\?=|=\\?",
+          "match": "\\*=|(?<!\\()/=|%=|\\+=|-=|\\?=|\\?\\?=|=\\?",
           "name": "keyword.operator.assignment.compound.imba"
         },
         {
@@ -1840,10 +1840,10 @@
               "name": "keyword.operator.arithmetic.imba"
             }
           },
-          "match": "(\\!)\\s*(/)(?![/*])"
+          "match": "(!)\\s*(/)(?![/*])"
         },
         {
-          "match": "\\!|&&|\\|\\||\\?\\?|or\\b(?=\\s|$)|and\\b(?=\\s|$)|\\@\\b(?=\\s|$)",
+          "match": "!|&&|\\|\\||\\?\\?|or\\b(?=\\s|$)|and\\b(?=\\s|$)|\\@\\b(?=\\s|$)",
           "name": "keyword.operator.logical.imba"
         },
         {
@@ -1855,7 +1855,7 @@
           "name": "keyword.operator.ternary.imba"
         },
         {
-          "match": "\\=",
+          "match": "=",
           "name": "keyword.operator.assignment.imba"
         },
         {
@@ -1896,7 +1896,7 @@
               "name": "variable.other.property.imba"
             }
           },
-          "match": "(\\.\\.?)([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)"
+          "match": "(\\.\\.?)([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)"
         }
       ]
     },
@@ -1907,7 +1907,7 @@
           "name": "variable.other.constant.imba"
         },
         {
-          "match": "[A-Z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\!]?",
+          "match": "[A-Z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[!]?",
           "name": "variable.other.class.imba"
         },
         {
@@ -1915,27 +1915,27 @@
           "name": "variable.special.imba"
         },
         {
-          "match": "\\$[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "\\$[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "variable.other.internal.imba"
         },
         {
-          "match": "\\@\\@+[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "\\@\\@+[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "variable.other.symbol.imba"
         },
         {
-          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "variable.other.readwrite.imba"
         },
         {
-          "match": "\\@[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "\\@[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "variable.other.instance.imba"
         },
         {
-          "match": "\\#+[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "\\#+[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "variable.other.private.imba"
         },
         {
-          "match": "\\:[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": ":[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "string.symbol.imba"
         }
       ]
@@ -2028,7 +2028,7 @@
     "regex": {
       "patterns": [
         {
-          "begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[\\()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^\\)\\\\]|\\\\.)+\\))+\\/([gimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+          "begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^)\\\\]|\\\\.)+\\))+\\/([gimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.begin.imba"
@@ -2220,7 +2220,7 @@
                   "name": "constant.character.escape.backslash.regexp"
                 }
               },
-              "match": "(?:.|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))\\-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))",
+              "match": "(?:.|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))",
               "name": "constant.other.character-class.range.regexp"
             },
             {
@@ -2373,7 +2373,7 @@
           "match": "(\\b\\d[0-9_]*)(\\w+|%)?"
         },
         {
-          "match": "--[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "--[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "support.constant.property-value.var.css"
         },
         {
@@ -2381,7 +2381,7 @@
           "name": "support.constant.property-value.size.css"
         },
         {
-          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?",
+          "match": "[_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?",
           "name": "support.constant.property-value.css"
         },
         {
@@ -2404,7 +2404,7 @@
     "style-property": {
       "patterns": [
         {
-          "begin": "(?=(?:[\\^\\@\\.\\%\\w\\$\\!\\-]+)(?:\\s*[\\:\\=]))",
+          "begin": "(?=(?:[\\^\\@\\.\\%\\w$!\\-]+)(?:\\s*[:=]))",
           "beginCaptures": {
             "1": {
               "name": "support.function.calc.css"
@@ -2413,7 +2413,7 @@
               "name": "punctuation.section.function.begin.bracket.round.css"
             }
           },
-          "end": "\\s*[\\:\\=]",
+          "end": "\\s*[:=]",
           "endCaptures": {
             "0": {
               "name": "punctuation.separator.key-value.css"
@@ -2422,35 +2422,35 @@
           "name": "meta.property-name.css",
           "patterns": [
             {
-              "match": "(?:--|\\$)[\\w\\-\\$]+",
+              "match": "(?:--|\\$)[\\w\\-$]+",
               "name": "support.type.property-name.variable.css"
             },
             {
-              "match": "\\@[\\!\\<\\>]?\\d+",
+              "match": "\\@[!<>]?\\d+",
               "name": "support.type.property-name.modifier.breakpoint.css"
             },
             {
-              "match": "\\^?\\@+[\\w\\-\\$]+",
+              "match": "\\^?\\@+[\\w\\-$]+",
               "name": "support.type.property-name.modifier.css"
             },
             {
-              "match": "\\^?\\.+[\\w\\-\\$]+",
+              "match": "\\^?\\.+[\\w\\-$]+",
               "name": "support.type.property-name.modifier.flag.css"
             },
             {
-              "match": "\\^?\\%+[\\w\\-\\$]+",
+              "match": "\\^?\\%+[\\w\\-$]+",
               "name": "support.type.property-name.modifier.state.css"
             },
             {
-              "match": "\\.\\.[\\w\\-\\$]+|\\^+[\\.\\@\\%][\\w\\-\\$]+",
+              "match": "\\.\\.[\\w\\-$]+|\\^+[\\.\\@\\%][\\w\\-$]+",
               "name": "support.type.property-name.modifier.up.css"
             },
             {
-              "match": "\\.[\\w\\-\\$]+",
+              "match": "\\.[\\w\\-$]+",
               "name": "support.type.property-name.modifier.is.css"
             },
             {
-              "match": "[\\w\\-\\$]+",
+              "match": "[\\w\\-$]+",
               "name": "support.type.property-name.css"
             }
           ]
@@ -2462,17 +2462,17 @@
       "name": "variable.language.super.imba"
     },
     "tag-attr-name": {
-      "begin": "([\\w$_]+(?:\\-[\\w$_]+)*)",
+      "begin": "([\\w$_]+(?:-[\\w$_]+)*)",
       "beginCaptures": {
         "0": {
           "name": "entity.other.attribute-name.imba"
         }
       },
       "contentName": "entity.other.attribute-name.imba",
-      "end": "(?=[\\s\\.\\[\\>\\=])"
+      "end": "(?=[\\s\\.\\[>=])"
     },
     "tag-attr-value": {
-      "begin": "(\\=)",
+      "begin": "(=)",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.tag.assignment"
@@ -2489,7 +2489,7 @@
     "tag-classname": {
       "begin": "\\.",
       "contentName": "entity.other.attribute-name.class.css",
-      "end": "(?=[\\.\\[\\>\\s\\(\\=])",
+      "end": "(?=[\\.\\[>\\s(=])",
       "patterns": [
         {
           "include": "#tag-interpolated-content"
@@ -2537,14 +2537,14 @@
       ]
     },
     "tag-event-handler": {
-      "begin": "(\\@[\\w$_]+(?:\\-[\\w$_]+)*)",
+      "begin": "(\\@[\\w$_]+(?:-[\\w$_]+)*)",
       "beginCaptures": {
         "0": {
           "name": "entity.other.event-name.imba"
         }
       },
       "contentName": "entity.other.tag.event",
-      "end": "(?=[\\[\\>\\s\\=])",
+      "end": "(?=[\\[>\\s=])",
       "patterns": [
         {
           "include": "#tag-interpolated-content"
@@ -2559,7 +2559,7 @@
               "name": "punctuation.section.tag"
             }
           },
-          "end": "(?=[\\.\\[\\>\\s\\=]|$)",
+          "end": "(?=[\\.\\[>\\s=]|$)",
           "name": "entity.other.event-modifier.imba",
           "patterns": [
             {
@@ -2573,9 +2573,9 @@
       ]
     },
     "tag-expr-name": {
-      "begin": "(?<=<)(?=[\\w\\{])",
+      "begin": "(?<=<)(?=[\\w{])",
       "contentName": "entity.name.tag.imba",
-      "end": "(?=[\\%\\$\\#\\.\\[\\>\\s\\(])",
+      "end": "(?=[\\%$#\\.\\[>\\s(])",
       "patterns": [
         {
           "include": "#tag-interpolated-content"
@@ -2651,7 +2651,7 @@
     "tag-literal": {
       "patterns": [
         {
-          "begin": "(<)(?=[\\%\\~\\w\\{\\[\\.\\#\\$\\@\\(])",
+          "begin": "(<)(?=[\\%\\~\\w{\\[\\.#$\\@(])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.tag.open.imba"
@@ -2680,7 +2680,7 @@
     "tag-name": {
       "patterns": [
         {
-          "match": "(?<=<)(self|global|slot)(?=[\\.\\[\\>\\s\\(])",
+          "match": "(?<=<)(self|global|slot)(?=[\\.\\[>\\s(])",
           "name": "entity.name.tag.special.imba"
         }
       ]
@@ -2692,16 +2692,16 @@
     "template": {
       "patterns": [
         {
-          "begin": "(?=(([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)({{typeArguments}}\\s*)?`)",
+          "begin": "(?=(([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)({{typeArguments}}\\s*)?`)",
           "end": "(?=`)",
           "name": "string.template.imba",
           "patterns": [
             {
-              "begin": "(?=(([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?))",
+              "begin": "(?=(([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?))",
               "end": "(?=({{typeArguments}}\\s*)?`)",
               "patterns": [
                 {
-                  "match": "([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)",
+                  "match": "([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)",
                   "name": "entity.name.function.tagged-template.imba"
                 }
               ]
@@ -2709,7 +2709,7 @@
           ]
         },
         {
-          "begin": "([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)\\s*(?=({{typeArguments}}\\s*)`)",
+          "begin": "([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)\\s*(?=({{typeArguments}}\\s*)`)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tagged-template.imba"
@@ -2724,7 +2724,7 @@
           ]
         },
         {
-          "begin": "([_$A-Za-z][_$0-9A-Za-z]*(?:\\-[_$0-9A-Za-z]+)*[\\?\\!]?)?(`)",
+          "begin": "([_$A-Za-z][_$0-9A-Za-z]*(?:-[_$0-9A-Za-z]+)*[?!]?)?(`)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tagged-template.imba"
@@ -2804,8 +2804,8 @@
           ]
         },
         {
-          "begin": "\\<",
-          "end": "\\>",
+          "begin": "<",
+          "end": ">",
           "patterns": [
             {
               "include": "#type-brackets"
@@ -2830,7 +2830,7 @@
           "name": "meta.type.annotation.open.imba"
         }
       },
-      "end": "(?=[\\s\\]\\)\\,\\.\\=\\}]|$)",
+      "end": "(?=[\\s\\])\\,\\.=}]|$)",
       "name": "meta.type.annotation.imba",
       "patterns": [
         {
@@ -2839,7 +2839,7 @@
       ]
     },
     "undefined-literal": {
-      "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))undefined(?![\\?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
+      "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))undefined(?![?_\\-$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.))",
       "name": "constant.language.undefined.imba"
     }
   },

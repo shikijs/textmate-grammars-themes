@@ -159,7 +159,7 @@
               "name": "storage.modifier.method.abap"
             }
           },
-          "match": "(?i)(?<=\\s)(USING)\\s+([a-z_\\/][a-z_0-9\\/=\\>]*)+(?=\\s+|\\.)"
+          "match": "(?i)(?<=\\s)(USING)\\s+([a-z_\\/][a-z_0-9\\/=>]*)+(?=\\s+|\\.)"
         },
         {
           "begin": "(?=[A-Za-z_][A-Za-z0-9_]*)",
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "begin": "(?i)^\\s*(FORM)\\s([a-z_\\/][a-z_0-9\\/\\-\\?]*)",
+      "begin": "(?i)^\\s*(FORM)\\s([a-z_\\/][a-z_0-9\\/\\-?]*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.block.abap"
@@ -268,7 +268,7 @@
       ]
     },
     "arithmetic_operator": {
-      "match": "(?i)(?<=\\s)(\\+|\\-|\\*|\\*\\*|\\/|%|DIV|MOD|BIT-AND|BIT-OR|BIT-XOR|BIT-NOT)(?=\\s)",
+      "match": "(?i)(?<=\\s)(\\+|-|\\*|\\*\\*|\\/|%|DIV|MOD|BIT-AND|BIT-OR|BIT-XOR|BIT-NOT)(?=\\s)",
       "name": "keyword.control.simple.abap"
     },
     "builtin_functions": {
@@ -276,7 +276,7 @@
       "name": "entity.name.function.builtin.abap"
     },
     "comparison_operator": {
-      "match": "(?i)(?<=\\s)(<|>|<\\=|>\\=|\\=|<>|eq|ne|lt|le|gt|ge|cs|cp|co|cn|ca|na|ns|np|byte-co|byte-cn|byte-ca|byte-na|byte-cs|byte-ns|o|z|m)(?=\\s)",
+      "match": "(?i)(?<=\\s)(<|>|<=|>=|=|<>|eq|ne|lt|le|gt|ge|cs|cp|co|cn|ca|na|ns|np|byte-co|byte-cn|byte-ca|byte-na|byte-cs|byte-ns|o|z|m)(?=\\s)",
       "name": "keyword.control.simple.abap"
     },
     "control_keywords": {

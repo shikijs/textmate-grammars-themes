@@ -71,7 +71,7 @@
           "name": "constant.language.boolean.scheme"
         },
         {
-          "match": "(?<=[\\(\\s])((#e|#i)?\\d+(\\.\\d+)?|(#x)[0-9a-fA-F]+|(#o)[0-7]+|(#b)[01]+)(?=[\\s;()'\",\\[\\]])",
+          "match": "(?<=[(\\s])((#e|#i)?\\d+(\\.\\d+)?|(#x)[0-9a-fA-F]+|(#o)[0-7]+|(#b)[01]+)(?=[\\s;()'\",\\[\\]])",
           "name": "constant.numeric.scheme"
         }
       ]
@@ -334,15 +334,15 @@
           "include": "#constants"
         },
         {
-          "match": "(?<=[\\(\\s])(#\\\\)(space|newline|tab)(?=[\\s\\)])",
+          "match": "(?<=[(\\s])(#\\\\)(space|newline|tab)(?=[\\s)])",
           "name": "constant.character.named.scheme"
         },
         {
-          "match": "(?<=[\\(\\s])(#\\\\)x[0-9A-F]{2,4}(?=[\\s\\)])",
+          "match": "(?<=[(\\s])(#\\\\)x[0-9A-F]{2,4}(?=[\\s)])",
           "name": "constant.character.hex-literal.scheme"
         },
         {
-          "match": "(?<=[\\(\\s])(#\\\\).(?=[\\s\\)])",
+          "match": "(?<=[(\\s])(#\\\\).(?=[\\s)])",
           "name": "constant.character.escape.scheme"
         },
         {

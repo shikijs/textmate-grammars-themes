@@ -192,7 +192,7 @@
           "name": "keyword.control.luau"
         }
       },
-      "end": "(?<=[\\)\\-{}\\[\\]\"'])",
+      "end": "(?<=[)\\-{}\\[\\]\"'])",
       "name": "meta.function.luau",
       "patterns": [
         {
@@ -238,7 +238,7 @@
                   "name": "keyword.operator.type.luau"
                 }
               },
-              "end": "(?=[\\),])",
+              "end": "(?=[),])",
               "patterns": [
                 {
                   "include": "#type_literal"
@@ -405,15 +405,15 @@
     "number": {
       "patterns": [
         {
-          "match": "\\b0_*[xX]_*[\\da-fA-F_]*(?:[eE][\\+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
+          "match": "\\b0_*[xX]_*[\\da-fA-F_]*(?:[eE][+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
           "name": "constant.numeric.hex.luau"
         },
         {
-          "match": "\\b0_*[bB][01_]+(?:[eE][\\+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
+          "match": "\\b0_*[bB][01_]+(?:[eE][+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
           "name": "constant.numeric.binary.luau"
         },
         {
-          "match": "(?:\\d[\\d_]*(?:\\.[\\d_]*)?|\\.\\d[\\d_]*)(?:[eE][\\+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
+          "match": "(?:\\d[\\d_]*(?:\\.[\\d_]*)?|\\.\\d[\\d_]*)(?:[eE][+\\-]?_*\\d[\\d_]*(?:\\.[\\d_]*)?)?",
           "name": "constant.numeric.decimal.luau"
         }
       ]
@@ -627,7 +627,7 @@
           "name": "keyword.operator.typecast.luau"
         }
       },
-      "end": "(?=^|[;),}\\]:?\\-\\+\\>](?!\\s*[&\\|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
+      "end": "(?=^|[;),}\\]:?\\-+>](?!\\s*[&\\|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
       "patterns": [
         {
           "include": "#type_literal"

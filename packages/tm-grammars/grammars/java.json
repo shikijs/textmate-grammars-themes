@@ -203,7 +203,7 @@
           "name": "keyword.control.new.java"
         }
       },
-      "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|\\-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
+      "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
       "patterns": [
         {
           "include": "#comments"
@@ -216,7 +216,7 @@
         },
         {
           "begin": "(?<=\\))",
-          "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|\\-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
+          "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
           "patterns": [
             {
               "include": "#comments"
@@ -245,7 +245,7 @@
         },
         {
           "begin": "(?<=\\])",
-          "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|\\-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
+          "end": "(?=;|\\)|\\]|\\.|,|\\?|:|}|\\+|-|\\*|\\/(?!\\/|\\*)|%|!|&|\\||\\^|=)",
           "patterns": [
             {
               "include": "#comments"
@@ -442,7 +442,7 @@
     "class-fields-and-methods": {
       "patterns": [
         {
-          "begin": "(?=\\=)",
+          "begin": "(?==)",
           "end": "(?=;)",
           "patterns": [
             {
@@ -646,7 +646,7 @@
                   "name": "variable.parameter.java"
                 }
               },
-              "match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*?}"
+              "match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^()]*\\)).*?}"
             }
           ]
         }
@@ -939,11 +939,11 @@
           "name": "keyword.operator.assignment.java"
         },
         {
-          "match": "(\\-\\-|\\+\\+)",
+          "match": "(--|\\+\\+)",
           "name": "keyword.operator.increment-decrement.java"
         },
         {
-          "match": "(\\-|\\+|\\*|\\/|%)",
+          "match": "(-|\\+|\\*|\\/|%)",
           "name": "keyword.operator.arithmetic.java"
         },
         {
@@ -970,7 +970,7 @@
     },
     "member-variables": {
       "begin": "(?=private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)",
-      "end": "(?=\\=|;)",
+      "end": "(?==|;)",
       "patterns": [
         {
           "include": "#storage-modifiers"
@@ -1512,7 +1512,7 @@
       ]
     },
     "record-constructor": {
-      "begin": "(?!new)(?=[\\w<].*\\s+)(?=([^\\(=/]|/(?!/))+(?={))",
+      "begin": "(?!new)(?=[\\w<].*\\s+)(?=([^(=/]|/(?!/))+(?={))",
       "end": "(})|(?=;)",
       "endCaptures": {
         "1": {
@@ -1839,7 +1839,7 @@
     },
     "variables": {
       "begin": "(?=\\b((void|boolean|byte|char|short|int|float|long|double)|(?>(\\w+\\.)*[A-Z_]+\\w*))\\b\\s*(<[\\w<>,\\.?\\s\\[\\]]*>)?\\s*((\\[\\])*)?\\s+[A-Za-z_$][\\w$]*([\\w\\[\\],$][\\w\\[\\],\\s]*)?\\s*(=|:|;))",
-      "end": "(?=\\=|:|;)",
+      "end": "(?==|:|;)",
       "name": "meta.definition.variable.java",
       "patterns": [
         {
@@ -1860,7 +1860,7 @@
     },
     "variables-local": {
       "begin": "(?=\\b(var)\\b\\s+[A-Za-z_$][\\w$]*\\s*(=|:|;))",
-      "end": "(?=\\=|:|;)",
+      "end": "(?==|:|;)",
       "name": "meta.definition.variable.local.java",
       "patterns": [
         {

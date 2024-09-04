@@ -297,7 +297,7 @@
               "name": "comment.typehint.type.notation.python"
             },
             {
-              "match": "([\\[\\]\\(\\),\\.\\=\\*]|(->))",
+              "match": "([\\[\\](),\\.=\\*]|(->))",
               "name": "comment.typehint.punctuation.notation.python"
             },
             {
@@ -1559,7 +1559,7 @@
       ]
     },
     "fstring-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.multi.python"
     },
     "fstring-normf-quoted-multi-line": {
@@ -1649,7 +1649,7 @@
       ]
     },
     "fstring-raw-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.raw.multi.python"
     },
     "fstring-raw-quoted-multi-line": {
@@ -1723,7 +1723,7 @@
       ]
     },
     "fstring-raw-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.raw.single.python"
     },
     "fstring-single-brace": {
@@ -1750,7 +1750,7 @@
       ]
     },
     "fstring-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.single.python"
     },
     "fstring-terminator-multi": {

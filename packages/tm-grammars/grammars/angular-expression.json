@@ -53,7 +53,7 @@
               "name": "entity.name.function.pipe.ng"
             }
           },
-          "match": "((?<!\\|)\\|(?!\\|))\\s?([a-zA-Z0-9\\-\\_\\$]*)"
+          "match": "((?<!\\|)\\|(?!\\|))\\s?([a-zA-Z0-9\\-_$]*)"
         },
         {
           "match": "(?<!\\.|\\$)\\b(let)\\b(?!\\$)",
@@ -114,7 +114,7 @@
           ]
         },
         {
-          "match": "\\*=|(?<!\\()\\/=|%=|\\+=|\\-=",
+          "match": "\\*=|(?<!\\()\\/=|%=|\\+=|-=",
           "name": "keyword.operator.assignment.compound.ts"
         },
         {
@@ -134,7 +134,7 @@
           "name": "keyword.operator.relational.ts"
         },
         {
-          "match": "\\!|&&|\\?\\?|\\|\\|",
+          "match": "!|&&|\\?\\?|\\|\\|",
           "name": "keyword.operator.logical.ts"
         },
         {
@@ -142,7 +142,7 @@
           "name": "keyword.operator.bitwise.ts"
         },
         {
-          "match": "\\=",
+          "match": "=",
           "name": "keyword.operator.assignment.ts"
         },
         {
@@ -171,8 +171,8 @@
       ]
     },
     "functionCall": {
-      "begin": "(?=(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
-      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
+      "begin": "(?=(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|<[^<>]+>)+>\\s*)?\\()",
+      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|<[^<>]+>)+>\\s*)?\\()",
       "patterns": [
         {
           "match": "\\?",
@@ -187,13 +187,13 @@
           "name": "entity.name.function.ts"
         },
         {
-          "begin": "\\<",
+          "begin": "<",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.typeparameters.begin.ts"
             }
           },
-          "end": "\\>",
+          "end": ">",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.typeparameters.end.ts"
@@ -273,7 +273,7 @@
               "name": "entity.name.function.ts"
             }
           },
-          "match": "(?:([?!]?\\.)\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
+          "match": "(?:([?!]?\\.)\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
         },
         {
           "captures": {
@@ -454,7 +454,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))))"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))))"
         },
         {
           "captures": {
@@ -501,7 +501,7 @@
       ]
     },
     "punctuationAccessor": {
-      "match": "\\?\\.|\\!\\.|\\.",
+      "match": "\\?\\.|!\\.|\\.",
       "name": "punctuation.accessor.ts"
     },
     "punctuationComma": {
@@ -634,7 +634,7 @@
           "name": "keyword.operator.type.annotation.ts"
         }
       },
-      "end": "(?=$|[,);\\}\\]]|\\/\\/|\")|(?==[^>])|(?<=[\\}>\\]\\)]|[_$A-Za-z])\\s*(?=\\{)",
+      "end": "(?=$|[,);}\\]]|\\/\\/|\")|(?==[^>])|(?<=[}>\\])]|[_$A-Za-z])\\s*(?=\\{)",
       "name": "meta.type.annotation.ts",
       "patterns": [
         {
@@ -654,7 +654,7 @@
               "name": "keyword.control.new.ts"
             }
           },
-          "match": "(?<!\\.|\\$)\\b(new)\\b(?=\\s*\\<)",
+          "match": "(?<!\\.|\\$)\\b(new)\\b(?=\\s*<)",
           "name": "meta.type.constructor.ts"
         },
         {
@@ -673,7 +673,7 @@
           ]
         },
         {
-          "begin": "(?<=\\>)\\s*(?=\\()",
+          "begin": "(?<=>)\\s*(?=\\()",
           "end": "(?<=\\))",
           "include": "#typeofOperator",
           "name": "meta.type.function.ts",

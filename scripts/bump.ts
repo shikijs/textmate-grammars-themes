@@ -14,9 +14,7 @@ const lastReleaseSHA = (await git.log(['-n', '1', '--pretty=format:%h', '--grep'
 const diff = lastReleaseSHA ? (await git.diffSummary([lastReleaseSHA!, 'HEAD'])) : undefined
 const createdDiffRaw = lastReleaseSHA ? await git.diff([lastReleaseSHA, 'HEAD', '--summary']) : ''
 
-const filesCreated = Array.from(createdDiffRaw.match(/create mode \d+ (.+)/g) || [])
-  .map(i => i.replace(/create mode \d+ /, ''))
-  .filter(Boolean)
+const filesCreated = Array.from(createdDiffRaw.match(/create mode \d+ (.+)/g) || []).map(i => i.replace(/create mode \d+ /, '')).filter(Boolean)
 
 if (lastReleaseSHA)
   console.log('Last release:', lastReleaseSHA)

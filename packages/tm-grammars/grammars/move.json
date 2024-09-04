@@ -122,7 +122,7 @@
       "patterns": [
         {
           "comment": "Annotation name",
-          "match": "\\b(\\w+)\\s*(?=\\=)",
+          "match": "\\b(\\w+)\\s*(?==)",
           "name": "meta.annotation.name.move"
         },
         {
@@ -797,7 +797,7 @@
     },
     "local_call": {
       "comment": "call to a local / imported fun",
-      "match": "\\b([a-z][_a-z0-9]*)(?=[<\\(])",
+      "match": "\\b([a-z][_a-z0-9]*)(?=[<(])",
       "name": "entity.name.function.call.local.move"
     },
     "macro": {
@@ -877,7 +877,7 @@
         }
       },
       "comment": "<expr>.[ident]<>?() call",
-      "match": "\\.([a-z][_a-z0-9]*)(?=[<\\(])",
+      "match": "\\.([a-z][_a-z0-9]*)(?=[<(])",
       "name": "meta.path.call.move"
     },
     "module": {
@@ -1295,7 +1295,7 @@
           "name": "storage.modifier.type.move"
         }
       },
-      "end": "(?<=[};\\)])",
+      "end": "(?<=[};)])",
       "name": "meta.struct.move",
       "patterns": [
         {

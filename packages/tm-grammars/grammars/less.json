@@ -799,7 +799,7 @@
       ]
     },
     "color-adjuster-operators": {
-      "match": "[\\-\\+*](?=\\s+)",
+      "match": "[\\-+*](?=\\s+)",
       "name": "keyword.operator.less"
     },
     "color-functions": {
@@ -1773,7 +1773,7 @@
           "name": "punctuation.separator.less"
         }
       },
-      "match": "(\\!)\\s*important",
+      "match": "(!)\\s*important",
       "name": "keyword.other.important.less"
     },
     "integer-type": {
@@ -2526,7 +2526,7 @@
     "less-math": {
       "patterns": [
         {
-          "match": "[-\\+\\*\\/]",
+          "match": "[-+\\*\\/]",
           "name": "keyword.operator.arithmetic.less"
         },
         {
@@ -4782,7 +4782,7 @@
     "selector": {
       "patterns": [
         {
-          "begin": "(?=[>~+/\\.*#a-zA-Z\\[&]|(\\:{1,2}[^\\s])|@\\{)",
+          "begin": "(?=[>~+/\\.*#a-zA-Z\\[&]|(:{1,2}[^\\s])|@\\{)",
           "contentName": "meta.selector.less",
           "end": "(?=@(?!\\{)|[{;])",
           "patterns": [
