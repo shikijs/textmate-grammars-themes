@@ -1891,7 +1891,7 @@ export const grammars = [
     source: 'https://github.com/nuxtlabs/vscode-mdc/blob/6294dbce9706f538a521e7dccce9609e928dc3be/syntaxes/mdc.tmLanguage.json',
   },
   {
-    byteSize: 132736,
+    byteSize: 134142,
     categories: [
       'web',
       'markup',
@@ -1941,13 +1941,13 @@ export const grammars = [
       'swift',
       'typescript',
     ],
-    lastUpdate: '2024-07-09T10:22:22Z',
+    lastUpdate: '2024-09-03T10:20:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license',
     name: 'mdx',
     scopeName: 'source.mdx',
-    sha: '3f11836d11ca5ed41431ecd53dca7710c2c823ce',
-    source: 'https://github.com/wooorm/markdown-tm-language/blob/3f11836d11ca5ed41431ecd53dca7710c2c823ce/source.mdx.tmLanguage',
+    sha: '0229d1b8fc37a7dea8cf7225d7713ac8a69621ca',
+    source: 'https://github.com/wooorm/markdown-tm-language/blob/0229d1b8fc37a7dea8cf7225d7713ac8a69621ca/source.mdx.tmLanguage',
   },
   {
     byteSize: 28659,
