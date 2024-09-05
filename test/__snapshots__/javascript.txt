@@ -1,194 +1,888 @@
+#758575DD      // --- Demonstration of imports ---
+#758575DD      // Importing named exports and the default export
+#4D9375        import
+#DBD7CACC       
+#BD976A        defaultAnimal
+#444444        ,
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        person
+#444444        ,
+#DBD7CACC       
+#BD976A        add
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        ./module.js
+#C98A7D77      '
+#444444        ;
+#758575DD      // Importing everything from the module as an alias
+#4D9375        import
+#DBD7CACC       
+#4D9375        *
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#BD976A        Module
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        ./module.js
+#C98A7D77      '
+#444444        ;
+#758575DD      // --- Demonstration of exports ---
+#758575DD      // Named exports
+#4D9375        export
+#DBD7CACC       
+#CB7676        const
+#DBD7CACC       
+#BD976A        person
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Alice
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        age
+#444444        :
+#DBD7CACC       
+#4C9A91        30
+#DBD7CACC       
+#444444        };
+#4D9375        export
+#DBD7CACC       
 #CB7676        function
 #DBD7CACC       
-#80A665        resolveAfter2Seconds
+#80A665        add
 #444444        (
 #BD976A        x
+#444444        ,
+#DBD7CACC       
+#BD976A        y
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0
 #444444        )
 #DBD7CACC       
 #444444        {
 #DBD7CACC        
 #4D9375        return
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        y
+#444444        ;
+#444444        }
+#758575DD      // Default export
+#CB7676        const
+#DBD7CACC       
+#BD976A        defaultAnimal
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Default Animal
+#C98A7D77      "
+#DBD7CACC       
+#444444        };
+#4D9375        export
+#DBD7CACC       
+#4D9375        default
+#DBD7CACC       
+#BD976A        defaultAnimal
+#444444        ;
+#758575DD      // Generator function
+#4D9375        export
+#DBD7CACC       
+#CB7676        function
+#4D9375        *
+#DBD7CACC       
+#80A665        idGenerator
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#BD976A        id
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#DBD7CACC        
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#4D9375        true
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        yield
+#DBD7CACC       
+#BD976A        id
+#CB7676        ++
+#444444        ;
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // Using typeof for runtime type checks
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#CB7676        typeof
+#DBD7CACC       
+#BD976A        person
+#444444        );
+#DBD7CACC        
+#758575DD      // object
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#80A665        add
+#444444        (
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        ));
+#DBD7CACC            
+#758575DD      // 5
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        defaultAnimal
+#444444        );
+#DBD7CACC        
+#758575DD      // { name: "Default Animal" }
+#758575DD      // Emulating 'satisfies' behavior using runtime checks
+#CB7676        function
+#DBD7CACC       
+#80A665        createAnimal
+#444444        (
+#BD976A        animal
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        typeof
+#DBD7CACC       
+#BD976A        animal
+#444444        .
+#BD976A        name
+#DBD7CACC       
+#CB7676        ===
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        string
+#C98A7D77      '
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#BD976A        animal
+#444444        ;
+#DBD7CACC        
+#758575DD      // Ensures the animal has a 'name' property
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#4D9375        throw
 #DBD7CACC       
 #CB7676        new
 #DBD7CACC       
-#B8A965        Promise
-#444444        ((
-#BD976A        resolve
+#80A665        Error
+#444444        (
+#C98A7D77      "
+#C98A7D        Animal must have a name
+#C98A7D77      "
+#444444        );
+#444444        }
+#CB7676        const
+#DBD7CACC       
+#BD976A        dog
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        createAnimal
+#444444        ({
+#DBD7CACC       
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Buddy
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        breed
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Golden Retriever
+#C98A7D77      "
+#DBD7CACC       
+#444444        });
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        dog
+#444444        );
+#DBD7CACC        
+#758575DD      // { name: 'Buddy', breed: 'Golden Retriever' }
+#758575DD      // Generator usage
+#CB7676        const
+#DBD7CACC       
+#BD976A        generator
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        Module
+#444444        .
+#80A665        idGenerator
+#444444        ();
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        generator
+#444444        .
+#80A665        next
+#444444        ().
+#BD976A        value
+#444444        );
+#DBD7CACC        
+#758575DD      // 0
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        generator
+#444444        .
+#80A665        next
+#444444        ().
+#BD976A        value
+#444444        );
+#DBD7CACC        
+#758575DD      // 1
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        generator
+#444444        .
+#80A665        next
+#444444        ().
+#BD976A        value
+#444444        );
+#DBD7CACC        
+#758575DD      // 2
+#758575DD      // Handling a generic-like behavior by allowing any type and runtime checks
+#CB7676        function
+#DBD7CACC       
+#80A665        identity
+#444444        (
+#BD976A        arg
 #444444        )
 #DBD7CACC       
-#444444        =>
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#BD976A        arg
+#444444        ;
+#444444        }
+#CB7676        let
+#DBD7CACC       
+#BD976A        str
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        identity
+#444444        (
+#C98A7D77      "
+#C98A7D        Hello
+#C98A7D77      "
+#444444        );
+#CB7676        let
+#DBD7CACC       
+#BD976A        num
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        identity
+#444444        (
+#4C9A91        42
+#444444        );
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        str
+#444444        ,
+#DBD7CACC       
+#BD976A        num
+#444444        );
+#DBD7CACC        
+#758575DD      // "Hello", 42
+#758575DD      // Emulating default generics by using default parameters
+#CB7676        function
+#DBD7CACC       
+#80A665        wrapInArray
+#444444        (
+#BD976A        value
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      ""
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#444444        [
+#BD976A        value
+#444444        ];
+#444444        }
+#CB7676        const
+#DBD7CACC       
+#BD976A        stringArray
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        wrapInArray
+#444444        ();
+#DBD7CACC        
+#758575DD      // Default is empty string
+#CB7676        const
+#DBD7CACC       
+#BD976A        numberArray
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        wrapInArray
+#444444        (
+#4C9A91        42
+#444444        );
+#DBD7CACC        
+#758575DD      // Passes 42 explicitly
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        stringArray
+#444444        ,
+#DBD7CACC       
+#BD976A        numberArray
+#444444        );
+#DBD7CACC        
+#758575DD      // [""] , [42]
+#758575DD      // --- for-of and for-in loops ---
+#758575DD      // for-of: Iterates over iterable objects like arrays, strings, maps, etc.
+#CB7676        const
+#DBD7CACC       
+#BD976A        fruits
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#C98A7D77      "
+#C98A7D        apple
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        banana
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        cherry
+#C98A7D77      "
+#444444        ];
+#4D9375        for
+#DBD7CACC       
+#444444        (
+#CB7676        const
+#DBD7CACC       
+#BD976A        fruit
+#DBD7CACC       
+#CB7676        of
+#DBD7CACC       
+#BD976A        fruits
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        fruit
+#444444        );
+#DBD7CACC        
+#758575DD      // Outputs: apple, banana, cherry
+#444444        }
+#758575DD      // for-in: Iterates over enumerable properties of an object
+#CB7676        const
+#DBD7CACC       
+#BD976A        car
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        make
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Tesla
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        model
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Model S
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        year
+#444444        :
+#DBD7CACC       
+#4C9A91        2021
+#DBD7CACC       
+#444444        };
+#4D9375        for
+#DBD7CACC       
+#444444        (
+#CB7676        const
+#DBD7CACC       
+#BD976A        key
+#DBD7CACC       
+#CB7676        in
+#DBD7CACC       
+#BD976A        car
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#BD976A        car
+#444444        .
+#80A665        hasOwnProperty
+#444444        (
+#BD976A        key
+#444444        ))
 #DBD7CACC       
 #444444        {
 #DBD7CACC          
-#80A665        setTimeout
-#444444        (()
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#C98A7D77      `
+#4D9375        ${
+#C98A7D        key
+#4D9375        }
+#C98A7D        : 
+#4D9375        ${
+#C98A7D        car
+#444444        [
+#C98A7D        key
+#444444        ]
+#4D9375        }
+#C98A7D77      `
+#444444        );
+#DBD7CACC        
+#758575DD      // Outputs key-value pairs of car object
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // --- IIFE (Immediately Invoked Function Expression) ---
+#444444        (
+#CB7676        function
 #DBD7CACC       
-#444444        =>
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#C98A7D77      "
+#C98A7D        This IIFE runs immediately after it's defined.
+#C98A7D77      "
+#444444        );
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        privateVar
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        I'm private inside the IIFE!
+#C98A7D77      "
+#444444        ;
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        privateVar
+#444444        );
+#DBD7CACC        
+#758575DD      // Accessing the private variable inside the IIFE
+#444444        })();
+#758575DD      // --- Using a generator to loop indefinitely ---
+#CB7676        function
+#4D9375        *
+#DBD7CACC       
+#80A665        infiniteGenerator
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#BD976A        i
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#DBD7CACC        
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#4D9375        true
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        yield
+#DBD7CACC       
+#BD976A        i
+#CB7676        ++
+#444444        ;
+#DBD7CACC        
+#444444        }
+#444444        }
+#CB7676        const
+#DBD7CACC       
+#BD976A        gen
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        infiniteGenerator
+#444444        ();
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        gen
+#444444        .
+#80A665        next
+#444444        ().
+#BD976A        value
+#444444        );
+#DBD7CACC        
+#758575DD      // 0
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        gen
+#444444        .
+#80A665        next
+#444444        ().
+#BD976A        value
+#444444        );
+#DBD7CACC        
+#758575DD      // 1
+#758575DD      // --- Async and Await ---
+#CB7676        async
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        fetchData
+#444444        (
+#BD976A        url
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        try
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#CB7676        const
+#DBD7CACC       
+#BD976A        response
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        await
+#DBD7CACC       
+#80A665        fetch
+#444444        (
+#BD976A        url
+#444444        );
+#DBD7CACC          
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#CB7676        !
+#BD976A        response
+#444444        .
+#BD976A        ok
+#444444        )
 #DBD7CACC       
 #444444        {
 #DBD7CACC            
-#80A665        resolve
+#4D9375        throw
+#DBD7CACC       
+#CB7676        new
+#DBD7CACC       
+#80A665        Error
 #444444        (
-#BD976A        x
+#C98A7D77      '
+#C98A7D        Network response was not ok
+#C98A7D77      '
 #444444        );
 #DBD7CACC          
-#444444        },
-#DBD7CACC       
-#4C9A91        2000
-#444444        );
-#DBD7CACC        
-#444444        });
 #444444        }
-#758575DD      // async function expression assigned to a variable
+#DBD7CACC          
 #CB7676        const
 #DBD7CACC       
-#80A665        add
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#CB7676        async
-#DBD7CACC       
-#CB7676        function
-#DBD7CACC       
-#444444        (
-#BD976A        x
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC        
-#CB7676        const
-#DBD7CACC       
-#BD976A        a
+#BD976A        data
 #DBD7CACC       
 #444444        =
 #DBD7CACC       
 #4D9375        await
 #DBD7CACC       
-#80A665        resolveAfter2Seconds
-#444444        (
-#4C9A91        20
-#444444        );
-#DBD7CACC        
-#CB7676        const
-#DBD7CACC       
-#BD976A        b
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#4D9375        await
-#DBD7CACC       
-#80A665        resolveAfter2Seconds
-#444444        (
-#4C9A91        30
-#444444        );
-#DBD7CACC        
+#BD976A        response
+#444444        .
+#80A665        json
+#444444        ();
+#DBD7CACC          
 #4D9375        return
 #DBD7CACC       
-#BD976A        x
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
-#BD976A        a
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
-#BD976A        b
+#BD976A        data
 #444444        ;
-#444444        };
-#80A665        add
+#DBD7CACC        
+#444444        }
+#DBD7CACC       
+#4D9375        catch
+#DBD7CACC       
 #444444        (
-#4C9A91        10
-#444444        ).
-#80A665        then
-#444444        ((
-#BD976A        v
+#BD976A        error
 #444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        console
+#444444        .
+#80A665        error
+#444444        (
+#C98A7D77      '
+#C98A7D        There has been a problem with your fetch operation:
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       
+#BD976A        error
+#444444        );
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // Example usage of async function
+#80A665        fetchData
+#444444        (
+#C98A7D77      '
+#C98A7D        https://jsonplaceholder.typicode.com/todos/1
+#C98A7D77      '
+#444444        )
+#DBD7CACC        
+#444444        .
+#80A665        then
+#444444        (
+#BD976A        data
 #DBD7CACC       
 #444444        =>
 #DBD7CACC       
-#444444        {
-#DBD7CACC        
 #BD976A        console
 #444444        .
 #80A665        log
 #444444        (
-#BD976A        v
-#444444        );
-#DBD7CACC       
-#758575DD      // prints 60 after 4 seconds.
-#444444        });
-#758575DD      // async function expression used as an IIFE
+#BD976A        data
+#444444        ))
+#DBD7CACC        
+#758575DD      // Outputs fetched data
+#DBD7CACC        
+#444444        .
+#80A665        catch
 #444444        (
-#CB7676        async
+#BD976A        error
 #DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#BD976A        console
+#444444        .
+#80A665        error
+#444444        (
+#BD976A        error
+#444444        ));
+#758575DD      // JSDoc type annotations
+#758575DD      /**
+#758575DD       * 
+#444444        @
+#4D9375        typedef
+#758575DD       
+#444444        {
+#5DA994        Object
+#444444        }
+#758575DD       
+#5DA994        Task
+#758575DD       * 
+#444444        @
+#4D9375        property
+#758575DD       
+#444444        {
+#5DA994        string
+#444444        }
+#758575DD       
+#BD976A        title
+#758575DD       * 
+#444444        @
+#4D9375        property
+#758575DD       
+#444444        {
+#5DA994        boolean
+#444444        }
+#758575DD       
+#BD976A        completed
+#758575DD       */
+#758575DD      /**
+#758575DD       * Create a task
+#758575DD       * 
+#444444        @
+#4D9375        param
+#758575DD       
+#444444        {
+#5DA994        Task
+#444444        }
+#758575DD       
+#BD976A        task
+#758575DD       * 
+#444444        @
+#4D9375        returns
+#758575DD       
+#444444        {
+#5DA994        Task
+#444444        }
+#758575DD       */
 #CB7676        function
 #DBD7CACC       
+#80A665        createTask
 #444444        (
-#BD976A        x
+#BD976A        task
 #444444        )
 #DBD7CACC       
 #444444        {
-#DBD7CACC        
-#CB7676        const
-#DBD7CACC       
-#BD976A        p1
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#80A665        resolveAfter2Seconds
-#444444        (
-#4C9A91        20
-#444444        );
-#DBD7CACC        
-#CB7676        const
-#DBD7CACC       
-#BD976A        p2
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#80A665        resolveAfter2Seconds
-#444444        (
-#4C9A91        30
-#444444        );
 #DBD7CACC        
 #4D9375        return
 #DBD7CACC       
-#BD976A        x
+#BD976A        task
+#444444        ;
+#444444        }
+#CB7676        const
 #DBD7CACC       
-#CB7676        +
+#BD976A        myTask
 #DBD7CACC       
-#444444        (
-#4D9375        await
+#444444        =
 #DBD7CACC       
-#BD976A        p1
-#444444        )
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
-#444444        (
-#4D9375        await
-#DBD7CACC       
-#BD976A        p2
-#444444        );
-#444444        })(
-#4C9A91        10
-#444444        ).
-#80A665        then
-#444444        ((
-#BD976A        v
-#444444        )
-#DBD7CACC       
-#444444        =>
-#DBD7CACC       
-#444444        {
+#80A665        createTask
+#444444        ({
 #DBD7CACC        
+#B8A965        title
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Learn JavaScript
+#C98A7D77      "
+#444444        ,
+#DBD7CACC        
+#B8A965        completed
+#444444        :
+#DBD7CACC       
+#4D9375        false
+#444444        ,
+#444444        });
 #BD976A        console
 #444444        .
 #80A665        log
 #444444        (
-#BD976A        v
+#BD976A        myTask
 #444444        );
+#758575DD      // Importing everything as a namespace (simulated for demonstration)
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        Module
+#444444        .
+#BD976A        person
+#444444        );
+#DBD7CACC        
+#758575DD      // { name: "Alice", age: 30 }
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        Module
+#444444        .
+#80A665        add
+#444444        (
+#4C9A91        10
+#444444        ,
 #DBD7CACC       
-#758575DD      // prints 60 after 2 seconds.
-#444444        });
-#758575DD      // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function
+#4C9A91        20
+#444444        ));
+#DBD7CACC        
+#758575DD      // 30

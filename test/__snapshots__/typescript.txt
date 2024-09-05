@@ -1,124 +1,470 @@
-#CB7676        enum
-#DBD7CACC       
-#5DA994        LogLevel
-#DBD7CACC       
-#444444        {
-#DBD7CACC        
-#BD976A        ERROR
-#444444        ,
-#DBD7CACC        
-#BD976A        WARN
-#444444        ,
-#DBD7CACC        
-#BD976A        INFO
-#444444        ,
-#DBD7CACC        
-#BD976A        DEBUG
-#444444        ,
-#444444        }
-#758575DD      /**
-#758575DD       * This is equivalent to:
-#758575DD       * type LogLevelStrings = 'ERROR' | 'WARN' | 'INFO' | 'DEBUG';
-#758575DD       */
+#758575DD      // Using 'typeof' to infer types
+#CB7676        const 
+#BD976A        person
+#CB7676         
+#444444        =
+#CB7676         
+#444444        { 
+#B8A965        name
+#444444        : 
+#C98A7D77      "
+#C98A7D        Alice
+#C98A7D77      "
+#444444        , 
+#B8A965        age
+#444444        : 
+#4C9A91        30
+#444444         };
 #CB7676        type
 #DBD7CACC       
-#5DA994        LogLevelStrings
+#5DA994        PersonType
 #DBD7CACC       
 #444444        =
 #DBD7CACC       
-#CB7676        keyof
+#CB7676        typeof
+#DBD7CACC       
+#BD976A        person
+#444444        ;
+#DBD7CACC        
+#758575DD      // { name: string; age: number }
+#758575DD      // 'satisfies' to ensure a type matches but allows more specific types
+#CB7676        type
+#DBD7CACC       
+#5DA994        Animal
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        name
+#444444        : 
+#5DA994        string
+#444444         };
+#CB7676        const 
+#BD976A        dog
+#CB7676         
+#444444        =
+#CB7676         
+#444444        { 
+#B8A965        name
+#444444        : 
+#C98A7D77      "
+#C98A7D        Buddy
+#C98A7D77      "
+#444444        , 
+#B8A965        breed
+#444444        : 
+#C98A7D77      "
+#C98A7D        Golden Retriever
+#C98A7D77      "
+#444444         }
+#CB7676         
+#4D9375        satisfies
+#CB7676         
+#5DA994        Animal
+#444444        ;
+#758575DD      // Generics with 'extends' and default values
+#CB7676        function
+#DBD7CACC       
+#80A665        identity
+#444444        <
+#5DA994        T
+#DBD7CACC       
+#CB7676        extends
+#DBD7CACC       
+#5DA994        number
+#DBD7CACC       
+#444444        |
+#DBD7CACC       
+#5DA994        string
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        string
+#444444        >(
+#BD976A        arg
+#444444        : 
+#5DA994        T
+#444444        ):
+#DBD7CACC       
+#5DA994        T
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#BD976A        arg
+#444444        ;
+#444444        }
+#CB7676        let 
+#BD976A        str
+#CB7676         
+#444444        =
+#CB7676         
+#80A665        identity
+#444444        ();
+#DBD7CACC        
+#758575DD      // Default type is string
+#CB7676        let 
+#BD976A        num
+#CB7676         
+#444444        =
+#CB7676         
+#80A665        identity
+#444444        (
+#4C9A91        42
+#444444        );
+#DBD7CACC        
+#758575DD      // T inferred as number
+#758575DD      // 'extends' with interface and class
+#CB7676        interface
+#DBD7CACC       
+#5DA994        HasLength
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        length
+#444444        : 
+#5DA994        number
+#444444        ;
+#444444        }
+#CB7676        function
+#DBD7CACC       
+#80A665        logLength
+#444444        <
+#5DA994        T
+#DBD7CACC       
+#CB7676        extends
+#DBD7CACC       
+#5DA994        HasLength
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        string
+#444444        >(
+#BD976A        arg
+#444444        : 
+#5DA994        T
+#444444        ):
+#DBD7CACC       
+#5DA994        void
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        console
+#444444        .
+#80A665        log
+#444444        (
+#BD976A        arg
+#444444        .
+#B8A965        length
+#444444        );
+#444444        }
+#80A665        logLength
+#444444        (
+#C98A7D77      "
+#C98A7D        Hello
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#758575DD      // OK: string has length (default is string)
+#80A665        logLength
+#444444        ([
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        ]);
+#DBD7CACC        
+#758575DD      // OK: array has length
+#758575DD      // logLength(123);      // Error: number doesn't have length
+#758575DD      // 'typeof' with functions
+#CB7676        function
+#DBD7CACC       
+#80A665        add
+#444444        (
+#BD976A        x
+#444444        : 
+#5DA994        number
+#444444        ,
+#DBD7CACC       
+#BD976A        y
+#444444        : 
+#5DA994        number
+#444444        ):
+#DBD7CACC       
+#5DA994        number
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        y
+#444444        ;
+#444444        }
+#CB7676        type
+#DBD7CACC       
+#5DA994        AddFunctionType
+#DBD7CACC       
+#444444        =
 #DBD7CACC       
 #CB7676        typeof
 #DBD7CACC       
-#BD976A        LogLevel
+#BD976A        add
 #444444        ;
-#CB7676        function
+#DBD7CACC        
+#758575DD      // (x: number, y: number) => number
+#758575DD      // Generic interfaces with 'extends' and default types
+#CB7676        interface
 #DBD7CACC       
-#80A665        printImportant
-#444444        (
-#BD976A        key
-#444444        : 
-#5DA994        LogLevelStrings
-#444444        ,
+#5DA994        Box
+#444444        <
+#5DA994        T
+#DBD7CACC       
+#CB7676        extends
+#DBD7CACC       
+#CB7676        object
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
 #DBD7CACC       
 #BD976A        message
 #444444        : 
 #5DA994        string
-#444444        )
+#444444         }>
 #DBD7CACC       
 #444444        {
 #DBD7CACC        
+#BD976A        content
+#444444        : 
+#5DA994        T
+#444444        ;
+#444444        }
+#CB7676        let 
+#BD976A        defaultBox
+#444444        : 
+#5DA994        Box
+#444444         =
+#CB7676         
+#444444        { 
+#B8A965        content
+#444444        : { 
+#B8A965        message
+#444444        : 
+#C98A7D77      "
+#C98A7D        Hello
+#C98A7D77      "
+#444444         } };
+#DBD7CACC        
+#758575DD      // Uses default type
+#CB7676        let 
+#BD976A        customBox
+#444444        : 
+#5DA994        Box
+#444444        <{ 
+#BD976A        status
+#444444        : 
+#5DA994        number
+#444444         }> =
+#CB7676         
+#444444        { 
+#B8A965        content
+#444444        : { 
+#B8A965        status
+#444444        : 
+#4C9A91        200
+#444444         } };
+#758575DD      // Complex example with 'satisfies' and default generics
+#CB7676        type
+#DBD7CACC       
+#5DA994        Task
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        title
+#444444        : 
+#5DA994        string
+#444444        ;
+#DBD7CACC        
+#BD976A        description
+#CB7676        ?
+#444444        : 
+#5DA994        string
+#444444        ;
+#DBD7CACC        
+#BD976A        completed
+#444444        : 
+#5DA994        boolean
+#444444        ;
+#444444        };
 #CB7676        const 
-#BD976A        num
+#BD976A        myTask
 #CB7676         
 #444444        =
 #CB7676         
-#BD976A        LogLevel
-#444444        [
-#BD976A        key
-#444444        ];
+#444444        {
+#444444          
+#B8A965        title
+#444444        : 
+#C98A7D77      "
+#C98A7D        Learn TypeScript
+#C98A7D77      "
+#444444        ,
+#444444          
+#B8A965        completed
+#444444        : 
+#4D9375        false
+#444444        ,
+#444444          
+#B8A965        priority
+#444444        : 
+#C98A7D77      "
+#C98A7D        High
+#C98A7D77      "
+#444444        ,
+#444444        }
+#CB7676         
+#4D9375        satisfies
+#CB7676         
+#5DA994        Task
+#444444        ;
 #DBD7CACC        
-#4D9375        if
+#758575DD      // Allows priority but ensures Task structure
+#758575DD      // Generic function with default type
+#CB7676        function
 #DBD7CACC       
-#444444        (
-#BD976A        num
+#80A665        wrapInArray
+#444444        <
+#5DA994        T
 #DBD7CACC       
-#444444        <=
+#444444        =
 #DBD7CACC       
-#BD976A        LogLevel
-#444444        .
-#BD976A        WARN
-#444444        )
+#5DA994        string
+#444444        >(
+#BD976A        value
+#444444        : 
+#5DA994        T
+#444444        ):
+#DBD7CACC       
+#5DA994        T
+#444444        []
 #DBD7CACC       
 #444444        {
-#DBD7CACC          
-#BD976A        console
-#444444        .
-#80A665        log
-#444444        (
-#C98A7D77      "
-#C98A7D        Log level key is:
-#C98A7D77      "
-#444444        ,
+#DBD7CACC        
+#4D9375        return
 #DBD7CACC       
-#BD976A        key
-#444444        );
-#DBD7CACC          
-#BD976A        console
-#444444        .
-#80A665        log
+#444444        [
+#BD976A        value
+#444444        ];
+#444444        }
+#CB7676        const 
+#BD976A        stringArray
+#CB7676         
+#444444        =
+#CB7676         
+#80A665        wrapInArray
+#444444        ();
+#DBD7CACC        
+#758575DD      // Default to string
+#CB7676        const 
+#BD976A        numberArray
+#CB7676         
+#444444        =
+#CB7676         
+#80A665        wrapInArray
 #444444        (
-#C98A7D77      "
-#C98A7D        Log level value is:
-#C98A7D77      "
-#444444        ,
-#DBD7CACC       
-#BD976A        num
-#444444        );
-#DBD7CACC          
-#BD976A        console
-#444444        .
-#80A665        log
-#444444        (
-#C98A7D77      "
-#C98A7D        Log level message is:
-#C98A7D77      "
-#444444        ,
-#DBD7CACC       
-#BD976A        message
+#4C9A91        42
 #444444        );
 #DBD7CACC        
+#758575DD      // T inferred as number
+#758575DD      /**
+#758575DD       * Combines two generic types into a tuple.
+#758575DD       * 
+#758575DD       * 
+#444444        @
+#4D9375        template
+#758575DD       
+#BD976A        T
+#758575DD       - The first type.
+#758575DD       * 
+#444444        @
+#4D9375        template
+#758575DD       
+#BD976A        U
+#758575DD       - The second type.
+#758575DD       * 
+#444444        @
+#4D9375        param
+#758575DD       
+#444444        {
+#5DA994        T
 #444444        }
+#758575DD       
+#BD976A        first
+#758575DD       - The first value.
+#758575DD       * 
+#444444        @
+#4D9375        param
+#758575DD       
+#444444        {
+#5DA994        U
 #444444        }
-#80A665        printImportant
-#444444        (
-#C98A7D77      "
-#C98A7D        ERROR
-#C98A7D77      "
+#758575DD       
+#BD976A        second
+#758575DD       - The second value.
+#758575DD       * 
+#444444        @
+#4D9375        returns
+#758575DD       
+#444444        {
+#5DA994        [T, U]
+#444444        }
+#758575DD       A tuple containing both values.
+#758575DD       */
+#CB7676        function
+#DBD7CACC       
+#80A665        combine
+#444444        <
+#5DA994        T
 #444444        ,
 #DBD7CACC       
-#C98A7D77      "
-#C98A7D        This is a message
-#C98A7D77      "
-#444444        );
-#758575DD      // From https://www.typescriptlang.org/docs/handbook/enums.html
+#5DA994        U
+#444444        >(
+#BD976A        first
+#444444        : 
+#5DA994        T
+#444444        ,
+#DBD7CACC       
+#BD976A        second
+#444444        : 
+#5DA994        U
+#444444        ):
+#DBD7CACC       
+#444444        [
+#5DA994        T
+#444444        ,
+#DBD7CACC       
+#5DA994        U
+#444444        ]
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#444444        [
+#BD976A        first
+#444444        ,
+#DBD7CACC       
+#BD976A        second
+#444444        ];
+#444444        }

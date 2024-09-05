@@ -881,7 +881,7 @@
       "name": "meta.path.call.move"
     },
     "module": {
-      "begin": "\\b(module|spec)\\b",
+      "begin": "\\b(module)\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.type.move"
@@ -895,7 +895,7 @@
           "include": "#comments"
         },
         {
-          "begin": "(?<=\\b(module|spec)\\b)",
+          "begin": "(?<=\\b(module)\\b)",
           "comment": "Module name",
           "end": "(?=[;{])",
           "patterns": [
@@ -906,7 +906,7 @@
               "include": "#escaped_identifier"
             },
             {
-              "begin": "(?<=\\b(module|spec))",
+              "begin": "(?<=\\b(module))",
               "comment": "Module namespace / address",
               "end": "(?=[(::){])",
               "name": "constant.other.move",
@@ -1016,7 +1016,7 @@
           "include": "#escaped_identifier"
         },
         {
-          "begin": "(?<=\\b(module|spec))",
+          "begin": "(?<=\\bmodule\\b)",
           "comment": "Module namespace / address",
           "end": "(?=[(::){])",
           "name": "constant.other.move"
