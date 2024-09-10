@@ -1,8 +1,8 @@
-import { fileURLToPath } from 'node:url'
 import fs from 'node:fs/promises'
 import { join } from 'node:path'
-import { expect, it } from 'vitest'
+import { fileURLToPath } from 'node:url'
 import { createHighlighterCore } from '@shikijs/core'
+import { expect, it } from 'vitest'
 import { grammars } from '../packages/tm-grammars/index'
 import theme from '../packages/tm-themes/themes/vitesse-black.json'
 

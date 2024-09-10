@@ -1,6 +1,6 @@
-import pLimit from 'p-limit'
-import { fetch } from 'ofetch'
 import c from 'chalk'
+import { fetch } from 'ofetch'
+import pLimit from 'p-limit'
 import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 

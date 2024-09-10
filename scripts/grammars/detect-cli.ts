@@ -1,8 +1,12 @@
-import { fileURLToPath } from 'node:url'
 import fs from 'node:fs/promises'
 import { basename } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import fg from 'fast-glob'
-import { FEATURES_POLYFILLABLE, FEATURES_SUPPORTED_BY_JS, detectRegexFeatures } from 'oniguruma-to-js/detect'
+import {
+  detectRegexFeatures,
+  FEATURES_POLYFILLABLE,
+  FEATURES_SUPPORTED_BY_JS,
+} from 'oniguruma-to-js/detect'
 
 export function getPatterns(grammar: any) {
   const patterns = new Set<string>()

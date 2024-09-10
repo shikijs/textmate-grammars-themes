@@ -1,6 +1,6 @@
 import { Buffer } from 'node:buffer'
-import { $fetch } from 'ofetch'
 import AdmZip from 'adm-zip'
+import { $fetch } from 'ofetch'
 
 const cache = new Map<string, ReturnType<typeof _downloadFromMarketplace>>()
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import Git from 'simple-git'
 import semver from 'semver'
+import Git from 'simple-git'
 
 const git = Git()
 
