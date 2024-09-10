@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { HighlighterCore } from '@shikijs/core'
 import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
-import { themes } from '../../packages/tm-themes/index'
+import type { HighlighterCore } from '@shikijs/core'
 import { grammars, injections } from '../../packages/tm-grammars/index'
+import { themes } from '../../packages/tm-themes/index'
 import { dependencies } from '../package.json'
+import Badge from './Badge.vue'
 import SegmentControl from './SegmentControl.vue'
 import { engine, grammar, isDark, theme } from './state'
-import Badge from './Badge.vue'
 
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
@@ -331,7 +331,7 @@ if (import.meta.hot) {
         <div v-if="error" text-red bg-red:10 p4 rounded flex-none>
           {{ error }}
         </div>
-        <div v-if="output" relative of-x-scroll flex-none>
+        <div v-if="output && !error" relative of-x-scroll flex-none>
           <div
             transition-all duration-500 :class="isFetching ? 'blur-3px' : ''"
             v-html="output"
