@@ -1,3 +1,5 @@
+import type { ThemeInfo } from '../../packages/tm-themes/index'
+import type { ThemeSource } from './types'
 import fs from 'node:fs/promises'
 import process from 'node:process'
 import c from 'chalk'
@@ -11,8 +13,6 @@ import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
 import { fileSizeToHuman } from '../shared/utils'
 import { cleanupTheme } from './cleanup'
-import type { ThemeInfo } from '../../packages/tm-themes/index'
-import type { ThemeSource } from './types'
 
 const badge = c.cyan.bold('  theme  ')
 

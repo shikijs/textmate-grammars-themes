@@ -3,8 +3,8 @@
   "fileTypes": [
     "liquid"
   ],
-  "foldingStartMarker": "(?x)\n{%\n  -?\n  \\s*\n  (capture|case|comment|for|form|if|javascript|paginate|schema|style)\n  [^(%})]+\n%}\n",
-  "foldingStopMarker": "(?x)\n{%\n  \\s*\n  (endcapture|endcase|endcomment|endfor|endform|endif|endjavascript|endpaginate|endschema|endstyle)\n  [^(%})]+\n%}\n",
+  "foldingStartMarker": "{%-?\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)[^(%})]+%}",
+  "foldingStopMarker": "{%\\s*(endcapture|endcase|endcomment|endfor|endform|endif|endjavascript|endpaginate|endschema|endstyle)[^(%})]+%}",
   "injections": {
     "L:meta.embedded.block.js, L:meta.embedded.block.css, L:meta.embedded.block.html, L:string.quoted": {
       "patterns": [

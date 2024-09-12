@@ -1,20 +1,21 @@
+import type { GrammarInfo } from '../../packages/tm-grammars/index'
+import type { GrammarSource } from './types'
+
 import fs from 'node:fs/promises'
 import process from 'node:process'
 import c from 'chalk'
 import stringify from 'json-stable-stringify'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
+
 import { sources } from '../../sources-grammars'
 import { parseGitHubUrl, resolveSourceGitHub } from '../shared/github'
 import { COMMENT_HEAD } from '../shared/head'
 import { generateLicense } from '../shared/license'
 import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
-
 import { fileSizeToHuman } from '../shared/utils'
 import { cleanupGrammar } from './cleanup'
-import type { GrammarInfo } from '../../packages/tm-grammars/index'
-import type { GrammarSource } from './types'
 
 const badge = c.magenta.bold(' grammar ')
 

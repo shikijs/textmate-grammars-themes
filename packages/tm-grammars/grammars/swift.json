@@ -720,7 +720,7 @@
                       "name": "constant.numeric.integer.swift"
                     }
                   },
-                  "match": "(line)\\s*(:)\\s*([0-9]+)"
+                  "match": "(line)\\s*(:)\\s*(\\d+)"
                 },
                 {
                   "match": ",",
@@ -4026,11 +4026,11 @@
                 "0": {
                   "patterns": [
                     {
-                      "match": "\\G(\\+\\+|\\-\\-)$",
+                      "match": "\\G(\\+\\+|--)$",
                       "name": "keyword.operator.increment-or-decrement.swift"
                     },
                     {
-                      "match": "\\G(\\+|\\-)$",
+                      "match": "\\G(\\+|-)$",
                       "name": "keyword.operator.arithmetic.unary.swift"
                     },
                     {
@@ -4056,7 +4056,7 @@
                 "0": {
                   "patterns": [
                     {
-                      "match": "\\G(\\+\\+|\\-\\-)$",
+                      "match": "\\G(\\+\\+|--)$",
                       "name": "keyword.operator.increment-or-decrement.swift"
                     },
                     {
@@ -4082,15 +4082,15 @@
                       "name": "keyword.operator.assignment.swift"
                     },
                     {
-                      "match": "\\G(\\+|\\-|\\*|/|%|<<|>>|&|\\^|\\||&&|\\|\\|)=$",
+                      "match": "\\G(\\+|-|\\*|/|%|<<|>>|&|\\^|\\||&&|\\|\\|)=$",
                       "name": "keyword.operator.assignment.compound.swift"
                     },
                     {
-                      "match": "\\G(\\+|\\-|\\*|/)$",
+                      "match": "\\G(\\+|-|\\*|/)$",
                       "name": "keyword.operator.arithmetic.swift"
                     },
                     {
-                      "match": "\\G&(\\+|\\-|\\*)$",
+                      "match": "\\G&(\\+|-|\\*)$",
                       "name": "keyword.operator.arithmetic.overflow.swift"
                     },
                     {

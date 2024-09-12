@@ -12,7 +12,7 @@
     "dyapp",
     "mipage"
   ],
-  "firstLineMatch": "(?x)\n# APL symbols\n[⌶-⍺]\n|\n\n# Hashbang\n^\\#!.*(?:\\s|\\/|(?<=!)\\b)\n\t(?:gnu[-._]?apl|aplx?|dyalog)\n(?:$|\\s)\n|\n\n# Modeline\n(?i:\n\t# Emacs\n\t-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)\n\t\tapl\n\t(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-\n\n\t|\n\n\t# Vim\n\t(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s* set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=\n\t\tapl\n\t(?=\\s|:|$)\n)",
+  "firstLineMatch": "[⌶-⍺]|^\\#!.*(?:\\s|\\/|(?<=!)\\b)(?:gnu[-._]?apl|aplx?|dyalog)(?:$|\\s)|(?i:-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)apl(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s*set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=apl(?=\\s|:|$))",
   "foldingStartMarker": "{",
   "foldingStopMarker": "}",
   "name": "apl",

@@ -1,5 +1,5 @@
 import { promises as fs } from 'node:fs'
-import { basename } from 'node:path'
+import { basename, resolve } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import fg from 'fast-glob'
@@ -7,7 +7,7 @@ import stringify from 'json-stable-stringify'
 import { cleanupGrammar } from './cleanup'
 
 const files = fg.sync('*.json', {
-  cwd: fileURLToPath(new URL('../../packages/tm-grammars/grammars', import.meta.url)),
+  cwd: fileURLToPath(new URL('../../packages/tm-grammars/raw', import.meta.url)),
   absolute: true,
 })
 
@@ -19,7 +19,7 @@ for (const file of files) {
     const data = JSON.parse(await fs.readFile(file, 'utf-8'))
     const result = await cleanupGrammar(data)
     console.log('Writing', name)
-    await fs.writeFile(file, `${stringify(result, { space: 2 })}\n`, 'utf-8')
+    await fs.writeFile(resolve(file, '../../grammars', basename(file)), `${stringify(result, { space: 2 })}\n`, 'utf-8')
   }
   catch (e) {
     errors.push([name, e])

@@ -1,8 +1,8 @@
-import { octokit } from './octokit'
 import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 import type { GrammarSource } from '../grammars/types'
 import type { ThemeSource } from '../themes/types'
+import { octokit } from './octokit'
 
 interface CommitInfo {
   sha: string

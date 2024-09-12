@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
 import type { HighlighterCore } from '@shikijs/core'
+import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
 import { grammars, injections } from '../../packages/tm-grammars/index'
 import { themes } from '../../packages/tm-themes/index'
 import { dependencies } from '../package.json'

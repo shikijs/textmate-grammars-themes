@@ -1,8 +1,8 @@
+import type { ParseError } from 'jsonc-parser'
 import CSON from 'cson'
 import { parse as parsePlist } from 'fast-plist'
 import YAML from 'js-yaml'
 import { parse as jsoncParse } from 'jsonc-parser'
-import type { ParseError } from 'jsonc-parser'
 
 export function parseJsonc(jsonc: string) {
   const errors: ParseError[] = []

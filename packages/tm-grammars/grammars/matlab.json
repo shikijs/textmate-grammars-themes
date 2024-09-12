@@ -388,7 +388,7 @@
                     "1": {
                       "patterns": [
                         {
-                          "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                          "match": "[a-zA-Z]\\w*",
                           "name": "variable.parameter.class.matlab"
                         },
                         {
@@ -418,7 +418,7 @@
                     "5": {
                       "patterns": [
                         {
-                          "match": "[a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*",
+                          "match": "[a-zA-Z]\\w*(\\.[a-zA-Z]\\w*)*",
                           "name": "entity.other.inherited-class.matlab"
                         },
                         {
@@ -435,7 +435,7 @@
                       ]
                     }
                   },
-                  "match": "(?x)\n\t\t\t\t\t\t\t\t\t\t(\t\t\t\t\t\t\t\t\t# Optional attributes\n\t\t\t\t\t\t\t\t\t\t\t \\( [^)]* \\)\n\t\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t\t(\n\t\t\t\t\t\t\t\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\t\t\t# Class name\n\t\t\t\t\t\t\t\t\t\t\t(?:\t\t\t\t\t\t\t\t# Optional inheritance\n\t\t\t\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t\t\t\t(<)\n\t\t\t\t\t\t\t\t\t\t\t\t\\s*\n\t\t\t\t\t\t\t\t\t\t\t\t([^%]*)\n\t\t\t\t\t\t\t\t\t\t\t)?\n\t\t\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t\t\t\t\\s*($|(?=(%|...)).*)\n\t\t\t\t\t\t\t\t\t"
+                  "match": "(\\([^)]*\\))?\\s*(([a-zA-Z]\\w*)(?:\\s*(<)\\s*([^%]*))?)\\s*($|(?=(%|...)).*)"
                 }
               ]
             }
@@ -457,7 +457,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[a-zA-Z]\\w*",
                       "name": "variable.parameter.properties.matlab"
                     },
                     {
@@ -502,7 +502,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[a-zA-Z]\\w*",
                       "name": "variable.parameter.methods.matlab"
                     },
                     {
@@ -544,7 +544,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[a-zA-Z]\\w*",
                       "name": "variable.parameter.events.matlab"
                     },
                     {
@@ -799,7 +799,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[a-zA-Z]\\w*",
                       "name": "variable.parameter.arguments.matlab"
                     }
                   ]

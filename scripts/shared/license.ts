@@ -1,8 +1,8 @@
+import type { GrammarInfo } from '../../packages/tm-grammars/index'
+import type { ThemeInfo } from '../../packages/tm-themes/index'
 import c from 'chalk'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
-import type { GrammarInfo } from '../../packages/tm-grammars/index'
-import type { ThemeInfo } from '../../packages/tm-themes/index'
 
 const badge = c.yellow.bold(' license ')
 

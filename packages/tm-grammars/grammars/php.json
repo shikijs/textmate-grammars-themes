@@ -477,7 +477,7 @@
                 },
                 {
                   "begin": "(?i)(?=[\\\\a-z_\\x{7f}-\\x{10ffff}])",
-                  "end": "(?xi)\n( [a-z_\\x{7f}-\\x{10ffff}] [a-z0-9_\\x{7f}-\\x{10ffff}]* )\n(?![a-z0-9_\\x{7f}-\\x{10ffff}\\\\])",
+                  "end": "(?i)([a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)(?![a-z0-9_\\x{7f}-\\x{10ffff}\\\\])",
                   "endCaptures": {
                     "1": {
                       "name": "support.class.exception.php"
@@ -2871,7 +2871,7 @@
               "name": "keyword.operator.nullable-type.php"
             },
             {
-              "match": "(?x)\\b\n(string|integer|int|boolean|bool|float|double|object|mixed\n|array|resource|void|null|callback|false|true|self|static)\\b",
+              "match": "\\b(string|integer|int|boolean|bool|float|double|object|mixed|array|resource|void|null|callback|false|true|self|static)\\b",
               "name": "keyword.other.type.php"
             },
             {

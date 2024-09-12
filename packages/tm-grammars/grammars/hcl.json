@@ -33,7 +33,7 @@
           "patterns": [
             {
               "comment": "Attribute name",
-              "match": "(?!null|false|true)[[:alpha:]][\\w-]*",
+              "match": "(?!null|false|true)[A-Za-z][\\w-]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -86,7 +86,7 @@
           "patterns": [
             {
               "comment": "Block type",
-              "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+              "match": "\\b(?!null|false|true)[A-Za-z][0-9A-Za-z_-]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -100,7 +100,7 @@
             },
             {
               "comment": "Block label (Indentifier)",
-              "match": "[[:alpha:]][[:alnum:]_-]*",
+              "match": "[A-Za-z][0-9A-Za-z_-]*",
               "name": "variable.other.enummember.hcl"
             }
           ]
@@ -286,11 +286,11 @@
         "1": {
           "patterns": [
             {
-              "match": "\\b[[:alpha:]][\\w_-]*::([[:alpha:]][\\w_-]*::)?[[:alpha:]][\\w_-]*\\b",
+              "match": "\\b[A-Za-z][\\w_-]*::([A-Za-z][\\w_-]*::)?[A-Za-z][\\w_-]*\\b",
               "name": "support.function.namespaced.hcl"
             },
             {
-              "match": "\\b[[:alpha:]][\\w_-]*\\b",
+              "match": "\\b[A-Za-z][\\w_-]*\\b",
               "name": "support.function.builtin.hcl"
             }
           ]
@@ -367,7 +367,7 @@
         "2": {
           "patterns": [
             {
-              "match": "\\=\\>",
+              "match": "=>",
               "name": "storage.type.function.hcl"
             },
             {

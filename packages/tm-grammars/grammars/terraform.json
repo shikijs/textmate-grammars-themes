@@ -34,7 +34,7 @@
           "patterns": [
             {
               "comment": "Attribute name",
-              "match": "(?!null|false|true)[[:alpha:]][\\w-]*",
+              "match": "(?!null|false|true)[A-Za-z][\\w-]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -92,7 +92,7 @@
             },
             {
               "comment": "Unknown block type",
-              "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+              "match": "\\b(?!null|false|true)[A-Za-z][0-9A-Za-z_-]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -291,7 +291,7 @@
               "name": "support.function.builtin.terraform"
             },
             {
-              "match": "\\bprovider::[[:alpha:]][\\w_-]*::[[:alpha:]][\\w_-]*\\b",
+              "match": "\\bprovider::[A-Za-z][\\w_-]*::[A-Za-z][\\w_-]*\\b",
               "name": "support.function.provider.terraform"
             }
           ]
@@ -368,7 +368,7 @@
         "2": {
           "patterns": [
             {
-              "match": "\\=\\>",
+              "match": "=>",
               "name": "storage.type.function.hcl"
             },
             {
@@ -558,7 +558,7 @@
               "name": "keyword.operator.assignment.hcl",
               "patterns": [
                 {
-                  "match": "\\=\\>",
+                  "match": "=>",
                   "name": "storage.type.function.hcl"
                 }
               ]
