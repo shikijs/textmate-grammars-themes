@@ -4,6 +4,171 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@antfu/eslint-config':
+      specifier: ^3.6.0
+      version: 3.6.0
+    '@antfu/ni':
+      specifier: ^0.23.0
+      version: 0.23.0
+    '@antfu/utils':
+      specifier: ^0.7.10
+      version: 0.7.10
+    '@iconify-json/carbon':
+      specifier: ^1.2.1
+      version: 1.2.1
+    '@iconify-json/svg-spinners':
+      specifier: ^1.2.0
+      version: 1.2.0
+    '@shikijs/core':
+      specifier: ^1.17.5
+      version: 1.17.5
+    '@types/adm-zip':
+      specifier: ^0.5.5
+      version: 0.5.5
+    '@types/cson':
+      specifier: ^7.20.3
+      version: 7.20.3
+    '@types/js-yaml':
+      specifier: ^4.0.9
+      version: 4.0.9
+    '@types/json-stable-stringify':
+      specifier: ^1.0.36
+      version: 1.0.36
+    '@types/node':
+      specifier: ^22.5.4
+      version: 22.5.4
+    '@types/semver':
+      specifier: ^7.5.8
+      version: 7.5.8
+    '@unocss/eslint-config':
+      specifier: ^0.62.3
+      version: 0.62.3
+    '@unocss/eslint-plugin':
+      specifier: ^0.62.3
+      version: 0.62.3
+    '@unocss/reset':
+      specifier: ^0.62.3
+      version: 0.62.3
+    '@vitejs/plugin-vue':
+      specifier: ^5.1.3
+      version: 5.1.3
+    '@vitest/expect':
+      specifier: ^2.1.0
+      version: 2.1.0
+    '@vue-macros/volar':
+      specifier: ^0.29.1
+      version: 0.29.1
+    '@vueuse/core':
+      specifier: ^11.0.3
+      version: 11.0.3
+    adm-zip:
+      specifier: ^0.5.16
+      version: 0.5.16
+    bumpp:
+      specifier: ^9.5.2
+      version: 9.5.2
+    chai:
+      specifier: ^5.1.1
+      version: 5.1.1
+    chalk:
+      specifier: ^5.3.0
+      version: 5.3.0
+    cson:
+      specifier: ^8.4.0
+      version: 8.4.0
+    dotenv:
+      specifier: ^16.4.5
+      version: 16.4.5
+    eslint:
+      specifier: ^9.10.0
+      version: 9.10.0
+    esno:
+      specifier: ^4.7.0
+      version: 4.7.0
+    fast-glob:
+      specifier: ^3.3.2
+      version: 3.3.2
+    fast-plist:
+      specifier: ^0.1.3
+      version: 0.1.3
+    js-yaml:
+      specifier: ^4.1.0
+      version: 4.1.0
+    json-stable-stringify:
+      specifier: ^1.1.1
+      version: 1.1.1
+    jsonc-parser:
+      specifier: ^3.3.1
+      version: 3.3.1
+    lint-staged:
+      specifier: ^15.2.10
+      version: 15.2.10
+    octokit:
+      specifier: ^4.0.2
+      version: 4.0.2
+    ofetch:
+      specifier: ^1.3.4
+      version: 1.3.4
+    p-limit:
+      specifier: ^6.1.0
+      version: 6.1.0
+    pnpm:
+      specifier: ^9.10.0
+      version: 9.10.0
+    rimraf:
+      specifier: ^6.0.1
+      version: 6.0.1
+    semver:
+      specifier: ^7.6.3
+      version: 7.6.3
+    simple-git:
+      specifier: ^3.26.0
+      version: 3.26.0
+    simple-git-hooks:
+      specifier: ^2.11.1
+      version: 2.11.1
+    typescript:
+      specifier: ^5.6.2
+      version: 5.6.2
+    unbuild:
+      specifier: ^2.0.0
+      version: 2.0.0
+    unocss:
+      specifier: ^0.62.3
+      version: 0.62.3
+    unplugin-auto-import:
+      specifier: ^0.18.3
+      version: 0.18.3
+    unplugin-vue-components:
+      specifier: ^0.27.4
+      version: 0.27.4
+    unplugin-vue-macros:
+      specifier: ^2.11.12
+      version: 2.11.12
+    unplugin-vue-router:
+      specifier: ^0.10.8
+      version: 0.10.8
+    vite:
+      specifier: ^5.4.4
+      version: 5.4.4
+    vitest:
+      specifier: ^2.1.0
+      version: 2.1.0
+    vue:
+      specifier: ^3.5.4
+      version: 3.5.4
+    vue-router:
+      specifier: ^4.4.4
+      version: 4.4.4
+    vue-tsc:
+      specifier: ^2.1.6
+      version: 2.1.6
+    yaml:
+      specifier: ^2.5.1
+      version: 2.5.1
+
 overrides:
   oniguruma-to-js: ^0.4.2
 
@@ -12,127 +177,127 @@ importers:
   .:
     devDependencies:
       '@antfu/eslint-config':
-        specifier: ^3.6.0
+        specifier: 'catalog:'
         version: 3.6.0(@typescript-eslint/utils@8.5.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@unocss/eslint-plugin@0.62.3(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@vue/compiler-sfc@3.5.4)(eslint-plugin-format@0.1.2(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)(vitest@2.1.0(@types/node@22.5.4))
       '@antfu/ni':
-        specifier: ^0.23.0
+        specifier: 'catalog:'
         version: 0.23.0
       '@antfu/utils':
-        specifier: ^0.7.10
+        specifier: 'catalog:'
         version: 0.7.10
       '@iconify-json/svg-spinners':
-        specifier: ^1.2.0
+        specifier: 'catalog:'
         version: 1.2.0
       '@shikijs/core':
-        specifier: ^1.17.4
-        version: 1.17.4
+        specifier: 'catalog:'
+        version: 1.17.5
       '@types/adm-zip':
-        specifier: ^0.5.5
+        specifier: 'catalog:'
         version: 0.5.5
       '@types/cson':
-        specifier: ^7.20.3
+        specifier: 'catalog:'
         version: 7.20.3
       '@types/js-yaml':
-        specifier: ^4.0.9
+        specifier: 'catalog:'
         version: 4.0.9
       '@types/json-stable-stringify':
-        specifier: ^1.0.36
+        specifier: 'catalog:'
         version: 1.0.36
       '@types/node':
-        specifier: ^22.5.4
+        specifier: 'catalog:'
         version: 22.5.4
       '@types/semver':
-        specifier: ^7.5.8
+        specifier: 'catalog:'
         version: 7.5.8
       '@vitest/expect':
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0
       adm-zip:
-        specifier: ^0.5.16
+        specifier: 'catalog:'
         version: 0.5.16
       bumpp:
-        specifier: ^9.5.2
+        specifier: 'catalog:'
         version: 9.5.2
       chai:
-        specifier: ^5.1.1
+        specifier: 'catalog:'
         version: 5.1.1
       chalk:
-        specifier: ^5.3.0
+        specifier: 'catalog:'
         version: 5.3.0
       cson:
-        specifier: ^8.4.0
+        specifier: 'catalog:'
         version: 8.4.0
       dotenv:
-        specifier: ^16.4.5
+        specifier: 'catalog:'
         version: 16.4.5
       eslint:
-        specifier: ^9.10.0
+        specifier: 'catalog:'
         version: 9.10.0(jiti@1.21.6)
       esno:
-        specifier: ^4.7.0
+        specifier: 'catalog:'
         version: 4.7.0
       fast-glob:
-        specifier: ^3.3.2
+        specifier: 'catalog:'
         version: 3.3.2
       fast-plist:
-        specifier: ^0.1.3
+        specifier: 'catalog:'
         version: 0.1.3
       js-yaml:
-        specifier: ^4.1.0
+        specifier: 'catalog:'
         version: 4.1.0
       json-stable-stringify:
-        specifier: ^1.1.1
+        specifier: 'catalog:'
         version: 1.1.1
       jsonc-parser:
-        specifier: ^3.3.1
+        specifier: 'catalog:'
         version: 3.3.1
       lint-staged:
-        specifier: ^15.2.10
+        specifier: 'catalog:'
         version: 15.2.10
       octokit:
-        specifier: ^4.0.2
+        specifier: 'catalog:'
         version: 4.0.2
       ofetch:
-        specifier: ^1.3.4
+        specifier: 'catalog:'
         version: 1.3.4
       oniguruma-to-js:
         specifier: ^0.4.2
         version: 0.4.2
       p-limit:
-        specifier: ^6.1.0
+        specifier: 'catalog:'
         version: 6.1.0
       pnpm:
-        specifier: ^9.10.0
+        specifier: 'catalog:'
         version: 9.10.0
       rimraf:
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1
       semver:
-        specifier: ^7.6.3
+        specifier: 'catalog:'
         version: 7.6.3
       simple-git:
-        specifier: ^3.26.0
+        specifier: 'catalog:'
         version: 3.26.0
       simple-git-hooks:
-        specifier: ^2.11.1
+        specifier: 'catalog:'
         version: 2.11.1
       typescript:
-        specifier: ^5.6.2
+        specifier: 'catalog:'
         version: 5.6.2
       unbuild:
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0(typescript@5.6.2)(vue-tsc@2.1.6(typescript@5.6.2))
       vite:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4(@types/node@22.5.4)
       vitest:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0(@types/node@22.5.4)
       vue-tsc:
-        specifier: ^2.1.6
+        specifier: 'catalog:'
         version: 2.1.6(typescript@5.6.2)
       yaml:
-        specifier: ^2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
 
   packages/tm-grammars: {}
@@ -142,62 +307,62 @@ importers:
   playground:
     dependencies:
       '@shikijs/core':
-        specifier: ^1.17.4
-        version: 1.17.4
+        specifier: 'catalog:'
+        version: 1.17.5
       '@vueuse/core':
-        specifier: ^11.0.3
+        specifier: 'catalog:'
         version: 11.0.3(vue@3.5.4(typescript@5.6.2))
       vue:
-        specifier: ^3.5.4
+        specifier: 'catalog:'
         version: 3.5.4(typescript@5.6.2)
       vue-router:
-        specifier: ^4.4.4
+        specifier: 'catalog:'
         version: 4.4.4(vue@3.5.4(typescript@5.6.2))
     devDependencies:
       '@iconify-json/carbon':
-        specifier: ^1.2.1
+        specifier: 'catalog:'
         version: 1.2.1
       '@unocss/eslint-config':
-        specifier: ^0.62.3
+        specifier: 'catalog:'
         version: 0.62.3(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
       '@unocss/eslint-plugin':
-        specifier: ^0.62.3
+        specifier: 'catalog:'
         version: 0.62.3(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
       '@unocss/reset':
-        specifier: ^0.62.3
+        specifier: 'catalog:'
         version: 0.62.3
       '@vitejs/plugin-vue':
-        specifier: ^5.1.3
+        specifier: 'catalog:'
         version: 5.1.3(vite@5.4.4(@types/node@22.5.4))(vue@3.5.4(typescript@5.6.2))
       '@vue-macros/volar':
-        specifier: ^0.29.1
+        specifier: 'catalog:'
         version: 0.29.1(rollup@4.21.1)(typescript@5.6.2)(vue-tsc@2.1.6(typescript@5.6.2))(vue@3.5.4(typescript@5.6.2))
       typescript:
-        specifier: ^5.6.2
+        specifier: 'catalog:'
         version: 5.6.2
       unocss:
-        specifier: ^0.62.3
+        specifier: 'catalog:'
         version: 0.62.3(postcss@8.4.44)(rollup@4.21.1)(vite@5.4.4(@types/node@22.5.4))
       unplugin-auto-import:
-        specifier: ^0.18.3
+        specifier: 'catalog:'
         version: 0.18.3(@vueuse/core@11.0.3(vue@3.5.4(typescript@5.6.2)))(rollup@4.21.1)(webpack-sources@3.2.3)
       unplugin-vue-components:
-        specifier: ^0.27.4
+        specifier: 'catalog:'
         version: 0.27.4(@babel/parser@7.25.6)(rollup@4.21.1)(vue@3.5.4(typescript@5.6.2))(webpack-sources@3.2.3)
       unplugin-vue-macros:
-        specifier: ^2.11.12
+        specifier: 'catalog:'
         version: 2.11.12(@vueuse/core@11.0.3(vue@3.5.4(typescript@5.6.2)))(esbuild@0.23.1)(rollup@4.21.1)(typescript@5.6.2)(vite@5.4.4(@types/node@22.5.4))(vue-tsc@2.1.6(typescript@5.6.2))(vue@3.5.4(typescript@5.6.2))(webpack-sources@3.2.3)
       unplugin-vue-router:
-        specifier: ^0.10.8
+        specifier: 'catalog:'
         version: 0.10.8(rollup@4.21.1)(vue-router@4.4.4(vue@3.5.4(typescript@5.6.2)))(vue@3.5.4(typescript@5.6.2))(webpack-sources@3.2.3)
       vite:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4(@types/node@22.5.4)
       vitest:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0(@types/node@22.5.4)
       vue-tsc:
-        specifier: ^2.1.6
+        specifier: 'catalog:'
         version: 2.1.6(typescript@5.6.2)
 
 packages:
@@ -1026,7 +1191,7 @@ packages:
     resolution: {integrity: sha512-cX1tyD+aIbhzKrCKe/9M5s2jZhldWGOR+cy7cIVpxG9RkoaN4XU+gG3dy6oEKtBFXjDx06GtP0OGO7jgbqa2DA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: '>=9'
+      eslint: ^9.10.0
 
   '@eslint/object-schema@2.1.4':
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
@@ -1222,7 +1387,7 @@ packages:
     resolution: {integrity: sha512-lpA3RZ9PdIG7qqhEfv79tBffNaoDuukFDrmhLqg9ifv99u/ehn+lOg30x2zmhf8AQqQUZaMk/B9fZraQ6/acDQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+      rollup: ^4.21.2
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -1352,17 +1517,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.17.4':
-    resolution: {integrity: sha512-d2RqLWGJDPGThosjMs472B+NLVRUbQSAez/UV9d9rKE/zLbSmPQ73me308ofPSALKwUv2RkuX8umkIdl97boig==}
+  '@shikijs/core@1.17.5':
+    resolution: {integrity: sha512-JDgFZbJvfZ1g0lRVHtPTv6n2MwWnbTSGwncL/Qmlg7BZBzHCcDY2CxYGkNUm7k+lljOrFzXFGh38s8CRRZH+TQ==}
 
-  '@shikijs/engine-javascript@1.17.4':
-    resolution: {integrity: sha512-qWulwA32cbvVxdthAB1w4DIeXn2+HC1Q5rO0KChnVkFA9xzmy2VH1W3CvmMGEyXo0GjQerovhREcxZh1FlgJ1A==}
+  '@shikijs/engine-javascript@1.17.5':
+    resolution: {integrity: sha512-129knB7yGxq51i5f9ci1lsrC/9rJwo7yzOmHVjQIRk+e1C0caaSwzm4mhLJ506ui0vEmQZ9LzY6a/crW1UsReA==}
 
-  '@shikijs/engine-oniguruma@1.17.4':
-    resolution: {integrity: sha512-7yLBEwkwrr3zYF17tJk56SXHl+0GIMeb0dSKW9jxOsYPfjIU+19nHogURpr5r9Ey03m73i3pj2cthqj5Ui8MNg==}
+  '@shikijs/engine-oniguruma@1.17.5':
+    resolution: {integrity: sha512-GcuDWdUcs06sCoRS/JwbcO8M55MOvirTs3wIR7E6pMoePJWgAxhIYDQHURvSrgKgyUrTl3EKwujHljivS5BJVA==}
 
-  '@shikijs/types@1.17.4':
-    resolution: {integrity: sha512-gh2PuD5wmqVlWWIyCpLpmVyl0PuN8IEBc86Mvj89g6LiEsqFOsCCdvk6znd0spRu+0y78aP0PA8mQV58RA3igA==}
+  '@shikijs/types@1.17.5':
+    resolution: {integrity: sha512-xDIczjZ7QB6opNrCObX/6/78Jb/BFglRPo7E7f9swd1TCabhumOLsv23103pNUOMZrJYARUkHJpEx7ryFLM3FA==}
 
   '@shikijs/vscode-textmate@9.2.2':
     resolution: {integrity: sha512-TMp15K+GGYrWlZM8+Lnj9EaHEFmOen0WJBrfa17hF7taDOYthuPPV0GWzfd/9iMij0akS/8Yw2ikquH7uVi/fg==}
@@ -1375,7 +1540,7 @@ packages:
     resolution: {integrity: sha512-Ufvk7hP+bf+pD35R/QfunF793XlSRIC7USr3/EdgduK9j13i2JjmsM0LUz3/foS+jDYp2fzyWZA9N44CPur0Ow==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: '>=8.40.0'
+      eslint: ^9.10.0
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -1444,7 +1609,7 @@ packages:
     resolution: {integrity: sha512-gF77eNv0Xz2UJg/NbpWJ0kqAm35UMsvZf1GHj8D9MRFTj/V3tAciIWXfmPLsAAF/vUlpWPvUDyH1jjsr0cMVWw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: ^9.10.0
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -1480,7 +1645,7 @@ packages:
     resolution: {integrity: sha512-6yyGYVL0e+VzGYp60wvkBHiqDWOpT63pdMV2CVG4LVDd5uR6q1qQN/7LafBZtAtNIn/mqXjsSeS5ggv/P0iECw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: ^9.10.0
 
   '@typescript-eslint/visitor-keys@8.5.0':
     resolution: {integrity: sha512-yTPqMnbAZJNy2Xq2XU8AdtOW9tJIr+UQb64aXB9f3B1498Zx9JorVgFJcZpEc9UBuCCrdzKID2RGAMkYcDtZOw==}
@@ -1587,8 +1752,8 @@ packages:
     resolution: {integrity: sha512-3xbWsKEKXYlmX82aOHufFQVnkbMC/v8fLpWwh6hWOUrK5fbbtBh9Q/WWse27BFgSy2/e2c0fz5Scgya9h2GLhw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      vite: ^5.0.0
-      vue: ^3.2.25
+      vite: ^5.4.3
+      vue: ^3.5.3
 
   '@vitest/eslint-plugin@1.1.0':
     resolution: {integrity: sha512-Ur80Y27Wbw8gFHJ3cv6vypcjXmrx6QHfw+q435h6Q2L+tf+h4Xf5pJTCL4YU/Jps9EVeggQxS85OcUZU7sdXRw==}
@@ -2386,7 +2551,7 @@ packages:
   eslint-plugin-antfu@2.6.0:
     resolution: {integrity: sha512-4dz0VgWGpZ6jUSEUPSI6OGFqBc+P8c7zFFXht5t+YwzIvBsruqVX7Hjl3I8KNNEyJmA4fL3+GIc+EWU1woTp1A==}
     peerDependencies:
-      eslint: '*'
+      eslint: ^9.10.0
 
   eslint-plugin-command@0.2.4:
     resolution: {integrity: sha512-IbZnQY21pOanbcCh/bAWWl+1BynV2HuDE75URMmk/28Tdn+PM7CoKeibXtPGrL7KQdIEHMgUEnRwwI8qmggVMA==}
@@ -5340,26 +5505,26 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.1':
     optional: true
 
-  '@shikijs/core@1.17.4':
+  '@shikijs/core@1.17.5':
     dependencies:
-      '@shikijs/engine-javascript': 1.17.4
-      '@shikijs/engine-oniguruma': 1.17.4
-      '@shikijs/types': 1.17.4
+      '@shikijs/engine-javascript': 1.17.5
+      '@shikijs/engine-oniguruma': 1.17.5
+      '@shikijs/types': 1.17.5
       '@shikijs/vscode-textmate': 9.2.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.2
 
-  '@shikijs/engine-javascript@1.17.4':
+  '@shikijs/engine-javascript@1.17.5':
     dependencies:
-      '@shikijs/types': 1.17.4
+      '@shikijs/types': 1.17.5
       oniguruma-to-js: 0.4.2
 
-  '@shikijs/engine-oniguruma@1.17.4':
+  '@shikijs/engine-oniguruma@1.17.5':
     dependencies:
-      '@shikijs/types': 1.17.4
+      '@shikijs/types': 1.17.5
       '@shikijs/vscode-textmate': 9.2.2
 
-  '@shikijs/types@1.17.4':
+  '@shikijs/types@1.17.5':
     dependencies:
       '@shikijs/vscode-textmate': 9.2.2
       '@types/hast': 3.0.4
