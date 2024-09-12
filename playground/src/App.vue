@@ -6,7 +6,7 @@ import { themes } from '../../packages/tm-themes/index'
 import { dependencies } from '../package.json'
 import Badge from './Badge.vue'
 import SegmentControl from './SegmentControl.vue'
-import { engine, grammar, isDark, theme } from './state'
+import { engine, engineJsForgiving, grammar, isDark, theme } from './state'
 
 const embedded = ref<string[]>([])
 const error = ref<any>(null)
@@ -22,7 +22,9 @@ const example = ref('')
 const isFetching = ref(false)
 const duration = ref(0)
 
-const jsEngine = createJavaScriptRegexEngine()
+const jsEngine = computed(() => createJavaScriptRegexEngine({
+  forgiving: engineJsForgiving.value,
+}))
 const wasmEngine = createWasmOnigEngine(() => import('@shikijs/core/wasm-inlined'))
 
 const filteredGrammars = computed(() => {
@@ -93,7 +95,7 @@ async function run(fetchInput = true) {
         themeObject,
       ],
       langs: await Promise.all(Array.from(langs.values())),
-      engine: engine.value === 'js' ? jsEngine : wasmEngine,
+      engine: engine.value === 'js' ? jsEngine.value : wasmEngine,
     })
 
     highlight()
@@ -166,7 +168,7 @@ function share() {
 }
 
 watch(
-  [theme, grammar, engine],
+  [theme, grammar, engine, engineJsForgiving],
   (n, o) => {
     params.theme = theme.value
     params.grammar = grammar.value
@@ -207,6 +209,14 @@ if (import.meta.hot) {
       </a>
       <Badge :text="`Shiki v${dependencies['@shikijs/core'].replace('^', '')}`" text-sm :color="160" />
       <div flex-auto />
+      <label
+        v-if="engine === 'js'"
+        for="js-forgiving" op50 flex="~ items-center gap-1" border="~ base rounded" px1.5 py0.5
+        title="Forgiving errors in JavaScript engine" select-none mr1
+      >
+        <input id="js-forgiving" v-model="engineJsForgiving" type="checkbox">
+        <span text-sm>Forgiving</span>
+      </label>
       <SegmentControl
         v-model:model-value="engine"
         :options="[
