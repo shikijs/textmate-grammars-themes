@@ -355,14 +355,14 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 33321,
+    byteSize: 33435,
     displayName: 'One Dark Pro',
-    lastUpdate: '2024-03-13T03:10:53Z',
+    lastUpdate: '2024-09-13T02:43:40Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
     name: 'one-dark-pro',
-    sha: '37492751be5cb02bed4c3bf4f1938f075bc6ce6b',
-    source: 'https://github.com/Binaryify/OneDark-Pro/blob/37492751be5cb02bed4c3bf4f1938f075bc6ce6b/themes/OneDark-Pro.json',
+    sha: '3072916859666e0ec12555dd42109cf3d84aaf32',
+    source: 'https://github.com/Binaryify/OneDark-Pro/blob/3072916859666e0ec12555dd42109cf3d84aaf32/themes/OneDark-Pro.json',
     type: 'dark',
   },
   {
