@@ -212,23 +212,29 @@
         },
         "3": {
           "name": "constant.character.escape.gdscript"
+        },
+        "4": {
+          "name": "constant.character.escape.gdscript"
         }
       },
-      "match": "(?<!/\\s*)(\\$|%|\\$%)([a-zA-Z_]\\w*)\\b(?!\\s*/)",
-      "name": "meta.literal.nodepath.gdscript"
+      "match": "(?<!/\\s*)(\\$\\s*|%|\\$%\\s*)(/\\s*)?([a-zA-Z_]\\w*)\\b(?!\\s*/)",
+      "name": "meta.literal.nodepath.bare.gdscript"
     },
     "builtin_get_node_shorthand_bare_multi": {
-      "begin": "(\\$|%|\\$%)([a-zA-Z_]\\w*)",
+      "begin": "(\\$\\s*|%|\\$%\\s*)(/\\s*)?([a-zA-Z_]\\w*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.gdscript"
         },
         "2": {
           "name": "constant.character.escape.gdscript"
+        },
+        "3": {
+          "name": "constant.character.escape.gdscript"
         }
       },
       "end": "(?!\\s*/\\s*%?\\s*[a-zA-Z_]\\w*)",
-      "name": "meta.literal.nodepath.gdscript",
+      "name": "meta.literal.nodepath.bare.gdscript",
       "patterns": [
         {
           "captures": {
