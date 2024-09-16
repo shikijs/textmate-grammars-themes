@@ -1,7 +1,9 @@
 /// <reference types="vitest" />
 
+import fs from 'node:fs/promises'
 import path from 'node:path'
 import Vue from '@vitejs/plugin-vue'
+import YAML from 'js-yaml'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -15,6 +17,9 @@ export default defineConfig({
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
+  },
+  define: {
+    __VERSION__: JSON.stringify((YAML.load(await fs.readFile(new URL('../pnpm-workspace.yaml', import.meta.url), 'utf-8')) as any).catalog['@shikijs/core'].replace('^', '')),
   },
   plugins: [
     VueMacros({

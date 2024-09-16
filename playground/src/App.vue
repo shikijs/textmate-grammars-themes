@@ -3,7 +3,6 @@ import type { HighlighterCore } from '@shikijs/core'
 import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
 import { grammars, injections } from '../../packages/tm-grammars/index'
 import { themes } from '../../packages/tm-themes/index'
-import { dependencies } from '../package.json'
 import Badge from './Badge.vue'
 import SegmentControl from './SegmentControl.vue'
 import { engine, engineJsForgiving, grammar, isDark, theme } from './state'
@@ -192,6 +191,9 @@ watch(
   { flush: 'post' },
 )
 
+// @ts-expect-error DEFINE
+const version = __VERSION__
+
 useTitle(() => `${grammarObject.value?.displayName || grammar.value} - ${themeObject.value?.displayName || theme.value} - TextMate Playground`)
 
 if (import.meta.hot) {
@@ -207,7 +209,7 @@ if (import.meta.hot) {
       <a href="https://github.com/shikijs/textmate-grammars-themes" target="_blank" text-lg hover="text-primary">
         Shiki TextMate Grammar & Theme Playground
       </a>
-      <Badge :text="`Shiki v${dependencies['@shikijs/core'].replace('^', '')}`" text-sm :color="160" />
+      <Badge :text="`Shiki v${version}`" text-sm :color="160" />
       <div flex-auto />
       <label
         v-if="engine === 'js'"
