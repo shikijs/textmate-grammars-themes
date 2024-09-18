@@ -211,7 +211,7 @@
           "include": "#types"
         },
         {
-          "match": "\\b([A-Z_]+)\\b",
+          "match": "\\b([A-Z][A-Z_0-9]+)\\b",
           "name": "constant.other.move"
         },
         {
@@ -339,7 +339,7 @@
       ]
     },
     "error_const": {
-      "match": "\\b(E[A-Z][A-Za-z_]*)\\b",
+      "match": "\\b(E[A-Z][A-Za-z0-9_]*)\\b",
       "name": "variable.other.error.const.move"
     },
     "escaped_identifier": {
