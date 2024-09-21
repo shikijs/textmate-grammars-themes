@@ -80,7 +80,7 @@
       }
     },
     "block": {
-      "begin": "([\\w][\\-\\w]*)([^?\\r\\n]*)(\\{)",
+      "begin": "([\\w][\\-\\w]*)(([^\\S\\r\\n]*([\\w][\\-_\\w]*|\\\"[^\\\"\\r\\n]*\\\"))*)[^\\S\\r\\n]*(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -99,13 +99,13 @@
               "name": "variable.other.enummember.hcl"
             },
             {
-              "comment": "Block label (Indentifier)",
+              "comment": "Block label (Identifier)",
               "match": "[[:alpha:]][[:alnum:]_-]*",
               "name": "variable.other.enummember.hcl"
             }
           ]
         },
-        "3": {
+        "5": {
           "name": "punctuation.section.block.begin.hcl"
         }
       },
