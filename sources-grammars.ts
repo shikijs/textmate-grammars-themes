@@ -678,7 +678,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'json5',
     source: 'https://github.com/mrmlnc/vscode-json5/blob/master/syntaxes/json5.json',
-    categories: ['data'],
+    categories: ['data', 'web'],
   },
   {
     name: 'jsonnet',
