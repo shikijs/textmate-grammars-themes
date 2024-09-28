@@ -911,13 +911,13 @@ export const grammars = [
     embedded: [
       'markdown',
     ],
-    lastUpdate: '2024-08-30T20:03:00Z',
+    lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'fsharp',
     scopeName: 'source.fsharp',
-    sha: '03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
-    source: 'https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
+    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
+    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
     byteSize: 4986,
@@ -1087,18 +1087,18 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 45713,
+    byteSize: 45723,
     categories: [
       'general',
     ],
     displayName: 'Go',
-    lastUpdate: '2024-08-30T20:03:00Z',
+    lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
-    source: 'https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
+    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
@@ -1617,7 +1617,7 @@ export const grammars = [
     source: 'https://github.com/rosshamish/kuskus/blob/6e6deead4af243432902869e1767df8a612cffe1/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
-    byteSize: 56049,
+    byteSize: 56042,
     categories: [
       'markup',
     ],
@@ -1641,13 +1641,13 @@ export const grammars = [
       'yaml',
       'scala',
     ],
-    lastUpdate: '2024-07-29T09:33:03Z',
+    lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
-    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
+    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
     aliases: [
@@ -2389,18 +2389,18 @@ export const grammars = [
     source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d/syntaxes/qss.tmLanguage.json',
   },
   {
-    byteSize: 34608,
+    byteSize: 34499,
     categories: [
       'data',
     ],
     displayName: 'R',
-    lastUpdate: '2023-10-27T16:35:46Z',
+    lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'r',
     scopeName: 'source.r',
-    sha: 'fa22e9ac36d5d37ef096679927179091ba7f6966',
-    source: 'https://github.com/microsoft/vscode/blob/fa22e9ac36d5d37ef096679927179091ba7f6966/extensions/r/syntaxes/r.tmLanguage.json',
+    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
+    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
     byteSize: 93524,
@@ -2932,7 +2932,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/cc2b4d4fe389f14b8a13937f4e0d7b2811b57588/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 8962,
+    byteSize: 8996,
     categories: [
       'markup',
     ],
@@ -2940,13 +2940,13 @@ export const grammars = [
     embedded: [
       'r',
     ],
-    lastUpdate: '2024-05-31T13:09:59Z',
+    lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: 'b8e3432a0b7dd11ffd0c832fad6a6c51e809013c',
-    source: 'https://github.com/microsoft/vscode/blob/b8e3432a0b7dd11ffd0c832fad6a6c51e809013c/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
+    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     byteSize: 6185,
