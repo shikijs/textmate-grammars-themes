@@ -9,6 +9,7 @@ export interface ThemeInfo {
   lastUpdate: string
   embedded?: string[]
   byteSize: number
+  hash: string
 }
 
 const themes: ThemeInfo[]

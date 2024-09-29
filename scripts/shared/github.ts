@@ -2,6 +2,7 @@ import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 import type { GrammarSource } from '../grammars/types'
 import type { ThemeSource } from '../themes/types'
+import { hash as getHash } from 'ohash'
 import { octokit } from './octokit'
 
 interface CommitInfo {
@@ -63,10 +64,15 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
     if (!commit)
       throw new Error(`Failed to resolve commit for ${source.name} from ${source.source}`)
 
-    if (old?.sha === commit.sha)
+    const hash = getHash({
+      source,
+      sha: commit.sha,
+    })
+    if (old?.sha === commit.sha && old?.hash === hash)
       return old
 
     info.sha = commit.sha
+    info.hash = hash
     info.lastUpdate = commit.date
 
     const license = await getLicenseUrl(repo)

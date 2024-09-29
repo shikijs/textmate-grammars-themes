@@ -23,6 +23,7 @@ export interface GrammarInfo {
   embedded?: string[]
   embeddedIn?: string[]
   byteSize: number
+  hash: string
 }
 
 const grammars: GrammarInfo[]

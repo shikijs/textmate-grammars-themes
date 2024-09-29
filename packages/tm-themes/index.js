@@ -7,6 +7,7 @@ export const themes = [
   {
     byteSize: 8801,
     displayName: 'Andromeeda',
+    hash: 'feNwHXfITl',
     lastUpdate: '2024-03-13T01:26:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
@@ -18,6 +19,7 @@ export const themes = [
   {
     byteSize: 13599,
     displayName: 'Aurora X',
+    hash: 'qGKgzY3VeE',
     lastUpdate: '2020-08-24T08:44:55Z',
     name: 'aurora-x',
     sha: '118727efadf48872adcd81f6c00be580097d6592',
@@ -27,6 +29,7 @@ export const themes = [
   {
     byteSize: 14889,
     displayName: 'Ayu Dark',
+    hash: 'HdBoryXDHL',
     lastUpdate: '2021-09-05T14:00:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
@@ -38,6 +41,7 @@ export const themes = [
   {
     byteSize: 45432,
     displayName: 'Catppuccin Frappé',
+    hash: 'LqcvPeWmQk',
     lastUpdate: '2024-08-25T10:53:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -49,6 +53,7 @@ export const themes = [
   {
     byteSize: 45430,
     displayName: 'Catppuccin Latte',
+    hash: 'GxG6lxm2fC',
     lastUpdate: '2024-08-25T10:53:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -60,6 +65,7 @@ export const themes = [
   {
     byteSize: 45437,
     displayName: 'Catppuccin Macchiato',
+    hash: '9uDTlqronK',
     lastUpdate: '2024-08-25T10:53:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -71,6 +77,7 @@ export const themes = [
   {
     byteSize: 45429,
     displayName: 'Catppuccin Mocha',
+    hash: 'znG17wX60S',
     lastUpdate: '2024-08-25T10:53:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -82,6 +89,7 @@ export const themes = [
   {
     byteSize: 8843,
     displayName: 'Dark Plus',
+    hash: 'ZWQBXNCAG3',
     lastUpdate: '2023-09-12T10:37:49Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -93,6 +101,7 @@ export const themes = [
   {
     byteSize: 21006,
     displayName: 'Dracula Theme',
+    hash: 'pOvFLQfPdQ',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
@@ -104,6 +113,7 @@ export const themes = [
   {
     byteSize: 21016,
     displayName: 'Dracula Theme Soft',
+    hash: 'Ndeo847sgy',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
@@ -115,6 +125,7 @@ export const themes = [
   {
     byteSize: 53685,
     displayName: 'Everforest Dark',
+    hash: 'XUhzxsftG3',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
@@ -126,6 +137,7 @@ export const themes = [
   {
     byteSize: 53688,
     displayName: 'Everforest Light',
+    hash: 'rqIYc3XGjL',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
@@ -137,6 +149,7 @@ export const themes = [
   {
     byteSize: 11345,
     displayName: 'GitHub Dark',
+    hash: 'ZTHLqAZ7MR',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -148,6 +161,7 @@ export const themes = [
   {
     byteSize: 14336,
     displayName: 'GitHub Dark Default',
+    hash: '9tIp3bLvZ9',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -159,6 +173,7 @@ export const themes = [
   {
     byteSize: 14334,
     displayName: 'GitHub Dark Dimmed',
+    hash: 'lIQNSi9CnX',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -170,6 +185,7 @@ export const themes = [
   {
     byteSize: 14496,
     displayName: 'GitHub Dark High Contrast',
+    hash: 'iAFu7GpnZb',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -181,6 +197,7 @@ export const themes = [
   {
     byteSize: 11124,
     displayName: 'GitHub Light',
+    hash: 'NqLJXAHEfL',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -192,6 +209,7 @@ export const themes = [
   {
     byteSize: 14057,
     displayName: 'GitHub Light Default',
+    hash: 'EVoh0ojMiZ',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -203,6 +221,7 @@ export const themes = [
   {
     byteSize: 14176,
     displayName: 'GitHub Light High Contrast',
+    hash: 'o9OmrH7DiS',
     lastUpdate: '2023-01-06T02:19:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -214,6 +233,7 @@ export const themes = [
   {
     byteSize: 35362,
     displayName: 'Houston',
+    hash: 'Tl8cxYEnjR',
     lastUpdate: '2023-11-10T11:20:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/withastro/houston-vscode/main/LICENSE',
@@ -225,6 +245,7 @@ export const themes = [
   {
     byteSize: 11439,
     displayName: 'LaserWave',
+    hash: 'wICe5amWDa',
     lastUpdate: '2022-11-07T01:48:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Jaredk3nt/laserwave/master/LICENSE',
@@ -236,6 +257,7 @@ export const themes = [
   {
     byteSize: 9698,
     displayName: 'Light Plus',
+    hash: 'qq0H00zVzv',
     lastUpdate: '2023-09-12T10:37:49Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -247,6 +269,7 @@ export const themes = [
   {
     byteSize: 18555,
     displayName: 'Material Theme',
+    hash: 'j5BPwyGHk8',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -258,6 +281,7 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Darker',
+    hash: 'pzXIf5kkLP',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -269,6 +293,7 @@ export const themes = [
   {
     byteSize: 18574,
     displayName: 'Material Theme Lighter',
+    hash: 'GFHjY5bfXJ',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -280,6 +305,7 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Ocean',
+    hash: 'oGNhhMu0Pu',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -291,6 +317,7 @@ export const themes = [
   {
     byteSize: 18575,
     displayName: 'Material Theme Palenight',
+    hash: 'mUFOBKfkFM',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -302,6 +329,7 @@ export const themes = [
   {
     byteSize: 6231,
     displayName: 'Min Dark',
+    hash: 'MGWafaHcrm',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -313,6 +341,7 @@ export const themes = [
   {
     byteSize: 6909,
     displayName: 'Min Light',
+    hash: 'HLbZfJ85nb',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -324,6 +353,7 @@ export const themes = [
   {
     byteSize: 7783,
     displayName: 'Monokai',
+    hash: 'HGlBrTxJ3F',
     lastUpdate: '2023-08-23T21:17:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -335,6 +365,7 @@ export const themes = [
   {
     byteSize: 28693,
     displayName: 'Night Owl',
+    hash: 'ThZvG98Asw',
     lastUpdate: '2020-10-13T13:03:14Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE',
@@ -346,6 +377,7 @@ export const themes = [
   {
     byteSize: 26663,
     displayName: 'Nord',
+    hash: 'xxqWQtRFL6',
     lastUpdate: '2023-04-10T15:56:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nordtheme/visual-studio-code/develop/license',
@@ -357,6 +389,7 @@ export const themes = [
   {
     byteSize: 33680,
     displayName: 'One Dark Pro',
+    hash: 'KzSRGLXdwu',
     lastUpdate: '2024-09-21T05:20:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
@@ -368,6 +401,7 @@ export const themes = [
   {
     byteSize: 25238,
     displayName: 'One Light',
+    hash: 'l6dAh6tUzF',
     lastUpdate: '2022-10-08T13:48:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/akamud/vscode-theme-onelight/master/LICENSE',
@@ -379,6 +413,7 @@ export const themes = [
   {
     byteSize: 9235,
     displayName: 'Plastic',
+    hash: 'FDMXnib5GO',
     lastUpdate: '2024-03-31T09:02:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
@@ -390,6 +425,7 @@ export const themes = [
   {
     byteSize: 33434,
     displayName: 'Poimandres',
+    hash: 'c0LwpsVlDP',
     lastUpdate: '2022-09-25T11:26:55Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/drcmda/poimandres-theme/main/LICENSE',
@@ -401,6 +437,7 @@ export const themes = [
   {
     byteSize: 6161,
     displayName: 'Red',
+    hash: 'N0Hq62PfT0',
     lastUpdate: '2023-08-23T21:17:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -412,6 +449,7 @@ export const themes = [
   {
     byteSize: 21540,
     displayName: 'Rosé Pine',
+    hash: 'k6PK6aQVfP',
     lastUpdate: '2024-09-26T14:38:45Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -423,6 +461,7 @@ export const themes = [
   {
     byteSize: 21551,
     displayName: 'Rosé Pine Dawn',
+    hash: 'SotEsMqqsC',
     lastUpdate: '2024-09-26T14:38:45Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -434,6 +473,7 @@ export const themes = [
   {
     byteSize: 21550,
     displayName: 'Rosé Pine Moon',
+    hash: 'OMgomnKMvw',
     lastUpdate: '2024-09-26T14:38:45Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -445,6 +485,7 @@ export const themes = [
   {
     byteSize: 9057,
     displayName: 'Slack Dark',
+    hash: 'mf8msUhVtp',
     lastUpdate: '2021-05-20T16:06:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -456,6 +497,7 @@ export const themes = [
   {
     byteSize: 9371,
     displayName: 'Slack Ochin',
+    hash: 'OGTDWaZihl',
     lastUpdate: '2021-06-12T21:35:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -467,6 +509,7 @@ export const themes = [
   {
     byteSize: 20713,
     displayName: 'Snazzy Light',
+    hash: 'LUdgltR7V2',
     lastUpdate: '2023-10-08T19:14:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/loilo/vscode-snazzy-light/master/LICENSE',
@@ -478,6 +521,7 @@ export const themes = [
   {
     byteSize: 6745,
     displayName: 'Solarized Dark',
+    hash: 'BNdHl4vFqz',
     lastUpdate: '2023-08-23T21:17:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -489,6 +533,7 @@ export const themes = [
   {
     byteSize: 6379,
     displayName: 'Solarized Light',
+    hash: 'HOH7M34Lrd',
     lastUpdate: '2023-08-23T21:17:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -500,6 +545,7 @@ export const themes = [
   {
     byteSize: 13976,
     displayName: 'Synthwave \'84',
+    hash: 'Tfj1HvLGE9',
     lastUpdate: '2022-07-27T08:21:45Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE',
@@ -511,6 +557,7 @@ export const themes = [
   {
     byteSize: 34303,
     displayName: 'Tokyo Night',
+    hash: 'mJ4ysNsd2O',
     lastUpdate: '2024-07-10T06:11:16Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/tokyo-night/tokyo-night-vscode-theme/master/LICENSE.txt',
@@ -522,6 +569,7 @@ export const themes = [
   {
     byteSize: 12603,
     displayName: 'Vesper',
+    hash: 'ztf14PeQsu',
     lastUpdate: '2023-05-24T03:15:20Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md',
@@ -533,6 +581,7 @@ export const themes = [
   {
     byteSize: 13617,
     displayName: 'Vitesse Black',
+    hash: 'QTaSMwtu5s',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
@@ -544,6 +593,7 @@ export const themes = [
   {
     byteSize: 13699,
     displayName: 'Vitesse Dark',
+    hash: 'q5xFZxFGnQ',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
@@ -555,6 +605,7 @@ export const themes = [
   {
     byteSize: 13556,
     displayName: 'Vitesse Light',
+    hash: 'mqhRpZKkV3',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
