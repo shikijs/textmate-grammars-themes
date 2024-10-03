@@ -131,7 +131,7 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'javascript',
     displayName: 'JavaScript',
-    aliases: ['js'],
+    aliases: ['js', 'nodejs'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
     categories: ['web', 'scripting', 'general'],
   },
