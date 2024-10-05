@@ -746,6 +746,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'mipsasm',
+    displayName: 'MIPS Assembly',
+    aliases: ['mips'],
+    source: 'https://github.com/textmate/mips.tmbundle/blob/master/Syntaxes/MIPS.tmLanguage',
+  },
+  {
     name: 'mojo',
     displayName: 'Mojo',
     source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',

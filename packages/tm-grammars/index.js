@@ -2082,6 +2082,19 @@ export const grammars = [
     source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/8b62f487cb7a89afcd152febfbf47f5d4787657f/syntaxes/mermaid.tmLanguage.yaml',
   },
   {
+    aliases: [
+      'mips',
+    ],
+    byteSize: 3114,
+    displayName: 'MIPS Assembly',
+    hash: 'd2an1tiAGG',
+    lastUpdate: '2011-11-14T07:25:17Z',
+    name: 'mipsasm',
+    scopeName: 'source.mips',
+    sha: 'eb7601016a109bf912a48a1c21988f3c4a59fb3a',
+    source: 'https://github.com/textmate/mips.tmbundle/blob/eb7601016a109bf912a48a1c21988f3c4a59fb3a/Syntaxes/MIPS.tmLanguage',
+  },
+  {
     byteSize: 70326,
     displayName: 'Mojo',
     hash: 'AI2YknoI0Y',
