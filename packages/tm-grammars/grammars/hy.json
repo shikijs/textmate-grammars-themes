@@ -28,7 +28,22 @@
           "include": "#keysym"
         },
         {
+          "include": "#builtin"
+        },
+        {
           "include": "#symbol"
+        }
+      ]
+    },
+    "builtin": {
+      "patterns": [
+        {
+          "match": "\\b(abs|all|any|ascii|bin|breakpoint|callable|chr|compile|delattr|dir|divmod|eval|exec|format|getattr|globals|hasattr|hash|hex|id|input|isinstance|issubclass|iter|aiter|len|locals|max|min|next|anext|oct|ord|pow|print|repr|round|setattr|sorted|sum|vars|False|None|True|NotImplemented|bool|memoryview|bytearray|bytes|classmethod|complex|dict|enumerate|filter|float|frozenset|property|int|list|map|object|range|reversed|set|slice|staticmethod|str|super|tuple|type|zip|open|quit|exit|copyright|credits|help)[\\s)]",
+          "name": "storage.builtin.hy"
+        },
+        {
+          "match": "(?<=\\(\\s*)\\.\\.\\.[\\s)]",
+          "name": "storage.builtin.dots.hy"
         }
       ]
     },
@@ -55,15 +70,19 @@
     "keywords": {
       "patterns": [
         {
-          "match": "\\b(\\.|->|->>|and|match|let|await|annotate|as->|as-model|assert|assoc|break|chainc|comment|cond|continue|do|doc|#doc|([dgls])?for|set[vx]|defclass|defmain|defmacro|defmacro\\/g!|defmacro!|deftag|del|doto|eval-and-compile|eval-when-compile|first|gensym|get|global|if|if\\*|if-not|import|(de)?fn(\\/a)?|last|nonlocal|not(\\?|-in)?|or|print|(quasi)?quote|require|rest|return|cut|raise|try|unless|unpack-iterable|unpack-mapping|unquote|unquote-splice|when|while|with(\\/a)?|with-decorator|with-gensyms|xor|yield(-from)?|butlast|coll\\?|comp|complement|constantly|dec|disassemble|empty\\?|eval|every\\?|exec|float\\?|fraction|even\\?|identity|inc|instance\\?|integer\\?|interleave|interpose|iterable\\?|iterator\\?|juxt|keyword|keyword\\?|macroexpand(-1)?|mangle|merge-with|name|neg\\?|none\\?|nth|numeric\\?|odd\\?|partition|pos\\?|second|some|string\\?|symbol\\?|zero\\?|cycle|distinct|drop|drop-last|drop-while|filter|flatten|iterate|read|read-str|remove|repeat|repeatedly|take|take-nth|take-while|unmangle|False|None|True|as|in|is|py(s)?|lambda|nonlocal|not|pass|abs|all|any|ascii|bin|bool|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr(-register)?|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__|abs|acos|angle|asin|assoc|assq|assv|atan|ceiling|cos|floor|round|sin|sqrt|tan|(?:real|imag)-part|numerator|denominatormodulo|exp|expt|remainder|quotient|lcm|call-with-(?:input|output)-file|(?:close|current)-(?:input|output)-port|with-(?:input|output)-from-file|open-(?:input|output)-file|char-(?:downcase|upcase|ready)|make-(?:polar|promise|rectangular|string|vector)|string(?:-(?:append|copy|length|ref))|vector(?:-length|-ref))[\\s)]",
+          "match": "\\b(and|await|match|let|annotate|assert|break|chainc|cond|continue|deftype|do|except\\*?|finally|else|defreader|([dgls])?for|set[vx]|defclass|defmacro|del|export|eval-and-compile|eval-when-compile|get|global|if|import|(de)?fn|nonlocal|not-in|or|(quasi)?quote|require|return|cut|raise|try|unpack-iterable|unpack-mapping|unquote|unquote-splice|when|while|with|yield|local-macros|in|is|py(s)?|pragma|nonlocal|(is-)?not)[\\s)]",
           "name": "keyword.control.hy"
+        },
+        {
+          "match": "(?<=\\(\\s*)\\.[\\s)]",
+          "name": "keyword.control.dot.hy"
         }
       ]
     },
     "operators": {
       "patterns": [
         {
-          "match": "(?<=\\()\\s*(\\+=?|\\/+|\\*+|-=?|[!<>]?=|@|%|<<|>>|<|>|&|\\||\\^|~)",
+          "match": "(?<=\\()\\s*(\\+=?|\\/\\/?=?|\\*\\*?=?|--?=?|[!<>]?=|@=?|%=?|<<?=?|>>?=?|&=?|\\|=?|\\^|~@|~=?|#\\*\\*?)",
           "name": "keyword.control.hy"
         }
       ]
