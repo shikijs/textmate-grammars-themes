@@ -389,4 +389,7 @@ if (import.meta.hot) {
 .panel-info button {
   --uno: hover-text-primary hover-underline hover:op100;
 }
+pre code {
+  --uno: font-mono;
+}
 </style>
