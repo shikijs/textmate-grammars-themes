@@ -98,6 +98,7 @@ export const sourcesCommunity: ThemeSource[] = [
   {
     name: 'kanagawa-lotus',
     source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/main/themes/kanagawa-lotus-color-theme.json',
+    type: 'light',
   },
   {
     name: 'kanagawa-wave',
