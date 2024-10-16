@@ -92,6 +92,18 @@ export const sourcesCommunity: ThemeSource[] = [
     type: 'dark',
   },
   {
+    name: 'kanagawa-dragon',
+    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/main/themes/kanagawa-dragon-color-theme.json',
+  },
+  {
+    name: 'kanagawa-lotus',
+    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/main/themes/kanagawa-lotus-color-theme.json',
+  },
+  {
+    name: 'kanagawa-wave',
+    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/main/themes/kanagawa-wave-color-theme.json',
+  },
+  {
     name: 'min-dark',
     source: 'https://github.com/misolori/min-theme/blob/master/themes/min-dark.json',
   },
