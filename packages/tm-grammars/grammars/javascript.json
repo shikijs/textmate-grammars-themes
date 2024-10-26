@@ -2165,13 +2165,13 @@
               ]
             },
             {
-              "begin": "(?<=\\))\\s*\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+              "begin": "(?<=\\))\\s*\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
               "beginCaptures": {
                 "0": {
                   "name": "punctuation.definition.string.begin.js"
                 }
               },
-              "end": "(/)([dgimsuy]*)",
+              "end": "(/)([dgimsuvy]*)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.string.end.js"
@@ -2406,6 +2406,18 @@
             "1": {
               "name": "keyword.control.type.js"
             },
+            "12": {
+              "name": "keyword.control.as.js"
+            },
+            "13": {
+              "name": "keyword.control.default.js"
+            },
+            "14": {
+              "name": "variable.other.readwrite.alias.js"
+            },
+            "15": {
+              "name": "string.quoted.alias.js"
+            },
             "2": {
               "name": "keyword.control.default.js"
             },
@@ -2416,16 +2428,10 @@
               "name": "variable.other.readwrite.js"
             },
             "5": {
-              "name": "keyword.control.as.js"
-            },
-            "6": {
-              "name": "keyword.control.default.js"
-            },
-            "7": {
-              "name": "variable.other.readwrite.alias.js"
+              "name": "string.quoted.alias.js"
             }
           },
-          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?:(\\btype)\\s+)?(?:(\\bdefault)|(\\*)|(\\b[_$A-Za-z][_$0-9A-Za-z]*)))\\s+(as)\\s+(?:(default(?![_$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$A-Za-z][_$0-9A-Za-z]*))"
+          "match": "(?<![_$0-9A-Za-z])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?:(\\btype)\\s+)?(?:(\\bdefault)|(\\*)|(\\b[_$A-Za-z][_$0-9A-Za-z]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))))\\s+(as)\\s+(?:(default(?![_$0-9A-Za-z])(?:(?=\\.\\.\\.)|(?!\\.)))|([_$A-Za-z][_$0-9A-Za-z]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`)))"
         },
         {
           "include": "#punctuation-comma"
@@ -2445,9 +2451,12 @@
             },
             "2": {
               "name": "variable.other.readwrite.alias.js"
+            },
+            "3": {
+              "name": "string.quoted.alias.js"
             }
           },
-          "match": "(?:(\\btype)\\s+)?([_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "(?:(\\btype)\\s+)?(?:([_$A-Za-z][_$0-9A-Za-z]*)|((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`)))"
         }
       ]
     },
@@ -4167,13 +4176,13 @@
     "regex": {
       "patterns": [
         {
-          "begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^)\\\\]|\\\\.)+\\))+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+          "begin": "(?<!\\+\\+|--|})(?<=[=(:,\\[?+!]|^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case|=>|&&|\\|\\||\\*\\/)\\s*(\\/)(?![\\/*])(?=(?:[^\\/\\\\\\[()]|\\\\.|\\[([^\\]\\\\]|\\\\.)+\\]|\\(([^)\\\\]|\\\\.)+\\))+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.begin.js"
             }
           },
-          "end": "(/)([dgimsuy]*)",
+          "end": "(/)([dgimsuvy]*)",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.string.end.js"
@@ -4190,13 +4199,13 @@
           ]
         },
         {
-          "begin": "((?<![_$0-9A-Za-z)\\]]|\\+\\+|--|}|\\*\\/)|((?<=^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case))\\s*)\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
+          "begin": "((?<![_$0-9A-Za-z)\\]]|\\+\\+|--|}|\\*\\/)|((?<=^return|[^\\._$0-9A-Za-z]return|^case|[^\\._$0-9A-Za-z]case))\\s*)\\/(?![\\/*])(?=(?:[^\\/\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])+\\/([dgimsuvy]+|(?![\\/\\*])|(?=\\/\\*))(?!\\s*[a-zA-Z0-9_$]))",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.js"
             }
           },
-          "end": "(/)([dgimsuy]*)",
+          "end": "(/)([dgimsuvy]*)",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.string.end.js"
