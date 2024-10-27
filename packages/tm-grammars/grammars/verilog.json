@@ -105,7 +105,7 @@
           "include": "#keywords"
         },
         {
-          "begin": "^\\s*([a-zA-Z]\\w*)\\s+([a-zA-Z]\\w*)(?<!begin|if)\\s*(?=\\(|$)",
+          "begin": "^\\s*(?!always|and|assign|output|input|inout|wire|module)([a-zA-Z]\\w*)\\s+([a-zA-Z]\\w*)(?<!begin|if)\\s*(?=\\(|$)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.tag.module.reference.verilog"
