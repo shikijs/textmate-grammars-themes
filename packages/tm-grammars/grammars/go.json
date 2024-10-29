@@ -526,7 +526,53 @@
           "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.\\[\\]]+)|(?:\\((?:[^)]+)?\\))))?)|(?:(?:[\\[\\]\\*]+)?[\\w\\*\\.]+(?:\\[(?:[^\\]]+)\\])?(?:[\\w\\.\\*]+)?)+)))"
         },
         {
-          "include": "#parameter-variable-types"
+          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "match": "(?:\\w+)",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.definition.begin.bracket.square.go"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.square.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#generic_param_types"
+            }
+          ]
+        },
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.begin.bracket.round.go"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.round.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#function_param_types"
+            }
+          ]
         },
         {
           "captures": {
@@ -735,7 +781,53 @@
           "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.]+)|(?:\\((?:[^)]+)?\\))))?)|(?:(?:(?:[\\w\\*\\.\\~]+)|(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\]))(?:[\\w\\.\\*]+)?)+)))"
         },
         {
-          "include": "#parameter-variable-types"
+          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "match": "(?:\\w+)",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.definition.begin.bracket.square.go"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.square.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#generic_param_types"
+            }
+          ]
+        },
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.begin.bracket.round.go"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.round.go"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#function_param_types"
+            }
+          ]
         },
         {
           "captures": {
