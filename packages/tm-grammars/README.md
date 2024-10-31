@@ -20,7 +20,7 @@ import { grammars } from 'tm-grammars'
 ## Grammars
 | Name | Alias | Source | License | Deps On | File Size |
 | ---- | ----- | ------ | ------- | ------- | --------- |
-| `abap` |  | [pvl/abap.tmbundle](https://github.com/pvl/abap.tmbundle/blob/a9b2efff4f4afa469d984353384f09e4ebd24055/Syntaxes/ABAP.tmLanguage) |  |  | 15.19 kB |
+| `abap` |  | [pvl/abap.tmbundle](https://github.com/pvl/abap.tmbundle/blob/ae37b62b547c4af5fb925cd97feaaeab69603ca2/Syntaxes/ABAP.tmLanguage) |  |  | 15.22 kB |
 | `actionscript-3` |  | [BowlerHatLLC/vscode-as3mxml](https://github.com/BowlerHatLLC/vscode-as3mxml/blob/77075cd9a439ecd87815cecb1f1c2bb1ff44a2e5/distribution/src/assembly/syntaxes/AS3.tmLanguage) | [Apache-2.0](https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE) |  | 13.64 kB |
 | `ada` |  | [AdaCore/ada_language_server](https://github.com/AdaCore/ada_language_server/blob/75c0d0c22b3f3dbf559946331c7aca6fc5b84065/integration/vscode/ada/advanced/ada.tmLanguage.json) | [GPL-3.0](https://raw.githubusercontent.com/AdaCore/ada_language_server/master/LICENSE) |  | 45.71 kB |
 | `angular-html` |  | [onivim/vscode-exthost](https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json) | [MIT](https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt) | `html` `angular-expression` `angular-let-declaration` `angular-template` `angular-template-blocks` | 772.00 B |
