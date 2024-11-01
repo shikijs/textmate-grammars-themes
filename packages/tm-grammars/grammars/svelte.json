@@ -1075,15 +1075,31 @@
               "name": "entity.name.tag.svelte"
             }
           },
-          "match": "(svelte)(:)([a-z][\\w0-9:-]*)"
+          "match": "(svelte)(:)([a-z][\\w:-]*)"
         },
         {
           "match": "slot",
           "name": "keyword.control.svelte"
         },
         {
-          "match": "[A-Z]\\w*",
-          "name": "support.class.component.svelte"
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "\\w+",
+                  "name": "support.class.component.svelte"
+                },
+                {
+                  "match": "\\.",
+                  "name": "punctuation.definition.keyword.svelte"
+                }
+              ]
+            },
+            "2": {
+              "name": "support.class.component.svelte"
+            }
+          },
+          "match": "([\\w]+(?:\\.[\\w]+)+)|([A-Z][\\w]+)"
         },
         {
           "match": "[a-z][\\w0-9:]*-[\\w0-9:-]*",
