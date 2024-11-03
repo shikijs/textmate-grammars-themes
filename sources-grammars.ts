@@ -19,6 +19,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'cairo',
+    displayName: 'Cairo',
+    source: 'https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/syntaxes/cairo.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'clojure',
     aliases: ['clj'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',

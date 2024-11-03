@@ -403,6 +403,21 @@ export const grammars = [
     source: 'https://github.com/onflow/vscode-cadence/blob/e227d66c0346d2229da8c81a116abefdcda5f443/extension/language/syntaxes/cadence.tmGrammar.json',
   },
   {
+    byteSize: 14269,
+    categories: [
+      'general',
+    ],
+    displayName: 'Cairo',
+    hash: '41RDZVWO1E',
+    lastUpdate: '2024-06-20T15:26:16Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/starkware-libs/cairo/main/LICENSE',
+    name: 'cairo',
+    scopeName: 'source.cairo',
+    sha: 'f3af4cb8dbe9acecaf71cfbc604df3d1e41fe45a',
+    source: 'https://github.com/starkware-libs/cairo/blob/f3af4cb8dbe9acecaf71cfbc604df3d1e41fe45a/vscode-cairo/syntaxes/cairo.tmLanguage.json',
+  },
+  {
     byteSize: 13897,
     categories: [
       'lisp',
