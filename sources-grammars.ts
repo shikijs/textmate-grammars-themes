@@ -418,6 +418,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'bsl',
+    displayName: '1C (Enterprise)',
+    aliases: ['1c'],
+    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c.tmLanguage.json',
+    categories: ['general', 'dsl'],
+  },
+  {
     name: 'cadence',
     displayName: 'Cadence',
     aliases: ['cdc'],
@@ -917,6 +924,13 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'scheme',
     source: 'https://github.com/sjhuangx/vscode-scheme/blob/master/syntaxes/scheme.tmLanguage',
     categories: ['general', 'lisp'],
+  },
+  {
+    name: 'sdbl',
+    displayName: '1C (Query)',
+    aliases: ['1c-query'],
+    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c-query.tmLanguage.json',
+    categories: ['dsl'],
   },
   {
     name: 'shellsession',
