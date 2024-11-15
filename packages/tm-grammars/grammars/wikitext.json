@@ -438,26 +438,27 @@
                   "include": "$self"
                 },
                 {
-                  "begin": "^\\s*(\\|-)\\s*",
-                  "beginCaptures": {
+                  "captures": {
                     "1": {
                       "name": "punctuation.definition.tag.begin.wikitext"
+                    },
+                    "2": {
+                      "patterns": [
+                        {
+                          "include": "$self"
+                        },
+                        {
+                          "match": "\\|.*",
+                          "name": "invalid.illegal.bad-table-context.wikitext"
+                        },
+                        {
+                          "include": "text.html.basic#attribute"
+                        }
+                      ]
                     }
                   },
-                  "end": "$",
-                  "name": "meta.tag.block.table-row.wikitext",
-                  "patterns": [
-                    {
-                      "include": "$self"
-                    },
-                    {
-                      "include": "text.html.basic#attribute"
-                    },
-                    {
-                      "match": "\\|.*",
-                      "name": "invalid.illegal.bad-table-context.wikitext"
-                    }
-                  ]
+                  "match": "^\\s*(\\|-)\\s*(.*)$",
+                  "name": "meta.tag.block.table-row.wikitext"
                 },
                 {
                   "begin": "^\\s*(!)(([^\\[]*?)(\\|))?(.*?)(?=(!!)|$)",
@@ -494,10 +495,10 @@
                         "3": {
                           "patterns": [
                             {
-                              "include": "text.html.basic#attribute"
+                              "include": "$self"
                             },
                             {
-                              "include": "$self"
+                              "include": "text.html.basic#attribute"
                             }
                           ]
                         },
@@ -535,9 +536,22 @@
                   ]
                 },
                 {
-                  "begin": "^\\s*(\\|)",
+                  "begin": "^\\s*(\\|)(([^\\[]*?)((?<!\\|)\\|(?!\\|)))?",
                   "beginCaptures": {
                     "1": {
+                      "name": "punctuation.definition.tag.wikitext"
+                    },
+                    "3": {
+                      "patterns": [
+                        {
+                          "include": "$self"
+                        },
+                        {
+                          "include": "text.html.basic#attribute"
+                        }
+                      ]
+                    },
+                    "4": {
                       "name": "punctuation.definition.tag.wikitext"
                     }
                   },

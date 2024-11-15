@@ -192,7 +192,27 @@
           "match": "(^|\\G)\\s*([:]{2,})$"
         },
         {
-          "include": "#content"
+          "begin": "(^|\\G)(\\s*)(-{3})(\\s*)$",
+          "end": "(^|\\G)(\\s*(-{3})(\\s*)$)",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "2": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "3": {
+              "name": "comment.block.html"
+            }
+          },
+          "match": "^(\\s*)(#[\\w\\-_]*)\\s*(<!--(.*)-->)?$"
+        },
+        {
+          "include": "#block"
         }
       ]
     },
@@ -235,36 +255,6 @@
       },
       "match": "(^|\\G|\\s+)(:)(?i:(\\w[\\w\\d-]*))(({[^}]*})(\\[[^\\]]*\\])?|(\\[[^\\]]*\\])({[^}]*})?)?\\s",
       "name": "inline.component.mdc"
-    },
-    "content": {
-      "begin": "(^|\\G)(\\s*)(.*)",
-      "contentName": "meta.embedded.block.mdc",
-      "patterns": [
-        {
-          "begin": "(^|\\G)(\\s*)(-{3})(\\s*)$",
-          "end": "(^|\\G)(\\s*(-{3})(\\s*)$)",
-          "patterns": [
-            {
-              "include": "source.yaml"
-            }
-          ]
-        },
-        {
-          "captures": {
-            "2": {
-              "name": "entity.other.attribute-name.html"
-            },
-            "3": {
-              "name": "comment.block.html"
-            }
-          },
-          "match": "^(\\s*)(#[\\w\\-_]*)\\s*(<!--(.*)-->)?$"
-        },
-        {
-          "include": "#block"
-        }
-      ],
-      "while": "(^|\\G)(?!\\s*([:]{2,})\\s*$)"
     },
     "entities": {
       "patterns": [

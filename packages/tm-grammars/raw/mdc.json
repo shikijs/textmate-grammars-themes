@@ -193,7 +193,27 @@
           "match": "(^|\\G)\\s*([:]{2,})$"
         },
         {
-          "include": "#content"
+          "begin": "(^|\\G)(\\s*)(-{3})(\\s*)$",
+          "end": "(^|\\G)(\\s*(-{3})(\\s*)$)",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "2": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "3": {
+              "name": "comment.block.html"
+            }
+          },
+          "match": "^(\\s*)(#[\\w\\-\\_]*)\\s*(<!--(.*)-->)?$"
+        },
+        {
+          "include": "#block"
         }
       ]
     },
@@ -236,36 +256,6 @@
       },
       "match": "(?x)\n  (^|\\G|\\s+)\n  (:)              # component colon\n  (?i:             # component name\n    (\\w[\\w\\d-]*)\n  )\n  (\n      ({[^}]*})        # attributes\n      (\\[[^\\]]*\\])? # slot\n      # reverse order\n    | (\\[[^\\]]*\\])  # slot\n      ({[^}]*})?       # attributes\n  )?\n  \\s",
       "name": "inline.component.mdc"
-    },
-    "content": {
-      "begin": "(^|\\G)(\\s*)(.*)",
-      "contentName": "meta.embedded.block.mdc",
-      "patterns": [
-        {
-          "begin": "(^|\\G)(\\s*)(-{3})(\\s*)$",
-          "end": "(^|\\G)(\\s*(-{3})(\\s*)$)",
-          "patterns": [
-            {
-              "include": "source.yaml"
-            }
-          ]
-        },
-        {
-          "captures": {
-            "2": {
-              "name": "entity.other.attribute-name.html"
-            },
-            "3": {
-              "name": "comment.block.html"
-            }
-          },
-          "match": "^(\\s*)(#[\\w\\-\\_]*)\\s*(<!--(.*)-->)?$"
-        },
-        {
-          "include": "#block"
-        }
-      ],
-      "while": "(^|\\G)(?!\\s*([:]{2,})\\s*$)"
     },
     "entities": {
       "patterns": [
