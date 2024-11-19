@@ -615,6 +615,18 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 13802,
+    displayName: 'Vesper++',
+    hash: 'XWlyQwoshK',
+    lastUpdate: '2024-11-19T19:05:10Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/ObstinateM/vesperpp/main/LICENSE.md',
+    name: 'vesper-pp',
+    sha: 'f66cb8b171aaa3ee99a48508d0c3f94423144148',
+    source: 'https://github.com/ObstinateM/vesperpp/blob/f66cb8b171aaa3ee99a48508d0c3f94423144148/themes/Vesperpp-color-theme.json',
+    type: 'dark',
+  },
+  {
     byteSize: 13617,
     displayName: 'Vitesse Black',
     hash: 'QTaSMwtu5s',

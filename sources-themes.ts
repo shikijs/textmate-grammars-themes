@@ -168,6 +168,12 @@ export const sourcesCommunity: ThemeSource[] = [
     type: 'light',
   },
   {
+    name: 'vesper-pp',
+    displayName: 'Vesper++',
+    source: 'https://github.com/ObstinateM/vesperpp/blob/main/themes/Vesperpp-color-theme.json',
+    type: 'dark',
+  },
+  {
     name: 'vesper',
     displayName: 'Vesper',
     source: 'https://github.com/raunofreiberg/vesper/blob/main/themes/Vesper-dark-color-theme.json',
