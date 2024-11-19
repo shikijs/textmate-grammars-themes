@@ -253,7 +253,7 @@
       ]
     },
     "builtin_get_node_shorthand_quoted": {
-      "begin": "(?:(\\$)|(&|\\^|@))(\"|')",
+      "begin": "(?:(\\$|%)|(&|\\^|@))(\"|')",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.gdscript"
@@ -513,17 +513,10 @@
           "name": "entity.name.function.gdscript"
         }
       },
-      "end": "(:|(?=[#'\"\\n]))",
-      "end2": "(\\s*(\\-\\>)\\s*(void\\w*)|([a-zA-Z_]\\w*)\\s*\\:)",
-      "endCaptures2": {
+      "end": "(:)",
+      "endCaptures": {
         "1": {
-          "name": "punctuation.separator.annotation.result.gdscript"
-        },
-        "2": {
-          "name": "keyword.language.void.gdscript"
-        },
-        "3": {
-          "name": "entity.name.type.class.gdscript markup.italic"
+          "name": "punctuation.section.function.begin.gdscript"
         }
       },
       "name": "meta.function.gdscript",
@@ -801,6 +794,15 @@
         },
         {
           "match": "[-]?(\\d[0-9_]*e[\\-+]?\\[0-9_])",
+          "name": "constant.numeric.float.gdscript"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "storage.type.imaginary.number.gdscript"
+            }
+          },
+          "match": "(?<!\\w)(?:(?:\\.\\d(?:_?\\d)*|\\d(?:_?\\d)*\\.\\d(?:_?\\d)*|\\d(?:_?\\d)*\\.)(?:[eE][+-]?\\d(?:_?\\d)*)?|\\d(?:_?\\d)*(?:[eE][+-]?\\d(?:_?\\d)*))([jJ])?\\b",
           "name": "constant.numeric.float.gdscript"
         },
         {
