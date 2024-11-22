@@ -295,6 +295,13 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'talonscript',
+    displayName: 'TalonScript',
+    aliases: ['talon'],
+    source: 'https://github.com/mrob95/vscode-TalonScript/blob/master/syntaxes%2Ftalon.tmLanguage.json',
+    categories: ['scripting'],
+  },
+  {
     name: 'tex',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/latex/syntaxes/TeX.tmLanguage.json',
     categories: ['markup'],
