@@ -3092,6 +3092,26 @@ export const grammars = [
     source: 'https://github.com/hangxingliu/vscode-systemd/blob/bb87cf9d8f7f9da36fbc5bf80683062b2558ed80/src/syntax/systemd.tmLanguage',
   },
   {
+    aliases: [
+      'talon',
+    ],
+    byteSize: 6433,
+    categories: [
+      'scripting',
+      'dsl',
+      'config',
+    ],
+    displayName: 'TalonScript',
+    hash: '2iGmBEN4sd',
+    lastUpdate: '2023-08-08T18:13:10Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/mrob95/vscode-TalonScript/master/LICENSE',
+    name: 'talonscript',
+    scopeName: 'source.talon',
+    sha: 'd422be3703e2b726c3538015bff9015a642eeb3e',
+    source: 'https://github.com/mrob95/vscode-TalonScript/blob/d422be3703e2b726c3538015bff9015a642eeb3e/syntaxes/talon.tmLanguage.json',
+  },
+  {
     byteSize: 3282,
     displayName: 'Tasl',
     hash: 'n3m9OvsOzC',

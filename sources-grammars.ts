@@ -979,6 +979,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['config'],
   },
   {
+    name: 'talonscript',
+    displayName: 'TalonScript',
+    aliases: ['talon'],
+    source: 'https://github.com/mrob95/vscode-TalonScript/blob/master/syntaxes/talon.tmLanguage.json',
+    categories: ['scripting', 'dsl', 'config'],
+  },
+  {
     name: 'tasl',
     displayName: 'Tasl',
     source: 'https://github.com/underlay/vscode-tasl/blob/main/syntaxes/tasl.tmLanguage.json',
