@@ -295,13 +295,6 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
-    name: 'talonscript',
-    displayName: 'TalonScript',
-    aliases: ['talon'],
-    source: 'https://github.com/mrob95/vscode-TalonScript/blob/master/syntaxes%2Ftalon.tmLanguage.json',
-    categories: ['scripting'],
-  },
-  {
     name: 'tex',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/latex/syntaxes/TeX.tmLanguage.json',
     categories: ['markup'],
@@ -984,6 +977,13 @@ export const sourcesCommunity: GrammarSource[] = [
     displayName: 'Systemd Units',
     source: 'https://github.com/hangxingliu/vscode-systemd/blob/main/src/syntax/systemd.tmLanguage',
     categories: ['config'],
+  },
+  {
+    name: 'talonscript',
+    displayName: 'TalonScript',
+    aliases: ['talon'],
+    source: 'https://github.com/mrob95/vscode-TalonScript/blob/master/syntaxes/talon.tmLanguage.json',
+    categories: ['scripting', 'dsl', 'config'],
   },
   {
     name: 'tasl',
