@@ -373,6 +373,28 @@ export const grammars = [
     source: 'https://github.com/spatie/shiki-php/blob/e985c3ab6b13252ad4521b7edb8ff91a9da3dd46/languages/blade.tmLanguage.json',
   },
   {
+    aliases: [
+      '1c',
+    ],
+    byteSize: 37465,
+    categories: [
+      'general',
+      'dsl',
+    ],
+    displayName: '1C (Enterprise)',
+    embedded: [
+      'sdbl',
+    ],
+    hash: 'I9YoWTD151',
+    lastUpdate: '2024-11-05T21:35:36Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
+    name: 'bsl',
+    scopeName: 'source.bsl',
+    sha: '2cde5a65a17b82b5363affadf5a620ebb0a026dc',
+    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/2cde5a65a17b82b5363affadf5a620ebb0a026dc/syntaxes/1c.tmLanguage.json',
+  },
+  {
     byteSize: 71034,
     categories: [
       'general',
@@ -2829,6 +2851,24 @@ export const grammars = [
     scopeName: 'source.css.scss',
     sha: 'cf8d61ebd2f022f4ce8280171f0360d1fe0a206d',
     source: 'https://github.com/microsoft/vscode/blob/cf8d61ebd2f022f4ce8280171f0360d1fe0a206d/extensions/scss/syntaxes/scss.tmLanguage.json',
+  },
+  {
+    aliases: [
+      '1c-query',
+    ],
+    byteSize: 4850,
+    categories: [
+      'dsl',
+    ],
+    displayName: '1C (Query)',
+    hash: 'kIBBVt4gTg',
+    lastUpdate: '2024-11-05T21:37:20Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
+    name: 'sdbl',
+    scopeName: 'source.sdbl',
+    sha: 'c60d42089e5139942ff5b1db3a0a3ca8dd094ce6',
+    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/c60d42089e5139942ff5b1db3a0a3ca8dd094ce6/syntaxes/1c-query.tmLanguage.json',
   },
   {
     aliases: [
