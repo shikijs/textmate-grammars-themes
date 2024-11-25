@@ -1,0 +1,70 @@
+#CB7676        .text
+#CB7676        .
+#DBD7CACC      global AckermannFunc
+#758575DD      # Preconditions:
+#758575DD      #   1st parameter ($a0) m
+#758575DD      #   2nd parameter ($a1) n
+#758575DD      # Postconditions:
+#758575DD      #   result in ($v0) = value of A(m,n)
+#80A665        AckermannFunc
+#DBD7CACC      :
+#DBD7CACC                  
+#B8A965        addi
+#DBD7CACC          
+#444444        $
+#BD976A        sp
+#DBD7CACC      ,   
+#444444        $
+#BD976A        sp
+#DBD7CACC      , -
+#4C9A91        8
+#DBD7CACC                  
+#B8A965        sw
+#DBD7CACC            
+#444444        $
+#BD976A        s0
+#DBD7CACC      , 
+#4C9A91        4
+#DBD7CACC      (
+#444444        $
+#BD976A        sp
+#DBD7CACC      )
+#DBD7CACC                  
+#B8A965        sw
+#DBD7CACC            
+#444444        $
+#BD976A        ra
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC      (
+#444444        $
+#BD976A        sp
+#DBD7CACC      )
+#444444                    
+#758575DD      # move the parameter registers to temporary  - no, only when nec.
+#80A665        LABEL_IF
+#DBD7CACC      :   
+#B8A965        bne
+#DBD7CACC           
+#444444        $
+#BD976A        a0
+#DBD7CACC      , 
+#444444        $
+#BD976A        zero
+#DBD7CACC      , LABEL_ELSE_IF
+#DBD7CACC                  
+#B8A965        addi
+#DBD7CACC          
+#444444        $
+#BD976A        v0
+#DBD7CACC      , 
+#444444        $
+#BD976A        a1
+#DBD7CACC      , 
+#4C9A91        1
+#444444                    
+#758575DD      # jump to LABEL_DONE
+#DBD7CACC                  
+#B8A965        j
+#DBD7CACC       LABEL_DONE
+#758575DD      # From https://github.com/highlightjs/highlight.js/blob/81e450f3eba5c3e9112a249ae85b696371d738f9/test/markup/mipsasm/default.txt

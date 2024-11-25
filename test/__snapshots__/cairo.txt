@@ -1,0 +1,758 @@
+#4D9375        use
+#DBD7CACC       
+#80A665        starknet
+#CB7676        ::
+#5DA994        ContractAddress
+#444444        ;
+#444444        #[
+#DBD7CACC      starknet
+#CB7676        ::
+#DBD7CACC      interface
+#444444        ]
+#4D9375        pub
+#DBD7CACC       
+#CB7676        trait
+#DBD7CACC       
+#5DA994        IPizzaFactory
+#444444        <
+#5DA994        TContractState
+#444444        >
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        increase_pepperoni
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        TContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        amount
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        );
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        increase_pineapple
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        TContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        amount
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        );
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        get_owner
+#444444        (
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#CB7676        @
+#5DA994        TContractState
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        ;
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        change_owner
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        TContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        new_owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        );
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        make_pizza
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        TContractState
+#444444        );
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        count_pizza
+#444444        (
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#CB7676        @
+#5DA994        TContractState
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        u32
+#444444        ;
+#444444        }
+#444444        #[
+#DBD7CACC      starknet
+#CB7676        ::
+#DBD7CACC      contract
+#444444        ]
+#4D9375        pub
+#DBD7CACC       
+#CB7676        mod
+#DBD7CACC       
+#5DA994        PizzaFactory
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        use
+#DBD7CACC       
+#C99076        super
+#CB7676        ::
+#5DA994        IPizzaFactory
+#444444        ;
+#DBD7CACC          
+#4D9375        use
+#DBD7CACC       
+#80A665        starknet
+#CB7676        ::
+#5DA994        ContractAddress
+#444444        ;
+#DBD7CACC          
+#4D9375        use
+#DBD7CACC       
+#80A665        starknet
+#CB7676        ::
+#DBD7CACC      get_caller_address
+#444444        ;
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      storage
+#444444        ]
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#CB7676        struct
+#DBD7CACC       
+#5DA994        Storage
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        pepperoni
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        ,
+#DBD7CACC              
+#BD976A        pineapple
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        ,
+#DBD7CACC              
+#BD976A        owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        ,
+#DBD7CACC              
+#BD976A        pizzas
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      constructor
+#444444        ]
+#DBD7CACC          
+#4D9375        fn
+#DBD7CACC       
+#80A665        constructor
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        write
+#444444        (
+#4C9A91        10
+#444444        );
+#DBD7CACC              
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        write
+#444444        (
+#4C9A91        10
+#444444        );
+#DBD7CACC              
+#BD976A        self
+#CB7676        .
+#DBD7CACC      owner
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        owner
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      event
+#444444        ]
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      derive
+#444444        (
+#5DA994        Drop
+#444444        ,
+#DBD7CACC       starknet
+#CB7676        ::
+#5DA994        Event
+#444444        )]
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#CB7676        enum
+#DBD7CACC       
+#5DA994        Event
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#5DA994        PizzaEmission
+#CB7676        :
+#DBD7CACC       
+#5DA994        PizzaEmission
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      derive
+#444444        (
+#5DA994        Drop
+#444444        ,
+#DBD7CACC       starknet
+#CB7676        ::
+#5DA994        Event
+#444444        )]
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#CB7676        struct
+#DBD7CACC       
+#5DA994        PizzaEmission
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        pub
+#DBD7CACC       
+#BD976A        counter
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      abi
+#444444        (
+#DBD7CACC      embed_v0
+#444444        )]
+#DBD7CACC          
+#4D9375        impl
+#DBD7CACC       
+#5DA994        PizzaFactoryimpl
+#DBD7CACC       
+#4D9375        of
+#DBD7CACC       
+#C99076        super
+#CB7676        ::
+#5DA994        IPizzaFactory
+#444444        <
+#5DA994        ContractState
+#444444        >
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        increase_pepperoni
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        amount
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        amount
+#DBD7CACC       
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Amount cannot be 0
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        amount
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        increase_pineapple
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        amount
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        amount
+#DBD7CACC       
+#CB7676        !=
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Amount cannot be 0
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        amount
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        make_pizza
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#444444        >
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Not enough pepperoni
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#444444        >
+#DBD7CACC       
+#4C9A91        0
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Not enough pineapple
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#CB7676        let
+#DBD7CACC       
+#BD976A        caller
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        get_caller_address
+#444444        ();
+#DBD7CACC                  
+#CB7676        let
+#DBD7CACC       
+#BD976A        owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        self
+#CB7676        .
+#80A665        get_owner
+#444444        ();
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        caller
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        owner
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Only the owner can make pizza
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pepperoni
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pineapple
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pizzas
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pizzas
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#80A665        emit
+#444444        (
+#5DA994        PizzaEmission
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        counter
+#CB7676        :
+#DBD7CACC       
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pizzas
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC       
+#444444        });
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        get_owner
+#444444        (
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#CB7676        @
+#5DA994        ContractState
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        ContractAddress
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      owner
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        change_owner
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        new_owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#80A665        set_owner
+#444444        (
+#BD976A        new_owner
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        count_pizza
+#444444        (
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#CB7676        @
+#5DA994        ContractState
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        u32
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      pizzas
+#CB7676        .
+#80A665        read
+#444444        ()
+#DBD7CACC              
+#444444        }
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        #[
+#DBD7CACC      generate_trait
+#444444        ]
+#DBD7CACC          
+#4D9375        pub
+#DBD7CACC       
+#4D9375        impl
+#DBD7CACC       
+#5DA994        InternalImpl
+#DBD7CACC       
+#4D9375        of
+#DBD7CACC       
+#5DA994        InternalTrait
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        fn
+#DBD7CACC       
+#80A665        set_owner
+#444444        (
+#CB7676        ref
+#DBD7CACC       
+#BD976A        self
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractState
+#444444        ,
+#DBD7CACC       
+#BD976A        new_owner
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#CB7676        let
+#DBD7CACC       
+#BD976A        caller
+#CB7676        :
+#DBD7CACC       
+#5DA994        ContractAddress
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        get_caller_address
+#444444        ();
+#DBD7CACC                  
+#80A665        assert!
+#444444        (
+#BD976A        caller
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        self
+#CB7676        .
+#80A665        get_owner
+#444444        (),
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Only the owner can set ownership
+#C98A7D77      "
+#444444        );
+#DBD7CACC                  
+#BD976A        self
+#CB7676        .
+#DBD7CACC      owner
+#CB7676        .
+#80A665        write
+#444444        (
+#BD976A        new_owner
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/github-linguist/linguist/blob/main/samples/Cairo/pizza_factory.cairo

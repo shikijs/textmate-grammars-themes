@@ -1,0 +1,447 @@
+#758575DD      # Compound of action(select, clear, copy, cut, paste, etc.)
+#758575DD      # and modifier(word, line, etc.) commands for editing text.
+#758575DD      # eg: "select line", "clear all"
+#BD976A        <user.edit_action>
+#4D9375         
+#BD976A        <user.edit_modifier>
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        edit_command
+#444444        (
+#BD976A        edit_action
+#444444        ,
+#BD976A         edit_modifier
+#444444        )
+#758575DD      # Zoom
+#4D9375        zoom in
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        zoom_in
+#444444        ()
+#4D9375        zoom out
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        zoom_out
+#444444        ()
+#4D9375        zoom reset
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        zoom_reset
+#444444        ()
+#758575DD      # Searching
+#4D9375        find it
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        find
+#444444        ()
+#4D9375        next one
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        find_next
+#444444        ()
+#758575DD      # Navigation
+#758575DD      # The reason for these spoken forms is that "page up" and "page down"
+#758575DD      #are globally defined as keys.
+#4D9375        scroll up
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        page_up
+#444444        ()
+#4D9375        scroll down
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        page_down
+#444444        ()
+#758575DD      # go left, go left left down, go 5 left 2 down
+#758575DD      # go word left, go 2 words right
+#4D9375        go 
+#BD976A        <user.navigation_step>
+#4D9375        +
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        perform_navigation_steps
+#444444        (
+#BD976A        navigation_step
+#CB7676        _
+#4C9A91        list
+#444444        )
+#4D9375        go line start 
+#444444        |
+#4D9375         head
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_start
+#444444        ()
+#4D9375        go line end 
+#444444        |
+#4D9375         tail
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_end
+#444444        ()
+#4D9375        go way left
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        line_start
+#444444        ()
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        line_start
+#444444        ()
+#4D9375        go way right
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_end
+#444444        ()
+#4D9375        go way up
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        file_start
+#444444        ()
+#4D9375        go way down
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        file_end
+#444444        ()
+#4D9375        go top
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        file_start
+#444444        ()
+#4D9375        go bottom
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        file_end
+#444444        ()
+#4D9375        go page up
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        page_up
+#444444        ()
+#4D9375        go page down
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        page_down
+#444444        ()
+#758575DD      # Selecting
+#4D9375        select left
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_left
+#444444        ()
+#4D9375        select right
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_right
+#444444        ()
+#4D9375        select up
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_line_up
+#444444        ()
+#4D9375        select down
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_line_down
+#444444        ()
+#4D9375        select word left
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_word_left
+#444444        ()
+#4D9375        select word right
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        extend_word_right
+#444444        ()
+#758575DD      # Indentation
+#4D9375        indent [more]
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        indent_more
+#444444        ()
+#444444        (
+#4D9375        indent less 
+#444444        |
+#4D9375         out dent
+#444444        )
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        indent_less
+#444444        ()
+#758575DD      # Delete
+#4D9375        clear left
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        delete
+#444444        ()
+#4D9375        clear right
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        delete_right
+#444444        ()
+#4D9375        clear up
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        extend_line_up
+#444444        ()
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        delete
+#444444        ()
+#4D9375        clear down
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        extend_line_down
+#444444        ()
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        delete
+#444444        ()
+#4D9375        clear word left
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        extend_word_left
+#444444        ()
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        delete
+#444444        ()
+#4D9375        clear word right
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        extend_word_right
+#444444        ()
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        delete
+#444444        ()
+#758575DD      # Copy
+#4D9375        copy that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        copy
+#444444        ()
+#4D9375        copy word left
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        copy_word_left
+#444444        ()
+#4D9375        copy word right
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        copy_word_right
+#444444        ()
+#758575DD      # Cut
+#4D9375        cut that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        cut
+#444444        ()
+#4D9375        cut word left
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        cut_word_left
+#444444        ()
+#4D9375        cut word right
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        cut_word_right
+#444444        ()
+#758575DD      # Paste
+#444444        (
+#4D9375        pace 
+#444444        |
+#4D9375         paste
+#444444        )
+#4D9375         that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        paste
+#444444        ()
+#444444        (
+#4D9375        pace 
+#444444        |
+#4D9375         paste
+#444444        )
+#4D9375         enter
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        edit
+#444444        .
+#80A665        paste
+#444444        ()
+#DBD7CACC          
+#80A665        key
+#444444        (
+#BD976A        enter
+#444444        )
+#4D9375        paste match
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        paste_match_style
+#444444        ()
+#758575DD      # Duplication
+#4D9375        clone that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        selection_clone
+#444444        ()
+#4D9375        clone line
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_clone
+#444444        ()
+#758575DD      # Insert new line
+#4D9375        new line above
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_insert_up
+#444444        ()
+#4D9375        new line below 
+#444444        |
+#4D9375         slap
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        line_insert_down
+#444444        ()
+#758575DD      # Insert padding with optional symbols
+#444444        (
+#4D9375        pad 
+#444444        |
+#4D9375         padding
+#444444        )
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        insert_between
+#444444        (
+#C98A7D77      "
+#C98A7D         
+#C98A7D77      "
+#444444        ,
+#BD976A         
+#C98A7D77      "
+#C98A7D         
+#C98A7D77      "
+#444444        )
+#444444        (
+#4D9375        pad 
+#444444        |
+#4D9375         padding
+#444444        )
+#4D9375         
+#BD976A        <user.symbol_key>
+#4D9375        +
+#DBD7CACC      :
+#DBD7CACC          
+#80A665        insert
+#444444        (
+#C98A7D77      "
+#C98A7D         
+#C98A7D77      "
+#444444        )
+#DBD7CACC          
+#80A665        user
+#444444        .
+#80A665        insert_many
+#444444        (
+#BD976A        symbol_key
+#CB7676        _
+#4C9A91        list
+#444444        )
+#DBD7CACC          
+#80A665        insert
+#444444        (
+#C98A7D77      "
+#C98A7D         
+#C98A7D77      "
+#444444        )
+#758575DD      # Undo/redo
+#4D9375        undo that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        undo
+#444444        ()
+#4D9375        redo that
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        redo
+#444444        ()
+#758575DD      # Save
+#4D9375        file save
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        save
+#444444        ()
+#4D9375        file save all
+#DBD7CACC      : 
+#80A665        edit
+#444444        .
+#80A665        save_all
+#444444        ()
+#4D9375        [go] line mid
+#DBD7CACC      : 
+#80A665        user
+#444444        .
+#80A665        line_middle
+#444444        ()
+#758575DD      # From https://github.com/talonhub/community/blob/main/core/edit/edit.talon
