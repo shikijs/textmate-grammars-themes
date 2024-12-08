@@ -139,13 +139,13 @@
       "patterns": [
         {
           "begin": "///",
+          "end": "^(?!\\s*///)",
           "name": "comment.block.documentation.dart",
           "patterns": [
             {
               "include": "#dartdoc"
             }
-          ],
-          "while": "^\\s*///"
+          ]
         }
       ]
     },
@@ -217,35 +217,46 @@
           "match": "(\\[.*?\\])"
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.name.source.dart"
+          "begin": "^\\s*///\\s*(```)",
+          "end": "^\\s*///\\s*(```)|^(?!\\s*///)",
+          "patterns": [
+            {
+              "include": "#dartdoc-codeblock-triple"
             }
-          },
-          "match": "^ {4,}(?![ \\*]).*"
+          ]
         },
         {
-          "begin": "```.*?$",
-          "contentName": "variable.other.source.dart",
-          "end": "```"
+          "begin": "^\\s*\\*\\s*(```)",
+          "end": "^\\s*\\*\\s*(```)|^(?=\\s*\\*/)",
+          "patterns": [
+            {
+              "include": "#dartdoc-codeblock-block"
+            }
+          ]
+        },
+        {
+          "match": "`[^`\n]+`",
+          "name": "variable.other.source.dart"
         },
         {
           "captures": {
-            "0": {
+            "1": {
               "name": "variable.other.source.dart"
             }
           },
-          "match": "(`[^`]+?`)"
-        },
-        {
-          "captures": {
-            "2": {
-              "name": "variable.other.source.dart"
-            }
-          },
-          "match": "(\\* ((    ).*))$"
+          "match": "(?:\\*|\\/\\/)\\s{4,}(.*?)(?=($|\\*\\/))"
         }
       ]
+    },
+    "dartdoc-codeblock-block": {
+      "begin": "^\\s*\\*\\s*(?!(\\s*```|/))",
+      "contentName": "variable.other.source.dart",
+      "end": "\n"
+    },
+    "dartdoc-codeblock-triple": {
+      "begin": "^\\s*///\\s*(?!\\s*```)",
+      "contentName": "variable.other.source.dart",
+      "end": "\n"
     },
     "expression": {
       "patterns": [
@@ -539,5 +550,5 @@
     }
   },
   "scopeName": "source.dart",
-  "version": "https://github.com/dart-lang/dart-syntax-highlight/commit/e8b053f9834cb44db0f49ac4a4567177bd943dbf"
+  "version": "https://github.com/dart-lang/dart-syntax-highlight/commit/e1ac5c446c2531343393adbe8fff9d45d8a7c412"
 }

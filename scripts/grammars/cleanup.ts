@@ -53,7 +53,7 @@ export async function cleanupGrammar(grammar: any, verify = true) {
   const after = verify ? await highlight(converted) : null
 
   if (verify && before !== after) {
-    throw new Error(`cleanup failed for ${grammar.name}`)
+    throw new Error(`Cleanup failed for ${grammar.name}`)
   }
 
   return converted

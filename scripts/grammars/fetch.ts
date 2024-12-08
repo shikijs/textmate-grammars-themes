@@ -17,77 +17,79 @@ import { parseFile } from '../shared/parse'
 import { fileSizeToHuman } from '../shared/utils'
 import { cleanupGrammar } from './cleanup'
 
-const badge = c.magenta.bold(' grammar ')
-
 const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.url)
 
-await fs.mkdir(dirOutput, { recursive: true })
+export async function run() {
+  const badge = c.magenta.bold(' grammar ')
 
-const limit = pLimit(25)
+  await fs.mkdir(dirOutput, { recursive: true })
 
-const scopeToGrammar = new Map<string, GrammarInfo>()
+  const limit = pLimit(25)
 
-const oldMeta = process.argv.includes('--force')
-  ? []
-  : await import('../../packages/tm-grammars/index.js')
-    .then(m => [...m.grammars, ...m.injections])
-    .catch(() => [] as GrammarInfo[])
+  const scopeToGrammar = new Map<string, GrammarInfo>()
 
-let changed = false
+  const oldMeta = process.argv.includes('--force')
+    ? []
+    : await import('../../packages/tm-grammars/index.js')
+      .then(m => [...m.grammars, ...m.injections])
+      .catch(() => [] as GrammarInfo[])
 
-const resolvedInfo = await Promise.all(
-  sources
-    .map(source => limit(async () => {
-      const { grammar, info, skip } = await fetchGrammar(source)
-      if (!skip) {
-        console.log(badge + c.gray(` Fetched ${source.name}`))
-        changed = true
-        scopeToGrammar.set(info.scopeName, grammar)
-        const url = new URL(`${source.name}.json`, dirOutput)
-        await fs.writeFile(url, `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
-      }
-      else {
-        console.log(badge + c.gray(` Skipped ${source.name}`))
-      }
-      return info
-    })),
-)
+  let changed = false
 
-resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
-
-resolvedInfo.forEach((info) => {
-  const grammar = scopeToGrammar.get(info.scopeName)
-  if (!grammar)
-    return
-  const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
-  const embedded = new Set([
-    ...includes.map(i => resolvedInfo.find(r => r.scopeName === i)?.name).filter(Boolean).filter(i => i !== info.name),
-    ...resolvedInfo.filter(i => i.embeddedIn?.includes(info.name)).map(i => i.name),
-  ])
-  info.embeddedIn?.forEach(i => embedded.delete(i))
-  if (embedded.size)
-    info.embedded = Array.from(embedded) as string[]
-})
-
-if (changed) {
-  await fs.writeFile(
-    new URL('../index.js', dirOutput),
-    [
-      COMMENT_HEAD,
-      `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
-      `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
-    ].join('\n'),
-    'utf-8',
+  const resolvedInfo = await Promise.all(
+    sources
+      .map(source => limit(async () => {
+        const { grammar, info, skip } = await fetchGrammar(source, oldMeta)
+        if (!skip) {
+          console.log(badge + c.gray(` Fetched ${source.name}`))
+          changed = true
+          scopeToGrammar.set(info.scopeName, grammar)
+          const url = new URL(`${source.name}.json`, dirOutput)
+          await fs.writeFile(url, `${stringify(grammar, { space: 2 })}\n`, 'utf-8')
+        }
+        else {
+          console.log(badge + c.gray(` Skipped ${source.name}`))
+        }
+        return info
+      })),
   )
-  await generateREADME(resolvedInfo)
-  await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-grammars', resolvedInfo), 'utf-8')
-  console.log(badge + c.green(' Finished'))
-}
-else {
-  console.log(badge + c.green(' Finished, nothing changed'))
+
+  resolvedInfo.sort((a, b) => a.name.localeCompare(b.name))
+
+  resolvedInfo.forEach((info) => {
+    const grammar = scopeToGrammar.get(info.scopeName)
+    if (!grammar)
+      return
+    const includes = Array.from(JSON.stringify(grammar, null, 2).matchAll(/"include": "(.*?)"/g)).map(i => i[1].replace(/#.*$/g, '')).filter(i => i && !i.startsWith('#'))
+    const embedded = new Set([
+      ...includes.map(i => resolvedInfo.find(r => r.scopeName === i)?.name).filter(Boolean).filter(i => i !== info.name),
+      ...resolvedInfo.filter(i => i.embeddedIn?.includes(info.name)).map(i => i.name),
+    ])
+    info.embeddedIn?.forEach(i => embedded.delete(i))
+    if (embedded.size)
+      info.embedded = Array.from(embedded) as string[]
+  })
+
+  if (changed) {
+    await fs.writeFile(
+      new URL('../index.js', dirOutput),
+      [
+        COMMENT_HEAD,
+        `export const grammars = ${stringify(resolvedInfo.filter(i => !i.embeddedIn), { space: 2 })}\n`,
+        `export const injections = ${stringify(resolvedInfo.filter(i => i.embeddedIn), { space: 2 })}\n`,
+      ].join('\n'),
+      'utf-8',
+    )
+    await generateREADME(resolvedInfo)
+    await fs.writeFile(new URL('../NOTICE', dirOutput), await generateLicense('tm-grammars', resolvedInfo), 'utf-8')
+    console.log(badge + c.green(' Finished'))
+  }
+  else {
+    console.log(badge + c.green(' Finished, nothing changed'))
+  }
 }
 
-async function fetchGrammar(source: GrammarSource) {
+async function fetchGrammar(source: GrammarSource, oldMeta: GrammarInfo[]) {
   let raw: string
   let parsed: any
   let info: GrammarInfo = source as GrammarInfo
@@ -116,7 +118,13 @@ async function fetchGrammar(source: GrammarSource) {
     else {
       raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
     }
-    parsed = parseFile(fileUrl, raw)
+    try {
+      parsed = parseFile(fileUrl, raw)
+    }
+    catch (e) {
+      console.error(`Failed to parse ${info.name} from ${info.source}`)
+      throw e
+    }
   }
 
   try {
@@ -178,3 +186,9 @@ export async function generateREADME(resolved: GrammarInfo[]) {
 
   await fs.writeFile(new URL('../README.md', dirOutput), replaced, 'utf-8')
 }
+
+run()
+  .catch((e) => {
+    console.error(e)
+    throw e
+  })

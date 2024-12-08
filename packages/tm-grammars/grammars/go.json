@@ -207,6 +207,124 @@
         }
       ]
     },
+    "const_assignment": {
+      "comment": "constant assignment with const keyword",
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#delimiters"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.constant.go"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "include": "#generic_types"
+                },
+                {
+                  "match": "\\(",
+                  "name": "punctuation.definition.begin.bracket.round.go"
+                },
+                {
+                  "match": "\\)",
+                  "name": "punctuation.definition.end.bracket.round.go"
+                },
+                {
+                  "match": "\\[",
+                  "name": "punctuation.definition.begin.bracket.square.go"
+                },
+                {
+                  "match": "\\]",
+                  "name": "punctuation.definition.end.bracket.square.go"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            }
+          },
+          "comment": "single assignment",
+          "match": "(?:(?<=\\bconst\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:=)?)?)"
+        },
+        {
+          "begin": "(?:(?<=\\bconst\\b)(?:\\s*)(\\())",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.begin.bracket.round.go"
+            }
+          },
+          "comment": "multi assignment",
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.round.go"
+            }
+          },
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "patterns": [
+                    {
+                      "include": "#delimiters"
+                    },
+                    {
+                      "match": "\\w+",
+                      "name": "variable.other.constant.go"
+                    }
+                  ]
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "include": "#type-declarations-without-brackets"
+                    },
+                    {
+                      "include": "#generic_types"
+                    },
+                    {
+                      "match": "\\(",
+                      "name": "punctuation.definition.begin.bracket.round.go"
+                    },
+                    {
+                      "match": "\\)",
+                      "name": "punctuation.definition.end.bracket.round.go"
+                    },
+                    {
+                      "match": "\\[",
+                      "name": "punctuation.definition.begin.bracket.square.go"
+                    },
+                    {
+                      "match": "\\]",
+                      "name": "punctuation.definition.end.bracket.square.go"
+                    },
+                    {
+                      "match": "\\w+",
+                      "name": "entity.name.type.go"
+                    }
+                  ]
+                }
+              },
+              "match": "(?:(?:^\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:=)?)?)"
+            },
+            {
+              "include": "$self"
+            }
+          ]
+        }
+      ]
+    },
     "delimiters": {
       "patterns": [
         {
@@ -934,7 +1052,10 @@
       "comment": "all statements related to variables",
       "patterns": [
         {
-          "include": "#var_const_assignment"
+          "include": "#const_assignment"
+        },
+        {
+          "include": "#var_assignment"
         },
         {
           "include": "#variable_assignment"
@@ -2813,8 +2934,8 @@
       "comment": "struct/interface types in-line (type assertion) | switch type keyword",
       "match": "(?:(?<=\\.\\()(?:(\\btype\\b)|((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?[\\w\\.\\[\\]\\*]+))(?=\\)))"
     },
-    "var_const_assignment": {
-      "comment": "variable assignment with var and const keyword",
+    "var_assignment": {
+      "comment": "variable assignment with var keyword",
       "patterns": [
         {
           "captures": {
@@ -2860,17 +2981,17 @@
               ]
             }
           },
-          "comment": "var and const with single type assignment",
-          "match": "(?:(?<=\\bvar\\b|\\bconst\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:=)?)?)"
+          "comment": "single assignment",
+          "match": "(?:(?<=\\bvar\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:=)?)?)"
         },
         {
-          "begin": "(?:(?<=\\bvar\\b|\\bconst\\b)(?:\\s*)(\\())",
+          "begin": "(?:(?<=\\bvar\\b)(?:\\s*)(\\())",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.begin.bracket.round.go"
             }
           },
-          "comment": "var and const with multi type assignment",
+          "comment": "multi assignment",
           "end": "\\)",
           "endCaptures": {
             "0": {

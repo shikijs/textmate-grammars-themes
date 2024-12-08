@@ -21,7 +21,7 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'cairo',
     displayName: 'Cairo',
-    source: 'https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/syntaxes/cairo.tmLanguage.json',
+    source: 'https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
     categories: ['general'],
   },
   {
@@ -477,7 +477,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'cue',
-    source: 'https://github.com/cue-sh/vscode-cue/blob/master/syntaxes/cue.tmLanguage.json',
+    source: 'https://github.com/cue-lang/vscode-cue/blob/master/extension/syntaxes/cue.tmLanguage.json',
   },
   {
     name: 'cypher',

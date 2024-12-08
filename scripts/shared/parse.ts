@@ -8,7 +8,7 @@ export function parseJsonc(jsonc: string) {
   const errors: ParseError[] = []
   const result = jsoncParse(jsonc, errors, { allowTrailingComma: true })
   if (errors.length)
-    throw errors[0]
+    throw new Error(`Failed to parse JSONC:\n${jsonc.slice(0, 100)}\n${errors[0]}`)
   return result
 }
 
