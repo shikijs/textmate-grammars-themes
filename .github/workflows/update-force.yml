@@ -1,0 +1,50 @@
+name: Update Themes and Grammars (Force)
+
+permissions:
+  contents: write
+  id-token: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-grammars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: pnpm setup
+        uses: pnpm/action-setup@v4
+
+      - name: install
+        run: pnpm install
+
+      - run: pnpm run fetch:force
+        env:
+          GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
+        timeout-minutes: 2
+
+      - id: bump
+        name: Bump versions
+        run: pnpm run bump
+
+      - uses: EndBug/add-and-commit@v9
+        if: ${{ steps.bump.outputs.CHANGED }}
+        with:
+          author_name: GitHub Actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'feat: update Themes and Grammars [ci skip]'
+
+      - run: pnpm -r publish
+        if: ${{ steps.bump.outputs.CHANGED }}
+        env:
+          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
