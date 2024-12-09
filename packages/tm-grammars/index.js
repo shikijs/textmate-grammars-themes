@@ -2110,7 +2110,7 @@ export const grammars = [
     aliases: [
       'mmd',
     ],
-    byteSize: 28557,
+    byteSize: 30915,
     displayName: 'Mermaid',
     hash: '3OqI6lV2PD',
     lastUpdate: '2022-06-10T19:46:22Z',
@@ -3651,7 +3651,7 @@ export const grammars = [
     displayName: 'Wolfram',
     hash: 'oiwSKFBPVa',
     lastUpdate: '2022-10-11T17:11:31Z',
-    license: 'MIT',
+    license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/WolframResearch/vscode-wolfram/master/LICENSE',
     name: 'wolfram',
     scopeName: 'source.wolfram',
