@@ -2,34 +2,22 @@
 #DBD7CACC       * The following pipeline parameters specify the reference genomes
 #DBD7CACC       * and read pairs and can be provided as command line options
 #DBD7CACC       */
-#C99076        params
-#DBD7CACC      .reads = "$baseDir/data/ggal/ggal_gut_{1,2}.fq"
-#C99076        params
-#DBD7CACC      .transcriptome = "$baseDir/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
-#C99076        params
-#DBD7CACC      .outdir = "results"
+#DBD7CACC      params.reads = "$baseDir/data/ggal/ggal_gut_{1,2}.fq"
+#DBD7CACC      params.transcriptome = "$baseDir/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
+#DBD7CACC      params.outdir = "results"
 #DBD7CACC       
 #4D9375        workflow
 #DBD7CACC       {
-#DBD7CACC          read_pairs_ch = 
-#4D9375        channel.
-#80A665        fromFilePairs(
+#DBD7CACC          read_pairs_ch = channel.fromFilePairs( params.reads, checkIfExists: true )
 #DBD7CACC       
-#C99076        params
-#DBD7CACC      .reads, checkIfExists: true )
-#DBD7CACC       
-#DBD7CACC          INDEX(
-#C99076        params
-#DBD7CACC      .transcriptome)
+#DBD7CACC          INDEX(params.transcriptome)
 #DBD7CACC          FASTQC(read_pairs_ch)
 #DBD7CACC          QUANT(INDEX.out, read_pairs_ch)
 #DBD7CACC      }
 #DBD7CACC       
 #4D9375        process
 #DBD7CACC       INDEX {
-#DBD7CACC          
-#80A665        tag
-#DBD7CACC       "$transcriptome.simpleName"
+#DBD7CACC          tag "$transcriptome.simpleName"
 #DBD7CACC       
 #DBD7CACC          
 #C99076        input:
@@ -46,22 +34,14 @@
 #DBD7CACC          
 #C99076        script:
 #DBD7CACC          """
-#DBD7CACC          salmon index --threads $task.
-#80A665        cpus
-#DBD7CACC       -t $transcriptome -i index
+#DBD7CACC          salmon index --threads $task.cpus -t $transcriptome -i index
 #DBD7CACC          """
 #DBD7CACC      }
 #DBD7CACC       
 #4D9375        process
 #DBD7CACC       FASTQC {
-#DBD7CACC          
-#80A665        tag
-#DBD7CACC       "FASTQC on $sample_id"
-#DBD7CACC          
-#80A665        publishDir
-#DBD7CACC       
-#C99076        params
-#DBD7CACC      .outdir
+#DBD7CACC          tag "FASTQC on $sample_id"
+#DBD7CACC          publishDir params.outdir
 #DBD7CACC       
 #DBD7CACC          
 #C99076        input:
@@ -77,8 +57,7 @@
 #80A665        path 
 #DBD7CACC      "fastqc_${sample_id}_logs"
 #DBD7CACC       
-#DBD7CACC          
-#C99076        script:
+#DBD7CACC          script:
 #DBD7CACC          """
 #DBD7CACC          fastqc.sh "$sample_id" "$reads"
 #DBD7CACC          """
@@ -86,14 +65,8 @@
 #DBD7CACC       
 #4D9375        process
 #DBD7CACC       QUANT {
-#DBD7CACC          
-#80A665        tag
-#DBD7CACC       "$pair_id"
-#DBD7CACC          
-#80A665        publishDir
-#DBD7CACC       
-#C99076        params
-#DBD7CACC      .outdir
+#DBD7CACC          tag "$pair_id"
+#DBD7CACC          publishDir params.outdir
 #DBD7CACC       
 #DBD7CACC          
 #C99076        input:
@@ -115,8 +88,6 @@
 #DBD7CACC          
 #C99076        script:
 #DBD7CACC          """
-#DBD7CACC          salmon quant --threads $task.
-#80A665        cpus
-#DBD7CACC       --libType=U -i $index -1 ${reads[0]} -2 ${reads[1]} -o $pair_id
+#DBD7CACC          salmon quant --threads $task.cpus --libType=U -i $index -1 ${reads[0]} -2 ${reads[1]} -o $pair_id
 #DBD7CACC          """
 #DBD7CACC      }

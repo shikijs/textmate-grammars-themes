@@ -1,41 +1,32 @@
-#BD976A        Year.Release
-#DBD7CACC       
+#DBD7CACC      Year.Release 
 #444444        <-
-#DBD7CACC       
-#BD976A        game
+#DBD7CACC       game
 #4D9375        $
-#BD976A        Year.Release
-#BD976A        counts
-#DBD7CACC       
+#DBD7CACC      Year.Release
+#DBD7CACC      counts 
 #444444        <-
 #DBD7CACC       
 #B8A965        data.frame
 #DBD7CACC      (
 #B8A965        table
-#DBD7CACC      (
-#BD976A        Year.Release
-#DBD7CACC      ))
-#BD976A        p
-#DBD7CACC       
+#DBD7CACC      (Year.Release))
+#DBD7CACC      p 
 #444444        <-
-#DBD7CACC       
-#BD976A        game
-#DBD7CACC       
+#DBD7CACC       game 
 #CB7676        %>%
 #DBD7CACC        
 #BD976A        select
 #444444        (
-#BD976A        Year.Release
+#DBD7CACC      Year.Release
 #444444        ,
-#DBD7CACC       
-#BD976A        Global.Sales
+#DBD7CACC       Global.Sales
 #444444        )
 #DBD7CACC       
 #CB7676        %>%
 #DBD7CACC        
 #BD976A        group_by
 #444444        (
-#BD976A        Year.Release
+#DBD7CACC      Year.Release
 #444444        )
 #DBD7CACC       
 #CB7676        %>%
@@ -47,28 +38,21 @@
 #444444        =
 #DBD7CACC       
 #B8A965        sum
-#DBD7CACC      (
-#BD976A        Global.Sales
+#DBD7CACC      (Global.Sales
 #444444        )
 #DBD7CACC      )
-#BD976A        q
-#DBD7CACC       
+#DBD7CACC      q 
 #444444        <-
 #DBD7CACC       
 #B8A965        cbind.data.frame
-#DBD7CACC      (
-#BD976A        p
-#DBD7CACC      , 
-#BD976A        counts
+#DBD7CACC      (p, counts
 #444444        [
 #4C9A91        2
 #444444        ]
 #DBD7CACC      )  
 #758575DD      # Add counts to data frame
 #B8A965        names
-#DBD7CACC      (
-#BD976A        q
-#DBD7CACC      )
+#DBD7CACC      (q)
 #444444        [
 #4C9A91        3
 #444444        ]
@@ -78,21 +62,18 @@
 #C98A7D77      "
 #C98A7D        count
 #C98A7D77      "
-#BD976A        q
+#DBD7CACC      q
 #4D9375        $
-#BD976A        count
-#DBD7CACC       
+#DBD7CACC      count 
 #444444        <-
 #DBD7CACC       
 #B8A965        as.numeric
-#DBD7CACC      (
-#BD976A        q
+#DBD7CACC      (q
 #4D9375        $
-#BD976A        count
-#DBD7CACC      )
+#DBD7CACC      count)
 #BD976A        ggplot
 #444444        (
-#BD976A        q
+#DBD7CACC      q
 #444444        ,
 #DBD7CACC       
 #BD976A        aes
@@ -100,24 +81,21 @@
 #BD976A        x
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        Year.Release
+#DBD7CACC       Year.Release
 #444444        ,
 #DBD7CACC       
 #BD976A        y
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        Total.Sales
+#DBD7CACC       Total.Sales
 #444444        ,
 #DBD7CACC       
 #BD976A        label
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        q
+#DBD7CACC       q
 #4D9375        $
-#BD976A        count
+#DBD7CACC      count
 #444444        ))
 #DBD7CACC       
 #CB7676        +
@@ -140,8 +118,7 @@
 #BD976A        y
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        q
+#DBD7CACC       q
 #4D9375        $
 #BD976A        count
 #DBD7CACC       
@@ -183,10 +160,9 @@
 #444444        =
 #DBD7CACC       
 #444444        (
-#BD976A        q
+#DBD7CACC      q
 #4D9375        $
-#BD976A        count
-#DBD7CACC       
+#DBD7CACC      count 
 #CB7676        +
 #DBD7CACC       
 #4C9A91        50
@@ -259,14 +235,11 @@
 #444444        =
 #DBD7CACC       
 #B8A965        as.character
-#DBD7CACC      (
-#BD976A        Year.Release
+#DBD7CACC      (Year.Release
 #444444        )
 #DBD7CACC      , 
 #BD976A        breaks
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        Year.Release
-#DBD7CACC      )
+#DBD7CACC       Year.Release)
 #758575DD      # From https://gexijin.github.io/learnR/the-game-sales-dataset.html#analysis-of-sales

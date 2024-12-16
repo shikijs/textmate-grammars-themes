@@ -1,758 +1,136 @@
-#4D9375        use
-#DBD7CACC       
-#80A665        starknet
-#CB7676        ::
-#5DA994        ContractAddress
-#444444        ;
-#444444        #[
-#DBD7CACC      starknet
-#CB7676        ::
-#DBD7CACC      interface
-#444444        ]
-#4D9375        pub
-#DBD7CACC       
-#CB7676        trait
-#DBD7CACC       
-#5DA994        IPizzaFactory
-#444444        <
-#5DA994        TContractState
-#444444        >
-#DBD7CACC       
-#444444        {
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        increase_pepperoni
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        TContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        amount
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        );
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        increase_pineapple
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        TContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        amount
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        );
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        get_owner
-#444444        (
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#CB7676        @
-#5DA994        TContractState
-#444444        )
-#DBD7CACC       
-#CB7676        ->
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        ;
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        change_owner
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        TContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        new_owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        );
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        make_pizza
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        TContractState
-#444444        );
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        count_pizza
-#444444        (
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#CB7676        @
-#5DA994        TContractState
-#444444        )
-#DBD7CACC       
-#CB7676        ->
-#DBD7CACC       
-#5DA994        u32
-#444444        ;
-#444444        }
-#444444        #[
-#DBD7CACC      starknet
-#CB7676        ::
-#DBD7CACC      contract
-#444444        ]
-#4D9375        pub
-#DBD7CACC       
-#CB7676        mod
-#DBD7CACC       
-#5DA994        PizzaFactory
-#DBD7CACC       
-#444444        {
-#DBD7CACC          
-#4D9375        use
-#DBD7CACC       
-#C99076        super
-#CB7676        ::
-#5DA994        IPizzaFactory
-#444444        ;
-#DBD7CACC          
-#4D9375        use
-#DBD7CACC       
-#80A665        starknet
-#CB7676        ::
-#5DA994        ContractAddress
-#444444        ;
-#DBD7CACC          
-#4D9375        use
-#DBD7CACC       
-#80A665        starknet
-#CB7676        ::
-#DBD7CACC      get_caller_address
-#444444        ;
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      storage
-#444444        ]
-#DBD7CACC          
-#4D9375        pub
-#DBD7CACC       
+#DBD7CACC      use starknet::ContractAddress;
+#DBD7CACC      #[starknet::interface]
+#DBD7CACC      pub trait IPizzaFactory<TContractState> {
+#DBD7CACC          fn increase_pepperoni(ref self: TContractState, amount: u32);
+#DBD7CACC          fn increase_pineapple(ref self: TContractState, amount: u32);
+#DBD7CACC          fn get_owner(self: @TContractState) -> ContractAddress;
+#DBD7CACC          fn change_owner(ref self: TContractState, new_owner: ContractAddress);
+#DBD7CACC          fn make_pizza(ref self: TContractState);
+#DBD7CACC          fn count_pizza(self: @TContractState) -> u32;
+#DBD7CACC      }
+#DBD7CACC      #[starknet::contract]
+#DBD7CACC      pub mod PizzaFactory {
+#DBD7CACC          use super::IPizzaFactory;
+#DBD7CACC          use starknet::ContractAddress;
+#DBD7CACC          use starknet::get_caller_address;
+#DBD7CACC          #[storage]
+#DBD7CACC          pub 
 #CB7676        struct
 #DBD7CACC       
-#5DA994        Storage
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#BD976A        pepperoni
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        ,
-#DBD7CACC              
-#BD976A        pineapple
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        ,
-#DBD7CACC              
-#BD976A        owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        ,
-#DBD7CACC              
-#BD976A        pizzas
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
+#80A665        Storage
+#DBD7CACC       {
+#DBD7CACC              pepperoni: u32,
+#DBD7CACC              pineapple: u32,
+#DBD7CACC              owner: ContractAddress,
+#DBD7CACC              pizzas: u32
 #DBD7CACC          
-#444444        }
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      constructor
-#444444        ]
-#DBD7CACC          
-#4D9375        fn
-#DBD7CACC       
-#80A665        constructor
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        write
-#444444        (
+#CB7676        }
+#DBD7CACC          #[constructor]
+#DBD7CACC          fn constructor(ref self: ContractState, owner: ContractAddress) {
+#DBD7CACC              self.pepperoni.write(
 #4C9A91        10
-#444444        );
-#DBD7CACC              
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        write
-#444444        (
+#DBD7CACC      );
+#DBD7CACC              self.pineapple.write(
 #4C9A91        10
-#444444        );
-#DBD7CACC              
-#BD976A        self
-#CB7676        .
-#DBD7CACC      owner
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        owner
-#444444        );
-#DBD7CACC          
-#444444        }
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      event
-#444444        ]
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      derive
-#444444        (
-#5DA994        Drop
-#444444        ,
-#DBD7CACC       starknet
-#CB7676        ::
-#5DA994        Event
-#444444        )]
-#DBD7CACC          
-#4D9375        pub
-#DBD7CACC       
-#CB7676        enum
-#DBD7CACC       
-#5DA994        Event
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#5DA994        PizzaEmission
-#CB7676        :
-#DBD7CACC       
-#5DA994        PizzaEmission
-#DBD7CACC          
-#444444        }
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      derive
-#444444        (
-#5DA994        Drop
-#444444        ,
-#DBD7CACC       starknet
-#CB7676        ::
-#5DA994        Event
-#444444        )]
-#DBD7CACC          
-#4D9375        pub
-#DBD7CACC       
+#DBD7CACC      );
+#DBD7CACC              self.owner.write(owner);
+#DBD7CACC          }
+#DBD7CACC          #[event]
+#DBD7CACC          #[derive(Drop, starknet::Event)]
+#DBD7CACC          pub enum Event {
+#DBD7CACC              PizzaEmission: PizzaEmission
+#DBD7CACC          }
+#DBD7CACC          #[derive(Drop, starknet::Event)]
+#DBD7CACC          pub 
 #CB7676        struct
 #DBD7CACC       
-#5DA994        PizzaEmission
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#4D9375        pub
-#DBD7CACC       
-#BD976A        counter
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
+#80A665        PizzaEmission
+#DBD7CACC       {
+#DBD7CACC              pub counter: u32
 #DBD7CACC          
-#444444        }
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      abi
-#444444        (
-#DBD7CACC      embed_v0
-#444444        )]
-#DBD7CACC          
-#4D9375        impl
-#DBD7CACC       
-#5DA994        PizzaFactoryimpl
-#DBD7CACC       
-#4D9375        of
-#DBD7CACC       
-#C99076        super
-#CB7676        ::
-#5DA994        IPizzaFactory
-#444444        <
-#5DA994        ContractState
-#444444        >
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        increase_pepperoni
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        amount
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        )
-#DBD7CACC       
-#444444        {
+#CB7676        }
+#DBD7CACC          #[abi(embed_v0)]
+#DBD7CACC          impl PizzaFactoryimpl of super::IPizzaFactory<ContractState> {
+#DBD7CACC              fn increase_pepperoni(ref self: ContractState, amount: u32) {
 #DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        amount
-#DBD7CACC       
-#CB7676        !=
-#DBD7CACC       
+#4D9375        assert
+#DBD7CACC      !(amount != 
 #4C9A91        0
-#444444        ,
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Amount cannot be 0
-#C98A7D77      "
-#444444        );
+#DBD7CACC      , 
+#C98A7D        "Amount cannot be 0"
+#DBD7CACC      );
+#DBD7CACC                  self.pepperoni.write(self.pepperoni.read() + amount);
+#DBD7CACC              }
+#DBD7CACC              fn increase_pineapple(ref self: ContractState, amount: u32) {
 #DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
-#BD976A        amount
-#444444        );
-#DBD7CACC              
-#444444        }
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        increase_pineapple
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        amount
-#CB7676        :
-#DBD7CACC       
-#5DA994        u32
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        amount
-#DBD7CACC       
-#CB7676        !=
-#DBD7CACC       
+#4D9375        assert
+#DBD7CACC      !(amount != 
 #4C9A91        0
-#444444        ,
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Amount cannot be 0
-#C98A7D77      "
-#444444        );
+#DBD7CACC      , 
+#C98A7D        "Amount cannot be 0"
+#DBD7CACC      );
+#DBD7CACC                  self.pineapple.write(self.pineapple.read() + amount);
+#DBD7CACC              }
+#DBD7CACC              fn make_pizza(ref self: ContractState) {
 #DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
-#BD976A        amount
-#444444        );
-#DBD7CACC              
-#444444        }
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        make_pizza
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#444444        >
-#DBD7CACC       
+#4D9375        assert
+#DBD7CACC      !(self.pepperoni.read() > 
 #4C9A91        0
-#444444        ,
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Not enough pepperoni
-#C98A7D77      "
-#444444        );
+#DBD7CACC      , 
+#C98A7D        "Not enough pepperoni"
+#DBD7CACC      );
 #DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#444444        >
-#DBD7CACC       
+#4D9375        assert
+#DBD7CACC      !(self.pineapple.read() > 
 #4C9A91        0
-#444444        ,
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Not enough pineapple
-#C98A7D77      "
-#444444        );
+#DBD7CACC      , 
+#C98A7D        "Not enough pineapple"
+#DBD7CACC      );
 #DBD7CACC                  
-#CB7676        let
-#DBD7CACC       
-#BD976A        caller
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#80A665        get_caller_address
-#444444        ();
+#4D9375        let
+#DBD7CACC       caller: ContractAddress = get_caller_address();
 #DBD7CACC                  
-#CB7676        let
-#DBD7CACC       
-#BD976A        owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#BD976A        self
-#CB7676        .
-#80A665        get_owner
-#444444        ();
+#4D9375        let
+#DBD7CACC       owner: ContractAddress = self.get_owner();
 #DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        caller
-#DBD7CACC       
-#CB7676        ==
-#DBD7CACC       
-#BD976A        owner
-#444444        ,
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Only the owner can make pizza
-#C98A7D77      "
-#444444        );
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pepperoni
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#CB7676        -
-#DBD7CACC       
+#4D9375        assert
+#DBD7CACC      !(caller == owner, 
+#C98A7D        "Only the owner can make pizza"
+#DBD7CACC      );
+#DBD7CACC                  self.pepperoni.write(self.pepperoni.read() - 
 #4C9A91        1
-#444444        );
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pineapple
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#CB7676        -
-#DBD7CACC       
+#DBD7CACC      );
+#DBD7CACC                  self.pineapple.write(self.pineapple.read() - 
 #4C9A91        1
-#444444        );
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pizzas
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pizzas
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#CB7676        +
-#DBD7CACC       
+#DBD7CACC      );
+#DBD7CACC                  self.pizzas.write(self.pizzas.read() + 
 #4C9A91        1
-#444444        );
+#DBD7CACC      );
+#DBD7CACC                  self.emit(PizzaEmission { counter: self.pizzas.read() });
+#DBD7CACC              }
+#DBD7CACC              fn get_owner(self: @ContractState) -> ContractAddress {
+#DBD7CACC                  self.owner.read()
+#DBD7CACC              }
+#DBD7CACC              fn change_owner(ref self: ContractState, new_owner: ContractAddress) {
+#DBD7CACC                  self.set_owner(new_owner);
+#DBD7CACC              }
+#DBD7CACC              fn count_pizza(self: @ContractState) -> u32 {
+#DBD7CACC                  self.pizzas.read()
+#DBD7CACC              }
+#DBD7CACC          }
+#DBD7CACC          #[generate_trait]
+#DBD7CACC          pub impl InternalImpl of InternalTrait {
+#DBD7CACC              fn set_owner(ref self: ContractState, new_owner: ContractAddress) {
 #DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#80A665        emit
-#444444        (
-#5DA994        PizzaEmission
-#DBD7CACC       
-#444444        {
-#DBD7CACC       
-#BD976A        counter
-#CB7676        :
-#DBD7CACC       
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pizzas
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC       
-#444444        });
-#DBD7CACC              
-#444444        }
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        get_owner
-#444444        (
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#CB7676        @
-#5DA994        ContractState
-#444444        )
-#DBD7CACC       
-#CB7676        ->
-#DBD7CACC       
-#5DA994        ContractAddress
-#DBD7CACC       
-#444444        {
+#4D9375        let
+#DBD7CACC       caller: ContractAddress = get_caller_address();
 #DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      owner
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC              
-#444444        }
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        change_owner
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        new_owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#80A665        set_owner
-#444444        (
-#BD976A        new_owner
-#444444        );
-#DBD7CACC              
-#444444        }
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        count_pizza
-#444444        (
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#CB7676        @
-#5DA994        ContractState
-#444444        )
-#DBD7CACC       
-#CB7676        ->
-#DBD7CACC       
-#5DA994        u32
-#DBD7CACC       
-#444444        {
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      pizzas
-#CB7676        .
-#80A665        read
-#444444        ()
-#DBD7CACC              
-#444444        }
-#DBD7CACC          
-#444444        }
-#DBD7CACC          
-#444444        #[
-#DBD7CACC      generate_trait
-#444444        ]
-#DBD7CACC          
-#4D9375        pub
-#DBD7CACC       
-#4D9375        impl
-#DBD7CACC       
-#5DA994        InternalImpl
-#DBD7CACC       
-#4D9375        of
-#DBD7CACC       
-#5DA994        InternalTrait
-#DBD7CACC       
-#444444        {
-#DBD7CACC              
-#4D9375        fn
-#DBD7CACC       
-#80A665        set_owner
-#444444        (
-#CB7676        ref
-#DBD7CACC       
-#BD976A        self
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractState
-#444444        ,
-#DBD7CACC       
-#BD976A        new_owner
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#444444        )
-#DBD7CACC       
-#444444        {
-#DBD7CACC                  
-#CB7676        let
-#DBD7CACC       
-#BD976A        caller
-#CB7676        :
-#DBD7CACC       
-#5DA994        ContractAddress
-#DBD7CACC       
-#444444        =
-#DBD7CACC       
-#80A665        get_caller_address
-#444444        ();
-#DBD7CACC                  
-#80A665        assert!
-#444444        (
-#BD976A        caller
-#DBD7CACC       
-#CB7676        ==
-#DBD7CACC       
-#BD976A        self
-#CB7676        .
-#80A665        get_owner
-#444444        (),
-#DBD7CACC       
-#C98A7D77      "
-#C98A7D        Only the owner can set ownership
-#C98A7D77      "
-#444444        );
-#DBD7CACC                  
-#BD976A        self
-#CB7676        .
-#DBD7CACC      owner
-#CB7676        .
-#80A665        write
-#444444        (
-#BD976A        new_owner
-#444444        );
-#DBD7CACC              
-#444444        }
-#DBD7CACC          
-#444444        }
-#444444        }
+#4D9375        assert
+#DBD7CACC      !(caller == self.get_owner(), 
+#C98A7D        "Only the owner can set ownership"
+#DBD7CACC      );
+#DBD7CACC                  self.owner.write(new_owner);
+#DBD7CACC              }
+#DBD7CACC          }
+#DBD7CACC      }
 #758575DD      // From https://github.com/github-linguist/linguist/blob/main/samples/Cairo/pizza_factory.cairo
