@@ -782,7 +782,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'nextflow',
     aliases: ['nf'],
-    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/master/syntaxes/nextflow.tmLanguage.json',
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/main/syntaxes/nextflow.tmLanguage.json',
   },
   {
     name: 'nginx',
