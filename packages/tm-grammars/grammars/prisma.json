@@ -12,6 +12,9 @@
       "include": "#double_comment"
     },
     {
+      "include": "#multi_line_comment"
+    },
+    {
       "include": "#model_block_definition"
     },
     {
@@ -136,6 +139,9 @@
           "include": "#double_comment"
         },
         {
+          "include": "#multi_line_comment"
+        },
+        {
           "include": "#assignment"
         }
       ]
@@ -199,6 +205,9 @@
         },
         {
           "include": "#double_comment"
+        },
+        {
+          "include": "#multi_line_comment"
         },
         {
           "include": "#enum_value_definition"
@@ -352,9 +361,17 @@
           "include": "#double_comment"
         },
         {
+          "include": "#multi_line_comment"
+        },
+        {
           "include": "#field_definition"
         }
       ]
+    },
+    "multi_line_comment": {
+      "begin": "/*",
+      "end": "*/",
+      "name": "comment.prisma"
     },
     "named_argument": {
       "name": "source.prisma.named_argument",
