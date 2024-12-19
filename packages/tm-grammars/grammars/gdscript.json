@@ -51,7 +51,7 @@
           "name": "entity.name.function.decorator.gdscript"
         }
       },
-      "match": "(@)(export|export_color_no_alpha|export_custom|export_dir|export_enum|export_exp_easing|export_file|export_flags|export_flags_2d_navigation|export_flags_2d_physics|export_flags_2d_render|export_flags_3d_navigation|export_flags_3d_physics|export_flags_3d_render|export_global_dir|export_global_file|export_multiline|export_node_path|export_placeholder|export_range|export_storage|icon|onready|rpc|tool|warning_ignore|abstract|static_unload)\\b"
+      "match": "(@)(export|export_group|export_color_no_alpha|export_custom|export_dir|export_enum|export_exp_easing|export_file|export_flags|export_flags_2d_navigation|export_flags_2d_physics|export_flags_2d_render|export_flags_3d_navigation|export_flags_3d_physics|export_flags_3d_render|export_global_dir|export_global_file|export_multiline|export_node_path|export_placeholder|export_range|export_storage|icon|onready|rpc|tool|warning_ignore|static_unload)\\b"
     },
     "any_method": {
       "match": "\\b([A-Za-z_]\\w*)\\b(?=\\s*(?:[(]))",
@@ -611,7 +611,7 @@
       ]
     },
     "keywords": {
-      "match": "\\b(?:class|class_name|is|onready|tool|static|export|as|void|enum|assert|breakpoint|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace)\\b",
+      "match": "\\b(?:class|class_name|abstract|is|onready|tool|static|export|as|void|enum|assert|breakpoint|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace)\\b",
       "name": "keyword.language.gdscript"
     },
     "lambda_declaration": {
@@ -785,24 +785,15 @@
           "name": "constant.numeric.integer.hexadecimal.gdscript"
         },
         {
-          "match": "[-]?(\\d[0-9_]+\\.[0-9_]*(e[\\-+]?[0-9_]+)?)",
+          "match": "\\.\\d[0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?(\\.\\d[0-9_]*(e[\\-+]?[0-9_]+)?)",
+          "match": "(\\d[0-9_]*)?\\.[0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?(\\d[0-9_]*e[\\-+]?\\[0-9_])",
-          "name": "constant.numeric.float.gdscript"
-        },
-        {
-          "captures": {
-            "1": {
-              "name": "storage.type.imaginary.number.gdscript"
-            }
-          },
-          "match": "(?<!\\w)(?:(?:\\.\\d(?:_?\\d)*|\\d(?:_?\\d)*\\.\\d(?:_?\\d)*|\\d(?:_?\\d)*\\.)(?:[eE][+-]?\\d(?:_?\\d)*)?|\\d(?:_?\\d)*(?:[eE][+-]?\\d(?:_?\\d)*))([jJ])?\\b",
+          "match": "\\d[0-9_]*[eE][+-]?[0-9_]+",
           "name": "constant.numeric.float.gdscript"
         },
         {
