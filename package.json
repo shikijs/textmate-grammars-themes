@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.1",
   "description": "Collection of TextMate grammars and themes in JSON",
   "scripts": {
     "build": "pnpm -r build",
@@ -12,7 +12,7 @@
     "test": "vitest",
     "fetch": "esno scripts/fetch.ts && eslint . --cache --fix",
     "fetch:force": "esno scripts/fetch.ts --force && eslint . --cache --fix",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit",
     "play": "nr -C playground dev",
     "play:build": "nr -C playground build",
     "prepare": "simple-git-hooks"
