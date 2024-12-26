@@ -5,14 +5,14 @@
 
 export const grammars = [
   {
-    byteSize: 15584,
+    byteSize: 15815,
     displayName: 'ABAP',
-    hash: 'm8nOHIPzTv',
-    lastUpdate: '2024-10-30T07:20:22Z',
+    hash: '3eD0RLf8LE',
+    lastUpdate: '2024-12-25T10:52:53Z',
     name: 'abap',
     scopeName: 'source.abap',
-    sha: 'ae37b62b547c4af5fb925cd97feaaeab69603ca2',
-    source: 'https://github.com/pvl/abap.tmbundle/blob/ae37b62b547c4af5fb925cd97feaaeab69603ca2/Syntaxes/ABAP.tmLanguage',
+    sha: '92e17e62a9449d2a6f87bfb30b4f920986c24018',
+    source: 'https://github.com/pvl/abap.tmbundle/blob/92e17e62a9449d2a6f87bfb30b4f920986c24018/Syntaxes/ABAP.tmLanguage',
   },
   {
     byteSize: 13967,
