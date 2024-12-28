@@ -827,6 +827,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['utility'],
   },
   {
+    name: 'polar',
+    displayName: 'Polar',
+    source: 'https://github.com/osohq/polar-grammar/blob/main/syntaxes/polar.tmLanguage.json',
+  },
+  {
     name: 'postcss',
     source: 'https://github.com/vuejs/vetur/blob/master/syntaxes/vue-postcss.json',
     categories: ['web'],
