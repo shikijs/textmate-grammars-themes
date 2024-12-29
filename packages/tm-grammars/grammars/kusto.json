@@ -226,7 +226,7 @@
     },
     {
       "comment": "User-defined functions: https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions",
-      "match": "(?<=let ).+(?=\\W*=)",
+      "match": "(?<=let )[^\\n]+(?=\\W*=)",
       "name": "entity.function.name.lambda.kusto"
     },
     {
