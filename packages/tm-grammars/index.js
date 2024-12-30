@@ -2393,6 +2393,18 @@ export const grammars = [
     source: 'https://github.com/textmate/gettext.tmbundle/blob/08bb69558d82ada8d4f36b8869f871ce69014749/Syntaxes/Gettext.tmLanguage',
   },
   {
+    byteSize: 4350,
+    displayName: 'Polar',
+    hash: 'rTp3rqMGfX',
+    lastUpdate: '2024-09-23T15:37:02Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/osohq/polar-grammar/main/LICENSE',
+    name: 'polar',
+    scopeName: 'source.polar',
+    sha: '331521c2eca6acf89a87e7360d89ab715cc1daff',
+    source: 'https://github.com/osohq/polar-grammar/blob/331521c2eca6acf89a87e7360d89ab715cc1daff/syntaxes/polar.tmLanguage.json',
+  },
+  {
     byteSize: 6252,
     categories: [
       'web',
