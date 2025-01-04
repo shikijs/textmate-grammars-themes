@@ -231,6 +231,18 @@ export const themes = [
     type: 'light',
   },
   {
+    byteSize: 18783,
+    displayName: 'Gruvbox Dark Hard',
+    hash: 'CWNwocUYh',
+    lastUpdate: '2024-07-23T00:38:38Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    name: 'gruvbox-dark-hard',
+    sha: '57aec8d75b4547d61fcc4af44ed4d71bee845ba9',
+    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/57aec8d75b4547d61fcc4af44ed4d71bee845ba9/themes/gruvbox-dark-hard.json',
+    type: 'dark',
+  },
+  {
     byteSize: 35362,
     displayName: 'Houston',
     hash: 'Tl8cxYEnjR',
