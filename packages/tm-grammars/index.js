@@ -3136,19 +3136,19 @@ export const grammars = [
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2/syntaxes/systemverilog.tmLanguage.json',
   },
   {
-    byteSize: 7595,
+    byteSize: 7651,
     categories: [
       'config',
     ],
     displayName: 'Systemd Units',
-    hash: 'SBpsAHIMAj',
-    lastUpdate: '2024-04-28T22:16:59Z',
+    hash: 'jrq9OYuEwJ',
+    lastUpdate: '2025-01-08T14:10:18Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-systemd/main/LICENSE',
     name: 'systemd',
     scopeName: 'source.systemd',
-    sha: 'bb87cf9d8f7f9da36fbc5bf80683062b2558ed80',
-    source: 'https://github.com/hangxingliu/vscode-systemd/blob/bb87cf9d8f7f9da36fbc5bf80683062b2558ed80/src/syntax/systemd.tmLanguage',
+    sha: '62ace1156b5afa0ec9932e3a55cfc00c0123c457',
+    source: 'https://github.com/hangxingliu/vscode-systemd/blob/62ace1156b5afa0ec9932e3a55cfc00c0123c457/src/syntax/systemd.tmLanguage',
   },
   {
     aliases: [
