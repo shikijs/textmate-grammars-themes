@@ -77,7 +77,7 @@
           "begin": "([\\w$]+)\\s*\\(",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.function.java"
+              "name": "entity.name.function.nextflow"
             }
           },
           "end": "\\)",
@@ -165,7 +165,7 @@
         }
       ]
     },
-    "include-statement": {
+    "include-decl": {
       "patterns": [
         {
           "match": "^\\b(include)\\b",
@@ -195,7 +195,7 @@
           "include": "#output-def"
         },
         {
-          "include": "#include-statement"
+          "include": "#include-decl"
         },
         {
           "include": "source.nextflow-groovy"
@@ -224,7 +224,7 @@
           "name": "constant.block.nextflow"
         },
         {
-          "match": "\\b(tuple|path|file|val|stdin|stdout)(\\(|\\s)",
+          "match": "\\b(val|env|file|path|stdin|stdout|tuple)(\\(|\\s)",
           "name": "entity.name.function.nextflow"
         },
         {
@@ -233,13 +233,13 @@
       ]
     },
     "process-def": {
-      "begin": "^\\s*(process)\\s+(\\w+|\"[^\"]+\"|'[^']+')\\s*{",
+      "begin": "^\\s*(process)\\s+(\\w+)\\s*{",
       "beginCaptures": {
         "1": {
           "name": "keyword.nextflow"
         },
         "2": {
-          "name": "function.nextflow"
+          "name": "entity.name.function.nextflow"
         }
       },
       "end": "}",
@@ -253,7 +253,7 @@
     "workflow-body": {
       "patterns": [
         {
-          "match": "(?:take|main|emit):",
+          "match": "(?:take|main|emit|publish):",
           "name": "constant.block.nextflow"
         },
         {
@@ -262,13 +262,13 @@
       ]
     },
     "workflow-def": {
-      "begin": "^\\s*(workflow)(?:\\s+(\\w+|\"[^\"]+\"|'[^']+'))?\\s*{",
+      "begin": "^\\s*(workflow)(?:\\s+(\\w+))?\\s*{",
       "beginCaptures": {
         "1": {
           "name": "keyword.nextflow"
         },
         "2": {
-          "name": "constant.nextflow"
+          "name": "entity.name.function.nextflow"
         }
       },
       "end": "}",
