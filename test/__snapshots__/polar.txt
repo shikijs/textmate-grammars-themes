@@ -1,0 +1,673 @@
+#4D9375        actor
+#DBD7CACC       
+#5DA994        User
+#DBD7CACC       { }
+#4D9375        actor
+#DBD7CACC       
+#5DA994        Group
+#DBD7CACC       { }
+#4D9375        resource
+#DBD7CACC       
+#5DA994        Organization
+#DBD7CACC       { 
+#DBD7CACC          permissions 
+#4D9375        =
+#DBD7CACC       [
+#DBD7CACC              
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "read_details"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "view_members"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "manage_members"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "set_default_role"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "create_repositories"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "delete"
+#DBD7CACC          ]
+#444444        ;
+#DBD7CACC          roles 
+#4D9375        =
+#DBD7CACC       [
+#C98A7D        "admin"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "member"
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC          
+#C98A7D        "read_details"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "member"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "view_members"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "member"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "create_repositories"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "member"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "member"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "manage_members"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "set_default_role"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "delete"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC      }
+#4D9375        resource
+#DBD7CACC       
+#5DA994        Repository
+#DBD7CACC       { 
+#DBD7CACC          permissions 
+#4D9375        =
+#DBD7CACC       [
+#DBD7CACC              
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "create"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "update"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "delete"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "invite"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "write"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "manage_jobs"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "manage_issues"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "create_issues"
+#444444        ,
+#DBD7CACC              
+#C98A7D        "view_members"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "manage_members"
+#DBD7CACC          ]
+#444444        ;
+#DBD7CACC          roles 
+#4D9375        =
+#DBD7CACC       [
+#C98A7D        "reader"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "maintainer"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "editor"
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC          relations 
+#4D9375        =
+#DBD7CACC       { organization: 
+#5DA994        Organization
+#DBD7CACC       }
+#444444        ;
+#DBD7CACC          
+#C98A7D        "reader"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "member"
+#DBD7CACC       
+#C99076        on
+#DBD7CACC       
+#C98A7D        "organization"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "admin"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#DBD7CACC       
+#C99076        on
+#DBD7CACC       
+#C98A7D        "organization"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "reader"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "editor"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "editor"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "maintainer"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "maintainer"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#758575DD      # reader permissions
+#DBD7CACC          
+#C98A7D        "read"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "reader"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "create_issues"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "reader"
+#444444        ;
+#DBD7CACC          
+#758575DD      # editor permissions
+#DBD7CACC          
+#C98A7D        "write"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "editor"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "manage_jobs"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "editor"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "manage_issues"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "editor"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "view_members"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "maintainer"
+#444444        ;
+#DBD7CACC          
+#758575DD      # admin permissions
+#DBD7CACC          
+#C98A7D        "manage_members"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "update"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "delete"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "invite"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#DBD7CACC       
+#444444        ;
+#DBD7CACC      }
+#4D9375        resource
+#DBD7CACC       
+#5DA994        Issue
+#DBD7CACC       { 
+#DBD7CACC          permissions 
+#4D9375        =
+#DBD7CACC       [
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "comment"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "close"
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC          roles 
+#4D9375        =
+#DBD7CACC       [
+#C98A7D        "reader"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "creator"
+#DBD7CACC      ]
+#444444        ;
+#DBD7CACC          relations 
+#4D9375        =
+#DBD7CACC       { repository: 
+#5DA994        Repository
+#DBD7CACC       }
+#444444        ;
+#DBD7CACC          
+#C98A7D        "reader"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "reader"
+#DBD7CACC       
+#C99076        on
+#DBD7CACC       
+#C98A7D        "repository"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "admin"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#DBD7CACC       
+#C99076        on
+#DBD7CACC       
+#C98A7D        "repository"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "read"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "reader"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "comment"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "close"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "creator"
+#444444        ;
+#DBD7CACC          
+#C98A7D        "close"
+#DBD7CACC       
+#C99076        if
+#DBD7CACC       
+#C98A7D        "admin"
+#444444        ;
+#DBD7CACC          
+#DBD7CACC      }
+#B8A965        has_permission
+#DBD7CACC      (_: 
+#5DA994        Actor
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       repo: 
+#5DA994        Repository
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          is_public(repo);
+#B8A965        has_permission
+#DBD7CACC      (actor: 
+#5DA994        Actor
+#444444        ,
+#DBD7CACC       
+#C98A7D        "delete"
+#444444        ,
+#DBD7CACC       repo: 
+#5DA994        Repository
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          has_role(actor, 
+#C98A7D        "member"
+#DBD7CACC      , repo) 
+#C99076        and
+#DBD7CACC          is_protected(repo, 
+#4D9375        false
+#DBD7CACC      );
+#758575DD      # readers can only comment on open issues
+#B8A965        has_permission
+#DBD7CACC      (actor: 
+#5DA994        Actor
+#444444        ,
+#DBD7CACC       
+#C98A7D        "comment"
+#444444        ,
+#DBD7CACC       issue: 
+#5DA994        Issue
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          has_permission(actor, 
+#C98A7D        "read"
+#DBD7CACC      , issue) 
+#C99076        and
+#DBD7CACC          is_closed(issue, 
+#4D9375        false
+#DBD7CACC      );
+#758575DD      # Misc rules:
+#758575DD      ## All organizations are public
+#B8A965        has_permission
+#DBD7CACC      (_: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       _: 
+#5DA994        Organization
+#DBD7CACC      );
+#B8A965        has_permission
+#DBD7CACC      (_: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       
+#C98A7D        "create"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "Organization"
+#DBD7CACC      );
+#758575DD      ## Users can read all users
+#B8A965        has_permission
+#DBD7CACC      (_: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       _: 
+#5DA994        User
+#DBD7CACC      );
+#758575DD      ## Users can only read their own profiles
+#B8A965        has_permission
+#DBD7CACC      (user: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read_profile"
+#444444        ,
+#DBD7CACC       user: 
+#5DA994        User
+#DBD7CACC      );
+#758575DD      # Complex rules
+#758575DD      # Actors inherit roles from groups
+#B8A965        has_role
+#DBD7CACC      (user: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       role: 
+#5DA994        String
+#444444        ,
+#DBD7CACC       resource: 
+#5DA994        Resource
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          group 
+#C99076        matches
+#DBD7CACC       Group 
+#C99076        and
+#DBD7CACC          has_group(user, group) 
+#C99076        and
+#DBD7CACC          has_role(group, role, resource);
+#758575DD      # Nested group
+#B8A965        has_group
+#DBD7CACC      (user: 
+#5DA994        User
+#444444        ,
+#DBD7CACC       group: 
+#5DA994        Group
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          g 
+#C99076        matches
+#DBD7CACC       Group 
+#C99076        and
+#DBD7CACC          has_group(user, g) 
+#C99076        and
+#DBD7CACC          has_group(g, group);
+#758575DD      # A custom role is defined by the permissions it grants
+#B8A965        has_permission
+#DBD7CACC      (actor: 
+#5DA994        Actor
+#444444        ,
+#DBD7CACC       action: 
+#5DA994        String
+#444444        ,
+#DBD7CACC       org: 
+#5DA994        Organization
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          role 
+#C99076        matches
+#DBD7CACC       Role 
+#C99076        and
+#DBD7CACC          has_role(actor, role, org) 
+#C99076        and
+#DBD7CACC          grants_permission(role, action);
+#B8A965        has_role
+#DBD7CACC      (actor: 
+#5DA994        Actor
+#444444        ,
+#DBD7CACC       role: 
+#5DA994        String
+#444444        ,
+#DBD7CACC       repo: 
+#5DA994        Repository
+#DBD7CACC      ) 
+#4D9375        if
+#DBD7CACC          org 
+#C99076        matches
+#DBD7CACC       Organization 
+#C99076        and
+#DBD7CACC          has_relation(repo, 
+#C98A7D        "organization"
+#DBD7CACC      , org) 
+#C99076        and
+#DBD7CACC          has_default_role(org, role) 
+#C99076        and
+#DBD7CACC          has_role(actor, 
+#C98A7D        "member"
+#DBD7CACC      , org);
+#758575DD      # Policy tests
+#758575DD      # Organization members inherit the read permission
+#758575DD      # on repositories that belong to the org
+#758575DD      # and issues that belong to those repositories
+#4D9375        test
+#DBD7CACC       
+#C98A7D        "organization members can read repos and issues"
+#DBD7CACC       {
+#DBD7CACC          
+#758575DD      # Define test data (facts)
+#DBD7CACC          
+#4D9375        setup
+#DBD7CACC       {
+#DBD7CACC              
+#758575DD      # alice is a member of the "acme" organization
+#DBD7CACC              
+#B8A965        has_role
+#DBD7CACC      (
+#5DA994        User
+#C99076        {
+#C98A7D        "alice"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "member"
+#444444        ,
+#DBD7CACC       
+#5DA994        Organization
+#C99076        {
+#C98A7D        "acme"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC              
+#758575DD      # The "test-repo" Repository belongs to the "acme" organization
+#DBD7CACC              
+#B8A965        has_relation
+#DBD7CACC      (
+#5DA994        Repository
+#C99076        {
+#C98A7D        "test-repo"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "organization"
+#444444        ,
+#DBD7CACC       
+#5DA994        Organization
+#C99076        {
+#C98A7D        "acme"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC              
+#758575DD      # The issue "Issue 1" belongs to the "test-repo" repository
+#DBD7CACC              
+#B8A965        has_relation
+#DBD7CACC      (
+#5DA994        Issue
+#C99076        {
+#C98A7D        "Issue 1"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "repository"
+#444444        ,
+#DBD7CACC       
+#5DA994        Repository
+#C99076        {
+#C98A7D        "test-repo"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC          }
+#DBD7CACC          
+#758575DD      # alice can read the "test-repo" Repository
+#DBD7CACC          
+#4D9375        assert
+#DBD7CACC       
+#B8A965        allow
+#DBD7CACC      (
+#5DA994        User
+#C99076        {
+#C98A7D        "alice"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       
+#5DA994        Repository
+#C99076        {
+#C98A7D        "test-repo"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC          
+#758575DD      # alice can read the issue "Issue 1"
+#DBD7CACC          
+#4D9375        assert
+#DBD7CACC       
+#B8A965        allow
+#DBD7CACC      (
+#5DA994        User
+#C99076        {
+#C98A7D        "alice"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "read"
+#444444        ,
+#DBD7CACC       
+#5DA994        Issue
+#C99076        {
+#C98A7D        "Issue 1"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC          
+#758575DD      # alice can not write to the "test-repo" Repository
+#DBD7CACC          
+#4D9375        assert_not
+#DBD7CACC       
+#B8A965        allow
+#DBD7CACC      (
+#5DA994        User
+#C99076        {
+#C98A7D        "alice"
+#C99076        }
+#444444        ,
+#DBD7CACC       
+#C98A7D        "write"
+#444444        ,
+#DBD7CACC       
+#5DA994        Repository
+#C99076        {
+#C98A7D        "test-repo"
+#C99076        }
+#DBD7CACC      );
+#DBD7CACC      }
+#758575DD      # From https://github.com/osohq/gitcloud/blob/main/policy/authorization.polar

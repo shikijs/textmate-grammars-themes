@@ -53,7 +53,7 @@
               "name": "entity.name.function.pipe.ng"
             }
           },
-          "match": "((?<!\\|)\\|(?!\\|))\\s?([a-zA-Z0-9\\-_$]*)"
+          "match": "((?<!\\|)\\|(?!\\|))\\s?([a-zA-Z0-9\\-\\_\\$]*)"
         },
         {
           "match": "(?<!\\.|\\$)\\b(let)\\b(?!\\$)",
@@ -114,7 +114,7 @@
           ]
         },
         {
-          "match": "\\*=|(?<!\\()\\/=|%=|\\+=|-=",
+          "match": "\\*=|(?<!\\()\\/=|%=|\\+=|\\-=",
           "name": "keyword.operator.assignment.compound.ts"
         },
         {
@@ -134,7 +134,7 @@
           "name": "keyword.operator.relational.ts"
         },
         {
-          "match": "!|&&|\\?\\?|\\|\\|",
+          "match": "\\!|&&|\\?\\?|\\|\\|",
           "name": "keyword.operator.logical.ts"
         },
         {
@@ -142,7 +142,7 @@
           "name": "keyword.operator.bitwise.ts"
         },
         {
-          "match": "=",
+          "match": "\\=",
           "name": "keyword.operator.assignment.ts"
         },
         {
@@ -163,7 +163,7 @@
               "name": "keyword.operator.arithmetic.ts"
             }
           },
-          "match": "(?<=[_$0-9A-Za-z])\\s*(\\/)(?![\\/*])"
+          "match": "(?<=[_$[:alnum:]])\\s*(\\/)(?![\\/*])"
         },
         {
           "include": "#typeofOperator"
@@ -171,8 +171,8 @@
       ]
     },
     "functionCall": {
-      "begin": "(?=(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|<[^<>]+>)+>\\s*)?\\()",
-      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)\\s*(<([^<>]|<[^<>]+>)+>\\s*)?\\()",
+      "begin": "(?=(\\??\\.\\s*)?([_$[:alpha:]][_$[:alnum:]]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
+      "end": "(?<=\\))(?!(\\??\\.\\s*)?([_$[:alpha:]][_$[:alnum:]]*)\\s*(<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\()",
       "patterns": [
         {
           "match": "\\?",
@@ -183,17 +183,17 @@
           "name": "punctuation.accessor.ts"
         },
         {
-          "match": "([_$A-Za-z][_$0-9A-Za-z]*)",
+          "match": "([_$[:alpha:]][_$[:alnum:]]*)",
           "name": "entity.name.function.ts"
         },
         {
-          "begin": "<",
+          "begin": "\\<",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.typeparameters.begin.ts"
             }
           },
-          "end": ">",
+          "end": "\\>",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.typeparameters.end.ts"
@@ -247,7 +247,7 @@
     "identifiers": {
       "patterns": [
         {
-          "match": "([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*\\.\\s*prototype\\b(?!\\$))",
+          "match": "([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*\\.\\s*prototype\\b(?!\\$))",
           "name": "support.class.ts"
         },
         {
@@ -262,7 +262,7 @@
               "name": "variable.other.object.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*(?:([A-Z][_$\\dA-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "([?!]?\\.)\\s*(?:([[:upper:]][_$[:digit:][:upper:]]*)|([_$[:alpha:]][_$[:alnum:]]*))(?=\\s*\\.\\s*[_$[:alpha:]][_$[:alnum:]]*)"
         },
         {
           "captures": {
@@ -273,7 +273,7 @@
               "name": "entity.name.function.ts"
             }
           },
-          "match": "(?:([?!]?\\.)\\s*)?([_$A-Za-z][_$0-9A-Za-z]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
+          "match": "(?:([?!]?\\.)\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))"
         },
         {
           "captures": {
@@ -284,7 +284,7 @@
               "name": "constant.other.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*([A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])"
+          "match": "([?!]?\\.)\\s*([[:upper:]][_$[:digit:][:upper:]]*)(?![_$[:alnum:]])"
         },
         {
           "captures": {
@@ -295,7 +295,7 @@
               "name": "variable.other.property.ts"
             }
           },
-          "match": "([?!]?\\.)\\s*([_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "([?!]?\\.)\\s*([_$[:alpha:]][_$[:alnum:]]*)"
         },
         {
           "captures": {
@@ -306,14 +306,14 @@
               "name": "variable.other.object.ts"
             }
           },
-          "match": "(?:([A-Z][_$\\dA-Z]*)|([_$A-Za-z][_$0-9A-Za-z]*))(?=\\s*\\.\\s*[_$A-Za-z][_$0-9A-Za-z]*)"
+          "match": "(?:([[:upper:]][_$[:digit:][:upper:]]*)|([_$[:alpha:]][_$[:alnum:]]*))(?=\\s*\\.\\s*[_$[:alpha:]][_$[:alnum:]]*)"
         },
         {
-          "match": "([A-Z][_$\\dA-Z]*)(?![_$0-9A-Za-z])",
+          "match": "([[:upper:]][_$[:digit:][:upper:]]*)(?![_$[:alnum:]])",
           "name": "constant.character.other"
         },
         {
-          "match": "[_$A-Za-z][_$0-9A-Za-z]*",
+          "match": "[_$[:alpha:]][_$[:alnum:]]*",
           "name": "variable.other.readwrite.ts"
         }
       ]
@@ -430,7 +430,7 @@
               "name": "meta.delimiter.decimal.period.ts"
             }
           },
-          "match": "(?<!\\$)(?:(?:\\b\\d+(\\.)\\d+[eE][+-]?\\d+\\b)|#1.1E+3(?:\\b\\d+(\\.)[eE][+-]?\\d+\\b)|#1.E+3(?:\\B(\\.)\\d+[eE][+-]?\\d+\\b)|#.1E+3(?:\\b\\d+[eE][+-]?\\d+\\b)|#1E+3(?:\\b\\d+(\\.)\\d+\\b)|#1.1(?:\\b\\d+(\\.)\\B)|#1.(?:\\B(\\.)\\d+\\b)|#.1(?:\\b\\d+\\b(?!\\.))#1)(?!\\$)"
+          "match": "(?<!\\$)(?:(?:\\b[0-9]+(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|#1.1E+3(?:\\b[0-9]+(\\.)[eE][+-]?[0-9]+\\b)|#1.E+3(?:\\B(\\.)[0-9]+[eE][+-]?[0-9]+\\b)|#.1E+3(?:\\b[0-9]+[eE][+-]?[0-9]+\\b)|#1E+3(?:\\b[0-9]+(\\.)[0-9]+\\b)|#1.1(?:\\b[0-9]+(\\.)\\B)|#1.(?:\\B(\\.)[0-9]+\\b)|#.1(?:\\b[0-9]+\\b(?!\\.))#1)(?!\\$)"
         }
       ]
     },
@@ -454,7 +454,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$A-Za-z][_$0-9A-Za-z]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))))"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|\\<[^<>]+\\>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|([(]\\s*(([)])|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|([)]\\s*=>))))))))"
         },
         {
           "captures": {
@@ -474,7 +474,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$A-Za-z][_$0-9A-Za-z]*)\\s*(\\??)"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(public|private|protected)\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)"
         }
       ]
     },
@@ -501,7 +501,7 @@
       ]
     },
     "punctuationAccessor": {
-      "match": "\\?\\.|!\\.|\\.",
+      "match": "\\?\\.|\\!\\.|\\.",
       "name": "punctuation.accessor.ts"
     },
     "punctuationComma": {
@@ -573,7 +573,7 @@
       "name": "constant.character.escape.ts"
     },
     "ternaryExpression": {
-      "begin": "(?!\\?\\.\\s*[^\\d])(\\?)(?!\\?)",
+      "begin": "(?!\\?\\.\\s*[^[:digit:]])(\\?)(?!\\?)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.ternary.ts"
@@ -634,7 +634,7 @@
           "name": "keyword.operator.type.annotation.ts"
         }
       },
-      "end": "(?=$|[,);}\\]]|\\/\\/|\")|(?==[^>])|(?<=[}>\\])]|[_$A-Za-z])\\s*(?=\\{)",
+      "end": "(?=$|[,);\\}\\]]|\\/\\/|\")|(?==[^>])|(?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)",
       "name": "meta.type.annotation.ts",
       "patterns": [
         {
@@ -654,7 +654,7 @@
               "name": "keyword.control.new.ts"
             }
           },
-          "match": "(?<!\\.|\\$)\\b(new)\\b(?=\\s*<)",
+          "match": "(?<!\\.|\\$)\\b(new)\\b(?=\\s*\\<)",
           "name": "meta.type.constructor.ts"
         },
         {
@@ -673,7 +673,7 @@
           ]
         },
         {
-          "begin": "(?<=>)\\s*(?=\\()",
+          "begin": "(?<=\\>)\\s*(?=\\()",
           "end": "(?<=\\))",
           "include": "#typeofOperator",
           "name": "meta.type.function.ts",
@@ -684,7 +684,7 @@
           ]
         },
         {
-          "begin": "((?=[(]\\s*(([)])|(\\.\\.\\.)|([_$0-9A-Za-z]+\\s*(([:,?=])|([)]\\s*=>))))))",
+          "begin": "((?=[(]\\s*(([)])|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|([)]\\s*=>))))))",
           "end": "(?<=\\))",
           "name": "meta.type.function.ts",
           "patterns": [
@@ -706,10 +706,10 @@
               "name": "punctuation.accessor.ts"
             }
           },
-          "match": "([_$A-Za-z][_$0-9A-Za-z]*)\\s*([?!]?\\.)"
+          "match": "([_$[:alpha:]][_$[:alnum:]]*)\\s*([?!]?\\.)"
         },
         {
-          "match": "[_$A-Za-z][_$0-9A-Za-z]*",
+          "match": "[_$[:alpha:]][_$[:alnum:]]*",
           "name": "entity.name.type.ts"
         }
       ]

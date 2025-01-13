@@ -69,10 +69,10 @@
           "name": "variable.other.property.gdscript"
         }
       },
-      "match": "\\b(\\.)\\s*(?<![@$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])"
+      "match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])"
     },
     "any_variable": {
-      "match": "\\b(?<![@$#%])([A-Za-z_]\\w*)\\b(?![(])",
+      "match": "\\b(?<![@\\$#%])([A-Za-z_]\\w*)\\b(?![(])",
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
@@ -785,19 +785,19 @@
           "name": "constant.numeric.integer.hexadecimal.gdscript"
         },
         {
-          "match": "\\.\\d[0-9_]*([eE][+-]?[0-9_]+)?",
+          "match": "\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "(\\d[0-9_]*)?\\.[0-9_]*([eE][+-]?[0-9_]+)?",
+          "match": "([0-9][0-9_]*)?\\.[0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "\\d[0-9_]*[eE][+-]?[0-9_]+",
+          "match": "[0-9][0-9_]*[eE][+-]?[0-9_]+",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?\\d[0-9_]*",
+          "match": "[-]?[0-9][0-9_]*",
           "name": "constant.numeric.integer.gdscript"
         }
       ]
@@ -984,7 +984,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "({{|}}|(?:{\\w*(\\.[A-Za-z_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
+          "match": "({{|}}|(?:{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
           "name": "meta.format.brace.gdscript"
         },
         {
@@ -999,7 +999,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "({\\w*(\\.[A-Za-z_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?\\}[^'\"{}\\n]*)*})",
+          "match": "({\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?\\}[^'\"{}\\n]*)*})",
           "name": "meta.format.brace.gdscript"
         }
       ]

@@ -16,7 +16,9 @@
 #DBD7CACC      }
 #DBD7CACC       
 #4D9375        process
-#DBD7CACC       INDEX {
+#DBD7CACC       
+#80A665        INDEX
+#DBD7CACC       {
 #DBD7CACC          tag "$transcriptome.simpleName"
 #DBD7CACC       
 #DBD7CACC          
@@ -39,7 +41,9 @@
 #DBD7CACC      }
 #DBD7CACC       
 #4D9375        process
-#DBD7CACC       FASTQC {
+#DBD7CACC       
+#80A665        FASTQC
+#DBD7CACC       {
 #DBD7CACC          tag "FASTQC on $sample_id"
 #DBD7CACC          publishDir params.outdir
 #DBD7CACC       
@@ -64,7 +68,9 @@
 #DBD7CACC      }
 #DBD7CACC       
 #4D9375        process
-#DBD7CACC       QUANT {
+#DBD7CACC       
+#80A665        QUANT
+#DBD7CACC       {
 #DBD7CACC          tag "$pair_id"
 #DBD7CACC          publishDir params.outdir
 #DBD7CACC       

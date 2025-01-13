@@ -51,7 +51,7 @@
       ]
     },
     {
-      "begin": "\\b(with_attr)\\s+([a-zA-Z_]\\w*)\\s*[({]",
+      "begin": "\\b(with_attr)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*[({]",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.with_attr"
@@ -99,11 +99,11 @@
       "name": "comment.line.sharp"
     },
     {
-      "match": "\\b[a-zA-Z_]\\w*:\\s*$",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*:\\s*$",
       "name": "entity.name.function"
     },
     {
-      "begin": "\\b(func)\\s+([a-zA-Z_]\\w*)\\s*[({]",
+      "begin": "\\b(func)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*[({]",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.cairo"
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "begin": "\\b(struct|namespace)\\s+([a-zA-Z_]\\w*)\\s*\\{",
+      "begin": "\\b(struct|namespace)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.cairo"
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "match": "\\b[+-]?\\d+\\b",
+      "match": "\\b[+-]?[0-9]+\\b",
       "name": "constant.numeric.decimal"
     },
     {

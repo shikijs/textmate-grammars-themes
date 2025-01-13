@@ -65,7 +65,7 @@
               "name": "keyword.operator.assignment"
             }
           },
-          "match": "(?<=\\G|[\\s\"'])([A-Za-z0-9_]+)(=)(?=[^\\s\"'])"
+          "match": "(?<=\\G|[\\s\"'])([A-Za-z0-9\\_]+)(=)(?=[^\\s\"'])"
         },
         {
           "include": "#variables"
@@ -283,7 +283,7 @@
     "executablePrefixes": {
       "patterns": [
         {
-          "match": "\\G([@\\-:]+(?:\\+|!!?)?|(?:\\+|!!?)[@\\-:]*)",
+          "match": "\\G([@\\-\\:]+(?:\\+|\\!\\!?)?|(?:\\+|\\!\\!?)[@\\-\\:]*)",
           "name": "keyword.operator.prefix.systemd"
         }
       ]
@@ -325,7 +325,7 @@
     "restartOptions": {
       "patterns": [
         {
-          "match": "\\b(no|always|on-(?:success|failure|abnormal|abort|watchdog))\\b",
+          "match": "\\b(no|always|on\\-(?:success|failure|abnormal|abort|watchdog))\\b",
           "name": "constant.language"
         }
       ]
@@ -381,7 +381,7 @@
               "name": "variable.other"
             }
           },
-          "match": "(\\$)([A-Za-z0-9_]+)\\b"
+          "match": "(\\$)([A-Za-z0-9\\_]+)\\b"
         },
         {
           "captures": {
@@ -395,7 +395,7 @@
               "name": "punctuation.definition.variable.systemd"
             }
           },
-          "match": "(\\$\\{)([A-Za-z0-9_]+)(\\})"
+          "match": "(\\$\\{)([A-Za-z0-9\\_]+)(\\})"
         },
         {
           "match": "%%",

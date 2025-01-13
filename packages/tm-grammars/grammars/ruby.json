@@ -24,7 +24,7 @@
         }
       },
       "comment": "class Namespace::ClassName < OtherNamespace::OtherClassName",
-      "match": "\b(class)\\s+((\\w+)((::)\\w+)*)\\s*((<)\\s*((\\w+)((::)\\w+)*))?",
+      "match": "\b(class)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)\\s*((<)\\s*(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*))?",
       "name": "meta.class.ruby"
     },
     {
@@ -39,7 +39,7 @@
           "name": "punctuation.separator.namespace.ruby"
         }
       },
-      "match": "\b(module)\\s+((\\w+)((::)\\w+)*)",
+      "match": "\b(module)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)",
       "name": "meta.module.ruby"
     },
     {
@@ -374,7 +374,7 @@
       "name": "meta.function.method.without-arguments.ruby"
     },
     {
-      "match": "\\b([\\d](?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0(?:[xX]\\h(?>_?\\h)*|[oO]?[0-7](?>_?[0-7])*|[bB][01](?>_?[01])*|[dD]\\d(?>_?\\d)*))\\b",
+      "match": "\\b([\\d](?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0(?:[xX]\\h(?>_?\\h)*|[oO]?[0-7](?>_?[0-7])*|[bB][01](?>_?[01])*|[dD]\\d(?>_?\\d)*))\\b",
       "name": "constant.numeric.ruby"
     },
     {

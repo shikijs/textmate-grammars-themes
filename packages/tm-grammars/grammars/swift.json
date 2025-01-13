@@ -53,7 +53,7 @@
                   "name": "constant.numeric.swift"
                 }
               },
-              "match": "\\b(swift|(?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+(\\d+(?:\\.\\d+)*\\b))?"
+              "match": "\\b(swift|(?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))?"
             },
             {
               "begin": "\\b(introduced|deprecated|obsoleted)\\s*(:)\\s*",
@@ -68,7 +68,7 @@
               "end": "(?!\\G)",
               "patterns": [
                 {
-                  "match": "\\b\\d+(?:\\.\\d+)*\\b",
+                  "match": "\\b[0-9]+(?:\\.[0-9]+)*\\b",
                   "name": "constant.numeric.swift"
                 }
               ]
@@ -651,7 +651,7 @@
                   "name": "keyword.operator.comparison.swift"
                 },
                 {
-                  "match": "\\b\\d+(?:\\.\\d+)*\\b",
+                  "match": "\\b[0-9]+(?:\\.[0-9]+)*\\b",
                   "name": "constant.numeric.swift"
                 }
               ]
@@ -720,7 +720,7 @@
                       "name": "constant.numeric.integer.swift"
                     }
                   },
-                  "match": "(line)\\s*(:)\\s*(\\d+)"
+                  "match": "(line)\\s*(:)\\s*([0-9]+)"
                 },
                 {
                   "match": ",",
@@ -1398,7 +1398,7 @@
               "name": "entity.name.type.swift"
             },
             {
-              "match": "(?<=\\G|\\.)\\$\\d+",
+              "match": "(?<=\\G|\\.)\\$[0-9]+",
               "name": "entity.name.type.swift"
             },
             {
@@ -1627,7 +1627,7 @@
               "name": "constant.numeric.integer.swift"
             }
           },
-          "match": "\\b(precedence)\\s+(\\d+)\\b"
+          "match": "\\b(precedence)\\s+([0-9]+)\\b"
         },
         {
           "captures": {
@@ -2587,7 +2587,7 @@
               "name": "constant.numeric.swift"
             }
           },
-          "match": "\\s*\\b((?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+(\\d+(?:\\.\\d+)*\\b))"
+          "match": "\\s*\\b((?:iOS|macOS|OSX|watchOS|tvOS|visionOS|UIKitForMac)(?:ApplicationExtension)?)\\b(?:\\s+([0-9]+(?:\\.[0-9]+)*\\b))"
         },
         {
           "captures": {
@@ -2607,7 +2607,7 @@
       ]
     },
     "expressions-without-trailing-closures-or-member-references-closure-parameter": {
-      "match": "\\$\\d+",
+      "match": "\\$[0-9]+",
       "name": "variable.language.closure-parameter.swift"
     },
     "expressions-without-trailing-closures-or-member-references-compound-name": {
@@ -2997,60 +2997,60 @@
       "patterns": [
         {
           "comment": "0.1, -4_2.5, 6.022e23, 10E-5",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)\\d[0-9_]*(?=\\.\\d|[eE])(?:\\.\\d[0-9_]*)?(?:[eE][-+]?\\d[0-9_]*)?\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)[0-9][0-9_]*(?=\\.[0-9]|[eE])(?:\\.[0-9][0-9_]*)?(?:[eE][-+]?[0-9][0-9_]*)?\\b(?!\\.[0-9])",
           "name": "constant.numeric.float.decimal.swift"
         },
         {
           "comment": "-0x1.ap2_3, 0x31p-4",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)(?:\\.[0-9a-fA-F][0-9a-fA-F_]*)?[pP][-+]?\\d[0-9_]*\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)(?:\\.[0-9a-fA-F][0-9a-fA-F_]*)?[pP][-+]?[0-9][0-9_]*\\b(?!\\.[0-9])",
           "name": "constant.numeric.float.hexadecimal.swift"
         },
         {
           "comment": "0x1p, 0x1p_2, 0x1.5pa, 0x1.1p+1f, 0x1pz",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)(?:\\.[0-9a-fA-F][0-9a-fA-F_]*)?(?:[pP][-+]?\\w*)\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)(?:\\.[0-9a-fA-F][0-9a-fA-F_]*)?(?:[pP][-+]?\\w*)\\b(?!\\.[0-9])",
           "name": "invalid.illegal.numeric.float.invalid-exponent.swift"
         },
         {
           "comment": "0x1.5w (note that 0x1.f may be a valid expression)",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)\\.\\d[\\w.]*",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)(0x[0-9a-fA-F][0-9a-fA-F_]*)\\.[0-9][\\w.]*",
           "name": "invalid.illegal.numeric.float.missing-exponent.swift"
         },
         {
           "comment": "-.5, .2f (note that 1.-.5 may be a valid expression)",
-          "match": "(?<=\\s|^)-?\\.\\d[\\w.]*",
+          "match": "(?<=\\s|^)\\-?\\.[0-9][\\w.]*",
           "name": "invalid.illegal.numeric.float.missing-leading-zero.swift"
         },
         {
           "comment": "0b_0_1, 0x_1p+3q",
-          "match": "(\\B-|\\b)0[box]_[0-9a-fA-F_]*(?:[pPeE][+-]?\\w+)?[\\w.]+",
+          "match": "(\\B\\-|\\b)0[box]_[0-9a-fA-F_]*(?:[pPeE][+-]?\\w+)?[\\w.]+",
           "name": "invalid.illegal.numeric.leading-underscore.swift"
         },
         {
           "comment": "tuple positional member: not really a numeric literal, but not invalid",
-          "match": "(?<=[\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)\\d+\\b"
+          "match": "(?<=[\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)[0-9]+\\b"
         },
         {
           "comment": "0b010, 0b1_0",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0b[01][01_]*\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0b[01][01_]*\\b(?!\\.[0-9])",
           "name": "constant.numeric.integer.binary.swift"
         },
         {
           "comment": "0o1, 0o7_3",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0o[0-7][0-7_]*\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0o[0-7][0-7_]*\\b(?!\\.[0-9])",
           "name": "constant.numeric.integer.octal.swift"
         },
         {
           "comment": "02, 3_456",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)\\d[0-9_]*\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)[0-9][0-9_]*\\b(?!\\.[0-9])",
           "name": "constant.numeric.integer.decimal.swift"
         },
         {
           "comment": "0x4, 0xF_7",
-          "match": "(\\B-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0x[0-9a-fA-F][0-9a-fA-F_]*\\b(?!\\.\\d)",
+          "match": "(\\B\\-|\\b)(?<![\\[\\](){}\\p{L}_\\p{N}\\p{M}]\\.)0x[0-9a-fA-F][0-9a-fA-F_]*\\b(?!\\.[0-9])",
           "name": "constant.numeric.integer.hexadecimal.swift"
         },
         {
-          "match": "(\\B-|\\b)\\d[\\w.]*",
+          "match": "(\\B\\-|\\b)[0-9][\\w.]*",
           "name": "invalid.illegal.numeric.other.swift"
         }
       ]
@@ -3199,7 +3199,7 @@
           "match": "(\\\\k\\{)((?!\\d)\\w+)(?:([+-])(\\d+))?(\\})"
         },
         {
-          "match": "\\\\[1-9]\\d+",
+          "match": "\\\\[1-9][0-9]+",
           "name": "keyword.other.back-reference.regexp"
         },
         {
@@ -4026,11 +4026,11 @@
                 "0": {
                   "patterns": [
                     {
-                      "match": "\\G(\\+\\+|--)$",
+                      "match": "\\G(\\+\\+|\\-\\-)$",
                       "name": "keyword.operator.increment-or-decrement.swift"
                     },
                     {
-                      "match": "\\G(\\+|-)$",
+                      "match": "\\G(\\+|\\-)$",
                       "name": "keyword.operator.arithmetic.unary.swift"
                     },
                     {
@@ -4056,7 +4056,7 @@
                 "0": {
                   "patterns": [
                     {
-                      "match": "\\G(\\+\\+|--)$",
+                      "match": "\\G(\\+\\+|\\-\\-)$",
                       "name": "keyword.operator.increment-or-decrement.swift"
                     },
                     {
@@ -4082,15 +4082,15 @@
                       "name": "keyword.operator.assignment.swift"
                     },
                     {
-                      "match": "\\G(\\+|-|\\*|/|%|<<|>>|&|\\^|\\||&&|\\|\\|)=$",
+                      "match": "\\G(\\+|\\-|\\*|/|%|<<|>>|&|\\^|\\||&&|\\|\\|)=$",
                       "name": "keyword.operator.assignment.compound.swift"
                     },
                     {
-                      "match": "\\G(\\+|-|\\*|/)$",
+                      "match": "\\G(\\+|\\-|\\*|/)$",
                       "name": "keyword.operator.arithmetic.swift"
                     },
                     {
-                      "match": "\\G&(\\+|-|\\*)$",
+                      "match": "\\G&(\\+|\\-|\\*)$",
                       "name": "keyword.operator.arithmetic.overflow.swift"
                     },
                     {
