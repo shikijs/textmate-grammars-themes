@@ -3193,21 +3193,21 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
-    byteSize: 23242,
+    byteSize: 23534,
     displayName: 'Templ',
     embedded: [
       'go',
       'javascript',
       'css',
     ],
-    hash: 'CL6GEwTha7',
-    lastUpdate: '2024-05-30T10:17:28Z',
+    hash: '9uNanNeV8W',
+    lastUpdate: '2025-01-13T16:55:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
     name: 'templ',
     scopeName: 'source.templ',
-    sha: '4f85ade86dba0ecabd80fe6e845653a0a4aed5bf',
-    source: 'https://github.com/templ-go/templ-vscode/blob/4f85ade86dba0ecabd80fe6e845653a0a4aed5bf/syntaxes/templ.tmLanguage.json',
+    sha: 'b99c1c940cec830c01a80b58ae3cce714b30056c',
+    source: 'https://github.com/templ-go/templ-vscode/blob/b99c1c940cec830c01a80b58ae3cce714b30056c/syntaxes/templ.tmLanguage.json',
   },
   {
     aliases: [
