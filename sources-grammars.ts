@@ -291,7 +291,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'swift',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/swift/syntaxes/swift.tmLanguage.json',
+    source: 'https://github.com/jtbandes/swift-tmlanguage/blob/main/Swift.tmLanguage.yaml',
     categories: ['general'],
   },
   {
