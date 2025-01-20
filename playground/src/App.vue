@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { HighlighterCore } from '@shikijs/core'
-import { createHighlighterCore, createJavaScriptRegexEngine, createWasmOnigEngine } from '@shikijs/core'
+import { createHighlighterCore } from '@shikijs/core'
+import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript'
+import { createOnigurumaEngine } from '@shikijs/engine-oniguruma'
 import { grammars, injections } from '../../packages/tm-grammars/index'
 import { themes } from '../../packages/tm-themes/index'
 import Badge from './Badge.vue'
@@ -24,7 +26,7 @@ const duration = ref(0)
 const jsEngine = computed(() => createJavaScriptRegexEngine({
   forgiving: engineJsForgiving.value,
 }))
-const wasmEngine = createWasmOnigEngine(() => import('@shikijs/core/wasm-inlined'))
+const wasmEngine = createOnigurumaEngine(() => import('@shikijs/core/wasm-inlined'))
 
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
