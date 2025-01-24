@@ -525,14 +525,14 @@ export const grammars = [
     ],
     byteSize: 32600,
     displayName: 'CodeQL',
-    hash: 'rtbAK5lO8i',
-    lastUpdate: '2023-09-08T08:43:39Z',
+    hash: '0c9c3xgdAS',
+    lastUpdate: '2025-01-20T17:49:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/github/vscode-codeql/main/LICENSE.md',
     name: 'codeql',
     scopeName: 'source.ql',
-    sha: '47fa163cb9fffce379458962eb391c9ef9082dcb',
-    source: 'https://github.com/github/vscode-codeql/blob/47fa163cb9fffce379458962eb391c9ef9082dcb/syntaxes/ql.tmLanguage.json',
+    sha: 'a6266bbcc88702619ceb580253a65e8f83333c1b',
+    source: 'https://github.com/github/vscode-codeql/blob/a6266bbcc88702619ceb580253a65e8f83333c1b/syntaxes/ql.tmLanguage.json',
   },
   {
     aliases: [
