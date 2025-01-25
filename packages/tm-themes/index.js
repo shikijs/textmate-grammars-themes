@@ -7,6 +7,10 @@ export const themes = [
   {
     byteSize: 8801,
     displayName: 'Andromeeda',
+    funding: {
+      custom: 'https://www.paypal.me/EliverLara/',
+      github: 'EliverLara',
+    },
     hash: 'feNwHXfITl',
     lastUpdate: '2024-03-13T01:26:57Z',
     license: 'MIT',
@@ -41,6 +45,10 @@ export const themes = [
   {
     byteSize: 45556,
     displayName: 'Catppuccin Frappé',
+    funding: {
+      github: 'catppuccin',
+      open_collective: 'catppuccin',
+    },
     hash: 'Anhq8s8gdo',
     lastUpdate: '2024-11-08T23:01:29Z',
     license: 'MIT',
@@ -53,6 +61,10 @@ export const themes = [
   {
     byteSize: 45554,
     displayName: 'Catppuccin Latte',
+    funding: {
+      github: 'catppuccin',
+      open_collective: 'catppuccin',
+    },
     hash: 'BSNMoQJVa8',
     lastUpdate: '2024-11-08T23:01:29Z',
     license: 'MIT',
@@ -65,6 +77,10 @@ export const themes = [
   {
     byteSize: 45561,
     displayName: 'Catppuccin Macchiato',
+    funding: {
+      github: 'catppuccin',
+      open_collective: 'catppuccin',
+    },
     hash: 'd31Qj1B5Me',
     lastUpdate: '2024-11-08T23:01:29Z',
     license: 'MIT',
@@ -77,6 +93,10 @@ export const themes = [
   {
     byteSize: 45553,
     displayName: 'Catppuccin Mocha',
+    funding: {
+      github: 'catppuccin',
+      open_collective: 'catppuccin',
+    },
     hash: 'fJyJfbcB2s',
     lastUpdate: '2024-11-08T23:01:29Z',
     license: 'MIT',
@@ -233,6 +253,10 @@ export const themes = [
   {
     byteSize: 35362,
     displayName: 'Houston',
+    funding: {
+      github: 'withastro',
+      open_collective: 'astrodotbuild',
+    },
     hash: 'Tl8cxYEnjR',
     lastUpdate: '2023-11-10T11:20:23Z',
     license: 'MIT',
@@ -305,6 +329,10 @@ export const themes = [
   {
     byteSize: 18555,
     displayName: 'Material Theme',
+    funding: {
+      open_collective: 'material-theme',
+      polar: 'material-theme',
+    },
     hash: 'j5BPwyGHk8',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -317,6 +345,10 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Darker',
+    funding: {
+      open_collective: 'material-theme',
+      polar: 'material-theme',
+    },
     hash: 'pzXIf5kkLP',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -329,6 +361,10 @@ export const themes = [
   {
     byteSize: 18574,
     displayName: 'Material Theme Lighter',
+    funding: {
+      open_collective: 'material-theme',
+      polar: 'material-theme',
+    },
     hash: 'GFHjY5bfXJ',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -341,6 +377,10 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Ocean',
+    funding: {
+      open_collective: 'material-theme',
+      polar: 'material-theme',
+    },
     hash: 'oGNhhMu0Pu',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -353,6 +393,10 @@ export const themes = [
   {
     byteSize: 18575,
     displayName: 'Material Theme Palenight',
+    funding: {
+      open_collective: 'material-theme',
+      polar: 'material-theme',
+    },
     hash: 'mUFOBKfkFM',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
@@ -401,6 +445,11 @@ export const themes = [
   {
     byteSize: 28853,
     displayName: 'Night Owl',
+    funding: {
+      github: [
+        'sdras',
+      ],
+    },
     hash: 'CPTuV0qaTN',
     lastUpdate: '2024-12-31T21:18:40Z',
     license: 'MIT',
@@ -437,6 +486,9 @@ export const themes = [
   {
     byteSize: 25238,
     displayName: 'One Light',
+    funding: {
+      github: 'akamud',
+    },
     hash: 'l6dAh6tUzF',
     lastUpdate: '2022-10-08T13:48:47Z',
     license: 'MIT',
@@ -449,6 +501,10 @@ export const themes = [
   {
     byteSize: 9235,
     displayName: 'Plastic',
+    funding: {
+      custom: 'https://www.buymeacoffee.com/wstone',
+      github: 'will-stone',
+    },
     hash: 'FDMXnib5GO',
     lastUpdate: '2024-03-31T09:02:26Z',
     license: 'MIT',
@@ -617,6 +673,9 @@ export const themes = [
   {
     byteSize: 13617,
     displayName: 'Vitesse Black',
+    funding: {
+      github: 'antfu',
+    },
     hash: 'QTaSMwtu5s',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
@@ -629,6 +688,9 @@ export const themes = [
   {
     byteSize: 13699,
     displayName: 'Vitesse Dark',
+    funding: {
+      github: 'antfu',
+    },
     hash: 'q5xFZxFGnQ',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
@@ -641,6 +703,9 @@ export const themes = [
   {
     byteSize: 13556,
     displayName: 'Vitesse Light',
+    funding: {
+      github: 'antfu',
+    },
     hash: 'mqhRpZKkV3',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',

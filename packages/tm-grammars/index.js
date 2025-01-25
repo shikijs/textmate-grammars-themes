@@ -20,6 +20,9 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'ActionScript',
+    funding: {
+      patreon: 'josht',
+    },
     hash: '6OPWQM2hdm',
     lastUpdate: '2024-06-05T14:26:29Z',
     license: 'Apache-2.0',
@@ -243,6 +246,10 @@ export const grammars = [
       'postcss',
       'tsx',
     ],
+    funding: {
+      github: 'withastro',
+      open_collective: 'astrodotbuild',
+    },
     hash: 'CTTcS9p5RI',
     lastUpdate: '2024-03-23T17:37:42Z',
     license: 'MIT',
@@ -363,6 +370,9 @@ export const grammars = [
       'json',
       'css',
     ],
+    funding: {
+      github: 'spatie',
+    },
     hash: 'Cm4jIukdax',
     lastUpdate: '2021-06-28T08:16:43Z',
     license: 'MIT',
@@ -714,6 +724,12 @@ export const grammars = [
   {
     byteSize: 41204,
     displayName: 'D',
+    funding: {
+      github: [
+        'WebFreak001',
+      ],
+      patreon: 'WebFreak',
+    },
     hash: 'KnYEmdZTmQ',
     lastUpdate: '2023-07-07T13:01:08Z',
     license: 'MIT',
@@ -754,6 +770,9 @@ export const grammars = [
       'config',
     ],
     displayName: 'Desktop',
+    funding: {
+      custom: 'https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ',
+    },
     hash: 'OmKCNgkQZj',
     lastUpdate: '2021-07-19T18:36:02Z',
     license: 'MIT',
@@ -856,6 +875,13 @@ export const grammars = [
     embedded: [
       'glsl',
     ],
+    funding: {
+      github: [
+        'razzeee',
+        'jmbockhorst',
+      ],
+      open_collective: 'elm-tooling',
+    },
     hash: '419SHaU3SB',
     lastUpdate: '2020-08-01T18:50:23Z',
     license: 'MIT',
@@ -1025,6 +1051,9 @@ export const grammars = [
       'gdshader',
       'gdscript',
     ],
+    funding: {
+      custom: 'https://fund.godotengine.org/',
+    },
     hash: 'BXLWIiNA5k',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
@@ -1037,6 +1066,9 @@ export const grammars = [
   {
     byteSize: 18047,
     displayName: 'GDScript',
+    funding: {
+      custom: 'https://fund.godotengine.org/',
+    },
     hash: 'erOZtbL3ip',
     lastUpdate: '2024-12-18T15:45:05Z',
     license: 'MIT',
@@ -1049,6 +1081,9 @@ export const grammars = [
   {
     byteSize: 6096,
     displayName: 'GDShader',
+    funding: {
+      custom: 'https://fund.godotengine.org/',
+    },
     hash: '9V2Wy87u0W',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
@@ -1327,6 +1362,9 @@ export const grammars = [
       'general',
     ],
     displayName: 'Haskell',
+    funding: {
+      github: 'octref',
+    },
     hash: 'cU0bQGeuQR',
     lastUpdate: '2020-08-20T04:20:28Z',
     license: 'BSD-3-Clause',
@@ -1568,6 +1606,9 @@ export const grammars = [
     embedded: [
       'jinja-html',
     ],
+    funding: {
+      github: 'samuelcolvin',
+    },
     hash: 'lS1WbbM6hM',
     lastUpdate: '2022-08-30T14:06:56Z',
     license: 'MIT',
@@ -2230,6 +2271,9 @@ export const grammars = [
   {
     byteSize: 14708,
     displayName: 'Nix',
+    funding: {
+      open_collective: 'nix-community',
+    },
     hash: 'US1yMcXb2a',
     lastUpdate: '2022-04-17T09:05:16Z',
     license: 'MIT',
@@ -2308,6 +2352,11 @@ export const grammars = [
       'general',
     ],
     displayName: 'Pascal',
+    funding: {
+      custom: 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted',
+      github: 'alefragnani',
+      patreon: 'alefragnani',
+    },
     hash: '4SfeZ44tbW',
     lastUpdate: '2024-05-29T12:09:03Z',
     license: 'MIT',
@@ -2410,6 +2459,12 @@ export const grammars = [
       'web',
     ],
     displayName: 'PostCSS',
+    funding: {
+      github: [
+        'octref',
+      ],
+      issuehunt: 'vuejs/vetur',
+    },
     hash: '72eQNhlGjK',
     lastUpdate: '2019-03-17T05:02:24Z',
     license: 'MIT',
@@ -2517,6 +2572,9 @@ export const grammars = [
   {
     byteSize: 11376,
     displayName: 'Puppet',
+    funding: {
+      github: 'octref',
+    },
     hash: 'ntELZbbh3Z',
     lastUpdate: '2020-08-20T04:40:24Z',
     license: 'Apache-2.0',
@@ -2625,6 +2683,11 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Racket',
+    funding: {
+      github: [
+        'eugleo',
+      ],
+    },
     hash: 'YfDTs0Irr0',
     lastUpdate: '2024-05-29T13:14:07Z',
     license: 'GPL-3.0',
@@ -3071,6 +3134,9 @@ export const grammars = [
       'web',
     ],
     displayName: 'Stylus',
+    funding: {
+      open_collective: 'stylus',
+    },
     hash: 'VVm34PHEQe',
     lastUpdate: '2021-11-19T11:55:44Z',
     license: 'MIT',
@@ -3099,6 +3165,9 @@ export const grammars = [
       'pug',
       'markdown',
     ],
+    funding: {
+      open_collective: 'svelte',
+    },
     hash: 'XCWPk8EwVr',
     lastUpdate: '2024-12-03T17:00:34Z',
     license: 'MIT',
@@ -3114,6 +3183,12 @@ export const grammars = [
       'general',
     ],
     displayName: 'Swift',
+    funding: {
+      github: [
+        'jtbandes',
+      ],
+      ko_fi: 'jtbandes',
+    },
     hash: 'huCqvuz9BT',
     lastUpdate: '2025-01-18T23:17:43Z',
     license: 'MIT',
@@ -3126,6 +3201,9 @@ export const grammars = [
   {
     byteSize: 25181,
     displayName: 'SystemVerilog',
+    funding: {
+      custom: 'https://www.buymeacoffee.com/mshr.h',
+    },
     hash: 'geVyELwt7T',
     lastUpdate: '2024-11-09T08:32:52Z',
     license: 'MIT',
@@ -3327,6 +3405,11 @@ export const grammars = [
       'python',
       'ruby',
     ],
+    funding: {
+      github: [
+        'mblode',
+      ],
+    },
     hash: 'nVLCdU01wk',
     lastUpdate: '2023-11-03T21:57:59Z',
     license: 'MIT',
@@ -3432,6 +3515,9 @@ export const grammars = [
   {
     byteSize: 5738,
     displayName: 'Verilog',
+    funding: {
+      custom: 'https://www.buymeacoffee.com/mshr.h',
+    },
     hash: 'RTTNS4GjI2',
     lastUpdate: '2024-10-26T13:17:15Z',
     license: 'MIT',
@@ -3501,6 +3587,9 @@ export const grammars = [
       'vue-interpolations',
       'vue-sfc-style-variable-injection',
     ],
+    funding: {
+      github: 'johnsoncodehk',
+    },
     hash: 'jHCVczJ3x8',
     lastUpdate: '2024-12-20T20:08:46Z',
     license: 'MIT',
@@ -3520,6 +3609,12 @@ export const grammars = [
       'vue',
       'javascript',
     ],
+    funding: {
+      github: [
+        'octref',
+      ],
+      issuehunt: 'vuejs/vetur',
+    },
     hash: 'zPZMJ00RN0',
     lastUpdate: '2020-08-20T02:58:43Z',
     license: 'MIT',
@@ -3650,6 +3745,13 @@ export const grammars = [
       'bibtex',
       'json',
     ],
+    funding: {
+      custom: [
+        'frederisk.github.io/donate/cryptocurrency',
+        'www.paypal.me/rwfholmejp',
+      ],
+      patreon: 'rwfholme',
+    },
     hash: '5e9ZYQBQec',
     lastUpdate: '2024-11-14T01:22:10Z',
     license: 'MIT',
@@ -3913,6 +4015,9 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
+    funding: {
+      ko_fi: 26,
+    },
     hash: 'b9lAesKxsY',
     injectTo: [
       'source.ts',
@@ -3936,6 +4041,9 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
+    funding: {
+      ko_fi: 26,
+    },
     hash: 'cjHb7XdeYY',
     injectTo: [
       'source.ts',
@@ -3959,6 +4067,9 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
+    funding: {
+      ko_fi: 26,
+    },
     hash: 'HFffghnePZ',
     injectTo: [
       'source.ts',
@@ -3981,6 +4092,9 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
+    funding: {
+      ko_fi: 26,
+    },
     hash: 'Ps1gaKvlPa',
     injectTo: [
       'source.ts',
@@ -4002,6 +4116,9 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
+    funding: {
+      ko_fi: 26,
+    },
     hash: 'rEsSluhkQQ',
     injectTo: [
       'source.ts',
@@ -4024,6 +4141,9 @@ export const injections = [
     embeddedIn: [
       'jinja',
     ],
+    funding: {
+      github: 'samuelcolvin',
+    },
     hash: 'GixUE5UUDf',
     lastUpdate: '2022-08-17T08:07:37Z',
     license: 'MIT',
@@ -4038,6 +4158,9 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
+    funding: {
+      github: 'johnsoncodehk',
+    },
     hash: 'dDgC0hpSLe',
     injectTo: [
       'text.html.markdown',
@@ -4055,6 +4178,9 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
+    funding: {
+      github: 'johnsoncodehk',
+    },
     hash: 'lhC1cd62GE',
     injectTo: [
       'source.vue',
@@ -4075,6 +4201,9 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
+    funding: {
+      github: 'johnsoncodehk',
+    },
     hash: 'ePqTfZTjMl',
     injectTo: [
       'source.vue',
@@ -4098,6 +4227,9 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
+    funding: {
+      github: 'johnsoncodehk',
+    },
     hash: 'gQb4LxBpN5',
     injectTo: [
       'source.vue',

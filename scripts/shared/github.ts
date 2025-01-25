@@ -2,6 +2,7 @@ import type { GrammarInfo } from '../../packages/tm-grammars/index'
 import type { ThemeInfo } from '../../packages/tm-themes/index'
 import type { GrammarSource } from '../grammars/types'
 import type { ThemeSource } from '../themes/types'
+import YAML from 'js-yaml'
 import { hash as getHash } from 'ohash'
 import { octokit } from './octokit'
 
@@ -11,11 +12,39 @@ interface CommitInfo {
 }
 
 const _cacheGetLicenseUrl = new Map<string, ReturnType<typeof _getLicenseUrl>>()
+const _cacheGetFundingInfo = new Map<string, ReturnType<typeof _getFundingInfo>>()
 const _cacheGetCommit = new Map<string, Promise<CommitInfo>>()
 
 function _getLicenseUrl(repo: string) {
   return octokit.request('GET /repos/{owner}/{repo}/license', { owner: repo.split('/')[0], repo: repo.split('/')[1] }).then((r: any) => {
     return r.data
+  })
+}
+
+function _getFundingInfo(ownerAndRepo: string) {
+  const [owner, repo] = ownerAndRepo.split('/')
+  // Set Accept to receive raw file contents
+  const headers = { Accept: 'application/vnd.github.raw+json' }
+
+  return octokit.request('GET /repos/{owner}/{repo}/contents/.github/FUNDING.yml', { owner, repo, headers }).catch((err: any) => {
+    // If there is no repo-specific .github folder, there may be an owner-level one that is used as a fallback
+    if (err.status === 404) {
+      return octokit.request('GET /repos/{owner}/.github/contents/FUNDING.yml', { owner, headers })
+    }
+    else {
+      throw err
+    }
+  }).then((r: any) => {
+    const funding = YAML.load(r.data) as Record<string, unknown>
+    const nonnullEntries = Object.entries(funding).filter(([, value]) => value != null)
+    return nonnullEntries.length > 0 ? Object.fromEntries(nonnullEntries) : undefined
+  }, (r: any) => {
+    if (r.status === 404) {
+      return undefined
+    }
+    else {
+      throw r
+    }
   })
 }
 
@@ -39,6 +68,12 @@ function getLicenseUrl(repo: string) {
   if (!_cacheGetLicenseUrl.has(repo))
     _cacheGetLicenseUrl.set(repo, _getLicenseUrl(repo))
   return _cacheGetLicenseUrl.get(repo)!
+}
+
+function getFundingInfo(repo: string) {
+  if (!_cacheGetFundingInfo.has(repo))
+    _cacheGetFundingInfo.set(repo, _getFundingInfo(repo))
+  return _cacheGetFundingInfo.get(repo)!
 }
 
 function getCommit(repo: string, branch: string, path: string) {
@@ -76,6 +111,9 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
     info.lastUpdate = commit.date
 
     const license = await getLicenseUrl(repo)
+      .catch(() => undefined)
+
+    info.funding = await getFundingInfo(repo)
       .catch(() => undefined)
 
     if (license) {
