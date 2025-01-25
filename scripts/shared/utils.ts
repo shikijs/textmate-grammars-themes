@@ -38,7 +38,7 @@ export function formatFunding(funding: FundingInfo | undefined): string {
 
     switch (key as keyof FundingInfo) {
       case 'community_bridge':
-        entries.push(`[❤️ LFX: **${value}**](https://funding.communitybridge.org/projects/${value})`)
+        entries.push(`[❤️ LFX: **${value}**](https://crowdfunding.lfx.linuxfoundation.org/projects/${value})`)
         break
       case 'github':
         entries.push(...(Array.isArray(value) ? value : [value]).map(v => `[❤️ GitHub Sponsors: **@${v}**](https://github.com/sponsors/${v})`))
@@ -50,7 +50,7 @@ export function formatFunding(funding: FundingInfo | undefined): string {
         entries.push(`[❤️ Ko-fi: **${value}**](https://ko-fi.com/${value})`)
         break
       case 'liberapay':
-        entries.push(`[❤️ Liberapay: **${value}**](https://liberapay.com/${value})`)
+        entries.push(`[❤️ Liberapay: **@${value}**](https://liberapay.com/${value})`)
         break
       case 'open_collective':
         entries.push(`[❤️ Open Collective: **${value}**](https://opencollective.com/${value})`)
