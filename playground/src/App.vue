@@ -5,6 +5,7 @@ import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript'
 import { createOnigurumaEngine } from '@shikijs/engine-oniguruma'
 import { grammars, injections } from '../../packages/tm-grammars/index'
 import { themes } from '../../packages/tm-themes/index'
+import { getFundingLinks } from '../../scripts/shared/utils'
 import Badge from './Badge.vue'
 import SegmentControl from './SegmentControl.vue'
 import { engine, engineJsForgiving, grammar, isDark, theme } from './state'
@@ -301,6 +302,14 @@ if (import.meta.hot) {
               <button text-left @click="openGrammar()">
                 <code>{{ grammar }}</code>
               </button>
+              <div text-xs>
+                <span v-for="(link, index) in getFundingLinks(grammarObject?.funding)" :key="index">
+                  <template v-if="index > 0">, </template>
+                  <a :href="link.url" target="_blank" hover="text-primary">
+                    ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
+                  </a>
+                </span>
+              </div>
               <div v-if="embedded.length < 15" flex="~ col" ml-2 border="l base">
                 <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
                   <div w-4 border="t base" h-1px flex-none />
@@ -318,9 +327,21 @@ if (import.meta.hot) {
             <div text-right op50>
               Theme
             </div>
-            <button text-left @click="openTheme()">
-              <code>{{ theme }}</code>
-            </button>
+            <div>
+              <button text-left @click="openTheme()">
+                <code>{{ theme }}</code>
+              </button>
+              <div text-xs>
+                <template v-for="(link, index) in getFundingLinks(themeObject?.funding)" :key="index">
+                  <template v-if="index > 0">
+                    ,
+                  </template>
+                  <a :href="link.url" target="_blank" hover="text-primary">
+                    ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
+                  </a>
+                </template>
+              </div>
+            </div>
             <div text-right op50>
               Sample
             </div>
