@@ -304,7 +304,7 @@ if (import.meta.hot) {
               </button>
               <div text-xs>
                 <span v-for="(link, index) in getFundingLinks(grammarObject?.funding)" :key="index">
-                  <template v-if="index > 0">, </template>
+                  <span v-if="index > 0">, </span>
                   <a :href="link.url" target="_blank" hover="text-primary">
                     ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
                   </a>
@@ -333,9 +333,7 @@ if (import.meta.hot) {
               </button>
               <div text-xs>
                 <template v-for="(link, index) in getFundingLinks(themeObject?.funding)" :key="index">
-                  <template v-if="index > 0">
-                    ,
-                  </template>
+                  <span v-if="index > 0">, </span>
                   <a :href="link.url" target="_blank" hover="text-primary">
                     ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
                   </a>
