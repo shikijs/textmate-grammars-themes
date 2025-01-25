@@ -71,7 +71,10 @@ export function formatFunding(funding: FundingInfo | undefined): string {
         entries.push(`[❤️ thanks.dev: **${value}**](https://thanks.dev/d/${value})`)
         break
       case 'custom':
-        entries.push(...(Array.isArray(value) ? value : [value]).map(v => `[❤️ ${v}](${v})`))
+        entries.push(...(Array.isArray(value) ? value : [value]).map((v) => {
+          const url = value.includes('://') ? v : `https://${v}`
+          return `[❤️ ${new URL(url).hostname.replace(/^www\./, '')}](${url})`
+        }))
         break
       default:
         throw new Error(`Unhandled FUNDING.yml key: ${key}`)
