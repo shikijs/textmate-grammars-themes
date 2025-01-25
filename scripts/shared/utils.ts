@@ -73,8 +73,10 @@ export function formatFunding(funding: FundingInfo | undefined): string {
       case 'custom':
         entries.push(...(Array.isArray(value) ? value : [value]).map(v => `[❤️ ${v}](${v})`))
         break
+      default:
+        throw new Error(`Unhandled FUNDING.yml key: ${key}`)
     }
   }
   // Use <br> instead of \n since this is placed into the middle of a table row
-  return entries.map(entry => `<br><sub>${entry}</sub>`).join()
+  return entries.map(entry => `<br><sub>${entry}</sub>`).join('')
 }
