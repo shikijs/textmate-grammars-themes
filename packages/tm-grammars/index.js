@@ -2181,7 +2181,7 @@ export const grammars = [
     hash: 'AI2YknoI0Y',
     lastUpdate: '2024-03-18T01:05:25Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/modularml/mojo-syntax/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/modular/mojo-syntax/main/LICENSE',
     name: 'mojo',
     scopeName: 'source.mojo',
     sha: '46eccdaeda2b1587e9b82808cdb35670f359d16d',

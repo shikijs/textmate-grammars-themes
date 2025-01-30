@@ -99,6 +99,6 @@ export function getFundingLinks(funding: FundingInfo | undefined): FundingLink[]
 export function formatFunding(funding: FundingInfo | undefined): string {
   const entries = getFundingLinks(funding)
   return entries
-    .map(entry => `<br><sub>[❤️ ${entry.name}${entry.handle ? `: **${entry.handle}**` : ''}](${entry.url})</sub>`)
-    .join('')
+    .map(entry => `[${entry.name}${entry.handle ? `: **${entry.handle}**` : ''}](${entry.url})`)
+    .join(' ')
 }

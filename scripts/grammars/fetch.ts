@@ -163,14 +163,15 @@ export async function generateREADME(resolved: GrammarInfo[]) {
 
   function createTable(items: GrammarInfo[]) {
     return [
-      formatTableRow(['Name', 'Alias', 'Source', 'License', 'Deps On', 'File Size']),
-      formatTableRow(['----', '-----', '------', '-------', '-------', '---------']),
+      formatTableRow(['Name', 'Alias', 'Source', 'License', 'Sponsor', 'Deps On', 'File Size']),
+      formatTableRow(['----', '-----', '------', '-------', '-------', '-------', '---------']),
       ...items.map(info =>
         formatTableRow([
           `\`${info.name}\``,
           info.aliases?.map(i => `\`${i}\``).join(' ') || '',
-          (typeof info.source === 'string' ? `[${[parseGitHubUrl(info.source).repo]}](${info.source})` : '-') + formatFunding(info.funding),
+          (typeof info.source === 'string' ? `[${[parseGitHubUrl(info.source).repo]}](${info.source})` : '-'),
           info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : '',
+          formatFunding(info.funding),
           info.embedded?.map(i => `\`${i}\``).join(' ') || '',
           fileSizeToHuman(info.byteSize),
         ]),
