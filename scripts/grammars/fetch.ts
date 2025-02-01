@@ -14,7 +14,7 @@ import { COMMENT_HEAD } from '../shared/head'
 import { generateLicense } from '../shared/license'
 import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
-import { fileSizeToHuman } from '../shared/utils'
+import { fileSizeToHuman, formatTableRow } from '../shared/utils'
 import { cleanupGrammar } from './cleanup'
 
 const dirOutput = new URL('../../packages/tm-grammars/grammars/', import.meta.url)
@@ -163,9 +163,21 @@ export async function generateREADME(resolved: GrammarInfo[]) {
 
   function createTable(items: GrammarInfo[]) {
     return [
-      '| Name | Alias | Source | License | Deps On | File Size |',
-      '| ---- | ----- | ------ | ------- | ------- | --------- |',
-      ...items.map(info => `| \`${info.name}\` | ${info.aliases?.map(i => `\`${i}\``).join(' ') || ''} | ${typeof info.source === 'string' ? `[${[parseGitHubUrl(info.source).repo]}](${info.source})` : '-'} | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${info.embedded?.map(i => `\`${i}\``).join(' ') || ''} | ${fileSizeToHuman(info.byteSize)} |`),
+      formatTableRow(['Name', 'Alias', 'Source', 'License', 'Sponsor', 'Deps On', 'File Size']),
+      formatTableRow(['----', '-----', '------', '-------', '-------', '-------', '---------']),
+      ...items.map(info =>
+        formatTableRow([
+          `\`${info.name}\``,
+          info.aliases?.map(i => `\`${i}\``).join(' ') || '',
+          (typeof info.source === 'string' ? `[${[parseGitHubUrl(info.source).repo]}](${info.source})` : '-'),
+          info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : '',
+          (info.funding ?? [])
+            .map(({ name, handle, url }) => `[${name}${handle ? `: **${handle}**` : ''}](${url})`)
+            .join(' '),
+          info.embedded?.map(i => `\`${i}\``).join(' ') || '',
+          fileSizeToHuman(info.byteSize),
+        ]),
+      ),
     ]
   }
   const replaced = original.replace(

@@ -9,6 +9,12 @@ export type GrammarCategory =
   | 'config'
   | 'lisp'
 
+export interface FundingLink {
+  name: string
+  handle?: string
+  url: string
+}
+
 export interface GrammarInfo {
   name: string
   displayName: string
@@ -18,6 +24,7 @@ export interface GrammarInfo {
   aliases?: string[]
   licenseUrl?: string
   license?: string
+  funding?: FundingLink[]
   sha: string
   lastUpdate: string
   embedded?: string[]
