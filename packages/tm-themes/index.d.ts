@@ -1,17 +1,7 @@
-/** https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository */
-export interface FundingInfo {
-  community_bridge?: string
-  github?: string | string[]
-  issuehunt?: string
-  ko_fi?: string
-  liberapay?: string
-  open_collective?: string
-  patreon?: string
-  tidelift?: string
-  polar?: string
-  buy_me_a_coffee?: string
-  thanks_dev?: string
-  custom?: string | string[]
+export interface FundingLink {
+  name: string
+  handle?: string
+  url: string
 }
 
 export interface ThemeInfo {
@@ -21,7 +11,7 @@ export interface ThemeInfo {
   source: string
   licenseUrl?: string
   license?: string
-  funding?: FundingInfo
+  funding?: FundingLink[]
   sha: string
   lastUpdate: string
   embedded?: string[]

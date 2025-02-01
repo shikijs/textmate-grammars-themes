@@ -11,7 +11,7 @@ import { COMMENT_HEAD } from '../shared/head'
 import { generateLicense } from '../shared/license'
 import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
-import { fileSizeToHuman, formatFunding, formatTableRow } from '../shared/utils'
+import { fileSizeToHuman, formatTableRow } from '../shared/utils'
 import { cleanupTheme } from './cleanup'
 
 const badge = c.cyan.bold('  theme  ')
@@ -151,7 +151,9 @@ export async function generateREADME(resolved: ThemeInfo[]) {
       `\`${info.name}\``,
       `[${parseGitHubUrl(info.source).repo}](${info.source})`,
       info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : '',
-      formatFunding(info.funding),
+      (info.funding ?? [])
+        .map(({ name, handle, url }) => `[${name}${handle ? `: **${handle}**` : ''}](${url})`)
+        .join(' '),
       fileSizeToHuman(info.byteSize),
     ])
   }

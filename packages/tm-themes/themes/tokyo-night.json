@@ -113,7 +113,7 @@
     "editorInfo.foreground": "#0da0ba",
     "editorLightBulb.foreground": "#e0af68",
     "editorLightBulbAutoFix.foreground": "#e0af68",
-    "editorLineNumber.activeForeground": "#737aa2",
+    "editorLineNumber.activeForeground": "#787c99",
     "editorLineNumber.foreground": "#363b54",
     "editorLink.activeForeground": "#acb0d0",
     "editorMarkerNavigation.background": "#16161e",
@@ -130,7 +130,7 @@
     "editorOverviewRuler.warningForeground": "#e0af68",
     "editorOverviewRuler.wordHighlightForeground": "#bb9af755",
     "editorOverviewRuler.wordHighlightStrongForeground": "#bb9af766",
-    "editorPane.background": "#16161e",
+    "editorPane.background": "#1a1b26",
     "editorRuler.foreground": "#101014",
     "editorSuggestWidget.background": "#16161e",
     "editorSuggestWidget.border": "#101014",
@@ -297,7 +297,7 @@
     "terminal.ansiBrightBlack": "#363b54",
     "terminal.ansiBrightBlue": "#7aa2f7",
     "terminal.ansiBrightCyan": "#7dcfff",
-    "terminal.ansiBrightGreen": "#41a6b5",
+    "terminal.ansiBrightGreen": "#73daca",
     "terminal.ansiBrightMagenta": "#bb9af7",
     "terminal.ansiBrightRed": "#f7768e",
     "terminal.ansiBrightWhite": "#acb0d0",
@@ -518,7 +518,8 @@
         "support.constant.handlebars keyword.control",
         "keyword.operator.comparison.twig",
         "keyword.blade",
-        "entity.name.function.blade"
+        "entity.name.function.blade",
+        "meta.tag.blade keyword.other.type.php"
       ],
       "settings": {
         "foreground": "#0db9d7"
@@ -559,7 +560,9 @@
         "entity.name.operator",
         "meta.property-list punctuation.separator.key-value",
         "meta.at-rule.mixin punctuation.separator.key-value",
-        "meta.at-rule.function variable.parameter.url"
+        "meta.at-rule.function variable.parameter.url",
+        "meta.embedded.inline.phpx punctuation.definition.tag.begin.html",
+        "meta.embedded.inline.phpx punctuation.definition.tag.end.html"
       ],
       "settings": {
         "foreground": "#89ddff"
@@ -626,7 +629,10 @@
       }
     },
     {
-      "scope": "punctuation.definition.tag",
+      "scope": [
+        "punctuation.definition.tag",
+        "text.html.php meta.embedded.block.html meta.tag.metadata.script.end.html punctuation.definition.tag.begin.html text.html.basic"
+      ],
       "settings": {
         "foreground": "#ba3c97"
       }
@@ -652,7 +658,8 @@
         "variable.parameter.handlebars",
         "variable.other.object",
         "meta.fstring",
-        "meta.function-call meta.function-call.arguments"
+        "meta.function-call meta.function-call.arguments",
+        "meta.embedded.inline.phpx constant.other.php"
       ],
       "settings": {
         "foreground": "#c0caf5"

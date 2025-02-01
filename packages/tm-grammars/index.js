@@ -7,6 +7,8 @@ export const grammars = [
   {
     byteSize: 17557,
     displayName: 'ABAP',
+    funding: [
+    ],
     hash: '3eD0RLf8LE',
     lastUpdate: '2024-12-25T10:52:53Z',
     name: 'abap',
@@ -20,9 +22,13 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'ActionScript',
-    funding: {
-      patreon: 'josht',
-    },
+    funding: [
+      {
+        handle: 'josht',
+        name: 'Patreon',
+        url: 'https://patreon.com/josht',
+      },
+    ],
     hash: '6OPWQM2hdm',
     lastUpdate: '2024-06-05T14:26:29Z',
     license: 'Apache-2.0',
@@ -35,6 +41,8 @@ export const grammars = [
   {
     byteSize: 46823,
     displayName: 'Ada',
+    funding: [
+    ],
     hash: 'gy2232UiiU',
     lastUpdate: '2024-12-20T16:34:23Z',
     license: 'GPL-3.0',
@@ -56,6 +64,8 @@ export const grammars = [
       'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
+    ],
+    funding: [
     ],
     hash: 'e4qpA2vWkd',
     lastUpdate: '2018-10-04T09:01:56Z',
@@ -80,6 +90,8 @@ export const grammars = [
       'angular-template',
       'angular-template-blocks',
     ],
+    funding: [
+    ],
     hash: 'ccnxPIUvBq',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -92,6 +104,8 @@ export const grammars = [
   {
     byteSize: 12867,
     displayName: 'Apache Conf',
+    funding: [
+    ],
     hash: '66FUGT7ysN',
     lastUpdate: '2020-05-30T18:14:18Z',
     license: 'NOASSERTION',
@@ -104,6 +118,8 @@ export const grammars = [
   {
     byteSize: 45103,
     displayName: 'Apex',
+    funding: [
+    ],
     hash: 'dQhvYwVL9a',
     lastUpdate: '2023-03-15T18:31:57Z',
     license: 'NOASSERTION',
@@ -123,6 +139,8 @@ export const grammars = [
       'javascript',
       'json',
     ],
+    funding: [
+    ],
     hash: 'kWKXgigD9i',
     lastUpdate: '2019-05-06T11:54:42Z',
     name: 'apl',
@@ -136,6 +154,8 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'AppleScript',
+    funding: [
+    ],
     hash: 'GNXSOPQmIN',
     lastUpdate: '2019-09-03T19:15:57Z',
     name: 'applescript',
@@ -146,6 +166,8 @@ export const grammars = [
   {
     byteSize: 6913,
     displayName: 'Ara',
+    funding: [
+    ],
     hash: 'y8JzrmD5bp',
     lastUpdate: '2023-01-14T07:35:56Z',
     license: 'Apache-2.0',
@@ -207,6 +229,8 @@ export const grammars = [
       'typescript',
       'xml',
     ],
+    funding: [
+    ],
     hash: 'znnGEI54k2',
     lastUpdate: '2024-08-06T12:13:07Z',
     license: 'NOASSERTION',
@@ -219,6 +243,8 @@ export const grammars = [
   {
     byteSize: 39512,
     displayName: 'Assembly',
+    funding: [
+    ],
     hash: 'X0Hkjzs06l',
     lastUpdate: '2023-07-30T20:16:37Z',
     license: 'MIT',
@@ -246,10 +272,18 @@ export const grammars = [
       'postcss',
       'tsx',
     ],
-    funding: {
-      github: 'withastro',
-      open_collective: 'astrodotbuild',
-    },
+    funding: [
+      {
+        handle: '@withastro',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/withastro',
+      },
+      {
+        handle: 'astrodotbuild',
+        name: 'Open Collective',
+        url: 'https://opencollective.com/astrodotbuild',
+      },
+    ],
     hash: 'CTTcS9p5RI',
     lastUpdate: '2024-03-23T17:37:42Z',
     license: 'MIT',
@@ -262,6 +296,8 @@ export const grammars = [
   {
     byteSize: 5303,
     displayName: 'AWK',
+    funding: [
+    ],
     hash: 'UE9qChc4nQ',
     lastUpdate: '2016-01-20T17:08:42Z',
     license: 'MIT',
@@ -274,6 +310,8 @@ export const grammars = [
   {
     byteSize: 57664,
     displayName: 'Ballerina',
+    funding: [
+    ],
     hash: 'yodBIfiYhr',
     lastUpdate: '2023-08-21T05:23:05Z',
     license: 'Apache-2.0',
@@ -292,6 +330,8 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'Batch File',
+    funding: [
+    ],
     hash: 'GnuiGSDvHB',
     lastUpdate: '2021-05-04T11:41:54Z',
     license: 'MIT',
@@ -304,6 +344,8 @@ export const grammars = [
   {
     byteSize: 10430,
     displayName: 'Beancount',
+    funding: [
+    ],
     hash: 'xU8OQFKOJx',
     lastUpdate: '2024-01-11T08:43:22Z',
     license: 'MIT',
@@ -319,6 +361,8 @@ export const grammars = [
     ],
     byteSize: 2169,
     displayName: 'Berry',
+    funding: [
+    ],
     hash: 'Wr01IhuHbu',
     lastUpdate: '2023-07-16T13:39:37Z',
     license: 'MIT',
@@ -334,6 +378,8 @@ export const grammars = [
       'markup',
     ],
     displayName: 'BibTeX',
+    funding: [
+    ],
     hash: 'Q2XvnQB6rS',
     lastUpdate: '2024-04-09T10:20:39Z',
     license: 'MIT',
@@ -346,6 +392,8 @@ export const grammars = [
   {
     byteSize: 4050,
     displayName: 'Bicep',
+    funding: [
+    ],
     hash: 'kdKJ1HGgi8',
     lastUpdate: '2024-08-22T16:30:14Z',
     license: 'MIT',
@@ -370,9 +418,13 @@ export const grammars = [
       'json',
       'css',
     ],
-    funding: {
-      github: 'spatie',
-    },
+    funding: [
+      {
+        handle: '@spatie',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/spatie',
+      },
+    ],
     hash: 'Cm4jIukdax',
     lastUpdate: '2021-06-28T08:16:43Z',
     license: 'MIT',
@@ -395,6 +447,8 @@ export const grammars = [
     embedded: [
       'sdbl',
     ],
+    funding: [
+    ],
     hash: 'I9YoWTD151',
     lastUpdate: '2024-11-05T21:35:36Z',
     license: 'MIT',
@@ -410,6 +464,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'C',
+    funding: [
+    ],
     hash: 'RJ6i0OPivg',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
@@ -425,6 +481,8 @@ export const grammars = [
     ],
     byteSize: 10592,
     displayName: 'Cadence',
+    funding: [
+    ],
     hash: 'E6XNWJFi4t',
     lastUpdate: '2022-07-04T20:41:15Z',
     license: 'Apache-2.0',
@@ -443,6 +501,8 @@ export const grammars = [
     embedded: [
       'python',
     ],
+    funding: [
+    ],
     hash: 'vuBcGooHpz',
     lastUpdate: '2024-08-18T08:38:43Z',
     license: 'Apache-2.0',
@@ -458,6 +518,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Clarity',
+    funding: [
+    ],
     hash: 'hjEIavuTMb',
     lastUpdate: '2024-06-28T13:13:11Z',
     license: 'MIT',
@@ -477,6 +539,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Clojure',
+    funding: [
+    ],
     hash: 'WGN0H9kqqh',
     lastUpdate: '2022-01-31T15:49:23Z',
     license: 'MIT',
@@ -492,6 +556,8 @@ export const grammars = [
       'config',
     ],
     displayName: 'CMake',
+    funding: [
+    ],
     hash: 'erj3kjKdED',
     lastUpdate: '2017-11-20T20:37:32Z',
     license: 'MIT',
@@ -508,6 +574,8 @@ export const grammars = [
       'html',
       'java',
     ],
+    funding: [
+    ],
     hash: 'euBtAopOGq',
     lastUpdate: '2025-01-16T21:59:32Z',
     license: 'MIT',
@@ -520,6 +588,8 @@ export const grammars = [
   {
     byteSize: 471,
     displayName: 'CODEOWNERS',
+    funding: [
+    ],
     hash: 'BiOl3iCBbE',
     lastUpdate: '2018-12-19T21:50:43Z',
     license: 'MIT',
@@ -535,6 +605,8 @@ export const grammars = [
     ],
     byteSize: 32600,
     displayName: 'CodeQL',
+    funding: [
+    ],
     hash: '0c9c3xgdAS',
     lastUpdate: '2025-01-20T17:49:31Z',
     license: 'MIT',
@@ -558,6 +630,8 @@ export const grammars = [
     embedded: [
       'javascript',
     ],
+    funding: [
+    ],
     hash: 'TOcwgSFz4o',
     lastUpdate: '2019-01-25T23:34:58Z',
     license: 'MIT',
@@ -577,6 +651,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Common Lisp',
+    funding: [
+    ],
     hash: '6wTSn0CYAb',
     lastUpdate: '2024-05-10T18:29:42Z',
     license: 'MIT',
@@ -592,6 +668,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Coq',
+    funding: [
+    ],
     hash: '81HAmAlUu5',
     lastUpdate: '2024-10-28T17:35:18Z',
     license: 'MIT',
@@ -616,6 +694,8 @@ export const grammars = [
       'glsl',
       'sql',
     ],
+    funding: [
+    ],
     hash: 'MndDxpEycR',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
@@ -636,6 +716,8 @@ export const grammars = [
       'javascript',
       'shellscript',
     ],
+    funding: [
+    ],
     hash: 'hkRCb4MprL',
     lastUpdate: '2024-02-26T14:51:19Z',
     license: 'MIT',
@@ -655,6 +737,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'C#',
+    funding: [
+    ],
     hash: '8AOwMrUpR4',
     lastUpdate: '2024-06-28T09:56:38Z',
     license: 'MIT',
@@ -670,6 +754,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'CSS',
+    funding: [
+    ],
     hash: 'riiTfuX26y',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -685,6 +771,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'CSV',
+    funding: [
+    ],
     hash: 'piTjrTXqM0',
     lastUpdate: '2019-01-31T01:50:13Z',
     license: 'MIT',
@@ -697,6 +785,8 @@ export const grammars = [
   {
     byteSize: 16313,
     displayName: 'CUE',
+    funding: [
+    ],
     hash: 'ToaxZhnihH',
     lastUpdate: '2024-09-04T15:25:05Z',
     license: 'NOASSERTION',
@@ -712,6 +802,8 @@ export const grammars = [
     ],
     byteSize: 6498,
     displayName: 'Cypher',
+    funding: [
+    ],
     hash: 'OgxeQc7itr',
     lastUpdate: '2023-01-17T10:10:13Z',
     license: 'MIT',
@@ -724,12 +816,18 @@ export const grammars = [
   {
     byteSize: 41204,
     displayName: 'D',
-    funding: {
-      github: [
-        'WebFreak001',
-      ],
-      patreon: 'WebFreak',
-    },
+    funding: [
+      {
+        handle: '@WebFreak001',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/WebFreak001',
+      },
+      {
+        handle: 'WebFreak',
+        name: 'Patreon',
+        url: 'https://patreon.com/WebFreak',
+      },
+    ],
     hash: 'KnYEmdZTmQ',
     lastUpdate: '2023-07-07T13:01:08Z',
     license: 'MIT',
@@ -745,6 +843,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Dart',
+    funding: [
+    ],
     hash: 'xewvk6t5Kq',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
@@ -757,6 +857,8 @@ export const grammars = [
   {
     byteSize: 5400,
     displayName: 'DAX',
+    funding: [
+    ],
     hash: 'AQ1R9tWxFq',
     lastUpdate: '2021-08-10T18:28:52Z',
     name: 'dax',
@@ -770,9 +872,12 @@ export const grammars = [
       'config',
     ],
     displayName: 'Desktop',
-    funding: {
-      custom: 'https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ',
-    },
+    funding: [
+      {
+        name: 'paypal.com',
+        url: 'https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ',
+      },
+    ],
     hash: 'OmKCNgkQZj',
     lastUpdate: '2021-07-19T18:36:02Z',
     license: 'MIT',
@@ -788,6 +893,8 @@ export const grammars = [
       'utility',
     ],
     displayName: 'Diff',
+    funding: [
+    ],
     hash: '4VNGD1sLSD',
     lastUpdate: '2021-11-12T09:59:52Z',
     license: 'MIT',
@@ -806,6 +913,8 @@ export const grammars = [
       'config',
     ],
     displayName: 'Dockerfile',
+    funding: [
+    ],
     hash: 'e3KcMhNBWQ',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
@@ -818,6 +927,8 @@ export const grammars = [
   {
     byteSize: 1604,
     displayName: 'dotEnv',
+    funding: [
+    ],
     hash: 'NXV89JmJiV',
     lastUpdate: '2023-06-15T08:23:24Z',
     license: 'MIT',
@@ -830,6 +941,8 @@ export const grammars = [
   {
     byteSize: 10040,
     displayName: 'Dream Maker',
+    funding: [
+    ],
     hash: 'rT5Shtop8w',
     lastUpdate: '2017-01-06T06:55:48Z',
     name: 'dream-maker',
@@ -844,6 +957,8 @@ export const grammars = [
       'typescript',
       'html',
       'html-derivative',
+    ],
+    funding: [
     ],
     hash: '6wQc9KoT3g',
     lastUpdate: '2024-02-05T08:06:04Z',
@@ -860,6 +975,8 @@ export const grammars = [
     embedded: [
       'html',
     ],
+    funding: [
+    ],
     hash: 'bm78ZT8qz7',
     lastUpdate: '2021-12-27T20:12:19Z',
     license: 'NOASSERTION',
@@ -875,13 +992,23 @@ export const grammars = [
     embedded: [
       'glsl',
     ],
-    funding: {
-      github: [
-        'razzeee',
-        'jmbockhorst',
-      ],
-      open_collective: 'elm-tooling',
-    },
+    funding: [
+      {
+        handle: '@razzeee',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/razzeee',
+      },
+      {
+        handle: '@jmbockhorst',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/jmbockhorst',
+      },
+      {
+        handle: 'elm-tooling',
+        name: 'Open Collective',
+        url: 'https://opencollective.com/elm-tooling',
+      },
+    ],
     hash: '419SHaU3SB',
     lastUpdate: '2020-08-01T18:50:23Z',
     license: 'MIT',
@@ -900,6 +1027,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Emacs Lisp',
+    funding: [
+    ],
     hash: 'j1vLKKLByB',
     lastUpdate: '2023-09-07T13:17:43Z',
     license: 'ISC',
@@ -916,6 +1045,8 @@ export const grammars = [
       'html',
       'ruby',
     ],
+    funding: [
+    ],
     hash: '1IUQ9qvXum',
     lastUpdate: '2014-10-30T18:38:50Z',
     name: 'erb',
@@ -929,6 +1060,8 @@ export const grammars = [
     ],
     byteSize: 35401,
     displayName: 'Erlang',
+    funding: [
+    ],
     hash: 'IcknwjfBvB',
     lastUpdate: '2024-06-18T19:26:56Z',
     license: 'Apache-2.0',
@@ -944,6 +1077,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Fennel',
+    funding: [
+    ],
     hash: 'jfjDIb262n',
     lastUpdate: '2021-05-05T22:44:42Z',
     license: 'MIT',
@@ -959,6 +1094,8 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'Fish',
+    funding: [
+    ],
     hash: 'ASb25W2jcI',
     lastUpdate: '2022-01-23T01:18:50Z',
     license: 'MIT',
@@ -974,6 +1111,8 @@ export const grammars = [
     ],
     byteSize: 3472,
     displayName: 'Fluent',
+    funding: [
+    ],
     hash: '44jrgxkmab',
     lastUpdate: '2022-07-23T20:00:33Z',
     license: 'MIT',
@@ -994,6 +1133,8 @@ export const grammars = [
     embedded: [
       'fortran-free-form',
     ],
+    funding: [
+    ],
     hash: 'uR6CHgkwG0',
     lastUpdate: '2021-11-09T22:09:17Z',
     license: 'MIT',
@@ -1013,6 +1154,8 @@ export const grammars = [
     ],
     byteSize: 95147,
     displayName: 'Fortran (Free Form)',
+    funding: [
+    ],
     hash: '6lHcSj9lTn',
     lastUpdate: '2023-05-09T01:04:12Z',
     license: 'MIT',
@@ -1035,6 +1178,8 @@ export const grammars = [
     embedded: [
       'markdown',
     ],
+    funding: [
+    ],
     hash: 'tCTkXKywyI',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
@@ -1051,9 +1196,12 @@ export const grammars = [
       'gdshader',
       'gdscript',
     ],
-    funding: {
-      custom: 'https://fund.godotengine.org/',
-    },
+    funding: [
+      {
+        name: 'fund.godotengine.org',
+        url: 'https://fund.godotengine.org/',
+      },
+    ],
     hash: 'BXLWIiNA5k',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
@@ -1066,9 +1214,12 @@ export const grammars = [
   {
     byteSize: 18047,
     displayName: 'GDScript',
-    funding: {
-      custom: 'https://fund.godotengine.org/',
-    },
+    funding: [
+      {
+        name: 'fund.godotengine.org',
+        url: 'https://fund.godotengine.org/',
+      },
+    ],
     hash: 'erOZtbL3ip',
     lastUpdate: '2024-12-18T15:45:05Z',
     license: 'MIT',
@@ -1081,9 +1232,12 @@ export const grammars = [
   {
     byteSize: 6096,
     displayName: 'GDShader',
-    funding: {
-      custom: 'https://fund.godotengine.org/',
-    },
+    funding: [
+      {
+        name: 'fund.godotengine.org',
+        url: 'https://fund.godotengine.org/',
+      },
+    ],
     hash: '9V2Wy87u0W',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
@@ -1096,6 +1250,8 @@ export const grammars = [
   {
     byteSize: 3194,
     displayName: 'Genie',
+    funding: [
+    ],
     hash: 'YpRh0MPgqm',
     lastUpdate: '2021-05-28T08:53:39Z',
     license: 'MIT',
@@ -1108,6 +1264,8 @@ export const grammars = [
   {
     byteSize: 12425,
     displayName: 'Gherkin',
+    funding: [
+    ],
     hash: 'SPvZe60Agr',
     lastUpdate: '2024-05-18T13:15:07Z',
     license: 'MIT',
@@ -1125,6 +1283,8 @@ export const grammars = [
     displayName: 'Git Commit Message',
     embedded: [
       'diff',
+    ],
+    funding: [
     ],
     hash: 'O04WSrmVWl',
     lastUpdate: '2023-02-07T12:40:16Z',
@@ -1144,6 +1304,8 @@ export const grammars = [
     embedded: [
       'shellscript',
     ],
+    funding: [
+    ],
     hash: 'PDaCUl3e8W',
     lastUpdate: '2021-11-12T10:35:35Z',
     license: 'MIT',
@@ -1156,6 +1318,8 @@ export const grammars = [
   {
     byteSize: 2530,
     displayName: 'Gleam',
+    funding: [
+    ],
     hash: 'hbDys2ygWA',
     lastUpdate: '2024-08-01T12:26:07Z',
     license: 'Apache-2.0',
@@ -1176,6 +1340,8 @@ export const grammars = [
       'typescript',
       'css',
       'html',
+    ],
+    funding: [
     ],
     hash: 'zKhmQF22hB',
     lastUpdate: '2024-03-15T16:05:31Z',
@@ -1198,6 +1364,8 @@ export const grammars = [
       'javascript',
       'html',
     ],
+    funding: [
+    ],
     hash: 'Z1lUFESbzp',
     lastUpdate: '2024-03-15T16:05:31Z',
     license: 'MIT',
@@ -1213,6 +1381,8 @@ export const grammars = [
     embedded: [
       'c',
     ],
+    funding: [
+    ],
     hash: 'BpRP8NoUHi',
     lastUpdate: '2014-07-27T13:53:58Z',
     name: 'glsl',
@@ -1223,6 +1393,8 @@ export const grammars = [
   {
     byteSize: 14182,
     displayName: 'Gnuplot',
+    funding: [
+    ],
     hash: 'RaizNtRaSh',
     lastUpdate: '2018-07-01T23:29:26Z',
     license: 'GPL-3.0',
@@ -1238,6 +1410,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Go',
+    funding: [
+    ],
     hash: 'YrljEOEx2b',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
@@ -1262,6 +1436,8 @@ export const grammars = [
       'jsx',
       'tsx',
     ],
+    funding: [
+    ],
     hash: 'Ex4avZPr6K',
     lastUpdate: '2021-09-27T21:24:32Z',
     license: 'MIT',
@@ -1277,6 +1453,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Groovy',
+    funding: [
+    ],
     hash: 'sG9Vj5vIIg',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
@@ -1295,6 +1473,8 @@ export const grammars = [
     embedded: [
       'html',
       'sql',
+    ],
+    funding: [
     ],
     hash: 'iAyEENbA7W',
     lastUpdate: '2025-01-09T20:28:53Z',
@@ -1320,6 +1500,8 @@ export const grammars = [
       'markdown',
       'css',
     ],
+    funding: [
+    ],
     hash: 'rXdwknSi5U',
     lastUpdate: '2022-06-22T00:28:44Z',
     license: 'MIT',
@@ -1344,6 +1526,8 @@ export const grammars = [
       'javascript',
       'yaml',
     ],
+    funding: [
+    ],
     hash: 'qBBFvL9Wyc',
     lastUpdate: '2019-05-16T17:17:43Z',
     license: 'MIT',
@@ -1362,9 +1546,13 @@ export const grammars = [
       'general',
     ],
     displayName: 'Haskell',
-    funding: {
-      github: 'octref',
-    },
+    funding: [
+      {
+        handle: '@octref',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/octref',
+      },
+    ],
     hash: 'cU0bQGeuQR',
     lastUpdate: '2020-08-20T04:20:28Z',
     license: 'BSD-3-Clause',
@@ -1380,6 +1568,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Haxe',
+    funding: [
+    ],
     hash: 'h580k7GdRU',
     lastUpdate: '2024-04-19T14:01:24Z',
     license: 'MIT',
@@ -1392,6 +1582,8 @@ export const grammars = [
   {
     byteSize: 11543,
     displayName: 'HashiCorp HCL',
+    funding: [
+    ],
     hash: 'GpQf5BLQtX',
     lastUpdate: '2024-12-20T01:03:46Z',
     license: 'MPL-2.0',
@@ -1407,6 +1599,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'Hjson',
+    funding: [
+    ],
     hash: '9FwZNCT2sZ',
     lastUpdate: '2018-10-25T15:31:53Z',
     license: 'MIT',
@@ -1422,6 +1616,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: 'HLSL',
+    funding: [
+    ],
     hash: 'aPrA3obiV2',
     lastUpdate: '2020-02-03T12:01:47Z',
     license: 'MIT',
@@ -1442,6 +1638,8 @@ export const grammars = [
       'javascript',
       'css',
     ],
+    funding: [
+    ],
     hash: 'Uu19XF4XE5',
     lastUpdate: '2022-12-07T13:44:00Z',
     license: 'MIT',
@@ -1460,6 +1658,8 @@ export const grammars = [
     displayName: 'HTML (Derivative)',
     embedded: [
       'html',
+    ],
+    funding: [
     ],
     hash: 'ZJ6TTpr5xO',
     lastUpdate: '2018-10-04T09:01:56Z',
@@ -1483,6 +1683,8 @@ export const grammars = [
       'xml',
       'graphql',
     ],
+    funding: [
+    ],
     hash: '7yigCuv6bk',
     lastUpdate: '2024-10-10T11:38:26Z',
     license: 'MIT',
@@ -1501,6 +1703,8 @@ export const grammars = [
     embedded: [
       'haxe',
     ],
+    funding: [
+    ],
     hash: 'pFbMyZbLCf',
     lastUpdate: '2020-06-27T14:36:19Z',
     license: 'MIT',
@@ -1516,6 +1720,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Hy',
+    funding: [
+    ],
     hash: 'GXqUrFsDdJ',
     lastUpdate: '2024-11-04T03:16:03Z',
     license: 'MIT',
@@ -1533,6 +1739,8 @@ export const grammars = [
     displayName: 'Imba',
     embedded: [
       'typescript',
+    ],
+    funding: [
     ],
     hash: 'nQl8Ao9cbY',
     lastUpdate: '2023-12-15T08:11:58Z',
@@ -1552,6 +1760,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'INI',
+    funding: [
+    ],
     hash: '8y1SYUozig',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
@@ -1567,6 +1777,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Java',
+    funding: [
+    ],
     hash: 'a3zinzOAU7',
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
@@ -1587,6 +1799,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'JavaScript',
+    funding: [
+    ],
     hash: 'zQuDB9duCh',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -1606,9 +1820,13 @@ export const grammars = [
     embedded: [
       'jinja-html',
     ],
-    funding: {
-      github: 'samuelcolvin',
-    },
+    funding: [
+      {
+        handle: '@samuelcolvin',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/samuelcolvin',
+      },
+    ],
     hash: 'lS1WbbM6hM',
     lastUpdate: '2022-08-30T14:06:56Z',
     license: 'MIT',
@@ -1628,6 +1846,8 @@ export const grammars = [
     embedded: [
       'javascript',
     ],
+    funding: [
+    ],
     hash: 'EkhsfEj0Jh',
     lastUpdate: '2020-04-29T00:41:44Z',
     license: 'MIT',
@@ -1644,6 +1864,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'JSON',
+    funding: [
+    ],
     hash: 'xKGV3fHReP',
     lastUpdate: '2020-11-05T13:50:48Z',
     license: 'MIT',
@@ -1660,6 +1882,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'JSON5',
+    funding: [
+    ],
     hash: 'Ef8vBWlkse',
     lastUpdate: '2016-10-01T11:46:03Z',
     license: 'MIT',
@@ -1676,6 +1900,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'JSON with Comments',
+    funding: [
+    ],
     hash: 'rwj3a9NKpC',
     lastUpdate: '2023-05-25T08:02:57Z',
     license: 'MIT',
@@ -1692,6 +1918,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'JSON Lines',
+    funding: [
+    ],
     hash: 'blyxq6KuF3',
     lastUpdate: '2023-05-25T08:02:57Z',
     license: 'MIT',
@@ -1704,6 +1932,8 @@ export const grammars = [
   {
     byteSize: 3400,
     displayName: 'Jsonnet',
+    funding: [
+    ],
     hash: 'PKd5QcMRXu',
     lastUpdate: '2017-03-12T08:07:55Z',
     license: 'Apache-2.0',
@@ -1719,6 +1949,8 @@ export const grammars = [
     ],
     byteSize: 2860,
     displayName: 'JSSM',
+    funding: [
+    ],
     hash: '1yKdjPSoLK',
     lastUpdate: '2017-08-20T01:05:35Z',
     license: 'MIT',
@@ -1734,6 +1966,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'JSX',
+    funding: [
+    ],
     hash: 'sCUf8YspzK',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -1760,6 +1994,8 @@ export const grammars = [
       'r',
       'sql',
     ],
+    funding: [
+    ],
     hash: 'Ravrn2ucL1',
     lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
@@ -1779,6 +2015,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Kotlin',
+    funding: [
+    ],
     hash: 'KuDDOzyJsj',
     lastUpdate: '2024-02-06T09:51:18Z',
     license: 'MIT',
@@ -1794,6 +2032,8 @@ export const grammars = [
     ],
     byteSize: 20079,
     displayName: 'Kusto',
+    funding: [
+    ],
     hash: 'uq1J4qF8yn',
     lastUpdate: '2024-12-28T02:00:10Z',
     name: 'kusto',
@@ -1826,6 +2066,8 @@ export const grammars = [
       'yaml',
       'scala',
     ],
+    funding: [
+    ],
     hash: 'meu3IhWZF0',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
@@ -1844,6 +2086,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Lean 4',
+    funding: [
+    ],
     hash: 'oNGmx5g75d',
     lastUpdate: '2024-04-19T14:33:46Z',
     license: 'Apache-2.0',
@@ -1859,6 +2103,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'Less',
+    funding: [
+    ],
     hash: 'z9fs42isrT',
     lastUpdate: '2024-08-30T20:03:00Z',
     license: 'MIT',
@@ -1877,6 +2123,8 @@ export const grammars = [
       'json',
       'javascript',
     ],
+    funding: [
+    ],
     hash: 'R8tpfkZnVt',
     lastUpdate: '2024-12-03T21:14:56Z',
     license: 'MIT',
@@ -1892,6 +2140,8 @@ export const grammars = [
       'utility',
     ],
     displayName: 'Log file',
+    funding: [
+    ],
     hash: 'Am2G1AubIr',
     lastUpdate: '2025-01-01T17:10:31Z',
     license: 'MIT',
@@ -1904,6 +2154,8 @@ export const grammars = [
   {
     byteSize: 3098,
     displayName: 'Logo',
+    funding: [
+    ],
     hash: '01uOdg2jPA',
     lastUpdate: '2011-11-14T07:42:34Z',
     name: 'logo',
@@ -1920,6 +2172,8 @@ export const grammars = [
     embedded: [
       'c',
     ],
+    funding: [
+    ],
     hash: 'haDsD2DcKZ',
     lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
@@ -1932,6 +2186,8 @@ export const grammars = [
   {
     byteSize: 12349,
     displayName: 'Luau',
+    funding: [
+    ],
     hash: 'VjzzoFvMGT',
     lastUpdate: '2024-11-11T20:13:41Z',
     license: 'NOASSERTION',
@@ -1950,6 +2206,8 @@ export const grammars = [
       'config',
     ],
     displayName: 'Makefile',
+    funding: [
+    ],
     hash: 'D7JKLIcty1',
     lastUpdate: '2023-01-10T10:50:28Z',
     license: 'MIT',
@@ -2025,6 +2283,8 @@ export const grammars = [
       'bibtex',
       'html-derivative',
     ],
+    funding: [
+    ],
     hash: 'OOilfgoNZ5',
     lastUpdate: '2024-07-08T18:33:21Z',
     license: 'MIT',
@@ -2047,6 +2307,8 @@ export const grammars = [
       'scss',
       'javascript',
     ],
+    funding: [
+    ],
     hash: 'ubxMhuahEy',
     lastUpdate: '2023-03-24T17:23:39Z',
     license: 'MIT',
@@ -2059,6 +2321,8 @@ export const grammars = [
   {
     byteSize: 19117,
     displayName: 'MATLAB',
+    funding: [
+    ],
     hash: 'j09IZ1V32M',
     lastUpdate: '2020-02-01T01:40:30Z',
     name: 'matlab',
@@ -2077,6 +2341,8 @@ export const grammars = [
       'markdown',
       'yaml',
       'html-derivative',
+    ],
+    funding: [
     ],
     hash: 'blzsjPQ88Z',
     lastUpdate: '2024-11-14T09:53:35Z',
@@ -2138,6 +2404,8 @@ export const grammars = [
       'swift',
       'typescript',
     ],
+    funding: [
+    ],
     hash: 'LKeK7pivda',
     lastUpdate: '2024-11-11T13:02:29Z',
     license: 'MIT',
@@ -2153,6 +2421,8 @@ export const grammars = [
     ],
     byteSize: 31019,
     displayName: 'Mermaid',
+    funding: [
+    ],
     hash: '3OqI6lV2PD',
     lastUpdate: '2022-06-10T19:46:22Z',
     license: 'MIT',
@@ -2168,6 +2438,8 @@ export const grammars = [
     ],
     byteSize: 3124,
     displayName: 'MIPS Assembly',
+    funding: [
+    ],
     hash: 'd2an1tiAGG',
     lastUpdate: '2011-11-14T07:25:17Z',
     name: 'mipsasm',
@@ -2178,6 +2450,8 @@ export const grammars = [
   {
     byteSize: 70494,
     displayName: 'Mojo',
+    funding: [
+    ],
     hash: 'AI2YknoI0Y',
     lastUpdate: '2024-03-18T01:05:25Z',
     license: 'MIT',
@@ -2190,6 +2464,8 @@ export const grammars = [
   {
     byteSize: 19746,
     displayName: 'Move',
+    funding: [
+    ],
     hash: 'Fg60NNORAI',
     lastUpdate: '2024-09-17T09:24:46Z',
     license: 'MIT',
@@ -2205,6 +2481,8 @@ export const grammars = [
     ],
     byteSize: 3472,
     displayName: 'Narrat Language',
+    funding: [
+    ],
     hash: 'EnNnXnoQ10',
     lastUpdate: '2022-08-06T14:25:00Z',
     license: 'MIT',
@@ -2220,6 +2498,8 @@ export const grammars = [
     ],
     byteSize: 3757,
     displayName: 'Nextflow',
+    funding: [
+    ],
     hash: 'AGoHxsYL0I',
     lastUpdate: '2025-01-09T01:25:31Z',
     license: 'MIT',
@@ -2237,6 +2517,8 @@ export const grammars = [
     displayName: 'Nginx',
     embedded: [
       'lua',
+    ],
+    funding: [
     ],
     hash: 'YnFuh7F2h8',
     lastUpdate: '2024-02-28T17:19:46Z',
@@ -2259,6 +2541,8 @@ export const grammars = [
       'glsl',
       'markdown',
     ],
+    funding: [
+    ],
     hash: 'M6gUzgKvLN',
     lastUpdate: '2020-08-30T02:33:21Z',
     license: 'NOASSERTION',
@@ -2271,9 +2555,13 @@ export const grammars = [
   {
     byteSize: 14708,
     displayName: 'Nix',
-    funding: {
-      open_collective: 'nix-community',
-    },
+    funding: [
+      {
+        handle: 'nix-community',
+        name: 'Open Collective',
+        url: 'https://opencollective.com/nix-community',
+      },
+    ],
     hash: 'US1yMcXb2a',
     lastUpdate: '2022-04-17T09:05:16Z',
     license: 'MIT',
@@ -2289,6 +2577,8 @@ export const grammars = [
     ],
     byteSize: 18916,
     displayName: 'nushell',
+    funding: [
+    ],
     hash: 'lQNlGrMUO3',
     lastUpdate: '2024-09-23T21:05:29Z',
     license: 'MIT',
@@ -2307,6 +2597,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Objective-C',
+    funding: [
+    ],
     hash: 'hvXcJoC5dk',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
@@ -2322,6 +2614,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Objective-C++',
+    funding: [
+    ],
     hash: 'Zol10By1o7',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
@@ -2337,6 +2631,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'OCaml',
+    funding: [
+    ],
     hash: 'm8nsCmS5Te',
     lastUpdate: '2019-08-17T12:45:56Z',
     license: 'Apache-2.0',
@@ -2352,11 +2648,22 @@ export const grammars = [
       'general',
     ],
     displayName: 'Pascal',
-    funding: {
-      custom: 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted',
-      github: 'alefragnani',
-      patreon: 'alefragnani',
-    },
+    funding: [
+      {
+        handle: '@alefragnani',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/alefragnani',
+      },
+      {
+        handle: 'alefragnani',
+        name: 'Patreon',
+        url: 'https://patreon.com/alefragnani',
+      },
+      {
+        name: 'paypal.com',
+        url: 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted',
+      },
+    ],
     hash: '4SfeZ44tbW',
     lastUpdate: '2024-05-29T12:09:03Z',
     license: 'MIT',
@@ -2378,6 +2685,8 @@ export const grammars = [
       'css',
       'javascript',
       'sql',
+    ],
+    funding: [
     ],
     hash: 'b1r9XtKoxU',
     lastUpdate: '2021-04-06T09:30:15Z',
@@ -2403,6 +2712,8 @@ export const grammars = [
       'json',
       'css',
     ],
+    funding: [
+    ],
     hash: 'zXrLGqRXEk',
     lastUpdate: '2023-04-17T18:42:57Z',
     license: 'MIT',
@@ -2415,6 +2726,8 @@ export const grammars = [
   {
     byteSize: 8180,
     displayName: 'PL/SQL',
+    funding: [
+    ],
     hash: 'KNUBUwS7mF',
     lastUpdate: '2019-03-31T11:02:30Z',
     license: 'MIT',
@@ -2434,6 +2747,8 @@ export const grammars = [
       'utility',
     ],
     displayName: 'Gettext PO',
+    funding: [
+    ],
     hash: 'V3dTKfhAHG',
     lastUpdate: '2014-11-13T07:01:18Z',
     name: 'po',
@@ -2444,6 +2759,8 @@ export const grammars = [
   {
     byteSize: 4460,
     displayName: 'Polar',
+    funding: [
+    ],
     hash: 'rTp3rqMGfX',
     lastUpdate: '2024-09-23T15:37:02Z',
     license: 'Apache-2.0',
@@ -2459,12 +2776,18 @@ export const grammars = [
       'web',
     ],
     displayName: 'PostCSS',
-    funding: {
-      github: [
-        'octref',
-      ],
-      issuehunt: 'vuejs/vetur',
-    },
+    funding: [
+      {
+        handle: '@octref',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/octref',
+      },
+      {
+        handle: 'vuejs/vetur',
+        name: 'IssueHunt',
+        url: 'https://issuehunt.io/r/vuejs/vetur',
+      },
+    ],
     hash: '72eQNhlGjK',
     lastUpdate: '2019-03-17T05:02:24Z',
     license: 'MIT',
@@ -2477,6 +2800,8 @@ export const grammars = [
   {
     byteSize: 5648,
     displayName: 'PowerQuery',
+    funding: [
+    ],
     hash: '1drrzayNnf',
     lastUpdate: '2019-04-24T13:39:36Z',
     license: 'MIT',
@@ -2493,6 +2818,8 @@ export const grammars = [
     ],
     byteSize: 21625,
     displayName: 'PowerShell',
+    funding: [
+    ],
     hash: 'DOddnTwID8',
     lastUpdate: '2021-11-02T14:27:57Z',
     license: 'MIT',
@@ -2505,6 +2832,8 @@ export const grammars = [
   {
     byteSize: 6150,
     displayName: 'Prisma',
+    funding: [
+    ],
     hash: 'ijAIoY7tJM',
     lastUpdate: '2024-12-17T09:09:57Z',
     license: 'Apache-2.0',
@@ -2517,6 +2846,8 @@ export const grammars = [
   {
     byteSize: 11281,
     displayName: 'Prolog',
+    funding: [
+    ],
     hash: 'rNFW132dHB',
     lastUpdate: '2018-06-02T15:08:48Z',
     license: 'MIT',
@@ -2532,6 +2863,8 @@ export const grammars = [
     ],
     byteSize: 6280,
     displayName: 'Protocol Buffer 3',
+    funding: [
+    ],
     hash: '49GgvOZ3S2',
     lastUpdate: '2022-02-08T19:51:15Z',
     license: 'MIT',
@@ -2560,6 +2893,8 @@ export const grammars = [
       'coffee',
       'html',
     ],
+    funding: [
+    ],
     hash: 'YT6PoyWT8q',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
@@ -2572,9 +2907,13 @@ export const grammars = [
   {
     byteSize: 11376,
     displayName: 'Puppet',
-    funding: {
-      github: 'octref',
-    },
+    funding: [
+      {
+        handle: '@octref',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/octref',
+      },
+    ],
     hash: 'ntELZbbh3Z',
     lastUpdate: '2020-08-20T04:40:24Z',
     license: 'Apache-2.0',
@@ -2587,6 +2926,8 @@ export const grammars = [
   {
     byteSize: 15852,
     displayName: 'PureScript',
+    funding: [
+    ],
     hash: 'VRGYKnCUfx',
     lastUpdate: '2021-05-12T19:47:16Z',
     license: 'NOASSERTION',
@@ -2605,6 +2946,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Python',
+    funding: [
+    ],
     hash: 'HdZEytYwrj',
     lastUpdate: '2022-10-20T22:45:17Z',
     license: 'MIT',
@@ -2623,6 +2966,8 @@ export const grammars = [
     embedded: [
       'javascript',
     ],
+    funding: [
+    ],
     hash: 'gX5FSoipuI',
     lastUpdate: '2022-08-26T21:14:57Z',
     license: 'MIT',
@@ -2638,6 +2983,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: 'QML Directory',
+    funding: [
+    ],
     hash: 'RU8Nigo0jW',
     lastUpdate: '2022-08-26T21:28:43Z',
     license: 'MIT',
@@ -2653,6 +3000,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: 'Qt Style Sheets',
+    funding: [
+    ],
     hash: 'RJ50f9oi8w',
     lastUpdate: '2023-02-15T15:05:28Z',
     license: 'MIT',
@@ -2668,6 +3017,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'R',
+    funding: [
+    ],
     hash: 'Iz2tO8cus7',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
@@ -2683,11 +3034,13 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Racket',
-    funding: {
-      github: [
-        'eugleo',
-      ],
-    },
+    funding: [
+      {
+        handle: '@eugleo',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/eugleo',
+      },
+    ],
     hash: 'YfDTs0Irr0',
     lastUpdate: '2024-05-29T13:14:07Z',
     license: 'GPL-3.0',
@@ -2706,6 +3059,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Raku',
+    funding: [
+    ],
     hash: 'dM0eznFC0Y',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
@@ -2722,6 +3077,8 @@ export const grammars = [
       'html',
       'csharp',
     ],
+    funding: [
+    ],
     hash: 'hjzTrk5BYO',
     lastUpdate: '2025-01-16T21:40:52Z',
     license: 'MIT',
@@ -2737,6 +3094,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: 'Windows Registry Script',
+    funding: [
+    ],
     hash: 'IL18E9vKX7',
     lastUpdate: '2020-02-08T20:48:08Z',
     license: 'MIT',
@@ -2752,6 +3111,8 @@ export const grammars = [
     ],
     byteSize: 7797,
     displayName: 'RegExp',
+    funding: [
+    ],
     hash: 'ZMpGSHLp6f',
     lastUpdate: '2020-02-16T01:06:09Z',
     license: 'MIT',
@@ -2764,6 +3125,8 @@ export const grammars = [
   {
     byteSize: 3260,
     displayName: 'Rel',
+    funding: [
+    ],
     hash: 'K8XTnrwyzo',
     lastUpdate: '2021-08-25T10:18:43Z',
     name: 'rel',
@@ -2774,6 +3137,8 @@ export const grammars = [
   {
     byteSize: 7176,
     displayName: 'RISC-V',
+    funding: [
+    ],
     hash: 'cpaAAnVp6N',
     lastUpdate: '2020-10-28T01:05:27Z',
     license: 'MIT',
@@ -2798,6 +3163,8 @@ export const grammars = [
       'yaml',
       'cmake',
       'ruby',
+    ],
+    funding: [
     ],
     hash: 'NKzjaocb2E',
     lastUpdate: '2023-10-02T14:56:43Z',
@@ -2831,6 +3198,8 @@ export const grammars = [
       'lua',
       'yaml',
     ],
+    funding: [
+    ],
     hash: 'dSLxvTo1ui',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -2849,6 +3218,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Rust',
+    funding: [
+    ],
     hash: 'MZ7CNyG0He',
     lastUpdate: '2024-08-30T20:03:00Z',
     license: 'MIT',
@@ -2863,6 +3234,8 @@ export const grammars = [
     displayName: 'SAS',
     embedded: [
       'sql',
+    ],
+    funding: [
     ],
     hash: 'Tx67Nr2Okh',
     lastUpdate: '2019-03-13T21:39:48Z',
@@ -2879,6 +3252,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'Sass',
+    funding: [
+    ],
     hash: 'r91PktG12h',
     lastUpdate: '2025-01-19T21:07:24Z',
     license: 'NOASSERTION',
@@ -2891,6 +3266,8 @@ export const grammars = [
   {
     byteSize: 28211,
     displayName: 'Scala',
+    funding: [
+    ],
     hash: 'jFx7a5afQ0',
     lastUpdate: '2025-01-13T17:26:01Z',
     license: 'MIT',
@@ -2907,6 +3284,8 @@ export const grammars = [
       'lisp',
     ],
     displayName: 'Scheme',
+    funding: [
+    ],
     hash: 'JeYkC6oXWD',
     lastUpdate: '2018-12-25T09:02:00Z',
     license: 'MIT',
@@ -2924,6 +3303,8 @@ export const grammars = [
     displayName: 'SCSS',
     embedded: [
       'css',
+    ],
+    funding: [
     ],
     hash: 'MKzkOu4s3N',
     lastUpdate: '2019-11-12T14:37:21Z',
@@ -2943,6 +3324,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: '1C (Query)',
+    funding: [
+    ],
     hash: 'kIBBVt4gTg',
     lastUpdate: '2024-11-05T21:37:20Z',
     license: 'MIT',
@@ -2963,6 +3346,8 @@ export const grammars = [
     displayName: 'ShaderLab',
     embedded: [
       'hlsl',
+    ],
+    funding: [
     ],
     hash: '6nVoPc4840',
     lastUpdate: '2018-02-12T15:54:35Z',
@@ -2985,6 +3370,8 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'Shell',
+    funding: [
+    ],
     hash: 'XcvXDDJa9G',
     lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
@@ -3006,6 +3393,8 @@ export const grammars = [
     embedded: [
       'shellscript',
     ],
+    funding: [
+    ],
     hash: 'uDbRBXpbMv',
     lastUpdate: '2021-12-19T08:29:21Z',
     license: 'MIT',
@@ -3018,6 +3407,8 @@ export const grammars = [
   {
     byteSize: 4002,
     displayName: 'Smalltalk',
+    funding: [
+    ],
     hash: 'acl1OEbBE7',
     lastUpdate: '2019-05-27T23:37:25Z',
     license: 'MIT',
@@ -3030,6 +3421,8 @@ export const grammars = [
   {
     byteSize: 15517,
     displayName: 'Solidity',
+    funding: [
+    ],
     hash: 'GhmcfTjlV3',
     lastUpdate: '2023-03-07T16:30:54Z',
     license: 'MIT',
@@ -3048,6 +3441,8 @@ export const grammars = [
     embedded: [
       'html',
     ],
+    funding: [
+    ],
     hash: 'r8TTzloejs',
     lastUpdate: '2017-05-27T18:02:53Z',
     license: 'MIT',
@@ -3063,6 +3458,8 @@ export const grammars = [
     embedded: [
       'turtle',
     ],
+    funding: [
+    ],
     hash: 'ZQ0tfVX55V',
     lastUpdate: '2022-11-21T15:24:11Z',
     name: 'sparql',
@@ -3076,6 +3473,8 @@ export const grammars = [
     ],
     byteSize: 3693,
     displayName: 'Splunk Query Language',
+    funding: [
+    ],
     hash: 'ejc8OzmWPd',
     lastUpdate: '2022-08-09T09:12:38Z',
     license: 'MIT',
@@ -3091,6 +3490,8 @@ export const grammars = [
       'dsl',
     ],
     displayName: 'SQL',
+    funding: [
+    ],
     hash: 'rxnPOCjDeo',
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
@@ -3103,6 +3504,8 @@ export const grammars = [
   {
     byteSize: 3500,
     displayName: 'SSH Config',
+    funding: [
+    ],
     hash: 'nAkMzbCxw0',
     lastUpdate: '2018-10-09T21:04:51Z',
     name: 'ssh-config',
@@ -3115,6 +3518,8 @@ export const grammars = [
     displayName: 'Stata',
     embedded: [
       'sql',
+    ],
+    funding: [
     ],
     hash: 'LTp0oicjVb',
     lastUpdate: '2018-06-12T13:58:33Z',
@@ -3134,9 +3539,13 @@ export const grammars = [
       'web',
     ],
     displayName: 'Stylus',
-    funding: {
-      open_collective: 'stylus',
-    },
+    funding: [
+      {
+        handle: 'stylus',
+        name: 'Open Collective',
+        url: 'https://opencollective.com/stylus',
+      },
+    ],
     hash: 'VVm34PHEQe',
     lastUpdate: '2021-11-19T11:55:44Z',
     license: 'MIT',
@@ -3165,9 +3574,13 @@ export const grammars = [
       'pug',
       'markdown',
     ],
-    funding: {
-      open_collective: 'svelte',
-    },
+    funding: [
+      {
+        handle: 'svelte',
+        name: 'Open Collective',
+        url: 'https://opencollective.com/svelte',
+      },
+    ],
     hash: 'XCWPk8EwVr',
     lastUpdate: '2024-12-03T17:00:34Z',
     license: 'MIT',
@@ -3183,12 +3596,18 @@ export const grammars = [
       'general',
     ],
     displayName: 'Swift',
-    funding: {
-      github: [
-        'jtbandes',
-      ],
-      ko_fi: 'jtbandes',
-    },
+    funding: [
+      {
+        handle: '@jtbandes',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/jtbandes',
+      },
+      {
+        handle: 'jtbandes',
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/jtbandes',
+      },
+    ],
     hash: 'huCqvuz9BT',
     lastUpdate: '2025-01-18T23:17:43Z',
     license: 'MIT',
@@ -3201,9 +3620,12 @@ export const grammars = [
   {
     byteSize: 25181,
     displayName: 'SystemVerilog',
-    funding: {
-      custom: 'https://www.buymeacoffee.com/mshr.h',
-    },
+    funding: [
+      {
+        name: 'buymeacoffee.com',
+        url: 'https://www.buymeacoffee.com/mshr.h',
+      },
+    ],
     hash: 'geVyELwt7T',
     lastUpdate: '2024-11-09T08:32:52Z',
     license: 'MIT',
@@ -3219,6 +3641,8 @@ export const grammars = [
       'config',
     ],
     displayName: 'Systemd Units',
+    funding: [
+    ],
     hash: 'jrq9OYuEwJ',
     lastUpdate: '2025-01-08T14:10:18Z',
     license: 'MIT',
@@ -3239,6 +3663,8 @@ export const grammars = [
       'config',
     ],
     displayName: 'TalonScript',
+    funding: [
+    ],
     hash: '2iGmBEN4sd',
     lastUpdate: '2023-08-08T18:13:10Z',
     license: 'MIT',
@@ -3251,6 +3677,8 @@ export const grammars = [
   {
     byteSize: 3282,
     displayName: 'Tasl',
+    funding: [
+    ],
     hash: 'n3m9OvsOzC',
     lastUpdate: '2021-11-08T06:00:28Z',
     license: 'MIT',
@@ -3263,6 +3691,8 @@ export const grammars = [
   {
     byteSize: 4774,
     displayName: 'Tcl',
+    funding: [
+    ],
     hash: '55VK5CPssg',
     lastUpdate: '2017-04-03T11:19:09Z',
     name: 'tcl',
@@ -3277,6 +3707,8 @@ export const grammars = [
       'go',
       'javascript',
       'css',
+    ],
+    funding: [
     ],
     hash: '9uNanNeV8W',
     lastUpdate: '2025-01-13T16:55:26Z',
@@ -3294,6 +3726,8 @@ export const grammars = [
     ],
     byteSize: 12938,
     displayName: 'Terraform',
+    funding: [
+    ],
     hash: 'Boynr9o0Ho',
     lastUpdate: '2024-09-17T14:22:47Z',
     license: 'MPL-2.0',
@@ -3312,6 +3746,8 @@ export const grammars = [
     embedded: [
       'r',
     ],
+    funding: [
+    ],
     hash: '9qIPhxDY6p',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
@@ -3327,6 +3763,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'TOML',
+    funding: [
+    ],
     hash: '49Q7Js3lVa',
     lastUpdate: '2020-05-25T19:51:56Z',
     name: 'toml',
@@ -3360,6 +3798,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'TSV',
+    funding: [
+    ],
     hash: 'b9TY2CtGyr',
     lastUpdate: '2018-06-05T03:29:03Z',
     license: 'MIT',
@@ -3375,6 +3815,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'TSX',
+    funding: [
+    ],
     hash: 'qyk3VfiysU',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -3387,6 +3829,8 @@ export const grammars = [
   {
     byteSize: 3588,
     displayName: 'Turtle',
+    funding: [
+    ],
     hash: 'DimfjwytJo',
     lastUpdate: '2022-11-21T15:21:23Z',
     name: 'turtle',
@@ -3405,11 +3849,13 @@ export const grammars = [
       'python',
       'ruby',
     ],
-    funding: {
-      github: [
-        'mblode',
-      ],
-    },
+    funding: [
+      {
+        handle: '@mblode',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/mblode',
+      },
+    ],
     hash: 'nVLCdU01wk',
     lastUpdate: '2023-11-03T21:57:59Z',
     license: 'MIT',
@@ -3430,6 +3876,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'TypeScript',
+    funding: [
+    ],
     hash: '1uhJNPohnQ',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
@@ -3445,6 +3893,8 @@ export const grammars = [
     ],
     byteSize: 26934,
     displayName: 'TypeSpec',
+    funding: [
+    ],
     hash: 'km51W174VV',
     lastUpdate: '2024-08-08T21:42:27Z',
     license: 'MIT',
@@ -3460,6 +3910,8 @@ export const grammars = [
     ],
     byteSize: 8171,
     displayName: 'Typst',
+    funding: [
+    ],
     hash: 'OgHO2Uxar2',
     lastUpdate: '2023-08-11T05:56:51Z',
     license: 'MIT',
@@ -3472,6 +3924,8 @@ export const grammars = [
   {
     byteSize: 13070,
     displayName: 'V',
+    funding: [
+    ],
     hash: 'qeaPlpL6Pq',
     lastUpdate: '2023-01-09T21:56:12Z',
     license: 'MIT',
@@ -3484,6 +3938,8 @@ export const grammars = [
   {
     byteSize: 3220,
     displayName: 'Vala',
+    funding: [
+    ],
     hash: 'dlH699jiwF',
     lastUpdate: '2021-05-28T08:53:39Z',
     license: 'MIT',
@@ -3503,6 +3959,8 @@ export const grammars = [
       'scripting',
     ],
     displayName: 'Visual Basic',
+    funding: [
+    ],
     hash: 'yC9XGL8yoU',
     lastUpdate: '2024-01-26T12:06:22Z',
     license: 'MIT',
@@ -3515,9 +3973,12 @@ export const grammars = [
   {
     byteSize: 5738,
     displayName: 'Verilog',
-    funding: {
-      custom: 'https://www.buymeacoffee.com/mshr.h',
-    },
+    funding: [
+      {
+        name: 'buymeacoffee.com',
+        url: 'https://www.buymeacoffee.com/mshr.h',
+      },
+    ],
     hash: 'RTTNS4GjI2',
     lastUpdate: '2024-10-26T13:17:15Z',
     license: 'MIT',
@@ -3530,6 +3991,8 @@ export const grammars = [
   {
     byteSize: 23051,
     displayName: 'VHDL',
+    funding: [
+    ],
     hash: 'iT8b3KCXtD',
     lastUpdate: '2023-12-21T19:50:34Z',
     license: 'MIT',
@@ -3546,6 +4009,8 @@ export const grammars = [
     ],
     byteSize: 20672,
     displayName: 'Vim Script',
+    funding: [
+    ],
     hash: '0JRHH2APQ2',
     lastUpdate: '2018-04-21T00:11:03Z',
     license: 'MIT',
@@ -3587,9 +4052,13 @@ export const grammars = [
       'vue-interpolations',
       'vue-sfc-style-variable-injection',
     ],
-    funding: {
-      github: 'johnsoncodehk',
-    },
+    funding: [
+      {
+        handle: '@johnsoncodehk',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/johnsoncodehk',
+      },
+    ],
     hash: 'jHCVczJ3x8',
     lastUpdate: '2024-12-20T20:08:46Z',
     license: 'MIT',
@@ -3609,12 +4078,18 @@ export const grammars = [
       'vue',
       'javascript',
     ],
-    funding: {
-      github: [
-        'octref',
-      ],
-      issuehunt: 'vuejs/vetur',
-    },
+    funding: [
+      {
+        handle: '@octref',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/octref',
+      },
+      {
+        handle: 'vuejs/vetur',
+        name: 'IssueHunt',
+        url: 'https://issuehunt.io/r/vuejs/vetur',
+      },
+    ],
     hash: 'zPZMJ00RN0',
     lastUpdate: '2020-08-20T02:58:43Z',
     license: 'MIT',
@@ -3630,6 +4105,8 @@ export const grammars = [
     ],
     byteSize: 75951,
     displayName: 'Vyper',
+    funding: [
+    ],
     hash: 'lya6Pm8pzc',
     lastUpdate: '2024-07-02T07:02:19Z',
     license: 'MIT',
@@ -3645,6 +4122,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'WebAssembly',
+    funding: [
+    ],
     hash: 'OqLKMQewi4',
     lastUpdate: '2023-10-31T03:53:56Z',
     license: 'MIT',
@@ -3660,6 +4139,8 @@ export const grammars = [
     ],
     byteSize: 2122,
     displayName: 'Wenyan',
+    funding: [
+    ],
     hash: 'SAW6qDrqxp',
     lastUpdate: '2020-09-07T17:31:32Z',
     license: 'MIT',
@@ -3675,6 +4156,8 @@ export const grammars = [
       'web',
     ],
     displayName: 'WGSL',
+    funding: [
+    ],
     hash: 'F7qeyQOEKk',
     lastUpdate: '2023-07-22T16:16:43Z',
     license: 'MIT',
@@ -3745,13 +4228,21 @@ export const grammars = [
       'bibtex',
       'json',
     ],
-    funding: {
-      custom: [
-        'frederisk.github.io/donate/cryptocurrency',
-        'www.paypal.me/rwfholmejp',
-      ],
-      patreon: 'rwfholme',
-    },
+    funding: [
+      {
+        handle: 'rwfholme',
+        name: 'Patreon',
+        url: 'https://patreon.com/rwfholme',
+      },
+      {
+        name: 'frederisk.github.io',
+        url: 'https://frederisk.github.io/donate/cryptocurrency',
+      },
+      {
+        name: 'paypal.me',
+        url: 'https://www.paypal.me/rwfholmejp',
+      },
+    ],
     hash: '5e9ZYQBQec',
     lastUpdate: '2024-11-14T01:22:10Z',
     license: 'MIT',
@@ -3767,6 +4258,8 @@ export const grammars = [
     ],
     byteSize: 266635,
     displayName: 'Wolfram',
+    funding: [
+    ],
     hash: 'oiwSKFBPVa',
     lastUpdate: '2022-10-11T17:11:31Z',
     license: 'NOASSERTION',
@@ -3786,6 +4279,8 @@ export const grammars = [
     embedded: [
       'java',
     ],
+    funding: [
+    ],
     hash: 'rtJ2oPdjCJ',
     lastUpdate: '2018-10-04T10:00:39Z',
     license: 'MIT',
@@ -3803,6 +4298,8 @@ export const grammars = [
     displayName: 'XSL',
     embedded: [
       'xml',
+    ],
+    funding: [
     ],
     hash: 'jQj121My0a',
     lastUpdate: '2018-02-12T15:54:35Z',
@@ -3822,6 +4319,8 @@ export const grammars = [
       'data',
     ],
     displayName: 'YAML',
+    funding: [
+    ],
     hash: 'E7ORFjbsNA',
     lastUpdate: '2017-08-24T17:48:19Z',
     name: 'yaml',
@@ -3832,6 +4331,8 @@ export const grammars = [
   {
     byteSize: 4173,
     displayName: 'ZenScript',
+    funding: [
+    ],
     hash: 'DpiFbr0LZI',
     lastUpdate: '2021-03-26T19:17:04Z',
     license: 'MIT',
@@ -3847,6 +4348,8 @@ export const grammars = [
       'general',
     ],
     displayName: 'Zig',
+    funding: [
+    ],
     hash: 'dhGp073AHk',
     lastUpdate: '2024-07-03T07:57:24Z',
     license: 'MIT',
@@ -3865,6 +4368,8 @@ export const injections = [
       'angular-ts',
       'angular-html',
     ],
+    funding: [
+    ],
     hash: 'lYKDXa2Z7B',
     lastUpdate: '2023-11-08T17:02:59Z',
     license: 'MIT',
@@ -3881,6 +4386,8 @@ export const injections = [
     ],
     embeddedIn: [
       'angular-ts',
+    ],
+    funding: [
     ],
     hash: 'e3Msqayw3j',
     injectTo: [
@@ -3903,6 +4410,8 @@ export const injections = [
     embeddedIn: [
       'angular-ts',
     ],
+    funding: [
+    ],
     hash: 'VhgopsrAal',
     injectTo: [
       'source.ts.ng',
@@ -3923,6 +4432,8 @@ export const injections = [
     embeddedIn: [
       'angular-ts',
       'angular-html',
+    ],
+    funding: [
     ],
     hash: 'kYnmUqFTFZ',
     injectTo: [
@@ -3947,6 +4458,8 @@ export const injections = [
       'angular-ts',
       'angular-html',
     ],
+    funding: [
+    ],
     hash: '4mO2f93Wyl',
     injectTo: [
       'text.html.derivative',
@@ -3970,6 +4483,8 @@ export const injections = [
     embeddedIn: [
       'angular-ts',
       'angular-html',
+    ],
+    funding: [
     ],
     hash: 'r0M7v6iygH',
     injectTo: [
@@ -3996,6 +4511,8 @@ export const injections = [
     embeddedIn: [
       'cpp',
     ],
+    funding: [
+    ],
     hash: 'kM4GgGU4eF',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
@@ -4015,9 +4532,13 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
-    funding: {
-      ko_fi: 26,
-    },
+    funding: [
+      {
+        handle: 26,
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/26',
+      },
+    ],
     hash: 'b9lAesKxsY',
     injectTo: [
       'source.ts',
@@ -4041,9 +4562,13 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
-    funding: {
-      ko_fi: 26,
-    },
+    funding: [
+      {
+        handle: 26,
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/26',
+      },
+    ],
     hash: 'cjHb7XdeYY',
     injectTo: [
       'source.ts',
@@ -4067,9 +4592,13 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
-    funding: {
-      ko_fi: 26,
-    },
+    funding: [
+      {
+        handle: 26,
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/26',
+      },
+    ],
     hash: 'HFffghnePZ',
     injectTo: [
       'source.ts',
@@ -4092,9 +4621,13 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
-    funding: {
-      ko_fi: 26,
-    },
+    funding: [
+      {
+        handle: 26,
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/26',
+      },
+    ],
     hash: 'Ps1gaKvlPa',
     injectTo: [
       'source.ts',
@@ -4116,9 +4649,13 @@ export const injections = [
     embeddedIn: [
       'ts-tags',
     ],
-    funding: {
-      ko_fi: 26,
-    },
+    funding: [
+      {
+        handle: 26,
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/26',
+      },
+    ],
     hash: 'rEsSluhkQQ',
     injectTo: [
       'source.ts',
@@ -4141,9 +4678,13 @@ export const injections = [
     embeddedIn: [
       'jinja',
     ],
-    funding: {
-      github: 'samuelcolvin',
-    },
+    funding: [
+      {
+        handle: '@samuelcolvin',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/samuelcolvin',
+      },
+    ],
     hash: 'GixUE5UUDf',
     lastUpdate: '2022-08-17T08:07:37Z',
     license: 'MIT',
@@ -4158,9 +4699,13 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
-    funding: {
-      github: 'johnsoncodehk',
-    },
+    funding: [
+      {
+        handle: '@johnsoncodehk',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/johnsoncodehk',
+      },
+    ],
     hash: 'dDgC0hpSLe',
     injectTo: [
       'text.html.markdown',
@@ -4178,9 +4723,13 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
-    funding: {
-      github: 'johnsoncodehk',
-    },
+    funding: [
+      {
+        handle: '@johnsoncodehk',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/johnsoncodehk',
+      },
+    ],
     hash: 'lhC1cd62GE',
     injectTo: [
       'source.vue',
@@ -4201,9 +4750,13 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
-    funding: {
-      github: 'johnsoncodehk',
-    },
+    funding: [
+      {
+        handle: '@johnsoncodehk',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/johnsoncodehk',
+      },
+    ],
     hash: 'ePqTfZTjMl',
     injectTo: [
       'source.vue',
@@ -4227,9 +4780,13 @@ export const injections = [
     embeddedIn: [
       'vue',
     ],
-    funding: {
-      github: 'johnsoncodehk',
-    },
+    funding: [
+      {
+        handle: '@johnsoncodehk',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/johnsoncodehk',
+      },
+    ],
     hash: 'gQb4LxBpN5',
     injectTo: [
       'source.vue',
