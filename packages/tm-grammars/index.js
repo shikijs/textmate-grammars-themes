@@ -2228,16 +2228,16 @@ export const grammars = [
     source: 'https://github.com/pragmagic/vscode-nim/blob/0272a0544ddf147fde98f8a8f2b624b7dcb19eb3/syntaxes/nim.json',
   },
   {
-    byteSize: 14708,
+    byteSize: 14722,
     displayName: 'Nix',
-    hash: 'US1yMcXb2a',
-    lastUpdate: '2022-04-17T09:05:16Z',
+    hash: 'sO7YUarMe5',
+    lastUpdate: '2025-02-02T04:56:34Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
     name: 'nix',
     scopeName: 'source.nix',
-    sha: 'cd420d0bcea26cf1cf650f47c738bd1b6658a80c',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/cd420d0bcea26cf1cf650f47c738bd1b6658a80c/syntaxes/nix.YAML-tmLanguage',
+    sha: 'ac1ed65aa92655748200cd62bd54e5ca051781bc',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/ac1ed65aa92655748200cd62bd54e5ca051781bc/syntaxes/nix.YAML-tmLanguage',
   },
   {
     aliases: [
