@@ -756,6 +756,49 @@
       ]
     },
     {
+      "begin": "\\s*\\\\begin\\{(?:javacode|javaverbatim|javablock|javaconcode|javaconsole|javaconverbatim)\\*?\\}(?:\\[[a-zA-Z0-9_-]*\\])?(?=\\[|\\{|\\s*$)",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#begin-env-tokenizer"
+            }
+          ]
+        }
+      },
+      "end": "\\s*\\\\end\\{(?:javacode|javaverbatim|javablock|javaconcode|javaconsole|javaconverbatim)\\*?\\}",
+      "patterns": [
+        {
+          "include": "#multiline-optional-arg-no-highlight"
+        },
+        {
+          "begin": "(?:\\G|(?<=\\]))(\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.arguments.begin.latex"
+            }
+          },
+          "contentName": "variable.parameter.function.latex",
+          "end": "(\\})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.arguments.end.latex"
+            }
+          }
+        },
+        {
+          "begin": "^(?=\\s*)",
+          "contentName": "source.java",
+          "end": "^\\s*(?=\\\\end\\{(?:javacode|javaverbatim|javablock|javaconcode|javaconsole|javaconverbatim)\\*?\\})",
+          "patterns": [
+            {
+              "include": "source.java"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "begin": "\\s*\\\\begin\\{(?:jlcode|jlverbatim|jlblock|jlconcode|jlconsole|jlconverbatim)\\*?\\}(?:\\[[a-zA-Z0-9_-]*\\])?(?=\\[|\\{|\\s*$)",
       "captures": {
         "0": {
@@ -1100,7 +1143,7 @@
       ]
     },
     {
-      "begin": "\\s*\\\\begin\\{([a-zA-Z]*code|lstlisting|minted|pyglist)\\*?\\}(?:\\[.*\\])?(?:\\{.*\\})?",
+      "begin": "\\s*\\\\begin\\{((?:[a-zA-Z]*code|lstlisting|minted|pyglist)\\*?)\\}(?:\\[.*\\])?(?:\\{.*\\})?",
       "captures": {
         "0": {
           "patterns": [
