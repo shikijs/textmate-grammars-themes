@@ -1613,6 +1613,27 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/d6af4893ed9a3545163a4cb748fa5548bd1e51a5/extensions/json/syntaxes/JSON.tmLanguage.json',
   },
   {
+    aliases: [
+      'JSON TextMate',
+    ],
+    byteSize: 35097,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'JSON TextMate',
+    embedded: [
+      'json-textmate-regex',
+    ],
+    hash: 'xIBRYIZSMJ',
+    lastUpdate: '2024-12-12T06:57:55Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/LICENSE',
+    name: 'json-textmate',
+    scopeName: 'source.json.textmate',
+    sha: 'fb105df2611356cbf475e4a2918884ab2a503046',
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/fb105df2611356cbf475e4a2918884ab2a503046/syntaxes/json.tmLanguage.json',
+  },
+  {
     byteSize: 3397,
     categories: [
       'data',
@@ -4032,6 +4053,21 @@ export const injections = [
     scopeName: 'text.html.jinja',
     sha: '64ad369cd167bba2e614944db6d925b7dc6483b4',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/64ad369cd167bba2e614944db6d925b7dc6483b4/syntaxes/jinja-html.tmLanguage.json',
+  },
+  {
+    byteSize: 44195,
+    displayName: 'JSON TextMate Oniguruma Regular Expressions',
+    embeddedIn: [
+      'json-textmate',
+    ],
+    hash: 'AskMZcZmMA',
+    lastUpdate: '2024-12-14T08:21:50Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/LICENSE',
+    name: 'json-textmate-regex',
+    scopeName: 'source.json.textmate.regexp',
+    sha: 'e017af7a8125c0285079455c7af44a04beb48a0d',
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/e017af7a8125c0285079455c7af44a04beb48a0d/syntaxes/regex.tmLanguage.json',
   },
   {
     byteSize: 684,

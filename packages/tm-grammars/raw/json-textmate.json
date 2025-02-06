@@ -1,0 +1,2464 @@
+{
+  "$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+  "displayName": "JSON TextMate",
+  "injections": {
+    "L:capture-group-lookbehind -capture-group-modify-extended -character-class -comment": {
+      "patterns": [
+        {
+          "include": "source.json.textmate.regexp#capture-group-lookbehind-invalid"
+        },
+        {
+          "include": "source.json.textmate.regexp#absent-invalid"
+        }
+      ]
+    },
+    "L:capture-group-lookbehind-extended -capture-group-modify -character-class -comment": {
+      "patterns": [
+        {
+          "include": "source.json.textmate.regexp#capture-group-lookbehind-invalid-extended"
+        },
+        {
+          "include": "source.json.textmate.regexp#absent-invalid-extended"
+        }
+      ]
+    },
+    "L:capture-group-negative-lookbehind -capture-group-modify-extended -character-class -comment": {
+      "patterns": [
+        {
+          "include": "source.json.textmate.regexp#capture-group-negative-lookbehind-invalid"
+        },
+        {
+          "include": "source.json.textmate.regexp#absent-invalid"
+        }
+      ]
+    },
+    "L:capture-group-negative-lookbehind-extended -capture-group-modify -character-class -comment": {
+      "patterns": [
+        {
+          "include": "source.json.textmate.regexp#capture-group-negative-lookbehind-invalid-extended"
+        },
+        {
+          "include": "source.json.textmate.regexp#absent-invalid-extended"
+        }
+      ]
+    }
+  },
+  "name": "json-textmate",
+  "patterns": [
+    {
+      "include": "#root"
+    },
+    {
+      "include": "#fallback"
+    }
+  ],
+  "repository": {
+    "$schema": {
+      "begin": "(\")(\\$schema)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.schema.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"$schema\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#string"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "applyEndPatternLast": {
+      "begin": "(\")(applyEndPatternLast)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.applyEndPatternLast.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"applyEndPatternLast\": true",
+      "end": "(?<=\\w)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\\w)|(?=[},])",
+          "patterns": [
+            {
+              "match": "true|false|null",
+              "name": "keyword.constant.$0.json.tm"
+            },
+            {
+              "match": "-?\\d+",
+              "name": "constant.numeric.json.tm"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "array-separator": {
+      "patterns": [
+        {
+          "begin": "\\G|,",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.array.json.tm"
+            }
+          },
+          "end": "(?!\\s|,|$)",
+          "patterns": [
+            {
+              "match": ",",
+              "name": "invalid.illegal.duplicate-array-separator.json.tm"
+            }
+          ]
+        },
+        {
+          "include": "#json-value"
+        }
+      ]
+    },
+    "capture": {
+      "begin": "(\")(\\d{1,3})(.*?(?<!\\\\)\\\\{2}*|.*)(\")",
+      "beginCaptures": {
+        "2": {
+          "name": "constant.numeric.json.tm"
+        },
+        "3Every char after the numeric is ignored. 0-9": {
+          "name": "punctuation.definition.tag.json.tm regex"
+        }
+      },
+      "comment": "\"0\": { ... }",
+      "end": "(?<=})|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=})|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "comment": "All normal \"patterns\" rules are allowed here. With the exception of \"include\". But only when they are paired with \"patterns\""
+                },
+                {
+                  "include": "#name"
+                },
+                {
+                  "include": "#contentName"
+                },
+                {
+                  "include": "#match"
+                },
+                {
+                  "include": "#patterns"
+                },
+                {
+                  "include": "#captures"
+                },
+                {
+                  "include": "#repository"
+                },
+                {
+                  "include": "#applyEndPatternLast"
+                },
+                {
+                  "include": "#id"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "captures": {
+      "begin": "(\")((?>beginC|whileC|endC|c)aptures)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.$2.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"captures\": { ... }",
+      "end": "(?<=}|])|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=}|])|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#capture"
+                },
+                {
+                  "include": "#include"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "begin": "\\[",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.begin.json.tm"
+                }
+              },
+              "comment": "An array of `\"captures\"` is not officially supported by VSCode TextMate. But still happens to work because JavaScript",
+              "end": "]",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "begin": "{",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.dictionary.begin.json.tm"
+                    }
+                  },
+                  "end": "}",
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.dictionary.end.json.tm"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "comment": "All normal \"patterns\" rules are allowed here. With the exception of \"include\". But only when they are paired with \"patterns\""
+                    },
+                    {
+                      "include": "#name"
+                    },
+                    {
+                      "include": "#contentName"
+                    },
+                    {
+                      "include": "#match"
+                    },
+                    {
+                      "include": "#patterns"
+                    },
+                    {
+                      "include": "#captures"
+                    },
+                    {
+                      "include": "#repository"
+                    },
+                    {
+                      "include": "#applyEndPatternLast"
+                    },
+                    {
+                      "include": "#id"
+                    },
+                    {
+                      "include": "#dictionary-separator"
+                    }
+                  ]
+                },
+                {
+                  "include": "#array-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "//": "Vscode's TextMate does NOT acknowledge \"comment\" but instead just ignores it like all other unsupported keys",
+          "begin": "(\")(comment)(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            },
+            "2": {
+              "name": "keyword.property-name.string.comment.json.tm"
+            },
+            "3": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "comment": "\"comment\": \"...\"",
+          "end": "(?<=\")(?!\\G)|(?=[},])",
+          "patterns": [
+            {
+              "begin": ":",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.separator.dictionary.key-value.json.tm"
+                }
+              },
+              "end": "(?<=\")|(?=[},])",
+              "patterns": [
+                {
+                  "begin": "\"",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.string.begin.json.tm"
+                    }
+                  },
+                  "end": "\"",
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.string.end.json.tm"
+                    }
+                  },
+                  "name": "quoted.double.json.tm comment.json.tm",
+                  "patterns": [
+                    {
+                      "captures": {
+                        "1": {
+                          "name": "constant.character.escape.json.tm"
+                        }
+                      },
+                      "match": "(\\\\)/"
+                    },
+                    {
+                      "include": "#escape-characters"
+                    }
+                  ]
+                },
+                {
+                  "include": "#json-value"
+                }
+              ]
+            },
+            {
+              "include": "#dictionary-separator"
+            }
+          ]
+        },
+        {
+          "//": {
+            "object": {
+              "array": [
+                "string",
+                true,
+                999,
+                {
+                },
+                [
+                ]
+              ]
+            }
+          },
+          "begin": "(\")(//)(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            },
+            "2": {
+              "name": "keyword.property-name.string.comment-slash.json.tm"
+            },
+            "3": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "comment": "\"//\": ...",
+          "end": "(?<=[]}\"])(?!\\G)|(?=[},])",
+          "patterns": [
+            {
+              "include": "#comment-slash-pair"
+            },
+            {
+              "include": "#dictionary-separator"
+            }
+          ]
+        },
+        {
+          "begin": "(\")(information_for_contributors)(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            },
+            "2": {
+              "name": "keyword.property-name.string.information_for_contributors.json.tm"
+            },
+            "3": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "comment": "\"information_for_contributors\": ...",
+          "end": "(?<=[]}\"])(?!\\G)|(?=[},])",
+          "patterns": [
+            {
+              "include": "#comment-slash-pair"
+            },
+            {
+              "include": "#dictionary-separator"
+            }
+          ]
+        }
+      ],
+      "repository": {
+        "comment-slash-array": {
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.array.begin.json.tm"
+            }
+          },
+          "comment": "[ ... ]",
+          "end": "]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.array.end.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comment-slash-dictionary"
+            },
+            {
+              "include": "#comment-slash-array"
+            },
+            {
+              "include": "#comment-slash-string"
+            },
+            {
+              "include": "#array-separator"
+            }
+          ]
+        },
+        "comment-slash-dictionary": {
+          "begin": "{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.dictionary.begin.json.tm"
+            }
+          },
+          "comment": "{ ... }",
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.dictionary.end.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "begin": "(?=\")",
+              "comment": "\"...\": ...",
+              "end": "(?<=[]}])|(?<=\")(?!:)(?!\\G)|(?=[},])",
+              "patterns": [
+                {
+                  "begin": "\"",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.string.begin.json.tm"
+                    }
+                  },
+                  "end": "\"",
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.string.end.json.tm"
+                    }
+                  },
+                  "name": "comment.double.slash.json.tm",
+                  "patterns": [
+                    {
+                      "include": "#escape-characters"
+                    }
+                  ]
+                },
+                {
+                  "include": "#comment-slash-pair"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#dictionary-separator"
+            }
+          ]
+        },
+        "comment-slash-pair": {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "comment": ": ...",
+          "end": "(?<=[]}\"])|(?=[},])",
+          "patterns": [
+            {
+              "include": "#comment-slash-dictionary"
+            },
+            {
+              "include": "#comment-slash-array"
+            },
+            {
+              "include": "#comment-slash-string"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        "comment-slash-string": {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "comment": "\"...\"",
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "name": "comment.double.slash.json.tm",
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            }
+          ]
+        }
+      }
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*\\*(?!/)",
+          "captures": {
+            "0": {
+              "name": "invalid.illegal.punctuation.definition.comment.json.tm"
+            }
+          },
+          "end": "\\*/",
+          "name": "comment.block.documentation.json.tm"
+        },
+        {
+          "begin": "/\\*",
+          "captures": {
+            "0": {
+              "name": "invalid.illegal.punctuation.definition.comment.json.tm"
+            }
+          },
+          "end": "\\*/",
+          "name": "comment.block.json.tm"
+        },
+        {
+          "begin": "//",
+          "captures": {
+            "0": {
+              "name": "invalid.illegal.punctuation.definition.comment.json.tm"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.double-slash.json.tm"
+        }
+      ]
+    },
+    "contentName": {
+      "begin": "(\")(contentName)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.contentName.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"contentName\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#name_scopes"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "dictionary-separator": {
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#json-pair"
+        },
+        {
+          "begin": "\\G|,",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.json.tm"
+            }
+          },
+          "end": "(?!\\s|,|$)",
+          "patterns": [
+            {
+              "match": ",",
+              "name": "invalid.illegal.duplicate-dictionary-separator.json.tm"
+            }
+          ]
+        },
+        {
+          "include": "#json-value"
+        }
+      ]
+    },
+    "escape-characters": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.tag.json.tm"
+            }
+          },
+          "match": "(\\\\)/"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.json.tm"
+            }
+          },
+          "match": "(\\\\)[\\\\\"]"
+        },
+        {
+          "match": "\\\\[bfnrt]",
+          "name": "constant.character.escape.json.tm"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "constant.character.escape.json.tm"
+            },
+            "2": {
+              "name": "constant.numeric.json.tm"
+            },
+            "3": {
+              "comment": "Fallback if `\\h{4}` fails. \"patterns\" inside a (capture) causes a performance hit",
+              "name": "constant.numeric.json.tm",
+              "patterns": [
+                {
+                  "match": "\\H+",
+                  "name": "invalid.illegal.regex.json.tm"
+                }
+              ]
+            }
+          },
+          "match": "(\\\\u)(\\h{4,0})"
+        },
+        {
+          "match": "\\\\.?|[\"\\x-\\x1F\\x7F]",
+          "name": "invalid.illegal.json.tm markup.underline regex"
+        }
+      ]
+    },
+    "fallback": {
+      "comment": "Fallback for when only part of the file is loaded or code snippets inside a hover",
+      "patterns": [
+        {
+          "include": "#version"
+        },
+        {
+          "include": "#$schema"
+        },
+        {
+          "include": "#scopeName"
+        },
+        {
+          "include": "#fileTypes"
+        },
+        {
+          "include": "#firstLineMatch"
+        },
+        {
+          "include": "#foldingStartMarker"
+        },
+        {
+          "include": "#foldingStopMarker"
+        },
+        {
+          "include": "#injectionSelector"
+        },
+        {
+          "include": "#injections"
+        },
+        {
+          "include": "#patterns"
+        },
+        {
+          "include": "#repository"
+        },
+        {
+          "include": "#uuid"
+        },
+        {
+          "include": "#name"
+        },
+        {
+          "include": "#contentName"
+        },
+        {
+          "include": "#match"
+        },
+        {
+          "include": "#include"
+        },
+        {
+          "include": "#captures"
+        },
+        {
+          "include": "#applyEndPatternLast"
+        },
+        {
+          "include": "#capture"
+        },
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#repo"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.json.tm"
+        },
+        {
+          "begin": "\\A(?!$|\\s*{\\s*(?>$|})|\\s*\\[\\s*(?>$|\\[|{)|[^\t]*\t|(?>[^\\\\\"]+|\\\\.)*+.)",
+          "comment": "This must be strict. So to reduce false positives",
+          "end": "(?=[)\"])|$",
+          "name": "meta.embedded.json.textmate.regexp",
+          "patterns": [
+            {
+              "include": "source.json.textmate.regexp"
+            },
+            {
+              "comment": "Fallback if `source.json.textmate.regexp` fails",
+              "include": "#escape-characters"
+            }
+          ]
+        },
+        {
+          "include": "#json-value"
+        }
+      ]
+    },
+    "fileTypes": {
+      "//": "Vscode's TextMate acknowledges \"fileTypes\" but doesn't do anything with it",
+      "begin": "(\")(fileTypes)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.fileTypes.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"fileTypes\": [ \"...\" ]",
+      "end": "(?<=])|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=])|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\\[",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.begin.json.tm"
+                }
+              },
+              "end": "]",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#string"
+                },
+                {
+                  "include": "#array-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "firstLineMatch": {
+      "begin": "(\")(firstLineMatch)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.firstLineMatch.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"firstLineMatch\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "contentName": "meta.embedded.json.textmate.regexp",
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "source.json.textmate.regexp"
+                },
+                {
+                  "comment": "Fallback if `source.json.textmate.regexp` fails",
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "foldingStartMarker": {
+      "begin": "(\")(foldingStartMarker)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.foldingStartMarker.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"foldingStartMarker\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "contentName": "meta.embedded.json.textmate.regexp",
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "source.json.textmate.regexp"
+                },
+                {
+                  "comment": "Fallback if `source.json.textmate.regexp` fails",
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "foldingStopMarker": {
+      "begin": "(\")(foldingStopMarker)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.foldingStopMarker.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"foldingStopMarker\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "contentName": "meta.embedded.json.textmate.regexp",
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "source.json.textmate.regexp"
+                },
+                {
+                  "comment": "Fallback if `source.json.textmate.regexp` fails",
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "id": {
+      "begin": "(\")(id)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "invalid.illegal.keyword.property-name.string.id.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"id\": 1",
+      "end": "(?<=\\S)(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\\w)|(?=[},])",
+          "patterns": [
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "include": {
+      "begin": "(\")(include)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.include.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"include\": \"...#...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "contentName": "regex",
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "begin": "\\G(?=(?>(?>[^\\\\\"#]++|\\\\[\\\\\"]?)*#|#?)\\$base\")",
+                  "contentName": "markup.strikethrough.json.tm",
+                  "end": "((#)?\\$)(base)",
+                  "endCaptures": {
+                    "1": {
+                      "name": "keyword.json.tm"
+                    },
+                    "2": {
+                      "name": "markup.strikethrough.json.tm"
+                    },
+                    "3": {
+                      "name": "support.function.json.tm"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#scope-string"
+                    }
+                  ]
+                },
+                {
+                  "captures": {
+                    "1": {
+                      "name": "keyword.json.tm"
+                    },
+                    "2": {
+                      "name": "markup.strikethrough.json.tm"
+                    },
+                    "3": {
+                      "name": "support.function.json.tm"
+                    }
+                  },
+                  "match": "\\G((#)?\\$)(self)(?=\")"
+                },
+                {
+                  "captures": {
+                    "0": {
+                      "name": "markup.strikethrough.json.tm"
+                    },
+                    "1": {
+                      "name": "keyword.json.tm"
+                    },
+                    "2": {
+                      "name": "support.function.json.tm"
+                    }
+                  },
+                  "match": "(#\\$)(self)(?=\")"
+                },
+                {
+                  "match": "(?!\\G)#(?=\")",
+                  "name": "keyword.json.tm markup.strikethrough.json.tm"
+                },
+                {
+                  "begin": "#",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "keyword.json.tm"
+                    }
+                  },
+                  "contentName": "variable.json.tm",
+                  "end": "(?=\")",
+                  "patterns": [
+                    {
+                      "include": "#escape-characters"
+                    }
+                  ]
+                },
+                {
+                  "include": "#scope-string"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "injection": {
+      "begin": "(?=\")",
+      "comment": "\"...\": { ... }",
+      "end": "(?<=})|(?=[},])",
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "contentName": "meta.embedded.injection.tm",
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#injection-string"
+            }
+          ]
+        },
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=})|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#patterns"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "injection-string": {
+      "comment": "All non-functional characters are treated as whitespace.  This includes whitespace ` ` and asterisk `*`.  [^\\w.,:|()-]",
+      "patterns": [
+        {
+          "match": "(?>\\\\[\\\\\"/bfnrt])+",
+          "name": "comment.injection.whitespace.tm"
+        },
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "begin": "[)|]",
+          "end": "(?=\")",
+          "name": "comment.injection.whitespace.tm"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "comment.injection.whitespace.tm"
+            },
+            "2": {
+              "name": "support.function.tm"
+            }
+          },
+          "match": "(?<=(?>^|[^\\\\])\"|,)((?>\\\\[\\\\\"/bfnrt]|[^\\\\\"\\w.:|()-])*)([LR]:|[\\w.:]:(?![\\w.:-]))"
+        },
+        {
+          "begin": "text|source(?=\\.[\\w.:])",
+          "beginCaptures": {
+            "0": {
+              "name": "support.function.tm"
+            }
+          },
+          "end": "(?![\\w.:-])",
+          "name": "string",
+          "patterns": [
+            {
+              "match": "\\.",
+              "name": "support.function.tm"
+            }
+          ]
+        },
+        {
+          "match": "[\\w.:][\\w.:-]*",
+          "name": "string $0"
+        },
+        {
+          "begin": "\\(",
+          "captures": {
+            "0": {
+              "name": "constant.character.set.regexp.tm"
+            }
+          },
+          "end": "\\)|(?=\")",
+          "patterns": [
+            {
+              "match": "(?<=[,|])(?>\\\\[\\\\\"/bfnrt]|[^\\\\\\w.:()-])+",
+              "name": "comment.injection.whitespace.tm"
+            },
+            {
+              "match": "\\|",
+              "name": "keyword.control.tm"
+            },
+            {
+              "include": "#injection-string"
+            }
+          ]
+        },
+        {
+          "match": "(?>\\\\[\\\\\"/bfnrt]|[^\\\\\"\\w.:,|()-])+",
+          "name": "comment.injection.whitespace.tm"
+        },
+        {
+          "match": "(?<=,)(?>\\\\[\\\\\"/bfnrt]|[^\\\\\"\\w.:|()-])+",
+          "name": "comment.injection.whitespace.tm"
+        },
+        {
+          "match": ",",
+          "name": "keyword.control.tm"
+        },
+        {
+          "match": "-(?>\\\\[\\\\\"/bfnrt]|[^\\\\\"\\w.:|()-])*-",
+          "name": "comment.injection.whitespace.tm"
+        },
+        {
+          "begin": "-",
+          "beginCaptures": {
+            "0": {
+              "name": "support.function.tm"
+            }
+          },
+          "end": "(?=[\"\t\n,|()-])",
+          "name": "emphasis",
+          "patterns": [
+            {
+              "include": "#injection-string"
+            }
+          ]
+        },
+        {
+          "match": "-",
+          "name": "support.function.tm"
+        }
+      ]
+    },
+    "injectionSelector": {
+      "begin": "(\")(injectionSelector)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.injectionSelector.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"injectionSelector\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#injectionSelectorValue"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "injectionSelectorValue": {
+      "comment": "\"...\" [ ... ]",
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#injection-string"
+            }
+          ]
+        },
+        {
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.array.begin.json.tm"
+            }
+          },
+          "comment": "An array of `\"injectionSelector\"` is not officially supported by VSCode TextMate. But still happens to work because JavaScript",
+          "end": "]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.array.end.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#injectionSelectorValue"
+            },
+            {
+              "include": "#array-separator"
+            }
+          ]
+        }
+      ]
+    },
+    "injections": {
+      "begin": "(\")(injections)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.injectionSelector.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"injections\": { ... }",
+      "end": "(?<=})|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=})|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#injection"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "json-array": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.begin.json.tm"
+        }
+      },
+      "comment": "[ ... ]",
+      "end": "]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.end.json.tm"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#array-separator"
+        }
+      ]
+    },
+    "json-dictionary": {
+      "begin": "{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.begin.json.tm"
+        }
+      },
+      "comment": "{ ... }",
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.end.json.tm"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "json-pair": {
+      "begin": "(?=\")",
+      "comment": "\"...\": ...",
+      "end": "(?<=[]}])(?!\\G)|(?!\\G)(?=[},\"])",
+      "patterns": [
+        {
+          "begin": "\\G\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.support.type.property-name.begin.json.tm"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.support.type.property-name.end.json.tm"
+            }
+          },
+          "name": "string.json.tm support.type.property-name.json.tm",
+          "patterns": [
+            {
+              "match": "\\\\[\"\\\\/bfnrt]",
+              "name": "constant.character.escape.json.tm"
+            },
+            {
+              "match": "\\\\u\\h{4}",
+              "name": "constant.character.escape.json.tm"
+            },
+            {
+              "match": "\\\\.?",
+              "name": "invalid.illegal.unrecognized-string-escape.json.tm"
+            }
+          ]
+        },
+        {
+          "begin": ":",
+          "end": "(?<=[]}\"])|(?=[},])",
+          "patterns": [
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "json-value": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#json-dictionary"
+        },
+        {
+          "include": "#json-array"
+        },
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "comment": "\"...\"",
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "name": "string.quoted.double.json.tm",
+          "patterns": [
+            {
+              "match": "\\\\[\"\\\\/bfnrt]",
+              "name": "constant.character.escape.json.tm"
+            },
+            {
+              "match": "\\\\u\\h{4}",
+              "name": "constant.character.escape.json.tm"
+            },
+            {
+              "match": "\\\\.?",
+              "name": "invalid.illegal.unrecognized-string-escape.json.tm"
+            },
+            {
+              "match": "[\\x-\\x1F\\x7F]+",
+              "name": "invalid.illegal.control-character.json.tm"
+            }
+          ]
+        },
+        {
+          "match": "\\btrue\\b",
+          "name": "constant.language.json.tm"
+        },
+        {
+          "match": "\\bfalse\\b",
+          "name": "constant.language.json.tm"
+        },
+        {
+          "match": "\\bnull\\b",
+          "name": "constant.language.json.tm"
+        },
+        {
+          "match": "-?(?>0|[1-9]\\d*)(?>\\.\\d+)?(?>[eE][+-]?\\d+)?",
+          "name": "constant.numeric.json.tm"
+        },
+        {
+          "match": "\\S[^,:/{}\\[\\]\\s\"]*",
+          "name": "invalid.illegal.expected-separator.json.tm"
+        }
+      ]
+    },
+    "match": {
+      "begin": "(\")(match|begin|while|end)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.$2.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"match\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "contentName": "meta.embedded.json.textmate.regexp",
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "source.json.textmate.regexp"
+                },
+                {
+                  "comment": "Fallback if `source.json.textmate.regexp` fails",
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "name": {
+      "begin": "(\")(name)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.name.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"name\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#name_scopes"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "name_display": {
+      "begin": "(\")(name)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.name.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"name\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#string"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "name_scopes": {
+      "//": [
+        "replaceCaptures `$1` removes all leading dots `.`",
+        "Causing us to deviate from VSCode TextMate",
+        "If a scopename is placed at the beginning of \"name\" and has leading dots `.`",
+        " \"name\": \"...keyword\" ",
+        "The dots will be striped by `$1` and it will appear that `...keyword` matches the scopename `keyword`, highlighting it",
+        "We can *partially* correct this by putting another character in front of the first dot `.`",
+        "Sadly the beginning double quote `\"` is the only one available to us. Space ` ` would have been nicer",
+        "and it ends up showing up in `Inspect Editor Tokens and Scopes`. Once again deviating from VSCode TextMate",
+        "However, I doubt anyone would create a scopename starting with a double quote `\"` and leading dots `.`",
+        " \"...scopename "
+      ],
+      "begin": "(?=(\"\\.(?>[^\\\\\"]++|\\\\.)*)\")\"|\"(?=((?>[^\\\\\"]++|\\\\.)*)\")",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        }
+      },
+      "comment": "\"...\"",
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "name": "$1$2",
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "match": "(?>comment|string|regex|meta\\.embedded)\\b",
+          "name": "markup.italic"
+        },
+        {
+          "match": "\\w+"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "meta.embedded constant.character.escape.json.tm markup.italic"
+            },
+            "2": {
+              "name": "punctuation.definition.tag.json.tm"
+            },
+            "3": {
+              "name": "constant.numeric.json.tm"
+            }
+          },
+          "comment": "An invalid capture group number does not convert, nor becomes null",
+          "match": "(\\$)(0*)(\\d{3,1})(?!\\d)"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "meta.embedded constant.character.escape.json.tm markup.italic.tm"
+            },
+            "2": {
+              "name": "meta.embedded constant.character.escape.json.tm"
+            },
+            "3": {
+              "name": "punctuation.definition.tag.json.tm"
+            },
+            "4": {
+              "name": "constant.numeric.json.tm"
+            },
+            "5": {
+              "name": "constant.character.escape.json.tm"
+            },
+            "6": {
+              "name": "markup.heading.json.tm"
+            },
+            "7": {
+              "name": "meta.embedded constant.character.escape.json.tm"
+            }
+          },
+          "match": "(\\$)({)(0*)(\\d{3,1})(:/)(upcase|downcase)(})"
+        }
+      ]
+    },
+    "patterns": {
+      "begin": "(\")(patterns)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.patterns.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"patterns\": [ ... ]",
+      "end": "(?<=])|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=])|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\\[",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.begin.json.tm"
+                }
+              },
+              "end": "]",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.array.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "begin": "{",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.dictionary.begin.json.tm"
+                    }
+                  },
+                  "comment": "{ ... }",
+                  "end": "}",
+                  "endCaptures": {
+                    "0": {
+                      "name": "punctuation.definition.dictionary.end.json.tm"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "include": "#name"
+                    },
+                    {
+                      "include": "#contentName"
+                    },
+                    {
+                      "include": "#match"
+                    },
+                    {
+                      "include": "#include"
+                    },
+                    {
+                      "include": "#patterns"
+                    },
+                    {
+                      "include": "#captures"
+                    },
+                    {
+                      "include": "#repository"
+                    },
+                    {
+                      "include": "#applyEndPatternLast"
+                    },
+                    {
+                      "include": "#id"
+                    },
+                    {
+                      "include": "#dictionary-separator"
+                    }
+                  ]
+                },
+                {
+                  "include": "#array-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "repo": {
+      "begin": "(?=\")",
+      "comment": "\"...\": { ... }",
+      "end": "(?<=})|(?=[},])",
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.json.tm"
+            }
+          },
+          "contentName": "variable.json.tm regex",
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.json.tm"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\G\\$(?>self|base)(?=\")",
+              "name": "markup.strikethrough.json.tm"
+            },
+            {
+              "include": "#escape-characters"
+            }
+          ]
+        },
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=})|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#name"
+                },
+                {
+                  "include": "#contentName"
+                },
+                {
+                  "include": "#match"
+                },
+                {
+                  "include": "#captures"
+                },
+                {
+                  "include": "#patterns"
+                },
+                {
+                  "include": "#include"
+                },
+                {
+                  "include": "#repository"
+                },
+                {
+                  "include": "#applyEndPatternLast"
+                },
+                {
+                  "include": "#id"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        }
+      ]
+    },
+    "repository": {
+      "begin": "(\")(repository)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.repository.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"repository\": { ... }",
+      "end": "(?<=})|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=})|(?=[},])",
+          "patterns": [
+            {
+              "begin": "{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.begin.json.tm"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.dictionary.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#repo"
+                },
+                {
+                  "include": "#json-pair"
+                },
+                {
+                  "include": "#dictionary-separator"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "root": {
+      "begin": "{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.begin.json.tm"
+        }
+      },
+      "comment": "{ ... }",
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.end.json.tm"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#version"
+        },
+        {
+          "include": "#$schema"
+        },
+        {
+          "include": "#scopeName"
+        },
+        {
+          "include": "#name_display"
+        },
+        {
+          "include": "#fileTypes"
+        },
+        {
+          "include": "#firstLineMatch"
+        },
+        {
+          "include": "#foldingStartMarker"
+        },
+        {
+          "include": "#foldingStopMarker"
+        },
+        {
+          "include": "#injectionSelector"
+        },
+        {
+          "include": "#injections"
+        },
+        {
+          "include": "#patterns"
+        },
+        {
+          "include": "#repository"
+        },
+        {
+          "include": "#uuid"
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "scope-string": {
+      "patterns": [
+        {
+          "match": "(?<= |\")(?>source|text)\\.(?![ \"#])",
+          "name": "support.function.json.tm"
+        },
+        {
+          "match": "(?<![\\s\".])\\.(?![\\s\"#])",
+          "name": "support.function.json.tm"
+        },
+        {
+          "match": "[\\w:][\\w:-]*+",
+          "name": "string"
+        },
+        {
+          "match": "\\\\[\"\\\\bfnrt]",
+          "name": "invalid.illegal.unrecognized-string-escape.json.tm"
+        },
+        {
+          "include": "#escape-characters"
+        }
+      ]
+    },
+    "scopeName": {
+      "begin": "(\")(scopeName)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.scopeName.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"scopeName\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "\\G(?>text|source)\\b",
+                  "name": "support.function.json.tm"
+                },
+                {
+                  "match": "(?<!\\.|\")\\.(?!$)",
+                  "name": "support.function.json.tm"
+                },
+                {
+                  "match": "[\\w-]+",
+                  "name": "string.json.tm"
+                },
+                {
+                  "match": "\\\\[\"\\\\/bfnrtu]",
+                  "name": "invalid.illegal.json.tm"
+                },
+                {
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "string": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "name": "string.quoted.double.json.tm",
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        }
+      ]
+    },
+    "uuid": {
+      "begin": "(\")(uuid)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.uuid.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"uuid\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.begin.json.tm"
+                }
+              },
+              "end": "\"",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.string.end.json.tm"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "\\h+",
+                  "name": "constant.numeric.hexadecimal.json.tm"
+                },
+                {
+                  "match": "-",
+                  "name": "separator.uuid.json.tm"
+                },
+                {
+                  "include": "#escape-characters"
+                }
+              ]
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    },
+    "version": {
+      "begin": "(\")(version)(\")",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.begin.json.tm"
+        },
+        "2": {
+          "name": "keyword.property-name.string.version.json.tm"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end.json.tm"
+        }
+      },
+      "comment": "\"version\": \"...\"",
+      "end": "(?<=\")(?!\\G)|(?=[},])",
+      "patterns": [
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.json.tm"
+            }
+          },
+          "end": "(?<=\")|(?=[},])",
+          "patterns": [
+            {
+              "include": "#string"
+            },
+            {
+              "include": "#json-value"
+            }
+          ]
+        },
+        {
+          "include": "#dictionary-separator"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.json.textmate",
+  "version": "https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/main/syntaxes/json.tmLanguage.json"
+}
