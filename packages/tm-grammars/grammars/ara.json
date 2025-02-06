@@ -91,7 +91,6 @@
       "patterns": [
         {
           "begin": "(?i)(?=\\\\?[a-z_0-9\\\\]+\\\\[a-z_][a-z0-9_]*\\s*(\\(|(::<)))",
-          "comment": "Functions in a user-defined namespace (overrides any built-ins)",
           "end": "(?=\\s*(\\(|(::<)))",
           "patterns": [
             {
@@ -106,7 +105,6 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "comment": "Root namespace function calls (built-in or user)",
           "end": "(?=\\s*(\\(|(::<)))",
           "patterns": [
             {
@@ -119,17 +117,14 @@
     "interpolation": {
       "patterns": [
         {
-          "comment": "Interpolating octal values e.g. \\01 or \\07.",
           "match": "\\\\[0-7]{1,3}",
           "name": "constant.numeric.octal.ara"
         },
         {
-          "comment": "Interpolating hex values e.g. \\x1 or \\xFF.",
           "match": "\\\\x[0-9A-Fa-f]{1,2}",
           "name": "constant.numeric.hex.ara"
         },
         {
-          "comment": "Escaped characters in double-quoted strings e.g. \\n or \\t.",
           "match": "\\\\[nrt\\\\\\$\\\"]",
           "name": "constant.character.escape.ara"
         }
@@ -232,27 +227,22 @@
     "operators": {
       "patterns": [
         {
-          "comment": "assignment operators",
           "match": "(\\+=|-=|\\*=|/=|%=|\\^=|&&=|<=|>=|&=|\\|=|<<=|>>=|\\?\\?=)",
           "name": "keyword.assignments.ara"
         },
         {
-          "comment": "logical operators",
           "match": "(\\^|\\||\\|\\||&&|>>|<<|&|~|<<|>>|>|<|<=>|\\?\\?|\\?|:|\\?:)(?!=)",
           "name": "keyword.operators.ara"
         },
         {
-          "comment": "comparison operators",
           "match": "(==|===|!==|!=|<=|>=|<|>)(?!=)",
           "name": "keyword.operator.comparison.ara"
         },
         {
-          "comment": "math operators",
           "match": "(([+%]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
           "name": "keyword.operator.math.ara"
         },
         {
-          "comment": "single equal assignment operator",
           "match": "(?<![<>])=(?!=|>)",
           "name": "keyword.operator.assignment.ara"
         },
@@ -280,36 +270,29 @@
               "name": "punctuation.brackets.curly.ara"
             }
           },
-          "comment": "less than, greater than (special case)",
           "match": "(?:\\b|(?:(\\))|(\\])|(\\})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
         },
         {
-          "comment": "arrow method call, arrow property access",
           "match": "(?:->|\\?->)",
           "name": "keyword.operator.arrow.ara"
         },
         {
-          "comment": "double arrow key-value pair",
           "match": "(?:=>)",
           "name": "keyword.operator.double-arrow.ara"
         },
         {
-          "comment": "static method call, static property access",
           "match": "(?:::)",
           "name": "keyword.operator.static.ara"
         },
         {
-          "comment": "closure creation",
           "match": "(?:\\(\\.\\.\\.\\))",
           "name": "keyword.operator.closure.ara"
         },
         {
-          "comment": "spread operator",
           "match": "(?:\\.\\.\\.)",
           "name": "keyword.operator.spread.ara"
         },
         {
-          "comment": "namespace operator",
           "match": "\\\\",
           "name": "keyword.operator.namespace.ara"
         }

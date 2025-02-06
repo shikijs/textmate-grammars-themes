@@ -378,7 +378,6 @@
           "name": "punctuation.section.scope.end.sql"
         }
       },
-      "comment": "Allow for special ↩ behavior",
       "match": "(\\()(\\))",
       "name": "meta.block.sql"
     }
@@ -471,7 +470,6 @@
               "name": "punctuation.definition.string.begin.sql"
             }
           },
-          "comment": "We should probably handle nested bracket pairs!?! -- Allan",
           "end": "\\}",
           "endCaptures": {
             "0": {
@@ -514,7 +512,6 @@
               "name": "punctuation.definition.string.end.sql"
             }
           },
-          "comment": "this is faster than the next begin/end rule since sub-pattern will match till end-of-line and SQL files tend to have very long lines.",
           "match": "(N)?(')[^']*(')",
           "name": "string.quoted.single.sql"
         },
@@ -547,7 +544,6 @@
               "name": "punctuation.definition.string.end.sql"
             }
           },
-          "comment": "this is faster than the next begin/end rule since sub-pattern will match till end-of-line and SQL files tend to have very long lines.",
           "match": "(`)[^`\\\\]*(`)",
           "name": "string.quoted.other.backtick.sql"
         },
@@ -580,7 +576,6 @@
               "name": "punctuation.definition.string.end.sql"
             }
           },
-          "comment": "this is faster than the next begin/end rule since sub-pattern will match till end-of-line and SQL files tend to have very long lines.",
           "match": "(\")[^\"#]*(\")",
           "name": "string.quoted.double.sql"
         },

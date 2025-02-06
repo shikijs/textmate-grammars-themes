@@ -798,20 +798,16 @@
       ]
     },
     "meta-bounds": {
-      "comment": "For themes: Matching view bounds",
       "match": "<%|=:=|<:<|<%<|>:|<:",
       "name": "meta.bounds.scala"
     },
     "meta-brackets": {
-      "comment": "For themes: Brackets look nice when colored.",
       "patterns": [
         {
-          "comment": "The punctuation.section.*.begin is needed for return snippet in source bundle",
           "match": "\\{",
           "name": "punctuation.section.block.begin.scala"
         },
         {
-          "comment": "The punctuation.section.*.end is needed for return snippet in source bundle",
           "match": "\\}",
           "name": "punctuation.section.block.end.scala"
         },
@@ -822,7 +818,6 @@
       ]
     },
     "meta-colons": {
-      "comment": "For themes: Matching type colons",
       "patterns": [
         {
           "match": "(?<!:):(?!:)",
@@ -1300,7 +1295,6 @@
               "name": "entity.name.tag.localname.xml"
             }
           },
-          "comment": "We do not allow a tag name to start with a - since this would likely conflict with the <- operator. This is not very common for tag names anyway.  Also code such as -- if (val <val2 || val> val3) will falsly be recognized as an xml tag.  The solution is to put a space on either side of the comparison operator",
           "end": "(>(<))/(?:([-_a-zA-Z0-9]+)((:)))?([-_a-zA-Z0-9:]*[_a-zA-Z0-9])(>)",
           "endCaptures": {
             "1": {

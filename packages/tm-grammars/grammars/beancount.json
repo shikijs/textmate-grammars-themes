@@ -6,7 +6,6 @@
   "name": "beancount",
   "patterns": [
     {
-      "comment": "Comments",
       "match": ";.*",
       "name": "comment.line.beancount"
     },
@@ -23,7 +22,6 @@
           "name": "entity.name.tag.beancount"
         }
       },
-      "comment": "Tag directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.tag.beancount",
       "patterns": [
@@ -45,7 +43,6 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "comment": "Include directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.include.beancount",
       "patterns": [
@@ -70,7 +67,6 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "comment": "Option directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.option.beancount",
       "patterns": [
@@ -98,7 +94,6 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "comment": "Plugin directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "keyword.operator.directive.beancount",
       "patterns": [
@@ -132,7 +127,6 @@
           "name": "support.function.beancount"
         }
       },
-      "comment": "Open/Close/Pad directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -179,7 +173,6 @@
           "name": "support.function.beancount"
         }
       },
-      "comment": "Custom directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -234,7 +227,6 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "comment": "Event directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -274,7 +266,6 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "comment": "Commodity directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -314,7 +305,6 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "comment": "Note/Document directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -357,7 +347,6 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "comment": "Price directives",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -400,7 +389,6 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "comment": "Balance directives",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
@@ -449,7 +437,6 @@
           "name": "string.quoted.narration.beancount"
         }
       },
-      "comment": "Transaction directive",
       "end": "(?=(^\\s*$|^\\S))",
       "name": "meta.directive.transaction.beancount",
       "patterns": [
@@ -498,7 +485,6 @@
               "name": "punctuation.separator.beancount"
             }
           },
-          "comment": "Sub accounts",
           "end": "([:]?)|(\\s)",
           "patterns": [
             {

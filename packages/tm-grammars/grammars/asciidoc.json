@@ -74,7 +74,6 @@
             },
             {
               "begin": "^(={4,})\\s*$",
-              "comment": "example block",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -87,7 +86,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -323,7 +321,6 @@
     "block-attribute-inner": {
       "patterns": [
         {
-          "comment": "separators",
           "match": "([,.#%])",
           "name": "punctuation.separator.asciidoc"
         },
@@ -338,7 +335,6 @@
               ]
             }
           },
-          "comment": "blockname",
           "match": "(?<=\\[)([^\\[\\],.#%=]+)"
         },
         {
@@ -351,7 +347,6 @@
               ]
             }
           },
-          "comment": "attributes",
           "match": "(?<=\\{|,|.|#|\"|'|%)([^\\],.#%]+)",
           "name": "markup.meta.attribute-list.asciidoc"
         }
@@ -510,7 +505,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "^(\\1)$",
               "patterns": [
                 {
@@ -592,7 +586,6 @@
             },
             {
               "begin": "^(={4,})$",
-              "comment": "example block",
               "end": "^(\\1)$",
               "patterns": [
                 {
@@ -602,7 +595,6 @@
             },
             {
               "begin": "^(-{2})$",
-              "comment": "open block",
               "end": "^(\\1)$",
               "patterns": [
                 {
@@ -864,22 +856,18 @@
     "keywords": {
       "patterns": [
         {
-          "comment": "Admonition",
           "match": "(NOTE|TIP|IMPORTANT|WARNING|CAUTION)",
           "name": "entity.name.function.asciidoc"
         },
         {
-          "comment": "Paragraph or verbatim",
           "match": "(comment|example|literal|listing|normal|pass|quote|sidebar|source|verse|abstract|partintro)",
           "name": "entity.name.function.asciidoc"
         },
         {
-          "comment": "Diagram",
           "match": "(actdiag|blockdiag|ditaa|graphviz|meme|mermaid|nwdiag|packetdiag|pikchr|plantuml|rackdiag|seqdiag|shaape|wavedrom)",
           "name": "entity.name.function.asciidoc"
         },
         {
-          "comment": "Others",
           "match": "(sect[1-4]|preface|colophon|dedication|glossary|bibliography|synopsis|appendix|index|normal|partintro|music|latex|stem)",
           "name": "entity.name.function.asciidoc"
         }
@@ -1043,12 +1031,10 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "end": "^(\\1)$"
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "^(\\1)$"
             },
             {
@@ -1082,12 +1068,10 @@
             },
             {
               "begin": "^(\\.{4,})$",
-              "comment": "literal block",
               "end": "^(\\1)$"
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "^(\\1)$"
             },
             {
@@ -1329,7 +1313,6 @@
             },
             {
               "begin": "^(\\+{4,})\\s*$",
-              "comment": "passthrough block",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -1339,7 +1322,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -1388,7 +1370,6 @@
             },
             {
               "begin": "^([_]{4,})\\s*$",
-              "comment": "quotes block",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -1401,7 +1382,6 @@
             },
             {
               "begin": "^(\"{2})\\s*$",
-              "comment": "air quotes",
               "end": "(?<=\\1)",
               "patterns": [
                 {
@@ -1414,7 +1394,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "(?<=\\1)$",
               "patterns": [
                 {
@@ -1479,7 +1458,6 @@
             },
             {
               "begin": "^(\\*{4,})$",
-              "comment": "sidebar block",
               "end": "^(\\1)$",
               "patterns": [
                 {
@@ -1489,7 +1467,6 @@
             },
             {
               "begin": "^(-{2})$",
-              "comment": "open block",
               "end": "^(\\1)$",
               "patterns": [
                 {
@@ -1542,7 +1519,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.c",
               "end": "^(\\1)$",
               "patterns": [
@@ -1559,7 +1535,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.c",
               "end": "^(\\1)$",
               "patterns": [
@@ -1576,7 +1551,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.c",
               "end": "^(\\1)$",
               "patterns": [
@@ -1619,7 +1593,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.clojure",
               "end": "^(\\1)$",
               "patterns": [
@@ -1636,7 +1609,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.clojure",
               "end": "^(\\1)$",
               "patterns": [
@@ -1653,7 +1625,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.clojure",
               "end": "^(\\1)$",
               "patterns": [
@@ -1696,7 +1667,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.coffee",
               "end": "^(\\1)$",
               "patterns": [
@@ -1713,7 +1683,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.coffee",
               "end": "^(\\1)$",
               "patterns": [
@@ -1730,7 +1699,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.coffee",
               "end": "^(\\1)$",
               "patterns": [
@@ -1773,7 +1741,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.cpp",
               "end": "^(\\1)$",
               "patterns": [
@@ -1790,7 +1757,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.cpp",
               "end": "^(\\1)$",
               "patterns": [
@@ -1807,7 +1773,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.cpp",
               "end": "^(\\1)$",
               "patterns": [
@@ -1850,7 +1815,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.css",
               "end": "^(\\1)$",
               "patterns": [
@@ -1867,7 +1831,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.css",
               "end": "^(\\1)$",
               "patterns": [
@@ -1884,7 +1847,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.css",
               "end": "^(\\1)$",
               "patterns": [
@@ -1927,7 +1889,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.cs",
               "end": "^(\\1)$",
               "patterns": [
@@ -1944,7 +1905,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.cs",
               "end": "^(\\1)$",
               "patterns": [
@@ -1961,7 +1921,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.cs",
               "end": "^(\\1)$",
               "patterns": [
@@ -2004,7 +1963,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.diff",
               "end": "^(\\1)$",
               "patterns": [
@@ -2021,7 +1979,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.diff",
               "end": "^(\\1)$",
               "patterns": [
@@ -2038,7 +1995,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.diff",
               "end": "^(\\1)$",
               "patterns": [
@@ -2081,7 +2037,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.dockerfile",
               "end": "^(\\1)$",
               "patterns": [
@@ -2098,7 +2053,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.dockerfile",
               "end": "^(\\1)$",
               "patterns": [
@@ -2115,7 +2069,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.dockerfile",
               "end": "^(\\1)$",
               "patterns": [
@@ -2158,7 +2111,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.elixir",
               "end": "^(\\1)$",
               "patterns": [
@@ -2175,7 +2127,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.elixir",
               "end": "^(\\1)$",
               "patterns": [
@@ -2192,7 +2143,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.elixir",
               "end": "^(\\1)$",
               "patterns": [
@@ -2235,7 +2185,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.elm",
               "end": "^(\\1)$",
               "patterns": [
@@ -2252,7 +2201,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.elm",
               "end": "^(\\1)$",
               "patterns": [
@@ -2269,7 +2217,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.elm",
               "end": "^(\\1)$",
               "patterns": [
@@ -2312,7 +2259,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.erlang",
               "end": "^(\\1)$",
               "patterns": [
@@ -2329,7 +2275,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.erlang",
               "end": "^(\\1)$",
               "patterns": [
@@ -2346,7 +2291,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.erlang",
               "end": "^(\\1)$",
               "patterns": [
@@ -2389,7 +2333,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.go",
               "end": "^(\\1)$",
               "patterns": [
@@ -2406,7 +2349,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.go",
               "end": "^(\\1)$",
               "patterns": [
@@ -2423,7 +2365,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.go",
               "end": "^(\\1)$",
               "patterns": [
@@ -2466,7 +2407,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.groovy",
               "end": "^(\\1)$",
               "patterns": [
@@ -2483,7 +2423,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.groovy",
               "end": "^(\\1)$",
               "patterns": [
@@ -2500,7 +2439,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.groovy",
               "end": "^(\\1)$",
               "patterns": [
@@ -2543,7 +2481,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.haskell",
               "end": "^(\\1)$",
               "patterns": [
@@ -2560,7 +2497,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.haskell",
               "end": "^(\\1)$",
               "patterns": [
@@ -2577,7 +2513,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.haskell",
               "end": "^(\\1)$",
               "patterns": [
@@ -2620,7 +2555,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "text.embedded.html.basic",
               "end": "^(\\1)$",
               "patterns": [
@@ -2637,7 +2571,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "text.embedded.html.basic",
               "end": "^(\\1)$",
               "patterns": [
@@ -2654,7 +2587,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "text.embedded.html.basic",
               "end": "^(\\1)$",
               "patterns": [
@@ -2697,7 +2629,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.java",
               "end": "^(\\1)$",
               "patterns": [
@@ -2714,7 +2645,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.java",
               "end": "^(\\1)$",
               "patterns": [
@@ -2731,7 +2661,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.java",
               "end": "^(\\1)$",
               "patterns": [
@@ -2774,7 +2703,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.js",
               "end": "^(\\1)$",
               "patterns": [
@@ -2791,7 +2719,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.js",
               "end": "^(\\1)$",
               "patterns": [
@@ -2808,7 +2735,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.js",
               "end": "^(\\1)$",
               "patterns": [
@@ -2851,7 +2777,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.json",
               "end": "^(\\1)$",
               "patterns": [
@@ -2868,7 +2793,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.json",
               "end": "^(\\1)$",
               "patterns": [
@@ -2885,7 +2809,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.json",
               "end": "^(\\1)$",
               "patterns": [
@@ -2928,7 +2851,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.js.jsx",
               "end": "^(\\1)$",
               "patterns": [
@@ -2945,7 +2867,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.js.jsx",
               "end": "^(\\1)$",
               "patterns": [
@@ -2962,7 +2883,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.js.jsx",
               "end": "^(\\1)$",
               "patterns": [
@@ -3005,7 +2925,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.julia",
               "end": "^(\\1)$",
               "patterns": [
@@ -3022,7 +2941,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.julia",
               "end": "^(\\1)$",
               "patterns": [
@@ -3039,7 +2957,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.julia",
               "end": "^(\\1)$",
               "patterns": [
@@ -3082,7 +2999,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.kotlin",
               "end": "^(\\1)$",
               "patterns": [
@@ -3099,7 +3015,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.kotlin",
               "end": "^(\\1)$",
               "patterns": [
@@ -3116,7 +3031,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.kotlin",
               "end": "^(\\1)$",
               "patterns": [
@@ -3159,7 +3073,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.css.less",
               "end": "^(\\1)$",
               "patterns": [
@@ -3176,7 +3089,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.css.less",
               "end": "^(\\1)$",
               "patterns": [
@@ -3193,7 +3105,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.css.less",
               "end": "^(\\1)$",
               "patterns": [
@@ -3236,7 +3147,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.makefile",
               "end": "^(\\1)$",
               "patterns": [
@@ -3253,7 +3163,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.makefile",
               "end": "^(\\1)$",
               "patterns": [
@@ -3270,7 +3179,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.makefile",
               "end": "^(\\1)$",
               "patterns": [
@@ -3313,7 +3221,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.gfm",
               "end": "^(\\1)$",
               "patterns": [
@@ -3330,7 +3237,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.gfm",
               "end": "^(\\1)$",
               "patterns": [
@@ -3347,7 +3253,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.gfm",
               "end": "^(\\1)$",
               "patterns": [
@@ -3390,7 +3295,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "text.embedded.html.mustache",
               "end": "^(\\1)$",
               "patterns": [
@@ -3407,7 +3311,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "text.embedded.html.mustache",
               "end": "^(\\1)$",
               "patterns": [
@@ -3424,7 +3327,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "text.embedded.html.mustache",
               "end": "^(\\1)$",
               "patterns": [
@@ -3467,7 +3369,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.objc",
               "end": "^(\\1)$",
               "patterns": [
@@ -3484,7 +3385,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.objc",
               "end": "^(\\1)$",
               "patterns": [
@@ -3501,7 +3401,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.objc",
               "end": "^(\\1)$",
               "patterns": [
@@ -3544,7 +3443,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.ocaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -3561,7 +3459,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.ocaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -3578,7 +3475,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.ocaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -3621,7 +3517,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.perl",
               "end": "^(\\1)$",
               "patterns": [
@@ -3638,7 +3533,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.perl",
               "end": "^(\\1)$",
               "patterns": [
@@ -3655,7 +3549,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.perl",
               "end": "^(\\1)$",
               "patterns": [
@@ -3698,7 +3591,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.perl6",
               "end": "^(\\1)$",
               "patterns": [
@@ -3715,7 +3607,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.perl6",
               "end": "^(\\1)$",
               "patterns": [
@@ -3732,7 +3623,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.perl6",
               "end": "^(\\1)$",
               "patterns": [
@@ -3775,7 +3665,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "text.embedded.html.php",
               "end": "^(\\1)$",
               "patterns": [
@@ -3792,7 +3681,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "text.embedded.html.php",
               "end": "^(\\1)$",
               "patterns": [
@@ -3809,7 +3697,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "text.embedded.html.php",
               "end": "^(\\1)$",
               "patterns": [
@@ -3852,7 +3739,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.asciidoc.properties",
               "end": "^(\\1)$",
               "patterns": [
@@ -3869,7 +3755,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.asciidoc.properties",
               "end": "^(\\1)$",
               "patterns": [
@@ -3886,7 +3771,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.asciidoc.properties",
               "end": "^(\\1)$",
               "patterns": [
@@ -3929,7 +3813,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.python",
               "end": "^(\\1)$",
               "patterns": [
@@ -3946,7 +3829,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.python",
               "end": "^(\\1)$",
               "patterns": [
@@ -3963,7 +3845,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.python",
               "end": "^(\\1)$",
               "patterns": [
@@ -4006,7 +3887,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.r",
               "end": "^(\\1)$",
               "patterns": [
@@ -4023,7 +3903,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.r",
               "end": "^(\\1)$",
               "patterns": [
@@ -4040,7 +3919,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.r",
               "end": "^(\\1)$",
               "patterns": [
@@ -4083,7 +3961,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.ruby",
               "end": "^(\\1)$",
               "patterns": [
@@ -4100,7 +3977,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.ruby",
               "end": "^(\\1)$",
               "patterns": [
@@ -4117,7 +3993,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.ruby",
               "end": "^(\\1)$",
               "patterns": [
@@ -4160,7 +4035,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.rust",
               "end": "^(\\1)$",
               "patterns": [
@@ -4177,7 +4051,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.rust",
               "end": "^(\\1)$",
               "patterns": [
@@ -4194,7 +4067,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.rust",
               "end": "^(\\1)$",
               "patterns": [
@@ -4237,7 +4109,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.sass",
               "end": "^(\\1)$",
               "patterns": [
@@ -4254,7 +4125,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.sass",
               "end": "^(\\1)$",
               "patterns": [
@@ -4271,7 +4141,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.sass",
               "end": "^(\\1)$",
               "patterns": [
@@ -4314,7 +4183,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.scala",
               "end": "^(\\1)$",
               "patterns": [
@@ -4331,7 +4199,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.scala",
               "end": "^(\\1)$",
               "patterns": [
@@ -4348,7 +4215,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.scala",
               "end": "^(\\1)$",
               "patterns": [
@@ -4391,7 +4257,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.css.scss",
               "end": "^(\\1)$",
               "patterns": [
@@ -4408,7 +4273,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.css.scss",
               "end": "^(\\1)$",
               "patterns": [
@@ -4425,7 +4289,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.css.scss",
               "end": "^(\\1)$",
               "patterns": [
@@ -4468,7 +4331,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.shell",
               "end": "^(\\1)$",
               "patterns": [
@@ -4485,7 +4347,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.shell",
               "end": "^(\\1)$",
               "patterns": [
@@ -4502,7 +4363,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.shell",
               "end": "^(\\1)$",
               "patterns": [
@@ -4545,7 +4405,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.sql",
               "end": "^(\\1)$",
               "patterns": [
@@ -4562,7 +4421,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.sql",
               "end": "^(\\1)$",
               "patterns": [
@@ -4579,7 +4437,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.sql",
               "end": "^(\\1)$",
               "patterns": [
@@ -4622,7 +4479,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.swift",
               "end": "^(\\1)$",
               "patterns": [
@@ -4639,7 +4495,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.swift",
               "end": "^(\\1)$",
               "patterns": [
@@ -4656,7 +4511,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.swift",
               "end": "^(\\1)$",
               "patterns": [
@@ -4699,7 +4553,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.toml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4716,7 +4569,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.toml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4733,7 +4585,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.toml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4776,7 +4627,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.ts",
               "end": "^(\\1)$",
               "patterns": [
@@ -4793,7 +4643,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.ts",
               "end": "^(\\1)$",
               "patterns": [
@@ -4810,7 +4659,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.ts",
               "end": "^(\\1)$",
               "patterns": [
@@ -4853,7 +4701,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "text.embedded.xml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4870,7 +4717,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "text.embedded.xml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4887,7 +4733,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "text.embedded.xml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4930,7 +4775,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "contentName": "source.embedded.yaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4947,7 +4791,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "contentName": "source.embedded.yaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -4964,7 +4807,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "contentName": "source.embedded.yaml",
               "end": "^(\\1)$",
               "patterns": [
@@ -5006,7 +4848,6 @@
             },
             {
               "begin": "^(-{4,})\\s*$",
-              "comment": "listing block",
               "end": "^(\\1)$",
               "name": "markup.raw.asciidoc",
               "patterns": [
@@ -5020,7 +4861,6 @@
             },
             {
               "begin": "^(-{2})\\s*$",
-              "comment": "open block",
               "end": "^(\\1)$",
               "name": "markup.raw.asciidoc",
               "patterns": [
@@ -5034,7 +4874,6 @@
             },
             {
               "begin": "^(\\.{4})\\s*$",
-              "comment": "literal block",
               "end": "^(\\1)$",
               "name": "markup.raw.asciidoc",
               "patterns": [
@@ -6316,7 +6155,6 @@
                   "name": "markup.table.cell.delimiter.asciidoc"
                 }
               },
-              "comment": "cell separator",
               "match": ","
             },
             {
@@ -6350,7 +6188,6 @@
                   "name": "markup.table.cell.delimiter.asciidoc"
                 }
               },
-              "comment": "cell separator",
               "match": ":"
             },
             {
@@ -6387,7 +6224,6 @@
                   "name": "markup.table.cell.delimiter.asciidoc"
                 }
               },
-              "comment": "cell separator and attributes",
               "match": "(^|[^\\p{Blank}\\\\]*)(?<!\\\\)(!)"
             },
             {
@@ -6424,7 +6260,6 @@
                   "name": "markup.table.cell.delimiter.asciidoc"
                 }
               },
-              "comment": "cell separator and attributes",
               "match": "(^|[^\\p{Blank}\\\\]*)(?<!\\\\)(\\|)"
             },
             {
@@ -6610,7 +6445,6 @@
               "name": "punctuation.definition.asciidoc"
             }
           },
-          "comment": "double-quoted",
           "match": "(?:^|(?<!\\p{Word}|;|:))(\\[([^\\]]+?)\\])?(\"`)(\\S|\\S.*?\\S)(`\")(?!\\p{Word})",
           "name": "markup.italic.quote.typographic-quotes.asciidoc"
         },
@@ -6626,7 +6460,6 @@
               "name": "punctuation.definition.asciidoc"
             }
           },
-          "comment": "single-quoted",
           "match": "(?:^|(?<!\\p{Word}|;|:))(\\[([^\\]]+?)\\])?('`)(\\S|\\S.*?\\S)(`')(?!\\p{Word})",
           "name": "markup.italic.quote.typographic-quotes.asciidoc"
         }

@@ -6,7 +6,6 @@
   "name": "matlab",
   "patterns": [
     {
-      "comment": "This and #all_after_command_dual are split out so #command_dual can be excluded in things like (), {}, []",
       "include": "#all_before_command_dual"
     },
     {
@@ -342,7 +341,6 @@
           "name": "storage.type.matlab"
         }
       },
-      "comment": "Validator functions. Treated as a recursive group to permit nested brackets, quotes, etc.",
       "end": "(})",
       "endCaptures": {
         "1": {
@@ -616,7 +614,6 @@
           "name": "comment.line.percentage.matlab"
         }
       },
-      "comment": "  1        2                                  3                                                    4                                                  5                                                    6                                                         7                                                                             8                 9                            10                   11                      12                         13                   14                                                               1516       17                                                             18                                                                                                                               19                      20                                     21                                    22                                      23                                         24                                         25                                                                         26            27                 28",
       "match": "^\\s*(([b-df-hk-moq-zA-HJ-MO-Z]\\w*|a|an|a([A-Za-mo-z0-9_]\\w*|n[A-Za-rt-z0-9_]\\w*|ns\\w+)|e|ep|e([A-Za-oq-z0-9_]\\w*|p[A-Za-rt-z0-9_]\\w*|ps\\w+)|in|i([A-Za-mo-z0-9_]\\w*|n[A-Za-eg-z0-9_]\\w*|nf\\w+)|I|In|I([A-Za-mo-z0-9_]\\w*|n[A-Za-eg-z0-9_]\\w*|nf\\w+)|j\\w+|N|Na|N([A-Zb-z0-9_]\\w*|a[A-MO-Za-z0-9_]\\w*|aN\\w+)|n|na|nar|narg|nargi|nargo|nargou|n([A-Zb-z0-9_]\\w*|a([A-Za-mo-qs-z0-9_]\\w*|n\\w+|r([A-Za-fh-z0-9_]\\w*|g([A-Za-hj-nq-z0-9_]\\w*|i([A-Za-mo-z0-9_]\\w*|n\\w+)|o([A-Za-tv-z0-9_]\\w*|u([A-Za-su-z]\\w*|t\\w+))))))|p|p[A-Za-hj-z0-9_]\\w*|pi\\w+)\\s+((([^\\s;,%()=.{&|~<>:+\\-*/\\\\@^'\"]|(?=')|(?=\"))|(\\.\\^|\\.\\*|\\./|\\.\\\\|\\.'|\\.\\(|&&|==|\\|\\||&(?=[^&])|\\|(?=[^\\|])|~=|<=|>=|~(?!=)|<(?!=)|>(?!=)|:|\\+|-|\\*|/|\\\\|@|\\^)([^\\s]|\\s*(?=%)|\\s+$|\\s+(,|;|\\)|}|\\]|&|\\||<|>|=|:|\\*|/|\\\\|\\^|@|(\\.[^\\d.]|\\.\\.[^.])))|(\\.[^^*/\\\\'(\\sA-Za-z]))([^%]|'[^']*'|\"[^\"]*\")*|(\\.(?=\\s)|\\.[A-Za-z]|(?={))([^(=\\'\"%]|==|'[^']*'|\"[^\"]*\"|\\(|\\([^)%]*\\)|\\[|\\[[^\\]%]*\\]|{|{[^}%]*})*(\\.\\.\\.[^%]*)?((?=%)|$)))(%.*)?$"
     },
     "comment_block": {
@@ -698,7 +695,6 @@
       "name": "keyword.operator.transpose.matlab"
     },
     "constants": {
-      "comment": "MATLAB Constants",
       "match": "(?<!\\.)\\b(eps|false|Inf|inf|intmax|intmin|namelengthmax|NaN|nan|on|off|realmax|realmin|true|pi)\\b",
       "name": "constant.language.matlab"
     },
@@ -713,7 +709,6 @@
     },
     "curly_brackets": {
       "begin": "\\{",
-      "comment": "We don't include $self here to avoid matching command syntax inside (), [], {}",
       "end": "\\}",
       "patterns": [
         {
@@ -729,13 +724,11 @@
           "include": "#end_in_parens"
         },
         {
-          "comment": "These block keywords pick up any such missed keywords when the block matching for things like (), if-end, etc. don't work. Useful for when someone has partially written",
           "include": "#block_keywords"
         }
       ]
     },
     "end_in_parens": {
-      "comment": "end as operator symbol",
       "match": "\\bend\\b",
       "name": "keyword.operator.symbols.matlab"
     },
@@ -849,7 +842,6 @@
           ]
         }
       },
-      "comment": "We don't include $self here to avoid matching command syntax inside (), [], {}",
       "end": "(\\}|(?<!\\.\\.\\.).\\n)",
       "patterns": [
         {
@@ -865,7 +857,6 @@
           "include": "#end_in_parens"
         },
         {
-          "comment": "These block keywords pick up any such missed keywords when the block matching for things like (), if-end, etc. don't work. Useful for when someone has partially written",
           "include": "#block_keywords"
         }
       ]
@@ -879,23 +870,19 @@
           "name": "comment.line.continuation.matlab"
         }
       },
-      "comment": "Line continuations",
       "match": "(\\.\\.\\.)(.*)$",
       "name": "meta.linecontinuation.matlab"
     },
     "numbers": {
-      "comment": "Valid numbers: 1, .1, 1.1, .1e1, 1.1e1, 1e1, 1i, 1j, 1e2j",
       "match": "(?<=[\\s\\-\\+\\*\\/\\\\=:\\[\\(\\{,]|^)\\d*\\.?\\d+([eE][+-]?\\d)?([0-9&&[^\\.]])*(i|j)?\\b",
       "name": "constant.numeric.matlab"
     },
     "operators": {
-      "comment": "Operator symbols",
       "match": "(?<=\\s)(==|~=|>|>=|<|<=|&|&&|:|\\||\\|\\||\\+|-|\\*|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)",
       "name": "keyword.operator.symbols.matlab"
     },
     "parens": {
       "begin": "\\(",
-      "comment": "We don't include $self here to avoid matching command syntax inside (), [], {}",
       "end": "(\\)|(?<!\\.\\.\\.).\\n)",
       "patterns": [
         {
@@ -908,14 +895,12 @@
           "include": "#all_after_command_dual"
         },
         {
-          "comment": "These block keywords pick up any such missed keywords when the block matching for things like (), if-end, etc. don't work. Useful for when someone has partially written",
           "include": "#block_keywords"
         }
       ]
     },
     "square_brackets": {
       "begin": "\\[",
-      "comment": "We don't include $self here to avoid matching command syntax inside (), [], {}",
       "end": "\\]",
       "patterns": [
         {
@@ -925,7 +910,6 @@
           "include": "#all_after_command_dual"
         },
         {
-          "comment": "These block keywords pick up any such missed keywords when the block matching for things like (), if-end, etc. don't work. Useful for when someone has partially written",
           "include": "#block_keywords"
         }
       ]
@@ -941,7 +925,6 @@
               "name": "punctuation.definition.string.begin.matlab"
             }
           },
-          "comment": "Shell command",
           "match": "^\\s*((!).*$\\n?)"
         },
         {
@@ -951,7 +934,6 @@
               "name": "punctuation.definition.string.begin.matlab"
             }
           },
-          "comment": "Character vector literal (single-quoted)",
           "end": "'(?=(\\[|\\(|\\{|\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^|\\s|;|:|,))",
           "endCaptures": {
             "0": {
@@ -969,7 +951,6 @@
               "name": "invalid.illegal.unescaped-quote.matlab"
             },
             {
-              "comment": "Operator symbols",
               "match": "((\\%([\\+\\-0]?\\d{0,3}(\\.\\d{1,3})?)(c|d|e|E|f|g|G|s|((b|t)?(o|u|x|X))))|\\%\\%|\\\\(b|f|n|r|t|\\\\))",
               "name": "constant.character.escape.matlab"
             }
@@ -982,7 +963,6 @@
               "name": "punctuation.definition.string.begin.matlab"
             }
           },
-          "comment": "String literal (double-quoted)",
           "end": "\"(?=(\\[|\\(|\\{|\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^|\\||\\s|;|:|,))",
           "endCaptures": {
             "0": {
@@ -1008,13 +988,11 @@
       "name": "keyword.operator.transpose.matlab"
     },
     "validator_strings": {
-      "comment": "Simplified string patterns nested inside validator functions which don't change scopes of matches.",
       "patterns": [
         {
           "patterns": [
             {
               "begin": "((?<=(\\[|\\(|\\{|=|\\s|;|:|,|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^))|^)'",
-              "comment": "Character vector literal (single-quoted)",
               "end": "'(?=(\\[|\\(|\\{|\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^|\\s|;|:|,))",
               "name": "storage.type.matlab",
               "patterns": [
@@ -1031,7 +1009,6 @@
             },
             {
               "begin": "((?<=(\\[|\\(|\\{|=|\\s|;|:|,|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^))|^)\"",
-              "comment": "String literal (double-quoted)",
               "end": "\"(?=(\\[|\\(|\\{|\\]|\\)|\\}|=|~|<|>|&|\\||-|\\+|\\*|/|\\\\|\\.|\\^|\\||\\s|;|:|,))",
               "name": "storage.type.matlab",
               "patterns": [
@@ -1052,7 +1029,6 @@
     },
     "validators": {
       "begin": "\\s*[;]?\\s*([a-zA-Z][a-zA-Z0-9_\\.\\?]*)",
-      "comment": "Property and argument validation. Match an identifier allowing . and ?.",
       "end": "([;\\n%=].*)",
       "endCaptures": {
         "1": {
@@ -1067,7 +1043,6 @@
                   ]
                 }
               },
-              "comment": "Match comments",
               "match": "([%].*)"
             },
             {
@@ -1080,7 +1055,6 @@
                   ]
                 }
               },
-              "comment": "Handle things like arg = val; nextArg",
               "match": "(=[^;]*)"
             },
             {
@@ -1093,7 +1067,6 @@
                   ]
                 }
               },
-              "comment": "End of property/argument patterns which start a new property/argument. Look for beginning of identifier after semicolon. Otherwise treat as regular code.",
               "match": "([\\n;]\\s*[a-zA-Z].*)"
             },
             {
@@ -1107,12 +1080,10 @@
           "include": "#line_continuation"
         },
         {
-          "comment": "Size declaration",
           "match": "\\s*(\\([^\\)]*\\))",
           "name": "storage.type.matlab"
         },
         {
-          "comment": "Type declaration",
           "match": "([a-zA-Z][a-zA-Z0-9_\\.]*)",
           "name": "storage.type.matlab"
         },
@@ -1122,7 +1093,6 @@
       ]
     },
     "variables": {
-      "comment": "MATLAB variables",
       "match": "(?<!\\.)\\b(nargin|nargout|varargin|varargout)\\b",
       "name": "variable.other.function.matlab"
     }

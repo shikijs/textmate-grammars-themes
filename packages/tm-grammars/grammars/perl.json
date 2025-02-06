@@ -30,7 +30,6 @@
     {
       "applyEndPatternLast": 1,
       "begin": "\\b(?=qr\\s*[^\\s\\w])",
-      "comment": "string.regexp.compile.perl",
       "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;\\,\\#\\{\\}\\)]|\\s*$))",
       "endCaptures": {
         "1": {
@@ -130,7 +129,6 @@
           "name": "string.regexp.compile.nested_parens.perl",
           "patterns": [
             {
-              "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable",
               "match": "\\$(?=[^\\s\\w\\\\'\\{\\[\\(\\<])"
             },
             {
@@ -176,7 +174,6 @@
           "name": "string.regexp.compile.simple-delimiter.perl",
           "patterns": [
             {
-              "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable",
               "match": "\\$(?=[^\\s\\w'\\{\\[\\(\\<])",
               "name": "keyword.control.anchor.perl"
             },
@@ -196,7 +193,6 @@
     {
       "applyEndPatternLast": 1,
       "begin": "(?<!\\{|\\+|\\-)\\b(?=m\\s*[^\\sa-zA-Z0-9])",
-      "comment": "string.regexp.find-m.perl",
       "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;\\,\\#\\{\\}\\)]|\\s*$))",
       "endCaptures": {
         "1": {
@@ -338,7 +334,6 @@
           "name": "string.regexp.find-m.simple-delimiter.perl",
           "patterns": [
             {
-              "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable",
               "match": "\\$(?=[^\\sa-zA-Z0-9'\\{\\[\\(\\<])",
               "name": "keyword.control.anchor.perl"
             },
@@ -364,7 +359,6 @@
               "name": "constant.other.character-class.set.perl",
               "patterns": [
                 {
-                  "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable",
                   "match": "\\$(?=[^\\s\\w'\\{\\[\\(\\<])",
                   "name": "keyword.control.anchor.perl"
                 },
@@ -383,7 +377,6 @@
     {
       "applyEndPatternLast": 1,
       "begin": "\\b(?=(?<!\\&)(s)(\\s+\\S|\\s*[;\\,\\{\\}\\(\\)\\[<]|$))",
-      "comment": "string.regexp.replace.perl",
       "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;\\,\\{\\}\\)\\]>]|\\s*$))",
       "endCaptures": {
         "1": {
@@ -606,7 +599,6 @@
     },
     {
       "begin": "\\b(?=s([^\\sa-zA-Z0-9\\[({<]).*\\1([egimosxradlupcn]*)([\\}\\)\\;\\,]|\\s+))",
-      "comment": "string.regexp.replaceXXX",
       "end": "((([egimosxradlupcn]*)))(?=([\\}\\)\\;\\,]|\\s+|\\s*$))",
       "endCaptures": {
         "1": {
@@ -676,7 +668,6 @@
     },
     {
       "begin": "\\b(?=(?<!\\\\)s\\s*([^\\s\\w\\[({<>]))",
-      "comment": "string.regexp.replace.extended",
       "end": "((([egimosradlupc]*x[egimosradlupc]*)))\\b",
       "endCaptures": {
         "1": {
@@ -768,7 +759,6 @@
       },
       "patterns": [
         {
-          "comment": "This is to prevent thinks like /foo$/ to treat $/ as a variable",
           "match": "\\$(?=\\/)",
           "name": "keyword.control.anchor.perl"
         },
@@ -1408,7 +1398,6 @@
           "name": "punctuation.section.scope.end.perl"
         }
       },
-      "comment": "Match empty brackets for ↩ snippet",
       "match": "(\\{)(\\})"
     },
     {
@@ -1420,7 +1409,6 @@
           "name": "punctuation.section.scope.end.perl"
         }
       },
-      "comment": "Match empty parenthesis for ↩ snippet",
       "match": "(\\()(\\))"
     }
   ],
@@ -2738,7 +2726,6 @@
       "end": "\\)",
       "patterns": [
         {
-          "comment": "This is to prevent thinks like qr/foo$/ to treat $/ as a variable",
           "match": "\\$(?=[^\\s\\w'\\{\\[\\(\\<])",
           "name": "keyword.control.anchor.perl"
         },

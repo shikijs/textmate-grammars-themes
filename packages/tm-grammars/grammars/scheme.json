@@ -87,22 +87,18 @@
           "name": "keyword.control.scheme"
         },
         {
-          "comment": "\n\t\t\t\t\t\tThese functions run a test, and return a boolean\n\t\t\t\t\t\tanswer.\n\t\t\t\t\t",
           "match": "(?<=(\\s|\\())(char-alphabetic|char-lower-case|char-numeric|char-ready|char-upper-case|char-whitespace|(?:char|string)(?:-ci)?(?:=|<=?|>=?)|atom|boolean|bound-identifier=|char|complex|identifier|integer|symbol|free-identifier=|inexact|eof-object|exact|list|(?:input|output)-port|pair|real|rational|zero|vector|negative|odd|null|string|eq|equal|eqv|even|number|positive|procedure)(\\?)(?=(\\s|\\())",
           "name": "support.function.boolean-test.scheme"
         },
         {
-          "comment": "\n\t\t\t\t\t\tThese functions change one type into another.\n\t\t\t\t\t",
           "match": "(?<=(\\s|\\())(char->integer|exact->inexact|inexact->exact|integer->char|symbol->string|list->vector|list->string|identifier->symbol|vector->list|string->list|string->number|string->symbol|number->string)(?=(\\s|\\())",
           "name": "support.function.convert-type.scheme"
         },
         {
-          "comment": "\n\t\t\t\t\t\tThese functions are potentially dangerous because\n\t\t\t\t\t\tthey have side-effects which could affect other\n\t\t\t\t\t\tparts of the program.\n\t\t\t\t\t",
           "match": "(?<=(\\s|\\())(set-(?:car|cdr)|(?:vector|string)-(?:fill|set))(!)(?=(\\s|\\())",
           "name": "support.function.with-side-effects.scheme"
         },
         {
-          "comment": "\n\t\t\t\t\t\t+, -, *, /, =, >, etc. \n\t\t\t\t\t",
           "match": "(?<=(\\s|\\())(>=?|<=?|=|[*/+-])(?=(\\s|\\())",
           "name": "keyword.operator.arithmetic.scheme"
         },
@@ -113,7 +109,6 @@
       ]
     },
     "quote": {
-      "comment": "\n\t\t\t\tWe need to be able to quote any kind of item, which creates\n\t\t\t\ta tiny bit of complexity in our grammar.  It is hopefully\n\t\t\t\tnot overwhelming complexity.\n\t\t\t\t\n\t\t\t\tNote: the first two matches are special cases.  quoted\n\t\t\t\tsymbols, and quoted empty lists are considered constant.other\n\t\t\t\t\n\t\t\t",
       "patterns": [
         {
           "captures": {
@@ -149,7 +144,6 @@
               "name": "punctuation.section.quoted.scheme"
             }
           },
-          "comment": "quoted double-quoted string or s-expression",
           "end": "(?=[\\s()])|(?<=\\n)",
           "name": "string.other.quoted-object.scheme",
           "patterns": [
@@ -167,7 +161,6 @@
           "name": "keyword.control.quote.scheme"
         }
       },
-      "comment": "\n\t\t\t\tSomething quoted with (quote «thing»).  In this case «thing»\n\t\t\t\twill not be evaluated, so we are considering it a string.\n\t\t\t",
       "contentName": "string.other.quote.scheme",
       "end": "(?=[\\s)])|(?<=\\n)",
       "patterns": [
@@ -279,7 +272,6 @@
               "name": "punctuation.definition.variable.scheme"
             }
           },
-          "comment": "\n\t\t\t\t\t\tNot sure this one is quite correct.  That \\s* is\n\t\t\t\t\t\tparticularly troubling\n\t\t\t\t\t",
           "end": "(?=\\))",
           "name": "meta.declaration.procedure.scheme",
           "patterns": [
@@ -346,7 +338,6 @@
           "name": "constant.character.escape.scheme"
         },
         {
-          "comment": "\n\t\t\t\t\t\tthe . in (a . b) which conses together two elements\n\t\t\t\t\t\ta and b. (a b c) == (a . (b . (c . nil)))\n\t\t\t\t\t",
           "match": "(?<=[ ()])\\.(?=[ ()])",
           "name": "punctuation.separator.cons.scheme"
         },

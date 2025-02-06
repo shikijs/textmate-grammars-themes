@@ -80,7 +80,6 @@
               "name": "punctuation.definition.parameters.end.applescript"
             }
           },
-          "comment": "\n\t\t\t\t\t\tThis is not a very well-designed rule.  For now,\n\t\t\t\t\t\twe can leave it like this though, as it sorta works.\n\t\t\t\t\t",
           "end": "^\\s*(end)(?:\\s+(\\2))?(?=\\s*(--.*?)?$)",
           "endCaptures": {
             "1": {
@@ -110,7 +109,6 @@
               "name": "variable.parameter.handler.direct.applescript"
             }
           },
-          "comment": "TODO: match `given` parameters",
           "end": "^\\s*(end)(?:\\s+(\\2))?(?=\\s*(--.*?)?$)",
           "endCaptures": {
             "1": {
@@ -639,7 +637,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell Textmate",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application.textmate.applescript",
           "patterns": [
@@ -661,7 +658,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell Finder",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application.finder.applescript",
           "patterns": [
@@ -683,7 +679,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell System Events",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application.system-events.applescript",
           "patterns": [
@@ -705,7 +700,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell iTunes",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application.itunes.applescript",
           "patterns": [
@@ -727,7 +721,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell generic application process",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application-process.generic.applescript",
           "patterns": [
@@ -746,7 +739,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell generic application",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.application.generic.applescript",
           "patterns": [
@@ -765,7 +757,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "generic tell block",
           "end": "^\\s*(end(?:\\s+tell)?)(?=\\s*(--.*?)?$)",
           "name": "meta.block.tell.generic.applescript",
           "patterns": [
@@ -781,7 +772,6 @@
               "name": "keyword.control.tell.applescript"
             }
           },
-          "comment": "tell … to statement",
           "end": "(?<!¬)$",
           "name": "meta.block.tell.generic.applescript",
           "patterns": [
@@ -811,7 +801,6 @@
     "built-in.constant": {
       "patterns": [
         {
-          "comment": "yes/no can’t always be used as booleans, e.g. in an if() expression. But they work e.g. for boolean arguments.",
           "match": "\\b(?i:true|false|yes|no)\\b",
           "name": "constant.language.boolean.applescript"
         },
@@ -864,7 +853,6 @@
           "name": "keyword.operator.word.applescript"
         },
         {
-          "comment": "In double quotes so we can use a single quote in the keywords.",
           "match": "(?ix)\\b\n\t\t\t\t\t\t(is(n't|\\s+not)?(\\s+(equal(\\s+to)?|(less|greater)\\s+than(\\s+or\\s+equal(\\s+to)?)?|in|contained\\s+by))?\n\t\t\t\t\t\t|does(n't|\\s+not)\\s+(equal|come\\s+(before|after)|contain)\n\t\t\t\t\t\t)\n\t\t\t\t\t\\b",
           "name": "keyword.operator.word.applescript"
         },
@@ -889,12 +877,10 @@
           "name": "punctuation.separator.continuation.line.applescript"
         },
         {
-          "comment": "the : in property assignments",
           "match": ":",
           "name": "punctuation.separator.key-value.property.applescript"
         },
         {
-          "comment": "the parentheses in groups",
           "match": "[()]",
           "name": "punctuation.section.group.applescript"
         }
@@ -1040,7 +1026,6 @@
               "name": "punctuation.definition.array.begin.applescript"
             }
           },
-          "comment": "We cannot necessarily distinguish \"records\" from \"arrays\", and so this could be either.",
           "end": "\\}",
           "endCaptures": {
             "0": {

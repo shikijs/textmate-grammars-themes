@@ -3,7 +3,6 @@
   "name": "latex",
   "patterns": [
     {
-      "comment": "This scope identifies partially typed commands such as `\\tab`. We use this to trigger “Command Completion” only when it makes sense.",
       "match": "(?<=\\\\[\\w@]|\\\\[\\w@]{2}|\\\\[\\w@]{3}|\\\\[\\w@]{4}|\\\\[\\w@]{5}|\\\\[\\w@]{6})\\s",
       "name": "meta.space-after-command.latex"
     },
@@ -96,7 +95,6 @@
           "name": "punctuation.definition.arguments.begin.latex"
         }
       },
-      "comment": "this works OK with all kinds of crazy stuff as long as section is one line",
       "contentName": "entity.name.section.latex",
       "end": "\\}",
       "endCaptures": {
@@ -2050,7 +2048,6 @@
           "name": "support.function.url.latex"
         }
       },
-      "comment": "Captures \\command[option]{url}{optional category}{optional name}{text}",
       "end": "(\\})",
       "endCaptures": {
         "1": {
@@ -2140,7 +2137,6 @@
           ]
         }
       },
-      "comment": "These two patterns match the \\begin{document} and \\end{document} commands, so that the environment matching pattern following them will ignore those commands.",
       "match": "(\\s*\\\\begin\\{document\\})",
       "name": "meta.function.begin-document.latex"
     },
@@ -2508,7 +2504,6 @@
           "name": "punctuation.definition.textit.begin.latex"
         }
       },
-      "comment": "We put the keyword in a capture and name this capture, so that disabling spell checking for “keyword” won't be inherited by the argument to \\textit{...}.\n\nPut specific matches for particular LaTeX keyword.functions before the last two more general functions",
       "contentName": "markup.italic.textit.latex",
       "end": "\\}",
       "endCaptures": {

@@ -9,7 +9,6 @@
   "patterns": [
     {
       "begin": "^(?=(msgid(_plural)?|msgctxt)\\s*\"[^\"])|^\\s*$",
-      "comment": "Start of body of document, after header",
       "end": "\\z",
       "patterns": [
         {
@@ -143,7 +142,6 @@
           "include": "#comments"
         },
         {
-          "comment": "a line that does not begin with # or \". Could improve this regexp",
           "match": "^(?!\\s*$)[^#\"].*$\\n?",
           "name": "invalid.illegal.po"
         }

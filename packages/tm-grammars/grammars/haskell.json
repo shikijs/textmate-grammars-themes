@@ -741,7 +741,6 @@
               "name": "punctuation.whitespace.comment.leading.haskell"
             }
           },
-          "comment": "Operators may begin with '--' as long as they are not entirely composed of '-' characters. This means comments can't be immediately followed by an allowable operator character.",
           "end": "(?!\\G)",
           "patterns": [
             {
@@ -785,7 +784,6 @@
           "name": "punctuation.definition.preprocessor.c"
         }
       },
-      "comment": "In addition to Haskell's \"native\" syntax, GHC permits the C preprocessor to be run on a source file.",
       "match": "^(#).*$",
       "name": "meta.preprocessor.c"
     },
@@ -1095,7 +1093,6 @@
           "name": "constant.numeric.floating.hexadecimal.haskell"
         }
       },
-      "comment": "Floats are decimal or hexadecimal",
       "match": "\\b(?<!')(?:([0-9][_0-9]*\\.[0-9][_0-9]*(?:[eE][-+]?[0-9][_0-9]*)?|[0-9][_0-9]*[eE][-+]?[0-9][_0-9]*)|(0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*\\.[0-9a-fA-F][_0-9a-fA-F]*(?:[pP][-+]?[0-9][_0-9]*)?|0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*[pP][-+]?[0-9][_0-9]*))\\b(?!')"
     },
     "forall": {
@@ -1240,7 +1237,6 @@
               "name": "keyword.operator.infix.haskell"
             }
           },
-          "comment": "In case this regex seems overly general, note that Haskell permits  the definition of new operators which can be nearly any string of  punctuation characters, such as $%^&*.\n",
           "match": "((?:(?<!'')('')?[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'']*\\.)*)(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))"
         },
         {
@@ -1262,7 +1258,6 @@
               "name": "punctuation.backtick.haskell"
             }
           },
-          "comment": "In case this regex seems unusual for an infix operator, note that Haskell\nallows any ordinary function application (elem 4 [1..10]) to be rewritten\nas an infix expression (4 `elem` [1..10]).\n",
           "match": "(`)((?:[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'']*\\.)*)([\\p{Ll}\\p{Lu}_][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}'']*)(`)",
           "name": "keyword.operator.function.infix.haskell"
         }
@@ -1573,7 +1568,6 @@
               "name": "punctuation.paren.haskell"
             }
           },
-          "comment": "An operator cannot be composed entirely of '-' characters;  instead, it should be matched as a comment.\n",
           "match": "(\\()\\s*(?!(?:--+|\\.\\.)\\))(\\#+|[\\p{S}\\p{P}&&[^(),;\\[\\]`{}_\"']]+(?<!\\#))\\s*(\\))"
         }
       ]

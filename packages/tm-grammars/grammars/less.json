@@ -811,7 +811,6 @@
               "name": "support.function.color.less"
             }
           },
-          "comment": "rgb(), rgba()",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -861,7 +860,6 @@
               "name": "support.function.color.less"
             }
           },
-          "comment": "hsla, hsl, hwb, oklab, oklch, lab, lch",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -920,7 +918,6 @@
               "name": "support.function.color.less"
             }
           },
-          "comment": "light-dark()",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -1930,7 +1927,6 @@
               "name": "support.function.color-definition.less"
             }
           },
-          "comment": "argb()",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -1968,7 +1964,6 @@
               "name": "support.function.color.less"
             }
           },
-          "comment": "hsva(), hsv()",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -3714,12 +3709,10 @@
     "property-value-constants": {
       "patterns": [
         {
-          "comment": "align-content, align-items, align-self, justify-content, justify-items, justify-self",
           "match": "\\b(flex-start|flex-end|start|end|space-between|space-around|space-evenly|stretch|baseline|safe|unsafe|legacy|anchor-center|first|last|self-start|self-end)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "alignment-baseline",
           "match": "\\b(text-before-edge|before-edge|middle|central|text-after-edge|after-edge|ideographic|alphabetic|hanging|mathematical|top|center|bottom)\\b",
           "name": "support.constant.property-value.less"
         },
@@ -3733,37 +3726,30 @@
           "include": "#steps-function"
         },
         {
-          "comment": "animation-composition",
           "match": "\\b(?:replace|add|accumulate)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-direction",
           "match": "\\b(?:normal|alternate-reverse|alternate|reverse)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-fill-mode",
           "match": "\\b(?:forwards|backwards|both)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-iteration-count",
           "match": "\\b(?:infinite)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-play-state",
           "match": "\\b(?:running|paused)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-range, animation-range-start, animation-range-end",
           "match": "\\b(?:entry-crossing|exit-crossing|entry|exit)\\b",
           "name": "support.constant.property-value.less"
         },
         {
-          "comment": "animation-timing-function",
           "match": "\\b(linear|ease-in-out|ease-in|ease-out|ease|step-start|step-end)\\b",
           "name": "support.constant.property-value.less"
         },
@@ -4036,7 +4022,6 @@
               "name": "punctuation.definition.entity.less"
             }
           },
-          "comment": "::highlight()",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -4072,7 +4057,6 @@
               "name": "punctuation.definition.entity.less"
             }
           },
-          "comment": "::slotted()",
           "contentName": "meta.function-call.less",
           "end": "\\)",
           "endCaptures": {
@@ -4105,7 +4089,6 @@
               "name": "punctuation.definition.entity.less"
             }
           },
-          "comment": "defined pseudo-elements",
           "match": "(::?)(after|backdrop|before|cue|file-selector-button|first-letter|first-line|grammar-error|marker|placeholder|selection|spelling-error|target-text|view-transition-group|view-transition-image-pair|view-transition-new|view-transition-old|view-transition)\\b",
           "name": "entity.other.attribute-name.pseudo-element.less"
         },
@@ -4118,7 +4101,6 @@
               "name": "meta.namespace.vendor-prefix.less"
             }
           },
-          "comment": "other possible pseudo-elements",
           "match": "(::?)(-\\w+-)(--|(?:-?(?:(?:[a-zA-Z_]|[\\x{00B7}\\x{00C0}-\\x{00D6}\\x{00D8}-\\x{00F6}\\x{00F8}-\\x{037D}\\x{037F}-\\x{1FFF}\\x{200C}\\x{200D}\\x{203F}\\x{2040}\\x{2070}-\\x{218F}\\x{2C00}-\\x{2FEF}\\x{3001}-\\x{D7FF}\\x{F900}-\\x{FDCF}\\x{FDF0}-\\x{FFFD}\\x{10000}-\\x{EFFFF}])|(?:\\\\(?:\\N|[[:^xdigit:]]|[[:xdigit:]]{1,6}[\\s\\R]))))(?:(?:[-\\da-zA-Z_]|[\\x{00B7}\\x{00C0}-\\x{00D6}\\x{00D8}-\\x{00F6}\\x{00F8}-\\x{037D}\\x{037F}-\\x{1FFF}\\x{200C}\\x{200D}\\x{203F}\\x{2040}\\x{2070}-\\x{218F}\\x{2C00}-\\x{2FEF}\\x{3001}-\\x{D7FF}\\x{F900}-\\x{FDCF}\\x{FDF0}-\\x{FFFD}\\x{10000}-\\x{EFFFF}])|(?:\\\\(?:\\N|[[:^xdigit:]]|[[:xdigit:]]{1,6}[\\s\\R])))*)\\b",
           "name": "entity.other.attribute-name.pseudo-element.less"
         }
@@ -4269,7 +4251,6 @@
                   "name": "meta.namespace.vendor-prefix.less"
                 }
               },
-              "comment": "vendor-prefixed properties",
               "end": "\\s*(;)|(?=[})])",
               "endCaptures": {
                 "1": {
@@ -4308,7 +4289,6 @@
                   "name": "support.type.property-name.less"
                 }
               },
-              "comment": "border-radius and border-image properties utilize a slash as a separator",
               "end": "\\s*(;)|(?=[})])",
               "endCaptures": {
                 "1": {

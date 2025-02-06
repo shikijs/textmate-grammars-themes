@@ -235,7 +235,6 @@
     },
     {
       "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        # Make sure our opening js tag has word boundaries\n                        (?<=\\{\\%\\sjs\\s\\%\\}|\\{\\%\\sincludejs\\s\\%\\})\n                    ",
-      "comment": "Add JS support to set tags that use the pattern \"css\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendjs\\s\\%\\}|\\{\\%\\sendincludejs\\s\\%\\})",
       "name": "source.js.embedded.twig",
       "patterns": [
@@ -246,7 +245,6 @@
     },
     {
       "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\scss\\s\\%\\}|\\{\\%\\sincludecss\\s\\%\\}|\\{\\%\\sincludehirescss\\s\\%\\})\n                        ",
-      "comment": "Add CSS support to set tags that use the pattern \"css\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendcss\\s\\%\\}|\\{\\%\\sendincludecss\\s\\%\\}|\\{\\%\\sendincludehirescss\\s\\%\\})",
       "name": "source.css.embedded.twig",
       "patterns": [
@@ -257,7 +255,6 @@
     },
     {
       "begin": "(?ix)   # Enable free spacing mode, case insensitive\n                        (?<=\\{\\%\\sscss\\s\\%\\}|\\{\\%\\sincludescss\\s\\%\\}|\\{\\%\\sincludehiresscss\\s\\%\\})\n                        ",
-      "comment": "Add SCSS support to set tags that use the pattern \"scss\" in their name",
       "end": "(?ix)(?=\\{\\%\\sendscss\\s\\%\\}|\\{\\%\\sendincludescss\\s\\%\\}|\\{\\%\\sendincludehiresscss\\s\\%\\})",
       "name": "source.css.scss.embedded.twig",
       "patterns": [

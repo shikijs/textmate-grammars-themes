@@ -127,19 +127,15 @@
       "begin": "(?<resourceType>[a-zA-Z_][a-zA-Z0-9_]*(?:::[a-zA-Z0-9_]+)*){0}((?:(resource|actor)\\s+(\\g<resourceType>)(?:\\s+(extends)\\s+(\\g<resourceType>(?:\\s*,\\s*\\g<resourceType>)*)\\s*,?\\s*)?)|(global))\\s*{",
       "beginCaptures": {
         "3": {
-          "comment": "actor|resource",
           "name": "keyword.control"
         },
         "4": {
-          "comment": "declared resource type",
           "name": "entity.name.type"
         },
         "5": {
-          "comment": "extends",
           "name": "keyword.control"
         },
         "6": {
-          "comment": "list of extended resources",
           "patterns": [
             {
               "match": "([a-zA-Z_][a-zA-Z0-9_]*(?:::[a-zA-Z0-9_]+)*)",
@@ -148,7 +144,6 @@
           ]
         },
         "7": {
-          "comment": "global",
           "name": "keyword.control"
         }
       },

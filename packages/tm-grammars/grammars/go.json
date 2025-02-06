@@ -29,7 +29,6 @@
           ]
         }
       },
-      "comment": "After control variables, to not highlight as a struct/interface (before formatting with gofmt)",
       "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)((?![\\[\\]]+)[[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
     },
     "brackets": {
@@ -94,7 +93,6 @@
       ]
     },
     "built_in_functions": {
-      "comment": "Built-in functions",
       "patterns": [
         {
           "match": "\\b(append|cap|close|complex|copy|delete|imag|len|panic|print|println|real|recover|min|max|clear)\\b(?=\\()",
@@ -110,7 +108,6 @@
               "name": "punctuation.definition.begin.bracket.round.go"
             }
           },
-          "comment": "new keyword",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -163,7 +160,6 @@
               ]
             }
           },
-          "comment": "make keyword",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -208,7 +204,6 @@
       ]
     },
     "const_assignment": {
-      "comment": "constant assignment with const keyword",
       "patterns": [
         {
           "captures": {
@@ -254,7 +249,6 @@
               ]
             }
           },
-          "comment": "single assignment",
           "match": "(?:(?<=\\bconst\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
         },
         {
@@ -264,7 +258,6 @@
               "name": "punctuation.definition.begin.bracket.round.go"
             }
           },
-          "comment": "multi assignment",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -371,7 +364,6 @@
           ]
         }
       },
-      "comment": "double parentheses types",
       "match": "(?:(?<!\\w)(\\((?:[\\w\\.\\[\\]\\*\\&]+)\\))(?=\\())"
     },
     "field_hover": {
@@ -406,7 +398,6 @@
           ]
         }
       },
-      "comment": "struct field property and types when hovering with the mouse",
       "match": "(?:(?<=^\\bfield\\b)\\s+([\\w\\*\\.]+)\\s+([\\s\\S]+))"
     },
     "function_declaration": {
@@ -473,7 +464,6 @@
           ]
         }
       },
-      "comment": "Function declarations",
       "end": "(?:(?<=\\))\\s*((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b))[\\w\\.\\-\\*\\[\\]]+)?\\s*(?=\\{))",
       "endCaptures": {
         "1": {
@@ -558,7 +548,6 @@
               ]
             }
           },
-          "comment": "single function as a type returned type(s) declaration",
           "match": "(?:(?<=\\))(?:\\s*)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\*\\.\\[\\]\\<\\>\\-]+(?:\\s*)(?:\\/(?:\\/|\\*).*)?)$)"
         },
         {
@@ -567,7 +556,6 @@
       ]
     },
     "function_param_types": {
-      "comment": "function parameter variables and types",
       "patterns": [
         {
           "include": "#struct_variables_types"
@@ -592,7 +580,6 @@
               ]
             }
           },
-          "comment": "struct/interface type declaration",
           "match": "((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)\\s+(?=(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b\\s*\\{)"
         },
         {
@@ -609,7 +596,6 @@
               ]
             }
           },
-          "comment": "multiple parameters one type -with multilines",
           "match": "(?:(?:(?<=\\()|^\\s*)((?:(?:\\b\\w+\\,\\s*)+)(?:/(?:/|\\*).*)?)$)"
         },
         {
@@ -640,7 +626,6 @@
               ]
             }
           },
-          "comment": "multiple params and types | multiple params one type | one param one type",
           "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^\\)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.\\[\\]]+)|(?:\\((?:[^\\)]+)?\\))))?)|(?:(?:[\\[\\]\\*]+)?[\\w\\*\\.]+(?:\\[(?:[^\\]]+)\\])?(?:[\\w\\.\\*]+)?)+)))"
         },
         {
@@ -706,7 +691,6 @@
               ]
             }
           },
-          "comment": "other types",
           "match": "([\\w\\.]+)"
         },
         {
@@ -721,7 +705,6 @@
           "name": "keyword.function.go"
         }
       },
-      "comment": "Functions",
       "end": "(?:(?<=\\))(\\s*(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?((?:(?:\\s*(?:(?:[\\[\\]\\*]+)?[\\w\\.\\*]+)?(?:(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\])|(?:\\((?:[^\\)]+)?\\)))?(?:[\\w\\.\\*]+)?)(?:\\s*)(?=\\{))|(?:\\s*(?:(?:(?:[\\[\\]\\*]+)?(?!\\bfunc\\b)(?:[\\w\\.\\*]+)(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\])?(?:[\\w\\.\\*]+)?)|(?:\\((?:[^\\)]+)?\\)))))?)",
       "endCaptures": {
         "1": {
@@ -807,11 +790,9 @@
           ]
         }
       },
-      "comment": "functions in-line with multi return types",
       "match": "(?:(\\bfunc\\b)((?:\\((?:[^/]*?)\\))(?:\\s+)(?:\\((?:[^/]*?)\\)))(?:\\s+)(?=\\{))"
     },
     "generic_param_types": {
-      "comment": "generic parameter variables and types",
       "patterns": [
         {
           "include": "#struct_variables_types"
@@ -836,7 +817,6 @@
               ]
             }
           },
-          "comment": "struct/interface type declaration",
           "match": "((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)\\s+(?=(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b\\s*\\{)"
         },
         {
@@ -853,7 +833,6 @@
               ]
             }
           },
-          "comment": "multiple parameters one type -with multilines",
           "match": "(?:(?:(?<=\\()|^\\s*)((?:(?:\\b\\w+\\,\\s*)+)(?:/(?:/|\\*).*)?)$)"
         },
         {
@@ -895,7 +874,6 @@
               ]
             }
           },
-          "comment": "multiple params and types | multiple types one param",
           "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^\\)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.]+)|(?:\\((?:[^\\)]+)?\\))))?)|(?:(?:(?:[\\w\\*\\.\\~]+)|(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\]))(?:[\\w\\.\\*]+)?)+)))"
         },
         {
@@ -961,7 +939,6 @@
               ]
             }
           },
-          "comment": "other types",
           "match": "(?:\\b([\\w\\.]+))"
         },
         {
@@ -990,11 +967,9 @@
           ]
         }
       },
-      "comment": "Generic support for all types",
       "match": "(?:([\\w\\.\\*]+)(\\[(?:[^\\]]+)?\\]))"
     },
     "group-functions": {
-      "comment": "all statements related to functions",
       "patterns": [
         {
           "include": "#function_declaration"
@@ -1014,7 +989,6 @@
       ]
     },
     "group-types": {
-      "comment": "all statements related to types",
       "patterns": [
         {
           "include": "#other_struct_interface_expressions"
@@ -1049,7 +1023,6 @@
       ]
     },
     "group-variables": {
-      "comment": "all statements related to variables",
       "patterns": [
         {
           "include": "#const_assignment"
@@ -1078,7 +1051,6 @@
       ]
     },
     "import": {
-      "comment": "import",
       "patterns": [
         {
           "begin": "\\b(import)\\s+",
@@ -1087,7 +1059,6 @@
               "name": "keyword.control.import.go"
             }
           },
-          "comment": "import",
           "end": "(?!\\G)",
           "patterns": [
             {
@@ -1098,7 +1069,6 @@
       ]
     },
     "imports": {
-      "comment": "import package(s)",
       "patterns": [
         {
           "captures": {
@@ -1165,7 +1135,6 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "comment": "interface variable types",
       "end": "\\}",
       "endCaptures": {
         "0": {
@@ -1182,7 +1151,6 @@
       ]
     },
     "interface_variables_types_field": {
-      "comment": "interface variable type fields",
       "patterns": [
         {
           "include": "#support_functions"
@@ -1253,7 +1221,6 @@
               ]
             }
           },
-          "comment": "other types",
           "match": "([\\w\\.]+)"
         }
       ]
@@ -1261,7 +1228,6 @@
     "keywords": {
       "patterns": [
         {
-          "comment": "Flow control keywords",
           "match": "\\b(break|case|continue|default|defer|else|fallthrough|for|go|goto|if|range|return|select|switch)\\b",
           "name": "keyword.control.go"
         },
@@ -1317,7 +1283,6 @@
           ]
         }
       },
-      "comment": "labeled loop variable name",
       "match": "((?:^\\s*\\w+:\\s*$)|(?:^\\s*(?:\\bbreak\\b|\\bgoto\\b|\\bcontinue\\b)\\s+\\w+(?:\\s*/(?:/|\\*)\\s*.*)?$))"
     },
     "language_constants": {
@@ -1332,7 +1297,6 @@
           "name": "constant.language.iota.go"
         }
       },
-      "comment": "Language constants",
       "match": "\\b(?:(true|false)|(nil)|(iota))\\b"
     },
     "map_types": {
@@ -1345,7 +1309,6 @@
           "name": "punctuation.definition.begin.bracket.square.go"
         }
       },
-      "comment": "map types",
       "end": "(?:(\\])((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?\\b(?:func|struct|map)\\b)(?:[\\*\\[\\]]+)?(?:[\\w\\.]+)(?:\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}]+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?)?)",
       "endCaptures": {
         "1": {
@@ -1421,7 +1384,6 @@
           "name": "punctuation.definition.begin.bracket.round.go"
         }
       },
-      "comment": "multi type declaration",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -1789,7 +1751,6 @@
       "match": "(?<!\\w)\\.?\\d(?:(?:[0-9a-zA-Z_\\.])|(?<=[eEpP])[+-])*"
     },
     "operators": {
-      "comment": "Note that the order here is very important!",
       "patterns": [
         {
           "match": "((?:\\*|\\&)+)(?:(?!\\d)(?=(?:[\\w\\[\\]])|(?:\\<\\-)))",
@@ -1834,10 +1795,8 @@
       ]
     },
     "other_struct_interface_expressions": {
-      "comment": "struct and interface expression in-line (before curly bracket)",
       "patterns": [
         {
-          "comment": "after control variables must be added exactly here, do not move it! (changing may not affect tests, so be careful!)",
           "include": "#after_control_variables"
         },
         {
@@ -1889,7 +1848,6 @@
       ]
     },
     "other_variables": {
-      "comment": "all other variables",
       "match": "\\w+",
       "name": "variable.other.go"
     },
@@ -1902,7 +1860,6 @@
               "name": "keyword.package.go"
             }
           },
-          "comment": "package name",
           "end": "(?!\\G)",
           "patterns": [
             {
@@ -1918,7 +1875,6 @@
       ]
     },
     "parameter-variable-types": {
-      "comment": "function and generic parameter types",
       "patterns": [
         {
           "match": "\\{",
@@ -1993,7 +1949,6 @@
           ]
         }
       },
-      "comment": "Property variables in struct",
       "match": "((?:\\b[\\w\\.]+)(?:\\:(?!\\=)))"
     },
     "raw_string_literals": {
@@ -2003,7 +1958,6 @@
           "name": "punctuation.definition.string.begin.go"
         }
       },
-      "comment": "Raw string literals",
       "end": "`",
       "endCaptures": {
         "0": {
@@ -2101,7 +2055,6 @@
               ]
             }
           },
-          "comment": "single type declaration",
           "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?:\\s+)(?!(?:\\=\\s*)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b)([\\s\\S]+))"
         },
         {
@@ -2122,7 +2075,6 @@
               ]
             }
           },
-          "comment": "single type declaration with generics",
           "end": "(?:(?<=\\])((?:\\s+)(?:\\=\\s*)?(?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b|\\bfunc\\b))[\\w\\.\\-\\*\\[\\]]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*))?)",
           "endCaptures": {
             "1": {
@@ -2201,7 +2153,6 @@
           ]
         }
       },
-      "comment": "slice index and capacity variables, to not scope them as property variables",
       "match": "(?<=\\w\\[)((?:(?:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+\\:)|(?:\\:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+))(?:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+)?(?:\\:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+)?)(?=\\])"
     },
     "statements": {
@@ -2286,7 +2237,6 @@
               "name": "punctuation.definition.string.begin.go"
             }
           },
-          "comment": "Interpreted string literals",
           "end": "\"",
           "endCaptures": {
             "0": {
@@ -2330,11 +2280,9 @@
           ]
         }
       },
-      "comment": "struct, interface type declarations (related to: struct_variables_types, interface_variables_types)",
       "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.]+))"
     },
     "struct_variable_types_fields_multi": {
-      "comment": "struct variable and type fields with multi lines",
       "patterns": [
         {
           "begin": "(?:((?:\\w+(?:\\,\\s*\\w+)*)(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s+)(?:[\\[\\]\\*]+)?)(\\bstruct\\b)(?:\\s*)(\\{))",
@@ -2357,7 +2305,6 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             }
           },
-          "comment": "struct in struct types",
           "end": "\\}",
           "endCaptures": {
             "0": {
@@ -2394,7 +2341,6 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             }
           },
-          "comment": "interface in struct types",
           "end": "\\}",
           "endCaptures": {
             "0": {
@@ -2431,7 +2377,6 @@
               "name": "punctuation.definition.begin.bracket.round.go"
             }
           },
-          "comment": "function in struct types",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -2462,7 +2407,6 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "comment": "Struct variable type",
       "end": "\\}",
       "endCaptures": {
         "0": {
@@ -2479,7 +2423,6 @@
       ]
     },
     "struct_variables_types_fields": {
-      "comment": "Struct variable type fields",
       "patterns": [
         {
           "include": "#struct_variable_types_fields_multi"
@@ -2498,7 +2441,6 @@
               ]
             }
           },
-          "comment": "one line - single type",
           "match": "(?:(?<=\\{)\\s*((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*\\[\\]]+))\\s*(?=\\}))"
         },
         {
@@ -2526,7 +2468,6 @@
               ]
             }
           },
-          "comment": "one line - property variables and types",
           "match": "(?:(?<=\\{)\\s*((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*\\[\\]]+))\\s*(?=\\}))"
         },
         {
@@ -2563,7 +2504,6 @@
               ]
             }
           },
-          "comment": "one line with semicolon(;) without formatting gofmt - single type | property variables and types",
           "match": "(?:(?<=\\{)((?:\\s*(?:(?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))?(?:(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\S]+)(?:\\;)?))+)\\s*(?=\\}))"
         },
         {
@@ -2580,7 +2520,6 @@
               ]
             }
           },
-          "comment": "one type only",
           "match": "(?:((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*]+)\\s*)(?:(?=\\`|\\/|\")|$))"
         },
         {
@@ -2611,7 +2550,6 @@
               ]
             }
           },
-          "comment": "property variables and types",
           "match": "(?:((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))([^\\`\"\\/]+))"
         }
       ]
@@ -2664,7 +2602,6 @@
           ]
         }
       },
-      "comment": "Support Functions",
       "match": "(?:(?:((?<=\\.)\\b\\w+)|(\\b\\w+))(\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}\"\\']+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?(?=\\())"
     },
     "switch_select_case_variables": {
@@ -2690,7 +2627,6 @@
           ]
         }
       },
-      "comment": "variables after case control keyword in switch/select expression, to not scope them as property variables",
       "match": "(?:(?:^\\s*(\\bcase\\b))(?:\\s+)([\\s\\S]+(?:\\:)\\s*(?:/(?:/|\\*).*)?)$)"
     },
     "switch_types": {
@@ -2739,7 +2675,6 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "comment": "switch type assertions, only highlights types after case keyword",
       "end": "(?:\\})",
       "endCaptures": {
         "0": {
@@ -2774,7 +2709,6 @@
               ]
             }
           },
-          "comment": "types after case keyword with single line",
           "match": "(?:^\\s*(\\bcase\\b))(?:\\s+)([\\w\\.\\,\\*\\=\\<\\>\\!\\s]+)(:)(\\s*/(?:/|\\*)\\s*.*)?$"
         },
         {
@@ -2784,7 +2718,6 @@
               "name": "keyword.control.go"
             }
           },
-          "comment": "types after case keyword with multi lines",
           "end": "\\:",
           "endCaptures": {
             "0": {
@@ -2814,23 +2747,19 @@
               "name": "invalid.illegal.slice.go"
             }
           },
-          "comment": "Syntax error using slices",
           "match": "\\[\\](\\s+)"
         },
         {
-          "comment": "Syntax error numeric literals",
           "match": "\\b0[0-7]*[89]\\d*\\b",
           "name": "invalid.illegal.numeric.go"
         }
       ]
     },
     "terminators": {
-      "comment": "Terminators",
       "match": ";",
       "name": "punctuation.terminator.go"
     },
     "type-declarations": {
-      "comment": "includes all type declarations",
       "patterns": [
         {
           "include": "#language_constants"
@@ -2874,7 +2803,6 @@
       ]
     },
     "type-declarations-without-brackets": {
-      "comment": "includes all type declarations without brackets (in some cases, brackets need to be captured manually)",
       "patterns": [
         {
           "include": "#language_constants"
@@ -2931,11 +2859,9 @@
           ]
         }
       },
-      "comment": "struct/interface types in-line (type assertion) | switch type keyword",
       "match": "(?:(?<=\\.\\()(?:(\\btype\\b)|((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\.\\[\\]\\*]+))(?=\\)))"
     },
     "var_assignment": {
-      "comment": "variable assignment with var keyword",
       "patterns": [
         {
           "captures": {
@@ -2981,7 +2907,6 @@
               ]
             }
           },
-          "comment": "single assignment",
           "match": "(?:(?<=\\bvar\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
         },
         {
@@ -2991,7 +2916,6 @@
               "name": "punctuation.definition.begin.bracket.round.go"
             }
           },
-          "comment": "multi assignment",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -3053,7 +2977,6 @@
       ]
     },
     "variable_assignment": {
-      "comment": "variable assignment",
       "patterns": [
         {
           "captures": {
@@ -3073,7 +2996,6 @@
               ]
             }
           },
-          "comment": "variable assignment with :=",
           "match": "\\b\\w+(?:\\,\\s*\\w+)*(?=\\s*:=)"
         },
         {
@@ -3097,7 +3019,6 @@
               ]
             }
           },
-          "comment": "variable assignment with =",
           "match": "\\b[\\w\\.\\*]+(?:\\,\\s*[\\w\\.\\*]+)*(?=\\s*=(?!=))"
         }
       ]
