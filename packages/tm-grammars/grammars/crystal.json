@@ -119,37 +119,30 @@
           "name": "entity.name.lib.type.value.crystal"
         }
       },
-      "comment": "type in lib",
       "match": "(?<!\\.)\\b(type)\\s+([A-Z]\\w+)\\s*(=)\\s*(.+)",
       "name": "meta.lib.type.crystal"
     },
     {
-      "comment": "everything being a reserved word, not a value, and needing a 'end' is a..",
       "match": "(?<!\\.)\\b(fun|begin|case|class|else|elsif|end|ensure|enum|for|if|macro|module|rescue|struct|then|union|unless|until|when|while)\\b(?![?!:])",
       "name": "keyword.control.crystal"
     },
     {
-      "comment": "everything being a reserved word, not a value, and not needing a 'end' is a..",
       "match": "(?<!\\.)\\b(abstract|alias|asm|break|extend|in|include|next|of|private|protected|struct|return|select|super|with|yield)\\b(?![?!:])",
       "name": "keyword.control.primary.crystal"
     },
     {
-      "comment": "everything being a spec keyword, not a value, and needing a block is a..",
       "match": "(?<!\\.)\\b(describe|context|it|expect_raises)\\b(?![?!:])",
       "name": "keyword.control.crystal"
     },
     {
-      "comment": "contextual smart pair support for block parameters",
       "match": "(?<!\\.)\\bdo\\b\\s*",
       "name": "keyword.control.start-block.crystal"
     },
     {
-      "comment": "contextual smart pair support",
       "match": "(?<=\\{)(\\s+)",
       "name": "meta.syntax.crystal.start-block"
     },
     {
-      "comment": "Just as above but being not a logical operation",
       "match": "(?<!\\.)\\b(pointerof|typeof|sizeof|instance_sizeof|offsetof|previous_def|forall|out|uninitialized)\\b(?![?!:])|\\.(is_a\\?|nil\\?|responds_to\\?|as\\?|as\b)",
       "name": "keyword.control.pseudo-method.crystal"
     },
@@ -170,7 +163,6 @@
       "name": "variable.language.self.crystal"
     },
     {
-      "comment": "https://crystal-lang.org/api/0.36.1/Object.html#macro-summary",
       "match": "(?<!\\.)\\b(((class_)?((getter|property)\\b[!?]?|setter\\b))|(def_(clone|equals|equals_and_hash|hash)|delegate|forward_missing_to)\\b)(?![?!:])",
       "name": "support.function.kernel.crystal"
     },
@@ -250,17 +242,14 @@
       ]
     },
     {
-      "comment": "Literals name of Crystal",
       "match": "\\b[A-Z\\x{80}-\\x{10FFFF}][\\w\\x{80}-\\x{10FFFF}]*",
       "name": "support.class.crystal"
     },
     {
-      "comment": "Fetch from https://crystal-lang.org/api/0.36.1/toplevel.html",
       "match": "(?<!\\.)\\b(abort|at_exit|caller|exit|gets|loop|main|p|pp|print|printf|puts|raise|rand|read_line|sleep|spawn|sprintf|system|debugger|record|spawn)\\b(?![?!:])",
       "name": "support.function.kernel.crystal"
     },
     {
-      "comment": "Constant name in any where",
       "match": "\\b[_A-Z]+\\b",
       "name": "variable.other.constant.crystal"
     },
@@ -277,7 +266,6 @@
           "name": "punctuation.definition.parameters.crystal"
         }
       },
-      "comment": "The method pattern comes from the symbol pattern. See there for an explanation.",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -323,42 +311,34 @@
           "name": "entity.name.function.crystal"
         }
       },
-      "comment": " the optional name is just to catch the def also without a method-name",
       "match": "(?=def\\b)(?<=^|\\s)(def)\\b(\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|\\^|===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[][?=]?|\\[]=?)))?",
       "name": "meta.function.method.without-arguments.crystal"
     },
     {
-      "comment": "Floating point literal (fraction)",
       "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
-      "comment": "Floating point literal (exponent)",
       "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?[eE][+-]?[0-9_]+(f32|f64)?\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
-      "comment": "Floating point literal (typed)",
       "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9_]+)?(f32|f64)\\b",
       "name": "constant.numeric.float.crystal"
     },
     {
-      "comment": "Integer literal (decimal)",
       "match": "\\b(?!0[0-9])[0-9][0-9_]*([ui](8|16|32|64|128))?\\b",
       "name": "constant.numeric.integer.decimal.crystal"
     },
     {
-      "comment": "Integer literal (hexadecimal)",
       "match": "\\b0x[a-fA-F0-9_]+([ui](8|16|32|64|128))?\\b",
       "name": "constant.numeric.integer.hexadecimal.crystal"
     },
     {
-      "comment": "Integer literal (octal)",
       "match": "\\b0o[0-7_]+([ui](8|16|32|64|128))?\\b",
       "name": "constant.numeric.integer.octal.crystal"
     },
     {
-      "comment": "Integer literal (binary)",
       "match": "\\b0b[01_]+([ui](8|16|32|64|128))?\\b",
       "name": "constant.numeric.integer.binary.crystal"
     },
@@ -369,7 +349,6 @@
           "name": "punctuation.definition.symbol.begin.crystal"
         }
       },
-      "comment": "symbol literal with '' delimiter",
       "end": "'",
       "endCaptures": {
         "0": {
@@ -391,7 +370,6 @@
           "name": "punctuation.section.symbol.begin.crystal"
         }
       },
-      "comment": "symbol literal with \"\" delimiter",
       "end": "\"",
       "endCaptures": {
         "0": {
@@ -409,7 +387,6 @@
       ]
     },
     {
-      "comment": "Needs higher precedence than regular expressions.",
       "match": "(?<!\\()/=",
       "name": "keyword.operator.assignment.augmented.crystal"
     },
@@ -420,7 +397,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "string literal with '' delimiter",
       "end": "'",
       "endCaptures": {
         "0": {
@@ -442,7 +418,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "string literal with interpolation and \"\" delimiter",
       "end": "\"",
       "endCaptures": {
         "0": {
@@ -466,7 +441,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allows for interpolation)",
       "end": "`",
       "endCaptures": {
         "0": {
@@ -490,7 +464,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allow for interpolation)",
       "end": "\\}",
       "endCaptures": {
         "0": {
@@ -517,7 +490,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allow for interpolation)",
       "end": "\\]",
       "endCaptures": {
         "0": {
@@ -544,7 +516,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allow for interpolation)",
       "end": "\\>",
       "endCaptures": {
         "0": {
@@ -571,7 +542,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allow for interpolation)",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -598,7 +568,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "execute string (allow for interpolation)",
       "end": "\\|",
       "endCaptures": {
         "0": {
@@ -625,7 +594,6 @@
           "name": "punctuation.definition.string.crystal"
         }
       },
-      "comment": "regular expressions (normal) we only start a regexp if the character before it (excluding whitespace) is what we think is before a regexp",
       "contentName": "string.regexp.classic.crystal",
       "end": "((/[imsx]*))",
       "patterns": [
@@ -641,7 +609,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "regular expressions (literal)",
       "end": "\\}[imsx]*",
       "endCaptures": {
         "0": {
@@ -665,7 +632,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "regular expressions (literal)",
       "end": "\\][imsx]*",
       "endCaptures": {
         "0": {
@@ -689,7 +655,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "regular expressions (literal)",
       "end": "\\)[imsx]*",
       "endCaptures": {
         "0": {
@@ -713,7 +678,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "regular expressions (literal)",
       "end": "\\>[imsx]*",
       "endCaptures": {
         "0": {
@@ -737,7 +701,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "regular expressions (literal)",
       "end": "\\|[imsx]*",
       "endCaptures": {
         "0": {
@@ -758,7 +721,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal capable of interpolation ()",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -785,7 +747,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal capable of interpolation []",
       "end": "\\]",
       "endCaptures": {
         "0": {
@@ -812,7 +773,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal capable of interpolation <>",
       "end": "\\>",
       "endCaptures": {
         "0": {
@@ -839,7 +799,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal capable of interpolation -- {}",
       "end": "\\}",
       "endCaptures": {
         "0": {
@@ -866,7 +825,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal capable of interpolation -- ||",
       "end": "\\|",
       "endCaptures": {
         "0": {
@@ -890,7 +848,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal incapable of interpolation -- ()",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -915,7 +872,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal incapable of interpolation -- <>",
       "end": "\\>",
       "endCaptures": {
         "0": {
@@ -940,7 +896,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal incapable of interpolation -- []",
       "end": "\\]",
       "endCaptures": {
         "0": {
@@ -965,7 +920,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal incapable of interpolation -- {}",
       "end": "\\}",
       "endCaptures": {
         "0": {
@@ -990,7 +944,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "literal incapable of interpolation -- ||",
       "end": "\\|",
       "endCaptures": {
         "0": {
@@ -1000,7 +953,6 @@
       "name": "string.quoted.other.literal.lower.crystal",
       "patterns": [
         {
-          "comment": "Cant be named because its not necessarily an escape.",
           "match": "\\\\."
         }
       ]
@@ -1011,7 +963,6 @@
           "name": "punctuation.definition.constant.crystal"
         }
       },
-      "comment": "symbols",
       "match": "(?<!:)(:)(?>[a-zA-Z_\\x{80}-\\x{10FFFF}][\\w\\x{80}-\\x{10FFFF}]*(?>[?!]|=(?![>=]))?|===?|>[>=]?|<[<=]?|<=>|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\][?=]?|@@?[a-zA-Z_\\x{80}-\\x{10FFFF}][\\w\\x{80}-\\x{10FFFF}]*)",
       "name": "constant.other.symbol.crystal"
     },
@@ -1021,7 +972,6 @@
           "name": "punctuation.definition.constant.crystal"
         }
       },
-      "comment": "symbols",
       "match": "(?>[a-zA-Z_\\x{80}-\\x{10FFFF}][\\w\\x{80}-\\x{10FFFF}]*(?>[?!])?)(:)(?!:)",
       "name": "constant.other.symbol.crystal.19syntax"
     },
@@ -1045,7 +995,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded HTML and indented terminator",
       "contentName": "text.html.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1076,7 +1025,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded SQL and indented terminator",
       "contentName": "text.sql.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1107,7 +1055,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded css and intented terminator",
       "contentName": "text.css.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1138,7 +1085,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded c++ and intented terminator",
       "contentName": "text.c++.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1169,7 +1115,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded c++ and intented terminator",
       "contentName": "text.c.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1200,7 +1145,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded javascript and intented terminator",
       "contentName": "text.js.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1231,7 +1175,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded javascript and intented terminator",
       "contentName": "text.js.jquery.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1262,7 +1205,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded shell and intented terminator",
       "contentName": "text.shell.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1293,7 +1235,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with embedded crystal and intented terminator",
       "contentName": "text.crystal.embedded.crystal",
       "end": "\\s*\\2\\b",
       "endCaptures": {
@@ -1324,7 +1265,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with indented terminator",
       "end": "\\s*\\1\\b",
       "endCaptures": {
         "0": {
@@ -1348,7 +1288,6 @@
           "name": "punctuation.definition.string.begin.crystal"
         }
       },
-      "comment": "heredoc with indented terminator",
       "end": "\\s*\\1\\b",
       "endCaptures": {
         "0": {
@@ -1420,7 +1359,6 @@
           "name": "punctuation.separator.method.crystal"
         }
       },
-      "comment": "Safe navigation operator",
       "match": "(&\\.)\\s*(?![A-Z])"
     },
     {
@@ -1478,14 +1416,12 @@
       ]
     },
     {
-      "comment": "This is kindof experimental. There really is no way to perfectly match all regular variables, but you can pretty well assume that any normal word in certain curcumstances that havnt already been scoped as something else are probably variables, and the advantages beat the potential errors",
       "match": "((?<=\\W)\\b|^)\\w+\\b(?=\\s*([\\]\\)\\}\\=\\+\\-\\*\\/\\^\\$\\,\\.]|<\\s|<<[\\s|\\.]))",
       "name": "variable.other.crystal"
     }
   ],
   "repository": {
     "escaped_char": {
-      "comment": "https://crystal-lang.org/reference/syntax_and_semantics/literals/string.html",
       "match": "\\\\(?:[0-7]{1,3}|x[a-fA-F0-9]{2}|u[a-fA-F0-9]{4}|u\\{[a-fA-F0-9 ]+\\}|.)",
       "name": "constant.character.escape.crystal"
     },
@@ -1860,7 +1796,6 @@
               "name": "punctuation.definition.comment.crystal"
             }
           },
-          "comment": "We are restrictive in what we allow to go after the comment character to avoid false positives, since the availability of comments depend on regexp flags.",
           "match": "(?<=^|\\s)(#)\\s[[a-zA-Z0-9,. \\t?!-][^\\x{00}-\\x{7F}]]*$",
           "name": "comment.line.number-sign.crystal"
         }

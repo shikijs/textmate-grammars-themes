@@ -67,17 +67,14 @@
           "include": "#comment"
         },
         {
-          "comment": "numerics",
           "match": "\\b(uint|int)\\b",
           "name": "entity.name.type.numeric.clarity"
         },
         {
-          "comment": "principal",
           "match": "\\b(principal)\\b",
           "name": "entity.name.type.principal.clarity"
         },
         {
-          "comment": "bool",
           "match": "\\b(bool)\\b",
           "name": "entity.name.type.bool.clarity"
         },
@@ -125,7 +122,6 @@
               "name": "storage.type.modifier"
             }
           },
-          "comment": "optional",
           "end": "(\\))",
           "endCaptures": {
             "1": {
@@ -149,7 +145,6 @@
               "name": "storage.type.modifier"
             }
           },
-          "comment": "response",
           "end": "(\\))",
           "endCaptures": {
             "1": {
@@ -176,7 +171,6 @@
               "name": "constant.numeric.list-len.clarity"
             }
           },
-          "comment": "list",
           "end": "(\\))",
           "endCaptures": {
             "1": {
@@ -686,17 +680,14 @@
         "number-literal": {
           "patterns": [
             {
-              "comment": "unsigned integers",
               "match": "(?<!\\S)(?!-)\\bu\\d+\\b(?!\\s*-)",
               "name": "constant.numeric.uint.clarity"
             },
             {
-              "comment": "signed integers",
               "match": "(?<!\\S)(?!-)\\b\\d+\\b(?!\\s*-)",
               "name": "constant.numeric.int.clarity"
             },
             {
-              "comment": "hexadecimals",
               "match": "(?<!\\S)(?!-)\\b0x[0-9a-f]*\\b(?!\\s*-)",
               "name": "constant.numeric.hex.clarity"
             }

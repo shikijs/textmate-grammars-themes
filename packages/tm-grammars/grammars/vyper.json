@@ -144,7 +144,6 @@
     },
     "call-wrapper-inheritance": {
       "begin": "\\b(?=([[:alpha:]_]\\w*)\\s*(\\())",
-      "comment": "same as a function call, but in inheritance context",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -576,7 +575,6 @@
     },
     "docstring-statement": {
       "begin": "^(?=\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))",
-      "comment": "the string either terminates correctly or by the beginning of a new line (this is for single line docstrings that aren't terminated) AND it's not followed by another docstring",
       "end": "((?<=\\1)|^)(?!\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))",
       "patterns": [
         {
@@ -1230,7 +1228,6 @@
       ]
     },
     "expression": {
-      "comment": "All valid Python expressions",
       "patterns": [
         {
           "include": "#expression-base"
@@ -1239,13 +1236,11 @@
           "include": "#member-access"
         },
         {
-          "comment": "Tokenize identifiers to help linters",
           "match": "\\b([[:alpha:]_]\\w*)\\b"
         }
       ]
     },
     "expression-bare": {
-      "comment": "valid Python expressions w/o comments and line continuation",
       "patterns": [
         {
           "include": "#backticks"
@@ -1328,7 +1323,6 @@
       ]
     },
     "expression-base": {
-      "comment": "valid Python expressions with comments and line continuation",
       "patterns": [
         {
           "include": "#comments"
@@ -1342,7 +1336,6 @@
       ]
     },
     "f-expression": {
-      "comment": "All valid Python expressions, except comments and line continuation",
       "patterns": [
         {
           "include": "#expression-bare"
@@ -1351,7 +1344,6 @@
           "include": "#member-access"
         },
         {
-          "comment": "Tokenize identifiers to help linters",
           "match": "\\b([[:alpha:]_]\\w*)\\b"
         }
       ]
@@ -1476,7 +1468,6 @@
               "name": "constant.character.format.placeholder.other.python"
             }
           },
-          "comment": "empty braces are illegal",
           "match": "({)(\\s*?)(})"
         },
         {
@@ -1519,7 +1510,6 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "comment": "it is illegal to have a multiline brace inside a single-line string",
       "end": "(\\})|(?=\\n)",
       "endCaptures": {
         "1": {
@@ -1542,7 +1532,6 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "comment": "value interpolation using { ... }",
       "end": "(\\})",
       "endCaptures": {
         "1": {
@@ -1733,7 +1722,6 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "comment": "value interpolation using { ... }",
       "end": "(\\})|(?=\\n)",
       "endCaptures": {
         "1": {
@@ -1970,7 +1958,6 @@
     },
     "function-call": {
       "begin": "\\b(?=([[:alpha:]_]\\w*)\\s*(\\())",
-      "comment": "Regular function call of the type \"name(args)\"",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -2050,7 +2037,6 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "comment": "Some color schemas support meta.function-call.generic scope",
           "match": "\\b([[:alpha:]_]\\w*)\\b",
           "name": "meta.function-call.generic.python"
         }
@@ -2063,7 +2049,6 @@
           "name": "keyword.control.flow.python"
         }
       },
-      "comment": "Match \"for ... in\" construct used in generators and for loops to\ncorrectly identify the \"in\" as a control flow keyword.\n",
       "end": "\\bin\\b",
       "endCaptures": {
         "0": {
@@ -2092,7 +2077,6 @@
       "match": "\\b(?:(and|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[\\.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(as|import))\\b"
     },
     "illegal-object-name": {
-      "comment": "It's illegal to name class or function \"True\"",
       "match": "\\b(True|False|None)\\b",
       "name": "keyword.illegal.name.python"
     },
@@ -2107,14 +2091,12 @@
           "name": "invalid.illegal.operator.python"
         },
         {
-          "comment": "We don't want `!` to flash when we're typing `!=`",
           "match": "!\\b",
           "name": "invalid.illegal.operator.python"
         }
       ]
     },
     "import": {
-      "comment": "Import statements used to correctly mark `from`, `import`, and `as`\n",
       "patterns": [
         {
           "begin": "\\b(?<!\\.)(from)\\b(?=.+import)",
@@ -2155,7 +2137,6 @@
       ]
     },
     "impossible": {
-      "comment": "This is a special rule that should be used where no match is desired. It is not a good idea to match something like '1{0}' because in some cases that can result in infinite loops in token generation. So the rule instead matches and impossible expression to allow a match to fail and move to the next token.",
       "match": "$.^"
     },
     "inheritance-identifier": {
@@ -2441,7 +2422,6 @@
           "name": "support.function.magic.python"
         }
       },
-      "comment": "these methods have magic interpretation by python and are generally called\nindirectly through syntactic constructs\n",
       "match": "\\b(__(?:abs|add|aenter|aexit|aiter|and|anext|await|bool|call|ceil|class_getitem|cmp|coerce|complex|contains|copy|deepcopy|del|delattr|delete|delitem|delslice|dir|div|divmod|enter|eq|exit|float|floor|floordiv|format|ge|get|getattr|getattribute|getinitargs|getitem|getnewargs|getslice|getstate|gt|hash|hex|iadd|iand|idiv|ifloordiv||ilshift|imod|imul|index|init|instancecheck|int|invert|ior|ipow|irshift|isub|iter|itruediv|ixor|le|len|long|lshift|lt|missing|mod|mul|ne|neg|new|next|nonzero|oct|or|pos|pow|radd|rand|rdiv|rdivmod|reduce|reduce_ex|repr|reversed|rfloordiv||rlshift|rmod|rmul|ror|round|rpow|rrshift|rshift|rsub|rtruediv|rxor|set|setattr|setitem|set_name|setslice|setstate|sizeof|str|sub|subclasscheck|truediv|trunc|unicode|xor|matmul|rmatmul|imatmul|init_subclass|set_name|fspath|bytes|prepare|length_hint)__)\\b"
     },
     "magic-names": {
@@ -2460,7 +2440,6 @@
           "name": "support.variable.magic.python"
         }
       },
-      "comment": "magic variables which a class/module may have.",
       "match": "\\b(__(?:all|annotations|bases|builtins|class|closure|code|debug|defaults|dict|doc|file|func|globals|kwdefaults|match_args|members|metaclass|methods|module|mro|mro_entries|name|qualname|post_init|self|signature|slots|subclasses|version|weakref|wrapped|classcell|spec|path|package|future|traceback)__)\\b"
     },
     "member-access": {
@@ -2485,7 +2464,6 @@
       ]
     },
     "member-access-attribute": {
-      "comment": "Highlight attribute access in otherwise non-specialized cases.",
       "match": "\\b([[:alpha:]_]\\w*)\\b",
       "name": "meta.attribute.python"
     },
@@ -2607,7 +2585,6 @@
           "name": "storage.type.number.python"
         }
       },
-      "comment": "this is to support python2 syntax for long ints",
       "match": "(?<![\\w\\.])([1-9][0-9]*|0)([lL])\\b",
       "name": "constant.numeric.bin.python"
     },
@@ -2622,7 +2599,6 @@
     },
     "odd-function-call": {
       "begin": "(?<=\\]|\\))\\s*(?=\\()",
-      "comment": "A bit obscured function call where there may have been an\narbitrary number of other operations to get the function.\nE.g. \"arr[idx](args)\"\n",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -3779,12 +3755,10 @@
           "name": "storage.type.function.python"
         },
         {
-          "comment": "if `as` is eventually followed by `:` or line continuation\nit's probably control flow like:\n    with foo as bar, \\\n         Foo as Bar:\n      try:\n        do_stuff()\n      except Exception as e:\n        pass\n",
           "match": "\\b(?<!\\.)as\\b(?=.*[:\\\\])",
           "name": "keyword.control.flow.python"
         },
         {
-          "comment": "other legal use of `as` is in an import",
           "match": "\\b(?<!\\.)as\\b",
           "name": "keyword.control.import.python"
         },
@@ -3973,7 +3947,6 @@
     },
     "string-multi-bad-brace1-formatting-raw": {
       "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%\\})",
-      "comment": "template using {% ... %}",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3983,7 +3956,6 @@
     },
     "string-multi-bad-brace1-formatting-unicode": {
       "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%\\})",
-      "comment": "template using {% ... %}",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3999,7 +3971,6 @@
     },
     "string-multi-bad-brace2-formatting-raw": {
       "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:\\.\\[}\\w]).*?(?!'''|\"\"\")\\})",
-      "comment": "odd format or format-like syntax",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -4012,7 +3983,6 @@
     },
     "string-multi-bad-brace2-formatting-unicode": {
       "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:\\.\\[}\\w]).*?(?!'''|\"\"\")\\})",
-      "comment": "odd format or format-like syntax",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -4240,7 +4210,6 @@
     },
     "string-single-bad-brace1-formatting-raw": {
       "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%\\})",
-      "comment": "template using {% ... %}",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4250,7 +4219,6 @@
     },
     "string-single-bad-brace1-formatting-unicode": {
       "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%\\})",
-      "comment": "template using {% ... %}",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4266,7 +4234,6 @@
     },
     "string-single-bad-brace2-formatting-raw": {
       "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:\\.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))\\})",
-      "comment": "odd format or format-like syntax",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4279,7 +4246,6 @@
     },
     "string-single-bad-brace2-formatting-unicode": {
       "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:\\.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))\\})",
-      "comment": "odd format or format-like syntax",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {

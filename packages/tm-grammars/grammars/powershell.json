@@ -60,7 +60,6 @@
       "include": "#scriptblock"
     },
     {
-      "comment": "Needed to parse stuff correctly in 'argument mode'. (See about_parsing.)",
       "include": "#doubleQuotedStringEscapes"
     },
     {
@@ -165,7 +164,6 @@
           "name": "punctuation.section.group.begin.powershell"
         }
       },
-      "comment": "TODO: move to repo; make recursive.",
       "end": "\\)",
       "endCaptures": {
         "0": {
@@ -198,7 +196,6 @@
           "name": "keyword.control.powershell"
         }
       },
-      "comment": "This should be moved to the repository at some point.",
       "end": "$",
       "patterns": [
         {
@@ -208,7 +205,6 @@
       ]
     },
     {
-      "comment": "This should only be relevant inside a class but will require a rework of how classes are matched. This is a temp fix.",
       "match": "(?<!\\w)((?i:hidden|static))(?!\\w)",
       "name": "storage.modifier.powershell"
     },
@@ -221,7 +217,6 @@
           "name": "entity.name.function"
         }
       },
-      "comment": "capture should be entity.name.type, but it doesn't provide a good color in the default schema.",
       "match": "(?<!\\w|-)((?i:class)|%|\\?)(?:\\s)+((?:\\p{L}|\\d|_|-|)+)\\b"
     },
     {
@@ -261,7 +256,6 @@
       "name": "keyword.operator.other.powershell"
     },
     {
-      "comment": "This is very imprecise, is there a syntax for 'must come after...' ",
       "match": "(?<!\\s|^)\\.\\.(?=\\-?\\d|\\(|\\$)",
       "name": "keyword.operator.range.powershell"
     }
@@ -357,27 +351,22 @@
     "commands": {
       "patterns": [
         {
-          "comment": "Verb-Noun pattern:",
           "match": "(?:(\\p{L}|\\d|_|-|\\\\|\\:)*\\\\)?\\b(?i:Add|Approve|Assert|Backup|Block|Build|Checkpoint|Clear|Close|Compare|Complete|Compress|Confirm|Connect|Convert|ConvertFrom|ConvertTo|Copy|Debug|Deny|Deploy|Disable|Disconnect|Dismount|Edit|Enable|Enter|Exit|Expand|Export|Find|Format|Get|Grant|Group|Hide|Import|Initialize|Install|Invoke|Join|Limit|Lock|Measure|Merge|Mount|Move|New|Open|Optimize|Out|Ping|Pop|Protect|Publish|Push|Read|Receive|Redo|Register|Remove|Rename|Repair|Request|Reset|Resize|Resolve|Restart|Restore|Resume|Revoke|Save|Search|Select|Send|Set|Show|Skip|Split|Start|Step|Stop|Submit|Suspend|Switch|Sync|Test|Trace|Unblock|Undo|Uninstall|Unlock|Unprotect|Unpublish|Unregister|Update|Use|Wait|Watch|Write)\\-.+?(?:\\.(?i:exe|cmd|bat|ps1))?\\b",
           "name": "support.function.powershell"
         },
         {
-          "comment": "Builtin cmdlets with reserved verbs",
           "match": "(?<!\\w)(?i:foreach-object)(?!\\w)",
           "name": "support.function.powershell"
         },
         {
-          "comment": "Builtin cmdlets with reserved verbs",
           "match": "(?<!\\w)(?i:where-object)(?!\\w)",
           "name": "support.function.powershell"
         },
         {
-          "comment": "Builtin cmdlets with reserved verbs",
           "match": "(?<!\\w)(?i:sort-object)(?!\\w)",
           "name": "support.function.powershell"
         },
         {
-          "comment": "Builtin cmdlets with reserved verbs",
           "match": "(?<!\\w)(?i:tee-object)(?!\\w)",
           "name": "support.function.powershell"
         }
@@ -394,7 +383,6 @@
               "name": "keyword.operator.documentation.powershell"
             }
           },
-          "comment": "these embedded doc keywords do not support arguments, must be the only thing on the line",
           "match": "(?:^|\\G)(?i:\\s*(\\.)(COMPONENT|DESCRIPTION|EXAMPLE|FUNCTIONALITY|INPUTS|LINK|NOTES|OUTPUTS|ROLE|SYNOPSIS))\\s*$",
           "name": "comment.documentation.embedded.powershell"
         },
@@ -410,7 +398,6 @@
               "name": "keyword.operator.documentation.powershell"
             }
           },
-          "comment": "these embedded doc keywords require arguments though the type required may be inconsistent, they may not all be able to use the same argument match",
           "match": "(?:^|\\G)(?i:\\s*(\\.)(EXTERNALHELP|FORWARDHELP(?:CATEGORY|TARGETNAME)|PARAMETER|REMOTEHELPRUNSPACE))\\s+(.+?)\\s*$",
           "name": "comment.documentation.embedded.powershell"
         }
@@ -731,7 +718,6 @@
       ]
     },
     "unicodeEscape": {
-      "comment": "`u{xxxx} added in PowerShell 6.0",
       "patterns": [
         {
           "match": "`u\\{(?:(?:10)?([0-9a-fA-F]){1,4}|0?\\g<1>{1,5})}",
@@ -754,7 +740,6 @@
               "name": "punctuation.definition.variable.powershell"
             }
           },
-          "comment": "These are special constants.",
           "match": "(\\$)(?i:(False|Null|True))\\b"
         },
         {
@@ -769,7 +754,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "These are the other built-in constants.",
           "match": "(\\$)(?i:(Error|ExecutionContext|Host|Home|PID|PsHome|PsVersionTable|ShellID))((?:\\.(?:\\p{L}|\\d|_)+)*\\b)?\\b"
         },
         {
@@ -784,7 +768,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "Automatic variables are not constants, but they are read-only. In monokai (default) color schema support.variable doesn't have color, so we use constant.",
           "match": "(\\$)((?:[$^?])|(?i:_|Args|ConsoleFileName|Event|EventArgs|EventSubscriber|ForEach|Input|LastExitCode|Matches|MyInvocation|NestedPromptLevel|Profile|PSBoundParameters|PsCmdlet|PsCulture|PSDebugContext|PSItem|PSCommandPath|PSScriptRoot|PsUICulture|Pwd|Sender|SourceArgs|SourceEventArgs|StackTrace|Switch|This)\\b)((?:\\.(?:\\p{L}|\\d|_)+)*\\b)?"
         },
         {
@@ -799,7 +782,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "Style preference variables as language variables so that they stand out.",
           "match": "(\\$)(?i:(ConfirmPreference|DebugPreference|ErrorActionPreference|ErrorView|FormatEnumerationLimit|InformationPreference|LogCommandHealthEvent|LogCommandLifecycleEvent|LogEngineHealthEvent|LogEngineLifecycleEvent|LogProviderHealthEvent|LogProviderLifecycleEvent|MaximumAliasCount|MaximumDriveCount|MaximumErrorCount|MaximumFunctionCount|MaximumHistoryCount|MaximumVariableCount|OFS|OutputEncoding|PSCulture|PSDebugContext|PSDefaultParameterValues|PSEmailServer|PSItem|PSModuleAutoLoadingPreference|PSModuleAutoloadingPreference|PSSenderInfo|PSSessionApplicationName|PSSessionConfigurationName|PSSessionOption|ProgressPreference|VerbosePreference|WarningPreference|WhatIfPreference))((?:\\.(?:\\p{L}|\\d|_)+)*\\b)?\\b"
         },
         {
@@ -895,7 +877,6 @@
               "name": "punctuation.definition.variable.powershell"
             }
           },
-          "comment": "These are special constants.",
           "match": "(\\$)(?i:(False|Null|True))\\b"
         },
         {
@@ -910,7 +891,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "These are the other built-in constants.",
           "match": "(\\$)(?i:(Error|ExecutionContext|Host|Home|PID|PsHome|PsVersionTable|ShellID))\\b"
         },
         {
@@ -925,7 +905,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "Automatic variables are not constants, but they are read-only...",
           "match": "(\\$)((?:[$^?])|(?i:_|Args|ConsoleFileName|Event|EventArgs|EventSubscriber|ForEach|Input|LastExitCode|Matches|MyInvocation|NestedPromptLevel|Profile|PSBoundParameters|PsCmdlet|PsCulture|PSDebugContext|PSItem|PSCommandPath|PSScriptRoot|PsUICulture|Pwd|Sender|SourceArgs|SourceEventArgs|StackTrace|Switch|This)\\b)"
         },
         {
@@ -940,7 +919,6 @@
               "name": "variable.other.member.powershell"
             }
           },
-          "comment": "Style preference variables as language variables so that they stand out.",
           "match": "(\\$)(?i:(ConfirmPreference|DebugPreference|ErrorActionPreference|ErrorView|FormatEnumerationLimit|InformationPreference|LogCommandHealthEvent|LogCommandLifecycleEvent|LogEngineHealthEvent|LogEngineLifecycleEvent|LogProviderHealthEvent|LogProviderLifecycleEvent|MaximumAliasCount|MaximumDriveCount|MaximumErrorCount|MaximumFunctionCount|MaximumHistoryCount|MaximumVariableCount|OFS|OutputEncoding|PSCulture|PSDebugContext|PSDefaultParameterValues|PSEmailServer|PSItem|PSModuleAutoLoadingPreference|PSModuleAutoloadingPreference|PSSenderInfo|PSSessionApplicationName|PSSessionConfigurationName|PSSessionOption|ProgressPreference|VerbosePreference|WarningPreference|WhatIfPreference))\\b"
         },
         {

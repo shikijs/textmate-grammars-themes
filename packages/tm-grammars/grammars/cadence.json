@@ -290,7 +290,6 @@
               "name": "punctuation.separator.argument-label.cadence"
             }
           },
-          "comment": "an element with a label",
           "end": "(?=[,)\\]])",
           "patterns": [
             {
@@ -300,7 +299,6 @@
         },
         {
           "begin": "(?![,)\\]])(?=\\S)",
-          "comment": "an element without a label (i.e. anything else)",
           "end": "(?=[,)\\]])",
           "patterns": [
             {
@@ -385,7 +383,6 @@
               "name": "punctuation.definition.arguments.begin.cadence"
             }
           },
-          "comment": "foo(args) -- a call whose callee is a highlightable name",
           "end": "\\)",
           "endCaptures": {
             "0": {
@@ -532,22 +529,18 @@
           ],
           "repository": {
             "binary": {
-              "comment": "",
               "match": "(\\B\\-|\\b)0b[01]([_01]*[01])?\\b",
               "name": "constant.numeric.integer.binary.cadence"
             },
             "decimal": {
-              "comment": "",
               "match": "(\\B\\-|\\b)[0-9]([_0-9]*[0-9])?\\b",
               "name": "constant.numeric.integer.decimal.cadence"
             },
             "hexadecimal": {
-              "comment": "",
               "match": "(\\B\\-|\\b)0x[0-9A-Fa-f]([_0-9A-Fa-f]*[0-9A-Fa-f])?\\b",
               "name": "constant.numeric.integer.hexadecimal.cadence"
             },
             "octal": {
-              "comment": "",
               "match": "(\\B\\-|\\b)0o[0-7]([_0-7]*[0-7])?\\b",
               "name": "constant.numeric.integer.octal.cadence"
             }
@@ -676,7 +669,6 @@
               "name": "variable.parameter.function.cadence"
             }
           },
-          "comment": "External parameter labels are considered part of the function name",
           "match": "([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)(?=\\s*:)"
         },
         {
@@ -688,7 +680,6 @@
               "name": "entity.name.function.cadence"
             }
           },
-          "comment": "If no external label is given, the name is both the external label and the internal variable name",
           "match": "(([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*))(?=\\s*:)"
         },
         {

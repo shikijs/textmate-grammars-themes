@@ -67,7 +67,6 @@
           "name": "keyword.other.tcl"
         }
       },
-      "comment": "special-case regexp/regsub keyword in order to handle the expression",
       "end": "[\\n;\\]]",
       "patterns": [
         {
@@ -75,13 +74,11 @@
           "name": "constant.character.escape.tcl"
         },
         {
-          "comment": "switch for regexp",
           "match": "-\\w+\\s*"
         },
         {
           "applyEndPatternLast": 1,
           "begin": "--\\s*",
-          "comment": "end of switches",
           "end": "",
           "patterns": [
             {
@@ -136,7 +133,6 @@
   "repository": {
     "bare-string": {
       "begin": "(?:^|(?<=\\s))\"",
-      "comment": "matches a single quote-enclosed word without scoping",
       "end": "\"([^\\s\\]]*)",
       "endCaptures": {
         "1": {
@@ -154,7 +150,6 @@
     },
     "braces": {
       "begin": "(?:^|(?<=\\s))\\{",
-      "comment": "matches a single brace-enclosed word",
       "end": "\\}([^\\s\\]]*)",
       "endCaptures": {
         "1": {
@@ -197,7 +192,6 @@
     },
     "inner-braces": {
       "begin": "\\{",
-      "comment": "matches a nested brace in a brace-enclosed word",
       "end": "\\}",
       "patterns": [
         {
@@ -219,7 +213,6 @@
     },
     "regexp": {
       "begin": "(?=\\S)(?![\\n;\\]])",
-      "comment": "matches a single word, named as a regexp, then swallows the rest of the command",
       "end": "(?=[\\n;\\]])",
       "patterns": [
         {
@@ -243,7 +236,6 @@
         },
         {
           "begin": "[ \\t]",
-          "comment": "swallow the rest of the command",
           "end": "(?=[\\n;\\]])",
           "patterns": [
             {
@@ -268,7 +260,6 @@
     "string": {
       "applyEndPatternLast": 1,
       "begin": "(?:^|(?<=\\s))(?=\")",
-      "comment": "matches a single quote-enclosed word with scoping",
       "end": "",
       "name": "string.quoted.double.tcl",
       "patterns": [

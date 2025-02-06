@@ -286,7 +286,6 @@
         },
         {
           "begin": "\\s*~L\"\"\"",
-          "comment": "Leex Sigil",
           "end": "\\s*\"\"\"",
           "name": "sigil.leex",
           "patterns": [
@@ -300,7 +299,6 @@
         },
         {
           "begin": "\\s*~H\"\"\"",
-          "comment": "HEEx Sigil",
           "end": "\\s*\"\"\"",
           "name": "sigil.heex",
           "patterns": [
@@ -314,7 +312,6 @@
         },
         {
           "begin": "@(module|type)?doc (~[a-z])?\"\"\"",
-          "comment": "@doc with heredocs is treated as documentation",
           "end": "\\s*\"\"\"",
           "name": "comment.block.documentation.heredoc",
           "patterns": [
@@ -328,13 +325,11 @@
         },
         {
           "begin": "@(module|type)?doc ~[A-Z]\"\"\"",
-          "comment": "@doc with heredocs is treated as documentation",
           "end": "\\s*\"\"\"",
           "name": "comment.block.documentation.heredoc"
         },
         {
           "begin": "@(module|type)?doc (~[a-z])?'''",
-          "comment": "@doc with heredocs is treated as documentation",
           "end": "\\s*'''",
           "name": "comment.block.documentation.heredoc",
           "patterns": [
@@ -348,18 +343,15 @@
         },
         {
           "begin": "@(module|type)?doc ~[A-Z]'''",
-          "comment": "@doc with heredocs is treated as documentation",
           "end": "\\s*'''",
           "name": "comment.block.documentation.heredoc"
         },
         {
-          "comment": "@doc false is treated as documentation",
           "match": "@(module|type)?doc false",
           "name": "comment.block.documentation.false"
         },
         {
           "begin": "@(module|type)?doc \"",
-          "comment": "@doc with string is treated as documentation",
           "end": "\"",
           "name": "comment.block.documentation.string",
           "patterns": [
@@ -376,7 +368,6 @@
           "name": "keyword.control.elixir"
         },
         {
-          "comment": " as above, just doesn't need a 'end' and does a logic operation",
           "match": "(?<!\\.)\\b(and|not|or|when|xor|in)\\b",
           "name": "keyword.operator.elixir"
         },
@@ -486,7 +477,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "Single-quoted heredocs",
           "end": "^\\s*'''",
           "endCaptures": {
             "0": {
@@ -510,7 +500,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "single quoted string (allows for interpolation)",
           "end": "'",
           "endCaptures": {
             "0": {
@@ -534,7 +523,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "Double-quoted heredocs",
           "end": "^\\s*\"\"\"",
           "endCaptures": {
             "0": {
@@ -558,7 +546,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "double quoted string (allows for interpolation)",
           "end": "\"",
           "endCaptures": {
             "0": {
@@ -582,7 +569,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "Double-quoted heredocs sigils",
           "end": "^\\s*\"\"\"",
           "endCaptures": {
             "0": {
@@ -606,7 +592,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (allow for interpolation)",
           "end": "\\}[a-z]*",
           "endCaptures": {
             "0": {
@@ -630,7 +615,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (allow for interpolation)",
           "end": "\\][a-z]*",
           "endCaptures": {
             "0": {
@@ -654,7 +638,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (allow for interpolation)",
           "end": "\\>[a-z]*",
           "endCaptures": {
             "0": {
@@ -678,7 +661,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (allow for interpolation)",
           "end": "\\)[a-z]*",
           "endCaptures": {
             "0": {
@@ -702,7 +684,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (allow for interpolation)",
           "end": "\\1[a-z]*",
           "endCaptures": {
             "0": {
@@ -726,7 +707,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "Double-quoted heredocs sigils",
           "end": "^\\s*\"\"\"",
           "endCaptures": {
             "0": {
@@ -742,7 +722,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (without interpolation)",
           "end": "\\}[a-z]*",
           "endCaptures": {
             "0": {
@@ -758,7 +737,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (without interpolation)",
           "end": "\\][a-z]*",
           "endCaptures": {
             "0": {
@@ -774,7 +752,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (without interpolation)",
           "end": "\\>[a-z]*",
           "endCaptures": {
             "0": {
@@ -790,7 +767,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (without interpolation)",
           "end": "\\)[a-z]*",
           "endCaptures": {
             "0": {
@@ -806,7 +782,6 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "comment": "sigil (without interpolation)",
           "end": "\\1[a-z]*",
           "endCaptures": {
             "0": {
@@ -821,7 +796,6 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "comment": "symbols",
           "match": "(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|\\<\\>|===?|!==?|<<>>|<<<|>>>|~~~|::|<\\-|\\|>|=>|=~|=|/|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|\\.\\.//|>=?|<=?|&&?&?|\\+\\+?|\\-\\-?|\\|\\|?\\|?|\\!|@|\\%?\\{\\}|%|\\[\\]|\\^(\\^\\^)?)",
           "name": "constant.other.symbol.elixir"
         },
@@ -831,7 +805,6 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "comment": "symbols",
           "match": "(?>[a-zA-Z_][\\w@]*(?>[?!])?)(:)(?!:)",
           "name": "constant.other.keywords.elixir"
         },
@@ -886,7 +859,6 @@
           "name": "comment.wildcard.elixir"
         },
         {
-          "comment": "\n\t\t\tmatches questionmark-letters.\n\n\t\t\texamples (1st alternation = hex):\n\t\t\t?\\x1     ?\\x61\n\n\t\t\texamples (2rd alternation = escaped):\n\t\t\t?\\n      ?\\b\n\n\t\t\texamples (3rd alternation = normal):\n\t\t\t?a       ?A       ?0\n\t\t\t?*       ?\"       ?(\n\t\t\t?.       ?#\n\n\t\t\tthe negative lookbehind prevents against matching\n\t\t\tp(42.tainted?)\n\t\t\t",
           "match": "(?<!\\w)\\?(\\\\(x[0-9A-Fa-f]{1,2}(?![0-9A-Fa-f])\\b|[^xMC])|[^\\s\\\\])",
           "name": "constant.numeric.elixir"
         },

@@ -32,7 +32,6 @@
           "name": "keyword.other.sas"
         }
       },
-      "comment": "Begins a DATA step and provides names for any output SAS data sets, views, or programs.",
       "end": "(;)",
       "patterns": [
         {
@@ -67,7 +66,6 @@
           "name": "entity.name.class.sas"
         }
       },
-      "comment": "DATA set File-Handling Statements for DATA step",
       "end": "(;)",
       "patterns": [
         {
@@ -104,7 +102,6 @@
           "name": "support.class.sas"
         }
       },
-      "comment": "Looks like for this to work there must be a *name* as well as the patterns/include bit.",
       "end": "(?i:\\b(quit)\\s*;)",
       "endCaptures": {
         "1": {
@@ -167,17 +164,14 @@
     "constant": {
       "patterns": [
         {
-          "comment": "numeric constant",
           "match": "(?<![&\\}])\\b[0-9]*\\.?[0-9]+([eEdD][-+]?[0-9]+)?\\b",
           "name": "constant.numeric.sas"
         },
         {
-          "comment": "single quote numeric-type constant",
           "match": "(')([^']+)(')(dt|[dt])",
           "name": "constant.numeric.quote.single.sas"
         },
         {
-          "comment": "double quote numeric-type constant",
           "match": "(\")([^\"]+)(\")(dt|[dt])",
           "name": "constant.numeric.quote.double.sas"
         }
@@ -195,7 +189,6 @@
               "name": "entity.name.class.dsname.sas"
             }
           },
-          "comment": "data set with options",
           "end": "\\)",
           "patterns": [
             {
@@ -227,7 +220,6 @@
               "name": "entity.name.class.dsname.sas"
             }
           },
-          "comment": "data set without options",
           "match": "\\b((\\w+)\\.)?(\\w+)\\b"
         }
       ]
@@ -268,13 +260,11 @@
       "patterns": [
         {
           "begin": "(?<!%)(')",
-          "comment": "single quoted string block",
           "end": "(')([bx])?",
           "name": "string.quoted.single.sas"
         },
         {
           "begin": "(\")",
-          "comment": "double quoted string block",
           "end": "(\")([bx])?",
           "name": "string.quoted.double.sas"
         }

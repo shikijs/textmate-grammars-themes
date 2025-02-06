@@ -354,7 +354,6 @@
           "name": "invalid.illegal.string.erlang"
         }
       },
-      "comment": "Only whitespace characters are allowed after the beggining and before the closing sequences and those cannot be in the same line",
       "end": "^(\\s*(\\2))(?!\")",
       "endCaptures": {
         "1": {
@@ -528,7 +527,6 @@
               "name": "variable.other.erlang"
             }
           },
-          "comment": "Implicit function expression with optional module qualifier when both module and function can be atom or variable",
           "match": "\\b(fun)\\s+((([a-z][a-zA-Z\\d@_]*+)|(_[a-zA-Z\\d@_]++|[A-Z][a-zA-Z\\d@_]*+))\\s*+(:)\\s*+)?(([a-z][a-zA-Z\\d@_]*+|'[^']*+')|(_[a-zA-Z\\d@_]++|[A-Z][a-zA-Z\\d@_]*+))\\s*(/)",
           "name": "meta.expression.fun.implicit.erlang"
         },
@@ -548,7 +546,6 @@
               "name": "punctuation.separator.module-function.erlang"
             }
           },
-          "comment": "Implicit function expression with module qualifier when module can be atom or variable and function can by anything",
           "end": "(/)",
           "endCaptures": {
             "1": {
@@ -569,7 +566,6 @@
               "name": "keyword.control.fun.erlang"
             }
           },
-          "comment": "Implicit function expression when both module and function can by anything",
           "end": "(/)",
           "endCaptures": {
             "1": {
@@ -593,7 +589,6 @@
               "name": "punctuation.definition.parameters.begin.erlang"
             }
           },
-          "comment": "Function type in type specification",
           "end": "(\\))",
           "endCaptures": {
             "1": {
@@ -613,7 +608,6 @@
               "name": "keyword.control.fun.erlang"
             }
           },
-          "comment": "Explicit function expression",
           "end": "\\b(end)\\b",
           "endCaptures": {
             "1": {
@@ -1058,7 +1052,6 @@
               "name": "punctuation.definition.escape.erlang"
             }
           },
-          "comment": "escape sequence",
           "match": "(\\\\)([bdefnrstv\\\\'\"]|(\\^)[@-_a-z]|[0-7]{1,3}|x[\\da-fA-F]{2})",
           "name": "constant.character.escape.erlang"
         },
@@ -1078,7 +1071,6 @@
               "name": "punctuation.separator.placeholder-parts.erlang"
             }
           },
-          "comment": "io:fwrite format control sequence",
           "match": "(~)((\\-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[tlkK]*[~cfegswpWPBX#bx\\+ni]",
           "name": "constant.character.format.placeholder.other.erlang"
         },
@@ -1088,7 +1080,6 @@
               "name": "punctuation.definition.placeholder.erlang"
             }
           },
-          "comment": "io:fread format control sequence",
           "match": "(~)(\\*)?(\\d++)?(t)?[~du\\-#fsacl]",
           "name": "constant.character.format.placeholder.other.erlang"
         },
@@ -1734,7 +1725,6 @@
           "name": "invalid.illegal.string.erlang"
         }
       },
-      "comment": "Only whitespace characters are allowed after the beggining and before the closing sequences and those cannot be in the same line",
       "end": "^(\\s*(\\3))(?!\")",
       "endCaptures": {
         "1": {

@@ -159,6 +159,9 @@ export function traverseGrammarPatterns(a: any, callback: (pattern: string) => a
   }
   if (!a || typeof a !== 'object')
     return
+
+  delete a.comment
+
   if (a.foldingStartMarker) {
     const pattern = callback(a.foldingStartMarker)
     if (pattern != null)

@@ -486,7 +486,6 @@
     },
     "function_call": {
       "begin": "(?=\\b[a-zA-Z_]\\w*\\b\\()",
-      "comment": "Regular function call of the type \"name(args)\"",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -542,7 +541,6 @@
           "name": "keyword.language.gdscript"
         },
         {
-          "comment": "Some color schemas support meta.function-call.generic scope",
           "match": "\\b([a-zA-Z_]\\w*)\\b",
           "name": "entity.name.function.gdscript"
         }

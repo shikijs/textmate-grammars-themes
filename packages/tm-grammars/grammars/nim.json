@@ -72,7 +72,6 @@
       ]
     },
     {
-      "comment": "A nim procedure or method",
       "name": "meta.proc.nim",
       "patterns": [
         {
@@ -99,7 +98,6 @@
     },
     {
       "begin": "discard \"\"\"",
-      "comment": "A discarded triple string literal comment",
       "end": "\"\"\"(?!\")",
       "name": "comment.line.discarded.nim"
     },
@@ -110,7 +108,6 @@
       "include": "#integer_literal"
     },
     {
-      "comment": "Operator as function name",
       "match": "(?<=\\`)[^\\` ]+(?=\\`)",
       "name": "entity.name.function.nim"
     },
@@ -120,7 +117,6 @@
           "name": "keyword.control.export"
         }
       },
-      "comment": "Export qualifier.",
       "match": "\\b\\s*(\\*)(?:\\s*(?=[,:])|\\s+(?=[=]))"
     },
     {
@@ -132,79 +128,64 @@
           "name": "keyword.control.export"
         }
       },
-      "comment": "Export qualifier following a type def.",
       "match": "\\b([A-Z]\\w+)(\\*)"
     },
     {
       "include": "#string_literal"
     },
     {
-      "comment": "Language Constants.",
       "match": "\\b(true|false|Inf|NegInf|NaN|nil)\\b",
       "name": "constant.language.nim"
     },
     {
-      "comment": "Keywords that affect program control flow or scope.",
       "match": "\\b(block|break|case|continue|do|elif|else|end|except|finally|for|if|raise|return|try|when|while|yield)\\b",
       "name": "keyword.control.nim"
     },
     {
-      "comment": "Keyword boolean operators for expressions.",
       "match": "(\\b(and|in|is|isnot|not|notin|or|xor)\\b)",
       "name": "keyword.boolean.nim"
     },
     {
-      "comment": "Generic operators for expressions.",
       "match": "(=|\\+|-|\\*|/|<|>|@|\\$|~|&|%|!|\\?|\\^|\\.|:|\\\\)+",
       "name": "keyword.operator.nim"
     },
     {
-      "comment": "Other keywords.",
       "match": "(\\b(addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template)\\b)",
       "name": "keyword.other.nim"
     },
     {
-      "comment": "Invalid and unused keywords.",
       "match": "(\\b(generic|interface|lambda|out|shared)\\b)",
       "name": "invalid.illegal.invalid-keyword.nim"
     },
     {
-      "comment": "Common functions",
       "match": "\\b(new|await|assert|echo|defined|declared|newException|countup|countdown|high|low)\\b",
       "name": "keyword.other.common.function.nim"
     },
     {
-      "comment": "Built-in, concrete types.",
       "match": "\\b(((uint|int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed)\\b",
       "name": "storage.type.concrete.nim"
     },
     {
-      "comment": "Built-in, generic types.",
       "match": "\\b(range|array|seq|set|pointer)\\b",
       "name": "storage.type.generic.nim"
     },
     {
-      "comment": "Special types.",
       "match": "\\b(openarray|varargs|void)\\b",
       "name": "storage.type.generic.nim"
     },
     {
-      "comment": "Other constants.",
       "match": "\\b[A-Z][A-Z0-9_]+\\b",
       "name": "support.constant.nim"
     },
     {
-      "comment": "Other types.",
       "match": "\\b[A-Z]\\w+\\b",
       "name": "support.type.nim"
     },
     {
-      "comment": "Function call.",
       "match": "\\b\\w+\\b(?=(\\[([a-zA-Z0-9_,]|\\s)+\\])?\\()",
       "name": "support.function.any-method.nim"
     },
     {
-      "comment": "Function call (no parenthesis).",
       "match": "(?!(openarray|varargs|void|range|array|seq|set|pointer|new|await|assert|echo|defined|declared|newException|countup|countdown|high|low|((uint|int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed|addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template|and|in|is|isnot|not|notin|or|xor|proc|method|template|macro|iterator|converter|func|true|false|Inf|NegInf|NaN|nil|block|break|case|continue|do|elif|else|end|except|finally|for|if|raise|return|try|when|while|yield)\\b)\\w+\\s+(?!(and|in|is|isnot|not|notin|or|xor|[^a-zA-Z0-9_\"'`(-+]+)\\b)(?=[a-zA-Z0-9_\"'`(-+])",
       "name": "support.function.any-method.nim"
     },
@@ -419,7 +400,6 @@
           "name": "keyword.operator.nim"
         }
       },
-      "comment": "tmpl specifier",
       "match": "(tmpl(i)?)(?=( (html|xml|js|css|glsl|md))?\"\"\")"
     },
     {
@@ -1426,7 +1406,6 @@
           "name": "punctuation.definition.string.begin.nim"
         }
       },
-      "comment": "Double Quoted String",
       "end": "\"",
       "endCaptures": {
         "0": {
@@ -1467,7 +1446,6 @@
           "name": "punctuation.definition.string.begin.nim"
         }
       },
-      "comment": "Single quoted character literal",
       "end": "'",
       "endCaptures": {
         "0": {
@@ -1492,7 +1470,6 @@
           "name": "punctuation.definition.string.begin.nim"
         }
       },
-      "comment": "Triple Quoted String",
       "end": "\"\"\"(?!\")",
       "endCaptures": {
         "0": {
@@ -1508,7 +1485,6 @@
           "name": "punctuation.definition.string.begin.nim"
         }
       },
-      "comment": "Raw Triple Quoted String",
       "end": "\"\"\"",
       "endCaptures": {
         "0": {

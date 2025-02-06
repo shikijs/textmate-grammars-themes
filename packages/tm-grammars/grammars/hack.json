@@ -121,7 +121,6 @@
               "name": "punctuation.definition.comment.php"
             }
           },
-          "comment": "This now only highlights a docblock if the first line contains only /**\n- this is to stop highlighting everything as invalid when people do comment banners with /******** ...\n- Now matches /**#@+ too - used for docblock templates:\n  http://manual.phpdoc.org/HTMLframesConverter/default/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#basics.docblocktemplate",
           "end": "\\*/",
           "name": "comment.block.documentation.phpdoc.php",
           "patterns": [
@@ -224,7 +223,6 @@
               "name": "support.constant.parser-token.php"
             },
             {
-              "comment": "In PHP, any identifier which is not a variable is taken to be a constant.\nHowever, if there is no constant defined with the given name then a notice\nis generated and the constant is assumed to have the value of its name.",
               "match": "[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*",
               "name": "constant.other.php"
             }
@@ -277,7 +275,6 @@
       "patterns": [
         {
           "begin": "(?i)(?=\\\\?[a-z_0-9\\\\]+\\\\[a-z_][a-z0-9_]*\\s*\\()",
-          "comment": "Functions in a user-defined namespace (overrides any built-ins)",
           "end": "(?=\\s*\\()",
           "patterns": [
             {
@@ -296,7 +293,6 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "comment": "Root namespace function calls (built-in or user)",
           "end": "(?=\\s*\\()",
           "patterns": [
             {
@@ -517,30 +513,24 @@
       ]
     },
     "interpolation": {
-      "comment": "http://www.php.net/manual/en/language.types.string.php#language.types.string.parsing",
       "patterns": [
         {
-          "comment": "Interpolating octal values e.g. \\01 or \\07.",
           "match": "\\\\[0-7]{1,3}",
           "name": "constant.numeric.octal.php"
         },
         {
-          "comment": "Interpolating hex values e.g. \\x1 or \\xFF.",
           "match": "\\\\x[0-9A-Fa-f]{1,2}",
           "name": "constant.numeric.hex.php"
         },
         {
-          "comment": "Escaped characters in double-quoted strings e.g. \\n or \\t.",
           "match": "\\\\[nrt\\\\\\$\\\"]",
           "name": "constant.character.escape.php"
         },
         {
-          "comment": "Interpolating expressions in double-quoted strings with {} e.g. {$x->y->z[0][1]}.",
           "match": "(\\{\\$.*?\\})",
           "name": "variable.other.php"
         },
         {
-          "comment": "Interpolating simple variables, e.g. $x, $x->y, $x[z] but not $x->y->z.",
           "match": "(\\$[a-zA-Z_][a-zA-Z0-9_]*((->[a-zA-Z_][a-zA-Z0-9_]*)|(\\[[a-zA-Z0-9_]+\\]))?)",
           "name": "variable.other.php"
         }
@@ -1443,7 +1433,6 @@
     "php_doc": {
       "patterns": [
         {
-          "comment": "PHPDocumentor only recognises lines with an asterisk as the first non-whitespaces character",
           "match": "^(?!\\s*\\*).*$\\n?",
           "name": "invalid.illegal.missing-asterisk.phpdoc.php"
         },
@@ -1503,7 +1492,6 @@
       "name": "string.regexp.double-quoted.php",
       "patterns": [
         {
-          "comment": "Escaped from the regexp – there can also be 2 backslashes (since 1 will escape the first)",
           "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
@@ -1571,12 +1559,10 @@
           "name": "string.regexp.arbitrary-repetition.php"
         },
         {
-          "comment": "Escaped from the regexp – there can also be 2 backslashes (since 1 will escape the first)",
           "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
-          "comment": "Escaped from the PHP string – there can also be 2 backslashes (since 1 will escape the first)",
           "match": "\\\\{1,2}[\\\\']",
           "name": "constant.character.escape.php"
         },
@@ -1619,7 +1605,6 @@
       "name": "string.quoted.double.sql.php",
       "patterns": [
         {
-          "comment": "Open parens cause the next escaped character to not be captured as an\nescape character. Example: $x = \"SELECT (\")\";",
           "match": "\\(",
           "name": "punctuation.definition.parameters.begin.bracket.round.php"
         },
@@ -1636,12 +1621,10 @@
           "name": "constant.character.escape.php"
         },
         {
-          "comment": "Unclosed strings must be captured to avoid them eating the remainder of the PHP script\nSample case: $sql = \"SELECT * FROM bar WHERE foo = '\" . $variable . \"'\"",
           "match": "'(?=((\\\\')|[^'\"])*(\"|$))",
           "name": "string.quoted.single.unclosed.sql"
         },
         {
-          "comment": "Unclosed strings must be captured to avoid them eating the remainder of the PHP script\nSample case: $sql = \"SELECT * FROM bar WHERE foo = '\" . $variable . \"'\"",
           "match": "`(?=((\\\\`)|[^`\"])*(\"|$))",
           "name": "string.quoted.other.backtick.unclosed.sql"
         },
@@ -1690,7 +1673,6 @@
       "name": "string.quoted.single.sql.php",
       "patterns": [
         {
-          "comment": "Open parens cause the next escaped character to not be captured as an\nescape character. Example: $x = 'SELECT (')';",
           "match": "\\(",
           "name": "punctuation.definition.parameters.begin.bracket.round.php"
         },
@@ -1707,12 +1689,10 @@
           "name": "constant.character.escape.php"
         },
         {
-          "comment": "Unclosed strings must be captured to avoid them eating the remainder of the PHP script\nSample case: $sql = \"SELECT * FROM bar WHERE foo = '\" . $variable . \"'\"",
           "match": "`(?=((\\\\`)|[^`'])*('|$))",
           "name": "string.quoted.other.backtick.unclosed.sql"
         },
         {
-          "comment": "Unclosed strings must be captured to avoid them eating the remainder of the PHP script\nSample case: $sql = \"SELECT * FROM bar WHERE foo = '\" . $variable . \"'\"",
           "match": "\"(?=((\\\\\")|[^\"'])*('|$))",
           "name": "string.quoted.double.unclosed.sql"
         },
@@ -1728,7 +1708,6 @@
           "name": "punctuation.definition.string.begin.php"
         }
       },
-      "comment": "This contentName is just to allow the usage of “select scope” to select the string contents first, then the string with quotes",
       "contentName": "meta.string-contents.quoted.double.php",
       "end": "\"",
       "endCaptures": {
@@ -2345,7 +2324,6 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "comment": "Simple syntax: $foo, $foo[0], $foo[$bar], $foo->bar",
           "match": "((\\$)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*))(?:(->)(\\g<name>)|(\\[)(?:(\\d+)|((\\$)\\g<name>)|(\\w+))(\\]))?"
         },
         {
@@ -2360,7 +2338,6 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "comment": "Simple syntax with braces: \"foo${bar}baz\"",
           "match": "((\\$\\{)(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\}))"
         }
       ]
@@ -2398,7 +2375,6 @@
       ]
     },
     "xhp": {
-      "comment": "Avoid < operator expressions as best we can using Zertosh's regex",
       "patterns": [
         {
           "applyEndPatternLast": 1,
@@ -2416,7 +2392,6 @@
     "xhp-assignment": {
       "patterns": [
         {
-          "comment": "look for attribute assignment",
           "match": "=(?=\\s*(?:'|\"|{|/\\*|<|//|\\n))",
           "name": "keyword.operator.assignment.xhp"
         }
@@ -2430,7 +2405,6 @@
               "name": "entity.other.attribute-name.xhp"
             }
           },
-          "comment": "look for attribute name",
           "match": "(?<!\\S)([_\\p{L}](?:[\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}-](?<!\\.\\.))*+)(?<!\\.)(?=//|/\\*|=|\\s|>|/>)"
         }
       ]
@@ -2452,11 +2426,9 @@
               "name": "punctuation.definition.entity.xhp"
             }
           },
-          "comment": "Embeded HTML entities &blah",
           "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)"
         },
         {
-          "comment": "Entity with & and invalid name",
           "match": "&\\S*;",
           "name": "invalid.illegal.bad-ampersand.xhp"
         }
@@ -2576,7 +2548,6 @@
               "name": "entity.name.tag.open.xhp"
             }
           },
-          "comment": "Tags that end > are trapped in #xhp-tag-termination",
           "end": "\\s*(?<=</)(\\2)(>)|(/>)|((?<=</)[\\S ]*?)>",
           "endCaptures": {
             "1": {
@@ -2618,7 +2589,6 @@
               "name": "XHPStartTagEnd"
             }
           },
-          "comment": "uses non consuming search for </ in </tag>",
           "end": "(</)",
           "endCaptures": {
             "0": {
