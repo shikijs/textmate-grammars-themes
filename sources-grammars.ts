@@ -414,7 +414,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'blade',
-    source: 'https://github.com/spatie/shiki-php/blob/main/languages/blade.tmLanguage.json',
+    source: 'https://github.com/laravel/vs-code-extension/blob/main/syntaxes/blade.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
