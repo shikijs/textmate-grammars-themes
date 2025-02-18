@@ -131,7 +131,7 @@
   "name": "blade",
   "patterns": [
     {
-      "include": "text.html.basic"
+      "include": "text.html.derivative"
     }
   ],
   "repository": {
@@ -385,7 +385,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_@]) (@  (?i:\n    auth\n    |break\n    |can\n    |cannot\n    |case\n    |choice\n    |component\n    |continue\n    |dd\n    |dump\n    |each\n    |elsecan\n    |elsecannot\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |foreach\n    |forelse\n    |guest\n    |hassection\n    |if\n    |include\n    |includefirst\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |lang\n    |once\n    |prepend\n    |push\n    |section\n    |sectionMissing\n    |slot\n    |stack\n    |switch\n    |unless\n    |unset\n    |while\n    |yield\n    |servers\n    |task\n    |story\n    |finished\n    |production\n    |slack\n    |method\n    |props\n    |env\n    |livewire\n    |php\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_@]) (@  (?i:\n    auth\n    |break\n    |can\n    |canany\n    |cannot\n    |case\n    |choice\n    |component\n    |continue\n    |dd\n    |dump\n    |each\n    |elsecan\n    |elsecanany\n    |elsecannot\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |foreach\n    |forelse\n    |guest\n    |hassection\n    |if\n    |include\n    |includefirst\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |lang\n    |once\n    |prepend\n    |push\n    |section\n    |sectionMissing\n    |slot\n    |stack\n    |switch\n    |unless\n    |unset\n    |while\n    |yield\n    |servers\n    |task\n    |story\n    |finished\n    |production\n    |slack\n    |method\n    |props\n    |env\n    |livewire\n    |php\n    |class\n    |aware\n    |js\n    |checked\n    |selected\n    |disabled\n    |style\n    |readonly\n    |required\n    |pushOnce\n    |pushIf\n    |prependOnce\n    |use\n    |vite\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -409,7 +409,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_@]) (@  (?i:\n    append\n    |default\n    |else\n    |endauth\n    |endcan\n    |endcannot\n    |endcomponent\n    |endempty\n    |enderror\n    |endfor\n    |endforeach\n    |endforelse\n    |endguest\n    |endif\n    |endisset\n    |endlang\n    |endonce\n    |endprepend\n    |endpush\n    |endsection\n    |endslot\n    |endswitch\n    |endunless\n    |endwhile\n    |overwrite\n    |parent\n    |show\n    |stop\n    |endtask\n    |endstory\n    |endfinished\n    |endproduction\n    |endenv\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_@]) (@  (?i:\n    append\n    |default\n    |else\n    |endauth\n    |endcan\n    |endcanany\n    |endcannot\n    |endcomponent\n    |endempty\n    |enderror\n    |endfor\n    |endforeach\n    |endforelse\n    |endguest\n    |endif\n    |endisset\n    |endlang\n    |endonce\n    |endprepend\n    |endpush\n    |endsection\n    |endslot\n    |endswitch\n    |endunless\n    |endwhile\n    |overwrite\n    |parent\n    |show\n    |stop\n    |endtask\n    |endstory\n    |endfinished\n    |endproduction\n    |endenv\n    |endPushOnce\n    |endPushIf\n    |endPrependOnce\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -437,7 +437,7 @@
           "name": "keyword.blade"
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_@]) @(end)? (?i:  auth\n  |can\n  |cannot\n  |component\n  |empty\n  |error\n  |for\n  |foreach\n  |forelse\n  |guest\n  |if\n  |isset\n  |lang\n  |prepend\n  |push\n  |section\n  |slot\n  |switch\n  |unless\n  |verbatim\n  |while\n  |task\n  |story\n  |finished\n  |production\n  |env\n  |once\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_@]) @(end)? (?i:  auth\n  |can\n  |canany\n  |cannot\n  |component\n  |empty\n  |error\n  |for\n  |foreach\n  |forelse\n  |guest\n  |if\n  |isset\n  |lang\n  |prepend\n  |push\n  |section\n  |slot\n  |switch\n  |unless\n  |verbatim\n  |while\n  |task\n  |story\n  |finished\n  |production\n  |env\n  |once\n  |pushOnce\n  |pushIf\n  |prependOnce\n  |session\n)\\b\n",
           "name": "keyword.blade"
         },
         {
@@ -516,6 +516,41 @@
         {
           "match": "(?x)(?<![A-Za-z0-9_@]) @\\w+(?:::w+)?\\b",
           "name": "entity.name.function.blade"
+        },
+        {
+          "begin": "(:[a-z-]+)(=)(\")",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.attribute.unrecognized.$1.html"
+            },
+            "1": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.html"
+            },
+            "3": {
+              "name": "string.quoted.double.html"
+            },
+            "4": {
+              "name": "punctuation.definition.string.begin.html"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\")",
+          "endCaptures": {
+            "0": {
+              "name": "string.quoted.double.html"
+            },
+            "1": {
+              "name": "punctuation.definition.string.end.html"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#language"
+            }
+          ]
         }
       ]
     },

@@ -131,7 +131,7 @@
   "name": "blade",
   "patterns": [
     {
-      "include": "text.html.basic"
+      "include": "text.html.derivative"
     }
   ],
   "repository": {
@@ -385,7 +385,7 @@
           ]
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@(?i:auth|break|can|cannot|case|choice|component|continue|dd|dump|each|elsecan|elsecannot|elseif|empty|error|extends|for|foreach|forelse|guest|hassection|if|include|includefirst|includeif|includeunless|includewhen|inject|isset|json|lang|once|prepend|push|section|sectionMissing|slot|stack|switch|unless|unset|while|yield|servers|task|story|finished|production|slack|method|props|env|livewire|php)[\\t ]*)(\\()",
+          "begin": "(?<![A-Za-z0-9_@])(@(?i:auth|break|can|canany|cannot|case|choice|component|continue|dd|dump|each|elsecan|elsecanany|elsecannot|elseif|empty|error|extends|for|foreach|forelse|guest|hassection|if|include|includefirst|includeif|includeunless|includewhen|inject|isset|json|lang|once|prepend|push|section|sectionMissing|slot|stack|switch|unless|unset|while|yield|servers|task|story|finished|production|slack|method|props|env|livewire|php|class|aware|js|checked|selected|disabled|style|readonly|required|pushOnce|pushIf|prependOnce|use|vite)[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -409,7 +409,7 @@
           ]
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@(?i:append|default|else|endauth|endcan|endcannot|endcomponent|endempty|enderror|endfor|endforeach|endforelse|endguest|endif|endisset|endlang|endonce|endprepend|endpush|endsection|endslot|endswitch|endunless|endwhile|overwrite|parent|show|stop|endtask|endstory|endfinished|endproduction|endenv)[\\t ]*)(\\()",
+          "begin": "(?<![A-Za-z0-9_@])(@(?i:append|default|else|endauth|endcan|endcanany|endcannot|endcomponent|endempty|enderror|endfor|endforeach|endforelse|endguest|endif|endisset|endlang|endonce|endprepend|endpush|endsection|endslot|endswitch|endunless|endwhile|overwrite|parent|show|stop|endtask|endstory|endfinished|endproduction|endenv|endPushOnce|endPushIf|endPrependOnce)[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -437,7 +437,7 @@
           "name": "keyword.blade"
         },
         {
-          "match": "(?<![A-Za-z0-9_@])@(end)?(?i:auth|can|cannot|component|empty|error|for|foreach|forelse|guest|if|isset|lang|prepend|push|section|slot|switch|unless|verbatim|while|task|story|finished|production|env|once)\\b",
+          "match": "(?<![A-Za-z0-9_@])@(end)?(?i:auth|can|canany|cannot|component|empty|error|for|foreach|forelse|guest|if|isset|lang|prepend|push|section|slot|switch|unless|verbatim|while|task|story|finished|production|env|once|pushOnce|pushIf|prependOnce|session)\\b",
           "name": "keyword.blade"
         },
         {
@@ -516,6 +516,41 @@
         {
           "match": "(?<![A-Za-z0-9_@])@\\w+(?:::w+)?\\b",
           "name": "entity.name.function.blade"
+        },
+        {
+          "begin": "(:[a-z-]+)(=)(\")",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.attribute.unrecognized.$1.html"
+            },
+            "1": {
+              "name": "entity.other.attribute-name.html"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.html"
+            },
+            "3": {
+              "name": "string.quoted.double.html"
+            },
+            "4": {
+              "name": "punctuation.definition.string.begin.html"
+            }
+          },
+          "contentName": "source.php",
+          "end": "(\")",
+          "endCaptures": {
+            "0": {
+              "name": "string.quoted.double.html"
+            },
+            "1": {
+              "name": "punctuation.definition.string.end.html"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#language"
+            }
+          ]
         }
       ]
     },
