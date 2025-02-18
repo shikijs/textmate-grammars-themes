@@ -232,6 +232,16 @@ export const sourcesMarketplace: ThemeSource[] = [
       'Catppuccin Frappé',
     ],
   ),
+  ...generateMarketplaceSource(
+    'ms-vscode.Theme-TomorrowKit',
+    'https://github.com/microsoft/vscode-themes/blob/main/tomorrow/package.json',
+    [
+      'Tomorrow',
+      'Tomorrow Night Eighties',
+      'Tomorrow Night',
+      'Tomorrow Night Bright',
+    ],
+  ),
 ]
 
 export const sources = [
