@@ -578,19 +578,19 @@ export const grammars = [
     source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json',
   },
   {
-    byteSize: 5106,
+    byteSize: 5114,
     categories: [
       'general',
     ],
     displayName: 'Coq',
-    hash: '81HAmAlUu5',
-    lastUpdate: '2024-10-28T17:35:18Z',
+    hash: 'MmWE0B5BF9',
+    lastUpdate: '2025-02-18T14:07:02Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/coq/vscoq/main/LICENSE',
     name: 'coq',
     scopeName: 'source.coq',
-    sha: 'fd167d6d78d2085e86a0bbbd18d37f732e9d1396',
-    source: 'https://github.com/coq-community/vscoq/blob/fd167d6d78d2085e86a0bbbd18d37f732e9d1396/client/syntax/coq.tmLanguage.json',
+    sha: '6173968fd4b7177c60d355b2a0da30ec3a0d4351',
+    source: 'https://github.com/coq-community/vscoq/blob/6173968fd4b7177c60d355b2a0da30ec3a0d4351/client/syntax/coq.tmLanguage.json',
   },
   {
     aliases: [
