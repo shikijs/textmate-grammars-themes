@@ -56,7 +56,7 @@
           "name": "entity.name.tag.tsp"
         }
       },
-      "end": "(?=[_$[:alpha:]])|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.augment-decorator-statement.typespec",
       "patterns": [
         {
@@ -139,7 +139,7 @@
           "name": "entity.name.tag.tsp"
         }
       },
-      "end": "(?=[_$[:alpha:]])|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.decorator.typespec",
       "patterns": [
         {
@@ -735,7 +735,7 @@
       ]
     },
     "namespace-name": {
-      "begin": "(?=[_$[:alpha:]])",
+      "begin": "(?=([_$[:alpha:]]|`))",
       "end": "((?=\\{)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b))",
       "name": "meta.namespace-name.typespec",
       "patterns": [
