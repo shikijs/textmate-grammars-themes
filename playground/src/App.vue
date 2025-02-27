@@ -26,7 +26,7 @@ const duration = ref(0)
 const jsEngine = computed(() => createJavaScriptRegexEngine({
   forgiving: engineJsForgiving.value,
 }))
-const wasmEngine = createOnigurumaEngine(() => import('@shikijs/core/wasm-inlined'))
+const wasmEngine = createOnigurumaEngine(() => import('@shikijs/engine-oniguruma/wasm-inlined'))
 
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
