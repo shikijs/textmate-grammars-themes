@@ -7,7 +7,7 @@ export const themes = [
   {
     byteSize: 8801,
     displayName: 'Andromeeda',
-    hash: 'feNwHXfITl',
+    hash: 'FOHim49cZc4pzYIwAkx62AtcyEqWqIyuu_Q5aeBHVmg',
     lastUpdate: '2024-03-13T01:26:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
@@ -19,7 +19,7 @@ export const themes = [
   {
     byteSize: 13599,
     displayName: 'Aurora X',
-    hash: 'qGKgzY3VeE',
+    hash: 'VUJdjYtTbgaJyT34ikNEc3EdNtcxGK-x-NIchzYei50',
     lastUpdate: '2020-08-24T08:44:55Z',
     name: 'aurora-x',
     sha: '118727efadf48872adcd81f6c00be580097d6592',
@@ -29,7 +29,7 @@ export const themes = [
   {
     byteSize: 14889,
     displayName: 'Ayu Dark',
-    hash: 'HdBoryXDHL',
+    hash: 'EXp1vBtMHrfrTh53dBrT4vAfUBLNhDLAKezZfvGF-cA',
     lastUpdate: '2021-09-05T14:00:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
@@ -41,7 +41,7 @@ export const themes = [
   {
     byteSize: 45556,
     displayName: 'Catppuccin Frappé',
-    hash: 'mEUU6Fwj5R',
+    hash: '7A2WW4vfvQXhJcggZQrDhz2sNi2bVYXdjXhEw2LtPYQ',
     lastUpdate: '2025-02-11T17:25:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -53,7 +53,7 @@ export const themes = [
   {
     byteSize: 45554,
     displayName: 'Catppuccin Latte',
-    hash: 'OPsddH6iEq',
+    hash: '-yk1YO_PgTS_Tjmg0fq2MsX6x7SnQZgNzvDPta3q4SQ',
     lastUpdate: '2025-02-11T17:25:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -65,7 +65,7 @@ export const themes = [
   {
     byteSize: 45561,
     displayName: 'Catppuccin Macchiato',
-    hash: 'teoTkcihH6',
+    hash: 'mUM2yG3hys7XAmI8CoGmRkCRHPyneZOE-2U8W6EmL40',
     lastUpdate: '2025-02-11T17:25:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -77,7 +77,7 @@ export const themes = [
   {
     byteSize: 45553,
     displayName: 'Catppuccin Mocha',
-    hash: 'BgrN7RFbRU',
+    hash: 'fWmZXdd6OVusJ3Nku7vhnj79leYvjvkWkRSqZxgCaac',
     lastUpdate: '2025-02-11T17:25:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
@@ -89,7 +89,7 @@ export const themes = [
   {
     byteSize: 9037,
     displayName: 'Dark Plus',
-    hash: 'JfxQsrbnYK',
+    hash: 'iPw-O9tfaVr2ZxdP61mEBZmD2zWmIt_rm-f-Fz0PK5Q',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -101,7 +101,7 @@ export const themes = [
   {
     byteSize: 21006,
     displayName: 'Dracula Theme',
-    hash: 'pOvFLQfPdQ',
+    hash: 'z0956tzwuw7az3ARt7wPQZPPZjAdXj0PD9TZwq-0v0A',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
@@ -113,7 +113,7 @@ export const themes = [
   {
     byteSize: 21016,
     displayName: 'Dracula Theme Soft',
-    hash: 'Ndeo847sgy',
+    hash: 't1Vr8knQeHOFfYojUMsPjqZmGC0AKaIwMffM4GQ7uos',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
@@ -125,7 +125,7 @@ export const themes = [
   {
     byteSize: 53685,
     displayName: 'Everforest Dark',
-    hash: 'XUhzxsftG3',
+    hash: 'zuStoqdej8hZ5pSdFL0b_7w70z6cgUfxyLQ6l36aFxc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
@@ -137,7 +137,7 @@ export const themes = [
   {
     byteSize: 53688,
     displayName: 'Everforest Light',
-    hash: 'rqIYc3XGjL',
+    hash: '5fIl20vLOTn2ZuDclhbVsK07LHRRrLF258dI4pS5eZc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
@@ -149,7 +149,7 @@ export const themes = [
   {
     byteSize: 11345,
     displayName: 'GitHub Dark',
-    hash: 'An7fa11DAv',
+    hash: 'zyKaBTjmsJSq5QiKmReFfJptymPJY57o3cSENDoUNtw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -161,7 +161,7 @@ export const themes = [
   {
     byteSize: 14375,
     displayName: 'GitHub Dark Default',
-    hash: 'y485Qj7GHR',
+    hash: '4E6NvYDQnRlRuJX3caPQld2IWB1MeyUb0TJIgpAWp_s',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -173,7 +173,7 @@ export const themes = [
   {
     byteSize: 14373,
     displayName: 'GitHub Dark Dimmed',
-    hash: '6b8bTiUSB7',
+    hash: 'NWaEL-yV7O-l_sSndpdHaH4V9sMIlIpIWxJpGEpbjak',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -185,7 +185,7 @@ export const themes = [
   {
     byteSize: 14535,
     displayName: 'GitHub Dark High Contrast',
-    hash: 'CLaQ3Pd72n',
+    hash: 'nYfBiBCNKAly85hhr-BSfSzDU0n4wF0vZxsDsB6sS5g',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -197,7 +197,7 @@ export const themes = [
   {
     byteSize: 11124,
     displayName: 'GitHub Light',
-    hash: 'hWLYAC2Hok',
+    hash: 'JzFpVMN1jRIJm7oKVQM9dcvbI22K776ImM75RjZP27k',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -209,7 +209,7 @@ export const themes = [
   {
     byteSize: 14096,
     displayName: 'GitHub Light Default',
-    hash: 'Jb4SQoxqgj',
+    hash: 'hirg13mpTH9XvQX3HtD0FIA9AxnHxK60FnLIz_GZ2s4',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -221,7 +221,7 @@ export const themes = [
   {
     byteSize: 14215,
     displayName: 'GitHub Light High Contrast',
-    hash: 'l0z44uRwF4',
+    hash: 'h_omJ2HPaBGoluj9BbOFTlShurKQEg8a-CEgRyxKUjw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
@@ -233,7 +233,7 @@ export const themes = [
   {
     byteSize: 35362,
     displayName: 'Houston',
-    hash: 'Tl8cxYEnjR',
+    hash: 'yD27Y-MmNsLs7ty9UozFBYWTcrgU4E59_Aas_46qqy0',
     lastUpdate: '2023-11-10T11:20:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/withastro/houston-vscode/main/LICENSE',
@@ -245,7 +245,7 @@ export const themes = [
   {
     byteSize: 17067,
     displayName: 'Kanagawa Dragon',
-    hash: 'HadlWHBhkl',
+    hash: '5bb_koviyjSDDS1Ra7sUpUhuNjyQMQ8LvWdF0vK7I88',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
@@ -257,7 +257,7 @@ export const themes = [
   {
     byteSize: 17066,
     displayName: 'Kanagawa Lotus',
-    hash: 'mrox9djfNi',
+    hash: '6xsFcqh1kmixPMl0Wgo18lFWyNoVJ2QDEmC0hw7qKuw',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
@@ -269,7 +269,7 @@ export const themes = [
   {
     byteSize: 17063,
     displayName: 'Kanagawa Wave',
-    hash: '89oI1ZOWnA',
+    hash: '7VbMqE7JFJzJEhQJVkxLemHPraBRuxAsRrVhAu8oLYI',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
@@ -281,7 +281,7 @@ export const themes = [
   {
     byteSize: 11439,
     displayName: 'LaserWave',
-    hash: 'wICe5amWDa',
+    hash: 'Seeh-rUB09h0bkMIQQGnHMer_7_cB5Cm-VLrKaSysGw',
     lastUpdate: '2022-11-07T01:48:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Jaredk3nt/laserwave/master/LICENSE',
@@ -293,7 +293,7 @@ export const themes = [
   {
     byteSize: 9881,
     displayName: 'Light Plus',
-    hash: 'cRuFSe2B6Q',
+    hash: 'YAj58fRkK9lYjNJ2VnK-8AwJ6DnEGO-RUZQ4MYg4Ul4',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -305,7 +305,7 @@ export const themes = [
   {
     byteSize: 18555,
     displayName: 'Material Theme',
-    hash: 'j5BPwyGHk8',
+    hash: 'mKsHZKREB1cNw-dFvU6NTmk5iciXb-qdIlQuk5OrucY',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -317,7 +317,7 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Darker',
-    hash: 'pzXIf5kkLP',
+    hash: 'UUKYX026ig6MexHF46MMG4BbQ2g-ZcIPVaLQ4fd3vjw',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -329,7 +329,7 @@ export const themes = [
   {
     byteSize: 18574,
     displayName: 'Material Theme Lighter',
-    hash: 'GFHjY5bfXJ',
+    hash: 'yCZVpXw6aBfqamS9GoDw4md3tRlbwV0dkateuUf-UVQ',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -341,7 +341,7 @@ export const themes = [
   {
     byteSize: 18569,
     displayName: 'Material Theme Ocean',
-    hash: 'oGNhhMu0Pu',
+    hash: '2b-SLiUo0JXJyqgP-LT-XNdEyU7oEZxF0PJiOkIOiHE',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -353,7 +353,7 @@ export const themes = [
   {
     byteSize: 18575,
     displayName: 'Material Theme Palenight',
-    hash: 'mUFOBKfkFM',
+    hash: '8iW38C_gQULFfct2bFmRNrfeKomDHoHQchKMCnYZYhI',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
@@ -365,7 +365,7 @@ export const themes = [
   {
     byteSize: 6231,
     displayName: 'Min Dark',
-    hash: 'MGWafaHcrm',
+    hash: 'FEbBLoKZxEvYa4b-QJYBcie75a0ffsvTXiabxTk_FnA',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -377,7 +377,7 @@ export const themes = [
   {
     byteSize: 6909,
     displayName: 'Min Light',
-    hash: 'HLbZfJ85nb',
+    hash: '2LHfOz1iq7nuKWuhx86kJSIrbSIXKMoJPi86uQBzziM',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
@@ -389,7 +389,7 @@ export const themes = [
   {
     byteSize: 7824,
     displayName: 'Monokai',
-    hash: 'NlfAmNy2C5',
+    hash: 'KibaWhWqApZw_IOWOjAhC3GCVn4CPg0Hz5Zvyi_qNFg',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -401,7 +401,7 @@ export const themes = [
   {
     byteSize: 28853,
     displayName: 'Night Owl',
-    hash: 'CPTuV0qaTN',
+    hash: 'jQrCN5XBlMEznW7YhHqmI6_zmW5qAlIibADYwNnBiTY',
     lastUpdate: '2024-12-31T21:18:40Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE.md',
@@ -413,7 +413,7 @@ export const themes = [
   {
     byteSize: 26663,
     displayName: 'Nord',
-    hash: 'xxqWQtRFL6',
+    hash: 'iFA3XJ9vT-uwIbCQitJQox3xRoGOQ7zGQ8RW_WKcRo0',
     lastUpdate: '2023-04-10T15:56:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nordtheme/visual-studio-code/develop/license',
@@ -425,7 +425,7 @@ export const themes = [
   {
     byteSize: 33727,
     displayName: 'One Dark Pro',
-    hash: '4ypEgxPjc8',
+    hash: 'efCCoMpMwkxZgFGGEY0gVcMdqZlrr6caG1_UaiKwtus',
     lastUpdate: '2025-02-01T14:01:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
@@ -437,7 +437,7 @@ export const themes = [
   {
     byteSize: 25238,
     displayName: 'One Light',
-    hash: 'l6dAh6tUzF',
+    hash: 'Pd7HK9OmiYrVuXUnRsBmOSayMVqwsM7XIKrMj5bWi1Y',
     lastUpdate: '2022-10-08T13:48:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/akamud/vscode-theme-onelight/master/LICENSE',
@@ -449,7 +449,7 @@ export const themes = [
   {
     byteSize: 9235,
     displayName: 'Plastic',
-    hash: 'FDMXnib5GO',
+    hash: 'X8CzgJ4ahYdtR-TDwCyfBgsVp5f0bT4Tg921h7ZnYwM',
     lastUpdate: '2024-03-31T09:02:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
@@ -461,7 +461,7 @@ export const themes = [
   {
     byteSize: 33434,
     displayName: 'Poimandres',
-    hash: 'c0LwpsVlDP',
+    hash: 'Z7S37sG_7EHzYSYm-8GjXDFWRLknzf3Bp4YeDFTwPyQ',
     lastUpdate: '2022-09-25T11:26:55Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/drcmda/poimandres-theme/main/LICENSE',
@@ -473,7 +473,7 @@ export const themes = [
   {
     byteSize: 6202,
     displayName: 'Red',
-    hash: 'z2aCR5kWdt',
+    hash: 'OXzKdFN5lRaTzY3wPRHXyQC2o6UH2JeHz30B29MKatI',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -485,7 +485,7 @@ export const themes = [
   {
     byteSize: 21699,
     displayName: 'Rosé Pine',
-    hash: 'nzdBER7t3m',
+    hash: '_FKBfhE1A2mSshoWSrT2cDY4uXBPpm3aw1lF-LrlP3c',
     lastUpdate: '2024-10-14T23:41:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -497,7 +497,7 @@ export const themes = [
   {
     byteSize: 21710,
     displayName: 'Rosé Pine Dawn',
-    hash: 'JVYfJEcfm5',
+    hash: '7acop-66dfCFL7uGvV7xkVK20GeZ_OM6yel4kXcNw-A',
     lastUpdate: '2024-10-14T23:41:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -509,7 +509,7 @@ export const themes = [
   {
     byteSize: 21709,
     displayName: 'Rosé Pine Moon',
-    hash: 'x0nBa2Rhjs',
+    hash: 'HVvUBokeIeFG_9E6LA_iu3gOFWiiRzZ5uOt38YGzWkk',
     lastUpdate: '2024-10-14T23:41:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/license',
@@ -521,7 +521,7 @@ export const themes = [
   {
     byteSize: 9057,
     displayName: 'Slack Dark',
-    hash: 'mf8msUhVtp',
+    hash: '6_NXtXzYfaXODzejPIruwGDpZAS2Fgs77p5zyE1-DpE',
     lastUpdate: '2021-05-20T16:06:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -533,7 +533,7 @@ export const themes = [
   {
     byteSize: 9371,
     displayName: 'Slack Ochin',
-    hash: 'OGTDWaZihl',
+    hash: 'HGn3arwZByocvHN-it3J2uXPSxVaM62AUAEMTL6UbY0',
     lastUpdate: '2021-06-12T21:35:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
@@ -545,7 +545,7 @@ export const themes = [
   {
     byteSize: 20713,
     displayName: 'Snazzy Light',
-    hash: 'LUdgltR7V2',
+    hash: '9JKQGPGVc9RSHhcVFFIpgxzYlkktmBBQT716vYb8WHQ',
     lastUpdate: '2023-10-08T19:14:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/loilo/vscode-snazzy-light/master/LICENSE',
@@ -557,7 +557,7 @@ export const themes = [
   {
     byteSize: 6786,
     displayName: 'Solarized Dark',
-    hash: 'PBJJWcuPK2',
+    hash: 'A40ugjIXS3_Bnnln8gPrgVkcVwZmwthNGAGs0zsBb8Q',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -569,7 +569,7 @@ export const themes = [
   {
     byteSize: 6420,
     displayName: 'Solarized Light',
-    hash: 'nEwPcN9uOG',
+    hash: 'S2NOeLAIK92omOWhh9CxZjFsllXpN_QTQkfsYdPM12c',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -581,7 +581,7 @@ export const themes = [
   {
     byteSize: 13976,
     displayName: 'Synthwave \'84',
-    hash: 'Tfj1HvLGE9',
+    hash: 'rXOK8Tj30ibvONSW7GPeGc8udCa5x9Wv53Gdv3GpKfI',
     lastUpdate: '2022-07-27T08:21:45Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE',
@@ -593,7 +593,7 @@ export const themes = [
   {
     byteSize: 35605,
     displayName: 'Tokyo Night',
-    hash: 'yXmrQpw0hy',
+    hash: 'TCdTUUA8-O4PQA5FCUpSOb0M4JombaZ2u9YnUdnKmnI',
     lastUpdate: '2025-02-05T19:34:14Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/tokyo-night/tokyo-night-vscode-theme/master/LICENSE.txt',
@@ -605,7 +605,7 @@ export const themes = [
   {
     byteSize: 12632,
     displayName: 'Vesper',
-    hash: 'lH5x9Xoy4B',
+    hash: 'kJIzTDdvM1rTKx3fFpH3Dpq8PBW5apySCrT2Apo7tHc',
     lastUpdate: '2025-01-16T15:07:46Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md',
@@ -617,7 +617,7 @@ export const themes = [
   {
     byteSize: 13617,
     displayName: 'Vitesse Black',
-    hash: 'QTaSMwtu5s',
+    hash: 'PbXaTHC8ftCpObIk78QP3U-IcoDCbgdBIWghUfr6JzU',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
@@ -629,7 +629,7 @@ export const themes = [
   {
     byteSize: 13699,
     displayName: 'Vitesse Dark',
-    hash: 'q5xFZxFGnQ',
+    hash: 'hAHFaaEAj_0pdxweV6SmgoAlzeJoSrV5X9QTI5atqcU',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
@@ -641,7 +641,7 @@ export const themes = [
   {
     byteSize: 13556,
     displayName: 'Vitesse Light',
-    hash: 'mqhRpZKkV3',
+    hash: 'CIJ5derYw8_T-sC51bAPLeLglZRyko80PAnMgJWrMcs',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
