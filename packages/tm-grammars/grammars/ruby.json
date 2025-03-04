@@ -23,7 +23,7 @@
           "name": "entity.other.inherited-class.ruby"
         }
       },
-      "match": "\b(class)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)\\s*((<)\\s*(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*))?",
+      "match": "\\b(class)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)\\s*((<)\\s*(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*))?",
       "name": "meta.class.ruby"
     },
     {
@@ -38,7 +38,7 @@
           "name": "punctuation.separator.namespace.ruby"
         }
       },
-      "match": "\b(module)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)",
+      "match": "\\b(module)\\s+(([a-zA-Z0-9_]+)((::)[a-zA-Z0-9_]+)*)",
       "name": "meta.module.ruby"
     },
     {
@@ -50,7 +50,7 @@
           "name": "punctuation.separator.inheritance.ruby"
         }
       },
-      "match": "\b(class)\\s*(<<)\\s*",
+      "match": "\\b(class)\\s*(<<)\\s*",
       "name": "meta.class.ruby"
     },
     {
@@ -113,7 +113,7 @@
           "name": "variable.ruby"
         }
       },
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*=[^=>]"
+      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*(?==[^=>])"
     },
     {
       "captures": {
@@ -2156,7 +2156,7 @@
       ]
     },
     {
-      "begin": "(?<={|{\\s|[^A-Za-z0-9_:@$]do|^do|[^A-Za-z0-9_:@$]do\\s|^do\\s)(\\|)",
+      "begin": "(?<={|{\\s+|[^A-Za-z0-9_:@$]do|^do|[^A-Za-z0-9_:@$]do\\s+|^do\\s+)(\\|)",
       "captures": {
         "1": {
           "name": "punctuation.separator.variable.ruby"
@@ -2176,12 +2176,9 @@
                 },
                 "2": {
                   "name": "variable.other.block.ruby"
-                },
-                "3": {
-                  "name": "variable.other.block.unused.ruby variable.other.constant.ruby"
                 }
               },
-              "match": "\\G([&*]?)([a-zA-Z][\\w_]*)|(_[\\w_]*)"
+              "match": "\\G((?:&|\\*\\*?)?)([a-zA-Z_][\\w_]*)"
             }
           ]
         },
