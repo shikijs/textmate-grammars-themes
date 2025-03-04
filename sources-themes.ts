@@ -234,7 +234,7 @@ export const sourcesMarketplace: ThemeSource[] = [
   ),
   ...generateMarketplaceSource(
     'jdinhlife.gruvbox',
-    'https://github.com/jdinhify/vscode-theme-gruvbox/blob/main/package.json',
+    'https://github.com/jdinhify/vscode-theme-gruvbox/blob/main/src/main.ts',
     [
       'Gruvbox Dark Hard',
       'Gruvbox Dark Medium',
