@@ -187,7 +187,7 @@
       ]
     },
     "class_declaration": {
-      "begin": "\\b(class)\\b\\s+([\\.\\w]+|\\*)",
+      "begin": "\\b(class)\\b\\s+([A-Za-z0-9_\\$\\.]+|\\*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.class.actionscript.3"
@@ -341,7 +341,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "\\b(extends)\\b\\s+([\\.\\w]+)\\s*(?:,\\s*([\\.\\w]+))*\\s*",
+      "match": "\\b(extends)\\b\\s+([A-Za-z0-9_\\$\\.]+)\\s*(?:,\\s*([A-Za-z0-9_\\$\\.]+))*\\s*",
       "name": "meta.extends.actionscript.3"
     },
     "function_arguments": {
@@ -412,7 +412,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "\\b(implements)\\b\\s+([\\.\\w]+)\\s*(?:,\\s*([\\.\\w]+))*\\s*",
+      "match": "\\b(implements)\\b\\s+([A-Za-z0-9_\\$\\.]+)\\s*(?:,\\s*([A-Za-z0-9_\\$\\.]+))*\\s*",
       "name": "meta.implements.actionscript.3"
     },
     "import": {
@@ -452,7 +452,7 @@
       ]
     },
     "interface_declaration": {
-      "begin": "\\b(interface)\\b\\s+([\\.\\w]+)",
+      "begin": "\\b(interface)\\b\\s+([A-Za-z0-9_\\$\\.]+)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.interface.actionscript.3"
