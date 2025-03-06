@@ -1430,11 +1430,11 @@
     },
     "enum-declaration": {
       "begin": "(?=\\benum\\b)",
-      "end": "(?<=\\})",
+      "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
           "begin": "(?=enum)",
-          "end": "(?=\\{)",
+          "end": "(?=\\{)|(?=;)",
           "patterns": [
             {
               "include": "#comment"
@@ -2307,7 +2307,7 @@
     },
     "interface-declaration": {
       "begin": "(?=\\binterface\\b)",
-      "end": "(?<=\\})",
+      "end": "(?<=\\})|(?=;)",
       "patterns": [
         {
           "begin": "(interface)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
@@ -2319,7 +2319,7 @@
               "name": "entity.name.type.interface.cs"
             }
           },
-          "end": "(?=\\{)",
+          "end": "(?=\\{)|(?=;)",
           "patterns": [
             {
               "include": "#comment"
