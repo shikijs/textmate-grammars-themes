@@ -1843,8 +1843,8 @@ export const grammars = [
     licenseUrl: 'https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md',
     name: 'liquid',
     scopeName: 'text.html.liquid',
-    sha: '91ef1e508a4723c640a15f65b809a279206bed78',
-    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/91ef1e508a4723c640a15f65b809a279206bed78/grammars/liquid.tmLanguage.json',
+    sha: 'aa58eab9a09a764b10864aa8d1d48f1d5f3aac2e',
+    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/aa58eab9a09a764b10864aa8d1d48f1d5f3aac2e/grammars/liquid.tmLanguage.json',
   },
   {
     byteSize: 6040,
