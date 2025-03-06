@@ -1111,6 +1111,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['markup'],
   },
   {
+    name: 'wit',
+    displayName: 'WebAssembly Interface Types',
+    source: 'https://github.com/wasmerio/vscode-wasm/blob/master/syntaxes/wit.json',
+    categories: ['web'],
+  },
+  {
     name: 'wolfram',
     aliases: ['wl'],
     source: 'https://github.com/WolframResearch/vscode-wolfram/blob/master/syntaxes/wolfram.tmLanguage.json',
