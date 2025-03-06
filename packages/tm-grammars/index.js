@@ -1847,6 +1847,21 @@ export const grammars = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/aa58eab9a09a764b10864aa8d1d48f1d5f3aac2e/grammars/liquid.tmLanguage.json',
   },
   {
+    byteSize: 6040,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'LLVM IR',
+    hash: '9d9OREXfF1YB_RYO4rnqPFz58ki_BICzKr37qOU9nRA',
+    lastUpdate: '2024-05-30T11:17:37Z',
+    license: 'NOASSERTION',
+    licenseUrl: 'https://raw.githubusercontent.com/llvm/llvm-project/main/LICENSE.TXT',
+    name: 'llvm',
+    scopeName: 'source.llvm',
+    sha: '2705c605da2854a6b044fdf5978dea0472fd0ab1',
+    source: 'https://github.com/llvm/llvm-project/blob/2705c605da2854a6b044fdf5978dea0472fd0ab1/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
+  },
+  {
     byteSize: 2680,
     categories: [
       'utility',
