@@ -20,7 +20,7 @@
           "name": "punctuation.definition.array.begin.json5"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.array.end.json5"
@@ -90,7 +90,7 @@
           "include": "#stringDouble"
         },
         {
-          "match": "[a-zA-Z0-9_-]",
+          "match": "[a-zA-Z0-9_\\-]",
           "name": "string.key.json5"
         }
       ]
@@ -102,7 +102,7 @@
           "name": "constant.hex.numeric.json5"
         },
         {
-          "match": "[+-.]?(?=[1-9]|0(?!\\d))\\d+(\\.\\d+)?([eE][+-]?\\d+)?",
+          "match": "[+-.]?(?=[1-9]|0(?!\\d))\\d+(\\.\\d+)?([eE][+\\-]?\\d+)?",
           "name": "constant.dec.numeric.json5"
         }
       ]
@@ -114,7 +114,7 @@
           "name": "punctuation.definition.dictionary.begin.json5"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.dictionary.end.json5"
@@ -135,7 +135,7 @@
               "name": "punctuation.separator.dictionary.key-value.json5"
             }
           },
-          "end": "(,)|(?=\\})",
+          "end": "(,)|(?=})",
           "endCaptures": {
             "1": {
               "name": "punctuation.separator.dictionary.pair.json5"
@@ -153,19 +153,19 @@
           ]
         },
         {
-          "match": "[^\\s\\}]",
+          "match": "[^\\s}]",
           "name": "invalid.illegal.expected-dictionary-separator.json5"
         }
       ]
     },
     "stringDouble": {
-      "begin": "[\"]",
+      "begin": "\"",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.json5"
         }
       },
-      "end": "[\"]",
+      "end": "\"",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.json5"
@@ -174,7 +174,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))",
+          "match": "\\\\(?:[\"\\\\/bfnrt]|u\\h{4})",
           "name": "constant.character.escape.json5"
         },
         {
@@ -184,13 +184,13 @@
       ]
     },
     "stringSingle": {
-      "begin": "[']",
+      "begin": "'",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.json5"
         }
       },
-      "end": "[']",
+      "end": "'",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.json5"
@@ -199,7 +199,7 @@
       "name": "string.quoted.json5",
       "patterns": [
         {
-          "match": "(?:\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4}))",
+          "match": "\\\\(?:[\"\\\\/bfnrt]|u\\h{4})",
           "name": "constant.character.escape.json5"
         },
         {

@@ -5,8 +5,8 @@
     "exs"
   ],
   "firstLineMatch": "^#!/.*\\belixir",
-  "foldingStartMarker": "(after|else|catch|rescue|\\-\\>|\\{|\\[|do)\\s*$",
-  "foldingStopMarker": "^\\s*((\\}|\\]|after|else|catch|rescue)\\s*$|end\\b)",
+  "foldingStartMarker": "(after|else|catch|rescue|->|[{\\[]|do)\\s*$",
+  "foldingStopMarker": "^\\s*(([}\\]]|after|else|catch|rescue)\\s*$|end\\b)",
   "name": "elixir",
   "patterns": [
     {
@@ -49,7 +49,7 @@
           "name": "entity.name.function.elixir"
         }
       },
-      "match": "(\\:\\w+)\\s*(\\.)\\s*([_]?\\w*[!?]?)"
+      "match": "(:\\w+)\\s*(\\.)\\s*(_?\\w*[!?]?)"
     },
     {
       "captures": {
@@ -60,7 +60,7 @@
           "name": "entity.name.function.elixir"
         }
       },
-      "match": "(\\|\\>)\\s*([a-z_]\\w*[!?]?)"
+      "match": "(\\|>)\\s*([a-z_]\\w*[!?]?)"
     },
     {
       "match": "\\b[a-z_]\\w*[!?]?(?=\\s*\\.?\\s*\\()",
@@ -95,7 +95,7 @@
       "include": "#core_syntax"
     },
     {
-      "begin": "^(?=.*->)((?![^\"']*(\"|')[^\"']*->)|(?=.*->[^\"']*(\"|')[^\"']*->))((?!.*\\([^\\)]*->)|(?=[^\\(\\)]*->)|(?=\\s*\\(.*\\).*->))((?!.*\\b(fn)\\b)|(?=.*->.*\\bfn\\b))",
+      "begin": "^(?=.*->)((?![^\"']*([\"'])[^\"']*->)|(?=.*->[^\"']*([\"'])[^\"']*->))((?!.*\\([^)]*->)|(?=[^()]*->)|(?=\\s*\\(.*\\).*->))((?!.*\\b(fn)\\b)|(?=.*->.*\\bfn\\b))",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.elixir"
@@ -191,7 +191,7 @@
           ]
         },
         {
-          "begin": "^\\s*(def|defmacro|defdelegate|defguard)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?))((\\()|\\s*)",
+          "begin": "^\\s*(def(?:|macro|delegate|guard))\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?))((\\()|\\s*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.module.elixir"
@@ -203,7 +203,7 @@
               "name": "punctuation.section.function.elixir"
             }
           },
-          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(def|defn|defmacro|defdelegate|defguard)\\b)",
+          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(def(?:|n|macro|delegate|guard))\\b)",
           "endCaptures": {
             "1": {
               "name": "constant.other.keywords.elixir"
@@ -224,7 +224,7 @@
                   "name": "keyword.operator.other.elixir"
                 }
               },
-              "end": ",|\\)|$",
+              "end": "[,)]|$",
               "patterns": [
                 {
                   "include": "$self"
@@ -238,7 +238,7 @@
           ]
         },
         {
-          "begin": "^\\s*(defp|defnp|defmacrop|defguardp)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?))((\\()|\\s*)",
+          "begin": "^\\s*(def(?:p|np|macrop|guardp))\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?))((\\()|\\s*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.module.elixir"
@@ -250,7 +250,7 @@
               "name": "punctuation.section.function.elixir"
             }
           },
-          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(defp|defmacrop|defguardp)\\b)",
+          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(def(?:p|macrop|guardp))\\b)",
           "endCaptures": {
             "1": {
               "name": "constant.other.keywords.elixir"
@@ -271,7 +271,7 @@
                   "name": "keyword.operator.other.elixir"
                 }
               },
-              "end": ",|\\)|$",
+              "end": "[,)]|$",
               "patterns": [
                 {
                   "include": "$self"
@@ -402,7 +402,7 @@
           "name": "variable.other.anonymous.elixir"
         },
         {
-          "match": "&(?![&])",
+          "match": "&(?!&)",
           "name": "variable.other.anonymous.elixir"
         },
         {
@@ -415,11 +415,11 @@
           "name": "variable.other.capture.elixir"
         },
         {
-          "match": "\\b0x[0-9A-Fa-f](?>_?[0-9A-Fa-f])*\\b",
+          "match": "\\b0x\\h(?>_?\\h)*\\b",
           "name": "constant.numeric.hex.elixir"
         },
         {
-          "match": "\\b\\d(?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)+)([eE][-+]?\\d(?>_?\\d)*)?\\b",
+          "match": "\\b\\d(?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)+)([eE][\\-+]?\\d(?>_?\\d)*)?\\b",
           "name": "constant.numeric.float.elixir"
         },
         {
@@ -471,7 +471,7 @@
           ]
         },
         {
-          "begin": "(?>''')",
+          "begin": "'''",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -517,7 +517,7 @@
           ]
         },
         {
-          "begin": "(?>\"\"\")",
+          "begin": "\"\"\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -563,7 +563,7 @@
           ]
         },
         {
-          "begin": "~[a-z](?>\"\"\")",
+          "begin": "~[a-z]\"\"\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -592,7 +592,7 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\}[a-z]*",
+          "end": "}[a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -615,7 +615,7 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\][a-z]*",
+          "end": "][a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -632,13 +632,13 @@
           ]
         },
         {
-          "begin": "~[a-z]\\<",
+          "begin": "~[a-z]<",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\>[a-z]*",
+          "end": ">[a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -678,7 +678,7 @@
           ]
         },
         {
-          "begin": "~[a-z]([^\\w])",
+          "begin": "~[a-z](\\W)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -701,7 +701,7 @@
           ]
         },
         {
-          "begin": "~[A-Z](?>\"\"\")",
+          "begin": "~[A-Z]\"\"\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -722,7 +722,7 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\}[a-z]*",
+          "end": "}[a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -737,7 +737,7 @@
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\][a-z]*",
+          "end": "][a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -746,13 +746,13 @@
           "name": "string.quoted.other.sigil.literal.elixir"
         },
         {
-          "begin": "~[A-Z]\\<",
+          "begin": "~[A-Z]<",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
             }
           },
-          "end": "\\>[a-z]*",
+          "end": ">[a-z]*",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.elixir"
@@ -776,7 +776,7 @@
           "name": "string.quoted.other.sigil.literal.elixir"
         },
         {
-          "begin": "~[A-Z]([^\\w])",
+          "begin": "~[A-Z](\\W)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.elixir"
@@ -796,7 +796,7 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "match": "(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|\\<\\>|===?|!==?|<<>>|<<<|>>>|~~~|::|<\\-|\\|>|=>|=~|=|/|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|\\.\\.//|>=?|<=?|&&?&?|\\+\\+?|\\-\\-?|\\|\\|?\\|?|\\!|@|\\%?\\{\\}|%|\\[\\]|\\^(\\^\\^)?)",
+          "match": "(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|<>|===?|!==?|<<>>|<<<|>>>|~~~|::|<-|\\|>|=>|=~|[=/]|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|\\.\\.//|>=?|<=?|&&?&?|\\+\\+?|--?|\\|\\|?\\|?|[!@]|%?\\{}|%|\\[]|\\^(\\^\\^)?)",
           "name": "constant.other.symbol.elixir"
         },
         {
@@ -805,7 +805,7 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "match": "(?>[a-zA-Z_][\\w@]*(?>[?!])?)(:)(?!:)",
+          "match": "(?>[a-zA-Z_][\\w@]*[?!]?)(:)(?!:)",
           "name": "constant.other.keywords.elixir"
         },
         {
@@ -851,7 +851,7 @@
           ]
         },
         {
-          "match": "\\b_([^_][\\w]+[?!]?)",
+          "match": "\\b_([^_]\\w+[?!]?)",
           "name": "comment.unused.elixir"
         },
         {
@@ -859,23 +859,23 @@
           "name": "comment.wildcard.elixir"
         },
         {
-          "match": "(?<!\\w)\\?(\\\\(x[0-9A-Fa-f]{1,2}(?![0-9A-Fa-f])\\b|[^xMC])|[^\\s\\\\])",
+          "match": "(?<!\\w)\\?(\\\\(x\\h{1,2}(?!\\h)\\b|[^xMC])|[^\\s\\\\])",
           "name": "constant.numeric.elixir"
         },
         {
-          "match": "\\+\\+|\\-\\-|<\\|>",
+          "match": "\\+\\+|--|<\\|>",
           "name": "keyword.operator.concatenation.elixir"
         },
         {
-          "match": "\\|\\>|<~>|<>|<<<|>>>|~>>|<<~|~>|<~|<\\|>",
+          "match": "\\|>|<~>|<>|<<<|>>>|~>>|<<~|~>|<~|<\\|>",
           "name": "keyword.operator.sigils_1.elixir"
         },
         {
-          "match": "&&&|&&",
+          "match": "&&(?:&|)",
           "name": "keyword.operator.sigils_2.elixir"
         },
         {
-          "match": "<\\-|\\\\\\\\",
+          "match": "<-|\\\\\\\\",
           "name": "keyword.operator.sigils_3.elixir"
         },
         {
@@ -891,11 +891,11 @@
           "name": "keyword.operator.logical.elixir"
         },
         {
-          "match": "(\\*|\\+|\\-|/)",
+          "match": "([*+\\-/])",
           "name": "keyword.operator.arithmetic.elixir"
         },
         {
-          "match": "\\||\\+\\+|\\-\\-|\\*\\*|\\\\\\\\|\\<\\-|\\<\\>|\\<\\<|\\>\\>|\\:\\:|\\.\\.|//|\\|>|~|=>|&",
+          "match": "\\||\\+\\+|--|\\*\\*|\\\\\\\\|<-|<>|<<|>>|::|\\.\\.|//|\\|>|~|=>|&",
           "name": "keyword.operator.other.elixir"
         },
         {
@@ -907,7 +907,7 @@
           "name": "punctuation.separator.other.elixir"
         },
         {
-          "match": "\\;",
+          "match": ";",
           "name": "punctuation.separator.statement.elixir"
         },
         {
@@ -919,15 +919,15 @@
           "name": "punctuation.separator.method.elixir"
         },
         {
-          "match": "\\{|\\}",
+          "match": "[{}]",
           "name": "punctuation.section.scope.elixir"
         },
         {
-          "match": "\\[|\\]",
+          "match": "[\\[\\]]",
           "name": "punctuation.section.array.elixir"
         },
         {
-          "match": "\\(|\\)",
+          "match": "[()]",
           "name": "punctuation.section.function.elixir"
         }
       ]
@@ -944,7 +944,7 @@
         }
       },
       "contentName": "source.elixir",
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.embedded.end.elixir"
@@ -969,7 +969,7 @@
               "name": "punctuation.section.scope.elixir"
             }
           },
-          "end": "\\}",
+          "end": "}",
           "patterns": [
             {
               "include": "#nest_curly_and_self"

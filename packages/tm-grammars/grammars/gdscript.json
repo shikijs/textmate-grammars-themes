@@ -54,7 +54,7 @@
       "match": "(@)(export|export_group|export_color_no_alpha|export_custom|export_dir|export_enum|export_exp_easing|export_file|export_flags|export_flags_2d_navigation|export_flags_2d_physics|export_flags_2d_render|export_flags_3d_navigation|export_flags_3d_physics|export_flags_3d_render|export_global_dir|export_global_file|export_multiline|export_node_path|export_placeholder|export_range|export_storage|icon|onready|rpc|tool|warning_ignore|static_unload)\\b"
     },
     "any_method": {
-      "match": "\\b([A-Za-z_]\\w*)\\b(?=\\s*(?:[(]))",
+      "match": "\\b([A-Za-z_]\\w*)\\b(?=\\s*\\()",
       "name": "entity.name.function.other.gdscript"
     },
     "any_property": {
@@ -69,14 +69,14 @@
           "name": "variable.other.property.gdscript"
         }
       },
-      "match": "\\b(\\.)\\s*(?<![@\\$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?![(])"
+      "match": "\\b(\\.)\\s*(?<![@$#%])(?:([A-Z_][A-Z_0-9]*)|([A-Za-z_]\\w*))\\b(?!\\()"
     },
     "any_variable": {
-      "match": "\\b(?<![@\\$#%])([A-Za-z_]\\w*)\\b(?![(])",
+      "match": "\\b(?<![@$#%])([A-Za-z_]\\w*)\\b(?!\\()",
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
-      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|\\*|/|%|\\+|-",
+      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|[*/%+\\-]",
       "name": "keyword.operator.arithmetic.gdscript"
     },
     "assignment_operator": {
@@ -181,7 +181,7 @@
       ]
     },
     "bitwise_operator": {
-      "match": "&|\\||<<=|>>=|<<|>>|\\^|~",
+      "match": "[\\&|]|<<=|>>=|<<|>>|[\\^~]",
       "name": "keyword.operator.bitwise.gdscript"
     },
     "boolean_operator": {
@@ -256,7 +256,7 @@
       ]
     },
     "builtin_get_node_shorthand_quoted": {
-      "begin": "(?:(\\$|%)|(&|\\^|@))(\"|')",
+      "begin": "(?:([$%])|([\\&\\^@]))([\"'])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.gdscript"
@@ -338,11 +338,11 @@
           "name": "punctuation.definition.comment.number-sign.gdscript"
         }
       },
-      "match": "(##|#).*$\\n?",
+      "match": "(#(?:#|)).*$\\n?",
       "name": "comment.line.number-sign.gdscript"
     },
     "compare_operator": {
-      "match": "<=|>=|==|<|>|!=|!",
+      "match": "<=|>=|==|[<>]|!=|!",
       "name": "keyword.operator.comparison.gdscript"
     },
     "const_vars": {
@@ -360,7 +360,7 @@
           "name": "punctuation.definition.dict.begin.gdscript"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.dict.end.gdscript"
@@ -688,7 +688,7 @@
               "name": "punctuation.separator.continuation.line.gdscript"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))|(\\G$))",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|['\"]))|(\\G$))",
           "patterns": [
             {
               "include": "#base_expression"
@@ -722,7 +722,7 @@
           "name": "keyword.control.gdscript"
         }
       },
-      "match": "^\n\\s*(match)"
+      "match": "^\\n\\s*(match)"
     },
     "nodepath_function": {
       "begin": "(get_node_or_null|has_node|has_node_and_resource|find_node|get_node)\\s*(\\()",
@@ -744,7 +744,7 @@
       "name": "meta.function.gdscript",
       "patterns": [
         {
-          "begin": "(\"|')",
+          "begin": "([\"'])",
           "end": "\\1",
           "name": "string.quoted.gdscript meta.literal.nodepath.gdscript constant.character.escape",
           "patterns": [
@@ -760,17 +760,17 @@
       ]
     },
     "nodepath_object": {
-      "begin": "(NodePath)\\s*(?:\\()",
+      "begin": "(NodePath)\\s*\\(",
       "beginCaptures": {
         "1": {
           "name": "support.class.library.gdscript"
         }
       },
-      "end": "(?:\\))",
+      "end": "\\)",
       "name": "meta.literal.nodepath.gdscript",
       "patterns": [
         {
-          "begin": "(\"|')",
+          "begin": "([\"'])",
           "end": "\\1",
           "name": "string.quoted.gdscript constant.character.escape.gdscript",
           "patterns": [
@@ -789,23 +789,27 @@
           "name": "constant.numeric.integer.binary.gdscript"
         },
         {
-          "match": "0x[0-9A-Fa-f_]+",
+          "match": "0x[_\\h]+",
           "name": "constant.numeric.integer.hexadecimal.gdscript"
         },
         {
-          "match": "\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?",
+          "match": "\\.[0-9][0-9_]*([eE][+\\-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "([0-9][0-9_]*)?\\.[0-9_]*([eE][+-]?[0-9_]+)?",
+          "match": "([0-9][0-9_]*)\\.[0-9_]*([eE][+\\-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[0-9][0-9_]*[eE][+-]?[0-9_]+",
+          "match": "([0-9][0-9_]*)?\\.[0-9_]*([eE][+\\-]?[0-9_]+)",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[-]?[0-9][0-9_]*",
+          "match": "[0-9][0-9_]*[eE][+\\-]?[0-9_]+",
+          "name": "constant.numeric.float.gdscript"
+        },
+        {
+          "match": "-?[0-9][0-9_]*",
           "name": "constant.numeric.integer.gdscript"
         }
       ]
@@ -940,7 +944,7 @@
           "name": "punctuation.definition.list.begin.gdscript"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.list.end.gdscript"
@@ -978,7 +982,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
+          "match": "^\\s*(case|match)(?=\\s*([\\-+\\w\\d(\\[{'\":#]|$))\\b"
         }
       ]
     },
@@ -996,7 +1000,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "({{|}}|(?:{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
           "name": "meta.format.brace.gdscript"
         },
         {
@@ -1011,7 +1015,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "({\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?\\}[^'\"{}\\n]*)*})",
+          "match": "(\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?}[^'\"{}\\n]*)*})",
           "name": "meta.format.brace.gdscript"
         }
       ]
@@ -1022,11 +1026,11 @@
           "name": "constant.character.format.placeholder.other.gdscript"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[\\-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.gdscript"
     },
     "strings": {
-      "begin": "(r)?(\"\"\"|'''|\"|')",
+      "begin": "(r)?(\"\"\"|'''|[\"'])",
       "beginCaptures": {
         "1": {
           "name": "constant.character.escape.gdscript"
@@ -1101,7 +1105,7 @@
               "name": "entity.name.function.gdscript"
             }
           },
-          "match": "(setget)\\s+([a-zA-Z_]\\w*)(?:[,]\\s*([a-zA-Z_]\\w*))?"
+          "match": "(setget)\\s+([a-zA-Z_]\\w*)(?:,\\s*([a-zA-Z_]\\w*))?"
         },
         {
           "include": "#expression"

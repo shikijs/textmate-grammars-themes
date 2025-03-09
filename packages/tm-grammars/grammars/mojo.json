@@ -41,8 +41,8 @@
       "name": "keyword.operator.assignment.python"
     },
     "backticks": {
-      "begin": "\\`",
-      "end": "(?:\\`|(?<!\\\\)(\\n))",
+      "begin": "`",
+      "end": "(?:`|(?<!\\\\)(\\n))",
       "name": "string.quoted.single.python"
     },
     "builtin-callables": {
@@ -115,7 +115,7 @@
     "class-declaration": {
       "patterns": [
         {
-          "begin": "\\s*(class|struct|trait)\\s+(?=[[:alpha:]_]\\w*\\s*(:|\\())",
+          "begin": "\\s*(class|struct|trait)\\s+(?=[[:alpha:]_]\\w*\\s*([:(]))",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.python"
@@ -155,7 +155,7 @@
       "name": "meta.class.inheritance.python",
       "patterns": [
         {
-          "match": "(\\*\\*|\\*)",
+          "match": "(\\*(?:\\*|))",
           "name": "keyword.operator.unpacking.arguments.python"
         },
         {
@@ -221,12 +221,12 @@
           "name": "keyword.codetag.notation.python"
         }
       },
-      "match": "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+      "match": "\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b"
     },
     "comments": {
       "patterns": [
         {
-          "begin": "(?:\\#\\s*(type:)\\s*+(?!$|\\#))",
+          "begin": "#\\s*(type:)\\s*+(?!$|#)",
           "beginCaptures": {
             "0": {
               "name": "meta.typehint.comment.python"
@@ -236,11 +236,11 @@
             }
           },
           "contentName": "meta.typehint.comment.python",
-          "end": "(?:$|(?=\\#))",
+          "end": "(?:$|(?=#))",
           "name": "comment.line.number-sign.python",
           "patterns": [
             {
-              "match": "\\Gignore(?=\\s*(?:$|\\#))",
+              "match": "\\Gignore(?=\\s*(?:$|#))",
               "name": "comment.typehint.ignore.notation.python"
             },
             {
@@ -248,7 +248,7 @@
               "name": "comment.typehint.type.notation.python"
             },
             {
-              "match": "([\\[\\]\\(\\),\\.\\=\\*]|(->))",
+              "match": "([\\[\\](),.=*]|(->))",
               "name": "comment.typehint.punctuation.notation.python"
             },
             {
@@ -263,7 +263,7 @@
       ]
     },
     "comments-base": {
-      "begin": "(\\#)",
+      "begin": "(#)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.comment.python"
@@ -278,7 +278,7 @@
       ]
     },
     "comments-string-double-three": {
-      "begin": "(\\#)",
+      "begin": "(#)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.comment.python"
@@ -293,7 +293,7 @@
       ]
     },
     "comments-string-single-three": {
-      "begin": "(\\#)",
+      "begin": "(#)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.comment.python"
@@ -314,7 +314,7 @@
           "name": "punctuation.definition.dict.begin.python"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.dict.end.python"
@@ -340,7 +340,7 @@
           "name": "punctuation.definition.decorator.python"
         }
       },
-      "end": "(\\))(?:(.*?)(?=\\s*(?:\\#|$)))|(?=\\n|\\#)",
+      "end": "(\\))(.*?)(?=\\s*(?:#|$))|(?=[\\n#])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.arguments.end.python"
@@ -385,7 +385,7 @@
               "name": "invalid.illegal.decorator.python"
             }
           },
-          "match": "\\s*([^([:alpha:]\\s_\\.#\\\\].*?)(?=\\#|$)",
+          "match": "\\s*([^([:alpha:]\\s_.#\\\\].*?)(?=#|$)",
           "name": "invalid.illegal.decorator.python"
         }
       ]
@@ -393,10 +393,10 @@
     "double-one-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\^?\\](?!.*?\\])"
+          "match": "\\[\\^?](?!.*?])"
         },
         {
-          "begin": "(\\[)(\\^)?(\\])?",
+          "begin": "(\\[)(\\^)?(])?",
           "beginCaptures": {
             "1": {
               "name": "punctuation.character.set.begin.regexp constant.other.set.regexp"
@@ -408,7 +408,7 @@
               "name": "constant.character.set.regexp"
             }
           },
-          "end": "(\\]|(?=\"))|((?=(?<!\\\\)\\n))",
+          "end": "(]|(?=\"))|((?=(?<!\\\\)\\n))",
           "endCaptures": {
             "1": {
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
@@ -423,7 +423,7 @@
               "include": "#regexp-charecter-set-escapes"
             },
             {
-              "match": "[^\\n]",
+              "match": "\\N",
               "name": "constant.character.set.regexp"
             }
           ]
@@ -454,7 +454,7 @@
       ]
     },
     "double-one-regexp-conditional": {
-      "begin": "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)",
+      "begin": "(\\()\\?\\((\\w+(?:\\s+\\p{alnum}+)?|\\d+)\\)",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.conditional.regexp"
@@ -622,7 +622,7 @@
       ]
     },
     "double-one-regexp-named-group": {
-      "begin": "(\\()(\\?P<\\w+(?:\\s+[[:alnum:]]+)?>)",
+      "begin": "(\\()(\\?P<\\w+(?:\\s+\\p{alnum}+)?>)",
       "beginCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp"
@@ -694,10 +694,10 @@
     "double-three-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\^?\\](?!.*?\\])"
+          "match": "\\[\\^?](?!.*?])"
         },
         {
-          "begin": "(\\[)(\\^)?(\\])?",
+          "begin": "(\\[)(\\^)?(])?",
           "beginCaptures": {
             "1": {
               "name": "punctuation.character.set.begin.regexp constant.other.set.regexp"
@@ -709,7 +709,7 @@
               "name": "constant.character.set.regexp"
             }
           },
-          "end": "(\\]|(?=\"\"\"))",
+          "end": "(]|(?=\"\"\"))",
           "endCaptures": {
             "1": {
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
@@ -724,7 +724,7 @@
               "include": "#regexp-charecter-set-escapes"
             },
             {
-              "match": "[^\\n]",
+              "match": "\\N",
               "name": "constant.character.set.regexp"
             }
           ]
@@ -755,7 +755,7 @@
       ]
     },
     "double-three-regexp-conditional": {
-      "begin": "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)",
+      "begin": "(\\()\\?\\((\\w+(?:\\s+\\p{alnum}+)?|\\d+)\\)",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.conditional.regexp"
@@ -941,7 +941,7 @@
       ]
     },
     "double-three-regexp-named-group": {
-      "begin": "(\\()(\\?P<\\w+(?:\\s+[[:alnum:]]+)?>)",
+      "begin": "(\\()(\\?P<\\w+(?:\\s+\\p{alnum}+)?>)",
       "beginCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp"
@@ -1024,13 +1024,13 @@
       "name": "constant.other.ellipsis.python"
     },
     "escape-sequence": {
-      "match": "\\\\(x[0-9A-Fa-f]{2}|[0-7]{1,3}|[\\\\\"'abfnrtv])",
+      "match": "\\\\(x\\h{2}|[0-7]{1,3}|[\\\\\"'abfnrtv])",
       "name": "constant.character.escape.python"
     },
     "escape-sequence-unicode": {
       "patterns": [
         {
-          "match": "\\\\(u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8}|N\\{[\\w\\s]+?\\})",
+          "match": "\\\\(u\\h{4}|U\\h{8}|N\\{[\\w\\s]+?})",
           "name": "constant.character.escape.python"
         }
       ]
@@ -1159,7 +1159,7 @@
           "include": "#fstring-formatting-braces"
         },
         {
-          "match": "\\{.*?\\}"
+          "match": "\\{.*?}"
         },
         {
           "include": "#regexp-base-common"
@@ -1167,7 +1167,7 @@
       ]
     },
     "fregexp-quantifier": {
-      "match": "\\{\\{(\\d+|\\d+,(\\d+)?|,\\d+)\\}\\}",
+      "match": "\\{\\{(\\d+|\\d+,(\\d+)?|,\\d+)}}",
       "name": "keyword.operator.quantifier.regexp"
     },
     "fstring-fnorm-quoted-multi-line": {
@@ -1270,10 +1270,10 @@
               "name": "constant.character.format.placeholder.other.python"
             }
           },
-          "match": "({)(\\s*?)(})"
+          "match": "(\\{)(\\s*?)(})"
         },
         {
-          "match": "({{|}})",
+          "match": "(\\{\\{|}})",
           "name": "constant.character.escape.python"
         }
       ]
@@ -1312,7 +1312,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "end": "(\\})|(?=\\n)",
+      "end": "(})|(?=\\n)",
       "endCaptures": {
         "1": {
           "name": "constant.character.format.placeholder.other.python"
@@ -1334,7 +1334,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "constant.character.format.placeholder.other.python"
@@ -1350,7 +1350,7 @@
       ]
     },
     "fstring-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.multi.python"
     },
     "fstring-normf-quoted-multi-line": {
@@ -1440,7 +1440,7 @@
       ]
     },
     "fstring-raw-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.raw.multi.python"
     },
     "fstring-raw-quoted-multi-line": {
@@ -1514,7 +1514,7 @@
       ]
     },
     "fstring-raw-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.raw.single.python"
     },
     "fstring-single-brace": {
@@ -1524,7 +1524,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "end": "(\\})|(?=\\n)",
+      "end": "(})|(?=\\n)",
       "endCaptures": {
         "1": {
           "name": "constant.character.format.placeholder.other.python"
@@ -1540,7 +1540,7 @@
       ]
     },
     "fstring-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\\\}\\{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.single.python"
     },
     "fstring-terminator-multi": {
@@ -1562,7 +1562,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![rsa])?)(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-multi-tail"
@@ -1570,7 +1570,7 @@
       ]
     },
     "fstring-terminator-multi-tail": {
-      "begin": "((?:=?)(?:![rsa])?)(:)(?=.*?{)",
+      "begin": "(=?(?:![rsa])?)(:)(?=.*?\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.format.python"
@@ -1604,15 +1604,15 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "(\\#)",
+          "match": "(#)",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([-+ ])",
+          "match": "([\\-+ ])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=^])",
+          "match": "([<>=\\^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1640,7 +1640,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "((?:=?)(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![rsa])?)(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-single-tail"
@@ -1648,7 +1648,7 @@
       ]
     },
     "fstring-terminator-single-tail": {
-      "begin": "((?:=?)(?:![rsa])?)(:)(?=.*?{)",
+      "begin": "(=?(?:![rsa])?)(:)(?=.*?\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.format.python"
@@ -1682,15 +1682,15 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "(\\#)",
+          "match": "(#)",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([-+ ])",
+          "match": "([\\-+ ])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=^])",
+          "match": "([<>=\\^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1780,7 +1780,7 @@
       ]
     },
     "function-declaration": {
-      "begin": "\\s*(?:\\b(async)\\s+)?\\b(def|fn)\\s+(?=[[:alpha:]_][[:word:]]*\\s*[\\(\\[])",
+      "begin": "\\s*(?:\\b(async)\\s+)?\\b(def|fn)\\s+(?=[[:alpha:]_]\\p{word}*\\s*[(\\[])",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.async.python"
@@ -1877,7 +1877,7 @@
           "name": "keyword.control.import.python"
         }
       },
-      "match": "\\b(?:(and|assert|async|await|break|class|struct|trait|continue|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[\\.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(def|fn|capturing|raises)|(as|import))\\b"
+      "match": "\\b(?:(and|assert|async|await|break|class|struct|trait|continue|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(def|fn|capturing|raises)|(as|import))\\b"
     },
     "illegal-object-name": {
       "match": "\\b(True|False|None)\\b",
@@ -1967,7 +1967,7 @@
       "patterns": [
         {
           "begin": "\\b(?=[[:alpha:]_]\\w*\\s*\\[)",
-          "end": "(\\])",
+          "end": "(])",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.arguments.end.python"
@@ -1996,7 +1996,7 @@
         }
       },
       "contentName": "meta.item-access.arguments.python",
-      "end": "(?=\\])",
+      "end": "(?=])",
       "patterns": [
         {
           "match": ":",
@@ -2032,7 +2032,7 @@
               "name": "keyword.control.flow.python"
             }
           },
-          "match": "((?<=\\.)lambda|lambda(?=\\s*[\\.=]))"
+          "match": "((?<=\\.)lambda|lambda(?=\\s*[.=]))"
         },
         {
           "captures": {
@@ -2067,7 +2067,7 @@
               "name": "keyword.operator.positional.parameter.python"
             },
             {
-              "match": "(\\*\\*|\\*)",
+              "match": "(\\*(?:\\*|))",
               "name": "keyword.operator.unpacking.parameter.python"
             },
             {
@@ -2156,7 +2156,7 @@
               "name": "punctuation.separator.continuation.line.python"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))|(\\G$))",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|['\"]))|(\\G$))",
           "patterns": [
             {
               "include": "#regexp"
@@ -2175,7 +2175,7 @@
           "name": "punctuation.definition.list.begin.python"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.list.end.python"
@@ -2318,7 +2318,7 @@
           "name": "punctuation.definition.parameters.begin.python"
         }
       },
-      "end": "(\\])",
+      "end": "(])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.parameters.end.python"
@@ -2336,7 +2336,7 @@
               "name": "punctuation.separator.annotation.python"
             }
           },
-          "end": "(,)|(?=\\])",
+          "end": "(,)|(?=])",
           "endCaptures": {
             "1": {
               "name": "punctuation.separator.parameters.python"
@@ -2386,7 +2386,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w\\.])(0[bB])(_?[01])+\\b",
+      "match": "(?<![\\w.])(0[bB])(_?[01])+\\b",
       "name": "constant.numeric.bin.python"
     },
     "number-dec": {
@@ -2398,7 +2398,7 @@
           "name": "invalid.illegal.dec.python"
         }
       },
-      "match": "(?<![\\w\\.])(?:[1-9](?:_?[0-9])*|0+|[0-9](?:_?[0-9])*([jJ])|0([0-9]+)(?![eE\\.]))\\b",
+      "match": "(?<![\\w.])(?:[1-9](?:_?[0-9])*|0+|[0-9](?:_?[0-9])*([jJ])|0([0-9]+)(?![eE.]))\\b",
       "name": "constant.numeric.dec.python"
     },
     "number-float": {
@@ -2407,7 +2407,7 @@
           "name": "storage.type.imaginary.number.python"
         }
       },
-      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[eE][+-]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*(?:[eE][+-]?[0-9](?:_?[0-9])*))([jJ])?\\b",
+      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[eE][+\\-]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*[eE][+\\-]?[0-9](?:_?[0-9])*)([jJ])?\\b",
       "name": "constant.numeric.float.python"
     },
     "number-hex": {
@@ -2416,7 +2416,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w\\.])(0[xX])(_?[0-9a-fA-F])+\\b",
+      "match": "(?<![\\w.])(0[xX])(_?\\h)+\\b",
       "name": "constant.numeric.hex.python"
     },
     "number-long": {
@@ -2425,7 +2425,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w\\.])([1-9][0-9]*|0)([lL])\\b",
+      "match": "(?<![\\w.])([1-9][0-9]*|0)([lL])\\b",
       "name": "constant.numeric.bin.python"
     },
     "number-oct": {
@@ -2434,11 +2434,11 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w\\.])(0[oO])(_?[0-7])+\\b",
+      "match": "(?<![\\w.])(0[oO])(_?[0-7])+\\b",
       "name": "constant.numeric.oct.python"
     },
     "odd-function-call": {
-      "begin": "(?<=\\]|\\))\\s*(?=\\()",
+      "begin": "(?<=[\\])])\\s*(?=\\()",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -2472,7 +2472,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|(?:yield(?:\\s+from)?)))(?!\\s*:)\\b|(<<|>>|&|\\||\\^|~)|(\\*\\*|\\*|\\+|-|%|//|/|@)|(!=|==|>=|<=|<|>)|(:=)"
+      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&|\\^~])|(\\*\\*|[*+\\-%]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
     },
     "parameter-special": {
       "captures": {
@@ -2515,7 +2515,7 @@
           "name": "keyword.operator.positional.parameter.python"
         },
         {
-          "match": "(\\*\\*|\\*)",
+          "match": "(\\*(?:\\*|))",
           "name": "keyword.operator.unpacking.parameter.python"
         },
         {
@@ -2592,7 +2592,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.backreference.named.end.regexp"
         }
       },
-      "match": "(\\()(\\?P=\\w+(?:\\s+[[:alnum:]]+)?)(\\))",
+      "match": "(\\()(\\?P=\\w+(?:\\s+\\p{alnum}+)?)(\\))",
       "name": "meta.backreference.named.regexp"
     },
     "regexp-backreference-number": {
@@ -2734,7 +2734,7 @@
       "name": "constant.character.escape.regexp"
     },
     "regexp-escape-character": {
-      "match": "\\\\(x[0-9A-Fa-f]{2}|0[0-7]{1,2}|[0-7]{3})",
+      "match": "\\\\(x\\h{2}|0[0-7]{1,2}|[0-7]{3})",
       "name": "constant.character.escape.regexp"
     },
     "regexp-escape-sequence": {
@@ -2761,7 +2761,7 @@
       "name": "support.other.escape.special.regexp"
     },
     "regexp-escape-unicode": {
-      "match": "\\\\(u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})",
+      "match": "\\\\(u\\h{4}|U\\h{8})",
       "name": "constant.character.unicode.regexp"
     },
     "regexp-flags": {
@@ -2769,11 +2769,11 @@
       "name": "storage.modifier.flag.regexp"
     },
     "regexp-quantifier": {
-      "match": "\\{(\\d+|\\d+,(\\d+)?|,\\d+)\\}",
+      "match": "\\{(\\d+|\\d+,(\\d+)?|,\\d+)}",
       "name": "keyword.operator.quantifier.regexp"
     },
     "regexp-single-one-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\')",
+      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(')",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -2788,7 +2788,7 @@
           "name": "punctuation.definition.string.begin.python"
         }
       },
-      "end": "(\\')|(?<!\\\\)(\\n)",
+      "end": "(')|(?<!\\\\)(\\n)",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.python"
@@ -2805,7 +2805,7 @@
       ]
     },
     "regexp-single-three-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\'\\'\\')",
+      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(''')",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -2820,7 +2820,7 @@
           "name": "punctuation.definition.string.begin.python"
         }
       },
-      "end": "(\\'\\'\\')",
+      "end": "(''')",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.python"
@@ -2872,7 +2872,7 @@
     "semicolon": {
       "patterns": [
         {
-          "match": "\\;$",
+          "match": ";$",
           "name": "invalid.deprecated.semicolon.python"
         }
       ]
@@ -2880,10 +2880,10 @@
     "single-one-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\^?\\](?!.*?\\])"
+          "match": "\\[\\^?](?!.*?])"
         },
         {
-          "begin": "(\\[)(\\^)?(\\])?",
+          "begin": "(\\[)(\\^)?(])?",
           "beginCaptures": {
             "1": {
               "name": "punctuation.character.set.begin.regexp constant.other.set.regexp"
@@ -2895,7 +2895,7 @@
               "name": "constant.character.set.regexp"
             }
           },
-          "end": "(\\]|(?=\\'))|((?=(?<!\\\\)\\n))",
+          "end": "(]|(?='))|((?=(?<!\\\\)\\n))",
           "endCaptures": {
             "1": {
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
@@ -2910,7 +2910,7 @@
               "include": "#regexp-charecter-set-escapes"
             },
             {
-              "match": "[^\\n]",
+              "match": "\\N",
               "name": "constant.character.set.regexp"
             }
           ]
@@ -2924,7 +2924,7 @@
           "name": "punctuation.comment.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "punctuation.comment.end.regexp"
@@ -2941,7 +2941,7 @@
       ]
     },
     "single-one-regexp-conditional": {
-      "begin": "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)",
+      "begin": "(\\()\\?\\((\\w+(?:\\s+\\p{alnum}+)?|\\d+)\\)",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.conditional.regexp"
@@ -2950,7 +2950,7 @@
           "name": "punctuation.parenthesis.conditional.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
@@ -3018,7 +3018,7 @@
           "name": "punctuation.parenthesis.lookahead.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
@@ -3043,7 +3043,7 @@
           "name": "punctuation.parenthesis.lookahead.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
@@ -3068,7 +3068,7 @@
           "name": "punctuation.parenthesis.lookbehind.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
@@ -3093,7 +3093,7 @@
           "name": "punctuation.parenthesis.lookbehind.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
@@ -3109,7 +3109,7 @@
       ]
     },
     "single-one-regexp-named-group": {
-      "begin": "(\\()(\\?P<\\w+(?:\\s+[[:alnum:]]+)?>)",
+      "begin": "(\\()(\\?P<\\w+(?:\\s+\\p{alnum}+)?>)",
       "beginCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp"
@@ -3118,7 +3118,7 @@
           "name": "entity.name.tag.named.group.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
@@ -3141,7 +3141,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
@@ -3163,7 +3163,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))",
+      "end": "(\\)|(?='))|((?=(?<!\\\\)\\n))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
@@ -3181,10 +3181,10 @@
     "single-three-regexp-character-set": {
       "patterns": [
         {
-          "match": "\\[\\^?\\](?!.*?\\])"
+          "match": "\\[\\^?](?!.*?])"
         },
         {
-          "begin": "(\\[)(\\^)?(\\])?",
+          "begin": "(\\[)(\\^)?(])?",
           "beginCaptures": {
             "1": {
               "name": "punctuation.character.set.begin.regexp constant.other.set.regexp"
@@ -3196,7 +3196,7 @@
               "name": "constant.character.set.regexp"
             }
           },
-          "end": "(\\]|(?=\\'\\'\\'))",
+          "end": "(]|(?='''))",
           "endCaptures": {
             "1": {
               "name": "punctuation.character.set.end.regexp constant.other.set.regexp"
@@ -3211,7 +3211,7 @@
               "include": "#regexp-charecter-set-escapes"
             },
             {
-              "match": "[^\\n]",
+              "match": "\\N",
               "name": "constant.character.set.regexp"
             }
           ]
@@ -3225,7 +3225,7 @@
           "name": "punctuation.comment.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "punctuation.comment.end.regexp"
@@ -3242,7 +3242,7 @@
       ]
     },
     "single-three-regexp-conditional": {
-      "begin": "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)",
+      "begin": "(\\()\\?\\((\\w+(?:\\s+\\p{alnum}+)?|\\d+)\\)",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.conditional.regexp"
@@ -3251,7 +3251,7 @@
           "name": "punctuation.parenthesis.conditional.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp"
@@ -3325,7 +3325,7 @@
           "name": "punctuation.parenthesis.lookahead.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp"
@@ -3353,7 +3353,7 @@
           "name": "punctuation.parenthesis.lookahead.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp"
@@ -3381,7 +3381,7 @@
           "name": "punctuation.parenthesis.lookbehind.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp"
@@ -3409,7 +3409,7 @@
           "name": "punctuation.parenthesis.lookbehind.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp"
@@ -3428,7 +3428,7 @@
       ]
     },
     "single-three-regexp-named-group": {
-      "begin": "(\\()(\\?P<\\w+(?:\\s+[[:alnum:]]+)?>)",
+      "begin": "(\\()(\\?P<\\w+(?:\\s+\\p{alnum}+)?>)",
       "beginCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp"
@@ -3437,7 +3437,7 @@
           "name": "entity.name.tag.named.group.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp"
@@ -3463,7 +3463,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.end.regexp"
@@ -3488,7 +3488,7 @@
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.begin.regexp"
         }
       },
-      "end": "(\\)|(?=\\'\\'\\'))",
+      "end": "(\\)|(?='''))",
       "endCaptures": {
         "1": {
           "name": "support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp"
@@ -3507,7 +3507,7 @@
       ]
     },
     "special-names": {
-      "match": "\\b(_*[[:upper:]][_\\d]*[[:upper:]])[[:upper:]\\d]*(_\\w*)?\\b",
+      "match": "\\b(_*\\p{upper}[_\\d]*\\p{upper})[[:upper:]\\d]*(_\\w*)?\\b",
       "name": "constant.other.caps.python"
     },
     "special-variables": {
@@ -3581,7 +3581,7 @@
               "name": "keyword.control.flow.python"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
+          "match": "^\\s*(case|match)(?=\\s*([\\-+\\w\\d(\\[{'\":#]|$))\\b"
         },
         {
           "captures": {
@@ -3708,7 +3708,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "({{|}}|(?:{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:\\w?[<>=^]?[-+ ]?\\#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?}))",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
           "name": "meta.format.brace.python"
         },
         {
@@ -3723,7 +3723,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "({\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+\\])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?\\}[^'\"{}\\n]*)*})",
+          "match": "(\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?}[^'\"{}\\n]*)*})",
           "name": "meta.format.brace.python"
         }
       ]
@@ -3750,7 +3750,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[\\-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.python"
     },
     "string-line-continuation": {
@@ -3758,7 +3758,7 @@
       "name": "constant.language.python"
     },
     "string-mojo-code-block": {
-      "begin": "^(\\s*\\`{3,})(mojo)$",
+      "begin": "^(\\s*`{3,})(mojo)$",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.single.python"
@@ -3782,7 +3782,7 @@
       ]
     },
     "string-multi-bad-brace1-formatting-raw": {
-      "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%\\})",
+      "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3791,7 +3791,7 @@
       ]
     },
     "string-multi-bad-brace1-formatting-unicode": {
-      "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%\\})",
+      "begin": "(?=\\{%(.*?(?!'''|\"\"\"))%})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3806,7 +3806,7 @@
       ]
     },
     "string-multi-bad-brace2-formatting-raw": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:\\.\\[}\\w]).*?(?!'''|\"\"\")\\})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:.\\[}\\w]).*?(?!'''|\"\"\")})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3818,7 +3818,7 @@
       ]
     },
     "string-multi-bad-brace2-formatting-unicode": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:\\.\\[}\\w]).*?(?!'''|\"\"\")\\})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:.\\[}\\w]).*?(?!'''|\"\"\")})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -4045,7 +4045,7 @@
       ]
     },
     "string-single-bad-brace1-formatting-raw": {
-      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%\\})",
+      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%})",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4054,7 +4054,7 @@
       ]
     },
     "string-single-bad-brace1-formatting-unicode": {
-      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%\\})",
+      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%})",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4069,7 +4069,7 @@
       ]
     },
     "string-single-bad-brace2-formatting-raw": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:\\.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))\\})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))})",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {
@@ -4081,7 +4081,7 @@
       ]
     },
     "string-single-bad-brace2-formatting-unicode": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:\\.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))\\})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))})",
       "end": "(?=(['\"])|((?<!\\\\)\\n))",
       "patterns": [
         {

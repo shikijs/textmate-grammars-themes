@@ -23,11 +23,11 @@
       "name": "variable.source.cmake"
     },
     {
-      "match": "\\$\\{\\w+\\}",
+      "match": "\\$\\{\\w+}",
       "name": "storage.source.cmake"
     },
     {
-      "match": "\\$ENV\\{\\w+\\}",
+      "match": "\\$ENV\\{\\w+}",
       "name": "storage.source.cmake"
     },
     {
@@ -115,7 +115,7 @@
       "name": "invalid.deprecated.source.cmake"
     },
     {
-      "match": "\\b(?i:(CMAKE_)?(CXX_FLAGS|CMAKE_CXX_FLAGS_DEBUG|CMAKE_CXX_FLAGS_MINSIZEREL|CMAKE_CXX_FLAGS_RELEASE|CMAKE_CXX_FLAGS_RELWITHDEBINFO))\\b",
+      "match": "\\b(?i:(CMAKE_)?(C(?:XX_FLAGS|MAKE_CXX_FLAGS_DEBUG|MAKE_CXX_FLAGS_MINSIZEREL|MAKE_CXX_FLAGS_RELEASE|MAKE_CXX_FLAGS_RELWITHDEBINFO)))\\b",
       "name": "variable.source.cmake"
     }
   ],

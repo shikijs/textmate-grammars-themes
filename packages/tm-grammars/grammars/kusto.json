@@ -63,7 +63,7 @@
           ]
         }
       },
-      "match": "\\b(binary_and|binary_or|binary_shift_left|binary_shift_right|binary_xor)(?:\\s*\\(\\s*(\\w+)\\s*,\\s*(\\w+)\\s*\\))?(?!\\w)",
+      "match": "\\b(binary_(?:and|or|shift_left|shift_right|xor))(?:\\s*\\(\\s*(\\w+)\\s*,\\s*(\\w+)\\s*\\))?(?!\\w)",
       "name": "meta.scalar.bitwise.kusto"
     },
     {
@@ -79,7 +79,7 @@
           ]
         }
       },
-      "match": "\\b(binary_not|bitset_count_ones)(?:\\s*\\(\\s*(\\w+)\\s*\\))?(?!\\w)",
+      "match": "\\b(bi(?:nary_not|tset_count_ones))(?:\\s*\\(\\s*(\\w+)\\s*\\))?(?!\\w)",
       "name": "meta.scalar.bitwise.kusto"
     },
     {
@@ -144,7 +144,7 @@
           ]
         }
       },
-      "match": "\\b(range)\\s*\\((?:\\s*(\\w+(?:\\(.*?\\))?)\\s*,\\s*(\\w+(?:\\(.*?\\))?)\\s*,?(?:\\s*)?(\\w+(?:\\(.*?\\))?)?\\s*\\))?(?!\\w)",
+      "match": "\\b(range)\\s*\\((?:\\s*(\\w+(?:\\(.*?\\))?)\\s*,\\s*(\\w+(?:\\(.*?\\))?)\\s*,?\\s*{0,1}(\\w+(?:\\(.*?\\))?)?\\s*\\))?(?!\\w)",
       "name": "meta.scalar.function.range.kusto"
     },
     {
@@ -195,7 +195,7 @@
       "name": "support.function.kusto"
     },
     {
-      "match": "\\b(geo_distance_2points|geo_distance_point_to_line|geo_distance_point_to_polygon|geo_intersects_2lines|geo_intersects_2polygons|geo_intersects_line_with_polygon|geo_intersection_2lines|geo_intersection_2polygons|geo_intersection_line_with_polygon|geo_line_centroid|geo_line_densify|geo_line_length|geo_line_simplify|geo_polygon_area|geo_polygon_centroid|geo_polygon_densify|geo_polygon_perimeter|geo_polygon_simplify|geo_polygon_to_s2cells|geo_point_in_circle|geo_point_in_polygon|geo_point_to_geohash|geo_point_to_h3cell|geo_point_to_s2cell|geo_geohash_to_central_point|geo_geohash_neighbors|geo_geohash_to_polygon|geo_s2cell_to_central_point|geo_s2cell_neighbors|geo_s2cell_to_polygon|geo_h3cell_to_central_point|geo_h3cell_neighbors|geo_h3cell_to_polygon|geo_h3cell_parent|geo_h3cell_children|geo_h3cell_level|geo_h3cell_rings|geo_simplify_polygons_array|geo_union_lines_array|geo_union_polygons_array)\\b",
+      "match": "\\b(geo_(?:distance_2points|distance_point_to_line|distance_point_to_polygon|intersects_2lines|intersects_2polygons|intersects_line_with_polygon|intersection_2lines|intersection_2polygons|intersection_line_with_polygon|line_centroid|line_densify|line_length|line_simplify|polygon_area|polygon_centroid|polygon_densify|polygon_perimeter|polygon_simplify|polygon_to_s2cells|point_in_circle|point_in_polygon|point_to_geohash|point_to_h3cell|point_to_s2cell|geohash_to_central_point|geohash_neighbors|geohash_to_polygon|s2cell_to_central_point|s2cell_neighbors|s2cell_to_polygon|h3cell_to_central_point|h3cell_neighbors|h3cell_to_polygon|h3cell_parent|h3cell_children|h3cell_level|h3cell_rings|simplify_polygons_array|union_lines_array|union_polygons_array))\\b",
       "name": "support.function.kusto"
     },
     {
@@ -350,7 +350,7 @@
           ]
         }
       },
-      "match": "\\b(sample)(?:\\s+(\\d+))?(?![\\w-])",
+      "match": "\\b(sample)(?:\\s+(\\d+))?(?![\\w\\-])",
       "name": "meta.query.sample.kusto"
     },
     {
@@ -400,7 +400,7 @@
           ]
         }
       },
-      "match": "\\b(take|limit)(?:\\s+(\\d+))\\b",
+      "match": "\\b(take|limit)\\s+(\\d+)\\b",
       "name": "meta.query.take.kusto"
     },
     {
@@ -422,7 +422,7 @@
           "name": "variable.other.column.kusto"
         }
       },
-      "match": "\\b(top)(?:\\s+(\\d+)\\s+(by)\\s+(\\w+))?(?![\\w-])\\b",
+      "match": "\\b(top)(?:\\s+(\\d+)\\s+(by)\\s+(\\w+))?(?![\\w\\-])\\b",
       "name": "meta.query.top.kusto"
     },
     {
@@ -466,7 +466,7 @@
       "name": "keyword.other.operator.kusto"
     },
     {
-      "match": "(\\$left|\\$right)\\b",
+      "match": "(\\$(?:left|right))\\b",
       "name": "keyword.other.kusto"
     },
     {
@@ -474,7 +474,7 @@
       "name": "keyword.other.kusto"
     },
     {
-      "match": "\\b(series_abs|series_acos|series_add|series_asin|series_atan|series_cos|series_decompose|series_decompose_anomalies|series_decompose_forecast|series_divide|series_equals|series_exp|series_fft|series_fill_backward|series_fill_const|series_fill_forward|series_fill_linear|series_fir|series_fit_2lines_dynamic|series_fit_2lines|series_fit_line_dynamic|series_fit_line|series_fit_poly|series_greater_equals|series_greater|series_ifft|series_iir|series_less_equals|series_less|series_multiply|series_not_equals|series_outliers|series_pearson_correlation|series_periods_detect|series_periods_validate|series_pow|series_seasonal|series_sign|series_sin|series_stats|series_stats_dynamic|series_subtract|series_tan)\\b",
+      "match": "\\b(series_(?:abs|acos|add|asin|atan|cos|decompose|decompose_anomalies|decompose_forecast|divide|equals|exp|fft|fill_backward|fill_const|fill_forward|fill_linear|fir|fit_2lines_dynamic|fit_2lines|fit_line_dynamic|fit_line|fit_poly|greater_equals|greater|ifft|iir|less_equals|less|multiply|not_equals|outliers|pearson_correlation|periods_detect|periods_validate|pow|seasonal|sign|sin|stats|stats_dynamic|subtract|tan))\\b",
       "name": "support.function.kusto"
     },
     {
@@ -497,7 +497,7 @@
       "include": "#Strings"
     },
     {
-      "match": "\\{.*?\\}",
+      "match": "\\{.*?}",
       "name": "string.other.kusto"
     },
     {
@@ -568,7 +568,7 @@
     "Escapes": {
       "patterns": [
         {
-          "match": "(\\\\['\"]|\\\\\\\\)",
+          "match": "(\\\\['\"\\\\])",
           "name": "constant.character.escape.kusto"
         }
       ]
@@ -576,7 +576,7 @@
     "Numeric": {
       "patterns": [
         {
-          "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*+)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?(?=\\b|\\w)",
+          "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*+)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)([Ll]|UL|ul|[uUFf]|ll|LL|ull|ULL)?(?=\\b|\\w)",
           "name": "constant.numeric.kusto"
         }
       ]
@@ -648,7 +648,7 @@
     "TimeSpanLiterals": {
       "patterns": [
         {
-          "match": "[+-]?(?:\\d*\\.)?\\d+(?:microseconds?|ticks?|seconds?|ms|d|h|m|s)\\b",
+          "match": "[+\\-]?(?:\\d*\\.)?\\d+(?:microseconds?|ticks?|seconds?|ms|[dhms])\\b",
           "name": "constant.numeric.kusto"
         }
       ]

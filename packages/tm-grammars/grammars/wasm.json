@@ -63,7 +63,7 @@
                   "name": "support.type.wat"
                 }
               },
-              "match": "\\b(i8x16)(?:\\s+0x[0-9a-fA-F]{1,2}){16}\\b",
+              "match": "\\b(i8x16)(?:\\s+0x\\h{1,2}){16}\\b",
               "name": "constant.numeric.vector.wat"
             },
             {
@@ -72,7 +72,7 @@
                   "name": "support.type.wat"
                 }
               },
-              "match": "\\b(i16x8)(?:\\s+0x[0-9a-fA-F]{1,4}){8}\\b",
+              "match": "\\b(i16x8)(?:\\s+0x\\h{1,4}){8}\\b",
               "name": "constant.numeric.vector.wat"
             },
             {
@@ -81,7 +81,7 @@
                   "name": "support.type.wat"
                 }
               },
-              "match": "\\b(i32x4)(?:\\s+0x[0-9a-fA-F]{1,8}){4}\\b",
+              "match": "\\b(i32x4)(?:\\s+0x\\h{1,8}){4}\\b",
               "name": "constant.numeric.vector.wat"
             },
             {
@@ -90,7 +90,7 @@
                   "name": "support.type.wat"
                 }
               },
-              "match": "\\b(i64x2)(?:\\s+0x[0-9a-fA-F]{1,16}){2}\\b",
+              "match": "\\b(i64x2)(?:\\s+0x\\h{1,16}){2}\\b",
               "name": "constant.numeric.vector.wat"
             }
           ]
@@ -98,23 +98,23 @@
         {
           "patterns": [
             {
-              "match": "[+-]?\\b[0-9][0-9]*(?:\\.[0-9][0-9]*)?(?:[eE][+-]?[0-9]+)?\\b",
+              "match": "[+\\-]?\\b[0-9][0-9]*(?:\\.[0-9][0-9]*)?(?:[eE][+\\-]?[0-9]+)?\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\b0x([0-9a-fA-F]*\\.[0-9a-fA-F]+|[0-9a-fA-F]+\\.?)[Pp][+-]?[0-9]+\\b",
+              "match": "[+\\-]?\\b0x(\\h*\\.\\h+|\\h+\\.?)[Pp][+\\-]?[0-9]+\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\binf\\b",
+              "match": "[+\\-]?\\binf\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\bnan:0x[0-9a-fA-F][0-9a-fA-F]*\\b",
+              "match": "[+\\-]?\\bnan:0x\\h\\h*\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\b(?:0x[0-9a-fA-F][0-9a-fA-F]*|\\d[\\d]*)\\b",
+              "match": "[+\\-]?\\b(?:0x\\h\\h*|\\d\\d*)\\b",
               "name": "constant.numeric.integer.wat"
             }
           ]
@@ -131,7 +131,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i32|i64)\\.trunc_sat_f(?:32|64)_[su]\\b",
+              "match": "\\b(i(?:32|64))\\.trunc_sat_f(?:32|64)_[su]\\b",
               "name": "keyword.operator.word.wat"
             }
           ]
@@ -144,7 +144,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i32)\\.(?:extend(?:8|16)_s)\\b",
+              "match": "\\b(i32)\\.extend(?:8|16)_s\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -153,7 +153,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i64)\\.(?:extend(?:8|16|32)_s)\\b",
+              "match": "\\b(i64)\\.extend(?:8|16|32)_s\\b",
               "name": "keyword.operator.word.wat"
             }
           ]
@@ -291,7 +291,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i32)\\.(atomic)\\.(?:load(?:8_u|16_u)?|store(?:8|16)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw8|rmw16)\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
+              "match": "\\b(i32)\\.(atomic)\\.(?:load(?:8_u|16_u)?|store(?:8|16)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16))\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -309,7 +309,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i64)\\.(atomic)\\.(?:load(?:8_u|16_u|32_u)?|store(?:8|16|32)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw8|rmw16|rmw32)\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
+              "match": "\\b(i64)\\.(atomic)\\.(?:load(?:8_u|16_u|32_u)?|store(?:8|16|32)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16|32))\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -381,7 +381,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i32|i64|f32|f64|externref|funcref|nullref|exnref)\\.(?:push|pop)\\b",
+              "match": "\\b(i32|i64|f32|f64|externref|funcref|nullref|exnref)\\.p(?:ush|op)\\b",
               "name": "keyword.operator.word.wat"
             }
           ]
@@ -412,7 +412,7 @@
                   "name": "support.class.type.wat"
                 }
               },
-              "match": "\\b(f32|f64)\\.(?:load|store)\\b",
+              "match": "\\b(f(?:32|64))\\.(?:load|store)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -456,7 +456,7 @@
                   "name": "support.class.type.wat"
                 }
               },
-              "match": "\\b(i32|i64)\\.(const|eqz|eq|ne|lt_[su]|gt_[su]|le_[su]|ge_[su]|clz|ctz|popcnt|add|sub|mul|div_[su]|rem_[su]|and|or|xor|shl|shr_[su]|rotl|rotr)\\b",
+              "match": "\\b(i(?:32|64))\\.(const|eqz|eq|ne|lt_[su]|gt_[su]|le_[su]|ge_[su]|clz|ctz|popcnt|add|sub|mul|div_[su]|rem_[su]|and|or|xor|shl|shr_[su]|rotl|rotr)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -465,7 +465,7 @@
                   "name": "support.class.type.wat"
                 }
               },
-              "match": "\\b(f32|f64)\\.(const|eq|ne|lt|gt|le|ge|abs|neg|ceil|floor|trunc|nearest|sqrt|add|sub|mul|div|min|max|copysign)\\b",
+              "match": "\\b(f(?:32|64))\\.(const|eq|ne|lt|gt|le|ge|abs|neg|ceil|floor|trunc|nearest|sqrt|add|sub|mul|div|min|max|copysign)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -474,7 +474,7 @@
                   "name": "support.class.type.wat"
                 }
               },
-              "match": "\\b(i32)\\.(wrap_i64|trunc_(f32|f64)_[su]|reinterpret_f32)\\b",
+              "match": "\\b(i32)\\.(wrap_i64|trunc_(f(?:32|64))_[su]|reinterpret_f32)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -558,7 +558,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(?:br_on_non_null|br_on_cast|br_on_cast_fail)\\b",
+              "match": "\\bbr_on_(?:non_null|cast|cast_fail)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -617,10 +617,10 @@
                   "name": "entity.name.function.wat"
                 }
               },
-              "match": "(?<=\\(func|\\(start|call|return_call|ref\\.func)\\s+(\\$[0-9A-Za-z!#$%&'*+\\-./:<=>?@\\\\^_`|~]*)"
+              "match": "(?<=\\(func|\\(start|call|return_call|ref\\.func)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\\\^_`|~]*)"
             },
             {
-              "begin": "\\)\\s+(\\$[0-9A-Za-z!#$%&'*+\\-./:<=>?@\\\\^_`|~]*)",
+              "begin": "\\)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\\\^_`|~]*)",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.wat"
@@ -629,7 +629,7 @@
               "end": "\\)",
               "patterns": [
                 {
-                  "match": "(?<=\\s)\\$[0-9A-Za-z!#$%&'*+\\-./:<=>?@\\\\^_`|~]*",
+                  "match": "(?<=\\s)\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\\\^_`|~]*",
                   "name": "entity.name.function.wat"
                 }
               ]
@@ -640,10 +640,10 @@
                   "name": "support.type.function.wat"
                 }
               },
-              "match": "(?<=\\(type)\\s+(\\$[0-9A-Za-z!#$%&'*+\\-./:<=>?@\\\\^_`|~]*)"
+              "match": "(?<=\\(type)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\\\^_`|~]*)"
             },
             {
-              "match": "\\$[0-9A-Za-z!#$%&'*+\\-./:<=>?@\\\\^_`|~]*\\b",
+              "match": "\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\\\^_`|~]*\\b",
               "name": "variable.other.wat"
             }
           ]
@@ -666,7 +666,7 @@
       "name": "string.quoted.double.wat",
       "patterns": [
         {
-          "match": "\\\\(n|t|\\\\|'|\"|[0-9a-fA-F]{2})",
+          "match": "\\\\([nt\\\\'\"]|\\h{2})",
           "name": "constant.character.escape.wat"
         }
       ]

@@ -126,7 +126,7 @@
           "name": "keyword.operator.talon"
         }
       },
-      "end": "\n",
+      "end": "\\n",
       "patterns": [
         {
           "include": "#comment"
@@ -159,7 +159,7 @@
       ]
     },
     "capture": {
-      "match": "(\\<[a-zA-Z0-9._]+\\>)",
+      "match": "(<[a-zA-Z0-9._]+>)",
       "name": "variable.parameter.talon"
     },
     "comment": {
@@ -238,7 +238,7 @@
           ]
         }
       },
-      "match": "{(.+?)}",
+      "match": "\\{(.+?)}",
       "name": "constant.character.format.placeholder.talon"
     },
     "header": {
@@ -277,7 +277,7 @@
       "match": "(ctrl|shift|cmd|alt|win|super)(-)"
     },
     "keystring": {
-      "begin": "(\"|')",
+      "begin": "([\"'])",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.string.begin.talon"
@@ -303,7 +303,7 @@
       ]
     },
     "list": {
-      "match": "({[a-zA-Z0-9._]+?})",
+      "match": "(\\{[a-zA-Z0-9._]+?})",
       "name": "string.interpolated.talon"
     },
     "number": {
@@ -311,7 +311,7 @@
       "name": "constant.numeric.talon"
     },
     "operator": {
-      "match": "\\s(\\+|-|\\*|/|or)\\s",
+      "match": "\\s([+\\-*/]|or)\\s",
       "name": "keyword.operator.talon"
     },
     "other-rule-definition": {
@@ -340,7 +340,7 @@
       ]
     },
     "qstring": {
-      "begin": "(\"|')",
+      "begin": "([\"'])",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.string.begin.talon"
@@ -397,15 +397,15 @@
           "name": "support.other.match.begin.regexp"
         },
         {
-          "match": "\\\\\\.|\\\\\\*|\\\\\\^|\\\\\\$|\\\\\\+|\\\\\\?",
+          "match": "\\\\[.*\\^$+?]",
           "name": "constant.character.escape.talon"
         },
         {
-          "match": "\\[(\\\\\\]|[^\\]])*\\]",
+          "match": "\\[(\\\\]|[^\\]])*]",
           "name": "constant.other.set.regexp"
         },
         {
-          "match": "\\*|\\+|\\?",
+          "match": "[*+?]",
           "name": "keyword.operator.quantifier.regexp"
         }
       ]
@@ -491,11 +491,11 @@
     "string-body": {
       "patterns": [
         {
-          "match": "{{|}}",
+          "match": "\\{\\{|}}",
           "name": "string.quoted.double.talon"
         },
         {
-          "match": "\\\\\\\\|\\\\n|\\\\t|\\\\r|\\\\\"|\\\\'",
+          "match": "\\\\[\\\\ntr\"']",
           "name": "constant.character.escape.python"
         },
         {

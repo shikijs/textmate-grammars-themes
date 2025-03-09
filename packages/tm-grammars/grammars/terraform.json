@@ -27,12 +27,12 @@
           "name": "keyword.operator.accessor.hcl"
         }
       },
-      "end": "[[:alpha:]][\\w-]*|\\d*",
+      "end": "\\p{alpha}[\\w\\-]*|\\d*",
       "endCaptures": {
         "0": {
           "patterns": [
             {
-              "match": "(?!null|false|true)[[:alpha:]][\\w-]*",
+              "match": "(?!null|false|true)\\p{alpha}[\\w\\-]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -58,7 +58,7 @@
           "name": "keyword.operator.assignment.hcl"
         }
       },
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)[[:alpha:]][[:alnum:]_-]*)(\\))?\\s*(\\=(?!\\=|\\>))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_\\-]*)(\\))?\\s*(=(?![=>]))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -76,7 +76,7 @@
       }
     },
     "block": {
-      "begin": "([\\w][\\-\\w]*)([\\s\\\"\\-\\w]*)(\\{)",
+      "begin": "(\\w[\\-\\w]*)([\\s\"\\-\\w]*)(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -85,7 +85,7 @@
               "name": "entity.name.type.terraform"
             },
             {
-              "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -93,7 +93,7 @@
         "2": {
           "patterns": [
             {
-              "match": "[\\\"\\-\\w]+",
+              "match": "[\"\\-\\w]+",
               "name": "variable.other.enummember.hcl"
             }
           ]
@@ -105,7 +105,7 @@
           "name": "punctuation.section.block.begin.hcl"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.block.end.hcl"
@@ -144,7 +144,7 @@
           "name": "punctuation.section.brackets.begin.hcl"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.brackets.end.hcl"
@@ -176,11 +176,11 @@
       ]
     },
     "char_escapes": {
-      "match": "\\\\[nrt\"\\\\]|\\\\u(\\h{8}|\\h{4})",
+      "match": "\\\\(?:[nrt\"\\\\]|u(\\h{8}|\\h{4}))",
       "name": "constant.character.escape.hcl"
     },
     "comma": {
-      "match": "\\,",
+      "match": ",",
       "name": "punctuation.separator.hcl"
     },
     "comments": {
@@ -251,7 +251,7 @@
           "name": "keyword.control.conditional.hcl"
         },
         {
-          "match": "\\:",
+          "match": ":",
           "name": "keyword.operator.hcl"
         },
         {
@@ -278,7 +278,7 @@
               "name": "support.function.builtin.terraform"
             },
             {
-              "match": "\\bprovider::[[:alpha:]][\\w_-]*::[[:alpha:]][\\w_-]*\\b",
+              "match": "\\bprovider::\\p{alpha}[\\w_\\-]*::\\p{alpha}[\\w_\\-]*\\b",
               "name": "support.function.provider.terraform"
             }
           ]
@@ -321,7 +321,7 @@
       "name": "storage.type.hcl"
     },
     "heredoc": {
-      "begin": "(\\<\\<\\-?)\\s*(\\w+)\\s*$",
+      "begin": "(<<-?)\\s*(\\w+)\\s*$",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.heredoc.hcl"
@@ -351,7 +351,7 @@
         "2": {
           "patterns": [
             {
-              "match": "\\=\\>",
+              "match": "=>",
               "name": "storage.type.function.hcl"
             },
             {
@@ -412,7 +412,7 @@
       ]
     },
     "local_identifiers": {
-      "match": "\\b(?!null|false|true)[[:alpha:]][[:alnum:]_-]*\\b",
+      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
       "name": "variable.other.readwrite.hcl"
     },
     "named_value_references": {
@@ -427,7 +427,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+([Ee][+-]?)\\d+\\b",
+          "match": "\\b\\d+([Ee][+\\-]?)\\d+\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -439,7 +439,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+-]?)\\d+)?\\b",
+          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+\\-]?)\\d+)?\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -458,7 +458,7 @@
           "name": "keyword.control.hcl"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.braces.end.hcl"
@@ -466,7 +466,7 @@
       },
       "patterns": [
         {
-          "match": "\\=\\>",
+          "match": "=>",
           "name": "storage.type.function.hcl"
         },
         {
@@ -506,7 +506,7 @@
           "name": "punctuation.section.braces.begin.hcl"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.braces.end.hcl"
@@ -535,13 +535,13 @@
               "name": "keyword.operator.assignment.hcl",
               "patterns": [
                 {
-                  "match": "\\=\\>",
+                  "match": "=>",
                   "name": "storage.type.function.hcl"
                 }
               ]
             }
           },
-          "match": "\\b((?!null|false|true)[[:alpha:]][[:alnum:]_-]*)\\s*(\\=\\>?)\\s*"
+          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*)\\s*(=>?)\\s*"
         },
         {
           "captures": {
@@ -565,7 +565,7 @@
               "name": "keyword.operator.hcl"
             }
           },
-          "match": "\\b((\").*(\"))\\s*(\\=)\\s*"
+          "match": "\\b((\").*(\"))\\s*(=)\\s*"
         },
         {
           "begin": "^\\s*\\(",
@@ -574,7 +574,7 @@
               "name": "punctuation.section.parens.begin.hcl"
             }
           },
-          "end": "(\\))\\s*(=|:)\\s*",
+          "end": "(\\))\\s*([=:])\\s*",
           "endCaptures": {
             "1": {
               "name": "punctuation.section.parens.end.hcl"
@@ -601,19 +601,19 @@
     "operators": {
       "patterns": [
         {
-          "match": "\\>\\=",
+          "match": ">=",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\<\\=",
+          "match": "<=",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\=\\=",
+          "match": "==",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\!\\=",
+          "match": "!=",
           "name": "keyword.operator.hcl"
         },
         {
@@ -621,7 +621,7 @@
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
-          "match": "\\-",
+          "match": "-",
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
@@ -629,15 +629,15 @@
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
-          "match": "\\/",
+          "match": "/",
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
-          "match": "\\%",
+          "match": "%",
           "name": "keyword.operator.arithmetic.hcl"
         },
         {
-          "match": "\\&\\&",
+          "match": "&&",
           "name": "keyword.operator.logical.hcl"
         },
         {
@@ -645,15 +645,15 @@
           "name": "keyword.operator.logical.hcl"
         },
         {
-          "match": "\\!",
+          "match": "!",
           "name": "keyword.operator.logical.hcl"
         },
         {
-          "match": "\\>",
+          "match": ">",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\<",
+          "match": "<",
           "name": "keyword.operator.hcl"
         },
         {
@@ -665,11 +665,11 @@
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\:",
+          "match": ":",
           "name": "keyword.operator.hcl"
         },
         {
-          "match": "\\=\\>",
+          "match": "=>",
           "name": "keyword.operator.hcl"
         }
       ]
@@ -697,13 +697,13 @@
       ]
     },
     "string_interpolation": {
-      "begin": "(?<![%$])([%$]{)",
+      "begin": "(?<![%$])([%$]\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.interpolation.begin.hcl"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "keyword.other.interpolation.end.hcl"
@@ -712,11 +712,11 @@
       "name": "meta.interpolation.hcl",
       "patterns": [
         {
-          "match": "\\~\\s",
+          "match": "~\\s",
           "name": "keyword.operator.template.left.trim.hcl"
         },
         {
-          "match": "\\s\\~",
+          "match": "\\s~",
           "name": "keyword.operator.template.right.trim.hcl"
         },
         {
@@ -764,7 +764,7 @@
           "name": "keyword.control.hcl"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.brackets.end.hcl"

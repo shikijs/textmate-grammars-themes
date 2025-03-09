@@ -130,7 +130,7 @@
           "name": "keyword.other.order.cypher"
         },
         {
-          "begin": "(?i)\\b(node|relationship|rel)((:)([\\p{L}_-][\\p{L}0-9_]*))?(?=\\s*\\()",
+          "begin": "(?i)\\b(node|relationship|rel)((:)([\\p{L}_\\-][\\p{L}0-9_]*))?(?=\\s*\\()",
           "beginCaptures": {
             "1": {
               "name": "support.class.starting-functions-point.cypher"
@@ -149,7 +149,7 @@
           "name": "source.starting-functions.cypher",
           "patterns": [
             {
-              "match": "((?:`.+?`)|(?:[\\p{L}_][\\p{L}0-9_]*))",
+              "match": "(`.+?`|[\\p{L}_][\\p{L}0-9_]*)",
               "name": "variable.parameter.relationship-name.cypher"
             },
             {
@@ -180,11 +180,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "(\\+|\\-|\\/|\\*|\\%|\\?|!)",
+          "match": "([+\\-/*%?!])",
           "name": "keyword.operator.math.cypher"
         },
         {
-          "match": "(<=|=>|<>|<|>|=~|=)",
+          "match": "(<=|=>|<>|[<>]|=~|=)",
           "name": "keyword.operator.compare.cypher"
         },
         {
@@ -213,7 +213,7 @@
               "name": "keyword.operator.relationship-pattern-start.cypher"
             }
           },
-          "end": "(])(->|-)",
+          "end": "(])(-(?:>|))",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.relationship-pattern-end.cypher"
@@ -236,7 +236,7 @@
                   "name": "entity.name.class.relationship.type.cypher"
                 }
               },
-              "match": "(:)((?:`.+?`)|(?:[\\p{L}_][\\p{L}0-9_]*))",
+              "match": "(:)(`.+?`|[\\p{L}_][\\p{L}0-9_]*)",
               "name": "entity.name.class.relationship-type.cypher"
             },
             {
@@ -248,11 +248,11 @@
                   "name": "entity.name.class.relationship.type-or.cypher"
                 }
               },
-              "match": "(\\|)(\\s*)((?:`.+?`)|(?:[\\p{L}_][\\p{L}0-9_]*))",
+              "match": "(\\|)(\\s*)(`.+?`|[\\p{L}_][\\p{L}0-9_]*)",
               "name": "entity.name.class.relationship-type-ored.cypher"
             },
             {
-              "match": "(?:\\?\\*|\\?|\\*)\\s*(?:\\d+\\s*(?:\\.\\.\\s*\\d+)?)?",
+              "match": "(?:\\?\\*|[?*])\\s*(?:\\d+\\s*(?:\\.\\.\\s*\\d+)?)?",
               "name": "support.function.relationship-pattern.quant.cypher"
             },
             {
@@ -265,7 +265,7 @@
     "properties_literal": {
       "patterns": [
         {
-          "begin": "{",
+          "begin": "\\{",
           "beginCaptures": {
             "0": {
               "name": "keyword.control.properties_literal.cypher"
@@ -280,7 +280,7 @@
           "name": "source.cypher",
           "patterns": [
             {
-              "match": ":|,",
+              "match": "[:,]",
               "name": "keyword.control.properties_literal.seperator.cypher"
             },
             {
@@ -314,7 +314,7 @@
           "name": "string.quoted.double.cypher"
         }
       },
-      "match": "(\\\\\\\\|\\\\[tbnrf])|(\\\\'|\\\\\")",
+      "match": "(\\\\[\\\\tbnrf])|(\\\\['\"])",
       "name": "constant.character.escape.cypher"
     },
     "strings": {

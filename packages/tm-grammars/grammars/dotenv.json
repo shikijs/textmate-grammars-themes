@@ -44,7 +44,7 @@
           ]
         }
       },
-      "match": "^\\s?(.*?)\\s?(\\=)(.*)$"
+      "match": "^\\s?(.*?)\\s?(=)(.*)$"
     }
   ],
   "repository": {
@@ -65,7 +65,7 @@
       "name": "string.quoted.double.dotenv"
     },
     "escape-characters": {
-      "match": "\\\\[nrtfb\"'\\\\]|\\\\u[0123456789ABCDEF]{4}",
+      "match": "\\\\(?:[nrtfb\"'\\\\]|u[0123456789ABCDEF]{4})",
       "name": "constant.character.escape.dotenv"
     },
     "interpolation": {
@@ -80,7 +80,7 @@
           "name": "keyword.interpolation.end.dotenv"
         }
       },
-      "match": "(\\$\\{)(.*)(\\})"
+      "match": "(\\$\\{)(.*)(})"
     },
     "key": {
       "captures": {

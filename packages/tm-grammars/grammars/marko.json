@@ -16,7 +16,7 @@
         }
       },
       "contentName": "source.css",
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.scope.end.marko.css"
@@ -43,7 +43,7 @@
         }
       },
       "contentName": "source.less",
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.scope.end.marko.css"
@@ -70,7 +70,7 @@
         }
       },
       "contentName": "source.scss",
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.scope.end.marko.css"
@@ -108,7 +108,7 @@
       "patterns": [
         {
           "applyEndPatternLast": 1,
-          "begin": "(?:\\s+|,)(?:(key|on[a-zA-Z0-9_$-]+|[a-zA-Z0-9_$]+Change|no-update(?:-body)?(?:-if)?)|([a-zA-Z0-9_$][a-zA-Z0-9_$-]*))(:[a-zA-Z0-9_$][a-zA-Z0-9_$-]*)?",
+          "begin": "(?:\\s+|,)(?:(key|on[a-zA-Z0-9_$\\-]+|[a-zA-Z0-9_$]+Change|no-update(?:-body)?(?:-if)?)|([a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*))(:[a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*)?",
           "beginCaptures": {
             "1": {
               "name": "support.type.attribute-name.marko"
@@ -606,7 +606,7 @@
         {
           "begin": "(?<=\\))\\s*(?=\\{)",
           "contentName": "source.js",
-          "end": "(?<=\\})",
+          "end": "(?<=})",
           "name": "meta.embedded.js",
           "patterns": [
             {
@@ -651,7 +651,7 @@
       ]
     },
     "invalid": {
-      "match": "[^\\s]",
+      "match": "\\S",
       "name": "invalid.illegal.character-not-allowed-here.marko"
     },
     "javascript-args": {
@@ -707,7 +707,7 @@
           "include": "#javascript-args"
         },
         {
-          "begin": "(?={)",
+          "begin": "(?=\\{)",
           "end": "(?<=})",
           "patterns": [
             {
@@ -770,7 +770,7 @@
           ]
         },
         {
-          "begin": "\\s*(?:(?:\\b(?:new|typeof|instanceof|in)\\b)|\\&\\&|\\|\\||[\\^|&]|[!=]=|[!=]==|<|<[=<]|=>|[?:]|[-+*%](?!-))",
+          "begin": "\\s*(?:\\b(?:new|typeof|instanceof|in)\\b|&&|\\|\\||[\\^|\\&]|[!=]=|[!=]==|<|<[=<]|=>|[?:]|[\\-+*%](?!-))",
           "captures": {
             "0": {
               "patterns": [
@@ -830,7 +830,7 @@
       ]
     },
     "placeholder": {
-      "begin": "\\$!?{",
+      "begin": "\\$!?\\{",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.template-expression.begin.js"
@@ -871,7 +871,7 @@
           "include": "#tag-name"
         },
         {
-          "match": "[#.][a-zA-Z0-9_$][a-zA-Z0-9_$-]*",
+          "match": "[#.][a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*",
           "name": "entity.other.attribute-name.marko"
         },
         {
@@ -882,7 +882,7 @@
             }
           },
           "contentName": "source.js",
-          "end": "(?=:?\\=|\\s|>|$|\\||\\(|/)",
+          "end": "(?=:?=|[\\s>]|$|[|(/])",
           "name": "meta.embedded.js",
           "patterns": [
             {
@@ -979,7 +979,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=\\>)",
+          "end": "/>|(?<=>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1028,7 +1028,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=\\>)",
+          "end": "/>|(?<=>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1077,7 +1077,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=\\>)",
+          "end": "/>|(?<=>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1126,7 +1126,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=\\>)",
+          "end": "/>|(?<=>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1175,7 +1175,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=\\>)",
+          "end": "/>|(?<=>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1192,7 +1192,7 @@
                   "name": "punctuation.definition.tag.end.marko"
                 }
               },
-              "end": "\\s*(</)([a-zA-Z0-9_$:@-]+)?(.*?)(>)",
+              "end": "\\s*(</)([a-zA-Z0-9_$:@\\-]+)?(.*?)(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.end.marko"
@@ -1228,7 +1228,7 @@
     "tag-name": {
       "patterns": [
         {
-          "begin": "\\${",
+          "begin": "\\$\\{",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.template-expression.begin.js"
@@ -1275,7 +1275,7 @@
               ]
             }
           },
-          "match": "(style)\\.([a-zA-Z0-9$_-]+(?:\\.[a-zA-Z0-9$_-]+)*)|([a-zA-Z0-9_$@][a-zA-Z0-9_$@:-]*)"
+          "match": "(style)\\.([a-zA-Z0-9$_\\-]+(?:\\.[a-zA-Z0-9$_\\-]+)*)|([a-zA-Z0-9_$@][a-zA-Z0-9_$@:\\-]*)"
         }
       ]
     }

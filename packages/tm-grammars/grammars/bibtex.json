@@ -24,7 +24,7 @@
           "name": "punctuation.section.preamble.begin.bibtex"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.preamble.end.bibtex"
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "begin": "((@)(?i:string))\\s*(\\{)\\s*([a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)",
+      "begin": "((@)(?i:string))\\s*(\\{)\\s*([a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.string-constant.bibtex"
@@ -79,7 +79,7 @@
           "name": "variable.other.bibtex"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.string-constant.end.bibtex"
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "begin": "((@)(?i:string))\\s*(\\()\\s*([a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)",
+      "begin": "((@)(?i:string))\\s*(\\()\\s*([a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.string-constant.bibtex"
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "begin": "((@)[a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)\\s*(\\{)\\s*([^\\s,}]*)",
+      "begin": "((@)[a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)\\s*(\\{)\\s*([^\\s,}]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.entry-type.bibtex"
@@ -137,7 +137,7 @@
           "name": "entity.name.type.entry-key.bibtex"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.entry.end.bibtex"
@@ -146,7 +146,7 @@
       "name": "meta.entry.braces.bibtex",
       "patterns": [
         {
-          "begin": "([a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)\\s*(\\=)",
+          "begin": "([a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)\\s*(=)",
           "beginCaptures": {
             "1": {
               "name": "support.function.key.bibtex"
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "begin": "((@)[a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)\\s*(\\()\\s*([^\\s,]*)",
+      "begin": "((@)[a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)\\s*(\\()\\s*([^\\s,]*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.entry-type.bibtex"
@@ -190,7 +190,7 @@
       "name": "meta.entry.parenthesis.bibtex",
       "patterns": [
         {
-          "begin": "([a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*)\\s*(\\=)",
+          "begin": "([a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*)\\s*(=)",
           "beginCaptures": {
             "1": {
               "name": "support.function.key.bibtex"
@@ -248,7 +248,7 @@
           "name": "punctuation.definition.group.begin.bibtex"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.group.end.bibtex"
@@ -269,7 +269,7 @@
               "name": "punctuation.definition.string.begin.bibtex"
             }
           },
-          "end": "\\}",
+          "end": "}",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.bibtex"
@@ -308,7 +308,7 @@
           "name": "support.variable.bibtex"
         }
       },
-      "match": "[a-zA-Z!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~][a-zA-Z0-9!$&*+\\-./:;<>?@\\[\\\\\\]^_`|~]*"
+      "match": "[a-zA-Z!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~][a-zA-Z0-9!$\\&*+\\-./:;<>?@\\[\\\\\\]\\^_`|~]*"
     }
   },
   "scopeName": "text.bibtex"

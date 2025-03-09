@@ -13,7 +13,7 @@
   ],
   "repository": {
     "block": {
-      "begin": "(@)(if|else if|else|defer|placeholder|loading|error|switch|case|default|for|empty)(?:\\s*)",
+      "begin": "(@)(if|else if|else|defer|placeholder|loading|error|switch|case|default|for|empty)\\s*",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -26,7 +26,7 @@
           "name": "keyword.control.block.kind.ng"
         }
       },
-      "end": "(?<=\\})",
+      "end": "(?<=})",
       "name": "control.block.ng",
       "patterns": [
         {
@@ -45,7 +45,7 @@
         }
       },
       "contentName": "control.block.body.ng",
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.block.ts"

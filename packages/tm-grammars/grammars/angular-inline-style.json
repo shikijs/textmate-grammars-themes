@@ -20,7 +20,7 @@
           "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts"
         }
       },
-      "end": "(?=,|})",
+      "end": "(?=[,}])",
       "patterns": [
         {
           "include": "#tsParenExpression"
@@ -34,7 +34,7 @@
       ]
     },
     "style": {
-      "begin": "\\s*([`|'|\"])",
+      "begin": "\\s*([`|'\"])",
       "beginCaptures": {
         "1": {
           "name": "string"
@@ -60,7 +60,7 @@
           "name": "meta.array.literal.ts meta.brace.square.ts"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "meta.array.literal.ts meta.brace.square.ts"
