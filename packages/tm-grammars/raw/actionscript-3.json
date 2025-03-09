@@ -187,7 +187,7 @@
       ]
     },
     "class_declaration": {
-      "begin": "(?x) \\b(class)\\b \\s+ ([\\.\\w]+|\\*)",
+      "begin": "(?x) \\b(class)\\b \\s+ ([A-Za-z0-9_\\$\\.]+|\\*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.class.actionscript.3"
@@ -341,7 +341,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "(?x) \\b(extends)\\b \\s+ ([\\.\\w]+) \\s* (?:, \\s* ([\\.\\w]+))* \\s*",
+      "match": "(?x) \\b(extends)\\b \\s+ ([A-Za-z0-9_\\$\\.]+) \\s* (?:, \\s* ([A-Za-z0-9_\\$\\.]+))* \\s*",
       "name": "meta.extends.actionscript.3"
     },
     "function_arguments": {
@@ -414,7 +414,7 @@
           "name": "entity.other.inherited-class.actionscript.3"
         }
       },
-      "match": "(?x) \\b(implements)\\b \\s+ ([\\.\\w]+) \\s* (?:, \\s* ([\\.\\w]+))* \\s*",
+      "match": "(?x) \\b(implements)\\b \\s+ ([A-Za-z0-9_\\$\\.]+) \\s* (?:, \\s* ([A-Za-z0-9_\\$\\.]+))* \\s*",
       "name": "meta.implements.actionscript.3"
     },
     "import": {
@@ -454,7 +454,7 @@
       ]
     },
     "interface_declaration": {
-      "begin": "(?x) \\b(interface)\\b \\s+ ([\\.\\w]+)",
+      "begin": "(?x) \\b(interface)\\b \\s+ ([A-Za-z0-9_\\$\\.]+)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.interface.actionscript.3"

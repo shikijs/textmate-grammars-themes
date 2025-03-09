@@ -28,7 +28,7 @@
   "name": "es-tag-html",
   "patterns": [
     {
-      "begin": "(?i)(\\s?\\/\\*\\s?(html|template|inline-html|inline-template)\\s?\\*\\/\\s?)(`)",
+      "begin": "(?i)(\\s?/\\*\\s?(html|template|inline-html|inline-template)\\s?\\*/\\s?)(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block"
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "begin": "(?i)(?<=\\s|\\,|\\=|\\:|\\(|\\$\\()\\s{0,}(((\\/\\*)|(\\/\\/))\\s?(html|template|inline-html|inline-template)[ ]{0,1000}\\*?\\/?)[ ]{0,1000}$",
+      "begin": "(?i)(?<=[\\s,=:(]|\\$\\()\\s*(((/\\*)|(//))\\s?(html|template|inline-html|inline-template) {0,1000}\\*?/?) {0,1000}$",
       "beginCaptures": {
         "1": {
           "name": "comment.line"
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "begin": "(\\${)",
+      "begin": "(\\$\\{)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"

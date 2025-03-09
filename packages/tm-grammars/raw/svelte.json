@@ -761,7 +761,17 @@
                   "name": "variable.other.constant.svelte"
                 }
               },
-              "end": "(?=\\=)"
+              "end": "(?=[:=])"
+            },
+            {
+              "begin": "(?=:)",
+              "end": "(?=\\=)",
+              "name": "meta.type.annotation.svelte",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
             },
             {
               "begin": "(?=\\=)",

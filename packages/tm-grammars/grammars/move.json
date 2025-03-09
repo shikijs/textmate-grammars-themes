@@ -85,7 +85,7 @@
         },
         {
           "begin": "(?<=address)",
-          "end": "(?=[{])",
+          "end": "(?=\\{)",
           "name": "meta.address.definition.move",
           "patterns": [
             {
@@ -107,11 +107,11 @@
     },
     "annotation": {
       "begin": "#\\[",
-      "end": "\\]",
+      "end": "]",
       "name": "support.constant.annotation.move",
       "patterns": [
         {
-          "match": "\\b(\\w+)\\s*(?=\\=)",
+          "match": "\\b(\\w+)\\s*(?==)",
           "name": "meta.annotation.name.move"
         },
         {
@@ -135,7 +135,7 @@
       "name": "meta.import.as.move"
     },
     "block": {
-      "begin": "{",
+      "begin": "\\{",
       "end": "}",
       "name": "meta.block.move",
       "patterns": [
@@ -147,7 +147,7 @@
     "block-comments": {
       "patterns": [
         {
-          "begin": "/\\*[\\*!](?![\\*/])",
+          "begin": "/\\*[*!](?![*/])",
           "end": "\\*/",
           "name": "comment.block.documentation.move"
         },
@@ -260,7 +260,7 @@
           "include": "#abilities"
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "name": "meta.enum.definition.move",
           "patterns": [
@@ -295,7 +295,7 @@
               ]
             },
             {
-              "begin": "{",
+              "begin": "\\{",
               "end": "}",
               "name": "meta.enum.struct.move",
               "patterns": [
@@ -400,7 +400,7 @@
           "name": "keyword.operator.macro.dollar.move"
         },
         {
-          "match": "(?<=[$])[a-z][A-Z_0-9a-z]*",
+          "match": "(?<=\\$)[a-z][A-Z_0-9a-z]*",
           "name": "variable.other.meta.move"
         },
         {
@@ -474,7 +474,7 @@
       ]
     },
     "fun_body": {
-      "begin": "{",
+      "begin": "\\{",
       "end": "(?<=})",
       "name": "meta.fun_body.move",
       "patterns": [
@@ -484,13 +484,13 @@
       ]
     },
     "fun_call": {
-      "begin": "\\b(\\w+)\\s*(?:<[\\w\\s,]+>)?\\s*[(]",
+      "begin": "\\b(\\w+)\\s*(?:<[\\w\\s,]+>)?\\s*\\(",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.call.move"
         }
       },
-      "end": "[)]",
+      "end": "\\)",
       "name": "meta.fun_call.move",
       "patterns": [
         {
@@ -571,8 +571,8 @@
           "include": "#type_param"
         },
         {
-          "begin": "[(]",
-          "end": "[)]",
+          "begin": "\\(",
+          "end": "\\)",
           "name": "meta.parentheses.move",
           "patterns": [
             {
@@ -660,7 +660,7 @@
           "name": "entity.name.type.move"
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "patterns": [
             {
@@ -702,7 +702,7 @@
       "name": "meta.literal.move",
       "patterns": [
         {
-          "match": "@0x[A-F0-9a-f]+",
+          "match": "@0x\\h+",
           "name": "support.constant.address.base16.move"
         },
         {
@@ -710,11 +710,11 @@
           "name": "support.constant.address.name.move"
         },
         {
-          "match": "0x[_a-fA-F0-9]+(?:u(?:8|16|32|64|128|256))?",
+          "match": "0x[_\\h]+(?:u(?:8|16|32|64|128|256))?",
           "name": "constant.numeric.hex.move"
         },
         {
-          "match": "(?<!(?:\\w|(?:(?<!\\.)\\.)))[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:[u](?:8|16|32|64|128|256))?",
+          "match": "(?<!(?:\\w|(?<!\\.)\\.))[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:u(?:8|16|32|64|128|256))?",
           "name": "constant.numeric.move"
         },
         {
@@ -727,11 +727,11 @@
               "name": "constant.character.escape.move"
             },
             {
-              "match": "\\\\[nrt\\0\"]",
+              "match": "\\\\[nrt\\x00\"]",
               "name": "constant.character.escape.move"
             },
             {
-              "match": "\\\\x[a-fA-F0-9][A-Fa-f0-9]",
+              "match": "\\\\x\\h\\h",
               "name": "constant.character.escape.hex.move"
             },
             {
@@ -746,7 +746,7 @@
           "name": "meta.vector.literal.hex.move",
           "patterns": [
             {
-              "match": "[A-Fa-f0-9]+",
+              "match": "\\h+",
               "name": "constant.character.move"
             }
           ]
@@ -757,7 +757,7 @@
         },
         {
           "begin": "vector\\[",
-          "end": "\\]",
+          "end": "]",
           "name": "meta.vector.literal.macro.move",
           "patterns": [
             {
@@ -768,7 +768,7 @@
       ]
     },
     "local_call": {
-      "match": "\\b([a-z][_a-z0-9]*)(?=[<\\(])",
+      "match": "\\b([a-z][_a-z0-9]*)(?=[<(])",
       "name": "entity.name.function.call.local.move"
     },
     "macro": {
@@ -818,7 +818,7 @@
           "include": "#types"
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "name": "meta.match.block.move",
           "patterns": [
@@ -842,7 +842,7 @@
           "name": "entity.name.function.call.path.move"
         }
       },
-      "match": "\\.([a-z][_a-z0-9]*)(?=[<\\(])",
+      "match": "\\.([a-z][_a-z0-9]*)(?=[<(])",
       "name": "meta.path.call.move"
     },
     "module": {
@@ -870,7 +870,7 @@
             },
             {
               "begin": "(?<=\\b(module))",
-              "end": "(?=[(::){])",
+              "end": "(?=[(:){])",
               "name": "constant.other.move",
               "patterns": [
                 {
@@ -897,7 +897,7 @@
           ]
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "name": "meta.module_scope.move",
           "patterns": [
@@ -975,7 +975,7 @@
         },
         {
           "begin": "(?<=\\bmodule\\b)",
-          "end": "(?=[(::){])",
+          "end": "(?=[(:){])",
           "name": "constant.other.move"
         },
         {
@@ -1059,7 +1059,7 @@
           "include": "#comments"
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "name": "meta.script_scope.move",
           "patterns": [
@@ -1114,7 +1114,7 @@
           "name": "entity.name.function.move"
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "patterns": [
             {
@@ -1152,7 +1152,7 @@
       ]
     },
     "spec_block": {
-      "begin": "{",
+      "begin": "\\{",
       "end": "}",
       "name": "meta.spec_block.move",
       "patterns": [
@@ -1203,7 +1203,7 @@
         },
         {
           "begin": "(?<=\\bdefine)",
-          "end": "(?=[(])",
+          "end": "(?=\\()",
           "patterns": [
             {
               "include": "#comments"
@@ -1231,7 +1231,7 @@
           "name": "storage.modifier.type.move"
         }
       },
-      "end": "(?<=[};\\)])",
+      "end": "(?<=[};)])",
       "name": "meta.struct.move",
       "patterns": [
         {
@@ -1271,7 +1271,7 @@
         },
         {
           "begin": "\\(",
-          "end": "(?<=[)])",
+          "end": "(?<=\\))",
           "name": "meta.struct.paren.move",
           "patterns": [
             {
@@ -1283,7 +1283,7 @@
           ]
         },
         {
-          "begin": "{",
+          "begin": "\\{",
           "end": "}",
           "name": "meta.struct.body.move",
           "patterns": [
@@ -1316,7 +1316,7 @@
       ]
     },
     "struct_pack": {
-      "begin": "(?<=[A-Za-z0-9_>])\\s*{",
+      "begin": "(?<=[A-Za-z0-9_>])\\s*\\{",
       "end": "}",
       "name": "meta.struct.pack.move",
       "patterns": [
