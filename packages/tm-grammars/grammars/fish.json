@@ -27,7 +27,7 @@
           "include": "#variable"
         },
         {
-          "match": "\\\\(\\\"|\\$|$|\\\\)",
+          "match": "\\\\([\"$]|$|\\\\)",
           "name": "constant.character.escape.fish"
         }
       ]
@@ -48,7 +48,7 @@
       "name": "string.quoted.single.fish",
       "patterns": [
         {
-          "match": "\\\\('|`|\\\\)",
+          "match": "\\\\(['`\\\\])",
           "name": "constant.character.escape.fish"
         }
       ]
@@ -71,7 +71,7 @@
           "name": "support.function.command.fish"
         }
       },
-      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|[;]\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!]))([a-zA-Z_\\-0-9\\[\\].]+)"
+      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|;\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!]))([a-zA-Z_\\-0-9\\[\\].]+)"
     },
     {
       "match": "(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!])",
@@ -86,7 +86,7 @@
       "name": "keyword.operator.pipe.fish"
     },
     {
-      "match": "(?:<|#StandardInput(>|\\^|>>|\\^\\^)(&[012\\-])?|[012](<|>|>>)(&[012\\-])?)",
+      "match": "(?:<|([>\\^]|>>|\\^\\^)(&[012\\-])?|[012]([<>]|>>)(&[012\\-])?)",
       "name": "keyword.operator.redirect.fish"
     },
     {
@@ -94,7 +94,7 @@
       "name": "keyword.operator.background.fish"
     },
     {
-      "match": "\\*\\*|\\*|\\?",
+      "match": "\\*\\*|[*?]",
       "name": "keyword.operator.glob.fish"
     },
     {
@@ -116,15 +116,15 @@
     "escape": {
       "patterns": [
         {
-          "match": "\\\\[abefnrtv $*?~#(){}\\[\\]<>^&|;\"']",
+          "match": "\\\\[abefnrtv $*?~#(){}\\[\\]<>\\^\\&|;\"']",
           "name": "constant.character.escape.single.fish"
         },
         {
-          "match": "\\\\x[0-9a-fA-F]{1,2}",
+          "match": "\\\\x\\h{1,2}",
           "name": "constant.character.escape.hex-ascii.fish"
         },
         {
-          "match": "\\\\X[0-9a-fA-F]{1,2}",
+          "match": "\\\\X\\h{1,2}",
           "name": "constant.character.escape.hex-byte.fish"
         },
         {
@@ -132,11 +132,11 @@
           "name": "constant.character.escape.octal.fish"
         },
         {
-          "match": "\\\\u[0-9a-fA-F]{1,4}",
+          "match": "\\\\u\\h{1,4}",
           "name": "constant.character.escape.unicode-16-bit.fish"
         },
         {
-          "match": "\\\\U[0-9a-fA-F]{1,8}",
+          "match": "\\\\U\\h{1,8}",
           "name": "constant.character.escape.unicode-32-bit.fish"
         },
         {
