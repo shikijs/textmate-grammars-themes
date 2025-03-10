@@ -232,6 +232,18 @@ export const sourcesMarketplace: ThemeSource[] = [
       'Catppuccin Frappé',
     ],
   ),
+  ...generateMarketplaceSource(
+    'jdinhlife.gruvbox',
+    'https://github.com/jdinhify/vscode-theme-gruvbox/blob/main/src/main.ts',
+    [
+      'Gruvbox Dark Hard',
+      'Gruvbox Dark Medium',
+      'Gruvbox Dark Soft',
+      'Gruvbox Light Hard',
+      'Gruvbox Light Medium',
+      'Gruvbox Light Soft',
+    ],
+  ),
 ]
 
 export const sources = [
