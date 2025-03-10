@@ -4,7 +4,7 @@
     "st"
   ],
   "foldingStartMarker": "\\[",
-  "foldingStopMarker": "^\\s*\\]|^\\s\\]",
+  "foldingStopMarker": "^(?:\\s*]|\\s])",
   "name": "smalltalk",
   "patterns": [
     {
@@ -67,11 +67,11 @@
       "include": "#numeric"
     },
     {
-      "match": "<(?!<|=)|>(?!<|=|>)|<=|>=|=|==|~=|~~|>>|\\^",
+      "match": "<(?![<=])|>(?![<=>])|<=|>=|=|==|~=|~~|>>|\\^",
       "name": "keyword.operator.comparison.smalltalk"
     },
     {
-      "match": "(\\*|\\+|\\-|/|\\\\)",
+      "match": "([*+\\-/\\\\])",
       "name": "keyword.operator.arithmetic.smalltalk"
     },
     {
@@ -130,7 +130,7 @@
           "name": "punctuation.definition.constant.smalltalk"
         }
       },
-      "match": "(?>[a-zA-Z_]\\w*(?>[?!])?)(:)(?!:)",
+      "match": "(?>[a-zA-Z_]\\w*[?!]?)(:)(?!:)",
       "name": "constant.other.messages.smalltalk"
     },
     {
@@ -149,7 +149,7 @@
           "name": "punctuation.definition.constant.begin.smalltalk"
         }
       ],
-      "end": "\\]",
+      "end": "]",
       "endCaptures": [
         {
           "name": "punctuation.definition.constant.end.smalltalk"

@@ -22,7 +22,7 @@
       "name": "comment.line.jssm"
     },
     {
-      "begin": "\\${",
+      "begin": "\\$\\{",
       "captures": {
         "0": {
           "name": "entity.name.function"
@@ -116,15 +116,15 @@
       "name": "constant.numeric.jssmProbability"
     },
     {
-      "match": "\\'[^']*\\'",
+      "match": "'[^']*'",
       "name": "constant.character.jssmAction"
     },
     {
-      "match": "\\\"[^\"]*\\\"",
+      "match": "\"[^\"]*\"",
       "name": "entity.name.tag.jssmLabel.doublequoted"
     },
     {
-      "match": "([a-zA-Z0-9_.+&()#@!?,])",
+      "match": "([a-zA-Z0-9_.+\\&()#@!?,])",
       "name": "entity.name.tag.jssmLabel.atom"
     }
   ],

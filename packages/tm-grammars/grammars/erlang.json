@@ -283,7 +283,7 @@
               ]
             },
             {
-              "match": "\\|\\||\\||:|;|,|\\.|->",
+              "match": "\\|\\||[|:;,.]|->",
               "name": "punctuation.separator.define.erlang"
             },
             {
@@ -342,7 +342,7 @@
       ]
     },
     "docstring": {
-      "begin": "(?<!\")(([\"]{3,})\\s*)(\\S.*)?$",
+      "begin": "(?<!\")((\"{3,})\\s*)(\\S.*)?$",
       "beginCaptures": {
         "1": {
           "name": "meta.string.quoted.triple.begin.erlang"
@@ -912,7 +912,7 @@
           "name": "punctuation.definition.list.begin.erlang"
         }
       },
-      "end": "(\\])",
+      "end": "(])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.list.end.erlang"
@@ -930,7 +930,7 @@
               "name": "punctuation.separator.function-arity.erlang"
             }
           },
-          "end": "(,)|(?=\\])",
+          "end": "(,)|(?=])",
           "endCaptures": {
             "1": {
               "name": "punctuation.separator.list.erlang"
@@ -982,7 +982,7 @@
               ]
             },
             {
-              "match": ",|;",
+              "match": "[,;]",
               "name": "punctuation.separator.guards.erlang"
             },
             {
@@ -1006,7 +1006,7 @@
           "name": "punctuation.definition.class.record.begin.erlang"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.class.record.end.erlang"
@@ -1024,7 +1024,7 @@
               "name": "variable.language.omitted.field.erlang"
             }
           },
-          "end": "(,)|(?=\\})",
+          "end": "(,)|(?=})",
           "endCaptures": {
             "1": {
               "name": "punctuation.separator.class.record.erlang"
@@ -1071,7 +1071,7 @@
               "name": "punctuation.separator.placeholder-parts.erlang"
             }
           },
-          "match": "(~)((\\-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[tlkK]*[~cfegswpWPBX#bx\\+ni]",
+          "match": "(~)((-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[tlkK]*[~cfegswpWPBX#bx+ni]",
           "name": "constant.character.format.placeholder.other.erlang"
         },
         {
@@ -1096,7 +1096,7 @@
           "name": "punctuation.separator.value-type.erlang"
         }
       },
-      "end": "(?=,|:|>>)",
+      "end": "(?=[,:]|>>)",
       "patterns": [
         {
           "captures": {
@@ -1141,7 +1141,7 @@
           "name": "punctuation.definition.list.begin.erlang"
         }
       },
-      "end": "(\\])",
+      "end": "(])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.list.end.erlang"
@@ -1283,7 +1283,7 @@
               "name": "punctuation.separator.float-exponent.erlang"
             }
           },
-          "match": "\\d++(\\.)\\d++([eE][\\+\\-]?\\d++)?",
+          "match": "\\d++(\\.)\\d++([eE][+\\-]?\\d++)?",
           "name": "constant.numeric.float.erlang"
         },
         {
@@ -1699,7 +1699,7 @@
               "name": "entity.name.type.class.record.erlang"
             }
           },
-          "end": "(?<=\\})",
+          "end": "(?<=})",
           "name": "meta.record-usage.erlang",
           "patterns": [
             {
@@ -1710,7 +1710,7 @@
       ]
     },
     "sigil-docstring": {
-      "begin": "(~[bBsS]?)(([\"]{3,})\\s*)(\\S.*)?$",
+      "begin": "(~[bBsS]?)((\"{3,})\\s*)(\\S.*)?$",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1783,7 +1783,7 @@
       ]
     },
     "sigil-string-curly-brackets": {
-      "begin": "(~[bs]?)([{])",
+      "begin": "(~[bs]?)(\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1792,7 +1792,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([}])",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -1806,7 +1806,7 @@
       ]
     },
     "sigil-string-curly-brackets-verbatim": {
-      "begin": "(~[BS])([{])",
+      "begin": "(~[BS])(\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1815,7 +1815,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([}])",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -1906,7 +1906,7 @@
       "name": "string.quoted.less-greater.sigil.erlang"
     },
     "sigil-string-parenthesis": {
-      "begin": "(~[bs]?)([(])",
+      "begin": "(~[bs]?)(\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1915,7 +1915,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([)])",
+      "end": "(\\))",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -1929,7 +1929,7 @@
       ]
     },
     "sigil-string-parenthesis-verbatim": {
-      "begin": "(~[BS])([(])",
+      "begin": "(~[BS])(\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1938,7 +1938,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([)])",
+      "end": "(\\))",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -1947,7 +1947,7 @@
       "name": "string.quoted.parenthesis.sigil.erlang"
     },
     "sigil-string-single-character": {
-      "begin": "(~[bs]?)([/\\|`#])",
+      "begin": "(~[bs]?)([/|`#])",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -1970,7 +1970,7 @@
       ]
     },
     "sigil-string-single-character-verbatim": {
-      "begin": "(~[BS])([/\\|`#])",
+      "begin": "(~[BS])([/|`#])",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -2029,7 +2029,7 @@
       "name": "string.quoted.single.sigil.erlang"
     },
     "sigil-string-square-brackets": {
-      "begin": "(~[bs]?)([\\[])",
+      "begin": "(~[bs]?)(\\[)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -2038,7 +2038,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([\\]])",
+      "end": "(])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -2052,7 +2052,7 @@
       ]
     },
     "sigil-string-square-brackets-verbatim": {
-      "begin": "(~[BS])([\\[])",
+      "begin": "(~[BS])(\\[)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.erlang"
@@ -2061,7 +2061,7 @@
           "name": "punctuation.definition.string.begin.erlang"
         }
       },
-      "end": "([\\]])",
+      "end": "(])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.erlang"
@@ -2090,7 +2090,7 @@
       ]
     },
     "symbolic-operator": {
-      "match": "\\+\\+|\\+|--|-|\\*|/=|/|=/=|=:=|==|=<|=|<-|<|>=|>|!|::|\\?=",
+      "match": "\\+\\+|\\+|--|[\\-*]|/=|/|=/=|=:=|==|=<|=|<-|<|>=|[>!]|::|\\?=",
       "name": "keyword.operator.symbolic.erlang"
     },
     "textual-operator": {
@@ -2104,7 +2104,7 @@
           "name": "punctuation.definition.tuple.begin.erlang"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.tuple.end.erlang"

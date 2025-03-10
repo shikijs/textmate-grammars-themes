@@ -238,7 +238,7 @@
   ],
   "repository": {
     "attributes": {
-      "begin": "(#)(\\!?)(\\[)",
+      "begin": "(#)(!?)(\\[)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.attribute.rust"
@@ -247,7 +247,7 @@
           "name": "punctuation.brackets.attribute.rust"
         }
       },
-      "end": "\\]",
+      "end": "]",
       "endCaptures": {
         "0": {
           "name": "punctuation.brackets.attribute.rust"
@@ -366,7 +366,7 @@
               "name": "entity.name.type.numeric.rust"
             }
           },
-          "match": "\\b\\d[\\d_]*(\\.?)[\\d_]*(?:(E|e)([+-]?)([\\d_]+))?(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "match": "\\b\\d[\\d_]*(\\.?)[\\d_]*(?:([Ee])([+\\-]?)([\\d_]+))?(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
           "name": "constant.numeric.decimal.rust"
         },
         {
@@ -420,7 +420,7 @@
           "name": "constant.character.escape.unicode.punctuation.rust"
         }
       },
-      "match": "(\\\\)(?:(?:(x[0-7][\\da-fA-F])|(u(\\{)[\\da-fA-F]{4,6}(\\}))|.))",
+      "match": "(\\\\)(?:(x[0-7][\\da-fA-F])|(u(\\{)[\\da-fA-F]{4,6}(}))|.)",
       "name": "constant.character.escape.rust"
     },
     "functions": {
@@ -657,7 +657,7 @@
           "name": "punctuation.definition.interpolation.rust"
         }
       },
-      "match": "({)[^\"{}]*(})",
+      "match": "(\\{)[^\"{}]*(})",
       "name": "meta.interpolation.rust"
     },
     "keywords": {
@@ -711,11 +711,11 @@
           "name": "storage.modifier.mut.rust"
         },
         {
-          "match": "(\\^|\\||\\|\\||&&|<<|>>|!)(?!=)",
+          "match": "([\\^|]|\\|\\||&&|<<|>>|!)(?!=)",
           "name": "keyword.operator.logical.rust"
         },
         {
-          "match": "&(?![&=])",
+          "match": "&(?![\\&=])",
           "name": "keyword.operator.borrow.and.rust"
         },
         {
@@ -723,7 +723,7 @@
           "name": "keyword.operator.assignment.rust"
         },
         {
-          "match": "(?<![<>])=(?!=|>)",
+          "match": "(?<![<>])=(?![=>])",
           "name": "keyword.operator.assignment.equal.rust"
         },
         {
@@ -758,7 +758,7 @@
               "name": "punctuation.brackets.curly.rust"
             }
           },
-          "match": "(?:\\b|(?:(\\))|(\\])|(\\})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
+          "match": "(?:\\b|(?:(\\))|(])|(})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
         },
         {
           "match": "::",
@@ -781,7 +781,7 @@
           "name": "keyword.operator.access.dot.rust"
         },
         {
-          "match": "\\.{2}(=|\\.)?",
+          "match": "\\.{2}([=.])?",
           "name": "keyword.operator.range.rust"
         },
         {
@@ -817,7 +817,7 @@
               "name": "entity.name.type.lifetime.rust"
             }
           },
-          "match": "(['])([a-zA-Z_][0-9a-zA-Z_]*)(?!['])\\b"
+          "match": "(')([a-zA-Z_][0-9a-zA-Z_]*)(?!')\\b"
         },
         {
           "captures": {
@@ -831,7 +831,7 @@
               "name": "entity.name.type.lifetime.rust"
             }
           },
-          "match": "(\\&)(['])([a-zA-Z_][0-9a-zA-Z_]*)(?!['])\\b"
+          "match": "(&)(')([a-zA-Z_][0-9a-zA-Z_]*)(?!')\\b"
         }
       ]
     },
@@ -874,7 +874,7 @@
               "name": "keyword.operator.namespace.rust"
             }
           },
-          "match": "(?<![A-Za-z0-9_])([A-Za-z0-9_]+)((?<!super|self)::)"
+          "match": "(?<![A-Za-z0-9_])([A-Za-z0-9_]+)((?<!s(?:uper|elf))::)"
         }
       ]
     },
