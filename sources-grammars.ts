@@ -180,6 +180,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web'],
   },
   {
+    name: 'llvm',
+    source: 'https://github.com/llvm/llvm-project/blob/main/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
+    categories: ['dsl'],
+  },
+  {
     name: 'lua',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/lua/syntaxes/lua.tmLanguage.json',
     categories: ['scripting'],
