@@ -3673,6 +3673,21 @@ export const grammars = [
     source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/c6967c5ac4abe9ad069ea3b376621c2ef431392e/syntaxes/wikitext.tmLanguage.yaml',
   },
   {
+    byteSize: 21180,
+    categories: [
+      'web',
+    ],
+    displayName: 'WebAssembly Interface Types',
+    hash: 'TOoD2Ik1UwLCr7YKz_8IbCq_v1PafpOoKJpM8BnW_4A',
+    lastUpdate: '2024-02-01T13:18:23Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE',
+    name: 'wit',
+    scopeName: 'source.wit',
+    sha: '5a67ac3f5ade246b44308768b034204612f3a0c9',
+    source: 'https://github.com/wasmerio/vscode-wasm/blob/5a67ac3f5ade246b44308768b034204612f3a0c9/syntaxes/wit.json',
+  },
+  {
     aliases: [
       'wl',
     ],
