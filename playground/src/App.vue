@@ -298,16 +298,18 @@ if (import.meta.hot) {
               Grammar
             </div>
             <div>
-              <button text-left @click="openGrammar()">
-                <code>{{ grammar }}</code>
-              </button>
-              <div text-xs>
-                <span v-for="(link, index) in grammarObject?.funding" :key="index">
-                  <span v-if="index > 0">, </span>
-                  <a :href="link.url" target="_blank" hover="text-primary">
-                    ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
-                  </a>
-                </span>
+              <div flex="~ items-center gap-2">
+                <button text-left @click="openGrammar()">
+                  <code>{{ grammar }}</code>
+                </button>
+                <!-- TODO: Add funding links -->
+                <!-- <div text-xs>
+                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
+                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
+                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
+                    </a>
+                  </span>
+                </div> -->
               </div>
               <div v-if="embedded.length < 15" flex="~ col" ml-2 border="l base">
                 <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
@@ -327,16 +329,18 @@ if (import.meta.hot) {
               Theme
             </div>
             <div>
-              <button text-left @click="openTheme()">
-                <code>{{ theme }}</code>
-              </button>
-              <div text-xs>
-                <template v-for="(link, index) in themeObject?.funding" :key="index">
-                  <span v-if="index > 0">, </span>
-                  <a :href="link.url" target="_blank" hover="text-primary">
-                    ❤️ {{ link.name }}<template v-if="link.handle">: <b>{{ link.handle }}</b></template>
-                  </a>
-                </template>
+              <div flex="~ items-center gap-2">
+                <button text-left @click="openTheme()">
+                  <code>{{ theme }}</code>
+                </button>
+                <!-- TODO: Add funding links -->
+                <!-- <div text-xs>
+                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
+                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
+                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
+                    </a>
+                  </span>
+                </div> -->
               </div>
             </div>
             <div text-right op50>
