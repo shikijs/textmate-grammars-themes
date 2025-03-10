@@ -1334,6 +1334,68 @@
         }
       ]
     },
+    "ies-string": {
+      "patterns": [
+        {
+          "begin": "i\"",
+          "end": "\"[cwd]?",
+          "name": "string.ies-string.d",
+          "patterns": [
+            {
+              "include": "#interpolation-escape"
+            },
+            {
+              "include": "#interpolation-sequence"
+            },
+            {
+              "include": "#double-quoted-characters"
+            }
+          ]
+        }
+      ]
+    },
+    "ies-token-string": {
+      "begin": "iq\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.token.d"
+        }
+      },
+      "end": "\\}[cdw]?",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.token.d"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#interpolation-sequence"
+        },
+        {
+          "include": "#token-string-content"
+        }
+      ]
+    },
+    "ies-wysiwyg-string": {
+      "patterns": [
+        {
+          "begin": "i`",
+          "end": "`[cwd]?",
+          "name": "string.ies-wysiwyg-string.d",
+          "patterns": [
+            {
+              "include": "#interpolation-escape"
+            },
+            {
+              "include": "#interpolation-sequence"
+            },
+            {
+              "include": "#wysiwyg-characters"
+            }
+          ]
+        }
+      ]
+    },
     "if-statement": {
       "patterns": [
         {
@@ -1492,6 +1554,30 @@
             }
           },
           "match": "\\b(interface)(?:\\s+([A-Za-z_][\\w_\\d]*))?\\b"
+        }
+      ]
+    },
+    "interpolation-escape": {
+      "match": "\\\\\\$",
+      "name": "constant.character.escape-sequence.d"
+    },
+    "interpolation-sequence": {
+      "begin": "\\$\\(",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.begin.d"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end.d"
+        }
+      },
+      "name": "meta.interpolation.expression.d",
+      "patterns": [
+        {
+          "include": "#expression"
         }
       ]
     },
@@ -2741,6 +2827,15 @@
         },
         {
           "include": "#token-string"
+        },
+        {
+          "include": "#ies-string"
+        },
+        {
+          "include": "#ies-wysiwyg-string"
+        },
+        {
+          "include": "#ies-token-string"
         }
       ]
     },

@@ -2339,16 +2339,16 @@
           ]
         }
       },
-      "contentName": "meta.embedded.markdown_latex_combined",
+      "contentName": "meta.embedded.internal_only_markdown_latex_combined",
       "end": "(\\\\end\\{markdown\\})",
       "patterns": [
         {
-          "include": "text.tex.markdown_latex_combined"
+          "include": "text.tex.internal_only_markdown_latex_combined"
         }
       ]
     },
     {
-      "begin": "(\\s*\\\\begin\\{(\\w+\\*?)\\})",
+      "begin": "(\\s*\\\\begin\\{(\\p{Alphabetic}+\\*?)\\})",
       "captures": {
         "1": {
           "patterns": [
@@ -3181,7 +3181,7 @@
           "name": "punctuation.definition.arguments.begin.latex"
         }
       },
-      "match": "\\s*((\\\\)(?:begin|end))(\\{)([a-zA-Z]*\\*?)(\\})(?:(\\[)([^\\]]*)(\\])){,2}(?:(\\{)([^{}]*)(\\}))?"
+      "match": "\\s*((\\\\)(?:begin|end))(\\{)(\\p{Alphabetic}+\\*?)(\\})(?:(\\[)([^\\]]*)(\\])){,2}(?:(\\{)([^{}]*)(\\}))?"
     },
     "definition-label": {
       "begin": "((\\\\)z?label)((?:\\[[^\\[]*?\\])*)(\\{)",
