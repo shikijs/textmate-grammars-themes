@@ -3,7 +3,7 @@
   "name": "llvm",
   "patterns": [
     {
-      "match": "\\bvoid\\b|\\bhalf\\b|\\bbfloat\\b|\\bfloat\\b|\\bdouble\\b|\\bx86_fp80\\b|\\bfp128\\b|\\bppc_fp128\\b|\\blabel\\b|\\bmetadata\\b|\\bx86_mmx\\b|\\bx86_amx\\b|\\btype\\b|\\blabel\\b|\\bopaque\\b|\\btoken\\b|\\bi\\d+\\**",
+      "match": "\\b(?:void\\b|half\\b|bfloat\\b|float\\b|double\\b|x86_fp80\\b|fp128\\b|ppc_fp128\\b|label\\b|metadata\\b|x86_mmx\\b|x86_amx\\b|type\\b|label\\b|opaque\\b|token\\b|i\\d+\\**)",
       "name": "storage.type.llvm"
     },
     {
@@ -19,11 +19,11 @@
       "name": "keyword.instruction.llvm"
     },
     {
-      "match": "\\bacq_rel\\b|\\bacquire\\b|\\baddrspace\\b|\\balias\\b|\\balign\\b|\\balignstack\\b|\\ballocsize\\b|\\balwaysinline\\b|\\bappending\\b|\\bargmemonly\\b|\\barm_aapcs_vfpcc\\b|\\barm_aapcscc\\b|\\barm_apcscc\\b|\\basm\\b|\\batomic\\b|\\bavailable_externally\\b|\\bblockaddress\\b|\\bbuiltin\\b|\\bbyref\\b|\\bbyval\\b|\\bc\\b|\\bcaller\\b|\\bcatch\\b|\\bcc\\b|\\bccc\\b|\\bcleanup\\b|\\bcold\\b|\\bcoldcc\\b|\\bcomdat\\b|\\bcommon\\b|\\bconstant\\b|\\bconvergent\\b|\\bdatalayout\\b|\\bdeclare\\b|\\bdefault\\b|\\bdefine\\b|\\bdeplibs\\b|\\bdereferenceable\\b|\\bdereferenceable_or_null\\b|\\bdistinct\\b|\\bdllexport\\b|\\bdllimport\\b|\\bdso_local\\b|\\bdso_preemptable\\b|\\bexcept\\b|\\bextern_weak\\b|\\bexternal\\b|\\bexternally_initialized\\b|\\bfastcc\\b|\\bfilter\\b|\\bfrom\\b|\\bgc\\b|\\bglobal\\b|\\bhhvm_ccc\\b|\\bhhvmcc\\b|\\bhidden\\b|\\bhot\\b|\\bimmarg\\b|\\binaccessiblemem_or_argmemonly\\b|\\binaccessiblememonly\\b|\\binalloc\\b|\\binitialexec\\b|\\binlinehint\\b|\\binreg\\b|\\bintel_ocl_bicc\\b|\\binteldialect\\b|\\binternal\\b|\\bjumptable\\b|\\blinkonce\\b|\\blinkonce_odr\\b|\\blocal_unnamed_addr\\b|\\blocaldynamic\\b|\\blocalexec\\b|\\bminsize\\b|\\bmodule\\b|\\bmonotonic\\b|\\bmsp430_intrcc\\b|\\bmustprogress\\b|\\bmusttail\\b|\\bnaked\\b|\\bnest\\b|\\bnoalias\\b|\\bnobuiltin\\b|\\bnocallback\\b|\\bnocapture\\b|\\bnocf_check\\b|\\bnoduplicate\\b|\\bnofree\\b|\\bnoimplicitfloat\\b|\\bnoinline\\b|\\bnomerge\\b|\\bnonlazybind\\b|\\bnonnull\\b|\\bnoprofile\\b|\\bnorecurse\\b|\\bnoredzone\\b|\\bnoreturn\\b|\\bnosync\\b|\\bnoundef\\b|\\bnounwind\\b|\\bnosanitize_bounds\\b|\\bnosanitize_coverage\\b|\\bnull_pointer_is_valid\\b|\\boptforfuzzing\\b|\\boptnone\\b|\\boptsize\\b|\\bpersonality\\b|\\bpreallocated\\b|\\bprivate\\b|\\bprotected\\b|\\bptx_device\\b|\\bptx_kernel\\b|\\breadnone\\b|\\breadonly\\b|\\brelease\\b|\\breturned\\b|\\breturns_twice\\b|\\bsafestack\\b|\\bsanitize_address\\b|\\bsanitize_hwaddress\\b|\\bsanitize_memory\\b|\\bsanitize_memtag\\b|\\bsanitize_thread\\b|\\bsection\\b|\\bseq_cst\\b|\\bshadowcallstack\\b|\\bsideeffect\\b|\\bsignext\\b|\\bsource_filename\\b|\\bspeculatable\\b|\\bspeculative_load_hardening\\b|\\bspir_func\\b|\\bspir_kernel\\b|\\bsret\\b|\\bssp\\b|\\bsspreq\\b|\\bsspstrong\\b|\\bstrictfp\\b|\\bswiftcc\\b|\\bswifterror\\b|\\bswiftself\\b|\\bsyncscope\\b|\\btail\\b|\\btailcc\\b|\\btarget\\b|\\bthread_local\\b|\\bto\\b|\\btriple\\b|\\bunnamed_addr\\b|\\bunordered\\b|\\buselistorder\\b|\\buselistorder_bb\\b|\\buwtable\\b|\\bvolatile\\b|\\bweak\\b|\\bweak_odr\\b|\\bwillreturn\\b|\\bwin64cc\\b|\\bwithin\\b|\\bwriteonly\\b|\\bx86_64_sysvcc\\b|\\bx86_fastcallcc\\b|\\bx86_stdcallcc\\b|\\bx86_thiscallcc\\b|\\bzeroext\\b",
+      "match": "\\b(?:acq_rel\\b|acquire\\b|addrspace\\b|alias\\b|align\\b|alignstack\\b|allocsize\\b|alwaysinline\\b|appending\\b|argmemonly\\b|arm_aapcs_vfpcc\\b|arm_aapcscc\\b|arm_apcscc\\b|asm\\b|atomic\\b|available_externally\\b|blockaddress\\b|builtin\\b|byref\\b|byval\\b|c\\b|caller\\b|catch\\b|cc\\b|ccc\\b|cleanup\\b|cold\\b|coldcc\\b|comdat\\b|common\\b|constant\\b|convergent\\b|datalayout\\b|declare\\b|default\\b|define\\b|deplibs\\b|dereferenceable\\b|dereferenceable_or_null\\b|distinct\\b|dllexport\\b|dllimport\\b|dso_local\\b|dso_preemptable\\b|except\\b|extern_weak\\b|external\\b|externally_initialized\\b|fastcc\\b|filter\\b|from\\b|gc\\b|global\\b|hhvm_ccc\\b|hhvmcc\\b|hidden\\b|hot\\b|immarg\\b|inaccessiblemem_or_argmemonly\\b|inaccessiblememonly\\b|inalloc\\b|initialexec\\b|inlinehint\\b|inreg\\b|intel_ocl_bicc\\b|inteldialect\\b|internal\\b|jumptable\\b|linkonce\\b|linkonce_odr\\b|local_unnamed_addr\\b|localdynamic\\b|localexec\\b|minsize\\b|module\\b|monotonic\\b|msp430_intrcc\\b|mustprogress\\b|musttail\\b|naked\\b|nest\\b|noalias\\b|nobuiltin\\b|nocallback\\b|nocapture\\b|nocf_check\\b|noduplicate\\b|nofree\\b|noimplicitfloat\\b|noinline\\b|nomerge\\b|nonlazybind\\b|nonnull\\b|noprofile\\b|norecurse\\b|noredzone\\b|noreturn\\b|nosync\\b|noundef\\b|nounwind\\b|nosanitize_bounds\\b|nosanitize_coverage\\b|null_pointer_is_valid\\b|optforfuzzing\\b|optnone\\b|optsize\\b|personality\\b|preallocated\\b|private\\b|protected\\b|ptx_device\\b|ptx_kernel\\b|readnone\\b|readonly\\b|release\\b|returned\\b|returns_twice\\b|safestack\\b|sanitize_address\\b|sanitize_hwaddress\\b|sanitize_memory\\b|sanitize_memtag\\b|sanitize_thread\\b|section\\b|seq_cst\\b|shadowcallstack\\b|sideeffect\\b|signext\\b|source_filename\\b|speculatable\\b|speculative_load_hardening\\b|spir_func\\b|spir_kernel\\b|sret\\b|ssp\\b|sspreq\\b|sspstrong\\b|strictfp\\b|swiftcc\\b|swifterror\\b|swiftself\\b|syncscope\\b|tail\\b|tailcc\\b|target\\b|thread_local\\b|to\\b|triple\\b|unnamed_addr\\b|unordered\\b|uselistorder\\b|uselistorder_bb\\b|uwtable\\b|volatile\\b|weak\\b|weak_odr\\b|willreturn\\b|win64cc\\b|within\\b|writeonly\\b|x86_64_sysvcc\\b|x86_fastcallcc\\b|x86_stdcallcc\\b|x86_thiscallcc\\b|zeroext\\b)",
       "name": "storage.modifier.llvm"
     },
     {
-      "match": "@[-a-zA-Z$._][-a-zA-Z$._0-9]*",
+      "match": "@[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*",
       "name": "entity.name.function.llvm"
     },
     {
@@ -31,7 +31,7 @@
       "name": "variable.llvm"
     },
     {
-      "match": "%[-a-zA-Z$._][-a-zA-Z$._0-9]*",
+      "match": "%[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*",
       "name": "variable.llvm"
     },
     {
@@ -40,7 +40,7 @@
           "name": "variable.llvm"
         }
       },
-      "match": "(![-a-zA-Z$._][-a-zA-Z$._0-9]*)\\s*$"
+      "match": "(![\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*)\\s*$"
     },
     {
       "captures": {
@@ -48,7 +48,7 @@
           "name": "variable.llvm"
         }
       },
-      "match": "(![-a-zA-Z$._][-a-zA-Z$._0-9]*)\\s*[=!]"
+      "match": "(![\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*)\\s*[=!]"
     },
     {
       "begin": "\"",
@@ -62,11 +62,11 @@
       ]
     },
     {
-      "match": "[-a-zA-Z$._][-a-zA-Z$._0-9]*:",
+      "match": "[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*:",
       "name": "entity.name.label.llvm"
     },
     {
-      "match": "-?\\b\\d+\\.\\d*(e[+-]\\d+)?\\b",
+      "match": "-?\\b\\d+\\.\\d*(e[+\\-]\\d+)?\\b",
       "name": "constant.numeric.float"
     },
     {
@@ -78,11 +78,11 @@
       "name": "constant.numeric.integer"
     },
     {
-      "match": "\\btrue\\b|\\bfalse\\b|\\bnull\\b|\\bzeroinitializer\\b|\\bundef\\b|\\bpoison\\b|\\bnull\\b|\\bnone\\b",
+      "match": "\\b(?:true\\b|false\\b|null\\b|zeroinitializer\\b|undef\\b|poison\\b|null\\b|none\\b)",
       "name": "constant.language"
     },
     {
-      "match": "\\bDW_TAG_[a-z_]+\\b|\\bDW_ATE_[a-zA-Z_]+\\b|\\bDW_OP_[a-zA-Z0-9_]+\\b|\\bDW_LANG_[a-zA-Z0-9_]+\\b|\\bDW_VIRTUALITY_[a-z_]+\\b|\\bDIFlag[A-Za-z]+\\b",
+      "match": "\\bD(?:W_TAG_[a-z_]+\\b|W_ATE_[a-zA-Z_]+\\b|W_OP_[a-zA-Z0-9_]+\\b|W_LANG_[a-zA-Z0-9_]+\\b|W_VIRTUALITY_[a-z_]+\\b|IFlag[A-Za-z]+\\b)",
       "name": "constant.other"
     },
     {

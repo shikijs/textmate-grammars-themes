@@ -9,7 +9,7 @@ export const grammars = [
     displayName: 'ABAP',
     funding: [
     ],
-    hash: '3eD0RLf8LE',
+    hash: 'pRc5lIY0C5D4se6NrjyyO2_x8nAxQBJxt-m-P252jrQ',
     lastUpdate: '2024-12-25T10:52:53Z',
     name: 'abap',
     scopeName: 'source.abap',
@@ -29,8 +29,8 @@ export const grammars = [
         url: 'https://patreon.com/josht',
       },
     ],
-    hash: '6OPWQM2hdm',
-    lastUpdate: '2024-06-05T14:26:29Z',
+    hash: '_KgC8yb3WkwXvzI2fq-Sr8nojbdHZG5mPRKm1TwoqZY',
+    lastUpdate: '2025-03-03T17:04:42Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE',
     name: 'actionscript-3',
@@ -43,7 +43,7 @@ export const grammars = [
     displayName: 'Ada',
     funding: [
     ],
-    hash: 'gy2232UiiU',
+    hash: 'ZyX-cf17ubqm7YZ9pPZh6lNPhB95BXX6hUVGz3GjZ1c',
     lastUpdate: '2024-12-20T16:34:23Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/AdaCore/ada_language_server/master/LICENSE',
@@ -67,7 +67,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'e4qpA2vWkd',
+    hash: 'iXKjoGStKw-aTPBuMVV4H_ABQOLZLUogRJt3r9vTTrw',
     lastUpdate: '2018-10-04T09:01:56Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt',
@@ -92,7 +92,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'ccnxPIUvBq',
+    hash: 'CZE5A9g78Qbs6QDtpVDBRfU0rVVLBGDV1VoTA3QUeS0',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -106,7 +106,7 @@ export const grammars = [
     displayName: 'Apache Conf',
     funding: [
     ],
-    hash: '66FUGT7ysN',
+    hash: 'uEO5vBVUt8RPRL7iXch1j4mJ4RcZgxzRcZn-1r9wnvY',
     lastUpdate: '2020-05-30T18:14:18Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/colinta/ApacheConf.tmLanguage/main/LICENSE',
@@ -120,7 +120,7 @@ export const grammars = [
     displayName: 'Apex',
     funding: [
     ],
-    hash: 'dQhvYwVL9a',
+    hash: 'MsPqjI7WwcRD454SLw4swkNDVOM12bnA-Oisqq8Be_c',
     lastUpdate: '2023-03-15T18:31:57Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/forcedotcom/apex-tmLanguage/main/LICENSE',
@@ -141,7 +141,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'kWKXgigD9i',
+    hash: 'Y9Gj7bIUEWvf2tQC6Y-qzkNJZfEHzgzUeNZPvUKL88U',
     lastUpdate: '2019-05-06T11:54:42Z',
     name: 'apl',
     scopeName: 'source.apl',
@@ -156,7 +156,7 @@ export const grammars = [
     displayName: 'AppleScript',
     funding: [
     ],
-    hash: 'GNXSOPQmIN',
+    hash: 'afF98nWF0zzXioLT4bVJRgSks_XYqnnDdZNQfUGX5x8',
     lastUpdate: '2019-09-03T19:15:57Z',
     name: 'applescript',
     scopeName: 'source.applescript',
@@ -168,7 +168,7 @@ export const grammars = [
     displayName: 'Ara',
     funding: [
     ],
-    hash: 'y8JzrmD5bp',
+    hash: 'Ce8_i9nQY0lCigBwgVOalKF9ps9FtO9ni9G7zQ4jiKA',
     lastUpdate: '2023-01-14T07:35:56Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/ara-lang/highlighting/main/LICENSE-APACHE',
@@ -231,8 +231,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'znnGEI54k2',
-    lastUpdate: '2024-08-06T12:13:07Z',
+    hash: 'wcUvhHH7xFbZ6EhpxWaNDO4nvd4bnFMq4hzscd9cauM',
+    lastUpdate: '2025-03-01T13:24:52Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/asciidoctor/asciidoctor-vscode/master/LICENSE',
     name: 'asciidoc',
@@ -245,7 +245,7 @@ export const grammars = [
     displayName: 'Assembly',
     funding: [
     ],
-    hash: 'X0Hkjzs06l',
+    hash: 's5d2-WiesEe-3tNK05-TT4WS4Rerelhc7ew31orMfnc',
     lastUpdate: '2023-07-30T20:16:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/13xforever/x86_64-assembly-vscode/master/LICENSE.txt',
@@ -283,8 +283,13 @@ export const grammars = [
         name: 'Open Collective',
         url: 'https://opencollective.com/astrodotbuild',
       },
+      {
+        handle: 'u/gh/withastro',
+        name: 'thanks.dev',
+        url: 'https://thanks.dev/d/u/gh/withastro',
+      },
     ],
-    hash: 'CTTcS9p5RI',
+    hash: '9iVJZbAxHEKF0gzTQGHv5GsvZW6UYtKzNJKAnGoiqkM',
     lastUpdate: '2024-03-23T17:37:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/withastro/language-tools/main/LICENSE',
@@ -298,7 +303,7 @@ export const grammars = [
     displayName: 'AWK',
     funding: [
     ],
-    hash: 'UE9qChc4nQ',
+    hash: '_DA0vZBWyjyGqKfg_rg5olmORXPxaP2kfr43gnmJf6Q',
     lastUpdate: '2016-01-20T17:08:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/luggage66/vscode-awk/master/LICENSE.txt',
@@ -312,7 +317,7 @@ export const grammars = [
     displayName: 'Ballerina',
     funding: [
     ],
-    hash: 'yodBIfiYhr',
+    hash: 'gOAutnr266vUWuNN8ZcTIpP7nvURVB3uXidMTbA2--8',
     lastUpdate: '2023-08-21T05:23:05Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/ballerina-platform/ballerina-grammar/master/LICENSE',
@@ -332,7 +337,7 @@ export const grammars = [
     displayName: 'Batch File',
     funding: [
     ],
-    hash: 'GnuiGSDvHB',
+    hash: '5sWGWSwg33Merq9aEnYnb9lhkgzz_6em5Tas59Hmnl8',
     lastUpdate: '2021-05-04T11:41:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -346,7 +351,7 @@ export const grammars = [
     displayName: 'Beancount',
     funding: [
     ],
-    hash: 'xU8OQFKOJx',
+    hash: 'Dzy3xN5rJaeXRnHW_5C63i4jP3ijzPfc2gWdjLCnCQg',
     lastUpdate: '2024-01-11T08:43:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE',
@@ -363,7 +368,7 @@ export const grammars = [
     displayName: 'Berry',
     funding: [
     ],
-    hash: 'Wr01IhuHbu',
+    hash: 'smk-mipL2yBr6UqoaY5w57jLWadIVcRDn9NEja0mr-s',
     lastUpdate: '2023-07-16T13:39:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/berry-lang/berry/master/LICENSE',
@@ -380,7 +385,7 @@ export const grammars = [
     displayName: 'BibTeX',
     funding: [
     ],
-    hash: 'Q2XvnQB6rS',
+    hash: '6z_-saH93ctdNNMXMvoY2-78NM_czgDPNgBSdzCTWDw',
     lastUpdate: '2024-04-09T10:20:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -394,7 +399,7 @@ export const grammars = [
     displayName: 'Bicep',
     funding: [
     ],
-    hash: 'kdKJ1HGgi8',
+    hash: '338SAH2q0UhBt6GnpLDZ4HhLjYt-9QfK7ZjGckkka-0',
     lastUpdate: '2024-08-22T16:30:14Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Azure/bicep/main/LICENSE',
@@ -420,14 +425,9 @@ export const grammars = [
       'css',
     ],
     funding: [
-      {
-        handle: '@spatie',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/spatie',
-      },
     ],
-    hash: 'Cm4jIukdax',
-    lastUpdate: '2021-06-28T08:16:43Z',
+    hash: 'ksB2H6rifgJnrJ0oWImwNJNltRItj9OzZOdUaPmd6W4',
+    lastUpdate: '2024-06-01T01:31:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/laravel/vs-code-extension/main/LICENSE.md',
     name: 'blade',
@@ -450,7 +450,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'I9YoWTD151',
+    hash: '6Guw8KjRDh1WLCJNIRbihihSjCFKHO4zgRV_ZnG6EkM',
     lastUpdate: '2024-11-05T21:35:36Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
@@ -467,7 +467,7 @@ export const grammars = [
     displayName: 'C',
     funding: [
     ],
-    hash: 'RJ6i0OPivg',
+    hash: 'OPzGZcqTiD4eJlHJlZ7dcE4aoM06lYU4lqeZAi906w0',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -484,7 +484,7 @@ export const grammars = [
     displayName: 'Cadence',
     funding: [
     ],
-    hash: 'E6XNWJFi4t',
+    hash: '-5DoZ6uCQ1jVa4T63q-jVa0yCe3Nt0ysw2TKfoYq5_U',
     lastUpdate: '2022-07-04T20:41:15Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/onflow/vscode-cadence/master/LICENSE',
@@ -504,7 +504,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'vuBcGooHpz',
+    hash: 'nPcmYvxJaVabwBVHr77SvQQCOPbDnSBlQoWnGUVa1BQ',
     lastUpdate: '2024-08-18T08:38:43Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/starkware-libs/cairo-lang/master/LICENSE.txt',
@@ -521,7 +521,7 @@ export const grammars = [
     displayName: 'Clarity',
     funding: [
     ],
-    hash: 'hjEIavuTMb',
+    hash: 'wXvuKP9Wh52za_AKE1BIeY1Uje64DTH9-BMzVBbcaD0',
     lastUpdate: '2024-06-28T13:13:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hirosystems/clarity.tmbundle/main/LICENSE',
@@ -542,7 +542,7 @@ export const grammars = [
     displayName: 'Clojure',
     funding: [
     ],
-    hash: 'WGN0H9kqqh',
+    hash: '3lOZnNEp7Jzsjqes6BT17qIMoGKnLIB4XI3vT0M7zjY',
     lastUpdate: '2022-01-31T15:49:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -559,7 +559,7 @@ export const grammars = [
     displayName: 'CMake',
     funding: [
     ],
-    hash: 'erj3kjKdED',
+    hash: 'fFhrWGgXTtJlEAwErDHxukPGbvnJmZ7kw5RCEdLtf18',
     lastUpdate: '2017-11-20T20:37:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/twxs/vs.language.cmake/master/LICENSE',
@@ -577,8 +577,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'euBtAopOGq',
-    lastUpdate: '2025-01-16T21:59:32Z',
+    hash: 'E-e4WaUcZag_iNSoYO_--KpBirhAOo3LDRn4b_CoKrs',
+    lastUpdate: '2025-02-12T21:19:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
@@ -591,7 +591,7 @@ export const grammars = [
     displayName: 'CODEOWNERS',
     funding: [
     ],
-    hash: 'BiOl3iCBbE',
+    hash: 't0TQSGVW7tx-vUnKt0e6t_uVq_DZ-p4HzmS9nvTZSZQ',
     lastUpdate: '2018-12-19T21:50:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/jasonnutter/vscode-codeowners/master/LICENSE.txt',
@@ -608,7 +608,7 @@ export const grammars = [
     displayName: 'CodeQL',
     funding: [
     ],
-    hash: '0c9c3xgdAS',
+    hash: '-UAFXDV3T70s_QFR2FhF3zzwXLuGVWQ7RVYHPhx7SP4',
     lastUpdate: '2025-01-20T17:49:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/github/vscode-codeql/main/LICENSE.md',
@@ -633,7 +633,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'TOcwgSFz4o',
+    hash: 'CNu5pwwMrAElRw_9PuH_Y8T1cAnxAkV0bxLBzHlvVGs',
     lastUpdate: '2019-01-25T23:34:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -654,7 +654,7 @@ export const grammars = [
     displayName: 'Common Lisp',
     funding: [
     ],
-    hash: '6wTSn0CYAb',
+    hash: 'FiiqYQ7m09ijKw0Lk7MVyTY1GWpzJr6b1T1RGklNVmY',
     lastUpdate: '2024-05-10T18:29:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/qingpeng9802/vscode-common-lisp/master/LICENSE',
@@ -671,8 +671,8 @@ export const grammars = [
     displayName: 'Coq',
     funding: [
     ],
-    hash: '81HAmAlUu5',
-    lastUpdate: '2024-10-28T17:35:18Z',
+    hash: 'eg8MYIdHmXxIkN5VBEhRlDN-t0pCT2dP1oFascHdDKo',
+    lastUpdate: '2025-02-24T14:24:51Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/coq/vscoq/main/LICENSE',
     name: 'coq',
@@ -697,7 +697,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'MndDxpEycR',
+    hash: 'XdIxlLlMGqa2--CibpJwA9BNIdxNO-Ac4eUD-ySRlDQ',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -719,7 +719,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'hkRCb4MprL',
+    hash: '_fLlqnE9huThsGOmjuY0fmrZC_WpbM1R6Ugttm0Gh_A',
     lastUpdate: '2024-02-26T14:51:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/crystal-lang-tools/vscode-crystal-lang/master/LICENSE',
@@ -740,8 +740,8 @@ export const grammars = [
     displayName: 'C#',
     funding: [
     ],
-    hash: '8AOwMrUpR4',
-    lastUpdate: '2024-06-28T09:56:38Z',
+    hash: 'kbih3rZQme5EYFEHLPfQ--OrzcmCUFAhnqnT5WTwEyc',
+    lastUpdate: '2025-02-28T12:20:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'csharp',
@@ -757,7 +757,7 @@ export const grammars = [
     displayName: 'CSS',
     funding: [
     ],
-    hash: 'riiTfuX26y',
+    hash: 'u3SSRC1E7eqV_opOqHy6Rql1MKhXWAE012EJdcHfKyc',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -774,7 +774,7 @@ export const grammars = [
     displayName: 'CSV',
     funding: [
     ],
-    hash: 'piTjrTXqM0',
+    hash: '66NcixdWcxdDsGeZ9TYVByGptlmFnAPtRk0mfRvVkMQ',
     lastUpdate: '2019-01-31T01:50:13Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
@@ -788,7 +788,7 @@ export const grammars = [
     displayName: 'CUE',
     funding: [
     ],
-    hash: 'ToaxZhnihH',
+    hash: 'Xvdnh60Hf25u7c-opsMgYVIBMkqs52lLmX1X4qx7jss',
     lastUpdate: '2024-09-04T15:25:05Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/cue-lang/vscode-cue/master/LICENSE',
@@ -805,7 +805,7 @@ export const grammars = [
     displayName: 'Cypher',
     funding: [
     ],
-    hash: 'OgxeQc7itr',
+    hash: 'Pm4tANPp8-1KIbrJG4uiFCA0t89ILo2uUiC3s3s6-bo',
     lastUpdate: '2023-01-17T10:10:13Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/adam-cowley/neo4j-vscode/main/LICENSE',
@@ -829,8 +829,8 @@ export const grammars = [
         url: 'https://patreon.com/WebFreak',
       },
     ],
-    hash: 'KnYEmdZTmQ',
-    lastUpdate: '2023-07-07T13:01:08Z',
+    hash: '0die406NmL02tZUAnLzynqqBbqoMxkGCmyTHZAYoc6Q',
+    lastUpdate: '2025-03-01T00:26:27Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Pure-D/code-d/master/LICENSE.md',
     name: 'd',
@@ -846,7 +846,7 @@ export const grammars = [
     displayName: 'Dart',
     funding: [
     ],
-    hash: 'xewvk6t5Kq',
+    hash: '3m3sTAphXXlBsFFMCtTIU16Je7izYC7XGBPP7TYBUdM',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -860,7 +860,7 @@ export const grammars = [
     displayName: 'DAX',
     funding: [
     ],
-    hash: 'AQ1R9tWxFq',
+    hash: 'UFsarX0ylIyGOIOBe_JGQzfQdBMpVNQNT1cz3sgqXQg',
     lastUpdate: '2021-08-10T18:28:52Z',
     name: 'dax',
     scopeName: 'source.dax',
@@ -879,7 +879,7 @@ export const grammars = [
         url: 'https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ',
       },
     ],
-    hash: 'OmKCNgkQZj',
+    hash: 'D94fkVMf-9GNupFzOFUY2sjScS_cdzXCMDkUpuqJsu4',
     lastUpdate: '2021-07-19T18:36:02Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nico-castell/desktop-file-support/main/LICENSE',
@@ -896,7 +896,7 @@ export const grammars = [
     displayName: 'Diff',
     funding: [
     ],
-    hash: '4VNGD1sLSD',
+    hash: 'ik4Zxh07S4K9d2EaC3faq6jOYa_Cdx65dLnwf1DIQl0',
     lastUpdate: '2021-11-12T09:59:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -916,7 +916,7 @@ export const grammars = [
     displayName: 'Dockerfile',
     funding: [
     ],
-    hash: 'e3KcMhNBWQ',
+    hash: 'soI4MtWZhWB7exGgkfjWQWhTePeB-HRF606X_aVPOiU',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -930,7 +930,7 @@ export const grammars = [
     displayName: 'dotEnv',
     funding: [
     ],
-    hash: 'NXV89JmJiV',
+    hash: 'sAz2IEDNM4YTm3TmMr4sQFJ2rPeOr44g6NvxpOEX9hc',
     lastUpdate: '2023-06-15T08:23:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dotenv-org/dotenv-vscode/master/LICENSE',
@@ -944,7 +944,7 @@ export const grammars = [
     displayName: 'Dream Maker',
     funding: [
     ],
-    hash: 'rT5Shtop8w',
+    hash: 'skTA6ka9a0pVfuEJFTzEQ0Rj8KxU1MpMukIWR0TFX88',
     lastUpdate: '2017-01-06T06:55:48Z',
     name: 'dream-maker',
     scopeName: 'source.dm',
@@ -961,7 +961,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '6wQc9KoT3g',
+    hash: 'rERYpL1kih8CnUACM8Re174NSo_mzI-kTN0JliXl-n0',
     lastUpdate: '2024-02-05T08:06:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/edge-js/edge-vscode/main/LICENSE.md',
@@ -978,7 +978,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'bm78ZT8qz7',
+    hash: '4uthCzdDmmvhZHrxEBFBncM1mcjkNvrfueFhWuQAtHM',
     lastUpdate: '2021-12-27T20:12:19Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/elixir-editors/elixir-tmbundle/master/LICENSE',
@@ -1010,7 +1010,7 @@ export const grammars = [
         url: 'https://opencollective.com/elm-tooling',
       },
     ],
-    hash: '419SHaU3SB',
+    hash: '01GDlYkz2tOgywtDnt9PetCbuXvfjv0SXdYk3bKfsyc',
     lastUpdate: '2020-08-01T18:50:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/elm-tooling/elm-language-client-vscode/main/LICENSE',
@@ -1030,7 +1030,7 @@ export const grammars = [
     displayName: 'Emacs Lisp',
     funding: [
     ],
-    hash: 'j1vLKKLByB',
+    hash: 'lXLyyDffGwt78bhdP_UWfs6Ft7iM8g01EnZ1o6pOen8',
     lastUpdate: '2023-09-07T13:17:43Z',
     license: 'ISC',
     licenseUrl: 'https://raw.githubusercontent.com/Alhadis/language-emacs-lisp/master/LICENSE.md',
@@ -1048,7 +1048,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '1IUQ9qvXum',
+    hash: '7NF4L3Y_pG3G-FSFStkuzzBZM71kSNmC6oTjAOzneo8',
     lastUpdate: '2014-10-30T18:38:50Z',
     name: 'erb',
     scopeName: 'text.html.erb',
@@ -1063,7 +1063,7 @@ export const grammars = [
     displayName: 'Erlang',
     funding: [
     ],
-    hash: 'IcknwjfBvB',
+    hash: 'y1WIcysT1dxCHf0-bKEzmj5K5dFJhxMlVYJBYUu2b_w',
     lastUpdate: '2024-06-18T19:26:56Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/erlang-ls/grammar/main/LICENSE',
@@ -1080,7 +1080,7 @@ export const grammars = [
     displayName: 'Fennel',
     funding: [
     ],
-    hash: 'jfjDIb262n',
+    hash: 'NSwYpgTmjTcA7_9scAlPkIZ4yYpx0YR2ah_Yl3CnuCo',
     lastUpdate: '2021-05-05T22:44:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/kongeor/vsc-fennel/master/LICENSE',
@@ -1097,7 +1097,7 @@ export const grammars = [
     displayName: 'Fish',
     funding: [
     ],
-    hash: 'ASb25W2jcI',
+    hash: 'ybTgKA2dGQNcghVfgive4rQ1_thBexLLS8e9KZymy3o',
     lastUpdate: '2022-01-23T01:18:50Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/bmalehorn/vscode-fish/master/LICENSE',
@@ -1114,7 +1114,7 @@ export const grammars = [
     displayName: 'Fluent',
     funding: [
     ],
-    hash: '44jrgxkmab',
+    hash: 'sFuhS1T50P-OrHVnVvME3LtC0dyV0N2HhpW-R666xDA',
     lastUpdate: '2022-07-23T20:00:33Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/macabeus/vscode-fluent/master/LICENSE',
@@ -1136,7 +1136,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'uR6CHgkwG0',
+    hash: 'blGoriEW3zDismfKI7bNrms7dB556ug8Y3guSD6_66o',
     lastUpdate: '2021-11-09T22:09:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
@@ -1157,7 +1157,7 @@ export const grammars = [
     displayName: 'Fortran (Free Form)',
     funding: [
     ],
-    hash: '6lHcSj9lTn',
+    hash: 'KcLieNVdT4NJ1daIMfcBpqJrM9jO10c8MtqDSrPoo-4',
     lastUpdate: '2023-05-09T01:04:12Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
@@ -1181,7 +1181,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'tCTkXKywyI',
+    hash: 'vC35xKFiu851Z2Tg_ZmO4u7K-Dmd0a4zxrvo9IebCmI',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1203,7 +1203,7 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'BXLWIiNA5k',
+    hash: 'a_SeHnF7ntduTw1bSSQ1QYbiRbAMaNhHDGGkiFyTX6A',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
@@ -1221,8 +1221,8 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'erOZtbL3ip',
-    lastUpdate: '2024-12-18T15:45:05Z',
+    hash: 'tVujk0LmJvJsIjBXZN1SEK6tpw-Jg7oL2kO6cDucLQE',
+    lastUpdate: '2025-03-04T23:56:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
@@ -1239,7 +1239,7 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: '9V2Wy87u0W',
+    hash: 'LZmhmd07-B6US6utFu4ht9r-2bH9mOUXPDYOVgMveE4',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
@@ -1253,7 +1253,7 @@ export const grammars = [
     displayName: 'Genie',
     funding: [
     ],
-    hash: 'YpRh0MPgqm',
+    hash: 'cSG3F5p3cQP-wb_nhNPpbf1IGyS80WYKsZOlPMK7zUw',
     lastUpdate: '2021-05-28T08:53:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE',
@@ -1267,7 +1267,7 @@ export const grammars = [
     displayName: 'Gherkin',
     funding: [
     ],
-    hash: 'SPvZe60Agr',
+    hash: 'kAQBzDukdMOmsMtYO5IbdajQPFZNlNwvhw3ahduxtkY',
     lastUpdate: '2024-05-18T13:15:07Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alexkrechik/VSCucumberAutoComplete/master/LICENSE',
@@ -1287,7 +1287,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'O04WSrmVWl',
+    hash: 'ZcrXd-PzuCcTwhg4S-WOs0gxUsw4wSxH6r1chHi0J5k',
     lastUpdate: '2023-02-07T12:40:16Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1307,7 +1307,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'PDaCUl3e8W',
+    hash: 'CvWgyCdOyGONazHztOhNEl79vNMa5wvhzwewgXO5wSU',
     lastUpdate: '2021-11-12T10:35:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1321,8 +1321,8 @@ export const grammars = [
     displayName: 'Gleam',
     funding: [
     ],
-    hash: 'hbDys2ygWA',
-    lastUpdate: '2024-08-01T12:26:07Z',
+    hash: '8DHF48VVq3p3zJTWVwgHbKIqXUP3gF2KNcUjJ83qlsQ',
+    lastUpdate: '2025-03-06T10:32:59Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
     name: 'gleam',
@@ -1344,7 +1344,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'zKhmQF22hB',
+    hash: 'Rh-VLWUoGI94oKJ2tfWuIo3fV3KC_zZkwTPpUfNaJ4c',
     lastUpdate: '2024-03-15T16:05:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
@@ -1367,7 +1367,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Z1lUFESbzp',
+    hash: 'CsAOWdSqIiz2mJIUZyeB4A938gMh5DD8wgDQkeFQ2MI',
     lastUpdate: '2024-03-15T16:05:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
@@ -1384,7 +1384,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'BpRP8NoUHi',
+    hash: 'tXXikCZ951EMKDZ_Ym3LfQU9fu1XitnpTY-1YVkm3pE',
     lastUpdate: '2014-07-27T13:53:58Z',
     name: 'glsl',
     scopeName: 'source.glsl',
@@ -1396,7 +1396,7 @@ export const grammars = [
     displayName: 'Gnuplot',
     funding: [
     ],
-    hash: 'RaizNtRaSh',
+    hash: 'cPHMVVoTiyyspvPQ0fj4iuT7HEuDM650NaeJZnJOMBk',
     lastUpdate: '2018-07-01T23:29:26Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/MarioSchwalbe/vscode-gnuplot/master/LICENSE',
@@ -1413,7 +1413,7 @@ export const grammars = [
     displayName: 'Go',
     funding: [
     ],
-    hash: 'YrljEOEx2b',
+    hash: 'H-SrESr1JEgjJygI7Eo81zpQLXnrp94R9KkpH_LmT4M',
     lastUpdate: '2024-12-06T15:55:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1439,7 +1439,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Ex4avZPr6K',
+    hash: 'b9qRFzMVMbOCX9H1IPZUeBMLCoq503vMCYoHQHe3DuU',
     lastUpdate: '2021-09-27T21:24:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/graphql/vscode-graphql/master/LICENSE',
@@ -1456,7 +1456,7 @@ export const grammars = [
     displayName: 'Groovy',
     funding: [
     ],
-    hash: 'sG9Vj5vIIg',
+    hash: 'U3BVAuoRkZsF04KWRHCWXN2SIvQ_bnGHVrFkKJSpxoA',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1477,7 +1477,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'iAyEENbA7W',
+    hash: 'gNkiY6PguCWpVcU2FaMywfe40NooGs465UGtLXyimIs',
     lastUpdate: '2025-01-09T20:28:53Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slackhq/vscode-hack/master/LICENSE.md',
@@ -1503,7 +1503,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'rXdwknSi5U',
+    hash: 'cuMt1-vymWDQu_x-fYi4KGN_RVDXHIFEAStk2b0nPm4',
     lastUpdate: '2022-06-22T00:28:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/karuna/haml-vscode/master/LICENSE.md',
@@ -1529,7 +1529,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'qBBFvL9Wyc',
+    hash: 'KX3RYFYTiXlgNxVzeZZIndYFhy1i-F4gtFdOqTLsd6g',
     lastUpdate: '2019-05-16T17:17:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1554,7 +1554,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/octref',
       },
     ],
-    hash: 'cU0bQGeuQR',
+    hash: 'VFdGTeq07oXEUKIYs3BND-TIwLTZNJfggsyX-L-l7m8',
     lastUpdate: '2020-08-20T04:20:28Z',
     license: 'BSD-3-Clause',
     licenseUrl: 'https://raw.githubusercontent.com/octref/language-haskell/master/LICENSE',
@@ -1571,7 +1571,7 @@ export const grammars = [
     displayName: 'Haxe',
     funding: [
     ],
-    hash: 'h580k7GdRU',
+    hash: 'NlmzgDzKJ8qVgAYeRtn28gOfrn5zA6-0jH3UENpjdJ4',
     lastUpdate: '2024-04-19T14:01:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md',
@@ -1585,7 +1585,7 @@ export const grammars = [
     displayName: 'HashiCorp HCL',
     funding: [
     ],
-    hash: 'GpQf5BLQtX',
+    hash: 'JEpbBBvXuu1GaBPvG3ssLLL0ZZWeY5IPk2143RKxrUE',
     lastUpdate: '2024-12-20T01:03:46Z',
     license: 'MPL-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE',
@@ -1602,7 +1602,7 @@ export const grammars = [
     displayName: 'Hjson',
     funding: [
     ],
-    hash: '9FwZNCT2sZ',
+    hash: 'QYX-XOBzWh1gYv7FnNo09S_qiwKg_6Yxb9PgkKjUX3Q',
     lastUpdate: '2018-10-25T15:31:53Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hjson/textmate-hjson/master/LICENSE',
@@ -1619,7 +1619,7 @@ export const grammars = [
     displayName: 'HLSL',
     funding: [
     ],
-    hash: 'aPrA3obiV2',
+    hash: '1ufx9HNPGOjyTvasAcZ8RWFih7y8GWMHH7izCjrmvIU',
     lastUpdate: '2020-02-03T12:01:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1641,7 +1641,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Uu19XF4XE5',
+    hash: 'U0W1Sp44h4zOVrAkoq8kGlwON2FKk4kKnybHQGgyXJA',
     lastUpdate: '2022-12-07T13:44:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1662,7 +1662,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'ZJ6TTpr5xO',
+    hash: 'mDOHh86y4vTAQoqSrxsHn5MccTfX6hBtqZ4jl-OuyXY',
     lastUpdate: '2018-10-04T09:01:56Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1686,7 +1686,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '7yigCuv6bk',
+    hash: 'iGFs3g0C-BeL3j7Jsq9gwEVFktxsZmL68YTnpTrt30U',
     lastUpdate: '2024-10-10T11:38:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Huachao/vscode-restclient/master/LICENSE',
@@ -1706,7 +1706,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'pFbMyZbLCf',
+    hash: 'R7A411-UB7mCZGKPofDLwTWZdASwlJaZ7K28VJJy5Iw',
     lastUpdate: '2020-06-27T14:36:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md',
@@ -1723,7 +1723,7 @@ export const grammars = [
     displayName: 'Hy',
     funding: [
     ],
-    hash: 'GXqUrFsDdJ',
+    hash: '6m-QAFhD62IxqxJTIJflqKe9vm0ESFp4V0bivcOXx40',
     lastUpdate: '2024-11-04T03:16:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hylang/vscode-hy/master/LICENSE.md',
@@ -1738,13 +1738,10 @@ export const grammars = [
       'web',
     ],
     displayName: 'Imba',
-    embedded: [
-      'typescript',
-    ],
     funding: [
     ],
-    hash: 'nQl8Ao9cbY',
-    lastUpdate: '2023-12-15T08:11:58Z',
+    hash: 'vXxSbKpwxlwW-eZpfTJc7xKmnqPIyYwLAnsVRK7T3Ro',
+    lastUpdate: '2025-03-06T08:51:50Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/imba/imba/master/LICENSE',
     name: 'imba',
@@ -1763,7 +1760,7 @@ export const grammars = [
     displayName: 'INI',
     funding: [
     ],
-    hash: '8y1SYUozig',
+    hash: 'JHALzUuwDy3Tt5W5yp6JMMxqUd5cF-XTOd0O3bneo0E',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1780,7 +1777,7 @@ export const grammars = [
     displayName: 'Java',
     funding: [
     ],
-    hash: 'a3zinzOAU7',
+    hash: 'OGtN9YfDYh7eJ_TIi2bFicIvgM_U6DZNrlDCHzlK1V0',
     lastUpdate: '2023-12-13T12:08:01Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1802,7 +1799,7 @@ export const grammars = [
     displayName: 'JavaScript',
     funding: [
     ],
-    hash: 'zQuDB9duCh',
+    hash: 'HIo9PZGVK_m6dUZAv28Uhk-RQm0ePcwzhgtqoNXhbN8',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1828,7 +1825,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/samuelcolvin',
       },
     ],
-    hash: 'lS1WbbM6hM',
+    hash: 'ipF8WBL1Wxt-LZ8t-Ocr6XcvPcDPW4aqJz_FSYRX65s',
     lastUpdate: '2022-08-30T14:06:56Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
@@ -1849,7 +1846,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'EkhsfEj0Jh',
+    hash: 'H_zxjxUffgS5Lf5yhFG7s69aBMCyeUnz2Xkem5WImdw',
     lastUpdate: '2020-04-29T00:41:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/cdibbs/language-jison/master/LICENSE.md',
@@ -1867,7 +1864,7 @@ export const grammars = [
     displayName: 'JSON',
     funding: [
     ],
-    hash: 'xKGV3fHReP',
+    hash: 'XlQwavRPXYv3R198mgsjnEPYAfi0oM6JquTVrg4N7O8',
     lastUpdate: '2020-11-05T13:50:48Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1885,7 +1882,7 @@ export const grammars = [
     displayName: 'JSON5',
     funding: [
     ],
-    hash: 'Ef8vBWlkse',
+    hash: 'PaLYtXhTZ5CbO7KXvgMhN-RIA9kg64q9A0I6dwr7K1c',
     lastUpdate: '2016-10-01T11:46:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mrmlnc/vscode-json5/master/LICENSE',
@@ -1903,7 +1900,7 @@ export const grammars = [
     displayName: 'JSON with Comments',
     funding: [
     ],
-    hash: 'rwj3a9NKpC',
+    hash: 'eg4m2wjJdSDvOTaJG6rTUJq_uIsKAMtDz-V18vY7_8s',
     lastUpdate: '2023-05-25T08:02:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1921,7 +1918,7 @@ export const grammars = [
     displayName: 'JSON Lines',
     funding: [
     ],
-    hash: 'blyxq6KuF3',
+    hash: 'xy0ogWMEJ4PUvS_KVMM1u7FZQ8qbIf1g7fO3fyOHenQ',
     lastUpdate: '2023-05-25T08:02:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1935,7 +1932,7 @@ export const grammars = [
     displayName: 'Jsonnet',
     funding: [
     ],
-    hash: 'PKd5QcMRXu',
+    hash: '9SDm3drlL3Auu2OLKlJC8blF0uK_YcB1m018rS96Rlk',
     lastUpdate: '2017-03-12T08:07:55Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/heptio/vscode-jsonnet/master/LICENSE',
@@ -1952,7 +1949,7 @@ export const grammars = [
     displayName: 'JSSM',
     funding: [
     ],
-    hash: '1yKdjPSoLK',
+    hash: 'MYY8qS_cQ9Bq93QihgAiV-expUaG8rTQP-kdFpP8lXQ',
     lastUpdate: '2017-08-20T01:05:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/StoneCypher/sublime-jssm/master/LICENSE',
@@ -1969,7 +1966,7 @@ export const grammars = [
     displayName: 'JSX',
     funding: [
     ],
-    hash: 'sCUf8YspzK',
+    hash: 'Wz2i7sb74EitHUjZ6JP7H8OpDCjRDlx0ox8WHhGKbB8',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -1997,7 +1994,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Ravrn2ucL1',
+    hash: 'GeE7ciLSpfv99jO6GTZ1hzW3JNlG4nL__c_1wgdX__4',
     lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2018,7 +2015,7 @@ export const grammars = [
     displayName: 'Kotlin',
     funding: [
     ],
-    hash: 'KuDDOzyJsj',
+    hash: '77NT4lEuDbyUc7b4E-KvGB5s5S2dH40bjAHI3Ovi2Gs',
     lastUpdate: '2024-02-06T09:51:18Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/fwcd/vscode-kotlin/main/LICENSE',
@@ -2035,7 +2032,7 @@ export const grammars = [
     displayName: 'Kusto',
     funding: [
     ],
-    hash: 'uq1J4qF8yn',
+    hash: 'txmhw13e588xXfoForFReDBKcV-4Ze_Zqmau2GPFyKA',
     lastUpdate: '2024-12-28T02:00:10Z',
     name: 'kusto',
     scopeName: 'source.kusto',
@@ -2069,8 +2066,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'meu3IhWZF0',
-    lastUpdate: '2024-09-27T08:27:11Z',
+    hash: 'KIT1trsOuwtGeYGTpxYkFilLXvM8-nIM9fcUN2MFXD8',
+    lastUpdate: '2025-02-28T12:20:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
@@ -2089,7 +2086,7 @@ export const grammars = [
     displayName: 'Lean 4',
     funding: [
     ],
-    hash: 'oNGmx5g75d',
+    hash: 'cKkHgeEf9Qy3it5oOWbTfm5CS3z0F7NiEapi61fQJHE',
     lastUpdate: '2024-04-19T14:33:46Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/leanprover/vscode-lean4/master/LICENSE',
@@ -2106,7 +2103,7 @@ export const grammars = [
     displayName: 'Less',
     funding: [
     ],
-    hash: 'z9fs42isrT',
+    hash: 'fDhYrU2qlFKVRm-dw25I325rbqsvOhRErfFJL1kwTFQ',
     lastUpdate: '2024-08-30T20:03:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2126,8 +2123,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'R8tpfkZnVt',
-    lastUpdate: '2024-12-03T21:14:56Z',
+    hash: '_-MFi9OadDInix-jsGfTlq_ZsSwpsuVDJ5vAnk2dOFM',
+    lastUpdate: '2025-03-05T17:23:18Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md',
     name: 'liquid',
@@ -2136,11 +2133,13 @@ export const grammars = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/91ef1e508a4723c640a15f65b809a279206bed78/grammars/liquid.tmLanguage.json',
   },
   {
-    byteSize: 6040,
+    byteSize: 5497,
     categories: [
       'dsl',
     ],
     displayName: 'LLVM IR',
+    funding: [
+    ],
     hash: '9d9OREXfF1YB_RYO4rnqPFz58ki_BICzKr37qOU9nRA',
     lastUpdate: '2024-05-30T11:17:37Z',
     license: 'NOASSERTION',
@@ -2151,14 +2150,14 @@ export const grammars = [
     source: 'https://github.com/llvm/llvm-project/blob/2705c605da2854a6b044fdf5978dea0472fd0ab1/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
   },
   {
-    byteSize: 2680,
+    byteSize: 2585,
     categories: [
       'utility',
     ],
     displayName: 'Log file',
     funding: [
     ],
-    hash: 'Am2G1AubIr',
+    hash: 'S6OI1mnnUYsZgH4CTpsp4rQ47yAO_DIc2VpV8Kkocu8',
     lastUpdate: '2025-01-01T17:10:31Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/LICENSE',
@@ -2172,7 +2171,7 @@ export const grammars = [
     displayName: 'Logo',
     funding: [
     ],
-    hash: '01uOdg2jPA',
+    hash: 'b1oBA4S24HPEDseeUz6ZC06VUX21vnp-v78RC99oejw',
     lastUpdate: '2011-11-14T07:42:34Z',
     name: 'logo',
     scopeName: 'source.logo',
@@ -2190,7 +2189,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'haDsD2DcKZ',
+    hash: 'djaDPp_QvYFI1fCREXw5frRA7bhilbEfP9mnpBIv5w4',
     lastUpdate: '2024-04-26T11:52:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2204,7 +2203,7 @@ export const grammars = [
     displayName: 'Luau',
     funding: [
     ],
-    hash: 'VjzzoFvMGT',
+    hash: 'eelZmFocP1Xp2P1PWhe7E5P3pj4UYhzPjykeOvFrxAc',
     lastUpdate: '2024-11-11T20:13:41Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md',
@@ -2224,7 +2223,7 @@ export const grammars = [
     displayName: 'Makefile',
     funding: [
     ],
-    hash: 'D7JKLIcty1',
+    hash: 'fjY_DK_r3g7e4bw-JpoAMxUjHQl4jCVd3wzimrhC-CU',
     lastUpdate: '2023-01-10T10:50:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2301,7 +2300,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'OOilfgoNZ5',
+    hash: 'cGCUtsGg_b4H29ujDU5qUoy9_T7BBjDlWGom_FxjMTA',
     lastUpdate: '2024-07-08T18:33:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2325,7 +2324,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'ubxMhuahEy',
+    hash: 'Nj7T7NDhnvoDGm8ryfQBsKa3QTLSHa5qEfkwif69iQM',
     lastUpdate: '2023-03-24T17:23:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/marko-js/marko-tmbundle/master/LICENSE',
@@ -2339,7 +2338,7 @@ export const grammars = [
     displayName: 'MATLAB',
     funding: [
     ],
-    hash: 'j09IZ1V32M',
+    hash: 'POEDzVszVkwcMTi0VV1sm1F8A0nheo0vB-tLsFzzxqk',
     lastUpdate: '2020-02-01T01:40:30Z',
     name: 'matlab',
     scopeName: 'source.matlab',
@@ -2360,8 +2359,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'blzsjPQ88Z',
-    lastUpdate: '2024-11-14T09:53:35Z',
+    hash: 'nwlm7swdVMmPwJth5yJFbQFefOIZKt1CCvXRjLYXfBA',
+    lastUpdate: '2025-02-24T11:33:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nuxtlabs/vscode-mdc/main/LICENSE',
     name: 'mdc',
@@ -2422,7 +2421,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'LKeK7pivda',
+    hash: 'BDWf61vomuMLV_y5RDOTOnJO8Z9wwzLSjfQkClTrbwE',
     lastUpdate: '2024-11-11T13:02:29Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license',
@@ -2439,7 +2438,7 @@ export const grammars = [
     displayName: 'Mermaid',
     funding: [
     ],
-    hash: '3OqI6lV2PD',
+    hash: 'tj-olbuGtaCrR3LH9SyEltdAQHnKIUzCrD8cnmTptxg',
     lastUpdate: '2022-06-10T19:46:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/LICENSE',
@@ -2456,7 +2455,7 @@ export const grammars = [
     displayName: 'MIPS Assembly',
     funding: [
     ],
-    hash: 'd2an1tiAGG',
+    hash: '-ltLAd_ZtyIHINouC1quUlIDQlPVWCh9YPy8kIDGOGI',
     lastUpdate: '2011-11-14T07:25:17Z',
     name: 'mipsasm',
     scopeName: 'source.mips',
@@ -2468,7 +2467,7 @@ export const grammars = [
     displayName: 'Mojo',
     funding: [
     ],
-    hash: 'AI2YknoI0Y',
+    hash: 'FVRo1lHOW-NnZ8zGKJD0mc7HRLydcDroAKVt76Ag-5k',
     lastUpdate: '2024-03-18T01:05:25Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/modular/mojo-syntax/main/LICENSE',
@@ -2482,7 +2481,7 @@ export const grammars = [
     displayName: 'Move',
     funding: [
     ],
-    hash: 'Fg60NNORAI',
+    hash: 'XPMUc2shR1_6bdiCwT1JVRtamdRciHbc-mkSxk-Ulzc',
     lastUpdate: '2024-09-17T09:24:46Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
@@ -2499,7 +2498,7 @@ export const grammars = [
     displayName: 'Narrat Language',
     funding: [
     ],
-    hash: 'EnNnXnoQ10',
+    hash: 'sHtK94ywyfA-zlVFZC_dniA3QWzHpFL7X3ncKaRsw5k',
     lastUpdate: '2022-08-06T14:25:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/liana-p/narrat-syntax-highlighting-vscode/main/LICENSE',
@@ -2516,8 +2515,8 @@ export const grammars = [
     displayName: 'Nextflow',
     funding: [
     ],
-    hash: 'AGoHxsYL0I',
-    lastUpdate: '2025-01-09T01:25:31Z',
+    hash: 'ixy2sP-nZxhMh1HHq8zb_ZcmhHp5S6aLJLxI3-TUm_A',
+    lastUpdate: '2025-02-27T19:43:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md',
     name: 'nextflow',
@@ -2536,7 +2535,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'YnFuh7F2h8',
+    hash: 'gXO0PAbCsPBgxfB02Yy-6gQZbgP4vMRQ4vdtu1W2YtU',
     lastUpdate: '2024-02-28T17:19:46Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-nginx-conf-hint/main/LICENSE',
@@ -2559,7 +2558,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'M6gUzgKvLN',
+    hash: 'jdht28-QtoGq59m2JirMxLcb7ekOYcWQ8TdY26FydTo',
     lastUpdate: '2020-08-30T02:33:21Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/pragmagic/vscode-nim/master/LICENSE',
@@ -2578,8 +2577,8 @@ export const grammars = [
         url: 'https://opencollective.com/nix-community',
       },
     ],
-    hash: 'US1yMcXb2a',
-    lastUpdate: '2022-04-17T09:05:16Z',
+    hash: 'Nh1Q0JSdPVZi9v00kkQ8yY9b5doEIFZeKSzqIiDmVXU',
+    lastUpdate: '2025-02-02T04:56:34Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
     name: 'nix',
@@ -2595,7 +2594,7 @@ export const grammars = [
     displayName: 'nushell',
     funding: [
     ],
-    hash: 'lQNlGrMUO3',
+    hash: 'DgA9_I6vLGRVtSfGmB03E2wt6GBAJTMlN2re2_OyAQ8',
     lastUpdate: '2024-09-23T21:05:29Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
@@ -2615,7 +2614,7 @@ export const grammars = [
     displayName: 'Objective-C',
     funding: [
     ],
-    hash: 'hvXcJoC5dk',
+    hash: '2_a-Pa63UVJJ-C_fmS6BjnrsdwidK2GRQXHFEEnJp7U',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2632,7 +2631,7 @@ export const grammars = [
     displayName: 'Objective-C++',
     funding: [
     ],
-    hash: 'Zol10By1o7',
+    hash: 'EIilxr2ZlXxgi8SU8BDhhuVmu3yeaBQ2UAe1Kquz4g0',
     lastUpdate: '2022-06-10T13:55:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2649,7 +2648,7 @@ export const grammars = [
     displayName: 'OCaml',
     funding: [
     ],
-    hash: 'm8nsCmS5Te',
+    hash: 'bilHYpjR_Hhw-RuTo-pqnsv6Y6uo0tRJU3KnsUZwR88',
     lastUpdate: '2019-08-17T12:45:56Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/reasonml-editor/vscode-reasonml/master/LICENSE',
@@ -2680,8 +2679,8 @@ export const grammars = [
         url: 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted',
       },
     ],
-    hash: '4SfeZ44tbW',
-    lastUpdate: '2024-05-29T12:09:03Z',
+    hash: 'k6fsB6wbz0Ch4QETubTB-h_wE_nGUPQFYxexGb2XgKw',
+    lastUpdate: '2025-02-16T13:44:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/LICENSE.md',
     name: 'pascal',
@@ -2704,7 +2703,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'b1r9XtKoxU',
+    hash: 'rxHwLwef3W3ydOe0Cui_0wexusq8QNAUn6joHAL50QE',
     lastUpdate: '2021-04-06T09:30:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2730,7 +2729,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'zXrLGqRXEk',
+    hash: 'PXnpI1ZtGapZBnV6ugYH_sYFJ9OewNcukT72LAtWXTU',
     lastUpdate: '2023-04-17T18:42:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2744,7 +2743,7 @@ export const grammars = [
     displayName: 'PL/SQL',
     funding: [
     ],
-    hash: 'KNUBUwS7mF',
+    hash: '6Bx4PDNOIVQ81uKRH-yVaZbXroGX91RocNAYizSbtiw',
     lastUpdate: '2019-03-31T11:02:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/zabel-xyz/plsql-language/master/LICENSE',
@@ -2765,7 +2764,7 @@ export const grammars = [
     displayName: 'Gettext PO',
     funding: [
     ],
-    hash: 'V3dTKfhAHG',
+    hash: 'UtB-hxdk9Xagag_qUZU7YPFBq4K8xipvzJexqziLhxI',
     lastUpdate: '2014-11-13T07:01:18Z',
     name: 'po',
     scopeName: 'source.po',
@@ -2777,8 +2776,8 @@ export const grammars = [
     displayName: 'Polar',
     funding: [
     ],
-    hash: 'rTp3rqMGfX',
-    lastUpdate: '2024-09-23T15:37:02Z',
+    hash: 'DQUP8OT3OUp5E56R38as_QPH84LMyKSXf0OAQZLGKOY',
+    lastUpdate: '2025-02-04T19:52:05Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/osohq/polar-grammar/main/LICENSE',
     name: 'polar',
@@ -2804,7 +2803,7 @@ export const grammars = [
         url: 'https://issuehunt.io/r/vuejs/vetur',
       },
     ],
-    hash: '72eQNhlGjK',
+    hash: 'U_8P6H3mHis15SN-uJCmyI0t3RyMW6vk7cijo_YNMtY',
     lastUpdate: '2019-03-17T05:02:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE',
@@ -2818,7 +2817,7 @@ export const grammars = [
     displayName: 'PowerQuery',
     funding: [
     ],
-    hash: '1drrzayNnf',
+    hash: 'ylh2bBUlAa4ERZFYwNC46r7Cs4v5a-siyl8e9IeA12A',
     lastUpdate: '2019-04-24T13:39:36Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/powerquery-language/master/LICENSE',
@@ -2836,7 +2835,7 @@ export const grammars = [
     displayName: 'PowerShell',
     funding: [
     ],
-    hash: 'DOddnTwID8',
+    hash: '3i4Vda2_-8ALBGd0UryNSQU_Vqi7i7dZePksCbjSdj8',
     lastUpdate: '2021-11-02T14:27:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2850,7 +2849,7 @@ export const grammars = [
     displayName: 'Prisma',
     funding: [
     ],
-    hash: 'ijAIoY7tJM',
+    hash: 'qFnRyo1155c5w7_p7KoM0JAYaJEH0-6Ow_PvYUFCads',
     lastUpdate: '2024-12-17T09:09:57Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/prisma/language-tools/main/LICENSE',
@@ -2864,7 +2863,7 @@ export const grammars = [
     displayName: 'Prolog',
     funding: [
     ],
-    hash: 'rNFW132dHB',
+    hash: '_wslbJVOrtScDJRsUlHr7_JQoqR612h_JoBAwkG1zcc',
     lastUpdate: '2018-06-02T15:08:48Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/arthwang/vsc-prolog/master/LICENSE.txt',
@@ -2881,7 +2880,7 @@ export const grammars = [
     displayName: 'Protocol Buffer 3',
     funding: [
     ],
-    hash: '49GgvOZ3S2',
+    hash: 'fGoQjk71Pi8UmDDojIWtwmyC1q-_0T4dVBep6tpH82A',
     lastUpdate: '2022-02-08T19:51:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/zxh0/vscode-proto3/master/LICENSE.txt',
@@ -2911,7 +2910,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'YT6PoyWT8q',
+    hash: 'DtlOh-9gzldDDvpIVJ5nH2fKApsu1XLeCcEdXJ2SE7k',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2930,7 +2929,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/octref',
       },
     ],
-    hash: 'ntELZbbh3Z',
+    hash: 'VcoXuMecc-7qIFw9YPb6d4HDfJxCxPC9j8rGSk0GEaU',
     lastUpdate: '2020-08-20T04:40:24Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/octref/puppet-vscode/main/LICENSE',
@@ -2944,8 +2943,8 @@ export const grammars = [
     displayName: 'PureScript',
     funding: [
     ],
-    hash: 'VRGYKnCUfx',
-    lastUpdate: '2021-05-12T19:47:16Z',
+    hash: 'LNhY2u12fXmMKLJU5g4gFx4FNryU4UT6pvoyF_2qcEQ',
+    lastUpdate: '2025-03-07T08:17:45Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/nwolverson/vscode-language-purescript/master/LICENSE.md',
     name: 'purescript',
@@ -2964,7 +2963,7 @@ export const grammars = [
     displayName: 'Python',
     funding: [
     ],
-    hash: 'HdZEytYwrj',
+    hash: '3QzSFtH7MOitfK3QFoKA6FykhVLrWwPSBlDvFLG9otI',
     lastUpdate: '2022-10-20T22:45:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -2984,7 +2983,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'gX5FSoipuI',
+    hash: 'ewvNUVmfhbtxZQ-fcKpY8FjdSOSfRk8yDxQtTJ2RQ0I',
     lastUpdate: '2022-08-26T21:14:57Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
@@ -3001,7 +3000,7 @@ export const grammars = [
     displayName: 'QML Directory',
     funding: [
     ],
-    hash: 'RU8Nigo0jW',
+    hash: 'cfzguECWzd9g56cb-N_MxwfE_J6RhaYEX0RKOb2Qazk',
     lastUpdate: '2022-08-26T21:28:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
@@ -3018,7 +3017,7 @@ export const grammars = [
     displayName: 'Qt Style Sheets',
     funding: [
     ],
-    hash: 'RJ50f9oi8w',
+    hash: '0Osg1Uny4y1ZnUND_3HZ-CeB_dS7MAaKpLNqQiVI_vs',
     lastUpdate: '2023-02-15T15:05:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
@@ -3035,7 +3034,7 @@ export const grammars = [
     displayName: 'R',
     funding: [
     ],
-    hash: 'Iz2tO8cus7',
+    hash: 'I7e6RGnd9clngidQrBv4NjY0H2pr1EArjFofRO0-okA',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3057,7 +3056,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/eugleo',
       },
     ],
-    hash: 'YfDTs0Irr0',
+    hash: '76duU8mqP6VhEWy_9mEjKaf3VIyZDpwROWm2nVV6Yac',
     lastUpdate: '2024-05-29T13:14:07Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
@@ -3077,7 +3076,7 @@ export const grammars = [
     displayName: 'Raku',
     funding: [
     ],
-    hash: 'dM0eznFC0Y',
+    hash: 'LoAP3GDbGymp6axP10ev3THDgeiY4Iy7lk80jfv_LDo',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3095,7 +3094,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'hjzTrk5BYO',
+    hash: 'twTvHeUmuJ6w9-C3OQrlEYFDpIg30cjsX4XTI_OTAhQ',
     lastUpdate: '2025-01-16T21:40:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dotnet/razor/main/LICENSE.txt',
@@ -3112,7 +3111,7 @@ export const grammars = [
     displayName: 'Windows Registry Script',
     funding: [
     ],
-    hash: 'IL18E9vKX7',
+    hash: '25tsOXM-UcNHDq_UJSUuCgDdOQUWCtXgL7nCQ_P4pSo',
     lastUpdate: '2020-02-08T20:48:08Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mihai-vlc/reg-vscode/master/LICENSE',
@@ -3129,7 +3128,7 @@ export const grammars = [
     displayName: 'RegExp',
     funding: [
     ],
-    hash: 'ZMpGSHLp6f',
+    hash: 'XF5cnlMsNTxKxQnlquEwGS2vJdRushREWG10JFx3-_Q',
     lastUpdate: '2020-02-16T01:06:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/MagicStack/MagicPython/master/LICENSE',
@@ -3143,7 +3142,7 @@ export const grammars = [
     displayName: 'Rel',
     funding: [
     ],
-    hash: 'K8XTnrwyzo',
+    hash: 'uGzg7INvpWWnNxRU2Kmz6KmEX6huFy6NiKaKxKuAQls',
     lastUpdate: '2021-08-25T10:18:43Z',
     name: 'rel',
     scopeName: 'source.rel',
@@ -3155,7 +3154,7 @@ export const grammars = [
     displayName: 'RISC-V',
     funding: [
     ],
-    hash: 'cpaAAnVp6N',
+    hash: 'kOeYkUe5DqM2rZ8bAA1j2_Z_EOMJERq9xjEJ1FeQzNA',
     lastUpdate: '2020-10-28T01:05:27Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/zhuanhao-wu/vscode-riscv-support/master/LICENSE',
@@ -3182,7 +3181,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'NKzjaocb2E',
+    hash: 'A9cQWHyJJd5LTidoyLqC2wC6QJn6qQq9Sf34ZKpGs6k',
     lastUpdate: '2023-10-02T14:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3216,8 +3215,8 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'dSLxvTo1ui',
-    lastUpdate: '2024-12-11T16:53:04Z',
+    hash: 'bKySyeAucA0CHe-PFhu9xBtFfrBcfTggFPhmhqgagl0',
+    lastUpdate: '2025-02-28T12:20:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
@@ -3236,7 +3235,7 @@ export const grammars = [
     displayName: 'Rust',
     funding: [
     ],
-    hash: 'MZ7CNyG0He',
+    hash: 'Ns-8yilJaOXwCeY5bI8sxkS8PaP-yh8cKL2LJ3HRjDw',
     lastUpdate: '2024-08-30T20:03:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3253,7 +3252,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Tx67Nr2Okh',
+    hash: 'i6tM05j0-1bm-tP160aqDftWYowbeIEOe6venFCXoeM',
     lastUpdate: '2019-03-13T21:39:48Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/rpardee/sas/master/LICENSE',
@@ -3270,7 +3269,7 @@ export const grammars = [
     displayName: 'Sass',
     funding: [
     ],
-    hash: 'r91PktG12h',
+    hash: 'nIaSVgwSUF9bxC4JlF_onMFmoMGkePl5o2jVXasjn7U',
     lastUpdate: '2025-01-19T21:07:24Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/TheRealSyler/vscode-sass-indented/master/LICENSE',
@@ -3284,7 +3283,7 @@ export const grammars = [
     displayName: 'Scala',
     funding: [
     ],
-    hash: 'jFx7a5afQ0',
+    hash: 'bckZSnzUUJqEd61PYjbPBojEBTMTX18mNDgcxxR3GTk',
     lastUpdate: '2025-01-13T17:26:01Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/scala/vscode-scala-syntax/main/LICENSE.md',
@@ -3302,7 +3301,7 @@ export const grammars = [
     displayName: 'Scheme',
     funding: [
     ],
-    hash: 'JeYkC6oXWD',
+    hash: 'mSEYUEWcYupyCrtFdHOZgGcw0mjlXHFzhtQLo_14DRI',
     lastUpdate: '2018-12-25T09:02:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/tinyjiahao/vscode-scheme/master/LICENSE.md',
@@ -3322,7 +3321,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'MKzkOu4s3N',
+    hash: 'ojpzVw7DV4kIFqnExv4x1FZW_vQDZbN8wQ_hXmDOelg',
     lastUpdate: '2019-11-12T14:37:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3342,7 +3341,7 @@ export const grammars = [
     displayName: '1C (Query)',
     funding: [
     ],
-    hash: 'kIBBVt4gTg',
+    hash: 'MCJM4tptI9FmvrSpoOKQ1Lp4wlC5MUNwCa7pFSO2LAQ',
     lastUpdate: '2024-11-05T21:37:20Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
@@ -3365,7 +3364,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '6nVoPc4840',
+    hash: 'cqQ73LKaXWV-o5k6k6_AWo561GijsBZkYUf5eiUO-D4',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3388,7 +3387,7 @@ export const grammars = [
     displayName: 'Shell',
     funding: [
     ],
-    hash: 'XcvXDDJa9G',
+    hash: 'l2mgA5XXHIrmKj-timscPGHz7KfiXx4aiwaMJPdNyws',
     lastUpdate: '2024-07-29T09:33:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3411,7 +3410,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'uDbRBXpbMv',
+    hash: 'Lm5oOVZarS8iB09z9zzooOSsm-WfE6MWvTrAcHpj8HE',
     lastUpdate: '2021-12-19T08:29:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hronro/sublime-linguist-syntax/master/LICENSE',
@@ -3425,7 +3424,7 @@ export const grammars = [
     displayName: 'Smalltalk',
     funding: [
     ],
-    hash: 'acl1OEbBE7',
+    hash: '_U3G1Ep0RihTVkBx2Xdkonr6okHwUWv9b09YPYq9sqE',
     lastUpdate: '2019-05-27T23:37:25Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/leocamello/vscode-smalltalk/master/LICENSE',
@@ -3439,7 +3438,7 @@ export const grammars = [
     displayName: 'Solidity',
     funding: [
     ],
-    hash: 'GhmcfTjlV3',
+    hash: 'QcSQNYvnssN-OonQGn8PO9j9lY6uVyfYtu7US7Aa-uQ',
     lastUpdate: '2023-03-07T16:30:54Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/juanfranblanco/vscode-solidity/master/License.txt',
@@ -3459,7 +3458,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'r8TTzloejs',
+    hash: 'AnsZA19YLsxPCDntTSGbCkpqqcOo7RXDRMMS5CUFS9Y',
     lastUpdate: '2017-05-27T18:02:53Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mthadley/language-closure-templates/master/LICENSE',
@@ -3476,7 +3475,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'ZQ0tfVX55V',
+    hash: 'VbH370sCYIbxj_0vTaSJ8XXypmOh647sGV4iyvCJe9Q',
     lastUpdate: '2022-11-21T15:24:11Z',
     name: 'sparql',
     scopeName: 'source.sparql',
@@ -3491,7 +3490,7 @@ export const grammars = [
     displayName: 'Splunk Query Language',
     funding: [
     ],
-    hash: 'ejc8OzmWPd',
+    hash: 'WD5_rGbg1Aa0HZb9cYo-8gG-a7Cm8_AUpiSGUvQAnDw',
     lastUpdate: '2022-08-09T09:12:38Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/arcsector/vscode-splunk-search-syntax/master/LICENSE.txt',
@@ -3508,8 +3507,8 @@ export const grammars = [
     displayName: 'SQL',
     funding: [
     ],
-    hash: 'rxnPOCjDeo',
-    lastUpdate: '2023-12-13T12:08:01Z',
+    hash: 'W5MamQD6DxwnXNbi1Mi_YjUx1hjltPzH2o0muNU80V8',
+    lastUpdate: '2025-02-28T12:20:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'sql',
@@ -3522,7 +3521,7 @@ export const grammars = [
     displayName: 'SSH Config',
     funding: [
     ],
-    hash: 'nAkMzbCxw0',
+    hash: 'mghKeapZ8a2z0zYQ0YmyK3WPzEs-p7q8dxVLvDQqRPw',
     lastUpdate: '2018-10-09T21:04:51Z',
     name: 'ssh-config',
     scopeName: 'source.ssh-config',
@@ -3537,7 +3536,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'LTp0oicjVb',
+    hash: 'TNykDgetaA0aZGCO0AHTHaqH_4bYP3m6oh5eNf8-zUI',
     lastUpdate: '2018-06-12T13:58:33Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/kylebarron/language-stata/master/LICENSE',
@@ -3562,7 +3561,7 @@ export const grammars = [
         url: 'https://opencollective.com/stylus',
       },
     ],
-    hash: 'VVm34PHEQe',
+    hash: 'NGG3_wNKZA0InTo9QebZeIpg-8Vcx0J9REFazvyKhOE',
     lastUpdate: '2021-11-19T11:55:44Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/d4rkr00t/language-stylus/master/LICENSE',
@@ -3597,8 +3596,8 @@ export const grammars = [
         url: 'https://opencollective.com/svelte',
       },
     ],
-    hash: 'XCWPk8EwVr',
-    lastUpdate: '2024-12-03T17:00:34Z',
+    hash: 'zsFbUVdYkEbN7GuPoklG0YIqW4mWcbJ8tzCrY6YdHH0',
+    lastUpdate: '2025-03-06T12:42:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/sveltejs/language-tools/master/LICENSE',
     name: 'svelte',
@@ -3624,7 +3623,7 @@ export const grammars = [
         url: 'https://ko-fi.com/jtbandes',
       },
     ],
-    hash: 'huCqvuz9BT',
+    hash: 'dBsZHPG49TUEZuXklYZNJ-Ij8D6dqUiLpOcS-Q3qE4g',
     lastUpdate: '2025-01-18T23:17:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/jtbandes/swift-tmlanguage/main/LICENSE.md',
@@ -3642,7 +3641,7 @@ export const grammars = [
         url: 'https://www.buymeacoffee.com/mshr.h',
       },
     ],
-    hash: 'geVyELwt7T',
+    hash: 'FYkYDo6EFlHVoxuuAMSKFp-HV69nSmh8P6qpie72JKY',
     lastUpdate: '2024-11-09T08:32:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE',
@@ -3659,7 +3658,7 @@ export const grammars = [
     displayName: 'Systemd Units',
     funding: [
     ],
-    hash: 'jrq9OYuEwJ',
+    hash: 'xEWVNFNIxfbQnn89_9rzS3yUP-QQdUy_fpmGSdQ0NEA',
     lastUpdate: '2025-01-08T14:10:18Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-systemd/main/LICENSE',
@@ -3681,8 +3680,8 @@ export const grammars = [
     displayName: 'TalonScript',
     funding: [
     ],
-    hash: '2iGmBEN4sd',
-    lastUpdate: '2023-08-08T18:13:10Z',
+    hash: '48eZ5T_g0tyhVg5yrGBrY_-2QzQf0_HZAb1m2e5sF-Q',
+    lastUpdate: '2025-02-08T02:47:13Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mrob95/vscode-TalonScript/master/LICENSE',
     name: 'talonscript',
@@ -3695,7 +3694,7 @@ export const grammars = [
     displayName: 'Tasl',
     funding: [
     ],
-    hash: 'n3m9OvsOzC',
+    hash: 'lTfZFXNHelZOahZd_ux53Y5OrhSl-TtiF8A9zsaIo5M',
     lastUpdate: '2021-11-08T06:00:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/underlay/vscode-tasl/main/LICENSE',
@@ -3709,7 +3708,7 @@ export const grammars = [
     displayName: 'Tcl',
     funding: [
     ],
-    hash: '55VK5CPssg',
+    hash: '9Q8ndCV-Ahd5uO5D21Vu2dVz3iTwfmHahseoXLtMBqY',
     lastUpdate: '2017-04-03T11:19:09Z',
     name: 'tcl',
     scopeName: 'source.tcl',
@@ -3726,7 +3725,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '9uNanNeV8W',
+    hash: '3vI-G4_FTELWwU5coq8zD3Nqe0VjS9U3KM1DzPnsgO0',
     lastUpdate: '2025-01-13T16:55:26Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
@@ -3744,7 +3743,7 @@ export const grammars = [
     displayName: 'Terraform',
     funding: [
     ],
-    hash: 'Boynr9o0Ho',
+    hash: 'XA4Wuzq6bxq86jTca5wIvIs-D-ylBxZ8_wWxbmc-_so',
     lastUpdate: '2024-09-17T14:22:47Z',
     license: 'MPL-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE',
@@ -3764,7 +3763,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '9qIPhxDY6p',
+    hash: 'iW7B39hklyd9KDDU6s2eBuxSscJ0jDnPuqgzxy1D3D8',
     lastUpdate: '2024-09-27T08:27:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3781,7 +3780,7 @@ export const grammars = [
     displayName: 'TOML',
     funding: [
     ],
-    hash: '49Q7Js3lVa',
+    hash: 'C_JDgO5Lg3hS0asTQMVojCrTdYDHIEJnUrBTUNF1-4w',
     lastUpdate: '2020-05-25T19:51:56Z',
     name: 'toml',
     scopeName: 'source.toml',
@@ -3816,7 +3815,7 @@ export const grammars = [
     displayName: 'TSV',
     funding: [
     ],
-    hash: 'b9TY2CtGyr',
+    hash: 'qWlxLbvKBJxjZKEXj0kkJcHcPOdGrbWFAB0wf0Ec5KQ',
     lastUpdate: '2018-06-05T03:29:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
@@ -3833,7 +3832,7 @@ export const grammars = [
     displayName: 'TSX',
     funding: [
     ],
-    hash: 'qyk3VfiysU',
+    hash: 'M9cElYonNsDV9nzerxuM3dtqePPCyEk-eK2_IzeiJfo',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3847,7 +3846,7 @@ export const grammars = [
     displayName: 'Turtle',
     funding: [
     ],
-    hash: 'DimfjwytJo',
+    hash: 'y_GUbNkwiArKhbhLIlb73y7T8TIqUem9EMo3BTG6wbs',
     lastUpdate: '2022-11-21T15:21:23Z',
     name: 'turtle',
     scopeName: 'source.turtle',
@@ -3872,7 +3871,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/mblode',
       },
     ],
-    hash: 'nVLCdU01wk',
+    hash: 'j5aB9jrDmbhbUN__mn16N9YKAv4Xhch9VWwoDHhLkU4',
     lastUpdate: '2023-11-03T21:57:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mblode/vscode-twig-language-2/master/LICENSE.md',
@@ -3894,7 +3893,7 @@ export const grammars = [
     displayName: 'TypeScript',
     funding: [
     ],
-    hash: '1uhJNPohnQ',
+    hash: 'AJ9y77GwIbSXydPeC63OBqQyKunnZoz1MlEF6MkbhQk',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3911,8 +3910,8 @@ export const grammars = [
     displayName: 'TypeSpec',
     funding: [
     ],
-    hash: 'km51W174VV',
-    lastUpdate: '2024-08-08T21:42:27Z',
+    hash: 'LAIE6LoenvYC7l_FgB4wgVkaRSSb9LryPZilOjJps-Y',
+    lastUpdate: '2025-03-07T20:50:42Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
     name: 'typespec',
@@ -3928,7 +3927,7 @@ export const grammars = [
     displayName: 'Typst',
     funding: [
     ],
-    hash: 'OgHO2Uxar2',
+    hash: 'CZhGN3v0QYURr0GlkYpxqlfn2BciqQajWeuiJLk2HQ4',
     lastUpdate: '2023-08-11T05:56:51Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nvarner/typst-lsp/master/LICENSE-MIT.txt',
@@ -3942,7 +3941,7 @@ export const grammars = [
     displayName: 'V',
     funding: [
     ],
-    hash: 'qeaPlpL6Pq',
+    hash: 'rZsyeKnT17_9HRGMDyL9XboadtgzNTsfCp8LTIzyenM',
     lastUpdate: '2023-01-09T21:56:12Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vlang/vscode-vlang/master/LICENSE',
@@ -3956,7 +3955,7 @@ export const grammars = [
     displayName: 'Vala',
     funding: [
     ],
-    hash: 'dlH699jiwF',
+    hash: 'nvvCviZWuIUKoImAes958pcpo1xKr2uE4H0_worqV8Q',
     lastUpdate: '2021-05-28T08:53:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE',
@@ -3977,7 +3976,7 @@ export const grammars = [
     displayName: 'Visual Basic',
     funding: [
     ],
-    hash: 'yC9XGL8yoU',
+    hash: 'dZp_a9mwDwlERpADaBuoJZOdpxW4NzJzqKMblRZo-3U',
     lastUpdate: '2024-01-26T12:06:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -3995,7 +3994,7 @@ export const grammars = [
         url: 'https://www.buymeacoffee.com/mshr.h',
       },
     ],
-    hash: 'RTTNS4GjI2',
+    hash: 'fEXXkb7Yvck2TLu9TxCuyyFO5Ptb3-FrKpxQPRDfpY8',
     lastUpdate: '2024-10-26T13:17:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE',
@@ -4009,7 +4008,7 @@ export const grammars = [
     displayName: 'VHDL',
     funding: [
     ],
-    hash: 'iT8b3KCXtD',
+    hash: 'cLmiMlqXvNORe00Cftq_dPQ_Q7abzIEXWa0eVJWQPNA',
     lastUpdate: '2023-12-21T19:50:34Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/LICENSE.txt',
@@ -4027,7 +4026,7 @@ export const grammars = [
     displayName: 'Vim Script',
     funding: [
     ],
-    hash: '0JRHH2APQ2',
+    hash: 'SFAhLb2k8KuQ2NWIZ_snmY5d-7feKUPW8clGzBrX9pM',
     lastUpdate: '2018-04-21T00:11:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/dunstontc/viml/master/LICENSE',
@@ -4075,7 +4074,7 @@ export const grammars = [
         url: 'https://github.com/sponsors/johnsoncodehk',
       },
     ],
-    hash: 'jHCVczJ3x8',
+    hash: 'Bnr1Z6ug6VNe2CW73WLxWQAYrGEY70kYOL_BlsMmJm4',
     lastUpdate: '2024-12-20T20:08:46Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
@@ -4106,7 +4105,7 @@ export const grammars = [
         url: 'https://issuehunt.io/r/vuejs/vetur',
       },
     ],
-    hash: 'zPZMJ00RN0',
+    hash: 'DH6dID0MZKIX5ED_QdNJ2hHA-G_dw43lB6u6yjCSHjo',
     lastUpdate: '2020-08-20T02:58:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE',
@@ -4123,7 +4122,7 @@ export const grammars = [
     displayName: 'Vyper',
     funding: [
     ],
-    hash: 'lya6Pm8pzc',
+    hash: 'Lp9P8cytSRUIyyfRuA9owosKbz3Z9bHf2v9DuDV5KAU',
     lastUpdate: '2024-07-02T07:02:19Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/tintinweb/vscode-vyper/master/LICENSE',
@@ -4140,7 +4139,7 @@ export const grammars = [
     displayName: 'WebAssembly',
     funding: [
     ],
-    hash: 'OqLKMQewi4',
+    hash: 'kE6pGlRzFLpLCut0oj3kN3xAysZDhchfsVLhs7TCb5g',
     lastUpdate: '2023-10-31T03:53:56Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE',
@@ -4157,7 +4156,7 @@ export const grammars = [
     displayName: 'Wenyan',
     funding: [
     ],
-    hash: 'SAW6qDrqxp',
+    hash: 'B79P2r6JD2MSZ2ibGYAKdETlZja7QZhyl8NJUD-x5Y0',
     lastUpdate: '2020-09-07T17:31:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/wenyan-lang/highlight/master/LICENSE',
@@ -4174,7 +4173,7 @@ export const grammars = [
     displayName: 'WGSL',
     funding: [
     ],
-    hash: 'F7qeyQOEKk',
+    hash: 'zGS2Zz9Ee14NcK-YPx6MyPKN3eCMGPvsoXP9aAR-zmo',
     lastUpdate: '2023-07-22T16:16:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/PolyMeilex/vscode-wgsl/master/LICENSE',
@@ -4259,7 +4258,7 @@ export const grammars = [
         url: 'https://www.paypal.me/rwfholmejp',
       },
     ],
-    hash: '5e9ZYQBQec',
+    hash: 'J86NBxeL9airMGtL0NG4683rBkQTFRwwRdUd2Tm8NKY',
     lastUpdate: '2024-11-14T01:22:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Frederisk/Wikitext-VSCode-Extension/master/LICENSE.txt',
@@ -4269,11 +4268,13 @@ export const grammars = [
     source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/c6967c5ac4abe9ad069ea3b376621c2ef431392e/syntaxes/wikitext.tmLanguage.yaml',
   },
   {
-    byteSize: 21180,
+    byteSize: 20983,
     categories: [
       'web',
     ],
     displayName: 'WebAssembly Interface Types',
+    funding: [
+    ],
     hash: 'TOoD2Ik1UwLCr7YKz_8IbCq_v1PafpOoKJpM8BnW_4A',
     lastUpdate: '2024-02-01T13:18:23Z',
     license: 'MIT',
@@ -4291,7 +4292,7 @@ export const grammars = [
     displayName: 'Wolfram',
     funding: [
     ],
-    hash: 'oiwSKFBPVa',
+    hash: '4EsRwaeJNObVwipuppkHqiUNQ95VUMZsSJRYuCaBHKk',
     lastUpdate: '2022-10-11T17:11:31Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/WolframResearch/vscode-wolfram/master/LICENSE',
@@ -4312,7 +4313,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'rtJ2oPdjCJ',
+    hash: '_nNqtZ45_CxqaXtcvPLxN7m5F1cVTUYJqyQkmKbmADs',
     lastUpdate: '2018-10-04T10:00:39Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -4332,7 +4333,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'jQj121My0a',
+    hash: 'PlMS1u4Tq--zUcxG_1JcsLmMe_iykwHUfrQW6x-o6BI',
     lastUpdate: '2018-02-12T15:54:35Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -4352,7 +4353,7 @@ export const grammars = [
     displayName: 'YAML',
     funding: [
     ],
-    hash: 'E7ORFjbsNA',
+    hash: 'tXcqIxeekCus8i1OqercLVaC4ngtqvKMupM6OARKpCc',
     lastUpdate: '2017-08-24T17:48:19Z',
     name: 'yaml',
     scopeName: 'source.yaml',
@@ -4364,7 +4365,7 @@ export const grammars = [
     displayName: 'ZenScript',
     funding: [
     ],
-    hash: 'DpiFbr0LZI',
+    hash: 'VD-jnkGuPBRRv-s1tVw6WUfptdZde-IFtO8VYPCJWr0',
     lastUpdate: '2021-03-26T19:17:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/CraftTweaker/ZenScript-tmLanguage/master/LICENSE',
@@ -4381,7 +4382,7 @@ export const grammars = [
     displayName: 'Zig',
     funding: [
     ],
-    hash: 'dhGp073AHk',
+    hash: 'MYBEhnUcMbs7yuQe35hVUAo-imdK-h-io-5N73Y8cuk',
     lastUpdate: '2024-07-03T07:57:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE',
@@ -4401,7 +4402,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'lYKDXa2Z7B',
+    hash: '3n0wu2DuuFSj_NXxrp9pvnebLTMWG5_wQrJ1der11ys',
     lastUpdate: '2023-11-08T17:02:59Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
@@ -4420,7 +4421,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'e3Msqayw3j',
+    hash: 'cEK5b2Y1J0E0IKzXAyXzKS0EsvSddB7g1nMehYM9u3o',
     injectTo: [
       'source.ts.ng',
     ],
@@ -4443,7 +4444,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'VhgopsrAal',
+    hash: 'kZe6Ps27KKUklDQSuoG4jc3GSuO4MJtcZqgOCdMc4n4',
     injectTo: [
       'source.ts.ng',
     ],
@@ -4466,7 +4467,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'kYnmUqFTFZ',
+    hash: '6Js5I0c3YlywB2xQnDJepsuGu3Y3PVX7VFyWuUKWoTg',
     injectTo: [
       'text.html.derivative',
       'text.html.derivative.ng',
@@ -4491,7 +4492,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: '4mO2f93Wyl',
+    hash: 'qqsrKCSqpCW3qUzeiS9Su7uSo-V-xUMEQu5fr37QWVk',
     injectTo: [
       'text.html.derivative',
       'text.html.derivative.ng',
@@ -4517,7 +4518,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'r0M7v6iygH',
+    hash: '_lL6ubNwHzMZcNfQKFGcx-Cw9nRnyeAo3frPiaAPsaA',
     injectTo: [
       'text.html.derivative',
       'text.html.derivative.ng',
@@ -4544,7 +4545,7 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: 'kM4GgGU4eF',
+    hash: 'Jv3E86GgoJg0DJmwMbyBo2ME5pnZfPIAh2vPxgl8Uew',
     lastUpdate: '2023-03-29T09:38:06Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -4570,7 +4571,7 @@ export const injections = [
         url: 'https://ko-fi.com/26',
       },
     ],
-    hash: 'b9lAesKxsY',
+    hash: 'B33J57T_tklLO_E9V9Et2ymf3sVxZkTm7U_uePnoAKg',
     injectTo: [
       'source.ts',
       'source.js',
@@ -4600,7 +4601,7 @@ export const injections = [
         url: 'https://ko-fi.com/26',
       },
     ],
-    hash: 'cjHb7XdeYY',
+    hash: 'hePKONWvWX8eqqcTKy2dllrqKD8jg3_TlMrcP_RDKjk',
     injectTo: [
       'source.ts',
       'source.js',
@@ -4630,7 +4631,7 @@ export const injections = [
         url: 'https://ko-fi.com/26',
       },
     ],
-    hash: 'HFffghnePZ',
+    hash: 'xkssZVFlKrqdsW7mG-hjClsRjz15LULXAMageIdcxgk',
     injectTo: [
       'source.ts',
       'source.js',
@@ -4659,7 +4660,7 @@ export const injections = [
         url: 'https://ko-fi.com/26',
       },
     ],
-    hash: 'Ps1gaKvlPa',
+    hash: '0nxyIHxbOwBjqkgBtKCL-xZPOJ9b-LNJTDdi7VEkB6w',
     injectTo: [
       'source.ts',
       'source.js',
@@ -4687,7 +4688,7 @@ export const injections = [
         url: 'https://ko-fi.com/26',
       },
     ],
-    hash: 'rEsSluhkQQ',
+    hash: '6V5G0X0AFzB0XIS4HnLK_Ob9K58aNFlP-AMQ--3d6PQ',
     injectTo: [
       'source.ts',
       'source.js',
@@ -4716,7 +4717,7 @@ export const injections = [
         url: 'https://github.com/sponsors/samuelcolvin',
       },
     ],
-    hash: 'GixUE5UUDf',
+    hash: 'NHF6XTRxdaRUJVYro_puMcUCbTeUW3qYffyB0lvlc7E',
     lastUpdate: '2022-08-17T08:07:37Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
@@ -4737,7 +4738,7 @@ export const injections = [
         url: 'https://github.com/sponsors/johnsoncodehk',
       },
     ],
-    hash: 'dDgC0hpSLe',
+    hash: '6Vh7U-PsUrX-jvaOsOdoCQUWZZHmCSluZ3HHym1PDOY',
     injectTo: [
       'text.html.markdown',
     ],
@@ -4761,7 +4762,7 @@ export const injections = [
         url: 'https://github.com/sponsors/johnsoncodehk',
       },
     ],
-    hash: 'lhC1cd62GE',
+    hash: 'EQr11jkalELHqITxNiwO5WTiu8V0-dycLEGglmdyzr0',
     injectTo: [
       'source.vue',
       'text.html.markdown',
@@ -4788,7 +4789,7 @@ export const injections = [
         url: 'https://github.com/sponsors/johnsoncodehk',
       },
     ],
-    hash: 'ePqTfZTjMl',
+    hash: 'PFtNnp1Hcim_t0GEPZ7YBnhEn7O2LPreOLlIi9_KJ4k',
     injectTo: [
       'source.vue',
       'text.html.markdown',
@@ -4818,7 +4819,7 @@ export const injections = [
         url: 'https://github.com/sponsors/johnsoncodehk',
       },
     ],
-    hash: 'gQb4LxBpN5',
+    hash: 'NcPL8DaCRMu25QT0V55Rdy5EZ0no3qGb8CWlnX7N7jc',
     injectTo: [
       'source.vue',
     ],

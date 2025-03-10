@@ -128,9 +128,6 @@
           "include": "#liquid_doc_example_tag"
         },
         {
-          "include": "#liquid_doc_description_tag"
-        },
-        {
           "include": "#liquid_doc_fallback_tag"
         }
       ]
@@ -251,18 +248,6 @@
         "0": {
           "name": "comment.block.documentation.liquid"
         },
-        "1": {
-          "name": "storage.type.class.liquid"
-        },
-        "2": {
-          "name": "string.quoted.single.liquid"
-        }
-      },
-      "match": "(@description)\\b(?:\\s+(.*))?"
-    },
-    "liquid_doc_example_tag": {
-      "begin": "(@example)\\b\\s*",
-      "beginCaptures": {
         "1": {
           "name": "storage.type.class.liquid"
         }

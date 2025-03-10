@@ -1,7 +1,7 @@
 {
   "displayName": "WebAssembly Interface Types",
-  "foldingStartMarker": "(\\{|\\[)\\s*",
-  "foldingStopMarker": "\\s*(\\}|\\])",
+  "foldingStartMarker": "([{\\[])\\s*",
+  "foldingStopMarker": "\\s*([}\\]])",
   "name": "wit",
   "patterns": [
     {
@@ -112,7 +112,7 @@
     },
     "enum": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(enum)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "\\b(enum)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.enum.enum-items.wit"
@@ -124,7 +124,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -150,11 +150,11 @@
           "include": "#comment"
         },
         {
-          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
           "name": "variable.other.enummember.id.enum-cases.wit"
         },
         {
-          "match": "(\\,)",
+          "match": "(,)",
           "name": "punctuation.comma.wit"
         },
         {
@@ -179,7 +179,7 @@
                   "name": "ppunctuation.brackets.curly.begin.wit"
                 }
               },
-              "end": "(\\})",
+              "end": "(})",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.brackets.curly.end.wit"
@@ -209,7 +209,7 @@
     },
     "flags": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(flags)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "\\b(flags)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.flags.flags-items.wit"
@@ -221,7 +221,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -247,11 +247,11 @@
           "include": "#comment"
         },
         {
-          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
           "name": "variable.other.enummember.id.flags-fields.wit"
         },
         {
-          "match": "(\\,)",
+          "match": "(,)",
           "name": "punctuation.comma.wit"
         },
         {
@@ -261,7 +261,7 @@
     },
     "function": {
       "applyEndPatternLast": 1,
-      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\:)",
+      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.id.func-item.wit"
@@ -279,7 +279,7 @@
           "name": "keyword.operator.key-value.wit"
         }
       },
-      "end": "((?<=\\n)|(?=\\}))",
+      "end": "((?<=\\n)|(?=}))",
       "name": "meta.func-item.wit",
       "patterns": [
         {
@@ -304,7 +304,7 @@
               "name": "keyword.other.func.func-type.wit"
             }
           },
-          "end": "((?<=\\n)|(?=\\}))",
+          "end": "((?<=\\n)|(?=}))",
           "name": "meta.function.wit",
           "patterns": [
             {
@@ -338,16 +338,16 @@
           "name": "punctuation.brackets.angle.end.wit"
         }
       },
-      "match": "\\b(borrow)\\b(\\<)\\s*%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\>)",
+      "match": "\\b(borrow)\\b(<)\\s*%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(>)",
       "name": "meta.handle.ty.wit"
     },
     "identifier": {
-      "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+      "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
       "name": "entity.name.type.id.wit"
     },
     "interface": {
       "applyEndPatternLast": 1,
-      "begin": "^\\b(default\\s+)?(interface)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "^\\b(default\\s+)?(interface)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.default.interface-item.wit"
@@ -362,7 +362,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -401,7 +401,7 @@
     },
     "list": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(list)\\b(\\<)",
+      "begin": "\\b(list)\\b(<)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.type.list.wit"
@@ -410,7 +410,7 @@
           "name": "punctuation.brackets.angle.begin.wit"
         }
       },
-      "end": "(\\>)",
+      "end": "(>)",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.angle.end.wit"
@@ -446,7 +446,7 @@
               "name": "punctuation.definition.quote.begin.markdown"
             }
           },
-          "match": "\\G\\s*((\\>)\\s+)+"
+          "match": "\\G\\s*((>)\\s+)+"
         },
         {
           "captures": {
@@ -454,7 +454,7 @@
               "name": "punctuation.definition.list.begin.markdown"
             }
           },
-          "match": "\\G\\s*(\\-)\\s+"
+          "match": "\\G\\s*(-)\\s+"
         },
         {
           "captures": {
@@ -511,7 +511,7 @@
     },
     "named-type-list": {
       "applyEndPatternLast": 1,
-      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(\\:)",
+      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.id.named-type.wit"
@@ -520,7 +520,7 @@
           "name": "keyword.operator.key-value.wit"
         }
       },
-      "end": "((\\,)|(?=\\))|(?=\\n))",
+      "end": "((,)|(?=\\))|(?=\\n))",
       "endCaptures": {
         "2": {
           "name": "punctuation.comma.wit"
@@ -546,19 +546,19 @@
     "operator": {
       "patterns": [
         {
-          "match": "\\=",
+          "match": "=",
           "name": "punctuation.equal.wit"
         },
         {
-          "match": "\\,",
+          "match": ",",
           "name": "punctuation.comma.wit"
         },
         {
-          "match": "\\:",
+          "match": ":",
           "name": "keyword.operator.key-value.wit"
         },
         {
-          "match": "\\;",
+          "match": ";",
           "name": "punctuation.semicolon.wit"
         },
         {
@@ -574,15 +574,15 @@
           "name": "punctuation.brackets.curly.begin.wit"
         },
         {
-          "match": "\\}",
+          "match": "}",
           "name": "punctuation.brackets.curly.end.wit"
         },
         {
-          "match": "\\<",
+          "match": "<",
           "name": "punctuation.brackets.angle.begin.wit"
         },
         {
-          "match": "\\>",
+          "match": ">",
           "name": "punctuation.brackets.angle.end.wit"
         },
         {
@@ -590,14 +590,14 @@
           "name": "keyword.operator.star.wit"
         },
         {
-          "match": "\\-\\>",
+          "match": "->",
           "name": "keyword.operator.arrow.skinny.wit"
         }
       ]
     },
     "option": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(option)\\b(\\<)",
+      "begin": "\\b(option)\\b(<)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.type.option.wit"
@@ -606,7 +606,7 @@
           "name": "punctuation.brackets.angle.begin.wit"
         }
       },
-      "end": "(\\>)",
+      "end": "(>)",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.angle.end.wit"
@@ -662,13 +662,13 @@
                   "name": "constant.numeric.versioning.package-identifier.wit"
                 }
               },
-              "match": "([^\\:]+)(\\:)([^\\@]+)((\\@)([^\\s]+))?",
+              "match": "([^:]+)(:)([^@]+)((@)(\\S+))?",
               "name": "meta.package-identifier.wit"
             }
           ]
         }
       },
-      "match": "^(package)\\s+([^\\s]+)\\s*",
+      "match": "^(package)\\s+(\\S+)\\s*",
       "name": "meta.package-decl.wit"
     },
     "parameter-list": {
@@ -714,7 +714,7 @@
     },
     "record": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(record)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "\\b(record)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.declaration.record.record-item.wit"
@@ -726,7 +726,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -747,7 +747,7 @@
     },
     "record-fields": {
       "applyEndPatternLast": 1,
-      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(\\:)",
+      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "variable.declaration.id.record-fields.wit"
@@ -756,7 +756,7 @@
           "name": "keyword.operator.key-value.wit"
         }
       },
-      "end": "((\\,)|(?=\\})|(?=\\n))",
+      "end": "((,)|(?=})|(?=\\n))",
       "endCaptures": {
         "2": {
           "name": "punctuation.comma.wit"
@@ -778,7 +778,7 @@
     },
     "resource": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(resource)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)",
+      "begin": "\\b(resource)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.resource.wit"
@@ -787,7 +787,7 @@
           "name": "entity.name.type.id.resource.wit"
         }
       },
-      "end": "((?<=\\n)|(?=\\}))",
+      "end": "((?<=\\n)|(?=}))",
       "name": "meta.resource-item.wit",
       "patterns": [
         {
@@ -809,7 +809,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -831,7 +831,7 @@
               "name": "punctuation.brackets.round.begin.wit"
             }
           },
-          "end": "((?<=\\n)|(?=\\}))",
+          "end": "((?<=\\n)|(?=}))",
           "name": "meta.constructor-type.wit",
           "patterns": [
             {
@@ -864,7 +864,7 @@
           "name": "punctuation.brackets.angle.begin.wit"
         }
       },
-      "end": "((?<=\\n)|(?=\\,)|(?=\\}))",
+      "end": "((?<=\\n)|(?=,)|(?=}))",
       "name": "meta.result.ty.wit",
       "patterns": [
         {
@@ -872,13 +872,13 @@
         },
         {
           "applyEndPatternLast": 1,
-          "begin": "(\\<)",
+          "begin": "(<)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.brackets.angle.begin.wit"
             }
           },
-          "end": "(\\>)",
+          "end": "(>)",
           "endCaptures": {
             "1": {
               "name": "punctuation.brackets.angle.end.wit"
@@ -890,7 +890,7 @@
               "include": "#comment"
             },
             {
-              "match": "(?<!\\w)(\\_)(?!\\w)",
+              "match": "(?<!\\w)(_)(?!\\w)",
               "name": "variable.other.inferred-type.result.wit"
             },
             {
@@ -898,7 +898,7 @@
               "name": "meta.types.result.wit"
             },
             {
-              "match": "(?<!result)\\s*(\\,)",
+              "match": "(?<!result)\\s*(,)",
               "name": "punctuation.comma.wit"
             },
             {
@@ -913,13 +913,13 @@
     },
     "result-list": {
       "applyEndPatternLast": 1,
-      "begin": "(\\-\\>)",
+      "begin": "(->)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.arrow.skinny.wit"
         }
       },
-      "end": "((?<=\\n)|(?=\\}))",
+      "end": "((?<=\\n)|(?=}))",
       "name": "meta.result-list.wit",
       "patterns": [
         {
@@ -949,7 +949,7 @@
           "name": "meta.interface.toplevel-use-item.wit",
           "patterns": [
             {
-              "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+              "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
               "name": "entity.name.type.declaration.interface.toplevel-use-item.wit"
             },
             {
@@ -961,7 +961,7 @@
                   "name": "constant.numeric.versioning.interface.toplevel-use-item.wit"
                 }
               },
-              "match": "(\\@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+              "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*))*))?(?:\\+([0-9a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?)",
               "name": "meta.versioning.interface.toplevel-use-item.wit"
             }
           ]
@@ -973,12 +973,12 @@
           "name": "entity.name.type.toplevel-use-item.wit"
         }
       },
-      "match": "^(use)\\s+([^\\s]+)(\\s+(as)\\s+([^\\s]+))?\\s*",
+      "match": "^(use)\\s+(\\S+)(\\s+(as)\\s+(\\S+))?\\s*",
       "name": "meta.toplevel-use-item.wit"
     },
     "tuple": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(tuple)\\b(\\<)",
+      "begin": "\\b(tuple)\\b(<)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.type.tuple.wit"
@@ -987,7 +987,7 @@
           "name": "punctuation.brackets.angle.begin.wit"
         }
       },
-      "end": "(\\>)",
+      "end": "(>)",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.angle.end.wit"
@@ -1003,7 +1003,7 @@
           "name": "meta.types.tuple.wit"
         },
         {
-          "match": "(\\,)",
+          "match": "(,)",
           "name": "punctuation.comma.wit"
         },
         {
@@ -1013,7 +1013,7 @@
     },
     "type-definition": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(type)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\=)",
+      "begin": "\\b(type)\\b\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(=)",
       "beginCaptures": {
         "1": {
           "name": "keyword.declaration.type.type-item.wit storage.type.wit"
@@ -1076,7 +1076,7 @@
     },
     "use": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(use)\\b\\s+([^\\s]+)(\\.)(\\{)",
+      "begin": "\\b(use)\\b\\s+(\\S+)(\\.)(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.use.use-item.wit"
@@ -1098,7 +1098,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -1110,11 +1110,11 @@
           "include": "#comment"
         },
         {
-          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
           "name": "entity.name.type.declaration.use-names-item.use-item.wit"
         },
         {
-          "match": "(\\,)",
+          "match": "(,)",
           "name": "punctuation.comma.wit"
         },
         {
@@ -1126,7 +1126,7 @@
       "name": "meta.use-path.wit",
       "patterns": [
         {
-          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+          "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
           "name": "entity.name.namespace.id.use-path.wit"
         },
         {
@@ -1138,7 +1138,7 @@
               "name": "constant.numeric.versioning.id.use-path.wit"
             }
           },
-          "match": "(\\@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+          "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*))*))?(?:\\+([0-9a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?)",
           "name": "meta.versioning.id.use-path.wit"
         },
         {
@@ -1149,7 +1149,7 @@
     },
     "variant": {
       "applyEndPatternLast": 1,
-      "begin": "\\b(variant)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "\\b(variant)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.variant.wit"
@@ -1161,7 +1161,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -1185,7 +1185,7 @@
     },
     "variant-cases": {
       "applyEndPatternLast": 1,
-      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(\\()",
+      "begin": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "variable.other.enummember.id.variant-cases.wit"
@@ -1194,7 +1194,7 @@
           "name": "punctuation.brackets.round.begin.wit"
         }
       },
-      "end": "(\\))\\s*(\\,)?",
+      "end": "(\\))\\s*(,)?",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.round.end.wit"
@@ -1220,7 +1220,7 @@
     },
     "world": {
       "applyEndPatternLast": 1,
-      "begin": "^\\b(default\\s+)?(world)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
+      "begin": "^\\b(default\\s+)?(world)\\s+%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.default.world-item.wit"
@@ -1235,7 +1235,7 @@
           "name": "punctuation.brackets.curly.begin.wit"
         }
       },
-      "end": "(\\})",
+      "end": "(})",
       "endCaptures": {
         "1": {
           "name": "punctuation.brackets.curly.end.wit"
@@ -1248,7 +1248,7 @@
         },
         {
           "applyEndPatternLast": 1,
-          "begin": "\\b(export)\\b\\s+([^\\s]+)",
+          "begin": "\\b(export)\\b\\s+(\\S+)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.export.export-item.wit"
@@ -1257,7 +1257,7 @@
               "name": "meta.id.export-item.wit",
               "patterns": [
                 {
-                  "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+                  "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
                   "name": "variable.other.constant.id.export-item.wit"
                 },
                 {
@@ -1269,13 +1269,13 @@
                       "name": "constant.numeric.versioning.id.export-item.wit"
                     }
                   },
-                  "match": "(\\@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*))*))?(?:\\+([0-9a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?)",
                   "name": "meta.versioning.id.export-item.wit"
                 }
               ]
             }
           },
-          "end": "((?<=\\n)|(?=\\}))",
+          "end": "((?<=\\n)|(?=}))",
           "name": "meta.export-item.wit",
           "patterns": [
             {
@@ -1288,7 +1288,7 @@
         },
         {
           "applyEndPatternLast": 1,
-          "begin": "\\b(import)\\b\\s+([^\\s]+)",
+          "begin": "\\b(import)\\b\\s+(\\S+)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.import.import-item.wit"
@@ -1297,7 +1297,7 @@
               "name": "meta.id.import-item.wit",
               "patterns": [
                 {
-                  "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)(([\\-])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
+                  "match": "\\b%?((?<![\\-\\w])([a-z][0-9a-z]*|[A-Z][0-9A-Z]*)((-)([a-z][0-9a-z]*|[A-Z][0-9A-Z]*))*)\\b",
                   "name": "variable.other.constant.id.import-item.wit"
                 },
                 {
@@ -1309,13 +1309,13 @@
                       "name": "constant.numeric.versioning.id.import-item.wit"
                     }
                   },
-                  "match": "(\\@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z\\-][0-9a-zA-Z\\-]*))*))?(?:\\+([0-9a-zA-Z\\-]+(?:\\.[0-9a-zA-Z\\-]+)*))?)",
                   "name": "meta.versioning.id.import-item.wit"
                 }
               ]
             }
           },
-          "end": "((?<=\\n)|(?=\\}))",
+          "end": "((?<=\\n)|(?=}))",
           "name": "meta.import-item.wit",
           "patterns": [
             {
@@ -1328,7 +1328,7 @@
         },
         {
           "applyEndPatternLast": 1,
-          "begin": "\\b(include)\\s+([^\\s]+)\\s*",
+          "begin": "\\b(include)\\s+(\\S+)\\s*",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.include.include-item.wit"
@@ -1356,7 +1356,7 @@
                   "name": "punctuation.brackets.curly.begin.wit"
                 }
               },
-              "end": "(\\})",
+              "end": "(})",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.brackets.curly.end.wit"
@@ -1379,11 +1379,11 @@
                       "name": "entity.name.type.include-names-item.wit"
                     }
                   },
-                  "match": "([^\\s]+)\\s+(as)\\s+([^\\s\\,]+)",
+                  "match": "(\\S+)\\s+(as)\\s+([^\\s,]+)",
                   "name": "meta.include-names-item.wit"
                 },
                 {
-                  "match": "(\\,)",
+                  "match": "(,)",
                   "name": "punctuation.comma.wit"
                 },
                 {
