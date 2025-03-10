@@ -121,11 +121,11 @@
           "name": "constant.numeric.octal.ara"
         },
         {
-          "match": "\\\\x[0-9A-Fa-f]{1,2}",
+          "match": "\\\\x\\h{1,2}",
           "name": "constant.numeric.hex.ara"
         },
         {
-          "match": "\\\\[nrt\\\\\\$\\\"]",
+          "match": "\\\\[nrt\\\\$\"]",
           "name": "constant.character.escape.ara"
         }
       ]
@@ -159,7 +159,7 @@
           "name": "punctuation.separator.colon.ara"
         }
       },
-      "match": "(?i)(?<=^|\\(|,)\\s*([a-z_\\x{7f}-\\x{10ffff}][a-z0-9_\\x{7f}-\\x{10ffff}]*)\\s*(:)(?!:)"
+      "match": "(?i)(?<=^|[(,])\\s*([a-z_\\x7F-\\x{10FFFF}][a-z0-9_\\x7F-\\x{10FFFF}]*)\\s*(:)(?!:)"
     },
     "namespace": {
       "begin": "(?i)((namespace)|[a-z0-9_]+)?(\\\\)(?=.*?[^a-z_0-9\\\\])",
@@ -191,7 +191,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "0[xX][0-9a-fA-F]+(?:_[0-9a-fA-F]+)*",
+          "match": "0[xX]\\h+(?:_\\h+)*",
           "name": "constant.numeric.hex.ara"
         },
         {
@@ -215,7 +215,7 @@
               "name": "punctuation.separator.decimal.period.ara"
             }
           },
-          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+-]?[0-9]+(?:_[0-9]+)*)",
+          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+\\-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+\\-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+\\-]?[0-9]+(?:_[0-9]+)*)",
           "name": "constant.numeric.decimal.ara"
         },
         {
@@ -231,11 +231,11 @@
           "name": "keyword.assignments.ara"
         },
         {
-          "match": "(\\^|\\||\\|\\||&&|>>|<<|&|~|<<|>>|>|<|<=>|\\?\\?|\\?|:|\\?:)(?!=)",
+          "match": "([\\^|]|\\|\\||&&|>>|<<|[\\&~]|<<|>>|[><]|<=>|\\?\\?|[?:]|\\?:)(?!=)",
           "name": "keyword.operators.ara"
         },
         {
-          "match": "(==|===|!==|!=|<=|>=|<|>)(?!=)",
+          "match": "(==|===|!==|!=|<=|>=|[<>])(?!=)",
           "name": "keyword.operator.comparison.ara"
         },
         {
@@ -243,7 +243,7 @@
           "name": "keyword.operator.math.ara"
         },
         {
-          "match": "(?<![<>])=(?!=|>)",
+          "match": "(?<![<>])=(?![=>])",
           "name": "keyword.operator.assignment.ara"
         },
         {
@@ -270,26 +270,26 @@
               "name": "punctuation.brackets.curly.ara"
             }
           },
-          "match": "(?:\\b|(?:(\\))|(\\])|(\\})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
+          "match": "(?:\\b|(?:(\\))|(])|(})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
         },
         {
           "match": "(?:->|\\?->)",
           "name": "keyword.operator.arrow.ara"
         },
         {
-          "match": "(?:=>)",
+          "match": "=>",
           "name": "keyword.operator.double-arrow.ara"
         },
         {
-          "match": "(?:::)",
+          "match": "::",
           "name": "keyword.operator.static.ara"
         },
         {
-          "match": "(?:\\(\\.\\.\\.\\))",
+          "match": "\\(\\.\\.\\.\\)",
           "name": "keyword.operator.closure.ara"
         },
         {
-          "match": "(?:\\.\\.\\.)",
+          "match": "\\.\\.\\.",
           "name": "keyword.operator.spread.ara"
         },
         {

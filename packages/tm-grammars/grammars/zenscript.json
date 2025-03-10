@@ -6,11 +6,11 @@
   "name": "zenscript",
   "patterns": [
     {
-      "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b",
+      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)([LlFfUuDd]|UL|ul)?\\b",
       "name": "constant.numeric.zenscript"
     },
     {
-      "match": "\\b\\-?(0b|0x|0o|0B|0X|0O)(0|[1-9a-fA-F][0-9a-fA-F_]*)[a-zA-Z_]*\\b",
+      "match": "\\b-?(0[bxoBXO])(0|[1-9a-fA-F][_\\h]*)[a-zA-Z_]*\\b",
       "name": "constant.numeric.zenscript"
     },
     {
@@ -102,17 +102,17 @@
     "comments": {
       "patterns": [
         {
-          "match": "//[^\n]*",
+          "match": "//[^\\n]*",
           "name": "comment.line.double=slash"
         },
         {
-          "begin": "\\/\\*",
+          "begin": "/\\*",
           "beginCaptures": {
             "0": {
               "name": "comment.block"
             }
           },
-          "end": "\\*\\/",
+          "end": "\\*/",
           "endCaptures": {
             "0": {
               "name": "comment.block"
@@ -176,11 +176,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "\\b(\\.|\\.\\.|\\.\\.\\.|,|\\+|\\+=|\\+\\+|-|-=|--|~|~=|\\*|\\*=|/|/=|%|%=|\\||\\|=|\\|\\||&|&=|&&|\\^|\\^=|\\?|\\?\\.|\\?\\?|<|<=|<<|<<=|>|>=|>>|>>=|>>>|>>>=|=>|=|==|===|!|!=|!==|\\$|`)\\b",
+          "match": "\\b(\\.|\\.\\.|\\.\\.\\.|[,+]|\\+=|\\+\\+|-|-=|--|~|~=|\\*|\\*=|/|/=|%|%=|\\||\\|=|\\|\\||&|&=|&&|\\^|\\^=|\\?|\\?\\.|\\?\\?|<|<=|<<|<<=|>|>=|>>|>>=|>>>|>>>=|=>|=|==|===|!|!=|!==|[$`])\\b",
           "name": "keyword.control"
         },
         {
-          "match": "\\b(;|:)\\b",
+          "match": "\\b([;:])\\b",
           "name": "keyword.control"
         }
       ]
@@ -232,7 +232,7 @@
       ]
     },
     "var": {
-      "match": "\\b(val|var)\\b",
+      "match": "\\b(va[lr])\\b",
       "name": "storage.type"
     }
   },

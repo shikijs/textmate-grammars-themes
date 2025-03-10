@@ -19,17 +19,17 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "variable.other.go"
             }
           ]
         }
       },
-      "match": "(?:(?<=\\brange\\b|\\bswitch\\b|\\;|\\bif\\b|\\bfor\\b|\\<|\\>|\\<\\=|\\>\\=|\\=\\=|\\!\\=|\\w(?:\\+|/|\\-|\\*|\\%)|\\w(?:\\+|/|\\-|\\*|\\%)\\=|\\|\\||\\&\\&)(?:\\s*)((?![\\[\\]]+)[[:alnum:]\\-\\_\\!\\.\\[\\]\\<\\>\\=\\*/\\+\\%\\:]+)(?:\\s*)(?=\\{))"
+      "match": "(?<=\\brange\\b|\\bswitch\\b|;|\\bif\\b|\\bfor\\b|[<>]|<=|>=|==|!=|\\w[+/\\-*%]|\\w[+/\\-*%]=|\\|\\||&&)\\s*((?![\\[\\]]+)[[:alnum:]\\-_!.\\[\\]<>=*/+%:]+)\\s*(?=\\{)"
     },
     "brackets": {
       "patterns": [
@@ -40,7 +40,7 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             }
           },
-          "end": "\\}",
+          "end": "}",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.curly.go"
@@ -78,7 +78,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -99,7 +99,7 @@
           "name": "entity.name.function.support.builtin.go"
         },
         {
-          "begin": "(?:(\\bnew\\b)(\\())",
+          "begin": "(\\bnew\\b)(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.support.builtin.go"
@@ -128,7 +128,7 @@
               "include": "#generic_types"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "entity.name.type.go"
             },
             {
@@ -137,7 +137,7 @@
           ]
         },
         {
-          "begin": "(?:(\\bmake\\b)(?:(\\()((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?:[\\[\\]\\*]+)?(?:(?!\\bmap\\b)(?:[\\w\\.]+))?(\\[(?:(?:[\\S]+)(?:(?:\\,\\s*(?:[\\S]+))*))?\\])?(?:\\,)?)?))",
+          "begin": "(\\bmake\\b)(\\()((?:(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?[\\[\\]*]+{0,1}(?:(?!\\bmap\\b)[\\w.]+)?(\\[(?:\\S+(?:,\\s*\\S+)*)?])?,?)?",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.support.builtin.go"
@@ -177,13 +177,13 @@
     "comments": {
       "patterns": [
         {
-          "begin": "(\\/\\*)",
+          "begin": "(/\\*)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.comment.go"
             }
           },
-          "end": "(\\*\\/)",
+          "end": "(\\*/)",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.comment.go"
@@ -192,7 +192,7 @@
           "name": "comment.block.go"
         },
         {
-          "begin": "(\\/\\/)",
+          "begin": "(//)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.comment.go"
@@ -239,7 +239,7 @@
                   "name": "punctuation.definition.begin.bracket.square.go"
                 },
                 {
-                  "match": "\\]",
+                  "match": "]",
                   "name": "punctuation.definition.end.bracket.square.go"
                 },
                 {
@@ -249,10 +249,10 @@
               ]
             }
           },
-          "match": "(?:(?<=\\bconst\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
+          "match": "(?<=\\bconst\\b)\\s*(\\b[\\w.]+(?:,\\s*[\\w.]+)*)\\s*((?:(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?![\\[\\]*]+{0,1}\\b(?:struct|func|map)\\b)(?:[\\w.\\[\\]*]+(?:,\\s*[\\w.\\[\\]*]+)*)?\\s*=?)?"
         },
         {
-          "begin": "(?:(?<=\\bconst\\b)(?:\\s*)(\\())",
+          "begin": "(?<=\\bconst\\b)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.begin.bracket.round.go"
@@ -299,7 +299,7 @@
                       "name": "punctuation.definition.begin.bracket.square.go"
                     },
                     {
-                      "match": "\\]",
+                      "match": "]",
                       "name": "punctuation.definition.end.bracket.square.go"
                     },
                     {
@@ -309,7 +309,7 @@
                   ]
                 }
               },
-              "match": "(?:(?:^\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
+              "match": "^\\s*(\\b[\\w.]+(?:,\\s*[\\w.]+)*)\\s*((?:(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?![\\[\\]*]+{0,1}\\b(?:struct|func|map)\\b)(?:[\\w.\\[\\]*]+(?:,\\s*[\\w.\\[\\]*]+)*)?\\s*=?)?"
             },
             {
               "include": "$self"
@@ -321,7 +321,7 @@
     "delimiters": {
       "patterns": [
         {
-          "match": "\\,",
+          "match": ",",
           "name": "punctuation.other.comma.go"
         },
         {
@@ -354,7 +354,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
@@ -364,7 +364,7 @@
           ]
         }
       },
-      "match": "(?:(?<!\\w)(\\((?:[\\w\\.\\[\\]\\*\\&]+)\\))(?=\\())"
+      "match": "(?<!\\w)(\\([\\w.\\[\\]*\\&]+\\))(?=\\()"
     },
     "field_hover": {
       "captures": {
@@ -398,10 +398,10 @@
           ]
         }
       },
-      "match": "(?:(?<=^\\bfield\\b)\\s+([\\w\\*\\.]+)\\s+([\\s\\S]+))"
+      "match": "(?<=^\\bfield\\b)\\s+([\\w*.]+)\\s+([\\s\\S]+)"
     },
     "function_declaration": {
-      "begin": "(?:^(\\bfunc\\b)(?:\\s*(\\([^\\)]+\\)\\s*)?(?:(\\w+)(?=\\(|\\[))?))",
+      "begin": "^(\\bfunc\\b)\\s*(\\([^)]+\\)\\s*)?(?:(\\w+)(?=[(\\[]))?",
       "beginCaptures": {
         "1": {
           "name": "keyword.function.go"
@@ -436,13 +436,13 @@
                           "include": "#parameter-variable-types"
                         },
                         {
-                          "match": "(?:\\w+)",
+                          "match": "\\w+",
                           "name": "entity.name.type.go"
                         }
                       ]
                     }
                   },
-                  "match": "(?:(\\w+(?:\\s+))?((?:[\\w\\.\\*]+)(?:\\[(?:(?:(?:[\\w\\.\\*]+)(?:\\,\\s+)?)+)?\\])?))"
+                  "match": "(\\w+\\s+)?([\\w.*]+(?:\\[(?:[\\w.*]+(?:,\\s+)?)+{0,1}])?)"
                 },
                 {
                   "include": "$self"
@@ -464,7 +464,7 @@
           ]
         }
       },
-      "end": "(?:(?<=\\))\\s*((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b))[\\w\\.\\-\\*\\[\\]]+)?\\s*(?=\\{))",
+      "end": "(?<=\\))\\s*((?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}(?![\\[\\]*]+{0,1}\\b(?:struct\\b|interface\\b))[\\w.\\-*\\[\\]]+)?\\s*(?=\\{)",
       "endCaptures": {
         "1": {
           "patterns": [
@@ -475,7 +475,7 @@
               "include": "#parameter-variable-types"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
@@ -502,7 +502,7 @@
           ]
         },
         {
-          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "begin": "([\\w.*]+)?(\\[)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -510,7 +510,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -519,7 +519,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -548,7 +548,7 @@
               ]
             }
           },
-          "match": "(?:(?<=\\))(?:\\s*)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\*\\.\\[\\]\\<\\>\\-]+(?:\\s*)(?:\\/(?:\\/|\\*).*)?)$)"
+          "match": "(?<=\\))\\s*((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\w*.\\[\\]<>\\-]+\\s*(?:/[/*].*)?)$"
         },
         {
           "include": "$self"
@@ -580,7 +580,7 @@
               ]
             }
           },
-          "match": "((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)\\s+(?=(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b\\s*\\{)"
+          "match": "((?:\\b\\w+,\\s*)+{0,1}\\b\\w+)\\s+(?=(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\[\\]*]+{0,1}\\b(?:struct|interface)\\b\\s*\\{)"
         },
         {
           "captures": {
@@ -596,7 +596,7 @@
               ]
             }
           },
-          "match": "(?:(?:(?<=\\()|^\\s*)((?:(?:\\b\\w+\\,\\s*)+)(?:/(?:/|\\*).*)?)$)"
+          "match": "(?:(?<=\\()|^\\s*)((?:\\b\\w+,\\s*)+(?:/[/*].*)?)$"
         },
         {
           "captures": {
@@ -620,16 +620,16 @@
                   "include": "#parameter-variable-types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^\\)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.\\[\\]]+)|(?:\\((?:[^\\)]+)?\\))))?)|(?:(?:[\\[\\]\\*]+)?[\\w\\*\\.]+(?:\\[(?:[^\\]]+)\\])?(?:[\\w\\.\\*]+)?)+)))"
+          "match": "((?:\\b\\w+,\\s*)+{0,1}\\b\\w+)\\s+((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}(?:[\\w\\[\\].*]+{0,1}(?:\\bfunc\\b\\([^)]+{0,1}\\)(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s*)+(?:[\\w*.\\[\\]]+|\\([^)]+{0,1}\\))?|(?:[\\[\\]*]+{0,1}[\\w*.]+(?:\\[[^\\]]+])?[\\w.*]+{0,1})+))"
         },
         {
-          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "begin": "([\\w.*]+)?(\\[)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -637,7 +637,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -646,7 +646,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -685,13 +685,13 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "([\\w\\.]+)"
+          "match": "([\\w.]+)"
         },
         {
           "include": "$self"
@@ -699,13 +699,13 @@
       ]
     },
     "functions": {
-      "begin": "(?:(\\bfunc\\b)(?=\\())",
+      "begin": "(\\bfunc\\b)(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.function.go"
         }
       },
-      "end": "(?:(?<=\\))(\\s*(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?((?:(?:\\s*(?:(?:[\\[\\]\\*]+)?[\\w\\.\\*]+)?(?:(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\])|(?:\\((?:[^\\)]+)?\\)))?(?:[\\w\\.\\*]+)?)(?:\\s*)(?=\\{))|(?:\\s*(?:(?:(?:[\\[\\]\\*]+)?(?!\\bfunc\\b)(?:[\\w\\.\\*]+)(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\])?(?:[\\w\\.\\*]+)?)|(?:\\((?:[^\\)]+)?\\)))))?)",
+      "end": "(?<=\\))(\\s*(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+)?(\\s*(?:[\\[\\]*]+{0,1}[\\w.*]+)?(?:\\[(?:[\\w.*]+{0,1}(?:\\[[^\\]]+{0,1}])?(?:,\\s+)?)+]|\\([^)]+{0,1}\\))?[\\w.*]+{0,1}\\s*(?=\\{)|\\s*(?:[\\[\\]*]+{0,1}(?!\\bfunc\\b)[\\w.*]+(?:\\[(?:[\\w.*]+{0,1}(?:\\[[^\\]]+{0,1}])?(?:,\\s+)?)+])?[\\w.*]+{0,1}|\\([^)]+{0,1}\\)))?",
       "endCaptures": {
         "1": {
           "patterns": [
@@ -723,7 +723,7 @@
               "include": "#parameter-variable-types"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
@@ -772,7 +772,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
@@ -780,17 +780,17 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             },
             {
-              "match": "\\}",
+              "match": "}",
               "name": "punctuation.definition.end.bracket.curly.go"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
         }
       },
-      "match": "(?:(\\bfunc\\b)((?:\\((?:[^/]*?)\\))(?:\\s+)(?:\\((?:[^/]*?)\\)))(?:\\s+)(?=\\{))"
+      "match": "(\\bfunc\\b)(\\([^/]*?\\)\\s+\\([^/]*?\\))\\s+(?=\\{)"
     },
     "generic_param_types": {
       "patterns": [
@@ -817,7 +817,7 @@
               ]
             }
           },
-          "match": "((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)\\s+(?=(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b\\s*\\{)"
+          "match": "((?:\\b\\w+,\\s*)+{0,1}\\b\\w+)\\s+(?=(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\[\\]*]+{0,1}\\b(?:struct|interface)\\b\\s*\\{)"
         },
         {
           "captures": {
@@ -833,7 +833,7 @@
               ]
             }
           },
-          "match": "(?:(?:(?<=\\()|^\\s*)((?:(?:\\b\\w+\\,\\s*)+)(?:/(?:/|\\*).*)?)$)"
+          "match": "(?:(?<=\\()|^\\s*)((?:\\b\\w+,\\s*)+(?:/[/*].*)?)$"
         },
         {
           "captures": {
@@ -857,7 +857,7 @@
                   "include": "#parameter-variable-types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -868,16 +868,16 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:((?:(?:\\b\\w+\\,\\s*)+)?\\b\\w+)(?:\\s+)((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?:(?:[\\w\\[\\]\\.\\*]+)?(?:(?:\\bfunc\\b\\((?:[^\\)]+)?\\))(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s*))+(?:(?:(?:[\\w\\*\\.]+)|(?:\\((?:[^\\)]+)?\\))))?)|(?:(?:(?:[\\w\\*\\.\\~]+)|(?:\\[(?:(?:[\\w\\.\\*]+)?(?:\\[(?:[^\\]]+)?\\])?(?:\\,\\s+)?)+\\]))(?:[\\w\\.\\*]+)?)+)))"
+          "match": "((?:\\b\\w+,\\s*)+{0,1}\\b\\w+)\\s+((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}(?:[\\w\\[\\].*]+{0,1}(?:\\bfunc\\b\\([^)]+{0,1}\\)(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s*)+(?:[\\w*.]+|\\([^)]+{0,1}\\))?|(?:(?:[\\w*.~]+|\\[(?:[\\w.*]+{0,1}(?:\\[[^\\]]+{0,1}])?(?:,\\s+)?)+])[\\w.*]+{0,1})+))"
         },
         {
-          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "begin": "([\\w.*]+)?(\\[)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -885,7 +885,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -894,7 +894,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -933,13 +933,13 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:\\b([\\w\\.]+))"
+          "match": "\\b([\\w.]+)"
         },
         {
           "include": "$self"
@@ -967,7 +967,7 @@
           ]
         }
       },
-      "match": "(?:([\\w\\.\\*]+)(\\[(?:[^\\]]+)?\\]))"
+      "match": "([\\w.*]+)(\\[[^\\]]+{0,1}])"
     },
     "group-functions": {
       "patterns": [
@@ -1078,7 +1078,7 @@
                   "include": "#delimiters"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "variable.other.import.go"
                 }
               ]
@@ -1096,7 +1096,7 @@
               "name": "punctuation.definition.string.end.go"
             }
           },
-          "match": "(\\s*[\\w\\.]+)?\\s*((\")([^\"]*)(\"))"
+          "match": "(\\s*[\\w.]+)?\\s*((\")([^\"]*)(\"))"
         },
         {
           "begin": "\\(",
@@ -1135,7 +1135,7 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.end.bracket.curly.go"
@@ -1159,7 +1159,7 @@
           "include": "#type-declarations-without-brackets"
         },
         {
-          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "begin": "([\\w.*]+)?(\\[)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -1167,7 +1167,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -1176,7 +1176,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -1221,7 +1221,7 @@
               ]
             }
           },
-          "match": "([\\w\\.]+)"
+          "match": "([\\w.]+)"
         }
       ]
     },
@@ -1283,7 +1283,7 @@
           ]
         }
       },
-      "match": "((?:^\\s*\\w+:\\s*$)|(?:^\\s*(?:\\bbreak\\b|\\bgoto\\b|\\bcontinue\\b)\\s+\\w+(?:\\s*/(?:/|\\*)\\s*.*)?$))"
+      "match": "(^(?:\\s*\\w+:\\s*$|\\s*\\b(?:break\\b|goto\\b|continue\\b)\\s+\\w+(?:\\s*/[/*]\\s*.*)?$))"
     },
     "language_constants": {
       "captures": {
@@ -1300,7 +1300,7 @@
       "match": "\\b(?:(true|false)|(nil)|(iota))\\b"
     },
     "map_types": {
-      "begin": "(?:(\\bmap\\b)(\\[))",
+      "begin": "(\\bmap\\b)(\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.map.go"
@@ -1309,7 +1309,7 @@
           "name": "punctuation.definition.begin.bracket.square.go"
         }
       },
-      "end": "(?:(\\])((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?!(?:[\\[\\]\\*]+)?\\b(?:func|struct|map)\\b)(?:[\\*\\[\\]]+)?(?:[\\w\\.]+)(?:\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}]+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?)?)",
+      "end": "(])((?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}(?![\\[\\]*]+{0,1}\\b(?:func|struct|map)\\b)[*\\[\\]]+{0,1}[\\w.]+(?:\\[(?:[\\w.*\\[\\]{}]+(?:,\\s*[\\w.*\\[\\]{}]+)*)?])?)?",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.end.bracket.square.go"
@@ -1324,7 +1324,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
@@ -1349,7 +1349,7 @@
           "name": "punctuation.definition.begin.bracket.square.go"
         },
         {
-          "match": "\\]",
+          "match": "]",
           "name": "punctuation.definition.end.bracket.square.go"
         },
         {
@@ -1357,7 +1357,7 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         },
         {
-          "match": "\\}",
+          "match": "}",
           "name": "punctuation.definition.end.bracket.curly.go"
         },
         {
@@ -1404,7 +1404,7 @@
           "include": "#parameter-variable-types"
         },
         {
-          "match": "(?:\\w+)",
+          "match": "\\w+",
           "name": "entity.name.type.go"
         }
       ]
@@ -1423,7 +1423,7 @@
                       "name": "constant.numeric.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1435,7 +1435,7 @@
                       "name": "constant.numeric.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1456,7 +1456,7 @@
                       "name": "constant.numeric.exponent.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1471,7 +1471,7 @@
                       "name": "constant.numeric.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1495,7 +1495,7 @@
                       "name": "constant.numeric.exponent.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1510,7 +1510,7 @@
                       "name": "constant.numeric.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1528,7 +1528,7 @@
                       "name": "constant.numeric.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1549,7 +1549,7 @@
                       "name": "constant.numeric.exponent.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1564,7 +1564,7 @@
                       "name": "constant.numeric.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1576,7 +1576,7 @@
                       "name": "constant.numeric.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1594,7 +1594,7 @@
                       "name": "constant.numeric.exponent.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1612,7 +1612,7 @@
                       "name": "constant.numeric.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1636,7 +1636,7 @@
                       "name": "constant.numeric.exponent.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1657,13 +1657,13 @@
                       "name": "constant.numeric.exponent.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
                     }
                   },
-                  "match": "(?:(?:(?:(?:(?:\\G(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)?(?:(?<!_)([eE])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)))?(i(?!\\w))?(?:\\n|$)|\\G(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(?<!_)([eE])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*))(i(?!\\w))?(?:\\n|$))|\\G((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(?:(?<!_)([eE])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)))?(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)((?:(?<=[0-9a-fA-F])\\.|\\.(?=[0-9a-fA-F])))([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)?(?<!_)([pP])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*))(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(?<!_)([pP])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*))(i(?!\\w))?(?:\\n|$))|(\\G0[xX])((?:(?<=[0-9a-fA-F])\\.|\\.(?=[0-9a-fA-F])))([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(?<!_)([pP])(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*))(i(?!\\w))?(?:\\n|$))"
+                  "match": "(?:(?:(?:\\G(?:(?:(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)?(?:(?<!_)([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*))?(i(?!\\w))?(?:\\n|$)|(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)(?<!_)([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*)(i(?!\\w))?(?:\\n|$))|((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)(?:(?<!_)([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*))?(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?(\\h(?:\\h|((?<=\\h)_(?=\\h)))*)((?:(?<=\\h)\\.|\\.(?=\\h)))(\\h(?:\\h|((?<=\\h)_(?=\\h)))*)?(?<!_)([pP])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*)(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?(\\h(?:\\h|((?<=\\h)_(?=\\h)))*)(?<!_)([pP])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*)(i(?!\\w))?(?:\\n|$))|(\\G0[xX])((?:(?<=\\h)\\.|\\.(?=\\h)))(\\h(?:\\h|((?<=\\h)_(?=\\h)))*)(?<!_)([pP])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*)(i(?!\\w))?(?:\\n|$))"
                 },
                 {
                   "captures": {
@@ -1671,7 +1671,7 @@
                       "name": "constant.numeric.decimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1689,7 +1689,7 @@
                       "name": "constant.numeric.hexadecimal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1713,7 +1713,7 @@
                       "name": "constant.numeric.binary.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
@@ -1731,16 +1731,16 @@
                       "name": "constant.numeric.octal.go",
                       "patterns": [
                         {
-                          "match": "(?<=[0-9a-fA-F])_(?=[0-9a-fA-F])",
+                          "match": "(?<=\\h)_(?=\\h)",
                           "name": "punctuation.separator.constant.numeric.go"
                         }
                       ]
                     }
                   },
-                  "match": "(?:(?:(?:\\G(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(i(?!\\w))?(?:\\n|$)|(\\G0[bB])_?([01](?:[01]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(i(?!\\w))?(?:\\n|$))|(\\G0[oO]?)_?((?:[0-7]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))+)(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])_(?=[0-9a-fA-F])))*)(i(?!\\w))?(?:\\n|$))"
+                  "match": "(?:(?:(?:\\G(?=[0-9.])(?!0[xXbBoO])([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)(i(?!\\w))?(?:\\n|$)|(\\G0[bB])_?([01](?:[01]|((?<=\\h)_(?=\\h)))*)(i(?!\\w))?(?:\\n|$))|(\\G0[oO]?)_?((?:[0-7]|((?<=\\h)_(?=\\h)))+)(i(?!\\w))?(?:\\n|$))|(\\G0[xX])_?(\\h(?:\\h|((?<=\\h)_(?=\\h)))*)(i(?!\\w))?(?:\\n|$))"
                 },
                 {
-                  "match": "(?:(?:[0-9a-zA-Z_\\.])|(?<=[eEpP])[+-])+",
+                  "match": "(?:[0-9a-zA-Z_.]|(?<=[eEpP])[+\\-])+",
                   "name": "invalid.illegal.constant.numeric.go"
                 }
               ]
@@ -1748,20 +1748,20 @@
           ]
         }
       },
-      "match": "(?<!\\w)\\.?\\d(?:(?:[0-9a-zA-Z_\\.])|(?<=[eEpP])[+-])*"
+      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_.]|(?<=[eEpP])[+\\-])*"
     },
     "operators": {
       "patterns": [
         {
-          "match": "((?:\\*|\\&)+)(?:(?!\\d)(?=(?:[\\w\\[\\]])|(?:\\<\\-)))",
+          "match": "([*\\&]+)(?!\\d)(?=[\\w\\[\\]]|<-)",
           "name": "keyword.operator.address.go"
         },
         {
-          "match": "<\\-",
+          "match": "<-",
           "name": "keyword.operator.channel.go"
         },
         {
-          "match": "\\-\\-",
+          "match": "--",
           "name": "keyword.operator.decrement.go"
         },
         {
@@ -1777,15 +1777,15 @@
           "name": "keyword.operator.logical.go"
         },
         {
-          "match": "(=|\\+=|\\-=|\\|=|\\^=|\\*=|/=|:=|%=|<<=|>>=|&\\^=|&=)",
+          "match": "(=|\\+=|-=|\\|=|\\^=|\\*=|/=|:=|%=|<<=|>>=|&\\^=|&=)",
           "name": "keyword.operator.assignment.go"
         },
         {
-          "match": "(\\+|\\-|\\*|/|%)",
+          "match": "([+\\-*/%])",
           "name": "keyword.operator.arithmetic.go"
         },
         {
-          "match": "(&(?!\\^)|\\||\\^|&\\^|<<|>>|\\~)",
+          "match": "(&(?!\\^)|[|\\^]|&\\^|<<|>>|~)",
           "name": "keyword.operator.arithmetic.bitwise.go"
         },
         {
@@ -1821,7 +1821,7 @@
                       "name": "punctuation.definition.begin.bracket.square.go"
                     }
                   },
-                  "end": "\\]",
+                  "end": "]",
                   "endCaptures": {
                     "0": {
                       "name": "punctuation.definition.end.bracket.square.go"
@@ -1843,7 +1843,7 @@
               ]
             }
           },
-          "match": "(\\b[\\w\\.]+)(\\[(?:[^\\]]+)?\\])?(?=\\{)(?<!\\bstruct\\b|\\binterface\\b)"
+          "match": "(\\b[\\w.]+)(\\[[^\\]]+{0,1}])?(?=\\{)(?<!\\b(?:struct\\b|interface\\b))"
         }
       ]
     },
@@ -1881,11 +1881,11 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         },
         {
-          "match": "\\}",
+          "match": "}",
           "name": "punctuation.definition.end.bracket.curly.go"
         },
         {
-          "begin": "(?:([\\w\\.\\*]+)?(\\[))",
+          "begin": "([\\w.*]+)?(\\[)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -1893,7 +1893,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
@@ -1902,7 +1902,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.square.go"
@@ -1949,7 +1949,7 @@
           ]
         }
       },
-      "match": "((?:\\b[\\w\\.]+)(?:\\:(?!\\=)))"
+      "match": "(\\b[\\w.]+:(?!=))"
     },
     "raw_string_literals": {
       "begin": "`",
@@ -1989,7 +1989,7 @@
           "name": "string.quoted.rune.go",
           "patterns": [
             {
-              "match": "\\G(\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})|.)(?=')",
+              "match": "\\G(\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x\\h{2}|u\\h{4}|U\\h{8})|.)(?=')",
               "name": "constant.other.rune.go"
             },
             {
@@ -2055,10 +2055,10 @@
               ]
             }
           },
-          "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?:\\s+)(?!(?:\\=\\s*)?(?:[\\[\\]\\*]+)?\\b(?:struct|interface)\\b)([\\s\\S]+))"
+          "match": "^\\s*(\\btype\\b)\\s*([\\w.*]+)\\s+(?!(?:=\\s*)?[\\[\\]*]+{0,1}\\b(?:struct|interface)\\b)([\\s\\S]+)"
         },
         {
-          "begin": "(?:(?:^|\\s+)(\\btype\\b)(?:\\s*)([\\w\\.\\*]+)(?=\\[))",
+          "begin": "(?:^|\\s+)(\\btype\\b)\\s*([\\w.*]+)(?=\\[)",
           "beginCaptures": {
             "1": {
               "name": "keyword.type.go"
@@ -2075,7 +2075,7 @@
               ]
             }
           },
-          "end": "(?:(?<=\\])((?:\\s+)(?:\\=\\s*)?(?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:(?!(?:[\\[\\]\\*]+)?(?:\\bstruct\\b|\\binterface\\b|\\bfunc\\b))[\\w\\.\\-\\*\\[\\]]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*))?)",
+          "end": "(?<=])(\\s+(?:=\\s*)?(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}(?![\\[\\]*]+{0,1}\\b(?:struct\\b|interface\\b|func\\b))[\\w.\\-*\\[\\]]+(?:,\\s*[\\w.\\[\\]*]+)*)?",
           "endCaptures": {
             "1": {
               "patterns": [
@@ -2087,7 +2087,7 @@
                   "name": "punctuation.definition.begin.bracket.square.go"
                 },
                 {
-                  "match": "\\]",
+                  "match": "]",
                   "name": "punctuation.definition.end.bracket.square.go"
                 },
                 {
@@ -2112,7 +2112,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
@@ -2120,7 +2120,7 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             },
             {
-              "match": "\\}",
+              "match": "}",
               "name": "punctuation.definition.end.bracket.curly.go"
             },
             {
@@ -2153,7 +2153,7 @@
           ]
         }
       },
-      "match": "(?<=\\w\\[)((?:(?:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+\\:)|(?:\\:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+))(?:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+)?(?:\\:\\b[\\w\\.\\*\\+/\\-\\%\\<\\>\\|\\&]+)?)(?=\\])"
+      "match": "(?<=\\w\\[)((?:\\b[\\w.*+/\\-%<>|\\&]+:|:\\b[\\w.*+/\\-%<>|\\&]+)(?:\\b[\\w.*+/\\-%<>|\\&]+)?(?::\\b[\\w.*+/\\-%<>|\\&]+)?)(?=])"
     },
     "statements": {
       "patterns": [
@@ -2219,11 +2219,11 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})",
+          "match": "\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x\\h{2}|u\\h{4}|U\\h{8})",
           "name": "constant.character.escape.go"
         },
         {
-          "match": "\\\\[^0-7xuUabfnrtv\\'\"]",
+          "match": "\\\\[^0-7xuUabfnrtv'\"]",
           "name": "invalid.illegal.unknown-escape.go"
         }
       ]
@@ -2258,7 +2258,7 @@
     "string_placeholder": {
       "patterns": [
         {
-          "match": "%(\\[\\d+\\])?([\\+#\\-0\\x20]{,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+\\])\\*?)?(\\[\\d+\\])?)?))?[vT%tbcdoqxXUbeEfFgGspw]",
+          "match": "%(\\[\\d+])?([+#\\-0 ]{0,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+])\\*?)?(\\[\\d+])?)?))?[vT%tbcdoqxXUeEfFgGspw]",
           "name": "constant.other.placeholder.go"
         }
       ]
@@ -2280,12 +2280,12 @@
           ]
         }
       },
-      "match": "(?:(?:^\\s*)(\\btype\\b)(?:\\s*)([\\w\\.]+))"
+      "match": "^\\s*(\\btype\\b)\\s*([\\w.]+)"
     },
     "struct_variable_types_fields_multi": {
       "patterns": [
         {
-          "begin": "(?:((?:\\w+(?:\\,\\s*\\w+)*)(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s+)(?:[\\[\\]\\*]+)?)(\\bstruct\\b)(?:\\s*)(\\{))",
+          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[\\[\\]*]+{0,1})(\\bstruct\\b)\\s*(\\{)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2305,7 +2305,7 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             }
           },
-          "end": "\\}",
+          "end": "}",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.curly.go"
@@ -2321,7 +2321,7 @@
           ]
         },
         {
-          "begin": "(?:((?:\\w+(?:\\,\\s*\\w+)*)(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s+)(?:[\\[\\]\\*]+)?)(\\binterface\\b)(?:\\s*)(\\{))",
+          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[\\[\\]*]+{0,1})(\\binterface\\b)\\s*(\\{)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2341,7 +2341,7 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             }
           },
-          "end": "\\}",
+          "end": "}",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.end.bracket.curly.go"
@@ -2357,7 +2357,7 @@
           ]
         },
         {
-          "begin": "(?:((?:\\w+(?:\\,\\s*\\w+)*)(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:\\s+)(?:[\\[\\]\\*]+)?)(\\bfunc\\b)(?:\\s*)(\\())",
+          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[\\[\\]*]+{0,1})(\\bfunc\\b)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2407,7 +2407,7 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "end": "\\}",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.end.bracket.curly.go"
@@ -2435,13 +2435,13 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:(?<=\\{)\\s*((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*\\[\\]]+))\\s*(?=\\}))"
+          "match": "(?<=\\{)\\s*((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\w.*\\[\\]]+)\\s*(?=})"
         },
         {
           "captures": {
@@ -2451,7 +2451,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "variable.other.property.go"
                 }
               ]
@@ -2462,13 +2462,13 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:(?<=\\{)\\s*((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*\\[\\]]+))\\s*(?=\\}))"
+          "match": "(?<=\\{)\\s*((?:\\w+,\\s*)+{0,1}\\w+\\s+)((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\w.*\\[\\]]+)\\s*(?=})"
         },
         {
           "captures": {
@@ -2482,7 +2482,7 @@
                           "include": "#type-declarations"
                         },
                         {
-                          "match": "(?:\\w+)",
+                          "match": "\\w+",
                           "name": "variable.other.property.go"
                         }
                       ]
@@ -2493,18 +2493,18 @@
                           "include": "#type-declarations"
                         },
                         {
-                          "match": "(?:\\w+)",
+                          "match": "\\w+",
                           "name": "entity.name.type.go"
                         }
                       ]
                     }
                   },
-                  "match": "(?:((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))?((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\S]+)(?:\\;)?))"
+                  "match": "((?:\\w+,\\s*)+{0,1}\\w+\\s+)?((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\S+;?)"
                 }
               ]
             }
           },
-          "match": "(?:(?<=\\{)((?:\\s*(?:(?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))?(?:(?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\S]+)(?:\\;)?))+)\\s*(?=\\}))"
+          "match": "(?<=\\{)((?:\\s*(?:(?:\\w+,\\s*)+{0,1}\\w+\\s+)?(?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\S+;?)+)\\s*(?=})"
         },
         {
           "captures": {
@@ -2514,13 +2514,13 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?(?:[\\w\\.\\*]+)\\s*)(?:(?=\\`|\\/|\")|$))"
+          "match": "((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\w.*]+\\s*)(?:(?=[`/\"])|$)"
         },
         {
           "captures": {
@@ -2530,7 +2530,7 @@
                   "include": "#type-declarations"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "variable.other.property.go"
                 }
               ]
@@ -2544,13 +2544,13 @@
                   "include": "#parameter-variable-types"
                 },
                 {
-                  "match": "(?:\\w+)",
+                  "match": "\\w+",
                   "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(?:((?:(?:\\w+\\,\\s*)+)?(?:\\w+\\s+))([^\\`\"\\/]+))"
+          "match": "((?:\\w+,\\s*)+{0,1}\\w+\\s+)([^`\"/]+)"
         }
       ]
     },
@@ -2584,7 +2584,7 @@
               "name": "punctuation.definition.begin.bracket.square.go"
             },
             {
-              "match": "\\]",
+              "match": "]",
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
@@ -2592,7 +2592,7 @@
               "name": "punctuation.definition.begin.bracket.curly.go"
             },
             {
-              "match": "\\}",
+              "match": "}",
               "name": "punctuation.definition.end.bracket.curly.go"
             },
             {
@@ -2602,7 +2602,7 @@
           ]
         }
       },
-      "match": "(?:(?:((?<=\\.)\\b\\w+)|(\\b\\w+))(\\[(?:(?:[\\w\\.\\*\\[\\]\\{\\}\"\\']+)(?:(?:\\,\\s*(?:[\\w\\.\\*\\[\\]\\{\\}]+))*))?\\])?(?=\\())"
+      "match": "(?:((?<=\\.)\\b\\w+)|(\\b\\w+))(\\[(?:[\\w.*\\[\\]{}\"']+(?:,\\s*[\\w.*\\[\\]{}]+)*)?])?(?=\\()"
     },
     "switch_select_case_variables": {
       "captures": {
@@ -2627,10 +2627,10 @@
           ]
         }
       },
-      "match": "(?:(?:^\\s*(\\bcase\\b))(?:\\s+)([\\s\\S]+(?:\\:)\\s*(?:/(?:/|\\*).*)?)$)"
+      "match": "^\\s*(\\bcase\\b)\\s+([\\s\\S]+:\\s*(?:/[/*].*)?)$"
     },
     "switch_types": {
-      "begin": "(?<=\\bswitch\\b)(?:\\s*)(?:(\\w+\\s*\\:\\=)?\\s*([\\w\\.\\*\\(\\)\\[\\]\\+/\\-\\%\\<\\>\\|\\&]+))(\\.\\(\\btype\\b\\)\\s*)(\\{)",
+      "begin": "(?<=\\bswitch\\b)\\s*(\\w+\\s*:=)?\\s*([\\w.*()\\[\\]+/\\-%<>|\\&]+)(\\.\\(\\btype\\b\\)\\s*)(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2675,7 +2675,7 @@
           "name": "punctuation.definition.begin.bracket.curly.go"
         }
       },
-      "end": "(?:\\})",
+      "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.end.bracket.curly.go"
@@ -2709,7 +2709,7 @@
               ]
             }
           },
-          "match": "(?:^\\s*(\\bcase\\b))(?:\\s+)([\\w\\.\\,\\*\\=\\<\\>\\!\\s]+)(:)(\\s*/(?:/|\\*)\\s*.*)?$"
+          "match": "^\\s*(\\bcase\\b)\\s+([\\w.,*=<>!\\s]+)(:)(\\s*/[/*]\\s*.*)?$"
         },
         {
           "begin": "\\bcase\\b",
@@ -2718,7 +2718,7 @@
               "name": "keyword.control.go"
             }
           },
-          "end": "\\:",
+          "end": ":",
           "endCaptures": {
             "0": {
               "name": "punctuation.other.colon.go"
@@ -2747,7 +2747,7 @@
               "name": "invalid.illegal.slice.go"
             }
           },
-          "match": "\\[\\](\\s+)"
+          "match": "\\[](\\s+)"
         },
         {
           "match": "\\b0[0-7]*[89]\\d*\\b",
@@ -2853,13 +2853,13 @@
               "include": "#type-declarations"
             },
             {
-              "match": "(?:\\w+)",
+              "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
         }
       },
-      "match": "(?:(?<=\\.\\()(?:(\\btype\\b)|((?:(?:\\s*(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+)?[\\w\\.\\[\\]\\*]+))(?=\\)))"
+      "match": "(?<=\\.\\()(?:(\\btype\\b)|((?:\\s*[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[\\w.\\[\\]*]+))(?=\\))"
     },
     "var_assignment": {
       "patterns": [
@@ -2897,7 +2897,7 @@
                   "name": "punctuation.definition.begin.bracket.square.go"
                 },
                 {
-                  "match": "\\]",
+                  "match": "]",
                   "name": "punctuation.definition.end.bracket.square.go"
                 },
                 {
@@ -2907,10 +2907,10 @@
               ]
             }
           },
-          "match": "(?:(?<=\\bvar\\b)(?:\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
+          "match": "(?<=\\bvar\\b)\\s*(\\b[\\w.]+(?:,\\s*[\\w.]+)*)\\s*((?:(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?![\\[\\]*]+{0,1}\\b(?:struct|func|map)\\b)(?:[\\w.\\[\\]*]+(?:,\\s*[\\w.\\[\\]*]+)*)?\\s*=?)?"
         },
         {
-          "begin": "(?:(?<=\\bvar\\b)(?:\\s*)(\\())",
+          "begin": "(?<=\\bvar\\b)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.begin.bracket.round.go"
@@ -2957,7 +2957,7 @@
                       "name": "punctuation.definition.begin.bracket.square.go"
                     },
                     {
-                      "match": "\\]",
+                      "match": "]",
                       "name": "punctuation.definition.end.bracket.square.go"
                     },
                     {
@@ -2967,7 +2967,7 @@
                   ]
                 }
               },
-              "match": "(?:(?:^\\s*)(\\b[\\w\\.]+(?:\\,\\s*[\\w\\.]+)*)(?:\\s*)((?:(?:(?:[\\*\\[\\]]+)?(?:\\<\\-\\s*)?\\bchan\\b(?:\\s*\\<\\-)?\\s*)+(?:\\([^\\)]+\\))?)?(?!(?:[\\[\\]\\*]+)?\\b(?:struct|func|map)\\b)(?:[\\w\\.\\[\\]\\*]+(?:\\,\\s*[\\w\\.\\[\\]\\*]+)*)?(?:\\s*)(?:\\=)?)?)"
+              "match": "^\\s*(\\b[\\w.]+(?:,\\s*[\\w.]+)*)\\s*((?:(?:[*\\[\\]]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+(?:\\([^)]+\\))?)?(?![\\[\\]*]+{0,1}\\b(?:struct|func|map)\\b)(?:[\\w.\\[\\]*]+(?:,\\s*[\\w.\\[\\]*]+)*)?\\s*=?)?"
             },
             {
               "include": "$self"
@@ -2996,7 +2996,7 @@
               ]
             }
           },
-          "match": "\\b\\w+(?:\\,\\s*\\w+)*(?=\\s*:=)"
+          "match": "\\b\\w+(?:,\\s*\\w+)*(?=\\s*:=)"
         },
         {
           "captures": {
@@ -3019,7 +3019,7 @@
               ]
             }
           },
-          "match": "\\b[\\w\\.\\*]+(?:\\,\\s*[\\w\\.\\*]+)*(?=\\s*=(?!=))"
+          "match": "\\b[\\w.*]+(?:,\\s*[\\w.*]+)*(?=\\s*=(?!=))"
         }
       ]
     }
