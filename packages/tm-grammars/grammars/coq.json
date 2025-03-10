@@ -22,7 +22,7 @@
           "name": "entity.name.function.theorem.coq"
         }
       },
-      "match": "\\b(Theorem|Lemma|Remark|Fact|Corollary|Property|Proposition)\\s+((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "\\b(Theorem|Lemma|Remark|Fact|Corollary|Property|Proposition)\\s+(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "match": "\\bGoal\\b",
@@ -40,7 +40,7 @@
           "name": "entity.name.assumption.coq"
         }
       },
-      "match": "\\b(Parameters?|Axioms?|Conjectures?|Variables?|Hypothesis|Hypotheses)(\\s+Inline)?\\b\\s*\\(?\\s*((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "\\b(Parameters?|Axioms?|Conjectures?|Variables?|Hypothesis|Hypotheses)(\\s+Inline)?\\b\\s*\\(?\\s*(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "captures": {
@@ -51,7 +51,7 @@
           "name": "entity.name.assumption.coq"
         }
       },
-      "match": "\\b(Context)\\b\\s*`?\\s*(\\(|\\{)?\\s*((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "\\b(Context)\\b\\s*`?\\s*([({])?\\s*(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "captures": {
@@ -65,7 +65,7 @@
           "name": "entity.name.function.coq"
         }
       },
-      "match": "(\\b(?:Program|Local)\\s+)?\\b(Definition|Fixpoint|CoFixpoint|Function|Example|Let(?:\\s+Fixpoint|\\s+CoFixpoint)?|Instance|Equations|Equations?)\\s+((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "(\\b(?:Program|Local)\\s+)?\\b(Definition|Fixpoint|CoFixpoint|Function|Example|Let(?:\\s+Fixpoint|\\s+CoFixpoint)?|Instance|Equations|Equations?)\\s+(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "captures": {
@@ -84,7 +84,7 @@
           "name": "entity.name.type.coq"
         }
       },
-      "match": "\\b(CoInductive|Inductive|Variant|Record|Structure|Class)\\s+(>\\s*)?((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "\\b(CoInductive|Inductive|Variant|Record|Structure|Class)\\s+(>\\s*)?(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "captures": {
@@ -95,7 +95,7 @@
           "name": "entity.name.function.ltac"
         }
       },
-      "match": "\\b(Ltac)\\s+((\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*)"
+      "match": "\\b(Ltac)\\s+(([\\p{L}_ ])([\\p{L}0-9_ '])*)"
     },
     {
       "match": "\\b(Hint(\\s+Mode)?|Create\\s+HintDb|Constructors|Resolve|Rewrite|Ltac|Implicit(\\s+Types)?|Set|Unset|Remove\\s+Printing|Arguments|((Tactic|Reserved)\\s+)?Notation|Infix|Section|Module(\\s+Type)?|End|Check|Print(\\s+All)?|Eval|Compute|Search|Universe|Coercions|Generalizable(\\s+(All|Variable))?|Existing(\\s+(Class|Instance))?|Canonical|About|Locate|Collection|Typeclasses\\s+(Opaque|Transparent))\\b",
@@ -114,11 +114,11 @@
       "name": "invalid.illegal.admit.coq"
     },
     {
-      "match": ":|\\||=|<|>|\\*|\\+|-|\\{|\\}|≠|∨|∧|↔|¬|→|≤|≥",
+      "match": "[:|=<>*+\\-{}≠∨∧↔¬→≤≥]",
       "name": "keyword.operator.coq"
     },
     {
-      "match": "\\b(forall|exists|Type|Set|Prop|nat|bool|option|list|unit|sum|prod|comparison|Empty_set)\\b|∀|∃",
+      "match": "\\b(forall|exists|Type|Set|Prop|nat|bool|option|list|unit|sum|prod|comparison|Empty_set)\\b|[∀∃]",
       "name": "support.type.coq"
     },
     {
@@ -152,11 +152,11 @@
       ]
     },
     {
-      "match": "\\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b",
+      "match": "\\b((0([xX])\\h+)|([0-9]+(\\.[0-9]+)?))\\b",
       "name": "constant.numeric.gallina"
     },
     {
-      "match": "\\b(True|False|tt|false|true|Some|None|nil|cons|pair|inl|inr|O|S|Eq|Lt|Gt|id|ex|all|unique)\\b",
+      "match": "\\b(True|False|tt|false|true|Some|None|nil|cons|pair|inl|inr|[OS]|Eq|Lt|Gt|id|ex|all|unique)\\b",
       "name": "constant.language.constructor.gallina"
     },
     {

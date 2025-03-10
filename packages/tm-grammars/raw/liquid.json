@@ -119,6 +119,9 @@
       "name": "meta.block.doc.liquid",
       "patterns": [
         {
+          "include": "#liquid_doc_description_tag"
+        },
+        {
           "include": "#liquid_doc_param_tag"
         },
         {
@@ -243,7 +246,11 @@
       "name": "constant.language.liquid"
     },
     "liquid_doc_description_tag": {
-      "captures": {
+      "begin": "(@description)\\b\\s*",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.block.documentation.liquid"
+        },
         "1": {
           "name": "storage.type.class.liquid"
         },
@@ -260,11 +267,29 @@
           "name": "storage.type.class.liquid"
         }
       },
-      "contentName": "string.quoted.single.liquid",
       "end": "(?=@|{%-?\\s*enddoc\\s*-?%})",
       "patterns": [
         {
-          "match": "(.(?!@|{%-?\\s*enddoc\\s*-?%}))*."
+          "match": "[^@]+",
+          "name": "string.quoted.single.liquid"
+        }
+      ]
+    },
+    "liquid_doc_example_tag": {
+      "begin": "(@example)\\b\\s*",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.block.documentation.liquid"
+        },
+        "1": {
+          "name": "storage.type.class.liquid"
+        }
+      },
+      "contentName": "meta.embedded.block.liquid",
+      "end": "(?=@|{%-?\\s*enddoc\\s*-?%})",
+      "patterns": [
+        {
+          "include": "#core"
         }
       ]
     },

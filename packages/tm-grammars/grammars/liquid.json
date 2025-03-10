@@ -3,8 +3,8 @@
   "fileTypes": [
     "liquid"
   ],
-  "foldingStartMarker": "{%-?\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)[^(%})]+%}",
-  "foldingStopMarker": "{%\\s*(endcapture|endcase|endcomment|endfor|endform|endif|endjavascript|endpaginate|endschema|endstyle)[^(%})]+%}",
+  "foldingStartMarker": "\\{%-?\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)[^(%})]+%}",
+  "foldingStopMarker": "\\{%\\s*(end(?:capture|case|comment|for|form|if|javascript|paginate|schema|style))[^(%})]+%}",
   "injections": {
     "L:meta.embedded.block.js, L:meta.embedded.block.css, L:meta.embedded.block.html, L:string.quoted": {
       "patterns": [
@@ -42,7 +42,7 @@
           "name": "entity.other.attribute-name.liquid"
         }
       },
-      "end": "(?=,|\\|)|$",
+      "end": "(?=[,|])|$",
       "patterns": [
         {
           "include": "#value_expression"
@@ -50,15 +50,15 @@
       ]
     },
     "comment_block": {
-      "begin": "{%-?\\s*comment\\s*-?%}",
-      "end": "{%-?\\s*endcomment\\s*-?%}",
+      "begin": "\\{%-?\\s*comment\\s*-?%}",
+      "end": "\\{%-?\\s*endcomment\\s*-?%}",
       "name": "comment.block.liquid",
       "patterns": [
         {
           "include": "#comment_block"
         },
         {
-          "match": "(.(?!{%-?\\s*(comment|endcomment)\\s*-?%}))*."
+          "match": "(.(?!\\{%-?\\s*(comment|endcomment)\\s*-?%}))*."
         }
       ]
     },
@@ -97,7 +97,7 @@
       ]
     },
     "doc_tag": {
-      "begin": "{%-?\\s*(doc)\\s*-?%}",
+      "begin": "\\{%-?\\s*(doc)\\s*-?%}",
       "beginCaptures": {
         "0": {
           "name": "meta.tag.liquid"
@@ -107,7 +107,7 @@
         }
       },
       "contentName": "comment.block.documentation.liquid",
-      "end": "{%-?\\s*(enddoc)\\s*-?%}",
+      "end": "\\{%-?\\s*(enddoc)\\s*-?%}",
       "endCaptures": {
         "0": {
           "name": "meta.tag.liquid"
@@ -118,6 +118,9 @@
       },
       "name": "meta.block.doc.liquid",
       "patterns": [
+        {
+          "include": "#liquid_doc_description_tag"
+        },
         {
           "include": "#liquid_doc_param_tag"
         },
@@ -138,7 +141,7 @@
           "name": "support.function.liquid"
         }
       },
-      "match": "\\|\\s*((?![\\.0-9])[a-zA-Z0-9_-]+\\:?)\\s*"
+      "match": "\\|\\s*((?![.0-9])[a-zA-Z0-9_\\-]+:?)\\s*"
     },
     "injection": {
       "patterns": [
@@ -161,7 +164,7 @@
       "name": "invalid.illegal.range.liquid"
     },
     "javascript_codefence": {
-      "begin": "({%-?)\\s*(javascript)\\s*(-?%})",
+      "begin": "(\\{%-?)\\s*(javascript)\\s*(-?%})",
       "beginCaptures": {
         "0": {
           "name": "meta.tag.metadata.javascript.start.liquid"
@@ -177,7 +180,7 @@
         }
       },
       "contentName": "meta.embedded.block.js",
-      "end": "({%-?)\\s*(endjavascript)\\s*(-?%})",
+      "end": "(\\{%-?)\\s*(endjavascript)\\s*(-?%})",
       "endCaptures": {
         "0": {
           "name": "meta.tag.metadata.javascript.end.liquid"
@@ -200,7 +203,7 @@
       ]
     },
     "json_codefence": {
-      "begin": "({%-?)\\s*(schema)\\s*(-?%})",
+      "begin": "(\\{%-?)\\s*(schema)\\s*(-?%})",
       "beginCaptures": {
         "0": {
           "name": "meta.tag.metadata.schema.start.liquid"
@@ -216,7 +219,7 @@
         }
       },
       "contentName": "meta.embedded.block.json",
-      "end": "({%-?)\\s*(endschema)\\s*(-?%})",
+      "end": "(\\{%-?)\\s*(endschema)\\s*(-?%})",
       "endCaptures": {
         "0": {
           "name": "meta.tag.metadata.schema.end.liquid"
@@ -243,7 +246,11 @@
       "name": "constant.language.liquid"
     },
     "liquid_doc_description_tag": {
-      "captures": {
+      "begin": "(@description)\\b\\s*",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.block.documentation.liquid"
+        },
         "1": {
           "name": "storage.type.class.liquid"
         },
@@ -260,11 +267,29 @@
           "name": "storage.type.class.liquid"
         }
       },
-      "contentName": "string.quoted.single.liquid",
-      "end": "(?=@|{%-?\\s*enddoc\\s*-?%})",
+      "end": "(?=@|\\{%-?\\s*enddoc\\s*-?%})",
       "patterns": [
         {
-          "match": "(.(?!@|{%-?\\s*enddoc\\s*-?%}))*."
+          "match": "[^@]+",
+          "name": "string.quoted.single.liquid"
+        }
+      ]
+    },
+    "liquid_doc_example_tag": {
+      "begin": "(@example)\\b\\s*",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.block.documentation.liquid"
+        },
+        "1": {
+          "name": "storage.type.class.liquid"
+        }
+      },
+      "contentName": "meta.embedded.block.liquid",
+      "end": "(?=@|\\{%-?\\s*enddoc\\s*-?%})",
+      "patterns": [
+        {
+          "include": "#core"
         }
       ]
     },
@@ -291,14 +316,14 @@
           "name": "string.quoted.single.liquid"
         }
       },
-      "match": "(@param)\\s+(?:({[^}]*}?)\\s+)?(\\[?[a-zA-Z_][\\w-]*\\]?)?(?:\\s+(.*))?"
+      "match": "(@param)\\s+(?:(\\{[^}]*}?)\\s+)?(\\[?[a-zA-Z_][\\w\\-]*]?)?(?:\\s+(.*))?"
     },
     "number": {
-      "match": "((-|\\+)\\s*)?[0-9]+(\\.[0-9]+)?",
+      "match": "(([\\-+])\\s*)?[0-9]+(\\.[0-9]+)?",
       "name": "constant.numeric.liquid"
     },
     "object": {
-      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%}){{-?",
+      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%})\\{\\{-?",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.tag.begin.liquid"
@@ -329,7 +354,7 @@
           "name": "keyword.operator.expression.liquid"
         }
       },
-      "match": "(?:(?<=\\s)|\\b)(\\=\\=|!\\=|\\>|\\<|\\>\\=|\\<\\=|or|and|contains)(?:(?=\\s)|\\b)"
+      "match": "(?:(?<=\\s)|\\b)(==|!=|[><]|>=|<=|or|and|contains)(?:(?=\\s)|\\b)"
     },
     "range": {
       "begin": "\\(",
@@ -359,14 +384,14 @@
       ]
     },
     "raw_tag": {
-      "begin": "{%-?\\s*(raw)\\s*-?%}",
+      "begin": "\\{%-?\\s*(raw)\\s*-?%}",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.liquid"
         }
       },
       "contentName": "string.unquoted.liquid",
-      "end": "{%-?\\s*(endraw)\\s*-?%}",
+      "end": "\\{%-?\\s*(endraw)\\s*-?%}",
       "endCaptures": {
         "1": {
           "name": "entity.name.tag.liquid"
@@ -375,7 +400,7 @@
       "name": "meta.entity.tag.raw.liquid",
       "patterns": [
         {
-          "match": "(.(?!{%-?\\s*endraw\\s*-?%}))*."
+          "match": "(.(?!\\{%-?\\s*endraw\\s*-?%}))*."
         }
       ]
     },
@@ -400,7 +425,7 @@
       "name": "string.quoted.single.liquid"
     },
     "style_codefence": {
-      "begin": "({%-?)\\s*(style)\\s*(-?%})",
+      "begin": "(\\{%-?)\\s*(style)\\s*(-?%})",
       "beginCaptures": {
         "0": {
           "name": "meta.tag.metadata.style.start.liquid"
@@ -416,7 +441,7 @@
         }
       },
       "contentName": "meta.embedded.block.css",
-      "end": "({%-?)\\s*(endstyle)\\s*(-?%})",
+      "end": "(\\{%-?)\\s*(endstyle)\\s*(-?%})",
       "endCaptures": {
         "0": {
           "name": "meta.tag.metadata.style.end.liquid"
@@ -439,7 +464,7 @@
       ]
     },
     "stylesheet_codefence": {
-      "begin": "({%-?)\\s*(stylesheet)\\s*(-?%})",
+      "begin": "(\\{%-?)\\s*(stylesheet)\\s*(-?%})",
       "beginCaptures": {
         "0": {
           "name": "meta.tag.metadata.style.start.liquid"
@@ -455,7 +480,7 @@
         }
       },
       "contentName": "meta.embedded.block.css",
-      "end": "({%-?)\\s*(endstylesheet)\\s*(-?%})",
+      "end": "(\\{%-?)\\s*(endstylesheet)\\s*(-?%})",
       "endCaptures": {
         "0": {
           "name": "meta.tag.metadata.style.end.liquid"
@@ -478,7 +503,7 @@
       ]
     },
     "tag": {
-      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%}){%-?",
+      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%})\\{%-?",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.tag.begin.liquid"
@@ -498,7 +523,7 @@
       ]
     },
     "tag_assign": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(assign|echo)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(assign|echo)\\b",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.liquid"
@@ -519,7 +544,7 @@
       ]
     },
     "tag_assign_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(assign|echo)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(assign|echo)\\b",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.liquid"
@@ -574,7 +599,7 @@
       ]
     },
     "tag_case": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(case|when)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(case|when)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.case.liquid"
@@ -589,7 +614,7 @@
       ]
     },
     "tag_case_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(case|when)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(case|when)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.case.liquid"
@@ -604,15 +629,15 @@
       ]
     },
     "tag_comment_block_liquid": {
-      "begin": "(?:^\\s*)(comment)\\b",
-      "end": "(?:^\\s*)(endcomment)\\b",
+      "begin": "^\\s*(comment)\\b",
+      "end": "^\\s*(endcomment)\\b",
       "name": "comment.block.liquid",
       "patterns": [
         {
           "include": "#tag_comment_block_liquid"
         },
         {
-          "match": "(?:^\\s*)(?!(comment|endcomment)).*"
+          "match": "^\\s*(?!(comment|endcomment)).*"
         }
       ]
     },
@@ -622,12 +647,12 @@
       "name": "comment.line.number-sign.liquid"
     },
     "tag_comment_inline_liquid": {
-      "begin": "(?:^\\s*)#.*",
+      "begin": "^\\s*#.*",
       "end": "$",
       "name": "comment.line.number-sign.liquid"
     },
     "tag_conditional": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(if|elsif|unless)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(if|elsif|unless)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.conditional.liquid"
@@ -642,7 +667,7 @@
       ]
     },
     "tag_conditional_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(if|elsif|unless)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(if|elsif|unless)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.conditional.liquid"
@@ -662,7 +687,7 @@
           "include": "#tag_expression_without_arguments"
         },
         {
-          "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(\\w+)",
+          "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(\\w+)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.tag.liquid"
@@ -684,7 +709,7 @@
           "include": "#tag_expression_without_arguments"
         },
         {
-          "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(\\w+)",
+          "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(\\w+)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.tag.liquid"
@@ -708,7 +733,7 @@
               "name": "keyword.control.conditional.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(endunless|endif)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(end(?:unless|if))\\b"
         },
         {
           "captures": {
@@ -716,7 +741,7 @@
               "name": "keyword.control.loop.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(endfor|endtablerow|endpaginate)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(end(?:for|tablerow|paginate))\\b"
         },
         {
           "captures": {
@@ -724,7 +749,7 @@
               "name": "keyword.control.case.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(endcase)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(endcase)\\b"
         },
         {
           "captures": {
@@ -732,7 +757,7 @@
               "name": "keyword.control.other.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(capture|case|comment|for|form|if|javascript|paginate|schema|style)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)\\b"
         },
         {
           "captures": {
@@ -740,7 +765,7 @@
               "name": "keyword.control.other.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(endcapture|endcase|endcomment|endfor|endform|endif|endjavascript|endpaginate|endschema|endstyle)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(end(?:capture|case|comment|for|form|if|javascript|paginate|schema|style))\\b"
         },
         {
           "captures": {
@@ -748,12 +773,12 @@
               "name": "keyword.control.other.liquid"
             }
           },
-          "match": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(else|break|continue)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(else|break|continue)\\b"
         }
       ]
     },
     "tag_for": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(for)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(for)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.for.liquid"
@@ -783,7 +808,7 @@
       ]
     },
     "tag_for_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(for)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(for)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.for.liquid"
@@ -798,7 +823,7 @@
       ]
     },
     "tag_injection": {
-      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%}){%-?(?!-?\\s*(endstyle|endjavascript|endcomment|endraw))",
+      "begin": "(?<!comment %})(?<!comment -%})(?<!comment%})(?<!comment-%})(?<!raw %})(?<!raw -%})(?<!raw%})(?<!raw-%})\\{%-?(?!-?\\s*(end(?:style|javascript|comment|raw)))",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.tag.end.liquid"
@@ -818,7 +843,7 @@
       ]
     },
     "tag_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(liquid)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(liquid)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.liquid.liquid"
@@ -860,7 +885,7 @@
       ]
     },
     "tag_paginate": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(paginate)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(paginate)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.paginate.liquid"
@@ -886,7 +911,7 @@
       ]
     },
     "tag_paginate_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(paginate)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(paginate)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.paginate.liquid"
@@ -901,7 +926,7 @@
       ]
     },
     "tag_render": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(render)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(render)\\b",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.render.liquid"
@@ -922,7 +947,7 @@
       ]
     },
     "tag_render_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(render)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(render)\\b",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.render.liquid"
@@ -947,7 +972,7 @@
       "name": "keyword.control.other.liquid"
     },
     "tag_tablerow": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(tablerow)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(tablerow)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.tablerow.liquid"
@@ -977,7 +1002,7 @@
       ]
     },
     "tag_tablerow_liquid": {
-      "begin": "(?:(?:(?<={%)|(?<={%-)|^)\\s*)(tablerow)\\b",
+      "begin": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(tablerow)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.tablerow.liquid"
@@ -1002,10 +1027,10 @@
               "name": "invalid.illegal.filter.liquid"
             }
           },
-          "match": "(\\[)(\\|)(?=[^\\]]*)(?=\\])"
+          "match": "(\\[)(\\|)(?=[^\\]]*)(?=])"
         },
         {
-          "match": "(?<=\\s)(\\+|\\-|\\/|\\*)(?=\\s)",
+          "match": "(?<=\\s)([+\\-/*])(?=\\s)",
           "name": "invalid.illegal.filter.liquid"
         },
         {
@@ -1038,7 +1063,7 @@
           "name": "variable.language.liquid"
         },
         {
-          "match": "((?<=\\w\\:\\s)\\w+)",
+          "match": "((?<=\\w:\\s)\\w+)",
           "name": "variable.parameter.liquid"
         },
         {
@@ -1048,7 +1073,7 @@
               "name": "punctuation.section.brackets.begin.liquid"
             }
           },
-          "end": "\\]",
+          "end": "]",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.brackets.end.liquid"
@@ -1062,7 +1087,7 @@
           ]
         },
         {
-          "match": "(?<=(\\w|\\])\\.)([-\\w]+\\??)",
+          "match": "(?<=([\\w\\]])\\.)([\\-\\w]+\\??)",
           "name": "variable.other.member.liquid"
         },
         {
@@ -1070,7 +1095,7 @@
           "name": "punctuation.accessor.liquid"
         },
         {
-          "match": "(?i)[a-z_](\\w|(?:-(?!\\}\\})))*",
+          "match": "(?i)[a-z_](\\w|-(?!}}))*",
           "name": "variable.other.liquid"
         }
       ]
