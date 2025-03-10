@@ -117,26 +117,24 @@
       "name": "punctuation.separator.talon"
     },
     "assignment": {
-      "captures": {
+      "begin": "(\\S*)(\\s?=\\s?)",
+      "beginCaptures": {
         "1": {
           "name": "variable.other.talon"
         },
         "2": {
           "name": "keyword.operator.talon"
-        },
-        "3": {
-          "name": "variable.other.talon",
-          "patterns": [
-            {
-              "include": "#comment"
-            },
-            {
-              "include": "#expression"
-            }
-          ]
         }
       },
-      "match": "(\\S*)(\\s?=\\s?)(.*)"
+      "end": "\n",
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#expression"
+        }
+      ]
     },
     "body-header": {
       "begin": "^-$",
@@ -374,7 +372,7 @@
           "name": "punctuation.definition.string.end.talon"
         }
       },
-      "name": "string.quoted.double.talon",
+      "name": "string.quoted.triple.talon",
       "patterns": [
         {
           "include": "#string-body"

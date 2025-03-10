@@ -1,154 +1,6 @@
+import { optimize } from 'oniguruma-parser/optimizer'
 import { objectPick } from '../shared/utils'
 import { highlight } from './highlight'
-
-export interface SyntaxLoweringResult {
-  pattern: string
-  flags: string
-}
-
-export function compressRegExp(
-  input: string,
-): string {
-  let output = ''
-
-  const stack: string[] = []
-  const freeSpacingLocal: number[] = []
-  let freeSpacingGlobal = false
-  let isInNestedCharClass = false
-
-  let i = 0
-  while (i < input.length) {
-    const char = input[i]
-
-    while (freeSpacingLocal.length && freeSpacingLocal[0] > stack.length) {
-      freeSpacingLocal.shift()
-    }
-
-    const head = stack[0]
-    const freeSpacing = freeSpacingGlobal || freeSpacingLocal.length
-
-    // Escape sequences
-    if (char === '\\') {
-      output += char + input[i + 1]
-      i += 2
-      continue
-    }
-
-    // Comments
-    if (char === '#' && freeSpacing && input[i - 1].match(/\s/) && head !== '[') {
-      for (let j = i + 1; j <= input.length; j++) {
-        if (input[j] === '\n' || j === input.length) {
-          i = j
-          break
-        }
-      }
-      continue
-    }
-
-    // Open bracket
-    if (char === '(' && head !== '[') {
-      // Group modifiers
-      if (input[i + 1] === '?') {
-        // (?#...) comment
-        if (input[i + 2] === '#') {
-          for (let j = i + 3; j < input.length; j++) {
-            if (input[j] === ')' && input[j - 1] !== '\\') {
-              i = j + 1
-              break
-            }
-          }
-          continue
-        }
-
-        // Extract flags
-        if (['x'].includes(input[i + 2])) {
-          let end = i + 3
-          for (; end < input.length; end++) {
-            if (!['x'].includes(input[end]))
-              break
-          }
-          const flagStr = input.slice(i + 2, end)
-          const hasX = flagStr.includes('x') && flagStr[0] !== '-'
-          const remainFlags = [...flagStr].filter(x => x !== 'x').join('')
-
-          if (input[end] === ')') {
-            i = end + 1
-            if (hasX) {
-              freeSpacingGlobal = true
-            }
-            if (remainFlags.length) {
-              output += `(?${remainFlags})`
-            }
-            continue
-          }
-          else if (input[end] === ':') {
-            i = end + 1
-            stack.unshift(char)
-            if (hasX) {
-              freeSpacingLocal.unshift(stack.length)
-            }
-            output += `(?${remainFlags}:`
-            continue
-          }
-        }
-
-        stack.unshift(char)
-        output += char + input[i + 1] + input[i + 2]
-        i += 3
-      }
-      else {
-        stack.unshift(char)
-        output += char
-        i += 1
-      }
-      continue
-    }
-
-    // Close bracket
-    if (char === ')' && head !== '[') {
-      if (head === '(')
-        stack.shift()
-      output += char
-      i += 1
-      continue
-    }
-
-    // Alternation open bracket
-    if (char === '[') {
-      // Prepend to the stack when not in a character class
-      if (head !== '[') {
-        stack.unshift(char)
-      }
-
-      output += char
-      i += 1
-      continue
-    }
-
-    // Alternation close bracket
-    if (char === ']') {
-      if (isInNestedCharClass) {
-        isInNestedCharClass = false
-        i += 1
-        continue
-      }
-      if (head === '[')
-        stack.shift()
-      output += char
-      i += 1
-      continue
-    }
-
-    // Ignore whitespace if Free-spacing mode is enabled
-    if (!(freeSpacing && head !== '[' && char.match(/\s/))) {
-      // Literals
-      output += char
-    }
-    i += 1
-  }
-
-  return output
-}
 
 export function traverseGrammarPatterns(a: any, callback: (pattern: string) => any | void): void {
   if (Array.isArray(a)) {
@@ -159,6 +11,9 @@ export function traverseGrammarPatterns(a: any, callback: (pattern: string) => a
   }
   if (!a || typeof a !== 'object')
     return
+
+  delete a.comment
+
   if (a.foldingStartMarker) {
     const pattern = callback(a.foldingStartMarker)
     if (pattern != null)
@@ -206,6 +61,9 @@ export function traverseGrammarPatterns(a: any, callback: (pattern: string) => a
   if (a.endCaptures) {
     traverseGrammarPatterns(Object.values(a.endCaptures), callback)
   }
+  if (a.injections) {
+    traverseGrammarPatterns(Object.values(a.injections), callback)
+  }
   Object.values(a.repository || {}).forEach((j: any) => {
     traverseGrammarPatterns(j, callback)
   })
@@ -218,9 +76,21 @@ export async function cleanupGrammar(grammar: any, verify = true) {
   traverseGrammarPatterns(
     grammar,
     (pattern) => {
-      // Rewrite Oniguruma patterns to more JS-friendly syntax
-      // Also it would "compress" the regex to save some bytes
-      const result = compressRegExp(pattern)
+      let result = pattern
+      try {
+        // Optimize Oniguruma regexes by minifying them and, in some cases, improving their
+        // performance
+        result = optimize(pattern, {
+          rules: {
+            // Follow `vscode-oniguruma` which enables this Oniguruma option by default
+            captureGroup: true,
+          },
+        }).pattern
+      }
+      catch {
+        // Ignore errors; either the pattern is an invalid Oniguruma regex (most likely) or it uses
+        // a feature that the `oniguruma-parser` library doesn't support
+      }
       return result
     },
   )
