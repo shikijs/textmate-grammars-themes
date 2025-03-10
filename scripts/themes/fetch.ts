@@ -11,7 +11,7 @@ import { COMMENT_HEAD } from '../shared/head'
 import { generateLicense } from '../shared/license'
 import { downloadFromMarketplace } from '../shared/marketplace'
 import { parseFile } from '../shared/parse'
-import { fileSizeToHuman } from '../shared/utils'
+import { fileSizeToHuman, formatTableRow } from '../shared/utils'
 import { cleanupTheme } from './cleanup'
 
 const badge = c.cyan.bold('  theme  ')
@@ -146,7 +146,16 @@ export async function generateREADME(resolved: ThemeInfo[]) {
   const original = await fs.readFile(new URL('../README.md', dirOutput), 'utf-8')
 
   function format(info: ThemeInfo) {
-    return `| ${info.displayName} | \`${info.name}\` | [${[parseGitHubUrl(info.source).repo]}](${info.source}) | ${info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : ''} | ${fileSizeToHuman(info.byteSize)} |`
+    return formatTableRow([
+      info.displayName,
+      `\`${info.name}\``,
+      `[${parseGitHubUrl(info.source).repo}](${info.source})`,
+      info.licenseUrl ? `[${info.license}](${info.licenseUrl})` : '',
+      (info.funding ?? [])
+        .map(({ name, handle, url }) => `[${name}${handle ? `: **${handle}**` : ''}](${url})`)
+        .join(' '),
+      fileSizeToHuman(info.byteSize),
+    ])
   }
   const replaced = original.replace(
     /<!--list-start-->([\s\S]*?)<!--list-end-->/,
@@ -155,14 +164,14 @@ export async function generateREADME(resolved: ThemeInfo[]) {
       '',
       '## Light Themes',
       '',
-      '| Name | ID | Source | License | File Size |',
-      '| ---- | -- | ------ | ------- | --------- |',
+      formatTableRow(['Name', 'ID', 'Source', 'License', 'Sponsor', 'File Size']),
+      formatTableRow(['----', '--', '------', '-------', '-------', '---------']),
       ...resolved.filter(i => i.type === 'light').map(info => format(info)),
       '',
       '## Dark Themes',
       '',
-      '| Name | ID | Source | License | File Size |',
-      '| ---- | -- | ------ | ------- | --------- |',
+      formatTableRow(['Name', 'ID', 'Source', 'License', 'Sponsor', 'File Size']),
+      formatTableRow(['----', '--', '------', '-------', '-------', '---------']),
       ...resolved.filter(i => i.type === 'dark').map(info => format(info)),
       '<!--list-end-->',
     ].join('\n'),

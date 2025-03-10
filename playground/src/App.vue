@@ -298,9 +298,19 @@ if (import.meta.hot) {
               Grammar
             </div>
             <div>
-              <button text-left @click="openGrammar()">
-                <code>{{ grammar }}</code>
-              </button>
+              <div flex="~ items-center gap-2">
+                <button text-left @click="openGrammar()">
+                  <code>{{ grammar }}</code>
+                </button>
+                <!-- TODO: Add funding links -->
+                <!-- <div text-xs>
+                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
+                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
+                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
+                    </a>
+                  </span>
+                </div> -->
+              </div>
               <div v-if="embedded.length < 15" flex="~ col" ml-2 border="l base">
                 <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
                   <div w-4 border="t base" h-1px flex-none />
@@ -318,9 +328,21 @@ if (import.meta.hot) {
             <div text-right op50>
               Theme
             </div>
-            <button text-left @click="openTheme()">
-              <code>{{ theme }}</code>
-            </button>
+            <div>
+              <div flex="~ items-center gap-2">
+                <button text-left @click="openTheme()">
+                  <code>{{ theme }}</code>
+                </button>
+                <!-- TODO: Add funding links -->
+                <!-- <div text-xs>
+                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
+                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
+                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
+                    </a>
+                  </span>
+                </div> -->
+              </div>
+            </div>
             <div text-right op50>
               Sample
             </div>
