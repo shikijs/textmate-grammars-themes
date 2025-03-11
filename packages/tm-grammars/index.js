@@ -684,7 +684,7 @@ export const grammars = [
     aliases: [
       'c++',
     ],
-    byteSize: 385504,
+    byteSize: 385482,
     categories: [
       'general',
     ],
@@ -2434,7 +2434,7 @@ export const grammars = [
     aliases: [
       'mmd',
     ],
-    byteSize: 26855,
+    byteSize: 26854,
     displayName: 'Mermaid',
     funding: [
     ],
