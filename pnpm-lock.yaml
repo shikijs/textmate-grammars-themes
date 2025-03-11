@@ -178,6 +178,9 @@ catalogs:
       specifier: ^2.7.0
       version: 2.7.0
 
+overrides:
+  oniguruma-to-es: ^4.1.0
+
 importers:
 
   .:
@@ -275,6 +278,9 @@ importers:
       oniguruma-parser:
         specifier: 'catalog:'
         version: 0.5.4
+      oniguruma-to-es:
+        specifier: ^4.1.0
+        version: 4.1.0
       p-limit:
         specifier: 'catalog:'
         version: 6.2.0
@@ -3414,8 +3420,8 @@ packages:
   oniguruma-parser@0.5.4:
     resolution: {integrity: sha512-yNxcQ8sKvURiTwP0mV6bLQCYE7NKfKRRWunhbZnXgxSmB1OXa1lHrN3o4DZd+0Si0kU5blidK7BcROO8qv5TZA==}
 
-  oniguruma-to-es@3.1.1:
-    resolution: {integrity: sha512-bUH8SDvPkH3ho3dvwJwfonjlQ4R80vjyvrU8YpxuROddv55vAEJrTuCuCVUhhsHbtlD9tGGbaNApGQckXhS8iQ==}
+  oniguruma-to-es@4.1.0:
+    resolution: {integrity: sha512-SNwG909cSLo4vPyyPbU/VJkEc9WOXqu2ycBlfd1UCXLqk1IijcQktSBb2yRQ2UFPsDhpkaf+C1dtT3PkLK/yWA==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -5264,7 +5270,7 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.1.0
       '@shikijs/vscode-textmate': 10.0.2
-      oniguruma-to-es: 3.1.1
+      oniguruma-to-es: 4.1.0
 
   '@shikijs/engine-oniguruma@3.1.0':
     dependencies:
@@ -7843,9 +7849,10 @@ snapshots:
 
   oniguruma-parser@0.5.4: {}
 
-  oniguruma-to-es@3.1.1:
+  oniguruma-to-es@4.1.0:
     dependencies:
       emoji-regex-xs: 1.0.0
+      oniguruma-parser: 0.5.4
       regex: 6.0.1
       regex-recursion: 6.0.2
 
