@@ -46,11 +46,11 @@
     "commands": {
       "patterns": [
         {
-          "match": "\\bcom(\\s|!)",
+          "match": "\\bcom([\\s!])",
           "name": "storage.other.command.viml"
         },
         {
-          "match": "\\bau(\\s|!)",
+          "match": "\\bau([\\s!])",
           "name": "storage.other.command.viml"
         },
         {
@@ -171,7 +171,7 @@
               "name": "punctuation.definition.map.viml"
             }
           },
-          "end": "(>|\\s)",
+          "end": "([>\\s])",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.map.viml"

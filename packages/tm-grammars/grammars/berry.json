@@ -107,7 +107,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "\\(|\\)|\\[|]|\\.|-|!|~|\\*|/|%|\\+|&|\\^|\\||<|>|=|:",
+          "match": "[()\\[\\].\\-!~*/%+\\&\\^|<>=:]",
           "name": "keyword.operator.berry"
         }
       ]
@@ -115,7 +115,7 @@
     "strings": {
       "patterns": [
         {
-          "begin": "(\"|')",
+          "begin": "([\"'])",
           "end": "\\1",
           "name": "string.quoted.double.berry",
           "patterns": [
@@ -126,7 +126,7 @@
           ]
         },
         {
-          "begin": "f(\"|')",
+          "begin": "f([\"'])",
           "end": "\\1",
           "name": "string.quoted.other.berry",
           "patterns": [

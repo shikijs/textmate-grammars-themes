@@ -42,7 +42,7 @@
           "name": "entity.other.attribute-name.liquid"
         }
       },
-      "end": "(?=,|\\|)|$",
+      "end": "(?=[,|])|$",
       "patterns": [
         {
           "include": "#value_expression"
@@ -304,7 +304,7 @@
       "match": "(@param)\\s+(?:(\\{[^}]*}?)\\s+)?(\\[?[a-zA-Z_][\\w\\-]*]?)?(?:\\s+(.*))?"
     },
     "number": {
-      "match": "((-|\\+)\\s*)?[0-9]+(\\.[0-9]+)?",
+      "match": "(([\\-+])\\s*)?[0-9]+(\\.[0-9]+)?",
       "name": "constant.numeric.liquid"
     },
     "object": {
@@ -339,7 +339,7 @@
           "name": "keyword.operator.expression.liquid"
         }
       },
-      "match": "(?:(?<=\\s)|\\b)(==|!=|>|<|>=|<=|or|and|contains)(?:(?=\\s)|\\b)"
+      "match": "(?:(?<=\\s)|\\b)(==|!=|[><]|>=|<=|or|and|contains)(?:(?=\\s)|\\b)"
     },
     "range": {
       "begin": "\\(",
@@ -1015,7 +1015,7 @@
           "match": "(\\[)(\\|)(?=[^\\]]*)(?=])"
         },
         {
-          "match": "(?<=\\s)(\\+|-|/|\\*)(?=\\s)",
+          "match": "(?<=\\s)([+\\-/*])(?=\\s)",
           "name": "invalid.illegal.filter.liquid"
         },
         {
@@ -1072,7 +1072,7 @@
           ]
         },
         {
-          "match": "(?<=(\\w|])\\.)([\\-\\w]+\\??)",
+          "match": "(?<=([\\w\\]])\\.)([\\-\\w]+\\??)",
           "name": "variable.other.member.liquid"
         },
         {

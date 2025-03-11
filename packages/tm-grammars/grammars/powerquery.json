@@ -89,11 +89,11 @@
       ]
     },
     "FloatNumber": {
-      "match": "(\\d*\\.)?\\d+(e|E)(\\+|-)?\\d+",
+      "match": "(\\d*\\.)?\\d+([eE])([+\\-])?\\d+",
       "name": "constant.numeric.float.powerquery"
     },
     "HexNumber": {
-      "match": "0(x|X)\\h+",
+      "match": "0([xX])\\h+",
       "name": "constant.numeric.integer.hexadecimal.powerquery"
     },
     "Identifier": {
@@ -240,7 +240,7 @@
           "name": "keyword.operator.optional.powerquery"
         }
       },
-      "match": "(=>)|(=)|(<>|<|>|<=|>=)|(&)|(\\+|-|\\*|/)|(!)|(\\?)"
+      "match": "(=>)|(=)|(<>|[<>]|<=|>=)|(&)|([+\\-*/])|(!)|(\\?)"
     },
     "Punctuation": {
       "captures": {

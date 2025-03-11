@@ -93,7 +93,7 @@
               "include": "#glimmer-component-path"
             },
             {
-              "match": "(@|:|\\$)",
+              "match": "([@:$])",
               "name": "markup.bold"
             }
           ]
@@ -179,7 +179,7 @@
       ]
     },
     "glimmer-block": {
-      "begin": "(\\{\\{~?)(#|/)(([@$a-zA-Z0-9_/.\\-]+))",
+      "begin": "(\\{\\{~?)([#/])(([@$a-zA-Z0-9_/.\\-]+))",
       "captures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -278,7 +278,7 @@
           "name": "punctuation.definition.tag"
         }
       },
-      "match": "(::|_|\\$|\\.)"
+      "match": "(::|[_$.])"
     },
     "glimmer-control-expression": {
       "begin": "(\\{\\{~?)(([\\-a-zA-Z_0-9/]+)\\s)",
@@ -580,7 +580,7 @@
       ]
     },
     "html-tag": {
-      "begin": "(</?)([a-z0-9\\-]+)(?!\\.|:)\\b",
+      "begin": "(</?)([a-z0-9\\-]+)(?![.:])\\b",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -875,7 +875,7 @@
           },
           "patterns": [
             {
-              "begin": "((`|'|\"))",
+              "begin": "(([`'\"]))",
               "beginCaptures": {
                 "1": {
                   "name": "string.template.ts"
@@ -884,7 +884,7 @@
                   "name": "punctuation.definition.string.template.begin.ts"
                 }
               },
-              "end": "((`|'|\"))",
+              "end": "(([`'\"]))",
               "endCaptures": {
                 "1": {
                   "name": "string.template.ts"
@@ -967,7 +967,7 @@
           },
           "patterns": [
             {
-              "begin": "((`|'|\"))",
+              "begin": "(([`'\"]))",
               "beginCaptures": {
                 "1": {
                   "name": "string.template.ts"
@@ -977,7 +977,7 @@
                 }
               },
               "contentName": "meta.embedded.block.html",
-              "end": "((`|'|\"))",
+              "end": "(([`'\"]))",
               "endCaptures": {
                 "1": {
                   "name": "string.template.ts"
@@ -1191,7 +1191,7 @@
                   ]
                 },
                 {
-                  "begin": "(?i:(?=type\\s*=\\s*('|\"|)text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)[\\s\"'>]))",
+                  "begin": "(?i:(?=type\\s*=\\s*(['\"]|)text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)[\\s\"'>]))",
                   "end": "((<))(?=/(?i:script))",
                   "endCaptures": {
                     "0": {

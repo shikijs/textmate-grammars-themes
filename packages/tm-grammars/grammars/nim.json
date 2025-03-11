@@ -75,7 +75,7 @@
       "name": "meta.proc.nim",
       "patterns": [
         {
-          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+`?([^:{\\s`*(]*)`?(\\s*\\*)?\\s*(?=\\(|=|:|\\[|\\n|\\{)",
+          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+`?([^:{\\s`*(]*)`?(\\s*\\*)?\\s*(?=[(=:\\[\\n{])",
           "captures": {
             "1": {
               "name": "keyword.other"
@@ -146,7 +146,7 @@
       "name": "keyword.boolean.nim"
     },
     {
-      "match": "(=|\\+|-|\\*|/|<|>|@|\\$|~|&|%|!|\\?|\\^|\\.|:|\\\\)+",
+      "match": "([=+\\-*/<>@$~\\&%!?\\^.:\\\\])+",
       "name": "keyword.operator.nim"
     },
     {
@@ -182,7 +182,7 @@
       "name": "support.type.nim"
     },
     {
-      "match": "\\b\\w+\\b(?=(\\[([a-zA-Z0-9_,]|\\s)+])?\\()",
+      "match": "\\b\\w+\\b(?=(\\[([a-zA-Z0-9_,\\s])+])?\\()",
       "name": "support.function.any-method.nim"
     },
     {
@@ -479,7 +479,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -579,7 +579,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -679,7 +679,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -779,7 +779,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -879,7 +879,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -979,7 +979,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "(\\{|\\n)",
+              "end": "([{\\n])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -1007,11 +1007,11 @@
     "char_escapes": {
       "patterns": [
         {
-          "match": "\\\\(?:[cC]|[rR])",
+          "match": "\\\\[cCrR]",
           "name": "constant.character.escape.carriagereturn.nim"
         },
         {
-          "match": "\\\\(?:[lL]|[nN])",
+          "match": "\\\\[lLnN]",
           "name": "constant.character.escape.linefeed.nim"
         },
         {
@@ -1116,7 +1116,7 @@
           "name": "constant.numeric.float.octal.nim"
         },
         {
-          "match": "\\b0(b|B)[01][_01]*'([fF](32|64|128)|[fFdD])",
+          "match": "\\b0([bB])[01][_01]*'([fF](32|64|128)|[fFdD])",
           "name": "constant.numeric.float.binary.nim"
         },
         {
@@ -1305,7 +1305,7 @@
           "name": "constant.numeric.integer.octal.nim"
         },
         {
-          "match": "\\b(0(b|B)[01][_01]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(0([bB])[01][_01]*)('(([iIuU](8|16|32|64))|[uU]))?",
           "name": "constant.numeric.integer.binary.nim"
         },
         {

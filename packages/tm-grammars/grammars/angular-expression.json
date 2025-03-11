@@ -33,11 +33,11 @@
     "booleanLiteral": {
       "patterns": [
         {
-          "match": "(?<!\\.|\\$)\\btrue\\b(?!\\$)",
+          "match": "(?<![.$])\\btrue\\b(?!\\$)",
           "name": "constant.language.boolean.true.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bfalse\\b(?!\\$)",
+          "match": "(?<![.$])\\bfalse\\b(?!\\$)",
           "name": "constant.language.boolean.false.ts"
         }
       ]
@@ -56,57 +56,57 @@
           "match": "((?<!\\|)\\|(?!\\|))\\s?([a-zA-Z0-9\\-_$]*)"
         },
         {
-          "match": "(?<!\\.|\\$)\\b(let)\\b(?!\\$)",
+          "match": "(?<![.$])\\b(let)\\b(?!\\$)",
           "name": "storage.type.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\b(await)\\b(?!\\$)",
+          "match": "(?<![.$])\\b(await)\\b(?!\\$)",
           "name": "keyword.control.flow.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bdelete\\b(?!\\$)",
+          "match": "(?<![.$])\\bdelete\\b(?!\\$)",
           "name": "keyword.operator.expression.delete.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bin\\b(?!\\$)",
+          "match": "(?<![.$])\\bin\\b(?!\\$)",
           "name": "keyword.operator.expression.in.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bof\\b(?!\\$)",
+          "match": "(?<![.$])\\bof\\b(?!\\$)",
           "name": "keyword.operator.expression.of.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bif\\b(?!\\$)",
+          "match": "(?<![.$])\\bif\\b(?!\\$)",
           "name": "keyword.control.if.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\belse\\b(?!\\$)",
+          "match": "(?<![.$])\\belse\\b(?!\\$)",
           "name": "keyword.control.else.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bthen\\b(?!\\$)",
+          "match": "(?<![.$])\\bthen\\b(?!\\$)",
           "name": "keyword.control.then.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\binstanceof\\b(?!\\$)",
+          "match": "(?<![.$])\\binstanceof\\b(?!\\$)",
           "name": "keyword.operator.expression.instanceof.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bnew\\b(?!\\$)",
+          "match": "(?<![.$])\\bnew\\b(?!\\$)",
           "name": "keyword.operator.new.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bvoid\\b(?!\\$)",
+          "match": "(?<![.$])\\bvoid\\b(?!\\$)",
           "name": "keyword.operator.expression.void.ts"
         },
         {
-          "begin": "(?<!\\.|\\$)\\bas\\b(?!\\$)",
+          "begin": "(?<![.$])\\bas\\b(?!\\$)",
           "beginCaptures": {
             "0": {
               "name": "storage.type.as.ts"
             }
           },
-          "end": "(?=$|\"|'|[;,:})\\]])",
+          "end": "(?=$|[\"';,:})\\]])",
           "patterns": [
             {
               "include": "#type"
@@ -130,7 +130,7 @@
           "name": "keyword.operator.comparison.ts"
         },
         {
-          "match": "<=|>=|<>|<|>",
+          "match": "<=|>=|<>|[<>]",
           "name": "keyword.operator.relational.ts"
         },
         {
@@ -138,7 +138,7 @@
           "name": "keyword.operator.logical.ts"
         },
         {
-          "match": "&|~|\\^|\\|",
+          "match": "[\\&~\\^|]",
           "name": "keyword.operator.bitwise.ts"
         },
         {
@@ -154,7 +154,7 @@
           "name": "keyword.operator.increment.ts"
         },
         {
-          "match": "%|\\*|/|-|\\+",
+          "match": "[%*/\\-+]",
           "name": "keyword.operator.arithmetic.ts"
         },
         {
@@ -377,17 +377,17 @@
       ]
     },
     "nullLiteral": {
-      "match": "(?<!\\.|\\$)\\bnull\\b(?!\\$)",
+      "match": "(?<![.$])\\bnull\\b(?!\\$)",
       "name": "constant.language.null.ts"
     },
     "numericConstantLiteral": {
       "patterns": [
         {
-          "match": "(?<!\\.|\\$)\\bNaN\\b(?!\\$)",
+          "match": "(?<![.$])\\bNaN\\b(?!\\$)",
           "name": "constant.language.nan.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bInfinity\\b(?!\\$)",
+          "match": "(?<![.$])\\bInfinity\\b(?!\\$)",
           "name": "constant.language.infinity.ts"
         }
       ]
@@ -395,15 +395,15 @@
     "numericLiteral": {
       "patterns": [
         {
-          "match": "\\b(?<!\\$)0(x|X)\\h+\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0([xX])\\h+\\b(?!\\$)",
           "name": "constant.numeric.hex.ts"
         },
         {
-          "match": "\\b(?<!\\$)0(b|B)[01]+\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0([bB])[01]+\\b(?!\\$)",
           "name": "constant.numeric.binary.ts"
         },
         {
-          "match": "\\\\b(?<!\\$)0(o|O)?[0-7]+\\b(?!\\$)",
+          "match": "\\\\b(?<!\\$)0([oO])?[0-7]+\\b(?!\\$)",
           "name": "constant.numeric.octal.ts"
         },
         {
@@ -454,7 +454,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(p(?:ublic|rivate|rotected))\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|(\\(\\s*((\\))|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|(\\)\\s*=>))))))))"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(p(?:ublic|rivate|rotected))\\s+)?(\\.\\.\\.)?\\s*(?<![=:])([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)(?=\\s*(=\\s*((async\\s+)|(function\\s*[(<])|(function\\s+)|([_$[:alpha:]][_$[:alnum:]]*\\s*=>)|((<([^<>]|<[^<>]+>)+>\\s*)?\\(([^()]|\\([^()]*\\))*\\)(\\s*:\\s*(.)*)?\\s*=>)))|(:\\s*((<)|(\\(\\s*((\\))|(\\.\\.\\.)|([_$[:alnum:]]+\\s*(([:,?=])|(\\)\\s*=>))))))))"
         },
         {
           "captures": {
@@ -474,7 +474,7 @@
               "name": "keyword.operator.optional.ts"
             }
           },
-          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(p(?:ublic|rivate|rotected))\\s+)?(\\.\\.\\.)?\\s*(?<!=|:)([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)"
+          "match": "(?:\\s*\\b(readonly)\\s+)?(?:\\s*\\b(p(?:ublic|rivate|rotected))\\s+)?(\\.\\.\\.)?\\s*(?<![=:])([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\??)"
         }
       ]
     },
@@ -592,7 +592,7 @@
       ]
     },
     "thisLiteral": {
-      "match": "(?<!\\.|\\$)\\bthis\\b(?!\\$)",
+      "match": "(?<![.$])\\bthis\\b(?!\\$)",
       "name": "variable.language.this.ts"
     },
     "type": {
@@ -634,7 +634,7 @@
           "name": "keyword.operator.type.annotation.ts"
         }
       },
-      "end": "(?=$|[,);}\\]]|//|\")|(?==[^>])|(?<=[}>\\])]|[_$[:alpha:]])\\s*(?=\\{)",
+      "end": "(?=$|[,);}\\]]|//|\")|(?==[^>])|(?<=[}>\\])_$[:alpha:]])\\s*(?=\\{)",
       "name": "meta.type.annotation.ts",
       "patterns": [
         {
@@ -643,7 +643,7 @@
       ]
     },
     "typeBuiltinLiterals": {
-      "match": "(?<!\\.|\\$)\\b(this|true|false|undefined|null)\\b(?!\\$)",
+      "match": "(?<![.$])\\b(this|true|false|undefined|null)\\b(?!\\$)",
       "name": "support.type.builtin.ts"
     },
     "typeFnTypeParameters": {
@@ -654,11 +654,11 @@
               "name": "keyword.control.new.ts"
             }
           },
-          "match": "(?<!\\.|\\$)\\b(new)\\b(?=\\s*<)",
+          "match": "(?<![.$])\\b(new)\\b(?=\\s*<)",
           "name": "meta.type.constructor.ts"
         },
         {
-          "begin": "(?<!\\.|\\$)\\b(new)\\b\\s*(?=\\()",
+          "begin": "(?<![.$])\\b(new)\\b\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.new.ts"
@@ -757,7 +757,7 @@
           "name": "keyword.operator.type.ts"
         },
         {
-          "match": "(?<!\\.|\\$)\\bkeyof\\b(?!\\$)",
+          "match": "(?<![.$])\\bkeyof\\b(?!\\$)",
           "name": "keyword.operator.expression.keyof.ts"
         }
       ]
@@ -809,15 +809,15 @@
       ]
     },
     "typeofOperator": {
-      "match": "(?<!\\.|\\$)\\btypeof\\b(?!\\$)",
+      "match": "(?<![.$])\\btypeof\\b(?!\\$)",
       "name": "keyword.operator.expression.typeof.ts"
     },
     "undefinedLiteral": {
-      "match": "(?<!\\.|\\$)\\bundefined\\b(?!\\$)",
+      "match": "(?<![.$])\\bundefined\\b(?!\\$)",
       "name": "constant.language.undefined.ts"
     },
     "variableInitializer": {
-      "begin": "(?<!=|!)(=)(?!=)",
+      "begin": "(?<![=!])(=)(?!=)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.assignment.ts"

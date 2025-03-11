@@ -23,7 +23,7 @@
       "include": "#char_literal"
     },
     {
-      "match": "(?<!@|#)-}",
+      "match": "(?<![@#])-}",
       "name": "invalid"
     },
     {
@@ -372,7 +372,7 @@
           "name": "keyword.other.instance.haskell"
         }
       },
-      "end": "(?=\\b(?<!')(where)\\b(?!'))|(?=}|;)|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
+      "end": "(?=\\b(?<!')(where)\\b(?!'))|(?=[};])|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
       "name": "meta.declaration.instance.haskell",
       "patterns": [
         {
@@ -393,7 +393,7 @@
           "name": "keyword.other.import.haskell"
         }
       },
-      "end": "(?=\\b(?<!')(where)\\b(?!'))|(?=}|;)|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
+      "end": "(?=\\b(?<!')(where)\\b(?!'))|(?=[};])|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
       "name": "meta.import.haskell",
       "patterns": [
         {
@@ -1141,7 +1141,7 @@
           "name": "keyword.operator.double-colon.haskell"
         }
       },
-      "end": "(?=(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])((<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}]))|(?=}|;)|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
+      "end": "(?=(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])((<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"'[^\\p{S}\\p{P}]]))|(?=[};])|^(?!\\1\\s+\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$))",
       "name": "meta.function.type-declaration.haskell",
       "patterns": [
         {
@@ -1479,7 +1479,7 @@
                   "name": "keyword.other.preprocessor.extension.haskell"
                 }
               },
-              "match": "((?:No)?(?:AllowAmbiguousTypes|AlternativeLayoutRule|AlternativeLayoutRuleTransitional|Arrows|BangPatterns|BinaryLiterals|CApiFFI|CPP|CUSKs|ConstrainedClassMethods|ConstraintKinds|DataKinds|DefaultSignatures|DeriveAnyClass|DeriveDataTypeable|DeriveFoldable|DeriveFunctor|DeriveGeneric|DeriveLift|DeriveTraversable|DerivingStrategies|DerivingVia|DisambiguateRecordFields|DoAndIfThenElse|BlockArguments|DuplicateRecordFields|EmptyCase|EmptyDataDecls|EmptyDataDeriving|ExistentialQuantification|ExplicitForAll|ExplicitNamespaces|ExtendedDefaultRules|FlexibleContexts|FlexibleInstances|ForeignFunctionInterface|FunctionalDependencies|GADTSyntax|GADTs|GHCForeignImportPrim|Generali(?:s|z)edNewtypeDeriving|ImplicitParams|ImplicitPrelude|ImportQualifiedPost|ImpredicativeTypes|TypeFamilyDependencies|InstanceSigs|ApplicativeDo|InterruptibleFFI|JavaScriptFFI|KindSignatures|LambdaCase|LiberalTypeSynonyms|MagicHash|MonadComprehensions|MonoLocalBinds|MonomorphismRestriction|MultiParamTypeClasses|MultiWayIf|NumericUnderscores|NPlusKPatterns|NamedFieldPuns|NamedWildCards|NegativeLiterals|HexFloatLiterals|NondecreasingIndentation|NumDecimals|OverloadedLabels|OverloadedLists|OverloadedStrings|PackageImports|ParallelArrays|ParallelListComp|PartialTypeSignatures|PatternGuards|PatternSynonyms|PolyKinds|PolymorphicComponents|QuantifiedConstraints|PostfixOperators|QuasiQuotes|Rank2Types|RankNTypes|RebindableSyntax|RecordWildCards|RecursiveDo|RelaxedLayout|RoleAnnotations|ScopedTypeVariables|StandaloneDeriving|StarIsType|StaticPointers|Strict|StrictData|TemplateHaskell|TemplateHaskellQuotes|StandaloneKindSignatures|TraditionalRecordSyntax|TransformListComp|TupleSections|TypeApplications|TypeInType|TypeFamilies|TypeOperators|TypeSynonymInstances|UnboxedTuples|UnboxedSums|UndecidableInstances|UndecidableSuperClasses|UnicodeSyntax|UnliftedFFITypes|UnliftedNewtypes|ViewPatterns))"
+              "match": "((?:No)?(?:AllowAmbiguousTypes|AlternativeLayoutRule|AlternativeLayoutRuleTransitional|Arrows|BangPatterns|BinaryLiterals|CApiFFI|CPP|CUSKs|ConstrainedClassMethods|ConstraintKinds|DataKinds|DefaultSignatures|DeriveAnyClass|DeriveDataTypeable|DeriveFoldable|DeriveFunctor|DeriveGeneric|DeriveLift|DeriveTraversable|DerivingStrategies|DerivingVia|DisambiguateRecordFields|DoAndIfThenElse|BlockArguments|DuplicateRecordFields|EmptyCase|EmptyDataDecls|EmptyDataDeriving|ExistentialQuantification|ExplicitForAll|ExplicitNamespaces|ExtendedDefaultRules|FlexibleContexts|FlexibleInstances|ForeignFunctionInterface|FunctionalDependencies|GADTSyntax|GADTs|GHCForeignImportPrim|Generali[sz]edNewtypeDeriving|ImplicitParams|ImplicitPrelude|ImportQualifiedPost|ImpredicativeTypes|TypeFamilyDependencies|InstanceSigs|ApplicativeDo|InterruptibleFFI|JavaScriptFFI|KindSignatures|LambdaCase|LiberalTypeSynonyms|MagicHash|MonadComprehensions|MonoLocalBinds|MonomorphismRestriction|MultiParamTypeClasses|MultiWayIf|NumericUnderscores|NPlusKPatterns|NamedFieldPuns|NamedWildCards|NegativeLiterals|HexFloatLiterals|NondecreasingIndentation|NumDecimals|OverloadedLabels|OverloadedLists|OverloadedStrings|PackageImports|ParallelArrays|ParallelListComp|PartialTypeSignatures|PatternGuards|PatternSynonyms|PolyKinds|PolymorphicComponents|QuantifiedConstraints|PostfixOperators|QuasiQuotes|Rank2Types|RankNTypes|RebindableSyntax|RecordWildCards|RecursiveDo|RelaxedLayout|RoleAnnotations|ScopedTypeVariables|StandaloneDeriving|StarIsType|StaticPointers|Strict|StrictData|TemplateHaskell|TemplateHaskellQuotes|StandaloneKindSignatures|TraditionalRecordSyntax|TransformListComp|TupleSections|TypeApplications|TypeInType|TypeFamilies|TypeOperators|TypeSynonymInstances|UnboxedTuples|UnboxedSums|UndecidableInstances|UndecidableSuperClasses|UnicodeSyntax|UnliftedFFITypes|UnliftedNewtypes|ViewPatterns))"
             },
             {
               "include": "#comma"
@@ -1487,7 +1487,7 @@
           ]
         },
         {
-          "begin": "(?i)\\b(?<!')(SPECIALI(?:S|Z)E)(?:\\s*(\\[[^\\[\\]]*])?\\s*|\\s+)(instance)\\b(?!')",
+          "begin": "(?i)\\b(?<!')(SPECIALI[SZ]E)(?:\\s*(\\[[^\\[\\]]*])?\\s*|\\s+)(instance)\\b(?!')",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.preprocessor.pragma.haskell"
@@ -1511,7 +1511,7 @@
           ]
         },
         {
-          "begin": "(?i)\\b(?<!')(SPECIALI(?:S|Z)E)\\b(?!')(?:\\s+(INLINE)\\b(?!'))?\\s*(\\[[^\\[\\]]*])?\\s*",
+          "begin": "(?i)\\b(?<!')(SPECIALI[SZ]E)\\b(?!')(?:\\s+(INLINE)\\b(?!'))?\\s*(\\[[^\\[\\]]*])?\\s*",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.preprocessor.pragma.haskell"
@@ -1579,7 +1579,7 @@
     "quasi_quote": {
       "patterns": [
         {
-          "begin": "(\\[)(e|d|p)?(\\|\\|?)",
+          "begin": "(\\[)([edp])?(\\|\\|?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.quasi-quotation.begin.haskell"
@@ -1631,7 +1631,7 @@
           ]
         },
         {
-          "begin": "(\\[)(?:(\\$\\$)|(\\$))?((?:[^\\s\\p{S}\\p{P}]|[.'_])*)(\\|\\|?)",
+          "begin": "(\\[)(?:(\\$\\$)|(\\$))?([[^\\s\\p{S}\\p{P}].'_]*)(\\|\\|?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.quasi-quotation.begin.haskell"
@@ -1927,7 +1927,7 @@
               "name": "keyword.operator.double-colon.haskell"
             }
           },
-          "end": "(?=#?\\)|]|,|(?<!')\\b(in|then|else|of)\\b(?!')|(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])(?:(\\\\|λ)|(<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])|(#|@)-}|(?=}|;)|^(?!\\1\\s*\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$)))",
+          "end": "(?=#?\\)|[\\],]|(?<!')\\b(in|then|else|of)\\b(?!')|(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])(?:([\\\\λ])|(<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"'[^\\p{S}\\p{P}]])|([#@])-}|(?=[};])|^(?!\\1\\s*\\S|\\s*(?:$|\\{-[^@]|--+(?![[\\p{S}\\p{P}]&&[^(),;\\[\\]{}`_\"']]).*$)))",
           "name": "meta.type-declaration.haskell",
           "patterns": [
             {
@@ -1942,7 +1942,7 @@
               "name": "keyword.operator.double-colon.haskell"
             }
           },
-          "end": "(?=#?\\)|]|,|\\b(?<!')(in|then|else|of)\\b(?!')|(#|@)-}|(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])(?:(\\\\|λ)|(<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"']|[^\\p{S}\\p{P}])|(?=}|;)|$)",
+          "end": "(?=#?\\)|[\\],]|\\b(?<!')(in|then|else|of)\\b(?!')|([#@])-}|(?<![[\\p{S}\\p{P}]&&[^(),;\\[\\]`{}_\"']])(?:([\\\\λ])|(<-|←)|(=)|(-<|↢)|(-<<|⤛))([(),;\\[\\]`{}_\"'[^\\p{S}\\p{P}]])|(?=[};])|$)",
           "patterns": [
             {
               "include": "#type_signature"

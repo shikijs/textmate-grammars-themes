@@ -199,8 +199,8 @@
       ]
     },
     "arrow-function-parameter": {
-      "begin": "(?<=\\(|,)",
-      "end": "(?=\\)|,)",
+      "begin": "(?<=[(,])",
+      "end": "(?=[),])",
       "patterns": [
         {
           "include": "#parameter-name"
@@ -226,7 +226,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=\\)|,|=)",
+      "end": "(?=[),=])",
       "patterns": [
         {
           "include": "#type"
@@ -483,7 +483,7 @@
               "name": "punctuation.definition.tag"
             }
           },
-          "end": "(?<=\\)|\\n)",
+          "end": "(?<=[)\\n])",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag"
@@ -760,8 +760,8 @@
       ]
     },
     "function-type-parameter": {
-      "begin": "(?<=\\(|,)",
-      "end": "(?=\\)|,)",
+      "begin": "(?<=[(,])",
+      "end": "(?=[),])",
       "patterns": [
         {
           "include": "#global"
@@ -807,7 +807,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=\\)|,|=)",
+      "end": "(?=[),=])",
       "patterns": [
         {
           "include": "#type"
@@ -1424,7 +1424,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=\\{|;|[a-z0-9])",
+      "end": "(?=[{;a-z0-9])",
       "patterns": [
         {
           "include": "#type"
@@ -1485,11 +1485,11 @@
           "name": "keyword.operator.logical.hx"
         },
         {
-          "match": "(~|&|\\||\\^|>>>|<<|>>)",
+          "match": "([~\\&|\\^]|>>>|<<|>>)",
           "name": "keyword.operator.bitwise.hx"
         },
         {
-          "match": "(==|!=|<=|>=|<|>)",
+          "match": "(==|!=|<=|>=|[<>])",
           "name": "keyword.operator.comparison.hx"
         },
         {
@@ -1501,7 +1501,7 @@
           "name": "keyword.operator.increment-decrement.hx"
         },
         {
-          "match": "(-|\\+|\\*|/|%)",
+          "match": "([\\-+*/%])",
           "name": "keyword.operator.arithmetic.hx"
         },
         {
@@ -1568,7 +1568,7 @@
       ]
     },
     "parameter": {
-      "begin": "(?<=\\(|,)",
+      "begin": "(?<=[(,])",
       "end": "(?=\\)(?!\\s*->)|,)",
       "patterns": [
         {
@@ -1595,7 +1595,7 @@
           "name": "keyword.operator.assignment.hx"
         }
       },
-      "end": "(?=\\)|,)",
+      "end": "(?=[),])",
       "patterns": [
         {
           "include": "#block"
@@ -1606,7 +1606,7 @@
       ]
     },
     "parameter-name": {
-      "begin": "(?<=\\(|,)",
+      "begin": "(?<=[(,])",
       "end": "([_a-zA-Z]\\w*)",
       "endCaptures": {
         "1": {
@@ -1632,7 +1632,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=\\)(?!\\s*->)|,|=)",
+      "end": "(?=\\)(?!\\s*->)|[,=])",
       "patterns": [
         {
           "include": "#type"
@@ -1745,7 +1745,7 @@
     "regexp": {
       "patterns": [
         {
-          "match": "\\\\[bB]|\\^|\\$",
+          "match": "\\\\[bB]|[\\^$]",
           "name": "keyword.control.anchor.regexp"
         },
         {
@@ -2314,7 +2314,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=}|,|;)",
+      "end": "(?=[},;])",
       "patterns": [
         {
           "include": "#type"
@@ -2402,7 +2402,7 @@
           "name": "keyword.operator.assignment.hx"
         }
       },
-      "end": "(?=;|,)",
+      "end": "(?=[;,])",
       "patterns": [
         {
           "include": "#block"
@@ -2472,7 +2472,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=$|;|,|=)",
+      "end": "(?=$|[;,=])",
       "patterns": [
         {
           "include": "#type"

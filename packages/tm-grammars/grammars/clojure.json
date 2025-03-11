@@ -65,7 +65,7 @@
     "constants": {
       "patterns": [
         {
-          "match": "(nil)(?=(\\s|\\)|]|}))",
+          "match": "(nil)(?=([\\s)\\]}]))",
           "name": "constant.language.nil.clojure"
         },
         {
@@ -112,17 +112,17 @@
     "keyfn": {
       "patterns": [
         {
-          "match": "(?<=(\\s|\\(|\\[|\\{))(if(-[\\-\\p{Ll}?]*)?|when(-[\\-\\p{Ll}]*)?|for(-[\\-\\p{Ll}]*)?|cond|do|let(-[\\-\\p{Ll}?]*)?|binding|loop|recur|fn|throw[\\p{Ll}\\-]*|try|catch|finally|(\\p{Ll}*case))(?=(\\s|\\)|]|}))",
+          "match": "(?<=([\\s(\\[{]))(if(-[\\-\\p{Ll}?]*)?|when(-[\\-\\p{Ll}]*)?|for(-[\\-\\p{Ll}]*)?|cond|do|let(-[\\-\\p{Ll}?]*)?|binding|loop|recur|fn|throw[\\p{Ll}\\-]*|try|catch|finally|(\\p{Ll}*case))(?=([\\s)\\]}]))",
           "name": "storage.control.clojure"
         },
         {
-          "match": "(?<=(\\s|\\(|\\[|\\{))(declare-?|(in-)?ns|import|use|require|load|compile|(def[\\p{Ll}\\-]*))(?=(\\s|\\)|]|}))",
+          "match": "(?<=([\\s(\\[{]))(declare-?|(in-)?ns|import|use|require|load|compile|(def[\\p{Ll}\\-]*))(?=([\\s)\\]}]))",
           "name": "keyword.control.clojure"
         }
       ]
     },
     "keyword": {
-      "match": "(?<=(\\s|\\(|\\[|\\{)):[\\w#.\\-_:+=></!?*]+(?=(\\s|\\)|]|}|,))",
+      "match": "(?<=([\\s(\\[{])):[\\w#.\\-_:+=></!?*]+(?=([\\s)\\]},]))",
       "name": "constant.keyword.clojure"
     },
     "map": {
@@ -343,7 +343,7 @@
               "name": "entity.name.function.clojure"
             }
           },
-          "match": "(?<=\\()(.+?)(?=\\s|\\))",
+          "match": "(?<=\\()(.+?)(?=[\\s)])",
           "patterns": [
             {
               "include": "$self"
@@ -395,7 +395,7 @@
       ]
     },
     "var": {
-      "match": "(?<=(\\s|\\(|\\[|\\{)#)'[\\w.\\-_:+=></!?*]+(?=(\\s|\\)|]|}))",
+      "match": "(?<=([\\s(\\[{])#)'[\\w.\\-_:+=></!?*]+(?=([\\s)\\]}]))",
       "name": "meta.var.clojure"
     },
     "vector": {

@@ -18,6 +18,7 @@ export default antfu(
       'packages/tm-grammars/raw/**',
       'packages/tm-themes/themes/**',
     ],
+    pnpm: true,
     vue: true,
   },
   {

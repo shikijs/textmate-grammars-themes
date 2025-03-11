@@ -873,7 +873,7 @@
           "name": "keyword.operator.logical.cs"
         }
       },
-      "match": "(!)(?=\\.[_[:alpha:]][_[:alnum:]]*|\\?|[\\[(])"
+      "match": "(!)(?=\\.[_[:alpha:]][_[:alnum:]]*|[?\\[(])"
     },
     "implicit-expression-operator": {
       "patterns": [
@@ -1760,7 +1760,7 @@
           "name": "keyword.control.razor.optionalSemicolon"
         }
       },
-      "match": "(@)(using)\\b\\s+(?!\\(|\\s)(.+?)?(;)?$",
+      "match": "(@)(using)\\b\\s+(?![(\\s])(.+?)?(;)?$",
       "name": "meta.directive"
     },
     "using-standard-directive": {

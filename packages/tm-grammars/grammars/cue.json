@@ -663,7 +663,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\#(?:\"\"\"|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\#(?:\"\"\"|[/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -720,7 +720,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\#(?:\"|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\#(?:[\"/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -777,7 +777,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\#(?:'''|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\#(?:'''|[/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -834,7 +834,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\#(?:'|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\#(?:['/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -891,7 +891,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\(?:\"\"\"|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:\"\"\"|[/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -948,7 +948,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\(?:\"|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:[\"/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -1005,7 +1005,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\(?:'''|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:'''|[/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {
@@ -1062,7 +1062,7 @@
           "name": "meta.string",
           "patterns": [
             {
-              "match": "\\\\(?:'|/|\\\\|[abfnrtv]|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:['/\\\\abfnrtv]|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             },
             {

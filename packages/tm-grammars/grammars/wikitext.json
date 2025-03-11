@@ -1330,7 +1330,7 @@
                   ]
                 },
                 "hl-csharp": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)c(?:sharp|#|s)\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)c(?:sharp|[#s])\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"
@@ -2680,7 +2680,7 @@
                   ]
                 },
                 "hl-php": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)php(?:|3|4|5)\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)php(?:|[345])\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"
@@ -2896,7 +2896,7 @@
                   ]
                 },
                 "hl-r": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)(?:splus|s|r)\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=(['\"]?)(?:splus|[sr])\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"

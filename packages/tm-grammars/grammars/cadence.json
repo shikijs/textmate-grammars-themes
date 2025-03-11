@@ -405,7 +405,7 @@
           "name": "keyword.operator.function-result.cadence"
         }
       },
-      "end": "(?!\\G)(?=\\{|;)|$",
+      "end": "(?!\\G)(?=[{;])|$",
       "name": "meta.function-result.cadence",
       "patterns": [
         {
@@ -414,7 +414,7 @@
       ]
     },
     "initializer": {
-      "begin": "(?<!\\.)\\b(init)\\s*(?=\\(|<)",
+      "begin": "(?<!\\.)\\b(init)\\s*(?=[(<])",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.cadence"
@@ -564,7 +564,7 @@
               "name": "string.quoted.double.single-line.cadence",
               "patterns": [
                 {
-                  "match": "\\r|\\n",
+                  "match": "[\\r\\n]",
                   "name": "invalid.illegal.returns-not-allowed.cadence"
                 },
                 {
@@ -613,7 +613,7 @@
           "name": "keyword.operator.force-move.cadence"
         },
         {
-          "match": "\\+|-|\\*|/",
+          "match": "[+\\-*/]",
           "name": "keyword.operator.arithmetic.cadence"
         },
         {
@@ -621,7 +621,7 @@
           "name": "keyword.operator.arithmetic.remainder.cadence"
         },
         {
-          "match": "==|!=|>|<|>=|<=",
+          "match": "==|!=|[><]|>=|<=",
           "name": "keyword.operator.comparison.cadence"
         },
         {

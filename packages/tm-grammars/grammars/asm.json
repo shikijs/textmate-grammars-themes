@@ -553,7 +553,7 @@
           "name": "keyword.operator.word.mnemonic.avx512.f.pblend"
         },
         {
-          "match": "(?i)\\bvp(erm[it]2(d|q|p[ds])|expand[dq]|(m(?:ax|in))[su]q|movu?s(q[bdw]|d[bw]))\\b",
+          "match": "(?i)\\bvp(erm[it]2([dq]|p[ds])|expand[dq]|(m(?:ax|in))[su]q|movu?s(q[bdw]|d[bw]))\\b",
           "name": "keyword.operator.word.mnemonic.avx512.f.permi"
         },
         {
@@ -673,7 +673,7 @@
           "name": "keyword.operator.word.mnemonic.fpu.transcendental"
         },
         {
-          "match": "(?i)\\b(fld(1|z|pi|l2[et]|l[ng]2))\\b",
+          "match": "(?i)\\b(fld([1z]|pi|l2[et]|l[ng]2))\\b",
           "name": "keyword.operator.word.mnemonic.fpu.load-constants"
         },
         {
@@ -788,7 +788,7 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.rng"
         },
         {
-          "match": "(?i)\\b(andn|bextr|bls(i|r|msk)|bzhi|pdep|pext|[lt]zcnt|(mul|ror|sar|shl|shr)x)\\b",
+          "match": "(?i)\\b(andn|bextr|bls([ir]|msk)|bzhi|pdep|pext|[lt]zcnt|(mul|ror|sar|shl|shr)x)\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.bmi"
         }
       ]
@@ -1361,7 +1361,7 @@
               "name": "keyword.control.import.include.c"
             }
           },
-          "end": "(?=/(?:/|\\*))|$",
+          "end": "(?=/[/*])|$",
           "name": "meta.preprocessor.c.include",
           "patterns": [
             {
@@ -1407,7 +1407,7 @@
               "name": "keyword.control.import.c"
             }
           },
-          "end": "(?=/(?:/|\\*))|$",
+          "end": "(?=/[/*])|$",
           "name": "meta.preprocessor.c",
           "patterns": [
             {
@@ -1462,7 +1462,7 @@
     "registers": {
       "patterns": [
         {
-          "match": "(?i)\\b(?:[abcd][hl]|[er]?[abcd]x|[er]?(?:di|si|bp|sp)|dil|sil|bpl|spl|r(?:8|9|1[0-5])[bdlw]?)\\b",
+          "match": "(?i)\\b(?:[abcd][hl]|[er]?[abcd]x|[er]?(?:di|si|bp|sp)|dil|sil|bpl|spl|r(?:[89]|1[0-5])[bdlw]?)\\b",
           "name": "constant.language.register.general-purpose.asm.x86_64"
         },
         {

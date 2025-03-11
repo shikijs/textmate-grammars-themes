@@ -14,7 +14,7 @@
     "gnus",
     "viper"
   ],
-  "firstLineMatch": "^#!.*(?:\\s|/|(?<=!)\\b)emacs(?:$|\\s)|(?:-\\*-(?i:[ \\t]*(?=[^:;\\s]+[ \\t]*-\\*-)|(?:.*?[ \\t;]|(?<=-\\*-))[ \\t]*mode[ \\t]*:[ \\t]*)(?i:emacs-lisp)(?=[ \\t;]|(?<![\\-*])-\\*-).*?-\\*-|(?:(?:^|[ \\t])(?:vi|Vi(?=m))(?:m(?:[<=>]?[0-9]+|))?|[ \\t]ex)(?=:(?:(?=[ \\t]*set?[ \\t][^\\r\\n:]+:)|(?![ \\t]*set?[ \\t])))(?:(?:[ \\t]*:[ \\t]*|[ \\t])\\w*(?:[ \\t]*=(?:[^\\\\\\s]|\\\\.)*)?)*[ \\t:](?:filetype|ft|syntax)[ \\t]*=(?i:e(?:macs-lisp|lisp))(?=$|\\s|:))",
+  "firstLineMatch": "^#!.*(?:[\\s/]|(?<=!)\\b)emacs(?:$|\\s)|(?:-\\*-(?i:[ \\t]*(?=[^:;\\s]+[ \\t]*-\\*-)|(?:.*?[ \\t;]|(?<=-\\*-))[ \\t]*mode[ \\t]*:[ \\t]*)(?i:emacs-lisp)(?=[ \\t;]|(?<![\\-*])-\\*-).*?-\\*-|(?:(?:^|[ \\t])(?:vi|Vi(?=m))(?:m(?:[<=>]?[0-9]+|))?|[ \\t]ex)(?=:(?:(?=[ \\t]*set?[ \\t][^\\r\\n:]+:)|(?![ \\t]*set?[ \\t])))(?:(?:[ \\t]*:[ \\t]*|[ \\t])\\w*(?:[ \\t]*=(?:[^\\\\\\s]|\\\\.)*)?)*[ \\t:](?:filetype|ft|syntax)[ \\t]*=(?i:e(?:macs-lisp|lisp))(?=$|[\\s:]))",
   "name": "emacs-lisp",
   "patterns": [
     {
@@ -43,7 +43,7 @@
     "arg-values": {
       "patterns": [
         {
-          "match": "&(optional|rest)(?=\\s|\\))",
+          "match": "&(optional|rest)(?=[\\s)])",
           "name": "constant.language.$1.arguments.emacs.lisp"
         }
       ]
@@ -982,15 +982,15 @@
           "name": "keyword.control.$1.emacs.lisp"
         },
         {
-          "match": "(?<=\\(|\\s|^)(interactive)(?=\\s|\\(|\\))",
+          "match": "(?<=[(\\s]|^)(interactive)(?=[\\s()])",
           "name": "storage.modifier.interactive.function.emacs.lisp"
         },
         {
-          "match": "(?<=\\(|\\s|^)[\\-*+/%](?=\\s|\\)|$)",
+          "match": "(?<=[(\\s]|^)[\\-*+/%](?=[\\s)]|$)",
           "name": "keyword.operator.numeric.emacs.lisp"
         },
         {
-          "match": "(?<=\\(|\\s|^)[/<>]=|[=<>](?=\\s|\\)|$)",
+          "match": "(?<=[(\\s]|^)[/<>]=|[=<>](?=[\\s)]|$)",
           "name": "keyword.operator.comparison.emacs.lisp"
         },
         {

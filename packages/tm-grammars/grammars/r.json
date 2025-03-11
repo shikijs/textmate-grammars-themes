@@ -221,35 +221,35 @@
           "name": "constant.language.r"
         },
         {
-          "match": "\\b0(x|X)\\h+i\\b",
+          "match": "\\b0([xX])\\h+i\\b",
           "name": "constant.numeric.imaginary.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:(e|E)(\\+|-)?[0-9]+)?i\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?i\\b",
           "name": "constant.numeric.imaginary.decimal.r"
         },
         {
-          "match": "\\.[0-9]+(?:(e|E)(\\+|-)?[0-9]+)?i\\b",
+          "match": "\\.[0-9]+(?:([eE])([+\\-])?[0-9]+)?i\\b",
           "name": "constant.numeric.imaginary.decimal.r"
         },
         {
-          "match": "\\b0(x|X)\\h+L\\b",
+          "match": "\\b0([xX])\\h+L\\b",
           "name": "constant.numeric.integer.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:(e|E)(\\+|-)?[0-9]+)?L\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?L\\b",
           "name": "constant.numeric.integer.decimal.r"
         },
         {
-          "match": "\\b0(x|X)\\h+\\b",
+          "match": "\\b0([xX])\\h+\\b",
           "name": "constant.numeric.float.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:(e|E)(\\+|-)?[0-9]+)?\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?\\b",
           "name": "constant.numeric.float.decimal.r"
         },
         {
-          "match": "\\.[0-9]+(?:(e|E)(\\+|-)?[0-9]+)?\\b",
+          "match": "\\.[0-9]+(?:([eE])([+\\-])?[0-9]+)?\\b",
           "name": "constant.numeric.float.decimal.r"
         }
       ]
@@ -375,7 +375,7 @@
           "name": "keyword.control.r"
         },
         {
-          "match": "(-|\\+|\\*|/|%/%|%%|%\\*%|%o%|%x%|\\^)",
+          "match": "([\\-+*/]|%/%|%%|%\\*%|%o%|%x%|\\^)",
           "name": "keyword.operator.arithmetic.r"
         },
         {
@@ -383,7 +383,7 @@
           "name": "keyword.operator.assignment.r"
         },
         {
-          "match": "(==|<=|>=|!=|<>|<|>|%in%)",
+          "match": "(==|<=|>=|!=|<>|[<>]|%in%)",
           "name": "keyword.operator.comparison.r"
         },
         {
@@ -399,7 +399,7 @@
           "name": "keyword.operator.other.r"
         },
         {
-          "match": "(\\.\\.\\.|\\$|:|~|@)",
+          "match": "(\\.\\.\\.|[$:~@])",
           "name": "keyword.other.r"
         }
       ]

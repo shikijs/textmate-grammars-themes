@@ -401,7 +401,7 @@
           "name": "constant.numeric.float.graphql"
         }
       },
-      "match": "\\s*(-?(0|[1-9][0-9]*)(\\.[0-9]+)?((e|E)(\\+|-)?[0-9]+)?)"
+      "match": "\\s*(-?(0|[1-9][0-9]*)(\\.[0-9]+)?(([eE])([+\\-])?[0-9]+)?)"
     },
     "graphql-fragment-definition": {
       "begin": "\\s*(\\bfragment\\b)\\s*([_A-Za-z][_0-9A-Za-z]*)?\\s*(\\bon\\b)\\s*([_A-Za-z][_0-9A-Za-z]*)",
@@ -734,7 +734,7 @@
                   "name": "variable.arguments.graphql"
                 }
               },
-              "end": "(?=\\s*(([_A-Za-z][_0-9A-Za-z]*)\\s*(\\(|:)|(})))|\\s*(,)",
+              "end": "(?=\\s*(([_A-Za-z][_0-9A-Za-z]*)\\s*([(:])|(})))|\\s*(,)",
               "endCaptures": {
                 "5": {
                   "name": "punctuation.comma.graphql"
@@ -895,7 +895,7 @@
           "name": "variable.graphql"
         }
       },
-      "end": "(?=\\s*(([_A-Za-z][_0-9A-Za-z]*)\\s*(\\(|:)|(})))|\\s*(,)",
+      "end": "(?=\\s*(([_A-Za-z][_0-9A-Za-z]*)\\s*([(:])|(})))|\\s*(,)",
       "endCaptures": {
         "5": {
           "name": "punctuation.comma.graphql"
@@ -1187,7 +1187,7 @@
           "name": "variable.parameter.graphql"
         }
       },
-      "end": "(?=\\s*((\\$?[_A-Za-z][_0-9A-Za-z]*)\\s*(\\(|:)|(}|\\))))|\\s*(,)",
+      "end": "(?=\\s*((\\$?[_A-Za-z][_0-9A-Za-z]*)\\s*([(:])|([})])))|\\s*(,)",
       "endCaptures": {
         "5": {
           "name": "punctuation.comma.graphql"

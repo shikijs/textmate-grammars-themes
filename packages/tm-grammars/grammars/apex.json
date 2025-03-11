@@ -408,7 +408,7 @@
       ]
     },
     "conditional-operator": {
-      "begin": "(?<!\\?)\\?(?!\\?|\\.|\\[)",
+      "begin": "(?<!\\?)\\?(?![?.\\[])",
       "beginCaptures": {
         "0": {
           "name": "keyword.operator.conditional.question-mark.apex"
@@ -520,7 +520,7 @@
           "name": "keyword.control.loop.do.apex"
         }
       },
-      "end": "(?=;|})",
+      "end": "(?=[;}])",
       "patterns": [
         {
           "include": "#statement"
@@ -625,7 +625,7 @@
                   "name": "entity.name.variable.enum-member.apex"
                 }
               },
-              "end": "(?=(,|}))",
+              "end": "(?=([,}]))",
               "patterns": [
                 {
                   "include": "#javadoc-comment"
@@ -742,7 +742,7 @@
           "name": "keyword.operator.comparison.apex"
         },
         {
-          "match": "(?:<|>)(?:=|)",
+          "match": "<=|>=|[<>]",
           "name": "keyword.operator.relational.apex"
         },
         {
@@ -750,7 +750,7 @@
           "name": "keyword.operator.logical.apex"
         },
         {
-          "match": "&|~|\\^|\\|",
+          "match": "[\\&~\\^|]",
           "name": "keyword.operator.bitwise.apex"
         },
         {
@@ -766,7 +766,7 @@
           "name": "keyword.operator.increment.apex"
         },
         {
-          "match": "%|\\*|/|-|\\+",
+          "match": "[%*/\\-+]",
           "name": "keyword.operator.arithmetic.apex"
         }
       ]
@@ -784,7 +784,7 @@
       "end": "(?=\\{|implements)"
     },
     "field-declaration": {
-      "begin": "(?<type_name>(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*)\\s+(\\g<identifier>)\\s*(?!=(?:>|=))(?=,|;|=|$)",
+      "begin": "(?<type_name>(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*)\\s+(\\g<identifier>)\\s*(?!=[>=])(?=[,;=]|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -1247,7 +1247,7 @@
       ]
     },
     "local-constant-declaration": {
-      "begin": "(?<const_keyword>\\bconst\\b)\\s*(?<type_name>(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*)\\s+(\\g<identifier>)\\s*(?=,|;|=)",
+      "begin": "(?<const_keyword>\\bconst\\b)\\s*(?<type_name>(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*)\\s+(\\g<identifier>)\\s*(?=[,;=])",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1291,7 +1291,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:ref\\s+)?(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*))\\s+(\\g<identifier>)\\s*(?=,|;|=|\\))",
+      "begin": "(?:(?:(\\bref)\\s+)?(\\bvar\\b)|(?<type_name>(?:ref\\s+)?(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*))\\s+(\\g<identifier>)\\s*(?=[,;=)])",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.apex"
@@ -1313,7 +1313,7 @@
           "name": "entity.name.variable.local.apex"
         }
       },
-      "end": "(?=;|\\))",
+      "end": "(?=[;)])",
       "patterns": [
         {
           "match": "@?[_[:alpha:]][_[:alnum:]]*",
@@ -1348,7 +1348,7 @@
               "name": "variable.other.object.property.apex"
             }
           },
-          "match": "(\\??\\.)\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?![_[:alnum:]]|\\(|(\\?)?\\[|<)"
+          "match": "(\\??\\.)\\s*(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?![_[:alnum:](]|(\\?)?\\[|<)"
         },
         {
           "captures": {
@@ -1493,7 +1493,7 @@
           "name": "punctuation.separator.colon.apex"
         }
       },
-      "end": "(?=(,|\\)|]))",
+      "end": "(?=([,)\\]]))",
       "patterns": [
         {
           "include": "#expression"
@@ -1507,7 +1507,7 @@
     "numeric-literal": {
       "patterns": [
         {
-          "match": "\\b(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(-|\\+)\\d{2}:\\d{2})\\b",
+          "match": "\\b(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?([\\-+])\\d{2}:\\d{2})\\b",
           "name": "constant.numeric.datetime.apex"
         },
         {
@@ -1519,27 +1519,27 @@
           "name": "constant.numeric.date.apex"
         },
         {
-          "match": "\\b0(x|X)[_\\h]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
+          "match": "\\b0([xX])[_\\h]+([UuLl]|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
           "name": "constant.numeric.hex.apex"
         },
         {
-          "match": "\\b0(b|B)[01_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
+          "match": "\\b0([bB])[01_]+([UuLl]|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
           "name": "constant.numeric.binary.apex"
         },
         {
-          "match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F|f|D|d|M|m)?\\b",
+          "match": "\\b([0-9_]+)?\\.[0-9_]+(([eE])[0-9]+)?([FfDdMm])?\\b",
           "name": "constant.numeric.decimal.apex"
         },
         {
-          "match": "\\b[0-9_]+(e|E)[0-9_]+(F|f|D|d|M|m)?\\b",
+          "match": "\\b[0-9_]+([eE])[0-9_]+([FfDdMm])?\\b",
           "name": "constant.numeric.decimal.apex"
         },
         {
-          "match": "\\b[0-9_]+(F|f|D|d|M|m)\\b",
+          "match": "\\b[0-9_]+([FfDdMm])\\b",
           "name": "constant.numeric.decimal.apex"
         },
         {
-          "match": "\\b[0-9_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
+          "match": "\\b[0-9_]+([UuLl]|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b",
           "name": "constant.numeric.decimal.apex"
         }
       ]
@@ -1606,7 +1606,7 @@
       ]
     },
     "operator-assignment": {
-      "match": "(?<!=|!)(=)(?!=)",
+      "match": "(?<![=!])(=)(?!=)",
       "name": "keyword.operator.assignment.apex"
     },
     "operator-safe-navigation": {
@@ -1896,7 +1896,7 @@
           "name": "keyword.operator.conditional.colon.apex"
         }
       },
-      "end": "(?![_[:alnum:]]|\\(|(\\?)?\\[|<)",
+      "end": "(?![_[:alnum:](]|(\\?)?\\[|<)",
       "patterns": [
         {
           "include": "#trigger-context-declaration"
@@ -2228,7 +2228,7 @@
       "match": "\\b(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)\\b"
     },
     "support-expression": {
-      "begin": "(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)(?=\\.|\\s)",
+      "begin": "(ApexPages|Database|DMLException|Exception|PageReference|Savepoint|SchedulableContext|Schema|SObject|System|Test)(?=[.\\s])",
       "beginCaptures": {
         "1": {
           "name": "support.class.apex"
@@ -2842,7 +2842,7 @@
       "match": "((USING SCOPE)\\b\\s*(Delegated|Everything|Mine|My_Territory|My_Team_Territory|Team))\\b\\s*"
     },
     "variable-initializer": {
-      "begin": "(?<!=|!)(=)(?!=|>)",
+      "begin": "(?<![=!])(=)(?![=>])",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.assignment.apex"

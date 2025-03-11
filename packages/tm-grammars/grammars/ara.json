@@ -159,7 +159,7 @@
           "name": "punctuation.separator.colon.ara"
         }
       },
-      "match": "(?i)(?<=^|\\(|,)\\s*([a-z_\\x7F-\\x{10FFFF}][a-z0-9_\\x7F-\\x{10FFFF}]*)\\s*(:)(?!:)"
+      "match": "(?i)(?<=^|[(,])\\s*([a-z_\\x7F-\\x{10FFFF}][a-z0-9_\\x7F-\\x{10FFFF}]*)\\s*(:)(?!:)"
     },
     "namespace": {
       "begin": "(?i)((namespace)|[a-z0-9_]+)?(\\\\)(?=.*?[^a-z_0-9\\\\])",
@@ -231,11 +231,11 @@
           "name": "keyword.assignments.ara"
         },
         {
-          "match": "(\\^|\\||\\|\\||&&|>>|<<|&|~|<<|>>|>|<|<=>|\\?\\?|\\?|:|\\?:)(?!=)",
+          "match": "([\\^|]|\\|\\||&&|>>|<<|[\\&~]|<<|>>|[><]|<=>|\\?\\?|[?:]|\\?:)(?!=)",
           "name": "keyword.operators.ara"
         },
         {
-          "match": "(==|===|!==|!=|<=|>=|<|>)(?!=)",
+          "match": "(==|===|!==|!=|<=|>=|[<>])(?!=)",
           "name": "keyword.operator.comparison.ara"
         },
         {
@@ -243,7 +243,7 @@
           "name": "keyword.operator.math.ara"
         },
         {
-          "match": "(?<![<>])=(?!=|>)",
+          "match": "(?<![<>])=(?![=>])",
           "name": "keyword.operator.assignment.ara"
         },
         {

@@ -85,12 +85,6 @@ export async function cleanupGrammar(grammar: any, verify = true) {
             // Follow `vscode-oniguruma` which enables this Oniguruma option by default
             captureGroup: true,
           },
-          // As we would keep supporting the JS engine in Node18 for a while
-          // this optimization is not available. We might consider to enable it
-          // once we drop support for Node18.
-          override: {
-            alternationToClass: false,
-          },
         }).pattern
       }
       catch {

@@ -381,7 +381,7 @@
           "name": "keyword.end.bracket.cobol"
         }
       },
-      "match": "(?<=(\\(|\\[))((-\\+)*\\s*[0-9 ,.+\\-*/]+)(?=(\\)|]))",
+      "match": "(?<=([(\\[]))((-\\+)*\\s*[0-9 ,.+\\-*/]+)(?=([)\\]]))",
       "name": "constant.numeric.cobol"
     },
     {
@@ -395,7 +395,7 @@
       "name": "constant.language.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:zeroes|alphabetic-lower|alphabetic-upper|alphanumeric-edited|alphabetic|alphabet|alphanumeric|zeros|zeros|zero|spaces|space|quotes|quote|low-values|low-value|high-values|high-value)(?=\\s+|\\.|,|\\))",
+      "match": "(?<![\\-_])(?i:zeroes|alphabetic-lower|alphabetic-upper|alphanumeric-edited|alphabetic|alphabet|alphanumeric|zeros|zeros|zero|spaces|space|quotes|quote|low-values|low-value|high-values|high-value)(?=\\s+|[.,)])",
       "name": "constant.language.figurative.cobol"
     },
     {
@@ -746,23 +746,23 @@
       "match": "(?<![\\-_])((?i:valuetype-id|operator-id|method-id|method|property-id|attribute-id|enum-id|iterator-id|class-id|program-id|operator-id|end\\s+program|end\\s+valuetype|extension))\\.*\\s+([a-zA-Z0-9_\\-]*)"
     },
     {
-      "match": "(?<![\\-_])(?i:implements|inherits|constraints|constrain)(?=\\s|\\.)",
+      "match": "(?<![\\-_])(?i:implements|inherits|constraints|constrain)(?=[\\s.])",
       "name": "keyword.verb.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:end\\s+enum|end\\s+interface|end\\s+class|end\\s+property|end\\s+method|end\\s+object|end\\s+iterator|end\\s+function|end\\s+operator|end\\s+program|end\\s+indexer|create|reset|instance|delegate|end-delegate|delegate-id|declare|exception-object|as|stop\\s+iterator|stop\\s+run|stop)(?=\\s|\\.|,|\\))",
+      "match": "(?<![\\-_])(?i:end\\s+enum|end\\s+interface|end\\s+class|end\\s+property|end\\s+method|end\\s+object|end\\s+iterator|end\\s+function|end\\s+operator|end\\s+program|end\\s+indexer|create|reset|instance|delegate|end-delegate|delegate-id|declare|exception-object|as|stop\\s+iterator|stop\\s+run|stop)(?=[\\s.,)])",
       "name": "keyword.identifiers.cobol"
     },
     {
-      "match": "\\s+(?i:attach\\s+method|attach\\s+del|attach|detach\\s+del|detach\\s+method|detach|method|del)(?=\\s|\\.|$)",
+      "match": "\\s+(?i:attach\\s+method|attach\\s+del|attach|detach\\s+del|detach\\s+method|detach|method|del)(?=[\\s.]|$)",
       "name": "keyword.identifiers.cobol"
     },
     {
-      "match": "\\s+(?i:sync\\s+(?i:on))(?=\\s|\\.)",
+      "match": "\\s+(?i:sync\\s+(?i:on))(?=[\\s.])",
       "name": "keyword.other.sync.cobol"
     },
     {
-      "match": "\\s+(?i:try|finally|catch|end-try|throw)(?=\\s|\\.|$)",
+      "match": "\\s+(?i:try|finally|catch|end-try|throw)(?=[\\s.]|$)",
       "name": "keyword.control.catch-exception.cobol"
     },
     {
@@ -770,15 +770,15 @@
       "name": "keyword.otherverb.cobol"
     },
     {
-      "match": "(?i:dynamic)\\s+(?i:length)(?=\\s|\\.)",
+      "match": "(?i:dynamic)\\s+(?i:length)(?=[\\s.])",
       "name": "storage.type.dynamiclength.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:assign|external|prototype|organization|organisation|indexed|column|plus|line\\*s*sequential|sequential|access|dynamic|relative|label|block|contains|standard|records|record\\s+key|record|is|alternate|duplicates|reel|tape|terminal|disk\\sfilename|disk|disc|recording\\smode|mode|random)(?=\\s|\\.)",
+      "match": "(?<![\\-_])(?i:assign|external|prototype|organization|organisation|indexed|column|plus|line\\*s*sequential|sequential|access|dynamic|relative|label|block|contains|standard|records|record\\s+key|record|is|alternate|duplicates|reel|tape|terminal|disk\\sfilename|disk|disc|recording\\smode|mode|random)(?=[\\s.])",
       "name": "keyword.identifers.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concatenate)(?=\\s|\\.|\\(|\\))",
+      "match": "(?<![\\-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concatenate)(?=[\\s.()])",
       "name": "support.function.cobol"
     },
     {
@@ -799,7 +799,7 @@
       "match": "(?<![\\-_])(?i:DFH(?:RESP|VALUE))(\\s*\\(\\s*)([a-zA-Z]*)(\\s*\\))"
     },
     {
-      "match": "(?<![\\-_])(?i:function)(?=\\s|\\.)",
+      "match": "(?<![\\-_])(?i:function)(?=[\\s.])",
       "name": "keyword.verb.cobol"
     },
     {
@@ -830,7 +830,7 @@
       "name": "storage.type.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:bit|byte|binary-char|binary-char-unsigned|binary-short|binary-short-unsigned|binary.long|binary-c-long|binary-long-unsigned|binary-long|binary-double|binary-double-unsigned|float-short|float-extended|float-long|bit|condition-value|characters|character\\s+type|character|comma|crt|decimal|object\\+sreference|object-reference|object|list|dictionary|unsigned)(?=\\s|\\.|,|]|\\[)",
+      "match": "(?<![\\-_])(?i:bit|byte|binary-char|binary-char-unsigned|binary-short|binary-short-unsigned|binary.long|binary-c-long|binary-long-unsigned|binary-long|binary-double|binary-double-unsigned|float-short|float-extended|float-long|bit|condition-value|characters|character\\s+type|character|comma|crt|decimal|object\\+sreference|object-reference|object|list|dictionary|unsigned)(?=[\\s.,\\]\\[])",
       "name": "storage.type.cobol"
     },
     {
@@ -981,7 +981,7 @@
       "name": "support.function.cbltypes.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|group-usage|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate|sql)(?=\\s|\\.|\\))",
+      "match": "(?<![\\-_])(?i:computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|group-usage|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate|sql)(?=[\\s.)])",
       "name": "storage.type.picture.cobol"
     },
     {
@@ -1005,11 +1005,11 @@
       "name": "invalid.illegal.screens.acu.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:internal|public|protected|final|private|static|new|abstract|override|readonly|property|async-void|async-value|async)(?=\\s|\\.)",
+      "match": "(?<![\\-_])(?i:internal|public|protected|final|private|static|new|abstract|override|readonly|property|async-void|async-value|async)(?=[\\s.])",
       "name": "storage.modifier.cobol"
     },
     {
-      "match": "=|<|>|<=|>=|<>|\\+|-|\\*|/|(?<![\\-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|less\\s+than|greater)(?![0-9A-Za-z_\\-])",
+      "match": "[=<>]|<=|>=|<>|[+\\-*/]|(?<![\\-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|less\\s+than|greater)(?![0-9A-Za-z_\\-])",
       "name": "keyword.operator.cobol"
     },
     {
@@ -1033,11 +1033,11 @@
       "name": "keyword.json.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:modify|inquire|tab|title|event|center|label-offset|cell|help-id|cells|push-button|radio-button|page-layout-screen|entry-field|list-box|label|default-font|id|no-tab|unsorted|color|height|width|bind|thread|erase|modeless|scroll|system|menu|title-bar|wrap|destroy|resizeable|user-gray|large-font|newline|3-d|data-columns|display-columns|alignment|separation|cursor-frame-width|divider-color|drag-color|heading-color|heading-divider-color|num-rows|record-data|tiled-headings|vpadding|centered-headings|column-headings|self-act|cancel-button|vscroll|report-composer|clsid|primary-interface|active-x-control|default-interface|default-source|auto-minimize|auto-resize|resource|engraved|initial-state|frame|acuactivexcontrol|activex-res|grid|box|message|namespace|class-name|module|constructor|version|strong|culture|method|handle|exception-value|read-only|dividers|graphical|indexed|termination-value|permanent|boxed|visible|centered|record-position|convert)(?=\\s|\\.|,|;|$)",
+      "match": "(?<![\\-_])(?i:modify|inquire|tab|title|event|center|label-offset|cell|help-id|cells|push-button|radio-button|page-layout-screen|entry-field|list-box|label|default-font|id|no-tab|unsorted|color|height|width|bind|thread|erase|modeless|scroll|system|menu|title-bar|wrap|destroy|resizeable|user-gray|large-font|newline|3-d|data-columns|display-columns|alignment|separation|cursor-frame-width|divider-color|drag-color|heading-color|heading-divider-color|num-rows|record-data|tiled-headings|vpadding|centered-headings|column-headings|self-act|cancel-button|vscroll|report-composer|clsid|primary-interface|active-x-control|default-interface|default-source|auto-minimize|auto-resize|resource|engraved|initial-state|frame|acuactivexcontrol|activex-res|grid|box|message|namespace|class-name|module|constructor|version|strong|culture|method|handle|exception-value|read-only|dividers|graphical|indexed|termination-value|permanent|boxed|visible|centered|record-position|convert)(?=[\\s.,;]|$)",
       "name": "invalid.illegal.acu.cobol"
     },
     {
-      "match": "(?<![\\-_])(?i:actual|auto|automatic|based-storage|complex|connect|contained|core-index|db-access-control-key|db-data-name|db-exception|db-record-name|db-set-name|db-status|dead-lock|endcobol|end-disable|end-enable|end-send|end-transceive|eos|file-limits|file-limit|formatted|sort-status|usage-mode)(?=\\s|\\.|,|;|$)",
+      "match": "(?<![\\-_])(?i:actual|auto|automatic|based-storage|complex|connect|contained|core-index|db-access-control-key|db-data-name|db-exception|db-record-name|db-set-name|db-status|dead-lock|endcobol|end-disable|end-enable|end-send|end-transceive|eos|file-limits|file-limit|formatted|sort-status|usage-mode)(?=[\\s.,;]|$)",
       "name": "invalid.illegal.netcobol.cobol"
     },
     {
@@ -1045,7 +1045,7 @@
       "name": "support.type.cobol.acu strong"
     },
     {
-      "match": "(?<![\\-_])(?i:alter)(?=\\s|\\.)",
+      "match": "(?<![\\-_])(?i:alter)(?=[\\s.])",
       "name": "invalid.illegal.cobol"
     },
     {
@@ -1065,7 +1065,7 @@
       "name": "variable.language"
     },
     {
-      "match": "(?<![\\-_])(?i:shortint1|shortint2|shortint3|shortint4|shortint5|shortint6|shortint7|longint1|longint2|longint3|longint4|longint5|longint6|bigint1|bigint2|blob-locator|clob-locator|dbclob-locator|dbclob-file|blob-file|clob-file|clob|dbclob|blob|varbinary|long-varbinary|time-record|timestamp-record|timestamp-offset-record|timestamp-offset|timestamp|rowid|xml|long-varchar)(?=\\s|\\.|\\)|\\()",
+      "match": "(?<![\\-_])(?i:shortint1|shortint2|shortint3|shortint4|shortint5|shortint6|shortint7|longint1|longint2|longint3|longint4|longint5|longint6|bigint1|bigint2|blob-locator|clob-locator|dbclob-locator|dbclob-file|blob-file|clob-file|clob|dbclob|blob|varbinary|long-varbinary|time-record|timestamp-record|timestamp-offset-record|timestamp-offset|timestamp|rowid|xml|long-varchar)(?=[\\s.)(])",
       "name": "storage.type.sql.picture.cobol"
     },
     {
@@ -1119,11 +1119,11 @@
       "name": "keyword.other.dli"
     },
     "number-complex-constant": {
-      "match": "(-|\\+)?((([0-9]+(\\.[0-9]+))|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDd]|UL|ul)?(?=\\s|\\.$|,|\\))",
+      "match": "([\\-+])?((([0-9]+(\\.[0-9]+))|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)([LlFfUuDd]|UL|ul)?(?=\\s|\\.$|[,)])",
       "name": "constant.numeric.cobol"
     },
     "number-simple-constant": {
-      "match": "(-|\\+)?([0-9]+)(?=\\s|\\.$|,|\\))",
+      "match": "([\\-+])?([0-9]+)(?=\\s|\\.$|[,)])",
       "name": "constant.numeric.cobol"
     },
     "string-double-quoted-constant": {

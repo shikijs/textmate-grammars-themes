@@ -1040,7 +1040,7 @@
     "vue-directives-expression": {
       "patterns": [
         {
-          "begin": "(=)\\s*('|\"|`)",
+          "begin": "(=)\\s*(['\"`])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.key-value.html.vue"
@@ -1057,7 +1057,7 @@
           },
           "patterns": [
             {
-              "begin": "(?<=('|\"|`))",
+              "begin": "(?<=(['\"`]))",
               "end": "(?=\\1)",
               "name": "source.ts.embedded.html.vue",
               "patterns": [
@@ -1075,11 +1075,11 @@
               "name": "punctuation.separator.key-value.html.vue"
             }
           },
-          "end": "(?=(\\s|>|/>))",
+          "end": "(?=([\\s>]|/>))",
           "patterns": [
             {
               "begin": "(?=[^'\"`])",
-              "end": "(?=(\\s|>|/>))",
+              "end": "(?=([\\s>]|/>))",
               "name": "source.ts.embedded.html.vue",
               "patterns": [
                 {
@@ -1101,11 +1101,11 @@
           "name": "punctuation.separator.key-value.html.vue"
         }
       },
-      "end": "(?<='|\")",
+      "end": "(?<=['\"])",
       "name": "meta.attribute.generic.vue",
       "patterns": [
         {
-          "begin": "('|\")",
+          "begin": "(['\"])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.begin.html.vue"
@@ -1208,11 +1208,11 @@
           "name": "punctuation.separator.key-value.html.vue"
         }
       },
-      "end": "(?<='|\")",
+      "end": "(?<=['\"])",
       "name": "meta.attribute.style.vue",
       "patterns": [
         {
-          "begin": "('|\")",
+          "begin": "(['\"])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.begin.html.vue"
@@ -1236,7 +1236,7 @@
               "include": "source.css#font-features"
             },
             {
-              "match": "(?<![\\w\\-])--(?:[\\-a-zA-Z_]|[^\\x00-\\x7F])(?:[\\-a-zA-Z0-9_]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.))*",
+              "match": "(?<![\\w\\-])--[\\-a-zA-Z_[^\\x00-\\x7F]](?:[\\-a-zA-Z0-9_[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.))*",
               "name": "variable.css"
             },
             {
@@ -1257,7 +1257,7 @@
                 }
               },
               "contentName": "meta.property-value.css",
-              "end": "\\s*(;)|\\s*(?='|\")",
+              "end": "\\s*(;)|\\s*(?=['\"])",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.terminator.rule.css"
