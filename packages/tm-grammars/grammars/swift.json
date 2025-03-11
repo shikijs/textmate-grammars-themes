@@ -188,7 +188,7 @@
     "builtin-functions": {
       "patterns": [
         {
-          "match": "(?<=\\.)(?:s(?:ort(?:ed)?|plit)|contains|index|partition|f(?:i(?:lter|rst)|orEach|latMap)|with(?:MutableCharacters|CString|U(?:nsafe(?:Mutable(?:BufferPointer|Pointer(?:s|To(?:Header|Elements)))|BufferPointer)|TF8Buffer))|m(?:in|a[px]))(?=\\s*[({])\\b",
+          "match": "(?<=\\.)(?:s(?:ort(?:ed)?|plit)|contains|index|partition|f(?:i(?:lter|rst)|orEach|latMap)|with(?:MutableCharacters|CString|U(?:nsafe(?:Mutable(?:BufferPointer|Pointer(?:s|To(?:Header|Elements)))|BufferPointer)|TF8Buffer))|m(?:in|a(?:p|x)))(?=\\s*[({])\\b",
           "name": "support.function.swift"
         },
         {
@@ -339,7 +339,7 @@
     "builtin-types-builtin-typealias": {
       "patterns": [
         {
-          "match": "\\b(?:Raw(?:Significand|Exponent|Value)|B(?:ooleanLiteralType|uffer|ase)|S(?:t(?:orage|r(?:i(?:ngLiteralType|de)|eam[12]))|ubSequence)|NativeBuffer|C(?:hild(?:ren)?|Bool|S(?:hort|ignedChar)|odeUnit|Char(?:16|32)?|Int|Double|Unsigned(?:Short|Char|Int|Long(?:Long)?)|Float|WideChar|Long(?:Long)?)|I(?:n(?:t(?:Max|egerLiteralType)|d(?:ices|ex(?:Distance)?))|terator)|Distance|U(?:n(?:icodeScalar(?:Type|Index|View|LiteralType)|foldFirstSequence)|TF(?:16(?:Index|View)|8Index)|IntMax)|E(?:lements?|x(?:tendedGraphemeCluster(?:Type|LiteralType)|ponent))|V(?:oid|alue)|Key|Float(?:32|LiteralType|64)|AnyClass)\\b",
+          "match": "\\b(?:Raw(?:Significand|Exponent|Value)|B(?:ooleanLiteralType|uffer|ase)|S(?:t(?:orage|r(?:i(?:ngLiteralType|de)|eam(?:1|2)))|ubSequence)|NativeBuffer|C(?:hild(?:ren)?|Bool|S(?:hort|ignedChar)|odeUnit|Char(?:16|32)?|Int|Double|Unsigned(?:Short|Char|Int|Long(?:Long)?)|Float|WideChar|Long(?:Long)?)|I(?:n(?:t(?:Max|egerLiteralType)|d(?:ices|ex(?:Distance)?))|terator)|Distance|U(?:n(?:icodeScalar(?:Type|Index|View|LiteralType)|foldFirstSequence)|TF(?:16(?:Index|View)|8Index)|IntMax)|E(?:lements?|x(?:tendedGraphemeCluster(?:Type|LiteralType)|ponent))|V(?:oid|alue)|Key|Float(?:32|LiteralType|64)|AnyClass)\\b",
           "name": "support.type.swift"
         },
         {
@@ -525,7 +525,7 @@
               "name": "keyword.control.import.preprocessor.conditional.swift"
             }
           },
-          "end": "(?=\\s*/[/*])|$",
+          "end": "(?=\\s*/(?:/|\\*))|$",
           "name": "meta.preprocessor.conditional.swift",
           "patterns": [
             {
@@ -916,7 +916,7 @@
               "name": "punctuation.separator.key-value.swift"
             }
           },
-          "end": "(?=[\\]>){}])",
+          "end": "(?=]|[>){}])",
           "patterns": [
             {
               "match": ":",
@@ -1004,7 +1004,7 @@
       ]
     },
     "declarations-function": {
-      "begin": "\\b(func)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>)|(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰])(\\g<oph>|(?<opc>[̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+)))\\s*(?=[(<])",
+      "begin": "\\b(func)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>)|(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰])(\\g<oph>|(?<opc>[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+)))\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift"
@@ -1063,7 +1063,7 @@
       ]
     },
     "declarations-function-initializer": {
-      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=[(<])",
+      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift",
@@ -1122,7 +1122,7 @@
           "name": "keyword.operator.function-result.swift"
         }
       },
-      "end": "(?!\\G)(?=\\{|\\bwhere\\b|[;=])|$",
+      "end": "(?!\\G)(?=\\{|\\bwhere\\b|;|=)|$",
       "name": "meta.function-result.swift",
       "patterns": [
         {
@@ -1131,7 +1131,7 @@
       ]
     },
     "declarations-function-subscript": {
-      "begin": "(?<!\\.)\\b(subscript)\\s*(?=[(<])",
+      "begin": "(?<!\\.)\\b(subscript)\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift"
@@ -1341,7 +1341,7 @@
           "name": "keyword.control.import.swift"
         }
       },
-      "end": "(;)|$\\n?|(?=/[/*])",
+      "end": "(;)|$\\n?|(?=/(?:/|\\*))",
       "endCaptures": {
         "1": {
           "name": "punctuation.terminator.statement.swift"
@@ -1385,7 +1385,7 @@
                   ]
                 }
               },
-              "match": "(?<=\\G|\\.)(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰])(\\g<oph>|(?<opc>[̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+))(?=[.;]|$|//|/\\*|\\s)",
+              "match": "(?<=\\G|\\.)(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰])(\\g<oph>|(?<opc>[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+))(?=\\.|;|$|//|/\\*|\\s)",
               "name": "entity.name.type.swift"
             },
             {
@@ -1463,7 +1463,7 @@
     },
     "declarations-inheritance-clause-more-types": {
       "begin": ",\\s*",
-      "end": "(?!\\G)(?!/[/*])|(?=[,={}]|(?!\\G)\\bwhere\\b)",
+      "end": "(?!\\G)(?!/(?:/|\\*))|(?=[,={}]|(?!\\G)\\bwhere\\b)",
       "name": "meta.inheritance-list.more-types",
       "patterns": [
         {
@@ -1481,7 +1481,7 @@
       ]
     },
     "declarations-macro": {
-      "begin": "\\b(macro)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>))\\s*(?=[(<=])",
+      "begin": "\\b(macro)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>))\\s*(?=\\(|<|=)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift"
@@ -1496,7 +1496,7 @@
           "name": "punctuation.definition.identifier.swift"
         }
       },
-      "end": "$|(?=;|//|/\\*|[}=])",
+      "end": "$|(?=;|//|/\\*|}|=)",
       "name": "meta.definition.macro.swift",
       "patterns": [
         {
@@ -1520,7 +1520,7 @@
       ]
     },
     "declarations-operator": {
-      "begin": "(?:\\b(prefix|infix|postfix)\\s+)?\\b(operator)\\s+(((?<oph>[/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰])(\\g<oph>|\\.|(?<opc>[̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))*+)|(\\.(\\g<oph>|\\g<opc>|\\.)++))\\s*",
+      "begin": "(?:\\b(prefix|infix|postfix)\\s+)?\\b(operator)\\s+(((?<oph>[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰])(\\g<oph>|\\.|(?<opc>[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))*+)|(\\.(\\g<oph>|\\g<opc>|\\.)++))\\s*",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.swift"
@@ -1541,7 +1541,7 @@
           ]
         }
       },
-      "end": "(;)|$\\n?|(?=/[/*])",
+      "end": "(;)|$\\n?|(?=/(?:/|\\*))",
       "endCaptures": {
         "1": {
           "name": "punctuation.terminator.statement.swift"
@@ -1897,7 +1897,7 @@
       ]
     },
     "declarations-protocol-protocol-initializer": {
-      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=[(<])",
+      "begin": "(?<!\\.)\\b(init[?!]*)\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift",
@@ -1950,7 +1950,7 @@
       ]
     },
     "declarations-protocol-protocol-method": {
-      "begin": "\\b(func)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>)|(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰])(\\g<oph>|(?<opc>[̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+)))\\s*(?=[(<])",
+      "begin": "\\b(func)\\s+((?<q>`?)[\\p{L}_][\\p{L}_\\p{N}\\p{M}]*(\\k<q>)|(?:((?<oph>[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰])(\\g<oph>|(?<opc>[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))*)|(\\.(\\g<oph>|\\g<opc>|\\.)+)))\\s*(?=\\(|<)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.swift"
@@ -2226,7 +2226,7 @@
           "name": "storage.type.enum.case.swift"
         }
       },
-      "end": "(?=[;}])|(?!\\G)(?!/[/*])(?=[^\\s,])",
+      "end": "(?=[;}])|(?!\\G)(?!/(?:/|\\*))(?=[^\\s,])",
       "patterns": [
         {
           "include": "#comments"
@@ -2241,7 +2241,7 @@
     },
     "declarations-type-enum-more-cases": {
       "begin": ",\\s*",
-      "end": "(?!\\G)(?!/[/*])(?=[;}[^\\s,]])",
+      "end": "(?!\\G)(?!/(?:/|\\*))(?=[;}]|[^\\s,])",
       "name": "meta.enum-case.more-cases",
       "patterns": [
         {
@@ -3783,7 +3783,7 @@
           "name": "string.quoted.double.single-line.swift",
           "patterns": [
             {
-              "match": "[\\r\\n]",
+              "match": "\\r|\\n",
               "name": "invalid.illegal.returns-not-allowed.swift"
             },
             {
@@ -3810,7 +3810,7 @@
           "name": "string.quoted.double.single-line.raw.swift",
           "patterns": [
             {
-              "match": "[\\r\\n]",
+              "match": "\\r|\\n",
               "name": "invalid.illegal.returns-not-allowed.swift"
             }
           ]
@@ -3834,7 +3834,7 @@
           "name": "string.quoted.double.single-line.raw.swift",
           "patterns": [
             {
-              "match": "[\\r\\n]",
+              "match": "\\r|\\n",
               "name": "invalid.illegal.returns-not-allowed.swift"
             },
             {
@@ -3957,7 +3957,7 @@
           "name": "keyword.operator.type-casting.swift"
         },
         {
-          "begin": "(?=(?<oph>[/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰])|\\.(\\g<oph>|[.̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))",
+          "begin": "(?=(?<oph>[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰])|\\.(\\g<oph>|\\.|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))",
           "end": "(?!\\G)",
           "patterns": [
             {
@@ -3969,7 +3969,7 @@
                       "name": "keyword.operator.increment-or-decrement.swift"
                     },
                     {
-                      "match": "\\G([+\\-])$",
+                      "match": "\\G(\\+|-)$",
                       "name": "keyword.operator.arithmetic.unary.swift"
                     },
                     {
@@ -3987,7 +3987,7 @@
                   ]
                 }
               },
-              "match": "\\G(?<=^|[\\s(\\[{,;:])((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++(?![\\s)\\]},;:]|\\z)"
+              "match": "\\G(?<=^|[\\s(\\[{,;:])((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++(?![\\s)\\]},;:]|\\z)"
             },
             {
               "captures": {
@@ -4008,7 +4008,7 @@
                   ]
                 }
               },
-              "match": "\\G(?<!^|[\\s(\\[{,;:])((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++(?=[\\s)\\]},;:]|\\z)"
+              "match": "\\G(?<!^|[\\s(\\[{,;:])((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++(?=[\\s)\\]},;:]|\\z)"
             },
             {
               "captures": {
@@ -4019,15 +4019,15 @@
                       "name": "keyword.operator.assignment.swift"
                     },
                     {
-                      "match": "\\G([+\\-*/%]|<<|>>|[\\&\\^|]|&&|\\|\\|)=$",
+                      "match": "\\G(\\+|-|\\*|/|%|<<|>>|&|\\^|\\||&&|\\|\\|)=$",
                       "name": "keyword.operator.assignment.compound.swift"
                     },
                     {
-                      "match": "\\G([+\\-*/])$",
+                      "match": "\\G(\\+|-|\\*|/)$",
                       "name": "keyword.operator.arithmetic.swift"
                     },
                     {
-                      "match": "\\G&([+\\-*])$",
+                      "match": "\\G&(\\+|-|\\*)$",
                       "name": "keyword.operator.arithmetic.overflow.swift"
                     },
                     {
@@ -4035,7 +4035,7 @@
                       "name": "keyword.operator.arithmetic.remainder.swift"
                     },
                     {
-                      "match": "\\G(==|!=|[><]|>=|<=|~=)$",
+                      "match": "\\G(==|!=|>|<|>=|<=|~=)$",
                       "name": "keyword.operator.comparison.swift"
                     },
                     {
@@ -4047,7 +4047,7 @@
                       "name": "keyword.operator.logical.swift"
                     },
                     {
-                      "match": "\\G([\\&|\\^]|<<|>>)$",
+                      "match": "\\G(&|\\||\\^|<<|>>)$",
                       "name": "keyword.operator.bitwise.swift"
                     },
                     {
@@ -4065,7 +4065,7 @@
                   ]
                 }
               },
-              "match": "\\G((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++"
+              "match": "\\G((?!(//|/\\*|\\*/))([/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++"
             },
             {
               "captures": {
@@ -4078,7 +4078,7 @@
                   ]
                 }
               },
-              "match": "\\G(?<=^|[\\s(\\[{,;:])\\.((?!(//|/\\*|\\*/))([./=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++(?![\\s)\\]},;:]|\\z)"
+              "match": "\\G(?<=^|[\\s(\\[{,;:])\\.((?!(//|/\\*|\\*/))(\\.|[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++(?![\\s)\\]},;:]|\\z)"
             },
             {
               "captures": {
@@ -4091,7 +4091,7 @@
                   ]
                 }
               },
-              "match": "\\G(?<!^|[\\s(\\[{,;:])\\.((?!(//|/\\*|\\*/))([./=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++(?=[\\s)\\]},;:]|\\z)"
+              "match": "\\G(?<!^|[\\s(\\[{,;:])\\.((?!(//|/\\*|\\*/))(\\.|[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++(?=[\\s)\\]},;:]|\\z)"
             },
             {
               "captures": {
@@ -4108,7 +4108,7 @@
                   ]
                 }
               },
-              "match": "\\G\\.((?!(//|/\\*|\\*/))([./=\\-+!*%<>\\&|\\^~?¡-§©«¬®°-±¶»¿×÷‖-‗†-‧‰-‾⁁-⁓⁕-⁞←-⏿─-❵➔-⯿⸀-⹿、-〃〈-〰̀-ͯ᷀-᷿⃐-⃿︀-️︠-︯\\x{E0100}-\\x{E01EF}]))++"
+              "match": "\\G\\.((?!(//|/\\*|\\*/))(\\.|[/=\\-+!*%<>\\&|\\^~?]|[¡-§]|[©«]|[¬®]|[°-±¶»¿×÷]|[‖-‗†-‧]|[‰-‾]|[⁁-⁓]|[⁕-⁞]|[←-⏿]|[─-❵]|[➔-⯿]|[⸀-⹿]|[、-〃]|[〈-〰]|[̀-ͯ]|[᷀-᷿]|[⃐-⃿]|[︀-️]|[︠-︯]|[\\x{E0100}-\\x{E01EF}]))++"
             }
           ]
         },

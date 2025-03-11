@@ -50,7 +50,7 @@
     "admonition-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(NOTE|TIP|IMPORTANT|WARNING|CAUTION)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(NOTE|TIP|IMPORTANT|WARNING|CAUTION)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--|====)$|^\\p{blank}*$)",
           "name": "markup.admonition.asciidoc",
           "patterns": [
@@ -64,7 +64,7 @@
                   ]
                 }
               },
-              "match": "^\\[(NOTE|TIP|IMPORTANT|WARNING|CAUTION)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(NOTE|TIP|IMPORTANT|WARNING|CAUTION)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -155,7 +155,7 @@
     "attribute-entry": {
       "patterns": [
         {
-          "begin": "^(:)(!?\\w.*?)(:)(\\p{blank}+.+\\p{blank}[+\\\\])$",
+          "begin": "^(:)(!?\\w.*?)(:)(\\p{blank}+.+\\p{blank}(?:\\+|\\\\))$",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.attribute-entry.asciidoc"
@@ -185,7 +185,7 @@
             }
           },
           "contentName": "string.unquoted.attribute-value.asciidoc",
-          "end": "^(?:\\p{blank}+.+$(?<![+\\\\])|\\p{blank}*$)",
+          "end": "^(?:\\p{blank}+.+$(?<!\\+|\\\\)|\\p{blank}*$)",
           "endCaptures": {
             "0": {
               "name": "string.unquoted.attribute-value.asciidoc"
@@ -347,7 +347,7 @@
               ]
             }
           },
-          "match": "(?<=[{,]|.|[#\"'%])([^\\],.#%]+)",
+          "match": "(?<=\\{|,|.|#|\"|'|%)([^\\],.#%]+)",
           "name": "markup.meta.attribute-list.asciidoc"
         }
       ]
@@ -484,7 +484,7 @@
     "comment-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(comment)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(comment)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--)$|^\\p{blank}*$)",
           "name": "comment.block.asciidoc",
           "patterns": [
@@ -498,7 +498,7 @@
                   ]
                 }
               },
-              "match": "^\\[(comment)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(comment)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -565,7 +565,7 @@
     "example-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(example)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(example)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--|====)$|^\\p{blank}*$)",
           "name": "markup.block.example.asciidoc",
           "patterns": [
@@ -579,7 +579,7 @@
                   ]
                 }
               },
-              "match": "^\\[(example)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(example)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -709,7 +709,7 @@
     "horizontal-rule": {
       "patterns": [
         {
-          "match": "^(?:['<]{3,}$| {0,3}([\\-*'])( *)\\1\\2\\1$)",
+          "match": "^(?:(?:'|<){3,}$| {0,3}([\\-*'])( *)\\1\\2\\1$)",
           "name": "constant.other.symbol.horizontal-rule.asciidoc"
         }
       ]
@@ -913,7 +913,7 @@
               "name": "string.unquoted.asciidoc"
             }
           },
-          "match": "(?:^|[<\\s>()\\[\\];])((?<!\\\\)(?:https?|file|ftp|irc)://[^\\s\\[\\]<]*[^\\s.,\\[\\]<)])(?:\\[((?:\\\\]|[^\\]])*?)])?",
+          "match": "(?:^|<|[\\s>()\\[\\];])((?<!\\\\)(?:https?|file|ftp|irc)://[^\\s\\[\\]<]*[^\\s.,\\[\\]<)])(?:\\[((?:\\\\]|[^\\]])*?)])?",
           "name": "markup.other.url.asciidoc"
         },
         {
@@ -925,7 +925,7 @@
               "name": "string.unquoted.asciidoc"
             }
           },
-          "match": "(?:^|[<[:blank:]>()\\[\\];])((?<!\\\\)\\{uri-\\w+(?:-\\w+)*(?<!\\\\)})\\[((?:\\\\]|[^\\]])*?)]",
+          "match": "(?:^|<|[[:blank:]>()\\[\\];])((?<!\\\\)\\{uri-\\w+(?:-\\w+)*(?<!\\\\)})\\[((?:\\\\]|[^\\]])*?)]",
           "name": "markup.other.url.asciidoc"
         },
         {
@@ -1010,7 +1010,7 @@
     "listing-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(listing)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(listing)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--)$|^\\p{blank}*$)",
           "name": "markup.block.listing.asciidoc",
           "patterns": [
@@ -1024,7 +1024,7 @@
                   ]
                 }
               },
-              "match": "^\\[(listing)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(listing)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -1047,7 +1047,7 @@
     "literal-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(literal)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(literal)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.block.literal.asciidoc",
           "patterns": [
@@ -1061,7 +1061,7 @@
                   ]
                 }
               },
-              "match": "^\\[(literal)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(literal)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -1291,7 +1291,7 @@
     "passthrough-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(pass)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(pass)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--|\\+\\+)$|^\\p{blank}*$)",
           "name": "markup.block.passthrough.asciidoc",
           "patterns": [
@@ -1306,7 +1306,7 @@
                   ]
                 }
               },
-              "match": "^\\[(pass)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(pass)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -1346,7 +1346,7 @@
     "quote-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(quote|verse)([,#.%]([^,\\]]+))*]$))",
+          "begin": "(?=(?>^\\[(quote|verse)((?:,|#|\\.|%)([^,\\]]+))*]$))",
           "end": "((?<=____|\"\"|--)$|^\\p{blank}*$)",
           "name": "markup.italic.quotes.asciidoc",
           "patterns": [
@@ -1360,7 +1360,7 @@
                   ]
                 }
               },
-              "match": "^\\[(quote|verse)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(quote|verse)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -1437,7 +1437,7 @@
     "sidebar-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(sidebar)([,#.%][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(sidebar)((?:,|#|\\.|%)[^\\]]+)*]$))",
           "end": "((?<=--|\\*\\*\\*\\*)$|^\\p{blank}*$)",
           "name": "markup.block.sidebar.asciidoc",
           "patterns": [
@@ -1451,7 +1451,7 @@
                   ]
                 }
               },
-              "match": "^\\[(sidebar)([,#.%]([^,\\]]+))*]$"
+              "match": "^\\[(sidebar)((?:,|#|\\.|%)([^,\\]]+))*]$"
             },
             {
               "include": "#block-title"
@@ -1494,7 +1494,7 @@
     "source-asciidoctor": {
       "patterns": [
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(c))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(c))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.c.asciidoc",
           "patterns": [
@@ -1509,7 +1509,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(c))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(c))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1568,7 +1568,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(clojure))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(clojure))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.clojure.asciidoc",
           "patterns": [
@@ -1583,7 +1583,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(clojure))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(clojure))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1642,7 +1642,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(coffee-?(script)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(coffee-?(script)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.coffee.asciidoc",
           "patterns": [
@@ -1657,7 +1657,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(coffee-?(script)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(coffee-?(script)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1716,7 +1716,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(c(pp|\\+\\+)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(c(pp|\\+\\+)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.cpp.asciidoc",
           "patterns": [
@@ -1731,7 +1731,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(c(pp|\\+\\+)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(c(pp|\\+\\+)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1790,7 +1790,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(css))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(css))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.css.asciidoc",
           "patterns": [
@@ -1805,7 +1805,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(css))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(css))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1864,7 +1864,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(cs(harp)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(cs(harp)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.cs.asciidoc",
           "patterns": [
@@ -1879,7 +1879,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(cs(harp)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(cs(harp)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -1938,7 +1938,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(diff|patch|rej))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(diff|patch|rej))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.diff.asciidoc",
           "patterns": [
@@ -1953,7 +1953,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(diff|patch|rej))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(diff|patch|rej))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2012,7 +2012,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(docker(file)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(docker(file)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.dockerfile.asciidoc",
           "patterns": [
@@ -2027,7 +2027,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(docker(file)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(docker(file)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2086,7 +2086,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(elixir))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(elixir))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.elixir.asciidoc",
           "patterns": [
@@ -2101,7 +2101,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(elixir))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(elixir))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2160,7 +2160,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(elm))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(elm))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.elm.asciidoc",
           "patterns": [
@@ -2175,7 +2175,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(elm))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(elm))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2234,7 +2234,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(erlang))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(erlang))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.erlang.asciidoc",
           "patterns": [
@@ -2249,7 +2249,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(erlang))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(erlang))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2308,7 +2308,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(go(lang)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(go(lang)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.go.asciidoc",
           "patterns": [
@@ -2323,7 +2323,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(go(lang)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(go(lang)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2382,7 +2382,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(groovy))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(groovy))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.groovy.asciidoc",
           "patterns": [
@@ -2397,7 +2397,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(groovy))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(groovy))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2456,7 +2456,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(haskell))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(haskell))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.haskell.asciidoc",
           "patterns": [
@@ -2471,7 +2471,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(haskell))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(haskell))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2530,7 +2530,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(html))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(html))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.html.basic.asciidoc",
           "patterns": [
@@ -2545,7 +2545,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(html))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(html))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2604,7 +2604,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(java))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(java))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.java.asciidoc",
           "patterns": [
@@ -2619,7 +2619,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(java))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(java))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2678,7 +2678,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(j(?:avascript|s)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(j(?:avascript|s)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.js.asciidoc",
           "patterns": [
@@ -2693,7 +2693,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(j(?:avascript|s)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(j(?:avascript|s)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2752,7 +2752,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(json))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(json))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.json.asciidoc",
           "patterns": [
@@ -2767,7 +2767,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(json))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(json))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2826,7 +2826,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(jsx))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(jsx))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.js.jsx.asciidoc",
           "patterns": [
@@ -2841,7 +2841,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(jsx))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(jsx))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2900,7 +2900,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(julia))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(julia))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.julia.asciidoc",
           "patterns": [
@@ -2915,7 +2915,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(julia))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(julia))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -2974,7 +2974,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(k(?:otlin|ts?)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(k(?:otlin|ts?)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.kotlin.asciidoc",
           "patterns": [
@@ -2989,7 +2989,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(k(?:otlin|ts?)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(k(?:otlin|ts?)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3048,7 +3048,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(less))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(less))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.css.less.asciidoc",
           "patterns": [
@@ -3063,7 +3063,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(less))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(less))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3122,7 +3122,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(make(file)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(make(file)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.makefile.asciidoc",
           "patterns": [
@@ -3137,7 +3137,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(make(file)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(make(file)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3196,7 +3196,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(m(?:arkdown|down|d)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(m(?:arkdown|down|d)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.gfm.asciidoc",
           "patterns": [
@@ -3211,7 +3211,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(m(?:arkdown|down|d)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(m(?:arkdown|down|d)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3270,7 +3270,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(mustache))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(mustache))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.html.mustache.asciidoc",
           "patterns": [
@@ -3285,7 +3285,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(mustache))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(mustache))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3344,7 +3344,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(obj(?:c|ective-c)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(obj(?:c|ective-c)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.objc.asciidoc",
           "patterns": [
@@ -3359,7 +3359,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(obj(?:c|ective-c)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(obj(?:c|ective-c)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3418,7 +3418,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(ocaml))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(ocaml))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.ocaml.asciidoc",
           "patterns": [
@@ -3433,7 +3433,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(ocaml))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(ocaml))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3492,7 +3492,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(perl))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(perl))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.perl.asciidoc",
           "patterns": [
@@ -3507,7 +3507,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(perl))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(perl))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3566,7 +3566,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(perl6))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(perl6))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.perl6.asciidoc",
           "patterns": [
@@ -3581,7 +3581,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(perl6))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(perl6))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3640,7 +3640,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(php))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(php))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.html.php.asciidoc",
           "patterns": [
@@ -3655,7 +3655,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(php))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(php))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3714,7 +3714,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(properties))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(properties))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.asciidoc.properties.asciidoc",
           "patterns": [
@@ -3729,7 +3729,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(properties))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(properties))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3788,7 +3788,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(py(thon)?))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(py(thon)?))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.python.asciidoc",
           "patterns": [
@@ -3803,7 +3803,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(py(thon)?))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(py(thon)?))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3862,7 +3862,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(r))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(r))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.r.asciidoc",
           "patterns": [
@@ -3877,7 +3877,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(r))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(r))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -3936,7 +3936,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(r(?:uby|b)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(r(?:uby|b)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.ruby.asciidoc",
           "patterns": [
@@ -3951,7 +3951,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(r(?:uby|b)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(r(?:uby|b)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4010,7 +4010,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(r(?:ust|s)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(r(?:ust|s)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.rust.asciidoc",
           "patterns": [
@@ -4025,7 +4025,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(r(?:ust|s)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(r(?:ust|s)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4084,7 +4084,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(sass))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(sass))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.sass.asciidoc",
           "patterns": [
@@ -4099,7 +4099,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(sass))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(sass))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4158,7 +4158,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(scala))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(scala))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.scala.asciidoc",
           "patterns": [
@@ -4173,7 +4173,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(scala))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(scala))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4232,7 +4232,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(scss))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(scss))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.css.scss.asciidoc",
           "patterns": [
@@ -4247,7 +4247,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(scss))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(scss))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4306,7 +4306,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(sh|bash|shell))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(sh|bash|shell))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.shell.asciidoc",
           "patterns": [
@@ -4321,7 +4321,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(sh|bash|shell))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(sh|bash|shell))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4380,7 +4380,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(sql))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(sql))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.sql.asciidoc",
           "patterns": [
@@ -4395,7 +4395,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(sql))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(sql))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4454,7 +4454,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(swift))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(swift))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.swift.asciidoc",
           "patterns": [
@@ -4469,7 +4469,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(swift))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(swift))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4528,7 +4528,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(toml))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(toml))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.toml.asciidoc",
           "patterns": [
@@ -4543,7 +4543,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(toml))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(toml))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4602,7 +4602,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(t(?:ypescript|s)))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(t(?:ypescript|s)))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.ts.asciidoc",
           "patterns": [
@@ -4617,7 +4617,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(t(?:ypescript|s)))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(t(?:ypescript|s)))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4676,7 +4676,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(xml))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(xml))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.xml.asciidoc",
           "patterns": [
@@ -4691,7 +4691,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(xml))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(xml))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4750,7 +4750,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[,#]\\p{blank}*(?i:(ya?ml))([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)(?:,|#)\\p{blank}*(?i:(ya?ml))((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "name": "markup.code.yaml.asciidoc",
           "patterns": [
@@ -4765,7 +4765,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[,#]\\p{blank}*(?i:(ya?ml))([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)(?:,|#)\\p{blank}*(?i:(ya?ml))((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -4824,7 +4824,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)([,#][^\\]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)((?:,|#)[^\\]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{blank}*$)",
           "patterns": [
             {
@@ -4838,7 +4838,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)([,#]([^,\\]]+))*]$"
+              "match": "^\\[(source)((?:,|#)([^,\\]]+))*]$"
             },
             {
               "include": "#inlines"
@@ -6322,7 +6322,7 @@
     "titles": {
       "patterns": [
         {
-          "begin": "^([=#]{6})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){6})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6340,7 +6340,7 @@
           ]
         },
         {
-          "begin": "^([=#]{5})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){5})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6358,7 +6358,7 @@
           ]
         },
         {
-          "begin": "^([=#]{4})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){4})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6376,7 +6376,7 @@
           ]
         },
         {
-          "begin": "^([=#]{3})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){3})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6394,7 +6394,7 @@
           ]
         },
         {
-          "begin": "^([=#]{2})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){2})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6412,7 +6412,7 @@
           ]
         },
         {
-          "begin": "^([=#]{1})(\\p{blank}+)(?=\\S+)",
+          "begin": "^((?:=|#){1})(\\p{blank}+)(?=\\S+)",
           "beginCaptures": {
             "1": {
               "name": "markup.heading.marker.asciidoc"
@@ -6445,7 +6445,7 @@
               "name": "punctuation.definition.asciidoc"
             }
           },
-          "match": "(?:^|(?<![[:word:];:]))(\\[([^\\]]+?)])?(\"`)(\\S(?:|.*?\\S))(`\")(?!\\p{word})",
+          "match": "(?:^|(?<!\\p{word}|;|:))(\\[([^\\]]+?)])?(\"`)(\\S(?:|.*?\\S))(`\")(?!\\p{word})",
           "name": "markup.italic.quote.typographic-quotes.asciidoc"
         },
         {
@@ -6460,7 +6460,7 @@
               "name": "punctuation.definition.asciidoc"
             }
           },
-          "match": "(?:^|(?<![[:word:];:]))(\\[([^\\]]+?)])?('`)(\\S(?:|.*?\\S))(`')(?!\\p{word})",
+          "match": "(?:^|(?<!\\p{word}|;|:))(\\[([^\\]]+?)])?('`)(\\S(?:|.*?\\S))(`')(?!\\p{word})",
           "name": "markup.italic.quote.typographic-quotes.asciidoc"
         }
       ]

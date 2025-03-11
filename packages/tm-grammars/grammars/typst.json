@@ -84,7 +84,7 @@
           "name": "keyword.operator.assignment.typst"
         },
         {
-          "match": "[+*/]|(?<![[:alpha:]_][[:alnum:]_\\-]*)-(?![:alnum]_-]*[[:alpha:]_])",
+          "match": "\\+|\\*|/|(?<![[:alpha:]_][[:alnum:]_\\-]*)-(?![:alnum]_-]*[[:alpha:]_])",
           "name": "keyword.operator.arithmetic.typst"
         },
         {
@@ -115,7 +115,7 @@
           "include": "#constants"
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_\\-]*!?(?=[\\[(])",
+          "match": "\\b[[:alpha:]_][[:alnum:]_\\-]*!?(?=\\[|\\()",
           "name": "entity.name.function.typst"
         },
         {
@@ -302,13 +302,13 @@
           "name": "constant.symbol.typst"
         },
         {
-          "begin": "(^\\*|\\*$|((?<=[\\W_])\\*)|(\\*(?=[\\W_])))",
+          "begin": "(^\\*|\\*$|((?<=\\W|_)\\*)|(\\*(?=\\W|_)))",
           "captures": {
             "0": {
               "name": "punctuation.definition.bold.typst"
             }
           },
-          "end": "(^\\*|\\*$|((?<=[\\W_])\\*)|(\\*(?=[\\W_])))|\\n|(?=])",
+          "end": "(^\\*|\\*$|((?<=\\W|_)\\*)|(\\*(?=\\W|_)))|\\n|(?=])",
           "name": "markup.bold.typst",
           "patterns": [
             {
@@ -317,13 +317,13 @@
           ]
         },
         {
-          "begin": "(^_|_$|((?<=[\\W_])_)|(_(?=[\\W_])))",
+          "begin": "(^_|_$|((?<=\\W|_)_)|(_(?=\\W|_)))",
           "captures": {
             "0": {
               "name": "punctuation.definition.italic.typst"
             }
           },
-          "end": "(^_|_$|((?<=[\\W_])_)|(_(?=[\\W_])))|\\n|(?=])",
+          "end": "(^_|_$|((?<=\\W|_)_)|(_(?=\\W|_)))|\\n|(?=])",
           "name": "markup.italic.typst",
           "patterns": [
             {
@@ -450,7 +450,7 @@
           "name": "keyword.other.typst"
         },
         {
-          "begin": "((#)if|(?<=([}\\]])\\s*)else)\\b",
+          "begin": "((#)if|(?<=(}|])\\s*)else)\\b",
           "beginCaptures": {
             "0": {
               "name": "keyword.control.conditional.typst"
@@ -459,7 +459,7 @@
               "name": "punctuation.definition.keyword.typst"
             }
           },
-          "end": "\\n|(?=])|(?<=[}\\]])",
+          "end": "\\n|(?=])|(?<=}|])",
           "patterns": [
             {
               "include": "#code"
@@ -476,7 +476,7 @@
               "name": "punctuation.definition.keyword.typst"
             }
           },
-          "end": "\\n|(?=])|(?<=[}\\]])",
+          "end": "\\n|(?=])|(?<=}|])",
           "patterns": [
             {
               "include": "#code"
@@ -529,7 +529,7 @@
               "name": "punctuation.definition.function.typst"
             }
           },
-          "match": "((#)[[:alpha:]_][[:alnum:]_\\-]*!?)(?=[\\[(])",
+          "match": "((#)[[:alpha:]_][[:alnum:]_\\-]*!?)(?=\\[|\\()",
           "name": "entity.name.function.typst"
         },
         {

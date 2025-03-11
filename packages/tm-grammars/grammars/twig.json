@@ -305,7 +305,7 @@
       ]
     },
     {
-      "begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|[qs]|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)",
+      "begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|q|s|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -555,7 +555,7 @@
           "name": "punctuation.separator.key-value.html"
         }
       },
-      "end": "(?<=['\"])",
+      "end": "(?<='|\")",
       "name": "meta.attribute-with-value.id.html",
       "patterns": [
         {
@@ -1073,7 +1073,7 @@
               "name": "keyword.operator.arithmetic.twig"
             }
           },
-          "match": "(?<=\\s)([+\\-]|//?|%|\\*\\*?)(?=\\s)"
+          "match": "(?<=\\s)(\\+|-|//?|%|\\*\\*?)(?=\\s)"
         },
         {
           "captures": {
@@ -1081,7 +1081,7 @@
               "name": "keyword.operator.assignment.twig"
             }
           },
-          "match": "(?<=\\s)([=~])(?=\\s)"
+          "match": "(?<=\\s)(=|~)(?=\\s)"
         },
         {
           "captures": {
@@ -1097,7 +1097,7 @@
               "name": "keyword.operator.comparison.twig"
             }
           },
-          "match": "(?<=\\s)([!=]=|<=?|>=?|(?:not )?in|is(?: not)?|(?:ends|starts) with|matches)(?=\\s)"
+          "match": "(?<=\\s)((?:!|=)=|<=?|>=?|(?:not )?in|is(?: not)?|(?:ends|starts) with|matches)(?=\\s)"
         },
         {
           "captures": {
@@ -1105,7 +1105,7 @@
               "name": "keyword.operator.logical.twig"
             }
           },
-          "match": "(?<=\\s)([?:]|\\?:|\\?\\?|and|not|or)(?=\\s)"
+          "match": "(?<=\\s)(\\?|:|\\?:|\\?\\?|and|not|or)(?=\\s)"
         },
         {
           "captures": {

@@ -122,7 +122,7 @@
           ]
         }
       },
-      "match": "\\s+([:+\\-*/%\\&|\\^]?=)\\s+",
+      "match": "\\s+((?::|\\+|-|\\*|/|%|&|\\||\\^)?=)\\s+",
       "name": "meta.definition.variable.v"
     },
     "attributes": {
@@ -627,11 +627,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "([+\\-*/%]|\\+\\+|--|>>|<<)",
+          "match": "(\\+|-|\\*|/|%|\\+\\+|--|>>|<<)",
           "name": "keyword.operator.arithmetic.v"
         },
         {
-          "match": "(==|!=|[><]|>=|<=)",
+          "match": "(==|!=|>|<|>=|<=)",
           "name": "keyword.operator.relation.v"
         },
         {
@@ -639,7 +639,7 @@
           "name": "keyword.operator.assignment.v"
         },
         {
-          "match": "([\\&|\\^~]|<(?!<)|>(?!>))",
+          "match": "(&|\\||\\^|~|<(?!<)|>(?!>))",
           "name": "keyword.operator.bitwise.v"
         },
         {

@@ -170,7 +170,7 @@
           "name": "keyword.other.compiler.directive.verilog"
         },
         {
-          "match": "\\$(f(open|close)|readmem([bh])|timeformat|printtimescale|stop|finish|(s|real)?time|realtobits|bitstoreal|rtoi|itor|(f)?(display|write([hb])))\\b",
+          "match": "\\$(f(open|close)|readmem(b|h)|timeformat|printtimescale|stop|finish|(s|real)?time|realtobits|bitstoreal|rtoi|itor|(f)?(display|write(h|b)))\\b",
           "name": "support.function.system.console.tasks.verilog"
         },
         {
@@ -194,7 +194,7 @@
           "name": "support.function.system.vcd.tasks.verilog"
         },
         {
-          "match": "\\$(countdrivers|list|input|scope|showscopes|(no)?(key|log)|reset(_(?:count|value))?|(inc)?save|restart|showvars|getpattern|sreadmem([bh])|scale)",
+          "match": "\\$(countdrivers|list|input|scope|showscopes|(no)?(key|log)|reset(_(?:count|value))?|(inc)?save|restart|showvars|getpattern|sreadmem(b|h)|scale)",
           "name": "support.function.non-standard.tasks.verilog"
         }
       ]
@@ -244,7 +244,7 @@
     "operators": {
       "patterns": [
         {
-          "match": "[+\\-*/%]|([<>])=?|([!=])?==?|!|&&?|\\|\\|?|\\^?~|~\\^?",
+          "match": "\\+|-|\\*|/|%|(<|>)=?|(!|=)?==?|!|&&?|\\|\\|?|\\^?~|~\\^?",
           "name": "keyword.operator.verilog"
         }
       ]

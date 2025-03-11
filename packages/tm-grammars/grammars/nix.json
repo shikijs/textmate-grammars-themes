@@ -234,7 +234,7 @@
           ]
         },
         {
-          "begin": "(?=\\{\\s*(}|[^,?]*([=;])))",
+          "begin": "(?=\\{\\s*(}|[^,?]*(=|;)))",
           "end": "(?=([\\])};,]|\\b(else|then)\\b))",
           "patterns": [
             {
@@ -511,7 +511,7 @@
           "include": "#attrset-or-function"
         },
         {
-          "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=|!|<=|<|>=|>|&&|\\|\\||->|//|\\?|\\+\\+|[\\-*]|/(?=([^*]|$))|\\+)",
+          "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=|!|<=|<|>=|>|&&|\\|\\||->|//|\\?|\\+\\+|-|\\*|/(?=([^*]|$))|\\+)",
           "name": "keyword.operator.nix"
         },
         {
@@ -994,7 +994,7 @@
       ]
     },
     "operator-unary": {
-      "match": "([!\\-])",
+      "match": "(!|-)",
       "name": "keyword.operator.unary.nix"
     },
     "others": {
@@ -1076,7 +1076,7 @@
                   "name": "punctuation.definition.string.other.start.nix"
                 }
               },
-              "end": "''(?![$']|\\\\.)",
+              "end": "''(?!\\$|'|\\\\.)",
               "endCaptures": {
                 "0": {
                   "name": "punctuation.definition.string.other.end.nix"
@@ -1085,7 +1085,7 @@
               "name": "string.quoted.other.nix",
               "patterns": [
                 {
-                  "match": "''([$']|\\\\.)",
+                  "match": "''(\\$|'|\\\\.)",
                   "name": "constant.character.escape.nix"
                 },
                 {

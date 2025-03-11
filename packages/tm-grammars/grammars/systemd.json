@@ -291,7 +291,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "(?<=[\\s=])\\d+(?:\\.\\d+)?(?=[\\s:]|$)",
+          "match": "(?<=\\s|=)\\d+(?:\\.\\d+)?(?=[\\s:]|$)",
           "name": "constant.numeric"
         }
       ]
@@ -345,7 +345,7 @@
     "sizes": {
       "patterns": [
         {
-          "match": "(?<=[\\s=])\\d+(?:\\.\\d+)?[KMGT](?=[\\s:]|$)",
+          "match": "(?<=\\s|=)\\d+(?:\\.\\d+)?[KMGT](?=[\\s:]|$)",
           "name": "constant.numeric"
         },
         {

@@ -92,7 +92,7 @@
       ]
     },
     {
-      "begin": "^\\s*(?:((%)([\\-\\w:]+))|(?=[.#]))",
+      "begin": "^\\s*(?:((%)([\\-\\w:]+))|(?=\\.|#))",
       "captures": {
         "1": {
           "name": "meta.tag.haml"
@@ -104,7 +104,7 @@
           "name": "entity.name.tag.haml"
         }
       },
-      "end": "$|(?![.#{(\\[]|&amp;|[=\\-~]|!=|&=|/)",
+      "end": "$|(?!\\.|#|\\{|\\(|\\[|&amp;|=|-|~|!=|&=|/)",
       "patterns": [
         {
           "begin": "==",
@@ -135,7 +135,7 @@
           "name": "meta.selector.css"
         },
         {
-          "begin": "(?<!#)\\{(?=.*(,|(do)|[{}|]|(#.*)|\\R)\\s*)",
+          "begin": "(?<!#)\\{(?=.*(,|(do)|\\{|}|\\||(#.*)|\\R)\\s*)",
           "end": "\\s*}(?!\\s*,)(?!\\s*\\|)(?!#\\{.*})",
           "name": "meta.section.attributes.haml",
           "patterns": [
@@ -186,7 +186,7 @@
           ]
         },
         {
-          "begin": "\\[(?=.+([,\\[\\]|]|(#.*))\\s*)",
+          "begin": "\\[(?=.+(,|\\[|]|\\||(#.*))\\s*)",
           "end": "\\s*](?!.*(?!#\\[)])",
           "name": "meta.section.object.haml",
           "patterns": [
@@ -322,7 +322,7 @@
       "match": "^\\s*(\\.)"
     },
     {
-      "begin": "^\\s*(?=[=\\-~]|!=|&=)",
+      "begin": "^\\s*(?==|-|~|!=|&=)",
       "end": "$",
       "patterns": [
         {
@@ -491,7 +491,7 @@
       ]
     },
     "rubyline": {
-      "begin": "(&amp|!)?([=\\-~])",
+      "begin": "(&amp|!)?(=|-|~)",
       "contentName": "source.ruby.embedded.haml",
       "end": "((do|\\{)( \\|[.*]+\\|)?)$|$|^(?!.*\\|\\s*)$\\n?",
       "endCaptures": {
@@ -510,7 +510,7 @@
               "name": "keyword.control.php"
             }
           },
-          "match": "\\s+((elseif|foreach|switch|declare|default|use))(?=[\\s(])"
+          "match": "\\s+((elseif|foreach|switch|declare|default|use))(?=\\s|\\()"
         },
         {
           "captures": {
@@ -518,10 +518,10 @@
               "name": "keyword.control.import.include.php"
             }
           },
-          "match": "\\s+(require_once|include_once)(?=[\\s(])"
+          "match": "\\s+(require_once|include_once)(?=\\s|\\()"
         },
         {
-          "match": "\\s+(catch|try|throw|exception|finally|die)(?=[\\s(]|\\n*)",
+          "match": "\\s+(catch|try|throw|exception|finally|die)(?=\\s|\\(|\\n*)",
           "name": "keyword.control.exception.php"
         },
         {
@@ -541,7 +541,7 @@
           "match": "\\s+(use\\s*)((?=\\())"
         },
         {
-          "match": "([|,<]|do|\\{)\\s*(#.*)?$\\n*",
+          "match": "(\\||,|<|do|\\{)\\s*(#.*)?$\\n*",
           "name": "source.ruby",
           "patterns": [
             {

@@ -479,7 +479,7 @@
               "name": "entity.name.function"
             }
           },
-          "end": "(?=[{;])",
+          "end": "(?=\\{|;)",
           "patterns": [
             {
               "include": "#natspec"
@@ -1039,7 +1039,7 @@
       ]
     },
     "operator-arithmetic": {
-      "match": "([+\\-/*])",
+      "match": "(\\+|-|/|\\*)",
       "name": "keyword.operator.arithmetic"
     },
     "operator-assignment": {
@@ -1047,11 +1047,11 @@
       "name": "keyword.operator.assignment"
     },
     "operator-binary": {
-      "match": "([\\^\\&|]|<<|>>)",
+      "match": "(\\^|&|\\||<<|>>)",
       "name": "keyword.operator.binary"
     },
     "operator-logic": {
-      "match": "(==|!=|<(?!<)|<=|>(?!>)|>=|&&|\\|\\||:(?!=)|[?!])",
+      "match": "(==|!=|<(?!<)|<=|>(?!>)|>=|&&|\\|\\||:(?!=)|\\?|!)",
       "name": "keyword.operator.logic"
     },
     "operator-mapping": {

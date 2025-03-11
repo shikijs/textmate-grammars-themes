@@ -139,7 +139,7 @@
       "name": "meta.record.field.elm"
     },
     {
-      "match": "([}{])",
+      "match": "(}|\\{)",
       "name": "punctuation.bracket.elm"
     },
     {
@@ -159,7 +159,7 @@
       "include": "#infix_op"
     },
     {
-      "match": "([=:|\\\\])",
+      "match": "(=|:|\\||\\\\)",
       "name": "keyword.other.elm"
     },
     {
@@ -313,7 +313,7 @@
       ]
     },
     "infix_op": {
-      "match": "(</>|<\\?>|<\\||<=|\\|\\||&&|>=|\\|>|\\|=|\\|\\.|\\+\\+|::|/=|==|//|>>|<<|[<>\\^+\\-/*])",
+      "match": "(</>|<\\?>|<\\||<=|\\|\\||&&|>=|\\|>|\\|=|\\|\\.|\\+\\+|::|/=|==|//|>>|<<|<|>|\\^|\\+|-|/|\\*)",
       "name": "keyword.operator.elm"
     },
     "module": {
@@ -418,7 +418,7 @@
       "name": "support.module.elm"
     },
     "parens": {
-      "match": "([()])",
+      "match": "(\\(|\\))",
       "name": "punctuation.parens.elm"
     },
     "period": {
@@ -588,7 +588,7 @@
               "name": "constant.type-constructor.elm"
             }
           },
-          "match": "([=|])\\s+([A-Z][a-zA-Z0-9_]*)\\b",
+          "match": "(=|\\|)\\s+([A-Z][a-zA-Z0-9_]*)\\b",
           "name": "meta.record.field.elm"
         },
         {

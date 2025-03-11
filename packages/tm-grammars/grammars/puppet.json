@@ -3,8 +3,8 @@
   "fileTypes": [
     "pp"
   ],
-  "foldingStartMarker": "(^\\s*/\\*|([{\\[(])\\s*$)",
-  "foldingStopMarker": "(\\*/|^\\s*([}\\])]))",
+  "foldingStartMarker": "(^\\s*/\\*|(\\{|\\[|\\()\\s*$)",
+  "foldingStopMarker": "(\\*/|^\\s*(}|]|\\)))",
   "name": "puppet",
   "patterns": [
     {
@@ -63,7 +63,7 @@
               "name": "storage.modifier.puppet"
             }
           },
-          "end": "(?=[({])",
+          "end": "(?=\\(|\\{)",
           "name": "meta.definition.class.inherits.puppet",
           "patterns": [
             {
@@ -318,7 +318,7 @@
               "name": "punctuation.definition.string.begin.puppet"
             }
           },
-          "end": "^\\p{blank}*(\\|\\p{blank}*-|[|\\-])?\\p{blank}*\\1",
+          "end": "^\\p{blank}*(\\|\\p{blank}*-|\\||-)?\\p{blank}*\\1",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.puppet"
@@ -341,7 +341,7 @@
               "name": "punctuation.definition.string.begin.puppet"
             }
           },
-          "end": "^\\p{blank}*(\\|\\p{blank}*-|[|\\-])?\\p{blank}*\\1",
+          "end": "^\\p{blank}*(\\|\\p{blank}*-|\\||-)?\\p{blank}*\\1",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.puppet"
@@ -595,15 +595,15 @@
     "numbers": {
       "patterns": [
         {
-          "match": "(?<![\\w\\d])([\\-+]?)(?i:0x)(?i:[0-9a-f])+(?![\\w\\d])",
+          "match": "(?<!\\w|\\d)([\\-+]?)(?i:0x)(?i:[0-9a-f])+(?!\\w|\\d)",
           "name": "constant.numeric.hexadecimal.puppet"
         },
         {
-          "match": "(?<![\\w.])([\\-+]?)(?<!\\d)\\d+(?i:e([+\\-])?\\d+)?(?![\\w\\d.])",
+          "match": "(?<!\\w|\\.)([\\-+]?)(?<!\\d)\\d+(?i:e(\\+|-)?\\d+)?(?!\\w|\\d|\\.)",
           "name": "constant.numeric.integer.puppet"
         },
         {
-          "match": "(?<!\\w)([\\-+]?)\\d+\\.\\d+(?i:e([+\\-])?\\d+)?(?![\\w\\d])",
+          "match": "(?<!\\w)([\\-+]?)\\d+\\.\\d+(?i:e(\\+|-)?\\d+)?(?!\\w|\\d)",
           "name": "constant.numeric.integer.puppet"
         }
       ]
@@ -680,7 +680,7 @@
               "name": "punctuation.definition.variable.puppet"
             }
           },
-          "match": "((\\$+)[a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=[,)])",
+          "match": "((\\$+)[a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=,|\\))",
           "name": "meta.function.argument.puppet"
         },
         {
@@ -696,7 +696,7 @@
               "name": "keyword.operator.assignment.puppet"
             }
           },
-          "end": "(?=[,)])",
+          "end": "(?=,|\\))",
           "name": "meta.function.argument.puppet",
           "patterns": [
             {

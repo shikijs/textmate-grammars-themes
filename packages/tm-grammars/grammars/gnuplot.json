@@ -60,7 +60,7 @@
           ]
         }
       },
-      "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+      "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
       "name": "meta.variable.gnuplot",
       "patterns": [
         {
@@ -95,7 +95,7 @@
           "name": "keyword.operator.logical.gnuplot"
         },
         {
-          "match": "(<<|>>|[\\&|\\^])",
+          "match": "(<<|>>|&|\\||\\^)",
           "name": "keyword.operator.bitwise.gnuplot"
         },
         {
@@ -107,11 +107,11 @@
           "name": "keyword.operator.assignment.gnuplot"
         },
         {
-          "match": "([+\\-~!])",
+          "match": "(\\+|-|~|!)",
           "name": "keyword.operator.arithmetic.gnuplot"
         },
         {
-          "match": "(\\*\\*|[+\\-*/%])",
+          "match": "(\\*\\*|\\+|-|\\*|/|%)",
           "name": "keyword.operator.arithmetic.gnuplot"
         },
         {
@@ -149,7 +149,7 @@
       "patterns": [
         {
           "begin": "\\bupdate\\b",
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "name": "invalid.deprecated.command.gnuplot"
         },
         {
@@ -159,7 +159,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#InvalidWord"
@@ -173,7 +173,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#Expression"
@@ -197,7 +197,7 @@
               "name": "keyword.control.import.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#SingleQuotedStringLiteral"
@@ -217,7 +217,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "match": "\\b(bind|error(state)?|session)\\b",
@@ -235,7 +235,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#BuiltinVariable"
@@ -259,7 +259,7 @@
               "name": "keyword.control.conditional.gnuplot"
             }
           },
-          "end": "(?=([{#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(\\{|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#Expression"
@@ -273,7 +273,7 @@
               "name": "keyword.control.conditional.gnuplot"
             }
           },
-          "end": "(?=([{#]|\\\\(?!\\n)|(?<!\\\\)\\n$))"
+          "end": "(?=(\\{|#|\\\\(?!\\n)|(?<!\\\\)\\n$))"
         },
         {
           "begin": "\\b(do)\\b",
@@ -282,7 +282,7 @@
               "name": "keyword.control.flow.gnuplot"
             }
           },
-          "end": "(?=([{#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(\\{|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#ForIterationExpr"
@@ -296,7 +296,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "match": "\\b(hidden3d|map|transparent|solid)\\b",
@@ -320,7 +320,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#SetUnsetOptions"
@@ -340,7 +340,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#ExtraShowOptions"
@@ -360,7 +360,7 @@
               "name": "keyword.other.command.gnuplot"
             }
           },
-          "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+          "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
           "patterns": [
             {
               "include": "#ColumnIndexLiteral"
@@ -577,7 +577,7 @@
           "name": "punctuation.definition.parameters.end.gnuplot"
         }
       },
-      "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+      "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
       "name": "meta.function.gnuplot",
       "patterns": [
         {
@@ -658,7 +658,7 @@
           ]
         }
       },
-      "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+      "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
       "patterns": [
         {
           "include": "#Expression"
@@ -740,7 +740,7 @@
           "name": "invalid.deprecated.options.gnuplot"
         },
         {
-          "match": "\\G\\s*\\b(?:angles|arrow|autoscale|border|boxwidth|clip|cntr(label|param)|color(box|sequence)?|contour|(dash|line)type|datafile|decimal(sign)?|dgrid3d|dummy|encoding|(error)?bars|fit|fontpath|format|grid|hidden3d|history|(iso)?samples|jitter|key|label|link|loadpath|locale|logscale|mapping|[lrtb]margin|margins|micro|minus(sign)?|mono(chrome)?|mouse|multiplot|nonlinear|object|offsets|origin|output|parametric|([pr])axis|pm3d|palette|pointintervalbox|pointsize|polar|print|psdir|size|style|surface|table|terminal|termoption|theta|tics|timestamp|timefmt|title|view|xyplane|zero|(no)?(m)?(x|x2|y|y2|z|cb|[rt])tics|(x|x2|y|y2|z|cb)data|(x|x2|y|y2|z|cb|r)label|(x|x2|y|y2|z|cb)dtics|(x|x2|y|y2|z|cb)mtics|(x|x2|y|y2|z|cb|[rtuv])range|(x|x2|y|y2|z)?zeroaxis)\\b",
+          "match": "\\G\\s*\\b(?:angles|arrow|autoscale|border|boxwidth|clip|cntr(label|param)|color(box|sequence)?|contour|(dash|line)type|datafile|decimal(sign)?|dgrid3d|dummy|encoding|(error)?bars|fit|fontpath|format|grid|hidden3d|history|(iso)?samples|jitter|key|label|link|loadpath|locale|logscale|mapping|[lrtb]margin|margins|micro|minus(sign)?|mono(chrome)?|mouse|multiplot|nonlinear|object|offsets|origin|output|parametric|(p|r)axis|pm3d|palette|pointintervalbox|pointsize|polar|print|psdir|size|style|surface|table|terminal|termoption|theta|tics|timestamp|timefmt|title|view|xyplane|zero|(no)?(m)?(x|x2|y|y2|z|cb|r|t)tics|(x|x2|y|y2|z|cb)data|(x|x2|y|y2|z|cb|r)label|(x|x2|y|y2|z|cb)dtics|(x|x2|y|y2|z|cb)mtics|(x|x2|y|y2|z|cb|[rtuv])range|(x|x2|y|y2|z)?zeroaxis)\\b",
           "name": "support.class.options.gnuplot"
         }
       ]
@@ -879,7 +879,7 @@
           ]
         }
       },
-      "end": "(?=([;#]|\\\\(?!\\n)|(?<!\\\\)\\n$))",
+      "end": "(?=(;|#|\\\\(?!\\n)|(?<!\\\\)\\n$))",
       "name": "meta.variable.gnuplot",
       "patterns": [
         {

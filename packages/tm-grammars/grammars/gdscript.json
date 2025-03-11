@@ -76,7 +76,7 @@
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
-      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|[*/%+\\-]",
+      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|\\*|/|%|\\+|-",
       "name": "keyword.operator.arithmetic.gdscript"
     },
     "assignment_operator": {
@@ -181,7 +181,7 @@
       ]
     },
     "bitwise_operator": {
-      "match": "[\\&|]|<<=|>>=|<<|>>|[\\^~]",
+      "match": "&|\\||<<=|>>=|<<|>>|\\^|~",
       "name": "keyword.operator.bitwise.gdscript"
     },
     "boolean_operator": {
@@ -256,7 +256,7 @@
       ]
     },
     "builtin_get_node_shorthand_quoted": {
-      "begin": "(?:([$%])|([\\&\\^@]))([\"'])",
+      "begin": "(?:(\\$|%)|(&|\\^|@))(\"|')",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.gdscript"
@@ -342,7 +342,7 @@
       "name": "comment.line.number-sign.gdscript"
     },
     "compare_operator": {
-      "match": "<=|>=|==|[<>]|!=|!",
+      "match": "<=|>=|==|<|>|!=|!",
       "name": "keyword.operator.comparison.gdscript"
     },
     "const_vars": {
@@ -688,7 +688,7 @@
               "name": "punctuation.separator.continuation.line.gdscript"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|['\"]))|(\\G$))",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|'|\"))|(\\G$))",
           "patterns": [
             {
               "include": "#base_expression"
@@ -744,7 +744,7 @@
       "name": "meta.function.gdscript",
       "patterns": [
         {
-          "begin": "([\"'])",
+          "begin": "(\"|')",
           "end": "\\1",
           "name": "string.quoted.gdscript meta.literal.nodepath.gdscript constant.character.escape",
           "patterns": [
@@ -770,7 +770,7 @@
       "name": "meta.literal.nodepath.gdscript",
       "patterns": [
         {
-          "begin": "([\"'])",
+          "begin": "(\"|')",
           "end": "\\1",
           "name": "string.quoted.gdscript constant.character.escape.gdscript",
           "patterns": [
@@ -1030,7 +1030,7 @@
       "name": "meta.format.percent.gdscript"
     },
     "strings": {
-      "begin": "(r)?(\"\"\"|'''|[\"'])",
+      "begin": "(r)?(\"\"\"|'''|\"|')",
       "beginCaptures": {
         "1": {
           "name": "constant.character.escape.gdscript"

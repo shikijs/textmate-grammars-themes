@@ -103,7 +103,7 @@
     "interpolation": {
       "patterns": [
         {
-          "match": "([\\w.])+",
+          "match": "(\\w|\\.)+",
           "name": "variable.interpolation.narrat"
         }
       ]
@@ -119,15 +119,15 @@
           "name": "variable.value.narrat"
         },
         {
-          "match": "^\\w+(?=([\\s\\w])*:)",
+          "match": "^\\w+(?=(\\s|\\w)*:)",
           "name": "entity.name.function.narrat"
         },
         {
-          "match": "^\\w+(?!([\\s\\w])*:)",
+          "match": "^\\w+(?!(\\s|\\w)*:)",
           "name": "invalid.label.narrat"
         },
         {
-          "match": "(?<=\\w)[^\\^](\\b\\w+\\b)(?=([\\s\\w])*:)",
+          "match": "(?<=\\w)[^\\^](\\b\\w+\\b)(?=(\\s|\\w)*:)",
           "name": "entity.other.attribute-name"
         }
       ]
@@ -135,11 +135,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "(&&|\\|\\||!=|==|>=|<=|[<>!?])\\s",
+          "match": "(&&|\\|\\||!=|==|>=|<=|<|>|!|\\?)\\s",
           "name": "keyword.operator.logic.narrat"
         },
         {
-          "match": "([+\\-*/])\\s",
+          "match": "(\\+|-|\\*|/)\\s",
           "name": "keyword.operator.arithmetic.narrat"
         }
       ]

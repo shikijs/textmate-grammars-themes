@@ -758,7 +758,7 @@
           "name": "standard.library.language.vhdl"
         },
         {
-          "match": "([+\\-]|<=|=|=>|:=|>=|[></|\\&]|(\\*{1,2}))",
+          "match": "(\\+|-|<=|=|=>|:=|>=|>|<|/|\\||&|(\\*{1,2}))",
           "name": "keyword.operator.vhdl"
         }
       ]
@@ -903,7 +903,7 @@
           "patterns": [
             {
               "begin": "(?=['\"a-zA-Z0-9])",
-              "end": "([;),])",
+              "end": "(;|\\)|,)",
               "endCaptures": {
                 "0": {
                   "name": "punctuation.vhdl"
@@ -1038,7 +1038,7 @@
     "procedure_prototype_pattern": {
       "patterns": [
         {
-          "begin": "\\b((?i:procedure))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*([(;]))",
+          "begin": "\\b((?i:procedure))\\s+(([a-zA-Z][a-zA-Z0-9_]*)|(.+?))(?=\\s*(\\(|;))",
           "beginCaptures": {
             "1": {
               "name": "keyword.language.vhdl"
@@ -1217,7 +1217,7 @@
     "punctuation": {
       "patterns": [
         {
-          "match": "([.,:;()])",
+          "match": "(\\.|,|:|;|\\(|\\))",
           "name": "punctuation.vhdl"
         }
       ]

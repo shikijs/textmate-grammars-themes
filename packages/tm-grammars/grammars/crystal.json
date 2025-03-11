@@ -223,7 +223,7 @@
           "name": "punctuation.definition.variable.crystal"
         }
       },
-      "match": "(\\$)([!@\\&`'+]|\\d+|[~=/\\\\,;.<>_*$?:\"]|-[0adFiIlpv])",
+      "match": "(\\$)(!|@|&|`|'|\\+|\\d+|~|=|/|\\\\|,|;|\\.|<|>|_|\\*|\\$|\\?|:|\"|-[0adFiIlpv])",
       "name": "variable.other.readwrite.global.pre-defined.crystal"
     },
     {
@@ -406,7 +406,7 @@
       "name": "string.quoted.single.crystal",
       "patterns": [
         {
-          "match": "\\\\['\\\\]",
+          "match": "\\\\(?:'|\\\\)",
           "name": "constant.character.escape.crystal"
         }
       ]
@@ -857,7 +857,7 @@
       "name": "string.quoted.other.literal.lower.crystal",
       "patterns": [
         {
-          "match": "\\\\[)\\\\]",
+          "match": "\\\\(?:\\)|\\\\)",
           "name": "constant.character.escape.crystal"
         },
         {
@@ -881,7 +881,7 @@
       "name": "string.quoted.other.literal.lower.crystal",
       "patterns": [
         {
-          "match": "\\\\[>\\\\]",
+          "match": "\\\\(?:>|\\\\)",
           "name": "constant.character.escape.crystal"
         },
         {
@@ -905,7 +905,7 @@
       "name": "string.quoted.other.literal.lower.crystal",
       "patterns": [
         {
-          "match": "\\\\[\\]\\\\]",
+          "match": "\\\\(?:]|\\\\)",
           "name": "constant.character.escape.crystal"
         },
         {
@@ -929,7 +929,7 @@
       "name": "string.quoted.other.literal.lower.crystal",
       "patterns": [
         {
-          "match": "\\\\[}\\\\]",
+          "match": "\\\\(?:}|\\\\)",
           "name": "constant.character.escape.crystal"
         },
         {
@@ -1342,7 +1342,7 @@
       "name": "keyword.operator.assignment.augmented.crystal"
     },
     {
-      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===|==|=~|!=|!~|(?<=[ \\t])\\?",
+      "match": "<=>|<(?!<|=)|>(?!<|=|>)|<=|>=|===|==|=~|!=|!~|(?<=[ \\t])\\?",
       "name": "keyword.operator.comparison.crystal"
     },
     {
@@ -1362,7 +1362,7 @@
       "match": "(&\\.)\\s*(?![A-Z])"
     },
     {
-      "match": "([%\\&]|\\*\\*|[*+\\-/])",
+      "match": "(%|&|\\*\\*|\\*|\\+|-|/)",
       "name": "keyword.operator.arithmetic.crystal"
     },
     {
@@ -1370,7 +1370,7 @@
       "name": "keyword.operator.assignment.crystal"
     },
     {
-      "match": "[|~]|>>",
+      "match": "\\||~|>>",
       "name": "keyword.operator.other.crystal"
     },
     {
@@ -1390,15 +1390,15 @@
       "name": "punctuation.separator.method.crystal"
     },
     {
-      "match": "[{}]",
+      "match": "\\{|}",
       "name": "punctuation.section.scope.crystal"
     },
     {
-      "match": "[\\[\\]]",
+      "match": "\\[|]",
       "name": "punctuation.section.array.crystal"
     },
     {
-      "match": "[()]",
+      "match": "\\(|\\)",
       "name": "punctuation.section.function.crystal"
     },
     {

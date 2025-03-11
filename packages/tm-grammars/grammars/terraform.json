@@ -58,7 +58,7 @@
           "name": "keyword.operator.assignment.hcl"
         }
       },
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_\\-]*)(\\))?\\s*(=(?![=>]))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_\\-]*)(\\))?\\s*(=(?!=|>))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -574,7 +574,7 @@
               "name": "punctuation.section.parens.begin.hcl"
             }
           },
-          "end": "(\\))\\s*([=:])\\s*",
+          "end": "(\\))\\s*(=|:)\\s*",
           "endCaptures": {
             "1": {
               "name": "punctuation.section.parens.end.hcl"

@@ -30,7 +30,7 @@
     "enum-values": {
       "patterns": [
         {
-          "begin": "(?<=;|^)\\s*\\b([A-Z0-9_]+)(?=\\s*(?:[,}(]|$))",
+          "begin": "(?<=;|^)\\s*\\b([A-Z0-9_]+)(?=\\s*(?:,|}|\\(|$))",
           "beginCaptures": {
             "1": {
               "name": "constant.enum.name.groovy"
@@ -62,7 +62,7 @@
           "match": "\\s"
         },
         {
-          "begin": "(?=[\\w<][^(]*\\s+[\\w$<]+\\s*\\()",
+          "begin": "(?=(?:\\w|<)[^(]*\\s+(?:[\\w$]|<)+\\s*\\()",
           "end": "(?=[\\w$]+\\s*\\()",
           "name": "meta.method.return-type.java",
           "patterns": [
@@ -88,7 +88,7 @@
               "patterns": [
                 {
                   "begin": "(?=[^,)])",
-                  "end": "(?=[,)])",
+                  "end": "(?=,|\\))",
                   "name": "meta.method.parameter.groovy",
                   "patterns": [
                     {
@@ -102,7 +102,7 @@
                           "name": "keyword.operator.assignment.groovy"
                         }
                       },
-                      "end": "(?=[,)])",
+                      "end": "(?=,|\\))",
                       "name": "meta.parameter.default.groovy",
                       "patterns": [
                         {
@@ -222,7 +222,7 @@
           "name": "constant.block.nextflow"
         },
         {
-          "match": "\\b(val|env|file|path|stdin|stdout|tuple)([(\\s])",
+          "match": "\\b(val|env|file|path|stdin|stdout|tuple)(\\(|\\s)",
           "name": "entity.name.function.nextflow"
         },
         {

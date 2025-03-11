@@ -237,7 +237,7 @@
     "css-combinators": {
       "patterns": [
         {
-          "match": ">>>|>>|[>+~]",
+          "match": ">>>|>>|>|\\+|~",
           "name": "punctuation.separator.combinator.css"
         },
         {
@@ -675,7 +675,7 @@
                   "name": "entity.other.namespace-prefix.css"
                 }
               },
-              "match": "(-?(?!\\d)(?:[\\w\\-[^\\\\x00-\\\\7F]]|\\\\(?:\\h{1,6}|.))+|\\*)(?=\\|(?![\\s=]|$|])(?:-?(?!\\d)|[\\\\\\w\\-[^\\\\x00-\\\\7F]]))"
+              "match": "(-?(?!\\d)(?:[\\w\\-]|[^\\\\x00-\\\\7F]|\\\\(?:\\h{1,6}|.))+|\\*)(?=\\|(?!\\s|=|$|])(?:-?(?!\\d)|[\\\\\\w\\-]|[^\\\\x00-\\\\7F]))"
             },
             {
               "captures": {
@@ -683,7 +683,7 @@
                   "name": "entity.other.attribute-name.css"
                 }
               },
-              "match": "(-?(?!\\d)(?>[\\w\\-[^\\\\x00-\\\\7F]]|\\\\(?:\\h{1,6}|.))+)\\s*(?=[~|\\^\\]$*=]|/\\*)"
+              "match": "(-?(?!\\d)(?>[\\w\\-]|[^\\\\x00-\\\\7F]|\\\\(?:\\h{1,6}|.))+)\\s*(?=[~|\\^\\]$*=]|/\\*)"
             }
           ]
         },
@@ -1342,7 +1342,7 @@
     },
     "inline-css-selector": {
       "begin": "(^\\t+)(?![\\^@.%\\w$!\\-]+\\s*[:=])",
-      "end": "(\\s*(?=[\\^@.%\\w$!\\-]+\\s*[:=]|[)\\]])|\\s*$)",
+      "end": "(\\s*(?=[\\^@.%\\w$!\\-]+\\s*[:=]|\\)|])|\\s*$)",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.sel-properties.css"
@@ -1707,7 +1707,7 @@
               "name": "storage.type.numeric.bigint.imba"
             }
           },
-          "match": "\\b(?<!\\$)0[xX]\\h[_\\h]*(n)?\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(?:x|X)\\h[_\\h]*(n)?\\b(?!\\$)",
           "name": "constant.numeric.hex.imba"
         },
         {
@@ -1716,7 +1716,7 @@
               "name": "storage.type.numeric.bigint.imba"
             }
           },
-          "match": "\\b(?<!\\$)0[bB][01][01_]*(n)?\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(?:b|B)[01][01_]*(n)?\\b(?!\\$)",
           "name": "constant.numeric.binary.imba"
         },
         {
@@ -1725,7 +1725,7 @@
               "name": "storage.type.numeric.bigint.imba"
             }
           },
-          "match": "\\b(?<!\\$)0[oO]?[0-7][0-7_]*(n)?\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(?:o|O)?[0-7][0-7_]*(n)?\\b(?!\\$)",
           "name": "constant.numeric.octal.imba"
         },
         {
@@ -1823,7 +1823,7 @@
           "name": "keyword.operator.comparison.imba"
         },
         {
-          "match": "<=|>=|<>|[<>]",
+          "match": "<=|>=|<>|<|>",
           "name": "keyword.operator.relational.imba"
         },
         {
@@ -1846,7 +1846,7 @@
           "name": "keyword.operator.bitwise.imba"
         },
         {
-          "match": "[\\&~\\^|]",
+          "match": "&|~|\\^|\\|",
           "name": "keyword.operator.ternary.imba"
         },
         {
@@ -1862,7 +1862,7 @@
           "name": "keyword.operator.increment.imba"
         },
         {
-          "match": "[%*/\\-+]",
+          "match": "%|\\*|/|-|\\+",
           "name": "keyword.operator.arithmetic.imba"
         }
       ]
@@ -2093,7 +2093,7 @@
     "regexp": {
       "patterns": [
         {
-          "match": "\\\\[bB]|[\\^$]",
+          "match": "\\\\[bB]|\\^|\\$",
           "name": "keyword.control.anchor.regexp"
         },
         {
@@ -2474,7 +2474,7 @@
         }
       },
       "contentName": "meta.tag.attribute-value.imba",
-      "end": "(?=[>\\s])",
+      "end": "(?=>|\\s)",
       "patterns": [
         {
           "include": "#expr"

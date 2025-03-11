@@ -96,7 +96,7 @@
       "name": "keyword.quantifier.any.ql"
     },
     "arithmetic-operator": {
-      "match": "[+\\-*/%]",
+      "match": "\\+|-|\\*|/|%",
       "name": "keyword.operator.arithmetic.ql"
     },
     "as": {
@@ -129,7 +129,7 @@
           ]
         }
       },
-      "end": "(?!(?:\\s|$|/[/*])|\\[)|(?<=])",
+      "end": "(?!(?:\\s|$|/(?:/|\\*))|\\[)|(?<=])",
       "name": "meta.block.bindingset-annotation.ql",
       "patterns": [
         {
@@ -227,7 +227,7 @@
           ]
         }
       },
-      "end": "(?<=[};])",
+      "end": "(?<=}|;)",
       "name": "meta.block.class-declaration.ql",
       "patterns": [
         {
@@ -309,7 +309,7 @@
       ]
     },
     "comment-start": {
-      "match": "/[/*]"
+      "match": "/(?:/|\\*)"
     },
     "comparison-operator": {
       "match": "=|!=",
@@ -356,7 +356,7 @@
       "name": "keyword.other.else.ql"
     },
     "end-of-as-clause": {
-      "match": "(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/[/*]|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_])))"
+      "match": "(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/(?:/|\\*)|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_])))"
     },
     "end-of-id": {
       "match": "(?![0-9A-Za-z_])"
@@ -376,7 +376,7 @@
           ]
         }
       },
-      "end": "(?:(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/[/*]|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_]))))",
+      "end": "(?:(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/(?:/|\\*)|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_]))))",
       "name": "meta.block.expr-as-clause.ql",
       "patterns": [
         {
@@ -534,7 +534,7 @@
           ]
         }
       },
-      "end": "(?:(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/[/*]|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_]))))",
+      "end": "(?:(?<=[0-9A-Za-z_])(?![0-9A-Za-z_])(?<!(?<![0-9A-Za-z_])as)|(?=\\s*(?!/(?:/|\\*)|\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))\\S)|(?=\\s*\\b(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_]))))",
       "name": "meta.block.import-as-clause.ql",
       "patterns": [
         {
@@ -557,7 +557,7 @@
           ]
         }
       },
-      "end": "(?<!\\bimport)(?<=[>A-Za-z0-9_])(?!\\s*(\\.|::|[,<]))",
+      "end": "(?<!\\bimport)(?<=>|[A-Za-z0-9_])(?!\\s*(\\.|::|,|<))",
       "name": "meta.block.import-directive.ql",
       "patterns": [
         {
@@ -792,7 +792,7 @@
           ]
         }
       },
-      "end": "(?!(?:\\s|$|/[/*])|\\[)|(?<=])",
+      "end": "(?!(?:\\s|$|/(?:/|\\*))|\\[)|(?<=])",
       "name": "meta.block.language-annotation.ql",
       "patterns": [
         {
@@ -906,7 +906,7 @@
           ]
         }
       },
-      "end": "(?<=[};])",
+      "end": "(?<=}|;)",
       "name": "meta.block.module-declaration.ql",
       "patterns": [
         {
@@ -1146,7 +1146,7 @@
           ]
         }
       },
-      "end": "(?!(?:\\s|$|/[/*])|\\[)|(?<=])",
+      "end": "(?!(?:\\s|$|/(?:/|\\*))|\\[)|(?<=])",
       "name": "meta.block.pragma-annotation.ql",
       "patterns": [
         {
@@ -1230,7 +1230,7 @@
           "include": "#module-qualifier"
         },
         {
-          "match": "\\b[a-z][0-9A-Za-z_]*(?![0-9A-Za-z_])\\s*[*+]?\\s*(?=\\()",
+          "match": "\\b[a-z][0-9A-Za-z_]*(?![0-9A-Za-z_])\\s*(?:\\*|\\+)?\\s*(?=\\()",
           "name": "entity.name.function.ql"
         },
         {
@@ -1245,7 +1245,7 @@
     },
     "predicate-or-field-declaration": {
       "begin": "(?=\\b[A-Za-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))(?!\\b(?:(?:_(?![0-9A-Za-z_])|and(?![0-9A-Za-z_])|any(?![0-9A-Za-z_])|as(?![0-9A-Za-z_])|asc(?![0-9A-Za-z_])|avg(?![0-9A-Za-z_])|boolean(?![0-9A-Za-z_])|by(?![0-9A-Za-z_])|class(?![0-9A-Za-z_])|concat(?![0-9A-Za-z_])|count(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|desc(?![0-9A-Za-z_])|else(?![0-9A-Za-z_])|exists(?![0-9A-Za-z_])|extends(?![0-9A-Za-z_])|false(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|forall(?![0-9A-Za-z_])|forex(?![0-9A-Za-z_])|from(?![0-9A-Za-z_])|if(?![0-9A-Za-z_])|implies(?![0-9A-Za-z_])|import(?![0-9A-Za-z_])|in(?![0-9A-Za-z_])|instanceof(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|max(?![0-9A-Za-z_])|min(?![0-9A-Za-z_])|module(?![0-9A-Za-z_])|newtype(?![0-9A-Za-z_])|none(?![0-9A-Za-z_])|not(?![0-9A-Za-z_])|or(?![0-9A-Za-z_])|order(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|rank(?![0-9A-Za-z_])|result(?![0-9A-Za-z_])|select(?![0-9A-Za-z_])|strictconcat(?![0-9A-Za-z_])|strictcount(?![0-9A-Za-z_])|strictsum(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])|sum(?![0-9A-Za-z_])|super(?![0-9A-Za-z_])|then(?![0-9A-Za-z_])|this(?![0-9A-Za-z_])|true(?![0-9A-Za-z_])|unique(?![0-9A-Za-z_])|where(?![0-9A-Za-z_]))|(?:abstract(?![0-9A-Za-z_])|additional(?![0-9A-Za-z_])|bindingset(?![0-9A-Za-z_])|cached(?![0-9A-Za-z_])|default(?![0-9A-Za-z_])|deprecated(?![0-9A-Za-z_])|external(?![0-9A-Za-z_])|final(?![0-9A-Za-z_])|language(?![0-9A-Za-z_])|library(?![0-9A-Za-z_])|override(?![0-9A-Za-z_])|pragma(?![0-9A-Za-z_])|private(?![0-9A-Za-z_])|query(?![0-9A-Za-z_])|signature(?![0-9A-Za-z_])|transient(?![0-9A-Za-z_]))))|(?=\\b(?:boolean(?![0-9A-Za-z_])|date(?![0-9A-Za-z_])|float(?![0-9A-Za-z_])|int(?![0-9A-Za-z_])|predicate(?![0-9A-Za-z_])|string(?![0-9A-Za-z_])))|(?=@[a-z][0-9A-Za-z_]*(?![0-9A-Za-z_]))",
-      "end": "(?<=[};])",
+      "end": "(?<=}|;)",
       "name": "meta.block.predicate-or-field-declaration.ql",
       "patterns": [
         {
@@ -1301,7 +1301,7 @@
           "include": "#non-context-sensitive"
         },
         {
-          "match": "\\b[A-Z][0-9A-Za-z_]*(?![0-9A-Za-z_])(?=\\s*[,)])",
+          "match": "\\b[A-Z][0-9A-Za-z_]*(?![0-9A-Za-z_])(?=\\s*(?:,|\\)))",
           "name": "variable.parameter.ql"
         },
         {
@@ -1533,7 +1533,7 @@
       ]
     },
     "whitespace-or-comment-start": {
-      "match": "\\s|$|/[/*]"
+      "match": "\\s|$|/(?:/|\\*)"
     }
   },
   "scopeName": "source.ql"

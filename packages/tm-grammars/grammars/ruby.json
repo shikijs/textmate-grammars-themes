@@ -91,7 +91,7 @@
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|\\^]|<<|>>)=)"
+      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*((\\+|\\*|-|/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
     },
     {
       "captures": {
@@ -105,7 +105,7 @@
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
-      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|\\^]|<<|>>)=)"
+      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*((\\+|\\*|-|/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
     },
     {
       "captures": {
@@ -187,7 +187,7 @@
           "name": "keyword.other.special-method.ruby"
         }
       },
-      "end": "$|(?=[#}])",
+      "end": "$|(?=#|})",
       "name": "meta.require.ruby",
       "patterns": [
         {
@@ -228,7 +228,7 @@
           "name": "punctuation.definition.variable.ruby"
         }
       },
-      "match": "(\\$)([!@\\&`'+]|\\d+|[~=/\\\\,;.<>_*$?:\"]|-[0adFiIlpv])",
+      "match": "(\\$)(!|@|&|`|'|\\+|\\d+|~|=|/|\\\\|,|;|\\.|<|>|_|\\*|\\$|\\?|:|\"|-[0adFiIlpv])",
       "name": "variable.other.readwrite.global.pre-defined.ruby"
     },
     {
@@ -331,7 +331,7 @@
       "patterns": [
         {
           "begin": "(?=[\\&*_a-zA-Z])",
-          "end": "(?=[,;]|\\s*#|\\s*$)",
+          "end": "(?=,|;|\\s*#|\\s*$)",
           "patterns": [
             {
               "include": "#method_parameters"
@@ -423,7 +423,7 @@
       "name": "string.quoted.single.ruby",
       "patterns": [
         {
-          "match": "\\\\['\\\\]",
+          "match": "\\\\(?:'|\\\\)",
           "name": "constant.character.escape.ruby"
         }
       ]
@@ -747,7 +747,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[\\]\\\\]",
+          "match": "\\\\(?:]|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -771,7 +771,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[)\\\\]",
+          "match": "\\\\(?:\\)|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -795,7 +795,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[>\\\\]",
+          "match": "\\\\(?:>|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -819,7 +819,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[}\\\\]",
+          "match": "\\\\(?:}|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -990,7 +990,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[\\]\\\\]",
+          "match": "\\\\(?:]|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1014,7 +1014,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[)\\\\]",
+          "match": "\\\\(?:\\)|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1038,7 +1038,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[>\\\\]",
+          "match": "\\\\(?:>|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1062,7 +1062,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[}\\\\]",
+          "match": "\\\\(?:}|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1256,7 +1256,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[)\\\\]",
+          "match": "\\\\(?:\\)|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1280,7 +1280,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[>\\\\]",
+          "match": "\\\\(?:>|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1304,7 +1304,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[\\]\\\\]",
+          "match": "\\\\(?:]|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1328,7 +1328,7 @@
       "name": "string.quoted.other.ruby",
       "patterns": [
         {
-          "match": "\\\\[}\\\\]",
+          "match": "\\\\(?:}|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1372,7 +1372,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[)\\\\]",
+          "match": "\\\\(?:\\)|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1396,7 +1396,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[>\\\\]",
+          "match": "\\\\(?:>|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1420,7 +1420,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[\\]\\\\]",
+          "match": "\\\\(?:]|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -1444,7 +1444,7 @@
       "name": "constant.language.symbol.ruby",
       "patterns": [
         {
-          "match": "\\\\[}\\\\]",
+          "match": "\\\\(?:}|\\\\)",
           "name": "constant.character.escape.ruby"
         },
         {
@@ -2201,7 +2201,7 @@
       "name": "keyword.operator.assignment.augmented.ruby"
     },
     {
-      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===|==|=~|!=|!~|(?<=[ \\t])\\?",
+      "match": "<=>|<(?!<|=)|>(?!<|=|>)|<=|>=|===|==|=~|!=|!~|(?<=[ \\t])\\?",
       "name": "keyword.operator.comparison.ruby"
     },
     {
@@ -2221,7 +2221,7 @@
       "match": "(&\\.)\\s*(?![A-Z])"
     },
     {
-      "match": "([%\\&]|\\*\\*|[*+\\-/])",
+      "match": "(%|&|\\*\\*|\\*|\\+|-|/)",
       "name": "keyword.operator.arithmetic.ruby"
     },
     {
@@ -2229,7 +2229,7 @@
       "name": "keyword.operator.assignment.ruby"
     },
     {
-      "match": "[|~]|>>",
+      "match": "\\||~|>>",
       "name": "keyword.operator.other.ruby"
     },
     {
@@ -2277,7 +2277,7 @@
       "name": "punctuation.section.array.end.ruby"
     },
     {
-      "match": "[()]",
+      "match": "\\(|\\)",
       "name": "punctuation.section.function.ruby"
     },
     {

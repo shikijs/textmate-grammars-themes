@@ -39,7 +39,7 @@
       "name": "meta.initialization.dm"
     },
     {
-      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)\\b",
+      "match": "\\b((0(x|X)\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
       "name": "constant.numeric.dm"
     },
     {
@@ -63,7 +63,7 @@
       "name": "variable.language.dm"
     },
     {
-      "match": "(\\?|([><])(=)?|[.:]|/(=)?|~|\\+([+=])?|-([\\-=])?|\\*([*=])?|%|>>|<<|=(=)?|!(=)?|<>|&|&&|[\\^|]|\\|\\||\\bto\\b|\\bin\\b|\\bstep\\b)",
+      "match": "(\\?|(>|<)(=)?|\\.|:|/(=)?|~|\\+(\\+|=)?|-(-|=)?|\\*(\\*|=)?|%|>>|<<|=(=)?|!(=)?|<>|&|&&|\\^|\\||\\|\\||\\bto\\b|\\bin\\b|\\bstep\\b)",
       "name": "keyword.operator.dm"
     },
     {
@@ -165,7 +165,7 @@
           "name": "punctuation.definition.parameters.end.dm"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.macro.dm",
       "patterns": [
         {
@@ -186,7 +186,7 @@
           "name": "variable.other.preprocessor.dm"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.macro.dm",
       "patterns": [
         {
@@ -226,7 +226,7 @@
           "name": "punctuation.definition.directive.dm"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.dm",
       "patterns": [
         {
@@ -575,7 +575,7 @@
       ]
     },
     "preprocessor-rule-other": {
-      "begin": "^\\s*((#\\s*(if(n?def)?))\\b.*?(?:(?=/[/*])|$))",
+      "begin": "^\\s*((#\\s*(if(n?def)?))\\b.*?(?:(?=/(?:/|\\*))|$))",
       "captures": {
         "1": {
           "name": "meta.preprocessor.dm"
@@ -592,7 +592,7 @@
       ]
     },
     "preprocessor-rule-other-block": {
-      "begin": "^\\s*(#\\s*(if(n?def)?)\\b.*?(?:(?=/[/*])|$))",
+      "begin": "^\\s*(#\\s*(if(n?def)?)\\b.*?(?:(?=/(?:/|\\*))|$))",
       "captures": {
         "1": {
           "name": "meta.preprocessor.dm"

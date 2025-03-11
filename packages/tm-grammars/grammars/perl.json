@@ -192,7 +192,7 @@
     },
     {
       "applyEndPatternLast": 1,
-      "begin": "(?<![{+\\-])\\b(?=m\\s*[^\\sa-zA-Z0-9])",
+      "begin": "(?<!\\{|\\+|-)\\b(?=m\\s*[^\\sa-zA-Z0-9])",
       "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,#{})]|\\s*$))",
       "endCaptures": {
         "1": {
@@ -321,7 +321,7 @@
           ]
         },
         {
-          "begin": "\\G(?<![{+\\-])(m)(?!_)\\s*([^\\sa-zA-Z0-9'{\\[(<])",
+          "begin": "\\G(?<!\\{|\\+|-)(m)(?!_)\\s*([^\\sa-zA-Z0-9'{\\[(<])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -735,7 +735,7 @@
       ]
     },
     {
-      "begin": "(?<=[({~\\&|]|if|unless|^)\\s*((/))",
+      "begin": "(?<=\\(|\\{|~|&|\\||if|unless|^)\\s*((/))",
       "beginCaptures": {
         "1": {
           "name": "string.regexp.find.perl"
@@ -1440,7 +1440,7 @@
           "name": "constant.character.escape.perl"
         },
         {
-          "match": "\\\\[pP](?:\\{\\w*}|P)",
+          "match": "\\\\(?:p|P)(?:\\{\\w*}|P)",
           "name": "constant.character.escape.perl"
         },
         {

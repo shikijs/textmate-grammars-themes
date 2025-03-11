@@ -283,7 +283,7 @@
               ]
             },
             {
-              "match": "\\|\\||[|:;,.]|->",
+              "match": "\\|\\||\\||:|;|,|\\.|->",
               "name": "punctuation.separator.define.erlang"
             },
             {
@@ -982,7 +982,7 @@
               ]
             },
             {
-              "match": "[,;]",
+              "match": ",|;",
               "name": "punctuation.separator.guards.erlang"
             },
             {
@@ -1096,7 +1096,7 @@
           "name": "punctuation.separator.value-type.erlang"
         }
       },
-      "end": "(?=[,:]|>>)",
+      "end": "(?=,|:|>>)",
       "patterns": [
         {
           "captures": {
@@ -2090,7 +2090,7 @@
       ]
     },
     "symbolic-operator": {
-      "match": "\\+\\+|\\+|--|[\\-*]|/=|/|=/=|=:=|==|=<|=|<-|<|>=|[>!]|::|\\?=",
+      "match": "\\+\\+|\\+|--|-|\\*|/=|/|=/=|=:=|==|=<|=|<-|<|>=|>|!|::|\\?=",
       "name": "keyword.operator.symbolic.erlang"
     },
     "textual-operator": {

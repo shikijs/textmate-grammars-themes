@@ -249,7 +249,7 @@
       "name": "meta.at-rule.for.scss",
       "patterns": [
         {
-          "match": "(==|!=|<=|>=|[<>]|from|to|through)",
+          "match": "(==|!=|<=|>=|<|>|from|to|through)",
           "name": "keyword.control.operator"
         },
         {
@@ -639,7 +639,7 @@
                     }
                   },
                   "contentName": "meta.property-value.media-query.scss",
-                  "end": "\\s*(;|(?=[})]))",
+                  "end": "\\s*(;|(?=}|\\)))",
                   "endCaptures": {
                     "1": {
                       "name": "punctuation.terminator.rule.scss"
@@ -788,7 +788,7 @@
     "at_rule_page": {
       "patterns": [
         {
-          "begin": "^\\s*((@)page)(?=[:\\s])\\s*([\\-:\\w]*)",
+          "begin": "^\\s*((@)page)(?=:|\\s)\\s*([\\-:\\w]*)",
           "captures": {
             "1": {
               "name": "keyword.control.at-rule.page.scss"
@@ -1005,7 +1005,7 @@
       "name": "comment.line.scss"
     },
     "comparison_operators": {
-      "match": "==|!=|<=|>=|[<>]",
+      "match": "==|!=|<=|>=|<|>",
       "name": "keyword.operator.comparison.scss"
     },
     "conditional_operators": {
@@ -1055,7 +1055,7 @@
       "name": "keyword.other.important.scss"
     },
     "constant_mathematical_symbols": {
-      "match": "\\b([+\\-*/])\\b",
+      "match": "\\b(\\+|-|\\*|/)\\b",
       "name": "support.constant.mathematical-symbols.scss"
     },
     "constant_optional": {
@@ -1063,7 +1063,7 @@
       "name": "keyword.other.optional.scss"
     },
     "constant_sass_functions": {
-      "begin": "(headings|stylesheet-url|rgba?|hsla?|ie-hex-str|red|green|blue|alpha|opacity|hue|saturation|lightness|prefixed|prefix|-moz|-svg|-css2|-pie|-webkit|-ms|font-(?:files|url)|grid-image|image-(?:width|height|url|color)|sprites?|sprite-(?:map|map-name|file|url|position)|inline-(?:font-files|image)|opposite-position|grad-point|grad-end-position|color-stops|color-stops-in-percentages|grad-color-stops|(?:radial|linear)-(?:gradient|svg-gradient)|opacify|fade-?in|transparentize|fade-?out|lighten|darken|saturate|desaturate|grayscale|adjust-(?:hue|lightness|saturation|color)|scale-(?:lightness|saturation|color)|change-color|spin|complement|invert|mix|-compass-(?:list|space-list|slice|nth|list-size)|blank|compact|nth|first-value-of|join|length|append|nest|append-selector|headers|enumerate|range|percentage|unitless|unit|if|type-of|comparable|elements-of-type|quote|unquote|escape|e|sin|cos|tan|abs|round|ceil|floor|pi|translate[XY])(\\()",
+      "begin": "(headings|stylesheet-url|rgba?|hsla?|ie-hex-str|red|green|blue|alpha|opacity|hue|saturation|lightness|prefixed|prefix|-moz|-svg|-css2|-pie|-webkit|-ms|font-(?:files|url)|grid-image|image-(?:width|height|url|color)|sprites?|sprite-(?:map|map-name|file|url|position)|inline-(?:font-files|image)|opposite-position|grad-point|grad-end-position|color-stops|color-stops-in-percentages|grad-color-stops|(?:radial|linear)-(?:gradient|svg-gradient)|opacify|fade-?in|transparentize|fade-?out|lighten|darken|saturate|desaturate|grayscale|adjust-(?:hue|lightness|saturation|color)|scale-(?:lightness|saturation|color)|change-color|spin|complement|invert|mix|-compass-(?:list|space-list|slice|nth|list-size)|blank|compact|nth|first-value-of|join|length|append|nest|append-selector|headers|enumerate|range|percentage|unitless|unit|if|type-of|comparable|elements-of-type|quote|unquote|escape|e|sin|cos|tan|abs|round|ceil|floor|pi|translate(?:X|Y))(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.misc.scss"
@@ -1309,13 +1309,13 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.identifier.scss"
             }
           ]
         }
       },
-      "match": "(?<=&)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|[$}])+)(?=$|[\\s,.#)\\[:{>+~|]|/\\*)",
+      "match": "(?<=&)((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\$|})+)(?=$|[\\s,.#)\\[:{>+~|]|/\\*)",
       "name": "entity.other.attribute-name.parent-selector-suffix.css"
     },
     "properties": {
@@ -1341,7 +1341,7 @@
             }
           },
           "contentName": "meta.property-value.scss",
-          "end": "\\s*(;|(?=[})]))",
+          "end": "\\s*(;|(?=}|\\)))",
           "endCaptures": {
             "1": {
               "name": "punctuation.terminator.rule.scss"
@@ -1492,7 +1492,7 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.scss"
             }
           ]
@@ -1514,7 +1514,7 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.scss"
             }
           ]
@@ -1533,7 +1533,7 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.scss"
             }
           ]
@@ -1554,7 +1554,7 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.scss"
             }
           ]
@@ -1566,7 +1566,7 @@
           "name": "string.quoted.single.attribute-value.scss"
         }
       },
-      "match": "(?i)(\\[)\\s*((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+?)(?:\\s*([~|\\^$*]?=)\\s*(?:((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)|((\")(.*?)(\"))|((')(.*?)('))))?\\s*(])",
+      "match": "(?i)(\\[)\\s*((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+?)(?:\\s*([~|\\^$*]?=)\\s*(?:((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)|((\")(.*?)(\"))|((')(.*?)('))))?\\s*(])",
       "name": "meta.attribute-selector.scss"
     },
     "selector_class": {
@@ -1584,13 +1584,13 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.scss"
             }
           ]
         }
       },
-      "match": "(\\.)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*|;)",
+      "match": "(\\.)((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*|;)",
       "name": "entity.other.attribute-name.class.css"
     },
     "selector_custom": {
@@ -1612,13 +1612,13 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.identifier.scss"
             }
           ]
         }
       },
-      "match": "(#)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
+      "match": "(#)((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
       "name": "entity.other.attribute-name.id.css"
     },
     "selector_placeholder": {
@@ -1636,13 +1636,13 @@
               "name": "constant.character.escape.scss"
             },
             {
-              "match": "[$}]",
+              "match": "\\$|}",
               "name": "invalid.illegal.identifier.scss"
             }
           ]
         }
       },
-      "match": "(%)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.\\$|[$}])+)(?=;|$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
+      "match": "(%)((?:[\\-a-zA-Z_0-9]|[^\\x00-\\x7F]|\\\\(?:\\h{1,6}|.)|#\\{|\\.\\$|\\$|})+)(?=;|$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
       "name": "entity.other.attribute-name.placeholder.css"
     },
     "selector_pseudo_class": {

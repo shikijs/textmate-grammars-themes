@@ -50,7 +50,7 @@
       ]
     },
     "binary-literal": {
-      "match": "0([bB])[01][01_]*",
+      "match": "0(b|B)[01][01_]*",
       "name": "constant.numeric.binary.kotlin"
     },
     "boolean-literal": {
@@ -261,7 +261,7 @@
       "name": "keyword.control.kotlin"
     },
     "decimal-literal": {
-      "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?(([eE])\\d+)?([uU])?([LFf])?\\b",
+      "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?((e|E)\\d+)?(u|U)?(L|F|f)?\\b",
       "name": "constant.numeric.decimal.kotlin"
     },
     "function": {
@@ -305,7 +305,7 @@
       "name": "keyword.hard.kotlin"
     },
     "hex-literal": {
-      "match": "0([xX])\\h[_\\h]*([uU])?",
+      "match": "0(x|X)\\h[_\\h]*(u|U)?",
       "name": "constant.numeric.hex.kotlin"
     },
     "import": {
@@ -391,7 +391,7 @@
     "operators": {
       "patterns": [
         {
-          "match": "(===?|!==?|<=|>=|[<>])",
+          "match": "(===?|!==?|<=|>=|<|>)",
           "name": "keyword.operator.comparison.kotlin"
         },
         {
@@ -542,7 +542,7 @@
           ]
         }
       },
-      "match": "(?<![:?]):\\s*([\\w?\\s]|->|(?<GROUP>[<(]([^<>()\"']|\\g<GROUP>)+[)>]))+"
+      "match": "(?<![:?]):\\s*(\\w|\\?|\\s|->|(?<GROUP>[<(]([^<>()\"']|\\g<GROUP>)+[)>]))+"
     },
     "type-parameter": {
       "patterns": [
@@ -573,7 +573,7 @@
           ]
         }
       },
-      "match": "\\b(va[lr])\\b\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?"
+      "match": "\\b(va(?:l|r))\\b\\s*(?<GROUP><([^<>]|\\g<GROUP>)+>)?"
     }
   },
   "scopeName": "source.kotlin"

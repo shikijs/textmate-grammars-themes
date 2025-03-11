@@ -395,7 +395,7 @@
           "name": "keyword.operator.multiplication.fortran"
         }
       },
-      "match": "(-)|(\\+)|/(?![/=\\\\])|(\\*\\*)|(\\*)"
+      "match": "(-)|(\\+)|/(?!/|=|\\\\)|(\\*\\*)|(\\*)"
     },
     "array-constructor": {
       "begin": "(?=\\s*(\\[|\\(/))",
@@ -497,7 +497,7 @@
       ]
     },
     "assignment-operator": {
-      "match": "(?<![/=<>])(=)(?![=>])",
+      "match": "(?<!/|=|<|>)(=)(?!=|>)",
       "name": "keyword.operator.assignment.fortran"
     },
     "associate-construct": {
@@ -1222,7 +1222,7 @@
                   "match": "\\G(?=[0-9.])(?!0[xXbB])([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)(?:(?<!')([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:[uU]|[uU]ll?|[uU]LL?|ll?[uU]?|LL?[uU]?|[fF])(?!\\w))?((?:\\w(?<![0-9eE])\\w*)?$)"
                 },
                 {
-                  "match": "(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+\\-])+",
+                  "match": "(?:(?:[0-9a-zA-Z_.]|')|(?<=[eEpP])[+\\-])+",
                   "name": "invalid.illegal.constant.numeric.cpp"
                 }
               ]
@@ -1230,7 +1230,7 @@
           ]
         }
       },
-      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+\\-])*"
+      "match": "(?<!\\w)\\.?\\d(?:(?:[0-9a-zA-Z_.]|')|(?<=[eEpP])[+\\-])*"
     },
     "critical-construct": {
       "begin": "(?i)\\b(critical)\\b",
@@ -2443,7 +2443,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|[><]|<=|[\\-+/]|//|\\*\\*|\\*)|(\\S.*))\\s*(\\))",
+          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|>|<|<=|-|\\+|/|//|\\*\\*|\\*)|(\\S.*))\\s*(\\))",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.operator.fortran"
@@ -2661,7 +2661,7 @@
                   "end": "(?i)(?=\\b(end\\s*if)\\b)",
                   "patterns": [
                     {
-                      "begin": "(?!(\\s*([;!\\n])))",
+                      "begin": "(?!(\\s*(;|!|\\n)))",
                       "end": "(?=[;!\\n])",
                       "patterns": [
                         {

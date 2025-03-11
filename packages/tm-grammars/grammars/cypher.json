@@ -180,11 +180,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "([+\\-/*%?!])",
+          "match": "(\\+|-|/|\\*|%|\\?|!)",
           "name": "keyword.operator.math.cypher"
         },
         {
-          "match": "(<=|=>|<>|[<>]|=~|=)",
+          "match": "(<=|=>|<>|<|>|=~|=)",
           "name": "keyword.operator.compare.cypher"
         },
         {
@@ -252,7 +252,7 @@
               "name": "entity.name.class.relationship-type-ored.cypher"
             },
             {
-              "match": "(?:\\?\\*|[?*])\\s*(?:\\d+\\s*(?:\\.\\.\\s*\\d+)?)?",
+              "match": "(?:\\?\\*|\\?|\\*)\\s*(?:\\d+\\s*(?:\\.\\.\\s*\\d+)?)?",
               "name": "support.function.relationship-pattern.quant.cypher"
             },
             {
@@ -280,7 +280,7 @@
           "name": "source.cypher",
           "patterns": [
             {
-              "match": "[:,]",
+              "match": ":|,",
               "name": "keyword.control.properties_literal.seperator.cypher"
             },
             {
@@ -314,7 +314,7 @@
           "name": "string.quoted.double.cypher"
         }
       },
-      "match": "(\\\\[\\\\tbnrf])|(\\\\['\"])",
+      "match": "(\\\\(?:\\\\|[tbnrf]))|(\\\\(?:'|\"))",
       "name": "constant.character.escape.cypher"
     },
     "strings": {

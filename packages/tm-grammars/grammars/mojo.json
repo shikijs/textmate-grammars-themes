@@ -115,7 +115,7 @@
     "class-declaration": {
       "patterns": [
         {
-          "begin": "\\s*(class|struct|trait)\\s+(?=[[:alpha:]_]\\w*\\s*([:(]))",
+          "begin": "\\s*(class|struct|trait)\\s+(?=[[:alpha:]_]\\w*\\s*(:|\\())",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.python"
@@ -340,7 +340,7 @@
           "name": "punctuation.definition.decorator.python"
         }
       },
-      "end": "(\\))(.*?)(?=\\s*(?:#|$))|(?=[\\n#])",
+      "end": "(\\))(.*?)(?=\\s*(?:#|$))|(?=\\n|#)",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.arguments.end.python"
@@ -2156,7 +2156,7 @@
               "name": "punctuation.separator.continuation.line.python"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|['\"]))|(\\G$))",
+          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|'|\"))|(\\G$))",
           "patterns": [
             {
               "include": "#regexp"
@@ -2438,7 +2438,7 @@
       "name": "constant.numeric.oct.python"
     },
     "odd-function-call": {
-      "begin": "(?<=[\\])])\\s*(?=\\()",
+      "begin": "(?<=]|\\))\\s*(?=\\()",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -2472,7 +2472,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&|\\^~])|(\\*\\*|[*+\\-%]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
+      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|&|\\||\\^|~)|(\\*\\*|\\*|\\+|-|%|//|/|@)|(!=|==|>=|<=|<|>)|(:=)"
     },
     "parameter-special": {
       "captures": {

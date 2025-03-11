@@ -26,7 +26,7 @@
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
-          "match": "(?<!_)_(?=\\s*([.;]))|\\b\\d+|-+",
+          "match": "(?<!_)_(?=\\s*(\\.|;))|\\b\\d+|-+",
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
@@ -74,7 +74,7 @@
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
-          "match": "(?<!_)_(?=\\s*([.;]))|\\b\\d+|-+",
+          "match": "(?<!_)_(?=\\s*(\\.|;))|\\b\\d+|-+",
           "name": "invalid.illegal.character_not_allowed_here.java"
         },
         {
@@ -203,7 +203,7 @@
           "name": "keyword.control.new.java"
         }
       },
-      "end": "(?=[;)\\].,?:}+\\-*]|/(?![/*])|[%!\\&|\\^=])",
+      "end": "(?=;|\\)|]|\\.|,|\\?|:|}|\\+|-|\\*|/(?!/|\\*)|%|!|&|\\||\\^|=)",
       "patterns": [
         {
           "include": "#comments"
@@ -216,7 +216,7 @@
         },
         {
           "begin": "(?<=\\))",
-          "end": "(?=[;)\\].,?:}+\\-*]|/(?![/*])|[%!\\&|\\^=])",
+          "end": "(?=;|\\)|]|\\.|,|\\?|:|}|\\+|-|\\*|/(?!/|\\*)|%|!|&|\\||\\^|=)",
           "patterns": [
             {
               "include": "#comments"
@@ -245,7 +245,7 @@
         },
         {
           "begin": "(?<=])",
-          "end": "(?=[;)\\].,?:}+\\-*]|/(?![/*])|[%!\\&|\\^=])",
+          "end": "(?=;|\\)|]|\\.|,|\\?|:|}|\\+|-|\\*|/(?!/|\\*)|%|!|&|\\||\\^|=)",
           "patterns": [
             {
               "include": "#comments"
@@ -740,7 +740,7 @@
           "patterns": [
             {
               "begin": "(?<=\\{)",
-              "end": "(?=[;}])",
+              "end": "(?=;|})",
               "patterns": [
                 {
                   "include": "#comments-javadoc"
@@ -755,7 +755,7 @@
                       "name": "constant.other.enum.java"
                     }
                   },
-                  "end": "(,)|(?=[;}])",
+                  "end": "(,)|(?=;|})",
                   "endCaptures": {
                     "1": {
                       "name": "punctuation.separator.delimiter.java"
@@ -907,7 +907,7 @@
           "name": "keyword.control.throw.java"
         },
         {
-          "match": "[?:]",
+          "match": "\\?|:",
           "name": "keyword.control.ternary.java"
         },
         {
@@ -919,15 +919,15 @@
           "name": "keyword.operator.instanceof.java"
         },
         {
-          "match": "(<<|>>>?|[~\\^])",
+          "match": "(<<|>>>?|~|\\^)",
           "name": "keyword.operator.bitwise.java"
         },
         {
-          "match": "(([\\&\\^|]|<<|>>>?)=)",
+          "match": "((&|\\^|\\||<<|>>>?)=)",
           "name": "keyword.operator.assignment.bitwise.java"
         },
         {
-          "match": "(===?|!=|<=|>=|<>|[<>])",
+          "match": "(===?|!=|<=|>=|<>|<|>)",
           "name": "keyword.operator.comparison.java"
         },
         {
@@ -943,7 +943,7 @@
           "name": "keyword.operator.increment-decrement.java"
         },
         {
-          "match": "([\\-+*/%])",
+          "match": "(-|\\+|\\*|/|%)",
           "name": "keyword.operator.arithmetic.java"
         },
         {
@@ -951,7 +951,7 @@
           "name": "keyword.operator.logical.java"
         },
         {
-          "match": "([|\\&])",
+          "match": "(\\||&)",
           "name": "keyword.operator.bitwise.java"
         },
         {
@@ -970,7 +970,7 @@
     },
     "member-variables": {
       "begin": "(?=private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)",
-      "end": "(?=[=;])",
+      "end": "(?==|;)",
       "patterns": [
         {
           "include": "#storage-modifiers"
@@ -1144,11 +1144,11 @@
     "numbers": {
       "patterns": [
         {
-          "match": "\\b(?<!\\$)0([xX])((?<!\\.)\\h([_\\h]*\\h)?[Ll]?(?!\\.)|(\\h([_\\h]*\\h)?\\.?|(\\h([_\\h]*\\h)?)?\\.\\h([_\\h]*\\h)?)[Pp][+\\-]?[0-9]([0-9_]*[0-9])?[FfDd]?)\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(x|X)((?<!\\.)\\h([_\\h]*\\h)?[Ll]?(?!\\.)|(\\h([_\\h]*\\h)?\\.?|(\\h([_\\h]*\\h)?)?\\.\\h([_\\h]*\\h)?)[Pp][+\\-]?[0-9]([0-9_]*[0-9])?[FfDd]?)\\b(?!\\$)",
           "name": "constant.numeric.hex.java"
         },
         {
-          "match": "\\b(?<!\\$)0([bB])[01]([01_]*[01])?[Ll]?\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(b|B)[01]([01_]*[01])?[Ll]?\\b(?!\\$)",
           "name": "constant.numeric.binary.java"
         },
         {
@@ -1648,7 +1648,7 @@
           "name": "storage.modifier.java"
         }
       },
-      "end": "(?=[{;])",
+      "end": "(?=\\{|;)",
       "name": "meta.throwables.java",
       "patterns": [
         {
@@ -1838,8 +1838,8 @@
       ]
     },
     "variables": {
-      "begin": "(?=\\b((void|boolean|byte|char|short|int|float|long|double)|(?>(\\w+\\.)*[A-Z_]+\\w*))\\b\\s*(<[\\w<>,.?\\s\\[\\]]*>)?\\s*((\\[])*)?\\s+[A-Za-z_$][\\w$]*([\\w\\[\\],$][\\w\\[\\],\\s]*)?\\s*([=:;]))",
-      "end": "(?=[=:;])",
+      "begin": "(?=\\b((void|boolean|byte|char|short|int|float|long|double)|(?>(\\w+\\.)*[A-Z_]+\\w*))\\b\\s*(<[\\w<>,.?\\s\\[\\]]*>)?\\s*((\\[])*)?\\s+[A-Za-z_$][\\w$]*([\\w\\[\\],$][\\w\\[\\],\\s]*)?\\s*(=|:|;))",
+      "end": "(?==|:|;)",
       "name": "meta.definition.variable.java",
       "patterns": [
         {
@@ -1848,7 +1848,7 @@
               "name": "variable.other.definition.java"
             }
           },
-          "match": "([A-Za-z$_][\\w$]*)(?=\\s*(\\[])*\\s*([;:=,]))"
+          "match": "([A-Za-z$_][\\w$]*)(?=\\s*(\\[])*\\s*(;|:|=|,))"
         },
         {
           "include": "#all-types"
@@ -1859,8 +1859,8 @@
       ]
     },
     "variables-local": {
-      "begin": "(?=\\b(var)\\b\\s+[A-Za-z_$][\\w$]*\\s*([=:;]))",
-      "end": "(?=[=:;])",
+      "begin": "(?=\\b(var)\\b\\s+[A-Za-z_$][\\w$]*\\s*(=|:|;))",
+      "end": "(?==|:|;)",
       "name": "meta.definition.variable.local.java",
       "patterns": [
         {
@@ -1873,7 +1873,7 @@
               "name": "variable.other.definition.java"
             }
           },
-          "match": "([A-Za-z$_][\\w$]*)(?=\\s*(\\[])*\\s*([=:;]))"
+          "match": "([A-Za-z$_][\\w$]*)(?=\\s*(\\[])*\\s*(=|:|;))"
         },
         {
           "include": "#code"

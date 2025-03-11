@@ -346,7 +346,7 @@
           "name": "entity.other.inherited-class.coffee"
         }
       },
-      "match": "(?<=\\s|^|[\\[(])(class)\\s+(extends)\\s+(@?[a-zA-Z$._][\\w.]*)",
+      "match": "(?<=\\s|^|\\[|\\()(class)\\s+(extends)\\s+(@?[a-zA-Z$._][\\w.]*)",
       "name": "meta.class.coffee"
     },
     {
@@ -364,7 +364,7 @@
           "name": "entity.other.inherited-class.coffee"
         }
       },
-      "match": "(?<=\\s|^|[\\[(])(class\\b)\\s+(@?[a-zA-Z$_][\\w.]*)?(?:\\s+(extends)\\s+(@?[a-zA-Z$._][\\w.]*))?",
+      "match": "(?<=\\s|^|\\[|\\()(class\\b)\\s+(@?[a-zA-Z$_][\\w.]*)?(?:\\s+(extends)\\s+(@?[a-zA-Z$._][\\w.]*))?",
       "name": "meta.class.coffee"
     },
     {
@@ -544,8 +544,8 @@
           ]
         },
         {
-          "begin": "(?=(@|@?[\\w$]+|[=\\-]>|-\\d|[\\[{\"']))",
-          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*([}\\])#]|$))",
+          "begin": "(?=(@|@?[\\w$]+|[=\\-]>|-\\d|\\[|\\{|\"|'))",
+          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*(}|]|\\)|#|$))",
           "name": "meta.arguments.coffee",
           "patterns": [
             {
@@ -626,7 +626,7 @@
           ]
         },
         {
-          "begin": "(@)?([\\w$]+)\\s*(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@?[\\w$]+|[=\\-]>|-\\d|[\\[{\"'])))",
+          "begin": "(@)?([\\w$]+)\\s*(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@?[\\w$]+|[=\\-]>|-\\d|\\[|\\{|\"|')))",
           "beginCaptures": {
             "1": {
               "name": "variable.other.readwrite.instance.coffee"
@@ -639,7 +639,7 @@
               ]
             }
           },
-          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*([}\\])#]|$))",
+          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*(}|]|\\)|#|$))",
           "name": "meta.function-call.coffee",
           "patterns": [
             {
@@ -714,7 +714,7 @@
     "heregexp": {
       "patterns": [
         {
-          "match": "\\\\[bB]|[\\^$]",
+          "match": "\\\\[bB]|\\^|\\$",
           "name": "keyword.control.anchor.regexp"
         },
         {
@@ -983,7 +983,7 @@
           ]
         },
         {
-          "begin": "(?:(\\.)|(::))\\s*([\\w$]+)\\s*(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@|@?[\\w$]+|[=\\-]>|-\\d|[\\[{\"'])))",
+          "begin": "(?:(\\.)|(::))\\s*([\\w$]+)\\s*(?=\\s+(?!(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))(?=(@|@?[\\w$]+|[=\\-]>|-\\d|\\[|\\{|\"|')))",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.method.period.coffee"
@@ -999,7 +999,7 @@
               ]
             }
           },
-          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*([}\\])#]|$))",
+          "end": "(?=\\s*(?<![\\w$])(of|in|then|is|isnt|and|or|for|else|when|if|unless|by|instanceof)(?![\\w$]))|(?=\\s*(}|]|\\)|#|$))",
           "name": "meta.method-call.coffee",
           "patterns": [
             {
@@ -1036,15 +1036,15 @@
     "numbers": {
       "patterns": [
         {
-          "match": "\\b(?<!\\$)0([xX])\\h+\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(x|X)\\h+\\b(?!\\$)",
           "name": "constant.numeric.hex.coffee"
         },
         {
-          "match": "\\b(?<!\\$)0([bB])[01]+\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(b|B)[01]+\\b(?!\\$)",
           "name": "constant.numeric.binary.coffee"
         },
         {
-          "match": "\\b(?<!\\$)0([oO])?[0-7]+\\b(?!\\$)",
+          "match": "\\b(?<!\\$)0(o|O)?[0-7]+\\b(?!\\$)",
           "name": "constant.numeric.octal.coffee"
         },
         {
@@ -1127,7 +1127,7 @@
           "name": "keyword.operator.bitwise.shift.coffee"
         },
         {
-          "match": "!=|<=|>=|==|[<>]",
+          "match": "!=|<=|>=|==|<|>",
           "name": "keyword.operator.comparison.coffee"
         },
         {
@@ -1135,7 +1135,7 @@
           "name": "keyword.operator.logical.coffee"
         },
         {
-          "match": "[\\&|\\^~]",
+          "match": "&|\\||\\^|~",
           "name": "keyword.operator.bitwise.coffee"
         },
         {
@@ -1166,7 +1166,7 @@
           "name": "keyword.operator.existential.coffee"
         },
         {
-          "match": "[%*/\\-+]",
+          "match": "%|\\*|/|-|\\+",
           "name": "keyword.operator.coffee"
         },
         {

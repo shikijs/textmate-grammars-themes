@@ -380,7 +380,7 @@
           "name": "punctuation.definition.directive.c"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.include.c",
       "patterns": [
         {
@@ -428,7 +428,7 @@
           "name": "punctuation.definition.directive.c"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.c",
       "patterns": [
         {
@@ -452,7 +452,7 @@
           "name": "punctuation.definition.directive.c"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.c",
       "patterns": [
         {
@@ -474,7 +474,7 @@
           "name": "punctuation.definition.directive.c"
         }
       },
-      "end": "(?=/[/*])|(?<!\\\\)(?=\\n)",
+      "end": "(?=/(?:/|\\*))|(?<!\\\\)(?=\\n)",
       "name": "meta.preprocessor.pragma.c",
       "patterns": [
         {
@@ -530,7 +530,7 @@
       "name": "storage.modifier.array.bracket.square.c"
     },
     "backslash_escapes": {
-      "match": "\\\\([\\\\abefnprtv'\"?]|[0-3][0-7]{0,2}|[4-7]\\d?|x\\h{0,2}|u\\h{0,4}|U\\h{0,8})",
+      "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3][0-7]{0,2}|[4-7]\\d?|x\\h{0,2}|u\\h{0,4}|U\\h{0,8})",
       "name": "constant.character.escape.c"
     },
     "block": {
@@ -749,7 +749,7 @@
                       "include": "#line_continuation_character"
                     },
                     {
-                      "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[$#<>%\".=]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|\\$|#|<|>|%|\"|\\.|=|::|\\||--|---)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -783,10 +783,10 @@
                           "name": "markup.inline.raw.string.c"
                         }
                       },
-                      "match": "((?<=[\\s*!/])[\\\\@][cp])\\s+(\\S+)"
+                      "match": "((?<=[\\s*!/])[\\\\@](?:c|p))\\s+(\\S+)"
                     },
                     {
-                      "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|[bc]|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|b|c|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -834,7 +834,7 @@
                     "2": {
                       "patterns": [
                         {
-                          "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[$#<>%\".=]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                          "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|\\$|#|<|>|%|\"|\\.|=|::|\\||--|---)\\b(?:\\{[^}]*})?",
                           "name": "storage.type.class.doxygen.c"
                         },
                         {
@@ -868,10 +868,10 @@
                               "name": "markup.inline.raw.string.c"
                             }
                           },
-                          "match": "((?<=[\\s*!/])[\\\\@][cp])\\s+(\\S+)"
+                          "match": "((?<=[\\s*!/])[\\\\@](?:c|p))\\s+(\\S+)"
                         },
                         {
-                          "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|[bc]|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
+                          "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|b|c|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
                           "name": "storage.type.class.doxygen.c"
                         },
                         {
@@ -934,7 +934,7 @@
                   "name": "comment.block.documentation.c",
                   "patterns": [
                     {
-                      "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[$#<>%\".=]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[\\s*!/])[\\\\@](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|\\$|#|<|>|%|\"|\\.|=|::|\\||--|---)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -968,10 +968,10 @@
                           "name": "markup.inline.raw.string.c"
                         }
                       },
-                      "match": "((?<=[\\s*!/])[\\\\@][cp])\\s+(\\S+)"
+                      "match": "((?<=[\\s*!/])[\\\\@](?:c|p))\\s+(\\S+)"
                     },
                     {
-                      "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|[bc]|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[\\s*!/])[\\\\@](?:a|anchor|b|c|cite|copybrief|copydetail|copydoc|def|dir|dontinclude|e|em|emoji|enum|example|extends|file|idlexcept|implements|include|includedoc|includelineno|latexinclude|link|memberof|namespace|p|package|ref|refitem|related|relates|relatedalso|relatesalso|verbinclude)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -1443,7 +1443,7 @@
                   "name": "punctuation.separator.pointer-access.c"
                 }
               },
-              "match": "((?:[a-zA-Z_]\\w*|(?<=[\\])]))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))"
+              "match": "((?:[a-zA-Z_]\\w*|(?<=]|\\)))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))"
             }
           ]
         },
@@ -1451,10 +1451,10 @@
           "name": "variable.other.member.c"
         }
       },
-      "match": "((?:[a-zA-Z_]\\w*|(?<=[\\])]))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))((?:[a-zA-Z_]\\w*\\s*(?:\\.(?:\\*|)|->(?:\\*|))\\s*)*)\\s*(\\b(?!(?:atomic_uint_least64_t|atomic_uint_least16_t|atomic_uint_least32_t|atomic_uint_least8_t|atomic_int_least16_t|atomic_uint_fast64_t|atomic_uint_fast32_t|atomic_int_least64_t|atomic_int_least32_t|pthread_rwlockattr_t|atomic_uint_fast16_t|pthread_mutexattr_t|atomic_int_fast16_t|atomic_uint_fast8_t|atomic_int_fast64_t|atomic_int_least8_t|atomic_int_fast32_t|atomic_int_fast8_t|pthread_condattr_t|atomic_uintptr_t|atomic_ptrdiff_t|pthread_rwlock_t|atomic_uintmax_t|pthread_mutex_t|atomic_intmax_t|atomic_intptr_t|atomic_char32_t|atomic_char16_t|pthread_attr_t|atomic_wchar_t|uint_least64_t|uint_least32_t|uint_least16_t|pthread_cond_t|pthread_once_t|uint_fast64_t|uint_fast16_t|atomic_size_t|uint_least8_t|int_least64_t|int_least32_t|int_least16_t|pthread_key_t|atomic_ullong|atomic_ushort|uint_fast32_t|atomic_schar|atomic_short|uint_fast8_t|int_fast64_t|int_fast32_t|int_fast16_t|atomic_ulong|atomic_llong|int_least8_t|atomic_uchar|memory_order|suseconds_t|int_fast8_t|atomic_bool|atomic_char|atomic_uint|atomic_long|atomic_int|useconds_t|_Imaginary|blksize_t|pthread_t|in_addr_t|uintptr_t|in_port_t|uintmax_t|uintmax_t|blkcnt_t|uint16_t|unsigned|_Complex|uint32_t|intptr_t|intmax_t|intmax_t|uint64_t|u_quad_t|int64_t|int32_t|ssize_t|caddr_t|clock_t|uint8_t|u_short|swblk_t|segsz_t|int16_t|fixpt_t|daddr_t|nlink_t|qaddr_t|size_t|time_t|mode_t|signed|quad_t|ushort|u_long|u_char|double|int8_t|ino_t|uid_t|pid_t|_Bool|float|dev_t|div_t|short|gid_t|off_t|u_int|key_t|id_t|uint|long|void|char|bool|id_t|int)\\b)[a-zA-Z_]\\w*\\b(?!\\())"
+      "match": "((?:[a-zA-Z_]\\w*|(?<=]|\\)))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))((?:[a-zA-Z_]\\w*\\s*(?:\\.(?:\\*|)|->(?:\\*|))\\s*)*)\\s*(\\b(?!(?:atomic_uint_least64_t|atomic_uint_least16_t|atomic_uint_least32_t|atomic_uint_least8_t|atomic_int_least16_t|atomic_uint_fast64_t|atomic_uint_fast32_t|atomic_int_least64_t|atomic_int_least32_t|pthread_rwlockattr_t|atomic_uint_fast16_t|pthread_mutexattr_t|atomic_int_fast16_t|atomic_uint_fast8_t|atomic_int_fast64_t|atomic_int_least8_t|atomic_int_fast32_t|atomic_int_fast8_t|pthread_condattr_t|atomic_uintptr_t|atomic_ptrdiff_t|pthread_rwlock_t|atomic_uintmax_t|pthread_mutex_t|atomic_intmax_t|atomic_intptr_t|atomic_char32_t|atomic_char16_t|pthread_attr_t|atomic_wchar_t|uint_least64_t|uint_least32_t|uint_least16_t|pthread_cond_t|pthread_once_t|uint_fast64_t|uint_fast16_t|atomic_size_t|uint_least8_t|int_least64_t|int_least32_t|int_least16_t|pthread_key_t|atomic_ullong|atomic_ushort|uint_fast32_t|atomic_schar|atomic_short|uint_fast8_t|int_fast64_t|int_fast32_t|int_fast16_t|atomic_ulong|atomic_llong|int_least8_t|atomic_uchar|memory_order|suseconds_t|int_fast8_t|atomic_bool|atomic_char|atomic_uint|atomic_long|atomic_int|useconds_t|_Imaginary|blksize_t|pthread_t|in_addr_t|uintptr_t|in_port_t|uintmax_t|uintmax_t|blkcnt_t|uint16_t|unsigned|_Complex|uint32_t|intptr_t|intmax_t|intmax_t|uint64_t|u_quad_t|int64_t|int32_t|ssize_t|caddr_t|clock_t|uint8_t|u_short|swblk_t|segsz_t|int16_t|fixpt_t|daddr_t|nlink_t|qaddr_t|size_t|time_t|mode_t|signed|quad_t|ushort|u_long|u_char|double|int8_t|ino_t|uid_t|pid_t|_Bool|float|dev_t|div_t|short|gid_t|off_t|u_int|key_t|id_t|uint|long|void|char|bool|id_t|int)\\b)[a-zA-Z_]\\w*\\b(?!\\())"
     },
     "method_access": {
-      "begin": "((?:[a-zA-Z_]\\w*|(?<=[\\])]))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))((?:[a-zA-Z_]\\w*\\s*(?:\\.(?:\\*|)|->(?:\\*|))\\s*)*)\\s*([a-zA-Z_]\\w*)(\\()",
+      "begin": "((?:[a-zA-Z_]\\w*|(?<=]|\\)))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))((?:[a-zA-Z_]\\w*\\s*(?:\\.(?:\\*|)|->(?:\\*|))\\s*)*)\\s*([a-zA-Z_]\\w*)(\\()",
       "beginCaptures": {
         "1": {
           "name": "variable.other.object.access.c"
@@ -1485,7 +1485,7 @@
                   "name": "punctuation.separator.pointer-access.c"
                 }
               },
-              "match": "((?:[a-zA-Z_]\\w*|(?<=[\\])]))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))"
+              "match": "((?:[a-zA-Z_]\\w*|(?<=]|\\)))\\s*)(?:(\\.(?:\\*|))|(->(?:\\*|)))"
             }
           ]
         },
@@ -1752,7 +1752,7 @@
                   "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)((?<!')([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?$"
                 },
                 {
-                  "match": "(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+\\-])+",
+                  "match": "(?:(?:[0-9a-zA-Z_.]|')|(?<=[eEpP])[+\\-])+",
                   "name": "invalid.illegal.constant.numeric"
                 }
               ]
@@ -1760,7 +1760,7 @@
           ]
         }
       },
-      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+\\-])*"
+      "match": "(?<!\\w)\\.?\\d(?:(?:[0-9a-zA-Z_.]|')|(?<=[eEpP])[+\\-])*"
     },
     "operators": {
       "patterns": [
@@ -1789,7 +1789,7 @@
           "name": "keyword.operator.bitwise.shift.c"
         },
         {
-          "match": "!=|<=|>=|==|[<>]",
+          "match": "!=|<=|>=|==|<|>",
           "name": "keyword.operator.comparison.c"
         },
         {
@@ -1797,7 +1797,7 @@
           "name": "keyword.operator.logical.c"
         },
         {
-          "match": "[\\&|\\^~]",
+          "match": "&|\\||\\^|~",
           "name": "keyword.operator.c"
         },
         {
@@ -1805,7 +1805,7 @@
           "name": "keyword.operator.assignment.c"
         },
         {
-          "match": "[%*/\\-+]",
+          "match": "%|\\*|/|-|\\+",
           "name": "keyword.operator.c"
         },
         {
@@ -2073,7 +2073,7 @@
     "preprocessor-rule-conditional-line": {
       "patterns": [
         {
-          "match": "\\bdefined\\b(?:\\s*$|(?=\\s*\\(*\\s*(?!defined\\b)[a-zA-Z_$][\\w$]*\\b\\s*\\)*\\s*(?:\\n|//|/\\*|[?:]|&&|\\|\\||\\\\\\s*\\n)))",
+          "match": "\\bdefined\\b(?:\\s*$|(?=\\s*\\(*\\s*(?!defined\\b)[a-zA-Z_$][\\w$]*\\b\\s*\\)*\\s*(?:\\n|//|/\\*|\\?|:|&&|\\|\\||\\\\\\s*\\n)))",
           "name": "keyword.control.directive.conditional.c"
         },
         {
@@ -3005,7 +3005,7 @@
           "name": "variable.parameter.probably.c"
         }
       },
-      "match": "(?<=(?:[a-zA-Z_0-9] |[\\&*>\\])]))\\s*([a-zA-Z_]\\w*)\\s*(?=(?:\\[]\\s*)?[,)])"
+      "match": "(?<=(?:[a-zA-Z_0-9] |[\\&*>\\])]))\\s*([a-zA-Z_]\\w*)\\s*(?=(?:\\[]\\s*)?(?:,|\\)))"
     },
     "static_assert": {
       "begin": "((?>(?:(?:(?>(?<!\\s)\\s+)|(/\\*)((?>(?:[^*]|(?>\\*+)[^/])*)((?>\\*+)/)))+|(?:(?:(?:(?:\\b|(?<=\\W))|(?=\\W))|\\A)|\\Z))))((?<!\\w)static_assert|_Static_assert(?!\\w))((?>(?:(?:(?>(?<!\\s)\\s+)|(/\\*)((?>(?:[^*]|(?>\\*+)[^/])*)((?>\\*+)/)))+|(?:(?:(?:(?:\\b|(?<=\\W))|(?=\\W))|\\A)|\\Z))))(\\()",
@@ -3325,7 +3325,7 @@
     "string_escaped_char": {
       "patterns": [
         {
-          "match": "\\\\([\\\\abefnprtv'\"?]|[0-3]\\d{0,2}|[4-7]\\d?|x\\h{0,2}|u\\h{0,4}|U\\h{0,8})",
+          "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3]\\d{0,2}|[4-7]\\d?|x\\h{0,2}|u\\h{0,4}|U\\h{0,8})",
           "name": "constant.character.escape.c"
         },
         {
@@ -3337,7 +3337,7 @@
     "string_placeholder": {
       "patterns": [
         {
-          "match": "%(\\d+\\$)?[#0\\- +']*[,;:_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|[ljtzqL]|vh|vl|v|hv|hl)?[diouxXDOUeEfFgGaACcSspn%]",
+          "match": "%(\\d+\\$)?[#0\\- +']*[,;:_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?[diouxXDOUeEfFgGaACcSspn%]",
           "name": "constant.other.placeholder.c"
         },
         {

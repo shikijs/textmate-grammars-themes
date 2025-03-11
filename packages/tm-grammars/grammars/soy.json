@@ -263,7 +263,7 @@
       ]
     },
     "for": {
-      "begin": "\\{/?(for(?:each|))(?=[\\s}])",
+      "begin": "\\{/?(for(?:each|))(?=\\s|})",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.soy"
@@ -395,7 +395,7 @@
       "name": "language.constant.numeric"
     },
     "operator": {
-      "match": "-|not|[*/%+]|<=|>=|[<>]|==|!=|and|or|\\?:|[?:]",
+      "match": "-|not|\\*|/|%|\\+|<=|>=|<|>|==|!=|and|or|\\?:|\\?|:",
       "name": "keyword.operator.soy"
     },
     "param": {
