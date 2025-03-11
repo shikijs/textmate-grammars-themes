@@ -1,0 +1,203 @@
+#CB7676        define
+#DBD7CACC       
+#CB7676        dso_local
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       
+#80A665        @array_sum
+#DBD7CACC      (ptr 
+#CB7676        nocapture
+#DBD7CACC       
+#CB7676        noundef
+#DBD7CACC       
+#CB7676        readonly
+#DBD7CACC       
+#BD976A        %input
+#DBD7CACC      , 
+#CB7676        i32
+#DBD7CACC       
+#CB7676        noundef
+#DBD7CACC       
+#BD976A        %length
+#DBD7CACC      ) 
+#CB7676        local_unnamed_addr
+#DBD7CACC       {
+#80A665        entry:
+#DBD7CACC        
+#BD976A        %cmp4
+#DBD7CACC       = 
+#4D9375        icmp
+#DBD7CACC       
+#4D9375        sgt
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       
+#BD976A        %length
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC        
+#4D9375        br
+#DBD7CACC       
+#CB7676        i1
+#DBD7CACC       
+#BD976A        %cmp4
+#DBD7CACC      , 
+#CB7676        label
+#DBD7CACC       
+#BD976A        %for.body.preheader
+#DBD7CACC      , 
+#CB7676        label
+#DBD7CACC       
+#BD976A        %for.end
+#80A665        for.body.preheader:
+#DBD7CACC        
+#BD976A        %wide.trip.count
+#DBD7CACC       = 
+#4D9375        zext
+#DBD7CACC       nneg 
+#CB7676        i32
+#DBD7CACC       
+#BD976A        %length
+#DBD7CACC       
+#CB7676        to
+#DBD7CACC       
+#CB7676        i64
+#DBD7CACC        
+#4D9375        br
+#DBD7CACC       
+#CB7676        label
+#DBD7CACC       
+#BD976A        %for.body
+#80A665        for.body:
+#DBD7CACC        
+#BD976A        %indvars.iv
+#DBD7CACC       = 
+#4D9375        phi
+#DBD7CACC       
+#CB7676        i64
+#DBD7CACC       [ 
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        %for.body.preheader
+#DBD7CACC       ], [ 
+#BD976A        %indvars.iv.next
+#DBD7CACC      , 
+#BD976A        %for.body
+#DBD7CACC       ]
+#DBD7CACC        
+#BD976A        %sum.06
+#DBD7CACC       = 
+#4D9375        phi
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       [ 
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        %for.body.preheader
+#DBD7CACC       ], [ 
+#BD976A        %add
+#DBD7CACC      , 
+#BD976A        %for.body
+#DBD7CACC       ]
+#DBD7CACC        
+#BD976A        %arrayidx
+#DBD7CACC       = 
+#4D9375        getelementptr
+#DBD7CACC       
+#4D9375        inbounds
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC      , ptr 
+#BD976A        %input
+#DBD7CACC      , 
+#CB7676        i64
+#DBD7CACC       
+#BD976A        %indvars.iv
+#DBD7CACC        
+#BD976A        %0
+#DBD7CACC       = 
+#4D9375        load
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC      , ptr 
+#BD976A        %arrayidx
+#DBD7CACC      , 
+#CB7676        align
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC        
+#BD976A        %add
+#DBD7CACC       = 
+#4D9375        add
+#DBD7CACC       
+#4D9375        nsw
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       
+#BD976A        %0
+#DBD7CACC      , 
+#BD976A        %sum.06
+#DBD7CACC        
+#BD976A        %indvars.iv.next
+#DBD7CACC       = 
+#4D9375        add
+#DBD7CACC       
+#4D9375        nuw
+#DBD7CACC       
+#4D9375        nsw
+#DBD7CACC       
+#CB7676        i64
+#DBD7CACC       
+#BD976A        %indvars.iv
+#DBD7CACC      , 
+#4C9A91        1
+#DBD7CACC        
+#BD976A        %exitcond.not
+#DBD7CACC       = 
+#4D9375        icmp
+#DBD7CACC       
+#4D9375        eq
+#DBD7CACC       
+#CB7676        i64
+#DBD7CACC       
+#BD976A        %indvars.iv.next
+#DBD7CACC      , 
+#BD976A        %wide.trip.count
+#DBD7CACC        
+#4D9375        br
+#DBD7CACC       
+#CB7676        i1
+#DBD7CACC       
+#BD976A        %exitcond.not
+#DBD7CACC      , 
+#CB7676        label
+#DBD7CACC       
+#BD976A        %for.end
+#DBD7CACC      , 
+#CB7676        label
+#DBD7CACC       
+#BD976A        %for.body
+#80A665        for.end:
+#DBD7CACC        
+#BD976A        %sum.0.lcssa
+#DBD7CACC       = 
+#4D9375        phi
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       [ 
+#4C9A91        0
+#DBD7CACC      , 
+#BD976A        %entry
+#DBD7CACC       ], [ 
+#BD976A        %add
+#DBD7CACC      , 
+#BD976A        %for.body
+#DBD7CACC       ]
+#DBD7CACC        
+#4D9375        ret
+#DBD7CACC       
+#CB7676        i32
+#DBD7CACC       
+#BD976A        %sum.0.lcssa
+#DBD7CACC      }
+#758575DD      ; From https://godbolt.org/z/vY4GMP3Wo
