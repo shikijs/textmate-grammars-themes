@@ -2140,7 +2140,7 @@ export const grammars = [
     displayName: 'LLVM IR',
     funding: [
     ],
-    hash: '9d9OREXfF1YB_RYO4rnqPFz58ki_BICzKr37qOU9nRA',
+    hash: 'WKcnkFsD13M_mYUhPPX6XcpE-VCDP3eYStfXhR29TDQ',
     lastUpdate: '2024-05-30T11:17:37Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/llvm/llvm-project/main/LICENSE.TXT',

@@ -12,7 +12,6 @@ const sampleDir = fileURLToPath(new URL('../samples', import.meta.url))
 
 const JS_ENGINE_EXPECT_FAIL: string[] = [
   'swift',
-  'llvm',
 ]
 
 const JS_ENGINE_EXPECT_MISMATCH: string[] = [
