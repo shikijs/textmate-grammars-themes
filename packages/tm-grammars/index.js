@@ -4395,21 +4395,21 @@ export const grammars = [
 
 export const injections = [
   {
-    byteSize: 12646,
+    byteSize: 18298,
     embeddedIn: [
       'angular-ts',
       'angular-html',
     ],
     funding: [
     ],
-    hash: '3n0wu2DuuFSj_NXxrp9pvnebLTMWG5_wQrJ1der11ys',
-    lastUpdate: '2023-11-08T17:02:59Z',
+    hash: 'bX8DyAhANINI88pfAg0eGzOY2Li8bDELOEl5gro-trU',
+    lastUpdate: '2025-03-12T17:49:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-expression',
     scopeName: 'expression.ng',
-    sha: 'd7dab52644375e64af3deaeac045cc75f5954414',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/d7dab52644375e64af3deaeac045cc75f5954414/syntaxes/expression.json',
+    sha: 'de5d9650caa3a9de1b50e9815acb2a631f14ab3d',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/de5d9650caa3a9de1b50e9815acb2a631f14ab3d/syntaxes/expression.json',
   },
   {
     byteSize: 1196,
