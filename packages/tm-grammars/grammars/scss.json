@@ -289,10 +289,10 @@
               "name": "punctuation.definition.wildcard.scss"
             }
           },
-          "match": "\\b([\\w\\-]+)(\\*)"
+          "match": "\\b([\\w-]+)(\\*)"
         },
         {
-          "match": "\\b[\\w\\-]+\\b",
+          "match": "\\b[\\w-]+\\b",
           "name": "entity.name.function.scss"
         },
         {
@@ -409,7 +409,7 @@
     "at_rule_include": {
       "patterns": [
         {
-          "begin": "(?<=@include)\\s+(?:([\\w\\-]+)\\s*(\\.))?([\\w\\-]+)\\s*(\\()",
+          "begin": "(?<=@include)\\s+(?:([\\w-]+)\\s*(\\.))?([\\w-]+)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "variable.scss"
@@ -452,7 +452,7 @@
               "name": "entity.name.function.scss"
             }
           },
-          "match": "(?<=@include)\\s+(?:([\\w\\-]+)\\s*(\\.))?([\\w\\-]+)"
+          "match": "(?<=@include)\\s+(?:([\\w-]+)\\s*(\\.))?([\\w-]+)"
         },
         {
           "captures": {
@@ -489,7 +489,7 @@
               "name": "entity.name.function.scss"
             }
           },
-          "match": "(?<=@keyframes)\\s+((?:[_A-Za-z][\\-\\w]|-[_A-Za-z])[\\-\\w]*)"
+          "match": "(?<=@keyframes)\\s+((?:[_A-Za-z][-\\w]|-[_A-Za-z])[-\\w]*)"
         },
         {
           "begin": "(?<=@keyframes)\\s+(\")",
@@ -619,8 +619,8 @@
               "name": "meta.property-list.media-query.scss",
               "patterns": [
                 {
-                  "begin": "(?<![\\-a-z])(?=[\\-a-z])",
-                  "end": "$|(?![\\-a-z])",
+                  "begin": "(?<![-a-z])(?=[-a-z])",
+                  "end": "$|(?![-a-z])",
                   "name": "meta.property-name.media-query.scss",
                   "patterns": [
                     {
@@ -672,7 +672,7 @@
     "at_rule_mixin": {
       "patterns": [
         {
-          "begin": "(?<=@mixin)\\s+([\\w\\-]+)\\s*(\\()",
+          "begin": "(?<=@mixin)\\s+([\\w-]+)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.scss"
@@ -700,7 +700,7 @@
               "name": "entity.name.function.scss"
             }
           },
-          "match": "(?<=@mixin)\\s+([\\w\\-]+)",
+          "match": "(?<=@mixin)\\s+([\\w-]+)",
           "name": "meta.at-rule.mixin.scss"
         },
         {
@@ -736,7 +736,7 @@
           ]
         },
         {
-          "begin": "(?<=@namespace)\\s+([\\w\\-]*)",
+          "begin": "(?<=@namespace)\\s+([\\w-]*)",
           "captures": {
             "1": {
               "name": "entity.name.namespace-prefix.scss"
@@ -788,7 +788,7 @@
     "at_rule_page": {
       "patterns": [
         {
-          "begin": "^\\s*((@)page)(?=[:\\s])\\s*([\\-:\\w]*)",
+          "begin": "^\\s*((@)page)(?=[:\\s])\\s*([-:\\w]*)",
           "captures": {
             "1": {
               "name": "keyword.control.at-rule.page.scss"
@@ -873,7 +873,7 @@
           "name": "keyword.control.operator"
         },
         {
-          "match": "\\b[\\w\\-]+\\b",
+          "match": "\\b[\\w-]+\\b",
           "name": "variable.scss"
         },
         {
@@ -1023,7 +1023,7 @@
       "name": "keyword.other.default.scss"
     },
     "constant_functions": {
-      "begin": "(?:([\\w\\-]+)(\\.))?([\\w\\-]+)(\\()",
+      "begin": "(?:([\\w-]+)(\\.))?([\\w-]+)(\\()",
       "beginCaptures": {
         "1": {
           "name": "variable.scss"
@@ -1130,7 +1130,7 @@
     "functions": {
       "patterns": [
         {
-          "begin": "([\\w\\-]+)(\\()\\s*",
+          "begin": "([\\w-]+)(\\()\\s*",
           "beginCaptures": {
             "1": {
               "name": "support.function.misc.scss"
@@ -1152,7 +1152,7 @@
           ]
         },
         {
-          "match": "([\\w\\-]+)",
+          "match": "([\\w-]+)",
           "name": "support.function.misc.scss"
         }
       ]
@@ -1233,7 +1233,7 @@
               "name": "punctuation.separator.key-value.scss"
             }
           },
-          "match": "\\b([\\w\\-]+)\\s*(:)"
+          "match": "\\b([\\w-]+)\\s*(:)"
         },
         {
           "match": ",",
@@ -1251,7 +1251,7 @@
       ]
     },
     "operators": {
-      "match": "[\\-+*/](?!\\s*[\\-+*/])",
+      "match": "[-+*/](?!\\s*[-+*/])",
       "name": "keyword.operator.css"
     },
     "parameters": {
@@ -1315,14 +1315,14 @@
           ]
         }
       },
-      "match": "(?<=&)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|[$}])+)(?=$|[\\s,.#)\\[:{>+~|]|/\\*)",
+      "match": "(?<=&)((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|[$}])+)(?=$|[\\s,.#)\\[:{>+~|]|/\\*)",
       "name": "entity.other.attribute-name.parent-selector-suffix.css"
     },
     "properties": {
       "patterns": [
         {
-          "begin": "(?<![\\-a-z])(?=[\\-a-z])",
-          "end": "$|(?![\\-a-z])",
+          "begin": "(?<![-a-z])(?=[-a-z])",
+          "end": "$|(?![-a-z])",
           "name": "meta.property-name.scss",
           "patterns": [
             {
@@ -1566,7 +1566,7 @@
           "name": "string.quoted.single.attribute-value.scss"
         }
       },
-      "match": "(?i)(\\[)\\s*((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+?)(?:\\s*([~|\\^$*]?=)\\s*(?:((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)|((\")(.*?)(\"))|((')(.*?)('))))?\\s*(])",
+      "match": "(?i)(\\[)\\s*((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+?)(?:\\s*([~|^$*]?=)\\s*(?:((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)|((\")(.*?)(\"))|((')(.*?)('))))?\\s*(])",
       "name": "meta.attribute-selector.scss"
     },
     "selector_class": {
@@ -1590,7 +1590,7 @@
           ]
         }
       },
-      "match": "(\\.)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*|;)",
+      "match": "(\\.)((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*|;)",
       "name": "entity.other.attribute-name.class.css"
     },
     "selector_custom": {
@@ -1618,7 +1618,7 @@
           ]
         }
       },
-      "match": "(#)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
+      "match": "(#)((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.?\\$|})+)(?=$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
       "name": "entity.other.attribute-name.id.css"
     },
     "selector_placeholder": {
@@ -1642,7 +1642,7 @@
           ]
         }
       },
-      "match": "(%)((?:[\\-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.\\$|[$}])+)(?=;|$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
+      "match": "(%)((?:[-a-zA-Z_0-9[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.)|#\\{|\\.\\$|[$}])+)(?=;|$|[\\s,#)\\[:{>+~|]|\\.[^$]|/\\*)",
       "name": "entity.other.attribute-name.placeholder.css"
     },
     "selector_pseudo_class": {
@@ -1799,7 +1799,7 @@
       ]
     },
     "variable_setting": {
-      "begin": "(?=\\$[\\w\\-]+\\s*:)",
+      "begin": "(?=\\$[\\w-]+\\s*:)",
       "contentName": "meta.definition.variable.scss",
       "end": ";",
       "endCaptures": {
@@ -1809,7 +1809,7 @@
       },
       "patterns": [
         {
-          "match": "\\$[\\w\\-]+(?=\\s*:)",
+          "match": "\\$[\\w-]+(?=\\s*:)",
           "name": "variable.scss"
         },
         {
@@ -1861,10 +1861,10 @@
               "name": "variable.scss"
             }
           },
-          "match": "\\b([\\w\\-]+)(\\.)(\\$[\\w\\-]+)\\b"
+          "match": "\\b([\\w-]+)(\\.)(\\$[\\w-]+)\\b"
         },
         {
-          "match": "(\\$|--)[A-Za-z0-9_\\-]+\\b",
+          "match": "(\\$|--)[A-Za-z0-9_-]+\\b",
           "name": "variable.scss"
         }
       ]

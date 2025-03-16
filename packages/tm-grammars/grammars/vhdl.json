@@ -334,7 +334,7 @@
     "constants_numeric": {
       "patterns": [
         {
-          "match": "\\b([+\\-]?[\\d_]+\\.[\\d_]+([eE][+\\-]?[\\d_]+)?)\\b",
+          "match": "\\b([+-]?[\\d_]+\\.[\\d_]+([eE][+-]?[\\d_]+)?)\\b",
           "name": "constant.numeric.floating_point.vhdl"
         },
         {
@@ -350,11 +350,11 @@
           "name": "constant.numeric.quoted.double.string.hex.vhdl"
         },
         {
-          "match": "[oO]\"[0-7_uUxXzZwWlLhH\\-]+\"",
+          "match": "[oO]\"[0-7_uUxXzZwWlLhH-]+\"",
           "name": "constant.numeric.quoted.double.string.octal.vhdl"
         },
         {
-          "match": "[bB]?\"[01_uUxXzZwWlLhH\\-]+\"",
+          "match": "[bB]?\"[01_uUxXzZwWlLhH-]+\"",
           "name": "constant.numeric.quoted.double.string.binary.vhdl"
         },
         {
@@ -367,7 +367,7 @@
           "name": "constant.numeric.quoted.double.string.illegal.vhdl"
         },
         {
-          "match": "'[01uUxXzZwWlLhH\\-]'",
+          "match": "'[01uUxXzZwWlLhH-]'",
           "name": "constant.numeric.quoted.single.std_logic"
         }
       ]
@@ -758,7 +758,7 @@
           "name": "standard.library.language.vhdl"
         },
         {
-          "match": "([+\\-]|<=|=|=>|:=|>=|[></|\\&]|(\\*{1,2}))",
+          "match": "([+-]|<=|=|=>|:=|>=|[></|\\&]|(\\*{1,2}))",
           "name": "keyword.operator.vhdl"
         }
       ]

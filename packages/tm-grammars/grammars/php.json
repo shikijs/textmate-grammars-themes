@@ -969,7 +969,7 @@
       "name": "keyword.operator.increment-decrement.php"
     },
     {
-      "match": "[\\-+]|\\*\\*?|[/%]",
+      "match": "[-+]|\\*\\*?|[/%]",
       "name": "keyword.operator.arithmetic.php"
     },
     {
@@ -980,7 +980,7 @@
       "include": "#function-call"
     },
     {
-      "match": "<<|>>|[~\\^\\&|]",
+      "match": "<<|>>|[~^\\&|]",
       "name": "keyword.operator.bitwise.php"
     },
     {
@@ -1660,7 +1660,7 @@
             }
           },
           "contentName": "text.html",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1696,7 +1696,7 @@
             }
           },
           "contentName": "text.xml",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1732,7 +1732,7 @@
             }
           },
           "contentName": "source.sql",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1768,7 +1768,7 @@
             }
           },
           "contentName": "source.js",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1804,7 +1804,7 @@
             }
           },
           "contentName": "source.json",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1840,7 +1840,7 @@
             }
           },
           "contentName": "source.css",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1876,7 +1876,7 @@
             }
           },
           "contentName": "string.regexp.heredoc.php",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1890,7 +1890,7 @@
               "include": "#interpolation"
             },
             {
-              "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -1922,7 +1922,7 @@
               ]
             },
             {
-              "match": "[$\\^+*]",
+              "match": "[$^+*]",
               "name": "keyword.operator.regexp.php"
             },
             {
@@ -1959,7 +1959,7 @@
             }
           },
           "contentName": "text.html.php.blade",
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -1988,7 +1988,7 @@
               "name": "invalid.illegal.trailing-whitespace.php"
             }
           },
-          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\3)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.heredoc.php"
@@ -2251,7 +2251,7 @@
             }
           },
           "contentName": "text.html",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2284,7 +2284,7 @@
             }
           },
           "contentName": "text.xml",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2317,7 +2317,7 @@
             }
           },
           "contentName": "source.sql",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2350,7 +2350,7 @@
             }
           },
           "contentName": "source.js",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2383,7 +2383,7 @@
             }
           },
           "contentName": "source.json",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2416,7 +2416,7 @@
             }
           },
           "contentName": "source.css",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2449,7 +2449,7 @@
             }
           },
           "contentName": "string.regexp.nowdoc.php",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2460,7 +2460,7 @@
           },
           "patterns": [
             {
-              "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -2492,7 +2492,7 @@
               ]
             },
             {
-              "match": "[$\\^+*]",
+              "match": "[$^+*]",
               "name": "keyword.operator.regexp.php"
             },
             {
@@ -2529,7 +2529,7 @@
             }
           },
           "contentName": "text.html.php.blade",
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -2553,7 +2553,7 @@
               "name": "invalid.illegal.trailing-whitespace.php"
             }
           },
-          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x{7f}-\\x{10ffff}])",
+          "end": "^\\s*(\\2)(?![A-Za-z0-9_\\x7F-\\x{10FFFF}])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.nowdoc.php"
@@ -2593,7 +2593,7 @@
               "name": "punctuation.separator.decimal.period.php"
             }
           },
-          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+\\-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+\\-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+\\-]?[0-9]+(?:_[0-9]+)*)",
+          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+-]?[0-9]+(?:_[0-9]+)*)",
           "name": "constant.numeric.decimal.php"
         },
         {
@@ -2957,7 +2957,7 @@
       "name": "string.regexp.double-quoted.php",
       "patterns": [
         {
-          "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+          "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
@@ -2991,7 +2991,7 @@
           ]
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]
@@ -3037,7 +3037,7 @@
           "name": "string.regexp.character-class.php"
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]

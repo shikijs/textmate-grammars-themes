@@ -349,7 +349,7 @@
       "match": "(?<!\\.)\\b(as)\\b\\s*(?<type_name>(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?(?!\\?))?(?:\\s*\\[\\s*(?:,\\s*)*](?:\\s*\\?(?!\\?))?)*)?"
     },
     "assignment-expression": {
-      "begin": "(?:[*/%+\\-]|\\?\\?|[\\&\\^]|<<|>>>?|\\|)?=(?![=>])",
+      "begin": "(?:[*/%+-]|\\?\\?|[\\&^]|<<|>>>?|\\|)?=(?![=>])",
       "beginCaptures": {
         "0": {
           "patterns": [
@@ -660,7 +660,7 @@
           "name": "punctuation.parenthesis.close.cs"
         }
       },
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "include": "#casted-constant-pattern"
@@ -1795,7 +1795,7 @@
           "name": "keyword.operator.logical.cs"
         },
         {
-          "match": "[\\&~\\^|]",
+          "match": "[\\&~^|]",
           "name": "keyword.operator.bitwise.cs"
         },
         {
@@ -2492,7 +2492,7 @@
           "name": "keyword.operator.expression.pattern.is.cs"
         }
       },
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=)",
       "patterns": [
         {
           "include": "#pattern"
@@ -2613,7 +2613,7 @@
     },
     "list-pattern": {
       "begin": "(?=\\[)",
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "begin": "\\[",
@@ -2639,7 +2639,7 @@
         },
         {
           "begin": "(?<=])",
-          "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -3186,7 +3186,7 @@
                   "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)_(?=\\h)))*)((?<!_)([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)_(?=\\h))*))?((?:(?:(?:(?:(?:[uU]|[uU]l)|[uU]L)|l[uU]?)|L[uU]?)|[fFdDmM])(?!\\w))?$"
                 },
                 {
-                  "match": "(?:[0-9a-zA-Z_]|(?<=[eE])[+\\-]|\\.\\d)+",
+                  "match": "(?:[0-9a-zA-Z_]|(?<=[eE])[+-]|\\.\\d)+",
                   "name": "invalid.illegal.constant.numeric.cs"
                 }
               ]
@@ -3194,7 +3194,7 @@
           ]
         }
       },
-      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_]|(?<=[eE])[+\\-]|\\.\\d)*"
+      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_]|(?<=[eE])[+-]|\\.\\d)*"
     },
     "object-creation-expression": {
       "patterns": [
@@ -3247,7 +3247,7 @@
       "name": "keyword.operator.assignment.cs"
     },
     "operator-declaration": {
-      "begin": "(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[+\\-*/%\\&|\\^!=~<>]+|true|false)\\s*(?=\\()",
+      "begin": "(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[+\\-*/%\\&|^!=~<>]+|true|false)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -3417,7 +3417,7 @@
     },
     "positional-pattern": {
       "begin": "(?=\\()",
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "begin": "\\(",
@@ -3443,7 +3443,7 @@
         },
         {
           "begin": "(?<=\\))",
-          "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -3859,7 +3859,7 @@
     },
     "property-pattern": {
       "begin": "(?=\\{)",
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "begin": "\\{",
@@ -3885,7 +3885,7 @@
         },
         {
           "begin": "(?<=})",
-          "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -4249,7 +4249,7 @@
           "name": "keyword.operator.relational.cs"
         }
       },
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "include": "#expression"
@@ -5135,11 +5135,11 @@
     },
     "type-pattern": {
       "begin": "(?=@?[_[:alpha:]][_[:alnum:]]*)",
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "begin": "\\G",
-          "end": "(?!\\G[@_[:alpha:]])(?=[({@_[:alpha:])}\\],;:=\\&|\\^]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
+          "end": "(?!\\G[@_[:alpha:]])(?=[({@_[:alpha:])}\\],;:=\\&|^]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5151,7 +5151,7 @@
         },
         {
           "begin": "(?=[({@_[:alpha:]])",
-          "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5188,7 +5188,7 @@
               "name": "punctuation.separator.coloncolon.cs"
             }
           },
-          "end": "(?<=[_[:alnum:]])|(?=[.<\\[({)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_[:alnum:]])|(?=[.<\\[({)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5210,7 +5210,7 @@
               "name": "punctuation.accessor.cs"
             }
           },
-          "end": "(?<=[_[:alnum:]])|(?=[<\\[({)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_[:alnum:]])|(?=[<\\[({)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5368,7 +5368,7 @@
           "name": "storage.type.var.cs"
         }
       },
-      "end": "(?=[)}\\],;:?=\\&|\\^]|!=|\\b(and|or|when)\\b)",
+      "end": "(?=[)}\\],;:?=\\&|^]|!=|\\b(and|or|when)\\b)",
       "patterns": [
         {
           "include": "#designation-pattern"
@@ -5551,7 +5551,7 @@
               "name": "punctuation.separator.equals.cs"
             }
           },
-          "match": "(?:^|\\s+)((?:([\\-_[:alnum:]]+)(:))?([\\-_[:alnum:]]+))(=)"
+          "match": "(?:^|\\s+)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))(=)"
         },
         {
           "include": "#xml-string"
@@ -5584,7 +5584,7 @@
               "name": "punctuation.definition.constant.cs"
             }
           },
-          "match": "(&)([[:alpha:]:_][[:alnum:]:_.\\-]*|#\\d+|#x\\h+)(;)",
+          "match": "(&)([[:alpha:]:_][[:alnum:]:_.-]*|#\\d+|#x\\h+)(;)",
           "name": "constant.character.entity.cs"
         },
         {
@@ -5669,7 +5669,7 @@
       ]
     },
     "xml-tag": {
-      "begin": "(</?)((?:([\\-_[:alnum:]]+)(:))?([\\-_[:alnum:]]+))",
+      "begin": "(</?)((?:([-_[:alnum:]]+)(:))?([-_[:alnum:]]+))",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.cs"

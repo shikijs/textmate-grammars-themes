@@ -77,27 +77,27 @@
           "name": "constant.numeric.symbol.clojure"
         },
         {
-          "match": "([\\-+]?\\d+/\\d+)",
+          "match": "([-+]?\\d+/\\d+)",
           "name": "constant.numeric.ratio.clojure"
         },
         {
-          "match": "([\\-+]?(?:3[0-6]|[12]\\d|[2-9])[rR][0-9A-Za-z]+N?)",
+          "match": "([-+]?(?:3[0-6]|[12]\\d|[2-9])[rR][0-9A-Za-z]+N?)",
           "name": "constant.numeric.arbitrary-radix.clojure"
         },
         {
-          "match": "([\\-+]?0[xX]\\h+N?)",
+          "match": "([-+]?0[xX]\\h+N?)",
           "name": "constant.numeric.hexadecimal.clojure"
         },
         {
-          "match": "([\\-+]?0[0-7]+N?)",
+          "match": "([-+]?0[0-7]+N?)",
           "name": "constant.numeric.octal.clojure"
         },
         {
-          "match": "([\\-+]?[0-9]+(\\.|(?=[eEM]))[0-9]*([eE][\\-+]?[0-9]+)?M?)",
+          "match": "([-+]?[0-9]+(\\.|(?=[eEM]))[0-9]*([eE][-+]?[0-9]+)?M?)",
           "name": "constant.numeric.double.clojure"
         },
         {
-          "match": "([\\-+]?\\d+N?)",
+          "match": "([-+]?\\d+N?)",
           "name": "constant.numeric.long.clojure"
         },
         {
@@ -112,11 +112,11 @@
     "keyfn": {
       "patterns": [
         {
-          "match": "(?<=([\\s(\\[{]))(if(-[\\-\\p{Ll}?]*)?|when(-[\\-\\p{Ll}]*)?|for(-[\\-\\p{Ll}]*)?|cond|do|let(-[\\-\\p{Ll}?]*)?|binding|loop|recur|fn|throw[\\p{Ll}\\-]*|try|catch|finally|(\\p{Ll}*case))(?=([\\s)\\]}]))",
+          "match": "(?<=([\\s(\\[{]))(if(-[-\\p{Ll}?]*)?|when(-[-\\p{Ll}]*)?|for(-[-\\p{Ll}]*)?|cond|do|let(-[-\\p{Ll}?]*)?|binding|loop|recur|fn|throw[\\p{Ll}-]*|try|catch|finally|(\\p{Ll}*case))(?=([\\s)\\]}]))",
           "name": "storage.control.clojure"
         },
         {
-          "match": "(?<=([\\s(\\[{]))(declare-?|(in-)?ns|import|use|require|load|compile|(def[\\p{Ll}\\-]*))(?=([\\s)\\]}]))",
+          "match": "(?<=([\\s(\\[{]))(declare-?|(in-)?ns|import|use|require|load|compile|(def[\\p{Ll}-]*))(?=([\\s)\\]}]))",
           "name": "keyword.control.clojure"
         }
       ]
@@ -295,7 +295,7 @@
       "name": "meta.expression.clojure",
       "patterns": [
         {
-          "begin": "(?<=\\()(ns|declare|def[\\w\\d._:+=><!?*\\-]*|[\\w._:+=><!?*\\-][\\w\\d._:+=><!?*\\-]*/def[\\w\\d._:+=><!?*\\-]*)\\s+",
+          "begin": "(?<=\\()(ns|declare|def[\\w\\d._:+=><!?*-]*|[\\w._:+=><!?*-][\\w\\d._:+=><!?*-]*/def[\\w\\d._:+=><!?*-]*)\\s+",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.clojure"

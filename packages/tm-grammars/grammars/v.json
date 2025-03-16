@@ -122,7 +122,7 @@
           ]
         }
       },
-      "match": "\\s+([:+\\-*/%\\&|\\^]?=)\\s+",
+      "match": "\\s+([:+\\-*/%\\&|^]?=)\\s+",
       "name": "meta.definition.variable.v"
     },
     "attributes": {
@@ -599,7 +599,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "([0-9]+(_?))+(\\.)([0-9]+[eE][\\-+]?[0-9]+)",
+          "match": "([0-9]+(_?))+(\\.)([0-9]+[eE][-+]?[0-9]+)",
           "name": "constant.numeric.exponential.v"
         },
         {
@@ -639,7 +639,7 @@
           "name": "keyword.operator.assignment.v"
         },
         {
-          "match": "([\\&|\\^~]|<(?!<)|>(?!>))",
+          "match": "([\\&|^~]|<(?!<)|>(?!>))",
           "name": "keyword.operator.bitwise.v"
         },
         {

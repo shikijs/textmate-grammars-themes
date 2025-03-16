@@ -82,6 +82,8 @@ export async function cleanupGrammar(grammar: any, verify = true) {
         // performance
         result = optimize(pattern, {
           rules: {
+            // Needed since TextMate grammars merge backrefs across patterns
+            allowOrphanBackrefs: true,
             // Follow `vscode-oniguruma` which enables this Oniguruma option by default
             captureGroup: true,
           },

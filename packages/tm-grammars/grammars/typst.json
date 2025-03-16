@@ -10,7 +10,7 @@
     "arguments": {
       "patterns": [
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_\\-]*(?=:)",
+          "match": "\\b[[:alpha:]_][[:alnum:]_-]*(?=:)",
           "name": "variable.parameter.typst"
         },
         {
@@ -84,7 +84,7 @@
           "name": "keyword.operator.assignment.typst"
         },
         {
-          "match": "[+*/]|(?<![[:alpha:]_][[:alnum:]_\\-]*)-(?![:alnum]_-]*[[:alpha:]_])",
+          "match": "[+*/]|(?<![[:alpha:]_][[:alnum:]_-]*)-(?![:alnum]_-]*[[:alpha:]_])",
           "name": "keyword.operator.arithmetic.typst"
         },
         {
@@ -115,15 +115,15 @@
           "include": "#constants"
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_\\-]*!?(?=[\\[(])",
+          "match": "\\b[[:alpha:]_][[:alnum:]_-]*!?(?=[\\[(])",
           "name": "entity.name.function.typst"
         },
         {
-          "match": "(?<=\\bshow\\s*)\\b[[:alpha:]_][[:alnum:]_\\-]*(?=\\s*[:.])",
+          "match": "(?<=\\bshow\\s*)\\b[[:alpha:]_][[:alnum:]_-]*(?=\\s*[:.])",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=\\b[[:alpha:]_][[:alnum:]_\\-]*!?)\\(",
+          "begin": "(?<=\\b[[:alpha:]_][[:alnum:]_-]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -137,7 +137,7 @@
           ]
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_\\-]*\\b",
+          "match": "\\b[[:alpha:]_][[:alnum:]_-]*\\b",
           "name": "variable.other.typst"
         },
         {
@@ -213,19 +213,19 @@
           "name": "constant.language.boolean.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+\\-]?\\d+)?(mm|pt|cm|in|em)\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?(mm|pt|cm|in|em)\\b",
           "name": "constant.numeric.length.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+\\-]?\\d+)?(rad|deg)\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?(rad|deg)\\b",
           "name": "constant.numeric.angle.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+\\-]?\\d+)?%",
+          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?%",
           "name": "constant.numeric.percentage.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+\\-]?\\d+)?fr",
+          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?fr",
           "name": "constant.numeric.fr.typst"
         },
         {
@@ -233,7 +233,7 @@
           "name": "constant.numeric.integer.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+\\-]?\\d+)?\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?\\b",
           "name": "constant.numeric.float.typst"
         },
         {
@@ -406,7 +406,7 @@
               "name": "punctuation.definition.label.typst"
             }
           },
-          "match": "<[[:alpha:]_][[:alnum:]_\\-]*>",
+          "match": "<[[:alpha:]_][[:alnum:]_-]*>",
           "name": "entity.other.label.typst"
         },
         {
@@ -415,7 +415,7 @@
               "name": "punctuation.definition.reference.typst"
             }
           },
-          "match": "(@)[[:alpha:]_][[:alnum:]_\\-]*",
+          "match": "(@)[[:alpha:]_][[:alnum:]_-]*",
           "name": "entity.other.reference.typst"
         },
         {
@@ -529,11 +529,11 @@
               "name": "punctuation.definition.function.typst"
             }
           },
-          "match": "((#)[[:alpha:]_][[:alnum:]_\\-]*!?)(?=[\\[(])",
+          "match": "((#)[[:alpha:]_][[:alnum:]_-]*!?)(?=[\\[(])",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=#[[:alpha:]_][[:alnum:]_\\-]*!?)\\(",
+          "begin": "(?<=#[[:alpha:]_][[:alnum:]_-]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -552,7 +552,7 @@
               "name": "punctuation.definition.variable.typst"
             }
           },
-          "match": "(#)[[:alpha:]_][.[:alnum:]_\\-]*",
+          "match": "(#)[[:alpha:]_][.[:alnum:]_-]*",
           "name": "entity.other.interpolated.typst"
         },
         {

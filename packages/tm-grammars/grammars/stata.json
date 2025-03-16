@@ -690,7 +690,7 @@
           "name": "storage.type.orgtype.mata"
         },
         {
-          "match": "!|\\+\\+|--|[\\&'?\\\\]|::|,|\\.\\.|[|=]|==|>=|<=|[<>]|!=|[#+\\-*\\^/]",
+          "match": "!|\\+\\+|--|[\\&'?\\\\]|::|,|\\.\\.|[|=]|==|>=|<=|[<>]|!=|[#+\\-*^/]",
           "name": "keyword.operator.mata"
         },
         {
@@ -747,7 +747,7 @@
     "ascii-regex-character-class": {
       "patterns": [
         {
-          "match": "\\\\[*+?\\-.\\^$|\\[\\]()\\\\]",
+          "match": "\\\\[*+?\\-.^$|\\[\\]()\\\\]",
           "name": "constant.character.escape.backslash.stata"
         },
         {
@@ -1380,15 +1380,15 @@
           "include": "#factorvariables"
         },
         {
-          "match": "\\b(?i:(\\d+\\.\\d*(e[\\-+]?\\d+)?))(?=[^a-zA-Z_])",
+          "match": "\\b(?i:(\\d+\\.\\d*(e[-+]?\\d+)?))(?=[^a-zA-Z_])",
           "name": "constant.numeric.float.stata"
         },
         {
-          "match": "(?<=[^0-9a-zA-Z_])(?i:(\\.\\d+(e[\\-+]?\\d+)?))",
+          "match": "(?<=[^0-9a-zA-Z_])(?i:(\\.\\d+(e[-+]?\\d+)?))",
           "name": "constant.numeric.float.stata"
         },
         {
-          "match": "\\b(?i:(\\d+e[\\-+]?\\d+))",
+          "match": "\\b(?i:(\\d+e[-+]?\\d+))",
           "name": "constant.numeric.float.stata"
         },
         {
@@ -1898,7 +1898,7 @@
               "name": "entity.name.type.class.stata"
             }
           },
-          "match": "\\b(list)\\s+(\\w{1,32})\\s+([|\\&\\-]|===|==|in)\\s+(\\w{1,32})"
+          "match": "\\b(list)\\s+(\\w{1,32})\\s+([|\\&-]|===|==|in)\\s+(\\w{1,32})"
         },
         {
           "captures": {
@@ -2316,7 +2316,7 @@
     "operators": {
       "patterns": [
         {
-          "match": "\\+\\+|--|[+\\-*\\^]",
+          "match": "\\+\\+|--|[+\\-*^]",
           "name": "keyword.operator.arithmetic.stata"
         },
         {

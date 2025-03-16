@@ -132,7 +132,7 @@
               "name": "support.constant.asciidoc"
             }
           },
-          "match": "(?<!\\\\)(\\[{2})([[:alpha:]:_][[:word:]:.\\-]*)(?:,\\p{blank}*(\\S.*?))?(]{2})",
+          "match": "(?<!\\\\)(\\[{2})([[:alpha:]:_][[:word:]:.-]*)(?:,\\p{blank}*(\\S.*?))?(]{2})",
           "name": "markup.other.anchor.asciidoc"
         },
         {
@@ -278,7 +278,7 @@
               "name": "support.constant.asciidoc"
             }
           },
-          "match": "(?<!\\\\)(\\[{3})([[:word:]:][[:word:]:.\\-]*?)(]{3})",
+          "match": "(?<!\\\\)(\\[{3})([[:word:]:][[:word:]:.-]*?)(]{3})",
           "name": "bibliography-anchor.asciidoc"
         }
       ]
@@ -622,7 +622,7 @@
     "footnote-macro": {
       "patterns": [
         {
-          "begin": "(?<!\\\\)footnote(?:(ref):|:([\\w\\-]+)?)\\[(?:|(.*?[^\\\\]))",
+          "begin": "(?<!\\\\)footnote(?:(ref):|:([\\w-]+)?)\\[(?:|(.*?[^\\\\]))",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.asciidoc"
@@ -709,7 +709,7 @@
     "horizontal-rule": {
       "patterns": [
         {
-          "match": "^(?:['<]{3,}$| {0,3}([\\-*'])( *)\\1\\2\\1$)",
+          "match": "^(?:['<]{3,}$| {0,3}([-*'])( *)\\1\\2\\1$)",
           "name": "constant.other.symbol.horizontal-rule.asciidoc"
         }
       ]
@@ -949,7 +949,7 @@
           "name": "markup.other.url.asciidoc"
         },
         {
-          "match": "\\p{word}[[:word:].%+\\-]*(@)\\p{alnum}[[:alnum:].\\-]*(\\.)\\p{alpha}{2,4}\\b",
+          "match": "\\p{word}[[:word:].%+-]*(@)\\p{alnum}[[:alnum:].-]*(\\.)\\p{alpha}{2,4}\\b",
           "name": "markup.link.email.asciidoc"
         }
       ]

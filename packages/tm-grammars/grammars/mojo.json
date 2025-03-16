@@ -1562,7 +1562,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![rsa])?)(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-multi-tail"
@@ -1608,11 +1608,11 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([\\-+ ])",
+          "match": "([-+ ])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=\\^])",
+          "match": "([<>=^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1640,7 +1640,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![rsa])?)(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
         },
         {
           "include": "#fstring-terminator-single-tail"
@@ -1686,11 +1686,11 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([\\-+ ])",
+          "match": "([-+ ])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=\\^])",
+          "match": "([<>=^])",
           "name": "storage.type.format.python"
         },
         {
@@ -2407,7 +2407,7 @@
           "name": "storage.type.imaginary.number.python"
         }
       },
-      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[eE][+\\-]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*[eE][+\\-]?[0-9](?:_?[0-9])*)([jJ])?\\b",
+      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[eE][+-]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*[eE][+-]?[0-9](?:_?[0-9])*)([jJ])?\\b",
       "name": "constant.numeric.float.python"
     },
     "number-hex": {
@@ -2472,7 +2472,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&|\\^~])|(\\*\\*|[*+\\-%]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
+      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&|^~])|(\\*\\*|[*+\\-%]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
     },
     "parameter-special": {
       "captures": {
@@ -3581,7 +3581,7 @@
               "name": "keyword.control.flow.python"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([\\-+\\w\\d(\\[{'\":#]|$))\\b"
+          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
         },
         {
           "captures": {
@@ -3708,7 +3708,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
           "name": "meta.format.brace.python"
         },
         {
@@ -3750,7 +3750,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[\\-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.python"
     },
     "string-line-continuation": {

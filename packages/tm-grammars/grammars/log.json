@@ -74,11 +74,11 @@
       "name": "comment log.date"
     },
     {
-      "match": "T?\\d{1,2}:\\d{2}(:\\d{2}([.,]\\d+)?)?(Z| ?[+\\-]\\d{1,2}:\\d{2})?\\b",
+      "match": "T?\\d{1,2}:\\d{2}(:\\d{2}([.,]\\d+)?)?(Z| ?[+-]\\d{1,2}:\\d{2})?\\b",
       "name": "comment log.date"
     },
     {
-      "match": "T\\d{2}\\d{2}(\\d{2}([.,]\\d+)?)?(Z| ?[+\\-]\\d{1,2}\\d{2})?\\b",
+      "match": "T\\d{2}\\d{2}(\\d{2}([.,]\\d+)?)?(Z| ?[+-]\\d{1,2}\\d{2})?\\b",
       "name": "comment log.date"
     },
     {
@@ -90,7 +90,7 @@
       "name": "constant.language log.constant"
     },
     {
-      "match": "\\b(\\h{2,}[:\\-])+\\h{2,}{1,}\\b",
+      "match": "\\b(\\h{2,}[:-])+\\h{2,}+\\b",
       "name": "constant.language log.constant"
     },
     {
@@ -123,7 +123,7 @@
       "name": "constant.language log.constant"
     },
     {
-      "match": "(?<![\\w/\\\\])([\\w\\-]+\\.)+([\\w\\-])+(?![\\w/\\\\])",
+      "match": "(?<![\\w/\\\\])([\\w-]+\\.)+([\\w-])+(?![\\w/\\\\])",
       "name": "constant.language log.constant"
     }
   ],

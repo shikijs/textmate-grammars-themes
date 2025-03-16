@@ -129,7 +129,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "[!:~+\\-\\&|\\^=<>*/%]",
+          "match": "[!:~+\\-\\&|^=<>*/%]",
           "name": "keyword.operator.jsonnet"
         },
         {
@@ -169,15 +169,15 @@
           "name": "constant.language.jsonnet"
         },
         {
-          "match": "\\b(\\d+([Ee][+\\-]?\\d+)?)\\b",
+          "match": "\\b(\\d+([Ee][+-]?\\d+)?)\\b",
           "name": "constant.numeric.jsonnet"
         },
         {
-          "match": "\\b\\d+\\.\\d*([Ee][+\\-]?\\d+)?\\b",
+          "match": "\\b\\d+\\.\\d*([Ee][+-]?\\d+)?\\b",
           "name": "constant.numeric.jsonnet"
         },
         {
-          "match": "\\b\\.\\d+([Ee][+\\-]?\\d+)?\\b",
+          "match": "\\b\\.\\d+([Ee][+-]?\\d+)?\\b",
           "name": "constant.numeric.jsonnet"
         }
       ]

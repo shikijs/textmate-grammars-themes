@@ -1044,7 +1044,7 @@
               "include": "#c_function_call"
             },
             {
-              "begin": "(?=\\s)(?<!else|new|return)(?<=\\w)\\s+(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
+              "begin": "(?=\\s)(?<!else|new|return)(?<=\\w)\\s+(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
               "beginCaptures": {
                 "1": {
                   "name": "variable.other.objc"
@@ -1094,7 +1094,7 @@
           ]
         },
         "c_function_call": {
-          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()(?=(?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[])\\s*\\()",
+          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()(?=(?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[])\\s*\\()",
           "end": "(?<=\\))(?!\\w)",
           "name": "meta.function-call.objc",
           "patterns": [
@@ -1246,7 +1246,7 @@
               "include": "#operators"
             },
             {
-              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
+              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.objc"
@@ -1306,7 +1306,7 @@
               "include": "#vararg_ellipses"
             },
             {
-              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
+              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.objc"
@@ -1498,7 +1498,7 @@
         },
         "numbers": {
           "begin": "(?<!\\w)(?=\\d|\\.\\d)",
-          "end": "(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))",
+          "end": "(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))",
           "patterns": [
             {
               "captures": {
@@ -1554,7 +1554,7 @@
                   "name": "keyword.operator.plus.exponent.hexadecimal.objc"
                 }
               },
-              "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?:(?<=\\h)\\.|\\.(?=\\h)))(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?<!')([pP])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?([lLfF](?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?:(?<=\\h)\\.|\\.(?=\\h)))(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?<!')([pP])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?([lLfF](?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
               "captures": {
@@ -1607,7 +1607,7 @@
                   "name": "keyword.operator.plus.exponent.decimal.objc"
                 }
               },
-              "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?<!')([eE])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?([lLfF](?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?<!')([eE])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?([lLfF](?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
               "captures": {
@@ -1630,7 +1630,7 @@
                   "name": "keyword.other.unit.suffix.integer.objc"
                 }
               },
-              "match": "(\\G0[bB])([01](?:[01]|((?<=\\h)'(?=\\h)))*)((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G0[bB])([01](?:[01]|((?<=\\h)'(?=\\h)))*)((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
               "captures": {
@@ -1653,7 +1653,7 @@
                   "name": "keyword.other.unit.suffix.integer.objc"
                 }
               },
-              "match": "(\\G0)((?:[0-7]|((?<=\\h)'(?=\\h)))+)((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G0)((?:[0-7]|((?<=\\h)'(?=\\h)))+)((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
               "captures": {
@@ -1694,7 +1694,7 @@
                   "name": "keyword.other.unit.suffix.integer.objc"
                 }
               },
-              "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)((?<!')([pP])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)((?<!')([pP])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
               "captures": {
@@ -1732,10 +1732,10 @@
                   "name": "keyword.other.unit.suffix.integer.objc"
                 }
               },
-              "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)((?<!')([eE])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-]))"
+              "match": "(\\G(?=[0-9.])(?!0[xXbB]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)((?<!')([eE])(\\+)?(-)?((?-im:[0-9](?:[0-9]|(?<=\\h)'(?=\\h))*)))?((?:(?:(?:(?:(?:[uU]|[uU]ll?)|[uU]LL?)|ll?[uU]?)|LL?[uU]?)|[fF])(?!\\w))?(?!(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-]))"
             },
             {
-              "match": "(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+\\-])+",
+              "match": "(?:['0-9a-zA-Z_.]|(?<=[eEpP])[+-])+",
               "name": "invalid.illegal.constant.numeric.objc"
             }
           ]
@@ -1775,7 +1775,7 @@
               "name": "keyword.operator.logical.objc"
             },
             {
-              "match": "[\\&|\\^~]",
+              "match": "[\\&|^~]",
               "name": "keyword.operator.objc"
             },
             {
@@ -2168,7 +2168,7 @@
               "name": "punctuation.section.parens.end.bracket.round.objc"
             },
             {
-              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()(?=(?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[])\\s*\\()",
+              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()(?=(?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[])\\s*\\()",
               "end": "(?<=\\))(?!\\w)|(?<!\\\\)(?=\\s*\\n)",
               "name": "meta.function.objc",
               "patterns": [
@@ -2258,7 +2258,7 @@
               "include": "#operators"
             },
             {
-              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
+              "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(\\()",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.objc"
@@ -3300,7 +3300,7 @@
       ]
     },
     "method": {
-      "begin": "^([\\-+])\\s*",
+      "begin": "^([-+])\\s*",
       "end": "(?=[{#])|;",
       "name": "meta.function.objc",
       "patterns": [
@@ -3378,7 +3378,7 @@
       ]
     },
     "method_super": {
-      "begin": "^(?=[\\-+])",
+      "begin": "^(?=[-+])",
       "end": "(?<=})|(?=#)",
       "name": "meta.function-with-body.objc",
       "patterns": [

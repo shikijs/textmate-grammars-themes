@@ -76,7 +76,7 @@
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
-      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|[*/%+\\-]",
+      "match": "->|\\+=|-=|\\*\\*=|\\*=|\\^=|/=|%=|&=|~=|\\|=|\\*\\*|[*/%+-]",
       "name": "keyword.operator.arithmetic.gdscript"
     },
     "assignment_operator": {
@@ -256,7 +256,7 @@
       ]
     },
     "builtin_get_node_shorthand_quoted": {
-      "begin": "(?:([$%])|([\\&\\^@]))([\"'])",
+      "begin": "(?:([$%])|([\\&^@]))([\"'])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.gdscript"
@@ -793,19 +793,19 @@
           "name": "constant.numeric.integer.hexadecimal.gdscript"
         },
         {
-          "match": "\\.[0-9][0-9_]*([eE][+\\-]?[0-9_]+)?",
+          "match": "\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "([0-9][0-9_]*)\\.[0-9_]*([eE][+\\-]?[0-9_]+)?",
+          "match": "([0-9][0-9_]*)\\.[0-9_]*([eE][+-]?[0-9_]+)?",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "([0-9][0-9_]*)?\\.[0-9_]*([eE][+\\-]?[0-9_]+)",
+          "match": "([0-9][0-9_]*)?\\.[0-9_]*([eE][+-]?[0-9_]+)",
           "name": "constant.numeric.float.gdscript"
         },
         {
-          "match": "[0-9][0-9_]*[eE][+\\-]?[0-9_]+",
+          "match": "[0-9][0-9_]*[eE][+-]?[0-9_]+",
           "name": "constant.numeric.float.gdscript"
         },
         {
@@ -982,7 +982,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([\\-+\\w\\d(\\[{'\":#]|$))\\b"
+          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
         }
       ]
     },
@@ -1000,7 +1000,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=\\^]?[\\-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
           "name": "meta.format.brace.gdscript"
         },
         {
@@ -1026,7 +1026,7 @@
           "name": "constant.character.format.placeholder.other.gdscript"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[\\-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
       "name": "meta.format.percent.gdscript"
     },
     "strings": {

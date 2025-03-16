@@ -350,7 +350,7 @@
           ]
         }
       },
-      "match": "\\b(sample)(?:\\s+(\\d+))?(?![\\w\\-])",
+      "match": "\\b(sample)(?:\\s+(\\d+))?(?![\\w-])",
       "name": "meta.query.sample.kusto"
     },
     {
@@ -422,7 +422,7 @@
           "name": "variable.other.column.kusto"
         }
       },
-      "match": "\\b(top)(?:\\s+(\\d+)\\s+(by)\\s+(\\w+))?(?![\\w\\-])\\b",
+      "match": "\\b(top)(?:\\s+(\\d+)\\s+(by)\\s+(\\w+))?(?![\\w-])\\b",
       "name": "meta.query.top.kusto"
     },
     {
@@ -576,7 +576,7 @@
     "Numeric": {
       "patterns": [
         {
-          "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*+)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)([Ll]|UL|ul|[uUFf]|ll|LL|ull|ULL)?(?=\\b|\\w)",
+          "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*+)|(\\.[0-9]+))(([eE])([+-])?[0-9]+)?)([Ll]|UL|ul|[uUFf]|ll|LL|ull|ULL)?(?=\\b|\\w)",
           "name": "constant.numeric.kusto"
         }
       ]
@@ -648,7 +648,7 @@
     "TimeSpanLiterals": {
       "patterns": [
         {
-          "match": "[+\\-]?(?:\\d*\\.)?\\d+(?:microseconds?|ticks?|seconds?|ms|[dhms])\\b",
+          "match": "[+-]?(?:\\d*\\.)?\\d+(?:microseconds?|ticks?|seconds?|ms|[dhms])\\b",
           "name": "constant.numeric.kusto"
         }
       ]

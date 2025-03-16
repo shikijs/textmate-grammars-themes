@@ -162,7 +162,7 @@
       "while": "(^|\\G)\\s*(>) ?"
     },
     "component_block": {
-      "begin": "(^|\\G)(\\s*)(:{2,})(?i:(\\w[\\w\\d\\-]+)(\\s*|\\s*(\\{[^{]*}))$)",
+      "begin": "(^|\\G)(\\s*)(:{2,})(?i:(\\w[\\w\\d-]+)(\\s*|\\s*(\\{[^{]*}))$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.tag.start.mdc"
@@ -256,7 +256,7 @@
           ]
         }
       },
-      "match": "(^|\\G|\\s+)(:)(?i:(\\w[\\w\\d\\-]*))((\\{[^}]*})(\\[[^\\]]*])?|(\\[[^\\]]*])(\\{[^}]*})?)?\\s",
+      "match": "(^|\\G|\\s+)(:)(?i:(\\w[\\w\\d-]*))((\\{[^}]*})(\\[[^\\]]*])?|(\\[[^\\]]*])(\\{[^}]*})?)?\\s",
       "name": "inline.component.mdc"
     },
     "entities": {
@@ -484,7 +484,7 @@
     "lists": {
       "patterns": [
         {
-          "begin": "(^|\\G)( *)([*+\\-])([ \\t])",
+          "begin": "(^|\\G)( *)([*+-])([ \\t])",
           "beginCaptures": {
             "3": {
               "name": "punctuation.definition.list.begin.markdown"
@@ -535,7 +535,7 @@
           "include": "#heading-setext"
         }
       ],
-      "while": "(^|\\G)((?=\\s*[\\-=]{3,}\\s*$)| {4,}(?=\\S))"
+      "while": "(^|\\G)((?=\\s*[-=]{3,}\\s*$)| {4,}(?=\\S))"
     },
     "span": {
       "captures": {

@@ -85,7 +85,7 @@
       ]
     },
     "close-element": {
-      "begin": "(</?)([a-zA-Z0-9:\\-]+)",
+      "begin": "(</?)([a-zA-Z0-9:-]+)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -225,7 +225,7 @@
       ]
     },
     "element": {
-      "begin": "(<)([a-zA-Z0-9:\\-]++)(?=[^>]*></\\2>)",
+      "begin": "(<)([a-zA-Z0-9:-]++)(?=[^>]*></\\2>)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.html"
@@ -938,7 +938,7 @@
       ]
     },
     "tag-generic-attribute": {
-      "match": "(?<=[^=])\\b([a-zA-Z0-9:\\-]+)",
+      "match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)",
       "name": "entity.other.attribute-name.html"
     },
     "tag-id-attribute": {

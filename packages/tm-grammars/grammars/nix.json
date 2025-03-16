@@ -110,7 +110,7 @@
     "attribute-name": {
       "patterns": [
         {
-          "match": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*",
           "name": "entity.other.attribute-name.multipart.nix"
         },
         {
@@ -125,7 +125,7 @@
       ]
     },
     "attribute-name-single": {
-      "match": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*",
       "name": "entity.other.attribute-name.single.nix"
     },
     "attrset-contents": {
@@ -257,7 +257,7 @@
       "end": "(?=([\\])};]|\\b(else|then)\\b))",
       "patterns": [
         {
-          "begin": "(?=(\\s*}|\"|\\binherit\\b|\\$\\{|\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*(\\s*\\.|\\s*=[^=])))",
+          "begin": "(?=(\\s*}|\"|\\binherit\\b|\\$\\{|\\b[a-zA-Z_][a-zA-Z0-9_'-]*(\\s*\\.|\\s*=[^=])))",
           "end": "(?=([\\])};,]|\\b(else|then)\\b))",
           "patterns": [
             {
@@ -266,7 +266,7 @@
           ]
         },
         {
-          "begin": "(?=(\\.\\.\\.|\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*\\s*[,?]))",
+          "begin": "(?=(\\.\\.\\.|\\b[a-zA-Z_][a-zA-Z0-9_'-]*\\s*[,?]))",
           "end": "(?=([\\])};,]|\\b(else|then)\\b))",
           "patterns": [
             {
@@ -278,7 +278,7 @@
           "include": "#bad-reserved"
         },
         {
-          "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*",
+          "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*",
           "beginCaptures": {
             "0": {
               "name": "variable.parameter.function.maybe.nix"
@@ -355,7 +355,7 @@
       ]
     },
     "bad-reserved": {
-      "match": "(?<![\\w'\\-])(if|then|else|assert|with|let|in|rec|inherit)(?![\\w'\\-])",
+      "match": "(?<![\\w'-])(if|then|else|assert|with|let|in|rec|inherit)(?![\\w'-])",
       "name": "invalid.illegal.reserved.nix"
     },
     "comment": {
@@ -511,7 +511,7 @@
           "include": "#attrset-or-function"
         },
         {
-          "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=|!|<=|<|>=|>|&&|\\|\\||->|//|\\?|\\+\\+|[\\-*]|/(?=([^*]|$))|\\+)",
+          "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=|!|<=|<|>=|>|&&|\\|\\||->|//|\\?|\\+\\+|[-*]|/(?=([^*]|$))|\\+)",
           "name": "keyword.operator.nix"
         },
         {
@@ -529,7 +529,7 @@
       ]
     },
     "function-body": {
-      "begin": "(@\\s*([a-zA-Z_][a-zA-Z0-9_'\\-]*)\\s*)?(:)",
+      "begin": "(@\\s*([a-zA-Z_][a-zA-Z0-9_'-]*)\\s*)?(:)",
       "end": "(?=([\\])};,]|\\b(else|then)\\b))",
       "patterns": [
         {
@@ -576,7 +576,7 @@
           "end": "(?=:)",
           "patterns": [
             {
-              "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*)",
+              "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_'-]*)",
               "beginCaptures": {
                 "0": {
                   "name": "variable.parameter.function.4.nix"
@@ -650,7 +650,7 @@
     "function-for-sure": {
       "patterns": [
         {
-          "begin": "(?=(\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*\\s*[:@]|\\{[^}]*}\\s*:|\\{[^#}\"'/=]*[,?]))",
+          "begin": "(?=(\\b[a-zA-Z_][a-zA-Z0-9_'-]*\\s*[:@]|\\{[^}]*}\\s*:|\\{[^#}\"'/=]*[,?]))",
           "end": "(?=([\\])};,]|\\b(else|then)\\b))",
           "patterns": [
             {
@@ -714,7 +714,7 @@
           "end": "(?=:)",
           "patterns": [
             {
-              "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*)",
+              "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_'-]*)",
               "end": "(?=:)",
               "name": "variable.parameter.function.3.nix"
             },
@@ -765,7 +765,7 @@
           ]
         },
         {
-          "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*",
+          "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*",
           "beginCaptures": {
             "0": {
               "name": "variable.parameter.function.1.nix"
@@ -994,7 +994,7 @@
       ]
     },
     "operator-unary": {
-      "match": "([!\\-])",
+      "match": "([!-])",
       "name": "keyword.operator.unary.nix"
     },
     "others": {
@@ -1016,10 +1016,10 @@
           "name": "variable.parameter.name.nix"
         }
       },
-      "match": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*"
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*"
     },
     "parameter-name-and-cont": {
-      "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'\\-]*",
+      "begin": "\\b[a-zA-Z_][a-zA-Z0-9_'-]*",
       "beginCaptures": {
         "0": {
           "name": "variable.parameter.name.nix"
@@ -1182,7 +1182,7 @@
       "match": "\\s+"
     },
     "with-assert": {
-      "begin": "(?<![\\w'\\-])(with|assert)(?![\\w'\\-])",
+      "begin": "(?<![\\w'-])(with|assert)(?![\\w'-])",
       "beginCaptures": {
         "0": {
           "name": "keyword.other.nix"

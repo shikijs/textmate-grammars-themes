@@ -518,7 +518,7 @@
           "name": "entity.name.function.blade"
         },
         {
-          "begin": "(:[a-z\\-]+)(=)(\")",
+          "begin": "(:[a-z-]+)(=)(\")",
           "beginCaptures": {
             "0": {
               "name": "meta.attribute.unrecognized.$1.html"
@@ -1281,7 +1281,7 @@
               "include": "#interpolation"
             },
             {
-              "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -1313,7 +1313,7 @@
               ]
             },
             {
-              "match": "[$\\^+*]",
+              "match": "[$^+*]",
               "name": "keyword.operator.regexp.php"
             },
             {
@@ -2106,7 +2106,7 @@
           "name": "keyword.operator.increment-decrement.php"
         },
         {
-          "match": "[\\-+*/%]",
+          "match": "[-+*/%]",
           "name": "keyword.operator.arithmetic.php"
         },
         {
@@ -2117,7 +2117,7 @@
           "include": "#function-call"
         },
         {
-          "match": "<<|>>|[~\\^\\&|]",
+          "match": "<<|>>|[~^\\&|]",
           "name": "keyword.operator.bitwise.php"
         },
         {
@@ -2475,7 +2475,7 @@
           },
           "patterns": [
             {
-              "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -2507,7 +2507,7 @@
               ]
             },
             {
-              "match": "[$\\^+*]",
+              "match": "[$^+*]",
               "name": "keyword.operator.regexp.php"
             },
             {
@@ -2572,7 +2572,7 @@
               "name": "punctuation.separator.decimal.period.php"
             }
           },
-          "match": "(?:[0-9]*(\\.)[0-9]+(?:[eE][+\\-]?[0-9]+)?|[0-9]+(\\.)[0-9]*(?:[eE][+\\-]?[0-9]+)?|[0-9]+[eE][+\\-]?[0-9]+)",
+          "match": "(?:[0-9]*(\\.)[0-9]+(?:[eE][+-]?[0-9]+)?|[0-9]+(\\.)[0-9]*(?:[eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)",
           "name": "constant.numeric.decimal.php"
         },
         {
@@ -2871,7 +2871,7 @@
       "name": "string.regexp.double-quoted.php",
       "patterns": [
         {
-          "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+          "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
@@ -2905,7 +2905,7 @@
           ]
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]
@@ -2951,7 +2951,7 @@
           "name": "string.regexp.character-class.php"
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]
