@@ -192,7 +192,7 @@
     },
     {
       "applyEndPatternLast": 1,
-      "begin": "(?<![{+\\-])\\b(?=m\\s*[^\\sa-zA-Z0-9])",
+      "begin": "(?<![{+-])\\b(?=m\\s*[^\\sa-zA-Z0-9])",
       "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,#{})]|\\s*$))",
       "endCaptures": {
         "1": {
@@ -321,7 +321,7 @@
           ]
         },
         {
-          "begin": "\\G(?<![{+\\-])(m)(?!_)\\s*([^\\sa-zA-Z0-9'{\\[(<])",
+          "begin": "\\G(?<![{+-])(m)(?!_)\\s*([^\\sa-zA-Z0-9'{\\[(<])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -806,7 +806,7 @@
           "name": "storage.type.method.perl"
         }
       },
-      "match": "\\b(sub)(?:\\s+([\\-a-zA-Z0-9_]+))?\\s*(?:\\([$@*;]*\\))?[^\\w{]",
+      "match": "\\b(sub)(?:\\s+([-a-zA-Z0-9_]+))?\\s*(?:\\([$@*;]*\\))?[^\\w{]",
       "name": "meta.function.perl"
     },
     {
@@ -2909,7 +2909,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)[_ab*./|,\\\\;#%=\\-~\\^:?!$<>()\\[\\]@](?![A-Za-z0-9_])",
+          "match": "(\\$)[_ab*./|,\\\\;#%=\\-~^:?!$<>()\\[\\]@](?![A-Za-z0-9_])",
           "name": "variable.other.predefined.perl"
         },
         {

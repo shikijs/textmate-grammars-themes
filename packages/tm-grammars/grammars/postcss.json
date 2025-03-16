@@ -72,13 +72,13 @@
       "name": "support.function.name.postcss.no-completions",
       "patterns": [
         {
-          "match": "[\\w\\-]+",
+          "match": "[\\w-]+",
           "name": "entity.name.function"
         }
       ]
     },
     {
-      "match": "(?<=@import)\\s[\\w/.*\\-]+",
+      "match": "(?<=@import)\\s[\\w/.*-]+",
       "name": "string.quoted.double.css.postcss"
     },
     {
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "begin": "\\.|(?<=&)([\\-_])",
+      "begin": "\\.|(?<=&)([-_])",
       "end": "$\\n?|(?=[\\s,;()\\[{>])",
       "name": "entity.other.attribute-name.class.css.postcss",
       "patterns": [
@@ -130,7 +130,7 @@
       ]
     },
     {
-      "match": "(?<=[\\])]|not\\(|[*>]|>\\s):[a-z:\\-]+|(:[:\\-])[a-z:\\-]+",
+      "match": "(?<=[\\])]|not\\(|[*>]|>\\s):[a-z:-]+|(:[:-])[a-z:-]+",
       "name": "entity.other.attribute-name.pseudo-class.css.postcss"
     },
     {
@@ -195,7 +195,7 @@
       "include": "#function-content"
     },
     {
-      "begin": "(?<![\\-(])\\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|[ux])\\b(?![\\-)]|:\\s)|&",
+      "begin": "(?<![-(])\\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|[ux])\\b(?![-)]|:\\s)|&",
       "end": "(?=[\\s,;().\\[{>\\-_])",
       "name": "entity.name.tag.css.postcss.symbol",
       "patterns": [
@@ -211,7 +211,7 @@
       "include": "#operator"
     },
     {
-      "match": "[a-z\\-]+((?=:|#\\{))",
+      "match": "[a-z-]+((?=:|#\\{))",
       "name": "support.type.property-name.css.postcss"
     },
     {
@@ -228,7 +228,7 @@
       "name": "comment.tags.postcss",
       "patterns": [
         {
-          "match": "[\\w\\-]+",
+          "match": "[\\w-]+",
           "name": "comment.tag.postcss"
         }
       ]
@@ -262,7 +262,7 @@
       "name": "keyword.other.important.css.postcss"
     },
     "function": {
-      "match": "(?<=[\\s|(,:])(?!url|format|attr)[\\w\\-][\\w\\-]*(?=\\()",
+      "match": "(?<=[\\s|(,:])(?!url|format|attr)[\\w-][\\w-]*(?=\\()",
       "name": "support.function.name.postcss"
     },
     "function-content": {
@@ -270,7 +270,7 @@
       "name": "string.quoted.double.css.postcss"
     },
     "function-content-var": {
-      "match": "(?<=var\\()[\\w\\-]+(?=\\))",
+      "match": "(?<=var\\()[\\w-]+(?=\\))",
       "name": "variable.parameter.postcss"
     },
     "interpolation": {
@@ -299,7 +299,7 @@
       ]
     },
     "numeric": {
-      "match": "([\\-.])?[0-9]+(\\.[0-9]+)?",
+      "match": "([-.])?[0-9]+(\\.[0-9]+)?",
       "name": "constant.numeric.css.postcss"
     },
     "operator": {
@@ -316,11 +316,11 @@
       "name": "entity.other.attribute-name.placeholder-selector.postcss"
     },
     "property-value": {
-      "match": "[\\w\\-]+",
+      "match": "[\\w-]+",
       "name": "meta.property-value.css.postcss, support.constant.property-value.css.postcss"
     },
     "pseudo-class": {
-      "match": ":[a-z:\\-]+",
+      "match": ":[a-z:-]+",
       "name": "entity.other.attribute-name.pseudo-class.css.postcss"
     },
     "quoted-interpolation": {
@@ -365,11 +365,11 @@
       "name": "keyword.other.unit.css.postcss"
     },
     "variable": {
-      "match": "\\$[\\w\\-]+",
+      "match": "\\$[\\w-]+",
       "name": "variable.parameter.postcss"
     },
     "variable-root-css": {
-      "match": "(?<!&)--[\\w\\-]+",
+      "match": "(?<!&)--[\\w-]+",
       "name": "variable.parameter.postcss"
     }
   },

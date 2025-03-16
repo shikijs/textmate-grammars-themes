@@ -4,7 +4,7 @@
     "haml",
     "html.haml"
   ],
-  "foldingStartMarker": "^\\s*([\\-%#:.\\w=].*)\\s$",
+  "foldingStartMarker": "^\\s*([-%#:.\\w=].*)\\s$",
   "foldingStopMarker": "^\\s*$",
   "name": "haml",
   "patterns": [
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "begin": "^\\s*(?:((%)([\\-\\w:]+))|(?=[.#]))",
+      "begin": "^\\s*(?:((%)([-\\w:]+))|(?=[.#]))",
       "captures": {
         "1": {
           "name": "meta.tag.haml"
@@ -131,7 +131,7 @@
               "name": "entity.other.attribute-name.id"
             }
           },
-          "match": "(#[\\w\\-]+)",
+          "match": "(#[\\w-]+)",
           "name": "meta.selector.css"
         },
         {
@@ -156,7 +156,7 @@
           "name": "meta.section.attributes.plain.haml",
           "patterns": [
             {
-              "match": "([\\w\\-]+)",
+              "match": "([\\w-]+)",
               "name": "constant.other.symbol.ruby"
             },
             {

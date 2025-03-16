@@ -357,7 +357,7 @@
               "include": "#generics"
             },
             {
-              "match": "([\\-+])?([A-Za-z_][A-Za-z0-9_]*)(?:\\s+(as|super)\\s+([A-Za-z_][A-Za-z0-9_]*))?",
+              "match": "([-+])?([A-Za-z_][A-Za-z0-9_]*)(?:\\s+(as|super)\\s+([A-Za-z_][A-Za-z0-9_]*))?",
               "name": "support.type.php"
             },
             {
@@ -1198,7 +1198,7 @@
           "name": "keyword.operator.increment-decrement.php"
         },
         {
-          "match": "([\\-+*/%])",
+          "match": "([-+*/%])",
           "name": "keyword.operator.arithmetic.php"
         },
         {
@@ -1230,7 +1230,7 @@
           "include": "#function-call"
         },
         {
-          "match": "<<|>>|[~\\^\\&|]",
+          "match": "<<|>>|[~^\\&|]",
           "name": "keyword.operator.bitwise.php"
         },
         {
@@ -1340,7 +1340,7 @@
       ]
     },
     "numbers": {
-      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)\\b",
+      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+-])?[0-9]+)?)\\b",
       "name": "constant.numeric.php"
     },
     "object": {
@@ -1492,7 +1492,7 @@
       "name": "string.regexp.double-quoted.php",
       "patterns": [
         {
-          "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+          "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
@@ -1526,7 +1526,7 @@
           ]
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]
@@ -1559,7 +1559,7 @@
           "name": "string.regexp.arbitrary-repetition.php"
         },
         {
-          "match": "(\\\\){1,2}[.$\\^\\[\\]{}]",
+          "match": "(\\\\){1,2}[.$^\\[\\]{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
@@ -1583,7 +1583,7 @@
           ]
         },
         {
-          "match": "[$\\^+*]",
+          "match": "[$^+*]",
           "name": "keyword.operator.regexp.php"
         }
       ]
@@ -2405,7 +2405,7 @@
               "name": "entity.other.attribute-name.xhp"
             }
           },
-          "match": "(?<!\\S)([_\\p{L}](?:[\\p{L}\\p{Mn}\\p{Mc}\\d\\p{Nl}\\p{Pc}\\-](?<!\\.\\.))*+)(?<!\\.)(?=//|/\\*|[=\\s>]|/>)"
+          "match": "(?<!\\S)([_\\p{L}](?:[\\p{L}\\p{Mn}\\p{Mc}\\d\\p{Nl}\\p{Pc}-](?<!\\.\\.))*+)(?<!\\.)(?=//|/\\*|[=\\s>]|/>)"
         }
       ]
     },
@@ -2539,7 +2539,7 @@
     "xhp-tag-element-name": {
       "patterns": [
         {
-          "begin": "\\s*(<)([_\\p{L}][:\\p{L}\\p{Mn}\\p{Mc}\\d\\p{Nl}\\p{Pc}\\-]*+)(?=[/>\\s])(?<!:)",
+          "begin": "\\s*(<)([_\\p{L}][:\\p{L}\\p{Mn}\\p{Mc}\\d\\p{Nl}\\p{Pc}-]*+)(?=[/>\\s])(?<!:)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.xhp"

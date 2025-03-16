@@ -26,12 +26,12 @@
           "name": "keyword.operator.accessor.hcl"
         }
       },
-      "end": "\\p{alpha}[\\w\\-]*|\\d*",
+      "end": "\\p{alpha}[\\w-]*|\\d*",
       "endCaptures": {
         "0": {
           "patterns": [
             {
-              "match": "(?!null|false|true)\\p{alpha}[\\w\\-]*",
+              "match": "(?!null|false|true)\\p{alpha}[\\w-]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -57,7 +57,7 @@
           "name": "keyword.operator.assignment.hcl"
         }
       },
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_\\-]*)(\\))?\\s*(=(?![=>]))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_-]*)(\\))?\\s*(=(?![=>]))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -75,12 +75,12 @@
       }
     },
     "block": {
-      "begin": "(\\w[\\-\\w]*)(([^\\S\\r\\n]+(\\w[\\-_\\w]*|\"[^\"\\r\\n]*\"))*)[^\\S\\r\\n]*(\\{)",
+      "begin": "(\\w[-\\w]*)(([^\\S\\r\\n]+(\\w[-_\\w]*|\"[^\"\\r\\n]*\"))*)[^\\S\\r\\n]*(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
             {
-              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
+              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -92,7 +92,7 @@
               "name": "variable.other.enummember.hcl"
             },
             {
-              "match": "\\p{alpha}[[:alnum:]_\\-]*",
+              "match": "\\p{alpha}[[:alnum:]_-]*",
               "name": "variable.other.enummember.hcl"
             }
           ]
@@ -270,11 +270,11 @@
         "1": {
           "patterns": [
             {
-              "match": "\\b\\p{alpha}[\\w_\\-]*::(\\p{alpha}[\\w_\\-]*::)?\\p{alpha}[\\w_\\-]*\\b",
+              "match": "\\b\\p{alpha}[\\w_-]*::(\\p{alpha}[\\w_-]*::)?\\p{alpha}[\\w_-]*\\b",
               "name": "support.function.namespaced.hcl"
             },
             {
-              "match": "\\b\\p{alpha}[\\w_\\-]*\\b",
+              "match": "\\b\\p{alpha}[\\w_-]*\\b",
               "name": "support.function.builtin.hcl"
             }
           ]
@@ -405,7 +405,7 @@
       ]
     },
     "local_identifiers": {
-      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
+      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
       "name": "variable.other.readwrite.hcl"
     },
     "numeric_literals": {
@@ -416,7 +416,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+([Ee][+\\-]?)\\d+\\b",
+          "match": "\\b\\d+([Ee][+-]?)\\d+\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -428,7 +428,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+\\-]?)\\d+)?\\b",
+          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+-]?)\\d+)?\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -524,7 +524,7 @@
               "name": "keyword.operator.assignment.hcl"
             }
           },
-          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*)\\s*(=(?!=))\\s*"
+          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_-]*)\\s*(=(?!=))\\s*"
         },
         {
           "captures": {

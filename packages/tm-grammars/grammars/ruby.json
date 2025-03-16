@@ -91,7 +91,7 @@
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|\\^]|<<|>>)=)"
+      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|^]|<<|>>)=)"
     },
     {
       "captures": {
@@ -105,7 +105,7 @@
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
-      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|\\^]|<<|>>)=)"
+      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*(([+*\\-/%]|\\*\\*|[\\&|^]|<<|>>)=)"
     },
     {
       "captures": {
@@ -282,7 +282,7 @@
       ]
     },
     {
-      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?))\\s*(\\()",
+      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?))\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -317,7 +317,7 @@
       ]
     },
     {
-      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?))[ \\t](?=[ \\t]*[^\\s#;])",
+      "begin": "(?=def\\b)(?<=^|\\s)(def)\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?))[ \\t](?=[ \\t]*[^\\s#;])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.def.ruby"
@@ -352,11 +352,11 @@
           "name": "entity.name.function.ruby"
         }
       },
-      "match": "(?=def\\b)(?<=^|\\s)(def)\\b(\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?)))?",
+      "match": "(?=def\\b)(?<=^|\\s)(def)\\b(\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|!=|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?)))?",
       "name": "meta.function.method.without-arguments.ruby"
     },
     {
-      "match": "\\b(\\d(?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)*)?([eE][\\-+]?\\d(?>_?\\d)*)?|0(?:[xX]\\h(?>_?\\h)*|[oO]?[0-7](?>_?[0-7])*|[bB][01](?>_?[01])*|[dD]\\d(?>_?\\d)*))\\b",
+      "match": "\\b(\\d(?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0(?:[xX]\\h(?>_?\\h)*|[oO]?[0-7](?>_?[0-7])*|[bB][01](?>_?[01])*|[dD]\\d(?>_?\\d)*))\\b",
       "name": "constant.numeric.ruby"
     },
     {
@@ -1478,7 +1478,7 @@
           "name": "punctuation.definition.constant.ruby"
         }
       },
-      "match": "(?<!:)(:)(?>[$a-zA-Z_]\\w*(?>[?!]|=(?![>=]))?|===?|<=>|>[>=]?|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[\\-+]@?|\\[]=?|@@?[a-zA-Z_]\\w*)",
+      "match": "(?<!:)(:)(?>[$a-zA-Z_]\\w*(?>[?!]|=(?![>=]))?|===?|<=>|>[>=]?|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?|@@?[a-zA-Z_]\\w*)",
       "name": "constant.language.symbol.ruby"
     },
     {
@@ -1542,12 +1542,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.html",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1579,12 +1579,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.haml",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1616,12 +1616,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.xml",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1653,12 +1653,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.sql",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1690,12 +1690,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.graphql",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1727,12 +1727,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.css",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1764,12 +1764,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.cpp",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1801,12 +1801,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.c",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1838,12 +1838,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.js",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1875,12 +1875,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.js.jquery",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1912,12 +1912,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.shell",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1949,12 +1949,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.lua",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -1986,12 +1986,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.ruby",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -2023,12 +2023,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)Y(?:AML|ML))\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)Y(?:AML|ML))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.yaml",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)Y(?:AML|ML))\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)Y(?:AML|ML))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -2060,12 +2060,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.slim",
       "patterns": [
         {
-          "begin": "(?><<[\\-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -2123,7 +2123,7 @@
       ]
     },
     {
-      "begin": "(?>((<<[\\-~]([\"'`]?)(\\w+)\\3,\\s?)*<<[\\-~]([\"'`]?)(\\w+)\\5))(.*)",
+      "begin": "(?>((<<[-~]([\"'`]?)(\\w+)\\3,\\s?)*<<[-~]([\"'`]?)(\\w+)\\5))(.*)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.string.begin.ruby"
@@ -2321,7 +2321,7 @@
       "name": "constant.character.escape.ruby"
     },
     "heredoc": {
-      "begin": "^<<[\\-~]?\\w+",
+      "begin": "^<<[-~]?\\w+",
       "end": "$",
       "patterns": [
         {

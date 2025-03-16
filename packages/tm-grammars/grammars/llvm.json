@@ -23,7 +23,7 @@
       "name": "storage.modifier.llvm"
     },
     {
-      "match": "@[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*",
+      "match": "@[-a-zA-Z$._][-a-zA-Z$._0-9]*",
       "name": "entity.name.function.llvm"
     },
     {
@@ -31,7 +31,7 @@
       "name": "variable.llvm"
     },
     {
-      "match": "%[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*",
+      "match": "%[-a-zA-Z$._][-a-zA-Z$._0-9]*",
       "name": "variable.llvm"
     },
     {
@@ -40,7 +40,7 @@
           "name": "variable.llvm"
         }
       },
-      "match": "(![\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*)\\s*$"
+      "match": "(![-a-zA-Z$._][-a-zA-Z$._0-9]*)\\s*$"
     },
     {
       "captures": {
@@ -48,7 +48,7 @@
           "name": "variable.llvm"
         }
       },
-      "match": "(![\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*)\\s*[=!]"
+      "match": "(![-a-zA-Z$._][-a-zA-Z$._0-9]*)\\s*[=!]"
     },
     {
       "begin": "\"",
@@ -62,11 +62,11 @@
       ]
     },
     {
-      "match": "[\\-a-zA-Z$._][\\-a-zA-Z$._0-9]*:",
+      "match": "[-a-zA-Z$._][-a-zA-Z$._0-9]*:",
       "name": "entity.name.label.llvm"
     },
     {
-      "match": "-?\\b\\d+\\.\\d*(e[+\\-]\\d+)?\\b",
+      "match": "-?\\b\\d+\\.\\d*(e[+-]\\d+)?\\b",
       "name": "constant.numeric.float"
     },
     {

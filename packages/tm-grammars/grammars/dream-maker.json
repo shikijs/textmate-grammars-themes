@@ -39,7 +39,7 @@
       "name": "meta.initialization.dm"
     },
     {
-      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+\\-])?[0-9]+)?)\\b",
+      "match": "\\b((0([xX])\\h*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(([eE])([+-])?[0-9]+)?)\\b",
       "name": "constant.numeric.dm"
     },
     {
@@ -63,7 +63,7 @@
       "name": "variable.language.dm"
     },
     {
-      "match": "(\\?|([><])(=)?|[.:]|/(=)?|~|\\+([+=])?|-([\\-=])?|\\*([*=])?|%|>>|<<|=(=)?|!(=)?|<>|&|&&|[\\^|]|\\|\\||\\bto\\b|\\bin\\b|\\bstep\\b)",
+      "match": "(\\?|([><])(=)?|[.:]|/(=)?|~|\\+([+=])?|-([-=])?|\\*([*=])?|%|>>|<<|=(=)?|!(=)?|<>|&|&&|[\\^|]|\\|\\||\\bto\\b|\\bin\\b|\\bstep\\b)",
       "name": "keyword.operator.dm"
     },
     {
@@ -239,7 +239,7 @@
       "include": "#block"
     },
     {
-      "begin": "(?:^|(?:(?=\\s)(?<!else|new|return)(?<=\\w)|(?=\\s*[A-Za-z_])(?<!&&)(?<=[*\\&>])))(\\s*)(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[\\-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(?=\\()",
+      "begin": "(?:^|(?:(?=\\s)(?<!else|new|return)(?<=\\w)|(?=\\s*[A-Za-z_])(?<!&&)(?<=[*\\&>])))(\\s*)(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()((?:[A-Za-z_][A-Za-z0-9_]*+|::)++|(?<=operator)(?:[-*\\&<>=+!]+|\\(\\)|\\[]))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.function.leading.dm"

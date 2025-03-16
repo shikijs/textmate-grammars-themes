@@ -99,7 +99,7 @@
           "name": "support.function.with-side-effects.scheme"
         },
         {
-          "match": "(?<=([\\s(]))(>=?|<=?|[=*/+\\-])(?=([\\s(]))",
+          "match": "(?<=([\\s(]))(>=?|<=?|[=*/+-])(?=([\\s(]))",
           "name": "keyword.operator.arithmetic.scheme"
         },
         {
@@ -116,7 +116,7 @@
               "name": "punctuation.section.quoted.symbol.scheme"
             }
           },
-          "match": "(')\\s*(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*)",
+          "match": "(')\\s*(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*)",
           "name": "constant.other.symbol.scheme"
         },
         {
@@ -224,7 +224,7 @@
           "include": "#comment"
         },
         {
-          "begin": "(?<=\\()(define)\\s+(\\()(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*)((\\s+(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*|[._]))*)\\s*(\\))",
+          "begin": "(?<=\\()(define)\\s+(\\()(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*)((\\s+(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*|[._]))*)\\s*(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -257,7 +257,7 @@
           ]
         },
         {
-          "begin": "(?<=\\()(lambda)\\s+(\\()((?:(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*|[._])\\s+)*(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*|[._])?)(\\))",
+          "begin": "(?<=\\()(lambda)\\s+(\\()((?:(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*|[._])\\s+)*(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*|[._])?)(\\))",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"
@@ -287,7 +287,7 @@
           ]
         },
         {
-          "begin": "(?<=\\()(define)\\s(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@\\^_~]*)\\s*.*?",
+          "begin": "(?<=\\()(define)\\s(\\p{alnum}[[:alnum:]!$%\\&*+-./:<=>?@^_~]*)\\s*.*?",
           "captures": {
             "1": {
               "name": "keyword.control.scheme"

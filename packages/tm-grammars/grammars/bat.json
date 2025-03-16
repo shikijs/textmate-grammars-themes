@@ -232,7 +232,7 @@
           "match": "([^ ]*)(\\+=|-=|\\*=|/=|%%=|&=|\\|=|\\^=|<<=|>>=)"
         },
         {
-          "match": "[+\\-/*]|%%|[|\\&\\^]|<<|>>|~",
+          "match": "[+\\-/*]|%%|[|\\&^]|<<|>>|~",
           "name": "keyword.operator.arithmetic.batchfile"
         },
         {
@@ -423,7 +423,7 @@
           "name": "keyword.control.conditional.batchfile"
         },
         {
-          "begin": "(?<=^|[\\s(\\&\\^])(?i)for(?=\\s)",
+          "begin": "(?<=^|[\\s(\\&^])(?i)for(?=\\s)",
           "beginCaptures": {
             "0": {
               "name": "keyword.control.repeat.batchfile"
@@ -433,13 +433,13 @@
           "name": "meta.block.repeat.batchfile",
           "patterns": [
             {
-              "begin": "(?<=[\\s\\^])(?i)in(?=\\s)",
+              "begin": "(?<=[\\s^])(?i)in(?=\\s)",
               "beginCaptures": {
                 "0": {
                   "name": "keyword.control.repeat.in.batchfile"
                 }
               },
-              "end": "(?<=[\\s)\\^])(?i)do(?=\\s)|\\n",
+              "end": "(?<=[\\s)^])(?i)do(?=\\s)|\\n",
               "endCaptures": {
                 "0": {
                   "name": "keyword.control.repeat.do.batchfile"
@@ -484,7 +484,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "(?<=^|[\\s=])(0[xX]\\h*|[+\\-]?\\d+)(?=$|[\\s<>])",
+          "match": "(?<=^|[\\s=])(0[xX]\\h*|[+-]?\\d+)(?=$|[\\s<>])",
           "name": "constant.numeric.batchfile"
         }
       ]
@@ -755,7 +755,7 @@
               "name": "constant.numeric.batchfile"
             }
           },
-          "match": "([+\\-]?\\d+)(?:(,)([+\\-]?\\d+))?"
+          "match": "([+-]?\\d+)(?:(,)([+-]?\\d+))?"
         }
       ]
     },

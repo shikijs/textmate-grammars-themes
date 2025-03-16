@@ -146,7 +146,7 @@
       "name": "keyword.control.awk"
     },
     "numeric-constant": {
-      "match": "\\b[0-9]+(?:\\.[0-9]+)?(?:e[+\\-][0-9]+)?\\b",
+      "match": "\\b[0-9]+(?:\\.[0-9]+)?(?:e[+-][0-9]+)?\\b",
       "name": "constant.numeric.awk"
     },
     "operator": {
@@ -160,7 +160,7 @@
           "name": "keyword.operator.comparison.awk"
         },
         {
-          "match": "([+\\-*/%\\^]=|\\+\\+|--|>>|=)",
+          "match": "([+\\-*/%^]=|\\+\\+|--|>>|=)",
           "name": "keyword.operator.assignment.awk"
         },
         {
@@ -168,7 +168,7 @@
           "name": "keyword.operator.boolean.awk"
         },
         {
-          "match": "([+\\-*/%\\^])",
+          "match": "([+\\-*/%^])",
           "name": "keyword.operator.arithmetic.awk"
         },
         {
@@ -216,7 +216,7 @@
       ]
     },
     "regex-as-assignment": {
-      "begin": "([^=<>!+\\-*/%\\^]=)\\s*(/)",
+      "begin": "([^=<>!+\\-*/%^]=)\\s*(/)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.assignment.awk"

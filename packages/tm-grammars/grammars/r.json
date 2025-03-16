@@ -225,11 +225,11 @@
           "name": "constant.numeric.imaginary.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?i\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+-])?[0-9]+)?i\\b",
           "name": "constant.numeric.imaginary.decimal.r"
         },
         {
-          "match": "\\.[0-9]+(?:([eE])([+\\-])?[0-9]+)?i\\b",
+          "match": "\\.[0-9]+(?:([eE])([+-])?[0-9]+)?i\\b",
           "name": "constant.numeric.imaginary.decimal.r"
         },
         {
@@ -237,7 +237,7 @@
           "name": "constant.numeric.integer.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?L\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+-])?[0-9]+)?L\\b",
           "name": "constant.numeric.integer.decimal.r"
         },
         {
@@ -245,11 +245,11 @@
           "name": "constant.numeric.float.hexadecimal.r"
         },
         {
-          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+\\-])?[0-9]+)?\\b",
+          "match": "\\b[0-9]+\\.?[0-9]*(?:([eE])([+-])?[0-9]+)?\\b",
           "name": "constant.numeric.float.decimal.r"
         },
         {
-          "match": "\\.[0-9]+(?:([eE])([+\\-])?[0-9]+)?\\b",
+          "match": "\\.[0-9]+(?:([eE])([+-])?[0-9]+)?\\b",
           "name": "constant.numeric.float.decimal.r"
         }
       ]
@@ -375,7 +375,7 @@
           "name": "keyword.control.r"
         },
         {
-          "match": "([\\-+*/]|%/%|%%|%\\*%|%o%|%x%|\\^)",
+          "match": "([-+*/]|%/%|%%|%\\*%|%o%|%x%|\\^)",
           "name": "keyword.operator.arithmetic.r"
         },
         {
@@ -497,7 +497,7 @@
               "name": "punctuation.definition.string.raw.begin.r"
             }
           },
-          "end": "\\]\\1\"",
+          "end": "]\\1\"",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.raw.end.r"
@@ -512,7 +512,7 @@
               "name": "punctuation.definition.string.raw.begin.r"
             }
           },
-          "end": "\\]\\1'",
+          "end": "]\\1'",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.raw.end.r"
@@ -527,7 +527,7 @@
               "name": "punctuation.definition.string.raw.begin.r"
             }
           },
-          "end": "\\}\\1\"",
+          "end": "}\\1\"",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.raw.end.r"
@@ -542,7 +542,7 @@
               "name": "punctuation.definition.string.raw.begin.r"
             }
           },
-          "end": "\\}\\1'",
+          "end": "}\\1'",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.raw.end.r"

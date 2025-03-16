@@ -108,7 +108,7 @@
       "patterns": [
         {
           "applyEndPatternLast": 1,
-          "begin": "(?:\\s+|,)(?:(key|on[a-zA-Z0-9_$\\-]+|[a-zA-Z0-9_$]+Change|no-update(?:-body)?(?:-if)?)|([a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*))(:[a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*)?",
+          "begin": "(?:\\s+|,)(?:(key|on[a-zA-Z0-9_$-]+|[a-zA-Z0-9_$]+Change|no-update(?:-body)?(?:-if)?)|([a-zA-Z0-9_$][a-zA-Z0-9_$-]*))(:[a-zA-Z0-9_$][a-zA-Z0-9_$-]*)?",
           "beginCaptures": {
             "1": {
               "name": "support.type.attribute-name.marko"
@@ -770,7 +770,7 @@
           ]
         },
         {
-          "begin": "\\s*(?:\\b(?:new|typeof|instanceof|in)\\b|&&|\\|\\||[\\^|\\&]|[!=]=|[!=]==|<|<[=<]|=>|[?:]|[\\-+*%](?!-))",
+          "begin": "\\s*(?:\\b(?:new|typeof|instanceof|in)\\b|&&|\\|\\||[\\^|\\&]|[!=]=|[!=]==|<|<[=<]|=>|[?:]|[-+*%](?!-))",
           "captures": {
             "0": {
               "patterns": [
@@ -871,7 +871,7 @@
           "include": "#tag-name"
         },
         {
-          "match": "[#.][a-zA-Z0-9_$][a-zA-Z0-9_$\\-]*",
+          "match": "[#.][a-zA-Z0-9_$][a-zA-Z0-9_$-]*",
           "name": "entity.other.attribute-name.marko"
         },
         {
@@ -1192,7 +1192,7 @@
                   "name": "punctuation.definition.tag.end.marko"
                 }
               },
-              "end": "\\s*(</)([a-zA-Z0-9_$:@\\-]+)?(.*?)(>)",
+              "end": "\\s*(</)([a-zA-Z0-9_$:@-]+)?(.*?)(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.end.marko"
@@ -1275,7 +1275,7 @@
               ]
             }
           },
-          "match": "(style)\\.([a-zA-Z0-9$_\\-]+(?:\\.[a-zA-Z0-9$_\\-]+)*)|([a-zA-Z0-9_$@][a-zA-Z0-9_$@:\\-]*)"
+          "match": "(style)\\.([a-zA-Z0-9$_-]+(?:\\.[a-zA-Z0-9$_-]+)*)|([a-zA-Z0-9_$@][a-zA-Z0-9_$@:-]*)"
         }
       ]
     }

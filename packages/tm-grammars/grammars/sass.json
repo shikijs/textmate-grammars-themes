@@ -64,7 +64,7 @@
       "include": "#placeholder-selector"
     },
     {
-      "begin": "\\$[a-zA-Z0-9_\\-]+(?=:)",
+      "begin": "\\$[a-zA-Z0-9_-]+(?=:)",
       "captures": {
         "0": {
           "name": "variable.other.name"
@@ -227,7 +227,7 @@
       "name": "support.function.name.sass",
       "patterns": [
         {
-          "match": "[\\w\\-]+",
+          "match": "[\\w-]+",
           "name": "entity.name.function"
         }
       ]
@@ -238,7 +238,7 @@
       "name": "keyword.control.at-rule.css.sass"
     },
     {
-      "begin": "(?<![\\-(])\\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|u|slot)\\b(?![\\-)]|:\\s)|&",
+      "begin": "(?<![-(])\\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|u|slot)\\b(?![-)]|:\\s)|&",
       "end": "$\\n?|(?=[\\s,().#\\[>\\-_])",
       "name": "entity.name.tag.css.sass.symbol",
       "patterns": [
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "begin": "\\.|(?<=&)([\\-_])",
+      "begin": "\\.|(?<=&)([-_])",
       "end": "$\\n?|(?=[\\s,()\\[>])",
       "name": "entity.other.attribute-name.class.css.sass",
       "patterns": [
@@ -294,14 +294,14 @@
       ]
     },
     {
-      "match": "^((?<=[\\])]|not\\(|[*>]|>\\s)|\\n*):[a-z:\\-]+|(:[:\\-])[a-z:\\-]+",
+      "match": "^((?<=[\\])]|not\\(|[*>]|>\\s)|\\n*):[a-z:-]+|(:[:-])[a-z:-]+",
       "name": "entity.other.attribute-name.pseudo-class.css.sass"
     },
     {
       "include": "#module"
     },
     {
-      "match": "[\\w\\-]*\\(",
+      "match": "[\\w-]*\\(",
       "name": "entity.name.function"
     },
     {
@@ -314,7 +314,7 @@
       "name": "meta.property-list.css.sass.prop",
       "patterns": [
         {
-          "match": "(?<=:)[a-z\\-]+\\s",
+          "match": "(?<=:)[a-z-]+\\s",
           "name": "support.type.property-name.css.sass.prop.name"
         },
         {
@@ -352,7 +352,7 @@
           "name": "variable.css"
         },
         {
-          "match": "[\\w\\-]*\\(",
+          "match": "[\\w-]*\\(",
           "name": "entity.name.function"
         },
         {
@@ -395,7 +395,7 @@
       "include": "#function-content"
     },
     {
-      "begin": "(?<=})(?![\\n()]|[a-zA-Z0-9_\\-]+:)",
+      "begin": "(?<=})(?![\\n()]|[a-zA-Z0-9_-]+:)",
       "end": "\\s|(?=[,.\\[)\\n])",
       "name": "entity.name.tag.css.sass",
       "patterns": [
@@ -411,7 +411,7 @@
       "include": "#operator"
     },
     {
-      "match": "[a-z\\-]+((?=:|#\\{))",
+      "match": "[a-z-]+((?=:|#\\{))",
       "name": "support.type.property-name.css.sass.prop.name"
     },
     {
@@ -472,7 +472,7 @@
       "name": "keyword.other.important.css.sass"
     },
     "function": {
-      "match": "(?<=[\\s|(,:])(?!url|format|attr)[a-zA-Z0-9_\\-][\\w\\-]*(?=\\()",
+      "match": "(?<=[\\s|(,:])(?!url|format|attr)[a-zA-Z0-9_-][\\w-]*(?=\\()",
       "name": "support.function.name.sass"
     },
     "function-content": {
@@ -521,11 +521,11 @@
           "name": "constant.numeric.module.dot"
         }
       },
-      "match": "([\\w\\-]+?)(\\.)",
+      "match": "([\\w-]+?)(\\.)",
       "name": "constant.character.module"
     },
     "numeric": {
-      "match": "([\\-.])?[0-9]+(\\.[0-9]+)?",
+      "match": "([-.])?[0-9]+(\\.[0-9]+)?",
       "name": "constant.numeric.css.sass"
     },
     "operator": {
@@ -550,11 +550,11 @@
       "name": "entity.other.inherited-class.placeholder-selector.css.sass"
     },
     "property-value": {
-      "match": "[a-zA-Z0-9_\\-]+",
+      "match": "[a-zA-Z0-9_-]+",
       "name": "meta.property-value.css.sass support.constant.property-value.css.sass"
     },
     "pseudo-class": {
-      "match": ":[a-z:\\-]+",
+      "match": ":[a-z:-]+",
       "name": "entity.other.attribute-name.pseudo-class.css.sass"
     },
     "quoted-interpolation": {
@@ -606,11 +606,11 @@
       "name": "keyword.control.unit.css.sass"
     },
     "variable": {
-      "match": "\\$[a-zA-Z0-9_\\-]+",
+      "match": "\\$[a-zA-Z0-9_-]+",
       "name": "variable.other.value"
     },
     "variable-root": {
-      "match": "\\$[a-zA-Z0-9_\\-]+",
+      "match": "\\$[a-zA-Z0-9_-]+",
       "name": "variable.other.root"
     }
   },

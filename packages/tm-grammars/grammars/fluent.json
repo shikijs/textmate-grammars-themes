@@ -14,7 +14,7 @@
   ],
   "repository": {
     "attributes": {
-      "begin": "\\s*(\\.[a-zA-Z][a-zA-Z0-9_\\-]*\\s*=\\s*)",
+      "begin": "\\s*(\\.[a-zA-Z][a-zA-Z0-9_-]*\\s*=\\s*)",
       "beginCaptures": {
         "1": {
           "name": "support.class.attribute-begin.fluent"
@@ -49,7 +49,7 @@
       "name": "variable.other.named-argument.fluent"
     },
     "function-positional-argument": {
-      "match": "\\$[a-zA-Z0-9_\\-]+",
+      "match": "\\$[a-zA-Z0-9_-]+",
       "name": "variable.other.function.positional-argument.fluent"
     },
     "invalid-placeable-string-missing-end-quote": {
@@ -57,11 +57,11 @@
       "name": "invalid.illegal.wrong-placeable-missing-end-quote.fluent"
     },
     "invalid-placeable-wrong-placeable-missing-end": {
-      "match": "([^}A-Z]*$|[^\\-][^>]$)\\b",
+      "match": "([^}A-Z]*$|[^-][^>]$)\\b",
       "name": "invalid.illegal.wrong-placeable-missing-end.fluent"
     },
     "message": {
-      "begin": "^(-?[a-zA-Z][a-zA-Z0-9_\\-]*\\s*=\\s*)",
+      "begin": "^(-?[a-zA-Z][a-zA-Z0-9_-]*\\s*=\\s*)",
       "beginCaptures": {
         "1": {
           "name": "support.class.message-identifier.fluent"
@@ -117,7 +117,7 @@
       ]
     },
     "placeable-function": {
-      "begin": "([A-Z][A-Z0-9_\\-]*\\()",
+      "begin": "([A-Z][A-Z0-9_-]*\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.placeable-function.call.begin.fluent"
@@ -143,7 +143,7 @@
       ]
     },
     "placeable-reference-or-number": {
-      "match": "(([\\-$])[a-zA-Z0-9_\\-]+|[a-zA-Z][a-zA-Z0-9_\\-]*|[0-9]+)",
+      "match": "(([-$])[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_-]*|[0-9]+)",
       "name": "variable.other.placeable.reference-or-number.fluent"
     },
     "placeable-string": {
@@ -177,7 +177,7 @@
       ]
     },
     "selector-item": {
-      "begin": "(\\s*\\*?\\[)([a-zA-Z0-9_\\-]+)(]\\s*)",
+      "begin": "(\\s*\\*?\\[)([a-zA-Z0-9_-]+)(]\\s*)",
       "beginCaptures": {
         "1": {
           "name": "support.function.selector-item.begin.fluent"

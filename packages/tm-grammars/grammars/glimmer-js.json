@@ -166,7 +166,7 @@
           "name": "punctuation.separator.key-value.html.ember-handlebars"
         }
       },
-      "match": "\\s(@[a-zA-Z0-9:_.\\-]+)(=)?"
+      "match": "\\s(@[a-zA-Z0-9:_.-]+)(=)?"
     },
     "glimmer-as-stuff": {
       "patterns": [
@@ -179,7 +179,7 @@
       ]
     },
     "glimmer-block": {
-      "begin": "(\\{\\{~?)([#/])(([@$a-zA-Z0-9_/.\\-]+))",
+      "begin": "(\\{\\{~?)([#/])(([@$a-zA-Z0-9_/.-]+))",
       "captures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -281,7 +281,7 @@
       "match": "(::|[_$.])"
     },
     "glimmer-control-expression": {
-      "begin": "(\\{\\{~?)(([\\-a-zA-Z_0-9/]+)\\s)",
+      "begin": "(\\{\\{~?)(([-a-zA-Z_0-9/]+)\\s)",
       "captures": {
         "1": {
           "name": "keyword.operator"
@@ -349,7 +349,7 @@
       "name": "entity.expression.ember-handlebars"
     },
     "glimmer-expression": {
-      "begin": "(\\{\\{~?)(([()\\s@a-zA-Z0-9_.\\-]+))",
+      "begin": "(\\{\\{~?)(([()\\s@a-zA-Z0-9_.-]+))",
       "captures": {
         "1": {
           "name": "keyword.operator"
@@ -387,7 +387,7 @@
       ]
     },
     "glimmer-expression-property": {
-      "begin": "(\\{\\{~?)((@|this.)([a-zA-Z0-9_.\\-]+))",
+      "begin": "(\\{\\{~?)((@|this.)([a-zA-Z0-9_.-]+))",
       "captures": {
         "1": {
           "name": "keyword.operator"
@@ -435,7 +435,7 @@
           "name": "punctuation.definition.expression.ember-handlebars"
         }
       },
-      "match": "\\b([a-zA-Z0-9_\\-]+)(\\s?=)",
+      "match": "\\b([a-zA-Z0-9_-]+)(\\s?=)",
       "patterns": [
       ]
     },
@@ -451,7 +451,7 @@
           ]
         }
       },
-      "match": "\\b([a-zA-Z0-9:_.\\-]+)\\b(?!=)",
+      "match": "\\b([a-zA-Z0-9:_.-]+)\\b(?!=)",
       "patterns": [
       ]
     },
@@ -474,7 +474,7 @@
       "name": "entity.expression.ember-handlebars"
     },
     "glimmer-subexp": {
-      "begin": "(\\()([@a-zA-Z0-9.\\-]+)",
+      "begin": "(\\()([@a-zA-Z0-9.-]+)",
       "captures": {
         "1": {
           "name": "keyword.other"
@@ -558,7 +558,7 @@
           "name": "punctuation.separator.key-value.html.ember-handlebars"
         }
       },
-      "match": "\\s([a-zA-Z0-9:_.\\-]+)(=)?"
+      "match": "\\s([a-zA-Z0-9:_.-]+)(=)?"
     },
     "html-comment": {
       "begin": "<!--",
@@ -580,7 +580,7 @@
       ]
     },
     "html-tag": {
-      "begin": "(</?)([a-z0-9\\-]+)(?![.:])\\b",
+      "begin": "(</?)([a-z0-9-]+)(?![.:])\\b",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag"
@@ -1072,7 +1072,7 @@
           ]
         }
       },
-      "match": "(@|this.)([a-zA-Z0-9_.\\-]+)",
+      "match": "(@|this.)([a-zA-Z0-9_.-]+)",
       "patterns": [
       ]
     },

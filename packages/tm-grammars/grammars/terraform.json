@@ -27,12 +27,12 @@
           "name": "keyword.operator.accessor.hcl"
         }
       },
-      "end": "\\p{alpha}[\\w\\-]*|\\d*",
+      "end": "\\p{alpha}[\\w-]*|\\d*",
       "endCaptures": {
         "0": {
           "patterns": [
             {
-              "match": "(?!null|false|true)\\p{alpha}[\\w\\-]*",
+              "match": "(?!null|false|true)\\p{alpha}[\\w-]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -58,7 +58,7 @@
           "name": "keyword.operator.assignment.hcl"
         }
       },
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_\\-]*)(\\))?\\s*(=(?![=>]))\\s*",
+      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_-]*)(\\))?\\s*(=(?![=>]))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -76,7 +76,7 @@
       }
     },
     "block": {
-      "begin": "(\\w[\\-\\w]*)([\\s\"\\-\\w]*)(\\{)",
+      "begin": "(\\w[-\\w]*)([\\s\"\\-\\w]*)(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -85,7 +85,7 @@
               "name": "entity.name.type.terraform"
             },
             {
-              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
+              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -278,7 +278,7 @@
               "name": "support.function.builtin.terraform"
             },
             {
-              "match": "\\bprovider::\\p{alpha}[\\w_\\-]*::\\p{alpha}[\\w_\\-]*\\b",
+              "match": "\\bprovider::\\p{alpha}[\\w_-]*::\\p{alpha}[\\w_-]*\\b",
               "name": "support.function.provider.terraform"
             }
           ]
@@ -412,7 +412,7 @@
       ]
     },
     "local_identifiers": {
-      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*\\b",
+      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
       "name": "variable.other.readwrite.hcl"
     },
     "named_value_references": {
@@ -427,7 +427,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+([Ee][+\\-]?)\\d+\\b",
+          "match": "\\b\\d+([Ee][+-]?)\\d+\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -439,7 +439,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+\\-]?)\\d+)?\\b",
+          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+-]?)\\d+)?\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -541,7 +541,7 @@
               ]
             }
           },
-          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_\\-]*)\\s*(=>?)\\s*"
+          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_-]*)\\s*(=>?)\\s*"
         },
         {
           "captures": {
