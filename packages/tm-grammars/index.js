@@ -1317,18 +1317,18 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
-    byteSize: 2502,
+    byteSize: 2501,
     displayName: 'Gleam',
     funding: [
     ],
-    hash: '8DHF48VVq3p3zJTWVwgHbKIqXUP3gF2KNcUjJ83qlsQ',
-    lastUpdate: '2025-03-06T10:32:59Z',
+    hash: 'NYwZnnPvs5pXlOkyEdhZbvCOXaOmIaqYTwLlTCvG0ho',
+    lastUpdate: '2025-03-13T17:03:24Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
     name: 'gleam',
     scopeName: 'source.gleam',
-    sha: '752bbdf1d6b300d642ba0f2cd01afdc59f8e07e1',
-    source: 'https://github.com/gleam-lang/vscode-gleam/blob/752bbdf1d6b300d642ba0f2cd01afdc59f8e07e1/syntaxes/gleam.tmLanguage.json',
+    sha: '79dce69097e64ee228784cb36ae0ef346eb0bf25',
+    source: 'https://github.com/gleam-lang/vscode-gleam/blob/79dce69097e64ee228784cb36ae0ef346eb0bf25/syntaxes/gleam.tmLanguage.json',
   },
   {
     aliases: [
