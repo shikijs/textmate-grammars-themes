@@ -2590,18 +2590,18 @@ export const grammars = [
     aliases: [
       'nu',
     ],
-    byteSize: 18552,
+    byteSize: 18846,
     displayName: 'nushell',
     funding: [
     ],
-    hash: 'DgA9_I6vLGRVtSfGmB03E2wt6GBAJTMlN2re2_OyAQ8',
-    lastUpdate: '2024-09-23T21:05:29Z',
+    hash: 'uibY99O-tSYoc-xQCftsk3G1ZtTNcOO9rXKTcyHrSCI',
+    lastUpdate: '2025-03-24T23:34:41Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
     name: 'nushell',
     scopeName: 'source.nushell',
-    sha: '63fcfaf32fe18db9f8bc75805117c2af3a896806',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/63fcfaf32fe18db9f8bc75805117c2af3a896806/syntaxes/nushell.tmLanguage.json',
+    sha: '28ccc907ad4e6bccf252fba4c83cc7f4c00c2161',
+    source: 'https://github.com/nushell/vscode-nushell-lang/blob/28ccc907ad4e6bccf252fba4c83cc7f4c00c2161/syntaxes/nushell.tmLanguage.json',
   },
   {
     aliases: [
