@@ -569,7 +569,7 @@ export const grammars = [
     source: 'https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage',
   },
   {
-    byteSize: 38503,
+    byteSize: 38493,
     displayName: 'COBOL',
     embedded: [
       'html',
@@ -577,14 +577,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'vnAOC00aYydSm1X_c86TNiyZatijYJsD7OoR7ydsiR8',
-    lastUpdate: '2025-03-16T15:40:15Z',
+    hash: 'lF4T2DcSya3MJshKUUA3tcpCB6ZfKFXlg9dIw1Zyn1o',
+    lastUpdate: '2025-03-27T20:12:33Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: '3cdee2f66c7ed4bdc57495d66c354021aae01f11',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/3cdee2f66c7ed4bdc57495d66c354021aae01f11/syntaxes/COBOL.tmLanguage.json',
+    sha: '439cc876fb63b73244502fe67aae909c4a458e49',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/439cc876fb63b73244502fe67aae909c4a458e49/syntaxes/COBOL.tmLanguage.json',
   },
   {
     byteSize: 471,
@@ -2590,18 +2590,18 @@ export const grammars = [
     aliases: [
       'nu',
     ],
-    byteSize: 18846,
+    byteSize: 19192,
     displayName: 'nushell',
     funding: [
     ],
-    hash: 'uibY99O-tSYoc-xQCftsk3G1ZtTNcOO9rXKTcyHrSCI',
-    lastUpdate: '2025-03-24T23:34:41Z',
+    hash: 'juKsDoL5GNPdtLAsdqQxopy2VATA6yPTnze7qGrdGhs',
+    lastUpdate: '2025-03-26T21:36:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
     name: 'nushell',
     scopeName: 'source.nushell',
-    sha: '28ccc907ad4e6bccf252fba4c83cc7f4c00c2161',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/28ccc907ad4e6bccf252fba4c83cc7f4c00c2161/syntaxes/nushell.tmLanguage.json',
+    sha: 'b03d40225eeec75f08c24720b734cd462c946ead',
+    source: 'https://github.com/nushell/vscode-nushell-lang/blob/b03d40225eeec75f08c24720b734cd462c946ead/syntaxes/nushell.tmLanguage.json',
   },
   {
     aliases: [
@@ -3434,18 +3434,18 @@ export const grammars = [
     source: 'https://github.com/leocamello/vscode-smalltalk/blob/bc888519a21740b4dbd4edcf2f884c61855dc58b/syntaxes/smalltalk.tmLanguage.json',
   },
   {
-    byteSize: 15450,
+    byteSize: 15585,
     displayName: 'Solidity',
     funding: [
     ],
-    hash: 'QcSQNYvnssN-OonQGn8PO9j9lY6uVyfYtu7US7Aa-uQ',
-    lastUpdate: '2023-03-07T16:30:54Z',
+    hash: 'aH4qktB-Xw5cophFFvNZgABSmMAi0LqHZigO4esKQ7w',
+    lastUpdate: '2025-03-26T16:21:49Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/juanfranblanco/vscode-solidity/master/License.txt',
     name: 'solidity',
     scopeName: 'source.solidity',
-    sha: '75531be0beda99b7293d778eb0b1c63f70d8ac59',
-    source: 'https://github.com/juanfranblanco/vscode-solidity/blob/75531be0beda99b7293d778eb0b1c63f70d8ac59/syntaxes/solidity.json',
+    sha: '00abfad973f7a2f4fd105e05641344e160020369',
+    source: 'https://github.com/juanfranblanco/vscode-solidity/blob/00abfad973f7a2f4fd105e05641344e160020369/syntaxes/solidity.json',
   },
   {
     aliases: [
@@ -4004,18 +4004,18 @@ export const grammars = [
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77/syntaxes/verilog.tmLanguage.json',
   },
   {
-    byteSize: 22907,
+    byteSize: 23568,
     displayName: 'VHDL',
     funding: [
     ],
-    hash: 'cLmiMlqXvNORe00Cftq_dPQ_Q7abzIEXWa0eVJWQPNA',
-    lastUpdate: '2023-12-21T19:50:34Z',
+    hash: 'QPCtz4p5lsdE9TDKtmNVvvA-02X9p61edg7qcuIEpSU',
+    lastUpdate: '2025-03-25T11:18:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/LICENSE.txt',
     name: 'vhdl',
     scopeName: 'source.vhdl',
-    sha: '0d0a052da44f64382314ba90a321a83022e5c11a',
-    source: 'https://github.com/jonasjj/awesome-vhdl/blob/0d0a052da44f64382314ba90a321a83022e5c11a/syntaxes/vhdl.tmLanguage',
+    sha: 'b787559a47d64c7baf2a9ac0f4cac8e2e721cddc',
+    source: 'https://github.com/jonasjj/awesome-vhdl/blob/b787559a47d64c7baf2a9ac0f4cac8e2e721cddc/syntaxes/vhdl.tmLanguage',
   },
   {
     aliases: [
@@ -4395,21 +4395,21 @@ export const grammars = [
 
 export const injections = [
   {
-    byteSize: 18288,
+    byteSize: 18324,
     embeddedIn: [
       'angular-ts',
       'angular-html',
     ],
     funding: [
     ],
-    hash: 'bX8DyAhANINI88pfAg0eGzOY2Li8bDELOEl5gro-trU',
-    lastUpdate: '2025-03-12T17:49:04Z',
+    hash: '1vvZP8DNhaqPIwUTbWHJLkJtzAqvTiLTCfn0x0erWfo',
+    lastUpdate: '2025-03-20T21:49:14Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-expression',
     scopeName: 'expression.ng',
-    sha: 'de5d9650caa3a9de1b50e9815acb2a631f14ab3d',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/de5d9650caa3a9de1b50e9815acb2a631f14ab3d/syntaxes/expression.json',
+    sha: '39057fc2dbb37125778fb2c5c517c661f9399996',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/39057fc2dbb37125778fb2c5c517c661f9399996/syntaxes/expression.json',
   },
   {
     byteSize: 1196,
@@ -4457,7 +4457,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json',
   },
   {
-    byteSize: 879,
+    byteSize: 871,
     embedded: [
       'angular-expression',
     ],
@@ -4467,19 +4467,19 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: '6Js5I0c3YlywB2xQnDJepsuGu3Y3PVX7VFyWuUKWoTg',
+    hash: 'vIHg7i8Gh67SGb4fRSbzQ0KFD3to2OhazPPHJ2wKybQ',
     injectTo: [
       'text.html.derivative',
       'text.html.derivative.ng',
       'source.ts.ng',
     ],
-    lastUpdate: '2024-06-25T18:10:01Z',
+    lastUpdate: '2025-03-20T00:20:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-let-declaration',
     scopeName: 'template.let.ng',
-    sha: '4ab348120e4fb499bb12560dc039e0c7b5b418b8',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/4ab348120e4fb499bb12560dc039e0c7b5b418b8/syntaxes/let-declaration.json',
+    sha: '0aa2aa572dedcad4c5fc3c6825227396f4e99f21',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/0aa2aa572dedcad4c5fc3c6825227396f4e99f21/syntaxes/let-declaration.json',
   },
   {
     byteSize: 475,
@@ -4507,7 +4507,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json',
   },
   {
-    byteSize: 1197,
+    byteSize: 1912,
     embedded: [
       'angular-expression',
       'angular-template',
@@ -4518,19 +4518,19 @@ export const injections = [
     ],
     funding: [
     ],
-    hash: '_lL6ubNwHzMZcNfQKFGcx-Cw9nRnyeAo3frPiaAPsaA',
+    hash: 'vPsHDcdaWqfeF3R-5kseCGXAx-_AmVrKHe7xmrl37n4',
     injectTo: [
       'text.html.derivative',
       'text.html.derivative.ng',
       'source.ts.ng',
     ],
-    lastUpdate: '2024-07-19T01:10:54Z',
+    lastUpdate: '2025-03-20T01:26:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
     name: 'angular-template-blocks',
     scopeName: 'template.blocks.ng',
-    sha: 'b424eaa01e3cb5600bfe65ce7232a72c7d452d19',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/b424eaa01e3cb5600bfe65ce7232a72c7d452d19/syntaxes/template-blocks.json',
+    sha: '8c84410f61ed87e261a83458af10af18cbf669a9',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/8c84410f61ed87e261a83458af10af18cbf669a9/syntaxes/template-blocks.json',
   },
   {
     byteSize: 214674,

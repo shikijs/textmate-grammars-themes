@@ -701,6 +701,9 @@
           "include": "#type-modifier-immutable"
         },
         {
+          "include": "#type-modifier-transient"
+        },
+        {
           "include": "#type-modifier-extend-scope"
         },
         {
@@ -1145,6 +1148,10 @@
     "type-modifier-payable": {
       "match": "\\b(nonpayable|payable)\\b",
       "name": "storage.type.modifier.payable"
+    },
+    "type-modifier-transient": {
+      "match": "\\b(transient)\\b",
+      "name": "storage.type.modifier.readonly"
     },
     "type-primitive": {
       "patterns": [

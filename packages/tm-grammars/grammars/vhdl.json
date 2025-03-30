@@ -385,6 +385,9 @@
         },
         {
           "include": "#while_pattern"
+        },
+        {
+          "include": "#loop_pattern"
         }
       ]
     },
@@ -760,6 +763,50 @@
         {
           "match": "([+-]|<=|=|=>|:=|>=|[></|\\&]|(\\*{1,2}))",
           "name": "keyword.operator.vhdl"
+        }
+      ]
+    },
+    "loop_pattern": {
+      "patterns": [
+        {
+          "begin": "^\\s*(([a-zA-Z][a-zA-Z0-9_]*)\\s*(:)\\s*)?\\b((?i:loop))\\b",
+          "beginCaptures": {
+            "2": {
+              "name": "entity.name.tag.loop.begin.vhdl"
+            },
+            "3": {
+              "name": "punctuation.vhdl"
+            },
+            "4": {
+              "name": "keyword.language.vhdl"
+            }
+          },
+          "end": "\\b((?i:end))\\s+(((?i:loop))|(\\S+))\\b(\\s+((\\2)|(.+?)))?(?=\\s*;)",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.language.vhdl"
+            },
+            "3": {
+              "name": "keyword.language.vhdl"
+            },
+            "4": {
+              "name": "invalid.illegal.loop.keyword.required.vhdl"
+            },
+            "7": {
+              "name": "entity.name.tag.loop.end.vhdl"
+            },
+            "8": {
+              "name": "invalid.illegal.mismatched.identifier.vhdl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#control_patterns"
+            },
+            {
+              "include": "#cleanup"
+            }
+          ]
         }
       ]
     },
