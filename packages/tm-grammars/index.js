@@ -378,21 +378,21 @@ export const grammars = [
     source: 'https://github.com/berry-lang/berry/blob/a0f5c044a3b593deaf87292ca6f04c2343e53dc8/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
   },
   {
-    byteSize: 4803,
+    byteSize: 4943,
     categories: [
       'markup',
     ],
     displayName: 'BibTeX',
     funding: [
     ],
-    hash: '6z_-saH93ctdNNMXMvoY2-78NM_czgDPNgBSdzCTWDw',
-    lastUpdate: '2024-04-09T10:20:39Z',
+    hash: 'ercXfCfOI0O4LNB5C-Q4PU6993MvdmiX2in2wXzyRsQ',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'bibtex',
     scopeName: 'text.bibtex',
-    sha: 'b557947e50a068bdcc927ffd31ee555dbb232558',
-    source: 'https://github.com/microsoft/vscode/blob/b557947e50a068bdcc927ffd31ee555dbb232558/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
   },
   {
     byteSize: 3968,
@@ -1406,21 +1406,21 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 42794,
+    byteSize: 43177,
     categories: [
       'general',
     ],
     displayName: 'Go',
     funding: [
     ],
-    hash: 'H-SrESr1JEgjJygI7Eo81zpQLXnrp94R9KkpH_LmT4M',
-    lastUpdate: '2024-12-06T15:55:37Z',
+    hash: 'P1xtPaitXdqOrKjN5CDRDdzj9Z-lAI6HyUnDc0pptxc',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '8270a86019db7551da42b71d15c6080a414d8c81',
-    source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/go/syntaxes/go.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/go/syntaxes/go.tmLanguage.json',
   },
   {
     aliases: [
@@ -1651,7 +1651,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/45324363153075dab0482312ae24d8c068d81e4f/extensions/html/syntaxes/html.tmLanguage.json',
   },
   {
-    byteSize: 706,
+    byteSize: 707,
     categories: [
       'web',
       'markup',
@@ -1662,14 +1662,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'mDOHh86y4vTAQoqSrxsHn5MccTfX6hBtqZ4jl-OuyXY',
-    lastUpdate: '2018-10-04T09:01:56Z',
+    hash: 'NZPXWfQuvta0UKNCRaEoo5hvbyf3dfz79uFTSGOc0XM',
+    lastUpdate: '2025-04-02T13:41:24Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'html-derivative',
     scopeName: 'text.html.derivative',
-    sha: 'cfc2a2212de9ea10943af58ebd1817a5ad196463',
-    source: 'https://github.com/microsoft/vscode/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
+    sha: '4064f172528461afc6944383d07521f6a30da89c',
+    source: 'https://github.com/microsoft/vscode/blob/4064f172528461afc6944383d07521f6a30da89c/extensions/html/syntaxes/html-derivative.tmLanguage.json',
   },
   {
     byteSize: 3982,
@@ -2040,7 +2040,7 @@ export const grammars = [
     source: 'https://github.com/rosshamish/kuskus/blob/2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
-    byteSize: 54940,
+    byteSize: 55950,
     categories: [
       'markup',
     ],
@@ -2066,14 +2066,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'KIT1trsOuwtGeYGTpxYkFilLXvM8-nIM9fcUN2MFXD8',
-    lastUpdate: '2025-02-28T12:20:44Z',
+    hash: 'cqoOuRciq23pBmh9cK_UfMAQZcw51eV39lIbwFR3R7g',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: 'a26707320440021f45b508767c94c2634eb6e897',
-    source: 'https://github.com/microsoft/vscode/blob/a26707320440021f45b508767c94c2634eb6e897/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
   },
   {
     aliases: [
@@ -2713,7 +2713,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e637ff1bf7f481134849625e982ec80df9b35bc8/extensions/perl/syntaxes/perl.tmLanguage.json',
   },
   {
-    byteSize: 105821,
+    byteSize: 106266,
     categories: [
       'general',
       'web',
@@ -2729,14 +2729,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'PXnpI1ZtGapZBnV6ugYH_sYFJ9OewNcukT72LAtWXTU',
-    lastUpdate: '2023-04-17T18:42:57Z',
+    hash: 'IHsgLHSSVIe0XJMYs3Z0oARG2cC2McupoFqV_RtxCwA',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'php',
     scopeName: 'source.php',
-    sha: '06401b39b18c5e7d1c021a619fa387d654033606',
-    source: 'https://github.com/microsoft/vscode/blob/06401b39b18c5e7d1c021a619fa387d654033606/extensions/php/syntaxes/php.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/php/syntaxes/php.tmLanguage.json',
   },
   {
     byteSize: 8165,
@@ -3228,21 +3228,21 @@ export const grammars = [
     aliases: [
       'rs',
     ],
-    byteSize: 14655,
+    byteSize: 14707,
     categories: [
       'general',
     ],
     displayName: 'Rust',
     funding: [
     ],
-    hash: 'Ns-8yilJaOXwCeY5bI8sxkS8PaP-yh8cKL2LJ3HRjDw',
-    lastUpdate: '2024-08-30T20:03:00Z',
+    hash: 'hEnoZ2o9jfmY0i-WSjKXX16_nc3Q8XRmkaR7EqOXOic',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'rust',
     scopeName: 'source.rust',
-    sha: '03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
-    source: 'https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/rust/syntaxes/rust.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/rust/syntaxes/rust.tmLanguage.json',
   },
   {
     byteSize: 8980,
@@ -3753,7 +3753,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/cc2b4d4fe389f14b8a13937f4e0d7b2811b57588/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 8974,
+    byteSize: 9252,
     categories: [
       'markup',
     ],
@@ -3763,14 +3763,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'iW7B39hklyd9KDDU6s2eBuxSscJ0jDnPuqgzxy1D3D8',
-    lastUpdate: '2024-09-27T08:27:11Z',
+    hash: 'Y5ZU6BTLorSinHZmf19U95bX0VZusgT6fg_-JtScnG8',
+    lastUpdate: '2025-04-02T13:41:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
-    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
+    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
     byteSize: 6132,

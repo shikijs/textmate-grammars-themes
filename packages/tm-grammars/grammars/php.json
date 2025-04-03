@@ -2031,23 +2031,68 @@
       ]
     },
     "instantiation": {
-      "begin": "(?i)(new)\\s+(?!class\\b)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.other.new.php"
-        }
-      },
-      "end": "(?i)(?=[^a-z0-9_\\x7F-\\x{10FFFF}\\\\])",
       "patterns": [
         {
-          "match": "(?i)(parent|static|self)(?![a-z0-9_\\x7F-\\x{10FFFF}])",
-          "name": "storage.type.php"
+          "captures": {
+            "1": {
+              "name": "keyword.other.new.php"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "(?i)(parent|static|self)(?![a-z0-9_\\x7F-\\x{10FFFF}])",
+                  "name": "storage.type.php"
+                },
+                {
+                  "include": "#class-name"
+                },
+                {
+                  "include": "#variable-name"
+                }
+              ]
+            }
+          },
+          "match": "(?i)(new)\\s+(?!class\\b)([$a-z0-9_\\x7F-\\x{10FFFF}\\\\]+)(?![a-z0-9_\\x7F-\\x{10FFFF}\\\\(])"
         },
         {
-          "include": "#class-name"
-        },
-        {
-          "include": "#variable-name"
+          "begin": "(?i)(new)\\s+(?!class\\b)([$a-z0-9_\\x7F-\\x{10FFFF}\\\\]+)\\s*(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.new.php"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "(?i)(parent|static|self)(?![a-z0-9_\\x7F-\\x{10FFFF}])",
+                  "name": "storage.type.php"
+                },
+                {
+                  "include": "#class-name"
+                },
+                {
+                  "include": "#variable-name"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.definition.arguments.begin.bracket.round.php"
+            }
+          },
+          "contentName": "meta.function-call.php",
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.arguments.end.bracket.round.php"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#named-arguments"
+            },
+            {
+              "include": "$self"
+            }
+          ]
         }
       ]
     },
@@ -2844,6 +2889,10 @@
             },
             {
               "include": "#php_doc_types"
+            },
+            {
+              "match": "[|\\&]",
+              "name": "punctuation.separator.delimiter.php"
             }
           ]
         },
@@ -2880,19 +2929,11 @@
             {
               "match": "[|\\&]",
               "name": "punctuation.separator.delimiter.php"
-            },
-            {
-              "match": "\\(",
-              "name": "punctuation.definition.type.begin.bracket.round.php"
-            },
-            {
-              "match": "\\)",
-              "name": "punctuation.definition.type.end.bracket.round.php"
             }
           ]
         }
       },
-      "match": "(?i)\\??[a-z_\\x7F-\\x{10FFFF}\\\\][a-z0-9_\\x7F-\\x{10FFFF}\\\\]*([|\\&]\\??[a-z_\\x7F-\\x{10FFFF}\\\\][a-z0-9_\\x7F-\\x{10FFFF}\\\\]*)*"
+      "match": "(?i)\\??[a-z0-9_\\x7F-\\x{10FFFF}\\\\]+([|\\&]\\??[a-z0-9_\\x7F-\\x{10FFFF}\\\\]+)*"
     },
     "php_doc_types_array_multiple": {
       "begin": "\\(",
@@ -2901,7 +2942,7 @@
           "name": "punctuation.definition.type.begin.bracket.round.phpdoc.php"
         }
       },
-      "end": "(\\))(\\[])|(?=\\*/)",
+      "end": "(\\))(\\[])?|(?=\\*/)",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.type.end.bracket.round.phpdoc.php"
@@ -2939,7 +2980,7 @@
           "name": "keyword.other.array.phpdoc.php"
         }
       },
-      "match": "(?i)([a-z_\\x7F-\\x{10FFFF}\\\\][a-z0-9_\\x7F-\\x{10FFFF}\\\\]*)(\\[])"
+      "match": "(?i)([a-z0-9_\\x7F-\\x{10FFFF}\\\\]+)(\\[])"
     },
     "regex-double-quoted": {
       "begin": "\"/(?=(\\\\.|[^\"/])++/[imsxeADSUXu]*\")",

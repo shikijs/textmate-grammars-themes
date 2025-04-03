@@ -67,7 +67,7 @@
         }
       },
       "comment": "macro type metavariables",
-      "match": "(\\$)((crate)|([A-Z][A-Za-z0-9_]*))((:)(block|expr|ident|item|lifetime|literal|meta|path?|stmt|tt|ty|vis))?",
+      "match": "(\\$)((crate)|([A-Z]\\w*))(\\s*(:)\\s*(block|expr(?:_2021)?|ident|item|lifetime|literal|meta|pat(?:_param)?|path|stmt|tt|ty|vis)\\b)?",
       "name": "meta.macro.metavariable.type.rust",
       "patterns": [
         {
@@ -91,7 +91,7 @@
         }
       },
       "comment": "macro metavariables",
-      "match": "(\\$)([a-z][A-Za-z0-9_]*)((:)(block|expr|ident|item|lifetime|literal|meta|path?|stmt|tt|ty|vis))?",
+      "match": "(\\$)([a-z]\\w*)(\\s*(:)\\s*(block|expr(?:_2021)?|ident|item|lifetime|literal|meta|pat(?:_param)?|path|stmt|tt|ty|vis)\\b)?",
       "name": "meta.macro.metavariable.rust",
       "patterns": [
         {
@@ -1186,5 +1186,5 @@
     }
   },
   "scopeName": "source.rust",
-  "version": "https://github.com/dustypomerleau/rust-syntax/commit/e90d3dbdb61b96e4afdce6f7a3572426b1a86d9d"
+  "version": "https://github.com/dustypomerleau/rust-syntax/commit/268fd42cfd4aa96a6ed9024a2850d17d6cd2dc7b"
 }

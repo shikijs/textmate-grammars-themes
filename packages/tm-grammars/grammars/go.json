@@ -358,13 +358,21 @@
               "name": "punctuation.definition.end.bracket.square.go"
             },
             {
+              "match": "\\{",
+              "name": "punctuation.definition.begin.bracket.curly.go"
+            },
+            {
+              "match": "}",
+              "name": "punctuation.definition.end.bracket.curly.go"
+            },
+            {
               "match": "\\w+",
               "name": "entity.name.type.go"
             }
           ]
         }
       },
-      "match": "(?<!\\w)(\\([\\w.\\[\\]*\\&]+\\))(?=\\()"
+      "match": "(?<!\\w)(\\([\\[\\]*]+{0,1}[\\w.]+(?:\\[(?:[\\w.*\\[\\]{}]+(?:,\\s*[\\w.*\\[\\]{}]+)*)?])?\\))(?=\\()"
     },
     "field_hover": {
       "captures": {
@@ -1815,35 +1823,32 @@
             "2": {
               "patterns": [
                 {
-                  "begin": "\\[",
-                  "beginCaptures": {
-                    "0": {
-                      "name": "punctuation.definition.begin.bracket.square.go"
-                    }
-                  },
-                  "end": "]",
-                  "endCaptures": {
-                    "0": {
-                      "name": "punctuation.definition.end.bracket.square.go"
-                    }
-                  },
-                  "patterns": [
-                    {
-                      "include": "#type-declarations"
-                    },
-                    {
-                      "match": "\\w+",
-                      "name": "entity.name.type.go"
-                    },
-                    {
-                      "include": "$self"
-                    }
-                  ]
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "match": "\\[",
+                  "name": "punctuation.definition.begin.bracket.square.go"
+                },
+                {
+                  "match": "]",
+                  "name": "punctuation.definition.end.bracket.square.go"
+                },
+                {
+                  "match": "\\{",
+                  "name": "punctuation.definition.begin.bracket.curly.go"
+                },
+                {
+                  "match": "}",
+                  "name": "punctuation.definition.end.bracket.curly.go"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
                 }
               ]
             }
           },
-          "match": "(\\b[\\w.]+)(\\[[^\\]]+{0,1}])?(?=\\{)(?<!\\b(?:struct\\b|interface\\b))"
+          "match": "(\\b[\\w.]+)(\\[(?:[\\w.*\\[\\]{}]+(?:,\\s*[\\w.*\\[\\]{}]+)*)?])?(?=\\{)(?<!\\b(?:struct\\b|interface\\b))"
         }
       ]
     },
@@ -2213,6 +2218,10 @@
         {
           "match": "\\bany\\b",
           "name": "entity.name.type.any.go"
+        },
+        {
+          "match": "\\bcomparable\\b",
+          "name": "entity.name.type.comparable.go"
         }
       ]
     },
