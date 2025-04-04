@@ -121,7 +121,7 @@
               "name": "keyword.constant.$0.json.tm"
             },
             {
-              "match": "-?\\d+",
+              "match": "-?[0-9]+",
               "name": "constant.numeric.json.tm"
             },
             {
@@ -137,7 +137,7 @@
     "array-separator": {
       "patterns": [
         {
-          "begin": "\\G|,",
+          "begin": "\\G(?=\\s|,|$)|,",
           "beginCaptures": {
             "0": {
               "name": "punctuation.separator.array.json.tm"
@@ -157,7 +157,7 @@
       ]
     },
     "capture": {
-      "begin": "(\")(\\d{1,3})(.*?(?<!\\\\)\\\\{2}*|.*)(\")",
+      "begin": "(\")([0-9]{1,3})(.*?(?<!\\\\)\\\\{2}*|.*)(\")",
       "beginCaptures": {
         "2": {
           "name": "constant.numeric.json.tm"
@@ -699,7 +699,7 @@
           "include": "#json-pair"
         },
         {
-          "begin": "\\G|,",
+          "begin": "\\G(?=\\s|,|$)|,",
           "beginCaptures": {
             "0": {
               "name": "punctuation.separator.dictionary.json.tm"
@@ -762,7 +762,7 @@
           "match": "(\\\\u)(\\h{4,0})"
         },
         {
-          "match": "\\\\.?|[\"\\x-\\x1F\\x7F]",
+          "match": "\\\\.?|[\"\\x00-\\x1F\\x7F]",
           "name": "invalid.illegal.json.tm markup.underline regex"
         }
       ]
@@ -775,6 +775,18 @@
         },
         {
           "include": "#$schema"
+        },
+        {
+          "include": "#match"
+        },
+        {
+          "include": "#captures"
+        },
+        {
+          "include": "#name"
+        },
+        {
+          "include": "#contentName"
         },
         {
           "include": "#scopeName"
@@ -798,6 +810,12 @@
           "include": "#injections"
         },
         {
+          "include": "#include"
+        },
+        {
+          "include": "#applyEndPatternLast"
+        },
+        {
           "include": "#patterns"
         },
         {
@@ -807,28 +825,10 @@
           "include": "#uuid"
         },
         {
-          "include": "#name"
-        },
-        {
-          "include": "#contentName"
-        },
-        {
-          "include": "#match"
-        },
-        {
-          "include": "#include"
-        },
-        {
-          "include": "#captures"
-        },
-        {
-          "include": "#applyEndPatternLast"
+          "include": "#comment"
         },
         {
           "include": "#capture"
-        },
-        {
-          "include": "#comment"
         },
         {
           "include": "#repo"
@@ -1217,7 +1217,7 @@
                   "match": "(#\\$)(self)(?=\")"
                 },
                 {
-                  "match": "(?!\\G)#(?=\")",
+                  "match": "(?!\\G)#?(?=\")",
                   "name": "keyword.json.tm markup.strikethrough.json.tm"
                 },
                 {
@@ -1343,7 +1343,7 @@
           "match": "(?<=(?>^|[^\\\\])\"|,)((?>\\\\[\\\\\"/bfnrt]|[^\\\\\"\\w.:|()-])*)([LR]:|[\\w.:]:(?![\\w.:-]))"
         },
         {
-          "begin": "text|source(?=\\.[\\w.:])",
+          "begin": "(?>text|source)(?=\\.[\\w.:])",
           "beginCaptures": {
             "0": {
               "name": "support.function.tm"
@@ -1691,7 +1691,7 @@
               "name": "invalid.illegal.unrecognized-string-escape.json.tm"
             },
             {
-              "match": "[\\x-\\x1F\\x7F]+",
+              "match": "[\\x00-\\x1F\\x7F]+",
               "name": "invalid.illegal.control-character.json.tm"
             }
           ]
@@ -1709,7 +1709,7 @@
           "name": "constant.language.json.tm"
         },
         {
-          "match": "-?(?>0|[1-9]\\d*)(?>\\.\\d+)?(?>[eE][+-]?\\d+)?",
+          "match": "-?(?>0|[1-9][0-9]*)(?>\\.[0-9]+)?(?>[eE][+-]?[0-9]+)?",
           "name": "constant.numeric.json.tm"
         },
         {
@@ -1885,11 +1885,8 @@
           "include": "#escape-characters"
         },
         {
-          "match": "(?>comment|string|regex|meta\\.embedded)\\b",
+          "match": "\\b(?>comment|string|regex|meta\\.embedded)\\b",
           "name": "markup.italic"
-        },
-        {
-          "match": "\\w+"
         },
         {
           "captures": {
@@ -1904,7 +1901,7 @@
             }
           },
           "comment": "An invalid capture group number does not convert, nor becomes null",
-          "match": "(\\$)(0*)(\\d{3,1})(?!\\d)"
+          "match": "(\\$)(0*)([0-9]{3,1})(?![0-9])"
         },
         {
           "captures": {
@@ -1930,7 +1927,7 @@
               "name": "meta.embedded constant.character.escape.json.tm"
             }
           },
-          "match": "(\\$)({)(0*)(\\d{3,1})(:/)(upcase|downcase)(})"
+          "match": "(\\$)({)(0*)([0-9]{3,1})(:/)(upcase|downcase)(})"
         }
       ]
     },
@@ -2169,9 +2166,6 @@
                   "include": "#repo"
                 },
                 {
-                  "include": "#json-pair"
-                },
-                {
                   "include": "#dictionary-separator"
                 }
               ]
@@ -2208,10 +2202,10 @@
           "include": "#$schema"
         },
         {
-          "include": "#scopeName"
+          "include": "#name_display"
         },
         {
-          "include": "#name_display"
+          "include": "#scopeName"
         },
         {
           "include": "#fileTypes"

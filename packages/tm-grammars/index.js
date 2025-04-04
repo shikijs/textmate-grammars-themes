@@ -1877,7 +1877,7 @@ export const grammars = [
     aliases: [
       'JSON TextMate',
     ],
-    byteSize: 35097,
+    byteSize: 32660,
     categories: [
       'dsl',
     ],
@@ -1887,14 +1887,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'xIBRYIZSMJ',
-    lastUpdate: '2024-12-12T06:57:55Z',
+    hash: '4zxYmizMdNJi4SDByixGAkaoHtBc8jLAOXv5SHa8Oi0',
+    lastUpdate: '2025-04-02T09:03:04Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/LICENSE',
     name: 'json-textmate',
     scopeName: 'source.json.textmate',
-    sha: 'fb105df2611356cbf475e4a2918884ab2a503046',
-    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/fb105df2611356cbf475e4a2918884ab2a503046/syntaxes/json.tmLanguage.json',
+    sha: '80dc429cccc303ea481e388071bace98e4a82ba1',
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/80dc429cccc303ea481e388071bace98e4a82ba1/syntaxes/json.tmLanguage.json',
   },
   {
     byteSize: 3123,
@@ -4750,21 +4750,21 @@ export const injections = [
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/64ad369cd167bba2e614944db6d925b7dc6483b4/syntaxes/jinja-html.tmLanguage.json',
   },
   {
-    byteSize: 44195,
+    byteSize: 41529,
     displayName: 'JSON TextMate Oniguruma Regular Expressions',
     embeddedIn: [
       'json-textmate',
     ],
     funding: [
     ],
-    hash: 'AskMZcZmMA',
-    lastUpdate: '2024-12-14T08:21:50Z',
+    hash: 'EGF1Dpmo27fuNP7cKIKi32a7zQxATMOlXOH5U1VUxCU',
+    lastUpdate: '2025-03-31T08:09:49Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/LICENSE',
     name: 'json-textmate-regex',
     scopeName: 'source.json.textmate.regexp',
-    sha: 'e017af7a8125c0285079455c7af44a04beb48a0d',
-    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/e017af7a8125c0285079455c7af44a04beb48a0d/syntaxes/regex.tmLanguage.json',
+    sha: '9d0dbcde1a31f5897fbf84803bb0139214f49993',
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/9d0dbcde1a31f5897fbf84803bb0139214f49993/syntaxes/regex.tmLanguage.json',
   },
   {
     byteSize: 679,
