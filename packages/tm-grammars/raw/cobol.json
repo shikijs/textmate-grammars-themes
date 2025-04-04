@@ -86,13 +86,13 @@
     {
       "captures": {
         "1": {
-          "name": "constant.cobol"
+          "name": "constant.numeric.cobol"
         },
         "2": {
           "name": "comment.line.cobol.fixed"
         }
       },
-      "match": "(^[0-9a-zA-Z\\s\\$#%\\.@\\- ][0-9a-zA-Z\\s\\$#%\\.@\\- ][0-9a-zA-Z\\s\\$#%\\.@\\- ][0-9a-zA-Z\\s\\$#%\\.@\\- ][0-9a-zA-Z\\s\\$#%\\.@\\- ][0-9a-zA-Z\\s\\$#%\\.@\\- ])(\\*.*$)"
+      "match": "(^[0-9a-zA-Z\\s\\$#%\\.@\\- +][0-9a-zA-Z\\s\\$#%\\.@\\- +][0-9a-zA-Z\\s\\$#%\\.@\\- +][0-9a-zA-Z\\s\\$#%\\.@\\- +][0-9a-zA-Z\\s\\$#%\\.@\\- +][0-9a-zA-Z\\s\\$#%\\.@\\- +])(\\*.*$)"
     },
     {
       "captures": {
@@ -886,7 +886,7 @@
       "match": "(?<![-_])(?i:type)\\s+([0-9a-zA-Z\\.]*)"
     },
     {
-      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|exit\\s+perform|perform|end-perform|when\\s+other|when|continue|call|end-call|chain|end-chain|invoke|end\\s+invoke|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|exit\\sparagraph|await)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|exit\\s+perform|perform|end-perform|when\\s+other|when|continue|call|end-call|chain|end-chain|invoke|end\\s+invoke|end-xml|go\\s+to|go|sort|merge|use|xml\\s+parse|xml|top\\s+run|goback\\s+returning|goback|raise|exit\\s+function|exit\\sparagraph|await)(?![0-9A-Za-z_-])",
       "name": "keyword.control.cobol"
     },
     {
@@ -988,7 +988,7 @@
       "name": "support.function.cbltypes.cobol"
     },
     {
-      "match": "(?<![-_])(?i:computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|group-usage|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate|sql)(?=\\s|\\.|\\))",
+      "match": "(?<![-_])(?i:computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|group-usage|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer-32|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate|sql)(?=\\s|\\.|\\))",
       "name": "storage.type.picture.cobol"
     },
     {
@@ -1032,7 +1032,7 @@
       "name": "support.type.cobol"
     },
     {
-      "match": "(?<![-_])(?i:end-xml|processing.*procedure|xml\\sparse|xml|xml-information|xml-text|xml-schemal|xml-declaration)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:processing.*procedure|xml-information|xml-text|xml-schemal|xml-declaration)(?![0-9A-Za-z_-])",
       "name": "keyword.xml.cobol"
     },
     {

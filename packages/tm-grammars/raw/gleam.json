@@ -1,6 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "displayName": "Gleam",
+  "fileTypes": [
+    "gleam"
+  ],
   "name": "gleam",
   "patterns": [
     {
@@ -50,9 +53,6 @@
         },
         {
           "include": "#decimal_number"
-        },
-        {
-          "include": "#boolean"
         },
         {
           "match": "[[:upper:]][[:alnum:]]*",
@@ -105,7 +105,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic|else|try)\\b",
+          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic|else|try|echo)\\b",
           "name": "keyword.control.gleam"
         },
         {

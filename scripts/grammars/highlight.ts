@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import { createHighlighterCore } from '@shikijs/core'
+import { createOnigurumaEngine } from '@shikijs/engine-oniguruma'
 
 export async function highlight(grammar: any) {
   const sample = new URL(`../../samples/${grammar.name}.sample`, import.meta.url)
@@ -11,7 +12,7 @@ export async function highlight(grammar: any) {
   const highlighter = await createHighlighterCore({
     themes: [() => import('../../packages/tm-themes/themes/vitesse-black.json') as any],
     langs: [grammar],
-    loadWasm: () => import('@shikijs/core/wasm-inlined'),
+    engine: createOnigurumaEngine(import('@shikijs/engine-oniguruma/wasm-inlined')),
   })
 
   try {

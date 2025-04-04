@@ -1,0 +1,263 @@
+#CB7676        package
+#DBD7CACC       
+#5DA994        local
+#CB7676        :
+#5DA994        demo;
+#758575DD      // An example interface.
+#CB7676        interface
+#DBD7CACC       
+#5DA994        shared
+#DBD7CACC       
+#444444        {
+#758575DD          // Examples of various types:
+#DBD7CACC          
+#4D9375        record
+#DBD7CACC       
+#5DA994        metadata
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        a
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        ,
+#DBD7CACC              
+#BD976A        b
+#CB7676        :
+#DBD7CACC       
+#5DA994        string
+#444444        ,
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        enum
+#DBD7CACC       
+#5DA994        errno
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        too-big
+#444444        ,
+#DBD7CACC              
+#BD976A        too-small
+#444444        ,
+#DBD7CACC          
+#444444        }
+#758575DD          // Use `%` to name something after a keyword.
+#DBD7CACC          
+#4D9375        variant
+#DBD7CACC       %
+#5DA994        variant
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        baby
+#444444        ,
+#DBD7CACC              
+#BD976A        child
+#444444        (
+#5DA994        u32
+#444444        ),
+#758575DD       // optional type payload
+#DBD7CACC              
+#BD976A        adult
+#444444        ,
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        flags
+#DBD7CACC       
+#5DA994        permissions
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        read
+#444444        ,
+#DBD7CACC              
+#BD976A        write
+#444444        ,
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        resource
+#DBD7CACC       
+#5DA994        blob
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#4D9375        constructor
+#444444        (
+#BD976A        init
+#CB7676        :
+#DBD7CACC       
+#5DA994        list
+#444444        <
+#5DA994        u8
+#444444        >)
+#DBD7CACC      ;
+#DBD7CACC              
+#80A665        write
+#CB7676        :
+#DBD7CACC       
+#4D9375        func
+#444444        (
+#BD976A        bytes
+#CB7676        :
+#DBD7CACC       
+#5DA994        list
+#444444        <
+#5DA994        u8
+#444444        >)
+#DBD7CACC      ;
+#DBD7CACC              
+#80A665        read
+#CB7676        :
+#DBD7CACC       
+#4D9375        func
+#444444        (
+#BD976A        n
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        list
+#444444        <
+#5DA994        u8
+#444444        >
+#DBD7CACC      ;
+#DBD7CACC              
+#80A665        merge
+#CB7676        :
+#DBD7CACC       
+#CB7676        static 
+#4D9375        func
+#444444        (
+#BD976A        lhs
+#CB7676        :
+#DBD7CACC       
+#5DA994        borrow
+#444444        <
+#5DA994        blob
+#444444        >,
+#DBD7CACC       
+#BD976A        rhs
+#CB7676        :
+#DBD7CACC       
+#5DA994        borrow
+#444444        <
+#5DA994        blob
+#444444        >)
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        blob
+#DBD7CACC      ;
+#DBD7CACC          
+#444444        }
+#444444        }
+#CB7676        interface
+#DBD7CACC       
+#5DA994        dependent-interface
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        use
+#DBD7CACC       
+#80A665        shared
+#CB7676        .
+#444444        {
+#5DA994        metadata
+#444444        }
+#DBD7CACC      ;
+#DBD7CACC          
+#CB7676        type
+#DBD7CACC       
+#5DA994        aliased-metadata
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        metadata
+#DBD7CACC      ;
+#DBD7CACC          
+#80A665        foo
+#CB7676        :
+#DBD7CACC       
+#4D9375        func
+#444444        ()
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        aliased-metadata
+#DBD7CACC      ;
+#444444        }
+#758575DD      // An example world.
+#CB7676        world
+#DBD7CACC       
+#5DA994        my-world
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        import
+#DBD7CACC       
+#BD976A        host
+#DBD7CACC      : 
+#4D9375        interface
+#DBD7CACC       {
+#DBD7CACC              
+#80A665        log
+#CB7676        :
+#DBD7CACC       
+#4D9375        func
+#444444        (
+#BD976A        param
+#CB7676        :
+#DBD7CACC       
+#5DA994        string
+#444444        )
+#DBD7CACC      ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        import
+#DBD7CACC       
+#BD976A        wasi
+#DBD7CACC      :
+#BD976A        clocks
+#DBD7CACC      /
+#BD976A        monotonic-clock
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        export
+#DBD7CACC       
+#BD976A        wasi
+#DBD7CACC      :
+#BD976A        cli
+#DBD7CACC      /
+#BD976A        run
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        export
+#DBD7CACC       
+#BD976A        run
+#DBD7CACC      : 
+#4D9375        func
+#444444        (
+#BD976A        x
+#CB7676        :
+#DBD7CACC       
+#5DA994        u32
+#444444        )
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC       
+#5DA994        list
+#444444        <
+#5DA994        string
+#444444        >
+#DBD7CACC      ;
+#444444        }
+#758575DD      // Mostly inspired by https://component-model.bytecodealliance.org/design/wit.html

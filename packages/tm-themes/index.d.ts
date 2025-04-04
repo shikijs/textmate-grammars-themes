@@ -1,3 +1,9 @@
+export interface FundingLink {
+  name: string
+  handle?: string
+  url: string
+}
+
 export interface ThemeInfo {
   name: string
   type: 'dark' | 'light'
@@ -5,6 +11,7 @@ export interface ThemeInfo {
   source: string
   licenseUrl?: string
   license?: string
+  funding?: FundingLink[]
   sha: string
   lastUpdate: string
   embedded?: string[]

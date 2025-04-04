@@ -180,6 +180,24 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web'],
   },
   {
+    name: 'llvm',
+    source: 'https://github.com/llvm/llvm-project/blob/main/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
+    categories: ['dsl'],
+    // TODO: Remove this once the patch applied to the upstream grammar.
+    // Comments from @slevithan:
+    // `\x` is invalid in most regex flavors, but Oniguruma sometimes treats it the same as `\x00`, but in other cases it's buggy and does bad things.
+    // The author would just need to change `\x` to any one of `\x00`, `\x0`, or `\0`.
+    // In fact, it looks like the author made an error with this regex, because a word boundary `\b` would never match on the border of a null character.
+    // From context, it's pretty clear they meant to use `\h` instead of `\x`.
+    patch: (grammar) => {
+      const pattern = (grammar.patterns as any[]).find(p => p.name === 'constant.numeric.float' && p.match === '\\b0x\\x+\\b')
+      if (!pattern) {
+        throw new Error('Failed to find llvm\'s `\\x` pattern')
+      }
+      pattern.match = '\\b0x\\h+\\b'
+    },
+  },
+  {
     name: 'lua',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/lua/syntaxes/lua.tmLanguage.json',
     categories: ['scripting'],
@@ -414,7 +432,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'blade',
-    source: 'https://github.com/spatie/shiki-php/blob/main/languages/blade.tmLanguage.json',
+    source: 'https://github.com/laravel/vs-code-extension/blob/main/syntaxes/blade.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
@@ -1115,6 +1133,12 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['mediawiki', 'wiki'],
     source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/master/syntaxes/wikitext.tmLanguage.yaml',
     categories: ['markup'],
+  },
+  {
+    name: 'wit',
+    displayName: 'WebAssembly Interface Types',
+    source: 'https://github.com/wasmerio/vscode-wasm/blob/master/syntaxes/wit.json',
+    categories: ['web'],
   },
   {
     name: 'wolfram',

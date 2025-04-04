@@ -385,6 +385,9 @@
         },
         {
           "include": "#while_pattern"
+        },
+        {
+          "include": "#loop_pattern"
         }
       ]
     },
@@ -760,6 +763,50 @@
         {
           "match": "(\\+|\\-|<=|=|=>|:=|>=|>|<|/|\\||&|(\\*{1,2}))",
           "name": "keyword.operator.vhdl"
+        }
+      ]
+    },
+    "loop_pattern": {
+      "patterns": [
+        {
+          "begin": "(?x)\n\t\t\t\t# From the beginning of the line\n\t\t\t\t^\\s*\n\t\t\t\t(\n\t\t\t\t# Optional label\n\t\t\t\t([a-zA-Z][a-zA-Z0-9_]*)\n\t\t\t\t\\s*(:)\\s*\n\t\t\t\t)?\n\n\t\t\t\t# The keyword \"loop\"\n\t\t\t\t\\b((?i:loop))\\b\n\t\t\t",
+          "beginCaptures": {
+            "2": {
+              "name": "entity.name.tag.loop.begin.vhdl"
+            },
+            "3": {
+              "name": "punctuation.vhdl"
+            },
+            "4": {
+              "name": "keyword.language.vhdl"
+            }
+          },
+          "end": "(?x)\n\t\t\t\t# The word \"end\"\n\t\t\t\t\\b((?i:end))\\s+\n\n\t\t\t\t# The word \"loop\" or an illegal mismatch\n\t\t\t\t(\n\t\t\t\t((?i:loop))\n\t\t\t\t|(\\S+)\n\t\t\t\t)\\b\n\n\t\t\t\t# Optional label again (or mismatch)\n\t\t\t\t(\\s+((\\2)|(.+?)))?\n\n\t\t\t\t# Must be followed by semicolon\n\t\t\t\t(?=\\s*;)\n\t\t\t",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.language.vhdl"
+            },
+            "3": {
+              "name": "keyword.language.vhdl"
+            },
+            "4": {
+              "name": "invalid.illegal.loop.keyword.required.vhdl"
+            },
+            "7": {
+              "name": "entity.name.tag.loop.end.vhdl"
+            },
+            "8": {
+              "name": "invalid.illegal.mismatched.identifier.vhdl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#control_patterns"
+            },
+            {
+              "include": "#cleanup"
+            }
+          ]
         }
       ]
     },

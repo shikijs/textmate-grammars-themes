@@ -1,0 +1,36 @@
+name: Update Snapshot
+
+permissions:
+  contents: write
+  id-token: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-grammars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: pnpm setup
+        uses: pnpm/action-setup@v4
+
+      - name: install
+        run: pnpm install
+
+      - run: pnpm run test -u
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'chore: update snapshot'
