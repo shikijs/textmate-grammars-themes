@@ -395,18 +395,18 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
   },
   {
-    byteSize: 3968,
+    byteSize: 3982,
     displayName: 'Bicep',
     funding: [
     ],
-    hash: '338SAH2q0UhBt6GnpLDZ4HhLjYt-9QfK7ZjGckkka-0',
-    lastUpdate: '2024-08-22T16:30:14Z',
+    hash: 's08ulLSLCbTEIf04bcZKEKLOh_wf4P-O9IctLXBIgUk',
+    lastUpdate: '2025-04-07T23:18:55Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Azure/bicep/main/LICENSE',
     name: 'bicep',
     scopeName: 'source.bicep',
-    sha: '9bbe7ae112fafe30b2ad67f2057640671a80069e',
-    source: 'https://github.com/Azure/bicep/blob/9bbe7ae112fafe30b2ad67f2057640671a80069e/src/textmate/bicep.tmlanguage',
+    sha: '8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e',
+    source: 'https://github.com/Azure/bicep/blob/8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e/src/textmate/bicep.tmlanguage',
   },
   {
     byteSize: 101380,
@@ -664,21 +664,21 @@ export const grammars = [
     source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json',
   },
   {
-    byteSize: 5008,
+    byteSize: 5014,
     categories: [
       'general',
     ],
     displayName: 'Coq',
     funding: [
     ],
-    hash: 'eg8MYIdHmXxIkN5VBEhRlDN-t0pCT2dP1oFascHdDKo',
-    lastUpdate: '2025-02-24T14:24:51Z',
+    hash: 'F_YU2xR6ZWRRNUQt-n5rI5D-6eI4pK1YQJ8d3scSYwU',
+    lastUpdate: '2025-04-05T23:01:01Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/coq/vscoq/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/rocq-prover/vscoq/main/LICENSE',
     name: 'coq',
     scopeName: 'source.coq',
-    sha: '1c2846a72b451c45645dba8c1147ab83b9002ad5',
-    source: 'https://github.com/coq-community/vscoq/blob/1c2846a72b451c45645dba8c1147ab83b9002ad5/client/syntax/coq.tmLanguage.json',
+    sha: 'da2bc41a3e5473581e9e1c3481e1b68c6b683f57',
+    source: 'https://github.com/coq-community/vscoq/blob/da2bc41a3e5473581e9e1c3481e1b68c6b683f57/client/syntax/coq.tmLanguage.json',
   },
   {
     aliases: [
