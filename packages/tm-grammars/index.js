@@ -2123,14 +2123,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '_-MFi9OadDInix-jsGfTlq_ZsSwpsuVDJ5vAnk2dOFM',
-    lastUpdate: '2025-03-05T17:23:18Z',
+    hash: 'S1NVkJ7UFCKJOJOCG9GPDd8-GXqt9lr57LA_yVZm8-c',
+    lastUpdate: '2025-04-10T16:13:50Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md',
     name: 'liquid',
     scopeName: 'text.html.liquid',
-    sha: '91ef1e508a4723c640a15f65b809a279206bed78',
-    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/91ef1e508a4723c640a15f65b809a279206bed78/grammars/liquid.tmLanguage.json',
+    sha: '38264742ed4f048e4f4e910067c9503b9506eb62',
+    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/38264742ed4f048e4f4e910067c9503b9506eb62/grammars/liquid.tmLanguage.json',
   },
   {
     byteSize: 5475,
@@ -3056,14 +3056,14 @@ export const grammars = [
         url: 'https://github.com/sponsors/eugleo',
       },
     ],
-    hash: '76duU8mqP6VhEWy_9mEjKaf3VIyZDpwROWm2nVV6Yac',
-    lastUpdate: '2024-05-29T13:14:07Z',
+    hash: 'p_5dFXjTI0y4d2TBVA-RH2dysDpT5OkhF2K9pelO2_A',
+    lastUpdate: '2025-04-10T11:19:24Z',
     license: 'GPL-3.0',
     licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
     name: 'racket',
     scopeName: 'source.racket',
-    sha: '6a4d9934b3ec523162ab0243b5cb0e785316507a',
-    source: 'https://github.com/Eugleo/magic-racket/blob/6a4d9934b3ec523162ab0243b5cb0e785316507a/syntaxes/racket.tmLanguage.json',
+    sha: '1b850db7f6e7c3ba8a1b47fe2781800a21f669a8',
+    source: 'https://github.com/Eugleo/magic-racket/blob/1b850db7f6e7c3ba8a1b47fe2781800a21f669a8/syntaxes/racket.tmLanguage.json',
   },
   {
     aliases: [
@@ -3716,7 +3716,7 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
-    byteSize: 23555,
+    byteSize: 23564,
     displayName: 'Templ',
     embedded: [
       'go',
@@ -3725,14 +3725,14 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '3vI-G4_FTELWwU5coq8zD3Nqe0VjS9U3KM1DzPnsgO0',
-    lastUpdate: '2025-01-13T16:55:26Z',
+    hash: 'AN7Y3py_iR7Fen9uHp6HAfw_qFcHoXM7KM18aVrswnA',
+    lastUpdate: '2025-04-08T08:46:52Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
     name: 'templ',
     scopeName: 'source.templ',
-    sha: 'b99c1c940cec830c01a80b58ae3cce714b30056c',
-    source: 'https://github.com/templ-go/templ-vscode/blob/b99c1c940cec830c01a80b58ae3cce714b30056c/syntaxes/templ.tmLanguage.json',
+    sha: '257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f',
+    source: 'https://github.com/templ-go/templ-vscode/blob/257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f/syntaxes/templ.tmLanguage.json',
   },
   {
     aliases: [
