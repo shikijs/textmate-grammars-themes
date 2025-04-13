@@ -98,23 +98,23 @@
         {
           "patterns": [
             {
-              "match": "[+-]?\\b[0-9][0-9]*(?:\\.[0-9][0-9]*)?(?:[eE][+-]?[0-9]+)?\\b",
+              "match": "[-+]?\\b[0-9][0-9]*(?:\\.[0-9][0-9]*)?(?:[Ee][-+]?[0-9]+)?\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\b0x(\\h*\\.\\h+|\\h+\\.?)[Pp][+-]?[0-9]+\\b",
+              "match": "[-+]?\\b0x(\\h*\\.\\h+|\\h+\\.?)[Pp][-+]?[0-9]+\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\binf\\b",
+              "match": "[-+]?\\binf\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\bnan:0x\\h\\h*\\b",
+              "match": "[-+]?\\bnan:0x\\h\\h*\\b",
               "name": "constant.numeric.float.wat"
             },
             {
-              "match": "[+-]?\\b(?:0x\\h\\h*|\\d\\d*)\\b",
+              "match": "[-+]?\\b(?:0x\\h\\h*|\\d\\d*)\\b",
               "name": "constant.numeric.integer.wat"
             }
           ]
@@ -291,7 +291,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i32)\\.(atomic)\\.(?:load(?:8_u|16_u)?|store(?:8|16)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16))\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
+              "match": "\\b(i32)\\.(atomic)\\.(?:load(?:(?:8|16)_u)?|store(?:8|16)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16))\\.(?:add|sub|and|or|xor|xchg|cmpxchg)_u)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -309,7 +309,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(i64)\\.(atomic)\\.(?:load(?:8_u|16_u|32_u)?|store(?:8|16|32)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16|32))\\.(?:add_u|sub_u|and_u|or_u|xor_u|xchg_u|cmpxchg_u))\\b",
+              "match": "\\b(i64)\\.(atomic)\\.(?:load(?:(?:8|16|32)_u)?|store(?:8|16|32)?|wait|(rmw)\\.(?:add|sub|and|or|xor|xchg|cmpxchg)|(rmw(?:8|16|32))\\.(?:add|sub|and|or|xor|xchg|cmpxchg)_u)\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -348,7 +348,7 @@
               "name": "keyword.operator.word.wat"
             },
             {
-              "match": "\\b(?:externref|funcref|nullref)\\b",
+              "match": "\\b(?:extern|func|null)ref\\b",
               "name": "entity.name.type.wat"
             }
           ]
@@ -447,7 +447,7 @@
                   "name": "support.class.global.wat"
                 }
               },
-              "match": "\\b(global)\\.(?:get|set)\\b",
+              "match": "\\b(global)\\.[gs]et\\b",
               "name": "keyword.operator.word.wat"
             },
             {
@@ -567,7 +567,7 @@
                   "name": "support.class.wat"
                 }
               },
-              "match": "\\b(extern)\\.(?:internalize|externalize)\\b",
+              "match": "\\b(extern)\\.(?:in|ex)ternalize\\b",
               "name": "keyword.operator.word.wat"
             }
           ]
@@ -577,7 +577,7 @@
     "invalid": {
       "patterns": [
         {
-          "match": "[^\\s()]+",
+          "match": "[^()\\s]+",
           "name": "invalid.wat"
         }
       ]
@@ -617,10 +617,10 @@
                   "name": "entity.name.function.wat"
                 }
               },
-              "match": "(?<=\\(func|\\(start|call|return_call|ref\\.func)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\^_`|~]*)"
+              "match": "(?<=\\(func|\\(start|call|return_call|ref\\.func)\\s+(\\$[!#-'*+\\--:<-Z\\\\^-z|~]*)"
             },
             {
-              "begin": "\\)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\^_`|~]*)",
+              "begin": "\\)\\s+(\\$[!#-'*+\\--:<-Z\\\\^-z|~]*)",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.wat"
@@ -629,7 +629,7 @@
               "end": "\\)",
               "patterns": [
                 {
-                  "match": "(?<=\\s)\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\^_`|~]*",
+                  "match": "(?<=\\s)\\$[!#-'*+\\--:<-Z\\\\^-z|~]*",
                   "name": "entity.name.function.wat"
                 }
               ]
@@ -640,10 +640,10 @@
                   "name": "support.type.function.wat"
                 }
               },
-              "match": "(?<=\\(type)\\s+(\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\^_`|~]*)"
+              "match": "(?<=\\(type)\\s+(\\$[!#-'*+\\--:<-Z\\\\^-z|~]*)"
             },
             {
-              "match": "\\$[0-9A-Za-z!#$%\\&'*+\\-./:<=>?@\\\\^_`|~]*\\b",
+              "match": "\\$[!#-'*+\\--:<-Z\\\\^-z|~]*\\b",
               "name": "variable.other.wat"
             }
           ]
@@ -666,7 +666,7 @@
       "name": "string.quoted.double.wat",
       "patterns": [
         {
-          "match": "\\\\([nt\\\\'\"]|\\h{2})",
+          "match": "\\\\([\"'\\\\nt]|\\h{2})",
           "name": "constant.character.escape.wat"
         }
       ]
@@ -684,7 +684,7 @@
         {
           "patterns": [
             {
-              "match": "\\b(?:externref|funcref|nullref)\\b(?!\\.)",
+              "match": "\\b(?:extern|func|null)ref\\b(?!\\.)",
               "name": "entity.name.type.wat"
             }
           ]

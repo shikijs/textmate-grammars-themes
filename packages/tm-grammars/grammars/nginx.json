@@ -228,7 +228,7 @@
       ]
     },
     {
-      "begin": "\\b(map) +(\\$)([A-Za-z0-9_]+) +(\\$)([A-Za-z0-9_]+) *\\{",
+      "begin": "\\b(map) +(\\$)([0-9A-Z_a-z]+) +(\\$)([0-9A-Z_a-z]+) *\\{",
       "beginCaptures": {
         "1": {
           "name": "storage.type.directive.context.nginx"
@@ -818,7 +818,7 @@
       ]
     },
     {
-      "begin": "([\"'\\s]|^)(types_)(hash_(?:bucket_size|max_size))([\"'\\s]|$)",
+      "begin": "([\"'\\s]|^)(types_)(hash_(?:bucket|max)_size)([\"'\\s]|$)",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.nginx"
@@ -846,7 +846,7 @@
       ]
     },
     {
-      "begin": "([\"'\\s]|^)(variables_)(hash_(?:bucket_size|max_size))([\"'\\s]|$)",
+      "begin": "([\"'\\s]|^)(variables_)(hash_(?:bucket|max)_size)([\"'\\s]|$)",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.nginx"
@@ -1238,7 +1238,7 @@
       ]
     },
     {
-      "begin": "([\"'\\s]|^)(map_)(hash_(?:bucket_size|max_size))([\"'\\s]|$)",
+      "begin": "([\"'\\s]|^)(map_)(hash_(?:bucket|max)_size)([\"'\\s]|$)",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.nginx"
@@ -1406,7 +1406,7 @@
       ]
     },
     {
-      "begin": "([\"'\\s]|^)(referer_)(hash_(?:bucket_size|max_size))([\"'\\s]|$)",
+      "begin": "([\"'\\s]|^)(referer_)(hash_(?:bucket|max)_size)([\"'\\s]|$)",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.nginx"
@@ -2019,7 +2019,7 @@
       ]
     },
     {
-      "begin": "\\b([a-zA-Z0-9_]+)\\s+",
+      "begin": "\\b([0-9A-Z_a-z]+)\\s+",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.unknown.nginx"
@@ -2038,7 +2038,7 @@
       ]
     },
     {
-      "begin": "\\b([a-z]+/[A-Za-z0-9\\-.+]+)\\b",
+      "begin": "\\b([a-z]+/[-+.0-9A-Za-z]+)\\b",
       "beginCaptures": {
         "1": {
           "name": "constant.other.mediatype.nginx"
@@ -2068,7 +2068,7 @@
           "name": "keyword.operator.nginx"
         },
         {
-          "match": "!?-[fdex]\\s",
+          "match": "!?-[d-fx]\\s",
           "name": "keyword.operator.nginx"
         },
         {
@@ -2092,7 +2092,7 @@
           "name": "string.quoted.double.nginx",
           "patterns": [
             {
-              "match": "\\\\[\"'nt\\\\]",
+              "match": "\\\\[\"'\\\\nt]",
               "name": "constant.character.escape.nginx"
             },
             {
@@ -2106,7 +2106,7 @@
           "name": "string.quoted.single.nginx",
           "patterns": [
             {
-              "match": "\\\\[\"'nt\\\\]",
+              "match": "\\\\[\"'\\\\nt]",
               "name": "constant.character.escape.nginx"
             },
             {
@@ -2130,7 +2130,7 @@
               "name": "constant.numeric.nginx"
             }
           },
-          "match": "(?:^|\\s)(weight|max_conn|max_fails|fail_timeout|slow_start)(=)(\\d[\\d.]*[bBkKmMgGtTsShHdD]?)(?:[\\s;]|$)"
+          "match": "(?:^|\\s)(weight|max_conn|max_fails|fail_timeout|slow_start)(=)(\\d[.\\d]*[BDGHKMSTbdghkmst]?)(?:[;\\s]|$)"
         },
         {
           "include": "#values"
@@ -2152,7 +2152,7 @@
               "name": "constant.numeric.nginx"
             }
           },
-          "match": "(?<=\\G|\\s)(=?[0-9][0-9.]*[bBkKmMgGtTsShHdD]?)(?=[\\t ;])"
+          "match": "(?<=\\G|\\s)(=?[0-9][.0-9]*[BDGHKMSTbdghkmst]?)(?=[\\t ;])"
         },
         {
           "match": "(?<=\\G|\\s)(on|off|true|false)(?=[\\t ;])",
@@ -2182,7 +2182,7 @@
               "name": "variable.other.nginx"
             }
           },
-          "match": "(\\$)([A-Za-z0-9_]+)\\b"
+          "match": "(\\$)([0-9A-Z_a-z]+)\\b"
         },
         {
           "captures": {
@@ -2196,7 +2196,7 @@
               "name": "punctuation.definition.variable.nginx"
             }
           },
-          "match": "(\\$\\{)([A-Za-z0-9_]+)(})"
+          "match": "(\\$\\{)([0-9A-Z_a-z]+)(})"
         }
       ]
     }

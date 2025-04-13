@@ -10,7 +10,7 @@
       "name": "comment.line.beancount"
     },
     {
-      "begin": "^\\s*(p(?:optag|ushtag))\\s+(#)([A-Za-z0-9\\-_/.]+)",
+      "begin": "^\\s*(p(?:op|ush)tag)\\s+(#)([\\--9A-Z_a-z]+)",
       "beginCaptures": {
         "1": {
           "name": "support.function.beancount"
@@ -22,7 +22,7 @@
           "name": "entity.name.tag.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.tag.beancount",
       "patterns": [
         {
@@ -43,7 +43,7 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.include.beancount",
       "patterns": [
         {
@@ -67,7 +67,7 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.option.beancount",
       "patterns": [
         {
@@ -94,7 +94,7 @@
           "name": "string.quoted.double.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "keyword.operator.directive.beancount",
       "patterns": [
         {
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s+(open|close|pad)\\b",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s+(open|close|pad)\\b",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -127,7 +127,7 @@
           "name": "support.function.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s+(custom)\\b",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s+(custom)\\b",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -173,7 +173,7 @@
           "name": "support.function.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s(event)",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s(event)",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -227,7 +227,7 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -245,7 +245,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s(commodity)",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s(commodity)",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -266,7 +266,7 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -284,7 +284,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s(note|document)",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s(note|document)",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -305,7 +305,7 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -326,7 +326,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s(price)",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s(price)",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -347,7 +347,7 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -368,7 +368,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s(balance)",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s(balance)",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -389,7 +389,7 @@
           "name": "support.function.directive.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.dated.beancount",
       "patterns": [
         {
@@ -410,7 +410,7 @@
       ]
     },
     {
-      "begin": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})\\s*(txn|[*!\\&#?%PSTCURM])\\s*(\".*?\")?\\s*(\".*?\")?",
+      "begin": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})\\s*(txn|[!#%\\&*?CMPR-U])\\s*(\".*?\")?\\s*(\".*?\")?",
       "beginCaptures": {
         "1": {
           "name": "constant.numeric.date.year.beancount"
@@ -437,7 +437,7 @@
           "name": "string.quoted.narration.beancount"
         }
       },
-      "end": "(?=(^(?:\\s*$|\\S)))",
+      "end": "(?=^(\\s*$|\\S))",
       "name": "meta.directive.transaction.beancount",
       "patterns": [
         {
@@ -509,7 +509,7 @@
           "name": "entity.name.type.commodity.beancount"
         }
       },
-      "match": "([-|+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)\\s*([A-Z][A-Z0-9'._-]{0,22}[A-Z0-9])",
+      "match": "([-+|]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)\\s*([A-Z][-'.0-9A-Z_]{0,22}[0-9A-Z])",
       "name": "meta.amount.beancount"
     },
     "bool": {
@@ -535,7 +535,7 @@
       "match": "(;.*)$"
     },
     "commodity": {
-      "match": "([A-Z][A-Z0-9'._-]{0,22}[A-Z0-9])",
+      "match": "([A-Z][-'.0-9A-Z_]{0,22}[0-9A-Z])",
       "name": "entity.name.type.commodity.beancount"
     },
     "cost": {
@@ -586,11 +586,11 @@
           "name": "constant.numeric.date.day.beancount"
         }
       },
-      "match": "([0-9]{4})([-|/])([0-9]{2})([-|/])([0-9]{2})",
+      "match": "([0-9]{4})([-/|])([0-9]{2})([-/|])([0-9]{2})",
       "name": "meta.date.beancount"
     },
     "flag": {
-      "match": "(?<=\\s)([*!\\&#?%PSTCURM])(?=\\s+)",
+      "match": "(?<=\\s)([!#%\\&*?CMPR-U])(?=\\s+)",
       "name": "keyword.other.beancount"
     },
     "illegal": {
@@ -606,10 +606,10 @@
           "name": "markup.underline.link.beancount"
         }
       },
-      "match": "(\\^)([A-Za-z0-9\\-_/.]+)"
+      "match": "(\\^)([\\--9A-Z_a-z]+)"
     },
     "meta": {
-      "begin": "^\\s*([a-z][A-Za-z0-9\\-_]+)(:)",
+      "begin": "^\\s*([a-z][-0-9A-Z_a-z]+)(:)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.directive.beancount"
@@ -662,11 +662,11 @@
           "name": "constant.numeric.currency.beancount"
         }
       },
-      "match": "([-|+]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)"
+      "match": "([-+|]?)(\\d+(?:,\\d{3})*(?:\\.\\d*)?)"
     },
     "posting": {
-      "begin": "^\\s+(?=([A-Z!]))",
-      "end": "(?=(^(?:\\s*$|\\S|\\s*[A-Z])))",
+      "begin": "^\\s+(?=([!A-Z]))",
+      "end": "(?=^(\\s*$|\\S|\\s*[A-Z]))",
       "name": "meta.posting.beancount",
       "patterns": [
         {
@@ -705,7 +705,7 @@
           "name": "keyword.operator.assignment.beancount"
         }
       },
-      "end": "(?=([;\\n]))",
+      "end": "(?=([\\n;]))",
       "name": "meta.price.beancount",
       "patterns": [
         {
@@ -736,7 +736,7 @@
           "name": "entity.name.tag.beancount"
         }
       },
-      "match": "(#)([A-Za-z0-9\\-_/.]+)"
+      "match": "(#)([\\--9A-Z_a-z]+)"
     }
   },
   "scopeName": "text.beancount"

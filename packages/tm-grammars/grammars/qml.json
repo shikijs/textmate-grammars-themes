@@ -117,7 +117,7 @@
           ]
         },
         {
-          "begin": "(//[~|=])\\s*([A-Za-z_$][\\w$.\\[\\]]*)",
+          "begin": "(//[=|~])\\s*([$A-Z_a-z][]$.\\[\\w]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.qml.tr"
@@ -201,7 +201,7 @@
     "group-attributes": {
       "patterns": [
         {
-          "begin": "\\b([_a-zA-Z]\\w*)\\s*\\{",
+          "begin": "\\b([A-Z_a-z]\\w*)\\s*\\{",
           "beginCaptures": {
             "1": {
               "name": "variable.parameter.qml"
@@ -226,7 +226,7 @@
       "description": "The name of variable, key, signal and etc.",
       "patterns": [
         {
-          "match": "\\b[_a-zA-Z]\\w*\\b",
+          "match": "\\b[A-Z_a-z]\\w*\\b",
           "name": "variable.parameter.qml"
         }
       ]
@@ -291,7 +291,7 @@
           "end": "(?<=})",
           "patterns": [
             {
-              "begin": "([_a-zA-Z]\\w*)\\s*\\(",
+              "begin": "([A-Z_a-z]\\w*)\\s*\\(",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.qml"
@@ -381,7 +381,7 @@
           "end": "$",
           "patterns": [
             {
-              "begin": "([_a-zA-Z]\\w*)\\s*\\(",
+              "begin": "([A-Z_a-z]\\w*)\\s*\\(",
               "beginCaptures": {
                 "1": {
                   "name": "entity.name.function.qml"

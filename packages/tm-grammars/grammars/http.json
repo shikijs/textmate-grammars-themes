@@ -94,7 +94,7 @@
           "name": "string.other.http"
         }
       },
-      "match": "^\\s*(@)([^\\s=]+)\\s*=\\s*(.*?)\\s*$",
+      "match": "^\\s*(@)([^=\\s]+)\\s*=\\s*(.*?)\\s*$",
       "name": "http.filevariable"
     },
     {
@@ -109,7 +109,7 @@
           "name": "string.other.http"
         }
       },
-      "match": "^\\s*([?\\&])([^=\\s]+)=(.*)$",
+      "match": "^\\s*([\\&?])([^=\\s]+)=(.*)$",
       "name": "http.query"
     },
     {
@@ -124,7 +124,7 @@
           "name": "string.other.http"
         }
       },
-      "match": "^([\\w-]+)\\s*(:)\\s*([^/].*?)\\s*$",
+      "match": "^([-\\w]+)\\s*(:)\\s*([^/].*?)\\s*$",
       "name": "http.headers"
     },
     {
@@ -161,7 +161,7 @@
               "name": "entity.name.type.http"
             }
           },
-          "match": "^\\s*#+\\s+((@)name)\\s+([^\\s.]+)$",
+          "match": "^\\s*#+\\s+((@)name)\\s+([^.\\s]+)$",
           "name": "comment.line.sharp.http"
         },
         {
@@ -176,7 +176,7 @@
               "name": "entity.name.type.http"
             }
           },
-          "match": "^\\s*/{2,}\\s+((@)name)\\s+([^\\s.]+)$",
+          "match": "^\\s*/{2,}\\s+((@)name)\\s+([^.\\s]+)$",
           "name": "comment.line.double-slash.http"
         },
         {

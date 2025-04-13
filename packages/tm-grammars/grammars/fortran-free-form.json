@@ -126,9 +126,9 @@
   ],
   "repository": {
     "IO-item-list": {
-      "begin": "(?i)(?=\\s*[a-z0-9\"'])",
+      "begin": "(?i)(?=\\s*[\"'0-9a-z])",
       "contentName": "meta.name-list.fortran",
-      "end": "(?=[);!\\n])",
+      "end": "(?=[\\n!);])",
       "patterns": [
         {
           "include": "#constants"
@@ -231,7 +231,7 @@
               "name": "keyword.control.write.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "punctuation.parentheses.right.fortran"
@@ -453,7 +453,7 @@
               "name": "keyword.control.assign.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "name": "meta.statement.control.assign.fortran",
           "patterns": [
             {
@@ -497,7 +497,7 @@
       ]
     },
     "assignment-operator": {
-      "match": "(?<![/=<>])(=)(?![=>])",
+      "match": "(?<![/<->])(=)(?![=>])",
       "name": "keyword.operator.assignment.fortran"
     },
     "associate-construct": {
@@ -530,7 +530,7 @@
     },
     "attribute-specification-statement": {
       "begin": "(?i)(?=\\b(?:allocatable|asynchronous|contiguous|external|intrinsic|optional|parameter|pointer|private|protected|public|save|target|value|volatile)\\b|(bind|dimension|intent)\\s*\\(|(codimension)\\s*\\[)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.attribute-specification.fortran",
       "patterns": [
         {
@@ -590,7 +590,7 @@
         {
           "begin": "(?=\\s*::)",
           "contentName": "meta.attribute-list.normal.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -705,7 +705,7 @@
               "name": "keyword.control.call.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "name": "meta.statement.control.call.fortran",
           "patterns": [
             {
@@ -764,7 +764,7 @@
                   "name": "entity.name.function.subroutine.fortran"
                 }
               },
-              "match": "(?i)\\G\\s*\\b([a-z]\\w*)\\b(?=\\s*[;!\\n])"
+              "match": "(?i)\\G\\s*\\b([a-z]\\w*)\\b(?=\\s*[\\n!;])"
             },
             {
               "include": "$base"
@@ -840,7 +840,7 @@
           "name": "keyword.control.common.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "include": "$base"
@@ -854,7 +854,7 @@
           "name": "keyword.control.while.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "include": "#parentheses"
@@ -894,7 +894,7 @@
               "name": "keyword.control.continue.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "name": "meta.statement.control.continue.fortran",
           "patterns": [
             {
@@ -1026,7 +1026,7 @@
                       "name": "keyword.operator.minus.exponent.hexadecimal.cpp"
                     }
                   },
-                  "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?:(?<=\\h)\\.|\\.(?=\\h)))(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?(?:(?<!')([pP])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?([lLfF](?!\\w))?((?:\\w(?<![pP\\h])\\w*)?$)"
+                  "match": "\\G(0[Xx])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?((?<=\\h)\\.|\\.(?=\\h))(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)?(?:(?<!')([Pp])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?([FLfl](?!\\w))?((?:\\w(?<![Pp\\h])\\w*)?)$"
                 },
                 {
                   "captures": {
@@ -1082,7 +1082,7 @@
                       ]
                     }
                   },
-                  "match": "\\G(?=[0-9.])(?!0[xXbB])([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?:(?<=[0-9])\\.|\\.(?=[0-9])))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?(?:(?<!')([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?([lLfF](?!\\w))?((?:\\w(?<![0-9eE])\\w*)?$)"
+                  "match": "\\G(?=[.0-9])(?!0[BXbx])([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?((?<=[0-9])\\.|\\.(?=[0-9]))([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)?(?:(?<!')([Ee])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?([FLfl](?!\\w))?((?:\\w(?<![0-9Ee])\\w*)?)$"
                 },
                 {
                   "captures": {
@@ -1108,7 +1108,7 @@
                       "name": "keyword.other.unit.user-defined.cpp"
                     }
                   },
-                  "match": "(\\G0[bB])([01](?:[01]|((?<=\\h)'(?=\\h)))*)((?:[uU]|[uU]ll?|[uU]LL?|ll?[uU]?|LL?[uU]?|[fF])(?!\\w))?((?:\\w(?<![0-9])\\w*)?$)"
+                  "match": "\\G(0[Bb])([01](?:[01]|((?<=\\h)'(?=\\h)))*)((?:[Uu]|[Uu]ll?|[Uu]LL?|ll?[Uu]?|LL?[Uu]?|[Ff])(?!\\w))?((?:\\w(?<![0-9])\\w*)?)$"
                 },
                 {
                   "captures": {
@@ -1134,7 +1134,7 @@
                       "name": "keyword.other.unit.user-defined.cpp"
                     }
                   },
-                  "match": "(\\G0)((?:[0-7]|((?<=\\h)'(?=\\h)))+)((?:[uU]|[uU]ll?|[uU]LL?|ll?[uU]?|LL?[uU]?|[fF])(?!\\w))?((?:\\w(?<![0-9])\\w*)?$)"
+                  "match": "\\G(0)((?:[0-7]|((?<=\\h)'(?=\\h)))+)((?:[Uu]|[Uu]ll?|[Uu]LL?|ll?[Uu]?|LL?[Uu]?|[Ff])(?!\\w))?((?:\\w(?<![0-9])\\w*)?)$"
                 },
                 {
                   "captures": {
@@ -1178,7 +1178,7 @@
                       "name": "keyword.other.unit.user-defined.cpp"
                     }
                   },
-                  "match": "(\\G0[xX])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)(?:(?<!')([pP])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:[uU]|[uU]ll?|[uU]LL?|ll?[uU]?|LL?[uU]?|[fF])(?!\\w))?((?:\\w(?<![pP\\h])\\w*)?$)"
+                  "match": "\\G(0[Xx])(\\h(?:\\h|((?<=\\h)'(?=\\h)))*)(?:(?<!')([Pp])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:[Uu]|[Uu]ll?|[Uu]LL?|ll?[Uu]?|LL?[Uu]?|[Ff])(?!\\w))?((?:\\w(?<![Pp\\h])\\w*)?)$"
                 },
                 {
                   "captures": {
@@ -1219,10 +1219,10 @@
                       "name": "keyword.other.unit.user-defined.cpp"
                     }
                   },
-                  "match": "\\G(?=[0-9.])(?!0[xXbB])([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)(?:(?<!')([eE])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:[uU]|[uU]ll?|[uU]LL?|ll?[uU]?|LL?[uU]?|[fF])(?!\\w))?((?:\\w(?<![0-9eE])\\w*)?$)"
+                  "match": "\\G(?=[.0-9])(?!0[BXbx])([0-9](?:[0-9]|((?<=\\h)'(?=\\h)))*)(?:(?<!')([Ee])(\\+?)(-?)([0-9](?:[0-9]|(?<=\\h)'(?=\\h))*))?((?:[Uu]|[Uu]ll?|[Uu]LL?|ll?[Uu]?|LL?[Uu]?|[Ff])(?!\\w))?((?:\\w(?<![0-9Ee])\\w*)?)$"
                 },
                 {
-                  "match": "(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+-])+",
+                  "match": "(?:['.0-9A-Z_a-z]|(?<=[EPep])[-+])+",
                   "name": "invalid.illegal.constant.numeric.cpp"
                 }
               ]
@@ -1230,7 +1230,7 @@
           ]
         }
       },
-      "match": "(?<!\\w)\\.?\\d(?:[0-9a-zA-Z_.']|(?<=[eEpP])[+-])*"
+      "match": "(?<!\\w)\\.?\\d(?:['.0-9A-Z_a-z]|(?<=[EPep])[-+])*"
     },
     "critical-construct": {
       "begin": "(?i)\\b(critical)\\b",
@@ -1261,7 +1261,7 @@
               "name": "keyword.control.cycle.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "name": "meta.statement.control.fortran",
           "patterns": [
           ]
@@ -1275,7 +1275,7 @@
           "name": "keyword.control.data.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "include": "$base"
@@ -1345,7 +1345,7 @@
     },
     "derived-type-component-attribute-specification": {
       "begin": "(?i)(?=\\s*\\b(?:private|sequence)\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.attribute-specification.fortran",
       "patterns": [
         {
@@ -1377,11 +1377,11 @@
           "name": "entity.name.derived-type.parameter.fortran"
         }
       },
-      "match": "(?i)\\b(integer)\\s*(,)\\s*(kind|len)\\s*(?:(::)\\s*([a-z]\\w*)?)?\\s*(?=[;!\\n])"
+      "match": "(?i)\\b(integer)\\s*(,)\\s*(kind|len)\\s*(?:(::)\\s*([a-z]\\w*)?)?\\s*(?=[\\n!;])"
     },
     "derived-type-component-procedure-specification": {
       "begin": "(?i)(?=\\bprocedure\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.procedure.fortran",
       "patterns": [
         {
@@ -1390,7 +1390,7 @@
         {
           "begin": "(?=\\s*(,|::|\\())",
           "contentName": "meta.attribute-list.derived-type-component-procedure.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1404,7 +1404,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,;!\\n])",
+              "end": "(?=::|[\\n!,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -1431,8 +1431,8 @@
       ]
     },
     "derived-type-component-type-specification": {
-      "begin": "(?i)(?=\\b(?:character|class|complex|double\\s*precision|double\\s*complex|integer|logical|real|type)\\b(?![^:'\";!\\n]*\\bfunction\\b))",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=\\b(?:character|class|complex|double\\s*precision|double\\s*complex|integer|logical|real|type)\\b(?![^\\n!\"':;]*\\bfunction\\b))",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.derived-type.fortran",
       "patterns": [
         {
@@ -1444,7 +1444,7 @@
         {
           "begin": "(?=\\s*(,|::))",
           "contentName": "meta.attribute-list.derived-type-component-type.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1458,7 +1458,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,;!\\n])",
+              "end": "(?=::|[\\n!,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -1492,7 +1492,7 @@
     },
     "derived-type-contains-attribute-specification": {
       "begin": "(?i)(?=\\bprivate\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.attribute-specification.fortran",
       "patterns": [
         {
@@ -1510,12 +1510,12 @@
           "name": "storage.type.final-procedure.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.procedure.final.fortran",
       "patterns": [
         {
           "begin": "(?=\\s*(::))",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1540,13 +1540,13 @@
           "name": "storage.type.procedure.generic.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.procedure.generic.fortran",
       "patterns": [
         {
           "begin": "(?=\\s*(,|::|\\())",
           "contentName": "meta.attribute-list.derived-type-contains-generic-procedure.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1560,7 +1560,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,\\&;!\\n])",
+              "end": "(?=::|[\\n!\\&,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -1575,7 +1575,7 @@
         {
           "begin": "(?=\\s*[a-z])",
           "contentName": "meta.name-list.fortran",
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "include": "#IO-keywords"
@@ -1598,7 +1598,7 @@
     },
     "derived-type-contains-procedure-specification": {
       "begin": "(?i)(?=\\bprocedure\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.procedure.fortran",
       "patterns": [
         {
@@ -1607,7 +1607,7 @@
         {
           "begin": "(?=\\s*(,|::|\\())",
           "contentName": "meta.attribute-list.derived-type-contains-procedure.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1621,7 +1621,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,\\&;!\\n])",
+              "end": "(?=::|[\\n!\\&,;])",
               "name": "meta.something.fortran",
               "patterns": [
                 {
@@ -1658,13 +1658,13 @@
           "name": "keyword.control.type.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.derived-type.definition.fortran",
       "patterns": [
         {
           "begin": "\\G(?=\\s*(,|::))",
           "contentName": "meta.attribute-list.derived-type.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -1678,7 +1678,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,;!\\n])",
+              "end": "(?=::|[\\n!,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -1824,13 +1824,13 @@
           "name": "meta.do.labeled.fortran",
           "patterns": [
             {
-              "begin": "(?i)\\G(?:\\s*(,)|(?!\\s*[;!\\n]))",
+              "begin": "(?i)\\G(?:\\s*(,)|(?!\\s*[\\n!;]))",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "patterns": [
                 {
                   "include": "#concurrent-attribute"
@@ -1867,13 +1867,13 @@
           "name": "meta.block.do.unlabeled.fortran",
           "patterns": [
             {
-              "begin": "(?i)\\G(?:\\s*(,)|(?!\\s*[;!\\n]))",
+              "begin": "(?i)\\G(?:\\s*(,)|(?!\\s*[\\n!;]))",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "name": "meta.loop-control.fortran",
               "patterns": [
                 {
@@ -1906,7 +1906,7 @@
           "name": "variable.parameter.fortran"
         }
       },
-      "match": "(?i)(?:^|(?<=[\\&,(]))\\s*([a-z]\\w*)"
+      "match": "(?i)(?:^|(?<=[\\&(,]))\\s*([a-z]\\w*)"
     },
     "dummy-variable-list": {
       "begin": "\\G\\s*(\\()",
@@ -1945,7 +1945,7 @@
               "name": "keyword.control.entry.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "name": "meta.statement.control.entry.fortran",
           "patterns": [
             {
@@ -1955,7 +1955,7 @@
                   "name": "entity.name.function.entry.fortran"
                 }
               },
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "patterns": [
                 {
                   "include": "#dummy-variable-list"
@@ -1994,7 +1994,7 @@
               "name": "punctuation.comma.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "include": "#language-binding-attribute"
@@ -2019,13 +2019,13 @@
                   "name": "keyword.other.enumerator.fortran"
                 }
               },
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "name": "meta.statement.enumerator-specification.fortran",
               "patterns": [
                 {
                   "begin": "(?=\\s*(,|::))",
                   "contentName": "meta.attribute-list.enum.fortran",
-                  "end": "(::)|(?=[;!\\n])",
+                  "end": "(::)|(?=[\\n!;])",
                   "endCaptures": {
                     "1": {
                       "name": "keyword.operator.double-colon.fortran"
@@ -2056,16 +2056,16 @@
           "name": "keyword.control.common.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
-          "begin": "(?:\\G|(,))",
+          "begin": "\\G|(,)",
           "beginCaptures": {
             "1": {
               "name": "puntuation.comma.fortran"
             }
           },
-          "end": "(?=[,;!\\n])",
+          "end": "(?=[\\n!,;])",
           "patterns": [
             {
               "include": "#parentheses-dummy-variables"
@@ -2081,7 +2081,7 @@
           "name": "keyword.control.errorstop.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.errorstop.fortran",
       "patterns": [
         {
@@ -2144,13 +2144,13 @@
           "name": "keyword.control.exit.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.exit.fortran",
       "patterns": [
       ]
     },
     "explicit-interface-block-construct": {
-      "begin": "(?i)\\b(interface)\\b(?=\\s*[;!\\n])",
+      "begin": "(?i)\\b(interface)\\b(?=\\s*[\\n!;])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.interface.fortran"
@@ -2176,7 +2176,7 @@
           "name": "storage.modifier.extends.fortran"
         }
       },
-      "end": "(?:\\)|(?=\\n))",
+      "end": "\\)|(?=\\n)",
       "patterns": [
         {
           "match": "(?i)\\s*\\b([a-z]\\w*)\\b",
@@ -2212,7 +2212,7 @@
       "end": "(?<!\\G)",
       "patterns": [
         {
-          "begin": "(?i)\\G(?!\\s*[;!\\n])",
+          "begin": "(?i)\\G(?!\\s*[\\n!;])",
           "end": "(?<!\\G)",
           "name": "meta.loop-control.fortran",
           "patterns": [
@@ -2225,7 +2225,7 @@
           ]
         },
         {
-          "begin": "(?<=\\))(?=\\s*[;!\\n])",
+          "begin": "(?<=\\))(?=\\s*[\\n!;])",
           "end": "(?i)\\b(end\\s*forall)\\b",
           "endCaptures": {
             "1": {
@@ -2240,7 +2240,7 @@
           ]
         },
         {
-          "begin": "(?i)(?<=\\))(?!\\s*[;!\\n])",
+          "begin": "(?i)(?<=\\))(?!\\s*[\\n!;])",
           "end": "\\n",
           "name": "meta.statement.control.forall.fortran",
           "patterns": [
@@ -2275,8 +2275,8 @@
       ]
     },
     "function-definition": {
-      "begin": "(?i)(?=([^:'\";!\\n](?!\\bend)(?!\\bsubroutine\\b))*\\bfunction\\b)",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=([^\\n!\"':;](?!\\bend)(?!\\bsubroutine\\b))*\\bfunction\\b)",
+      "end": "(?=[\\n!;])",
       "name": "meta.function.fortran",
       "patterns": [
         {
@@ -2311,7 +2311,7 @@
               "name": "keyword.other.function.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "begin": "(?i)\\G\\s*\\b([a-z]\\w*)\\b",
@@ -2320,7 +2320,7 @@
                   "name": "entity.name.function.fortran"
                 }
               },
-              "end": "(?i)\\s*\\b(?:(end\\s*function)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+              "end": "(?i)\\s*\\b(?:(end\\s*function)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
               "endCaptures": {
                 "1": {
                   "name": "keyword.other.endfunction.fortran"
@@ -2337,8 +2337,8 @@
               },
               "patterns": [
                 {
-                  "begin": "\\G(?!\\s*[;!\\n])",
-                  "end": "(?=[;!\\n])",
+                  "begin": "\\G(?!\\s*[\\n!;])",
+                  "end": "(?=[\\n!;])",
                   "name": "meta.function.first-line.fortran",
                   "patterns": [
                     {
@@ -2353,8 +2353,8 @@
                   ]
                 },
                 {
-                  "begin": "(?i)(?!\\bend(?:\\s*[;!\\n]|\\s*function\\b))",
-                  "end": "(?i)(?=\\bend(?:\\s*[;!\\n]|\\s*function\\b))",
+                  "begin": "(?i)(?!\\bend(?:\\s*[\\n!;]|\\s*function\\b))",
+                  "end": "(?i)(?=\\bend(?:\\s*[\\n!;]|\\s*function\\b))",
                   "name": "meta.block.specification.function.fortran",
                   "patterns": [
                     {
@@ -2364,7 +2364,7 @@
                           "name": "keyword.control.contains.fortran"
                         }
                       },
-                      "end": "(?i)(?=end(?:\\s*[;!\\n]|\\s*function\\b))",
+                      "end": "(?i)(?=end(?:\\s*[\\n!;]|\\s*function\\b))",
                       "name": "meta.block.contains.fortran",
                       "patterns": [
                         {
@@ -2390,7 +2390,7 @@
           "name": "keyword.control.interface.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.interface.generic.fortran",
       "patterns": [
         {
@@ -2443,7 +2443,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|[><]|<=|[-+/]|//|\\*\\*|\\*)|(\\S.*))\\s*(\\))",
+          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|[<>]|<=|[-+/]|//|\\*\\*|\\*)|(\\S.*))\\s*(\\))",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.operator.fortran"
@@ -2586,7 +2586,7 @@
           "name": "keyword.control.goto.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.goto.fortran",
       "patterns": [
         {
@@ -2603,7 +2603,7 @@
               "name": "keyword.control.if.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "include": "#logical-control-expression"
@@ -2630,7 +2630,7 @@
                       "name": "keyword.control.elseif.fortran"
                     }
                   },
-                  "end": "(?=[;!\\n])",
+                  "end": "(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#parentheses"
@@ -2661,8 +2661,8 @@
                   "end": "(?i)(?=\\b(end\\s*if)\\b)",
                   "patterns": [
                     {
-                      "begin": "(?!(\\s*([;!\\n])))",
-                      "end": "(?=[;!\\n])",
+                      "begin": "(?!(\\s*([\\n!;])))",
+                      "end": "(?=[\\n!;])",
                       "patterns": [
                         {
                           "captures": {
@@ -2698,7 +2698,7 @@
             },
             {
               "begin": "(?i)(?=\\s*[a-z])",
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "name": "meta.statement.control.if.fortran",
               "patterns": [
                 {
@@ -2736,7 +2736,7 @@
           "name": "keyword.other.implicit.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.implicit.fortran",
       "patterns": [
         {
@@ -2759,7 +2759,7 @@
           "name": "keyword.control.include.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.include.fortran",
       "patterns": [
         {
@@ -2769,7 +2769,7 @@
               "name": "keyword.operator.double-colon.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "include": "#name-list"
@@ -2783,7 +2783,7 @@
               "name": "punctuation.comma.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "captures": {
@@ -2811,7 +2811,7 @@
                   "name": "keyword.other.colon.fortran"
                 }
               },
-              "end": "(?=[;!\\n])",
+              "end": "(?=[\\n!;])",
               "patterns": [
                 {
                   "include": "#name-list"
@@ -2832,7 +2832,7 @@
           "name": "keyword.control.include.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.include.fortran",
       "patterns": [
         {
@@ -2853,7 +2853,7 @@
           "name": "punctuation.parentheses.left.fortran"
         }
       },
-      "end": "(\\))|(?=[;!\\n])",
+      "end": "(\\))|(?=[\\n!;])",
       "endCaptures": {
         "1": {
           "name": "punctuation.parentheses.left.fortran"
@@ -2893,8 +2893,8 @@
       ]
     },
     "interface-procedure-statement": {
-      "begin": "(?i)(?=[^'\";!\\n]*\\bprocedure\\b)",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=[^\\n!\"';]*\\bprocedure\\b)",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.procedure.fortran",
       "patterns": [
         {
@@ -2917,7 +2917,7 @@
               "name": "keyword.other.procedure.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "captures": {
@@ -3140,7 +3140,7 @@
           ]
         },
         {
-          "begin": "(?i)\\b([icd]?abs|acos|[ad]int|[ad]nint|aimag|amax[01]|amin[01]|d?asin|d?atan|d?atan2|char|conjg|[cd]?cos|d?cosh|cmplx|dble|i?dim|dmax1|dmin1|dprod|[cd]?exp|float|ichar|idint|ifix|index|int|len|lge|lgt|lle|llt|[acd]?log|[ad]?log10|max[01]?|min[01]?|[ad]?mod|(id)?nint|real|[di]?sign|[cd]?sin|d?sinh|sngl|[cd]?sqrt|d?tan|d?tanh)\\s*(?=\\()",
+          "begin": "(?i)\\b([cdi]?abs|acos|[ad]int|[ad]nint|aimag|amax[01]|amin[01]|d?asin|d?atan|d?atan2|char|conjg|[cd]?cos|d?cosh|cmplx|dble|i?dim|dmax1|dmin1|dprod|[cd]?exp|float|ichar|idint|ifix|index|int|len|lge|lgt|lle|llt|[acd]?log|[ad]?log10|max[01]?|min[01]?|[ad]?mod|(id)?nint|real|[di]?sign|[cd]?sin|d?sinh|sngl|[cd]?sqrt|d?tan|d?tanh)\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.intrinsic.fortran"
@@ -3210,7 +3210,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(ieee_(get|set)_(rounding|underflow)_mode)\\s*(?=\\()",
+          "begin": "(?i)\\G\\s*\\b(ieee_([gs]et)_(rounding|underflow)_mode)\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.subroutine.fortran"
@@ -3232,7 +3232,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(ieee_(get|set)_(flag|halting_mode|status))\\s*(?=\\()",
+          "begin": "(?i)\\G\\s*\\b(ieee_([gs]et)_(flag|halting_mode|status))\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.subroutine.fortran"
@@ -3254,7 +3254,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(c_f_(p(?:ointer|rocpointer)))\\s*(?=\\()",
+          "begin": "(?i)\\G\\s*\\b(c_f_(p(?:|rocp)ointer))\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.subroutine.fortran"
@@ -3300,7 +3300,7 @@
       ]
     },
     "invalid-character": {
-      "match": "(?i)[^\\s;!\\n]+",
+      "match": "(?i)[^\\n!;\\s]+",
       "name": "invalid.error.character.fortran"
     },
     "invalid-word": {
@@ -3314,7 +3314,7 @@
           "name": "storage.modifier.bind.fortran"
         }
       },
-      "end": "(?:\\)|(?=\\n))",
+      "end": "\\)|(?=\\n)",
       "patterns": [
         {
           "match": "(?i)\\b(c)\\b",
@@ -3444,11 +3444,11 @@
           "name": "storage.modifier.module.fortran"
         }
       },
-      "match": "(?i)\\s*\\b(module)\\b(?=\\s*(?:[;!\\n]|[^'\";!\\n]*\\b(?:function|procedure|subroutine)\\b))"
+      "match": "(?i)\\s*\\b(module)\\b(?=\\s*(?:[\\n!;]|[^\\n!\"';]*\\b(?:function|procedure|subroutine)\\b))"
     },
     "module-definition": {
-      "begin": "(?i)(?=\\b(module)\\b)(?![^'\";!\\n]*\\b(?:function|procedure|subroutine)\\b)",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=\\b(module)\\b)(?![^\\n!\"';]*\\b(?:function|procedure|subroutine)\\b)",
+      "end": "(?=[\\n!;])",
       "name": "meta.module.fortran",
       "patterns": [
         {
@@ -3467,7 +3467,7 @@
               "name": "entity.name.class.module.fortran"
             }
           },
-          "end": "(?i)\\b(?:(end\\s*module)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+          "end": "(?i)\\b(?:(end\\s*module)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.other.endmodule.fortran"
@@ -3485,7 +3485,7 @@
           "patterns": [
             {
               "begin": "\\G",
-              "end": "(?i)(?=\\bend(?:\\s*[;!\\n]|\\s*module\\b))",
+              "end": "(?i)(?=\\bend(?:\\s*[\\n!;]|\\s*module\\b))",
               "name": "meta.block.specification.module.fortran",
               "patterns": [
                 {
@@ -3495,7 +3495,7 @@
                       "name": "keyword.control.contains.fortran"
                     }
                   },
-                  "end": "(?i)(?=\\s*end(?:\\s*[;!\\n]|\\s*module\\b))",
+                  "end": "(?i)(?=\\s*end(?:\\s*[\\n!;]|\\s*module\\b))",
                   "name": "meta.block.contains.fortran",
                   "patterns": [
                     {
@@ -3515,7 +3515,7 @@
     "name-list": {
       "begin": "(?i)(?=\\s*[a-z])",
       "contentName": "meta.name-list.fortran",
-      "end": "(?=[);!\\n])",
+      "end": "(?=[\\n!);])",
       "patterns": [
         {
           "include": "#constants"
@@ -3550,7 +3550,7 @@
       "applyEndPatternLast": 1,
       "begin": "(?i)([a-z]\\w*)\\s*(:)(?=\\s*(?:associate|block(?!\\s*data)|critical|do|forall|if|select\\s*case|select\\s*type|select\\s*rank|where)\\b)",
       "contentName": "meta.named-construct.fortran.modern",
-      "end": "(?i)(?!\\s*\\b(?:associate|block(?!\\s*data)|critical|do|forall|if|select\\s*case|select\\s*type|select\\s*rank|where)\\b)(?:\\b(\\1)\\b)?([^\\s;!\\n]*?)?(?=\\s*[;!\\n])",
+      "end": "(?i)(?!\\s*\\b(?:associate|block(?!\\s*data)|critical|do|forall|if|select\\s*case|select\\s*type|select\\s*rank|where)\\b)(?:\\b(\\1)\\b)?([^\\n!;\\s]*?)?(?=\\s*[\\n!;])",
       "endCaptures": {
         "1": {
           "name": "meta.label.end.name.fortran"
@@ -3572,7 +3572,7 @@
           "name": "keyword.control.namelist.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "include": "$base"
@@ -3627,7 +3627,7 @@
       ]
     },
     "numeric-constant": {
-      "match": "(?i)[+-]?(\\b\\d+\\.?\\d*|\\.\\d+)(_\\w+|d[+-]?\\d+|e[+-]?\\d+(_\\w+)?)?(?![a-z_])",
+      "match": "(?i)[-+]?(\\b\\d+\\.?\\d*|\\.\\d+)(_\\w+|d[-+]?\\d+|e[-+]?\\d+(_\\w+)?)?(?![_a-z])",
       "name": "constant.numeric.fortran"
     },
     "numeric-type": {
@@ -3877,7 +3877,7 @@
           "name": "keyword.control.pause.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.pause.fortran",
       "patterns": [
         {
@@ -4355,8 +4355,8 @@
       "name": "variable.parameter.dummy-variable.fortran.modern"
     },
     "procedure-definition": {
-      "begin": "(?i)(?=[^'\";!\\n]*\\bmodule\\s+procedure\\b)",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=[^\\n!\"';]*\\bmodule\\s+procedure\\b)",
+      "end": "(?=[\\n!;])",
       "name": "meta.procedure.fortran",
       "patterns": [
         {
@@ -4366,7 +4366,7 @@
               "name": "keyword.other.procedure.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "begin": "(?i)\\G\\s*\\b([a-z]\\w*)\\b",
@@ -4375,7 +4375,7 @@
                   "name": "entity.name.function.procedure.fortran"
                 }
               },
-              "end": "(?i)\\s*\\b(?:(end\\s*procedure)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+              "end": "(?i)\\s*\\b(?:(end\\s*procedure)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
               "endCaptures": {
                 "1": {
                   "name": "keyword.other.endprocedure.fortran"
@@ -4392,8 +4392,8 @@
               },
               "patterns": [
                 {
-                  "begin": "\\G(?!\\s*[;!\\n])",
-                  "end": "(?=[;!\\n])",
+                  "begin": "\\G(?!\\s*[\\n!;])",
+                  "end": "(?=[\\n!;])",
                   "name": "meta.first-line.fortran",
                   "patterns": [
                     {
@@ -4402,8 +4402,8 @@
                   ]
                 },
                 {
-                  "begin": "(?i)(?!\\s*(?:contains\\b|end\\s*[;!\\n]|end\\s*procedure\\b))",
-                  "end": "(?i)(?=\\s*(?:contains\\b|end\\s*[;!\\n]|end\\s*procedure\\b))",
+                  "begin": "(?i)(?!\\s*(?:contains\\b|end\\s*[\\n!;]|end\\s*procedure\\b))",
+                  "end": "(?i)(?=\\s*(?:contains\\b|end\\s*[\\n!;]|end\\s*procedure\\b))",
                   "name": "meta.block.specification.procedure.fortran",
                   "patterns": [
                     {
@@ -4418,7 +4418,7 @@
                       "name": "keyword.control.contains.fortran"
                     }
                   },
-                  "end": "(?i)(?=\\s*end(?:\\s*[;!\\n]|\\s*procedure\\b))",
+                  "end": "(?i)(?=\\s*end(?:\\s*[\\n!;]|\\s*procedure\\b))",
                   "name": "meta.block.contains.fortran",
                   "patterns": [
                     {
@@ -4443,11 +4443,11 @@
     "procedure-name-list": {
       "begin": "(?i)(?=\\s*[a-z])",
       "contentName": "meta.name-list.fortran",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "begin": "(?!\\s*\\n)",
-          "end": "(,)|(?=[!;\\n])",
+          "end": "(,)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "punctuation.comma.fortran"
@@ -4466,7 +4466,7 @@
     },
     "procedure-specification-statement": {
       "begin": "(?i)(?=\\bprocedure\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.specification.procedure.fortran",
       "patterns": [
         {
@@ -4475,7 +4475,7 @@
         {
           "begin": "(?=\\s*(,|::|\\())",
           "contentName": "meta.attribute-list.procedure.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -4489,7 +4489,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,\\&;!\\n])",
+              "end": "(?=::|[\\n!\\&,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -4561,7 +4561,7 @@
     },
     "program-definition": {
       "begin": "(?i)(?=\\b(program)\\b)",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.program.fortran",
       "patterns": [
         {
@@ -4580,7 +4580,7 @@
               "name": "entity.name.program.fortran"
             }
           },
-          "end": "(?i)\\b(?:(end\\s*program)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+          "end": "(?i)\\b(?:(end\\s*program)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.control.endprogram.fortran"
@@ -4598,7 +4598,7 @@
           "patterns": [
             {
               "begin": "\\G",
-              "end": "(?i)(?=\\bend(?:\\s*[;!\\n]|\\s*program\\b))",
+              "end": "(?i)(?=\\bend(?:\\s*[\\n!;]|\\s*program\\b))",
               "name": "meta.block.specification.program.fortran",
               "patterns": [
                 {
@@ -4608,7 +4608,7 @@
                       "name": "keyword.control.contains.fortran"
                     }
                   },
-                  "end": "(?i)(?=end(?:\\s*[;!\\n]|\\s*program\\b))",
+                  "end": "(?i)(?=end(?:\\s*[\\n!;]|\\s*program\\b))",
                   "name": "meta.block.contains.fortran",
                   "patterns": [
                     {
@@ -4692,7 +4692,7 @@
           "name": "keyword.control.return.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.return.fortran",
       "patterns": [
         {
@@ -4733,7 +4733,7 @@
               "name": "keyword.control.case.fortran"
             }
           },
-          "end": "(?i)(?=[;!\\n])",
+          "end": "(?i)(?=[\\n!;])",
           "patterns": [
             {
               "captures": {
@@ -4781,7 +4781,7 @@
               "name": "keyword.control.rank.fortran"
             }
           },
-          "end": "(?i)(?=[;!\\n])",
+          "end": "(?i)(?=[\\n!;])",
           "patterns": [
             {
               "captures": {
@@ -4832,7 +4832,7 @@
               "name": "keyword.control.type.fortran"
             }
           },
-          "end": "(?i)(?=[;!\\n])",
+          "end": "(?i)(?=[\\n!;])",
           "patterns": [
             {
               "captures": {
@@ -4906,7 +4906,7 @@
           "name": "meta.label.stop.stop"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.control.stop.fortran",
       "patterns": [
         {
@@ -4975,7 +4975,7 @@
           "name": "keyword.operator.line-continuation.fortran"
         }
       },
-      "end": "(?i)^(?:(?=\\s*[^\\s!\\&])|\\s*(&))",
+      "end": "(?i)^(?:(?=\\s*[^!\\&\\s])|\\s*(&))",
       "endCaptures": {
         "1": {
           "name": "keyword.operator.line-continuation.fortran"
@@ -4997,7 +4997,7 @@
     },
     "submodule-definition": {
       "begin": "(?i)(?=\\b(submodule)\\s*\\()",
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.submodule.fortran",
       "patterns": [
         {
@@ -5030,7 +5030,7 @@
               "name": "entity.name.module.submodule.fortran"
             }
           },
-          "end": "(?i)\\s*\\b(?:(end\\s*submodule)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+          "end": "(?i)\\s*\\b(?:(end\\s*submodule)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.other.endsubmodule.fortran"
@@ -5048,7 +5048,7 @@
           "patterns": [
             {
               "begin": "\\G",
-              "end": "(?i)(?=\\bend(?:\\s*[;!\\n]|\\s*submodule\\b))",
+              "end": "(?i)(?=\\bend(?:\\s*[\\n!;]|\\s*submodule\\b))",
               "name": "meta.block.specification.submodule.fortran",
               "patterns": [
                 {
@@ -5058,7 +5058,7 @@
                       "name": "keyword.control.contains.fortran"
                     }
                   },
-                  "end": "(?i)(?=\\s*end(?:\\s*[;!\\n]|\\s*submodule\\b))",
+                  "end": "(?i)(?=\\s*end(?:\\s*[\\n!;]|\\s*submodule\\b))",
                   "name": "meta.block.contains.fortran",
                   "patterns": [
                     {
@@ -5076,8 +5076,8 @@
       ]
     },
     "subroutine-definition": {
-      "begin": "(?i)(?=([^:'\";!\\n](?!\\bend))*\\bsubroutine\\b)",
-      "end": "(?=[;!\\n])",
+      "begin": "(?i)(?=([^\\n!\"':;](?!\\bend))*\\bsubroutine\\b)",
+      "end": "(?=[\\n!;])",
       "name": "meta.subroutine.fortran",
       "patterns": [
         {
@@ -5109,7 +5109,7 @@
               "name": "keyword.other.subroutine.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "begin": "(?i)\\G\\s*\\b([a-z]\\w*)\\b",
@@ -5118,7 +5118,7 @@
                   "name": "entity.name.function.subroutine.fortran"
                 }
               },
-              "end": "(?i)\\b(?:(end\\s*subroutine)(?:\\s+([a-z_]\\w*))?|(end))\\b\\s*([^;!\\n]+)?(?=[;!\\n])",
+              "end": "(?i)\\b(?:(end\\s*subroutine)(?:\\s+([_a-z]\\w*))?|(end))\\b\\s*([^\\n!;]+)?(?=[\\n!;])",
               "endCaptures": {
                 "1": {
                   "name": "keyword.other.endsubroutine.fortran"
@@ -5135,8 +5135,8 @@
               },
               "patterns": [
                 {
-                  "begin": "\\G(?!\\s*[;!\\n])",
-                  "end": "(?=[;!\\n])",
+                  "begin": "\\G(?!\\s*[\\n!;])",
+                  "end": "(?=[\\n!;])",
                   "name": "meta.first-line.fortran",
                   "patterns": [
                     {
@@ -5148,8 +5148,8 @@
                   ]
                 },
                 {
-                  "begin": "(?i)(?!\\bend(?:\\s*[;!\\n]|\\s*subroutine\\b))",
-                  "end": "(?i)(?=\\bend(?:\\s*[;!\\n]|\\s*subroutine\\b))",
+                  "begin": "(?i)(?!\\bend(?:\\s*[\\n!;]|\\s*subroutine\\b))",
+                  "end": "(?i)(?=\\bend(?:\\s*[\\n!;]|\\s*subroutine\\b))",
                   "name": "meta.block.specification.subroutine.fortran",
                   "patterns": [
                     {
@@ -5159,7 +5159,7 @@
                           "name": "keyword.control.contains.fortran"
                         }
                       },
-                      "end": "(?i)(?=end(?:\\s*[;!\\n]|\\s*subroutine\\b))",
+                      "end": "(?i)(?=end(?:\\s*[\\n!;]|\\s*subroutine\\b))",
                       "name": "meta.block.contains.fortran",
                       "patterns": [
                         {
@@ -5233,8 +5233,8 @@
       "match": "(?i)\\s*\\b(target)\\b"
     },
     "type-specification-statements": {
-      "begin": "(?i)(?=\\b(?:character|class|complex|double\\s*precision|double\\s*complex|integer|logical|real|type|dimension)\\b(?![^'\";!\\n:]*\\bfunction\\b))",
-      "end": "(?=[);!\\n])",
+      "begin": "(?i)(?=\\b(?:character|class|complex|double\\s*precision|double\\s*complex|integer|logical|real|type|dimension)\\b(?![^\\n!\"':;]*\\bfunction\\b))",
+      "end": "(?=[\\n!);])",
       "name": "meta.specification.type.fortran",
       "patterns": [
         {
@@ -5243,7 +5243,7 @@
         {
           "begin": "(?=\\s*(,|::))",
           "contentName": "meta.attribute-list.type-specification-statements.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -5257,7 +5257,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,\\&;!\\n])",
+              "end": "(?=::|[\\n!\\&,;])",
               "patterns": [
                 {
                   "include": "#access-attribute"
@@ -5382,13 +5382,13 @@
           "name": "keyword.control.use.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "name": "meta.statement.use.fortran",
       "patterns": [
         {
           "begin": "(?=\\s*(,|::|\\())",
           "contentName": "meta.attribute-list.namelist.fortran",
-          "end": "(::)|(?=[;!\\n])",
+          "end": "(::)|(?=[\\n!;])",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.double-colon.fortran"
@@ -5402,7 +5402,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[,;!\\n])",
+              "end": "(?=::|[\\n!,;])",
               "patterns": [
                 {
                   "include": "#intrinsic-attribute"
@@ -5424,7 +5424,7 @@
               "name": "entity.name.class.module.fortran"
             }
           },
-          "end": "(?=[;!\\n])",
+          "end": "(?=[\\n!;])",
           "patterns": [
             {
               "begin": "(,)",
@@ -5433,7 +5433,7 @@
                   "name": "punctuation.comma.fortran"
                 }
               },
-              "end": "(?=::|[;!\\n])",
+              "end": "(?=::|[\\n!;])",
               "patterns": [
                 {
                   "begin": "(?i)\\s*\\b(only\\s*:)",
@@ -5442,7 +5442,7 @@
                       "name": "keyword.control.only.fortran"
                     }
                   },
-                  "end": "(?=[;!\\n])",
+                  "end": "(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#operator-keyword"
@@ -5455,7 +5455,7 @@
                 {
                   "begin": "(?i)(?=\\s*[a-z])",
                   "contentName": "meta.name-list.fortran",
-                  "end": "(?=[;!\\n])",
+                  "end": "(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#operator-keyword"
@@ -5531,7 +5531,7 @@
               "include": "#logical-control-expression"
             },
             {
-              "begin": "(?<=\\))(?=\\s*[;!\\n])",
+              "begin": "(?<=\\))(?=\\s*[\\n!;])",
               "end": "(?i)\\b(end\\s*where)\\b",
               "endCaptures": {
                 "1": {
@@ -5547,7 +5547,7 @@
                       "name": "keyword.control.elsewhere.fortran"
                     }
                   },
-                  "end": "(?=[;!\\n])",
+                  "end": "(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#parentheses"
@@ -5563,7 +5563,7 @@
               ]
             },
             {
-              "begin": "(?i)(?<=\\))(?!\\s*[;!\\n])",
+              "begin": "(?i)(?<=\\))(?!\\s*[\\n!;])",
               "end": "\\n",
               "name": "meta.statement.control.where.fortran",
               "patterns": [
@@ -5583,7 +5583,7 @@
           "name": "keyword.control.while.fortran"
         }
       },
-      "end": "(?=[;!\\n])",
+      "end": "(?=[\\n!;])",
       "patterns": [
         {
           "include": "#parentheses"

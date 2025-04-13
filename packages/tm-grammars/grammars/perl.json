@@ -6,8 +6,8 @@
       "include": "#line_comment"
     },
     {
-      "begin": "^(?==[a-zA-Z]+)",
-      "end": "^(=cut\\b.*$)",
+      "begin": "^(?==[A-Za-z]+)",
+      "end": "^(=cut\\b.*)$",
       "endCaptures": {
         "1": {
           "patterns": [
@@ -30,7 +30,7 @@
     {
       "applyEndPatternLast": 1,
       "begin": "\\b(?=qr\\s*[^\\s\\w])",
-      "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,#{})]|\\s*$))",
+      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.compile.perl"
@@ -129,7 +129,7 @@
           "name": "string.regexp.compile.nested_parens.perl",
           "patterns": [
             {
-              "match": "\\$(?=[^\\s\\w\\\\'{\\[(<])"
+              "match": "\\$(?=[^'(<\\[\\\\{\\s\\w])"
             },
             {
               "include": "#escaped_char"
@@ -161,7 +161,7 @@
           ]
         },
         {
-          "begin": "(qr)\\s*([^\\s\\w'{\\[(<])",
+          "begin": "(qr)\\s*([^'(<\\[{\\s\\w])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -174,7 +174,7 @@
           "name": "string.regexp.compile.simple-delimiter.perl",
           "patterns": [
             {
-              "match": "\\$(?=[^\\s\\w'{\\[(<])",
+              "match": "\\$(?=[^'(<\\[{\\s\\w])",
               "name": "keyword.control.anchor.perl"
             },
             {
@@ -192,8 +192,8 @@
     },
     {
       "applyEndPatternLast": 1,
-      "begin": "(?<![{+-])\\b(?=m\\s*[^\\sa-zA-Z0-9])",
-      "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,#{})]|\\s*$))",
+      "begin": "(?<![-+{])\\b(?=m\\s*[^0-9A-Za-z\\s])",
+      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.find-m.perl"
@@ -321,7 +321,7 @@
           ]
         },
         {
-          "begin": "\\G(?<![{+-])(m)(?!_)\\s*([^\\sa-zA-Z0-9'{\\[(<])",
+          "begin": "\\G(?<![-+{])(m)(?!_)\\s*([^'(0-9<A-\\[a-{\\s])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -334,7 +334,7 @@
           "name": "string.regexp.find-m.simple-delimiter.perl",
           "patterns": [
             {
-              "match": "\\$(?=[^\\sa-zA-Z0-9'{\\[(<])",
+              "match": "\\$(?=[^'(0-9<A-\\[a-{\\s])",
               "name": "keyword.control.anchor.perl"
             },
             {
@@ -359,7 +359,7 @@
               "name": "constant.other.character-class.set.perl",
               "patterns": [
                 {
-                  "match": "\\$(?=[^\\s\\w'{\\[(<])",
+                  "match": "\\$(?=[^'(<\\[{\\s\\w])",
                   "name": "keyword.control.anchor.perl"
                 },
                 {
@@ -376,8 +376,8 @@
     },
     {
       "applyEndPatternLast": 1,
-      "begin": "\\b(?=(?<!&)(s)(\\s+\\S|\\s*[;,{}()\\[<]|$))",
-      "end": "((([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,{})\\]>]|\\s*$))",
+      "begin": "\\b(?=(?<!&)(s)(\\s+\\S|\\s*[(),;<\\[{}]|$))",
+      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[]),;>{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -575,7 +575,7 @@
           ]
         },
         {
-          "begin": "([^\\s\\w\\[({<;])",
+          "begin": "([^(;<\\[{\\s\\w])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -598,8 +598,8 @@
       ]
     },
     {
-      "begin": "\\b(?=s([^\\sa-zA-Z0-9\\[({<]).*\\1([egimosxradlupcn]*)([});,]|\\s+))",
-      "end": "((([egimosxradlupcn]*)))(?=([});,]|\\s+|\\s*$))",
+      "begin": "\\b(?=s([^(0-9<A-\\[a-{\\s]).*\\1([ac-egil-prsux]*)([),;}]|\\s+))",
+      "end": "((([ac-egil-prsux]*)))(?=([),;}]|\\s+|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -613,7 +613,7 @@
       },
       "patterns": [
         {
-          "begin": "(s\\s*)([^\\sa-zA-Z0-9\\[({<])",
+          "begin": "(s\\s*)([^(0-9<A-\\[a-{\\s])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -647,7 +647,7 @@
           ]
         },
         {
-          "begin": "([^\\sa-zA-Z0-9\\[({<])",
+          "begin": "([^(0-9<A-\\[a-{\\s])",
           "captures": {
             "0": {
               "name": "punctuation.definition.string.perl"
@@ -667,8 +667,8 @@
       ]
     },
     {
-      "begin": "\\b(?=(?<!\\\\)s\\s*([^\\s\\w\\[({<>]))",
-      "end": "((([egimosradlupc]*x[egimosradlupc]*)))\\b",
+      "begin": "\\b(?=(?<!\\\\)s\\s*([^(<>\\[{\\s\\w]))",
+      "end": "((([ac-egilmoprsu]*x[ac-egilmoprsu]*)))\\b",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -706,7 +706,7 @@
               "name": "punctuation.definition.string.perl"
             }
           },
-          "end": "'(?=[egimosradlupc]*x[egimosradlupc]*)\\b",
+          "end": "'(?=[ac-egilmoprsu]*x[ac-egilmoprsu]*)\\b",
           "name": "string.regexp.replace.extended.simple_delimiter.perl",
           "patterns": [
             {
@@ -721,7 +721,7 @@
               "name": "punctuation.definition.string.perl"
             }
           },
-          "end": "\\1(?=[egimosradlupc]*x[egimosradlupc]*)\\b",
+          "end": "\\1(?=[ac-egilmoprsu]*x[ac-egilmoprsu]*)\\b",
           "name": "string.regexp.replace.extended.simple_delimiter.perl",
           "patterns": [
             {
@@ -735,7 +735,7 @@
       ]
     },
     {
-      "begin": "(?<=[({~\\&|]|if|unless|^)\\s*((/))",
+      "begin": "(?<=[\\&({|~]|if|unless|^)\\s*((/))",
       "beginCaptures": {
         "1": {
           "name": "string.regexp.find.perl"
@@ -745,7 +745,7 @@
         }
       },
       "contentName": "string.regexp.find.perl",
-      "end": "((\\1([egimosxradlupcn]*)))(?=(\\s+\\S|\\s*[;,#{})]|\\s*$))",
+      "end": "((\\1([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.find.perl"
@@ -791,7 +791,7 @@
           "name": "entity.name.type.class.perl"
         }
       },
-      "match": "^\\s*(package)\\s+([^\\s;]+)",
+      "match": "^\\s*(package)\\s+([^;\\s]+)",
       "name": "meta.class.perl"
     },
     {
@@ -806,7 +806,7 @@
           "name": "storage.type.method.perl"
         }
       },
-      "match": "\\b(sub)(?:\\s+([-a-zA-Z0-9_]+))?\\s*(?:\\([$@*;]*\\))?[^\\w{]",
+      "match": "\\b(sub)(?:\\s+([-0-9A-Z_a-z]+))?\\s*(?:\\([$*;@]*\\))?[^{\\w]",
       "name": "meta.function.perl"
     },
     {
@@ -857,15 +857,15 @@
           "name": "punctuation.definition.string.perl"
         }
       },
-      "match": "\\b(tr|y)\\s*([^A-Za-z0-9\\s])(.*?)(?<!\\\\)(\\\\{2})*(\\2)(.*?)(?<!\\\\)(\\\\{2})*(\\2)",
+      "match": "\\b(tr|y)\\s*([^0-9A-Za-z\\s])(.*?)(?<!\\\\)(\\\\{2})*(\\2)(.*?)(?<!\\\\)(\\\\{2})*(\\2)",
       "name": "string.regexp.replace.perl"
     },
     {
-      "match": "\\b(__(?:FILE__|LINE__|PACKAGE__|SUB__))\\b",
+      "match": "\\b(__(?:FILE|LINE|PACKAGE|SUB)__)\\b",
       "name": "constant.language.perl"
     },
     {
-      "begin": "\\b(__(?:DATA__|END__))\\n?",
+      "begin": "\\b(__(?:DATA|END)__)\\n?",
       "beginCaptures": {
         "1": {
           "name": "constant.language.perl"
@@ -888,7 +888,7 @@
       "name": "storage.modifier.perl"
     },
     {
-      "match": "(?<!\\w)-[rwxoRWXOezsfdlpSbctugkTBMAC]\\b",
+      "match": "(?<!\\w)-[A-CMOR-TWXb-gklopr-uwxz]\\b",
       "name": "keyword.operator.filetest.perl"
     },
     {
@@ -896,14 +896,14 @@
       "name": "keyword.operator.logical.perl"
     },
     {
-      "match": "(<=>|=>|->)",
+      "match": "((?:<=|[-=])>)",
       "name": "keyword.operator.comparison.perl"
     },
     {
       "include": "#heredoc"
     },
     {
-      "begin": "\\bqq\\s*([^({\\[<\\w\\s])",
+      "begin": "\\bqq\\s*([^(<\\[{\\w\\s])",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.perl"
@@ -926,7 +926,7 @@
       ]
     },
     {
-      "begin": "\\bqx\\s*([^'({\\[<\\w\\s])",
+      "begin": "\\bqx\\s*([^'(<\\[{\\w\\s])",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.perl"
@@ -992,7 +992,7 @@
       ]
     },
     {
-      "begin": "(?<!->)\\bqw?\\s*([^({\\[<\\w\\s])",
+      "begin": "(?<!->)\\bqw?\\s*([^(<\\[{\\w\\s])",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.perl"
@@ -1420,7 +1420,7 @@
           "name": "constant.character.escape.perl"
         },
         {
-          "match": "\\\\c[^\\s\\\\]",
+          "match": "\\\\c[^\\\\\\s]",
           "name": "constant.character.escape.perl"
         },
         {
@@ -1440,11 +1440,11 @@
           "name": "constant.character.escape.perl"
         },
         {
-          "match": "\\\\[pP](?:\\{\\w*}|P)",
+          "match": "\\\\[Pp](?:\\{\\w*}|P)",
           "name": "constant.character.escape.perl"
         },
         {
-          "match": "\\\\x(?:[0-9a-zA-Z]{2}|\\{\\w*})?",
+          "match": "\\\\x(?:[0-9A-Za-z]{2}|\\{\\w*})?",
           "name": "constant.character.escape.perl"
         },
         {
@@ -1772,7 +1772,7 @@
           }
         },
         {
-          "begin": "((((<<(~)?) *\\\\)((?![=\\d$( ])[^;,'\"`\\s)]*)()))(.*)\\n?",
+          "begin": "((((<<(~)?) *\\\\)((?![ $(=\\d])[^\"'),;`\\s]*)()))(.*)\\n?",
           "beginCaptures": {
             "1": {
               "name": "string.unquoted.heredoc.raw.perl"
@@ -2484,7 +2484,7 @@
           ]
         },
         {
-          "begin": "((((<<(~)?) *)((?![=\\d$( ])[^;,'\"`\\s)]*)()))(.*)\\n?",
+          "begin": "((((<<(~)?) *)((?![ $(=\\d])[^\"'),;`\\s]*)()))(.*)\\n?",
           "beginCaptures": {
             "1": {
               "name": "string.unquoted.heredoc.interpolated.perl"
@@ -2572,7 +2572,7 @@
     "line_comment": {
       "patterns": [
         {
-          "begin": "(^[ \\t]+)?(?=#)",
+          "begin": "(^[\\t ]+)?(?=#)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.perl"
@@ -2726,7 +2726,7 @@
       "end": "\\)",
       "patterns": [
         {
-          "match": "\\$(?=[^\\s\\w'{\\[(<])",
+          "match": "\\$(?=[^'(<\\[{\\s\\w])",
           "name": "keyword.control.anchor.perl"
         },
         {
@@ -2855,7 +2855,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)&(?![A-Za-z0-9_])",
+          "match": "(\\$)&(?![0-9A-Z_a-z])",
           "name": "variable.other.regexp.match.perl"
         },
         {
@@ -2864,7 +2864,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)`(?![A-Za-z0-9_])",
+          "match": "(\\$)`(?![0-9A-Z_a-z])",
           "name": "variable.other.regexp.pre-match.perl"
         },
         {
@@ -2873,7 +2873,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)'(?![A-Za-z0-9_])",
+          "match": "(\\$)'(?![0-9A-Z_a-z])",
           "name": "variable.other.regexp.post-match.perl"
         },
         {
@@ -2882,7 +2882,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)\\+(?![A-Za-z0-9_])",
+          "match": "(\\$)\\+(?![0-9A-Z_a-z])",
           "name": "variable.other.regexp.last-paren-match.perl"
         },
         {
@@ -2891,7 +2891,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)\"(?![A-Za-z0-9_])",
+          "match": "(\\$)\"(?![0-9A-Z_a-z])",
           "name": "variable.other.readwrite.list-separator.perl"
         },
         {
@@ -2900,7 +2900,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)0(?![A-Za-z0-9_])",
+          "match": "(\\$)0(?![0-9A-Z_a-z])",
           "name": "variable.other.predefined.program-name.perl"
         },
         {
@@ -2909,7 +2909,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)[_ab*./|,\\\\;#%=\\-~^:?!$<>()\\[\\]@](?![A-Za-z0-9_])",
+          "match": "(\\$)[!#-%(-*,-/:-@\\[-_ab|~](?![0-9A-Z_a-z])",
           "name": "variable.other.predefined.perl"
         },
         {
@@ -2918,7 +2918,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)[0-9]+(?![A-Za-z0-9_])",
+          "match": "(\\$)[0-9]+(?![0-9A-Z_a-z])",
           "name": "variable.other.subpattern.perl"
         },
         {
@@ -2927,7 +2927,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "([$@%](#)?)([a-zA-Zx7f-xf$]|::)([a-zA-Z0-9_x7f-xf$]|::)*\\b",
+          "match": "([$%@](#)?)([$7A-Za-z]|::)([$0-9A-Z_a-z]|::)*\\b",
           "name": "variable.other.readwrite.global.perl"
         },
         {
@@ -2939,7 +2939,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$\\{)(?:[a-zA-Zx7f-xf$]|::)(?:[a-zA-Z0-9_x7f-xf$]|::)*(})",
+          "match": "(\\$\\{)(?:[$7A-Za-z]|::)(?:[$0-9A-Z_a-z]|::)*(})",
           "name": "variable.other.readwrite.global.perl"
         },
         {
@@ -2948,7 +2948,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "([$@%](#)?)[0-9_]\\b",
+          "match": "([$%@](#)?)[0-9_]\\b",
           "name": "variable.other.readwrite.global.special.perl"
         }
       ]

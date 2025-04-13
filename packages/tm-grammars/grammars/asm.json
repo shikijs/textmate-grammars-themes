@@ -56,27 +56,27 @@
     "constants": {
       "patterns": [
         {
-          "match": "(?i)\\b0[by][01][01_]*\\.(?:(?:[01][01_]*)?(?:p[+-]?[0-9][0-9_]*)?\\b)?",
+          "match": "(?i)\\b0[by][01][01_]*\\.(?:(?:[01][01_]*)?(?:p[-+]?[0-9][0-9_]*)?\\b)?",
           "name": "constant.numeric.binary.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[by][01][01_]*p[+-]?[0-9][0-9_]*\\b",
+          "match": "(?i)\\b0[by][01][01_]*p[-+]?[0-9][0-9_]*\\b",
           "name": "constant.numeric.binary.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[oq][0-7][0-7_]*\\.(?:(?:[0-7][0-7_]*)?(?:p[+-]?[0-9][0-9_]*)?\\b)?",
+          "match": "(?i)\\b0[oq][0-7][0-7_]*\\.(?:(?:[0-7][0-7_]*)?(?:p[-+]?[0-9][0-9_]*)?\\b)?",
           "name": "constant.numeric.octal.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[oq][0-7][0-7_]*p[+-]?[0-9][0-9_]*\\b",
+          "match": "(?i)\\b0[oq][0-7][0-7_]*p[-+]?[0-9][0-9_]*\\b",
           "name": "constant.numeric.octal.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b(?:0[dt])?[0-9][0-9_]*\\.(?:(?:[0-9][0-9_]*)?(?:e[+-]?[0-9][0-9_]*)?\\b)?",
+          "match": "(?i)\\b(?:0[dt])?[0-9][0-9_]*\\.(?:(?:[0-9][0-9_]*)?(?:e[-+]?[0-9][0-9_]*)?\\b)?",
           "name": "constant.numeric.decimal.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b[0-9][0-9_]*e[+-]?[0-9][0-9_]*\\b",
+          "match": "(?i)\\b[0-9][0-9_]*e[-+]?[0-9][0-9_]*\\b",
           "name": "constant.numeric.decimal.floating-point.asm.x86_64"
         },
         {
@@ -84,19 +84,19 @@
           "name": "constant.numeric.decimal.packed-bcd.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[xh]\\h[\\h_]*\\.(?:(?:\\h[\\h_]*)?(?:p[+-]?[0-9][0-9_]*)?\\b)?",
+          "match": "(?i)\\b0[hx]\\h[_\\h]*\\.(?:(?:\\h[_\\h]*)?(?:p[-+]?[0-9][0-9_]*)?\\b)?",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\b0[xh]\\h[\\h_]*p[+-]?[0-9][0-9_]*\\b",
+          "match": "(?i)\\b0[hx]\\h[_\\h]*p[-+]?[0-9][0-9_]*\\b",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$[0-9]_?(?:\\h[\\h_]*)?\\.(?:(?:\\h[\\h_]*)?(?:p[+-]?[0-9][0-9_]*)?\\b)?",
+          "match": "(?i)\\$[0-9]_?(?:\\h[_\\h]*)?\\.(?:(?:\\h[_\\h]*)?(?:p[-+]?[0-9][0-9_]*)?\\b)?",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
-          "match": "(?i)\\$[0-9]_?\\h[\\h_]*p[+-]?[0-9][0-9_]*\\b",
+          "match": "(?i)\\$[0-9]_?\\h[_\\h]*p[-+]?[0-9][0-9_]*\\b",
           "name": "constant.numeric.hex.floating-point.asm.x86_64"
         },
         {
@@ -112,11 +112,11 @@
           "name": "constant.numeric.decimal.asm.x86_64"
         },
         {
-          "match": "(?i)\\$[0-9]_?(?:\\h[\\h_]*)?\\b",
+          "match": "(?i)\\$[0-9]_?(?:\\h[_\\h]*)?\\b",
           "name": "constant.numeric.hex.asm.x86_64"
         },
         {
-          "match": "(?i)\\b(?:0[xh]\\h[\\h_]*|\\h[\\h_]*[hxHX])\\b",
+          "match": "(?i)\\b(?:0[hx]\\h[_\\h]*|\\h[_\\h]*[HXhx])\\b",
           "name": "constant.numeric.hex.asm.x86_64"
         }
       ]
@@ -147,7 +147,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.\\.@)([[:alpha:]_?][[:alnum:]_$#@~.?]*)(?:(:)?|\\b)",
+          "match": "(\\.\\.@)([?_[:alpha:]][#$.?@_~[:alnum:]]*)(?:(:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -162,7 +162,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)([[:alpha:]_?][[:alnum:]_$#@~.?]*)(:)",
+          "match": "(?:(\\.)?|\\b)([?_[:alpha:]][#$.?@_~[:alnum:]]*)(:)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -177,7 +177,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(\\.)([0-9]+[[:alnum:]_$#@~.?]*)(?:(:)?|\\b)",
+          "match": "(\\.)([0-9]+[#$.?@_~[:alnum:]]*)(?:(:)?|\\b)",
           "name": "entity.name.function.asm.x86_64"
         },
         {
@@ -192,7 +192,7 @@
               "name": "punctuation.separator.asm.x86_64"
             }
           },
-          "match": "(?:(\\.)?|\\b)([0-9$@~][[:alnum:]_$#@~.?]*)(:)",
+          "match": "(?:(\\.)?|\\b)([$0-9@~][#$.?@_~[:alnum:]]*)(:)",
           "name": "invalid.illegal.entity.name.function.asm.x86_64"
         }
       ]
@@ -384,7 +384,7 @@
           "name": "keyword.operator.word.mnemonic.avx.promoted.simd-integer"
         },
         {
-          "match": "(?i)\\b(vp(sr(?:a[dwq]|l[dqw])))\\b",
+          "match": "(?i)\\b(vp(sr(?:a[dqw]|l[dqw])))\\b",
           "name": "keyword.operator.word.mnemonic.avx.promoted.shift-and-rotate"
         },
         {
@@ -420,7 +420,7 @@
     "mnemonics-avx2": {
       "patterns": [
         {
-          "match": "(?i)\\b(v((broadcast|extract|insert|perm2)i128|pmaskmov[dq]|perm([dsq]|p[sd])))\\b",
+          "match": "(?i)\\b(v((broadcast|extract|insert|perm2)i128|pmaskmov[dq]|perm([dqs]|p[ds])))\\b",
           "name": "keyword.operator.word.mnemonic.avx2.promoted.simd"
         },
         {
@@ -593,11 +593,11 @@
           "name": "keyword.operator.word.mnemonic.avx512.fp16.cvtx"
         },
         {
-          "match": "(?i)\\bvcvt(s[dsi]|usi)2sh\\b",
+          "match": "(?i)\\bvcvt(s[dis]|usi)2sh\\b",
           "name": "keyword.operator.word.mnemonic.avx512.fp16.cvtx2sh"
         },
         {
-          "match": "(?i)\\bvcvtsh2(s[dsi]|usi)\\b",
+          "match": "(?i)\\bvcvtsh2(s[dis]|usi)\\b",
           "name": "keyword.operator.word.mnemonic.avx512.fp16.cvtsh2x"
         },
         {
@@ -621,7 +621,7 @@
     "mnemonics-avx512pf": {
       "patterns": [
         {
-          "match": "(?i)\\bv(gather|scatter)pf[01][dq]p[ds]\\b",
+          "match": "(?i)\\bv((?:gath|scatt)er)pf[01][dq]p[ds]\\b",
           "name": "keyword.operator.word.mnemonic.avx512.pf"
         }
       ]
@@ -673,7 +673,7 @@
           "name": "keyword.operator.word.mnemonic.fpu.transcendental"
         },
         {
-          "match": "(?i)\\b(fld([1z]|pi|l2[et]|l[ng]2))\\b",
+          "match": "(?i)\\b(fld([1z]|pi|l2[et]|l[gn]2))\\b",
           "name": "keyword.operator.word.mnemonic.fpu.load-constants"
         },
         {
@@ -716,7 +716,7 @@
     "mnemonics-general-purpose": {
       "patterns": [
         {
-          "match": "(?i)\\b(?:mov(?:[sz]x)?|cmov(?:n?[abceglopsz]|n?[abgl]e|p[eo]))\\b",
+          "match": "(?i)\\b(?:mov(?:[sz]x)?|cmov(?:n?[a-ceglopsz]|n?[abgl]e|p[eo]))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.data-transfer.mov"
         },
         {
@@ -740,11 +740,11 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.logical"
         },
         {
-          "match": "(?i)\\b(s[ah][rl]|sh[rl]d|r[co][rl])\\b",
+          "match": "(?i)\\b(s[ah][lr]|sh[lr]d|r[co][lr])\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.rotate"
         },
         {
-          "match": "(?i)\\b(set(n?[abceglopsz]|n?[abgl]e|p[eo]))\\b",
+          "match": "(?i)\\b(set(n?[a-ceglopsz]|n?[abgl]e|p[eo]))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.bit-and-byte.set"
         },
         {
@@ -752,7 +752,7 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.bit-and-byte.other"
         },
         {
-          "match": "(?i)\\b(j(?:mp|n?[abceglopsz]|n?[abgl]e|p[eo]|[er]?cxz))\\b",
+          "match": "(?i)\\b(j(?:mp|n?[a-ceglopsz]|n?[abgl]e|p[eo]|[er]?cxz))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.control-transfer.jmp"
         },
         {
@@ -772,7 +772,7 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.flag-control"
         },
         {
-          "match": "(?i)\\b(l[defgs]s)\\b",
+          "match": "(?i)\\b(l[d-gs]s)\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.segment-registers"
         },
         {
@@ -967,7 +967,7 @@
           "name": "keyword.operator.word.mnemonic.mmx.conversion"
         },
         {
-          "match": "(?i)\\b(p(((add|sub)(d|(u?s)?[bw]))|maddwd|mul[lh]w))\\b",
+          "match": "(?i)\\b(p(((add|sub)(d|(u?s)?[bw]))|maddwd|mul[hl]w))\\b",
           "name": "keyword.operator.word.mnemonic.mmx.packed-arithmetic"
         },
         {
@@ -979,7 +979,7 @@
           "name": "keyword.operator.word.mnemonic.mmx.logical"
         },
         {
-          "match": "(?i)\\b(ps([rl]l[dwq]|raw|rad))\\b",
+          "match": "(?i)\\b(ps([lr]l[dqw]|raw|rad))\\b",
           "name": "keyword.operator.word.mnemonic.mmx.shift-and-rotate"
         },
         {
@@ -1071,7 +1071,7 @@
     "mnemonics-sse": {
       "patterns": [
         {
-          "match": "(?i)\\b(mov(([ahlu]|hl|lh|msk)ps|ss))\\b",
+          "match": "(?i)\\b(mov((?:([ahlu]|hl|lh|msk)p|s)s))\\b",
           "name": "keyword.operator.word.mnemonic.sse.data-transfer"
         },
         {
@@ -1115,7 +1115,7 @@
     "mnemonics-sse2": {
       "patterns": [
         {
-          "match": "(?i)\\b(mov([auhl]|msk)pd)\\b",
+          "match": "(?i)\\b(mov([ahlu]|msk)pd)\\b",
           "name": "keyword.operator.word.mnemonic.sse2.data-transfer"
         },
         {
@@ -1159,7 +1159,7 @@
     "mnemonics-sse3": {
       "patterns": [
         {
-          "match": "(?i)\\b(fisttp|lddqu|(addsub|h(add|sub))p[sd]|mov(sh|sl|d)dup|monitor|mwait)\\b",
+          "match": "(?i)\\b(fisttp|lddqu|(addsub|h(add|sub))p[ds]|mov(sh|sl|d)dup|monitor|mwait)\\b",
           "name": "keyword.operator.word.mnemonic.sse3"
         },
         {
@@ -1191,7 +1191,7 @@
           "name": "keyword.operator.word.mnemonic.sse4.1.packed-integer"
         },
         {
-          "match": "(?i)\\b(round[ps][sd])\\b",
+          "match": "(?i)\\b(round[ps][ds])\\b",
           "name": "keyword.operator.word.mnemonic.sse4.1.packed-floating-point"
         },
         {
@@ -1291,7 +1291,7 @@
     "mnemonics-system": {
       "patterns": [
         {
-          "match": "(?i)\\b((cl|st)ac|[ls]([gli]dt|tr|msw)|clts|arpl|lar|lsl|ver[rw]|inv(d|lpg|pcid)|wbinvd)\\b",
+          "match": "(?i)\\b((cl|st)ac|[ls]([gil]dt|tr|msw)|clts|arpl|lar|lsl|ver[rw]|inv(d|lpg|pcid)|wbinvd)\\b",
           "name": "keyword.operator.word.mnemonic.system"
         },
         {
@@ -1323,7 +1323,7 @@
     "mnemonics-undocumented": {
       "patterns": [
         {
-          "match": "(?i)\\b(ret[nf]|icebp|int1|int03|smi|ud1)\\b",
+          "match": "(?i)\\b(ret[fn]|icebp|int1|int03|smi|ud1)\\b",
           "name": "keyword.operator.word.mnemonic.undocumented"
         }
       ]
@@ -1361,7 +1361,7 @@
               "name": "keyword.control.import.include.c"
             }
           },
-          "end": "(?=/[/*])|$",
+          "end": "(?=/[*/])|$",
           "name": "meta.preprocessor.c.include",
           "patterns": [
             {
@@ -1401,13 +1401,13 @@
           ]
         },
         {
-          "begin": "^\\s*[%#]\\s*(i?x?define|defined|elif(def)?|else|i[fs]n?(?:def|macro|ctx|idni?|id|num|str|token|empty|env)?|line|(i|end|uni?)?macro|pragma|endif)\\b",
+          "begin": "^\\s*[#%]\\s*(i?x?define|defined|elif(def)?|else|i[fs]n?(?:def|macro|ctx|idni?|id|num|str|token|empty|env)?|line|(i|end|uni?)?macro|pragma|endif)\\b",
           "captures": {
             "1": {
               "name": "keyword.control.import.c"
             }
           },
-          "end": "(?=/[/*])|$",
+          "end": "(?=/[*/])|$",
           "name": "meta.preprocessor.c",
           "patterns": [
             {
@@ -1462,11 +1462,11 @@
     "registers": {
       "patterns": [
         {
-          "match": "(?i)\\b(?:[abcd][hl]|[er]?[abcd]x|[er]?(?:di|si|bp|sp)|dil|sil|bpl|spl|r(?:[89]|1[0-5])[bdlw]?)\\b",
+          "match": "(?i)\\b(?:[a-d][hl]|[er]?[a-d]x|[er]?(?:di|si|bp|sp)|dil|sil|bpl|spl|r(?:[89]|1[0-5])[bdlw]?)\\b",
           "name": "constant.language.register.general-purpose.asm.x86_64"
         },
         {
-          "match": "(?i)\\b[cdefgs]s\\b",
+          "match": "(?i)\\b[c-gs]s\\b",
           "name": "constant.language.register.segment.asm.x86_64"
         },
         {
@@ -1644,18 +1644,18 @@
               "name": "storage.modifier.rounding.asm.x86_64"
             }
           },
-          "match": "\\{(z|(?:r[nudz]-)?sae)}"
+          "match": "\\{(z|(?:r[dnuz]-)?sae)}"
         },
         {
           "match": "\\.\\.(?:start|imagebase|tlvp|got(?:pc(?:rel)?|(?:tp)?off)?|plt|sym|tlsie)\\b",
           "name": "support.constant.asm.x86_64"
         },
         {
-          "match": "\\b__\\?(?:utf(?:16|32)(?:[lb]e)?|float(?:8|16|32|64|80[me]|128[lh])|bfloat16|Infinity|[QS]?NaN)\\?__\\b",
+          "match": "\\b__\\?(?:utf(?:16|32)(?:[bl]e)?|float(?:8|16|32|64|80[em]|128[hl])|bfloat16|Infinity|[QS]?NaN)\\?__\\b",
           "name": "support.function.asm.x86_64"
         },
         {
-          "match": "\\b__(?:utf(?:16|32)(?:[lb]e)?|float(?:8|16|32|64|80[me]|128[lh])|bfloat16|Infinity|[QS]?NaN)__\\b",
+          "match": "\\b__(?:utf(?:16|32)(?:[bl]e)?|float(?:8|16|32|64|80[em]|128[hl])|bfloat16|Infinity|[QS]?NaN)__\\b",
           "name": "support.function.legacy.asm.x86_64"
         },
         {
@@ -1727,11 +1727,11 @@
           "name": "support.constant.fp.asm.x86_64"
         },
         {
-          "match": "\\bfloat(?:8|16|32|64|80[me]|128[lh])\\b",
+          "match": "\\bfloat(?:8|16|32|64|80[em]|128[hl])\\b",
           "name": "support.function.fp.asm.x86_64"
         },
         {
-          "match": "(?i)\\bilog2(?:[ewfc]|[fc]w)?\\b",
+          "match": "(?i)\\bilog2(?:[cefw]|[cf]w)?\\b",
           "name": "support.function.ifunc.asm.x86_64"
         }
       ]

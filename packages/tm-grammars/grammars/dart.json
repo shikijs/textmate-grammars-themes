@@ -63,7 +63,7 @@
     "annotations": {
       "patterns": [
         {
-          "match": "@[a-zA-Z]+",
+          "match": "@[A-Za-z]+",
           "name": "storage.type.annotation.dart"
         }
       ]
@@ -79,7 +79,7 @@
           "name": "storage.type.primitive.dart"
         },
         {
-          "begin": "(?<![a-zA-Z0-9_$])([_$]*[A-Z][a-zA-Z0-9_$]*)\\b",
+          "begin": "(?<![$0-9A-Z_a-z])([$_]*[A-Z][$0-9A-Z_a-z]*)\\b",
           "beginCaptures": {
             "1": {
               "name": "support.class.dart"
@@ -190,7 +190,7 @@
           "name": "variable.language.dart"
         },
         {
-          "match": "(?<!\\$)\\b((0([xX])\\h[_\\h]*)|(([0-9][0-9_]*\\.?[0-9_]*)|(\\.[0-9][0-9_]*))(([eE])([+-])?[0-9][0-9_]*)?)\\b(?!\\$)",
+          "match": "(?<!\\$)\\b((0([Xx])\\h[_\\h]*)|(([0-9][0-9_]*\\.?[0-9_]*)|(\\.[0-9][0-9_]*))(([Ee])([-+])?[0-9][0-9_]*)?)\\b(?!\\$)",
           "name": "constant.numeric.dart"
         },
         {
@@ -230,7 +230,7 @@
           ]
         },
         {
-          "match": "`[^`\\n]+`",
+          "match": "`[^\\n`]+`",
           "name": "variable.other.source.dart"
         },
         {
@@ -262,7 +262,7 @@
           "include": "#strings"
         },
         {
-          "match": "[a-zA-Z0-9_]+",
+          "match": "[0-9A-Z_a-z]+",
           "name": "variable.parameter.dart"
         },
         {
@@ -291,7 +291,7 @@
               ]
             }
           },
-          "match": "([_$]*[a-z][a-zA-Z0-9_$]*)(<(?:[a-zA-Z0-9_$<>?]|,\\s*|\\s+extends\\s+)+>)?[!?]?\\("
+          "match": "([$_]*[a-z][$0-9A-Z_a-z]*)(<(?:[$0-9<>?A-Z_a-z]|,\\s*|\\s+extends\\s+)+>)?[!?]?\\("
         }
       ]
     },
@@ -346,11 +346,11 @@
           "name": "keyword.operator.dart"
         },
         {
-          "match": "[?:]",
+          "match": "[:?]",
           "name": "keyword.operator.ternary.dart"
         },
         {
-          "match": "(<<|>>>?|[~^|\\&])",
+          "match": "(<<|>>>?|[\\&^|~])",
           "name": "keyword.operator.bitwise.dart"
         },
         {
@@ -366,7 +366,7 @@
           "name": "keyword.operator.comparison.dart"
         },
         {
-          "match": "(([+*/%\\-~])=)",
+          "match": "(([-%*+/~])=)",
           "name": "keyword.operator.assignment.arithmetic.dart"
         },
         {
@@ -378,7 +378,7 @@
           "name": "keyword.operator.increment-decrement.dart"
         },
         {
-          "match": "([-+*/]|~/|%)",
+          "match": "([-*+/]|~/|%)",
           "name": "keyword.operator.arithmetic.dart"
         },
         {
@@ -411,7 +411,7 @@
               "name": "variable.parameter.dart"
             }
           },
-          "match": "\\$([a-zA-Z0-9_]+)",
+          "match": "\\$([0-9A-Z_a-z]+)",
           "name": "meta.embedded.expression.dart"
         },
         {

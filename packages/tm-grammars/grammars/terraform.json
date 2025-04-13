@@ -27,12 +27,12 @@
           "name": "keyword.operator.accessor.hcl"
         }
       },
-      "end": "\\p{alpha}[\\w-]*|\\d*",
+      "end": "\\p{alpha}[-\\w]*|\\d*",
       "endCaptures": {
         "0": {
           "patterns": [
             {
-              "match": "(?!null|false|true)\\p{alpha}[\\w-]*",
+              "match": "(?!null|false|true)\\p{alpha}[-\\w]*",
               "name": "variable.other.member.hcl"
             },
             {
@@ -58,7 +58,7 @@
           "name": "keyword.operator.assignment.hcl"
         }
       },
-      "match": "(\\()?(\\b(?!null\\b|false\\b|true\\b)\\p{alpha}[[:alnum:]_-]*)(\\))?\\s*(=(?![=>]))\\s*",
+      "match": "(\\()?\\b((?!(?:null|false|true)\\b)\\p{alpha}[-_[:alnum:]]*)(\\))?\\s*(=(?![=>]))\\s*",
       "name": "variable.declaration.hcl"
     },
     "attribute_splat": {
@@ -76,7 +76,7 @@
       }
     },
     "block": {
-      "begin": "(\\w[-\\w]*)([\\s\"\\-\\w]*)(\\{)",
+      "begin": "(\\w[-\\w]*)([-\"\\s\\w]*)(\\{)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -85,7 +85,7 @@
               "name": "entity.name.type.terraform"
             },
             {
-              "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
+              "match": "\\b(?!null|false|true)\\p{alpha}[-_[:alnum:]]*\\b",
               "name": "entity.name.type.hcl"
             }
           ]
@@ -93,7 +93,7 @@
         "2": {
           "patterns": [
             {
-              "match": "[\"\\-\\w]+",
+              "match": "[-\"\\w]+",
               "name": "variable.other.enummember.hcl"
             }
           ]
@@ -176,7 +176,7 @@
       ]
     },
     "char_escapes": {
-      "match": "\\\\(?:[nrt\"\\\\]|u(\\h{8}|\\h{4}))",
+      "match": "\\\\(?:[\"\\\\nrt]|u(\\h{8}|\\h{4}))",
       "name": "constant.character.escape.hcl"
     },
     "comma": {
@@ -269,7 +269,7 @@
       ]
     },
     "functions": {
-      "begin": "([:\\-\\w]+)(\\()",
+      "begin": "([-:\\w]+)(\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -278,7 +278,7 @@
               "name": "support.function.builtin.terraform"
             },
             {
-              "match": "\\bprovider::\\p{alpha}[\\w_-]*::\\p{alpha}[\\w_-]*\\b",
+              "match": "\\bprovider::\\p{alpha}[-_\\w]*::\\p{alpha}[-_\\w]*\\b",
               "name": "support.function.provider.terraform"
             }
           ]
@@ -412,7 +412,7 @@
       ]
     },
     "local_identifiers": {
-      "match": "\\b(?!null|false|true)\\p{alpha}[[:alnum:]_-]*\\b",
+      "match": "\\b(?!null|false|true)\\p{alpha}[-_[:alnum:]]*\\b",
       "name": "variable.other.readwrite.hcl"
     },
     "named_value_references": {
@@ -427,7 +427,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+([Ee][+-]?)\\d+\\b",
+          "match": "\\b\\d+([Ee][-+]?)\\d+\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -439,7 +439,7 @@
               "name": "punctuation.separator.exponent.hcl"
             }
           },
-          "match": "\\b\\d+(\\.)\\d+(?:([Ee][+-]?)\\d+)?\\b",
+          "match": "\\b\\d+(\\.)\\d+(?:([Ee][-+]?)\\d+)?\\b",
           "name": "constant.numeric.float.hcl"
         },
         {
@@ -541,7 +541,7 @@
               ]
             }
           },
-          "match": "\\b((?!null|false|true)\\p{alpha}[[:alnum:]_-]*)\\s*(=>?)\\s*"
+          "match": "\\b((?!null|false|true)\\p{alpha}[-_[:alnum:]]*)\\s*(=>?)\\s*"
         },
         {
           "captures": {
@@ -574,7 +574,7 @@
               "name": "punctuation.section.parens.begin.hcl"
             }
           },
-          "end": "(\\))\\s*([=:])\\s*",
+          "end": "(\\))\\s*([:=])\\s*",
           "endCaptures": {
             "1": {
               "name": "punctuation.section.parens.end.hcl"
@@ -697,7 +697,7 @@
       ]
     },
     "string_interpolation": {
-      "begin": "(?<![%$])([%$]\\{)",
+      "begin": "(?<![$%])([$%]\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.interpolation.begin.hcl"

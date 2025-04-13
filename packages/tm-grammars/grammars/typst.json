@@ -10,7 +10,7 @@
     "arguments": {
       "patterns": [
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*(?=:)",
+          "match": "\\b[_[:alpha:]][-_[:alnum:]]*(?=:)",
           "name": "variable.parameter.typst"
         },
         {
@@ -80,11 +80,11 @@
           "name": "keyword.operator.relational.typst"
         },
         {
-          "match": "\\+=|-=|\\*=|/=|=",
+          "match": "(?:[-*+/]|)=",
           "name": "keyword.operator.assignment.typst"
         },
         {
-          "match": "[+*/]|(?<![[:alpha:]_][[:alnum:]_-]*)-(?![:alnum]_-]*[[:alpha:]_])",
+          "match": "[*+/]|(?<![_[:alpha:]][-_[:alnum:]]*)-(?![:al-nu]_-]*[_[:alpha:]])",
           "name": "keyword.operator.arithmetic.typst"
         },
         {
@@ -115,15 +115,15 @@
           "include": "#constants"
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*!?(?=[\\[(])",
+          "match": "\\b[_[:alpha:]][-_[:alnum:]]*!?(?=[(\\[])",
           "name": "entity.name.function.typst"
         },
         {
-          "match": "(?<=\\bshow\\s*)\\b[[:alpha:]_][[:alnum:]_-]*(?=\\s*[:.])",
+          "match": "(?<=\\bshow\\s*)\\b[_[:alpha:]][-_[:alnum:]]*(?=\\s*[.:])",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=\\b[[:alpha:]_][[:alnum:]_-]*!?)\\(",
+          "begin": "(?<=\\b[_[:alpha:]][-_[:alnum:]]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -137,7 +137,7 @@
           ]
         },
         {
-          "match": "\\b[[:alpha:]_][[:alnum:]_-]*\\b",
+          "match": "\\b[_[:alpha:]][-_[:alnum:]]*\\b",
           "name": "variable.other.typst"
         },
         {
@@ -213,19 +213,19 @@
           "name": "constant.language.boolean.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?(mm|pt|cm|in|em)\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([Ee][-+]?\\d+)?(mm|pt|cm|in|em)\\b",
           "name": "constant.numeric.length.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?(rad|deg)\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([Ee][-+]?\\d+)?(rad|deg)\\b",
           "name": "constant.numeric.angle.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?%",
+          "match": "\\b(\\d*)?\\.?\\d+([Ee][-+]?\\d+)?%",
           "name": "constant.numeric.percentage.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?fr",
+          "match": "\\b(\\d*)?\\.?\\d+([Ee][-+]?\\d+)?fr",
           "name": "constant.numeric.fr.typst"
         },
         {
@@ -233,7 +233,7 @@
           "name": "constant.numeric.integer.typst"
         },
         {
-          "match": "\\b(\\d*)?\\.?\\d+([eE][+-]?\\d+)?\\b",
+          "match": "\\b(\\d*)?\\.?\\d+([Ee][-+]?\\d+)?\\b",
           "name": "constant.numeric.float.typst"
         },
         {
@@ -247,7 +247,7 @@
           "name": "string.quoted.double.typst",
           "patterns": [
             {
-              "match": "\\\\([\\\\\"nrt]|u\\{?[0-9a-zA-Z]*}?)",
+              "match": "\\\\([\"\\\\nrt]|u\\{?[0-9A-Za-z]*}?)",
               "name": "constant.character.escape.string.typst"
             }
           ]
@@ -270,7 +270,7 @@
           "include": "#common"
         },
         {
-          "match": "\\\\([\\\\/\\[\\]{}#*_=~`$-.]|u\\{[0-9a-zA-Z]*}?)",
+          "match": "\\\\([#-/=\\[-\\]_`{}~]|u\\{[0-9A-Za-z]*}?)",
           "name": "constant.character.escape.content.typst"
         },
         {
@@ -298,17 +298,17 @@
           "name": "punctuation.definition.ellipsis.typst"
         },
         {
-          "match": ":([a-zA-Z0-9]+:)+",
+          "match": ":([0-9A-Za-z]+:)+",
           "name": "constant.symbol.typst"
         },
         {
-          "begin": "(^\\*|\\*$|((?<=[\\W_])\\*)|(\\*(?=[\\W_])))",
+          "begin": "(^\\*|\\*$|((?<=[_\\W])\\*)|(\\*(?=[_\\W])))",
           "captures": {
             "0": {
               "name": "punctuation.definition.bold.typst"
             }
           },
-          "end": "(^\\*|\\*$|((?<=[\\W_])\\*)|(\\*(?=[\\W_])))|\\n|(?=])",
+          "end": "(^\\*|\\*$|((?<=[_\\W])\\*)|(\\*(?=[_\\W])))|\\n|(?=])",
           "name": "markup.bold.typst",
           "patterns": [
             {
@@ -317,13 +317,13 @@
           ]
         },
         {
-          "begin": "(^_|_$|((?<=[\\W_])_)|(_(?=[\\W_])))",
+          "begin": "(^_|_$|((?<=[_\\W])_)|(_(?=[_\\W])))",
           "captures": {
             "0": {
               "name": "punctuation.definition.italic.typst"
             }
           },
-          "end": "(^_|_$|((?<=[\\W_])_)|(_(?=[\\W_])))|\\n|(?=])",
+          "end": "(^_|_$|((?<=[_\\W])_)|(_(?=[_\\W])))|\\n|(?=])",
           "name": "markup.italic.typst",
           "patterns": [
             {
@@ -332,7 +332,7 @@
           ]
         },
         {
-          "match": "https?://[0-9a-zA-Z~/%#\\&=',;.+?]*",
+          "match": "https?://[#%-'+,.-9;=?A-Za-z~]*",
           "name": "markup.underline.link.typst"
         },
         {
@@ -406,7 +406,7 @@
               "name": "punctuation.definition.label.typst"
             }
           },
-          "match": "<[[:alpha:]_][[:alnum:]_-]*>",
+          "match": "<[_[:alpha:]][-_[:alnum:]]*>",
           "name": "entity.other.label.typst"
         },
         {
@@ -415,7 +415,7 @@
               "name": "punctuation.definition.reference.typst"
             }
           },
-          "match": "(@)[[:alpha:]_][[:alnum:]_-]*",
+          "match": "(@)[_[:alpha:]][-_[:alnum:]]*",
           "name": "entity.other.reference.typst"
         },
         {
@@ -450,7 +450,7 @@
           "name": "keyword.other.typst"
         },
         {
-          "begin": "((#)if|(?<=([}\\]])\\s*)else)\\b",
+          "begin": "((#)if|(?<=([]}])\\s*)else)\\b",
           "beginCaptures": {
             "0": {
               "name": "keyword.control.conditional.typst"
@@ -459,7 +459,7 @@
               "name": "punctuation.definition.keyword.typst"
             }
           },
-          "end": "\\n|(?=])|(?<=[}\\]])",
+          "end": "\\n|(?=])|(?<=[]}])",
           "patterns": [
             {
               "include": "#code"
@@ -476,7 +476,7 @@
               "name": "punctuation.definition.keyword.typst"
             }
           },
-          "end": "\\n|(?=])|(?<=[}\\]])",
+          "end": "\\n|(?=])|(?<=[]}])",
           "patterns": [
             {
               "include": "#code"
@@ -529,11 +529,11 @@
               "name": "punctuation.definition.function.typst"
             }
           },
-          "match": "((#)[[:alpha:]_][[:alnum:]_-]*!?)(?=[\\[(])",
+          "match": "((#)[_[:alpha:]][-_[:alnum:]]*!?)(?=[(\\[])",
           "name": "entity.name.function.typst"
         },
         {
-          "begin": "(?<=#[[:alpha:]_][[:alnum:]_-]*!?)\\(",
+          "begin": "(?<=#[_[:alpha:]][-_[:alnum:]]*!?)\\(",
           "captures": {
             "0": {
               "name": "punctuation.definition.group.typst"
@@ -552,7 +552,7 @@
               "name": "punctuation.definition.variable.typst"
             }
           },
-          "match": "(#)[[:alpha:]_][.[:alnum:]_-]*",
+          "match": "(#)[_[:alpha:]][-._[:alnum:]]*",
           "name": "entity.other.interpolated.typst"
         },
         {

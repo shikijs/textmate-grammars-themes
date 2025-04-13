@@ -37,8 +37,8 @@
     "class-name": {
       "patterns": [
         {
-          "begin": "\\b(?i)(?<!\\$)(?=[\\\\a-zA-Z_])",
-          "end": "(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\\\])\\b",
+          "begin": "\\b(?i)(?<!\\$)(?=[A-Z\\\\_a-z])",
+          "end": "(?i)([_a-z][0-9_a-z]*)?(?=[^0-9\\\\_a-z])\\b",
           "endCaptures": {
             "1": {
               "name": "support.class.ara"
@@ -65,7 +65,7 @@
           "name": "comment.block.ara"
         },
         {
-          "begin": "(^[ \\t]+)?(?=//)",
+          "begin": "(^[\\t ]+)?(?=//)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.ara"
@@ -90,7 +90,7 @@
     "function-call": {
       "patterns": [
         {
-          "begin": "(?i)(?=\\\\?[a-z_0-9\\\\]+\\\\[a-z_][a-z0-9_]*\\s*(\\(|(::<)))",
+          "begin": "(?i)(?=\\\\?[0-9\\\\_a-z]+\\\\[_a-z][0-9_a-z]*\\s*(\\(|(::<)))",
           "end": "(?=\\s*(\\(|(::<)))",
           "patterns": [
             {
@@ -99,7 +99,7 @@
           ]
         },
         {
-          "begin": "(?i)(\\\\)?(?=\\b[a-z_][a-z_0-9]*\\s*(\\(|(::<)))",
+          "begin": "(?i)(\\\\)?(?=\\b[_a-z][0-9_a-z]*\\s*(\\(|(::<)))",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.inheritance.php"
@@ -125,7 +125,7 @@
           "name": "constant.numeric.hex.ara"
         },
         {
-          "match": "\\\\[nrt\\\\$\"]",
+          "match": "\\\\[\"$\\\\nrt]",
           "name": "constant.character.escape.ara"
         }
       ]
@@ -159,10 +159,10 @@
           "name": "punctuation.separator.colon.ara"
         }
       },
-      "match": "(?i)(?<=^|[(,])\\s*([a-z_\\x7F-\\x{10FFFF}][a-z0-9_\\x7F-\\x{10FFFF}]*)\\s*(:)(?!:)"
+      "match": "(?i)(?<=^|[(,])\\s*([_a-z\\x7F-\\x{10FFFF}][0-9_a-z\\x7F-\\x{10FFFF}]*)\\s*(:)(?!:)"
     },
     "namespace": {
-      "begin": "(?i)((namespace)|[a-z0-9_]+)?(\\\\)(?=.*?[^a-z_0-9\\\\])",
+      "begin": "(?i)((namespace)|[0-9_a-z]+)?(\\\\)(?=.*?[^0-9\\\\_a-z])",
       "beginCaptures": {
         "1": {
           "name": "entity.name.type.namespace.php"
@@ -171,11 +171,11 @@
           "name": "punctuation.separator.inheritance.php"
         }
       },
-      "end": "(?i)(?=[a-z0-9_]*[^a-z0-9_\\\\])",
+      "end": "(?i)(?=[0-9_a-z]*[^0-9\\\\_a-z])",
       "name": "support.other.namespace.php",
       "patterns": [
         {
-          "match": "(?i)[a-z0-9_]+(?=\\\\)",
+          "match": "(?i)[0-9_a-z]+(?=\\\\)",
           "name": "entity.name.type.namespace.php"
         },
         {
@@ -191,15 +191,15 @@
     "numbers": {
       "patterns": [
         {
-          "match": "0[xX]\\h+(?:_\\h+)*",
+          "match": "0[Xx]\\h+(?:_\\h+)*",
           "name": "constant.numeric.hex.ara"
         },
         {
-          "match": "0[bB][01]+(?:_[01]+)*",
+          "match": "0[Bb][01]+(?:_[01]+)*",
           "name": "constant.numeric.binary.ara"
         },
         {
-          "match": "0[oO][0-7]+(?:_[0-7]+)*",
+          "match": "0[Oo][0-7]+(?:_[0-7]+)*",
           "name": "constant.numeric.octal.ara"
         },
         {
@@ -215,7 +215,7 @@
               "name": "punctuation.separator.decimal.period.ara"
             }
           },
-          "match": "(?:(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[eE][+-]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[eE][+-]?[0-9]+(?:_[0-9]+)*)",
+          "match": "(?:[0-9]+(?:_[0-9]+)*)?(\\.)[0-9]+(?:_[0-9]+)*(?:[Ee][-+]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*(\\.)(?:[0-9]+(?:_[0-9]+)*)?(?:[Ee][-+]?[0-9]+(?:_[0-9]+)*)?|[0-9]+(?:_[0-9]+)*[Ee][-+]?[0-9]+(?:_[0-9]+)*",
           "name": "constant.numeric.decimal.ara"
         },
         {
@@ -227,11 +227,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "(\\+=|-=|\\*=|/=|%=|\\^=|&&=|<=|>=|&=|\\|=|<<=|>>=|\\?\\?=)",
+          "match": "((?:[-%*+/^]|&&|[\\&<>|]|<<|>>|\\?\\?)=)",
           "name": "keyword.assignments.ara"
         },
         {
-          "match": "([\\^|]|\\|\\||&&|>>|<<|[\\&~]|<<|>>|[><]|<=>|\\?\\?|[?:]|\\?:)(?!=)",
+          "match": "([\\^|]|\\|\\||&&|>>|<<|[\\&~]|<<|>>|[<>]|<=>|\\?\\?|[:?]|\\?:)(?!=)",
           "name": "keyword.operators.ara"
         },
         {
@@ -239,7 +239,7 @@
           "name": "keyword.operator.comparison.ara"
         },
         {
-          "match": "(([+%]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
+          "match": "(([%+]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
           "name": "keyword.operator.math.ara"
         },
         {
@@ -270,10 +270,10 @@
               "name": "punctuation.brackets.curly.ara"
             }
           },
-          "match": "(?:\\b|(?:(\\))|(])|(})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
+          "match": "(?:\\b|(?:(\\))|(])|(})))[\\t ]+([<>])[\\t ]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
         },
         {
-          "match": "(?:->|\\?->)",
+          "match": "(?:|\\?)->",
           "name": "keyword.operator.arrow.ara"
         },
         {
@@ -306,7 +306,7 @@
           "name": "string.quoted.single.ara",
           "patterns": [
             {
-              "match": "\\\\[\\\\']",
+              "match": "\\\\['\\\\]",
               "name": "constant.character.escape.ara"
             }
           ]
@@ -331,7 +331,7 @@
           "name": "support.type.php"
         },
         {
-          "begin": "([A-Za-z_][A-Za-z0-9_]*)<",
+          "begin": "([A-Z_a-z][0-9A-Z_a-z]*)<",
           "beginCaptures": {
             "1": {
               "name": "support.class.php"
@@ -392,8 +392,8 @@
       ]
     },
     "user-function-call": {
-      "begin": "(?i)(?=[a-z_0-9\\\\]*[a-z_][a-z0-9_]*\\s*\\()",
-      "end": "(?i)[a-z_][a-z_0-9]*(?=\\s*\\()",
+      "begin": "(?i)(?=[0-9\\\\_a-z]*[_a-z][0-9_a-z]*\\s*\\()",
+      "end": "(?i)[_a-z][0-9_a-z]*(?=\\s*\\()",
       "endCaptures": {
         "0": {
           "name": "entity.name.function.php"

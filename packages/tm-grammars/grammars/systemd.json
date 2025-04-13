@@ -6,7 +6,7 @@
       "include": "#comments"
     },
     {
-      "begin": "^\\s*(InaccessableDirectories|InaccessibleDirectories|ReadOnlyDirectories|ReadWriteDirectories|Capabilities|TableId|UseDomainName|IPv6AcceptRouterAdvertisements|SysVStartPriority|StartLimitInterval|RequiresOverridable|RequisiteOverridable|PropagateReloadTo|PropagateReloadFrom|OnFailureIsolate|BindTo)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(InaccessableDirectories|InaccessibleDirectories|ReadOnlyDirectories|ReadWriteDirectories|Capabilities|TableId|UseDomainName|IPv6AcceptRouterAdvertisements|SysVStartPriority|StartLimitInterval|RequiresOverridable|RequisiteOverridable|PropagateReloadTo|PropagateReloadFrom|OnFailureIsolate|BindTo)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "invalid.deprecated"
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "begin": "^\\s*(Environment)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(Environment)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -65,7 +65,7 @@
               "name": "keyword.operator.assignment"
             }
           },
-          "match": "(?<=\\G|[\\s\"'])([A-Za-z0-9_]+)(=)(?=[^\\s\"'])"
+          "match": "(?<=\\G|[\"'\\s])([0-9A-Z_a-z]+)(=)(?=[^\"'\\s])"
         },
         {
           "include": "#variables"
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "begin": "^\\s*(OnCalendar)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(OnCalendar)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "begin": "^\\s*(CapabilityBoundingSet|AmbientCapabilities|AddCapability|DropCapability)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(CapabilityBoundingSet|AmbientCapabilities|AddCapability|DropCapability)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "begin": "^\\s*(Restart)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(Restart)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "begin": "^\\s*(Type)\\s*(=)[ \\t]*",
+      "begin": "^\\s*(Type)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "begin": "^\\s*(Exec(?:Start(?:P(?:re|ost))?|Reload|Stop(?:Post)?))\\s*(=)[ \\t]*",
+      "begin": "^\\s*(Exec(?:Start(?:P(?:re|ost))?|Reload|Stop(?:Post)?))\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "begin": "^\\s*([\\w\\-.]+)\\s*(=)[ \\t]*",
+      "begin": "^\\s*([-.\\w]+)\\s*(=)[\\t ]*",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag"
@@ -251,7 +251,7 @@
     "booleans": {
       "patterns": [
         {
-          "match": "\\b(?<![-/.])(true|false|on|off|yes|no)(?![-/.])\\b",
+          "match": "\\b(?<![\\--/])(true|false|on|off|yes|no)(?![\\--/])\\b",
           "name": "constant.language"
         }
       ]
@@ -283,7 +283,7 @@
     "executablePrefixes": {
       "patterns": [
         {
-          "match": "\\G([@\\-:]+(?:\\+|!!?)?|(?:\\+|!!?)[@\\-:]*)",
+          "match": "\\G([-:@]+(?:\\+|!!?)?|(?:\\+|!!?)[-:@]*)",
           "name": "keyword.operator.prefix.systemd"
         }
       ]
@@ -291,7 +291,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "(?<=[\\s=])\\d+(?:\\.\\d+)?(?=[\\s:]|$)",
+          "match": "(?<=[=\\s])\\d+(?:\\.\\d+)?(?=[:\\s]|$)",
           "name": "constant.numeric"
         }
       ]
@@ -300,22 +300,22 @@
       "patterns": [
         {
           "begin": "(?<=\\G|\\s)'",
-          "end": "['\\n]",
+          "end": "[\\n']",
           "name": "string.quoted.single",
           "patterns": [
             {
-              "match": "\\\\(?:[abfnrtvs\\\\\"'\\n]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:[\\n\"'\\\\abfnr-tv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             }
           ]
         },
         {
           "begin": "(?<=\\G|\\s)\"",
-          "end": "[\"\\n]",
+          "end": "[\\n\"]",
           "name": "string.quoted.double",
           "patterns": [
             {
-              "match": "\\\\(?:[abfnrtvs\\\\\"'\\n]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:[\\n\"'\\\\abfnr-tv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             }
           ]
@@ -337,7 +337,7 @@
           "name": "entity.name.section"
         },
         {
-          "match": "\\s*\\[[\\w-]+]",
+          "match": "\\s*\\[[-\\w]+]",
           "name": "entity.name.unknown-section"
         }
       ]
@@ -345,11 +345,11 @@
     "sizes": {
       "patterns": [
         {
-          "match": "(?<=[\\s=])\\d+(?:\\.\\d+)?[KMGT](?=[\\s:]|$)",
+          "match": "(?<=[=\\s])\\d+(?:\\.\\d+)?[GKMT](?=[:\\s]|$)",
           "name": "constant.numeric"
         },
         {
-          "match": "(?<==)infinity(?=[\\s:]|$)",
+          "match": "(?<==)infinity(?=[:\\s]|$)",
           "name": "constant.numeric"
         }
       ]
@@ -381,7 +381,7 @@
               "name": "variable.other"
             }
           },
-          "match": "(\\$)([A-Za-z0-9_]+)\\b"
+          "match": "(\\$)([0-9A-Z_a-z]+)\\b"
         },
         {
           "captures": {
@@ -395,14 +395,14 @@
               "name": "punctuation.definition.variable.systemd"
             }
           },
-          "match": "(\\$\\{)([A-Za-z0-9_]+)(})"
+          "match": "(\\$\\{)([0-9A-Z_a-z]+)(})"
         },
         {
           "match": "%%",
           "name": "constant.other.placeholder"
         },
         {
-          "match": "%[aAbBCEfgGhHiIjJlLmMnNopPsStTuUvVwW]\\b",
+          "match": "%[A-CEG-JL-NPS-Wabf-jl-ps-w]\\b",
           "name": "constant.other.placeholder"
         }
       ]

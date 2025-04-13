@@ -46,11 +46,11 @@
     "commands": {
       "patterns": [
         {
-          "match": "\\bcom([\\s!])",
+          "match": "\\bcom([!\\s])",
           "name": "storage.other.command.viml"
         },
         {
-          "match": "\\bau([\\s!])",
+          "match": "\\bau([!\\s])",
           "name": "storage.other.command.viml"
         },
         {
@@ -130,7 +130,7 @@
     "entity": {
       "patterns": [
         {
-          "match": "(([absg]:)?[a-zA-Z0-9_#.]{2,})\\b(?=\\()",
+          "match": "(([abgs]:)?[#.0-9A-Z_a-z]{2,})\\b(?=\\()",
           "name": "entity.name.function.viml"
         }
       ]
@@ -187,7 +187,7 @@
               "name": "constant.character.map.special.viml"
             },
             {
-              "match": "(?i:([adcms]-\\w))",
+              "match": "(?i:([acdms]-\\w))",
               "name": "constant.character.map.key.viml"
             },
             {
@@ -201,7 +201,7 @@
           ]
         },
         {
-          "match": "(\\b([cinostvx]?(nore)?map)\\b)",
+          "match": "\\b(([cinostvx]?(nore)?map))\\b",
           "name": "storage.type.map.viml"
         }
       ]
@@ -209,11 +209,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "([#+?!=~\\\\])",
+          "match": "([!#+=?\\\\~])",
           "name": "keyword.operator.viml"
         },
         {
-          "match": " ([:\\-.]|[\\&|]{2})( |$)",
+          "match": " ([-.:]|[\\&|]{2})( |$)",
           "name": "keyword.operator.viml"
         },
         {
@@ -431,11 +431,11 @@
           "name": "variable.other.link.viml"
         },
         {
-          "match": "(?<=\\()([a-zA-Z]+)(?=\\))",
+          "match": "(?<=\\()([A-Za-z]+)(?=\\))",
           "name": "variable.parameter.viml"
         },
         {
-          "match": "\\b([absgl]:[a-zA-Z0-9_.#]+)\\b(?!\\()",
+          "match": "\\b([abgls]:[#.0-9A-Z_a-z]+)\\b(?!\\()",
           "name": "variable.other.viml"
         }
       ]

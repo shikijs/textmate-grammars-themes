@@ -54,7 +54,7 @@
       ]
     },
     {
-      "begin": "(?i)(\\s?/?\\*?\\s?(sql|inline-sql)\\s?\\*?/?\\s?)(`)",
+      "begin": "(?i)(\\s?/?\\*?\\s?((?:|inline-)sql)\\s?\\*?/?\\s?)(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block"
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "begin": "(?i)(?<=[\\s,=:(]|\\$\\()\\s*(((/\\*)|(//))\\s?(sql|inline-sql) {0,1000}\\*?/?) {0,1000}$",
+      "begin": "(?i)(?<=[(,:=\\s]|\\$\\()\\s*(((/\\*)|(//))\\s?((?:|inline-)sql) {0,1000}\\*?/?) {0,1000}$",
       "beginCaptures": {
         "1": {
           "name": "comment.line"
@@ -89,7 +89,7 @@
       "end": "(`)",
       "patterns": [
         {
-          "begin": "(\\G)",
+          "begin": "\\G()",
           "end": "(`)"
         },
         {

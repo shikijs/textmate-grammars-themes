@@ -12,7 +12,7 @@
           "include": "#blade"
         },
         {
-          "begin": "(^\\s*)(?=<\\?(?![^?]*\\?>))",
+          "begin": "^(\\s*)(?=<\\?(?![^?]*\\?>))",
           "beginCaptures": {
             "0": {
               "name": "punctuation.whitespace.embedded.leading.php"
@@ -169,7 +169,7 @@
           "name": "comment.block.blade",
           "patterns": [
             {
-              "begin": "(^\\s*)(?=<\\?(?![^?]*\\?>))",
+              "begin": "^(\\s*)(?=<\\?(?![^?]*\\?>))",
               "beginCaptures": {
                 "0": {
                   "name": "punctuation.whitespace.embedded.leading.php"
@@ -385,7 +385,7 @@
           ]
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@(?i:auth|break|can|canany|cannot|case|choice|component|continue|dd|dump|each|elsecan|elsecanany|elsecannot|elseif|empty|error|extends|for|foreach|forelse|guest|hassection|if|include|includefirst|includeif|includeunless|includewhen|inject|isset|json|lang|once|prepend|push|section|sectionMissing|slot|stack|switch|unless|unset|while|yield|servers|task|story|finished|production|slack|method|props|env|livewire|php|class|aware|js|checked|selected|disabled|style|readonly|required|pushOnce|pushIf|prependOnce|use|vite)[\\t ]*)(\\()",
+          "begin": "(?<![0-9@-Z_a-z])(@(?i:auth|break|can|canany|cannot|case|choice|component|continue|dd|dump|each|elsecan|elsecanany|elsecannot|elseif|empty|error|extends|for|foreach|forelse|guest|hassection|if|include|includefirst|includeif|includeunless|includewhen|inject|isset|json|lang|once|prepend|push|section|sectionMissing|slot|stack|switch|unless|unset|while|yield|servers|task|story|finished|production|slack|method|props|env|livewire|php|class|aware|js|checked|selected|disabled|style|readonly|required|pushOnce|pushIf|prependOnce|use|vite)[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -409,7 +409,7 @@
           ]
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@(?i:append|default|else|endauth|endcan|endcanany|endcannot|endcomponent|endempty|enderror|endfor|endforeach|endforelse|endguest|endif|endisset|endlang|endonce|endprepend|endpush|endsection|endslot|endswitch|endunless|endwhile|overwrite|parent|show|stop|endtask|endstory|endfinished|endproduction|endenv|endPushOnce|endPushIf|endPrependOnce)[\\t ]*)(\\()",
+          "begin": "(?<![0-9@-Z_a-z])(@(?i:append|default|else|endauth|endcan|endcanany|endcannot|endcomponent|endempty|enderror|endfor|endforeach|endforelse|endguest|endif|endisset|endlang|endonce|endprepend|endpush|endsection|endslot|endswitch|endunless|endwhile|overwrite|parent|show|stop|endtask|endstory|endfinished|endproduction|endenv|endPushOnce|endPushIf|endPrependOnce)[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.blade"
@@ -433,22 +433,22 @@
           ]
         },
         {
-          "match": "(?<![A-Za-z0-9_@])@(?:append|break|continue|csrf|default|each|else|overwrite|parent|sectionMissing|show|stack|stop|livewireStyles|livewireScripts)\\b",
+          "match": "(?<![0-9@-Z_a-z])@(?:append|break|continue|csrf|default|each|else|overwrite|parent|sectionMissing|show|stack|stop|livewireStyles|livewireScripts)\\b",
           "name": "keyword.blade"
         },
         {
-          "match": "(?<![A-Za-z0-9_@])@(end)?(?i:auth|can|canany|cannot|component|empty|error|for|foreach|forelse|guest|if|isset|lang|prepend|push|section|slot|switch|unless|verbatim|while|task|story|finished|production|env|once|pushOnce|pushIf|prependOnce|session)\\b",
+          "match": "(?<![0-9@-Z_a-z])@(end)?(?i:auth|can|canany|cannot|component|empty|error|for|foreach|forelse|guest|if|isset|lang|prepend|push|section|slot|switch|unless|verbatim|while|task|story|finished|production|env|once|pushOnce|pushIf|prependOnce|session)\\b",
           "name": "keyword.blade"
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])@(?i:php|setup)\\b",
+          "begin": "(?<![0-9@-Z_a-z])@(?i:php|setup)\\b",
           "beginCaptures": {
             "0": {
               "name": "punctuation.section.embedded.begin.php"
             }
           },
           "contentName": "source.php",
-          "end": "(?<![A-Za-z0-9_@])(?=@(?i:end(?:php|setup))\\b)",
+          "end": "(?<![0-9@-Z_a-z])(?=@(?i:end(?:php|setup))\\b)",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.php"
@@ -462,7 +462,7 @@
           ]
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@(?i:end(?:php|setup))[\\t ]*)(\\()",
+          "begin": "(?<![0-9@-Z_a-z])(@(?i:end(?:php|setup))[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.embedded.end.php"
@@ -486,11 +486,11 @@
           ]
         },
         {
-          "match": "(?<![A-Za-z0-9_@])@(?:(?i)endphp|endsetup)\\b",
+          "match": "(?<![0-9@-Z_a-z])@(?:(?i)endphp|endsetup)\\b",
           "name": "punctuation.section.embedded.end.php"
         },
         {
-          "begin": "(?<![A-Za-z0-9_@])(@\\w+(?:::w+)?[\\t ]*)(\\()",
+          "begin": "(?<![0-9@-Z_a-z])(@\\w+(?:::w+)?[\\t ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.blade"
@@ -514,11 +514,11 @@
           ]
         },
         {
-          "match": "(?<![A-Za-z0-9_@])@\\w+(?:::w+)?\\b",
+          "match": "(?<![0-9@-Z_a-z])@\\w+(?:::w+)?\\b",
           "name": "entity.name.function.blade"
         },
         {
-          "begin": "(:[a-z-]+)(=)(\")",
+          "begin": "(:[-a-z]+)(=)(\")",
           "beginCaptures": {
             "0": {
               "name": "meta.attribute.unrecognized.$1.html"
@@ -562,7 +562,7 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "match": "(?i)(\\\\)?\\b((A(?:PC|ppend))Iterator|Array(Access|Iterator|Object)|Bad(Function|Method)CallException|(Ca(?:ching|llbackFilter))Iterator|Collator|Collectable|Cond|Countable|CURLFile|Date(Interval|Period|Time(Interface|Immutable|Zone)?)?|Directory(Iterator)?|DomainException|DOM(Attr|CdataSection|CharacterData|Comment|Document(Fragment)?|Element|EntityReference|Implementation|NamedNodeMap|Node(list)?|ProcessingInstruction|Text|XPath)|(Error)?Exception|EmptyIterator|finfo|Ev(Check|Child|Embed|Fork|Idle|Io|Loop|Periodic|Prepare|Signal|Stat|Timer|Watcher)?|Event(Base|Buffer(Event)?|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|FANNConnection|(Fil(?:ter|esystem))Iterator|Gender\\\\Gender|GlobIterator|Gmagick(Draw|Pixel)?|Haru(Annotation|Destination|Doc|Encoder|Font|Image|Outline|Page)|Http((Inflate|Deflate)?Stream|Message|Request(Pool)?|Response|QueryString)|HRTime\\\\(PerformanceCounter|StopWatch)|Intl(Calendar|((CodePoint|RuleBased)?Break|Parts)?Iterator|DateFormatter|TimeZone)|Imagick(Draw|Pixel(Iterator)?)?|InfiniteIterator|InvalidArgumentException|Iterator(Aggregate|Iterator)?|JsonSerializable|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|(AttachedPicture)?Frame))|Lapack|(L(?:ength|ocale|ogic))Exception|LimitIterator|Lua(Closure)?|Mongo(BinData|Client|Code|Collection|CommandCursor|Cursor(Exception)?|Date|DB(Ref)?|DeleteBatch|Grid(FS(Cursor|File)?)|Id|InsertBatch|Int(32|64)|Log|Pool|Regex|ResultException|Timestamp|UpdateBatch|Write(Batch|ConcernException))?|Memcache(d)?|MessageFormatter|MultipleIterator|Mutex|mysqli(_(driver|stmt|warning|result))?|MysqlndUh(Connection|PreparedStatement)|NoRewindIterator|Normalizer|NumberFormatter|OCI-(Collection|Lob)|OuterIterator|(O(?:utOf(Bounds|Range)|verflow))Exception|ParentIterator|PDO(Statement)?|Phar(Data|FileInfo)?|php_user_filter|Pool|QuickHash(Int(S(?:et|tringHash))|StringIntHash)|Recursive(Array|Caching|Directory|Fallback|Filter|Iterator|Regex|Tree)?Iterator|Reflection(Class|Function(Abstract)?|Method|Object|Parameter|Property|(Zend)?Extension)?|RangeException|Reflector|RegexIterator|ResourceBundle|RuntimeException|RRD(Creator|Graph|Updater)|SAM(Connection|Message)|SCA(_(SoapProxy|LocalProxy))?|SDO_(DAS_(ChangeSummary|Data(Factory|Object)|Relational|Setting|XML(_Document)?)|Data(Factory|Object)|Exception|List|Model_(Property|ReflectionDataObject|Type)|Sequence)|SeekableIterator|Serializable|SessionHandler(Interface)?|SimpleXML(Iterator|Element)|SNMP|Soap(Client|Fault|Header|Param|Server|Var)|SphinxClient|Spoofchecker|Spl(DoublyLinkedList|Enum|File(Info|Object)|FixedArray|(M(?:ax|in))?Heap|Observer|ObjectStorage|(Priority)?Queue|Stack|Subject|Type|TempFileObject)|SQLite(3(Result|Stmt)?|Database|Result|Unbuffered)|stdClass|streamWrapper|SVM(Model)?|Swish(Result(s)?|Search)?|Sync(Event|Mutex|ReaderWriter|Semaphore)|Thread(ed)?|tidy(Node)?|TokyoTyrant(Table|Iterator|Query)?|Transliterator|Traversable|UConverter|(Un(?:derflow|expectedValue))Exception|V8Js(Exception)?|Varnish(Admin|Log|Stat)|Worker|Weak(Map|Ref)|XML(Diff\\\\(Base|DOM|File|Memory)|Reader|Writer)|XsltProcessor|Yaf_(Route_(Interface|Map|Regex|Rewrite|Simple|Supervar)|Action_Abstract|Application|Config_(Simple|Ini|Abstract)|Controller_Abstract|Dispatcher|Exception|Loader|Plugin_Abstract|Registry|Request_(Abstract|Simple|Http)|Response_Abstract|Router|Session|View_(Simple|Interface))|Yar_(Client(_Exception)?|Concurrent_Client|Server(_Exception)?)|ZipArchive|ZMQ(Context|Device|Poll|Socket)?)\\b",
+          "match": "(?i)(\\\\)?\\b((A(?:PC|ppend))Iterator|Array(Access|Iterator|Object)|Bad(Function|Method)CallException|(Ca(?:ching|llbackFilter))Iterator|Collator|Collectable|Cond|Countable|CURLFile|Date(Interval|Period|Time(Interface|Immutable|Zone)?)?|Directory(Iterator)?|DomainException|DOM(Attr|CdataSection|CharacterData|Comment|Document(Fragment)?|Element|EntityReference|Implementation|NamedNodeMap|Node(list)?|ProcessingInstruction|Text|XPath)|(Error)?Exception|EmptyIterator|finfo|Ev(Check|Child|Embed|Fork|Idle|Io|Loop|Periodic|Prepare|Signal|Stat|Timer|Watcher)?|Event(Base|Buffer(Event)?|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|FANNConnection|(Fil(?:ter|esystem))Iterator|Gender\\\\Gender|GlobIterator|Gmagick(Draw|Pixel)?|Haru(Annotation|Destination|Doc|Encoder|Font|Image|Outline|Page)|Http(((?:In|De)flate)?Stream|Message|Request(Pool)?|Response|QueryString)|HRTime\\\\(PerformanceCounter|StopWatch)|Intl(Calendar|((CodePoint|RuleBased)?Break|Parts)?Iterator|DateFormatter|TimeZone)|Imagick(Draw|Pixel(Iterator)?)?|InfiniteIterator|InvalidArgumentException|Iterator(Aggregate|Iterator)?|JsonSerializable|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|(AttachedPicture)?Frame))|Lapack|(L(?:ength|ocale|ogic))Exception|LimitIterator|Lua(Closure)?|Mongo(BinData|Client|Code|Collection|CommandCursor|Cursor(Exception)?|Date|DB(Ref)?|DeleteBatch|Grid(FS(Cursor|File)?)|Id|InsertBatch|Int(32|64)|Log|Pool|Regex|ResultException|Timestamp|UpdateBatch|Write(Batch|ConcernException))?|Memcache(d)?|MessageFormatter|MultipleIterator|Mutex|mysqli(_(driver|stmt|warning|result))?|MysqlndUh(Connection|PreparedStatement)|NoRewindIterator|Normalizer|NumberFormatter|OCI-(Collection|Lob)|OuterIterator|(O(?:utOf(Bounds|Range)|verflow))Exception|ParentIterator|PDO(Statement)?|Phar(Data|FileInfo)?|php_user_filter|Pool|QuickHash(Int(S(?:et|tringHash))|StringIntHash)|Recursive(Array|Caching|Directory|Fallback|Filter|Iterator|Regex|Tree)?Iterator|Reflection(Class|Function(Abstract)?|Method|Object|Parameter|Property|(Zend)?Extension)?|RangeException|Reflector|RegexIterator|ResourceBundle|RuntimeException|RRD(Creator|Graph|Updater)|SAM(Connection|Message)|SCA(_((?:Soap|Local)Proxy))?|SDO_(DAS_(ChangeSummary|Data(Factory|Object)|Relational|Setting|XML(_Document)?)|Data(Factory|Object)|Exception|List|Model_(Property|ReflectionDataObject|Type)|Sequence)|SeekableIterator|Serializable|SessionHandler(Interface)?|SimpleXML(Iterator|Element)|SNMP|Soap(Client|Fault|Header|Param|Server|Var)|SphinxClient|Spoofchecker|Spl(DoublyLinkedList|Enum|File(Info|Object)|FixedArray|(M(?:ax|in))?Heap|Observer|ObjectStorage|(Priority)?Queue|Stack|Subject|Type|TempFileObject)|SQLite(3(Result|Stmt)?|Database|Result|Unbuffered)|stdClass|streamWrapper|SVM(Model)?|Swish(Result(s)?|Search)?|Sync(Event|Mutex|ReaderWriter|Semaphore)|Thread(ed)?|tidy(Node)?|TokyoTyrant(Table|Iterator|Query)?|Transliterator|Traversable|UConverter|(Un(?:derflow|expectedValue))Exception|V8Js(Exception)?|Varnish(Admin|Log|Stat)|Worker|Weak(Map|Ref)|XML(Diff\\\\(Base|DOM|File|Memory)|Reader|Writer)|XsltProcessor|Yaf_(Route_(Interface|Map|Regex|Rewrite|Simple|Supervar)|Action_Abstract|Application|Config_(Simple|Ini|Abstract)|Controller_Abstract|Dispatcher|Exception|Loader|Plugin_Abstract|Registry|Request_(Abstract|Simple|Http)|Response_Abstract|Router|Session|View_(Simple|Interface))|Yar_(Client(_Exception)?|Concurrent_Client|Server(_Exception)?)|ZipArchive|ZMQ(Context|Device|Poll|Socket)?)\\b",
           "name": "support.class.builtin.php"
         }
       ]
@@ -570,8 +570,8 @@
     "class-name": {
       "patterns": [
         {
-          "begin": "(?i)(?=\\\\?[a-z_0-9]+\\\\)",
-          "end": "(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\\\])",
+          "begin": "(?i)(?=\\\\?[0-9_a-z]+\\\\)",
+          "end": "(?i)([_a-z][0-9_a-z]*)?(?=[^0-9\\\\_a-z])",
           "endCaptures": {
             "1": {
               "name": "support.class.php"
@@ -587,8 +587,8 @@
           "include": "#class-builtin"
         },
         {
-          "begin": "(?=[\\\\a-zA-Z_])",
-          "end": "(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\\\])",
+          "begin": "(?=[A-Z\\\\_a-z])",
+          "end": "(?i)([_a-z][0-9_a-z]*)?(?=[^0-9\\\\_a-z])",
           "endCaptures": {
             "1": {
               "name": "support.class.php"
@@ -690,7 +690,7 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "match": "(\\\\)?\\b(DEFAULT_INCLUDE_PATH|EAR_(INSTALL|EXTENSION)_DIR|E_(ALL|COMPILE_(ERROR|WARNING)|CORE_(ERROR|WARNING)|DEPRECATED|ERROR|NOTICE|PARSE|RECOVERABLE_ERROR|STRICT|USER_(DEPRECATED|ERROR|NOTICE|WARNING)|WARNING)|PHP_(ROUND_HALF_(DOWN|EVEN|ODD|UP)|(MAJOR|MINOR|RELEASE)_VERSION|MAXPATHLEN|BINDIR|SHLIB_SUFFIX|SYSCONFDIR|SAPI|CONFIG_FILE_(PATH|SCAN_DIR)|INT_(MAX|SIZE)|ZTS|OS|OUTPUT_HANDLER_(START|CONT|END)|DEBUG|DATADIR|URL_(SCHEME|HOST|USER|PORT|PASS|PATH|QUERY|FRAGMENT)|PREFIX|EXTRA_VERSION|EXTENSION_DIR|EOL|VERSION(_ID)?|WINDOWS_(NT_(SERVER|DOMAIN_CONTROLLER|WORKSTATION)|VERSION_(M(?:AJOR|INOR))|BUILD|SUITEMASK|SP_(M(?:AJOR|INOR))|PRODUCTTYPE|PLATFORM)|LIBDIR|LOCALSTATEDIR)|STD(ERR|IN|OUT)|ZEND_(DEBUG_BUILD|THREAD_SAFE))\\b",
+          "match": "(\\\\)?\\b(DEFAULT_INCLUDE_PATH|EAR_(INSTALL|EXTENSION)_DIR|E_(ALL|COMPILE_(ERROR|WARNING)|CORE_(ERROR|WARNING)|DEPRECATED|ERROR|NOTICE|PARSE|RECOVERABLE_ERROR|STRICT|USER_(DEPRECATED|ERROR|NOTICE|WARNING)|WARNING)|PHP_(ROUND_HALF_(DOWN|EVEN|ODD|UP)|(MAJOR|MINOR|RELEASE)_VERSION|MAXPATHLEN|BINDIR|SHLIB_SUFFIX|SYSCONFDIR|SAPI|CONFIG_FILE_(PATH|SCAN_DIR)|INT_(MAX|SIZE)|ZTS|OS|OUTPUT_HANDLER_(START|CONT|END)|DEBUG|DATADIR|URL_(SCHEME|HOST|USER|PORT|PASS|PATH|QUERY|FRAGMENT)|PREFIX|EXTRA_VERSION|EXTENSION_DIR|EOL|VERSION(_ID)?|WINDOWS_(NT_(SERVER|DOMAIN_CONTROLLER|WORKSTATION)|VERSION_(M(?:AJ|IN)OR)|BUILD|SUITEMASK|SP_(M(?:AJ|IN)OR)|PRODUCTTYPE|PLATFORM)|LIBDIR|LOCALSTATEDIR)|STD(ERR|IN|OUT)|ZEND_(DEBUG_BUILD|THREAD_SAFE))\\b",
           "name": "support.constant.core.php"
         },
         {
@@ -699,7 +699,7 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "match": "(\\\\)?\\b(__COMPILER_HALT_OFFSET__|AB(MON_([123456789]|10|11|12)|DAY[1-7])|AM_STR|ASSERT_(ACTIVE|BAIL|CALLBACK_QUIET_EVAL|WARNING)|ALT_DIGITS|CASE_(UPPER|LOWER)|CHAR_MAX|CONNECTION_(ABORTED|NORMAL|TIMEOUT)|CODESET|COUNT_(NORMAL|RECURSIVE)|CREDITS_(ALL|DOCS|FULLPAGE|GENERAL|GROUP|MODULES|QA|SAPI)|CRYPT_(BLOWFISH|EXT_DES|MD5|SHA(256|512)|SALT_LENGTH|STD_DES)|CURRENCY_SYMBOL|D_(T_)?FMT|DATE_(ATOM|COOKIE|ISO8601|RFC(822|850|1036|1123|2822|3339)|RSS|W3C)|DAY_[1-7]|DECIMAL_POINT|DIRECTORY_SEPARATOR|ENT_(COMPAT|IGNORE|(NO)?QUOTES)|EXTR_(IF_EXISTS|OVERWRITE|PREFIX_(ALL|IF_EXISTS|INVALID|SAME)|REFS|SKIP)|ERA(_(D_(T_)?FMT)|T_FMT|YEAR)?|FRAC_DIGITS|GROUPING|HASH_HMAC|HTML_(ENTITIES|SPECIALCHARS)|INF|INFO_(ALL|CREDITS|CONFIGURATION|ENVIRONMENT|GENERAL|LICENSEMODULES|VARIABLES)|INI_(ALL|CANNER_(NORMAL|RAW)|PERDIR|SYSTEM|USER)|INT_(CURR_SYMBOL|FRAC_DIGITS)|LC_(ALL|COLLATE|CTYPE|MESSAGES|MONETARY|NUMERIC|TIME)|LOCK_(EX|NB|SH|UN)|LOG_(ALERT|AUTH(PRIV)?|CRIT|CRON|CONS|DAEMON|DEBUG|EMERG|ERR|INFO|LOCAL[1-7]|LPR|KERN|MAIL|NEWS|NODELAY|NOTICE|NOWAIT|ODELAY|PID|PERROR|WARNING|SYSLOG|UCP|USER)|M_(1_PI|SQRT(1_2|[23]|PI)|2_(SQRT)?PI|PI(_([24]))?|E(ULER)?|LN(10|2|PI)|LOG(10|2)E)|MON_([123456789]|10|11|12|DECIMAL_POINT|GROUPING|THOUSANDS_SEP)|N_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN)|NAN|NEGATIVE_SIGN|NO(EXPR|STR)|P_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN)|PM_STR|POSITIVE_SIGN|PATH(_SEPARATOR|INFO_(EXTENSION|(BASE|DIR|FILE)NAME))|RADIXCHAR|SEEK_(CUR|END|SET)|SORT_(ASC|DESC|LOCALE_STRING|REGULAR|STRING)|STR_PAD_(BOTH|LEFT|RIGHT)|T_FMT(_AMPM)?|THOUSEP|THOUSANDS_SEP|UPLOAD_ERR_(CANT_WRITE|EXTENSION|(FORM|INI)_SIZE|NO_(FILE|TMP_DIR)|OK|PARTIAL)|YES(EXPR|STR))\\b",
+          "match": "(\\\\)?\\b(__COMPILER_HALT_OFFSET__|AB(MON_([1-9]|10|11|12)|DAY[1-7])|AM_STR|ASSERT_(ACTIVE|BAIL|CALLBACK_QUIET_EVAL|WARNING)|ALT_DIGITS|CASE_((?:UPP|LOW)ER)|CHAR_MAX|CONNECTION_(ABORTED|NORMAL|TIMEOUT)|CODESET|COUNT_(NORMAL|RECURSIVE)|CREDITS_(ALL|DOCS|FULLPAGE|GENERAL|GROUP|MODULES|QA|SAPI)|CRYPT_(BLOWFISH|EXT_DES|MD5|SHA(256|512)|SALT_LENGTH|STD_DES)|CURRENCY_SYMBOL|D_(T_)?FMT|DATE_(ATOM|COOKIE|ISO8601|RFC(822|850|1036|1123|2822|3339)|RSS|W3C)|DAY_[1-7]|DECIMAL_POINT|DIRECTORY_SEPARATOR|ENT_(COMPAT|IGNORE|(NO)?QUOTES)|EXTR_(IF_EXISTS|OVERWRITE|PREFIX_(ALL|IF_EXISTS|INVALID|SAME)|REFS|SKIP)|ERA(_(D_(T_)?FMT)|T_FMT|YEAR)?|FRAC_DIGITS|GROUPING|HASH_HMAC|HTML_(ENTITIES|SPECIALCHARS)|INF|INFO_(ALL|CREDITS|CONFIGURATION|ENVIRONMENT|GENERAL|LICENSEMODULES|VARIABLES)|INI_(ALL|CANNER_(NORMAL|RAW)|PERDIR|SYSTEM|USER)|INT_(CURR_SYMBOL|FRAC_DIGITS)|LC_(ALL|COLLATE|CTYPE|MESSAGES|MONETARY|NUMERIC|TIME)|LOCK_(EX|NB|SH|UN)|LOG_(ALERT|AUTH(PRIV)?|CRIT|CRON|CONS|DAEMON|DEBUG|EMERG|ERR|INFO|LOCAL[1-7]|LPR|KERN|MAIL|NEWS|NODELAY|NOTICE|NOWAIT|ODELAY|PID|PERROR|WARNING|SYSLOG|UCP|USER)|M_(1_PI|SQRT(1_2|[23]|PI)|2_(SQRT)?PI|PI(_([24]))?|E(ULER)?|LN(10|2|PI)|LOG(10|2)E)|MON_([1-9]|10|11|12|DECIMAL_POINT|GROUPING|THOUSANDS_SEP)|N_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN)|NAN|NEGATIVE_SIGN|NO(EXPR|STR)|P_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN)|PM_STR|POSITIVE_SIGN|PATH(_SEPARATOR|INFO_(EXTENSION|(BASE|DIR|FILE)NAME))|RADIXCHAR|SEEK_(CUR|END|SET)|SORT_(ASC|DESC|LOCALE_STRING|REGULAR|STRING)|STR_PAD_(BOTH|LEFT|RIGHT)|T_FMT(_AMPM)?|THOUSEP|THOUSANDS_SEP|UPLOAD_ERR_(CANT_WRITE|EXTENSION|(FORM|INI)_SIZE|NO_(FILE|TMP_DIR)|OK|PARTIAL)|YES(EXPR|STR))\\b",
           "name": "support.constant.std.php"
         },
         {
@@ -708,7 +708,7 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "match": "(\\\\)?\\b(GLOB_(MARK|BRACE|NO(SORT|CHECK|ESCAPE)|ONLYDIR|ERR|AVAILABLE_FLAGS)|XML_(SAX_IMPL|(DTD|DOCUMENT(_(FRAG|TYPE))?|HTML_DOCUMENT|NOTATION|NAMESPACE_DECL|PI|COMMENT|DATA_SECTION|TEXT)_NODE|OPTION_(SKIP_(TAGSTART|WHITE)|CASE_FOLDING|TARGET_ENCODING)|ERROR_((BAD_CHAR|(ATTRIBUTE_EXTERNAL|BINARY|PARAM|RECURSIVE)_ENTITY)_REF|MISPLACED_XML_PI|SYNTAX|NONE|NO_(MEMORY|ELEMENTS)|TAG_MISMATCH|INCORRECT_ENCODING|INVALID_TOKEN|DUPLICATE_ATTRIBUTE|UNCLOSED_(CDATA_SECTION|TOKEN)|UNDEFINED_ENTITY|UNKNOWN_ENCODING|JUNK_AFTER_DOC_ELEMENT|PARTIAL_CHAR|EXTERNAL_ENTITY_HANDLING|ASYNC_ENTITY)|ENTITY_(((REF|DECL)_)?NODE)|ELEMENT(_DECL)?_NODE|LOCAL_NAMESPACE|ATTRIBUTE_(N(?:MTOKEN(S)?|OTATION|ODE))|CDATA|ID(REF(S)?)?|DECL_NODE|ENTITY|ENUMERATION)|MHASH_(RIPEMD(128|160|256|320)|GOST|MD([245])|SHA(1|224|256|384|512)|SNEFRU256|HAVAL(128|160|192|224|256)|CRC23(B)?|TIGER(1(?:28|60))?|WHIRLPOOL|ADLER32)|MYSQL_(BOTH|NUM|CLIENT_(SSL|COMPRESS|IGNORE_SPACE|INTERACTIVE|ASSOC))|MYSQLI_(REPORT_(STRICT|INDEX|OFF|ERROR|ALL)|REFRESH_(GRANT|MASTER|BACKUP_LOG|STATUS|SLAVE|HOSTS|THREADS|TABLES|LOG)|READ_DEFAULT_(FILE|GROUP)|(GROUP|MULTIPLE_KEY|BINARY|BLOB)_FLAG|BOTH|STMT_ATTR_(CURSOR_TYPE|UPDATE_MAX_LENGTH|PREFETCH_ROWS)|STORE_RESULT|SERVER_QUERY_(NO_((GOOD_)?INDEX_USED)|WAS_SLOW)|SET_(CHARSET_NAME|FLAG)|NO_(D(?:EFAULT_VALUE_FLAG|ATA))|NOT_NULL_FLAG|NUM(_FLAG)?|CURSOR_TYPE_(READ_ONLY|SCROLLABLE|NO_CURSOR|FOR_UPDATE)|CLIENT_(SSL|NO_SCHEMA|COMPRESS|IGNORE_SPACE|INTERACTIVE|FOUND_ROWS)|TYPE_(GEOMETRY|((MEDIUM|LONG|TINY)_)?BLOB|BIT|SHORT|STRING|SET|YEAR|NULL|NEWDECIMAL|NEWDATE|CHAR|TIME(STAMP)?|TINY|INT24|INTERVAL|DOUBLE|DECIMAL|DATE(TIME)?|ENUM|VAR_STRING|FLOAT|LONG(LONG)?)|TIME_STAMP_FLAG|INIT_COMMAND|ZEROFILL_FLAG|ON_UPDATE_NOW_FLAG|OPT_(NET_((CMD|READ)_BUFFER_SIZE)|CONNECT_TIMEOUT|INT_AND_FLOAT_NATIVE|LOCAL_INFILE)|DEBUG_TRACE_ENABLED|DATA_TRUNCATED|USE_RESULT|(ENUM|(PART|PRI|UNIQUE)_KEY|UNSIGNED)_FLAG|ASSOC|ASYNC|AUTO_INCREMENT_FLAG)|MCRYPT_(RC([26])|RIJNDAEL_(128|192|256)|RAND|GOST|XTEA|MODE_(STREAM|NOFB|CBC|CFB|OFB|ECB)|MARS|BLOWFISH(_COMPAT)?|SERPENT|SKIPJACK|SAFER(64|128|PLUS)|CRYPT|CAST_(128|256)|TRIPLEDES|THREEWAY|TWOFISH|IDEA|(3)?DES|DECRYPT|DEV_(U)?RANDOM|PANAMA|ENCRYPT|ENIGNA|WAKE|LOKI97|ARCFOUR(_IV)?)|STREAM_(REPORT_ERRORS|MUST_SEEK|MKDIR_RECURSIVE|BUFFER_(NONE|FULL|LINE)|SHUT_(RD)?WR|SOCK_(RDM|RAW|STREAM|SEQPACKET|DGRAM)|SERVER_(BIND|LISTEN)|NOTIFY_(REDIRECTED|RESOLVE|MIME_TYPE_IS|SEVERITY_(INFO|ERR|WARN)|COMPLETED|CONNECT|PROGRESS|FILE_SIZE_IS|FAILURE|AUTH_(RE(?:QUIRED|SULT)))|CRYPTO_METHOD_((SSLv2(3)?|SSLv3|TLS)_(CLIENT|SERVER))|CLIENT_((ASYNC_)?CONNECT|PERSISTENT)|CAST_(AS_STREAM|FOR_SELECT)|(I(?:GNORE|S))_URL|IPPROTO_(RAW|TCP|ICMP|IP|UDP)|OOB|OPTION_(READ_(BUFFER|TIMEOUT)|BLOCKING|WRITE_BUFFER)|URL_STAT_(LINK|QUIET)|USE_PATH|PEEK|PF_(INET(6)?|UNIX)|ENFORCE_SAFE_MODE|FILTER_(ALL|READ|WRITE))|SUNFUNCS_RET_(DOUBLE|STRING|TIMESTAMP)|SQLITE_(READONLY|ROW|MISMATCH|MISUSE|BOTH|BUSY|SCHEMA|NOMEM|NOTFOUND|NOTADB|NOLFS|NUM|CORRUPT|CONSTRAINT|CANTOPEN|TOOBIG|INTERRUPT|INTERNAL|IOERR|OK|DONE|PROTOCOL|PERM|ERROR|EMPTY|FORMAT|FULL|LOCKED|ABORT|ASSOC|AUTH)|SQLITE3_(BOTH|BLOB|NUM|NULL|TEXT|INTEGER|OPEN_(READ(ONLY|WRITE)|CREATE)|FLOAT_ASSOC)|CURL(M_(BAD_((EASY)?HANDLE)|CALL_MULTI_PERFORM|INTERNAL_ERROR|OUT_OF_MEMORY|OK)|MSG_DONE|SSH_AUTH_(HOST|NONE|DEFAULT|PUBLICKEY|PASSWORD|KEYBOARD)|CLOSEPOLICY_(SLOWEST|CALLBACK|OLDEST|LEAST_(RECENTLY_USED|TRAFFIC)|INFO_(REDIRECT_(COUNT|TIME)|REQUEST_SIZE|SSL_VERIFYRESULT|STARTTRANSFER_TIME|(S(?:IZE|PEED))_(DOWNLOAD|UPLOAD)|HTTP_CODE|HEADER_(OUT|SIZE)|NAMELOOKUP_TIME|CONNECT_TIME|CONTENT_(TYPE|LENGTH_(DOWNLOAD|UPLOAD))|CERTINFO|TOTAL_TIME|PRIVATE|PRETRANSFER_TIME|EFFECTIVE_URL|FILETIME)|OPT_(RESUME_FROM|RETURNTRANSFER|REDIR_PROTOCOLS|REFERER|READ(DATA|FUNCTION)|RANGE|RANDOM_FILE|MAX(CONNECTS|REDIRS)|BINARYTRANSFER|BUFFERSIZE|SSH_(HOST_PUBLIC_KEY_MD5|(P(?:RIVATE|UBLIC))_KEYFILE)|AUTH_TYPES)|SSL(CERT(TYPE|PASSWD)?|ENGINE(_DEFAULT)?|VERSION|KEY(TYPE|PASSWD)?)|SSL_(CIPHER_LIST|VERIFY(HOST|PEER))|STDERR|HTTP(GET|HEADER|200ALIASES|_VERSION|PROXYTUNNEL|AUTH)|HEADER(FUNCTION)?|NO(BODY|SIGNAL|PROGRESS)|NETRC|CRLF|CONNECTTIMEOUT(_MS)?|COOKIE(SESSION|JAR|FILE)?|CUSTOMREQUEST|CERTINFO|CLOSEPOLICY|CA(INFO|PATH)|TRANSFERTEXT|TCP_NODELAY|TIME(CONDITION|OUT(_MS)?|VALUE)|INTERFACE|INFILE(SIZE)?|IPRESOLVE|DNS_(CACHE_TIMEOUT|USE_GLOBAL_CACHE)|URL|USER(AGENT|PWD)|UNRESTRICTED_AUTH|UPLOAD|PRIVATE|PROGRESSFUNCTION|PROXY(TYPE|USERPWD|PORT|AUTH)?|PROTOCOLS|PORT|POST(REDIR|QUOTE|FIELDS)?|PUT|EGDSOCKET|ENCODING|VERBOSE|KRB4LEVEL|KEYPASSWD|QUOTE|FRESH_CONNECT|FTP(APPEND|LISTONLY|PORT|SSLAUTH)|FTP_(SSL|SKIP_PASV_IP|CREATE_MISSING_DIRS|USE_EP(RT|SV)|FILEMETHOD)|FILE(TIME)?|FORBID_REUSE|FOLLOWLOCATION|FAILONERROR|WRITE(FUNCTION|HEADER)|LOW_SPEED_(LIMIT|TIME)|AUTOREFERER)|PROXY_(HTTP|SOCKS([45]))|PROTO_(SCP|SFTP|HTTP(S)?|TELNET|TFTP|DICT|FTP(S)?|FILE|LDAP(S)?|ALL)|E_((RE(?:CV|AD))_ERROR|GOT_NOTHING|MALFORMAT_USER|BAD_(CONTENT_ENCODING|CALLING_ORDER|PASSWORD_ENTERED|FUNCTION_ARGUMENT)|SSH|SSL_(CIPHER|CONNECT_ERROR|CERTPROBLEM|CACERT|PEER_CERTIFICATE|ENGINE_(NOTFOUND|SETFAILED))|SHARE_IN_USE|SEND_ERROR|HTTP_(RANGE_ERROR|NOT_FOUND|PORT_FAILED|POST_ERROR)|COULDNT_(RESOLVE_(HOST|PROXY)|CONNECT)|TOO_MANY_REDIRECTS|TELNET_OPTION_SYNTAX|OBSOLETE|OUT_OF_MEMORY|OPERATION|TIMEOUTED|OK|URL_MALFORMAT(_USER)?|UNSUPPORTED_PROTOCOL|UNKNOWN_TELNET_OPTION|PARTIAL_FILE|FTP_(BAD_DOWNLOAD_RESUME|SSL_FAILED|COULDNT_(RETR_FILE|GET_SIZE|STOR_FILE|SET_(BINARY|ASCII)|USE_REST)|CANT_(GET_HOST|RECONNECT)|USER_PASSWORD_INCORRECT|PORT_FAILED|QUOTE_ERROR|WRITE_ERROR|WEIRD_((PASS|PASV|SERVER|USER)_REPLY|227_FORMAT)|ACCESS_DENIED)|FILESIZE_EXCEEDED|FILE_COULDNT_READ_FILE|FUNCTION_NOT_FOUND|FAILED_INIT|WRITE_ERROR|LIBRARY_NOT_FOUND|LDAP_(SEARCH_FAILED|CANNOT_BIND|INVALID_URL)|ABORTED_BY_CALLBACK)|VERSION_NOW|FTP(METHOD_(MULTI|SINGLE|NO)CWD|SSL_(ALL|NONE|CONTROL|TRY)|AUTH_(DEFAULT|SSL|TLS))|AUTH_(ANY(SAFE)?|BASIC|DIGEST|GSSNEGOTIATE|NTLM))|CURL_(HTTP_VERSION_(1_([01])|NONE)|NETRC_(REQUIRED|IGNORED|OPTIONAL)|TIMECOND_(IF(UN)?MODSINCE|LASTMOD)|IPRESOLVE_(V([46])|WHATEVER)|VERSION_(SSL|IPV6|KERBEROS4|LIBZ))|IMAGETYPE_(GIF|XBM|BMP|SWF|COUNT|TIFF_(MM|II)|ICO|IFF|UNKNOWN|JB2|JPX|JP2|JPC|JPEG(2000)?|PSD|PNG|WBMP)|INPUT_(REQUEST|GET|SERVER|SESSION|COOKIE|POST|ENV)|ICONV_(MIME_DECODE_(STRICT|CONTINUE_ON_ERROR)|IMPL|VERSION)|DNS_(MX|SRV|SOA|HINFO|NS|NAPTR|CNAME|TXT|PTR|ANY|ALL|AAAA|A(6)?)|DOM(STRING_SIZE_ERR)|DOM_((SYNTAX|HIERARCHY_REQUEST|NO_(MODIFICATION_ALLOWED|DATA_ALLOWED)|NOT_(FOUND|SUPPORTED)|NAMESPACE|INDEX_SIZE|USE_ATTRIBUTE|VALID_(MODIFICATION|STATE|CHARACTER|ACCESS)|PHP|VALIDATION|WRONG_DOCUMENT)_ERR)|JSON_(HEX_(TAG|QUOT|AMP|APOS)|NUMERIC_CHECK|ERROR_(SYNTAX|STATE_MISMATCH|NONE|CTRL_CHAR|DEPTH|UTF8)|FORCE_OBJECT)|PREG_((D_UTF8(_OFFSET)?|NO|INTERNAL|(BACKTRACK|RECURSION)_LIMIT)_ERROR|GREP_INVERT|SPLIT_(NO_EMPTY|(DELIM|OFFSET)_CAPTURE)|SET_ORDER|OFFSET_CAPTURE|PATTERN_ORDER)|PSFS_(PASS_ON|ERR_FATAL|FEED_ME|FLAG_(NORMAL|FLUSH_(CLOSE|INC)))|PCRE_VERSION|POSIX_(([FRWX])_OK|S_IF(REG|BLK|SOCK|CHR|IFO))|FNM_(NOESCAPE|CASEFOLD|PERIOD|PATHNAME)|FILTER_(REQUIRE_(SCALAR|ARRAY)|NULL_ON_FAILURE|CALLBACK|DEFAULT|UNSAFE_RAW|SANITIZE_(MAGIC_QUOTES|STRING|STRIPPED|SPECIAL_CHARS|NUMBER_(INT|FLOAT)|URL|EMAIL|ENCODED|FULL_SPCIAL_CHARS)|VALIDATE_(REGEXP|BOOLEAN|INT|IP|URL|EMAIL|FLOAT)|FORCE_ARRAY|FLAG_(SCHEME_REQUIRED|STRIP_(BACKTICK|HIGH|LOW)|HOST_REQUIRED|NONE|NO_(RES|PRIV)_RANGE|ENCODE_QUOTES|IPV([46])|PATH_REQUIRED|EMPTY_STRING_NULL|ENCODE_(HIGH|LOW|AMP)|QUERY_REQUIRED|ALLOW_(SCIENTIFIC|HEX|THOUSAND|OCTAL|FRACTION)))|FILE_(BINARY|SKIP_EMPTY_LINES|NO_DEFAULT_CONTEXT|TEXT|IGNORE_NEW_LINES|USE_INCLUDE_PATH|APPEND)|FILEINFO_(RAW|MIME(_(ENCODING|TYPE))?|SYMLINK|NONE|CONTINUE|DEVICES|PRESERVE_ATIME)|FORCE_(DEFLATE|GZIP)|LIBXML_(XINCLUDE|NSCLEAN|NO(XMLDECL|BLANKS|NET|CDATA|ERROR|EMPTYTAG|ENT|WARNING)|COMPACT|DTD(VALID|LOAD|ATTR)|((DOTTED|LOADED)_)?VERSION|PARSEHUGE|ERR_(NONE|ERROR|FATAL|WARNING)))\\b",
+          "match": "(\\\\)?\\b(GLOB_(MARK|BRACE|NO(SORT|CHECK|ESCAPE)|ONLYDIR|ERR|AVAILABLE_FLAGS)|XML_(SAX_IMPL|(DTD|DOCUMENT(_(FRAG|TYPE))?|HTML_DOCUMENT|NOTATION|NAMESPACE_DECL|PI|COMMENT|DATA_SECTION|TEXT)_NODE|OPTION_(SKIP_(TAGSTART|WHITE)|CASE_FOLDING|TARGET_ENCODING)|ERROR_((BAD_CHAR|(ATTRIBUTE_EXTERNAL|BINARY|PARAM|RECURSIVE)_ENTITY)_REF|MISPLACED_XML_PI|SYNTAX|NONE|NO_(MEMORY|ELEMENTS)|TAG_MISMATCH|INCORRECT_ENCODING|INVALID_TOKEN|DUPLICATE_ATTRIBUTE|UNCLOSED_(CDATA_SECTION|TOKEN)|UNDEFINED_ENTITY|UNKNOWN_ENCODING|JUNK_AFTER_DOC_ELEMENT|PARTIAL_CHAR|EXTERNAL_ENTITY_HANDLING|ASYNC_ENTITY)|ENTITY_(((REF|DECL)_)?NODE)|ELEMENT(_DECL)?_NODE|LOCAL_NAMESPACE|ATTRIBUTE_(N(?:MTOKEN(S)?|OTATION|ODE))|CDATA|ID(REF(S)?)?|DECL_NODE|ENTITY|ENUMERATION)|MHASH_(RIPEMD(128|160|256|320)|GOST|MD([245])|SHA(1|224|256|384|512)|SNEFRU256|HAVAL(128|160|192|224|256)|CRC23(B)?|TIGER(1(?:28|60))?|WHIRLPOOL|ADLER32)|MYSQL_(BOTH|NUM|CLIENT_(SSL|COMPRESS|IGNORE_SPACE|INTERACTIVE|ASSOC))|MYSQLI_(REPORT_(STRICT|INDEX|OFF|ERROR|ALL)|REFRESH_(GRANT|MASTER|BACKUP_LOG|STATUS|SLAVE|HOSTS|THREADS|TABLES|LOG)|READ_DEFAULT_(FILE|GROUP)|(GROUP|MULTIPLE_KEY|BINARY|BLOB)_FLAG|BOTH|STMT_ATTR_(CURSOR_TYPE|UPDATE_MAX_LENGTH|PREFETCH_ROWS)|STORE_RESULT|SERVER_QUERY_(NO_((GOOD_)?INDEX_USED)|WAS_SLOW)|SET_(CHARSET_NAME|FLAG)|NO_(D(?:EFAULT_VALUE_FLAG|ATA))|NOT_NULL_FLAG|NUM(_FLAG)?|CURSOR_TYPE_(READ_ONLY|SCROLLABLE|NO_CURSOR|FOR_UPDATE)|CLIENT_(SSL|NO_SCHEMA|COMPRESS|IGNORE_SPACE|INTERACTIVE|FOUND_ROWS)|TYPE_(GEOMETRY|((MEDIUM|LONG|TINY)_)?BLOB|BIT|SHORT|STRING|SET|YEAR|NULL|NEWDECIMAL|NEWDATE|CHAR|TIME(STAMP)?|TINY|INT24|INTERVAL|DOUBLE|DECIMAL|DATE(TIME)?|ENUM|VAR_STRING|FLOAT|LONG(LONG)?)|TIME_STAMP_FLAG|INIT_COMMAND|ZEROFILL_FLAG|ON_UPDATE_NOW_FLAG|OPT_(NET_((CMD|READ)_BUFFER_SIZE)|CONNECT_TIMEOUT|INT_AND_FLOAT_NATIVE|LOCAL_INFILE)|DEBUG_TRACE_ENABLED|DATA_TRUNCATED|USE_RESULT|(ENUM|(PART|PRI|UNIQUE)_KEY|UNSIGNED)_FLAG|ASSOC|ASYNC|AUTO_INCREMENT_FLAG)|MCRYPT_(RC([26])|RIJNDAEL_(128|192|256)|RAND|GOST|XTEA|MODE_(STREAM|NOFB|CBC|CFB|OFB|ECB)|MARS|BLOWFISH(_COMPAT)?|SERPENT|SKIPJACK|SAFER(64|128|PLUS)|CRYPT|CAST_(128|256)|TRIPLEDES|THREEWAY|TWOFISH|IDEA|(3)?DES|DECRYPT|DEV_(U)?RANDOM|PANAMA|ENCRYPT|ENIGNA|WAKE|LOKI97|ARCFOUR(_IV)?)|STREAM_(REPORT_ERRORS|MUST_SEEK|MKDIR_RECURSIVE|BUFFER_(NONE|FULL|LINE)|SHUT_(RD)?WR|SOCK_(RDM|RAW|STREAM|SEQPACKET|DGRAM)|SERVER_(BIND|LISTEN)|NOTIFY_(REDIRECTED|RESOLVE|MIME_TYPE_IS|SEVERITY_(INFO|ERR|WARN)|COMPLETED|CONNECT|PROGRESS|FILE_SIZE_IS|FAILURE|AUTH_(RE(?:QUIRED|SULT)))|CRYPTO_METHOD_((SSLv2(3)?|SSLv3|TLS)_(CLIENT|SERVER))|CLIENT_((ASYNC_)?CONNECT|PERSISTENT)|CAST_(AS_STREAM|FOR_SELECT)|(I(?:GNORE|S))_URL|IPPROTO_(RAW|TCP|ICMP|IP|UDP)|OOB|OPTION_(READ_(BUFFER|TIMEOUT)|BLOCKING|WRITE_BUFFER)|URL_STAT_(LINK|QUIET)|USE_PATH|PEEK|PF_(INET(6)?|UNIX)|ENFORCE_SAFE_MODE|FILTER_(ALL|READ|WRITE))|SUNFUNCS_RET_(DOUBLE|STRING|TIMESTAMP)|SQLITE_(READONLY|ROW|MISMATCH|MISUSE|BOTH|BUSY|SCHEMA|NOMEM|NOTFOUND|NOTADB|NOLFS|NUM|CORRUPT|CONSTRAINT|CANTOPEN|TOOBIG|INTERRUPT|INTERNAL|IOERR|OK|DONE|PROTOCOL|PERM|ERROR|EMPTY|FORMAT|FULL|LOCKED|ABORT|ASSOC|AUTH)|SQLITE3_(BOTH|BLOB|NUM|NULL|TEXT|INTEGER|OPEN_(READ(ONLY|WRITE)|CREATE)|FLOAT_ASSOC)|CURL(M_(BAD_((EASY)?HANDLE)|CALL_MULTI_PERFORM|INTERNAL_ERROR|OUT_OF_MEMORY|OK)|MSG_DONE|SSH_AUTH_(HOST|NONE|DEFAULT|PUBLICKEY|PASSWORD|KEYBOARD)|CLOSEPOLICY_(SLOWEST|CALLBACK|OLDEST|LEAST_(RECENTLY_USED|TRAFFIC)|INFO_(REDIRECT_(COUNT|TIME)|REQUEST_SIZE|SSL_VERIFYRESULT|STARTTRANSFER_TIME|(S(?:IZE|PEED))_((?:DOWN|UP)LOAD)|HTTP_CODE|HEADER_(OUT|SIZE)|NAMELOOKUP_TIME|CONNECT_TIME|CONTENT_(TYPE|LENGTH_((?:DOWN|UP)LOAD))|CERTINFO|TOTAL_TIME|PRIVATE|PRETRANSFER_TIME|EFFECTIVE_URL|FILETIME)|OPT_(RESUME_FROM|RETURNTRANSFER|REDIR_PROTOCOLS|REFERER|READ(DATA|FUNCTION)|RANGE|RANDOM_FILE|MAX(CONNECTS|REDIRS)|BINARYTRANSFER|BUFFERSIZE|SSH_(HOST_PUBLIC_KEY_MD5|(P(?:RIVATE|UBLIC))_KEYFILE)|AUTH_TYPES)|SSL(CERT(TYPE|PASSWD)?|ENGINE(_DEFAULT)?|VERSION|KEY(TYPE|PASSWD)?)|SSL_(CIPHER_LIST|VERIFY(HOST|PEER))|STDERR|HTTP(GET|HEADER|200ALIASES|_VERSION|PROXYTUNNEL|AUTH)|HEADER(FUNCTION)?|NO(BODY|SIGNAL|PROGRESS)|NETRC|CRLF|CONNECTTIMEOUT(_MS)?|COOKIE(SESSION|JAR|FILE)?|CUSTOMREQUEST|CERTINFO|CLOSEPOLICY|CA(INFO|PATH)|TRANSFERTEXT|TCP_NODELAY|TIME(CONDITION|OUT(_MS)?|VALUE)|INTERFACE|INFILE(SIZE)?|IPRESOLVE|DNS_(CACHE_TIMEOUT|USE_GLOBAL_CACHE)|URL|USER(AGENT|PWD)|UNRESTRICTED_AUTH|UPLOAD|PRIVATE|PROGRESSFUNCTION|PROXY(TYPE|USERPWD|PORT|AUTH)?|PROTOCOLS|PORT|POST(REDIR|QUOTE|FIELDS)?|PUT|EGDSOCKET|ENCODING|VERBOSE|KRB4LEVEL|KEYPASSWD|QUOTE|FRESH_CONNECT|FTP(APPEND|LISTONLY|PORT|SSLAUTH)|FTP_(SSL|SKIP_PASV_IP|CREATE_MISSING_DIRS|USE_EP(RT|SV)|FILEMETHOD)|FILE(TIME)?|FORBID_REUSE|FOLLOWLOCATION|FAILONERROR|WRITE(FUNCTION|HEADER)|LOW_SPEED_(LIMIT|TIME)|AUTOREFERER)|PROXY_(HTTP|SOCKS([45]))|PROTO_(SCP|SFTP|HTTP(S)?|TELNET|TFTP|DICT|FTP(S)?|FILE|LDAP(S)?|ALL)|E_((RE(?:CV|AD))_ERROR|GOT_NOTHING|MALFORMAT_USER|BAD_(CONTENT_ENCODING|CALLING_ORDER|PASSWORD_ENTERED|FUNCTION_ARGUMENT)|SSH|SSL_(CIPHER|CONNECT_ERROR|CERTPROBLEM|CACERT|PEER_CERTIFICATE|ENGINE_(NOTFOUND|SETFAILED))|SHARE_IN_USE|SEND_ERROR|HTTP_(RANGE_ERROR|NOT_FOUND|PORT_FAILED|POST_ERROR)|COULDNT_(RESOLVE_(HOST|PROXY)|CONNECT)|TOO_MANY_REDIRECTS|TELNET_OPTION_SYNTAX|OBSOLETE|OUT_OF_MEMORY|OPERATION|TIMEOUTED|OK|URL_MALFORMAT(_USER)?|UNSUPPORTED_PROTOCOL|UNKNOWN_TELNET_OPTION|PARTIAL_FILE|FTP_(BAD_DOWNLOAD_RESUME|SSL_FAILED|COULDNT_(RETR_FILE|GET_SIZE|STOR_FILE|SET_(BINARY|ASCII)|USE_REST)|CANT_(GET_HOST|RECONNECT)|USER_PASSWORD_INCORRECT|PORT_FAILED|QUOTE_ERROR|WRITE_ERROR|WEIRD_((PASS|PASV|SERVER|USER)_REPLY|227_FORMAT)|ACCESS_DENIED)|FILESIZE_EXCEEDED|FILE_COULDNT_READ_FILE|FUNCTION_NOT_FOUND|FAILED_INIT|WRITE_ERROR|LIBRARY_NOT_FOUND|LDAP_(SEARCH_FAILED|CANNOT_BIND|INVALID_URL)|ABORTED_BY_CALLBACK)|VERSION_NOW|FTP(METHOD_(MULTI|SINGLE|NO)CWD|SSL_(ALL|NONE|CONTROL|TRY)|AUTH_(DEFAULT|SSL|TLS))|AUTH_(ANY(SAFE)?|BASIC|DIGEST|GSSNEGOTIATE|NTLM))|CURL_(HTTP_VERSION_(1_([01])|NONE)|NETRC_(REQUIRED|IGNORED|OPTIONAL)|TIMECOND_(IF(UN)?MODSINCE|LASTMOD)|IPRESOLVE_(V([46])|WHATEVER)|VERSION_(SSL|IPV6|KERBEROS4|LIBZ))|IMAGETYPE_(GIF|XBM|BMP|SWF|COUNT|TIFF_(MM|II)|ICO|IFF|UNKNOWN|JB2|JPX|JP2|JPC|JPEG(2000)?|PSD|PNG|WBMP)|INPUT_(REQUEST|GET|SERVER|SESSION|COOKIE|POST|ENV)|ICONV_(MIME_DECODE_(STRICT|CONTINUE_ON_ERROR)|IMPL|VERSION)|DNS_(MX|SRV|SOA|HINFO|NS|NAPTR|CNAME|TXT|PTR|ANY|ALL|AAAA|A(6)?)|DOM(STRING_SIZE_ERR)|DOM_((SYNTAX|HIERARCHY_REQUEST|NO_((?:MODIFICATION|DATA)_ALLOWED)|NOT_(FOUND|SUPPORTED)|NAMESPACE|INDEX_SIZE|USE_ATTRIBUTE|VALID_(MODIFICATION|STATE|CHARACTER|ACCESS)|PHP|VALIDATION|WRONG_DOCUMENT)_ERR)|JSON_(HEX_(TAG|QUOT|AMP|APOS)|NUMERIC_CHECK|ERROR_(SYNTAX|STATE_MISMATCH|NONE|CTRL_CHAR|DEPTH|UTF8)|FORCE_OBJECT)|PREG_((D_UTF8(_OFFSET)?|NO|INTERNAL|(BACKTRACK|RECURSION)_LIMIT)_ERROR|GREP_INVERT|SPLIT_(NO_EMPTY|(DELIM|OFFSET)_CAPTURE)|SET_ORDER|OFFSET_CAPTURE|PATTERN_ORDER)|PSFS_(PASS_ON|ERR_FATAL|FEED_ME|FLAG_(NORMAL|FLUSH_(CLOSE|INC)))|PCRE_VERSION|POSIX_(([FRWX])_OK|S_IF(REG|BLK|SOCK|CHR|IFO))|FNM_(NOESCAPE|CASEFOLD|PERIOD|PATHNAME)|FILTER_(REQUIRE_(SCALAR|ARRAY)|NULL_ON_FAILURE|CALLBACK|DEFAULT|UNSAFE_RAW|SANITIZE_(MAGIC_QUOTES|STRING|STRIPPED|SPECIAL_CHARS|NUMBER_(INT|FLOAT)|URL|EMAIL|ENCODED|FULL_SPCIAL_CHARS)|VALIDATE_(REGEXP|BOOLEAN|INT|IP|URL|EMAIL|FLOAT)|FORCE_ARRAY|FLAG_(SCHEME_REQUIRED|STRIP_(BACKTICK|HIGH|LOW)|HOST_REQUIRED|NONE|NO_(RES|PRIV)_RANGE|ENCODE_QUOTES|IPV([46])|PATH_REQUIRED|EMPTY_STRING_NULL|ENCODE_(HIGH|LOW|AMP)|QUERY_REQUIRED|ALLOW_(SCIENTIFIC|HEX|THOUSAND|OCTAL|FRACTION)))|FILE_(BINARY|SKIP_EMPTY_LINES|NO_DEFAULT_CONTEXT|TEXT|IGNORE_NEW_LINES|USE_INCLUDE_PATH|APPEND)|FILEINFO_(RAW|MIME(_(ENCODING|TYPE))?|SYMLINK|NONE|CONTINUE|DEVICES|PRESERVE_ATIME)|FORCE_(DEFLATE|GZIP)|LIBXML_(XINCLUDE|NSCLEAN|NO(XMLDECL|BLANKS|NET|CDATA|ERROR|EMPTYTAG|ENT|WARNING)|COMPACT|DTD(VALID|LOAD|ATTR)|(((?:DOTT|LOAD)ED)_)?VERSION|PARSEHUGE|ERR_(NONE|ERROR|FATAL|WARNING)))\\b",
           "name": "support.constant.ext.php"
         },
         {
@@ -717,11 +717,11 @@
               "name": "punctuation.separator.inheritance.php"
             }
           },
-          "match": "(\\\\)?\\b(T_(RETURN|REQUIRE(_ONCE)?|GOTO|GLOBAL|(MINUS|MOD|MUL|XOR)_EQUAL|METHOD_C|ML_COMMENT|BREAK|BOOL_CAST|BOOLEAN_(AND|OR)|BAD_CHARACTER|SR(_EQUAL)?|STRING(_CAST|VARNAME)?|START_HEREDOC|STATIC|SWITCH|SL(_EQUAL)?|HALT_COMPILER|NS_(C|SEPARATOR)|NUM_STRING|NEW|NAMESPACE|CHARACTER|COMMENT|CONSTANT(_ENCAPSED_STRING)?|CONCAT_EQUAL|CONTINUE|CURLY_OPEN|CLOSE_TAG|CLONE|CLASS(_C)?|CASE|CATCH|TRY|THROW|IMPLEMENTS|ISSET|IS_((GREATER|SMALLER)_OR_EQUAL|(NOT_)?(IDENTICAL|EQUAL))|INSTANCEOF|INCLUDE(_ONCE)?|INC|INT_CAST|INTERFACE|INLINE_HTML|IF|OR_EQUAL|OBJECT_(CAST|OPERATOR)|OPEN_TAG(_WITH_ECHO)?|OLD_FUNCTION|DNUMBER|DIR|DIV_EQUAL|DOC_COMMENT|DOUBLE_(ARROW|CAST|COLON)|DOLLAR_OPEN_CURLY_BRACES|DO|DEC|DECLARE|DEFAULT|USE|UNSET(_CAST)?|PRINT|PRIVATE|PROTECTED|PUBLIC|PLUS_EQUAL|PAAMAYIM_NEKUDOTAYIM|EXTENDS|EXIT|EMPTY|ENCAPSED_AND_WHITESPACE|END(SWITCH|IF|DECLARE|FOR(EACH)?|WHILE)|END_HEREDOC|ECHO|EVAL|ELSE(IF)?|VAR(IABLE)?|FINAL|FILE|FOR(EACH)?|FUNC_C|FUNCTION|WHITESPACE|WHILE|LNUMBER|LIST|LINE|LOGICAL_(AND|OR|XOR)|ARRAY_(CAST)?|ABSTRACT|AS|AND_EQUAL))\\b",
+          "match": "(\\\\)?\\b(T_(RETURN|REQUIRE(_ONCE)?|GOTO|GLOBAL|(MINUS|MOD|MUL|XOR)_EQUAL|METHOD_C|ML_COMMENT|BREAK|BOOL_CAST|BOOLEAN_(AND|OR)|BAD_CHARACTER|SR(_EQUAL)?|STRING(_CAST|VARNAME)?|START_HEREDOC|STATIC|SWITCH|SL(_EQUAL)?|HALT_COMPILER|NS_(C|SEPARATOR)|NUM_STRING|NEW|NAMESPACE|CHARACTER|COMMENT|CONSTANT(_ENCAPSED_STRING)?|CONCAT_EQUAL|CONTINUE|CURLY_OPEN|CLOSE_TAG|CLONE|CLASS(_C)?|CASE|CATCH|TRY|THROW|IMPLEMENTS|ISSET|IS_(((?:GREAT|SMALL)ER)_OR_EQUAL|(NOT_)?((?:IDENTIC|EQU)AL))|INSTANCEOF|INCLUDE(_ONCE)?|INC|INT_CAST|INTERFACE|INLINE_HTML|IF|OR_EQUAL|OBJECT_(CAST|OPERATOR)|OPEN_TAG(_WITH_ECHO)?|OLD_FUNCTION|DNUMBER|DIR|DIV_EQUAL|DOC_COMMENT|DOUBLE_(ARROW|CAST|COLON)|DOLLAR_OPEN_CURLY_BRACES|DO|DEC|DECLARE|DEFAULT|USE|UNSET(_CAST)?|PRINT|PRIVATE|PROTECTED|PUBLIC|PLUS_EQUAL|PAAMAYIM_NEKUDOTAYIM|EXTENDS|EXIT|EMPTY|ENCAPSED_AND_WHITESPACE|END(SWITCH|IF|DECLARE|FOR(EACH)?|WHILE)|END_HEREDOC|ECHO|EVAL|ELSE(IF)?|VAR(IABLE)?|FINAL|FILE|FOR(EACH)?|FUNC_C|FUNCTION|WHITESPACE|WHILE|LNUMBER|LIST|LINE|LOGICAL_(AND|OR|XOR)|ARRAY_(CAST)?|ABSTRACT|AS|AND_EQUAL))\\b",
           "name": "support.constant.parser-token.php"
         },
         {
-          "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+          "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
           "name": "constant.other.php"
         }
       ]
@@ -729,7 +729,7 @@
     "function-call": {
       "patterns": [
         {
-          "begin": "(?i)(\\\\?\\b[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*(?:\\\\[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)+)\\s*(\\()",
+          "begin": "(?i)(\\\\?\\b[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*(?:\\\\[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)+)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -737,7 +737,7 @@
                   "include": "#namespace"
                 },
                 {
-                  "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                  "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                   "name": "entity.name.function.php"
                 }
               ]
@@ -760,7 +760,7 @@
           ]
         },
         {
-          "begin": "(?i)(\\\\)?\\b([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(\\()",
+          "begin": "(?i)(\\\\)?\\b([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -775,7 +775,7 @@
                   "include": "#support"
                 },
                 {
-                  "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                  "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                   "name": "entity.name.function.php"
                 }
               ]
@@ -813,7 +813,7 @@
           "name": "punctuation.separator.delimiter.php"
         },
         {
-          "begin": "(?i)(array)\\s+((&)?\\s*(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(=)\\s*(array)\\s*(\\()",
+          "begin": "(?i)(array)\\s+((&)?\\s*(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(=)\\s*(array)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "storage.type.php"
@@ -894,17 +894,17 @@
               "name": "punctuation.section.array.end.php"
             }
           },
-          "match": "(?i)(array|callable)\\s+((&)?\\s*(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)(?:\\s*(=)\\s*(?:(null)|(\\[)((?>[^\\[\\]]+|\\[\\g<8>])*)(])|(\\S*?\\(\\)|\\S*?)))?\\s*(?=[,)]|/[/*]|#|$)",
+          "match": "(?i)(array|callable)\\s+((&)?\\s*(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)(?:\\s*(=)\\s*(?:(null)|(\\[)((?>[^]\\[]+|\\[\\g<8>])*)(])|(\\S*?\\(\\)|\\S*?)))?\\s*(?=[),]|/[*/]|#|$)",
           "name": "meta.function.parameter.array.php"
         },
         {
-          "begin": "(?i)(\\\\?(?:[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*\\\\)*)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s+((&)?\\s*(\\.\\.\\.)?(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)",
+          "begin": "(?i)(\\\\?(?:[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*\\\\)*)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s+((&)?\\s*(\\.\\.\\.)?(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)",
           "beginCaptures": {
             "1": {
               "name": "support.other.namespace.php",
               "patterns": [
                 {
-                  "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                  "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                   "name": "storage.type.php"
                 },
                 {
@@ -929,7 +929,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "end": "(?=[,)]|/[/*]|#)",
+          "end": "(?=[),]|/[*/]|#)",
           "name": "meta.function.parameter.typehinted.php",
           "patterns": [
             {
@@ -939,7 +939,7 @@
                   "name": "keyword.operator.assignment.php"
                 }
               },
-              "end": "(?=[,)]|/[/*]|#)",
+              "end": "(?=[),]|/[*/]|#)",
               "patterns": [
                 {
                   "include": "#language"
@@ -963,11 +963,11 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?i)((&)?\\s*(\\.\\.\\.)?(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(?=[,)]|/[/*]|#|$)",
+          "match": "(?i)((&)?\\s*(\\.\\.\\.)?(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(?=[),]|/[*/]|#|$)",
           "name": "meta.function.parameter.no-default.php"
         },
         {
-          "begin": "(?i)((&)?\\s*(\\.\\.\\.)?(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(=)\\s*(?:(\\[)((?>[^\\[\\]]+|\\[\\g<6>])*)(]))?",
+          "begin": "(?i)((&)?\\s*(\\.\\.\\.)?(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(=)\\s*(?:(\\[)((?>[^]\\[]+|\\[\\g<6>])*)(]))?",
           "beginCaptures": {
             "1": {
               "name": "variable.other.php"
@@ -998,7 +998,7 @@
               "name": "punctuation.section.array.end.php"
             }
           },
-          "end": "(?=[,)]|/[/*]|#)",
+          "end": "(?=[),]|/[*/]|#)",
           "name": "meta.function.parameter.default.php",
           "patterns": [
             {
@@ -1011,7 +1011,7 @@
     "heredoc": {
       "patterns": [
         {
-          "begin": "(?i)(?=<<<\\s*(\"?)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)(\\1)\\s*$)",
+          "begin": "(?i)(?=<<<\\s*(\"?)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)(\\1)\\s*$)",
           "end": "(?!\\G)",
           "name": "string.unquoted.heredoc.php",
           "patterns": [
@@ -1021,7 +1021,7 @@
           ]
         },
         {
-          "begin": "(?=<<<\\s*'([a-zA-Z_]+[a-zA-Z0-9_]*)'\\s*$)",
+          "begin": "(?=<<<\\s*'([A-Z_a-z]+[0-9A-Z_a-z]*)'\\s*$)",
           "end": "(?!\\G)",
           "name": "string.unquoted.nowdoc.php",
           "patterns": [
@@ -1281,7 +1281,7 @@
               "include": "#interpolation"
             },
             {
-              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
+              "match": "(\\\\){1,2}[]$.\\[^{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -1307,17 +1307,17 @@
               "name": "string.regexp.character-class.php",
               "patterns": [
                 {
-                  "match": "\\\\[\\\\'\\[\\]]",
+                  "match": "\\\\['\\[-\\]]",
                   "name": "constant.character.escape.php"
                 }
               ]
             },
             {
-              "match": "[$^+*]",
+              "match": "[$*+^]",
               "name": "keyword.operator.regexp.php"
             },
             {
-              "begin": "(?i)(?<=^|\\s)(#)\\s(?=[a-z0-9_\\x7F-ÿ,. \\t?!\\-[^\\x00-\\x7F]]*$)",
+              "begin": "(?i)(?<=^|\\s)(#)\\s(?=[\\t !,-.0-9?_a-z\\x7F-ÿ[^\\x00-\\x7F]]*$)",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.definition.comment.php"
@@ -1334,7 +1334,7 @@
           ]
         },
         {
-          "begin": "(?i)(<<<)\\s*(\"?)([a-z_\\x7F-ÿ]+[a-z0-9_\\x7F-ÿ]*)(\\2)(\\s*)",
+          "begin": "(?i)(<<<)\\s*(\"?)([_a-z\\x7F-ÿ]+[0-9_a-z\\x7F-ÿ]*)(\\2)(\\s*)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.php"
@@ -1367,10 +1367,10 @@
           "name": "keyword.other.new.php"
         }
       },
-      "end": "(?i)(?=[^a-z0-9_\\x7F-ÿ\\\\])",
+      "end": "(?i)(?=[^0-9\\\\_a-z\\x7F-ÿ])",
       "patterns": [
         {
-          "match": "(?i)(parent|static|self)(?![a-z0-9_\\x7F-ÿ])",
+          "match": "(?i)(parent|static|self)(?![0-9_a-z\\x7F-ÿ])",
           "name": "storage.type.php"
         },
         {
@@ -1396,7 +1396,7 @@
           "name": "constant.character.escape.unicode.php"
         },
         {
-          "match": "\\\\[nrtvef$\"\\\\]",
+          "match": "\\\\[\"$\\\\efnrtv]",
           "name": "constant.character.escape.php"
         },
         {
@@ -1432,7 +1432,7 @@
           "name": "variable.other.php"
         }
       },
-      "match": "(?i)(\\$+)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)(?=\\s*\\()",
+      "match": "(?i)(\\$+)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)(?=\\s*\\()",
       "name": "meta.function-call.invoke.php"
     },
     "language": {
@@ -1441,7 +1441,7 @@
           "include": "#comments"
         },
         {
-          "begin": "(?i)^\\s*(interface)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(extends)?\\s*",
+          "begin": "(?i)^\\s*(interface)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(extends)?\\s*",
           "beginCaptures": {
             "1": {
               "name": "storage.type.interface.php"
@@ -1453,12 +1453,12 @@
               "name": "storage.modifier.extends.php"
             }
           },
-          "end": "(?i)((?:[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*\\s*,\\s*)*)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?\\s*(?:(?=\\{)|$)",
+          "end": "(?i)((?:[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*\\s*,\\s*)*)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?\\s*(?:(?=\\{)|$)",
           "endCaptures": {
             "1": {
               "patterns": [
                 {
-                  "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                  "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                   "name": "entity.other.inherited-class.php"
                 },
                 {
@@ -1479,7 +1479,7 @@
           ]
         },
         {
-          "begin": "(?i)^\\s*(trait)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)",
+          "begin": "(?i)^\\s*(trait)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.trait.php"
@@ -1511,7 +1511,7 @@
               ]
             }
           },
-          "match": "(?i)(?:^|(?<=<\\?php))\\s*(namespace)\\s+([a-z0-9_\\x7F-ÿ\\\\]+)(?=\\s*;)",
+          "match": "(?i)(?:^|(?<=<\\?php))\\s*(namespace)\\s+([0-9\\\\_a-z\\x7F-ÿ]+)(?=\\s*;)",
           "name": "meta.namespace.php"
         },
         {
@@ -1538,7 +1538,7 @@
                   ]
                 }
               },
-              "match": "(?i)[a-z0-9_\\x7F-ÿ\\\\]+",
+              "match": "(?i)[0-9\\\\_a-z\\x7F-ÿ]+",
               "name": "entity.name.type.namespace.php"
             },
             {
@@ -1612,7 +1612,7 @@
                       "name": "entity.other.alias.php"
                     }
                   },
-                  "match": "(?i)\\b(as)\\s+(final|abstract|public|private|protected|static)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\b"
+                  "match": "(?i)\\b(as)\\s+(final|abstract|public|private|protected|static)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\b"
                 },
                 {
                   "captures": {
@@ -1632,7 +1632,7 @@
                       ]
                     }
                   },
-                  "match": "(?i)\\b(as)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\b"
+                  "match": "(?i)\\b(as)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\b"
                 },
                 {
                   "captures": {
@@ -1643,7 +1643,7 @@
                       "name": "support.class.php"
                     }
                   },
-                  "match": "(?i)\\b(insteadof)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)"
+                  "match": "(?i)\\b(insteadof)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)"
                 },
                 {
                   "match": ";",
@@ -1660,7 +1660,7 @@
           ]
         },
         {
-          "begin": "(?i)^\\s*(?:(abstract|final)\\s+)?(class)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)",
+          "begin": "(?i)^\\s*(?:(abstract|final)\\s+)?(class)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.modifier.${1:/downcase}.php"
@@ -1691,11 +1691,11 @@
                 }
               },
               "contentName": "meta.other.inherited-class.php",
-              "end": "(?i)(?=[^a-z0-9_\\x7F-ÿ\\\\])",
+              "end": "(?i)(?=[^0-9\\\\_a-z\\x7F-ÿ])",
               "patterns": [
                 {
-                  "begin": "(?i)(?=\\\\?[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*\\\\)",
-                  "end": "(?i)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?(?=[^a-z0-9_\\x7F-ÿ\\\\])",
+                  "begin": "(?i)(?=\\\\?[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*\\\\)",
+                  "end": "(?i)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?(?=[^0-9\\\\_a-z\\x7F-ÿ])",
                   "endCaptures": {
                     "1": {
                       "name": "entity.other.inherited-class.php"
@@ -1714,7 +1714,7 @@
                   "include": "#namespace"
                 },
                 {
-                  "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                  "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                   "name": "entity.other.inherited-class.php"
                 }
               ]
@@ -1732,13 +1732,13 @@
                   "include": "#comments"
                 },
                 {
-                  "begin": "(?i)(?=[a-z0-9_\\x7F-ÿ\\\\]+)",
+                  "begin": "(?i)(?=[0-9\\\\_a-z\\x7F-ÿ]+)",
                   "contentName": "meta.other.inherited-class.php",
-                  "end": "(?i)\\s*(?:,|(?=[^a-z0-9_\\x7F-ÿ\\\\\\s]))\\s*",
+                  "end": "(?i)\\s*(?:,|(?=[^0-9\\\\_a-z\\x7F-ÿ\\s]))\\s*",
                   "patterns": [
                     {
-                      "begin": "(?i)(?=\\\\?[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*\\\\)",
-                      "end": "(?i)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?(?=[^a-z0-9_\\x7F-ÿ\\\\])",
+                      "begin": "(?i)(?=\\\\?[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*\\\\)",
+                      "end": "(?i)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?(?=[^0-9\\\\_a-z\\x7F-ÿ])",
                       "endCaptures": {
                         "1": {
                           "name": "entity.other.inherited-class.php"
@@ -1757,7 +1757,7 @@
                       "include": "#namespace"
                     },
                     {
-                      "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                      "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                       "name": "entity.other.inherited-class.php"
                     }
                   ]
@@ -1799,7 +1799,7 @@
               "name": "keyword.control.import.include.php"
             }
           },
-          "end": "(?=[\\s;]|$|\\?>)",
+          "end": "(?=[;\\s]|$|\\?>)",
           "name": "meta.include.php",
           "patterns": [
             {
@@ -1836,7 +1836,7 @@
                 "2": {
                   "patterns": [
                     {
-                      "match": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+                      "match": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
                       "name": "support.class.exception.php"
                     },
                     {
@@ -1852,7 +1852,7 @@
                   "name": "punctuation.definition.variable.php"
                 }
               },
-              "match": "(?i)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)((?:\\s*\\|\\s*[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)*)\\s*((\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)"
+              "match": "(?i)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)((?:\\s*\\|\\s*[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)*)\\s*((\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)"
             }
           ]
         },
@@ -1919,7 +1919,7 @@
                       "name": "punctuation.definition.variable.php"
                     }
                   },
-                  "match": "(?i)((&)?\\s*(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(?=[,)])",
+                  "match": "(?i)((&)?\\s*(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(?=[),])",
                   "name": "meta.function.closure.use.php"
                 }
               ]
@@ -1927,7 +1927,7 @@
           ]
         },
         {
-          "begin": "((?:(?:final|abstract|public|private|protected|static)\\s+)*)(function)\\s+(?i:(__(?:call|construct|debugInfo|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic))|([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*))\\s*(\\()",
+          "begin": "((?:(?:final|abstract|public|private|protected|static)\\s+)*)(function)\\s+(?i:(__(?:call|construct|debugInfo|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic))|([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -1951,7 +1951,7 @@
             }
           },
           "contentName": "meta.function.parameters.php",
-          "end": "(\\))(?:\\s*(:)\\s*([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*))?",
+          "end": "(\\))(?:\\s*(:)\\s*([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*))?",
           "endCaptures": {
             "1": {
               "name": "punctuation.definition.parameters.end.bracket.round.php"
@@ -2083,7 +2083,7 @@
               "name": "storage.modifier.reference.php"
             }
           },
-          "match": "(?i)(=)(&)|(&)(?=[$a-z_])"
+          "match": "(?i)(=)(&)|(&)(?=[$_a-z])"
         },
         {
           "match": "@",
@@ -2094,7 +2094,7 @@
           "name": "keyword.operator.comparison.php"
         },
         {
-          "match": "=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=|<<=|>>=",
+          "match": "(?:|[-%\\&*+/^|]|<<|>>)=",
           "name": "keyword.operator.assignment.php"
         },
         {
@@ -2106,7 +2106,7 @@
           "name": "keyword.operator.increment-decrement.php"
         },
         {
-          "match": "[-+*/%]",
+          "match": "[-%*+/]",
           "name": "keyword.operator.arithmetic.php"
         },
         {
@@ -2117,17 +2117,17 @@
           "include": "#function-call"
         },
         {
-          "match": "<<|>>|[~^\\&|]",
+          "match": "<<|>>|[\\&^|~]",
           "name": "keyword.operator.bitwise.php"
         },
         {
-          "begin": "(?i)\\b(instanceof)\\s+(?=[\\\\$a-z_])",
+          "begin": "(?i)\\b(instanceof)\\s+(?=[$\\\\_a-z])",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.type.php"
             }
           },
-          "end": "(?=[^\\\\$a-z0-9_\\x7F-ÿ])",
+          "end": "(?=[^$0-9\\\\_a-z\\x7F-ÿ])",
           "patterns": [
             {
               "include": "#class-name"
@@ -2149,7 +2149,7 @@
               "name": "support.other.php"
             }
           },
-          "match": "(?i)(goto)\\s+([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)"
+          "match": "(?i)(goto)\\s+([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)"
         },
         {
           "captures": {
@@ -2157,7 +2157,7 @@
               "name": "entity.name.goto-label.php"
             }
           },
-          "match": "(?i)^\\s*([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*:(?!:)"
+          "match": "(?i)^\\s*([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*:(?!:)"
         },
         {
           "include": "#string-backtick"
@@ -2229,7 +2229,7 @@
       ]
     },
     "namespace": {
-      "begin": "(?i)(?:(namespace)|[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?(\\\\)(?=.*?[^a-z0-9_\\x7F-ÿ\\\\])",
+      "begin": "(?i)(?:(namespace)|[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?(\\\\)(?=.*?[^0-9\\\\_a-z\\x7F-ÿ])",
       "beginCaptures": {
         "1": {
           "name": "variable.language.namespace.php"
@@ -2238,7 +2238,7 @@
           "name": "punctuation.separator.inheritance.php"
         }
       },
-      "end": "(?i)(?=[a-z0-9_\\x7F-ÿ]*[^a-z0-9_\\x7F-ÿ\\\\])",
+      "end": "(?i)(?=[0-9_a-z\\x7F-ÿ]*[^0-9\\\\_a-z\\x7F-ÿ])",
       "name": "support.other.namespace.php",
       "patterns": [
         {
@@ -2475,7 +2475,7 @@
           },
           "patterns": [
             {
-              "match": "(\\\\){1,2}[.$^\\[\\]{}]",
+              "match": "(\\\\){1,2}[]$.\\[^{}]",
               "name": "constant.character.escape.regex.php"
             },
             {
@@ -2501,17 +2501,17 @@
               "name": "string.regexp.character-class.php",
               "patterns": [
                 {
-                  "match": "\\\\[\\\\'\\[\\]]",
+                  "match": "\\\\['\\[-\\]]",
                   "name": "constant.character.escape.php"
                 }
               ]
             },
             {
-              "match": "[$^+*]",
+              "match": "[$*+^]",
               "name": "keyword.operator.regexp.php"
             },
             {
-              "begin": "(?i)(?<=^|\\s)(#)\\s(?=[a-z0-9_\\x7F-ÿ,. \\t?!\\-[^\\x00-\\x7F]]*$)",
+              "begin": "(?i)(?<=^|\\s)(#)\\s(?=[\\t !,-.0-9?_a-z\\x7F-ÿ[^\\x00-\\x7F]]*$)",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.definition.comment.php"
@@ -2528,7 +2528,7 @@
           ]
         },
         {
-          "begin": "(?i)(<<<)\\s*'([a-z_\\x7F-ÿ]+[a-z0-9_\\x7F-ÿ]*)'(\\s*)",
+          "begin": "(?i)(<<<)\\s*'([_a-z\\x7F-ÿ]+[0-9_a-z\\x7F-ÿ]*)'(\\s*)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.php"
@@ -2552,11 +2552,11 @@
     "numbers": {
       "patterns": [
         {
-          "match": "0[xX]\\h+",
+          "match": "0[Xx]\\h+",
           "name": "constant.numeric.hex.php"
         },
         {
-          "match": "0[bB][01]+",
+          "match": "0[Bb][01]+",
           "name": "constant.numeric.binary.php"
         },
         {
@@ -2572,7 +2572,7 @@
               "name": "punctuation.separator.decimal.period.php"
             }
           },
-          "match": "(?:[0-9]*(\\.)[0-9]+(?:[eE][+-]?[0-9]+)?|[0-9]+(\\.)[0-9]*(?:[eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)",
+          "match": "[0-9]*(\\.)[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+(\\.)[0-9]*(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+",
           "name": "constant.numeric.decimal.php"
         },
         {
@@ -2606,7 +2606,7 @@
           ]
         },
         {
-          "begin": "(?i)(->)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(\\()",
+          "begin": "(?i)(->)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.class.php"
@@ -2643,7 +2643,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?i)(->)((\\$+)?[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?"
+          "match": "(?i)(->)((\\$+)?[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?"
         }
       ]
     },
@@ -2700,8 +2700,8 @@
           "include": "#instantiation"
         },
         {
-          "begin": "(?i)(?=[a-z0-9_\\x7F-ÿ\\\\]+(::)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?)",
-          "end": "(?i)(::)([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)?",
+          "begin": "(?i)(?=[0-9\\\\_a-z\\x7F-ÿ]+(::)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?)",
+          "end": "(?i)(::)([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)?",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.class.php"
@@ -2753,7 +2753,7 @@
           "match": "(@xlink)\\s+(.+)\\s*$"
         },
         {
-          "begin": "(@(?:global|param|property(-(read|write))?|return|throws|var))\\s+(?=[A-Za-z_\\x7F-ÿ\\\\(])",
+          "begin": "(@(?:global|param|property(-(read|write))?|return|throws|var))\\s+(?=[(A-Z\\\\_a-z\\x7F-ÿ])",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.phpdoc.php"
@@ -2806,7 +2806,7 @@
           ]
         }
       },
-      "match": "(?i)[a-z_\\x7F-ÿ\\\\][a-z0-9_\\x7F-ÿ\\\\]*(\\|[a-z_\\x7F-ÿ\\\\][a-z0-9_\\x7F-ÿ\\\\]*)*"
+      "match": "(?i)[\\\\_a-z\\x7F-ÿ][0-9\\\\_a-z\\x7F-ÿ]*(\\|[\\\\_a-z\\x7F-ÿ][0-9\\\\_a-z\\x7F-ÿ]*)*"
     },
     "php_doc_types_array_multiple": {
       "begin": "\\(",
@@ -2853,16 +2853,16 @@
           "name": "keyword.other.array.phpdoc.php"
         }
       },
-      "match": "(?i)([a-z_\\x7F-ÿ\\\\][a-z0-9_\\x7F-ÿ\\\\]*)(\\[])"
+      "match": "(?i)([\\\\_a-z\\x7F-ÿ][0-9\\\\_a-z\\x7F-ÿ]*)(\\[])"
     },
     "regex-double-quoted": {
-      "begin": "\"/(?=(\\\\.|[^\"/])++/[imsxeADSUXu]*\")",
+      "begin": "\"/(?=(\\\\.|[^\"/])++/[ADSUXeimsux]*\")",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.php"
         }
       },
-      "end": "(/)([imsxeADSUXu]*)(\")",
+      "end": "(/)([ADSUXeimsux]*)(\")",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.php"
@@ -2871,7 +2871,7 @@
       "name": "string.regexp.double-quoted.php",
       "patterns": [
         {
-          "match": "(\\\\){1,2}[.$^\\[\\]{}]",
+          "match": "(\\\\){1,2}[]$.\\[^{}]",
           "name": "constant.character.escape.regex.php"
         },
         {
@@ -2905,19 +2905,19 @@
           ]
         },
         {
-          "match": "[$^+*]",
+          "match": "[$*+^]",
           "name": "keyword.operator.regexp.php"
         }
       ]
     },
     "regex-single-quoted": {
-      "begin": "'/(?=(\\\\(?:\\\\(?:\\\\[\\\\']?|[^'])|.)|[^'/])++/[imsxeADSUXu]*')",
+      "begin": "'/(?=(\\\\(?:\\\\(?:\\\\['\\\\]?|[^'])|.)|[^'/])++/[ADSUXeimsux]*')",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.php"
         }
       },
-      "end": "(/)([imsxeADSUXu]*)(')",
+      "end": "(/)([ADSUXeimsux]*)(')",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.php"
@@ -2951,7 +2951,7 @@
           "name": "string.regexp.character-class.php"
         },
         {
-          "match": "[$^+*]",
+          "match": "[$*+^]",
           "name": "keyword.operator.regexp.php"
         }
       ]
@@ -2979,10 +2979,10 @@
               ]
             }
           },
-          "match": "(?i)\\b([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)(?=\\s*::)"
+          "match": "(?i)\\b([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)(?=\\s*::)"
         },
         {
-          "begin": "(?i)(::)\\s*([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)\\s*(\\()",
+          "begin": "(?i)(::)\\s*([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.class.php"
@@ -3033,12 +3033,12 @@
               "name": "constant.other.class.php"
             }
           },
-          "match": "(?i)(::)\\s*(?:((\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)|([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*))?"
+          "match": "(?i)(::)\\s*(?:((\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)|([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*))?"
         }
       ]
     },
     "single_quote_regex_escape": {
-      "match": "\\\\(?:\\\\(?:\\\\[\\\\']?|[^'])|.)",
+      "match": "\\\\(?:\\\\(?:\\\\['\\\\]?|[^'])|.)",
       "name": "constant.character.escape.php"
     },
     "sql-string-double-quoted": {
@@ -3076,15 +3076,15 @@
           "name": "comment.line.double-dash.sql"
         },
         {
-          "match": "\\\\[\\\\\"`']",
+          "match": "\\\\[\"'\\\\`]",
           "name": "constant.character.escape.php"
         },
         {
-          "match": "'(?=((\\\\')|[^'\"])*(\"|$))",
+          "match": "'(?=((\\\\')|[^\"'])*(\"|$))",
           "name": "string.quoted.single.unclosed.sql"
         },
         {
-          "match": "`(?=((\\\\`)|[^`\"])*(\"|$))",
+          "match": "`(?=((\\\\`)|[^\"`])*(\"|$))",
           "name": "string.quoted.other.backtick.unclosed.sql"
         },
         {
@@ -3150,11 +3150,11 @@
           "name": "comment.line.double-dash.sql"
         },
         {
-          "match": "\\\\[\\\\'`\"]",
+          "match": "\\\\[\"'\\\\`]",
           "name": "constant.character.escape.php"
         },
         {
-          "match": "`(?=((\\\\`)|[^`'])*('|$))",
+          "match": "`(?=((\\\\`)|[^'`])*('|$))",
           "name": "string.quoted.other.backtick.unclosed.sql"
         },
         {
@@ -3226,7 +3226,7 @@
       "name": "string.quoted.single.php",
       "patterns": [
         {
-          "match": "\\\\[\\\\']",
+          "match": "\\\\['\\\\]",
           "name": "constant.character.escape.php"
         }
       ]
@@ -3308,7 +3308,7 @@
           "name": "support.function.curl.php"
         },
         {
-          "match": "(?i)\\b(strtotime|str[fp]time|checkdate|time|timezone_name_(from_abbr|get)|idate|timezone_((location|offset|transitions|version)_get|(abbreviations|identifiers)_list|open)|date(_(sun(rise|set)|sun_info|sub|create(_(immutable_)?from_format)?|timestamp_(get|set)|timezone_(get|set)|time_set|isodate_set|interval_(create_from_date_string|format)|offset_get|diff|default_timezone_(get|set)|date_set|parse(_from_format)?|format|add|get_last_errors|modify))?|localtime|get(date|timeofday)|gm(strftime|date|mktime)|microtime|mktime)\\b",
+          "match": "(?i)\\b(strtotime|str[fp]time|checkdate|time|timezone_name_(from_abbr|get)|idate|timezone_((location|offset|transitions|version)_get|(abbreviations|identifiers)_list|open)|date(_(sun(rise|set)|sun_info|sub|create(_(immutable_)?from_format)?|timestamp_([gs]et)|timezone_([gs]et)|time_set|isodate_set|interval_(create_from_date_string|format)|offset_get|diff|default_timezone_([gs]et)|date_set|parse(_from_format)?|format|add|get_last_errors|modify))?|localtime|get(date|timeofday)|gm(strftime|date|mktime)|microtime|mktime)\\b",
           "name": "support.function.datetime.php"
         },
         {
@@ -3336,7 +3336,7 @@
           "name": "support.function.ereg.php"
         },
         {
-          "match": "(?i)\\b((restore|set)_(e(?:rror_handler|xception_handler))|trigger_error|debug_(print_)?backtrace|user_error|error_(log|reporting|get_last))\\b",
+          "match": "(?i)\\b((restore|set)_(e(?:rror|xception)_handler)|trigger_error|debug_(print_)?backtrace|user_error|error_(log|reporting|get_last))\\b",
           "name": "support.function.errorfunc.php"
         },
         {
@@ -3348,11 +3348,11 @@
           "name": "support.function.exif.php"
         },
         {
-          "match": "(?i)\\bfann_((duplicate|length|merge|shuffle|subset)_train_data|scale_(train(_data)?|(input|output)(_train_data)?)|set_(scaling_params|sarprop_(step_error_(shift|threshold_factor)|temperature|weight_decay_shift)|cascade_(num_candidate_groups|candidate_(change_fraction|limit|stagnation_epochs)|output_(change_fraction|stagnation_epochs)|weight_multiplier|activation_(functions|steepnesses)|(m(?:ax|in))_(cand|out)_epochs)|callback|training_algorithm|train_(error|stop)_function|(input|output)_scaling_params|error_log|quickprop_(decay|mu)|weight(_array)?|learning_(momentum|rate)|bit_fail_limit|activation_(function|steepness)(_(hidden|layer|output))?|rprop_((decrease|increase)_factor|delta_(max|min|zero)))|save(_train)?|num_(input|output)_train_data|copy|clear_scaling_params|cascadetrain_on_(file|data)|create_((s(?:parse|hortcut|tandard))(_array)?|train(_from_callback)?|from_file)|test(_data)?|train(_(on_(file|data)|epoch))?|init_weights|descale_(input|output|train)|destroy(_train)?|print_error|run|reset_(MSE|err(no|str))|read_train_from_file|randomize_weights|get_(sarprop_(step_error_(shift|threshold_factor)|temperature|weight_decay_shift)|num_(input|output|layers)|network_type|MSE|connection_(array|rate)|bias_array|bit_fail(_limit)?|cascade_(num_(candidate(?:s|_groups))|(candidate|output)_(change_fraction|limit|stagnation_epochs)|weight_multiplier|activation_(functions|steepnesses)(_count)?|(m(?:ax|in))_(cand|out)_epochs)|total_(connections|neurons)|training_algorithm|train_(error|stop)_function|err(no|str)|quickprop_(decay|mu)|learning_(momentum|rate)|layer_array|activation_(function|steepness)|rprop_((decrease|increase)_factor|delta_(max|min|zero))))\\b",
+          "match": "(?i)\\bfann_((duplicate|length|merge|shuffle|subset)_train_data|scale_(train(_data)?|((?:in|out)put)(_train_data)?)|set_(scaling_params|sarprop_(step_error_(shift|threshold_factor)|temperature|weight_decay_shift)|cascade_(num_candidate_groups|candidate_(change_fraction|limit|stagnation_epochs)|output_(change_fraction|stagnation_epochs)|weight_multiplier|activation_(functions|steepnesses)|(m(?:ax|in))_(cand|out)_epochs)|callback|training_algorithm|train_(error|stop)_function|((?:in|out)put)_scaling_params|error_log|quickprop_(decay|mu)|weight(_array)?|learning_(momentum|rate)|bit_fail_limit|activation_(function|steepness)(_(hidden|layer|output))?|rprop_(((?:de|in)crease)_factor|delta_(max|min|zero)))|save(_train)?|num_((?:in|out)put)_train_data|copy|clear_scaling_params|cascadetrain_on_(file|data)|create_((s(?:parse|hortcut|tandard))(_array)?|train(_from_callback)?|from_file)|test(_data)?|train(_(on_(file|data)|epoch))?|init_weights|descale_(input|output|train)|destroy(_train)?|print_error|run|reset_(MSE|err(no|str))|read_train_from_file|randomize_weights|get_(sarprop_(step_error_(shift|threshold_factor)|temperature|weight_decay_shift)|num_(input|output|layers)|network_type|MSE|connection_(array|rate)|bias_array|bit_fail(_limit)?|cascade_(num_(candidate(?:|_group)s)|(candidate|output)_(change_fraction|limit|stagnation_epochs)|weight_multiplier|activation_(functions|steepnesses)(_count)?|(m(?:ax|in))_(cand|out)_epochs)|total_((?:connecti|neur)ons)|training_algorithm|train_(error|stop)_function|err(no|str)|quickprop_(decay|mu)|learning_(momentum|rate)|layer_array|activation_(function|steepness)|rprop_(((?:de|in)crease)_factor|delta_(max|min|zero))))\\b",
           "name": "support.function.fann.php"
         },
         {
-          "match": "(?i)\\b(symlink|stat|set_file_buffer|chown|chgrp|chmod|copy|clearstatcache|touch|tempnam|tmpfile|is_(dir|(uploaded_)?file|executable|link|readable|writ(e)?able)|disk_(free|total)_space|diskfreespace|dirname|delete|unlink|umask|pclose|popen|pathinfo|parse_ini_(file|string)|fscanf|fstat|fseek|fnmatch|fclose|ftell|ftruncate|file(size|[acm]time|type|inode|owner|perms|group)?|file_(exists|(get|put)_contents)|f(open|puts|putcsv|passthru|eof|flush|write|lock|read|gets(s)?|getc(sv)?)|lstat|lchown|lchgrp|link(info)?|rename|rewind|read(file|link)|realpath(_cache_(get|size))?|rmdir|glob|move_uploaded_file|mkdir|basename)\\b",
+          "match": "(?i)\\b(symlink|stat|set_file_buffer|chown|chgrp|chmod|copy|clearstatcache|touch|tempnam|tmpfile|is_(dir|(uploaded_)?file|executable|link|readable|writ(e)?able)|disk_(free|total)_space|diskfreespace|dirname|delete|unlink|umask|pclose|popen|pathinfo|parse_ini_(file|string)|fscanf|fstat|fseek|fnmatch|fclose|ftell|ftruncate|file(size|[acm]time|type|inode|owner|perms|group)?|file_((?:exis|(get|put)_conten)ts)|f(open|puts|putcsv|passthru|eof|flush|write|lock|read|gets(s)?|getc(sv)?)|lstat|lchown|lchgrp|link(info)?|rename|rewind|read(file|link)|realpath(_cache_(get|size))?|rmdir|glob|move_uploaded_file|mkdir|basename)\\b",
           "name": "support.function.file.php"
         },
         {
@@ -3372,7 +3372,7 @@
           "name": "support.function.funchand.php"
         },
         {
-          "match": "(?i)\\b((n)?gettext|textdomain|d((n)?gettext|c(n)?gettext)|bind(textdomain|_textdomain_codeset))\\b",
+          "match": "(?i)\\b((n)?gettext|textdomain|d((?:(n)?|c(n)?)gettext)|bind(textdomain|_textdomain_codeset))\\b",
           "name": "support.function.gettext.php"
         },
         {
@@ -3388,7 +3388,7 @@
           "name": "support.function.http.php"
         },
         {
-          "match": "(?i)\\b(iconv(_(str(pos|len|rpos)|substr|(get|set)_encoding|mime_(decode(_headers)?|encode)))?|ob_iconv_handler)\\b",
+          "match": "(?i)\\b(iconv(_(str(pos|len|rpos)|substr|([gs]et)_encoding|mime_(decode(_headers)?|encode)))?|ob_iconv_handler)\\b",
           "name": "support.function.iconv.php"
         },
         {
@@ -3400,11 +3400,11 @@
           "name": "support.function.image.php"
         },
         {
-          "match": "(?i)\\b(sys_get_temp_dir|set_(time_limit|include_path|magic_quotes_runtime)|cli_(get|set)_process_title|ini_(alter|get(_all)?|restore|set)|zend_(thread_id|version|logo_guid)|dl|php(credits|info|version)|php_(sapi_name|ini_(scanned_files|loaded_file)|uname|logo_guid)|putenv|extension_loaded|version_compare|assert(_options)?|restore_include_path|gc_(collect_cycles|disable|enable(d)?)|getopt|get_(cfg_var|current_user|defined_constants|extension_funcs|include_path|included_files|loaded_extensions|magic_quotes_(gpc|runtime)|required_files|resources)|get(env|lastmod|rusage|my(inode|[gup]id))|memory_get_(peak_)?usage|main|magic_quotes_runtime)\\b",
+          "match": "(?i)\\b(sys_get_temp_dir|set_(time_limit|include_path|magic_quotes_runtime)|cli_([gs]et)_process_title|ini_(alter|get(_all)?|restore|set)|zend_(thread_id|version|logo_guid)|dl|php(credits|info|version)|php_(sapi_name|ini_(scanned_files|loaded_file)|uname|logo_guid)|putenv|extension_loaded|version_compare|assert(_options)?|restore_include_path|gc_(collect_cycles|disable|enable(d)?)|getopt|get_(cfg_var|current_user|defined_constants|extension_funcs|include_path|included_files|loaded_extensions|magic_quotes_(gpc|runtime)|required_files|resources)|get(env|lastmod|rusage|my(inode|[gpu]id))|memory_get_(peak_)?usage|main|magic_quotes_runtime)\\b",
           "name": "support.function.info.php"
         },
         {
-          "match": "(?i)\\bibase_(set_event_handler|service_(attach|detach)|server_info|num_(fields|params)|name_result|connect|commit(_ret)?|close|trans|delete_user|drop_db|db_info|pconnect|param_info|prepare|err(code|msg)|execute|query|field_info|fetch_(assoc|object|row)|free_(event_handler|query|result)|wait_event|add_user|affected_rows|rollback(_ret)?|restore|gen_id|modify_user|maintain_db|backup|blob_(cancel|close|create|import|info|open|echo|add|get))\\b",
+          "match": "(?i)\\bibase_(set_event_handler|service_((?:at|de)tach)|server_info|num_(fields|params)|name_result|connect|commit(_ret)?|close|trans|delete_user|drop_db|db_info|pconnect|param_info|prepare|err(code|msg)|execute|query|field_info|fetch_(assoc|object|row)|free_(event_handler|query|result)|wait_event|add_user|affected_rows|rollback(_ret)?|restore|gen_id|modify_user|maintain_db|backup|blob_(cancel|close|create|import|info|open|echo|add|get))\\b",
           "name": "support.function.interbase.php"
         },
         {
@@ -3428,11 +3428,11 @@
           "name": "support.function.mail.php"
         },
         {
-          "match": "(?i)\\b((a)?(cos|sin|tan)(h)?|sqrt|srand|hypot|hexdec|ceil|is_(nan|(in)?finite)|octdec|dec(hex|oct|bin)|deg2rad|pi|pow|exp(m1)?|floor|fmod|lcg_value|log(1([p0]))?|atan2|abs|round|rand|rad2deg|getrandmax|mt_(srand|rand|getrandmax)|max|min|bindec|base_convert)\\b",
+          "match": "(?i)\\b((a)?(cos|sin|tan)(h)?|sqrt|srand|hypot|hexdec|ceil|is_(nan|(in)?finite)|octdec|dec(hex|oct|bin)|deg2rad|pi|pow|exp(m1)?|floor|fmod|lcg_value|log(1([0p]))?|atan2|abs|round|rand|rad2deg|getrandmax|mt_(srand|rand|getrandmax)|max|min|bindec|base_convert)\\b",
           "name": "support.function.math.php"
         },
         {
-          "match": "(?i)\\bmb_(str(cut|str|to(lower|upper)|istr|ipos|imwidth|pos|width|len|rchr|richr|ripos|rpos)|substitute_character|substr(_count)?|split|send_mail|http_(input|output)|check_encoding|convert_(case|encoding|kana|variables)|internal_encoding|output_handler|decode_(numericentity|mimeheader)|detect_(encoding|order)|parse_str|preferred_mime_name|encoding_aliases|encode_(numericentity|mimeheader)|ereg(i(_replace)?)?|ereg_(search(_(get(pos|regs)|init|regs|(set)?pos))?|replace(_callback)?|match)|list_encodings|language|regex_(set_options|encoding)|get_info)\\b",
+          "match": "(?i)\\bmb_(str(cut|str|to((?:low|upp)er)|istr|ipos|imwidth|pos|width|len|rchr|richr|ripos|rpos)|substitute_character|substr(_count)?|split|send_mail|http_((?:in|out)put)|check_encoding|convert_(case|encoding|kana|variables)|internal_encoding|output_handler|decode_(numericentity|mimeheader)|detect_(encoding|order)|parse_str|preferred_mime_name|encoding_aliases|encode_(numericentity|mimeheader)|ereg(i(_replace)?)?|ereg_(search(_(get(pos|regs)|init|regs|(set)?pos))?|replace(_callback)?|match)|list_encodings|language|regex_(set_options|encoding)|get_info)\\b",
           "name": "support.function.mbstring.php"
         },
         {
@@ -3448,15 +3448,15 @@
           "name": "support.function.mhash.php"
         },
         {
-          "match": "(?i)\\b(log_(cmd_(insert|delete|update)|killcursor|write_batch|reply|getmore)|bson_(decode|encode))\\b",
+          "match": "(?i)\\b(log_(cmd_(insert|delete|update)|killcursor|write_batch|reply|getmore)|bson_((?:de|en)code))\\b",
           "name": "support.function.mongo.php"
         },
         {
-          "match": "(?i)\\bmysql_(stat|set_charset|select_db|num_(fields|rows)|connect|client_encoding|close|create_db|escape_string|thread_id|tablename|insert_id|info|data_seek|drop_db|db_(name|query)|unbuffered_query|pconnect|ping|errno|error|query|field_(seek|name|type|table|flags|len)|fetch_(object|field|lengths|assoc|array|row)|free_result|list_(tables|dbs|processes|fields)|affected_rows|result|real_escape_string|get_(client|host|proto|server)_info)\\b",
+          "match": "(?i)\\bmysql_(stat|set_charset|select_db|num_(fields|rows)|connect|client_encoding|close|create_db|escape_string|thread_id|tablename|insert_id|info|data_seek|drop_db|db_(name|query)|unbuffered_query|pconnect|ping|errno|error|query|field_(seek|name|type|table|flags|len)|fetch_(object|field|lengths|assoc|array|row)|free_result|list_((?:table|db|processe|field)s)|affected_rows|result|real_escape_string|get_(client|host|proto|server)_info)\\b",
           "name": "support.function.mysql.php"
         },
         {
-          "match": "(?i)\\bmysqli_(ssl_set|store_result|stat|send_(query|long_data)|set_(charset|opt|local_infile_(default|handler))|stmt_(store_result|send_long_data|next_result|close|init|data_seek|prepare|execute|fetch|free_result|attr_(get|set)|result_metadata|reset|get_(result|warnings)|more_results|bind_(param|result))|select_db|slave_query|savepoint|next_result|change_user|character_set_name|connect|commit|client_encoding|close|thread_safe|init|options|(enable|disable)_(r(?:eads_from_master|pl_parse))|dump_debug_info|debug|data_seek|use_result|ping|poll|param_count|prepare|escape_string|execute|embedded_server_(start|end)|kill|query|field_seek|free_result|autocommit|rollback|report|refresh|fetch(_(object|fields|field(_direct)?|assoc|all|array|row))?|rpl_(parse_enabled|probe|query_type)|release_savepoint|reap_async_query|real_(connect|escape_string|query)|more_results|multi_query|get_(charset|connection_stats|client_(stats|info|version)|cache_stats|warnings|links_stats|metadata)|master_query|bind_(param|result)|begin_transaction)\\b",
+          "match": "(?i)\\bmysqli_(ssl_set|store_result|stat|send_(query|long_data)|set_(charset|opt|local_infile_(default|handler))|stmt_(store_result|send_long_data|next_result|close|init|data_seek|prepare|execute|fetch|free_result|attr_([gs]et)|result_metadata|reset|get_(result|warnings)|more_results|bind_(param|result))|select_db|slave_query|savepoint|next_result|change_user|character_set_name|connect|commit|client_encoding|close|thread_safe|init|options|((?:en|dis)able)_(r(?:eads_from_master|pl_parse))|dump_debug_info|debug|data_seek|use_result|ping|poll|param_count|prepare|escape_string|execute|embedded_server_(start|end)|kill|query|field_seek|free_result|autocommit|rollback|report|refresh|fetch(_(object|fields|field(_direct)?|assoc|all|array|row))?|rpl_(parse_enabled|probe|query_type)|release_savepoint|reap_async_query|real_(connect|escape_string|query)|more_results|multi_query|get_(charset|connection_stats|client_(stats|info|version)|cache_stats|warnings|links_stats|metadata)|master_query|bind_(param|result)|begin_transaction)\\b",
           "name": "support.function.mysqli.php"
         },
         {
@@ -3492,7 +3492,7 @@
           "name": "support.function.opcache.php"
         },
         {
-          "match": "(?i)\\bopenssl_(sign|spki_(new|export(_challenge)?|verify)|seal|csr_(sign|new|export(_to_file)?|get_(subject|public_key))|cipher_iv_length|open|dh_compute_key|digest|decrypt|public_(decrypt|encrypt)|encrypt|error_string|pkcs12_(export(_to_file)?|read)|pkcs7_(sign|decrypt|encrypt|verify)|verify|free_key|random_pseudo_bytes|pkey_(new|export(_to_file)?|free|get_(details|public|private))|private_(decrypt|encrypt)|pbkdf2|get_((cipher|md)_methods|cert_locations|(p(?:ublic|rivate))key)|x509_(check_private_key|checkpurpose|parse|export(_to_file)?|fingerprint|free|read))\\b",
+          "match": "(?i)\\bopenssl_(sign|spki_(new|export(_challenge)?|verify)|seal|csr_(sign|new|export(_to_file)?|get_(subject|public_key))|cipher_iv_length|open|dh_compute_key|digest|decrypt|public_((?:de|en)crypt)|encrypt|error_string|pkcs12_(export(_to_file)?|read)|pkcs7_(sign|decrypt|encrypt|verify)|verify|free_key|random_pseudo_bytes|pkey_(new|export(_to_file)?|free|get_(details|public|private))|private_((?:de|en)crypt)|pbkdf2|get_((cipher|md)_methods|cert_locations|(p(?:ublic|rivate))key)|x509_(check_private_key|checkpurpose|parse|export(_to_file)?|fingerprint|free|read))\\b",
           "name": "support.function.openssl.php"
         },
         {
@@ -3504,7 +3504,7 @@
           "name": "support.function.password.php"
         },
         {
-          "match": "(?i)\\bpcntl_(strerror|signal(_dispatch)?|sig(timedwait|procmask|waitinfo)|setpriority|errno|exec|fork|w(stopsig|termsig|if(stopped|signaled|exited))|wait(pid)?|alarm|getpriority|get_last_error)\\b",
+          "match": "(?i)\\bpcntl_(strerror|signal(_dispatch)?|sig(timedwait|procmask|waitinfo)|setpriority|errno|exec|fork|w(stopsig|termsig|if((?:stopp|signal|exit)ed))|wait(pid)?|alarm|getpriority|get_last_error)\\b",
           "name": "support.function.pcntl.php"
         },
         {
@@ -3512,7 +3512,7 @@
           "name": "support.function.pgsql.php"
         },
         {
-          "match": "(?i)\\b(virtual|getallheaders|apache_((get|set)env|note|child_terminate|lookup_uri|response_headers|reset_timeout|request_headers|get_(version|modules)))\\b",
+          "match": "(?i)\\b(virtual|getallheaders|apache_(([gs]et)env|note|child_terminate|lookup_uri|response_headers|reset_timeout|request_headers|get_(version|modules)))\\b",
           "name": "support.function.php_apache.php"
         },
         {
@@ -3524,7 +3524,7 @@
           "name": "support.function.php_ftp.php"
         },
         {
-          "match": "(?i)\\bimap_((create|delete|list|rename|scan)(mailbox)?|status|sort|subscribe|set_quota|set(flag_full|acl)|search|savebody|num_(recent|msg)|check|close|clearflag_full|thread|timeout|open|header(info)?|headers|append|alerts|reopen|8bit|unsubscribe|undelete|utf7_(decode|encode)|utf8|uid|ping|errors|expunge|qprint|gc|fetch(structure|header|text|mime|body)|fetch_overview|lsub|list(s(?:can|ubscribed))|last_error|rfc822_(parse_(headers|adrlist)|write_address)|get(subscribed|acl|mailboxes)|get_quota(root)?|msgno|mime_header_decode|mail_(copy|compose|move)|mail|mailboxmsginfo|binary|body(struct)?|base64)\\b",
+          "match": "(?i)\\bimap_((create|delete|list|rename|scan)(mailbox)?|status|sort|subscribe|set_quota|set(flag_full|acl)|search|savebody|num_(recent|msg)|check|close|clearflag_full|thread|timeout|open|header(info)?|headers|append|alerts|reopen|8bit|unsubscribe|undelete|utf7_((?:de|en)code)|utf8|uid|ping|errors|expunge|qprint|gc|fetch(structure|header|text|mime|body)|fetch_overview|lsub|list(s(?:can|ubscribed))|last_error|rfc822_(parse_(headers|adrlist)|write_address)|get(subscribed|acl|mailboxes)|get_quota(root)?|msgno|mime_header_decode|mail_(copy|compose|move)|mail|mailboxmsginfo|binary|body(struct)?|base64)\\b",
           "name": "support.function.php_imap.php"
         },
         {
@@ -3600,7 +3600,7 @@
           "name": "support.function.sockets.php"
         },
         {
-          "match": "(?i)\\bsqlite_(single_query|seek|has_(more|prev)|num_(fields|rows)|next|changes|column|current|close|create_(aggregate|function)|open|unbuffered_query|udf_(decode|encode)_binary|popen|prev|escape_string|error_string|exec|valid|key|query|field_name|factory|fetch_(string|single|column_types|object|all|array)|lib(encoding|version)|last_(insert_rowid|error)|array_query|rewind|busy_timeout)\\b",
+          "match": "(?i)\\bsqlite_(single_query|seek|has_(more|prev)|num_(fields|rows)|next|changes|column|current|close|create_(aggregate|function)|open|unbuffered_query|udf_((?:de|en)code)_binary|popen|prev|escape_string|error_string|exec|valid|key|query|field_name|factory|fetch_(string|single|column_types|object|all|array)|lib(encoding|version)|last_(insert_rowid|error)|array_query|rewind|busy_timeout)\\b",
           "name": "support.function.sqlite.php"
         },
         {
@@ -3616,7 +3616,7 @@
           "name": "support.function.streamsfuncs.php"
         },
         {
-          "match": "(?i)\\b(money_format|md5(_file)?|metaphone|bin2hex|sscanf|sha1(_file)?|str(str|c?spn|n(at)?(case)?cmp|chr|coll|(case)?cmp|to(upper|lower)|tok|tr|istr|pos|pbrk|len|rchr|ri?pos|rev)|str_(getcsv|ireplace|pad|repeat|replace|rot13|shuffle|split|word_count)|strip(c?slashes|os)|strip_tags|similar_text|soundex|substr(_(count|compare|replace))?|setlocale|html(specialchars(_decode)?|entities)|html_entity_decode|hex2bin|hebrev(c)?|number_format|nl2br|nl_langinfo|chop|chunk_split|chr|convert_(cyr_string|uu(decode|encode))|count_chars|crypt|crc32|trim|implode|ord|uc(first|words)|join|parse_str|print(f)?|echo|explode|v?[fs]?printf|quoted_printable_(decode|encode)|quotemeta|wordwrap|lcfirst|[lr]trim|localeconv|levenshtein|addc?slashes|get_html_translation_table)\\b",
+          "match": "(?i)\\b(money_format|md5(_file)?|metaphone|bin2hex|sscanf|sha1(_file)?|str(str|c?spn|n(at)?(case)?cmp|chr|coll|(case)?cmp|to((?:upp|low)er)|tok|tr|istr|pos|pbrk|len|rchr|ri?pos|rev)|str_(getcsv|ireplace|pad|repeat|replace|rot13|shuffle|split|word_count)|strip((?:c?slashe|o)s)|strip_tags|similar_text|soundex|substr(_(count|compare|replace))?|setlocale|html(specialchars(_decode)?|entities)|html_entity_decode|hex2bin|hebrev(c)?|number_format|nl2br|nl_langinfo|chop|chunk_split|chr|convert_(cyr_string|uu((?:de|en)code))|count_chars|crypt|crc32|trim|implode|ord|uc(first|words)|join|parse_str|print(f)?|echo|explode|v?[fs]?printf|quoted_printable_((?:de|en)code)|quotemeta|wordwrap|lcfirst|[lr]trim|localeconv|levenshtein|addc?slashes|get_html_translation_table)\\b",
           "name": "support.function.string.php"
         },
         {
@@ -3628,7 +3628,7 @@
           "name": "support.function.taint.php"
         },
         {
-          "match": "(?i)\\b(tidy_((get|set)opt|set_encoding|save_config|config_count|clean_repair|is_(x(?:html|ml))|diagnose|(access|error|warning)_count|load_config|reset_config|(parse|repair)_(string|file)|get_(status|html(_ver)?|head|config|output|opt_doc|root|release|body))|ob_tidyhandler)\\b",
+          "match": "(?i)\\b(tidy_(([gs]et)opt|set_encoding|save_config|config_count|clean_repair|is_(x(?:ht|)ml)|diagnose|(access|error|warning)_count|load_config|reset_config|(parse|repair)_(string|file)|get_(status|html(_ver)?|head|config|output|opt_doc|root|release|body))|ob_tidyhandler)\\b",
           "name": "support.function.tidy.php"
         },
         {
@@ -3644,7 +3644,7 @@
           "name": "support.function.uopz.php"
         },
         {
-          "match": "(?i)\\b(http_build_query|(raw)?url(decode|encode)|parse_url|get_(headers|meta_tags)|base64_(decode|encode))\\b",
+          "match": "(?i)\\b(http_build_query|(raw)?url((?:de|en)code)|parse_url|get_(headers|meta_tags)|base64_((?:de|en)code))\\b",
           "name": "support.function.url.php"
         },
         {
@@ -3656,15 +3656,15 @@
           "name": "support.function.wddx.php"
         },
         {
-          "match": "(?i)\\bxhprof_(sample_)?(disable|enable)\\b",
+          "match": "(?i)\\bxhprof_(sample_)?((?:dis|en)able)\\b",
           "name": "support.function.xhprof.php"
         },
         {
-          "match": "(?i)\\b(utf8_(decode|encode)|xml_(set_((notation|(end|start)_namespace|unparsed_entity)_decl_handler|(character_data|default|element|external_entity_ref|processing_instruction)_handler|object)|parse(_into_struct)?|parser_((get|set)_option|create(_ns)?|free)|error_string|get_(current_((column|line)_number|byte_index)|error_code)))\\b",
+          "match": "(?i)\\b(utf8_((?:de|en)code)|xml_(set_((notation|(end|start)_namespace|unparsed_entity)_decl_handler|(character_data|default|element|external_entity_ref|processing_instruction)_handler|object)|parse(_into_struct)?|parser_(([gs]et)_option|create(_ns)?|free)|error_string|get_(current_((column|line)_number|byte_index)|error_code)))\\b",
           "name": "support.function.xml.php"
         },
         {
-          "match": "(?i)\\bxmlrpc_(server_(call_method|create|destroy|add_introspection_data|register_(introspection_callback|method))|is_fault|decode(_request)?|parse_method_descriptions|encode(_request)?|(get|set)_type)\\b",
+          "match": "(?i)\\bxmlrpc_(server_(call_method|create|destroy|add_introspection_data|register_(introspection_callback|method))|is_fault|decode(_request)?|parse_method_descriptions|encode(_request)?|([gs]et)_type)\\b",
           "name": "support.function.xmlrpc.php"
         },
         {
@@ -3750,7 +3750,7 @@
               "name": "keyword.other.use-as.php"
             }
           },
-          "end": "(?i)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*",
+          "end": "(?i)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*",
           "endCaptures": {
             "0": {
               "name": "entity.other.alias.php"
@@ -3774,7 +3774,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?i)(\\$+)[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*\\b",
+          "match": "(?i)(\\$+)[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*\\b",
           "name": "variable.other.php"
         }
       ]
@@ -3785,7 +3785,7 @@
           "name": "punctuation.definition.variable.php"
         }
       },
-      "match": "(\\$)((_(COOKIE|FILES|GET|POST|REQUEST))|arg([vc]))\\b",
+      "match": "(\\$)((_(COOKIE|FILES|GET|POST|REQUEST))|arg([cv]))\\b",
       "name": "variable.other.global.php"
     },
     "var_global_safer": {
@@ -3847,7 +3847,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?i)((\\$)(?<name>[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*))(?:(->)(\\g<name>)|(\\[)(?:(\\d+)|((\\$)\\g<name>)|([a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*))(]))?"
+          "match": "(?i)((\\$)(?<name>[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*))(?:(->)(\\g<name>)|(\\[)(?:(\\d+)|((\\$)\\g<name>)|([_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*))(]))?"
         },
         {
           "captures": {
@@ -3861,7 +3861,7 @@
               "name": "punctuation.definition.variable.php"
             }
           },
-          "match": "(?i)((\\$\\{)(?<name>[a-z_\\x7F-ÿ][a-z0-9_\\x7F-ÿ]*)(}))"
+          "match": "(?i)((\\$\\{)(?<name>[_a-z\\x7F-ÿ][0-9_a-z\\x7F-ÿ]*)(}))"
         }
       ]
     },

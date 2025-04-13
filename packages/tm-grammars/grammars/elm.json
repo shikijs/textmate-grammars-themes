@@ -40,7 +40,7 @@
       "include": "#char"
     },
     {
-      "match": "\\b([0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)\\b",
+      "match": "\\b([0-9]+\\.[0-9]+([Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)\\b",
       "name": "constant.numeric.float.elm"
     },
     {
@@ -78,7 +78,7 @@
           "name": "entity.name.record.field.elm"
         }
       },
-      "match": "(\\{)\\s+([a-z][a-zA-Z0-9_]*)\\s+(\\|)\\s+([a-z][a-zA-Z0-9_]*)",
+      "match": "(\\{)\\s+([a-z][0-9A-Z_a-z]*)\\s+(\\|)\\s+([a-z][0-9A-Z_a-z]*)",
       "name": "meta.record.field.update.elm"
     },
     {
@@ -93,7 +93,7 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(\\|)\\s+([a-z][a-zA-Z0-9_]*)\\s+(=)",
+      "match": "(\\|)\\s+([a-z][0-9A-Z_a-z]*)\\s+(=)",
       "name": "meta.record.field.update.elm"
     },
     {
@@ -105,7 +105,7 @@
           "name": "record.name.elm"
         }
       },
-      "match": "(\\{)\\s+([a-z][a-zA-Z0-9_]*)\\s+$",
+      "match": "(\\{)\\s+([a-z][0-9A-Z_a-z]*)\\s+$",
       "name": "meta.record.field.update.elm"
     },
     {
@@ -120,7 +120,7 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(\\{)\\s+([a-z][a-zA-Z0-9_]*)\\s+(=)",
+      "match": "(\\{)\\s+([a-z][0-9A-Z_a-z]*)\\s+(=)",
       "name": "meta.record.field.elm"
     },
     {
@@ -135,11 +135,11 @@
           "name": "keyword.operator.assignment.elm"
         }
       },
-      "match": "(,)\\s+([a-z][a-zA-Z0-9_]*)\\s+(=)",
+      "match": "(,)\\s+([a-z][0-9A-Z_a-z]*)\\s+(=)",
       "name": "meta.record.field.elm"
     },
     {
-      "match": "([}{])",
+      "match": "([{}])",
       "name": "punctuation.bracket.elm"
     },
     {
@@ -159,7 +159,7 @@
       "include": "#infix_op"
     },
     {
-      "match": "([=:|\\\\])",
+      "match": "([:=\\\\|])",
       "name": "keyword.other.elm"
     },
     {
@@ -219,11 +219,11 @@
       "name": "string.quoted.single.elm",
       "patterns": [
         {
-          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\\\"'\\&]|x\\h{1,5})",
+          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[\"\\&'\\\\abfnrtv]|x\\h{1,5})",
           "name": "constant.character.escape.elm"
         },
         {
-          "match": "\\^[A-Z@\\[\\]\\\\^_]",
+          "match": "\\^[@-_]",
           "name": "constant.character.escape.control.elm"
         }
       ]
@@ -250,7 +250,7 @@
       ]
     },
     "constructor": {
-      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+      "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
       "name": "constant.type-constructor.elm"
     },
     "debug": {
@@ -313,11 +313,11 @@
       ]
     },
     "infix_op": {
-      "match": "(</>|<\\?>|<\\||<=|\\|\\||&&|>=|\\|>|\\|=|\\|\\.|\\+\\+|::|/=|==|//|>>|<<|[<>^+\\-/*])",
+      "match": "(</>|<\\?>|<\\||<=|\\|\\||&&|>=|\\|>|\\|=|\\|\\.|\\+\\+|::|/=|==|//|>>|<<|[-*+/<>^])",
       "name": "keyword.operator.elm"
     },
     "module": {
-      "begin": "^\\b((port |effect )?module)\\s+",
+      "begin": "^\\b(((?:por|effec)t )?module)\\s+",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.elm"
@@ -366,11 +366,11 @@
       "name": "meta.declaration.exports.elm",
       "patterns": [
         {
-          "match": "\\b[a-z][a-zA-Z_'0-9]*",
+          "match": "\\b[a-z]['0-9A-Z_a-z]*",
           "name": "entity.name.function.elm"
         },
         {
-          "match": "\\b[A-Z][A-Za-z_'0-9]*",
+          "match": "\\b[A-Z]['0-9A-Z_a-z]*",
           "name": "storage.type.elm"
         },
         {
@@ -410,11 +410,11 @@
           "name": "keyword.other.period.elm"
         }
       },
-      "match": "([A-Z][a-zA-Z0-9_]*)(\\.)",
+      "match": "([A-Z][0-9A-Z_a-z]*)(\\.)",
       "name": "meta.module.name.elm"
     },
     "module_chunk": {
-      "match": "[A-Z][a-zA-Z0-9_]*",
+      "match": "[A-Z][0-9A-Z_a-z]*",
       "name": "support.module.elm"
     },
     "parens": {
@@ -434,7 +434,7 @@
           "name": "entity.name.record.field.accessor.elm"
         }
       },
-      "match": "(\\.)([a-z][a-zA-Z0-9_]*)",
+      "match": "(\\.)([a-z][0-9A-Z_a-z]*)",
       "name": "meta.record.accessor"
     },
     "record-prefix": {
@@ -449,11 +449,11 @@
           "name": "entity.name.record.field.accessor.elm"
         }
       },
-      "match": "([a-z][a-zA-Z0-9_]*)(\\.)([a-z][a-zA-Z0-9_]*)",
+      "match": "([a-z][0-9A-Z_a-z]*)(\\.)([a-z][0-9A-Z_a-z]*)",
       "name": "record.accessor.elm"
     },
     "square_brackets": {
-      "match": "[\\[\\]]",
+      "match": "[]\\[]",
       "name": "punctuation.definition.list.elm"
     },
     "string-quote": {
@@ -472,11 +472,11 @@
       "name": "string.quoted.double.elm",
       "patterns": [
         {
-          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\\\"'\\&]|x\\h{1,5})",
+          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[\"\\&'\\\\abfnrtv]|x\\h{1,5})",
           "name": "constant.character.escape.elm"
         },
         {
-          "match": "\\^[A-Z@\\[\\]\\\\^_]",
+          "match": "\\^[@-_]",
           "name": "constant.character.escape.control.elm"
         }
       ]
@@ -497,21 +497,21 @@
       "name": "string.quoted.triple.elm",
       "patterns": [
         {
-          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\\\"'\\&]|x\\h{1,5})",
+          "match": "\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[\"\\&'\\\\abfnrtv]|x\\h{1,5})",
           "name": "constant.character.escape.elm"
         },
         {
-          "match": "\\^[A-Z@\\[\\]\\\\^_]",
+          "match": "\\^[@-_]",
           "name": "constant.character.escape.control.elm"
         }
       ]
     },
     "top_level_value": {
-      "match": "^[a-z][a-zA-Z0-9_]*\\b",
+      "match": "^[a-z][0-9A-Z_a-z]*\\b",
       "name": "entity.name.function.top_level.elm"
     },
     "type-alias-declaration": {
-      "begin": "^(type\\s+)(alias\\s+)([A-Z][a-zA-Z0-9_']*)\\s+",
+      "begin": "^(type\\s+)(alias\\s+)([A-Z]['0-9A-Z_a-z]*)\\s+",
       "beginCaptures": {
         "1": {
           "name": "keyword.type.elm"
@@ -538,11 +538,11 @@
           "include": "#module-prefix"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "storage.type.elm"
         },
         {
-          "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[a-z][0-9A-Z_a-z]*\\b",
           "name": "variable.type.elm"
         },
         {
@@ -554,7 +554,7 @@
       ]
     },
     "type-declaration": {
-      "begin": "^(type\\s+)([A-Z][a-zA-Z0-9_']*)\\s+",
+      "begin": "^(type\\s+)([A-Z]['0-9A-Z_a-z]*)\\s+",
       "beginCaptures": {
         "1": {
           "name": "keyword.type.elm"
@@ -572,7 +572,7 @@
               "name": "constant.type-constructor.elm"
             }
           },
-          "match": "^\\s*([A-Z][a-zA-Z0-9_]*)\\b",
+          "match": "^\\s*([A-Z][0-9A-Z_a-z]*)\\b",
           "name": "meta.record.field.elm"
         },
         {
@@ -588,7 +588,7 @@
               "name": "constant.type-constructor.elm"
             }
           },
-          "match": "([=|])\\s+([A-Z][a-zA-Z0-9_]*)\\b",
+          "match": "([=|])\\s+([A-Z][0-9A-Z_a-z]*)\\b",
           "name": "meta.record.field.elm"
         },
         {
@@ -603,11 +603,11 @@
           "include": "#module-prefix"
         },
         {
-          "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[a-z][0-9A-Z_a-z]*\\b",
           "name": "variable.type.elm"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "storage.type.elm"
         },
         {
@@ -650,7 +650,7 @@
               "name": "keyword.other.elm"
             }
           },
-          "match": "([a-z][a-zA-Z0-9_]*)\\s+(:)",
+          "match": "([a-z][0-9A-Z_a-z]*)\\s+(:)",
           "name": "meta.record.field.elm"
         },
         {
@@ -661,11 +661,11 @@
           "include": "#module-prefix"
         },
         {
-          "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[a-z][0-9A-Z_a-z]*\\b",
           "name": "variable.type.elm"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "storage.type.elm"
         },
         {
@@ -677,7 +677,7 @@
       ]
     },
     "type-signature": {
-      "begin": "^(port\\s+)?([a-z_][a-zA-Z0-9_']*)\\s+(:)",
+      "begin": "^(port\\s+)?([_a-z]['0-9A-Z_a-z]*)\\s+(:)",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.port.elm"
@@ -689,7 +689,7 @@
           "name": "keyword.other.colon.elm"
         }
       },
-      "end": "((^(?=[a-z]))|^$)",
+      "end": "^(((?=[a-z]))|$)",
       "name": "meta.function.type-declaration.elm",
       "patterns": [
         {
@@ -711,11 +711,11 @@
           "include": "#module-prefix"
         },
         {
-          "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[a-z][0-9A-Z_a-z]*\\b",
           "name": "variable.type.elm"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "storage.type.elm"
         },
         {
@@ -741,7 +741,7 @@
       "name": "constant.unit.elm"
     },
     "value": {
-      "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+      "match": "\\b[a-z][0-9A-Z_a-z]*\\b",
       "name": "meta.value.elm"
     }
   },

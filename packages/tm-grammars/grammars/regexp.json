@@ -99,7 +99,7 @@
           "name": "support.other.match.end.regexp"
         },
         {
-          "match": "[+*?]\\??",
+          "match": "[*+?]\\??",
           "name": "keyword.operator.quantifier.regexp"
         },
         {
@@ -164,7 +164,7 @@
     "regexp-charecter-set-escapes": {
       "patterns": [
         {
-          "match": "\\\\[abfnrtv\\\\]",
+          "match": "\\\\[\\\\abfnrtv]",
           "name": "constant.character.escape.regexp"
         },
         {
@@ -261,7 +261,7 @@
       ]
     },
     "regexp-escape-special": {
-      "match": "\\\\([AbBdDsSwWZ])",
+      "match": "\\\\([ABDSWZbdsw])",
       "name": "support.other.escape.special.regexp"
     },
     "regexp-escape-unicode": {
@@ -312,7 +312,7 @@
       ]
     },
     "regexp-flags": {
-      "match": "\\(\\?[aiLmsux]+\\)",
+      "match": "\\(\\?[Laimsux]+\\)",
       "name": "storage.modifier.flag.regexp"
     },
     "regexp-lookahead": {

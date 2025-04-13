@@ -14,7 +14,7 @@
   ],
   "repository": {
     "annotated-parameter": {
-      "begin": "\\b([[:alpha:]_]\\w*)\\s*(:)",
+      "begin": "\\b([_[:alpha:]]\\w*)\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.function.language.python"
@@ -45,7 +45,7 @@
     },
     "backticks": {
       "begin": "`",
-      "end": "(?:`|(?<!\\\\)(\\n))",
+      "end": "`|(?<!\\\\)(\\n)",
       "name": "invalid.deprecated.backtick.python",
       "patterns": [
         {
@@ -137,13 +137,13 @@
           "name": "support.type.constant.vyper"
         },
         {
-          "match": "(?<!\\.)\\b(implements|uses|initializes|exports)\\b",
+          "match": "(?<!\\.)\\b((?:implement|use|initialize|export)s)\\b",
           "name": "entity.other.inherited-class.modules.vyper"
         }
       ]
     },
     "call-wrapper-inheritance": {
-      "begin": "\\b(?=([[:alpha:]_]\\w*)\\s*(\\())",
+      "begin": "\\b(?=([_[:alpha:]]\\w*)\\s*(\\())",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -163,7 +163,7 @@
     "class-declaration": {
       "patterns": [
         {
-          "begin": "\\s*(class)\\s+(?=[[:alpha:]_]\\w*\\s*([:(]))",
+          "begin": "\\s*(class)\\s+(?=[_[:alpha:]]\\w*\\s*([(:]))",
           "beginCaptures": {
             "1": {
               "name": "storage.type.class.python"
@@ -247,7 +247,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b([[:alpha:]_]\\w*)\\s*(=)(?!=)"
+      "match": "\\b([_[:alpha:]]\\w*)\\s*(=)(?!=)"
     },
     "class-name": {
       "patterns": [
@@ -258,7 +258,7 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b",
+          "match": "\\b([_[:alpha:]]\\w*)\\b",
           "name": "entity.name.type.class.python"
         }
       ]
@@ -284,7 +284,7 @@
             }
           },
           "contentName": "meta.typehint.comment.python",
-          "end": "(?:$|(?=#))",
+          "end": "$|(?=#)",
           "name": "comment.line.number-sign.python",
           "patterns": [
             {
@@ -296,11 +296,11 @@
               "name": "comment.typehint.type.notation.python"
             },
             {
-              "match": "([\\[\\](),.=*]|(->))",
+              "match": "([](-*,.=\\[]|(->))",
               "name": "comment.typehint.punctuation.notation.python"
             },
             {
-              "match": "([[:alpha:]_]\\w*)",
+              "match": "([_[:alpha:]]\\w*)",
               "name": "comment.typehint.variable.notation.python"
             }
           ]
@@ -317,7 +317,7 @@
           "name": "punctuation.definition.comment.python"
         }
       },
-      "end": "($)",
+      "end": "$()",
       "name": "comment.line.number-sign.python",
       "patterns": [
         {
@@ -379,7 +379,7 @@
       ]
     },
     "decorator": {
-      "begin": "^\\s*((@))\\s*(?=[[:alpha:]_]\\w*)",
+      "begin": "^\\s*((@))\\s*(?=[_[:alpha:]]\\w*)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.decorator.python"
@@ -421,7 +421,7 @@
               "name": "punctuation.separator.period.python"
             }
           },
-          "match": "([[:alpha:]_]\\w*)|(\\.)",
+          "match": "([_[:alpha:]]\\w*)|(\\.)",
           "name": "entity.name.function.decorator.python"
         },
         {
@@ -433,7 +433,7 @@
               "name": "invalid.illegal.decorator.python"
             }
           },
-          "match": "\\s*([^([:alpha:]\\s_.#\\\\].*?)(?=#|$)",
+          "match": "\\s*([^#(.\\\\_[:alpha:]\\s].*?)(?=#|$)",
           "name": "invalid.illegal.decorator.python"
         }
       ]
@@ -467,7 +467,7 @@
           ]
         },
         {
-          "begin": "([rR])('''|\"\"\")",
+          "begin": "([Rr])('''|\"\"\")",
           "beginCaptures": {
             "1": {
               "name": "storage.type.string.python"
@@ -496,7 +496,7 @@
           ]
         },
         {
-          "begin": "(['\"])",
+          "begin": "([\"'])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.string.begin.python"
@@ -522,7 +522,7 @@
           ]
         },
         {
-          "begin": "([rR])(['\"])",
+          "begin": "([Rr])([\"'])",
           "beginCaptures": {
             "1": {
               "name": "storage.type.string.python"
@@ -574,8 +574,8 @@
       "match": "(?:^|\\G)\\s*((?:>>>|\\.\\.\\.)\\s)(?=\\s*\\S)"
     },
     "docstring-statement": {
-      "begin": "^(?=\\s*[rR]?('''|\"\"\"|['\"]))",
-      "end": "((?<=\\1)|^)(?!\\s*[rR]?('''|\"\"\"|['\"]))",
+      "begin": "^(?=\\s*[Rr]?('''|\"\"\"|[\"']))",
+      "end": "((?<=\\1)|^)(?!\\s*[Rr]?('''|\"\"\"|[\"']))",
       "patterns": [
         {
           "include": "#docstring"
@@ -1216,7 +1216,7 @@
       "name": "constant.other.ellipsis.python"
     },
     "escape-sequence": {
-      "match": "\\\\(x\\h{2}|[0-7]{1,3}|[\\\\\"'abfnrtv])",
+      "match": "\\\\(x\\h{2}|[0-7]{1,3}|[\"'\\\\abfnrtv])",
       "name": "constant.character.escape.python"
     },
     "escape-sequence-unicode": {
@@ -1236,7 +1236,7 @@
           "include": "#member-access"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b"
+          "match": "\\b([_[:alpha:]]\\w*)\\b"
         }
       ]
     },
@@ -1344,7 +1344,7 @@
           "include": "#member-access"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b"
+          "match": "\\b([_[:alpha:]]\\w*)\\b"
         }
       ]
     },
@@ -1369,7 +1369,7 @@
       "name": "keyword.operator.quantifier.regexp"
     },
     "fstring-fnorm-quoted-multi-line": {
-      "begin": "(\\b[fF])([bBuU])?('''|\"\"\")",
+      "begin": "\\b([Ff])([BUbu])?('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "string.interpolated.python string.quoted.multi.python storage.type.string.python"
@@ -1407,7 +1407,7 @@
       ]
     },
     "fstring-fnorm-quoted-single-line": {
-      "begin": "(\\b[fF])([bBuU])?((['\"]))",
+      "begin": "\\b([Ff])([BUbu])?(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "string.interpolated.python string.quoted.single.python storage.type.string.python"
@@ -1548,11 +1548,11 @@
       ]
     },
     "fstring-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)($(\\n?)|(?=[\\\\{}]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.multi.python"
     },
     "fstring-normf-quoted-multi-line": {
-      "begin": "(\\b[bBuU])([fF])('''|\"\"\")",
+      "begin": "\\b([BUbu])([Ff])('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "invalid.illegal.prefix.python"
@@ -1590,7 +1590,7 @@
       ]
     },
     "fstring-normf-quoted-single-line": {
-      "begin": "(\\b[bBuU])([fF])((['\"]))",
+      "begin": "\\b([BUbu])([Ff])(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "invalid.illegal.prefix.python"
@@ -1638,11 +1638,11 @@
       ]
     },
     "fstring-raw-multi-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|'''|\"\"\"))|\\n",
+      "match": "(.+?)($(\\n?)|(?=[\\\\{}]|'''|\"\"\"))|\\n",
       "name": "string.interpolated.python string.quoted.raw.multi.python"
     },
     "fstring-raw-quoted-multi-line": {
-      "begin": "(\\b(?:[rR][fF]|[fF][rR]))('''|\"\"\")",
+      "begin": "\\b([Rr][Ff]|[Ff][Rr])('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "string.interpolated.python string.quoted.raw.multi.python storage.type.string.python"
@@ -1677,7 +1677,7 @@
       ]
     },
     "fstring-raw-quoted-single-line": {
-      "begin": "(\\b(?:[rR][fF]|[fF][rR]))((['\"]))",
+      "begin": "\\b([Rr][Ff]|[Ff][Rr])(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "string.interpolated.python string.quoted.raw.single.python storage.type.string.python"
@@ -1712,7 +1712,7 @@
       ]
     },
     "fstring-raw-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)($(\\n?)|(?=[\\\\{}]|([\"'])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.raw.single.python"
     },
     "fstring-single-brace": {
@@ -1738,17 +1738,17 @@
       ]
     },
     "fstring-single-core": {
-      "match": "(.+?)(($\\n?)|(?=[\\\\}{]|(['\"])|((?<!\\\\)\\n)))|\\n",
+      "match": "(.+?)($(\\n?)|(?=[\\\\{}]|([\"'])|((?<!\\\\)\\n)))|\\n",
       "name": "string.interpolated.python string.quoted.single.python"
     },
     "fstring-terminator-multi": {
       "patterns": [
         {
-          "match": "(=(![rsa])?)(?=})",
+          "match": "(=(![ars])?)(?=})",
           "name": "storage.type.format.python"
         },
         {
-          "match": "(=?![rsa])(?=})",
+          "match": "(=?![ars])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1760,7 +1760,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![ars])?)(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)(?=})"
         },
         {
           "include": "#fstring-terminator-multi-tail"
@@ -1768,7 +1768,7 @@
       ]
     },
     "fstring-terminator-multi-tail": {
-      "begin": "(=?(?:![rsa])?)(:)(?=.*?\\{)",
+      "begin": "(=?(?:![ars])?)(:)(?=.*?\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.format.python"
@@ -1786,7 +1786,7 @@
           "include": "#fstring-multi-brace"
         },
         {
-          "match": "([bcdeEfFgGnosxX%])(?=})",
+          "match": "([%E-GXb-gnosx])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1806,11 +1806,11 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([-+ ])",
+          "match": "([- +])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=^])",
+          "match": "([<->^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1822,11 +1822,11 @@
     "fstring-terminator-single": {
       "patterns": [
         {
-          "match": "(=(![rsa])?)(?=})",
+          "match": "(=(![ars])?)(?=})",
           "name": "storage.type.format.python"
         },
         {
-          "match": "(=?![rsa])(?=})",
+          "match": "(=?![ars])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1838,7 +1838,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![rsa])?)(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)(?=})"
+          "match": "(=?(?:![ars])?)(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)(?=})"
         },
         {
           "include": "#fstring-terminator-single-tail"
@@ -1846,7 +1846,7 @@
       ]
     },
     "fstring-terminator-single-tail": {
-      "begin": "(=?(?:![rsa])?)(:)(?=.*?\\{)",
+      "begin": "(=?(?:![ars])?)(:)(?=.*?\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.format.python"
@@ -1864,7 +1864,7 @@
           "include": "#fstring-single-brace"
         },
         {
-          "match": "([bcdeEfFgGnosxX%])(?=})",
+          "match": "([%E-GXb-gnosx])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1884,11 +1884,11 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([-+ ])",
+          "match": "([- +])",
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<>=^])",
+          "match": "([<->^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1917,7 +1917,7 @@
               "name": "keyword.operator.unpacking.arguments.python"
             }
           },
-          "match": "(?:(?<=[,(])|^)\\s*(\\*{1,2})"
+          "match": "(?:(?<=[(,])|^)\\s*(\\*{1,2})"
         },
         {
           "include": "#lambda-incomplete"
@@ -1934,7 +1934,7 @@
               "name": "keyword.operator.assignment.python"
             }
           },
-          "match": "\\b([[:alpha:]_]\\w*)\\s*(=)(?!=)"
+          "match": "\\b([_[:alpha:]]\\w*)\\s*(=)(?!=)"
         },
         {
           "match": "=(?!=)",
@@ -1957,7 +1957,7 @@
       ]
     },
     "function-call": {
-      "begin": "\\b(?=([[:alpha:]_]\\w*)\\s*(\\())",
+      "begin": "\\b(?=([_[:alpha:]]\\w*)\\s*(\\())",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -1978,7 +1978,7 @@
       ]
     },
     "function-declaration": {
-      "begin": "\\s*(?:\\b(async)\\s+)?\\b(def)\\s+(?=[[:alpha:]_]\\p{word}*\\s*\\()",
+      "begin": "\\s*(?:\\b(async)\\s+)?\\b(def)\\s+(?=[_[:alpha:]]\\p{word}*\\s*\\()",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.async.python"
@@ -1987,7 +1987,7 @@
           "name": "storage.type.function.python"
         }
       },
-      "end": "(:|(?=[#'\"\\n]))",
+      "end": "(:|(?=[\\n\"#']))",
       "endCaptures": {
         "1": {
           "name": "punctuation.section.function.begin.python"
@@ -2026,7 +2026,7 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b",
+          "match": "\\b([_[:alpha:]]\\w*)\\b",
           "name": "entity.name.function.python"
         }
       ]
@@ -2037,7 +2037,7 @@
           "include": "#builtin-possible-callables"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b",
+          "match": "\\b([_[:alpha:]]\\w*)\\b",
           "name": "meta.function-call.generic.python"
         }
       ]
@@ -2087,7 +2087,7 @@
           "name": "invalid.illegal.operator.python"
         },
         {
-          "match": "[?$]",
+          "match": "[$?]",
           "name": "invalid.illegal.operator.python"
         },
         {
@@ -2145,7 +2145,7 @@
           "name": "entity.other.inherited-class.python"
         }
       },
-      "match": "\\b([[:alpha:]_]\\w*)\\b"
+      "match": "\\b([_[:alpha:]]\\w*)\\b"
     },
     "inheritance-name": {
       "patterns": [
@@ -2163,7 +2163,7 @@
     "item-access": {
       "patterns": [
         {
-          "begin": "\\b(?=[[:alpha:]_]\\w*\\s*\\[)",
+          "begin": "\\b(?=[_[:alpha:]]\\w*\\s*\\[)",
           "end": "(])",
           "endCaptures": {
             "1": {
@@ -2216,7 +2216,7 @@
           "include": "#special-names"
         },
         {
-          "match": "\\b([[:alpha:]_]\\w*)\\b",
+          "match": "\\b([_[:alpha:]]\\w*)\\b",
           "name": "meta.indexed-name.python"
         },
         {
@@ -2240,7 +2240,7 @@
               "name": "storage.type.function.lambda.python"
             }
           },
-          "match": "\\b(lambda)\\s*?(?=[,\\n]|$)"
+          "match": "\\b(lambda)\\s*?(?=[\\n,]|$)"
         },
         {
           "begin": "\\b(lambda)\\b",
@@ -2281,7 +2281,7 @@
                   "name": "punctuation.separator.parameters.python"
                 }
               },
-              "match": "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=:|$))"
+              "match": "([_[:alpha:]]\\w*)\\s*(?:(,)|(?=:|$))"
             },
             {
               "include": "#comments"
@@ -2306,15 +2306,15 @@
       ]
     },
     "lambda-incomplete": {
-      "match": "\\blambda(?=\\s*[,)])",
+      "match": "\\blambda(?=\\s*[),])",
       "name": "storage.type.function.lambda.python"
     },
     "lambda-nested-incomplete": {
-      "match": "\\blambda(?=\\s*[:,)])",
+      "match": "\\blambda(?=\\s*[),:])",
       "name": "storage.type.function.lambda.python"
     },
     "lambda-parameter-with-default": {
-      "begin": "\\b([[:alpha:]_]\\w*)\\s*(=)",
+      "begin": "\\b([_[:alpha:]]\\w*)\\s*(=)",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter.function.language.python"
@@ -2355,7 +2355,7 @@
               "name": "punctuation.separator.continuation.line.python"
             }
           },
-          "end": "(?=^\\s*$)|(?!(\\s*[rR]?('''|\"\"\"|['\"]))|(\\G$))",
+          "end": "(?=^\\s*$)|(?!(\\s*[Rr]?('''|\"\"\"|[\"']))|\\G()$)",
           "patterns": [
             {
               "include": "#regexp"
@@ -2464,7 +2464,7 @@
       ]
     },
     "member-access-attribute": {
-      "match": "\\b([[:alpha:]_]\\w*)\\b",
+      "match": "\\b([_[:alpha:]]\\w*)\\b",
       "name": "meta.attribute.python"
     },
     "member-access-base": {
@@ -2546,7 +2546,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w.])(0[bB])(_?[01])+\\b",
+      "match": "(?<![.\\w])(0[Bb])(_?[01])+\\b",
       "name": "constant.numeric.bin.python"
     },
     "number-dec": {
@@ -2558,7 +2558,7 @@
           "name": "invalid.illegal.dec.python"
         }
       },
-      "match": "(?<![\\w.])(?:[1-9](?:_?[0-9])*|0+|[0-9](?:_?[0-9])*([jJ])|0([0-9]+)(?![eE.]))\\b",
+      "match": "(?<![.\\w])(?:[1-9](?:_?[0-9])*|0+|[0-9](?:_?[0-9])*([Jj])|0([0-9]+)(?![.Ee]))\\b",
       "name": "constant.numeric.dec.python"
     },
     "number-float": {
@@ -2567,7 +2567,7 @@
           "name": "storage.type.imaginary.number.python"
         }
       },
-      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[eE][+-]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*[eE][+-]?[0-9](?:_?[0-9])*)([jJ])?\\b",
+      "match": "(?<!\\w)(?:(?:\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.[0-9](?:_?[0-9])*|[0-9](?:_?[0-9])*\\.)(?:[Ee][-+]?[0-9](?:_?[0-9])*)?|[0-9](?:_?[0-9])*[Ee][-+]?[0-9](?:_?[0-9])*)([Jj])?\\b",
       "name": "constant.numeric.float.python"
     },
     "number-hex": {
@@ -2576,7 +2576,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w.])(0[xX])(_?\\h)+\\b",
+      "match": "(?<![.\\w])(0[Xx])(_?\\h)+\\b",
       "name": "constant.numeric.hex.python"
     },
     "number-long": {
@@ -2585,7 +2585,7 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w.])([1-9][0-9]*|0)([lL])\\b",
+      "match": "(?<![.\\w])([1-9][0-9]*|0)([Ll])\\b",
       "name": "constant.numeric.bin.python"
     },
     "number-oct": {
@@ -2594,11 +2594,11 @@
           "name": "storage.type.number.python"
         }
       },
-      "match": "(?<![\\w.])(0[oO])(_?[0-7])+\\b",
+      "match": "(?<![.\\w])(0[Oo])(_?[0-7])+\\b",
       "name": "constant.numeric.oct.python"
     },
     "odd-function-call": {
-      "begin": "(?<=[\\])])\\s*(?=\\()",
+      "begin": "(?<=[])])\\s*(?=\\()",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -2632,7 +2632,7 @@
           "name": "keyword.operator.assignment.python"
         }
       },
-      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&|^~])|(\\*\\*|[*+\\-%]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
+      "match": "\\b(?<!\\.)(?:(and|or|not|in|is)|(for|if|else|await|yield(?:\\s+from)?))(?!\\s*:)\\b|(<<|>>|[\\&^|~])|(\\*\\*|[-%*+]|//|[/@])|(!=|==|>=|<=|[<>])|(:=)"
     },
     "parameter-special": {
       "captures": {
@@ -2695,7 +2695,7 @@
               "name": "punctuation.separator.parameters.python"
             }
           },
-          "match": "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=[)#\\n=]))"
+          "match": "([_[:alpha:]]\\w*)\\s*(?:(,)|(?=[\\n#)=]))"
         },
         {
           "include": "#comments"
@@ -2775,7 +2775,7 @@
           "name": "support.other.match.end.regexp"
         },
         {
-          "match": "[+*?]\\??",
+          "match": "[*+?]\\??",
           "name": "keyword.operator.quantifier.regexp"
         },
         {
@@ -2800,7 +2800,7 @@
     "regexp-charecter-set-escapes": {
       "patterns": [
         {
-          "match": "\\\\[abfnrtv\\\\]",
+          "match": "\\\\[\\\\abfnrtv]",
           "name": "constant.character.escape.regexp"
         },
         {
@@ -2822,7 +2822,7 @@
       ]
     },
     "regexp-double-one-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\")",
+      "begin": "\\b(([Uu]r)|([Bb]r)|(r[Bb]?))(\")",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -2854,7 +2854,7 @@
       ]
     },
     "regexp-double-three-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(\"\"\")",
+      "begin": "\\b(([Uu]r)|([Bb]r)|(r[Bb]?))(\"\"\")",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -2913,7 +2913,7 @@
       ]
     },
     "regexp-escape-special": {
-      "match": "\\\\([AbBdDsSwWZ])",
+      "match": "\\\\([ABDSWZbdsw])",
       "name": "support.other.escape.special.regexp"
     },
     "regexp-escape-unicode": {
@@ -2921,7 +2921,7 @@
       "name": "constant.character.unicode.regexp"
     },
     "regexp-flags": {
-      "match": "\\(\\?[aiLmsux]+\\)",
+      "match": "\\(\\?[Laimsux]+\\)",
       "name": "storage.modifier.flag.regexp"
     },
     "regexp-quantifier": {
@@ -2929,7 +2929,7 @@
       "name": "keyword.operator.quantifier.regexp"
     },
     "regexp-single-one-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(')",
+      "begin": "\\b(([Uu]r)|([Bb]r)|(r[Bb]?))(')",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -2961,7 +2961,7 @@
       ]
     },
     "regexp-single-three-line": {
-      "begin": "\\b(([uU]r)|([bB]r)|(r[bB]?))(''')",
+      "begin": "\\b(([Uu]r)|([Bb]r)|(r[Bb]?))(''')",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -3767,7 +3767,7 @@
           "name": "keyword.control.flow.python"
         },
         {
-          "match": "\\b(?<!\\.)(global|nonlocal)\\b",
+          "match": "\\b(?<!\\.)((?:glob|nonloc)al)\\b",
           "name": "storage.modifier.declaration.python"
         },
         {
@@ -3780,7 +3780,7 @@
               "name": "keyword.control.flow.python"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b"
+          "match": "^\\s*(case|match)(?=\\s*([-\"#'(+:\\[{\\w\\d]|$))\\b"
         }
       ]
     },
@@ -3831,7 +3831,7 @@
       ]
     },
     "string-bin-quoted-multi-line": {
-      "begin": "(\\b[bB])('''|\"\"\")",
+      "begin": "\\b([Bb])('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.python"
@@ -3857,7 +3857,7 @@
       ]
     },
     "string-bin-quoted-single-line": {
-      "begin": "(\\b[bB])((['\"]))",
+      "begin": "\\b([Bb])(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.python"
@@ -3896,7 +3896,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(\\{\\{|}}|\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:\\w?[<>=^]?[-+ ]?#?\\d*,?(\\.\\d+)?[bcdeEfFgGnosxX%]?)?})",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)?})",
           "name": "meta.format.brace.python"
         },
         {
@@ -3911,13 +3911,13 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(\\{\\w*(\\.[[:alpha:]_]\\w*|\\[[^\\]'\"]+])*(![rsa])?(:)[^'\"{}\\n]*(?:\\{[^'\"}\\n]*?}[^'\"{}\\n]*)*})",
+          "match": "(\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:)[^\\n\"'{}]*(?:\\{[^\\n\"'}]*?}[^\\n\"'{}]*)*})",
           "name": "meta.format.brace.python"
         }
       ]
     },
     "string-consume-escape": {
-      "match": "\\\\['\"\\n\\\\]"
+      "match": "\\\\[\\n\"'\\\\]"
     },
     "string-entity": {
       "patterns": [
@@ -3938,7 +3938,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[-+#0 ]*(\\d+|\\*)?(\\.(\\d+|\\*))?([hlL])?[diouxXeEfFgGcrsab%])",
+      "match": "(%(\\([\\w\\s]*\\))?[- #+0]*(\\d+|\\*)?(\\.(\\d+|\\*))?([Lhl])?[%E-GXa-giorsux])",
       "name": "meta.format.percent.python"
     },
     "string-line-continuation": {
@@ -3970,7 +3970,7 @@
       ]
     },
     "string-multi-bad-brace2-formatting-raw": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:.\\[}\\w]).*?(?!'''|\"\"\")})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!.:\\[}\\w]).*?(?!'''|\"\"\")})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3982,7 +3982,7 @@
       ]
     },
     "string-multi-bad-brace2-formatting-unicode": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!:.\\[}\\w]).*?(?!'''|\"\"\")})",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!'''|\"\"\")[^!.:\\[}\\w]).*?(?!'''|\"\"\")})",
       "end": "(?='''|\"\"\")",
       "patterns": [
         {
@@ -3994,7 +3994,7 @@
       ]
     },
     "string-quoted-multi-line": {
-      "begin": "(?:\\b([rR])(?=[uU]))?([uU])?('''|\"\"\")",
+      "begin": "(?:\\b([Rr])(?=[Uu]))?([Uu])?('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "invalid.illegal.prefix.python"
@@ -4029,7 +4029,7 @@
       ]
     },
     "string-quoted-single-line": {
-      "begin": "(?:\\b([rR])(?=[uU]))?([uU])?((['\"]))",
+      "begin": "(?:\\b([Rr])(?=[Uu]))?([Uu])?(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "invalid.illegal.prefix.python"
@@ -4074,7 +4074,7 @@
       ]
     },
     "string-raw-bin-quoted-multi-line": {
-      "begin": "(\\b(?:R[bB]|[bB]R))('''|\"\"\")",
+      "begin": "\\b(R[Bb]|[Bb]R)('''|\"\"\")",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.python"
@@ -4100,7 +4100,7 @@
       ]
     },
     "string-raw-bin-quoted-single-line": {
-      "begin": "(\\b(?:R[bB]|[bB]R))((['\"]))",
+      "begin": "\\b(R[Bb]|[Bb]R)(([\"']))",
       "beginCaptures": {
         "1": {
           "name": "storage.type.string.python"
@@ -4139,7 +4139,7 @@
       ]
     },
     "string-raw-quoted-multi-line": {
-      "begin": "\\b(([uU]R)|(R))('''|\"\"\")",
+      "begin": "\\b(([Uu]R)|(R))('''|\"\"\")",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -4174,7 +4174,7 @@
       ]
     },
     "string-raw-quoted-single-line": {
-      "begin": "\\b(([uU]R)|(R))((['\"]))",
+      "begin": "\\b(([Uu]R)|(R))(([\"']))",
       "beginCaptures": {
         "2": {
           "name": "invalid.deprecated.prefix.python"
@@ -4209,8 +4209,8 @@
       ]
     },
     "string-single-bad-brace1-formatting-raw": {
-      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%})",
-      "end": "(?=(['\"])|((?<!\\\\)\\n))",
+      "begin": "(?=\\{%(.*?(?!([\"'])|((?<!\\\\)\\n)))%})",
+      "end": "(?=([\"'])|((?<!\\\\)\\n))",
       "patterns": [
         {
           "include": "#string-consume-escape"
@@ -4218,8 +4218,8 @@
       ]
     },
     "string-single-bad-brace1-formatting-unicode": {
-      "begin": "(?=\\{%(.*?(?!(['\"])|((?<!\\\\)\\n)))%})",
-      "end": "(?=(['\"])|((?<!\\\\)\\n))",
+      "begin": "(?=\\{%(.*?(?!([\"'])|((?<!\\\\)\\n)))%})",
+      "end": "(?=([\"'])|((?<!\\\\)\\n))",
       "patterns": [
         {
           "include": "#escape-sequence-unicode"
@@ -4233,8 +4233,8 @@
       ]
     },
     "string-single-bad-brace2-formatting-raw": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))})",
-      "end": "(?=(['\"])|((?<!\\\\)\\n))",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!([\"'])|((?<!\\\\)\\n))[^!.:\\[}\\w]).*?(?!([\"'])|((?<!\\\\)\\n))})",
+      "end": "(?=([\"'])|((?<!\\\\)\\n))",
       "patterns": [
         {
           "include": "#string-consume-escape"
@@ -4245,8 +4245,8 @@
       ]
     },
     "string-single-bad-brace2-formatting-unicode": {
-      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!(['\"])|((?<!\\\\)\\n))[^!:.\\[}\\w]).*?(?!(['\"])|((?<!\\\\)\\n))})",
-      "end": "(?=(['\"])|((?<!\\\\)\\n))",
+      "begin": "(?!\\{\\{)(?=\\{(\\w*?(?!([\"'])|((?<!\\\\)\\n))[^!.:\\[}\\w]).*?(?!([\"'])|((?<!\\\\)\\n))})",
+      "end": "(?=([\"'])|((?<!\\\\)\\n))",
       "patterns": [
         {
           "include": "#escape-sequence-unicode"

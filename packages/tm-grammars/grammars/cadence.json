@@ -120,7 +120,7 @@
           "name": "invalid.illegal.unexpected-end-of-block-comment.cadence"
         },
         {
-          "begin": "(^[ \\t]+)?(?=//)",
+          "begin": "(^[\\t ]+)?(?=//)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.cadence"
@@ -174,7 +174,7 @@
       }
     },
     "composite": {
-      "begin": "\\b((?:struct|resource|contract)(?:\\s+interface)?|transaction|enum)\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)",
+      "begin": "\\b((?:struct|resource|contract)(?:\\s+interface)?|transaction|enum)\\s+([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.$1.cadence"
@@ -255,7 +255,7 @@
       ]
     },
     "event": {
-      "begin": "\\b(event)\\b\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s*",
+      "begin": "\\b(event)\\b\\s+([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)\\s*",
       "beginCaptures": {
         "1": {
           "name": "storage.type.event.cadence"
@@ -281,7 +281,7 @@
           "include": "#comments"
         },
         {
-          "begin": "([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s*(:)",
+          "begin": "([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)\\s*(:)",
           "beginCaptures": {
             "1": {
               "name": "support.function.any-method.cadence"
@@ -290,7 +290,7 @@
               "name": "punctuation.separator.argument-label.cadence"
             }
           },
-          "end": "(?=[,)\\]])",
+          "end": "(?=[]),])",
           "patterns": [
             {
               "include": "#expressions"
@@ -298,8 +298,8 @@
           ]
         },
         {
-          "begin": "(?![,)\\]])(?=\\S)",
-          "end": "(?=[,)\\]])",
+          "begin": "(?![]),])(?=\\S)",
+          "end": "(?=[]),])",
           "patterns": [
             {
               "include": "#expressions"
@@ -328,7 +328,7 @@
       ]
     },
     "function": {
-      "begin": "\\b(fun)\\b\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s*",
+      "begin": "\\b(fun)\\b\\s+([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)\\s*",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.cadence"
@@ -374,7 +374,7 @@
     "function-call-expression": {
       "patterns": [
         {
-          "begin": "(?!(?:set|init))([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s*(\\()",
+          "begin": "(?!set|init)([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.any-method.cadence"
@@ -399,13 +399,13 @@
       ]
     },
     "function-result": {
-      "begin": "(?<![/=\\-+!*%<>\\&|^~.])(:)(?![/=\\-+!*%<>\\&|^~.])\\s*",
+      "begin": "(?<![!%\\&*+\\--/<->^|~])(:)(?![!%\\&*+\\--/<->^|~])\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.function-result.cadence"
         }
       },
-      "end": "(?!\\G)(?=[{;])|$",
+      "end": "(?!\\G)(?=[;{])|$",
       "name": "meta.function-result.cadence",
       "patterns": [
         {
@@ -529,11 +529,11 @@
           ],
           "repository": {
             "binary": {
-              "match": "(\\B-|\\b)0b[01]([_01]*[01])?\\b",
+              "match": "(\\B-|\\b)0b[01]([01_]*[01])?\\b",
               "name": "constant.numeric.integer.binary.cadence"
             },
             "decimal": {
-              "match": "(\\B-|\\b)[0-9]([_0-9]*[0-9])?\\b",
+              "match": "(\\B-|\\b)[0-9]([0-9_]*[0-9])?\\b",
               "name": "constant.numeric.integer.decimal.cadence"
             },
             "hexadecimal": {
@@ -541,7 +541,7 @@
               "name": "constant.numeric.integer.hexadecimal.cadence"
             },
             "octal": {
-              "match": "(\\B-|\\b)0o[0-7]([_0-7]*[0-7])?\\b",
+              "match": "(\\B-|\\b)0o[0-7]([0-7_]*[0-7])?\\b",
               "name": "constant.numeric.integer.octal.cadence"
             }
           }
@@ -564,7 +564,7 @@
               "name": "string.quoted.double.single-line.cadence",
               "patterns": [
                 {
-                  "match": "[\\r\\n]",
+                  "match": "[\\n\\r]",
                   "name": "invalid.illegal.returns-not-allowed.cadence"
                 },
                 {
@@ -577,7 +577,7 @@
             "string-guts": {
               "patterns": [
                 {
-                  "match": "\\\\[0\\\\tnr\"']",
+                  "match": "\\\\[\"'0\\\\nrt]",
                   "name": "constant.character.escape.cadence"
                 },
                 {
@@ -613,7 +613,7 @@
           "name": "keyword.operator.force-move.cadence"
         },
         {
-          "match": "[+\\-*/]",
+          "match": "[-*+/]",
           "name": "keyword.operator.arithmetic.cadence"
         },
         {
@@ -621,7 +621,7 @@
           "name": "keyword.operator.arithmetic.remainder.cadence"
         },
         {
-          "match": "==|!=|[><]|>=|<=",
+          "match": "==|!=|[<>]|>=|<=",
           "name": "keyword.operator.comparison.cadence"
         },
         {
@@ -633,7 +633,7 @@
           "name": "keyword.operator.logical.cadence"
         },
         {
-          "match": "[?!]",
+          "match": "[!?]",
           "name": "keyword.operator.type.optional.cadence"
         }
       ]
@@ -669,7 +669,7 @@
               "name": "variable.parameter.function.cadence"
             }
           },
-          "match": "([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)(?=\\s*:)"
+          "match": "([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)\\s+([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)(?=\\s*:)"
         },
         {
           "captures": {
@@ -680,11 +680,11 @@
               "name": "entity.name.function.cadence"
             }
           },
-          "match": "(([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*))(?=\\s*:)"
+          "match": "(([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*))(?=\\s*:)"
         },
         {
           "begin": ":\\s*(?!\\s)",
-          "end": "(?=[,)])",
+          "end": "(?=[),])",
           "patterns": [
             {
               "include": "#type"
@@ -703,13 +703,13 @@
           "include": "#comments"
         },
         {
-          "match": "([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)",
+          "match": "([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)",
           "name": "storage.type.cadence"
         }
       ]
     },
     "var-let-declaration": {
-      "begin": "\\b(var|let)\\b\\s+([\\p{L}_][\\p{L}_\\p{N}\\p{M}]*)",
+      "begin": "\\b(var|let)\\b\\s+([_\\p{L}][_\\p{L}\\p{N}\\p{M}]*)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.$1.cadence"

@@ -81,13 +81,13 @@
     "blocks": {
       "patterns": [
         {
-          "begin": "\\s*(?:^|[\\s,;])(for)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(for)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.for.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.for.matlab"
@@ -101,13 +101,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(if)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(if)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.if.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.if.matlab"
@@ -136,7 +136,7 @@
                 }
               },
               "end": "^",
-              "match": "(\\s*)(?:^|[\\s,;])(elseif)\\b(.*)$\\n?",
+              "match": "(\\s*)(?:^|[,;\\s])(elseif)\\b(.*)$\\n?",
               "name": "meta.elseif.matlab"
             },
             {
@@ -153,7 +153,7 @@
                 }
               },
               "end": "^",
-              "match": "(\\s*)(?:^|[\\s,;])(else)\\b(.*)?$\\n?",
+              "match": "(\\s*)(?:^|[,;\\s])(else)\\b(.*)?$\\n?",
               "name": "meta.else.matlab"
             },
             {
@@ -162,13 +162,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(parfor)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(parfor)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.for.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.for.matlab"
@@ -192,13 +192,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(spmd)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(spmd)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.spmd.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.spmd.matlab"
@@ -222,13 +222,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(switch)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(switch)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.switch.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.switch.matlab"
@@ -250,7 +250,7 @@
                 }
               },
               "end": "^",
-              "match": "(\\s*)(?:^|[\\s,;])(case)\\b(.*)$\\n?",
+              "match": "(\\s*)(?:^|[,;\\s])(case)\\b(.*)$\\n?",
               "name": "meta.case.matlab"
             },
             {
@@ -267,7 +267,7 @@
                 }
               },
               "end": "^",
-              "match": "(\\s*)(?:^|[\\s,;])(otherwise)\\b(.*)?$\\n?",
+              "match": "(\\s*)(?:^|[,;\\s])(otherwise)\\b(.*)?$\\n?",
               "name": "meta.otherwise.matlab"
             },
             {
@@ -276,13 +276,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(try)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(try)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.try.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.try.matlab"
@@ -304,7 +304,7 @@
                 }
               },
               "end": "^",
-              "match": "(\\s*)(?:^|[\\s,;])(catch)\\b(.*)?$\\n?",
+              "match": "(\\s*)(?:^|[,;\\s])(catch)\\b(.*)?$\\n?",
               "name": "meta.catch.matlab"
             },
             {
@@ -313,13 +313,13 @@
           ]
         },
         {
-          "begin": "\\s*(?:^|[\\s,;])(while)\\b",
+          "begin": "\\s*(?:^|[,;\\s])(while)\\b",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.while.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.while.matlab"
@@ -363,7 +363,7 @@
               "name": "storage.type.matlab"
             }
           },
-          "match": "([^{}'\".]+)"
+          "match": "([^\"'.{}]+)"
         },
         {
           "match": "\\.",
@@ -374,7 +374,7 @@
     "classdef": {
       "patterns": [
         {
-          "begin": "(^\\s*)(classdef)\\b\\s*(.*)",
+          "begin": "^(\\s*)(classdef)\\b\\s*(.*)",
           "beginCaptures": {
             "2": {
               "name": "storage.type.class.matlab"
@@ -386,7 +386,7 @@
                     "1": {
                       "patterns": [
                         {
-                          "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                          "match": "[A-Za-z][0-9A-Z_a-z]*",
                           "name": "variable.parameter.class.matlab"
                         },
                         {
@@ -416,7 +416,7 @@
                     "5": {
                       "patterns": [
                         {
-                          "match": "[a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*",
+                          "match": "[A-Za-z][0-9A-Z_a-z]*(\\.[A-Za-z][0-9A-Z_a-z]*)*",
                           "name": "entity.other.inherited-class.matlab"
                         },
                         {
@@ -433,12 +433,12 @@
                       ]
                     }
                   },
-                  "match": "(\\([^)]*\\))?\\s*(([a-zA-Z][a-zA-Z0-9_]*)(?:\\s*(<)\\s*([^%]*))?)\\s*($|(?=(%|...)).*)"
+                  "match": "(\\([^)]*\\))?\\s*(([A-Za-z][0-9A-Z_a-z]*)(?:\\s*(<)\\s*([^%]*))?)\\s*($|(?=(%|...)).*)"
                 }
               ]
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.class.matlab"
@@ -447,7 +447,7 @@
           "name": "meta.class.matlab",
           "patterns": [
             {
-              "begin": "(^\\s*)(properties)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
+              "begin": "^(\\s*)(properties)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.properties.matlab"
@@ -455,7 +455,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[A-Za-z][0-9A-Z_a-z]*",
                       "name": "variable.parameter.properties.matlab"
                     },
                     {
@@ -475,7 +475,7 @@
                   ]
                 }
               },
-              "end": "\\s*(?:^|[\\s,;])(end)\\b",
+              "end": "\\s*(?:^|[,;\\s])(end)\\b",
               "endCaptures": {
                 "1": {
                   "name": "keyword.control.end.properties.matlab"
@@ -492,7 +492,7 @@
               ]
             },
             {
-              "begin": "(^\\s*)(methods)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
+              "begin": "^(\\s*)(methods)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.methods.matlab"
@@ -500,7 +500,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[A-Za-z][0-9A-Z_a-z]*",
                       "name": "variable.parameter.methods.matlab"
                     },
                     {
@@ -520,7 +520,7 @@
                   ]
                 }
               },
-              "end": "\\s*(?:^|[\\s,;])(end)\\b",
+              "end": "\\s*(?:^|[,;\\s])(end)\\b",
               "endCaptures": {
                 "1": {
                   "name": "keyword.control.end.methods.matlab"
@@ -534,7 +534,7 @@
               ]
             },
             {
-              "begin": "(^\\s*)(events)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
+              "begin": "^(\\s*)(events)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.events.matlab"
@@ -542,7 +542,7 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[A-Za-z][0-9A-Z_a-z]*",
                       "name": "variable.parameter.events.matlab"
                     },
                     {
@@ -562,7 +562,7 @@
                   ]
                 }
               },
-              "end": "\\s*(?:^|[\\s,;])(end)\\b",
+              "end": "\\s*(?:^|[,;\\s])(end)\\b",
               "endCaptures": {
                 "1": {
                   "name": "keyword.control.end.events.matlab"
@@ -576,13 +576,13 @@
               ]
             },
             {
-              "begin": "(^\\s*)(enumeration)\\b([^%]*)\\s*($|(?=%))",
+              "begin": "^(\\s*)(enumeration)\\b([^%]*)\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.enumeration.matlab"
                 }
               },
-              "end": "\\s*(?:^|[\\s,;])(end)\\b",
+              "end": "\\s*(?:^|[,;\\s])(end)\\b",
               "endCaptures": {
                 "1": {
                   "name": "keyword.control.end.enumeration.matlab"
@@ -614,10 +614,10 @@
           "name": "comment.line.percentage.matlab"
         }
       },
-      "match": "^\\s*(([b-df-hk-moq-zA-HJ-MO-Z]\\w*|a|an|a([A-Za-mo-z0-9_]\\w*|n[A-Za-rt-z0-9_]\\w*|ns\\w+)|e|ep|e([A-Za-oq-z0-9_]\\w*|p[A-Za-rt-z0-9_]\\w*|ps\\w+)|in|i([A-Za-mo-z0-9_]\\w*|n[A-Za-eg-z0-9_]\\w*|nf\\w+)|I|In|I([A-Za-mo-z0-9_]\\w*|n[A-Za-eg-z0-9_]\\w*|nf\\w+)|j\\w+|N|Na|N([A-Zb-z0-9_]\\w*|a[A-MO-Za-z0-9_]\\w*|aN\\w+)|n|na|nar|narg|nargi|nargo|nargou|n([A-Zb-z0-9_]\\w*|a([A-Za-mo-qs-z0-9_]\\w*|n\\w+|r([A-Za-fh-z0-9_]\\w*|g([A-Za-hj-nq-z0-9_]\\w*|i([A-Za-mo-z0-9_]\\w*|n\\w+)|o([A-Za-tv-z0-9_]\\w*|u([A-Za-su-z]\\w*|t\\w+))))))|p|p[A-Za-hj-z0-9_]\\w*|pi\\w+)\\s+((([^\\s;,%()=.{\\&|~<>:+\\-*/\\\\@^'\"]|(?=')|(?=\"))|(\\.\\^|\\.\\*|\\./|\\.\\\\|\\.'|\\.\\(|&&|==|\\|\\||&(?=[^\\&])|\\|(?=[^|])|~=|<=|>=|~(?!=)|<(?!=)|>(?!=)|[:+\\-*/\\\\@^])(\\S|\\s*(?=%)|\\s+$|\\s+([,;)}\\]\\&|<>=:*/\\\\^@]|(\\.(?:[^\\d.]|\\.[^.]))))|(\\.[^^*/\\\\'(\\sA-Za-z]))([^%]|'[^']*'|\"[^\"]*\")*|(\\.(?=\\s)|\\.[A-Za-z]|(?=\\{))([^(='\"%]|==|'[^']*'|\"[^\"]*\"|\\(|\\([^)%]*\\)|\\[|\\[[^\\]%]*]|\\{|\\{[^}%]*})*(\\.\\.\\.[^%]*)?((?=%)|$)))(%.*)?$"
+      "match": "^\\s*(([A-HJ-MO-Zb-df-hk-moq-z]\\w*|a|an|a([0-9A-Z_a-mo-z]\\w*|n[0-9A-Z_a-rt-z]\\w*|ns\\w+)|e|ep|e([0-9A-Z_a-oq-z]\\w*|p[0-9A-Z_a-rt-z]\\w*|ps\\w+)|in|i([0-9A-Z_a-mo-z]\\w*|n[0-9A-Z_a-eg-z]\\w*|nf\\w+)|I|In|I([0-9A-Z_a-mo-z]\\w*|n[0-9A-Z_a-eg-z]\\w*|nf\\w+)|j\\w+|N|Na|N([0-9A-Z_b-z]\\w*|a[0-9A-MO-Z_a-z]\\w*|aN\\w+)|n|na|nar|narg|nargi|nargo|nargou|n([0-9A-Z_b-z]\\w*|a([0-9A-Z_a-mo-qs-z]\\w*|n\\w+|r([0-9A-Z_a-fh-z]\\w*|g([0-9A-Z_a-hj-nq-z]\\w*|i([0-9A-Z_a-mo-z]\\w*|n\\w+)|o([0-9A-Z_a-tv-z]\\w*|u([A-Za-su-z]\\w*|t\\w+))))))|p|p[0-9A-Z_a-hj-z]\\w*|pi\\w+)\\s+((([^\"%-/:->@\\\\^{|~\\s]|(?=')|(?=\"))|(\\.\\^|\\.\\*|\\./|\\.\\\\|\\.'|\\.\\(|&&|==|\\|\\||&(?=[^\\&])|\\|(?=[^|])|~=|<=|>=|~(?!=)|<(?!=)|>(?!=)|[-*+/:@\\\\^])(\\S|\\s*(?=%)|\\s+$|\\s+([\\&)*,/:->@\\\\-^|}]|(\\.(?:[^.\\d]|\\.[^.]))))|(\\.[^'(*/A-Z\\\\^a-z\\s]))([^%]|'[^']*'|\"[^\"]*\")*|(\\.(?=\\s)|\\.[A-Za-z]|(?=\\{))([^\"%'(=]|==|'[^']*'|\"[^\"]*\"|\\(|\\([^%)]*\\)|\\[|\\[[^]%]*]|\\{|\\{[^%}]*})*(\\.\\.\\.[^%]*)?((?=%)|$)))(%.*)?$"
     },
     "comment_block": {
-      "begin": "(^\\s*)%\\{[^\\n\\S]*+\\n",
+      "begin": "^(\\s*)%\\{[^\\n\\S]*+\\n",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.comment.matlab"
@@ -637,7 +637,7 @@
     "comments": {
       "patterns": [
         {
-          "begin": "(^[ \\t]+)?(?=%%\\s)",
+          "begin": "(^[\\t ]+)?(?=%%\\s)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.matlab"
@@ -656,7 +656,7 @@
               "name": "comment.line.double-percentage.matlab",
               "patterns": [
                 {
-                  "begin": "\\G[^\\S\\n]*(?![\\n\\s])",
+                  "begin": "\\G[^\\n\\S]*(?![\\n\\s])",
                   "contentName": "meta.cell.matlab",
                   "end": "(?=\\n)"
                 }
@@ -668,7 +668,7 @@
           "include": "#comment_block"
         },
         {
-          "begin": "(^[ \\t]+)?(?=%)",
+          "begin": "(^[\\t ]+)?(?=%)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.matlab"
@@ -704,7 +704,7 @@
           "name": "keyword.control.matlab"
         }
       },
-      "match": "\\s*(?:^|[\\s,;])(break|continue|return)\\b",
+      "match": "\\s*(?:^|[,;\\s])(break|continue|return)\\b",
       "name": "meta.control.matlab"
     },
     "curly_brackets": {
@@ -735,7 +735,7 @@
     "function": {
       "patterns": [
         {
-          "begin": "(^\\s*)(function)\\s+(?:(?:(\\[)([^\\]]*)(])|([a-zA-Z][a-zA-Z0-9_]*))\\s*=\\s*)?([a-zA-Z][a-zA-Z0-9_]*(\\.[a-zA-Z][a-zA-Z0-9_]*)*)\\s*",
+          "begin": "^(\\s*)(function)\\s+(?:(?:(\\[)([^]]*)(])|([A-Za-z][0-9A-Z_a-z]*))\\s*=\\s*)?([A-Za-z][0-9A-Z_a-z]*(\\.[A-Za-z][0-9A-Z_a-z]*)*)\\s*",
           "beginCaptures": {
             "2": {
               "name": "storage.type.function.matlab"
@@ -761,7 +761,7 @@
               "name": "entity.name.function.matlab"
             }
           },
-          "end": "\\s*(?:^|[\\s,;])(end)\\b(\\s*\\n)?",
+          "end": "\\s*(?:^|[,;\\s])(end)\\b(\\s*\\n)?",
           "endCaptures": {
             "1": {
               "name": "keyword.control.end.function.matlab"
@@ -784,7 +784,7 @@
               ]
             },
             {
-              "begin": "(^\\s*)(arguments)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
+              "begin": "^(\\s*)(arguments)\\b([^%]*)\\s*(\\([^)]*\\))?\\s*($|(?=%))",
               "beginCaptures": {
                 "2": {
                   "name": "keyword.control.arguments.matlab"
@@ -792,13 +792,13 @@
                 "3": {
                   "patterns": [
                     {
-                      "match": "[a-zA-Z][a-zA-Z0-9_]*",
+                      "match": "[A-Za-z][0-9A-Z_a-z]*",
                       "name": "variable.parameter.arguments.matlab"
                     }
                   ]
                 }
               },
-              "end": "\\s*(?:^|[\\s,;])(end)\\b",
+              "end": "\\s*(?:^|[,;\\s])(end)\\b",
               "endCaptures": {
                 "1": {
                   "name": "keyword.control.end.arguments.matlab"
@@ -832,7 +832,7 @@
     },
     "indexing_curly_brackets": {
       "Comment": "Match identifier{idx, idx, } and stop at newline without ... This helps with partially written code like x{idx ",
-      "begin": "([a-zA-Z][a-zA-Z0-9_.]*\\s*)\\{",
+      "begin": "([A-Za-z][.0-9A-Z_a-z]*\\s*)\\{",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -874,11 +874,11 @@
       "name": "meta.linecontinuation.matlab"
     },
     "numbers": {
-      "match": "(?<=[\\s\\-+*/\\\\=:\\[({,]|^)\\d*\\.?\\d+([eE][+-]?\\d)?([0-9&&[^.]])*([ij])?\\b",
+      "match": "(?<=[(*-\\-/:=\\[\\\\{\\s]|^)\\d*\\.?\\d+([Ee][-+]?\\d)?([0-9&&[^.]])*([ij])?\\b",
       "name": "constant.numeric.matlab"
     },
     "operators": {
-      "match": "(?<=\\s)(==|~=|>|>=|<|<=|&|&&|[:|]|\\|\\||[+\\-*]|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)",
+      "match": "(?<=\\s)(==|~=|>|>=|<|<=|&|&&|[:|]|\\|\\||[-*+]|\\.\\*|/|\\./|\\\\|\\.\\\\|\\^|\\.\\^)(?=\\s)",
       "name": "keyword.operator.symbols.matlab"
     },
     "parens": {
@@ -928,13 +928,13 @@
           "match": "^\\s*((!).*$\\n?)"
         },
         {
-          "begin": "((?<=([\\[({=\\s;:,~<>\\&|\\-+*/\\\\.^]))|^)'",
+          "begin": "((?<=([\\&(*-/:->\\[\\\\^{|~\\s]))|^)'",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.matlab"
             }
           },
-          "end": "'(?=([\\[({\\])}=~<>\\&|\\-+*/\\\\.^\\s;:,]))",
+          "end": "'(?=([\\&(-/:->\\[-^{-~\\s]))",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.matlab"
@@ -951,19 +951,19 @@
               "name": "invalid.illegal.unescaped-quote.matlab"
             },
             {
-              "match": "((%([+\\-0]?\\d{0,3}(\\.\\d{1,3})?)([cdeEfgGs]|(([bt])?([ouxX]))))|%%|\\\\([bfnrt\\\\]))",
+              "match": "((%([-+0]?\\d{0,3}(\\.\\d{1,3})?)([EGc-gs]|(([bt])?([Xoux]))))|%%|\\\\([\\\\bfnrt]))",
               "name": "constant.character.escape.matlab"
             }
           ]
         },
         {
-          "begin": "((?<=([\\[({=\\s;:,~<>\\&|\\-+*/\\\\.^]))|^)\"",
+          "begin": "((?<=([\\&(*-/:->\\[\\\\^{|~\\s]))|^)\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.matlab"
             }
           },
-          "end": "\"(?=([\\[({\\])}=~<>\\&|\\-+*/\\\\.^\\s;:,]))",
+          "end": "\"(?=([\\&(-/:->\\[-^{-~\\s]))",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.matlab"
@@ -992,8 +992,8 @@
         {
           "patterns": [
             {
-              "begin": "((?<=([\\[({=\\s;:,~<>\\&|\\-+*/\\\\.^]))|^)'",
-              "end": "'(?=([\\[({\\])}=~<>\\&|\\-+*/\\\\.^\\s;:,]))",
+              "begin": "((?<=([\\&(*-/:->\\[\\\\^{|~\\s]))|^)'",
+              "end": "'(?=([\\&(-/:->\\[-^{-~\\s]))",
               "name": "storage.type.matlab",
               "patterns": [
                 {
@@ -1008,8 +1008,8 @@
               ]
             },
             {
-              "begin": "((?<=([\\[({=\\s;:,~<>\\&|\\-+*/\\\\.^]))|^)\"",
-              "end": "\"(?=([\\[({\\])}=~<>\\&|\\-+*/\\\\.^\\s;:,]))",
+              "begin": "((?<=([\\&(*-/:->\\[\\\\^{|~\\s]))|^)\"",
+              "end": "\"(?=([\\&(-/:->\\[-^{-~\\s]))",
               "name": "storage.type.matlab",
               "patterns": [
                 {
@@ -1028,8 +1028,8 @@
       ]
     },
     "validators": {
-      "begin": "\\s*;?\\s*([a-zA-Z][a-zA-Z0-9_.?]*)",
-      "end": "([;\\n%=].*)",
+      "begin": "\\s*;?\\s*([A-Za-z][.0-9?A-Z_a-z]*)",
+      "end": "([\\n%;=].*)",
       "endCaptures": {
         "1": {
           "patterns": [
@@ -1067,7 +1067,7 @@
                   ]
                 }
               },
-              "match": "([\\n;]\\s*[a-zA-Z].*)"
+              "match": "([\\n;]\\s*[A-Za-z].*)"
             },
             {
               "include": "$self"
@@ -1084,7 +1084,7 @@
           "name": "storage.type.matlab"
         },
         {
-          "match": "([a-zA-Z][a-zA-Z0-9_.]*)",
+          "match": "([A-Za-z][.0-9A-Z_a-z]*)",
           "name": "storage.type.matlab"
         },
         {

@@ -107,7 +107,7 @@
           "name": "string.path.apacheconf"
         }
       },
-      "match": "(?<=ScriptAliasMatch|AliasMatch)\\s+(.+?)\\s+((.+?)\\s)?"
+      "match": "(?<=(?:Script|)AliasMatch)\\s+(.+?)\\s+((.+?)\\s)?"
     },
     {
       "captures": {
@@ -182,7 +182,7 @@
           "name": "keyword.auth_dbm.apacheconf"
         }
       },
-      "match": "\\b(AuthDBM(?:Authoritative|GroupFile|Type|UserFile))\\b"
+      "match": "\\b(AuthDBM(?:Authoritativ|GroupFil|Typ|UserFil)e)\\b"
     },
     {
       "captures": {
@@ -294,7 +294,7 @@
           "name": "keyword.dumpio.apacheconf"
         }
       },
-      "match": "\\b(DumpIO(?:Input|Output))\\b"
+      "match": "\\b(DumpIO(?:In|Out)put)\\b"
     },
     {
       "captures": {
@@ -302,7 +302,7 @@
           "name": "keyword.env.apacheconf"
         }
       },
-      "match": "\\b(PassEnv|SetEnv|UnsetEnv)\\b"
+      "match": "\\b((?:Pass|Set|Unset)Env)\\b"
     },
     {
       "captures": {
@@ -326,7 +326,7 @@
           "name": "keyword.file_cache.apacheconf"
         }
       },
-      "match": "\\b(CacheFile|MMapFile)\\b"
+      "match": "\\b((?:Cache|MMap)File)\\b"
     },
     {
       "captures": {
@@ -342,7 +342,7 @@
           "name": "keyword.headers.apacheconf"
         }
       },
-      "match": "\\b(Header|RequestHeader)\\b"
+      "match": "\\b((?:|Request)Header)\\b"
     },
     {
       "captures": {
@@ -454,7 +454,7 @@
           "name": "keyword.so.apacheconf"
         }
       },
-      "match": "\\b(Load(?:File|Module))\\b"
+      "match": "\\b(Load(?:Fi|Modu)le)\\b"
     },
     {
       "captures": {
