@@ -318,7 +318,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21769,
+    byteSize: 21795,
     displayName: 'Gruvbox Dark Hard',
     funding: [
       {
@@ -342,7 +342,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21773,
+    byteSize: 21799,
     displayName: 'Gruvbox Dark Medium',
     funding: [
       {
@@ -366,7 +366,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21769,
+    byteSize: 21795,
     displayName: 'Gruvbox Dark Soft',
     funding: [
       {
@@ -390,7 +390,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21772,
+    byteSize: 21798,
     displayName: 'Gruvbox Light Hard',
     funding: [
       {
@@ -414,7 +414,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21776,
+    byteSize: 21802,
     displayName: 'Gruvbox Light Medium',
     funding: [
       {
@@ -438,7 +438,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21772,
+    byteSize: 21798,
     displayName: 'Gruvbox Light Soft',
     funding: [
       {

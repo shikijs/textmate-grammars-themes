@@ -66,7 +66,7 @@
           "name": "storage.type.class.hx"
         }
       },
-      "end": "([_A-Za-z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "entity.name.type.class.hx"
@@ -80,7 +80,7 @@
     },
     "abstract-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([{;])",
+      "end": "([;{])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -106,7 +106,7 @@
     "accessor-method": {
       "patterns": [
         {
-          "match": "\\b(get|set)_[_A-Za-z]\\w*\\b",
+          "match": "\\b([gs]et)_[A-Z_a-z]\\w*\\b",
           "name": "entity.name.function.hx"
         }
       ]
@@ -383,7 +383,7 @@
           "name": "storage.type.class.hx"
         }
       },
-      "end": "([_A-Za-z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "entity.name.type.class.hx"
@@ -398,7 +398,7 @@
     },
     "class-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([{;])",
+      "end": "([;{])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -474,16 +474,16 @@
               "name": "punctuation.definition.tag"
             }
           },
-          "match": "((#(if|elseif))[\\s!]+([a-zA-Z_][a-zA-Z0-9_]*(\\.[a-zA-Z_][a-zA-Z0-9_]*)*)(?=\\s|/\\*|//))"
+          "match": "((#((?:|else)if))[!\\s]+([A-Z_a-z][0-9A-Z_a-z]*(\\.[A-Z_a-z][0-9A-Z_a-z]*)*)(?=\\s|/\\*|//))"
         },
         {
-          "begin": "((#(if|elseif))[\\s!]*)(?=\\()",
+          "begin": "((#((?:|else)if))[!\\s]*)(?=\\()",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.tag"
             }
           },
-          "end": "(?<=[)\\n])",
+          "end": "(?<=[\\n)])",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag"
@@ -501,7 +501,7 @@
           "name": "punctuation.definition.tag"
         },
         {
-          "match": "(#([a-zA-Z0-9_]*))\\s",
+          "match": "(#([0-9A-Z_a-z]*))\\s",
           "name": "punctuation.definition.tag"
         }
       ]
@@ -516,7 +516,7 @@
       ]
     },
     "constant-name": {
-      "match": "\\b([_A-Z][_A-Z0-9]*)\\b",
+      "match": "\\b([A-Z_][0-9A-Z_]*)\\b",
       "name": "variable.other.hx"
     },
     "constants": {
@@ -534,7 +534,7 @@
               "name": "constant.numeric.suffix.hx"
             }
           },
-          "match": "\\b0[xX]\\h[_\\h]*([iu][0-9][0-9_]*)?\\b"
+          "match": "\\b0[Xx]\\h[_\\h]*([iu][0-9][0-9_]*)?\\b"
         },
         {
           "captures": {
@@ -545,7 +545,7 @@
               "name": "constant.numeric.suffix.hx"
             }
           },
-          "match": "\\b0[bB][01][_01]*([iu][0-9][0-9_]*)?\\b"
+          "match": "\\b0[Bb][01][01_]*([iu][0-9][0-9_]*)?\\b"
         },
         {
           "captures": {
@@ -595,7 +595,7 @@
               "name": "constant.numeric.suffix.hx"
             }
           },
-          "match": "(?<!\\$)(?:\\b[0-9][0-9_]*(\\.)[0-9_]+[eE][+\\-]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)[eE][+\\-]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\B(\\.)[0-9][0-9_]*[eE][+\\-]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*[eE][+\\-]?[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)(?!\\.)(?:\\B|([fiu][0-9][0-9_]*)\\b)|\\B(\\.)[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b)(?!\\$)"
+          "match": "(?<!\\$)(?:\\b[0-9][0-9_]*(\\.)[0-9_]+[Ee][-+]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)[Ee][-+]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\B(\\.)[0-9][0-9_]*[Ee][-+]?[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*[Ee][-+]?[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)[0-9_]+([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*(\\.)(?!\\.)(?:\\B|([fiu][0-9][0-9_]*)\\b)|\\B(\\.)[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b|\\b[0-9][0-9_]*([fiu][0-9][0-9_]*)?\\b)(?!\\$)"
         }
       ]
     },
@@ -685,7 +685,7 @@
           "name": "storage.type.class.hx"
         }
       },
-      "end": "([_A-Za-z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "entity.name.type.class.hx"
@@ -699,7 +699,7 @@
     },
     "enum-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([{;])",
+      "end": "([;{])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -798,7 +798,7 @@
           "name": "variable.parameter.hx"
         }
       },
-      "match": "([_a-zA-Z]\\w*)(?=\\s*:)"
+      "match": "([A-Z_a-z]\\w*)(?=\\s*:)"
     },
     "function-type-parameter-type-hint": {
       "begin": ":",
@@ -825,7 +825,7 @@
       ]
     },
     "identifier-name": {
-      "match": "\\b([_A-Za-z]\\w*)\\b",
+      "match": "\\b([A-Z_a-z]\\w*)\\b",
       "name": "variable.other.hx"
     },
     "identifiers": {
@@ -871,7 +871,7 @@
           "name": "constant.language.import-all.hx"
         },
         {
-          "match": "\\b([_A-Za-z]\\w*)\\b(?=\\s*(as|in|$|(;)))",
+          "match": "\\b([A-Z_a-z]\\w*)\\b(?=\\s*(as|in|$|(;)))",
           "name": "variable.other.hxt"
         },
         {
@@ -931,7 +931,7 @@
           "name": "storage.type.class.hx"
         }
       },
-      "end": "([_A-Za-z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "entity.name.type.class.hx"
@@ -945,7 +945,7 @@
     },
     "interface-name-post": {
       "begin": "(?<=\\w)",
-      "end": "([{;])",
+      "end": "([;{])",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.block.begin.hx"
@@ -974,7 +974,7 @@
               "name": "variable.other.javadoc"
             }
           },
-          "match": "(@(?:param|exception|throws|event))\\s+([_A-Za-z]\\w*)\\s+"
+          "match": "(@(?:param|exception|throws|event))\\s+([A-Z_a-z]\\w*)\\s+"
         },
         {
           "captures": {
@@ -985,7 +985,7 @@
               "name": "constant.numeric.javadoc"
             }
           },
-          "match": "(@since)\\s+([\\w.\\-]+)\\s+"
+          "match": "(@since)\\s+([-.\\w]+)\\s+"
         },
         {
           "captures": {
@@ -1096,7 +1096,7 @@
                   "name": "variable.other.hx"
                 }
               },
-              "match": "\\b(var|final)\\b\\s*([_a-zA-Z]\\w*)\\b"
+              "match": "\\b(var|final)\\b\\s*([A-Z_a-z]\\w*)\\b"
             },
             {
               "include": "#array"
@@ -1198,7 +1198,7 @@
               "name": "keyword.reification.hx"
             }
           },
-          "match": "(\\$)([eabipv])\\{"
+          "match": "(\\$)([abeipv])\\{"
         },
         {
           "captures": {
@@ -1209,14 +1209,14 @@
               "name": "variable.reification.hx"
             }
           },
-          "match": "((\\$)([a-zA-Z]*))"
+          "match": "((\\$)([A-Za-z]*))"
         }
       ]
     },
     "metadata": {
       "patterns": [
         {
-          "begin": "(@)(:(abi|abstract|access|allow|analyzer|annotation|arrayAccess|astSource|autoBuild|bind|bitmap|bridgeProperties|build|buildXml|bypassAccessor|callable|classCode|commutative|compilerGenerated|const|coreApi|coreType|cppFileCode|cppInclude|cppNamespaceCode|cs.assemblyMeta|cs.assemblyStrict|cs.using|dce|debug|decl|delegate|depend|deprecated|eager|enum|event|expose|extern|file|fileXml|final|fixed|flash.property|font|forward.new|forward.variance|forward|forwardStatics|from|functionCode|functionTailCode|generic|genericBuild|genericClassPerMethod|getter|hack|headerClassCode|headerCode|headerInclude|headerNamespaceCode|hlNative|hxGen|ifFeature|include|inheritDoc|inline|internal|isVar|java.native|javaCanonical|jsRequire|jvm.synthetic|keep|keepInit|keepSub|luaDotMethod|luaRequire|macro|markup|mergeBlock|multiReturn|multiType|native|nativeChildren|nativeGen|nativeProperty|nativeStaticExtension|noClosure|noCompletion|noDebug|noDoc|noImportGlobal|noPrivateAccess|noStack|noUsing|nonVirtual|notNull|nullSafety|objc|objcProtocol|op|optional|overload|persistent|phpClassConst|phpGlobal|phpMagic|phpNoConstructor|pos|private|privateAccess|property|protected|publicFields|pure|pythonImport|readOnly|remove|require|resolve|rtti|runtimeValue|scalar|selfCall|semantics|setter|sound|sourceFile|stackOnly|strict|struct|structAccess|structInit|suppressWarnings|templatedCall|throws|to|transient|transitive|unifyMinDynamic|unreflective|unsafe|using|void|volatile)\\b)\\s*(\\()",
+          "begin": "(@)(:(abi|abstract|access|allow|analyzer|annotation|arrayAccess|astSource|autoBuild|bind|bitmap|bridgeProperties|build|buildXml|bypassAccessor|callable|classCode|commutative|compilerGenerated|const|coreApi|coreType|cppFileCode|cppInclude|cppNamespaceCode|cs.assemblyMeta|cs.assemblyStrict|cs.using|dce|debug|decl|delegate|depend|deprecated|eager|enum|event|expose|extern|file|fileXml|final|fixed|flash.property|font|forward.new|forward.variance|forward|forwardStatics|from|functionCode|functionTailCode|generic|genericBuild|genericClassPerMethod|getter|hack|headerClassCode|headerCode|headerInclude|headerNamespaceCode|hlNative|hxGen|ifFeature|include|inheritDoc|inline|internal|isVar|java.native|javaCanonical|jsRequire|jvm.synthetic|keep|keepInit|keepSub|luaDotMethod|luaRequire|macro|markup|mergeBlock|multiReturn|multiType|native|nativeChildren|nativeGen|nativeProperty|nativeStaticExtension|noClosure|noCompletion|noDebug|noDoc|noImportGlobal|noPrivateAccess|noStack|noUsing|nonVirtual|notNull|nullSafety|objc|objcProtocol|op|optional|overload|persistent|phpClassConst|phpGlobal|phpMagic|phpNoConstructor|pos|private|privateAccess|property|protected|publicFields|pure|pythonImport|readOnly|remove|require|resolve|rtti|runtimeValue|scalar|selfCall|semantics|setter|sound|sourceFile|stackOnly|strict|struct|structAccess|structInit|suppressWarnings|templatedCall|throws|to|transient|transitive|unifyMinDynamic|unreflective|unsafe|using|void|volatile))\\b\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.metadata.hx"
@@ -1249,10 +1249,10 @@
               "name": "storage.modifier.metadata.hx"
             }
           },
-          "match": "((@)(:(abi|abstract|access|allow|analyzer|annotation|arrayAccess|astSource|autoBuild|bind|bitmap|bridgeProperties|build|buildXml|bypassAccessor|callable|classCode|commutative|compilerGenerated|const|coreApi|coreType|cppFileCode|cppInclude|cppNamespaceCode|cs.assemblyMeta|cs.assemblyStrict|cs.using|dce|debug|decl|delegate|depend|deprecated|eager|enum|event|expose|extern|file|fileXml|final|fixed|flash.property|font|forward.new|forward.variance|forward|forwardStatics|from|functionCode|functionTailCode|generic|genericBuild|genericClassPerMethod|getter|hack|headerClassCode|headerCode|headerInclude|headerNamespaceCode|hlNative|hxGen|ifFeature|include|inheritDoc|inline|internal|isVar|java.native|javaCanonical|jsRequire|jvm.synthetic|keep|keepInit|keepSub|luaDotMethod|luaRequire|macro|markup|mergeBlock|multiReturn|multiType|native|nativeChildren|nativeGen|nativeProperty|nativeStaticExtension|noClosure|noCompletion|noDebug|noDoc|noImportGlobal|noPrivateAccess|noStack|noUsing|nonVirtual|notNull|nullSafety|objc|objcProtocol|op|optional|overload|persistent|phpClassConst|phpGlobal|phpMagic|phpNoConstructor|pos|private|privateAccess|property|protected|publicFields|pure|pythonImport|readOnly|remove|require|resolve|rtti|runtimeValue|scalar|selfCall|semantics|setter|sound|sourceFile|stackOnly|strict|struct|structAccess|structInit|suppressWarnings|templatedCall|throws|to|transient|transitive|unifyMinDynamic|unreflective|unsafe|using|void|volatile)\\b))"
+          "match": "((@)(:(abi|abstract|access|allow|analyzer|annotation|arrayAccess|astSource|autoBuild|bind|bitmap|bridgeProperties|build|buildXml|bypassAccessor|callable|classCode|commutative|compilerGenerated|const|coreApi|coreType|cppFileCode|cppInclude|cppNamespaceCode|cs.assemblyMeta|cs.assemblyStrict|cs.using|dce|debug|decl|delegate|depend|deprecated|eager|enum|event|expose|extern|file|fileXml|final|fixed|flash.property|font|forward.new|forward.variance|forward|forwardStatics|from|functionCode|functionTailCode|generic|genericBuild|genericClassPerMethod|getter|hack|headerClassCode|headerCode|headerInclude|headerNamespaceCode|hlNative|hxGen|ifFeature|include|inheritDoc|inline|internal|isVar|java.native|javaCanonical|jsRequire|jvm.synthetic|keep|keepInit|keepSub|luaDotMethod|luaRequire|macro|markup|mergeBlock|multiReturn|multiType|native|nativeChildren|nativeGen|nativeProperty|nativeStaticExtension|noClosure|noCompletion|noDebug|noDoc|noImportGlobal|noPrivateAccess|noStack|noUsing|nonVirtual|notNull|nullSafety|objc|objcProtocol|op|optional|overload|persistent|phpClassConst|phpGlobal|phpMagic|phpNoConstructor|pos|private|privateAccess|property|protected|publicFields|pure|pythonImport|readOnly|remove|require|resolve|rtti|runtimeValue|scalar|selfCall|semantics|setter|sound|sourceFile|stackOnly|strict|struct|structAccess|structInit|suppressWarnings|templatedCall|throws|to|transient|transitive|unifyMinDynamic|unreflective|unsafe|using|void|volatile)))\\b"
         },
         {
-          "begin": "(@)(:?[a-zA-Z_]*)\\s*(\\()",
+          "begin": "(@)(:?[A-Z_a-z]*)\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.metadata.hx"
@@ -1294,13 +1294,13 @@
               "name": "variable.metadata.hx"
             }
           },
-          "match": "(@)(:?)([a-zA-Z_]*(\\.))*([a-zA-Z_]*)?"
+          "match": "(@)(:?)([A-Z_a-z]*(\\.))*([A-Z_a-z]*)?"
         }
       ]
     },
     "method": {
       "begin": "(?=\\bfunction\\b)",
-      "end": "(?<=[};])",
+      "end": "(?<=[;}])",
       "name": "meta.method.hx",
       "patterns": [
         {
@@ -1369,7 +1369,7 @@
       ]
     },
     "method-name": {
-      "begin": "\\b(function)\\b\\s*\\b(?:(new)|([_A-Za-z]\\w*))?\\b",
+      "begin": "\\b(function)\\b\\s*\\b(?:(new)|([A-Z_a-z]\\w*))?\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.hx"
@@ -1392,7 +1392,7 @@
       ]
     },
     "method-name-post": {
-      "begin": "(?<=[\\w\\s>])",
+      "begin": "(?<=[>\\w\\s])",
       "end": "(\\{)|(;)",
       "endCaptures": {
         "1": {
@@ -1424,7 +1424,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=[{;a-z0-9])",
+      "end": "(?=[0-9;a-{])",
       "patterns": [
         {
           "include": "#type"
@@ -1489,7 +1489,7 @@
           "name": "keyword.operator.logical.hx"
         },
         {
-          "match": "([~\\&|\\^]|>>>|<<|>>)",
+          "match": "([\\&^|~]|>>>|<<|>>)",
           "name": "keyword.operator.bitwise.hx"
         },
         {
@@ -1505,7 +1505,7 @@
           "name": "keyword.operator.increment-decrement.hx"
         },
         {
-          "match": "([\\-+*/%])",
+          "match": "([-%*+/])",
           "name": "keyword.operator.arithmetic.hx"
         },
         {
@@ -1614,7 +1614,7 @@
               "name": "variable.parameter.hx"
             }
           },
-          "match": "\\s*([_a-zA-Z]\\w*)"
+          "match": "\\s*([A-Z_a-z]\\w*)"
         },
         {
           "include": "#global"
@@ -1733,7 +1733,7 @@
     "regex-character-class": {
       "patterns": [
         {
-          "match": "\\\\[wWsSdDtrnvf]|\\.",
+          "match": "\\\\[DSWdfnr-tvw]|\\.",
           "name": "constant.other.character-class.regexp"
         },
         {
@@ -1753,7 +1753,7 @@
     "regexp": {
       "patterns": [
         {
-          "match": "\\\\[bB]|[\\^$]",
+          "match": "\\\\[Bb]|[$^]",
           "name": "keyword.control.anchor.regexp"
         },
         {
@@ -1761,7 +1761,7 @@
           "name": "keyword.other.back-reference.regexp"
         },
         {
-          "match": "[?+*]|\\{(\\d+,\\d+|\\d+,|,\\d+|\\d+)}\\??",
+          "match": "[*+?]|\\{(\\d+,\\d+|\\d+,|,\\d+|\\d+)}\\??",
           "name": "keyword.operator.quantifier.regexp"
         },
         {
@@ -1859,7 +1859,7 @@
                   "name": "constant.character.escape.backslash.regexp"
                 }
               },
-              "match": "(?:.|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))",
+              "match": "(?:.|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))-(?:[^]\\\\]|(\\\\(?:[0-7]{3}|x\\h\\h|u\\h\\h\\h\\h))|(\\\\c[A-Z])|(\\\\.))",
               "name": "constant.other.character-class.range.regexp"
             },
             {
@@ -1891,7 +1891,7 @@
           "name": "constant.character.escape.hx"
         },
         {
-          "match": "\\\\[nrt\"'\\\\]",
+          "match": "\\\\[\"'\\\\nrt]",
           "name": "constant.character.escape.hx"
         },
         {
@@ -1988,7 +1988,7 @@
                   "name": "variable.other.hx"
                 }
               },
-              "match": "(\\$)([_a-zA-Z]\\w*)"
+              "match": "(\\$)([A-Z_a-z]\\w*)"
             },
             {
               "match": "",
@@ -2025,11 +2025,11 @@
           "name": "keyword.operator.type.intersection.hx"
         },
         {
-          "match": "\\?(?=\\s*[_A-Z])",
+          "match": "\\?(?=\\s*[A-Z_])",
           "name": "keyword.operator.optional"
         },
         {
-          "match": "\\?(?!\\s*[_A-Z])",
+          "match": "\\?(?!\\s*[A-Z_])",
           "name": "punctuation.definition.tag"
         },
         {
@@ -2188,7 +2188,7 @@
       ]
     },
     "type-path-package-name": {
-      "match": "\\b([_A-Za-z]\\w*)\\b",
+      "match": "\\b([A-Z_a-z]\\w*)\\b",
       "name": "support.package.hx"
     },
     "type-path-type-name": {
@@ -2277,7 +2277,7 @@
           "name": "storage.type.class.hx"
         }
       },
-      "end": "([_A-Za-z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "entity.name.type.class.hx"
@@ -2322,7 +2322,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=[},;])",
+      "end": "(?=[,;}])",
       "patterns": [
         {
           "include": "#type"
@@ -2410,7 +2410,7 @@
           "name": "keyword.operator.assignment.hx"
         }
       },
-      "end": "(?=[;,])",
+      "end": "(?=[,;])",
       "patterns": [
         {
           "include": "#block"
@@ -2427,7 +2427,7 @@
           "name": "storage.type.variable.hx"
         }
       },
-      "end": "(?=$)|([_a-zA-Z]\\w*)",
+      "end": "(?=$)|([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "variable.other.hx"
@@ -2446,7 +2446,7 @@
           "name": "punctuation.separator.comma.hx"
         }
       },
-      "end": "([_a-zA-Z]\\w*)",
+      "end": "([A-Z_a-z]\\w*)",
       "endCaptures": {
         "1": {
           "name": "variable.other.hx"
@@ -2480,7 +2480,7 @@
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=$|[;,=])",
+      "end": "(?=$|[,;=])",
       "patterns": [
         {
           "include": "#type"

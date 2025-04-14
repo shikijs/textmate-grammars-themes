@@ -1564,7 +1564,7 @@ export const grammars = [
     source: 'https://github.com/octref/language-haskell/blob/ae87982aac2bf5cf6334c067e49c5ec8fc08b871/syntaxes/haskell.json',
   },
   {
-    byteSize: 34325,
+    byteSize: 34309,
     categories: [
       'general',
     ],
