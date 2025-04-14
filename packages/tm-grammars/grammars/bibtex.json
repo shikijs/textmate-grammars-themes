@@ -30,7 +30,7 @@
     "entry": {
       "patterns": [
         {
-          "begin": "((@)[!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(\\{)\\s*([^,}\\s]*)",
+          "begin": "((@)[-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(\\{)\\s*([^,}\\s]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.entry-type.bibtex"
@@ -54,7 +54,7 @@
           "name": "meta.entry.braces.bibtex",
           "patterns": [
             {
-              "begin": "([!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(=)",
+              "begin": "([-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(=)",
               "beginCaptures": {
                 "1": {
                   "name": "support.function.key.bibtex"
@@ -74,7 +74,7 @@
           ]
         },
         {
-          "begin": "((@)[!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(\\()\\s*([^,\\s]*)",
+          "begin": "((@)[-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(\\()\\s*([^,\\s]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.entry-type.bibtex"
@@ -98,7 +98,7 @@
           "name": "meta.entry.parenthesis.bibtex",
           "patterns": [
             {
-              "begin": "([!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(=)",
+              "begin": "([-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)\\s*(=)",
               "beginCaptures": {
                 "1": {
                   "name": "support.function.key.bibtex"
@@ -222,7 +222,7 @@
     "string": {
       "patterns": [
         {
-          "begin": "((@)(?i:string))\\s*(\\{)\\s*([!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)",
+          "begin": "((@)(?i:string))\\s*(\\{)\\s*([-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.string-constant.bibtex"
@@ -251,7 +251,7 @@
           ]
         },
         {
-          "begin": "((@)(?i:string))\\s*(\\()\\s*([!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*)",
+          "begin": "((@)(?i:string))\\s*(\\()\\s*([-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.string-constant.bibtex"
@@ -329,7 +329,7 @@
           "name": "support.variable.bibtex"
         }
       },
-      "match": "[!$\\&*+\\--/:-<>-z|~][!$\\&*+\\--<>-z|~]*"
+      "match": "[-!$\\&*+./:;<>-z|~][!$\\&*+\\--<>-z|~]*"
     }
   },
   "scopeName": "text.bibtex"

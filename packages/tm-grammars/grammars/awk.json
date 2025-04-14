@@ -152,7 +152,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "(!?~|[!<->]=|[<>])",
+          "match": "(!?~|[!<=>]=|[<>])",
           "name": "keyword.operator.comparison.awk"
         },
         {
@@ -216,7 +216,7 @@
       ]
     },
     "regex-as-assignment": {
-      "begin": "([^-!%*+/<->^]=)\\s*(/)",
+      "begin": "([^-!%*+/<=>^]=)\\s*(/)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.assignment.awk"

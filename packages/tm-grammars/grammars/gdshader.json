@@ -295,7 +295,7 @@
       "name": "storage.modifier.gdshader"
     },
     "operator": {
-      "match": "<<=?|>>=?|[-!\\&*+/<->|]=|&&|\\|\\||[-!%\\&*+/<->^|~]",
+      "match": "<<=?|>>=?|[-!\\&*+/<=>|]=|&&|\\|\\||[-!%\\&*+/<=>^|~]",
       "name": "keyword.operator.gdshader"
     },
     "precisionKeyword": {
@@ -397,7 +397,7 @@
       "match": "(\\.)\\s*([w-z]{2,4}|[abgr]{2,4}|[pqst]{2,4})\\b"
     },
     "typeKeyword": {
-      "match": "\\b(?:void|bool|[biu]?vec[2-4]|u?int|float|mat[2-4]|[iu]?sampler(?:3D|2D(?:Array)?)|samplerCube)\\b",
+      "match": "\\b(?:void|bool|[biu]?vec[234]|u?int|float|mat[234]|[iu]?sampler(?:3D|2D(?:Array)?)|samplerCube)\\b",
       "name": "support.type.gdshader"
     }
   },

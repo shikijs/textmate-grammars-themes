@@ -64,7 +64,7 @@
       "while": "(^|\\G)\\s*(>) ?"
     },
     "bold": {
-      "begin": "(?<open>(\\*\\*(?=\\w)|(?<!\\w)\\*\\*|(?<!\\w)\\b__))(?=\\S)(?=(<[^>]*+>|(?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>|\\\\[-!#(-+.>\\[-\\]_`{}]?+|\\[((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+](( ?\\[[^]]*+])|(\\([\\t ]*+<?(.*?)>?[\\t ]*+((?<title>[\"'])(.*?)\\k<title>)?\\))))|(?!(?<=\\S)\\k<open>).)++(?<=\\S)(?=__\\b|\\*\\*)\\k<open>)",
+      "begin": "(?<open>(\\*\\*(?=\\w)|(?<!\\w)\\*\\*|(?<!\\w)\\b__))(?=\\S)(?=(<[^>]*+>|(?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>|\\\\[-\\]!#(-+.>\\[\\\\_`{}]?+|\\[((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+](( ?\\[[^]]*+])|(\\([\\t ]*+<?(.*?)>?[\\t ]*+((?<title>[\"'])(.*?)\\k<title>)?\\))))|(?!(?<=\\S)\\k<open>).)++(?<=\\S)(?=__\\b|\\*\\*)\\k<open>)",
       "captures": {
         "1": {
           "name": "punctuation.definition.bold.markdown"
@@ -135,7 +135,7 @@
       "name": "meta.other.valid-bracket.markdown"
     },
     "escape": {
-      "match": "\\\\[-!#(-+.>\\[-\\]_`{}]",
+      "match": "\\\\[-\\]!#(-+.>\\[\\\\_`{}]",
       "name": "constant.character.escape.markdown"
     },
     "fenced_code_block": {
@@ -908,7 +908,7 @@
       ]
     },
     "fenced_code_block_groovy": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(g(?:roo|)vy)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(g(?:roovy|vy))((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -941,7 +941,7 @@
       ]
     },
     "fenced_code_block_handlebars": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(h(?:andlebar|b)s)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(h(?:andlebars|bs))((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -2433,7 +2433,7 @@
           "while": "^(?!\\s*$)"
         },
         {
-          "begin": "(^|\\G)\\s*(?=(<(?:[-0-9A-Za-z]((?:/?|\\s.*?)>)|/[-0-9A-Za-z]>))\\s*$)",
+          "begin": "(^|\\G)\\s*(?=(<(?:[-0-9A-Za-z](/?>|\\s.*?>)|/[-0-9A-Za-z]>))\\s*$)",
           "patterns": [
             {
               "include": "text.html.derivative"
@@ -2500,7 +2500,7 @@
           "name": "punctuation.definition.link.markdown"
         }
       },
-      "match": "(!\\[)((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+)(])(\\()[\\t ]*((<)((?:\\\\[<>]|[^\\n<>])*)(>)|((?<url>(?>[^()\\s]+)|\\(\\g<url>*\\))*))[\\t ]*(?:((\\().+?(\\)))|((\").+?(\"))|((').+?(')))?\\s*(\\))",
+      "match": "(!\\[)((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+)(])(\\()[\\t ]*((<)((?:\\\\[<>]|[^\\n<>])*)(>)|((?<url>(?>[^()\\s]+)|\\(\\g<url>*\\))*))[\\t ]*(?:((\\().+?(\\)))|((\").+?(\"))|((').+?(')))?\\s*(\\))",
       "name": "meta.image.inline.markdown"
     },
     "image-ref": {
@@ -2524,7 +2524,7 @@
           "name": "punctuation.definition.constant.markdown"
         }
       },
-      "match": "(!\\[)((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+)(]) ?(\\[)(.*?)(])",
+      "match": "(!\\[)((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+)(]) ?(\\[)(.*?)(])",
       "name": "meta.image.reference.markdown"
     },
     "inline": {
@@ -2577,7 +2577,7 @@
       ]
     },
     "italic": {
-      "begin": "(?<open>(\\*(?=\\w)|(?<!\\w)\\*|(?<!\\w)\\b_))(?=\\S)(?=(<[^>]*+>|(?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>|\\\\[-!#(-+.>\\[-\\]_`{}]?+|\\[((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+](( ?\\[[^]]*+])|(\\([\\t ]*+<?(.*?)>?[\\t ]*+((?<title>[\"'])(.*?)\\k<title>)?\\))))|\\k<open>\\k<open>|(?!(?<=\\S)\\k<open>).)++(?<=\\S)(?=_\\b|\\*)\\k<open>)",
+      "begin": "(?<open>(\\*(?=\\w)|(?<!\\w)\\*|(?<!\\w)\\b_))(?=\\S)(?=(<[^>]*+>|(?<raw>`+)([^`]|(?!(?<!`)\\k<raw>(?!`))`)*+\\k<raw>|\\\\[-\\]!#(-+.>\\[\\\\_`{}]?+|\\[((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+](( ?\\[[^]]*+])|(\\([\\t ]*+<?(.*?)>?[\\t ]*+((?<title>[\"'])(.*?)\\k<title>)?\\))))|\\k<open>\\k<open>|(?!(?<=\\S)\\k<open>).)++(?<=\\S)(?=_\\b|\\*)\\k<open>)",
       "captures": {
         "1": {
           "name": "punctuation.definition.italic.markdown"
@@ -2801,7 +2801,7 @@
           "name": "punctuation.definition.link.markdown"
         }
       },
-      "match": "(\\[)((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+)(])(\\()[\\t ]*((<)((?:\\\\[<>]|[^\\n<>])*)(>)|((?<url>(?>[^()\\s]+)|\\(\\g<url>*\\))*))[\\t ]*(?:((\\()[^()]*(\\)))|((\")[^\"]*(\"))|((')[^']*(')))?\\s*(\\))",
+      "match": "(\\[)((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+)(])(\\()[\\t ]*((<)((?:\\\\[<>]|[^\\n<>])*)(>)|((?<url>(?>[^()\\s]+)|\\(\\g<url>*\\))*))[\\t ]*(?:((\\()[^()]*(\\)))|((\")[^\"]*(\"))|((')[^']*(')))?\\s*(\\))",
       "name": "meta.link.inline.markdown"
     },
     "link-ref": {
@@ -2842,7 +2842,7 @@
           "name": "punctuation.definition.constant.end.markdown"
         }
       },
-      "match": "(?<![]\\\\])(\\[)((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+)(])(\\[)([^]]*+)(])",
+      "match": "(?<![]\\\\])(\\[)((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+)(])(\\[)([^]]*+)(])",
       "name": "meta.link.reference.markdown"
     },
     "link-ref-literal": {
@@ -2863,7 +2863,7 @@
           "name": "punctuation.definition.constant.end.markdown"
         }
       },
-      "match": "(?<![]\\\\])(\\[)((?<square>[^\\[-\\]]|\\\\.|\\[\\g<square>*+])*+)(]) ?(\\[)(])",
+      "match": "(?<![]\\\\])(\\[)((?<square>[^]\\[\\\\]|\\\\.|\\[\\g<square>*+])*+)(]) ?(\\[)(])",
       "name": "meta.link.reference.literal.markdown"
     },
     "link-ref-shortcut": {
@@ -2878,11 +2878,11 @@
           "name": "punctuation.definition.link.title.end.markdown"
         }
       },
-      "match": "(?<![]\\\\])(\\[)((?:[^\\[-\\]\\s]|\\\\[]\\[])+?)((?<!\\\\)])",
+      "match": "(?<![]\\\\])(\\[)((?:[^]\\[\\\\\\s]|\\\\[]\\[])+?)((?<!\\\\)])",
       "name": "meta.link.reference.markdown"
     },
     "list_paragraph": {
-      "begin": "(^|\\G)(?=\\S)(?!(?:[*->]|[0-9]+\\.)\\s)",
+      "begin": "(^|\\G)(?=\\S)(?![*->]\\s|[0-9]+\\.\\s)",
       "name": "meta.paragraph.markdown",
       "patterns": [
         {

@@ -73,7 +73,7 @@
                   "name": "keyword.operator.wikitext"
                 }
               },
-              "match": "(?:^|\\G)([^]#:\\[{-}]*)(\\|)"
+              "match": "(?:^|\\G)([^]#:\\[{|}]*)(\\|)"
             },
             {
               "include": "$self"
@@ -288,7 +288,7 @@
         },
         "internal-link": {
           "TODO": "SINGLE LINE",
-          "begin": "(\\[\\[)(([^]#:\\[{-}]*:)*)?([^]\\[|]*)?",
+          "begin": "(\\[\\[)(([^]#:\\[{|}]*:)*)?([^]\\[|]*)?",
           "captures": {
             "1": {
               "name": "punctuation.definition.tag.link.internal.wikitext"
@@ -403,7 +403,7 @@
                   "name": "punctuation.definition.tag.link.internal.end.wikitext"
                 }
               },
-              "match": "(?i)^(\\s*?#REDIRECT)\\s*(\\[\\[)(([^]#:\\[{-}]*?:)*)?([^]\\[|]*)?(\\|[^]\\[]*?)?(]])"
+              "match": "(?i)^(\\s*?#REDIRECT)\\s*(\\[\\[)(([^]#:\\[{|}]*?:)*)?([^]\\[|]*)?(\\|[^]\\[]*?)?(]])"
             }
           ]
         },
@@ -571,7 +571,7 @@
           ]
         },
         "template": {
-          "begin": "(\\{\\{)\\s*(([^]#:\\[{-}]*(:))*)\\s*((#[^]#:\\[{-}]+(:))*)([^]#:\\[{-}]*)",
+          "begin": "(\\{\\{)\\s*(([^]#:\\[{|}]*(:))*)\\s*((#[^]#:\\[{|}]+(:))*)([^]#:\\[{|}]*)",
           "captures": {
             "1": {
               "name": "punctuation.definition.tag.template.wikitext"
@@ -2680,7 +2680,7 @@
                   ]
                 },
                 "hl-php": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)php(?:|[3-5])\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)php(?:|[345])\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"

@@ -55,7 +55,7 @@
       ]
     },
     "bracket-group": {
-      "begin": "(?:::|)\\[",
+      "begin": "::\\[|\\[",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.brackets.begin.wolfram"
@@ -105,7 +105,7 @@
     "escaped_character_symbols": {
       "patterns": [
         {
-          "match": "System`\\\\\\[Formal(?:A|Alpha|B|Beta|C|CapitalA|CapitalAlpha|CapitalB|CapitalBeta|CapitalC|CapitalChi|CapitalD|CapitalDelta|CapitalDigamma|CapitalE|CapitalEpsilon|CapitalEta|CapitalF|CapitalG|CapitalGamma|CapitalH|CapitalI|CapitalIota|CapitalJ|CapitalK|CapitalKappa|CapitalKoppa|CapitalL|CapitalLambda|CapitalM|CapitalMu|CapitalN|CapitalNu|CapitalO|CapitalOmega|CapitalOmicron|CapitalP|CapitalPhi|CapitalPi|CapitalPsi|CapitalQ|CapitalR|CapitalRho|CapitalS|CapitalSampi|CapitalSigma|CapitalStigma|CapitalT|CapitalTau|CapitalTheta|CapitalU|CapitalUpsilon|CapitalV|CapitalW|CapitalX|CapitalXi|CapitalY|CapitalZ|CapitalZeta|Chi|CurlyCapitalUpsilon|CurlyEpsilon|CurlyKappa|CurlyPhi|CurlyPi|CurlyRho|CurlyTheta|D|Delta|Digamma|E|Epsilon|Eta|F|FinalSigma|G|Gamma|[HI]|Iota|[JK]|Kappa|Koppa|L|Lambda|M|Mu|N|Nu|O|Omega|Omicron|P|Phi|Pi|Psi|[QR]|Rho|S|Sampi|ScriptA|ScriptB|ScriptC|ScriptCapitalA|ScriptCapitalB|ScriptCapitalC|ScriptCapitalD|ScriptCapitalE|ScriptCapitalF|ScriptCapitalG|ScriptCapitalH|ScriptCapitalI|ScriptCapitalJ|ScriptCapitalK|ScriptCapitalL|ScriptCapitalM|ScriptCapitalN|ScriptCapitalO|ScriptCapitalP|ScriptCapitalQ|ScriptCapitalR|ScriptCapitalS|ScriptCapitalT|ScriptCapitalU|ScriptCapitalV|ScriptCapitalW|ScriptCapitalX|ScriptCapitalY|ScriptCapitalZ|ScriptD|ScriptE|ScriptF|ScriptG|ScriptH|ScriptI|ScriptJ|ScriptK|ScriptL|ScriptM|ScriptN|ScriptO|ScriptP|ScriptQ|ScriptR|ScriptS|ScriptT|ScriptU|ScriptV|ScriptW|ScriptX|ScriptY|ScriptZ|Sigma|Stigma|T|Tau|Theta|U|Upsilon|[V-X]|Xi|[YZ]|Zeta)](?![$`[:alnum:]])",
+          "match": "System`\\\\\\[Formal(?:A|Alpha|B|Beta|C|CapitalA|CapitalAlpha|CapitalB|CapitalBeta|CapitalC|CapitalChi|CapitalD|CapitalDelta|CapitalDigamma|CapitalE|CapitalEpsilon|CapitalEta|CapitalF|CapitalG|CapitalGamma|CapitalH|CapitalI|CapitalIota|CapitalJ|CapitalK|CapitalKappa|CapitalKoppa|CapitalL|CapitalLambda|CapitalM|CapitalMu|CapitalN|CapitalNu|CapitalO|CapitalOmega|CapitalOmicron|CapitalP|CapitalPhi|CapitalPi|CapitalPsi|CapitalQ|CapitalR|CapitalRho|CapitalS|CapitalSampi|CapitalSigma|CapitalStigma|CapitalT|CapitalTau|CapitalTheta|CapitalU|CapitalUpsilon|CapitalV|CapitalW|CapitalX|CapitalXi|CapitalY|CapitalZ|CapitalZeta|Chi|CurlyCapitalUpsilon|CurlyEpsilon|CurlyKappa|CurlyPhi|CurlyPi|CurlyRho|CurlyTheta|D|Delta|Digamma|E|Epsilon|Eta|F|FinalSigma|G|Gamma|[HI]|Iota|[JK]|Kappa|Koppa|L|Lambda|M|Mu|N|Nu|O|Omega|Omicron|P|Phi|Pi|Psi|[QR]|Rho|S|Sampi|ScriptA|ScriptB|ScriptC|ScriptCapitalA|ScriptCapitalB|ScriptCapitalC|ScriptCapitalD|ScriptCapitalE|ScriptCapitalF|ScriptCapitalG|ScriptCapitalH|ScriptCapitalI|ScriptCapitalJ|ScriptCapitalK|ScriptCapitalL|ScriptCapitalM|ScriptCapitalN|ScriptCapitalO|ScriptCapitalP|ScriptCapitalQ|ScriptCapitalR|ScriptCapitalS|ScriptCapitalT|ScriptCapitalU|ScriptCapitalV|ScriptCapitalW|ScriptCapitalX|ScriptCapitalY|ScriptCapitalZ|ScriptD|ScriptE|ScriptF|ScriptG|ScriptH|ScriptI|ScriptJ|ScriptK|ScriptL|ScriptM|ScriptN|ScriptO|ScriptP|ScriptQ|ScriptR|ScriptS|ScriptT|ScriptU|ScriptV|ScriptW|ScriptX|ScriptY|ScriptZ|Sigma|Stigma|T|Tau|Theta|U|Upsilon|[VWX]|Xi|[YZ]|Zeta)](?![$`[:alnum:]])",
           "name": "constant.language.wolfram"
         },
         {
@@ -113,7 +113,7 @@
           "name": "constant.language.wolfram"
         },
         {
-          "match": "\\\\\\[Formal(?:A|Alpha|B|Beta|C|CapitalA|CapitalAlpha|CapitalB|CapitalBeta|CapitalC|CapitalChi|CapitalD|CapitalDelta|CapitalDigamma|CapitalE|CapitalEpsilon|CapitalEta|CapitalF|CapitalG|CapitalGamma|CapitalH|CapitalI|CapitalIota|CapitalJ|CapitalK|CapitalKappa|CapitalKoppa|CapitalL|CapitalLambda|CapitalM|CapitalMu|CapitalN|CapitalNu|CapitalO|CapitalOmega|CapitalOmicron|CapitalP|CapitalPhi|CapitalPi|CapitalPsi|CapitalQ|CapitalR|CapitalRho|CapitalS|CapitalSampi|CapitalSigma|CapitalStigma|CapitalT|CapitalTau|CapitalTheta|CapitalU|CapitalUpsilon|CapitalV|CapitalW|CapitalX|CapitalXi|CapitalY|CapitalZ|CapitalZeta|Chi|CurlyCapitalUpsilon|CurlyEpsilon|CurlyKappa|CurlyPhi|CurlyPi|CurlyRho|CurlyTheta|D|Delta|Digamma|E|Epsilon|Eta|F|FinalSigma|G|Gamma|[HI]|Iota|[JK]|Kappa|Koppa|L|Lambda|M|Mu|N|Nu|O|Omega|Omicron|P|Phi|Pi|Psi|[QR]|Rho|S|Sampi|ScriptA|ScriptB|ScriptC|ScriptCapitalA|ScriptCapitalB|ScriptCapitalC|ScriptCapitalD|ScriptCapitalE|ScriptCapitalF|ScriptCapitalG|ScriptCapitalH|ScriptCapitalI|ScriptCapitalJ|ScriptCapitalK|ScriptCapitalL|ScriptCapitalM|ScriptCapitalN|ScriptCapitalO|ScriptCapitalP|ScriptCapitalQ|ScriptCapitalR|ScriptCapitalS|ScriptCapitalT|ScriptCapitalU|ScriptCapitalV|ScriptCapitalW|ScriptCapitalX|ScriptCapitalY|ScriptCapitalZ|ScriptD|ScriptE|ScriptF|ScriptG|ScriptH|ScriptI|ScriptJ|ScriptK|ScriptL|ScriptM|ScriptN|ScriptO|ScriptP|ScriptQ|ScriptR|ScriptS|ScriptT|ScriptU|ScriptV|ScriptW|ScriptX|ScriptY|ScriptZ|Sigma|Stigma|T|Tau|Theta|U|Upsilon|[V-X]|Xi|[YZ]|Zeta)](?![$`[:alnum:]])",
+          "match": "\\\\\\[Formal(?:A|Alpha|B|Beta|C|CapitalA|CapitalAlpha|CapitalB|CapitalBeta|CapitalC|CapitalChi|CapitalD|CapitalDelta|CapitalDigamma|CapitalE|CapitalEpsilon|CapitalEta|CapitalF|CapitalG|CapitalGamma|CapitalH|CapitalI|CapitalIota|CapitalJ|CapitalK|CapitalKappa|CapitalKoppa|CapitalL|CapitalLambda|CapitalM|CapitalMu|CapitalN|CapitalNu|CapitalO|CapitalOmega|CapitalOmicron|CapitalP|CapitalPhi|CapitalPi|CapitalPsi|CapitalQ|CapitalR|CapitalRho|CapitalS|CapitalSampi|CapitalSigma|CapitalStigma|CapitalT|CapitalTau|CapitalTheta|CapitalU|CapitalUpsilon|CapitalV|CapitalW|CapitalX|CapitalXi|CapitalY|CapitalZ|CapitalZeta|Chi|CurlyCapitalUpsilon|CurlyEpsilon|CurlyKappa|CurlyPhi|CurlyPi|CurlyRho|CurlyTheta|D|Delta|Digamma|E|Epsilon|Eta|F|FinalSigma|G|Gamma|[HI]|Iota|[JK]|Kappa|Koppa|L|Lambda|M|Mu|N|Nu|O|Omega|Omicron|P|Phi|Pi|Psi|[QR]|Rho|S|Sampi|ScriptA|ScriptB|ScriptC|ScriptCapitalA|ScriptCapitalB|ScriptCapitalC|ScriptCapitalD|ScriptCapitalE|ScriptCapitalF|ScriptCapitalG|ScriptCapitalH|ScriptCapitalI|ScriptCapitalJ|ScriptCapitalK|ScriptCapitalL|ScriptCapitalM|ScriptCapitalN|ScriptCapitalO|ScriptCapitalP|ScriptCapitalQ|ScriptCapitalR|ScriptCapitalS|ScriptCapitalT|ScriptCapitalU|ScriptCapitalV|ScriptCapitalW|ScriptCapitalX|ScriptCapitalY|ScriptCapitalZ|ScriptD|ScriptE|ScriptF|ScriptG|ScriptH|ScriptI|ScriptJ|ScriptK|ScriptL|ScriptM|ScriptN|ScriptO|ScriptP|ScriptQ|ScriptR|ScriptS|ScriptT|ScriptU|ScriptV|ScriptW|ScriptX|ScriptY|ScriptZ|Sigma|Stigma|T|Tau|Theta|U|Upsilon|[VWX]|Xi|[YZ]|Zeta)](?![$`[:alnum:]])",
           "name": "constant.language.wolfram"
         },
         {
@@ -141,7 +141,7 @@
     "escaped_characters": {
       "patterns": [
         {
-          "match": "\\\\[ !%\\&(-+/@^-`]",
+          "match": "\\\\[ !%\\&(-+/@^_`]",
           "name": "donothighlight.constant.character.escape"
         },
         {

@@ -3344,7 +3344,7 @@
           ]
         },
         {
-          "begin": "(?=(?>^\\[(source)[#,]\\p{blank}*(?i:(obj(?:|ective-)c))([#,][^]]+)*]$))",
+          "begin": "(?=(?>^\\[(source)[#,]\\p{blank}*(?i:(obj(?:c|ective-c)))([#,][^]]+)*]$))",
           "end": "((?<=--|\\.\\.\\.\\.)|^\\p{blank}*)$",
           "name": "markup.code.objc.asciidoc",
           "patterns": [
@@ -3359,7 +3359,7 @@
                   ]
                 }
               },
-              "match": "^\\[(source)[#,]\\p{blank}*(?i:(obj(?:|ective-)c))([#,]([^],]+))*]$"
+              "match": "^\\[(source)[#,]\\p{blank}*(?i:(obj(?:c|ective-c)))([#,]([^],]+))*]$"
             },
             {
               "include": "#inlines"
@@ -5515,7 +5515,7 @@
           ]
         },
         {
-          "begin": "^\\s*(`{3,})\\s*(?i:(obj(?:|ective-)c))\\s*$",
+          "begin": "^\\s*(`{3,})\\s*(?i:(obj(?:c|ective-c)))\\s*$",
           "beginCaptures": {
             "0": {
               "name": "support.asciidoc"

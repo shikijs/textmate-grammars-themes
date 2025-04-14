@@ -543,7 +543,7 @@
     "string_escape": {
       "patterns": [
         {
-          "match": "\\\\[\"'\\\\`-bfnrtvz{]",
+          "match": "\\\\[\"'\\\\`abfnrtvz{]",
           "name": "constant.character.escape.luau"
         },
         {
@@ -627,7 +627,7 @@
           "name": "keyword.operator.typecast.luau"
         }
       },
-      "end": "(?=^|[])+-\\-:;>?}](?!\\s*[\\&|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
+      "end": "(?=^|[-\\])+,:;>?}](?!\\s*[\\&|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
       "patterns": [
         {
           "include": "#type_literal"

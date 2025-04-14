@@ -119,7 +119,7 @@
           "name": "constant.language.commonlisp"
         },
         {
-          "match": "(?<=^|[(\\s]|,@|,\\.|,)([-+]?[0-9]+(?:/[0-9]+)*|[-+]?[0-9]*\\.?[0-9]+([Ee][-+]?[0-9]+)?|(#[Bb])[-+/-1]+|(#[Oo])[-+/-7]+|(#[Xx])[-+/\\h]+|(#[0-9]+[Rr]?)[-+/-9A-Za-z]+)(?=([)\\s]))",
+          "match": "(?<=^|[(\\s]|,@|,\\.|,)([-+]?[0-9]+(?:/[0-9]+)*|[-+]?[0-9]*\\.?[0-9]+([Ee][-+]?[0-9]+)?|(#[Bb])[-+/01]+|(#[Oo])[-+/-7]+|(#[Xx])[-+/\\h]+|(#[0-9]+[Rr]?)[-+/-9A-Za-z]+)(?=([)\\s]))",
           "name": "constant.numeric.commonlisp"
         },
         {
@@ -127,7 +127,7 @@
           "name": "variable.other.constant.dot.commonlisp"
         },
         {
-          "match": "(?<=^|[(\\s]|,@|,\\.|,)([-+]?[0-9]*\\.[0-9]*(([D-FLSd-fls])[-+]?[0-9]+)?|[-+]?[0-9]+(\\.[0-9]*)?([D-FLSd-fls])[-+]?[0-9]+)(?=([)\\s]))",
+          "match": "(?<=^|[(\\s]|,@|,\\.|,)([-+]?[0-9]*\\.[0-9]*(([DEFLSdefls])[-+]?[0-9]+)?|[-+]?[0-9]+(\\.[0-9]*)?([DEFLSdefls])[-+]?[0-9]+)(?=([)\\s]))",
           "name": "constant.numeric.commonlisp"
         }
       ]
@@ -175,7 +175,7 @@
               ]
             }
           },
-          "match": "(?i)(?<=^|[(\\s])(def(?:un|setf|method|macro|ine-symbol-macro|ine-setf-expander|ine-modify-macro|ine-method-combination|ine-compiler-macro|generic))\\s+(\\(\\s*([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+)\\s*((,(?:[.@]|))?)([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)|((,(?:[.@]|))?)([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?))(?=([()\\s]))"
+          "match": "(?i)(?<=^|[(\\s])(def(?:un|setf|method|macro|ine-symbol-macro|ine-setf-expander|ine-modify-macro|ine-method-combination|ine-compiler-macro|generic))\\s+(\\(\\s*([]!#-\\&*+\\--:<-\\[^_a-{}~]+)\\s*((,(?:[.@]|))?)([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)|((,(?:[.@]|))?)([]!#-\\&*+\\--:<-\\[^_a-{}~]+?))(?=([()\\s]))"
         },
         {
           "captures": {
@@ -186,7 +186,7 @@
               "name": "entity.name.type.commonlisp"
             }
           },
-          "match": "(?i)(?<=^|[(\\s])(def(?:type|package|ine-condition|class))\\s+([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)(?=([()\\s]))"
+          "match": "(?i)(?<=^|[(\\s])(def(?:type|package|ine-condition|class))\\s+([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)(?=([()\\s]))"
         },
         {
           "captures": {
@@ -205,7 +205,7 @@
               ]
             }
           },
-          "match": "(?i)(?<=^|[(\\s])(defconstant)\\s+([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)(?=([()\\s]))"
+          "match": "(?i)(?<=^|[(\\s])(defconstant)\\s+([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)(?=([()\\s]))"
         },
         {
           "captures": {
@@ -224,7 +224,7 @@
               "name": "entity.name.type.commonlisp"
             }
           },
-          "match": "(?i)(?<=^|[(\\s])(defstruct)\\s+\\(?\\s*([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)(?=([()\\s]))"
+          "match": "(?i)(?<=^|[(\\s])(defstruct)\\s+\\(?\\s*([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)(?=([()\\s]))"
         },
         {
           "captures": {
@@ -243,7 +243,7 @@
               ]
             }
           },
-          "match": "(?i)(?<=^|[(\\s])(macrolet|labels|flet)\\s+\\(\\s*\\(\\s*([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)(?=([()\\s]))"
+          "match": "(?i)(?<=^|[(\\s])(macrolet|labels|flet)\\s+\\(\\s*\\(\\s*([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)(?=([()\\s]))"
         }
       ]
     },
@@ -280,7 +280,7 @@
       ]
     },
     "lambda-list": {
-      "match": "(?i)(?<=^|[(\\s])&(?:[!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?|whole|rest|optional|key|environment|body|aux|allow-other-keys)(?=([()\\s]))",
+      "match": "(?i)(?<=^|[(\\s])&(?:[]!#-\\&*+\\--:<-\\[^_a-{}~]+?|whole|rest|optional|key|environment|body|aux|allow-other-keys)(?=([()\\s]))",
       "name": "keyword.other.lambdalist.commonlisp"
     },
     "macro": {
@@ -310,7 +310,7 @@
               "name": "support.type.package.commonlisp"
             }
           },
-          "match": "(?i)(?<=^|[(\\s]|,@|,\\.|,)(([!$-\\&*+\\--9<-\\[\\]-_a-{}~]+?)|(#))(?=:(?::|))"
+          "match": "(?i)(?<=^|[(\\s]|,@|,\\.|,)(([]!$%\\&*+\\--9<-\\[^_a-{}~]+?)|(#))(?=:(?::|))"
         }
       ]
     },
@@ -321,7 +321,7 @@
           "name": "variable.other.constant.singlequote.commonlisp"
         },
         {
-          "match": "(?i)(?<=^|[(\\s]|,@|,\\.|,):[!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?(?=([()\\s]))",
+          "match": "(?i)(?<=^|[(\\s]|,@|,\\.|,):[]!#-\\&*+\\--:<-\\[^_a-{}~]+?(?=([()\\s]))",
           "name": "entity.name.variable.commonlisp"
         },
         {
@@ -489,7 +489,7 @@
               "name": "entity.name.variable.commonlisp"
             }
           },
-          "match": "(?i)(~)(((([-+]?[0-9]+)|('.)|[#V])*?(,)?)*?)((:@|@:|[:@])?)([$-\\&*?A-GIOPR-TWX_|~])"
+          "match": "(?i)(~)(((([-+]?[0-9]+)|('.)|[#V])*?(,)?)*?)((:@|@:|[:@])?)([$%\\&*?A-GIOPRSTWX_|~])"
         },
         {
           "captures": {
@@ -512,7 +512,7 @@
               "name": "entity.name.variable.commonlisp"
             }
           },
-          "match": "(?i)(~)(((([-+]?[0-9]+)|('.)|[#V])*?(,)?)*?)((:@|@:|[:@])?)(/)([!#-\\&*+\\--:<-\\[\\]-_a-{}~]+?)(/)"
+          "match": "(?i)(~)(((([-+]?[0-9]+)|('.)|[#V])*?(,)?)*?)((:@|@:|[:@])?)(/)([]!#-\\&*+\\--:<-\\[^_a-{}~]+?)(/)"
         },
         {
           "match": "(~\\n)",

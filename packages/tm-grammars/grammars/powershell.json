@@ -85,13 +85,13 @@
       ]
     },
     {
-      "begin": "(@[\"“-„])\\s*$",
+      "begin": "(@[\"“”„])\\s*$",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.string.begin.powershell"
         }
       },
-      "end": "^[\"“-„]@",
+      "end": "^[\"“”„]@",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.powershell"
@@ -423,13 +423,13 @@
     },
     "doubleQuotedString": {
       "applyEndPatternLast": true,
-      "begin": "[\"“-„]",
+      "begin": "[\"“”„]",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.powershell"
         }
       },
-      "end": "[\"“-„]",
+      "end": "[\"“”„]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.end.powershell"
@@ -447,7 +447,7 @@
           "include": "#doubleQuotedStringEscapes"
         },
         {
-          "match": "[\"“-„]{2}",
+          "match": "[\"“”„]{2}",
           "name": "constant.character.escape.powershell"
         },
         {
@@ -462,7 +462,7 @@
     "doubleQuotedStringEscapes": {
       "patterns": [
         {
-          "match": "`[\"$'0`-befnrtv‘-„]",
+          "match": "`[\"$'0`abefnrtv‘-„]",
           "name": "constant.character.escape.powershell"
         },
         {

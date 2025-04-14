@@ -450,7 +450,7 @@
       ]
     },
     "assignment_statement": {
-      "begin": "\\b([\"'-)._\\w\\d\\s]+)\\s*(:=)",
+      "begin": "\\b([\"'()._\\w\\d\\s]+)\\s*(:=)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -2361,7 +2361,7 @@
               ]
             }
           },
-          "match": "^\\s*(#)((?:|els)if)\\s+(.*)$"
+          "match": "^\\s*(#)(if|elsif)\\s+(.*)$"
         },
         {
           "captures": {

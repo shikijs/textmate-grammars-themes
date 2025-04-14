@@ -239,7 +239,7 @@
       "include": "#block"
     },
     {
-      "begin": "(?:^|(?:(?=\\s)(?<!else|new|return)(?<=\\w)|(?=\\s*[A-Z_a-z])(?<!&&)(?<=[\\&*>])))(\\s*)(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[]))\\s*(?=\\()",
+      "begin": "(?:^|(?:(?=\\s)(?<!else|new|return)(?<=\\w)|(?=\\s*[A-Z_a-z])(?<!&&)(?<=[\\&*>])))(\\s*)(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[]))\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.function.leading.dm"

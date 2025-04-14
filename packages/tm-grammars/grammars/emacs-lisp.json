@@ -14,7 +14,7 @@
     "gnus",
     "viper"
   ],
-  "firstLineMatch": "^#!.*(?:[/\\s]|(?<=!)\\b)emacs(?:$|\\s)|(?:-\\*-(?i:[\\t ]*(?=[^:;\\s]+[\\t ]*-\\*-)|(?:.*?[\\t ;]|(?<=-\\*-))[\\t ]*mode[\\t ]*:[\\t ]*)(?i:emacs-lisp)(?=[\\t ;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:^|[\\t ])(?:vi|Vi(?=m))(?:m(?:[<->]?[0-9]+|))?|[\\t ]ex)(?=:(?:(?=[\\t ]*set?[\\t ][^\\n\\r:]+:)|(?![\\t ]*set?[\\t ])))(?:(?:[\\t ]*:[\\t ]*|[\\t ])\\w*(?:[\\t ]*=(?:[^\\\\\\s]|\\\\.)*)?)*[\\t :](?:filetype|ft|syntax)[\\t ]*=(?i:e(?:macs-|)lisp)(?=$|[:\\s]))",
+  "firstLineMatch": "^#!.*(?:[/\\s]|(?<=!)\\b)emacs(?:$|\\s)|(?:-\\*-(?i:[\\t ]*(?=[^:;\\s]+[\\t ]*-\\*-)|(?:.*?[\\t ;]|(?<=-\\*-))[\\t ]*mode[\\t ]*:[\\t ]*)(?i:emacs-lisp)(?=[\\t ;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:^|[\\t ])(?:vi|Vi(?=m))(?:m(?:[<=>]?[0-9]+|))?|[\\t ]ex)(?=:(?:(?=[\\t ]*set?[\\t ][^\\n\\r:]+:)|(?![\\t ]*set?[\\t ])))(?:(?:[\\t ]*:[\\t ]*|[\\t ])\\w*(?:[\\t ]*=(?:[^\\\\\\s]|\\\\.)*)?)*[\\t :](?:filetype|ft|syntax)[\\t ]*=(?i:e(?:macs-|)lisp)(?=$|[:\\s]))",
   "name": "emacs-lisp",
   "patterns": [
     {
@@ -103,7 +103,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "(\\()(?:(cl-(def(?:un|macro|subst)))|(def(?:un|macro|subst)))(?!-)\\b(?:\\s*(?![-+\\d])([-!$-\\&*+/:<-@^{}~\\w]+))?",
+          "begin": "(\\()(?:(cl-(def(?:un|macro|subst)))|(def(?:un|macro|subst)))(?!-)\\b(?:\\s*(?![-+\\d])([-!$%\\&*+/:<-@^{}~\\w]+))?",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.expression.begin.emacs.lisp"
@@ -136,7 +136,7 @@
           "name": "storage.type.function.emacs.lisp"
         },
         {
-          "begin": "(?<=\\s|^)(\\()(def(advice|class|const|custom|face|image|group|package|struct|subst|theme|type|var))(?:\\s+([-!$-\\&*+/:<-@^{}~\\w]+))?(?=[()\\s]|$)",
+          "begin": "(?<=\\s|^)(\\()(def(advice|class|const|custom|face|image|group|package|struct|subst|theme|type|var))(?:\\s+([-!$%\\&*+/:<-@^{}~\\w]+))?(?=[()\\s]|$)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.expression.begin.emacs.lisp"
@@ -188,7 +188,7 @@
               "include": "#arg-keywords"
             },
             {
-              "match": "(?![-#\\&'+:\\d])([-!$-\\&*+/:<-@^{}~\\w]+)",
+              "match": "(?![-#\\&'+:\\d])([-!$%\\&*+/:<-@^{}~\\w]+)",
               "name": "variable.parameter.emacs.lisp"
             },
             {
@@ -762,7 +762,7 @@
           "name": "punctuation.definition.keyword.emacs.lisp"
         }
       },
-      "match": "(?<=[()\\[\\s]|^)(:)[-!$-\\&*+/:<-@^{}~\\w]+",
+      "match": "(?<=[()\\[\\s]|^)(:)[-!$%\\&*+/:<-@^{}~\\w]+",
       "name": "constant.keyword.emacs.lisp"
     },
     "lambda": {
@@ -990,7 +990,7 @@
           "name": "keyword.operator.numeric.emacs.lisp"
         },
         {
-          "match": "(?<=[(\\s]|^)[/<>]=|[<->](?=[)\\s]|$)",
+          "match": "(?<=[(\\s]|^)[/<>]=|[<=>](?=[)\\s]|$)",
           "name": "keyword.operator.comparison.emacs.lisp"
         },
         {
@@ -1014,7 +1014,7 @@
               ]
             }
           },
-          "match": "(')([-!$-\\&*+/:<-@^{}~\\w]+)",
+          "match": "(')([-!$%\\&*+/:<-@^{}~\\w]+)",
           "name": "constant.other.symbol.emacs.lisp"
         }
       ]
@@ -1363,7 +1363,7 @@
               "name": "punctuation.definition.spliced.symbol.emacs.lisp"
             }
           },
-          "match": "(,@)([-!$-\\&*+/:<-@^{}~\\w]+)",
+          "match": "(,@)([-!$%\\&*+/:<-@^{}~\\w]+)",
           "name": "constant.other.spliced.symbol.emacs.lisp"
         },
         {
@@ -1372,7 +1372,7 @@
               "name": "punctuation.definition.inserted.symbol.emacs.lisp"
             }
           },
-          "match": "(,)([-!$-\\&*+/:<-@^{}~\\w]+)",
+          "match": "(,)([-!$%\\&*+/:<-@^{}~\\w]+)",
           "name": "constant.other.inserted.symbol.emacs.lisp"
         }
       ]

@@ -561,7 +561,7 @@
                   "name": "entity.name.function.mermaid"
                 }
               },
-              "match": "(?i)^\\s*(axisFormat)\\s+([%\\--/\\\\\\w]+)"
+              "match": "(?i)^\\s*(axisFormat)\\s+([-%./\\\\\\w]+)"
             },
             {
               "captures": {
@@ -901,7 +901,7 @@
                       "name": "string"
                     }
                   },
-                  "match": "(?i)\\s*([!#-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*([!#-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 }
               ]
             },
@@ -960,7 +960,7 @@
                       "name": "string"
                     }
                   },
-                  "match": "(?i)\\s*([!#-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*([!#-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 }
               ]
             },
@@ -1183,7 +1183,7 @@
               "name": "comment"
             },
             {
-              "begin": "(?i)^\\s*((?:(?:functional|interface|performance|physical)?requireme|designConstrai)nt)\\s*([!-/:-?\\\\^\\w\\s]*)\\s*(\\{)",
+              "begin": "(?i)^\\s*((?:functional|interface|performance|physical)?requirement|designConstraint)\\s*([!-/:-?\\\\^\\w\\s]*)\\s*(\\{)",
               "beginCaptures": {
                 "1": {
                   "name": "keyword.control.mermaid"
@@ -1211,7 +1211,7 @@
                       "name": "variable"
                     }
                   },
-                  "match": "(?i)\\s*(id:)\\s*([!#-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*(id:)\\s*([!#-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 },
                 {
                   "captures": {
@@ -1222,7 +1222,7 @@
                       "name": "string"
                     }
                   },
-                  "match": "(?i)\\s*(text:)\\s*([!#-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*(text:)\\s*([!#-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 },
                 {
                   "captures": {
@@ -1277,7 +1277,7 @@
                       "name": "variable"
                     }
                   },
-                  "match": "(?i)\\s*(type:)\\s*([!-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*(type:)\\s*([!-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 },
                 {
                   "captures": {
@@ -1288,7 +1288,7 @@
                       "name": "variable"
                     }
                   },
-                  "match": "(?i)\\s*(docref:)\\s*([!#-'*-,./:-<>?\\\\^_\\w\\s]+)"
+                  "match": "(?i)\\s*(docref:)\\s*([!#-'*+,./:;<>?\\\\^_\\w\\s]+)"
                 }
               ]
             },
@@ -1838,7 +1838,7 @@
                           "name": "string"
                         }
                       },
-                      "match": "(?i)\\s*([!#-(*+\\--/:-?\\\\^\\w\\s]+)"
+                      "match": "(?i)\\s*([-!#-(*+./:-?\\\\^\\w\\s]+)"
                     },
                     {
                       "captures": {

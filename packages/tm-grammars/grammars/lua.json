@@ -770,7 +770,7 @@
               "name": "keyword.operator.lua"
             },
             {
-              "match": "([A-Z_a-z][]*,-.0-9<>A-\\[_a-z]*)(?<!,)[\\t ]*(?=\\??:)",
+              "match": "([A-Z_a-z][-\\]*,.0-9<>A-\\[_a-z]*)(?<!,)[\\t ]*(?=\\??:)",
               "name": "entity.name.variable.lua"
             },
             {
@@ -790,7 +790,7 @@
           "name": "entity.name.tag.lua"
         },
         {
-          "match": "[,:?`{-}][\\t ]*",
+          "match": "[,:?`{|}][\\t ]*",
           "name": "keyword.operator.lua"
         },
         {
@@ -798,7 +798,7 @@
           "end": "(?=[#),:?|}\\s])",
           "patterns": [
             {
-              "match": "([]*,-.0-9<>A-\\[_a-z]+)(?<!,)[\\t ]*",
+              "match": "([-\\]*,.0-9<>A-\\[_a-z]+)(?<!,)[\\t ]*",
               "name": "support.type.lua"
             },
             {

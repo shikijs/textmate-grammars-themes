@@ -621,7 +621,7 @@
     "mnemonics-avx512pf": {
       "patterns": [
         {
-          "match": "(?i)\\bv((?:gath|scatt)er)pf[01][dq]p[ds]\\b",
+          "match": "(?i)\\bv(gather|scatter)pf[01][dq]p[ds]\\b",
           "name": "keyword.operator.word.mnemonic.avx512.pf"
         }
       ]
@@ -716,7 +716,7 @@
     "mnemonics-general-purpose": {
       "patterns": [
         {
-          "match": "(?i)\\b(?:mov(?:[sz]x)?|cmov(?:n?[a-ceglopsz]|n?[abgl]e|p[eo]))\\b",
+          "match": "(?i)\\b(?:mov(?:[sz]x)?|cmov(?:n?[abceglopsz]|n?[abgl]e|p[eo]))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.data-transfer.mov"
         },
         {
@@ -744,7 +744,7 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.rotate"
         },
         {
-          "match": "(?i)\\b(set(n?[a-ceglopsz]|n?[abgl]e|p[eo]))\\b",
+          "match": "(?i)\\b(set(n?[abceglopsz]|n?[abgl]e|p[eo]))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.bit-and-byte.set"
         },
         {
@@ -752,7 +752,7 @@
           "name": "keyword.operator.word.mnemonic.general-purpose.bit-and-byte.other"
         },
         {
-          "match": "(?i)\\b(j(?:mp|n?[a-ceglopsz]|n?[abgl]e|p[eo]|[er]?cxz))\\b",
+          "match": "(?i)\\b(j(?:mp|n?[abceglopsz]|n?[abgl]e|p[eo]|[er]?cxz))\\b",
           "name": "keyword.operator.word.mnemonic.general-purpose.control-transfer.jmp"
         },
         {
@@ -1071,7 +1071,7 @@
     "mnemonics-sse": {
       "patterns": [
         {
-          "match": "(?i)\\b(mov((?:([ahlu]|hl|lh|msk)p|s)s))\\b",
+          "match": "(?i)\\b(mov(([ahlu]|hl|lh|msk)ps|ss))\\b",
           "name": "keyword.operator.word.mnemonic.sse.data-transfer"
         },
         {
@@ -1107,7 +1107,7 @@
           "name": "keyword.operator.word.mnemonic.sse.cacheability-control"
         },
         {
-          "match": "(?i)\\b(prefetch(nta|t[0-2]|w(t1)?))\\b",
+          "match": "(?i)\\b(prefetch(nta|t[012]|w(t1)?))\\b",
           "name": "keyword.operator.word.mnemonic.sse.prefetch"
         }
       ]
@@ -1478,7 +1478,7 @@
           "name": "constant.language.register.instruction-pointer.asm.x86_64"
         },
         {
-          "match": "(?i)\\bcr[02-4]\\b",
+          "match": "(?i)\\bcr[0234]\\b",
           "name": "constant.language.register.control.asm.x86_64"
         },
         {

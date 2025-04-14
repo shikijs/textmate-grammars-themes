@@ -90,7 +90,7 @@
           "name": "comment.line.cobol.fixed"
         }
       },
-      "match": "^([- #-%+.0-9@-Za-z\\s][- #-%+.0-9@-Za-z\\s][- #-%+.0-9@-Za-z\\s][- #-%+.0-9@-Za-z\\s][- #-%+.0-9@-Za-z\\s][- #-%+.0-9@-Za-z\\s])(\\*.*)$"
+      "match": "^([- #$%+.0-9@-Za-z\\s][- #$%+.0-9@-Za-z\\s][- #$%+.0-9@-Za-z\\s][- #$%+.0-9@-Za-z\\s][- #$%+.0-9@-Za-z\\s][- #$%+.0-9@-Za-z\\s])(\\*.*)$"
     },
     {
       "captures": {
@@ -126,7 +126,7 @@
           "name": "comment.line.cobol.newpage"
         }
       },
-      "match": "^([#-%.0-9@-Za-z\\s][#-%.0-9@-Za-z\\s][#-%.0-9@-Za-z\\s][#-%.0-9@-Za-z\\s][#-%.0-9@-Za-z\\s][#-%.0-9@-Za-z\\s])(/.*)$"
+      "match": "^([#$%.0-9@-Za-z\\s][#$%.0-9@-Za-z\\s][#$%.0-9@-Za-z\\s][#$%.0-9@-Za-z\\s][#$%.0-9@-Za-z\\s][#$%.0-9@-Za-z\\s])(/.*)$"
     },
     {
       "match": "^\\*.*$",
@@ -1009,7 +1009,7 @@
       "name": "storage.modifier.cobol"
     },
     {
-      "match": "[<->]|<=|>=|<>|[-*+/]|(?<![-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|less\\s+than|greater)(?![-0-9A-Z_a-z])",
+      "match": "[<=>]|<=|>=|<>|[-*+/]|(?<![-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|less\\s+than|greater)(?![-0-9A-Z_a-z])",
       "name": "keyword.operator.cobol"
     },
     {

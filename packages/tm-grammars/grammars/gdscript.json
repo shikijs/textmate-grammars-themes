@@ -69,10 +69,10 @@
           "name": "variable.other.property.gdscript"
         }
       },
-      "match": "\\b(\\.)\\s*(?<![#-%@])(?:([A-Z_][0-9A-Z_]*)|([A-Z_a-z]\\w*))\\b(?!\\()"
+      "match": "\\b(\\.)\\s*(?<![#$%@])(?:([A-Z_][0-9A-Z_]*)|([A-Z_a-z]\\w*))\\b(?!\\()"
     },
     "any_variable": {
-      "match": "\\b(?<![#-%@])([A-Z_a-z]\\w*)\\b(?!\\()",
+      "match": "\\b(?<![#$%@])([A-Z_a-z]\\w*)\\b(?!\\()",
       "name": "variable.other.gdscript"
     },
     "arithmetic_operator": {
@@ -1000,7 +1000,7 @@
               "name": "storage.type.format.gdscript"
             }
           },
-          "match": "(\\{\\{|}}|\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)?})",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:\\w?[<=>^]?[- +]?#?\\d*,?(\\.\\d+)?[%EFGXb-gnosx]?)?})",
           "name": "meta.format.brace.gdscript"
         },
         {
@@ -1026,7 +1026,7 @@
           "name": "constant.character.format.placeholder.other.gdscript"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[- #+0]*(\\d+|\\*)?(\\.(\\d+|\\*))?([Lhl])?[%E-GXa-giorsux])",
+      "match": "(%(\\([\\w\\s]*\\))?[- #+0]*(\\d+|\\*)?(\\.(\\d+|\\*))?([Lhl])?[%EFGXa-giorsux])",
       "name": "meta.format.percent.gdscript"
     },
     "strings": {

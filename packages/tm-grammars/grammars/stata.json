@@ -275,7 +275,7 @@
       "captures": {
         "1": "keyword.functions.data.stata.test"
       },
-      "match": "\\b(form(a(?:t|))?)\\s*([\\w&&[^0-9]]\\w{0,31})*\\s*(%)(-)?(0)?([0-9]+)(.)([0-9]+)([e-g])(c)?"
+      "match": "\\b(form(a(?:t|))?)\\s*([\\w&&[^0-9]]\\w{0,31})*\\s*(%)(-)?(0)?([0-9]+)(.)([0-9]+)([efg])(c)?"
     },
     {
       "include": "#braces-with-error"
@@ -1682,7 +1682,7 @@
     "macro-commands": {
       "patterns": [
         {
-          "begin": "\\b(loc(a(?:l|))?)\\s+([$'-)`{}\\w]+)\\s*(?=[:=])",
+          "begin": "\\b(loc(a(?:l|))?)\\s+([$'()`{}\\w]+)\\s*(?=[:=])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -2300,7 +2300,7 @@
     "macro-local-identifiers": {
       "patterns": [
         {
-          "match": "[^$'-)`\\w\\s]",
+          "match": "[^$'()`\\w\\s]",
           "name": "invalid.illegal.name.stata"
         },
         {
@@ -2336,7 +2336,7 @@
           "name": "keyword.operator.logical.stata"
         },
         {
-          "match": "<=|>=|:=|==|!=|~=|[<->]|!!|!",
+          "match": "<=|>=|:=|==|!=|~=|[<=>]|!!|!",
           "name": "keyword.operator.comparison.stata"
         },
         {
@@ -2380,7 +2380,7 @@
           "name": "invalid.illegal.name.stata"
         },
         {
-          "match": "[^$'-)`\\w\\s]",
+          "match": "[^$'()`\\w\\s]",
           "name": "invalid.illegal.name.stata"
         },
         {
@@ -2895,7 +2895,7 @@
           "name": "keyword.control.anchor.stata"
         },
         {
-          "match": "\\$(?![,013_{-}[\\w&&[^0-9_]]\\w])",
+          "match": "\\$(?![,013_{|}[\\w&&[^0-9_]]\\w])",
           "name": "keyword.control.anchor.stata"
         },
         {

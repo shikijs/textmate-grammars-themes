@@ -332,7 +332,7 @@
           ]
         },
         {
-          "begin": "(?i)(?<![-\\w])((?:-(?:webkit|moz|o)-)?(?:repeating-)?(?:linear|radial|conic)-gradient)(\\()",
+          "begin": "(?i)(?<![-\\w])((?:-(?:webkit-|moz-|o-))?(?:repeating-)?(?:linear|radial|conic)-gradient)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.gradient.css"
@@ -489,7 +489,7 @@
           ]
         },
         {
-          "begin": "(?i)(?<![-\\w])((?:translate|scale|rotate)(?:[X-Z]|3D)?|matrix(?:3D)?|skew[XY]?|perspective)(\\()",
+          "begin": "(?i)(?<![-\\w])((?:translate|scale|rotate)(?:[XYZ]|3D)?|matrix(?:3D)?|skew[XY]?|perspective)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.transform.css"
@@ -1423,7 +1423,7 @@
                   "name": "punctuation.separator.pipe.jsdoc"
                 }
               },
-              "match": "\\G((?:[^*@{-}\\s]|\\*[^/])+)(\\|)?"
+              "match": "\\G((?:[^*@{|}\\s]|\\*[^/])+)(\\|)?"
             }
           ]
         }
@@ -2073,7 +2073,7 @@
     "regex-character-class": {
       "patterns": [
         {
-          "match": "\\\\[DSWdfnr-tvw]|\\.",
+          "match": "\\\\[DSWdfnrstvw]|\\.",
           "name": "constant.other.character-class.regexp"
         },
         {
@@ -2321,7 +2321,7 @@
       ]
     },
     "string-character-escape": {
-      "match": "\\\\(x\\h{2}|u\\h{4}|u\\{\\h+}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
+      "match": "\\\\(x\\h{2}|u\\h{4}|u\\{\\h+}|[012][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
       "name": "constant.character.escape.imba"
     },
     "style-declaration": {
@@ -2570,7 +2570,7 @@
     "tag-expr-name": {
       "begin": "(?<=<)(?=[{\\w])",
       "contentName": "entity.name.tag.imba",
-      "end": "(?=[#-%(.>\\[\\s])",
+      "end": "(?=[#$%(.>\\[\\s])",
       "patterns": [
         {
           "include": "#tag-interpolated-content"
@@ -2646,7 +2646,7 @@
     "tag-literal": {
       "patterns": [
         {
-          "begin": "(<)(?=[#-%(.@\\[{~\\w])",
+          "begin": "(<)(?=[#$%(.@\\[{~\\w])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.tag.open.imba"
