@@ -5,8 +5,8 @@
     "exs"
   ],
   "firstLineMatch": "^#!/.*\\belixir",
-  "foldingStartMarker": "(after|else|catch|rescue|->|[{\\[]|do)\\s*$",
-  "foldingStopMarker": "^\\s*(([}\\]]|after|else|catch|rescue)\\s*$|end\\b)",
+  "foldingStartMarker": "(after|else|catch|rescue|->|[\\[{]|do)\\s*$",
+  "foldingStopMarker": "^\\s*(([]}]|after|else|catch|rescue)\\s*$|end\\b)",
   "name": "elixir",
   "patterns": [
     {
@@ -35,7 +35,7 @@
           "name": "entity.name.function.elixir"
         }
       },
-      "match": "([A-Z]\\w+)\\s*(\\.)\\s*([a-z_]\\w*[!?]?)"
+      "match": "([A-Z]\\w+)\\s*(\\.)\\s*([_a-z]\\w*[!?]?)"
     },
     {
       "captures": {
@@ -60,10 +60,10 @@
           "name": "entity.name.function.elixir"
         }
       },
-      "match": "(\\|>)\\s*([a-z_]\\w*[!?]?)"
+      "match": "(\\|>)\\s*([_a-z]\\w*[!?]?)"
     },
     {
-      "match": "\\b[a-z_]\\w*[!?]?(?=\\s*\\.?\\s*\\()",
+      "match": "\\b[_a-z]\\w*[!?]?(?=\\s*\\.?\\s*\\()",
       "name": "entity.name.function.elixir"
     },
     {
@@ -191,7 +191,7 @@
           ]
         },
         {
-          "begin": "^\\s*(def(?:|macro|delegate|guard))\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?))((\\()|\\s*)",
+          "begin": "^\\s*(def(?:|macro|delegate|guard))\\s+((?>[A-Z_a-z]\\w*(?>\\.|::))?(?>[A-Z_a-z]\\w*(?>[!?]|=(?!>))?|===?|>[=>]?|<=>|<[<=]?|[%\\&/`|]|\\*\\*?|=?~|[-+]@?|\\[]=?))((\\()|\\s*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.module.elixir"
@@ -203,7 +203,7 @@
               "name": "punctuation.section.function.elixir"
             }
           },
-          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(def(?:|n|macro|delegate|guard))\\b)",
+          "end": "\\b(do:)|\\b(do)\\b|(?=\\s+(def(?:|n|macro|delegate|guard))\\b)",
           "endCaptures": {
             "1": {
               "name": "constant.other.keywords.elixir"
@@ -224,7 +224,7 @@
                   "name": "keyword.operator.other.elixir"
                 }
               },
-              "end": "[,)]|$",
+              "end": "[),]|$",
               "patterns": [
                 {
                   "include": "$self"
@@ -238,7 +238,7 @@
           ]
         },
         {
-          "begin": "^\\s*(def(?:p|np|macrop|guardp))\\s+((?>[a-zA-Z_]\\w*(?>\\.|::))?(?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?|===?|>[>=]?|<=>|<[<=]?|[%\\&`/|]|\\*\\*?|=?~|[-+]@?|\\[]=?))((\\()|\\s*)",
+          "begin": "^\\s*(def(?:|n|macro|guard)p)\\s+((?>[A-Z_a-z]\\w*(?>\\.|::))?(?>[A-Z_a-z]\\w*(?>[!?]|=(?!>))?|===?|>[=>]?|<=>|<[<=]?|[%\\&/`|]|\\*\\*?|=?~|[-+]@?|\\[]=?))((\\()|\\s*)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.module.elixir"
@@ -250,7 +250,7 @@
               "name": "punctuation.section.function.elixir"
             }
           },
-          "end": "(\\bdo:)|(\\bdo\\b)|(?=\\s+(def(?:p|macrop|guardp))\\b)",
+          "end": "\\b(do:)|\\b(do)\\b|(?=\\s+(def(?:|macro|guard)p)\\b)",
           "endCaptures": {
             "1": {
               "name": "constant.other.keywords.elixir"
@@ -271,7 +271,7 @@
                   "name": "keyword.operator.other.elixir"
                 }
               },
-              "end": "[,)]|$",
+              "end": "[),]|$",
               "patterns": [
                 {
                   "include": "$self"
@@ -364,7 +364,7 @@
           ]
         },
         {
-          "match": "(?<!\\.)\\b(do|end|case|bc|lc|for|if|cond|unless|try|receive|fn|defmodule|defp?|defprotocol|defimpl|defrecord|defstruct|defnp?|defmacrop?|defguardp?|defdelegate|defexception|defoverridable|exit|after|rescue|catch|else|raise|reraise|throw|import|require|alias|use|quote|unquote|super|with)\\b(?![?!:])",
+          "match": "(?<!\\.)\\b(do|end|case|bc|lc|for|if|cond|unless|try|receive|fn|defmodule|defp?|defprotocol|defimpl|defrecord|defstruct|defnp?|defmacrop?|defguardp?|defdelegate|defexception|defoverridable|exit|after|rescue|catch|else|raise|reraise|throw|import|require|alias|use|quote|unquote|super|with)\\b(?![!:?])",
           "name": "keyword.control.elixir"
         },
         {
@@ -376,11 +376,11 @@
           "name": "entity.name.type.class.elixir"
         },
         {
-          "match": "\\b(nil|true|false)\\b(?![?!])",
+          "match": "\\b(nil|true|false)\\b(?![!?])",
           "name": "constant.language.elixir"
         },
         {
-          "match": "\\b(__(CALLER|ENV|MODULE|DIR|STACKTRACE)__)\\b(?![?!])",
+          "match": "\\b(__(CALLER|ENV|MODULE|DIR|STACKTRACE)__)\\b(?![!?])",
           "name": "variable.language.elixir"
         },
         {
@@ -389,7 +389,7 @@
               "name": "punctuation.definition.variable.elixir"
             }
           },
-          "match": "(@)[a-zA-Z_]\\w*",
+          "match": "(@)[A-Z_a-z]\\w*",
           "name": "variable.other.readwrite.module.elixir"
         },
         {
@@ -411,7 +411,7 @@
               "name": "punctuation.definition.variable.elixir"
             }
           },
-          "match": "\\^[a-z_]\\w*",
+          "match": "\\^[_a-z]\\w*",
           "name": "variable.other.capture.elixir"
         },
         {
@@ -419,7 +419,7 @@
           "name": "constant.numeric.hex.elixir"
         },
         {
-          "match": "\\b\\d(?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)+)([eE][-+]?\\d(?>_?\\d)*)?\\b",
+          "match": "\\b\\d(?>_?\\d)*(\\.(?![^\\s\\d])(?>_?\\d)+)([Ee][-+]?\\d(?>_?\\d)*)?\\b",
           "name": "constant.numeric.float.elixir"
         },
         {
@@ -796,7 +796,7 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "match": "(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|<>|===?|!==?|<<>>|<<<|>>>|~~~|::|<-|\\|>|=>|=~|[=/]|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|\\.\\.//|>=?|<=?|&&?&?|\\+\\+?|--?|\\|\\|?\\|?|[!@]|%?\\{}|%|\\[]|\\^(\\^\\^)?)",
+          "match": "(?<!:)(:)(?>[A-Z_a-z][@\\w]*(?>[!?]|=(?![=>]))?|<>|===?|!==?|<<>>|<<<|>>>|~~~|::|<-|\\|>|=>|=~|[/=]|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|\\.\\.//|>=?|<=?|&&?&?|\\+\\+?|--?|\\|\\|?\\|?|[!@]|%?\\{}|%|\\[]|\\^(\\^\\^)?)",
           "name": "constant.other.symbol.elixir"
         },
         {
@@ -805,11 +805,11 @@
               "name": "punctuation.definition.constant.elixir"
             }
           },
-          "match": "(?>[a-zA-Z_][\\w@]*[?!]?)(:)(?!:)",
+          "match": "(?>[A-Z_a-z][@\\w]*[!?]?)(:)(?!:)",
           "name": "constant.other.keywords.elixir"
         },
         {
-          "begin": "(^[ \\t]+)?(?=##)",
+          "begin": "(^[\\t ]+)?(?=##)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.elixir"
@@ -830,7 +830,7 @@
           ]
         },
         {
-          "begin": "(^[ \\t]+)?(?=#)",
+          "begin": "(^[\\t ]+)?(?=#)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.elixir"
@@ -851,7 +851,7 @@
           ]
         },
         {
-          "match": "\\b_([^_]\\w+[?!]?)",
+          "match": "\\b_([^_]\\w+[!?]?)",
           "name": "comment.unused.elixir"
         },
         {
@@ -859,7 +859,7 @@
           "name": "comment.wildcard.elixir"
         },
         {
-          "match": "(?<!\\w)\\?(\\\\(x\\h{1,2}(?!\\h)\\b|[^xMC])|[^\\s\\\\])",
+          "match": "(?<!\\w)\\?(\\\\(x\\h{1,2}(?!\\h)\\b|[^CMx])|[^\\\\\\s])",
           "name": "constant.numeric.elixir"
         },
         {
@@ -887,11 +887,11 @@
           "name": "keyword.operator.bitwise.elixir"
         },
         {
-          "match": "(?<=[ \\t])!+|\\bnot\\b|&&|\\band\\b|\\|\\||\\bor\\b|\\bxor\\b",
+          "match": "(?<=[\\t ])!+|\\bnot\\b|&&|\\band\\b|\\|\\||\\bor\\b|\\bxor\\b",
           "name": "keyword.operator.logical.elixir"
         },
         {
-          "match": "([*+\\-/])",
+          "match": "([-*+/])",
           "name": "keyword.operator.arithmetic.elixir"
         },
         {
@@ -923,7 +923,7 @@
           "name": "punctuation.section.scope.elixir"
         },
         {
-          "match": "[\\[\\]]",
+          "match": "[]\\[]",
           "name": "punctuation.section.array.elixir"
         },
         {
@@ -933,7 +933,7 @@
       ]
     },
     "escaped_char": {
-      "match": "\\\\(x[\\da-fA-F]{1,2}|.)",
+      "match": "\\\\(x[A-Fa-f\\d]{1,2}|.)",
       "name": "constant.character.escaped.elixir"
     },
     "interpolated_elixir": {

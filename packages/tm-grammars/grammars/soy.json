@@ -46,7 +46,7 @@
           "name": "entity.name.type.soy"
         }
       },
-      "match": "\\{(alias)\\s+([\\w.]+)(?:\\s+(as)\\s+(\\w+))?}"
+      "match": "\\{(alias)\\s+([.\\w]+)(?:\\s+(as)\\s+(\\w+))?}"
     },
     "attribute": {
       "captures": {
@@ -109,7 +109,7 @@
     "call": {
       "patterns": [
         {
-          "begin": "\\{((?:del)?call)\\s+([\\w.]+)(?=[^/]*?})",
+          "begin": "\\{((?:del)?call)\\s+([.\\w]+)(?=[^/]*?})",
           "beginCaptures": {
             "1": {
               "name": "storage.type.function.soy"
@@ -140,7 +140,7 @@
           ]
         },
         {
-          "begin": "\\{((?:del)?call)(\\s+[\\w.]+)",
+          "begin": "\\{((?:del)?call)(\\s+[.\\w]+)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.function.soy"
@@ -235,7 +235,7 @@
           "name": "entity.name.type.soy"
         }
       },
-      "match": "\\{(delpackage)\\s+([\\w.]+)}"
+      "match": "\\{(delpackage)\\s+([.\\w]+)}"
     },
     "expression": {
       "patterns": [
@@ -263,7 +263,7 @@
       ]
     },
     "for": {
-      "begin": "\\{/?(for(?:each|))(?=[\\s}])",
+      "begin": "\\{/?(for(?:each|))(?=[}\\s])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.soy"
@@ -368,7 +368,7 @@
         }
       },
       "end": "}",
-      "match": "\\{/?(msg|fallbackmsg)",
+      "match": "\\{/?((?:|fallback)msg)",
       "patterns": [
         {
           "include": "#attribute"
@@ -384,7 +384,7 @@
           "name": "entity.name.type.soy"
         }
       },
-      "match": "\\{(namespace)\\s+([\\w.]+)}"
+      "match": "\\{(namespace)\\s+([.\\w]+)}"
     },
     "null": {
       "match": "null",
@@ -395,7 +395,7 @@
       "name": "language.constant.numeric"
     },
     "operator": {
-      "match": "-|not|[*/%+]|<=|>=|[<>]|==|!=|and|or|\\?:|[?:]",
+      "match": "-|not|[%*+/]|<=|>=|[<>]|==|!=|and|or|\\?:|[:?]",
       "name": "keyword.operator.soy"
     },
     "param": {
@@ -480,13 +480,13 @@
       "name": "string.quoted.single.soy",
       "patterns": [
         {
-          "match": "\\\\(?:[\\\\'\"nrtbf]|u\\h{4})",
+          "match": "\\\\(?:[\"'\\\\bfnrt]|u\\h{4})",
           "name": "constant.character.escape.soy"
         }
       ]
     },
     "template": {
-      "begin": "\\{(template|deltemplate)\\s([\\w.]+)",
+      "begin": "\\{((?:|del)template)\\s([.\\w]+)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.soy"
@@ -565,7 +565,7 @@
       ]
     },
     "variable-ref": {
-      "match": "\\$[\\a-zA-Z_][\\w.]*",
+      "match": "\\$[\\a-z][.\\w]*",
       "name": "variable.other.soy"
     },
     "variant": {

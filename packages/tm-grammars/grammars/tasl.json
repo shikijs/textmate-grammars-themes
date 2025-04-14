@@ -91,7 +91,7 @@
       ]
     },
     "datatype": {
-      "match": "[a-zA-Z][a-zA-Z0-9]*:(?:[A-Za-z0-9\\-._~!$\\&'()*+,;=:@/?]|%\\h{2})+",
+      "match": "[A-Za-z][0-9A-Za-z]*:(?:[!$\\&-;=?-Z_a-z~]|%\\h{2})+",
       "name": "string.regexp"
     },
     "edge": {
@@ -161,10 +161,10 @@
           "name": "variable"
         }
       },
-      "match": "([a-zA-Z][a-zA-Z0-9]*)\\b"
+      "match": "([A-Za-z][0-9A-Za-z]*)\\b"
     },
     "key": {
-      "match": "[a-zA-Z][a-zA-Z0-9]*:(?:[A-Za-z0-9\\-._~!$\\&'()*+,;=:@/?]|%\\h{2})+",
+      "match": "[A-Za-z][0-9A-Za-z]*:(?:[!$\\&-;=?-Z_a-z~]|%\\h{2})+",
       "name": "markup.bold entity.name.class"
     },
     "literal": {
@@ -185,7 +185,7 @@
               "include": "#namespaceURI"
             },
             {
-              "match": "[a-zA-Z][a-zA-Z0-9]*\\b",
+              "match": "[A-Za-z][0-9A-Za-z]*\\b",
               "name": "entity.name"
             }
           ]
@@ -194,7 +194,7 @@
       "match": "^\\s*(namespace)\\b(.*)"
     },
     "namespaceURI": {
-      "match": "[a-z]+:[a-zA-Z0-9\\-._~:/?#\\[\\]@!$\\&'()*+,;%=]+",
+      "match": "[a-z]+:[]!#-;=?-\\[_a-z~]+",
       "name": "markup.underline.link"
     },
     "option": {
@@ -266,7 +266,7 @@
       "match": "(\\*)\\s*(.*)"
     },
     "term": {
-      "match": "[a-zA-Z][a-zA-Z0-9]*:(?:[A-Za-z0-9\\-._~!$\\&'()*+,;=:@/?]|%\\h{2})+",
+      "match": "[A-Za-z][0-9A-Za-z]*:(?:[!$\\&-;=?-Z_a-z~]|%\\h{2})+",
       "name": "entity.other.tasl.key"
     },
     "type": {

@@ -7,7 +7,7 @@
       "name": "text.variable"
     },
     {
-      "match": "(\\[)[^\\]]*(])",
+      "match": "(\\[)[^]]*(])",
       "name": "text.bracketed"
     },
     {
@@ -25,7 +25,7 @@
           "name": "entity.name.function.sql"
         }
       },
-      "match": "(?i:^\\s*(create(?:\\s+or\\s+replace)?)\\s+(aggregate|conversion|database|domain|function|group|(unique\\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\s+)(['\"`]?)(\\w+)\\4",
+      "match": "(?i:^\\s*(create(?:\\s+or\\s+replace)?)\\s+(aggregate|conversion|database|domain|function|group|(unique\\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\s+)([\"'`]?)(\\w+)\\4",
       "name": "meta.create.sql"
     },
     {
@@ -161,7 +161,7 @@
       "name": "keyword.other.alias.sql"
     },
     {
-      "match": "(?i)\\b(DESC|ASC)\\b",
+      "match": "(?i)\\b((?:DE|A)SC)\\b",
       "name": "keyword.other.order.sql"
     },
     {
@@ -202,7 +202,7 @@
           "name": "support.function.bitmanipulation.sql"
         }
       },
-      "match": "(?i)\\b(bit_count|get_bit|left_shift|right_shift|set_bit)\\b\\s*\\("
+      "match": "(?i)\\b((?:bit_coun|get_bi|left_shif|right_shif|set_bi)t)\\b\\s*\\("
     },
     {
       "captures": {
@@ -401,7 +401,7 @@
     "comments": {
       "patterns": [
         {
-          "begin": "(^[ \\t]+)?(?=--)",
+          "begin": "(^[\\t ]+)?(?=--)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.sql"
@@ -422,7 +422,7 @@
           ]
         },
         {
-          "begin": "(^[ \\t]+)?(?=#)",
+          "begin": "(^[\\t ]+)?(?=#)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.sql"
@@ -544,7 +544,7 @@
               "name": "punctuation.definition.string.end.sql"
             }
           },
-          "match": "(`)[^`\\\\]*(`)",
+          "match": "(`)[^\\\\`]*(`)",
           "name": "string.quoted.other.backtick.sql"
         },
         {

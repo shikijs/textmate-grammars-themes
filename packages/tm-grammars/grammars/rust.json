@@ -106,7 +106,7 @@
           "name": "punctuation.brackets.curly.rust"
         }
       },
-      "match": "\\b(macro_rules!)\\s+(([a-z0-9_]+)|([A-Z][a-z0-9_]*))\\s+(\\{)",
+      "match": "\\b(macro_rules!)\\s+(([0-9_a-z]+)|([A-Z][0-9_a-z]*))\\s+(\\{)",
       "name": "meta.macro.rules.rust"
     },
     {
@@ -118,7 +118,7 @@
           "name": "entity.name.module.rust"
         }
       },
-      "match": "(mod)\\s+((?:r#(?!crate|[Ss]elf|super))?[a-z][A-Za-z0-9_]*)"
+      "match": "(mod)\\s+((?:r#(?!crate|[Ss]elf|super))?[a-z][0-9A-Z_a-z]*)"
     },
     {
       "begin": "\\b(extern)\\s+(crate)",
@@ -334,7 +334,7 @@
     "constants": {
       "patterns": [
         {
-          "match": "\\b[A-Z]{2}[A-Z0-9_]*\\b",
+          "match": "\\b[A-Z]{2}[0-9A-Z_]*\\b",
           "name": "constant.other.caps.rust"
         },
         {
@@ -346,7 +346,7 @@
               "name": "constant.other.caps.rust"
             }
           },
-          "match": "\\b(const)\\s+([A-Z][A-Za-z0-9_]*)\\b"
+          "match": "\\b(const)\\s+([A-Z][0-9A-Z_a-z]*)\\b"
         },
         {
           "captures": {
@@ -366,7 +366,7 @@
               "name": "entity.name.type.numeric.rust"
             }
           },
-          "match": "\\b\\d[\\d_]*(\\.?)[\\d_]*(?:([Ee])([+-]?)([\\d_]+))?(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "match": "\\b\\d[_\\d]*(\\.?)[_\\d]*(?:([Ee])([-+]?)([_\\d]+))?(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
           "name": "constant.numeric.decimal.rust"
         },
         {
@@ -375,7 +375,7 @@
               "name": "entity.name.type.numeric.rust"
             }
           },
-          "match": "\\b0x[\\da-fA-F_]+(i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "match": "\\b0x[A-F_a-f\\d]+(i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
           "name": "constant.numeric.hex.rust"
         },
         {
@@ -420,7 +420,7 @@
           "name": "constant.character.escape.unicode.punctuation.rust"
         }
       },
-      "match": "(\\\\)(?:(x[0-7][\\da-fA-F])|(u(\\{)[\\da-fA-F]{4,6}(}))|.)",
+      "match": "(\\\\)(?:(x[0-7][A-Fa-f\\d])|(u(\\{)[A-Fa-f\\d]{4,6}(}))|.)",
       "name": "constant.character.escape.rust"
     },
     "functions": {
@@ -437,7 +437,7 @@
           "match": "\\b(pub)(\\()"
         },
         {
-          "begin": "\\b(fn)\\s+((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)((\\()|(<))",
+          "begin": "\\b(fn)\\s+((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)((\\()|(<))",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.fn.rust"
@@ -508,7 +508,7 @@
           ]
         },
         {
-          "begin": "((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(\\()",
+          "begin": "((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.rust"
@@ -573,7 +573,7 @@
           ]
         },
         {
-          "begin": "((?:r#(?!crate|[Ss]elf|super))?[A-Za-z0-9_]+)(?=::<.*>\\()",
+          "begin": "((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)(?=::<.*>\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.rust"
@@ -719,7 +719,7 @@
           "name": "keyword.operator.borrow.and.rust"
         },
         {
-          "match": "(\\+=|-=|\\*=|/=|%=|\\^=|&=|\\|=|<<=|>>=)",
+          "match": "((?:[-%\\&*+/^|]|<<|>>)=)",
           "name": "keyword.operator.assignment.rust"
         },
         {
@@ -731,7 +731,7 @@
           "name": "keyword.operator.comparison.rust"
         },
         {
-          "match": "(([+%]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
+          "match": "(([%+]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
           "name": "keyword.operator.math.rust"
         },
         {
@@ -758,7 +758,7 @@
               "name": "punctuation.brackets.curly.rust"
             }
           },
-          "match": "(?:\\b|(?:(\\))|(])|(})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
+          "match": "(?:\\b|(?:(\\))|(])|(})))[\\t ]+([<>])[\\t ]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
         },
         {
           "match": "::",
@@ -781,7 +781,7 @@
           "name": "keyword.operator.access.dot.rust"
         },
         {
-          "match": "\\.{2}([=.])?",
+          "match": "\\.{2}([.=])?",
           "name": "keyword.operator.range.rust"
         },
         {
@@ -817,7 +817,7 @@
               "name": "entity.name.type.lifetime.rust"
             }
           },
-          "match": "(')([a-zA-Z_][0-9a-zA-Z_]*)(?!')\\b"
+          "match": "(')([A-Z_a-z][0-9A-Z_a-z]*)(?!')\\b"
         },
         {
           "captures": {
@@ -831,7 +831,7 @@
               "name": "entity.name.type.lifetime.rust"
             }
           },
-          "match": "(&)(')([a-zA-Z_][0-9a-zA-Z_]*)(?!')\\b"
+          "match": "(&)(')([A-Z_a-z][0-9A-Z_a-z]*)(?!')\\b"
         }
       ]
     },
@@ -858,7 +858,7 @@
               "name": "entity.name.type.macro.rust"
             }
           },
-          "match": "(([a-z_][A-Za-z0-9_]*!)|([A-Z_][A-Za-z0-9_]*!))",
+          "match": "(([_a-z][0-9A-Z_a-z]*!)|([A-Z_][0-9A-Z_a-z]*!))",
           "name": "meta.macro.rust"
         }
       ]
@@ -874,7 +874,7 @@
               "name": "keyword.operator.namespace.rust"
             }
           },
-          "match": "(?<![A-Za-z0-9_])([A-Za-z0-9_]+)((?<!s(?:uper|elf))::)"
+          "match": "(?<![0-9A-Z_a-z])([0-9A-Z_a-z]+)((?<!s(?:uper|elf))::)"
         }
       ]
     },
@@ -897,7 +897,7 @@
           "name": "punctuation.semi.rust"
         },
         {
-          "match": "[\\[\\]]",
+          "match": "[]\\[]",
           "name": "punctuation.brackets.square.rust"
         },
         {
@@ -994,7 +994,7 @@
           "match": "(?<![A-Za-z])(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)\\b"
         },
         {
-          "begin": "\\b(_?[A-Z][A-Za-z0-9_]*)(<)",
+          "begin": "\\b(_?[A-Z][0-9A-Z_a-z]*)(<)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.rust"
@@ -1049,7 +1049,7 @@
               "name": "entity.name.type.trait.rust"
             }
           },
-          "match": "\\b(trait)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b"
+          "match": "\\b(trait)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
         },
         {
           "captures": {
@@ -1060,7 +1060,7 @@
               "name": "entity.name.type.struct.rust"
             }
           },
-          "match": "\\b(struct)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b"
+          "match": "\\b(struct)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
         },
         {
           "captures": {
@@ -1071,7 +1071,7 @@
               "name": "entity.name.type.enum.rust"
             }
           },
-          "match": "\\b(enum)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b"
+          "match": "\\b(enum)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
         },
         {
           "captures": {
@@ -1082,10 +1082,10 @@
               "name": "entity.name.type.declaration.rust"
             }
           },
-          "match": "\\b(type)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b"
+          "match": "\\b(type)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
         },
         {
-          "match": "\\b_?[A-Z][A-Za-z0-9_]*\\b(?!!)",
+          "match": "\\b_?[A-Z][0-9A-Z_a-z]*\\b(?!!)",
           "name": "entity.name.type.rust"
         }
       ]
@@ -1093,7 +1093,7 @@
     "variables": {
       "patterns": [
         {
-          "match": "\\b(?<!(?<!\\.)\\.)(?:r#(?!(crate|[Ss]elf|super)))?[a-z0-9_]+\\b",
+          "match": "\\b(?<!(?<!\\.)\\.)(?:r#(?!(crate|[Ss]elf|super)))?[0-9_a-z]+\\b",
           "name": "variable.other.rust"
         }
       ]

@@ -10,7 +10,7 @@
   "name": "twig",
   "patterns": [
     {
-      "begin": "(<)([a-zA-Z0-9:]++)(?=[^>]*></\\2>)",
+      "begin": "(<)([0-:A-Za-z]++)(?=[^>]*></\\2>)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.html"
@@ -234,8 +234,8 @@
       ]
     },
     {
-      "begin": "(?i)(?<=\\{%\\s(?:js\\s%}|includejs\\s%}))",
-      "end": "(?i)(?=\\{%\\send(?:js\\s%}|includejs\\s%}))",
+      "begin": "(?i)(?<=\\{%\\s(?:|include)js\\s%})",
+      "end": "(?i)(?=\\{%\\send(?:|include)js\\s%})",
       "name": "source.js.embedded.twig",
       "patterns": [
         {
@@ -244,8 +244,8 @@
       ]
     },
     {
-      "begin": "(?i)(?<=\\{%\\s(?:css\\s%}|includecss\\s%}|includehirescss\\s%}))",
-      "end": "(?i)(?=\\{%\\send(?:css\\s%}|includecss\\s%}|includehirescss\\s%}))",
+      "begin": "(?i)(?<=\\{%\\s(?:|include|includehires)css\\s%})",
+      "end": "(?i)(?=\\{%\\send(?:|include|includehires)css\\s%})",
       "name": "source.css.embedded.twig",
       "patterns": [
         {
@@ -254,8 +254,8 @@
       ]
     },
     {
-      "begin": "(?i)(?<=\\{%\\s(?:scss\\s%}|includescss\\s%}|includehiresscss\\s%}))",
-      "end": "(?i)(?=\\{%\\send(?:scss\\s%}|includescss\\s%}|includehiresscss\\s%}))",
+      "begin": "(?i)(?<=\\{%\\s(?:|include|includehires)scss\\s%})",
+      "end": "(?i)(?=\\{%\\send(?:|include|includehires)scss\\s%})",
       "name": "source.css.scss.embedded.twig",
       "patterns": [
         {
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "begin": "(</?)((?i:body|head|html)\\b)",
+      "begin": "(</?)((?i:body|head|html))\\b",
       "captures": {
         "1": {
           "name": "punctuation.definition.tag.html"
@@ -282,7 +282,7 @@
       ]
     },
     {
-      "begin": "(</?)((?i:address|blockquote|dd|div|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|menu|pre)\\b)",
+      "begin": "(</?)((?i:address|blockquote|dd|div|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|menu|pre))\\b",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|[qs]|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var)\\b)",
+      "begin": "(</?)((?i:a|abbr|acronym|area|b|base|basefont|bdo|big|br|button|caption|cite|code|col|colgroup|del|dfn|em|font|head|html|i|img|input|ins|isindex|kbd|label|legend|li|link|map|meta|noscript|optgroup|option|param|[qs]|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|var))\\b",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -328,7 +328,7 @@
       ]
     },
     {
-      "begin": "(</?)([a-zA-Z0-9:]+)",
+      "begin": "(</?)([0-:A-Za-z]+)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -405,7 +405,7 @@
               "name": "punctuation.definition.entity.html"
             }
           },
-          "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x\\h+)(;)",
+          "match": "(&)([0-9A-Za-z]+|#[0-9]+|#x\\h+)(;)",
           "name": "constant.character.entity.html"
         },
         {
@@ -542,7 +542,7 @@
       ]
     },
     "tag-generic-attribute": {
-      "match": "\\b([a-zA-Z\\-:]+)",
+      "match": "\\b([-:A-Za-z]+)",
       "name": "entity.other.attribute-name.html"
     },
     "tag-id-attribute": {
@@ -555,7 +555,7 @@
           "name": "punctuation.separator.key-value.html"
         }
       },
-      "end": "(?<=['\"])",
+      "end": "(?<=[\"'])",
       "name": "meta.attribute-with-value.id.html",
       "patterns": [
         {
@@ -628,7 +628,7 @@
       ]
     },
     "twig-arrays": {
-      "begin": "(?<=[\\s({\\[:,])\\[",
+      "begin": "(?<=[(,:\\[{\\s])\\[",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.array.begin.twig"
@@ -708,11 +708,11 @@
     "twig-constants": {
       "patterns": [
         {
-          "match": "(?i)(?<=[\\s\\[({:,])(?:true|false|null|none)(?=[\\s)\\]},])",
+          "match": "(?i)(?<=[(,:\\[{\\s])(?:true|false|null|none)(?=[]),}\\s])",
           "name": "constant.language.twig"
         },
         {
-          "match": "(?<=[\\s\\[({:,]|\\.\\.|\\*\\*)[0-9]+(?:\\.[0-9]+)?(?=[\\s)\\]},]|\\.\\.|\\*\\*)",
+          "match": "(?<=[(,:\\[{\\s]|\\.\\.|\\*\\*)[0-9]+(?:\\.[0-9]+)?(?=[]),}\\s]|\\.\\.|\\*\\*)",
           "name": "constant.numeric.twig"
         }
       ]
@@ -723,7 +723,7 @@
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\])'\"]\\||\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[\\s|\\]}):,]|\\.\\.|\\*\\*)"
+      "match": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[]),:|}\\s]|\\.\\.|\\*\\*)"
     },
     "twig-filters-ud": {
       "captures": {
@@ -731,10 +731,10 @@
           "name": "meta.function-call.other.twig"
         }
       },
-      "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\])'\"]\\||\\{%\\sfilter\\s)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)"
+      "match": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)"
     },
     "twig-filters-warg": {
-      "begin": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\])'\"]\\||\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\\()",
+      "begin": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -796,7 +796,7 @@
       ]
     },
     "twig-filters-warg-ud": {
-      "begin": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\])'\"]\\||\\{%\\sfilter\\s)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(\\()",
+      "begin": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(\\()",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.other.twig"
@@ -863,7 +863,7 @@
       "match": "(?<=is\\s)(defined|empty|even|iterable|odd)"
     },
     "twig-functions-warg": {
-      "begin": "(?<=[\\s(\\[{:,])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\\()",
+      "begin": "(?<=[(,:\\[{\\s])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\\()",
       "beginCaptures": {
         "1": {
           "name": "support.function.twig"
@@ -919,7 +919,7 @@
       ]
     },
     "twig-hashes": {
-      "begin": "(?<=[\\s({\\[:,])\\{",
+      "begin": "(?<=[(,:\\[{\\s])\\{",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.hash.begin.twig"
@@ -990,7 +990,7 @@
       "name": "keyword.control.twig"
     },
     "twig-macros": {
-      "begin": "(?<=[\\s(\\[{:,])([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(?:(\\.)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*))?(\\()",
+      "begin": "(?<=[(,:\\[{\\s])([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(?:(\\.)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*))?(\\()",
       "beginCaptures": {
         "1": {
           "name": "meta.function-call.twig"
@@ -1063,7 +1063,7 @@
           "name": "variable.other.twig"
         }
       },
-      "match": "(?<=[\\s{\\[(:,])([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(?=[\\s}\\[\\]().|,:])"
+      "match": "(?<=[(,:\\[{\\s])([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(?=[](),.:\\[|}\\s])"
     },
     "twig-operators": {
       "patterns": [
@@ -1073,7 +1073,7 @@
               "name": "keyword.operator.arithmetic.twig"
             }
           },
-          "match": "(?<=\\s)([+-]|//?|%|\\*\\*?)(?=\\s)"
+          "match": "(?<=\\s)([-+]|//?|%|\\*\\*?)(?=\\s)"
         },
         {
           "captures": {
@@ -1105,7 +1105,7 @@
               "name": "keyword.operator.logical.twig"
             }
           },
-          "match": "(?<=\\s)([?:]|\\?:|\\?\\?|and|not|or)(?=\\s)"
+          "match": "(?<=\\s)([:?]|\\?:|\\?\\?|and|not|or)(?=\\s)"
         },
         {
           "captures": {
@@ -1113,7 +1113,7 @@
               "name": "keyword.operator.other.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\])'\"])\\.\\.(?=[a-zA-Z0-9_\\x7F-ÿ'\"])"
+          "match": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ])\\.\\.(?=[\"'0-9A-Z_a-z\\x7F-ÿ])"
         },
         {
           "captures": {
@@ -1121,7 +1121,7 @@
               "name": "keyword.operator.other.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\]})'\"])\\|(?=[a-zA-Z_\\x7F-ÿ])"
+          "match": "(?<=[]\"')0-9A-Z_a-z}\\x7F-ÿ])\\|(?=[A-Z_a-z\\x7F-ÿ])"
         }
       ]
     },
@@ -1195,10 +1195,10 @@
               "name": "variable.other.property.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ])(\\.)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(?=[.\\s|\\[)\\]}:,])"
+          "match": "(?<=[0-9A-Z_a-z\\x7F-ÿ])(\\.)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(?=[]),.:\\[|}\\s])"
         },
         {
-          "begin": "(?<=[a-zA-Z0-9_\\x7F-ÿ])(\\.)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(\\()",
+          "begin": "(?<=[0-9A-Z_a-z\\x7F-ÿ])(\\.)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.separator.property.twig"
@@ -1286,7 +1286,7 @@
               "name": "punctuation.section.array.end.twig"
             }
           },
-          "match": "(?<=[a-zA-Z0-9_\\x7F-ÿ\\]])(?:(\\[)('[a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*')(])|(\\[)(\"[a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*\")(])|(\\[)([a-zA-Z_\\x7F-ÿ][a-zA-Z0-9_\\x7F-ÿ]*)(]))"
+          "match": "(?<=[]0-9A-Z_a-z\\x7F-ÿ])(?:(\\[)('[A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*')(])|(\\[)(\"[A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*\")(])|(\\[)([A-Z_a-z\\x7F-ÿ][0-9A-Z_a-z\\x7F-ÿ]*)(]))"
         }
       ]
     },

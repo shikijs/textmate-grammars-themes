@@ -566,7 +566,7 @@
               "name": "keyword.control.loop.in.cs"
             }
           },
-          "match": "(?:(\\bvar\\b)|(?<type-name>(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name-and-type-args>\\g<identifier>\\s*(?<type-args>\\s*<(?:[^<>]|\\g<type-args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name-and-type-args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*))\\s+(\\g<identifier>)\\s+\\b(in)\\b"
+          "match": "(?:\\b(var)\\b|(?<type-name>(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name-and-type-args>\\g<identifier>\\s*(?<type-args>\\s*<(?:[^<>]|\\g<type-args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name-and-type-args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*))\\s+(\\g<identifier>)\\s+\\b(in)\\b"
         },
         {
           "captures": {
@@ -773,7 +773,7 @@
         }
       },
       "contentName": "source.cs",
-      "end": "(?=[\\s<>{})\\]'\"])",
+      "end": "(?=[]\"')<>{}\\s])",
       "name": "meta.expression.implicit.cshtml",
       "patterns": [
         {
@@ -795,7 +795,7 @@
           "name": "variable.other.object.cs"
         }
       },
-      "end": "(?=[\\s<>{})\\]'\"])",
+      "end": "(?=[]\"')<>{}\\s])",
       "patterns": [
         {
           "include": "#implicit-expression-continuation"
@@ -803,7 +803,7 @@
       ]
     },
     "implicit-expression-body": {
-      "end": "(?=[\\s<>{})\\]'\"])",
+      "end": "(?=[]\"')<>{}\\s])",
       "patterns": [
         {
           "include": "#implicit-expression-invocation-start"
@@ -814,7 +814,7 @@
       ]
     },
     "implicit-expression-continuation": {
-      "end": "(?=[\\s<>{})\\]'\"])",
+      "end": "(?=[]\"')<>{}\\s])",
       "patterns": [
         {
           "include": "#balanced-parenthesis-csharp"
@@ -852,7 +852,7 @@
           "name": "entity.name.function.cs"
         }
       },
-      "end": "(?=[\\s<>{})\\]'\"])",
+      "end": "(?=[]\"')<>{}\\s])",
       "patterns": [
         {
           "include": "#implicit-expression-continuation"
@@ -873,7 +873,7 @@
           "name": "keyword.operator.logical.cs"
         }
       },
-      "match": "(!)(?=\\.[_[:alpha:]][_[:alnum:]]*|[?\\[(])"
+      "match": "(!)(?=\\.[_[:alpha:]][_[:alnum:]]*|[(?\\[])"
     },
     "implicit-expression-operator": {
       "patterns": [
@@ -1074,7 +1074,7 @@
       "match": "([_[:alpha:]][_[:alnum:]]*)(\\.)?"
     },
     "non-void-tag": {
-      "begin": "(?=<(!)?([^/\\s>]+)(\\s|/?>))",
+      "begin": "(?=<(!)?([^/>\\s]+)(\\s|/?>))",
       "end": "(</)(\\2)\\s*(>)|(/>)",
       "endCaptures": {
         "1": {
@@ -1092,7 +1092,7 @@
       },
       "patterns": [
         {
-          "begin": "(<)(!)?([^/\\s>]+)(?=\\s|/?>)",
+          "begin": "(<)(!)?([^/>\\s]+)(?=\\s|/?>)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.html"

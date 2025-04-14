@@ -12,11 +12,11 @@
       "name": "storage.type.lean4"
     },
     {
-      "match": "\\battribute\\b\\s*\\[[^\\]]*]",
+      "match": "\\battribute\\b\\s*\\[[^]]*]",
       "name": "storage.modifier.lean4"
     },
     {
-      "match": "@\\[[^\\]]*]",
+      "match": "@\\[[^]]*]",
       "name": "storage.modifier.lean4"
     },
     {
@@ -42,7 +42,7 @@
           "name": "keyword.other.definitioncommand.lean4"
         }
       },
-      "end": "(?=\\bwith\\b|\\bextends\\b|\\bwhere\\b|[:|(\\[{⦃<>])",
+      "end": "(?=\\bwith\\b|\\bextends\\b|\\bwhere\\b|[(:<>\\[{|⦃])",
       "name": "meta.definitioncommand.lean4",
       "patterns": [
         {
@@ -95,7 +95,7 @@
           ]
         },
         {
-          "match": "\\\\[\\\\\"ntr']",
+          "match": "\\\\[\"'\\\\nrt]",
           "name": "constant.character.escape.lean4"
         },
         {
@@ -114,7 +114,7 @@
       "name": "string.quoted.double.lean4",
       "patterns": [
         {
-          "match": "\\\\[\\\\\"ntr']",
+          "match": "\\\\[\"'\\\\nrt]",
           "name": "constant.character.escape.lean4"
         },
         {
@@ -132,7 +132,7 @@
       "name": "constant.language.lean4"
     },
     {
-      "match": "'[^\\\\']'",
+      "match": "'[^'\\\\]'",
       "name": "string.quoted.single.lean4"
     },
     {
@@ -145,11 +145,11 @@
       "name": "string.quoted.single.lean4"
     },
     {
-      "match": "`+[^\\[(]\\S+",
+      "match": "`+[^(\\[]\\S+",
       "name": "entity.name.lean4"
     },
     {
-      "match": "\\b([0-9]+|0([xX]\\h+)|-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?)\\b",
+      "match": "\\b([0-9]+|0([Xx]\\h+)|-?(0|[1-9][0-9]*)(\\.[0-9]+)?([Ee][-+]?[0-9]+)?)\\b",
       "name": "constant.numeric.lean4"
     }
   ],
@@ -199,7 +199,7 @@
     "definitionName": {
       "patterns": [
         {
-          "match": "\\b[^:«»(){}\\s=→λ∀?][^:«»(){}\\s]*",
+          "match": "\\b[^():=?{}«»λ→∀\\s][^():{}«»\\s]*",
           "name": "entity.name.function.lean4"
         },
         {

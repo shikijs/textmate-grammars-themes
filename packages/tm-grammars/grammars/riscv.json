@@ -9,7 +9,7 @@
   "name": "riscv",
   "patterns": [
     {
-      "match": "\\b(la|lb|lh|lw|ld|nop|li|mv|not|neg|negw|sext\\.w|seqz|snez|sltz|sgtz|beqz|bnez|blez|bgez|bltz|bgtz|bgt|ble|bgtu|bleu|j|jal|jr|ret|call|tail|fence|csr[r|wsc]|csr[w|sc]i)\\b",
+      "match": "\\b(la|lb|lh|lw|ld|nop|li|mv|not|neg|negw|sext\\.w|seqz|snez|sltz|sgtz|beqz|bnez|blez|bgez|bltz|bgtz|bgt|ble|bgtu|bleu|j|jal|jr|ret|call|tail|fence|csr[crsw|]|csr[csw|]i)\\b",
       "name": "support.function.pseudo.riscv"
     },
     {
@@ -29,7 +29,7 @@
       "name": "support.function.riscv.c"
     },
     {
-      "match": "\\b(lr\\.[w|d]|sc\\.[w|d]|amoswap\\.[w|d]|amoadd\\.[w|d]|amoxor\\.[w|d]|amoand\\.[w|d]|amoor\\.[w|d]|amomin\\.[w|d]|amomax\\.[w|d]|amominu\\.[w|d]|amomaxu\\.[w|d])\\b",
+      "match": "\\b(lr\\.[dw|]|sc\\.[dw|]|amoswap\\.[dw|]|amoadd\\.[dw|]|amoxor\\.[dw|]|amoand\\.[dw|]|amoor\\.[dw|]|amomin\\.[dw|]|amomax\\.[dw|]|amominu\\.[dw|]|amomaxu\\.[dw|])\\b",
       "name": "support.function.riscv.a"
     },
     {
@@ -41,7 +41,7 @@
       "name": "support.function.riscv.d"
     },
     {
-      "match": "\\.(skip|ascii|asciiz|byte|[2|48]byte|data|double|float|half|kdata|ktext|space|text|word|dword|dtprelword|dtpreldword|set\\s*(noat|at)|[s|u]leb128|string|incbin|zero|rodata|comm|common)\\b",
+      "match": "\\.(skip|ascii|asciiz|byte|[248|]byte|data|double|float|half|kdata|ktext|space|text|word|dword|dtprelword|dtpreldword|set\\s*((?:no|)at)|[su|]leb128|string|incbin|zero|rodata|comm|common)\\b",
       "name": "storage.type.riscv"
     },
     {
@@ -54,7 +54,7 @@
           "name": "entity.name.function.label.riscv"
         }
       },
-      "match": "\\b([A-Za-z0-9_]+):",
+      "match": "\\b([0-9A-Z_a-z]+):",
       "name": "meta.function.label.riscv"
     },
     {
@@ -63,7 +63,7 @@
           "name": "punctuation.definition.variable.riscv"
         }
       },
-      "match": "\\b(x([0-9]|1[0-9]|2[0-9]|3[0-1]))\\b",
+      "match": "\\b(x([0-9]|1[0-9]|2[0-9]|3[01]))\\b",
       "name": "variable.other.register.usable.by-number.riscv"
     },
     {
@@ -72,7 +72,7 @@
           "name": "punctuation.definition.variable.riscv"
         }
       },
-      "match": "\\b(zero|ra|sp|gp|tp|t[0-6]|a[0-7]|s[0-9]|fp|s1[0-1])\\b",
+      "match": "\\b(zero|ra|sp|gp|tp|t[0-6]|a[0-7]|s[0-9]|fp|s1[01])\\b",
       "name": "variable.other.register.usable.by-name.riscv"
     },
     {
@@ -81,7 +81,7 @@
           "name": "punctuation.definition.variable.riscv"
         }
       },
-      "match": "\\b(([umsh]|vs)status|([umsh]|vs)ie|([ums]|vs)tvec|([ums]|vs)scratch|([ums]|vs)epc|([ums]|vs)cause|([umsh]|vs)tval|([umsh]|vs)ip|fflags|frm|fcsr|m?cycleh?|timeh?|m?instreth?|m?hpmcounter([3-9]|[12][0-9]|3[01])h?|[msh][ei]deleg|[msh]counteren|v?satp|hgeie|hgeip|[hm]tinst|hvip|hgatp|htimedeltah?|mvendorid|marchid|mimpid|mhartid|misa|mstatush|mtval2|pmpcfg[0-3]|pmpaddr([0-9]|1[0-5])|mcountinhibit|mhpmevent([3-9]|[12][0-9]|3[01])|tselect|tdata[1-3]|dcsr|dpc|dscratch[0-1])\\b",
+      "match": "\\b(([hmsu]|vs)status|([hmsu]|vs)ie|([msu]|vs)tvec|([msu]|vs)scratch|([msu]|vs)epc|([msu]|vs)cause|([hmsu]|vs)tval|([hmsu]|vs)ip|fflags|frm|fcsr|m?cycleh?|timeh?|m?instreth?|m?hpmcounter([3-9]|[12][0-9]|3[01])h?|[hms][ei]deleg|[hms]counteren|v?satp|hgeie|hgeip|[hm]tinst|hvip|hgatp|htimedeltah?|mvendorid|marchid|mimpid|mhartid|misa|mstatush|mtval2|pmpcfg[0-3]|pmpaddr([0-9]|1[0-5])|mcountinhibit|mhpmevent([3-9]|[12][0-9]|3[01])|tselect|tdata[1-3]|dcsr|dpc|dscratch[01])\\b",
       "name": "variable.other.csr.names.riscv"
     },
     {
@@ -90,7 +90,7 @@
           "name": "punctuation.definition.variable.riscv"
         }
       },
-      "match": "\\bf([0-9]|1[0-9]|2[0-9]|3[0-1])\\b",
+      "match": "\\bf([0-9]|1[0-9]|2[0-9]|3[01])\\b",
       "name": "variable.other.register.usable.floating-point.riscv"
     },
     {
@@ -98,7 +98,7 @@
       "name": "constant.numeric.float.riscv"
     },
     {
-      "match": "\\b(\\d+|0([xX])\\h+)\\b",
+      "match": "\\b(\\d+|0([Xx])\\h+)\\b",
       "name": "constant.numeric.integer.riscv"
     },
     {
@@ -117,7 +117,7 @@
       "name": "string.quoted.double.riscv",
       "patterns": [
         {
-          "match": "\\\\[rnt\\\\\"]",
+          "match": "\\\\[\"\\\\nrt]",
           "name": "constant.character.escape.riscv"
         }
       ]
@@ -138,7 +138,7 @@
       "name": "string.quoted.single.riscv",
       "patterns": [
         {
-          "match": "\\\\[rnt\\\\\"]",
+          "match": "\\\\[\"\\\\nrt]",
           "name": "constant.character.escape.riscv"
         }
       ]
@@ -154,7 +154,7 @@
       "name": "comment.line.double-slash"
     },
     {
-      "begin": "^\\s*#\\s*(define)\\s+((?<id>[a-zA-Z_][a-zA-Z0-9_]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))?",
+      "begin": "^\\s*#\\s*(define)\\s+((?<id>[A-Z_a-z][0-9A-Z_a-z]*))(?:(\\()(\\s*\\g<id>\\s*((,)\\s*\\g<id>\\s*)*(?:\\.\\.\\.)?)(\\)))?",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.import.define.c"
@@ -175,7 +175,7 @@
           "name": "punctuation.definition.parameters.c"
         }
       },
-      "end": "(?=/[/*])|$",
+      "end": "(?=/[*/])|$",
       "name": "meta.preprocessor.macro.c",
       "patterns": [
         {
@@ -210,7 +210,7 @@
           "name": "keyword.control.import.include.c"
         }
       },
-      "end": "(?=/[/*])|$",
+      "end": "(?=/[*/])|$",
       "name": "meta.preprocessor.c.include",
       "patterns": [
         {
@@ -256,7 +256,7 @@
           "name": "keyword.control.import.c"
         }
       },
-      "end": "(?=/[/*])|$",
+      "end": "(?=/[*/])|$",
       "name": "meta.preprocessor.c",
       "patterns": [
         {
@@ -266,7 +266,7 @@
       ]
     },
     {
-      "begin": "(^[ \\t]+)?(?=#)",
+      "begin": "(^[\\t ]+)?(?=#)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.comment.leading.riscv"

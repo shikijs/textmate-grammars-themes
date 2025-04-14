@@ -108,7 +108,7 @@
       "patterns": [
         {
           "applyEndPatternLast": 1,
-          "begin": "(?:\\s+|,)(?:(key|on[a-zA-Z0-9_$-]+|[a-zA-Z0-9_$]+Change|no-update(?:-body)?(?:-if)?)|([a-zA-Z0-9_$][a-zA-Z0-9_$-]*))(:[a-zA-Z0-9_$][a-zA-Z0-9_$-]*)?",
+          "begin": "(?:\\s+|,)(?:(key|on[-$0-9A-Z_a-z]+|[$0-9A-Z_a-z]+Change|no-update(?:-body)?(?:-if)?)|([$0-9A-Z_a-z][-$0-9A-Z_a-z]*))(:[$0-9A-Z_a-z][-$0-9A-Z_a-z]*)?",
           "beginCaptures": {
             "1": {
               "name": "support.type.attribute-name.marko"
@@ -234,7 +234,7 @@
           ]
         }
       },
-      "match": "\\s*(--+)(?=\\s+\\S)(.*$)",
+      "match": "\\s*(--+)(?=\\s+\\S)(.*)$",
       "name": "meta.section.marko-html-line"
     },
     "concise-open-tag-content": {
@@ -512,7 +512,7 @@
               "while": "(?=^\\1\\s+(\\S|$))"
             },
             {
-              "begin": "^(\\s*)(?=[a-zA-Z0-9_$@])",
+              "begin": "^(\\s*)(?=[$0-9@-Z_a-z])",
               "patterns": [
                 {
                   "include": "#concise-open-tag-content"
@@ -752,7 +752,7 @@
           ]
         },
         {
-          "begin": "/(?!<[\\]})A-Z0-9.<%]\\s*/)(?!/?>|$)",
+          "begin": "/(?!<[]%).0-9<A-Z}]\\s*/)(?!/?>|$)",
           "captures": {
             "0": {
               "name": "string.regexp.js"
@@ -770,7 +770,7 @@
           ]
         },
         {
-          "begin": "\\s*(?:\\b(?:new|typeof|instanceof|in)\\b|&&|\\|\\||[\\^|\\&]|[!=]=|[!=]==|<|<[=<]|=>|[?:]|[-+*%](?!-))",
+          "begin": "\\s*(?:\\b(?:new|typeof|instanceof|in)\\b|&&|\\|\\||[\\&^|]|[!=]=|[!=]==|<|<[<=]|=>|[:?]|[-%*+](?!-))",
           "captures": {
             "0": {
               "patterns": [
@@ -799,7 +799,7 @@
               ]
             }
           },
-          "match": "[0-9a-zA-Z$_.]+"
+          "match": "[$.0-9A-Z_a-z]+"
         }
       ]
     },
@@ -871,7 +871,7 @@
           "include": "#tag-name"
         },
         {
-          "match": "[#.][a-zA-Z0-9_$][a-zA-Z0-9_$-]*",
+          "match": "[#.][$0-9A-Z_a-z][-$0-9A-Z_a-z]*",
           "name": "entity.other.attribute-name.marko"
         },
         {
@@ -882,11 +882,11 @@
             }
           },
           "contentName": "source.js",
-          "end": "(?=:?=|[\\s>]|$|[|(/])",
+          "end": "(?=:?=|[>\\s]|$|[(/|])",
           "name": "meta.embedded.js",
           "patterns": [
             {
-              "match": "[a-zA-Z$_][0-9a-zA-Z$_]*",
+              "match": "[$A-Z_a-z][$0-9A-Z_a-z]*",
               "name": "variable.other.constant.object.js"
             },
             {
@@ -1169,7 +1169,7 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=[a-zA-Z0-9_$@])",
+          "begin": "\\s*(<)(?=[$0-9@-Z_a-z])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
@@ -1192,7 +1192,7 @@
                   "name": "punctuation.definition.tag.end.marko"
                 }
               },
-              "end": "\\s*(</)([a-zA-Z0-9_$:@-]+)?(.*?)(>)",
+              "end": "\\s*(</)([-$0-:@-Z_a-z]+)?(.*?)(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.end.marko"
@@ -1275,7 +1275,7 @@
               ]
             }
           },
-          "match": "(style)\\.([a-zA-Z0-9$_-]+(?:\\.[a-zA-Z0-9$_-]+)*)|([a-zA-Z0-9_$@][a-zA-Z0-9_$@:-]*)"
+          "match": "(style)\\.([-$0-9A-Z_a-z]+(?:\\.[-$0-9A-Z_a-z]+)*)|([$0-9@-Z_a-z][-$0-:@-Z_a-z]*)"
         }
       ]
     }

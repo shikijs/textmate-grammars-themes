@@ -18,7 +18,7 @@
   ],
   "repository": {
     "annotation-simple": {
-      "match": "(?<!\\w)@[\\w.]+\\b(?!:)",
+      "match": "(?<!\\w)@[.\\w]+\\b(?!:)",
       "name": "entity.name.type.annotation.kotlin"
     },
     "annotation-site": {
@@ -50,7 +50,7 @@
       ]
     },
     "binary-literal": {
-      "match": "0([bB])[01][01_]*",
+      "match": "0([Bb])[01][01_]*",
       "name": "constant.numeric.binary.kotlin"
     },
     "boolean-literal": {
@@ -232,7 +232,7 @@
                   "name": "variable.parameter.kotlin"
                 }
               },
-              "match": "\\{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^()]*\\)).*}"
+              "match": "\\{(@link)\\s+(\\S+)?#([$\\w]+\\s*\\([^()]*\\)).*}"
             }
           ]
         }
@@ -261,7 +261,7 @@
       "name": "keyword.control.kotlin"
     },
     "decimal-literal": {
-      "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?(([eE])\\d+)?([uU])?([LFf])?\\b",
+      "match": "\\b\\d[_\\d]*(\\.[_\\d]+)?(([Ee])\\d+)?([Uu])?([FLf])?\\b",
       "name": "constant.numeric.decimal.kotlin"
     },
     "function": {
@@ -305,7 +305,7 @@
       "name": "keyword.hard.kotlin"
     },
     "hex-literal": {
-      "match": "0([xX])\\h[_\\h]*([uU])?",
+      "match": "0([Xx])\\h[_\\h]*([Uu])?",
       "name": "constant.numeric.hex.kotlin"
     },
     "import": {
@@ -395,7 +395,7 @@
           "name": "keyword.operator.comparison.kotlin"
         },
         {
-          "match": "([+*/%-]=)",
+          "match": "([-%*+/]=)",
           "name": "keyword.operator.assignment.arithmetic.kotlin"
         },
         {
@@ -403,7 +403,7 @@
           "name": "keyword.operator.assignment.kotlin"
         },
         {
-          "match": "([+*/%-])",
+          "match": "([-%*+/])",
           "name": "keyword.operator.arithmetic.kotlin"
         },
         {
@@ -542,7 +542,7 @@
           ]
         }
       },
-      "match": "(?<![:?]):\\s*([\\w?\\s]|->|(?<GROUP>[<(]([^<>()\"']|\\g<GROUP>)+[)>]))+"
+      "match": "(?<![:?]):\\s*([?\\w\\s]|->|(?<GROUP>[(<]([^\"'-)<>]|\\g<GROUP>)+[)>]))+"
     },
     "type-parameter": {
       "patterns": [
@@ -557,7 +557,7 @@
       ]
     },
     "unescaped-annotation": {
-      "match": "\\b[\\w.]+\\b",
+      "match": "\\b[.\\w]+\\b",
       "name": "entity.name.type.annotation.kotlin"
     },
     "variable-declaration": {

@@ -25,7 +25,7 @@
           "name": "keyword.commands.flow.narrat"
         },
         {
-          "match": "\\b(log|clear_dialog)\\b",
+          "match": "\\b((?:|clear_dia)log)\\b",
           "name": "keyword.commands.helpers.narrat"
         },
         {
@@ -103,7 +103,7 @@
     "interpolation": {
       "patterns": [
         {
-          "match": "([\\w.])+",
+          "match": "([.\\w])+",
           "name": "variable.interpolation.narrat"
         }
       ]
@@ -115,7 +115,7 @@
           "name": "keyword.control.narrat"
         },
         {
-          "match": "\\$[\\w|.]+\\b",
+          "match": "\\$[.|\\w]+\\b",
           "name": "variable.value.narrat"
         },
         {
@@ -127,7 +127,7 @@
           "name": "invalid.label.narrat"
         },
         {
-          "match": "(?<=\\w)[^^](\\b\\w+\\b)(?=([\\s\\w])*:)",
+          "match": "(?<=\\w)[^^]\\b(\\w+)\\b(?=([\\s\\w])*:)",
           "name": "entity.other.attribute-name"
         }
       ]
@@ -135,11 +135,11 @@
     "operators": {
       "patterns": [
         {
-          "match": "(&&|\\|\\||!=|==|>=|<=|[<>!?])\\s",
+          "match": "(&&|\\|\\||!=|==|>=|<=|[!<>?])\\s",
           "name": "keyword.operator.logic.narrat"
         },
         {
-          "match": "([+\\-*/])\\s",
+          "match": "([-*+/])\\s",
           "name": "keyword.operator.arithmetic.narrat"
         }
       ]

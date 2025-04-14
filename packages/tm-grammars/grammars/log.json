@@ -14,7 +14,7 @@
       "name": "comment log.verbose"
     },
     {
-      "match": "(?<=^[\\s\\dp]*)\\bV\\b",
+      "match": "(?<=^[p\\s\\d]*)\\bV\\b",
       "name": "comment log.verbose"
     },
     {
@@ -26,7 +26,7 @@
       "name": "markup.changed log.debug"
     },
     {
-      "match": "(?<=^[\\s\\dp]*)\\bD\\b",
+      "match": "(?<=^[p\\s\\d]*)\\bD\\b",
       "name": "markup.changed log.debug"
     },
     {
@@ -38,7 +38,7 @@
       "name": "markup.inserted log.info"
     },
     {
-      "match": "(?<=^[\\s\\dp]*)\\bI\\b",
+      "match": "(?<=^[p\\s\\d]*)\\bI\\b",
       "name": "markup.inserted log.info"
     },
     {
@@ -50,7 +50,7 @@
       "name": "markup.deleted log.warning"
     },
     {
-      "match": "(?<=^[\\s\\dp]*)\\bW\\b",
+      "match": "(?<=^[p\\s\\d]*)\\bW\\b",
       "name": "markup.deleted log.warning"
     },
     {
@@ -62,7 +62,7 @@
       "name": "string.regexp, strong log.error"
     },
     {
-      "match": "(?<=^[\\s\\dp]*)\\bE\\b",
+      "match": "(?<=^[p\\s\\d]*)\\bE\\b",
       "name": "string.regexp, strong log.error"
     },
     {
@@ -74,11 +74,11 @@
       "name": "comment log.date"
     },
     {
-      "match": "T?\\d{1,2}:\\d{2}(:\\d{2}([.,]\\d+)?)?(Z| ?[+-]\\d{1,2}:\\d{2})?\\b",
+      "match": "T?\\d{1,2}:\\d{2}(:\\d{2}([,.]\\d+)?)?(Z| ?[-+]\\d{1,2}:\\d{2})?\\b",
       "name": "comment log.date"
     },
     {
-      "match": "T\\d{2}\\d{2}(\\d{2}([.,]\\d+)?)?(Z| ?[+-]\\d{1,2}\\d{2})?\\b",
+      "match": "T\\d{2}\\d{2}(\\d{2}([,.]\\d+)?)?(Z| ?[-+]\\d{1,2}\\d{2})?\\b",
       "name": "comment log.date"
     },
     {
@@ -90,7 +90,7 @@
       "name": "constant.language log.constant"
     },
     {
-      "match": "\\b(\\h{2,}[:-])+\\h{2,}+\\b",
+      "match": "\\b(\\h{2,}[-:])+\\h{2,}+\\b",
       "name": "constant.language log.constant"
     },
     {
@@ -110,7 +110,7 @@
       "name": "string log.string"
     },
     {
-      "match": "\\b([a-zA-Z.]*Exception)\\b",
+      "match": "\\b([.A-Za-z]*Exception)\\b",
       "name": "string.regexp, emphasis log.exceptiontype"
     },
     {
@@ -123,7 +123,7 @@
       "name": "constant.language log.constant"
     },
     {
-      "match": "(?<![\\w/\\\\])([\\w-]+\\.)+([\\w-])+(?![\\w/\\\\])",
+      "match": "(?<![/\\\\\\w])([-\\w]+\\.)+([-\\w])+(?![/\\\\\\w])",
       "name": "constant.language log.constant"
     }
   ],

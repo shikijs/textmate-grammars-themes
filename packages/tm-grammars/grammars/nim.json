@@ -6,7 +6,7 @@
   "name": "nim",
   "patterns": [
     {
-      "begin": "[ \\t]*##\\[",
+      "begin": "[\\t ]*##\\[",
       "contentName": "comment.block.doc-comment.content.nim",
       "end": "]##",
       "name": "comment.block.doc-comment.nim",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "begin": "[ \\t]*#\\[",
+      "begin": "[\\t ]*#\\[",
       "contentName": "comment.block.content.nim",
       "end": "]#",
       "name": "comment.block.nim",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "begin": "(^[ \\t]+)?(?=##)",
+      "begin": "(^[\\t ]+)?(?=##)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.comment.leading.nim"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "begin": "(^[ \\t]+)?(?=#[^\\[])",
+      "begin": "(^[\\t ]+)?(?=#[^\\[])",
       "beginCaptures": {
         "1": {
           "name": "punctuation.whitespace.comment.leading.nim"
@@ -75,7 +75,7 @@
       "name": "meta.proc.nim",
       "patterns": [
         {
-          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+`?([^:{\\s`*(]*)`?(\\s*\\*)?\\s*(?=[(=:\\[\\n{])",
+          "begin": "\\b(proc|method|template|macro|iterator|converter|func)\\s+`?([^(*:`{\\s]*)`?(\\s*\\*)?\\s*(?=[\\n(:=\\[{])",
           "captures": {
             "1": {
               "name": "keyword.other"
@@ -108,7 +108,7 @@
       "include": "#integer_literal"
     },
     {
-      "match": "(?<=`)[^` ]+(?=`)",
+      "match": "(?<=`)[^ `]+(?=`)",
       "name": "entity.name.function.nim"
     },
     {
@@ -142,19 +142,19 @@
       "name": "keyword.control.nim"
     },
     {
-      "match": "(\\b(and|in|is|isnot|not|notin|or|xor)\\b)",
+      "match": "\\b((and|in|is|isnot|not|notin|or|xor))\\b",
       "name": "keyword.boolean.nim"
     },
     {
-      "match": "([=+\\-*/<>@$~\\&%!?^.:\\\\])+",
+      "match": "([!$-\\&*+\\--/:<-@\\\\^~])+",
       "name": "keyword.operator.nim"
     },
     {
-      "match": "(\\b(addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template)\\b)",
+      "match": "\\b((addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template))\\b",
       "name": "keyword.other.nim"
     },
     {
-      "match": "(\\b(generic|interface|lambda|out|shared)\\b)",
+      "match": "\\b((generic|interface|lambda|out|shared))\\b",
       "name": "invalid.illegal.invalid-keyword.nim"
     },
     {
@@ -162,7 +162,7 @@
       "name": "keyword.other.common.function.nim"
     },
     {
-      "match": "\\b(((uint|int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed)\\b",
+      "match": "\\b((((?:u|)int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed)\\b",
       "name": "storage.type.concrete.nim"
     },
     {
@@ -174,7 +174,7 @@
       "name": "storage.type.generic.nim"
     },
     {
-      "match": "\\b[A-Z][A-Z0-9_]+\\b",
+      "match": "\\b[A-Z][0-9A-Z_]+\\b",
       "name": "support.constant.nim"
     },
     {
@@ -182,11 +182,11 @@
       "name": "support.type.nim"
     },
     {
-      "match": "\\b\\w+\\b(?=(\\[([a-zA-Z0-9_,\\s])+])?\\()",
+      "match": "\\b\\w+\\b(?=(\\[([,0-9A-Z_a-z\\s])+])?\\()",
       "name": "support.function.any-method.nim"
     },
     {
-      "match": "(?!(openarray|varargs|void|range|array|seq|set|pointer|new|await|assert|echo|defined|declared|newException|countup|countdown|high|low|((uint|int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed|addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template|and|in|is|isnot|not|notin|or|xor|proc|method|template|macro|iterator|converter|func|true|false|Inf|NegInf|NaN|nil|block|break|case|continue|do|elif|else|end|except|finally|for|if|raise|return|try|when|while|yield)\\b)\\w+\\s+(?!(and|in|is|isnot|not|notin|or|xor|[^a-zA-Z0-9_\"'`(-+]+)\\b)(?=[a-zA-Z0-9_\"'`(-+])",
+      "match": "(?!(openarray|varargs|void|range|array|seq|set|pointer|new|await|assert|echo|defined|declared|newException|countup|countdown|high|low|(((?:u|)int)(8|16|32|64)?)|float(32|64)?|bool|string|auto|cstring|char|byte|tobject|typedesc|stmt|expr|any|untyped|typed|addr|as|asm|atomic|bind|cast|const|converter|concept|defer|discard|distinct|div|enum|export|from|import|include|let|mod|mixin|object|of|ptr|ref|shl|shr|static|type|using|var|tuple|iterator|macro|func|method|proc|template|and|in|is|isnot|not|notin|or|xor|proc|method|template|macro|iterator|converter|func|true|false|Inf|NegInf|NaN|nil|block|break|case|continue|do|elif|else|end|except|finally|for|if|raise|return|try|when|while|yield)\\b)\\w+\\s+(?!(and|in|is|isnot|not|notin|or|xor|[^\"'-+0-9A-Z_-z]+)\\b)(?=[\"'-+0-9A-Z_-z])",
       "name": "support.function.any-method.nim"
     },
     {
@@ -479,7 +479,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -579,7 +579,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -679,7 +679,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -779,7 +779,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -879,7 +879,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -979,7 +979,7 @@
                   "name": "keyword.operator.nim"
                 }
               },
-              "end": "([{\\n])",
+              "end": "([\\n{])",
               "endCaptures": {
                 "1": {
                   "name": "plain"
@@ -1007,23 +1007,23 @@
     "char_escapes": {
       "patterns": [
         {
-          "match": "\\\\[cCrR]",
+          "match": "\\\\[CRcr]",
           "name": "constant.character.escape.carriagereturn.nim"
         },
         {
-          "match": "\\\\[lLnN]",
+          "match": "\\\\[LNln]",
           "name": "constant.character.escape.linefeed.nim"
         },
         {
-          "match": "\\\\[fF]",
+          "match": "\\\\[Ff]",
           "name": "constant.character.escape.formfeed.nim"
         },
         {
-          "match": "\\\\[tT]",
+          "match": "\\\\[Tt]",
           "name": "constant.character.escape.tabulator.nim"
         },
         {
-          "match": "\\\\[vV]",
+          "match": "\\\\[Vv]",
           "name": "constant.character.escape.verticaltabulator.nim"
         },
         {
@@ -1039,19 +1039,19 @@
           "name": "constant.character.escape.chardecimalvalue.nim"
         },
         {
-          "match": "\\\\[aA]",
+          "match": "\\\\[Aa]",
           "name": "constant.character.escape.alert.nim"
         },
         {
-          "match": "\\\\[bB]",
+          "match": "\\\\[Bb]",
           "name": "constant.character.escape.backspace.nim"
         },
         {
-          "match": "\\\\[eE]",
+          "match": "\\\\[Ee]",
           "name": "constant.character.escape.escape.nim"
         },
         {
-          "match": "\\\\[xX]\\h\\h",
+          "match": "\\\\[Xx]\\h\\h",
           "name": "constant.character.escape.hex.nim"
         },
         {
@@ -1104,23 +1104,23 @@
     "float_literal": {
       "patterns": [
         {
-          "match": "\\b\\d[_\\d]*((\\.\\d[_\\d]*([eE][+-]?\\d[_\\d]*)?)|([eE][+-]?\\d[_\\d]*))('([fF](32|64|128)|[fFdD]))?",
+          "match": "\\b\\d[_\\d]*((\\.\\d[_\\d]*([Ee][-+]?\\d[_\\d]*)?)|([Ee][-+]?\\d[_\\d]*))('([Ff](32|64|128)|[DFdf]))?",
           "name": "constant.numeric.float.decimal.nim"
         },
         {
-          "match": "\\b0[xX]\\h[_\\h]*'([fF](32|64|128)|[fFdD])",
+          "match": "\\b0[Xx]\\h[_\\h]*'([Ff](32|64|128)|[DFdf])",
           "name": "constant.numeric.float.hexadecimal.nim"
         },
         {
-          "match": "\\b0o[0-7][_0-7]*'([fF](32|64|128)|[fFdD])",
+          "match": "\\b0o[0-7][0-7_]*'([Ff](32|64|128)|[DFdf])",
           "name": "constant.numeric.float.octal.nim"
         },
         {
-          "match": "\\b0([bB])[01][_01]*'([fF](32|64|128)|[fFdD])",
+          "match": "\\b0([Bb])[01][01_]*'([Ff](32|64|128)|[DFdf])",
           "name": "constant.numeric.float.binary.nim"
         },
         {
-          "match": "\\b(\\d[_\\d]*)'([fF](32|64|128)|[fFdD])",
+          "match": "\\b(\\d[_\\d]*)'([Ff](32|64|128)|[DFdf])",
           "name": "constant.numeric.float.decimal.nim"
         }
       ]
@@ -1297,19 +1297,19 @@
     "integer_literal": {
       "patterns": [
         {
-          "match": "\\b(0[xX]\\h[_\\h]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(0[Xx]\\h[_\\h]*)('(([IUiu](8|16|32|64))|[Uu]))?",
           "name": "constant.numeric.integer.hexadecimal.nim"
         },
         {
-          "match": "\\b(0o[0-7][_0-7]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(0o[0-7][0-7_]*)('(([IUiu](8|16|32|64))|[Uu]))?",
           "name": "constant.numeric.integer.octal.nim"
         },
         {
-          "match": "\\b(0([bB])[01][_01]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(0([Bb])[01][01_]*)('(([IUiu](8|16|32|64))|[Uu]))?",
           "name": "constant.numeric.integer.binary.nim"
         },
         {
-          "match": "\\b(\\d[_\\d]*)('(([iIuU](8|16|32|64))|[uU]))?",
+          "match": "\\b(\\d[_\\d]*)('(([IUiu](8|16|32|64))|[Uu]))?",
           "name": "constant.numeric.integer.decimal.nim"
         }
       ]
@@ -1343,15 +1343,15 @@
     "string_escapes": {
       "patterns": [
         {
-          "match": "\\\\[pP]",
+          "match": "\\\\[Pp]",
           "name": "constant.character.escape.newline.nim"
         },
         {
-          "match": "\\\\[uU]\\h\\h\\h\\h",
+          "match": "\\\\[Uu]\\h\\h\\h\\h",
           "name": "constant.character.escape.hex.nim"
         },
         {
-          "match": "\\\\[uU]\\{\\h+}",
+          "match": "\\\\[Uu]\\{\\h+}",
           "name": "constant.character.escape.hex.nim"
         },
         {

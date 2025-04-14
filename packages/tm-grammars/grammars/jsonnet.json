@@ -73,11 +73,11 @@
       "name": "string.quoted.double.jsonnet",
       "patterns": [
         {
-          "match": "\\\\([\"\\\\/bfnrt]|(u\\h{4}))",
+          "match": "\\\\([\"/\\\\bfnrt]|(u\\h{4}))",
           "name": "constant.character.escape.jsonnet"
         },
         {
-          "match": "\\\\[^\"\\\\/bfnrtu]",
+          "match": "\\\\[^\"/\\\\bfnrtu]",
           "name": "invalid.illegal.jsonnet"
         }
       ]
@@ -110,7 +110,7 @@
     "functions": {
       "patterns": [
         {
-          "begin": "\\b([a-zA-Z_][a-z0-9A-Z_]*)\\s*\\(",
+          "begin": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\s*\\(",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.jsonnet"
@@ -129,7 +129,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "[!:~+\\-\\&|^=<>*/%]",
+          "match": "[-!%\\&*+/:<->^|~]",
           "name": "keyword.operator.jsonnet"
         },
         {
@@ -149,15 +149,15 @@
           "name": "storage.type.jsonnet"
         },
         {
-          "match": "[a-zA-Z_][a-z0-9A-Z_]*\\s*(:::|\\+:::)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+):::)",
           "name": "variable.parameter.jsonnet"
         },
         {
-          "match": "[a-zA-Z_][a-z0-9A-Z_]*\\s*(::|\\+::)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+)::)",
           "name": "entity.name.type"
         },
         {
-          "match": "[a-zA-Z_][a-z0-9A-Z_]*\\s*(:|\\+:)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+):)",
           "name": "variable.parameter.jsonnet"
         }
       ]
@@ -169,15 +169,15 @@
           "name": "constant.language.jsonnet"
         },
         {
-          "match": "\\b(\\d+([Ee][+-]?\\d+)?)\\b",
+          "match": "\\b(\\d+([Ee][-+]?\\d+)?)\\b",
           "name": "constant.numeric.jsonnet"
         },
         {
-          "match": "\\b\\d+\\.\\d*([Ee][+-]?\\d+)?\\b",
+          "match": "\\b\\d+\\.\\d*([Ee][-+]?\\d+)?\\b",
           "name": "constant.numeric.jsonnet"
         },
         {
-          "match": "\\b\\.\\d+([Ee][+-]?\\d+)?\\b",
+          "match": "\\b\\.\\d+([Ee][-+]?\\d+)?\\b",
           "name": "constant.numeric.jsonnet"
         }
       ]
@@ -188,11 +188,11 @@
       "name": "string.quoted.double.jsonnet",
       "patterns": [
         {
-          "match": "\\\\(['\\\\/bfnrt]|(u\\h{4}))",
+          "match": "\\\\(['/\\\\bfnrt]|(u\\h{4}))",
           "name": "constant.character.escape.jsonnet"
         },
         {
-          "match": "\\\\[^'\\\\/bfnrtu]",
+          "match": "\\\\[^'/\\\\bfnrtu]",
           "name": "invalid.illegal.jsonnet"
         }
       ]

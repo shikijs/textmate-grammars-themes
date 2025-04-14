@@ -28,7 +28,7 @@
   "name": "es-tag-css",
   "patterns": [
     {
-      "begin": "(?i)(\\s?/\\*\\s?(css|inline-css)\\s?\\*/\\s?)(`)",
+      "begin": "(?i)(\\s?/\\*\\s?((?:|inline-)css)\\s?\\*/\\s?)(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block"
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "begin": "(?i)(\\s*(css|inline-css))(`)",
+      "begin": "(?i)(\\s*((?:|inline-)css))(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block"
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "begin": "(?i)(?<=[\\s,=:(]|\\$\\()\\s*(((/\\*)|(//))\\s?(css|inline-css) {0,1000}\\*?/?) {0,1000}$",
+      "begin": "(?i)(?<=[(,:=\\s]|\\$\\()\\s*(((/\\*)|(//))\\s?((?:|inline-)css) {0,1000}\\*?/?) {0,1000}$",
       "beginCaptures": {
         "1": {
           "name": "comment.line"
@@ -80,7 +80,7 @@
       "end": "(`).*",
       "patterns": [
         {
-          "begin": "(\\G)",
+          "begin": "\\G()",
           "end": "(`)"
         },
         {

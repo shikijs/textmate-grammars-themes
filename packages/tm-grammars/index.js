@@ -5,7 +5,7 @@
 
 export const grammars = [
   {
-    byteSize: 15745,
+    byteSize: 15720,
     displayName: 'ABAP',
     funding: [
     ],
@@ -17,7 +17,7 @@ export const grammars = [
     source: 'https://github.com/pvl/abap.tmbundle/blob/92e17e62a9449d2a6f87bfb30b4f920986c24018/Syntaxes/ABAP.tmLanguage',
   },
   {
-    byteSize: 13605,
+    byteSize: 13598,
     categories: [
       'scripting',
     ],
@@ -39,7 +39,7 @@ export const grammars = [
     source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/68bf5d056fb2001484618a51fff545aa3777bd97/distribution/src/assembly/syntaxes/AS3.tmLanguage',
   },
   {
-    byteSize: 46492,
+    byteSize: 46479,
     displayName: 'Ada',
     funding: [
     ],
@@ -77,7 +77,7 @@ export const grammars = [
     source: 'https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
   },
   {
-    byteSize: 165353,
+    byteSize: 163902,
     categories: [
       'web',
     ],
@@ -102,7 +102,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
   },
   {
-    byteSize: 12129,
+    byteSize: 12111,
     displayName: 'Apache Conf',
     funding: [
     ],
@@ -116,7 +116,7 @@ export const grammars = [
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07/ApacheConf.tmLanguage',
   },
   {
-    byteSize: 44667,
+    byteSize: 44629,
     displayName: 'Apex',
     funding: [
     ],
@@ -130,7 +130,7 @@ export const grammars = [
     source: 'https://github.com/forcedotcom/apex-tmLanguage/blob/1d3c7097c8e50b4f4163c9e27b450fcd45f40a5e/grammars/apex.tmLanguage',
   },
   {
-    byteSize: 23363,
+    byteSize: 23233,
     displayName: 'APL',
     embedded: [
       'html',
@@ -149,7 +149,7 @@ export const grammars = [
     source: 'https://github.com/kimmolinna/vscode-apl-language/blob/13541242d9ffae225e89ebba23f9abaa4c60697e/syntaxes/apl.tmLanguage.json',
   },
   {
-    byteSize: 28477,
+    byteSize: 28483,
     categories: [
       'scripting',
     ],
@@ -164,7 +164,7 @@ export const grammars = [
     source: 'https://github.com/textmate/applescript.tmbundle/blob/4947cad7494eba084c21cfe04689b4efce96700f/Syntaxes/AppleScript.tmLanguage',
   },
   {
-    byteSize: 6084,
+    byteSize: 6059,
     displayName: 'Ara',
     funding: [
     ],
@@ -181,7 +181,7 @@ export const grammars = [
     aliases: [
       'adoc',
     ],
-    byteSize: 84171,
+    byteSize: 83855,
     categories: [
       'markup',
     ],
@@ -255,7 +255,7 @@ export const grammars = [
     source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/15c07b12741ac75f5bb6e7701dc7c0d742add8dd/syntaxes/language-x86_64-assembly.tmLanguage',
   },
   {
-    byteSize: 23488,
+    byteSize: 23467,
     categories: [
       'web',
     ],
@@ -299,7 +299,7 @@ export const grammars = [
     source: 'https://github.com/withastro/language-tools/blob/8e55c37cbcf134dedf0068781245da5a9d46d081/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
   },
   {
-    byteSize: 5292,
+    byteSize: 5284,
     displayName: 'AWK',
     funding: [
     ],
@@ -313,7 +313,7 @@ export const grammars = [
     source: 'https://github.com/luggage66/vscode-awk/blob/eff8c0f160ae16592c8d9963fd77046137fd2612/syntaxes/awk.tmLanguage',
   },
   {
-    byteSize: 55876,
+    byteSize: 55697,
     displayName: 'Ballerina',
     funding: [
     ],
@@ -330,7 +330,7 @@ export const grammars = [
     aliases: [
       'batch',
     ],
-    byteSize: 12618,
+    byteSize: 12602,
     categories: [
       'scripting',
     ],
@@ -347,7 +347,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/df15c8e832a341633acd2e9bb26e1b275d09cfe0/extensions/bat/syntaxes/batchfile.tmLanguage.json',
   },
   {
-    byteSize: 9961,
+    byteSize: 9893,
     displayName: 'Beancount',
     funding: [
     ],
@@ -364,7 +364,7 @@ export const grammars = [
     aliases: [
       'be',
     ],
-    byteSize: 2115,
+    byteSize: 2112,
     displayName: 'Berry',
     funding: [
     ],
@@ -378,7 +378,7 @@ export const grammars = [
     source: 'https://github.com/berry-lang/berry/blob/a0f5c044a3b593deaf87292ca6f04c2343e53dc8/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
   },
   {
-    byteSize: 4943,
+    byteSize: 4635,
     categories: [
       'markup',
     ],
@@ -395,7 +395,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
   },
   {
-    byteSize: 3982,
+    byteSize: 3978,
     displayName: 'Bicep',
     funding: [
     ],
@@ -409,7 +409,7 @@ export const grammars = [
     source: 'https://github.com/Azure/bicep/blob/8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e/src/textmate/bicep.tmlanguage',
   },
   {
-    byteSize: 101380,
+    byteSize: 101300,
     categories: [
       'web',
       'markup',
@@ -439,7 +439,7 @@ export const grammars = [
     aliases: [
       '1c',
     ],
-    byteSize: 33381,
+    byteSize: 33379,
     categories: [
       'general',
       'dsl',
@@ -460,7 +460,7 @@ export const grammars = [
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/2cde5a65a17b82b5363affadf5a620ebb0a026dc/syntaxes/1c.tmLanguage.json',
   },
   {
-    byteSize: 69939,
+    byteSize: 69763,
     categories: [
       'general',
     ],
@@ -480,7 +480,7 @@ export const grammars = [
     aliases: [
       'cdc',
     ],
-    byteSize: 10121,
+    byteSize: 10109,
     displayName: 'Cadence',
     funding: [
     ],
@@ -514,7 +514,7 @@ export const grammars = [
     source: 'https://github.com/starkware-libs/cairo-lang/blob/4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
   },
   {
-    byteSize: 13644,
+    byteSize: 13643,
     categories: [
       'lisp',
     ],
@@ -534,7 +534,7 @@ export const grammars = [
     aliases: [
       'clj',
     ],
-    byteSize: 6213,
+    byteSize: 6164,
     categories: [
       'general',
       'lisp',
@@ -569,7 +569,7 @@ export const grammars = [
     source: 'https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage',
   },
   {
-    byteSize: 38493,
+    byteSize: 38378,
     displayName: 'COBOL',
     embedded: [
       'html',
@@ -604,7 +604,7 @@ export const grammars = [
     aliases: [
       'ql',
     ],
-    byteSize: 26415,
+    byteSize: 26408,
     displayName: 'CodeQL',
     funding: [
     ],
@@ -621,7 +621,7 @@ export const grammars = [
     aliases: [
       'coffeescript',
     ],
-    byteSize: 26546,
+    byteSize: 26522,
     categories: [
       'web',
       'scripting',
@@ -646,7 +646,7 @@ export const grammars = [
     aliases: [
       'lisp',
     ],
-    byteSize: 22513,
+    byteSize: 22237,
     categories: [
       'general',
       'lisp',
@@ -664,7 +664,7 @@ export const grammars = [
     source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json',
   },
   {
-    byteSize: 5014,
+    byteSize: 5008,
     categories: [
       'general',
     ],
@@ -684,7 +684,7 @@ export const grammars = [
     aliases: [
       'c++',
     ],
-    byteSize: 385410,
+    byteSize: 383263,
     categories: [
       'general',
     ],
@@ -707,7 +707,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.tmLanguage.json',
   },
   {
-    byteSize: 28092,
+    byteSize: 28057,
     displayName: 'Crystal',
     embedded: [
       'html',
@@ -733,7 +733,7 @@ export const grammars = [
       'c#',
       'cs',
     ],
-    byteSize: 82393,
+    byteSize: 82329,
     categories: [
       'general',
     ],
@@ -750,7 +750,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/a26707320440021f45b508767c94c2634eb6e897/extensions/csharp/syntaxes/csharp.tmLanguage.json',
   },
   {
-    byteSize: 48088,
+    byteSize: 48067,
     categories: [
       'web',
     ],
@@ -784,7 +784,7 @@ export const grammars = [
     source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/3bdafafa12940a75166089b64bdd80b1d3b071db/syntaxes/csv.tmLanguage.json',
   },
   {
-    byteSize: 15461,
+    byteSize: 15455,
     displayName: 'CUE',
     funding: [
     ],
@@ -801,7 +801,7 @@ export const grammars = [
     aliases: [
       'cql',
     ],
-    byteSize: 5679,
+    byteSize: 5682,
     displayName: 'Cypher',
     funding: [
     ],
@@ -815,7 +815,7 @@ export const grammars = [
     source: 'https://github.com/adam-cowley/neo4j-vscode/blob/ad90d275ac76c740018e78f78722343f730270e0/cypher/cypher.tmLanguage',
   },
   {
-    byteSize: 42186,
+    byteSize: 42163,
     displayName: 'D',
     funding: [
       {
@@ -839,7 +839,7 @@ export const grammars = [
     source: 'https://github.com/Pure-D/code-d/blob/71992a1a52a3025f3333e4025eee0f255a8cda03/syntaxes/d.json',
   },
   {
-    byteSize: 7430,
+    byteSize: 7428,
     categories: [
       'general',
     ],
@@ -856,7 +856,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/dart/syntaxes/dart.tmLanguage.json',
   },
   {
-    byteSize: 5349,
+    byteSize: 5347,
     displayName: 'DAX',
     funding: [
     ],
@@ -868,7 +868,7 @@ export const grammars = [
     source: 'https://github.com/huyza/dax-language/blob/7fd39aa84552617daa258189b2550dcdbd14149a/syntaxes/dax.grammer.json',
   },
   {
-    byteSize: 1822,
+    byteSize: 1731,
     categories: [
       'config',
     ],
@@ -889,7 +889,7 @@ export const grammars = [
     source: 'https://github.com/nico-castell/desktop-file-support/blob/63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e/syntaxes/desktop.tmLanguage.json',
   },
   {
-    byteSize: 2441,
+    byteSize: 2437,
     categories: [
       'utility',
     ],
@@ -926,7 +926,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/docker/syntaxes/docker.tmLanguage.json',
   },
   {
-    byteSize: 1341,
+    byteSize: 1331,
     displayName: 'dotEnv',
     funding: [
     ],
@@ -940,7 +940,7 @@ export const grammars = [
     source: 'https://github.com/dotenv-org/dotenv-vscode/blob/e7e41baa5b23e01c1ff0567a4e596c24860e7def/syntaxes/dotenv.tmLanguage.json',
   },
   {
-    byteSize: 9942,
+    byteSize: 9940,
     displayName: 'Dream Maker',
     funding: [
     ],
@@ -971,7 +971,7 @@ export const grammars = [
     source: 'https://github.com/edge-js/edge-vscode/blob/04352c41981ca664598674556afa63bd393a10f3/syntaxes/edge.tmLanguage.json',
   },
   {
-    byteSize: 15571,
+    byteSize: 15560,
     displayName: 'Elixir',
     embedded: [
       'html',
@@ -988,7 +988,7 @@ export const grammars = [
     source: 'https://github.com/elixir-editors/elixir-tmbundle/blob/43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9/Syntaxes/Elixir.tmLanguage',
   },
   {
-    byteSize: 10568,
+    byteSize: 10526,
     displayName: 'Elm',
     embedded: [
       'glsl',
@@ -1023,7 +1023,7 @@ export const grammars = [
     aliases: [
       'elisp',
     ],
-    byteSize: 780871,
+    byteSize: 780846,
     categories: [
       'lisp',
     ],
@@ -1059,7 +1059,7 @@ export const grammars = [
     aliases: [
       'erl',
     ],
-    byteSize: 34520,
+    byteSize: 34455,
     displayName: 'Erlang',
     funding: [
     ],
@@ -1090,7 +1090,7 @@ export const grammars = [
     source: 'https://github.com/kongeor/vsc-fennel/blob/664148923d7bd72531120d0cba712c6dba6f698d/syntaxes/fennel.tmLanguage.json',
   },
   {
-    byteSize: 3985,
+    byteSize: 3971,
     categories: [
       'scripting',
     ],
@@ -1110,7 +1110,7 @@ export const grammars = [
     aliases: [
       'ftl',
     ],
-    byteSize: 3467,
+    byteSize: 3466,
     displayName: 'Fluent',
     funding: [
     ],
@@ -1153,7 +1153,7 @@ export const grammars = [
       'f08',
       'f18',
     ],
-    byteSize: 84163,
+    byteSize: 84135,
     displayName: 'Fortran (Free Form)',
     funding: [
     ],
@@ -1171,7 +1171,7 @@ export const grammars = [
       'f#',
       'fs',
     ],
-    byteSize: 24496,
+    byteSize: 24473,
     categories: [
       'general',
     ],
@@ -1191,7 +1191,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
   },
   {
-    byteSize: 4853,
+    byteSize: 4850,
     displayName: 'GDResource',
     embedded: [
       'gdshader',
@@ -1213,7 +1213,7 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 18318,
+    byteSize: 18306,
     displayName: 'GDScript',
     funding: [
       {
@@ -1231,7 +1231,7 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/0203cec2938650a3ec3af4e1f14a98a7b929fffc/syntaxes/GDScript.tmLanguage.json',
   },
   {
-    byteSize: 6049,
+    byteSize: 6048,
     displayName: 'GDShader',
     funding: [
       {
@@ -1263,7 +1263,7 @@ export const grammars = [
     source: 'https://github.com/vala-lang/vala-vscode/blob/8f825e95648326df2572d0522632251cdff4a43b/syntaxes/genie.YAML-tmLanguage',
   },
   {
-    byteSize: 12425,
+    byteSize: 11938,
     displayName: 'Gherkin',
     funding: [
     ],
@@ -1277,7 +1277,7 @@ export const grammars = [
     source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/fbb554addf81e8961b58b1577924af10fecf9694/syntaxes/feature.tmLanguage.json',
   },
   {
-    byteSize: 1088,
+    byteSize: 1090,
     categories: [
       'utility',
     ],
@@ -1317,7 +1317,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
-    byteSize: 2501,
+    byteSize: 2482,
     displayName: 'Gleam',
     funding: [
     ],
@@ -1334,7 +1334,7 @@ export const grammars = [
     aliases: [
       'gjs',
     ],
-    byteSize: 19524,
+    byteSize: 19510,
     displayName: 'Glimmer JS',
     embedded: [
       'javascript',
@@ -1357,7 +1357,7 @@ export const grammars = [
     aliases: [
       'gts',
     ],
-    byteSize: 19524,
+    byteSize: 19510,
     displayName: 'Glimmer TS',
     embedded: [
       'typescript',
@@ -1377,7 +1377,7 @@ export const grammars = [
     source: 'https://github.com/lifeart/vsc-ember-syntax/blob/76fce7b360ce09a78789e7d5217b8955d1a5d95f/syntaxes/source.gts.json',
   },
   {
-    byteSize: 3495,
+    byteSize: 3484,
     displayName: 'GLSL',
     embedded: [
       'c',
@@ -1392,7 +1392,7 @@ export const grammars = [
     source: 'https://github.com/polym0rph/GLSL.tmbundle/blob/6998d3bbd204e26746a5ca580cda4c650b9057b1/Syntaxes/GLSL.tmLanguage',
   },
   {
-    byteSize: 14090,
+    byteSize: 14085,
     displayName: 'Gnuplot',
     funding: [
     ],
@@ -1406,7 +1406,7 @@ export const grammars = [
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
   },
   {
-    byteSize: 43177,
+    byteSize: 42925,
     categories: [
       'general',
     ],
@@ -1449,7 +1449,7 @@ export const grammars = [
     source: 'https://github.com/prisma-labs/vscode-graphql/blob/4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d/grammars/graphql.json',
   },
   {
-    byteSize: 18621,
+    byteSize: 18603,
     categories: [
       'general',
     ],
@@ -1466,7 +1466,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/groovy/syntaxes/groovy.tmLanguage.json',
   },
   {
-    byteSize: 78822,
+    byteSize: 78617,
     categories: [
       'general',
     ],
@@ -1487,7 +1487,7 @@ export const grammars = [
     source: 'https://github.com/slackhq/vscode-hack/blob/2da10a05b70c9aae672f25bc218fe92d44522408/syntaxes/hack.json',
   },
   {
-    byteSize: 7733,
+    byteSize: 7719,
     categories: [
       'markup',
       'web',
@@ -1516,7 +1516,7 @@ export const grammars = [
     aliases: [
       'hbs',
     ],
-    byteSize: 11689,
+    byteSize: 11676,
     categories: [
       'web',
     ],
@@ -1542,7 +1542,7 @@ export const grammars = [
     aliases: [
       'hs',
     ],
-    byteSize: 39628,
+    byteSize: 39448,
     categories: [
       'general',
     ],
@@ -1564,7 +1564,7 @@ export const grammars = [
     source: 'https://github.com/octref/language-haskell/blob/ae87982aac2bf5cf6334c067e49c5ec8fc08b871/syntaxes/haskell.json',
   },
   {
-    byteSize: 34311,
+    byteSize: 34325,
     categories: [
       'general',
     ],
@@ -1581,7 +1581,7 @@ export const grammars = [
     source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/c1b9bc8952c83c4469e8cdeb4a1e5a6492fd8c87/haxe.YAML-tmLanguage',
   },
   {
-    byteSize: 9718,
+    byteSize: 9714,
     displayName: 'HashiCorp HCL',
     funding: [
     ],
@@ -1595,7 +1595,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/2ec7cd10c9d6134e836bf85eb0f5aa010512bff4/syntaxes/hcl.tmGrammar.json',
   },
   {
-    byteSize: 11677,
+    byteSize: 11647,
     categories: [
       'data',
     ],
@@ -1612,7 +1612,7 @@ export const grammars = [
     source: 'https://github.com/hjson/textmate-hjson/blob/196075169c9a9f9ab04c8e7423b67ea72c976237/Syntaxes/Hjson.tmLanguage',
   },
   {
-    byteSize: 7044,
+    byteSize: 7022,
     categories: [
       'dsl',
     ],
@@ -1629,7 +1629,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/efa12b2f49ec6ee84ed1e7bbd948808efec452f6/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
   },
   {
-    byteSize: 56477,
+    byteSize: 56431,
     categories: [
       'web',
       'markup',
@@ -1716,7 +1716,7 @@ export const grammars = [
     source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/cf8117cb69876af5fbac537860ffc73928fe2571/hxml.YAML-tmLanguage',
   },
   {
-    byteSize: 2534,
+    byteSize: 2501,
     categories: [
       'lisp',
     ],
@@ -1733,7 +1733,7 @@ export const grammars = [
     source: 'https://github.com/hylang/vscode-hy/blob/8f99630793b7483cf4cac10a655da6fed08a4f9f/syntaxes/hy.tmLanguage.json',
   },
   {
-    byteSize: 48423,
+    byteSize: 48266,
     categories: [
       'web',
     ],
@@ -1770,7 +1770,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/ini/syntaxes/ini.tmLanguage.json',
   },
   {
-    byteSize: 26372,
+    byteSize: 26347,
     categories: [
       'general',
     ],
@@ -1790,7 +1790,7 @@ export const grammars = [
     aliases: [
       'js',
     ],
-    byteSize: 160470,
+    byteSize: 159343,
     categories: [
       'web',
       'scripting',
@@ -1856,7 +1856,7 @@ export const grammars = [
     source: 'https://github.com/cdibbs/language-jison/blob/9d4cb4b044832320a51fabb6e533fc299425f552/grammars/jison.cson',
   },
   {
-    byteSize: 2707,
+    byteSize: 2705,
     categories: [
       'web',
       'data',
@@ -1874,7 +1874,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/d6af4893ed9a3545163a4cb748fa5548bd1e51a5/extensions/json/syntaxes/JSON.tmLanguage.json',
   },
   {
-    byteSize: 3123,
+    byteSize: 3118,
     categories: [
       'data',
       'web',
@@ -1892,7 +1892,7 @@ export const grammars = [
     source: 'https://github.com/mrmlnc/vscode-json5/blob/e884b89929103ff009322c393080ff45a4544e88/syntaxes/json5.json',
   },
   {
-    byteSize: 2992,
+    byteSize: 2990,
     categories: [
       'web',
       'data',
@@ -1910,7 +1910,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONC.tmLanguage.json',
   },
   {
-    byteSize: 2894,
+    byteSize: 2892,
     categories: [
       'web',
       'data',
@@ -1928,7 +1928,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONL.tmLanguage.json',
   },
   {
-    byteSize: 3378,
+    byteSize: 3382,
     displayName: 'Jsonnet',
     funding: [
     ],
@@ -1945,7 +1945,7 @@ export const grammars = [
     aliases: [
       'fsl',
     ],
-    byteSize: 2131,
+    byteSize: 2129,
     displayName: 'JSSM',
     funding: [
     ],
@@ -1959,7 +1959,7 @@ export const grammars = [
     source: 'https://github.com/StoneCypher/sublime-jssm/blob/2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef/jssm.tmLanguage',
   },
   {
-    byteSize: 163464,
+    byteSize: 162337,
     categories: [
       'web',
     ],
@@ -1979,7 +1979,7 @@ export const grammars = [
     aliases: [
       'jl',
     ],
-    byteSize: 30827,
+    byteSize: 28820,
     categories: [
       'web',
       'data',
@@ -2040,7 +2040,7 @@ export const grammars = [
     source: 'https://github.com/rosshamish/kuskus/blob/2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
   },
   {
-    byteSize: 55950,
+    byteSize: 55909,
     categories: [
       'markup',
     ],
@@ -2079,7 +2079,7 @@ export const grammars = [
     aliases: [
       'lean4',
     ],
-    byteSize: 3861,
+    byteSize: 3857,
     categories: [
       'general',
     ],
@@ -2096,7 +2096,7 @@ export const grammars = [
     source: 'https://github.com/leanprover/vscode-lean4/blob/2255bc20c9d28d868d04fb91428652a95cc87a92/vscode-lean4/syntaxes/lean4.json',
   },
   {
-    byteSize: 94868,
+    byteSize: 94847,
     categories: [
       'web',
     ],
@@ -2113,7 +2113,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/less/syntaxes/less.tmLanguage.json',
   },
   {
-    byteSize: 17040,
+    byteSize: 17028,
     displayName: 'Liquid',
     embedded: [
       'html',
@@ -2133,7 +2133,7 @@ export const grammars = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/38264742ed4f048e4f4e910067c9503b9506eb62/grammars/liquid.tmLanguage.json',
   },
   {
-    byteSize: 5475,
+    byteSize: 4642,
     categories: [
       'dsl',
     ],
@@ -2179,7 +2179,7 @@ export const grammars = [
     source: 'https://github.com/textmate/logo.tmbundle/blob/3205e987ed2a2aa11accdd55a7d094832441f89c/Syntaxes/Logo.tmLanguage',
   },
   {
-    byteSize: 14516,
+    byteSize: 14503,
     categories: [
       'scripting',
     ],
@@ -2199,7 +2199,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json',
   },
   {
-    byteSize: 12215,
+    byteSize: 12199,
     displayName: 'Luau',
     funding: [
     ],
@@ -2216,7 +2216,7 @@ export const grammars = [
     aliases: [
       'makefile',
     ],
-    byteSize: 8629,
+    byteSize: 8619,
     categories: [
       'config',
     ],
@@ -2236,7 +2236,7 @@ export const grammars = [
     aliases: [
       'md',
     ],
-    byteSize: 53190,
+    byteSize: 53097,
     categories: [
       'web',
       'markup',
@@ -2310,7 +2310,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
   },
   {
-    byteSize: 16160,
+    byteSize: 16149,
     categories: [
       'web',
       'markup',
@@ -2334,7 +2334,7 @@ export const grammars = [
     source: 'https://github.com/marko-js/marko-tmbundle/blob/dd3a0c39e656bedd276d3bcbdea92a2d627755c7/Syntaxes/marko.tmLanguage',
   },
   {
-    byteSize: 15408,
+    byteSize: 15285,
     displayName: 'MATLAB',
     funding: [
     ],
@@ -2346,7 +2346,7 @@ export const grammars = [
     source: 'https://github.com/mathworks/MATLAB-Language-grammar/blob/69dbf20c1eb19efd629c0438a2a493e60617e8de/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage',
   },
   {
-    byteSize: 19185,
+    byteSize: 19155,
     categories: [
       'web',
       'markup',
@@ -2369,7 +2369,7 @@ export const grammars = [
     source: 'https://github.com/nuxtlabs/vscode-mdc/blob/96f619ccd8df724e5bd94eb28b87e03b769a8c41/syntaxes/mdc.standalone.tmLanguage.json',
   },
   {
-    byteSize: 130985,
+    byteSize: 130893,
     categories: [
       'web',
       'markup',
@@ -2434,7 +2434,7 @@ export const grammars = [
     aliases: [
       'mmd',
     ],
-    byteSize: 26630,
+    byteSize: 26149,
     displayName: 'Mermaid',
     funding: [
     ],
@@ -2463,7 +2463,7 @@ export const grammars = [
     source: 'https://github.com/textmate/mips.tmbundle/blob/eb7601016a109bf912a48a1c21988f3c4a59fb3a/Syntaxes/MIPS.tmLanguage',
   },
   {
-    byteSize: 67583,
+    byteSize: 67532,
     displayName: 'Mojo',
     funding: [
     ],
@@ -2477,7 +2477,7 @@ export const grammars = [
     source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
   },
   {
-    byteSize: 16553,
+    byteSize: 16547,
     displayName: 'Move',
     funding: [
     ],
@@ -2494,7 +2494,7 @@ export const grammars = [
     aliases: [
       'nar',
     ],
-    byteSize: 3465,
+    byteSize: 3464,
     displayName: 'Narrat Language',
     funding: [
     ],
@@ -2511,7 +2511,7 @@ export const grammars = [
     aliases: [
       'nf',
     ],
-    byteSize: 3738,
+    byteSize: 3736,
     displayName: 'Nextflow',
     funding: [
     ],
@@ -2525,7 +2525,7 @@ export const grammars = [
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/f83f4d1a5b015ff03570f069f6c6a1d6ee8f7f03/syntaxes/nextflow.tmLanguage.json',
   },
   {
-    byteSize: 34717,
+    byteSize: 34695,
     categories: [
       'config',
     ],
@@ -2545,7 +2545,7 @@ export const grammars = [
     source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/49159c02fd09dce264ded7802c9499a0f09646f5/src/syntax/nginx.tmLanguage',
   },
   {
-    byteSize: 21295,
+    byteSize: 21289,
     displayName: 'Nim',
     embedded: [
       'c',
@@ -2568,7 +2568,7 @@ export const grammars = [
     source: 'https://github.com/pragmagic/vscode-nim/blob/0272a0544ddf147fde98f8a8f2b624b7dcb19eb3/syntaxes/nim.json',
   },
   {
-    byteSize: 14409,
+    byteSize: 14309,
     displayName: 'Nix',
     funding: [
       {
@@ -2590,7 +2590,7 @@ export const grammars = [
     aliases: [
       'nu',
     ],
-    byteSize: 19192,
+    byteSize: 19110,
     displayName: 'nushell',
     funding: [
     ],
@@ -2607,7 +2607,7 @@ export const grammars = [
     aliases: [
       'objc',
     ],
-    byteSize: 104414,
+    byteSize: 103226,
     categories: [
       'general',
     ],
@@ -2624,7 +2624,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
   },
   {
-    byteSize: 169031,
+    byteSize: 167686,
     categories: [
       'general',
     ],
@@ -2641,7 +2641,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
   },
   {
-    byteSize: 61616,
+    byteSize: 60761,
     categories: [
       'general',
     ],
@@ -2689,7 +2689,7 @@ export const grammars = [
     source: 'https://github.com/alefragnani/vscode-language-pascal/blob/f2d6345bd9fe83932f4d04fcacf98ce7d74b8034/syntaxes/pascal.tmLanguage',
   },
   {
-    byteSize: 41945,
+    byteSize: 41876,
     categories: [
       'general',
     ],
@@ -2713,7 +2713,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e637ff1bf7f481134849625e982ec80df9b35bc8/extensions/perl/syntaxes/perl.tmLanguage.json',
   },
   {
-    byteSize: 106266,
+    byteSize: 106205,
     categories: [
       'general',
       'web',
@@ -2739,7 +2739,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/php/syntaxes/php.tmLanguage.json',
   },
   {
-    byteSize: 8165,
+    byteSize: 8164,
     displayName: 'PL/SQL',
     funding: [
     ],
@@ -2772,7 +2772,7 @@ export const grammars = [
     source: 'https://github.com/textmate/gettext.tmbundle/blob/08bb69558d82ada8d4f36b8869f871ce69014749/Syntaxes/Gettext.tmLanguage',
   },
   {
-    byteSize: 4476,
+    byteSize: 4474,
     displayName: 'Polar',
     funding: [
     ],
@@ -2786,7 +2786,7 @@ export const grammars = [
     source: 'https://github.com/osohq/polar-grammar/blob/1a87b3a7f2b47aea681a0f627b2297f77171d1c3/syntaxes/polar.tmLanguage.json',
   },
   {
-    byteSize: 6199,
+    byteSize: 6195,
     categories: [
       'web',
     ],
@@ -2813,7 +2813,7 @@ export const grammars = [
     source: 'https://github.com/vuejs/vetur/blob/8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c/syntaxes/vue-postcss.json',
   },
   {
-    byteSize: 5633,
+    byteSize: 5631,
     displayName: 'PowerQuery',
     funding: [
     ],
@@ -2831,7 +2831,7 @@ export const grammars = [
       'ps',
       'ps1',
     ],
-    byteSize: 19624,
+    byteSize: 19616,
     displayName: 'PowerShell',
     funding: [
     ],
@@ -2893,7 +2893,7 @@ export const grammars = [
     aliases: [
       'jade',
     ],
-    byteSize: 13044,
+    byteSize: 13039,
     categories: [
       'web',
       'markup',
@@ -2920,7 +2920,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/pug/syntaxes/pug.tmLanguage.json',
   },
   {
-    byteSize: 11067,
+    byteSize: 11065,
     displayName: 'Puppet',
     funding: [
       {
@@ -2939,7 +2939,7 @@ export const grammars = [
     source: 'https://github.com/octref/puppet-vscode/blob/42e02ef6c02aefb0dcf03f8367fdc106d7213a6c/syntaxes/puppet.tmLanguage',
   },
   {
-    byteSize: 21767,
+    byteSize: 21697,
     displayName: 'PureScript',
     funding: [
     ],
@@ -2956,7 +2956,7 @@ export const grammars = [
     aliases: [
       'py',
     ],
-    byteSize: 68207,
+    byteSize: 68156,
     categories: [
       'general',
     ],
@@ -2973,7 +2973,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/cf4c9e469d521fa5f33353737e8157eb0789ad02/extensions/python/syntaxes/MagicPython.tmLanguage.json',
   },
   {
-    byteSize: 5034,
+    byteSize: 5032,
     categories: [
       'dsl',
     ],
@@ -3010,7 +3010,7 @@ export const grammars = [
     source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b/syntaxes/qmldir.tmLanguage.json',
   },
   {
-    byteSize: 7566,
+    byteSize: 7294,
     categories: [
       'dsl',
     ],
@@ -3027,7 +3027,7 @@ export const grammars = [
     source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d/syntaxes/qss.tmLanguage.json',
   },
   {
-    byteSize: 34462,
+    byteSize: 34439,
     categories: [
       'data',
     ],
@@ -3044,7 +3044,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/r/syntaxes/r.tmLanguage.json',
   },
   {
-    byteSize: 91542,
+    byteSize: 91404,
     categories: [
       'lisp',
     ],
@@ -3086,7 +3086,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/perl/syntaxes/perl6.tmLanguage.json',
   },
   {
-    byteSize: 24893,
+    byteSize: 24883,
     displayName: 'ASP.NET Razor',
     embedded: [
       'html',
@@ -3104,7 +3104,7 @@ export const grammars = [
     source: 'https://github.com/dotnet/razor/blob/9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
   },
   {
-    byteSize: 2245,
+    byteSize: 2239,
     categories: [
       'dsl',
     ],
@@ -3138,7 +3138,7 @@ export const grammars = [
     source: 'https://github.com/MagicStack/MagicPython/blob/c9b3409deb69acec31bbf7913830e93a046b30cc/grammars/MagicRegExp.tmLanguage',
   },
   {
-    byteSize: 3222,
+    byteSize: 3220,
     displayName: 'Rel',
     funding: [
     ],
@@ -3150,7 +3150,7 @@ export const grammars = [
     source: 'https://github.com/relationalai-oss/rel_vscode/blob/63dda4dee48c67b037357f47b562185484555ea9/syntaxes/rel.tmLanguage.json',
   },
   {
-    byteSize: 6573,
+    byteSize: 6571,
     displayName: 'RISC-V',
     funding: [
     ],
@@ -3194,7 +3194,7 @@ export const grammars = [
     aliases: [
       'rb',
     ],
-    byteSize: 44687,
+    byteSize: 44652,
     categories: [
       'general',
     ],
@@ -3228,7 +3228,7 @@ export const grammars = [
     aliases: [
       'rs',
     ],
-    byteSize: 14707,
+    byteSize: 14689,
     categories: [
       'general',
     ],
@@ -3245,7 +3245,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/rust/syntaxes/rust.tmLanguage.json',
   },
   {
-    byteSize: 8980,
+    byteSize: 8977,
     displayName: 'SAS',
     embedded: [
       'sql',
@@ -3262,7 +3262,7 @@ export const grammars = [
     source: 'https://github.com/rpardee/sas/blob/49f6e733c6c0b918a2a825ca2f63dba704f3e8c0/syntaxes/sas.tmLanguage',
   },
   {
-    byteSize: 8977,
+    byteSize: 8971,
     categories: [
       'web',
     ],
@@ -3279,7 +3279,7 @@ export const grammars = [
     source: 'https://github.com/TheRealSyler/vscode-sass-indented/blob/f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f/syntaxes/sass.tmLanguage.json',
   },
   {
-    byteSize: 27275,
+    byteSize: 26953,
     displayName: 'Scala',
     funding: [
     ],
@@ -3293,7 +3293,7 @@ export const grammars = [
     source: 'https://github.com/scala/vscode-scala-syntax/blob/1d4029f21c9c57ce3e05486968b5de2847c25c62/syntaxes/Scala.tmLanguage.json',
   },
   {
-    byteSize: 6973,
+    byteSize: 6926,
     categories: [
       'general',
       'lisp',
@@ -3311,7 +3311,7 @@ export const grammars = [
     source: 'https://github.com/sjhuangx/vscode-scheme/blob/4e21683666e1e2edfa21d040ecd427f628e7b5ff/syntaxes/scheme.tmLanguage',
   },
   {
-    byteSize: 26434,
+    byteSize: 26425,
     categories: [
       'web',
     ],
@@ -3334,7 +3334,7 @@ export const grammars = [
     aliases: [
       '1c-query',
     ],
-    byteSize: 4480,
+    byteSize: 4478,
     categories: [
       'dsl',
     ],
@@ -3354,7 +3354,7 @@ export const grammars = [
     aliases: [
       'shader',
     ],
-    byteSize: 5655,
+    byteSize: 5647,
     categories: [
       'dsl',
     ],
@@ -3380,7 +3380,7 @@ export const grammars = [
       'shell',
       'zsh',
     ],
-    byteSize: 40033,
+    byteSize: 39930,
     categories: [
       'scripting',
     ],
@@ -3420,7 +3420,7 @@ export const grammars = [
     source: 'https://github.com/hronro/sublime-linguist-syntax/blob/9c84f1d69dbe89bc23292f129cf2d408a9c7afe1/syntaxes/ShellSession.tmLanguage',
   },
   {
-    byteSize: 3692,
+    byteSize: 3686,
     displayName: 'Smalltalk',
     funding: [
     ],
@@ -3434,7 +3434,7 @@ export const grammars = [
     source: 'https://github.com/leocamello/vscode-smalltalk/blob/bc888519a21740b4dbd4edcf2f884c61855dc58b/syntaxes/smalltalk.tmLanguage.json',
   },
   {
-    byteSize: 15585,
+    byteSize: 15577,
     displayName: 'Solidity',
     funding: [
     ],
@@ -3451,7 +3451,7 @@ export const grammars = [
     aliases: [
       'closure-templates',
     ],
-    byteSize: 6562,
+    byteSize: 6555,
     displayName: 'Closure Templates',
     embedded: [
       'html',
@@ -3468,7 +3468,7 @@ export const grammars = [
     source: 'https://github.com/mthadley/language-closure-templates/blob/7caf3a1fad0245c4196d3766ba0f481762fbc92e/grammars/closure-templates.json',
   },
   {
-    byteSize: 1336,
+    byteSize: 1330,
     displayName: 'SPARQL',
     embedded: [
       'turtle',
@@ -3486,7 +3486,7 @@ export const grammars = [
     aliases: [
       'spl',
     ],
-    byteSize: 3279,
+    byteSize: 3280,
     displayName: 'Splunk Query Language',
     funding: [
     ],
@@ -3529,7 +3529,7 @@ export const grammars = [
     source: 'https://github.com/textmate/ssh-config.tmbundle/blob/212a0000c50e0c877303b2c4fcead539d2af2670/Syntaxes/SSH-Config.tmLanguage',
   },
   {
-    byteSize: 56468,
+    byteSize: 56439,
     displayName: 'Stata',
     embedded: [
       'sql',
@@ -3549,7 +3549,7 @@ export const grammars = [
     aliases: [
       'styl',
     ],
-    byteSize: 30478,
+    byteSize: 30428,
     categories: [
       'web',
     ],
@@ -3571,7 +3571,7 @@ export const grammars = [
     source: 'https://github.com/d4rkr00t/language-stylus/blob/198a851f385aee857332f3ce5dd981ff67720ead/syntaxes/stylus.json',
   },
   {
-    byteSize: 16390,
+    byteSize: 16384,
     categories: [
       'web',
     ],
@@ -3606,7 +3606,7 @@ export const grammars = [
     source: 'https://github.com/sveltejs/language-tools/blob/52e80f2fb4c37bec9405fde356ea5d1f789123af/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml',
   },
   {
-    byteSize: 83614,
+    byteSize: 83229,
     categories: [
       'general',
     ],
@@ -3633,7 +3633,7 @@ export const grammars = [
     source: 'https://github.com/jtbandes/swift-tmlanguage/blob/b8d2889b4af1d8bad41578317a6adade642555a3/Swift.tmLanguage.yaml',
   },
   {
-    byteSize: 24969,
+    byteSize: 24804,
     displayName: 'SystemVerilog',
     funding: [
       {
@@ -3651,7 +3651,7 @@ export const grammars = [
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2/syntaxes/systemverilog.tmLanguage.json',
   },
   {
-    byteSize: 7589,
+    byteSize: 7578,
     categories: [
       'config',
     ],
@@ -3671,7 +3671,7 @@ export const grammars = [
     aliases: [
       'talon',
     ],
-    byteSize: 6347,
+    byteSize: 6337,
     categories: [
       'scripting',
       'dsl',
@@ -3683,14 +3683,14 @@ export const grammars = [
     hash: '48eZ5T_g0tyhVg5yrGBrY_-2QzQf0_HZAb1m2e5sF-Q',
     lastUpdate: '2025-02-08T02:47:13Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mrob95/vscode-TalonScript/master/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/mirober/vscode-TalonScript/master/LICENSE',
     name: 'talonscript',
     scopeName: 'source.talon',
     sha: '2ac0a7b9e7dd2ea59d5a1d79934c1f407493a0fa',
     source: 'https://github.com/mrob95/vscode-TalonScript/blob/2ac0a7b9e7dd2ea59d5a1d79934c1f407493a0fa/syntaxes/talon.tmLanguage.json',
   },
   {
-    byteSize: 3250,
+    byteSize: 3178,
     displayName: 'Tasl',
     funding: [
     ],
@@ -3704,7 +3704,7 @@ export const grammars = [
     source: 'https://github.com/underlay/vscode-tasl/blob/dde4b7c0b762c2e667584095362dd49ebfacece7/syntaxes/tasl.tmLanguage.json',
   },
   {
-    byteSize: 4226,
+    byteSize: 4214,
     displayName: 'Tcl',
     funding: [
     ],
@@ -3716,7 +3716,7 @@ export const grammars = [
     source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
   },
   {
-    byteSize: 23564,
+    byteSize: 23544,
     displayName: 'Templ',
     embedded: [
       'go',
@@ -3739,7 +3739,7 @@ export const grammars = [
       'tf',
       'tfvars',
     ],
-    byteSize: 11065,
+    byteSize: 11057,
     displayName: 'Terraform',
     funding: [
     ],
@@ -3753,7 +3753,7 @@ export const grammars = [
     source: 'https://github.com/hashicorp/syntax/blob/cc2b4d4fe389f14b8a13937f4e0d7b2811b57588/syntaxes/terraform.tmGrammar.json',
   },
   {
-    byteSize: 9252,
+    byteSize: 9230,
     categories: [
       'markup',
     ],
@@ -3773,7 +3773,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/TeX.tmLanguage.json',
   },
   {
-    byteSize: 6132,
+    byteSize: 6129,
     categories: [
       'data',
     ],
@@ -3825,7 +3825,7 @@ export const grammars = [
     source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3/syntaxes/tsv.tmLanguage.json',
   },
   {
-    byteSize: 161208,
+    byteSize: 160081,
     categories: [
       'web',
     ],
@@ -3842,7 +3842,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
   },
   {
-    byteSize: 3580,
+    byteSize: 3578,
     displayName: 'Turtle',
     funding: [
     ],
@@ -3854,7 +3854,7 @@ export const grammars = [
     source: 'https://github.com/stardog-union/stardog-vsc/blob/3f1364b08bdbf4b4d77f123682db7d2b708b2f6e/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json',
   },
   {
-    byteSize: 20173,
+    byteSize: 20063,
     displayName: 'Twig',
     embedded: [
       'css',
@@ -3884,7 +3884,7 @@ export const grammars = [
     aliases: [
       'ts',
     ],
-    byteSize: 165342,
+    byteSize: 163891,
     categories: [
       'web',
       'scripting',
@@ -3906,7 +3906,7 @@ export const grammars = [
     aliases: [
       'tsp',
     ],
-    byteSize: 22757,
+    byteSize: 22752,
     displayName: 'TypeSpec',
     funding: [
     ],
@@ -3923,7 +3923,7 @@ export const grammars = [
     aliases: [
       'typ',
     ],
-    byteSize: 8040,
+    byteSize: 8019,
     displayName: 'Typst',
     funding: [
     ],
@@ -3937,7 +3937,7 @@ export const grammars = [
     source: 'https://github.com/nvarner/typst-lsp/blob/6972d4b9c2cbcb0551e203067f09ec84ca8f9df3/editors/vscode/typst.tmLanguage.json',
   },
   {
-    byteSize: 12784,
+    byteSize: 12747,
     displayName: 'V',
     funding: [
     ],
@@ -3968,7 +3968,7 @@ export const grammars = [
     aliases: [
       'cmd',
     ],
-    byteSize: 5915,
+    byteSize: 5847,
     categories: [
       'general',
       'scripting',
@@ -3986,7 +3986,7 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
   },
   {
-    byteSize: 5736,
+    byteSize: 5734,
     displayName: 'Verilog',
     funding: [
       {
@@ -4004,7 +4004,7 @@ export const grammars = [
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77/syntaxes/verilog.tmLanguage.json',
   },
   {
-    byteSize: 23568,
+    byteSize: 23552,
     displayName: 'VHDL',
     funding: [
     ],
@@ -4022,7 +4022,7 @@ export const grammars = [
       'vim',
       'vimscript',
     ],
-    byteSize: 20163,
+    byteSize: 20161,
     displayName: 'Vim Script',
     funding: [
     ],
@@ -4036,7 +4036,7 @@ export const grammars = [
     source: 'https://github.com/dunstontc/viml/blob/8762570fc7d6f1009a3c93efd2a337330d88b88e/syntaxes/viml.tmLanguage.json',
   },
   {
-    byteSize: 17497,
+    byteSize: 17470,
     categories: [
       'web',
     ],
@@ -4084,7 +4084,7 @@ export const grammars = [
     source: 'https://github.com/vuejs/language-tools/blob/5f11c44dce3f49e2c5f0dae1f93d892164a1980e/extensions/vscode/syntaxes/vue.tmLanguage.json',
   },
   {
-    byteSize: 8247,
+    byteSize: 8233,
     categories: [
       'web',
     ],
@@ -4118,7 +4118,7 @@ export const grammars = [
     aliases: [
       'vy',
     ],
-    byteSize: 72796,
+    byteSize: 72746,
     displayName: 'Vyper',
     funding: [
     ],
@@ -4132,7 +4132,7 @@ export const grammars = [
     source: 'https://github.com/tintinweb/vscode-vyper/blob/3df08ea46fc7df1a5e7f35365e615624849d1c1b/syntaxes/vyper.tmLanguage.json',
   },
   {
-    byteSize: 11582,
+    byteSize: 11454,
     categories: [
       'web',
     ],
@@ -4152,7 +4152,7 @@ export const grammars = [
     aliases: [
       '文言',
     ],
-    byteSize: 2066,
+    byteSize: 2054,
     displayName: 'Wenyan',
     funding: [
     ],
@@ -4166,7 +4166,7 @@ export const grammars = [
     source: 'https://github.com/wenyan-lang/highlight/blob/5100e8a803978b4f5b009adac035d1f27f591760/wenyan.tmLanguage.json',
   },
   {
-    byteSize: 4966,
+    byteSize: 4934,
     categories: [
       'web',
     ],
@@ -4187,7 +4187,7 @@ export const grammars = [
       'mediawiki',
       'wiki',
     ],
-    byteSize: 54353,
+    byteSize: 54296,
     categories: [
       'markup',
     ],
@@ -4268,7 +4268,7 @@ export const grammars = [
     source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/c6967c5ac4abe9ad069ea3b376621c2ef431392e/syntaxes/wikitext.tmLanguage.yaml',
   },
   {
-    byteSize: 20893,
+    byteSize: 20891,
     categories: [
       'web',
     ],
@@ -4288,7 +4288,7 @@ export const grammars = [
     aliases: [
       'wl',
     ],
-    byteSize: 262119,
+    byteSize: 261914,
     displayName: 'Wolfram',
     funding: [
     ],
@@ -4302,7 +4302,7 @@ export const grammars = [
     source: 'https://github.com/WolframResearch/vscode-wolfram/blob/8b55fb1724d971a303120b3f5b981d654c308c59/syntaxes/wolfram.tmLanguage.json',
   },
   {
-    byteSize: 5216,
+    byteSize: 5210,
     categories: [
       'markup',
       'data',
@@ -4346,7 +4346,7 @@ export const grammars = [
     aliases: [
       'yml',
     ],
-    byteSize: 10132,
+    byteSize: 9961,
     categories: [
       'data',
     ],
@@ -4395,7 +4395,7 @@ export const grammars = [
 
 export const injections = [
   {
-    byteSize: 18324,
+    byteSize: 18249,
     embeddedIn: [
       'angular-ts',
       'angular-html',
@@ -4533,7 +4533,7 @@ export const injections = [
     source: 'https://github.com/angular/vscode-ng-language-service/blob/8c84410f61ed87e261a83458af10af18cbf669a9/syntaxes/template-blocks.json',
   },
   {
-    byteSize: 214674,
+    byteSize: 213710,
     displayName: 'C++',
     embedded: [
       'regexp',
@@ -4555,7 +4555,7 @@ export const injections = [
     source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
   },
   {
-    byteSize: 1685,
+    byteSize: 1688,
     embedded: [
       'typescript',
       'css',
@@ -4645,7 +4645,7 @@ export const injections = [
     source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-html.json',
   },
   {
-    byteSize: 1481,
+    byteSize: 1483,
     embedded: [
       'typescript',
       'sql',
@@ -4674,7 +4674,7 @@ export const injections = [
     source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-sql.json',
   },
   {
-    byteSize: 1069,
+    byteSize: 1070,
     embedded: [
       'xml',
     ],

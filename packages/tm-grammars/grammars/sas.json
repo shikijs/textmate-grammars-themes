@@ -89,7 +89,7 @@
           "name": "entity.name.function.sas"
         }
       },
-      "match": "(?i:(%(bquote|do|else|end|eval|global|goto|if|inc|include|index|input|length|let|list|local|lowcase|macro|mend|nrbquote|nrquote|nrstr|put|qscan|qsysfunc|quote|run|scan|str|substr|syscall|sysevalf|sysexec|sysfunc|sysrc|then|to|unquote|upcase|until|while|window)\\b))\\s*(\\w*)",
+      "match": "(?i:(%(bquote|do|else|end|eval|global|goto|if|inc|include|index|input|length|let|list|local|lowcase|macro|mend|nrbquote|nrquote|nrstr|put|qscan|qsysfunc|quote|run|scan|str|substr|syscall|sysevalf|sysexec|sysfunc|sysrc|then|to|unquote|upcase|until|while|window))\\b)\\s*(\\w*)",
       "name": "keyword.other.sas"
     },
     {
@@ -138,7 +138,7 @@
       "name": "meta.function-call.sas"
     },
     {
-      "match": "(?i:\\b(_(?:n_|error_))\\b)",
+      "match": "(?i:\\b(_(?:n|error)_)\\b)",
       "name": "variable.language.sas"
     },
     {
@@ -164,7 +164,7 @@
     "constant": {
       "patterns": [
         {
-          "match": "(?<![\\&}])\\b[0-9]*\\.?[0-9]+([eEdD][-+]?[0-9]+)?\\b",
+          "match": "(?<![\\&}])\\b[0-9]*\\.?[0-9]+([DEde][-+]?[0-9]+)?\\b",
           "name": "constant.numeric.sas"
         },
         {
@@ -227,7 +227,7 @@
     "dataSetOptions": {
       "patterns": [
         {
-          "match": "(?<=[\\s()])(?i:ALTER|BUFNO|BUFSIZE|CNTLLEV|COMPRESS|DLDMGACTION|ENCRYPT|ENCRYPTKEY|EXTENDOBSCOUNTER|GENMAX|GENNUM|INDEX|LABEL|OBSBUF|OUTREP|PW|PWREQ|READ|REPEMPTY|REPLACE|REUSE|ROLE|SORTEDBY|SPILL|TOBSNO|TYPE|WRITE|FILECLOSE|FIRSTOBS|IN|OBS|POINTOBS|WHERE|WHEREUP|IDXNAME|IDXWHERE|DROP|KEEP|RENAME)\\s?=",
+          "match": "(?<=[()\\s])(?i:ALTER|BUFNO|BUFSIZE|CNTLLEV|COMPRESS|DLDMGACTION|ENCRYPT|ENCRYPTKEY|EXTENDOBSCOUNTER|GENMAX|GENNUM|INDEX|LABEL|OBSBUF|OUTREP|PW|PWREQ|READ|REPEMPTY|REPLACE|REUSE|ROLE|SORTEDBY|SPILL|TOBSNO|TYPE|WRITE|FILECLOSE|FIRSTOBS|IN|OBS|POINTOBS|WHERE|WHEREUP|IDXNAME|IDXWHERE|DROP|KEEP|RENAME)\\s?=",
           "name": "keyword.other.sas"
         }
       ]
@@ -235,7 +235,7 @@
     "macro": {
       "patterns": [
         {
-          "match": "(&+(?i:[a-z_]([a-z0-9_]+)?)(\\.+)?)\\b",
+          "match": "(&+(?i:[_a-z]([0-9_a-z]+)?)(\\.+)?)\\b",
           "name": "variable.other.macro.sas"
         }
       ]
@@ -243,7 +243,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "([+\\-*^/])",
+          "match": "([-*+/^])",
           "name": "keyword.operator.arithmetic.sas"
         },
         {
@@ -251,7 +251,7 @@
           "name": "keyword.operator.comparison.sas"
         },
         {
-          "match": "([¬<>^~]?=(:)?|[><|!¦¬]|^|~|<>|><|\\|\\|)",
+          "match": "([<>^~¬]?=(:)?|[!<>|¦¬]|^|~|<>|><|\\|\\|)",
           "name": "keyword.operator.sas"
         }
       ]
@@ -276,12 +276,12 @@
           "include": "#blockcomment"
         },
         {
-          "begin": "(?<=;)[\\s%]*\\*",
+          "begin": "(?<=;)[%\\s]*\\*",
           "end": ";",
           "name": "comment.line.inline.star.sas"
         },
         {
-          "begin": "^[\\s%]*\\*",
+          "begin": "^[%\\s]*\\*",
           "end": ";",
           "name": "comment.line.start.sas"
         }

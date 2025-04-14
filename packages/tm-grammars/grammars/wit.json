@@ -1,7 +1,7 @@
 {
   "displayName": "WebAssembly Interface Types",
-  "foldingStartMarker": "([{\\[])\\s*",
-  "foldingStopMarker": "\\s*([}\\]])",
+  "foldingStartMarker": "([\\[{])\\s*",
+  "foldingStopMarker": "\\s*([]}])",
   "name": "wit",
   "patterns": [
     {
@@ -961,7 +961,7 @@
                   "name": "constant.numeric.versioning.interface.toplevel-use-item.wit"
                 }
               },
-              "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+              "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*)(?:\\.(?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*))*))?(?:\\+([-0-9A-Za-z]+(?:\\.[-0-9A-Za-z]+)*))?)",
               "name": "meta.versioning.interface.toplevel-use-item.wit"
             }
           ]
@@ -1138,7 +1138,7 @@
               "name": "constant.numeric.versioning.id.use-path.wit"
             }
           },
-          "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+          "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*)(?:\\.(?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*))*))?(?:\\+([-0-9A-Za-z]+(?:\\.[-0-9A-Za-z]+)*))?)",
           "name": "meta.versioning.id.use-path.wit"
         },
         {
@@ -1269,7 +1269,7 @@
                       "name": "constant.numeric.versioning.id.export-item.wit"
                     }
                   },
-                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*)(?:\\.(?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*))*))?(?:\\+([-0-9A-Za-z]+(?:\\.[-0-9A-Za-z]+)*))?)",
                   "name": "meta.versioning.id.export-item.wit"
                 }
               ]
@@ -1309,7 +1309,7 @@
                       "name": "constant.numeric.versioning.id.import-item.wit"
                     }
                   },
-                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)",
+                  "match": "(@)((0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*)(?:\\.(?:0|[1-9]\\d*|\\d*[-A-Za-z][-0-9A-Za-z]*))*))?(?:\\+([-0-9A-Za-z]+(?:\\.[-0-9A-Za-z]+)*))?)",
                   "name": "meta.versioning.id.import-item.wit"
                 }
               ]
@@ -1379,7 +1379,7 @@
                       "name": "entity.name.type.include-names-item.wit"
                     }
                   },
-                  "match": "(\\S+)\\s+(as)\\s+([^\\s,]+)",
+                  "match": "(\\S+)\\s+(as)\\s+([^,\\s]+)",
                   "name": "meta.include-names-item.wit"
                 },
                 {

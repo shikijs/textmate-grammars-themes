@@ -48,7 +48,7 @@
       "name": "string.quoted.single.fish",
       "patterns": [
         {
-          "match": "\\\\(['`\\\\])",
+          "match": "\\\\(['\\\\`])",
           "name": "constant.character.escape.fish"
         }
       ]
@@ -71,14 +71,14 @@
           "name": "support.function.command.fish"
         }
       },
-      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|;\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!]))([a-zA-Z_\\-0-9\\[\\].]+)"
+      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|;\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![!?]))([-\\].0-9A-\\[_a-z]+)"
     },
     {
-      "match": "(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!])",
+      "match": "(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![!?])",
       "name": "keyword.control.fish"
     },
     {
-      "match": "(?<!\\.)\\bfunction\\b(?![?!])",
+      "match": "(?<!\\.)\\bfunction\\b(?![!?])",
       "name": "storage.type.fish"
     },
     {
@@ -86,7 +86,7 @@
       "name": "keyword.operator.pipe.fish"
     },
     {
-      "match": "(?:<|([>^]|>>|\\^\\^)(&[012-])?|[012]([<>]|>>)(&[012-])?)",
+      "match": "<|([>^]|>>|\\^\\^)(&[-0-2])?|[0-2]([<>]|>>)(&[-0-2])?",
       "name": "keyword.operator.redirect.fish"
     },
     {
@@ -103,7 +103,7 @@
           "name": "source.option.fish"
         }
       },
-      "match": "\\s(-{1,2}[a-zA-Z_\\-0-9]+|-\\w)\\b"
+      "match": "\\s(-{1,2}[-0-9A-Z_a-z]+|-\\w)\\b"
     },
     {
       "include": "#variable"
@@ -116,7 +116,7 @@
     "escape": {
       "patterns": [
         {
-          "match": "\\\\[abefnrtv $*?~#(){}\\[\\]<>^\\&|;\"']",
+          "match": "\\\\[] \"-$\\&-*;<>?\\[^abefnrtv{-~]",
           "name": "constant.character.escape.single.fish"
         },
         {
@@ -140,7 +140,7 @@
           "name": "constant.character.escape.unicode-32-bit.fish"
         },
         {
-          "match": "\\\\c[a-zA-Z]",
+          "match": "\\\\c[A-Za-z]",
           "name": "constant.character.escape.control.fish"
         }
       ]
@@ -162,7 +162,7 @@
               "name": "punctuation.definition.variable.fish"
             }
           },
-          "match": "(\\$)[a-zA-Z_][a-zA-Z0-9_]*",
+          "match": "(\\$)[A-Z_a-z][0-9A-Z_a-z]*",
           "name": "variable.other.normal.fish"
         }
       ]

@@ -116,7 +116,7 @@
         },
         {
           "begin": "=",
-          "end": "(?=[,\\]])",
+          "end": "(?=[],])",
           "name": "meta.annotation.value.move",
           "patterns": [
             {
@@ -147,7 +147,7 @@
     "block-comments": {
       "patterns": [
         {
-          "begin": "/\\*[*!](?![*/])",
+          "begin": "/\\*[!*](?![*/])",
           "end": "\\*/",
           "name": "comment.block.documentation.move"
         },
@@ -159,7 +159,7 @@
       ]
     },
     "capitalized": {
-      "match": "\\b([A-Z][a-zA-Z_0-9]*)\\b",
+      "match": "\\b([A-Z][0-9A-Z_a-z]*)\\b",
       "name": "entity.name.type.use.move"
     },
     "comments": {
@@ -199,7 +199,7 @@
           "include": "#types"
         },
         {
-          "match": "\\b([A-Z][A-Z_0-9]+)\\b",
+          "match": "\\b([A-Z][0-9A-Z_]+)\\b",
           "name": "constant.other.move"
         },
         {
@@ -250,7 +250,7 @@
           "include": "#type_param"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z_0-9]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "entity.name.type.enum.move"
         },
         {
@@ -268,11 +268,11 @@
               "include": "#comments"
             },
             {
-              "match": "\\b([A-Z][A-Za-z_0-9]*)\\b(?=\\s*\\()",
+              "match": "\\b([A-Z][0-9A-Z_a-z]*)\\b(?=\\s*\\()",
               "name": "entity.name.function.enum.move"
             },
             {
-              "match": "\\b([A-Z][A-Za-z_0-9]*)\\b",
+              "match": "\\b([A-Z][0-9A-Z_a-z]*)\\b",
               "name": "entity.name.type.enum.move"
             },
             {
@@ -321,7 +321,7 @@
       ]
     },
     "error_const": {
-      "match": "\\b(E[A-Z][A-Za-z0-9_]*)\\b",
+      "match": "\\b(E[A-Z][0-9A-Z_a-z]*)\\b",
       "name": "variable.other.error.const.move"
     },
     "escaped_identifier": {
@@ -400,7 +400,7 @@
           "name": "keyword.operator.macro.dollar.move"
         },
         {
-          "match": "(?<=\\$)[a-z][A-Z_0-9a-z]*",
+          "match": "(?<=\\$)[a-z][0-9A-Z_a-z]*",
           "name": "variable.other.meta.move"
         },
         {
@@ -411,7 +411,7 @@
           "include": "#error_const"
         },
         {
-          "match": "\\b([A-Z][a-zA-Z_0-9]*)\\b",
+          "match": "\\b([A-Z][0-9A-Z_a-z]*)\\b",
           "name": "entity.name.type.move"
         },
         {
@@ -423,7 +423,7 @@
       ]
     },
     "expr_generic": {
-      "begin": "<(?=([\\sa-z_,0-9A-Z<>]+>))",
+      "begin": "<(?=([,0-9<>A-Z_a-z\\s]+>))",
       "end": ">",
       "name": "meta.expression.generic.type.move",
       "patterns": [
@@ -458,7 +458,7 @@
           "include": "#address_literal"
         },
         {
-          "match": "\\b([a-zA-Z][A-Za-z_0-9]*)\\b",
+          "match": "\\b([A-Za-z][0-9A-Z_a-z]*)\\b",
           "name": "entity.name.type.module.move"
         }
       ]
@@ -484,7 +484,7 @@
       ]
     },
     "fun_call": {
-      "begin": "\\b(\\w+)\\s*(?:<[\\w\\s,]+>)?\\s*\\(",
+      "begin": "\\b(\\w+)\\s*(?:<[,\\w\\s]+>)?\\s*\\(",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.call.move"
@@ -552,7 +552,7 @@
         },
         {
           "begin": "(?<=\\bfun)",
-          "end": "(?=[<(])",
+          "end": "(?=[(<])",
           "name": "meta.function_name.move",
           "patterns": [
             {
@@ -612,7 +612,7 @@
       "name": "keyword.control.ability.has.move"
     },
     "has_ability": {
-      "begin": "(?<=[})])\\s+(has)\\b",
+      "begin": "(?<=[)}])\\s+(has)\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.type.move"
@@ -630,7 +630,7 @@
       ]
     },
     "ident": {
-      "match": "\\b([a-zA-Z][A-Z_a-z0-9]*)\\b",
+      "match": "\\b([A-Za-z][0-9A-Z_a-z]*)\\b",
       "name": "meta.identifier.move"
     },
     "import": {
@@ -686,7 +686,7 @@
       "name": "storage.modifier.visibility.inline.move"
     },
     "label": {
-      "match": "'[a-z][a-z_0-9]*",
+      "match": "'[a-z][0-9_a-z]*",
       "name": "string.quoted.single.label.move"
     },
     "let": {
@@ -706,7 +706,7 @@
           "name": "support.constant.address.base16.move"
         },
         {
-          "match": "@[a-zA-Z][a-zA-Z_0-9]*",
+          "match": "@[A-Za-z][0-9A-Z_a-z]*",
           "name": "support.constant.address.name.move"
         },
         {
@@ -714,7 +714,7 @@
           "name": "constant.numeric.hex.move"
         },
         {
-          "match": "(?<!(?:\\w|(?<!\\.)\\.))[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+-]?[_0-9]+)?(?:u(?:8|16|32|64|128|256))?",
+          "match": "(?<!\\w|(?<!\\.)\\.)[0-9][0-9_]*(?:\\.(?!\\.)(?:[0-9][0-9_]*)?)?(?:[Ee][-+]?[0-9_]+)?(?:u(?:8|16|32|64|128|256))?",
           "name": "constant.numeric.move"
         },
         {
@@ -727,7 +727,7 @@
               "name": "constant.character.escape.move"
             },
             {
-              "match": "\\\\[nrt\\x00\"]",
+              "match": "\\\\[\\x00\"nrt]",
               "name": "constant.character.escape.move"
             },
             {
@@ -768,7 +768,7 @@
       ]
     },
     "local_call": {
-      "match": "\\b([a-z][_a-z0-9]*)(?=[<(])",
+      "match": "\\b([a-z][0-9_a-z]*)(?=[(<])",
       "name": "entity.name.function.call.local.move"
     },
     "macro": {
@@ -795,7 +795,7 @@
           "name": "support.function.macro.move"
         }
       },
-      "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)!",
+      "match": "(\\b|\\.)([a-z][0-9A-Z_a-z]*)!",
       "name": "meta.macro.call"
     },
     "match_expression": {
@@ -842,7 +842,7 @@
           "name": "entity.name.function.call.path.move"
         }
       },
-      "match": "\\.([a-z][_a-z0-9]*)(?=[<(])",
+      "match": "\\.([a-z][0-9_a-z]*)(?=[(<])",
       "name": "meta.path.call.move"
     },
     "module": {
@@ -870,7 +870,7 @@
             },
             {
               "begin": "(?<=\\b(module))",
-              "end": "(?=[(:){])",
+              "end": "(?=[():{])",
               "name": "constant.other.move",
               "patterns": [
                 {
@@ -883,7 +883,7 @@
             },
             {
               "begin": "(?<=::)",
-              "end": "(?=[\\s;{])",
+              "end": "(?=[;{\\s])",
               "name": "entity.name.type.move",
               "patterns": [
                 {
@@ -975,12 +975,12 @@
         },
         {
           "begin": "(?<=\\bmodule\\b)",
-          "end": "(?=[(:){])",
+          "end": "(?=[():{])",
           "name": "constant.other.move"
         },
         {
           "begin": "(?<=::)",
-          "end": "(?=[\\s{])",
+          "end": "(?=[{\\s])",
           "name": "entity.name.type.move"
         }
       ]
@@ -998,7 +998,7 @@
       "name": "storage.modifier.visibility.native.move"
     },
     "packed_field": {
-      "match": "[a-z][a-z0-9_]+\\s*:\\s*(?=\\s)",
+      "match": "[a-z][0-9_a-z]+\\s*:\\s*(?=\\s)",
       "name": "meta.struct.field.move"
     },
     "paren": {
@@ -1012,7 +1012,7 @@
       ]
     },
     "path_access": {
-      "match": "\\.[a-z][_a-z0-9]*\\b",
+      "match": "\\.[a-z][0-9_a-z]*\\b",
       "name": "meta.path.access.move"
     },
     "phantom": {
@@ -1231,7 +1231,7 @@
           "name": "storage.modifier.type.move"
         }
       },
-      "end": "(?<=[};)])",
+      "end": "(?<=[);}])",
       "name": "meta.struct.move",
       "patterns": [
         {
@@ -1247,7 +1247,7 @@
           "include": "#abilities"
         },
         {
-          "match": "\\b[A-Z][a-zA-Z_0-9]*\\b",
+          "match": "\\b[A-Z][0-9A-Z_a-z]*\\b",
           "name": "entity.name.type.struct.move"
         },
         {
@@ -1316,7 +1316,7 @@
       ]
     },
     "struct_pack": {
-      "begin": "(?<=[A-Za-z0-9_>])\\s*\\{",
+      "begin": "(?<=[0-9>A-Z_a-z])\\s*\\{",
       "end": "}",
       "name": "meta.struct.pack.move",
       "patterns": [
@@ -1380,7 +1380,7 @@
           "name": "variable.language.self.use.fun.move"
         },
         {
-          "match": "\\b(_______[a-z][a-z_0-9]+)\\b",
+          "match": "\\b(_______[a-z][0-9_a-z]+)\\b",
           "name": "entity.name.function.use.move"
         },
         {

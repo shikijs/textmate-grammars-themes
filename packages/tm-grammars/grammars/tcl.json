@@ -21,7 +21,7 @@
       "end": "\\n",
       "patterns": [
         {
-          "match": "(\\\\[\\\\\\n])"
+          "match": "(\\\\[\\n\\\\])"
         }
       ]
     },
@@ -31,7 +31,7 @@
           "name": "keyword.control.tcl"
         }
       },
-      "match": "(?<=^|[\\[{;])\\s*(if|while|for|catch|default|return|break|continue|switch|exit|foreach|try|throw)\\b"
+      "match": "(?<=^|[;\\[{])\\s*(if|while|for|catch|default|return|break|continue|switch|exit|foreach|try|throw)\\b"
     },
     {
       "captures": {
@@ -58,16 +58,16 @@
           "name": "keyword.other.tcl"
         }
       },
-      "match": "(?<=^|[\\[{;])\\s*(after|append|array|auto_execok|auto_import|auto_load|auto_mkindex|auto_mkindex_old|auto_qualify|auto_reset|bgerror|binary|cd|clock|close|concat|dde|encoding|eof|error|eval|exec|expr|fblocked|fconfigure|fcopy|file|fileevent|filename|flush|format|gets|glob|global|history|http|incr|info|interp|join|lappend|library|lindex|linsert|list|llength|load|lrange|lreplace|lsearch|lset|lsort|memory|msgcat|namespace|open|package|parray|pid|pkg::create|pkg_mkIndex|proc|puts|pwd|re_syntax|read|registry|rename|resource|scan|seek|set|socket|SafeBase|source|split|string|subst|Tcl|tcl_endOfWord|tcl_findLibrary|tcl_startOfNextWord|tcl_startOfPreviousWord|tcl_wordBreakAfter|tcl_wordBreakBefore|tcltest|tclvars|tell|time|trace|unknown|unset|update|uplevel|upvar|variable|vwait)\\b"
+      "match": "(?<=^|[;\\[{])\\s*(after|append|array|auto_execok|auto_import|auto_load|auto_mkindex|auto_mkindex_old|auto_qualify|auto_reset|bgerror|binary|cd|clock|close|concat|dde|encoding|eof|error|eval|exec|expr|fblocked|fconfigure|fcopy|file|fileevent|filename|flush|format|gets|glob|global|history|http|incr|info|interp|join|lappend|library|lindex|linsert|list|llength|load|lrange|lreplace|lsearch|lset|lsort|memory|msgcat|namespace|open|package|parray|pid|pkg::create|pkg_mkIndex|proc|puts|pwd|re_syntax|read|registry|rename|resource|scan|seek|set|socket|SafeBase|source|split|string|subst|Tcl|tcl_endOfWord|tcl_findLibrary|tcl_startOfNextWord|tcl_startOfPreviousWord|tcl_wordBreakAfter|tcl_wordBreakBefore|tcltest|tclvars|tell|time|trace|unknown|unset|update|uplevel|upvar|variable|vwait)\\b"
     },
     {
-      "begin": "(?<=^|[\\[{;])\\s*(reg(?:exp|sub))\\b\\s*",
+      "begin": "(?<=^|[;\\[{])\\s*(reg(?:exp|sub))\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.tcl"
         }
       },
-      "end": "[\\n;\\]]",
+      "end": "[]\\n;]",
       "patterns": [
         {
           "match": "\\\\(?:.|\\n)",
@@ -133,7 +133,7 @@
   "repository": {
     "bare-string": {
       "begin": "(?:^|(?<=\\s))\"",
-      "end": "\"([^\\s\\]]*)",
+      "end": "\"([^]\\s]*)",
       "endCaptures": {
         "1": {
           "name": "invalid.illegal.tcl"
@@ -150,7 +150,7 @@
     },
     "braces": {
       "begin": "(?:^|(?<=\\s))\\{",
-      "end": "}([^\\s\\]]*)",
+      "end": "}([^]\\s]*)",
       "endCaptures": {
         "1": {
           "name": "invalid.illegal.tcl"
@@ -158,7 +158,7 @@
       },
       "patterns": [
         {
-          "match": "\\\\[{}\\n]",
+          "match": "\\\\[\\n{}]",
           "name": "constant.character.escape.tcl"
         },
         {
@@ -195,7 +195,7 @@
       "end": "}",
       "patterns": [
         {
-          "match": "\\\\[{}\\n]",
+          "match": "\\\\[\\n{}]",
           "name": "constant.character.escape.tcl"
         },
         {
@@ -204,7 +204,7 @@
       ]
     },
     "numeric": {
-      "match": "(?<![a-zA-Z])([+-]?([0-9]*\\.)?[0-9]+f?)(?![.a-zA-Z])",
+      "match": "(?<![A-Za-z])([-+]?([0-9]*\\.)?[0-9]+f?)(?![.A-Za-z])",
       "name": "constant.numeric.tcl"
     },
     "operator": {
@@ -212,12 +212,12 @@
       "name": "keyword.operator.tcl"
     },
     "regexp": {
-      "begin": "(?=\\S)(?![\\n;\\]])",
-      "end": "(?=[\\n;\\]])",
+      "begin": "(?=\\S)(?![]\\n;])",
+      "end": "(?=[]\\n;])",
       "patterns": [
         {
-          "begin": "(?=[^ \\t\\n;])",
-          "end": "(?=[ \\t\\n;])",
+          "begin": "(?=[^\\t\\n ;])",
+          "end": "(?=[\\t\\n ;])",
           "name": "string.regexp.tcl",
           "patterns": [
             {
@@ -235,8 +235,8 @@
           ]
         },
         {
-          "begin": "[ \\t]",
-          "end": "(?=[\\n;\\]])",
+          "begin": "[\\t ]",
+          "end": "(?=[]\\n;])",
           "patterns": [
             {
               "include": "#variable"
@@ -274,7 +274,7 @@
           "name": "punctuation.definition.variable.tcl"
         }
       },
-      "match": "(\\$)((?:[a-zA-Z0-9_]|::)+(\\([^)]+\\))?|\\{[^}]*})",
+      "match": "(\\$)((?:[0-9A-Z_a-z]|::)+(\\([^)]+\\))?|\\{[^}]*})",
       "name": "support.function.tcl"
     }
   },
