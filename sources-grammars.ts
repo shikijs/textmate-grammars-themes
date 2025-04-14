@@ -707,6 +707,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['data', 'web'],
   },
   {
+    name: 'json-textmate',
+    aliases: ['JSON TextMate'],
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/main/syntaxes/json.tmLanguage.json',
+    categories: ['dsl'],
+  },
+  {
     name: 'json5',
     source: 'https://github.com/mrmlnc/vscode-json5/blob/master/syntaxes/json5.json',
     categories: ['data', 'web'],
@@ -1228,6 +1234,11 @@ export const sourcesInjections: GrammarSource[] = [
     name: 'jinja-html',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/main/syntaxes/jinja-html.tmLanguage.json',
     embeddedIn: ['jinja'],
+  },
+  {
+    name: 'json-textmate-regex',
+    source: 'https://github.com/RedCMD/TmLanguage-Syntax-Highlighter/blob/main/syntaxes/regex.tmLanguage.json',
+    embeddedIn: ['json-textmate'],
   },
   // ========== Vue ==========
   {
