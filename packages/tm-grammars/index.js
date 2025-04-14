@@ -1564,21 +1564,21 @@ export const grammars = [
     source: 'https://github.com/octref/language-haskell/blob/ae87982aac2bf5cf6334c067e49c5ec8fc08b871/syntaxes/haskell.json',
   },
   {
-    byteSize: 34223,
+    byteSize: 34325,
     categories: [
       'general',
     ],
     displayName: 'Haxe',
     funding: [
     ],
-    hash: 'NlmzgDzKJ8qVgAYeRtn28gOfrn5zA6-0jH3UENpjdJ4',
-    lastUpdate: '2024-04-19T14:01:24Z',
+    hash: 'fzdryd6YC9SL8wqo_Arig8QUV5_tJUvvSr1Dh6uQsvo',
+    lastUpdate: '2025-04-14T00:10:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md',
     name: 'haxe',
     scopeName: 'source.hx',
-    sha: 'ddad8b4c6d0781ac20be0481174ec1be772c5da5',
-    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/ddad8b4c6d0781ac20be0481174ec1be772c5da5/haxe.YAML-tmLanguage',
+    sha: 'c1b9bc8952c83c4469e8cdeb4a1e5a6492fd8c87',
+    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/c1b9bc8952c83c4469e8cdeb4a1e5a6492fd8c87/haxe.YAML-tmLanguage',
   },
   {
     byteSize: 9714,
