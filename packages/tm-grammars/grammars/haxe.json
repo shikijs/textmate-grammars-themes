@@ -1474,6 +1474,10 @@
       "match": "(\\?)(?!\\s)",
       "name": "keyword.operator.optional.hx"
     },
+    "operator-rest": {
+      "match": "\\.\\.\\.",
+      "name": "keyword.operator.rest.hx"
+    },
     "operator-type-hint": {
       "match": "(:)",
       "name": "keyword.operator.type.annotation.hx"
@@ -1581,9 +1585,6 @@
           "include": "#parameter-assign"
         },
         {
-          "include": "#punctuation-comma"
-        },
-        {
           "include": "#global"
         }
       ]
@@ -1606,14 +1607,15 @@
       ]
     },
     "parameter-name": {
-      "begin": "(?<=[(,])",
-      "end": "([_a-zA-Z]\\w*)",
-      "endCaptures": {
-        "1": {
-          "name": "variable.parameter.hx"
-        }
-      },
       "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "variable.parameter.hx"
+            }
+          },
+          "match": "\\s*([_a-zA-Z]\\w*)"
+        },
         {
           "include": "#global"
         },
@@ -1622,6 +1624,9 @@
         },
         {
           "include": "#operator-optional"
+        },
+        {
+          "include": "#operator-rest"
         }
       ]
     },
@@ -1656,6 +1661,9 @@
       "patterns": [
         {
           "include": "#parameter"
+        },
+        {
+          "include": "#punctuation-comma"
         }
       ]
     },
