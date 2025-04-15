@@ -612,7 +612,7 @@
           "include": "#c_function_call"
         },
         {
-          "begin": "(?=\\s)(?<!else|new|return)(?<=\\w)\\s+(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[]))\\s*(\\()",
+          "begin": "(?=\\s)(?<!else|new|return)(?<=\\w)\\s+(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[]))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "variable.other.c"
@@ -672,7 +672,7 @@
       ]
     },
     "c_function_call": {
-      "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()(?=(?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++\\s*\\(|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[])\\s*\\()",
+      "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()(?=(?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++\\s*\\(|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[])\\s*\\()",
       "end": "(?<=\\))(?!\\w)",
       "name": "meta.function-call.c",
       "patterns": [
@@ -749,7 +749,7 @@
                       "include": "#line_continuation_character"
                     },
                     {
-                      "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<->]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<=>]|::|\\||--|---)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -834,7 +834,7 @@
                     "2": {
                       "patterns": [
                         {
-                          "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<->]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                          "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<=>]|::|\\||--|---)\\b(?:\\{[^}]*})?",
                           "name": "storage.type.class.doxygen.c"
                         },
                         {
@@ -934,7 +934,7 @@
                   "name": "comment.block.documentation.c",
                   "patterns": [
                     {
-                      "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<->]|::|\\||--|---)\\b(?:\\{[^}]*})?",
+                      "match": "(?<=[!*/\\s])[@\\\\](?:callergraph|callgraph|else|endif|f\\$|f\\[|f]|hidecallergraph|hidecallgraph|hiderefby|hiderefs|hideinitializer|htmlinclude|n|nosubgrouping|private|privatesection|protected|protectedsection|public|publicsection|pure|showinitializer|showrefby|showrefs|tableofcontents|[\"-%.<=>]|::|\\||--|---)\\b(?:\\{[^}]*})?",
                       "name": "storage.type.class.doxygen.c"
                     },
                     {
@@ -1176,7 +1176,7 @@
           "include": "#operators"
         },
         {
-          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[]))\\s*(\\()",
+          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[]))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.c"
@@ -1236,7 +1236,7 @@
           "include": "#vararg_ellipses"
         },
         {
-          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[]))\\s*(\\()",
+          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[]))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.c"
@@ -2206,7 +2206,7 @@
           "name": "punctuation.section.parens.end.bracket.round.c"
         },
         {
-          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()(?=(?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++\\s*\\(|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[])\\s*\\()",
+          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()(?=(?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++\\s*\\(|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[])\\s*\\()",
           "end": "(?<=\\))(?!\\w)|(?<!\\\\)(?=\\s*\\n)",
           "name": "meta.function.c",
           "patterns": [
@@ -2296,7 +2296,7 @@
           "include": "#operators"
         },
         {
-          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<->]+|\\(\\)|\\[]))\\s*(\\()",
+          "begin": "(?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|typeid|xor|xor_eq|alignof|alignas)\\s*\\()((?:[A-Z_a-z][0-9A-Z_a-z]*+|::)++|(?<=operator)(?:[-!\\&*+<=>]+|\\(\\)|\\[]))\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.c"
@@ -3337,7 +3337,7 @@
     "string_placeholder": {
       "patterns": [
         {
-          "match": "%(\\d+\\$)?[- #'+0]*[,:;_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|[Ljlqtz]|vh|vl|v|hv|hl)?[%AC-GOSUXac-gin-psux]",
+          "match": "%(\\d+\\$)?[- #'+0]*[,:;_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|[Ljlqtz]|vh|vl|v|hv|hl)?[%AC-GOSUXac-ginopsux]",
           "name": "constant.other.placeholder.c"
         },
         {

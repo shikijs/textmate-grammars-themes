@@ -30,7 +30,7 @@
     {
       "applyEndPatternLast": 1,
       "begin": "\\b(?=qr\\s*[^\\s\\w])",
-      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
+      "end": "((([acdegil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.compile.perl"
@@ -193,7 +193,7 @@
     {
       "applyEndPatternLast": 1,
       "begin": "(?<![-+{])\\b(?=m\\s*[^0-9A-Za-z\\s])",
-      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
+      "end": "((([acdegil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.find-m.perl"
@@ -377,7 +377,7 @@
     {
       "applyEndPatternLast": 1,
       "begin": "\\b(?=(?<!&)(s)(\\s+\\S|\\s*[(),;<\\[{}]|$))",
-      "end": "((([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[]),;>{}]|\\s*$))",
+      "end": "((([acdegil-prsux]*)))(?=(\\s+\\S|\\s*[]),;>{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -598,8 +598,8 @@
       ]
     },
     {
-      "begin": "\\b(?=s([^(0-9<A-\\[a-{\\s]).*\\1([ac-egil-prsux]*)([),;}]|\\s+))",
-      "end": "((([ac-egil-prsux]*)))(?=([),;}]|\\s+|\\s*$))",
+      "begin": "\\b(?=s([^(0-9<A-\\[a-{\\s]).*\\1([acdegil-prsux]*)([),;}]|\\s+))",
+      "end": "((([acdegil-prsux]*)))(?=([),;}]|\\s+|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -668,7 +668,7 @@
     },
     {
       "begin": "\\b(?=(?<!\\\\)s\\s*([^(<>\\[{\\s\\w]))",
-      "end": "((([ac-egilmoprsu]*x[ac-egilmoprsu]*)))\\b",
+      "end": "((([acdegilmoprsu]*x[acdegilmoprsu]*)))\\b",
       "endCaptures": {
         "1": {
           "name": "string.regexp.replace.perl"
@@ -706,7 +706,7 @@
               "name": "punctuation.definition.string.perl"
             }
           },
-          "end": "'(?=[ac-egilmoprsu]*x[ac-egilmoprsu]*)\\b",
+          "end": "'(?=[acdegilmoprsu]*x[acdegilmoprsu]*)\\b",
           "name": "string.regexp.replace.extended.simple_delimiter.perl",
           "patterns": [
             {
@@ -721,7 +721,7 @@
               "name": "punctuation.definition.string.perl"
             }
           },
-          "end": "\\1(?=[ac-egilmoprsu]*x[ac-egilmoprsu]*)\\b",
+          "end": "\\1(?=[acdegilmoprsu]*x[acdegilmoprsu]*)\\b",
           "name": "string.regexp.replace.extended.simple_delimiter.perl",
           "patterns": [
             {
@@ -745,7 +745,7 @@
         }
       },
       "contentName": "string.regexp.find.perl",
-      "end": "((\\1([ac-egil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
+      "end": "((\\1([acdegil-prsux]*)))(?=(\\s+\\S|\\s*[#),;{}]|\\s*$))",
       "endCaptures": {
         "1": {
           "name": "string.regexp.find.perl"
@@ -865,7 +865,7 @@
       "name": "constant.language.perl"
     },
     {
-      "begin": "\\b(__(?:DATA|END)__)\\n?",
+      "begin": "\\b(__(?:DATA__|END__))\\n?",
       "beginCaptures": {
         "1": {
           "name": "constant.language.perl"
@@ -888,7 +888,7 @@
       "name": "storage.modifier.perl"
     },
     {
-      "match": "(?<!\\w)-[A-CMOR-TWXb-gklopr-uwxz]\\b",
+      "match": "(?<!\\w)-[ABCMORSTWXb-gklopr-uwxz]\\b",
       "name": "keyword.operator.filetest.perl"
     },
     {
@@ -2909,7 +2909,7 @@
               "name": "punctuation.definition.variable.perl"
             }
           },
-          "match": "(\\$)[!#-%(-*,-/:-@\\[-_ab|~](?![0-9A-Z_a-z])",
+          "match": "(\\$)[!#$%()*,-/:-@\\[-_ab|~](?![0-9A-Z_a-z])",
           "name": "variable.other.predefined.perl"
         },
         {

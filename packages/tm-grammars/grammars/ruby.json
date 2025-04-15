@@ -475,7 +475,7 @@
       ]
     },
     {
-      "begin": "(?<![)\\w])((/))(?![*+?])(?=(?:\\\\/|[^/])*+/[eim-osux]*\\s*(?:[]#),.:?}]|\\|\\||&&|<=>|=>|==|=~|!~|!=|;|$|if|else|elsif|then|do|end|unless|while|until|or|and)|$)",
+      "begin": "(?<![)\\w])((/))(?![*+?])(?=(?:\\\\/|[^/])*+/[eimnosux]*\\s*(?:[]#),.:?}]|\\|\\||&&|<=>|=>|==|=~|!~|!=|;|$|if|else|elsif|then|do|end|unless|while|until|or|and)|$)",
       "captures": {
         "1": {
           "name": "string.regexp.interpolated.ruby"
@@ -485,7 +485,7 @@
         }
       },
       "contentName": "string.regexp.interpolated.ruby",
-      "end": "((/[eim-osux]*))",
+      "end": "((/[eimnosux]*))",
       "patterns": [
         {
           "include": "#regex_sub"
@@ -499,7 +499,7 @@
           "name": "punctuation.section.regexp.begin.ruby"
         }
       },
-      "end": "}[eim-osux]*",
+      "end": "}[eimnosux]*",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.regexp.end.ruby"
@@ -522,7 +522,7 @@
           "name": "punctuation.section.regexp.begin.ruby"
         }
       },
-      "end": "][eim-osux]*",
+      "end": "][eimnosux]*",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.regexp.end.ruby"
@@ -545,7 +545,7 @@
           "name": "punctuation.section.regexp.begin.ruby"
         }
       },
-      "end": "\\)[eim-osux]*",
+      "end": "\\)[eimnosux]*",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.regexp.end.ruby"
@@ -568,7 +568,7 @@
           "name": "punctuation.section.regexp.begin.ruby"
         }
       },
-      "end": ">[eim-osux]*",
+      "end": ">[eimnosux]*",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.regexp.end.ruby"
@@ -591,7 +591,7 @@
           "name": "punctuation.section.regexp.begin.ruby"
         }
       },
-      "end": "\\1[eim-osux]*",
+      "end": "\\1[eimnosux]*",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.regexp.end.ruby"
@@ -1690,12 +1690,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPH|)QL)\\b\\1))",
+      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.graphql",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPH|)QL)\\b\\1)",
+          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.ruby"
@@ -2201,7 +2201,7 @@
       "name": "keyword.operator.assignment.augmented.ruby"
     },
     {
-      "match": "<=>|<(?![<=])|>(?![<->])|<=|>=|===|==|=~|!=|!~|(?<=[\\t ])\\?",
+      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===|==|=~|!=|!~|(?<=[\\t ])\\?",
       "name": "keyword.operator.comparison.ruby"
     },
     {
@@ -2802,7 +2802,7 @@
           ]
         },
         {
-          "begin": "(?<=^|\\s)(#)\\s(?=[\\t !,-.0-9?A-Za-z[^\\x00-\\x7F]]*$)",
+          "begin": "(?<=^|\\s)(#)\\s(?=[-\\t !,.0-9?A-Za-z[^\\x00-\\x7F]]*$)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.comment.ruby"

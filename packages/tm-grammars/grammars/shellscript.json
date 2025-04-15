@@ -313,7 +313,7 @@
           ]
         }
       },
-      "match": "(?![\\n!#\\&()<>\\[{|]|$|[\\t ;])(?!nocorrect |nocorrect\\t|nocorrect$|readonly |readonly\\t|readonly$|function |function\\t|function$|foreach |foreach\\t|foreach$|coproc |coproc\\t|coproc$|logout |logout\\t|logout$|export |export\\t|export$|select |select\\t|select$|repeat |repeat\\t|repeat$|pushd |pushd\\t|pushd$|until |until\\t|until$|while |while\\t|while$|local |local\\t|local$|case |case\\t|case$|done |done\\t|done$|elif |elif\\t|elif$|else |else\\t|else$|esac |esac\\t|esac$|popd |popd\\t|popd$|then |then\\t|then$|time |time\\t|time$|for |for\\t|for$|end |end\\t|end$|fi |fi\\t|fi$|do |do\\t|do$|in |in\\t|in$|if |if\\t|if$)(?:((?<=^|[\\t \\&;])(?:readonly|declare|typeset|export|local)(?=[\\t \\&;]|$))|((?![\"']|\\\\\\n?$)[^\\t\\n\\r -\"'<>]+?))(?:(?=[\\t ])|(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\))",
+      "match": "(?![\\n!#\\&()<>\\[{|]|$|[\\t ;])(?!nocorrect |nocorrect\\t|nocorrect$|readonly |readonly\\t|readonly$|function |function\\t|function$|foreach |foreach\\t|foreach$|coproc |coproc\\t|coproc$|logout |logout\\t|logout$|export |export\\t|export$|select |select\\t|select$|repeat |repeat\\t|repeat$|pushd |pushd\\t|pushd$|until |until\\t|until$|while |while\\t|while$|local |local\\t|local$|case |case\\t|case$|done |done\\t|done$|elif |elif\\t|elif$|else |else\\t|else$|esac |esac\\t|esac$|popd |popd\\t|popd$|then |then\\t|then$|time |time\\t|time$|for |for\\t|for$|end |end\\t|end$|fi |fi\\t|fi$|do |do\\t|do$|in |in\\t|in$|if |if\\t|if$)(?:((?<=^|[\\t \\&;])(?:readonly|declare|typeset|export|local)(?=[\\t \\&;]|$))|((?![\"']|\\\\\\n?$)[^\\t\\n\\r !\"'<>]+?))(?:(?=[\\t ])|(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\))",
       "name": "meta.statement.command.name.basic.shell"
     },
     "block_comment": {
@@ -557,7 +557,7 @@
       "begin": "[\\t ]*+(?![\\n!#\\&()<>\\[{|]|$|[\\t ;])(?!nocorrect |nocorrect\\t|nocorrect$|readonly |readonly\\t|readonly$|function |function\\t|function$|foreach |foreach\\t|foreach$|coproc |coproc\\t|coproc$|logout |logout\\t|logout$|export |export\\t|export$|select |select\\t|select$|repeat |repeat\\t|repeat$|pushd |pushd\\t|pushd$|until |until\\t|until$|while |while\\t|while$|local |local\\t|local$|case |case\\t|case$|done |done\\t|done$|elif |elif\\t|elif$|else |else\\t|else$|esac |esac\\t|esac$|popd |popd\\t|popd$|then |then\\t|then$|time |time\\t|time$|for |for\\t|for$|end |end\\t|end$|fi |fi\\t|fi$|do |do\\t|do$|in |in\\t|in$|if |if\\t|if$)(?!\\\\\\n?$)",
       "beginCaptures": {
       },
-      "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+      "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
       "endCaptures": {
       },
       "name": "meta.statement.command.shell",
@@ -741,7 +741,7 @@
               "name": "keyword.control.in.shell"
             }
           },
-          "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+          "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
           "endCaptures": {
           },
           "name": "meta.for.in.shell",
@@ -764,7 +764,7 @@
               "name": "keyword.control.for.shell"
             }
           },
-          "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+          "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
           "endCaptures": {
           },
           "name": "meta.for.shell",
@@ -781,7 +781,7 @@
     },
     "function_definition": {
       "applyEndPatternLast": 1,
-      "begin": "[\\t ]*+(?:\\b(function)\\b[\\t ]*+([^\\t\\n\\r \"'-)=]+)(?:(\\()[\\t ]*+(\\)))?|([^\\t\\n\\r \"'-)=]+)[\\t ]*+(\\()[\\t ]*+(\\)))",
+      "begin": "[\\t ]*+(?:\\b(function)\\b[\\t ]*+([^\\t\\n\\r \"'()=]+)(?:(\\()[\\t ]*+(\\)))?|([^\\t\\n\\r \"'()=]+)[\\t ]*+(\\()[\\t ]*+(\\)))",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.shell"
@@ -1285,7 +1285,7 @@
           "name": "keyword.operator.logical.shell"
         },
         {
-          "match": "(?<!\\S)-(nt|ot|ef|eq|ne|l[et]|g[et]|[GLNOSa-hkn-pr-uwxz])\\b",
+          "match": "(?<!\\S)-(nt|ot|ef|eq|ne|l[et]|g[et]|[GLNOSa-hknopr-uwxz])\\b",
           "name": "keyword.operator.logical.shell"
         }
       ]
@@ -1588,7 +1588,7 @@
           "name": "storage.modifier.$0.shell"
         }
       },
-      "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+      "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
       "endCaptures": {
       },
       "name": "meta.statement.shell meta.expression.assignment.modified.shell",
@@ -1684,7 +1684,7 @@
           "name": "keyword.operator.assignment.compound.shell"
         }
       },
-      "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+      "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
       "endCaptures": {
       },
       "name": "meta.expression.assignment.shell",
@@ -1702,7 +1702,7 @@
           "begin": "(?<=[\\t ])(?![\\t ]|\\w+=)",
           "beginCaptures": {
           },
-          "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+          "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
           "endCaptures": {
           },
           "name": "meta.statement.command.env.shell",
@@ -1791,7 +1791,7 @@
       "begin": "(?!^[\\t ]*+$)(?:(?<=(?:^until| until|\\tuntil|^while| while|\\twhile|^elif| elif|\\telif|^else| else|\\telse|^then| then|\\tthen|^do| do|\\tdo|^if| if|\\tif) )|(?<=^|[!\\&(;`{|]))[\\t ]*+(?!nocorrect\\W|nocorrect\\$|function\\W|function\\$|foreach\\W|foreach\\$|repeat\\W|repeat\\$|logout\\W|logout\\$|coproc\\W|coproc\\$|select\\W|select\\$|while\\W|while\\$|pushd\\W|pushd\\$|until\\W|until\\$|case\\W|case\\$|done\\W|done\\$|elif\\W|elif\\$|else\\W|else\\$|esac\\W|esac\\$|popd\\W|popd\\$|then\\W|then\\$|time\\W|time\\$|for\\W|for\\$|end\\W|end\\$|fi\\W|fi\\$|do\\W|do\\$|in\\W|in\\$|if\\W|if\\$)",
       "beginCaptures": {
       },
-      "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+      "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
       "endCaptures": {
       },
       "name": "meta.statement.shell",
@@ -1852,7 +1852,7 @@
         }
       },
       "contentName": "string.unquoted.argument constant.other.option",
-      "end": "(?=[\\t ])|(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+      "end": "(?=[\\t ])|(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
       "endCaptures": {
       },
       "patterns": [
@@ -2343,7 +2343,7 @@
               "name": "keyword.control.while.shell"
             }
           },
-          "end": "(?=[\\n\\&);`{-}]|[\\t ]*#|])(?<!\\\\)",
+          "end": "(?=[\\n\\&);`{|}]|[\\t ]*#|])(?<!\\\\)",
           "endCaptures": {
           },
           "name": "meta.while.shell",

@@ -64,7 +64,7 @@
                   "name": "punctuation.definition.escape.erlang"
                 }
               },
-              "match": "(\\\\)([\"'\\\\bd-fnr-tv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2})",
+              "match": "(\\\\)([\"'\\\\bdefnrstv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2})",
               "name": "constant.other.symbol.escape.erlang"
             },
             {
@@ -154,7 +154,7 @@
               "name": "punctuation.definition.escape.erlang"
             }
           },
-          "match": "(\\$)((\\\\)([\"'\\\\bd-fnr-tv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2}))",
+          "match": "(\\$)((\\\\)([\"'\\\\bdefnrstv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2}))",
           "name": "constant.character.erlang"
         },
         {
@@ -752,7 +752,7 @@
       ]
     },
     "function-call": {
-      "begin": "(?=([a-z][@-Z_a-z\\d]*+|'[^']*+'|_[@-Z_a-z\\d]++|[A-Z][@-Z_a-z\\d]*+)\\s*+((?:|:\\s*+([a-z][@-Z_a-z\\d]*+|'[^']*+'|_[@-Z_a-z\\d]++|[A-Z][@-Z_a-z\\d]*+)\\s*+)\\())",
+      "begin": "(?=([a-z][@-Z_a-z\\d]*+|'[^']*+'|_[@-Z_a-z\\d]++|[A-Z][@-Z_a-z\\d]*+)\\s*+(\\(|:\\s*+([a-z][@-Z_a-z\\d]*+|'[^']*+'|_[@-Z_a-z\\d]++|[A-Z][@-Z_a-z\\d]*+)\\s*+\\())",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -1052,7 +1052,7 @@
               "name": "punctuation.definition.escape.erlang"
             }
           },
-          "match": "(\\\\)([\"'\\\\bd-fnr-tv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2})",
+          "match": "(\\\\)([\"'\\\\bdefnrstv]|(\\^)[@-_a-z]|[0-7]{1,3}|x[A-Fa-f\\d]{2})",
           "name": "constant.character.escape.erlang"
         },
         {
@@ -1071,7 +1071,7 @@
               "name": "punctuation.separator.placeholder-parts.erlang"
             }
           },
-          "match": "(~)((-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[Kklt]*[#+BPWXbce-ginpswx~]",
+          "match": "(~)((-)?\\d++|(\\*))?((\\.)(\\d++|(\\*))?((\\.)((\\*)|.))?)?[Kklt]*[#+BPWXbcefginpswx~]",
           "name": "constant.character.format.placeholder.other.erlang"
         },
         {
@@ -1301,7 +1301,7 @@
               "name": "punctuation.separator.base-integer.erlang"
             }
           },
-          "match": "3(#)([0-2]++_)*[0-2]++",
+          "match": "3(#)([012]++_)*[012]++",
           "name": "constant.numeric.integer.base-3.erlang"
         },
         {
@@ -1391,7 +1391,7 @@
               "name": "punctuation.separator.base-integer.erlang"
             }
           },
-          "match": "13(#)([A-Ca-c\\d]++_)*[A-Ca-c\\d]++",
+          "match": "13(#)([ABCabc\\d]++_)*[ABCabc\\d]++",
           "name": "constant.numeric.integer.base-13.erlang"
         },
         {

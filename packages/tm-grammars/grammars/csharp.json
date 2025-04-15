@@ -3247,7 +3247,7 @@
       "name": "keyword.operator.assignment.cs"
     },
     "operator-declaration": {
-      "begin": "(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[-!%\\&*+/<->^|~]+|true|false)\\s*(?=\\()",
+      "begin": "(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s*\\b(?<operator_keyword>operator)\\b\\s*(?<operator>[-!%\\&*+/<=>^|~]+|true|false)\\s*(?=\\()",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -5139,7 +5139,7 @@
       "patterns": [
         {
           "begin": "\\G",
-          "end": "(?!\\G[@_[:alpha:]])(?=[\\&(),:;=@\\]-_{-}[:alpha:]]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
+          "end": "(?!\\G[@_[:alpha:]])(?=[]\\&(),:;=@^_{|}[:alpha:]]|(?:\\s|^)\\?|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5188,7 +5188,7 @@
               "name": "punctuation.separator.coloncolon.cs"
             }
           },
-          "end": "(?<=[_[:alnum:]])|(?=[]\\&(),.:-=?\\[^{-}]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_[:alnum:]])|(?=[]\\&(),.:-=?\\[^{|}]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"
@@ -5210,7 +5210,7 @@
               "name": "punctuation.accessor.cs"
             }
           },
-          "end": "(?<=[_[:alnum:]])|(?=[]\\&(),:-=?\\[^{-}]|!=|\\b(and|or|when)\\b)",
+          "end": "(?<=[_[:alnum:]])|(?=[]\\&(),:-=?\\[^{|}]|!=|\\b(and|or|when)\\b)",
           "patterns": [
             {
               "include": "#intrusive"

@@ -248,7 +248,7 @@
               "name": "comment.typehint.type.notation.python"
             },
             {
-              "match": "([](-*,.=\\[]|(->))",
+              "match": "([]()*,.=\\[]|(->))",
               "name": "comment.typehint.punctuation.notation.python"
             },
             {
@@ -1562,7 +1562,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![ars])?)(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)(?=})"
+          "match": "(=?(?:![ars])?)(:\\w?[<=>^]?[- +]?#?\\d*,?(\\.\\d+)?[%EFGXb-gnosx]?)(?=})"
         },
         {
           "include": "#fstring-terminator-multi-tail"
@@ -1588,7 +1588,7 @@
           "include": "#fstring-multi-brace"
         },
         {
-          "match": "([%E-GXb-gnosx])(?=})",
+          "match": "([%EFGXb-gnosx])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1612,7 +1612,7 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<->^])",
+          "match": "([<=>^])",
           "name": "storage.type.format.python"
         },
         {
@@ -1640,7 +1640,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(=?(?:![ars])?)(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)(?=})"
+          "match": "(=?(?:![ars])?)(:\\w?[<=>^]?[- +]?#?\\d*,?(\\.\\d+)?[%EFGXb-gnosx]?)(?=})"
         },
         {
           "include": "#fstring-terminator-single-tail"
@@ -1666,7 +1666,7 @@
           "include": "#fstring-single-brace"
         },
         {
-          "match": "([%E-GXb-gnosx])(?=})",
+          "match": "([%EFGXb-gnosx])(?=})",
           "name": "storage.type.format.python"
         },
         {
@@ -1690,7 +1690,7 @@
           "name": "storage.type.format.python"
         },
         {
-          "match": "([<->^])",
+          "match": "([<=>^])",
           "name": "storage.type.format.python"
         },
         {
@@ -3568,7 +3568,7 @@
           "name": "keyword.control.flow.python"
         },
         {
-          "match": "\\b(?<!\\.)((?:glob|nonloc)al)\\b",
+          "match": "\\b(?<!\\.)(global|nonlocal)\\b",
           "name": "storage.modifier.declaration.python"
         },
         {
@@ -3708,7 +3708,7 @@
               "name": "storage.type.format.python"
             }
           },
-          "match": "(\\{\\{|}}|\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:\\w?[<->^]?[- +]?#?\\d*,?(\\.\\d+)?[%E-GXb-gnosx]?)?})",
+          "match": "(\\{\\{|}}|\\{\\w*(\\.[_[:alpha:]]\\w*|\\[[^]\"']+])*(![ars])?(:\\w?[<=>^]?[- +]?#?\\d*,?(\\.\\d+)?[%EFGXb-gnosx]?)?})",
           "name": "meta.format.brace.python"
         },
         {
@@ -3750,7 +3750,7 @@
           "name": "constant.character.format.placeholder.other.python"
         }
       },
-      "match": "(%(\\([\\w\\s]*\\))?[- #+0]*(\\d+|\\*)?(\\.(\\d+|\\*))?([Lhl])?[%E-GXa-giorsux])",
+      "match": "(%(\\([\\w\\s]*\\))?[- #+0]*(\\d+|\\*)?(\\.(\\d+|\\*))?([Lhl])?[%EFGXa-giorsux])",
       "name": "meta.format.percent.python"
     },
     "string-line-continuation": {

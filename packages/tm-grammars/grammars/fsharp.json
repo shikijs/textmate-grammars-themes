@@ -106,7 +106,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\??)([ '.0-9^-`[:alpha:]]+)\\s*(:)((?!with\\b)\\b([ '.0-9^-`\\w]+))?"
+          "match": "(\\??)([ '.0-9^_`[:alpha:]]+)\\s*(:)((?!with\\b)\\b([ '.0-9^_`\\w]+))?"
         },
         {
           "captures": {
@@ -115,7 +115,7 @@
             }
           },
           "comments": "Here we need the \\w modifier in order to check that the words isn't blacklisted",
-          "match": "(?!with|get|set\\b)\\s*(['.0-9^-`\\w]+)"
+          "match": "(?!with|get|set\\b)\\s*(['.0-9^_`\\w]+)"
         },
         {
           "include": "#keywords"
@@ -188,7 +188,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "match": "[ '0-9^-`[:alpha:]]+(:)"
+          "match": "[ '0-9^_`[:alpha:]]+(:)"
         },
         {
           "captures": {
@@ -196,7 +196,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "([ '0-9^-`[:alpha:]]+)"
+          "match": "([ '0-9^_`[:alpha:]]+)"
         },
         {
           "include": "#anonymous_record_declaration"
@@ -387,7 +387,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "end": "(\\)\\s*(([ '.0-9?^-`[:alpha:]]*)))",
+          "end": "(\\)\\s*(([ '.0-9?^_`[:alpha:]]*)))",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -449,7 +449,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(:)\\s*([ '.0-9?^-`[:alpha:]]+)"
+          "match": "(:)\\s*([ '.0-9?^_`[:alpha:]]+)"
         },
         {
           "captures": {
@@ -463,7 +463,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(->)\\s*(\\()?\\s*([ '.0-9?^-`[:alpha:]]+)*"
+          "match": "(->)\\s*(\\()?\\s*([ '.0-9?^_`[:alpha:]]+)*"
         },
         {
           "begin": "(\\*)\\s*(\\()",
@@ -475,7 +475,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "end": "(\\)\\s*(([ '.0-9?^-`[:alpha:]]+))*)",
+          "end": "(\\)\\s*(([ '.0-9?^_`[:alpha:]]+))*)",
           "endCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -491,7 +491,7 @@
           ]
         },
         {
-          "begin": "(\\*)(\\s*([ '.0-9?^-`[:alpha:]]+))*",
+          "begin": "(\\*)(\\s*([ '.0-9?^_`[:alpha:]]+))*",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -569,7 +569,7 @@
     "common_declaration": {
       "patterns": [
         {
-          "begin": "\\s*(->)\\s*([ '.0-9^-`[:alpha:]]+)(<)",
+          "begin": "\\s*(->)\\s*([ '.0-9^_`[:alpha:]]+)(<)",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.arrow.fsharp"
@@ -594,7 +594,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([ '.0-9^-`[:alpha:]]+)"
+              "match": "([ '.0-9^_`[:alpha:]]+)"
             },
             {
               "include": "#keywords"
@@ -610,13 +610,13 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "\\s*(->)\\s*(?!with|get|set\\b)\\b(['.0-9^-`\\w]+)"
+          "match": "\\s*(->)\\s*(?!with|get|set\\b)\\b(['.0-9^_`\\w]+)"
         },
         {
           "include": "#anonymous_record_declaration"
         },
         {
-          "begin": "(\\??)([ '.0-9^-`[:alpha:]]+)\\s*(:)(\\s*([ '.0-9?^-`[:alpha:]]+)(<))",
+          "begin": "(\\??)([ '.0-9^_`[:alpha:]]+)\\s*(:)(\\s*([ '.0-9?^_`[:alpha:]]+)(<))",
           "beginCaptures": {
             "1": {
               "name": "keyword.symbol.fsharp"
@@ -647,7 +647,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "([ '.0-9^-`[:alpha:]]+)"
+              "match": "([ '.0-9^_`[:alpha:]]+)"
             },
             {
               "include": "#keywords"
@@ -870,7 +870,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(['.0-9<>^-`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)\\s*(:)\\s*(['.0-9<>^-`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)"
+              "match": "(['.0-9<>^_`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)\\s*(:)\\s*(['.0-9<>^_`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)"
             },
             {
               "captures": {
@@ -878,7 +878,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(``([ '.0-9^_[:alpha:]]+)``|['.0-9^-`[:alpha:]]+)"
+              "match": "(``([ '.0-9^_[:alpha:]]+)``|['.0-9^_`[:alpha:]]+)"
             },
             {
               "include": "#anonymous_record_declaration"
@@ -1017,7 +1017,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(([ '.0-9?^-`[:alpha:]]+))+"
+              "match": "(([ '.0-9?^_`[:alpha:]]+))+"
             },
             {
               "include": "#tuple_signature"
@@ -1031,7 +1031,7 @@
             }
           },
           "comments": "Here we need the \\w modifier in order to check that the words are allowed",
-          "match": "(?!when|and|or\\b)\\b(['.0-9^-`\\w]+)"
+          "match": "(?!when|and|or\\b)\\b(['.0-9^_`\\w]+)"
         },
         {
           "captures": {
@@ -1066,7 +1066,7 @@
           "name": "keyword.symbol.arrow.fsharp"
         },
         {
-          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~-|<<<|>>>|\\|>|:>|:\\?>|[]:;\\[]|<>|[=@]|\\|\\||&&|[%\\&_{-}]|\\.\\.|[!*-\\-/>^]|>=|>>|<|<=|[()]|<<)[.?]*",
+          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~-|<<<|>>>|\\|>|:>|:\\?>|[]:;\\[]|<>|[=@]|\\|\\||&&|[%\\&_{|}]|\\.\\.|[!*-\\-/>^]|>=|>>|<|<=|[()]|<<)[.?]*",
           "name": "keyword.symbol.fsharp"
         }
       ]
@@ -1166,7 +1166,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\??)(['.0-9^-`[:alpha:]]+|``[ ',.0-:^-`[:alpha:]]+``)\\s*(:?)(\\s*([ '.0-9<>?_`[:alpha:]]+))?"
+          "match": "(\\??)(['.0-9^_`[:alpha:]]+|``[ ',.0-:^_`[:alpha:]]+``)\\s*(:?)(\\s*([ '.0-9<>?_`[:alpha:]]+))?"
         },
         {
           "include": "#keywords"
@@ -1293,7 +1293,7 @@
               "include": "#comments"
             },
             {
-              "begin": "(((mutable)\\s\\p{alpha}+)|['.0-9<>^-`[:alpha:]]*)\\s*((?<!:):(?!:))\\s*",
+              "begin": "(((mutable)\\s\\p{alpha}+)|['.0-9<>^_`[:alpha:]]*)\\s*((?<!:):(?!:))\\s*",
               "beginCaptures": {
                 "3": {
                   "name": "keyword.fsharp"
@@ -1318,7 +1318,7 @@
                       "name": "entity.name.type.fsharp"
                     }
                   },
-                  "match": "([ '0-9^-`[:alpha:]]+)"
+                  "match": "([ '0-9^_`[:alpha:]]+)"
                 },
                 {
                   "include": "#keywords"
@@ -1373,7 +1373,7 @@
               "name": "variable.parameter.fsharp"
             }
           },
-          "match": "[ '0-9^-`[:alpha:]]+(=)([ '0-9^-`[:alpha:]]+)"
+          "match": "[ '0-9^_`[:alpha:]]+(=)([ '0-9^_`[:alpha:]]+)"
         },
         {
           "begin": "(\\{)",
@@ -1398,7 +1398,7 @@
                   "name": "variable.parameter.fsharp"
                 }
               },
-              "match": "[ '0-9^-`[:alpha:]]+(=)([ '0-9^-`[:alpha:]]+)"
+              "match": "[ '0-9^_`[:alpha:]]+(=)([ '0-9^_`[:alpha:]]+)"
             },
             {
               "include": "#record_signature"
@@ -1457,7 +1457,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(['.0-9^_[:alpha:]]+|``[ ',.0-:^-`[:alpha:]]+``)"
+              "match": "(['.0-9^_[:alpha:]]+|``[ ',.0-:^_`[:alpha:]]+``)"
             },
             {
               "begin": "(<)",
@@ -1479,7 +1479,7 @@
                       "name": "entity.name.type.fsharp"
                     }
                   },
-                  "match": "((['^])``[ ,.0-:^-`[:alpha:]]+``|(['^])[.0-:^-`[:alpha:]]+)"
+                  "match": "((['^])``[ ,.0-:^_`[:alpha:]]+``|(['^])[.0-:^_`[:alpha:]]+)"
                 },
                 {
                   "match": "\\b(interface|with|abstract|and|when|or|not|struct|equality|comparison|unmanaged|delegate|enum)\\b",
@@ -1519,7 +1519,7 @@
                     }
                   },
                   "comments": "Here we need the \\w modifier in order to check that the words isn't blacklisted",
-                  "match": "(['.0-9^-`\\w]+)"
+                  "match": "(['.0-9^_`\\w]+)"
                 },
                 {
                   "include": "#keywords"
@@ -1568,7 +1568,7 @@
               "name": "keyword.format.specifier.fsharp"
             }
           },
-          "match": "(%0?-?(\\d+)?(([at])|(\\.\\d+)?([E-GMe-g])|([Xb-diosux])|([Obs])|(\\+?A)))",
+          "match": "(%0?-?(\\d+)?(([at])|(\\.\\d+)?([EFGMefg])|([Xbcdiosux])|([Obs])|(\\+?A)))",
           "name": "entity.name.type.format.specifier.fsharp"
         }
       ]
@@ -1724,7 +1724,7 @@
               "name": "keyword.symbol.fsharp"
             }
           },
-          "match": "((?:static |)member)\\s*(['.0-9<>^-`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)\\s*(:)"
+          "match": "((?:static |)member)\\s*(['.0-9<>^_`[:alpha:]]+|``[ '.0-9<>^_[:alpha:]]+``)\\s*(:)"
         },
         {
           "include": "#compiler_directives"
@@ -1780,7 +1780,7 @@
               "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(([ '.0-9?^-`[:alpha:]]+))+"
+          "match": "(([ '.0-9?^_`[:alpha:]]+))+"
         },
         {
           "begin": "(\\()",
@@ -1802,7 +1802,7 @@
                   "name": "entity.name.type.fsharp"
                 }
               },
-              "match": "(([ '.0-9?^-`[:alpha:]]+))+"
+              "match": "(([ '.0-9?^_`[:alpha:]]+))+"
             },
             {
               "include": "#tuple_signature"
@@ -1829,7 +1829,7 @@
               "name": "variable.parameter.fsharp"
             }
           },
-          "match": "(\\??)(``[ ',.0-:^-`[:alpha:]]+``|(?!private|struct\\b)\\b[ '.0-9<>^-`\\w[:alpha:]]+)"
+          "match": "(\\??)(``[ ',.0-:^_`[:alpha:]]+``|(?!private|struct\\b)\\b[ '.0-9<>^_`\\w[:alpha:]]+)"
         }
       ]
     }

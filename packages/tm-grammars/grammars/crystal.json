@@ -4,7 +4,7 @@
     "cr"
   ],
   "firstLineMatch": "^#!/.*\\bcrystal",
-  "foldingStartMarker": "(?:^(\\s*+(annotation|module|class|struct|union|enum|def(?!.*\\bend\\s*$)|unless|if|case|begin|for|while|until|^=begin|(\"(\\\\.|[^\"])*+\"|'(\\\\.|[^'])*+'|[^\"#'])*(\\s(do|begin|case)|(?<!\\$)[-%\\&*+/<->^|~]\\s*+(if|unless)))\\b(?![^;]*+;.*?\\bend\\b)|(\"(\\\\.|[^\"])*+\"|'(\\\\.|[^'])*+'|[^\"#'])*(\\{(?![^}]*+})|\\[(?![^]]*+]))).*|#.*?\\(fold\\)\\s*+)$",
+  "foldingStartMarker": "(?:^(\\s*+(annotation|module|class|struct|union|enum|def(?!.*\\bend\\s*$)|unless|if|case|begin|for|while|until|^=begin|(\"(\\\\.|[^\"])*+\"|'(\\\\.|[^'])*+'|[^\"#'])*(\\s(do|begin|case)|(?<!\\$)[-%\\&*+/<=>^|~]\\s*+(if|unless)))\\b(?![^;]*+;.*?\\bend\\b)|(\"(\\\\.|[^\"])*+\"|'(\\\\.|[^'])*+'|[^\"#'])*(\\{(?![^}]*+})|\\[(?![^]]*+]))).*|#.*?\\(fold\\)\\s*+)$",
   "foldingStopMarker": "((^|;)\\s*+end\\s*+(#.*)?$|(^|;)\\s*+end\\..*$|^\\s*+[]}],?\\s*+(#.*)?$|#.*?\\(end\\)\\s*+$|^=end)",
   "name": "crystal",
   "patterns": [
@@ -585,7 +585,7 @@
       ]
     },
     {
-      "begin": "(?:^|(?<=[\\&(,:;=-?\\[|~]|[;\\s]if\\s|[;\\s]elsif\\s|[;\\s]while\\s|[;\\s]unless\\s|[;\\s]when\\s|[;\\s]assert_match\\s|[;\\s]or\\s|[;\\s]and\\s|[;\\s]not\\s|[.\\s]index\\s|[.\\s]scan\\s|[.\\s]sub\\s|[.\\s]sub!\\s|[.\\s]gsub\\s|[.\\s]gsub!\\s|[.\\s]match\\s)|(?<=^(?:when|if|elsif|while|unless)\\s))\\s*((/))(?![*+?{}])",
+      "begin": "(?:^|(?<=[\\&(,:;=>?\\[|~]|[;\\s]if\\s|[;\\s]elsif\\s|[;\\s]while\\s|[;\\s]unless\\s|[;\\s]when\\s|[;\\s]assert_match\\s|[;\\s]or\\s|[;\\s]and\\s|[;\\s]not\\s|[.\\s]index\\s|[.\\s]scan\\s|[.\\s]sub\\s|[.\\s]sub!\\s|[.\\s]gsub\\s|[.\\s]gsub!\\s|[.\\s]match\\s)|(?<=^(?:when|if|elsif|while|unless)\\s))\\s*((/))(?![*+?{}])",
       "captures": {
         "1": {
           "name": "string.regexp.classic.crystal"
@@ -1342,7 +1342,7 @@
       "name": "keyword.operator.assignment.augmented.crystal"
     },
     {
-      "match": "<=>|<(?![<=])|>(?![<->])|<=|>=|===|==|=~|!=|!~|(?<=[\\t ])\\?",
+      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===|==|=~|!=|!~|(?<=[\\t ])\\?",
       "name": "keyword.operator.comparison.crystal"
     },
     {
@@ -1796,7 +1796,7 @@
               "name": "punctuation.definition.comment.crystal"
             }
           },
-          "match": "(?<=^|\\s)(#)\\s[\\t !,-.0-9?A-Za-z[^\\x00-\\x7F]]*$",
+          "match": "(?<=^|\\s)(#)\\s[-\\t !,.0-9?A-Za-z[^\\x00-\\x7F]]*$",
           "name": "comment.line.number-sign.crystal"
         }
       ]

@@ -251,7 +251,7 @@
     "booleans": {
       "patterns": [
         {
-          "match": "\\b(?<![\\--/])(true|false|on|off|yes|no)(?![\\--/])\\b",
+          "match": "\\b(?<![-./])(true|false|on|off|yes|no)(?![-./])\\b",
           "name": "constant.language"
         }
       ]
@@ -304,7 +304,7 @@
           "name": "string.quoted.single",
           "patterns": [
             {
-              "match": "\\\\(?:[\\n\"'\\\\abfnr-tv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:[\\n\"'\\\\abfnrstv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             }
           ]
@@ -315,7 +315,7 @@
           "name": "string.quoted.double",
           "patterns": [
             {
-              "match": "\\\\(?:[\\n\"'\\\\abfnr-tv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
+              "match": "\\\\(?:[\\n\"'\\\\abfnrstv]|x\\h{2}|[0-8]{3}|u\\h{4}|U\\h{8})",
               "name": "constant.character.escape"
             }
           ]
@@ -402,7 +402,7 @@
           "name": "constant.other.placeholder"
         },
         {
-          "match": "%[A-CEG-JL-NPS-Wabf-jl-ps-w]\\b",
+          "match": "%[ABCEG-JLMNPS-Wabf-jl-ps-w]\\b",
           "name": "constant.other.placeholder"
         }
       ]
