@@ -635,7 +635,7 @@
           "name": "keyword.operator.relation.v"
         },
         {
-          "match": "((?::||[-%\\&*+/^|~]|&&|\\|\\||>>|<<)=)",
+          "match": "((?::?|[-%\\&*+/^|~]|&&|\\|\\||>>|<<)=)",
           "name": "keyword.operator.assignment.v"
         },
         {
@@ -994,7 +994,7 @@
           ]
         }
       },
-      "match": "[A-Z_a-z]\\w*(?:,\\s*[A-Z_a-z]\\w*)*(?=\\s*(?:|:)=)"
+      "match": "[A-Z_a-z]\\w*(?:,\\s*[A-Z_a-z]\\w*)*(?=\\s*:??=)"
     }
   },
   "scopeName": "source.v"

@@ -1035,7 +1035,7 @@
       ]
     },
     {
-      "begin": "\\s*\\\\begin\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|python|pythonq|pythonrepl)\\*?}(?:\\[[-0-9A-Z_a-z]*])?(?=[\\[{]|\\s*$)",
+      "begin": "\\s*\\\\begin\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|pythonq??|pythonrepl)\\*?}(?:\\[[-0-9A-Z_a-z]*])?(?=[\\[{]|\\s*$)",
       "captures": {
         "0": {
           "patterns": [
@@ -1045,7 +1045,7 @@
           ]
         }
       },
-      "end": "\\s*\\\\end\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|python|pythonq|pythonrepl)\\*?}",
+      "end": "\\s*\\\\end\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|pythonq??|pythonrepl)\\*?}",
       "patterns": [
         {
           "include": "#multiline-optional-arg-no-highlight"
@@ -1068,7 +1068,7 @@
         {
           "begin": "^(?=\\s*)",
           "contentName": "source.python",
-          "end": "^\\s*(?=\\\\end\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|python|pythonq|pythonrepl)\\*?})",
+          "end": "^\\s*(?=\\\\end\\{(?:sageblock|sagesilent|sageverbatim|sageexample|sagecommandline|pythonq??|pythonrepl)\\*?})",
           "patterns": [
             {
               "include": "source.python"

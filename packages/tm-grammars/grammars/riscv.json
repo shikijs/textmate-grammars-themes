@@ -9,11 +9,11 @@
   "name": "riscv",
   "patterns": [
     {
-      "match": "\\b(la|lb|lh|lw|ld|nop|li|mv|not|neg|negw|sext\\.w|seqz|snez|sltz|sgtz|beqz|bnez|blez|bgez|bltz|bgtz|bgt|ble|bgtu|bleu|j|jal|jr|ret|call|tail|fence|csr[crsw|]|csr[csw|]i)\\b",
+      "match": "\\b(la|lb|lh|lw|ld|nop|li|mv|not|negw??|sext\\.w|seqz|snez|sltz|sgtz|beqz|bnez|blez|bgez|bltz|bgtz?|ble|bgtu|bleu|j|jal|jr|ret|call|tail|fence|csr[crsw|]|csr[csw|]i)\\b",
       "name": "support.function.pseudo.riscv"
     },
     {
-      "match": "\\b(add|addw|auipc|lui|jalr|beq|bne|blt|bge|bltu|bgeu|lb|lh|lw|ld|lbu|lhu|sb|sh|sw|sd|addi|addiw|slti|sltiu|xori|ori|andi|slli|slliw|srli|srliw|srai|sraiw|sub|subw|sll|sllw|slt|sltu|xor|srl|srlw|sra|sraw|or|and|fence|fence\\.i|csrrw|csrrs|csrrc|csrrwi|csrrsi|csrrci)\\b",
+      "match": "\\b(addw??|auipc|lui|jalr|beq|bne|blt|bge|bltu|bgeu|lb|lh|lw|ld|lbu|lhu|sb|sh|sw|sd|addiw??|sltiu??|xori|ori|andi|slliw??|srliw??|sraiw??|subw??|sllw??|sltu??|xor|srlw??|sraw??|or|and|fence|fence\\.i|csrrw|csrrs|csrrc|csrrwi|csrrsi|csrrci)\\b",
       "name": "support.function.riscv"
     },
     {
@@ -21,7 +21,7 @@
       "name": "support.function.riscv.privileged"
     },
     {
-      "match": "\\b(mul|mulh|mulhsu|mulhu|div|divu|rem|remu|mulw|divw|divuw|remw|remuw)\\b",
+      "match": "\\b(mulh??|mulhsu|mulhu|divu??|remu??|mulw|divw|divuw|remw|remuw)\\b",
       "name": "support.function.riscv.m"
     },
     {
@@ -33,15 +33,15 @@
       "name": "support.function.riscv.a"
     },
     {
-      "match": "\\b(f(?:lw|sw|madd\\.s|msub\\.s|nmsub\\.s|nmadd\\.s|add\\.s|sub\\.s|mul\\.s|div\\.s|sqrt\\.s|sgnj\\.s|sgnjn\\.s|sgnjx\\.s|min\\.s|max\\.s|cvt\\.w\\.s|cvt\\.wu\\.s|mv\\.x\\.w|eq\\.s|lt\\.s|le\\.s|class\\.s|cvt\\.s\\.w|cvt\\.s\\.wu|mv\\.w\\.x|cvt\\.l\\.s|cvt\\.lu\\.s|cvt\\.s\\.l|cvt\\.s\\.lu))\\b",
+      "match": "\\b(f(?:lw|sw|madd\\.s|msub\\.s|nmsub\\.s|nmadd\\.s|add\\.s|sub\\.s|mul\\.s|div\\.s|sqrt\\.s|sgnj\\.s|sgnjn\\.s|sgnjx\\.s|min\\.s|max\\.s|cvt\\.w\\.s|cvt\\.wu\\.s|mv\\.x\\.w|eq\\.s|lt\\.s|le\\.s|class\\.s|cvt\\.s\\.wu??|mv\\.w\\.x|cvt\\.l\\.s|cvt\\.lu\\.s|cvt\\.s\\.lu??))\\b",
       "name": "support.function.riscv.f"
     },
     {
-      "match": "\\b(f(?:ld|sd|madd\\.d|msub\\.d|nmsub\\.d|nmadd\\.d|add\\.d|sub\\.d|mul\\.d|div\\.d|sqrt\\.d|sgnj\\.d|sgnjn\\.d|sgnjx\\.d|min\\.d|max\\.d|cvt\\.s\\.d|cvt\\.d\\.s|eq\\.d|lt\\.d|le\\.d|class\\.d|cvt\\.w\\.d|cvt\\.wu\\.d|cvt\\.d\\.w|cvt\\.d\\.wu|cvt\\.l\\.d|cvt\\.lu\\.d|mv\\.x\\.d|cvt\\.d\\.l|cvt\\.d\\.lu|mv\\.d\\.x))\\b",
+      "match": "\\b(f(?:ld|sd|madd\\.d|msub\\.d|nmsub\\.d|nmadd\\.d|add\\.d|sub\\.d|mul\\.d|div\\.d|sqrt\\.d|sgnj\\.d|sgnjn\\.d|sgnjx\\.d|min\\.d|max\\.d|cvt\\.s\\.d|cvt\\.d\\.s|eq\\.d|lt\\.d|le\\.d|class\\.d|cvt\\.w\\.d|cvt\\.wu\\.d|cvt\\.d\\.wu??|cvt\\.l\\.d|cvt\\.lu\\.d|mv\\.x\\.d|cvt\\.d\\.lu??|mv\\.d\\.x))\\b",
       "name": "support.function.riscv.d"
     },
     {
-      "match": "\\.(skip|ascii|asciiz|byte|[248|]byte|data|double|float|half|kdata|ktext|space|text|word|dword|dtprelword|dtpreldword|set\\s*(noat|at)|[su|]leb128|string|incbin|zero|rodata|comm|common)\\b",
+      "match": "\\.(skip|asciiz??|byte|[248|]byte|data|double|float|half|kdata|ktext|space|text|word|dword|dtprelword|dtpreldword|set\\s*(noat|at)|[su|]leb128|string|incbin|zero|rodata|comm|common)\\b",
       "name": "storage.type.riscv"
     },
     {
@@ -250,7 +250,7 @@
       ]
     },
     {
-      "begin": "^\\s*#\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\\b",
+      "begin": "^\\s*#\\s*(defined??|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\\b",
       "captures": {
         "1": {
           "name": "keyword.control.import.c"

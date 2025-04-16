@@ -48,7 +48,7 @@
           "name": "punctuation.definition.tag"
         }
       },
-      "match": "((?<![-!#-\\&*+./:<-@^|~])%(?![-!#-\\&*+./:<-@^|~]))((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)"
+      "match": "((?<![-!#-\\&*+./:<-@^|~])%(?![-!#-\\&*+./:<-@^|~]))((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)"
     },
     "attributePayload": {
       "patterns": [
@@ -130,7 +130,7 @@
           "patterns": [
             {
               "begin": "(?<=(?:\\P{word}|^)(?:and|class|type))(?!\\p{word})",
-              "end": "(?=(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?=\\btype\\b)",
+              "end": "(?=(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?=\\btype\\b)",
               "endCaptures": {
                 "0": {
                   "name": "entity.name.function strong emphasis"
@@ -207,7 +207,7 @@
           "patterns": [
             {
               "begin": "(?<=(?:\\P{word}|^)(?:and|class|type))(?!\\p{word})",
-              "end": "(?=(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?=\\btype\\b)",
+              "end": "(?=(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?=\\btype\\b)",
               "endCaptures": {
                 "0": {
                   "name": "entity.name.function strong emphasis"
@@ -477,7 +477,7 @@
           "patterns": [
             {
               "begin": "(?<=(?:[^-!#-\\&*+./:<-@^|~]|^)!)(?![-!#-\\&*+./:<-@^|~])|(?<=(?:\\P{word}|^)(?:and|external|let|method|val))(?!\\p{word})",
-              "end": "(?=\\b(?:module|open)\\b)|(?=(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|\\b(rec)\\b|((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)",
+              "end": "(?=\\b(?:module|open)\\b)|(?=(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*\\s*,|[^%\\s[:lower:]])|\\b(rec)\\b|((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)",
               "endCaptures": {
                 "1": {
                   "name": "variable.other.class.js message.error variable.interpolation string.regexp"
@@ -497,7 +497,7 @@
             },
             {
               "begin": "(?<=(?:\\P{word}|^)rec)(?!\\p{word})",
-              "end": "((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?=[^\\s[:alpha:]])",
+              "end": "((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?=[^\\s[:alpha:]])",
               "endCaptures": {
                 "0": {
                   "name": "entity.name.function strong emphasis"
@@ -604,7 +604,7 @@
           "patterns": [
             {
               "begin": "(?<=[^-!#-\\&*+./:<-@^|~]~|^~|[^-!#-\\&*+./:<-@^|~]\\?|^\\?)(?![-!#-\\&*+./:<-@^|~])",
-              "end": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?<=\\))",
+              "end": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*|(?<=\\))",
               "endCaptures": {
                 "0": {
                   "name": "markup.inserted constant.language support.constant.property-value entity.name.filename"
@@ -633,7 +633,7 @@
                       },
                       "patterns": [
                         {
-                          "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+                          "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
                           "name": "markup.inserted constant.language support.constant.property-value entity.name.filename"
                         }
                       ]
@@ -690,7 +690,7 @@
               "include": "#pathType"
             },
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "entity.name.function strong"
             },
             {
@@ -1301,7 +1301,7 @@
               "include": "#pathModulePrefixSimple"
             },
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -1322,7 +1322,7 @@
           },
           "patterns": [
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -1517,7 +1517,7 @@
     "pathRecord": {
       "patterns": [
         {
-          "begin": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+          "begin": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
           "end": "(?=[^.\\s])(?!\\(\\*)",
           "patterns": [
             {
@@ -1530,7 +1530,7 @@
                   "name": "keyword strong"
                 }
               },
-              "end": "((?<![-!#-\\&*+./:<-@^|~])\\.(?![-!#-\\&*+./:<-@^|~]))|((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|mutable|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?<=\\))|(?<=])",
+              "end": "((?<![-!#-\\&*+./:<-@^|~])\\.(?![-!#-\\&*+./:<-@^|~]))|((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|mutable|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?<=\\))|(?<=])",
               "endCaptures": {
                 "1": {
                   "name": "keyword strong"
@@ -1745,7 +1745,7 @@
               "include": "#pathModulePrefixSimple"
             },
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -1766,7 +1766,7 @@
           },
           "patterns": [
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -2537,7 +2537,7 @@
               "name": "keyword"
             }
           },
-          "end": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+          "end": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
           "endCaptures": {
             "0": {
               "name": "entity.name.function"
@@ -2586,7 +2586,7 @@
       "patterns": [
         {
           "begin": "(?<=[^-!#-\\&*+./:<-@^|~]\\?|^\\?|[^-!#-\\&*+./:<-@^|~]~|^~)(?![-!#-\\&*+./:<-@^|~])",
-          "end": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+          "end": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
           "endCaptures": {
             "0": {
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename"
@@ -2690,7 +2690,7 @@
     "typeConstructor": {
       "patterns": [
         {
-          "begin": "(_)|((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(')((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?<=[^*]\\)|])",
+          "begin": "(_)|((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(')((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)|(?<=[^*]\\)|])",
           "beginCaptures": {
             "1": {
               "name": "comment constant.regexp meta.separator.markdown"
@@ -2702,7 +2702,7 @@
               "name": "keyword.control emphasis"
             }
           },
-          "end": "(?=\\((?!\\*)|[])-.:;=>\\[{|}])|((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)[:aceps]*(?!\\(\\*|\\p{word})|(?=;;|[])}]|\\b(?:end|and|class|exception|external|in|include|inherit|initializer|let|method|module|open|type|val)\\b)",
+          "end": "(?=\\((?!\\*)|[])-.:;=>\\[{|}])|((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)[:aceps]*(?!\\(\\*|\\p{word})|(?=;;|[])}]|\\b(?:end|and|class|exception|external|in|include|inherit|initializer|let|method|module|open|type|val)\\b)",
           "endCaptures": {
             "1": {
               "name": "entity.name.function strong"
@@ -2722,7 +2722,7 @@
     "typeLabel": {
       "patterns": [
         {
-          "begin": "(\\??)((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)\\s*((?<![-!#-\\&*+./:<-@^|~]):(?![-!#-\\&*+./:<-@^|~]))",
+          "begin": "(\\??)((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)\\s*((?<![-!#-\\&*+./:<-@^|~]):(?![-!#-\\&*+./:<-@^|~]))",
           "captures": {
             "1": {
               "name": "keyword strong emphasis"
@@ -2791,7 +2791,7 @@
               "include": "#pathModulePrefixSimple"
             },
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -2884,7 +2884,7 @@
               "include": "#pathModulePrefixSimple"
             },
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -2905,7 +2905,7 @@
           },
           "patterns": [
             {
-              "match": "(?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
+              "match": "(?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*",
               "name": "markup.inserted constant.language support.constant.property-value entity.name.filename emphasis"
             }
           ]
@@ -2960,7 +2960,7 @@
           "name": "string.other.link variable.language variable.parameter emphasis"
         }
       },
-      "match": "\\b(_)\\b|((?!\\b(?:and|'|as|asr|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)"
+      "match": "\\b(_)\\b|((?!\\b(?:and|'|asr??|assert|\\*|begin|class|[,:@]|constraint|do|done|downto|else|end|=|exception|external|false|for|\\.|fun|function|functor|[->]|if|in|include|inherit|initializer|land|lazy|[(<\\[{]|let|lor|lsl|lsr|lxor|match|method|mod|module|mutable|new|nonrec|#|object|of|open|or|[%+]|private|[\"?]|rec|[]);\\\\}]|sig|/|struct|then|~|to|true|try|type|val|\\||virtual|when|while|with)\\b(?:[^']|$))\\b(?=[_[:lower:]])[_[:alpha:]]['[:word:]]*)"
     }
   },
   "scopeName": "source.ocaml"

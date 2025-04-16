@@ -911,7 +911,7 @@
     "escape-sequence": {
       "patterns": [
         {
-          "match": "(\\\\(?:quot|amp|lt|gt|OElig|oelig|Scaron|scaron|Yuml|circ|tilde|ensp|emsp|thinsp|zwnj|zwj|lrm|rlm|ndash|mdash|lsquo|rsquo|sbquo|ldquo|rdquo|bdquo|dagger|Dagger|permil|lsaquo|rsaquo|euro|nbsp|iexcl|cent|pound|curren|yen|brvbar|sect|uml|copy|ordf|laquo|not|shy|reg|macr|deg|plusmn|sup2|sup3|acute|micro|para|middot|cedil|sup1|ordm|raquo|frac14|frac12|frac34|iquest|Agrave|Aacute|Acirc|Atilde|Auml|Aring|Aelig|Ccedil|egrave|eacute|ecirc|iuml|eth|ntilde|ograve|oacute|ocirc|otilde|ouml|divide|oslash|ugrave|uacute|ucirc|uuml|yacute|thorn|yuml|fnof|Alpha|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega|alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigmaf|sigma|tau|upsilon|phi|chi|psi|omega|thetasym|upsih|piv|bull|hellip|prime|Prime|oline|frasl|weierp|image|real|trade|alefsym|larr|uarr|rarr|darr|harr|crarr|lArr|uArr|rArr|dArr|hArr|forall|part|exist|empty|nabla|isin|notin|ni|prod|sum|minux|lowast|radic|prop|infin|ang|and|or|cap|cup|int|there4|sim|cong|asymp|ne|equiv|le|ge|sub|sup|nsub|sube|supe|oplus|otimes|perp|sdot|lceil|rceil|lfloor|rfloor|loz|spades|clubs|hearts|diams|lang|rang))",
+          "match": "(\\\\(?:quot|amp|lt|gt|OElig|oelig|Scaron|scaron|Yuml|circ|tilde|ensp|emsp|thinsp|zwnj|zwj|lrm|rlm|ndash|mdash|lsquo|rsquo|sbquo|ldquo|rdquo|bdquo|dagger|Dagger|permil|lsaquo|rsaquo|euro|nbsp|iexcl|cent|pound|curren|yen|brvbar|sect|uml|copy|ordf|laquo|not|shy|reg|macr|deg|plusmn|sup2|sup3|acute|micro|para|middot|cedil|sup1|ordm|raquo|frac14|frac12|frac34|iquest|Agrave|Aacute|Acirc|Atilde|Auml|Aring|Aelig|Ccedil|egrave|eacute|ecirc|iuml|eth|ntilde|ograve|oacute|ocirc|otilde|ouml|divide|oslash|ugrave|uacute|ucirc|uuml|yacute|thorn|yuml|fnof|Alpha|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega|alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigmaf?|tau|upsilon|phi|chi|psi|omega|thetasym|upsih|piv|bull|hellip|prime|Prime|oline|frasl|weierp|image|real|trade|alefsym|larr|uarr|rarr|darr|harr|crarr|lArr|uArr|rArr|dArr|hArr|forall|part|exist|empty|nabla|isin|notin|ni|prod|sum|minux|lowast|radic|prop|infin|ang|and|or|cap|cup|int|there4|sim|cong|asymp|ne|equiv|le|ge|sub|sup|nsub|sube|supe|oplus|otimes|perp|sdot|lceil|rceil|lfloor|rfloor|loz|spades|clubs|hearts|diams|lang|rang))",
           "name": "constant.character.escape-sequence.entity.d"
         },
         {
@@ -1329,7 +1329,7 @@
     "identity-expression": {
       "patterns": [
         {
-          "match": "\\b((?:|!)is)\\b",
+          "match": "\\b(!??is)\\b",
           "name": "keyword.operator.identity.d"
         }
       ]
@@ -1499,7 +1499,7 @@
     "in-expression": {
       "patterns": [
         {
-          "match": "\\b((?:|!)in)\\b",
+          "match": "\\b(!??in)\\b",
           "name": "keyword.operator.in.d"
         }
       ]
@@ -2168,7 +2168,7 @@
     "logical-expression": {
       "patterns": [
         {
-          "match": "\\|\\||&&|==|!=|!",
+          "match": "\\|\\||&&|==|!=?",
           "name": "keyword.operator.logical.d"
         }
       ]
@@ -2582,7 +2582,7 @@
     "register-64": {
       "patterns": [
         {
-          "match": "\\b(RAX|RBX|RCX|RDX|BPL|RBP|SPL|RSP|DIL|RDI|SIL|RSI|R8B|R8W|R8D|R8|R9B|R9W|R9D|R9|R10B|R10W|R10D|R10|R11B|R11W|R11D|R11|R12B|R12W|R12D|R12|R13B|R13W|R13D|R13|R14B|R14W|R14D|R14|R15B|R15W|R15D|R15|XMM8|XMM9|XMM10|XMM11|XMM12|XMM13|XMM14|XMM15|YMM0|YMM1|YMM2|YMM3|YMM4|YMM5|YMM6|YMM7|YMM8|YMM9|YMM10|YMM11|YMM12|YMM13|YMM14|YMM15)\\b",
+          "match": "\\b(RAX|RBX|RCX|RDX|BPL|RBP|SPL|RSP|DIL|RDI|SIL|RSI|R8B|R8W|R8D?|R9B|R9W|R9D?|R10B|R10W|R10D?|R11B|R11W|R11D?|R12B|R12W|R12D?|R13B|R13W|R13D?|R14B|R14W|R14D?|R15B|R15W|R15D?|XMM8|XMM9|XMM10|XMM11|XMM12|XMM13|XMM14|XMM15|YMM0|YMM1|YMM2|YMM3|YMM4|YMM5|YMM6|YMM7|YMM8|YMM9|YMM10|YMM11|YMM12|YMM13|YMM14|YMM15)\\b",
           "name": "storage.type.assembly.register-64.d"
         }
       ]
@@ -2590,7 +2590,7 @@
     "rel-expression": {
       "patterns": [
         {
-          "match": "!<>=|!<>|<>=|!>=|!<=|<=|>=|<>|!>|!<|[<>]",
+          "match": "!<>=?|<>=|!>=|!<=|<=|>=|<>|!>|!<|[<>]",
           "name": "keyword.operator.rel.d"
         }
       ]
@@ -2641,7 +2641,7 @@
     "shift-expression": {
       "patterns": [
         {
-          "match": "<<|>>|>>>",
+          "match": "<<|>>>??",
           "name": "keyword.operator.shift.d"
         },
         {
@@ -2981,7 +2981,7 @@
           "include": "#keyword"
         },
         {
-          "match": "~=|~|>>>|>>=|>>|>=|>|=>|==|=|<>|<=|<<|<|%=|[#%]|&=|&&|[$\\&]|\\|=|\\|\\||\\||\\+=|\\+\\+|\\+|\\^=|\\^\\^=|\\^\\^|\\^|\\*=|[]()*\\[{}]|\\.\\.\\.|\\.\\.|[.?]|!>=|!>|!=|!<>=|!<>|!<=|!<|!|/=|[,/:;@]|-=|--|-",
+          "match": "~=?|>>>|>>=?|>=?|=>|==?|<>|<=|<<?|%=|[#%]|&=|&&|[$\\&]|\\|=|\\|\\|?|\\+=|\\+\\+?|\\^=|\\^\\^=?|\\^|\\*=|[]()*\\[{}]|\\.\\.\\.?|[.?]|!>=?|!=|!<>=?|!<=?|!|/=|[,/:;@]|-=|--?",
           "name": "meta.lexical.token.symbolic.d"
         },
         {

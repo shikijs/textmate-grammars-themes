@@ -550,7 +550,7 @@
     "commonmark-code-fenced-clojure": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:clojure|rouge|(?:.*\\.)?(?:boot|cl2|clj|cljc|cljs|cljs\\.hl|cljscm|cljx|edn|hic|rg|wisp)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:clojure|rouge|(?:.*\\.)?(?:boot|cl2|cljc??|cljs|cljs\\.hl|cljscm|cljx|edn|hic|rg|wisp)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -592,7 +592,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:clojure|rouge|(?:.*\\.)?(?:boot|cl2|clj|cljc|cljs|cljs\\.hl|cljscm|cljx|edn|hic|rg|wisp)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:clojure|rouge|(?:.*\\.)?(?:boot|cl2|cljc??|cljs|cljs\\.hl|cljscm|cljx|edn|hic|rg|wisp)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -814,7 +814,7 @@
     "commonmark-code-fenced-cpp": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:ags|ags-script|asymptote|c\\+\\+|edje-data-collection|game-maker-language|swig|(?:.*\\.)?(?:asc|ash|asy|c\\+\\+|cc|cp|cpp|cppm|cxx|edc|gml|h\\+\\+|hh|hpp|hxx|inl|ino|ipp|ixx|metal|re|tcc|tpp|txx)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:ags|ags-script|asymptote|c\\+\\+|edje-data-collection|game-maker-language|swig|(?:.*\\.)?(?:asc|ash|asy|c\\+\\+|cc|cpp??|cppm|cxx|edc|gml|h\\+\\+|hh|hpp|hxx|inl|ino|ipp|ixx|metal|re|tcc|tpp|txx)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -859,7 +859,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:ags|ags-script|asymptote|c\\+\\+|edje-data-collection|game-maker-language|swig|(?:.*\\.)?(?:asc|ash|asy|c\\+\\+|cc|cp|cpp|cppm|cxx|edc|gml|h\\+\\+|hh|hpp|hxx|inl|ino|ipp|ixx|metal|re|tcc|tpp|txx)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:ags|ags-script|asymptote|c\\+\\+|edje-data-collection|game-maker-language|swig|(?:.*\\.)?(?:asc|ash|asy|c\\+\\+|cc|cpp??|cppm|cxx|edc|gml|h\\+\\+|hh|hpp|hxx|inl|ino|ipp|ixx|metal|re|tcc|tpp|txx)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -1260,7 +1260,7 @@
     "commonmark-code-fenced-elixir": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:elixir|(?:.*\\.)?ex(?:|s)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:elixir|(?:.*\\.)?exs??))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -1302,7 +1302,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:elixir|(?:.*\\.)?ex(?:|s)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:elixir|(?:.*\\.)?exs??))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -1700,7 +1700,7 @@
     "commonmark-code-fenced-graphql": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:(?:.*\\.)?g(?:ql|raphql|raphqls)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:(?:.*\\.)?g(?:ql|raphqls??)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -1742,7 +1742,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:(?:.*\\.)?g(?:ql|raphql|raphqls)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:(?:.*\\.)?g(?:ql|raphqls??)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2052,7 +2052,7 @@
     "commonmark-code-fenced-java": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:chuck|unrealscript|(?:.*\\.)?(?:ck|jav|java|jsh|uc)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:chuck|unrealscript|(?:.*\\.)?(?:ck|java??|jsh|uc)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2094,7 +2094,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:chuck|unrealscript|(?:.*\\.)?(?:ck|jav|java|jsh|uc)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:chuck|unrealscript|(?:.*\\.)?(?:ck|java??|jsh|uc)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2228,7 +2228,7 @@
     "commonmark-code-fenced-json": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:ecere-projects|ipython-notebook|jupyter-notebook|max|max/msp|maxmsp|oasv2-json|oasv3-json|(?:.*\\.)?(?:4dform|4dproject|avsc|epj|geojson|gltf|har|ice|ipynb|json|json|json|json-tmlanguage|jsonl|maxhelp|maxpat|maxproj|mcmeta|mxt|pat|sarif|tfstate|tfstate\\.backup|topojson|webapp|webmanifest|yy|yyp)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:ecere-projects|ipython-notebook|jupyter-notebook|max|max/msp|maxmsp|oasv2-json|oasv3-json|(?:.*\\.)?(?:4dform|4dproject|avsc|epj|geojson|gltf|har|ice|ipynb|json|json-tmlanguage|jsonl|maxhelp|maxpat|maxproj|mcmeta|mxt|pat|sarif|tfstate|tfstate\\.backup|topojson|webapp|webmanifest|yyp??)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2270,7 +2270,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:ecere-projects|ipython-notebook|jupyter-notebook|max|max/msp|maxmsp|oasv2-json|oasv3-json|(?:.*\\.)?(?:4dform|4dproject|avsc|epj|geojson|gltf|har|ice|ipynb|json|json|json|json-tmlanguage|jsonl|maxhelp|maxpat|maxproj|mcmeta|mxt|pat|sarif|tfstate|tfstate\\.backup|topojson|webapp|webmanifest|yy|yyp)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:ecere-projects|ipython-notebook|jupyter-notebook|max|max/msp|maxmsp|oasv2-json|oasv3-json|(?:.*\\.)?(?:4dform|4dproject|avsc|epj|geojson|gltf|har|ice|ipynb|json|json-tmlanguage|jsonl|maxhelp|maxpat|maxproj|mcmeta|mxt|pat|sarif|tfstate|tfstate\\.backup|topojson|webapp|webmanifest|yyp??)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2404,7 +2404,7 @@
     "commonmark-code-fenced-kotlin": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:gradle-kotlin-dsl|kotlin|(?:.*\\.)?(?:gradle\\.kts|kt|ktm|kts)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:gradle-kotlin-dsl|kotlin|(?:.*\\.)?(?:gradle\\.kts|ktm??|kts)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2446,7 +2446,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:gradle-kotlin-dsl|kotlin|(?:.*\\.)?(?:gradle\\.kts|kt|ktm|kts)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:gradle-kotlin-dsl|kotlin|(?:.*\\.)?(?:gradle\\.kts|ktm??|kts)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2668,7 +2668,7 @@
     "commonmark-code-fenced-makefile": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:bsdmake|mf|(?:.*\\.)?m(?:ak|ake|akefile|k|kfile)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:bsdmake|mf|(?:.*\\.)?m(?:ake??|akefile|k|kfile)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2710,7 +2710,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:bsdmake|mf|(?:.*\\.)?m(?:ak|ake|akefile|k|kfile)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:bsdmake|mf|(?:.*\\.)?m(?:ake??|akefile|k|kfile)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2756,7 +2756,7 @@
     "commonmark-code-fenced-md": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:md|pandoc|rmarkdown|(?:.*\\.)?(?:livemd|markdown|mdown|mdwn|mkd|mkdn|mkdown|qmd|rmd|ronn|scd|workbook)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:md|pandoc|rmarkdown|(?:.*\\.)?(?:livemd|markdown|mdown|mdwn|mkdn??|mkdown|qmd|rmd|ronn|scd|workbook)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2804,7 +2804,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:md|pandoc|rmarkdown|(?:.*\\.)?(?:livemd|markdown|mdown|mdwn|mkd|mkdn|mkdown|qmd|rmd|ronn|scd|workbook)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:md|pandoc|rmarkdown|(?:.*\\.)?(?:livemd|markdown|mdown|mdwn|mkdn??|mkdown|qmd|rmd|ronn|scd|workbook)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2944,7 +2944,7 @@
     "commonmark-code-fenced-objc": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:obj(?:-||ective-|ective)c))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:obj(?:-?|ective-?)c))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -2986,7 +2986,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:obj(?:-||ective-|ective)c))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:obj(?:-?|ective-?)c))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3032,7 +3032,7 @@
     "commonmark-code-fenced-perl": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:cperl|(?:.*\\.)?(?:cgi|perl|ph|pl|plx|pm|psgi|t)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:cperl|(?:.*\\.)?(?:cgi|perl|ph|plx??|pm|psgi|t)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3074,7 +3074,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:cperl|(?:.*\\.)?(?:cgi|perl|ph|pl|plx|pm|psgi|t)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:cperl|(?:.*\\.)?(?:cgi|perl|ph|plx??|pm|psgi|t)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3208,7 +3208,7 @@
     "commonmark-code-fenced-python": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:bazel|easybuild|python|python3|rusthon|snakemake|starlark|xonsh|(?:.*\\.)?(?:bzl|eb|gyp|gypi|lmi|py|py3|pyde|pyi|pyp|pyt|pyw|rpy|sage|sagews|smk|snakefile|spec|tac|wsgi|xpy|xsh)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:bazel|easybuild|python3??|rusthon|snakemake|starlark|xonsh|(?:.*\\.)?(?:bzl|eb|gypi??|lmi|py3??|pyde|pyi|pyp|pyt|pyw|rpy|sage|sagews|smk|snakefile|spec|tac|wsgi|xpy|xsh)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3250,7 +3250,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:bazel|easybuild|python|python3|rusthon|snakemake|starlark|xonsh|(?:.*\\.)?(?:bzl|eb|gyp|gypi|lmi|py|py3|pyde|pyi|pyp|pyt|pyw|rpy|sage|sagews|smk|snakefile|spec|tac|wsgi|xpy|xsh)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:bazel|easybuild|python3??|rusthon|snakemake|starlark|xonsh|(?:.*\\.)?(?:bzl|eb|gypi??|lmi|py3??|pyde|pyi|pyp|pyt|pyw|rpy|sage|sagews|smk|snakefile|spec|tac|wsgi|xpy|xsh)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3384,7 +3384,7 @@
     "commonmark-code-fenced-raku": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:perl-6|perl6|pod-6|(?:.*\\.)?(?:6pl|6pm|nqp|p6|p6l|p6m|pl6|pm6|pod|pod6|raku|rakumod)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:perl-6|perl6|pod-6|(?:.*\\.)?(?:6pl|6pm|nqp|p6l??|p6m|pl6|pm6|pod6??|raku|rakumod)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3426,7 +3426,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:perl-6|perl6|pod-6|(?:.*\\.)?(?:6pl|6pm|nqp|p6|p6l|p6m|pl6|pm6|pod|pod6|raku|rakumod)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:perl-6|perl6|pod-6|(?:.*\\.)?(?:6pl|6pm|nqp|p6l??|p6m|pl6|pm6|pod6??|raku|rakumod)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3472,7 +3472,7 @@
     "commonmark-code-fenced-ruby": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:jruby|macruby|(?:.*\\.)?(?:builder|druby|duby|eye|gemspec|god|jbuilder|mirah|mspec|pluginspec|podspec|prawn|rabl|rake|rb|rbi|rbuild|rbw|rbx|ru|ruby|thor|watchr)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:jruby|macruby|(?:.*\\.)?(?:builder|druby|duby|eye|gemspec|god|jbuilder|mirah|mspec|pluginspec|podspec|prawn|rabl|rake|rbi??|rbuild|rbw|rbx|ru|ruby|thor|watchr)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -3514,7 +3514,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:jruby|macruby|(?:.*\\.)?(?:builder|druby|duby|eye|gemspec|god|jbuilder|mirah|mspec|pluginspec|podspec|prawn|rabl|rake|rb|rbi|rbuild|rbw|rbx|ru|ruby|thor|watchr)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:jruby|macruby|(?:.*\\.)?(?:builder|druby|duby|eye|gemspec|god|jbuilder|mirah|mspec|pluginspec|podspec|prawn|rabl|rake|rbi??|rbuild|rbw|rbx|ru|ruby|thor|watchr)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4000,7 +4000,7 @@
     "commonmark-code-fenced-sql": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:plpgsql|sqlpl|(?:.*\\.)?(?:cql|db2|ddl|mysql|pgsql|prc|sql|sql|sql|tab|udf|viw)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:plpgsql|sqlpl|(?:.*\\.)?(?:cql|db2|ddl|mysql|pgsql|prc|sql|tab|udf|viw)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4042,7 +4042,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:plpgsql|sqlpl|(?:.*\\.)?(?:cql|db2|ddl|mysql|pgsql|prc|sql|sql|sql|tab|udf|viw)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:plpgsql|sqlpl|(?:.*\\.)?(?:cql|db2|ddl|mysql|pgsql|prc|sql|tab|udf|viw)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4358,7 +4358,7 @@
     "commonmark-code-fenced-ts": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:typescript|(?:.*\\.)?(?:[cm]|)ts))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:typescript|(?:.*\\.)?(?:c|m?)ts))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4400,7 +4400,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:typescript|(?:.*\\.)?(?:[cm]|)ts))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:typescript|(?:.*\\.)?(?:c|m?)ts))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4688,7 +4688,7 @@
     "commonmark-code-fenced-xml": {
       "patterns": [
         {
-          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:collada|eagle|labview|web-ontology-language|xpages|(?:.*\\.)?(?:adml|admx|ant|axaml|axml|brd|builds|ccproj|ccxml|clixml|cproject|cscfg|csdef|csproj|ct|dae|depproj|dita|ditamap|ditaval|dll\\.config|dotsettings|filters|fsproj|fxml|glade|gmx|grxml|hzp|iml|ivy|jelly|jsproj|kml|launch|lvclass|lvlib|lvproj|mdpolicy|mjml|mxml|natvis|ndproj|nproj|nuspec|odd|osm|owl|pkgproj|proj|props|ps1xml|psc1|pt|qhelp|rdf|resx|rss|sch|sch|scxml|sfproj|shproj|srdf|storyboard|sublime-snippet|targets|tml|ui|urdf|ux|vbproj|vcxproj|vsixmanifest|vssettings|vstemplate|vxml|wixproj|wsdl|wsf|wxi|wxl|wxs|x3d|xacro|xaml|xib|xlf|xliff|xmi|xml|xml\\.dist|xmp|xpl|xproc|xproj|xsd|xsp-config|xsp\\.metadata|xspec|xul|zcml)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(`{3,})[\\t ]*((?i:collada|eagle|labview|web-ontology-language|xpages|(?:.*\\.)?(?:adml|admx|ant|axaml|axml|brd|builds|ccproj|ccxml|clixml|cproject|cscfg|csdef|csproj|ct|dae|depproj|dita|ditamap|ditaval|dll\\.config|dotsettings|filters|fsproj|fxml|glade|gmx|grxml|hzp|iml|ivy|jelly|jsproj|kml|launch|lvclass|lvlib|lvproj|mdpolicy|mjml|mxml|natvis|ndproj|nproj|nuspec|odd|osm|owl|pkgproj|proj|props|ps1xml|psc1|pt|qhelp|rdf|resx|rss|sch|scxml|sfproj|shproj|srdf|storyboard|sublime-snippet|targets|tml|ui|urdf|ux|vbproj|vcxproj|vsixmanifest|vssettings|vstemplate|vxml|wixproj|wsdl|wsf|wxi|wxl|wxs|x3d|xacro|xaml|xib|xlf|xliff|xmi|xml|xml\\.dist|xmp|xpl|xproc|xproj|xsd|xsp-config|xsp\\.metadata|xspec|xul|zcml)))(?:[\\t ]+([^\\n\\r`]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"
@@ -4730,7 +4730,7 @@
           ]
         },
         {
-          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:collada|eagle|labview|web-ontology-language|xpages|(?:.*\\.)?(?:adml|admx|ant|axaml|axml|brd|builds|ccproj|ccxml|clixml|cproject|cscfg|csdef|csproj|ct|dae|depproj|dita|ditamap|ditaval|dll\\.config|dotsettings|filters|fsproj|fxml|glade|gmx|grxml|hzp|iml|ivy|jelly|jsproj|kml|launch|lvclass|lvlib|lvproj|mdpolicy|mjml|mxml|natvis|ndproj|nproj|nuspec|odd|osm|owl|pkgproj|proj|props|ps1xml|psc1|pt|qhelp|rdf|resx|rss|sch|sch|scxml|sfproj|shproj|srdf|storyboard|sublime-snippet|targets|tml|ui|urdf|ux|vbproj|vcxproj|vsixmanifest|vssettings|vstemplate|vxml|wixproj|wsdl|wsf|wxi|wxl|wxs|x3d|xacro|xaml|xib|xlf|xliff|xmi|xml|xml\\.dist|xmp|xpl|xproc|xproj|xsd|xsp-config|xsp\\.metadata|xspec|xul|zcml)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
+          "begin": "(?:^|\\G)[\\t ]*(~{3,})[\\t ]*((?i:collada|eagle|labview|web-ontology-language|xpages|(?:.*\\.)?(?:adml|admx|ant|axaml|axml|brd|builds|ccproj|ccxml|clixml|cproject|cscfg|csdef|csproj|ct|dae|depproj|dita|ditamap|ditaval|dll\\.config|dotsettings|filters|fsproj|fxml|glade|gmx|grxml|hzp|iml|ivy|jelly|jsproj|kml|launch|lvclass|lvlib|lvproj|mdpolicy|mjml|mxml|natvis|ndproj|nproj|nuspec|odd|osm|owl|pkgproj|proj|props|ps1xml|psc1|pt|qhelp|rdf|resx|rss|sch|scxml|sfproj|shproj|srdf|storyboard|sublime-snippet|targets|tml|ui|urdf|ux|vbproj|vcxproj|vsixmanifest|vssettings|vstemplate|vxml|wixproj|wsdl|wsf|wxi|wxl|wxs|x3d|xacro|xaml|xib|xlf|xliff|xmi|xml|xml\\.dist|xmp|xpl|xproc|xproj|xsd|xsp-config|xsp\\.metadata|xspec|xul|zcml)))(?:[\\t ]+([^\\n\\r]+))?[\\t ]*$",
           "beginCaptures": {
             "1": {
               "name": "string.other.begin.code.fenced.mdx"

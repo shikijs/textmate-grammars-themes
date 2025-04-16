@@ -41,7 +41,7 @@
           "name": "support.function.jsonnet"
         },
         {
-          "match": "\\bstd\\.(s(?:et|et(Diff|Inter|Member|Union)|ort))\\b",
+          "match": "\\bstd\\.(s(?:et(Diff|Inter|Member|Union)??|ort))\\b",
           "name": "support.function.jsonnet"
         },
         {
@@ -149,15 +149,15 @@
           "name": "storage.type.jsonnet"
         },
         {
-          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+):::)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*(\\+??:::)",
           "name": "variable.parameter.jsonnet"
         },
         {
-          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+)::)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*(\\+??::)",
           "name": "entity.name.type"
         },
         {
-          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*((?:|\\+):)",
+          "match": "[A-Z_a-z][0-9A-Z_a-z]*\\s*(\\+??:)",
           "name": "variable.parameter.jsonnet"
         }
       ]

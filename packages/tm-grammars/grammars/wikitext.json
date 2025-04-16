@@ -356,11 +356,11 @@
             "variables": {
               "patterns": [
                 {
-                  "match": "(?i)(\\{\\{)(CURRENTYEAR|CURRENTMONTH|CURRENTMONTH1|CURRENTMONTHNAME|CURRENTMONTHNAMEGEN|CURRENTMONTHABBREV|CURRENTDAY|CURRENTDAY2|CURRENTDOW|CURRENTDAYNAME|CURRENTTIME|CURRENTHOUR|CURRENTWEEK|CURRENTTIMESTAMP|LOCALYEAR|LOCALMONTH|LOCALMONTH1|LOCALMONTHNAME|LOCALMONTHNAMEGEN|LOCALMONTHABBREV|LOCALDAY|LOCALDAY2|LOCALDOW|LOCALDAYNAME|LOCALTIME|LOCALHOUR|LOCALWEEK|LOCALTIMESTAMP)(}})",
+                  "match": "(?i)(\\{\\{)(CURRENTYEAR|CURRENTMONTH1??|CURRENTMONTHNAME|CURRENTMONTHNAMEGEN|CURRENTMONTHABBREV|CURRENTDAY2??|CURRENTDOW|CURRENTDAYNAME|CURRENTTIME|CURRENTHOUR|CURRENTWEEK|CURRENTTIMESTAMP|LOCALYEAR|LOCALMONTH1??|LOCALMONTHNAME|LOCALMONTHNAMEGEN|LOCALMONTHABBREV|LOCALDAY2??|LOCALDOW|LOCALDAYNAME|LOCALTIME|LOCALHOUR|LOCALWEEK|LOCALTIMESTAMP)(}})",
                   "name": "constant.language.variables.time.wikitext"
                 },
                 {
-                  "match": "(?i)(\\{\\{)(SITENAME|SERVER|SERVERNAME|DIRMARK|DIRECTIONMARK|SCRIPTPATH|STYLEPATH|CURRENTVERSION|CONTENTLANGUAGE|CONTENTLANG|PAGEID|PAGELANGUAGE|CASCADINGSOURCES|REVISIONID|REVISIONDAY|REVISIONDAY2|REVISIONMONTH|REVISIONMONTH1|REVISIONYEAR|REVISIONTIMESTAMP|REVISIONUSER|REVISIONSIZE)(}})",
+                  "match": "(?i)(\\{\\{)(SITENAME|SERVER|SERVERNAME|DIRMARK|DIRECTIONMARK|SCRIPTPATH|STYLEPATH|CURRENTVERSION|CONTENTLANGUAGE|CONTENTLANG|PAGEID|PAGELANGUAGE|CASCADINGSOURCES|REVISIONID|REVISIONDAY2??|REVISIONMONTH1??|REVISIONYEAR|REVISIONTIMESTAMP|REVISIONUSER|REVISIONSIZE)(}})",
                   "name": "constant.language.variables.metadata.wikitext"
                 },
                 {
@@ -1492,7 +1492,7 @@
                   ]
                 },
                 "hl-diff": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)(?:|u)diff\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)u??diff\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"
@@ -1600,7 +1600,7 @@
                   ]
                 },
                 "hl-elixir": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)e(?:lixir|x|xs)\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)e(?:lixir|xs??)\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"
@@ -2680,7 +2680,7 @@
                   ]
                 },
                 "hl-php": {
-                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)php(?:|[345])\\4(?:\\s+[^>]+)?)\\s*(>)",
+                  "begin": "(?i)(<)(syntaxhighlight)((?:\\s+[^>]+)?\\s+lang=([\"']?)php[345]??\\4(?:\\s+[^>]+)?)\\s*(>)",
                   "beginCaptures": {
                     "0": {
                       "name": "meta.tag.metadata.start.wikitext"

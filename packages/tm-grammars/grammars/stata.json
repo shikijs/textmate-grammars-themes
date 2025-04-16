@@ -58,10 +58,10 @@
           "name": "storage.type.scalar.stata"
         }
       },
-      "match": "^\\s*(sca(l(?:ar|a|))?(\\s+de(f(?:ine|in|i|))?)?)\\s+(?!(drop|dir?|l(i(?:st|s|))?)\\s+)"
+      "match": "^\\s*(sca(l(?:ar?|))?(\\s+de(f(?:ine?|i?))?)?)\\s+(?!(drop|dir?|l(i(?:st?|))?)\\s+)"
     },
     {
-      "begin": "\\b(mer(g(?:e|))?)\\s+([1mn])(:)([1mn])",
+      "begin": "\\b(mer(ge?)?)\\s+([1mn])(:)([1mn])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.stata"
@@ -130,10 +130,10 @@
           "name": "keyword.control.flow.stata"
         }
       },
-      "match": "\\b(foreach)\\s+((?!in|of).+)\\s+(in|of var(l(?:ist|is|i|))?|of new(l(?:ist|is|i|))?|of num(l(?:ist|is|i|))?)\\b"
+      "match": "\\b(foreach)\\s+((?!in|of).+)\\s+(in|of var(l(?:ist?|i?))?|of new(l(?:ist?|i?))?|of num(l(?:ist?|i?))?)\\b"
     },
     {
-      "begin": "\\b(foreach)\\s+((?!in|of).+)\\s+(of (?:loc(a(?:l|))?|glo(b(?:al|a|))?))\\b\\s*",
+      "begin": "\\b(foreach)\\s+((?!in|of).+)\\s+(of (?:loc(al?)?|glo(b(?:al?|))?))\\b\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.stata"
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "begin": "\\b(forv(?:alues|alue|alu|al|a|))\\s*",
+      "begin": "\\b(forv(?:alues?|alu?|a?))\\s*",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.stata"
@@ -219,14 +219,14 @@
           "name": "keyword.other.stata"
         }
       },
-      "match": "\\b(as(?:|s|se|ser|sert))\\b"
+      "match": "\\b(as(?:|se??|sert??))\\b"
     },
     {
-      "match": "\\b(by(s(?:ort|or|o|))?|statsby|rolling|bootstrap|jackknife|permute|simulate|svy|mi est(i(?:mate|mat|ma|m|))?|nestreg|stepwise|xi|fp|mfp|vers(i(?:on|o|))?)\\b",
+      "match": "\\b(by(s(?:ort?|o?))?|statsby|rolling|bootstrap|jackknife|permute|simulate|svy|mi est(i(?:mate?|ma?|))?|nestreg|stepwise|xi|fp|mfp|vers(i(?:on?|))?)\\b",
       "name": "storage.type.function.stata"
     },
     {
-      "match": "\\b(qui(e(?:tly|tl|t|))?|n(o(?:isily|isil|isi|is|i|))?|cap(t(?:ure|ur|u|))?)\\b:?",
+      "match": "\\b(qui(e(?:tly?|t?))?|n(o(?:isily?|isi?|i?))?|cap(t(?:ure?|u?))?)\\b:?",
       "name": "keyword.control.flow.stata"
     },
     {
@@ -241,10 +241,10 @@
           "name": "entity.name.function.stata"
         }
       },
-      "match": "\\s*(pr(o(?:gram|gra|gr|g|))?)\\s+((di(r)?|drop|l(i(?:st|s|))?)\\s+)([\\w&&[^0-9]]\\w{0,31})"
+      "match": "\\s*(pr(o(?:gram?|gr?|))?)\\s+((di(r)?|drop|l(i(?:st?|))?)\\s+)([\\w&&[^0-9]]\\w{0,31})"
     },
     {
-      "begin": "^\\s*(pr(o(?:gram|gra|gr|g|))?)\\s+(de(f(?:ine|in|i|))?\\s+)?",
+      "begin": "^\\s*(pr(o(?:gram?|gr?|))?)\\s+(de(f(?:ine?|i?))?\\s+)?",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.stata"
@@ -275,7 +275,7 @@
       "captures": {
         "1": "keyword.functions.data.stata.test"
       },
-      "match": "\\b(form(a(?:t|))?)\\s*([\\w&&[^0-9]]\\w{0,31})*\\s*(%)(-)?(0)?([0-9]+)(.)([0-9]+)([efg])(c)?"
+      "match": "\\b(form(at?)?)\\s*([\\w&&[^0-9]]\\w{0,31})*\\s*(%)(-)?(0)?([0-9]+)(.)([0-9]+)([efg])(c)?"
     },
     {
       "include": "#braces-with-error"
@@ -402,7 +402,7 @@
                       "name": "support.type.stata"
                     }
                   },
-                  "match": "\\b(integer|intege|integ|inte|int|real|string|strin|stri|str)\\b"
+                  "match": "\\b(integer?|integ?|int|real|string?|stri?)\\b"
                 },
                 {
                   "include": "#constants"
@@ -461,7 +461,7 @@
           "name": "keyword.functions.data.stata"
         }
       },
-      "match": "\\b(sa(v(?:|e))|saveold|destring|tostring|u(s(?:e|))?|note(s)?|form(a(?:t|))?)\\b"
+      "match": "\\b(sa(ve??)|saveold|destring|tostring|u(se?)?|note(s)?|form(at?)?)\\b"
     },
     {
       "match": "\\b(e(?:xit|nd))\\b",
@@ -513,7 +513,7 @@
           "name": "keyword.operator.assignment.stata"
         }
       },
-      "match": "\\b(g(e(?:nerate|nerat|nera|ner|ne|n|))?|egen)\\s+((byte|int|long|float|double|str[1-9]?[0-9]?[0-9]?[0-9]?|strL)\\s+)?([^=\\s]+)\\s*((==)|(=))"
+      "match": "\\b(g(e(?:nerate?|nera?|ne?|))?|egen)\\s+((byte|int|long|float|double|str[1-9]?[0-9]?[0-9]?[0-9]?|strL)\\s+)?([^=\\s]+)\\s*((==)|(=))"
     },
     {
       "captures": {
@@ -524,7 +524,7 @@
           "name": "support.type.stata"
         }
       },
-      "match": "\\b(set ty(p(?:e|))?)\\s+((byte|int|long|float|double|str[1-9]?[0-9]?[0-9]?[0-9]?|strL)?\\s+)\\b"
+      "match": "\\b(set ty(pe?)?)\\s+((byte|int|long|float|double|str[1-9]?[0-9]?[0-9]?[0-9]?|strL)?\\s+)\\b"
     },
     {
       "captures": {
@@ -568,7 +568,7 @@
           "name": "punctuation.definition.string.begin.stata"
         }
       },
-      "match": "\\b(la(b(?:el|e|))?)\\s+(var(i(?:able|abl|ab|a|))?)\\s+([\\w&&[^0-9]]\\w{0,31})\\s+(`\")(.+)(\"')"
+      "match": "\\b(la(b(?:el?|))?)\\s+(var(i(?:able?|ab?|))?)\\s+([\\w&&[^0-9]]\\w{0,31})\\s+(`\")(.+)(\"')"
     },
     {
       "captures": {
@@ -609,7 +609,7 @@
           "name": "punctuation.definition.string.begin.stata"
         }
       },
-      "match": "\\b(la(b(?:el|e|))?)\\s+(var(i(?:able|abl|ab|a|))?)\\s+([\\w&&[^0-9]]\\w{0,31})\\s+(\")(.+)(\")"
+      "match": "\\b(la(b(?:el?|))?)\\s+(var(i(?:able?|ab?|))?)\\s+([\\w&&[^0-9]]\\w{0,31})\\s+(\")(.+)(\")"
     },
     {
       "captures": {
@@ -620,7 +620,7 @@
           "name": "keyword.functions.data.stata"
         }
       },
-      "match": "\\b(la(b(?:el|e|))?)\\s+(da(t(?:a|))?|var(i(?:able|abl|ab|a|))?|de(f(?:|i|in|ine))?|val(u(?:es|e|))?|di(r)?|l(i(?:st|s|))?|copy|drop|save|lang(u(?:age|ag|a|))?)\\b"
+      "match": "\\b(la(b(?:el?|))?)\\s+(da(ta?)?|var(i(?:able?|ab?|))?|de(f(?:|in??|ine))?|val(u(?:es?|))?|di(r)?|l(i(?:st?|))?|copy|drop|save|lang(u(?:age?|a?))?)\\b"
     },
     {
       "begin": "\\b(drop|keep)\\b(?!\\s+(i[fn])\\b)",
@@ -1255,7 +1255,7 @@
           "name": "keyword.control.flow.stata"
         },
         {
-          "match": "\\b(about|ac|acprplot|ado|adopath|adoupdate|alpha|ameans|an|ano|anov|anova|anova_terms|anovadef|aorder|ap|app|appe|appen|append|arch|arch_dr|arch_estat|arch_p|archlm|areg|areg_p|args|arima|arima_dr|arima_estat|arima_p|asmprobit|asmprobit_estat|asmprobit_lf|asmprobit_mfx__dlg|asmprobit_p|avplot|avplots|bcskew0|bgodfrey|binreg|bip0_lf|biplot|bipp_lf|bipr_lf|bipr_p|biprobit|bitest|bitesti|bitowt|blogit|bmemsize|boot|bootsamp|boxco_l|boxco_p|boxcox|boxcox_p|bprobit|br|break|brier|bro|brow|brows|browse|brr|brrstat|bs|bsampl_w|bsample|bsqreg|bstat|bstrap|ca|ca_estat|ca_p|cabiplot|camat|canon|canon_estat|canon_p|caprojection|cat|cc|cchart|cci|cd|censobs_table|centile|cf|char|chdir|checkdlgfiles|checkestimationsample|checkhlpfiles|checksum|chelp|ci|cii|cl|class|classutil|clear|cli|clis|clist|clog|clog_lf|clog_p|clogi|clogi_sw|clogit|clogit_lf|clogit_p|clogitp|clogl_sw|cloglog|clonevar|clslistarray|cluster|cluster_measures|cluster_stop|cluster_tree|cluster_tree_8|clustermat|cmdlog|cnr|cnre|cnreg|cnreg_p|cnreg_sw|cnsreg|codebook|collaps4|collapse|colormult_nb|colormult_nw|compare|compress|conf|confi|confir|confirm|conren|cons|const|constr|constra|constrai|constrain|constraint|contract|copy|copyright|copysource|cor|corc|corr|corr2data|corr_anti|corr_kmo|corr_smc|corre|correl|correla|correlat|correlate|corrgram|cou|coun|count|cprplot|crc|cret|cretu|cretur|creturn|cross|cs|cscript|cscript_log|csi|ct|ct_is|ctset|ctst_st|cttost|cumsp|cumul|cusum|cutil|d|datasig|datasign|datasigna|datasignat|datasignatu|datasignatur|datasignature|datetof|db|dbeta|de|dec|deco|decod|decode|deff|des|desc|descr|descri|describ|describe|dfbeta|dfgls|dfuller|di|di_g|dir|dirstats|dis|discard|disp|disp_res|disp_s|displ|displa|display|do|doe|doed|doedi|doedit|dotplot|dprobit|drawnorm|ds|ds_util|dstdize|duplicates|durbina|dwstat|dydx|ed|edi|edit|eivreg|emdef|en|enc|enco|encod|encode|eq|erase|ereg|ereg_lf|ereg_p|ereg_sw|ereghet|ereghet_glf|ereghet_glf_sh|ereghet_gp|ereghet_ilf|ereghet_ilf_sh|ereghet_ip|eret|eretu|eretur|ereturn|err|erro|error|est|est_cfexist|est_cfname|est_clickable|est_expand|est_hold|est_table|est_unhold|est_unholdok|estat|estat_default|estat_summ|estat_vce_only|esti|estimates|etodow|etof|etomdy|expand|expandcl|fac|fact|facto|factor|factor_estat|factor_p|factor_pca_rotated|factor_rotate|factormat|fcast|fcast_compute|fcast_graph|fdades|fdadesc|fdadescr|fdadescri|fdadescrib|fdadescribe|fdasav|fdasave|fdause|fh_st|file|filefilter|fillin|find_hlp_file|findfile|findit|fit|fl|fli|flis|flist|fpredict|frac_adj|frac_chk|frac_cox|frac_ddp|frac_dis|frac_dv|frac_in|frac_mun|frac_pp|frac_pq|frac_pv|frac_wgt|frac_xo|fracgen|fracplot|fracpoly|fracpred|fron_ex|fron_hn|fron_p|fron_tn|fron_tn2|frontier|ftodate|ftoe|ftomdy|ftowdate|gamhet_glf|gamhet_gp|gamhet_ilf|gamhet_ip|gamma|gamma_d2|gamma_p|gamma_sw|gammahet|gdi_hexagon|gdi_spokes|genrank|genstd|genvmean|gettoken|gladder|glim_l01|glim_l02|glim_l03|glim_l04|glim_l05|glim_l06|glim_l07|glim_l08|glim_l09|glim_l10|glim_l11|glim_l12|glim_lf|glim_mu|glim_nw1|glim_nw2|glim_nw3|glim_p|glim_v1|glim_v2|glim_v3|glim_v4|glim_v5|glim_v6|glim_v7|glm|glm_p|glm_sw|glmpred|glogit|glogit_p|gmeans|gnbre_lf|gnbreg|gnbreg_p|gomp_lf|gompe_sw|gomper_p|gompertz|gompertzhet|gomphet_glf|gomphet_glf_sh|gomphet_gp|gomphet_ilf|gomphet_ilf_sh|gomphet_ip|gphdot|gphpen|gphprint|gprefs|gprobi_p|gprobit|gr|gr7|gr_copy|gr_current|gr_db|gr_describe|gr_dir|gr_draw|gr_draw_replay|gr_drop|gr_edit|gr_editviewopts|gr_example|gr_example2|gr_export|gr_print|gr_qscheme|gr_query|gr_read|gr_rename|gr_replay|gr_save|gr_set|gr_setscheme|gr_table|gr_undo|gr_use|graph|grebar|greigen|grmeanby|gs_fileinfo|gs_filetype|gs_graphinfo|gs_stat|gsort|gwood|h|hareg|hausman|haver|he|heck_d2|heckma_p|heckman|heckp_lf|heckpr_p|heckprob|hel|help|hereg|hetpr_lf|hetpr_p|hetprob|hettest|hexdump|hilite|hist|histogram|hlogit|hlu|hmeans|hotel|hotelling|hprobit|hreg|hsearch|icd9|icd9_ff|icd9p|iis|impute|imtest|inbase|include|inf|infi|infil|infile|infix|inp|inpu|input|ins|insheet|insp|inspe|inspec|inspect|integ|inten|intreg|intreg_p|intrg2_ll|intrg_ll|intrg_ll2|ipolate|iqreg|ir|irf|irf_create|irfm|iri|is_svy|is_svysum|isid|istdize|ivprobit|ivprobit_p|ivreg|ivreg_footnote|ivtob_lf|ivtobit|ivtobit_p|jacknife|jknife|jkstat|joinby|kalarma1|kap|kapmeier|kappa|kapwgt|kdensity|ksm|ksmirnov|ktau|kwallis|labelbook|ladder|levelsof|leverage|lfit|lfit_p|li|lincom|line|linktest|lis|list|lloghet_glf|lloghet_glf_sh|lloghet_gp|lloghet_ilf|lloghet_ilf_sh|lloghet_ip|llogi_sw|llogis_p|llogist|llogistic|llogistichet|lnorm_lf|lnorm_sw|lnorma_p|lnormal|lnormalhet|lnormhet_glf|lnormhet_glf_sh|lnormhet_gp|lnormhet_ilf|lnormhet_ilf_sh|lnormhet_ip|lnskew0|loadingplot|(?<!\\.)log|logi|logis_lf|logistic|logistic_p|logit|logit_estat|logit_p|loglogs|logrank|loneway|lookfor|lookup|lowess|lpredict|lrecomp|lroc|lrtest|ls|lsens|lsens_x|lstat|ltable|ltriang|lv|lvr2plot|m|ma|mac|macr|macro|makecns|man|manova|manovatest|mantel|mark|markin|markout|marksample|mat|mat_capp|mat_order|mat_put_rr|mat_rapp|mata|mata_clear|mata_describe|mata_drop|mata_matdescribe|mata_matsave|mata_matuse|mata_memory|mata_mlib|mata_mosave|mata_rename|mata_which|matalabel|matcproc|matlist|matname|matr|matri|matrix|matrix_input__dlg|matstrik|mcc|mcci|md0_|md1_|md1debug_|md2_|md2debug_|mds|mds_estat|mds_p|mdsconfig|mdslong|mdsmat|mdsshepard|mdytoe|mdytof|me_derd|mean|means|median|memory|memsize|mfp|mfx|mhelp|mhodds|minbound|mixed_ll|mixed_ll_reparm|mkassert|mkdir|mkmat|mkspline|ml|ml_adjs|ml_bhhhs|ml_c_d|ml_check|ml_clear|ml_cnt|ml_debug|ml_defd|ml_e0|ml_e0_bfgs|ml_e0_cycle|ml_e0_dfp|ml_e0i|ml_e1|ml_e1_bfgs|ml_e1_bhhh|ml_e1_cycle|ml_e1_dfp|ml_e2|ml_e2_cycle|ml_ebfg0|ml_ebfr0|ml_ebfr1|ml_ebh0q|ml_ebhh0|ml_ebhr0|ml_ebr0i|ml_ecr0i|ml_edfp0|ml_edfr0|ml_edfr1|ml_edr0i|ml_eds|ml_eer0i|ml_egr0i|ml_elf|ml_elf_bfgs|ml_elf_bhhh|ml_elf_cycle|ml_elf_dfp|ml_elfi|ml_elfs|ml_enr0i|ml_enrr0|ml_erdu0|ml_erdu0_bfgs|ml_erdu0_bhhh|ml_erdu0_bhhhq|ml_erdu0_cycle|ml_erdu0_dfp|ml_erdu0_nrbfgs|ml_exde|ml_footnote|ml_geqnr|ml_grad0|ml_graph|ml_hbhhh|ml_hd0|ml_hold|ml_init|ml_inv|ml_log|ml_max|ml_mlout|ml_mlout_8|ml_model|ml_nb0|ml_opt|ml_p|ml_plot|ml_query|ml_rdgrd|ml_repor|ml_s_e|ml_score|ml_searc|ml_technique|ml_unhold|mleval|mlf_|mlmatbysum|mlmatsum|mlog|mlogi|mlogit|mlogit_footnote|mlogit_p|mlopts|mlsum|mlvecsum|mnl0_|mor|more|mov|move|mprobit|mprobit_lf|mprobit_p|mrdu0_|mrdu1_|mvdecode|mvencode|mvreg|mvreg_estat|nbreg|nbreg_al|nbreg_lf|nbreg_p|nbreg_sw|nestreg|net|newey|newey_p|news|nl|nlcom|nlcom_p|nlexp2|nlexp2a|nlexp3|nlgom3|nlgom4|nlinit|nllog3|nllog4|nlog_rd|nlogit|nlogit_p|nlogitgen|nlogittree|nlpred|nobreak|notes_dlg|nptrend|numlabel|numlist|old_ver|olo|olog|ologi|ologi_sw|ologit|ologit_p|ologitp|on|one|onew|onewa|oneway|op_colnm|op_comp|op_diff|op_inv|op_str|opr|opro|oprob|oprob_sw|oprobi|oprobi_p|oprobit|oprobitp|opts_exclusive|order|orthog|orthpoly|ou|out|outf|outfi|outfil|outfile|outs|outsh|outshe|outshee|outsheet|ovtest|pac|palette|parse_dissim|pause|pca|pca_display|pca_estat|pca_p|pca_rotate|pcamat|pchart|pchi|pcorr|pctile|pentium|pergram|personal|peto_st|pkcollapse|pkcross|pkequiv|pkexamine|pkshape|pksumm|plugin|pnorm|poisgof|poiss_lf|poiss_sw|poisso_p|poisson|poisson_estat|post|postclose|postfile|postutil|pperron|prais|prais_e|prais_e2|prais_p|predict|predictnl|preserve|print|prob|probi|probit|probit_estat|probit_p|proc_time|procoverlay|procrustes|procrustes_estat|procrustes_p|profiler|prop|proportion|prtest|prtesti|pwcorr|pwd|qs|qby|qbys|qchi|qladder|qnorm|qqplot|qreg|qreg_c|qreg_p|qreg_sw|qu|quadchk|quantile|que|quer|query|range|ranksum|ratio|rchart|rcof|recast|recode|reg|reg3|reg3_p|regdw|regr|regre|regre_p2|regres|regres_p|regress|regress_estat|regriv_p|remap|ren|rena|renam|rename|renpfix|repeat|reshape|restore|ret|retu|retur|return|rmdir|robvar|roccomp|rocf_lf|rocfit|rocgold|rocplot|roctab|rologit|rologit_p|rot|rota|rotat|rotate|rotatemat|rreg|rreg_p|ru|run|runtest|rvfplot|rvpplot|safesum|sample|sampsi|savedresults|sc|scatter|scm_mine|sco|scob_lf|scob_p|scobi_sw|scobit|scor|score|scoreplot|scoreplot_help|scree|screeplot|screeplot_help|sdtest|sdtesti|se|search|separate|seperate|serrbar|serset|set|set_defaults|sfrancia|sh|she|shel|shell|shewhart|signestimationsample|signrank|signtest|simul|sktest|sleep|slogit|slogit_d2|slogit_p|smooth|snapspan|so|sor|sort|spearman|spikeplot|spikeplt|spline_x|split|sqreg|sqreg_p|sret|sretu|sretur|sreturn|ssc|st|st_ct|st_hc|st_hcd|st_hcd_sh|st_is|st_issys|st_note|st_promo|st_set|st_show|st_smpl|st_subid|stack|stbase|stci|stcox|stcox_estat|stcox_fr|stcox_fr_ll|stcox_p|stcox_sw|stcoxkm|stcstat|stcurv|stcurve|stdes|stem|stepwise|stfill|stgen|stir|stjoin|stmc|stmh|stphplot|stphtest|stptime|strate|streg|streg_sw|streset|sts|stset|stsplit|stsum|sttocc|sttoct|stvary|su|suest|sum|summ|summa|summar|summari|summariz|summarize|sunflower|sureg|survcurv|survsum|svar|svar_p|svmat|svy_disp|svy_dreg|svy_est|svy_est_7|svy_estat|svy_get|svy_gnbreg_p|svy_head|svy_header|svy_heckman_p|svy_heckprob_p|svy_intreg_p|svy_ivreg_p|svy_logistic_p|svy_logit_p|svy_mlogit_p|svy_nbreg_p|svy_ologit_p|svy_oprobit_p|svy_poisson_p|svy_probit_p|svy_regress_p|svy_sub|svy_sub_7|svy_x|svy_x_7|svy_x_p|svydes|svygen|svygnbreg|svyheckman|svyheckprob|svyintreg|svyintrg|svyivreg|svylc|svylog_p|svylogit|svymarkout|svymean|svymlog|svymlogit|svynbreg|svyolog|svyologit|svyoprob|svyoprobit|svyopts|svypois|svypoisson|svyprobit|svyprobt|svyprop|svyratio|svyreg|svyreg_p|svyregress|svyset|svytab|svytest|svytotal|sw|swilk|symmetry|symmi|symplot|sysdescribe|sysdir|sysuse|szroeter|ta|tab|tab1|tab2|tab_or|tabd|tabdi|tabdis|tabdisp|tabi|table|tabodds|tabstat|tabu|tabul|tabula|tabulat|tabulate|te|tes|test|testnl|testparm|teststd|tetrachoric|time_it|timer|tis|tob|tobi|tobit|tobit_p|tobit_sw|token|tokeni|tokeniz|tokenize|total|translate|translator|transmap|treat_ll|treatr_p|treatreg|trim|trnb_cons|trnb_mean|trpoiss_d2|trunc_ll|truncr_p|truncreg|tsappend|tset|tsfill|tsline|tsline_ex|tsreport|tsrevar|tsrline|tsset|tssmooth|tsunab|ttest|ttesti|tut_chk|tut_wait|tutorial|tw|tware_st|two|twoway|twoway__fpfit_serset|twoway__function_gen|twoway__histogram_gen|twoway__ipoint_serset|twoway__ipoints_serset|twoway__kdensity_gen|twoway__lfit_serset|twoway__normgen_gen|twoway__pci_serset|twoway__qfit_serset|twoway__scatteri_serset|twoway__sunflower_gen|twoway_ksm_serset|ty|typ|type|typeof|unab|unabbrev|unabcmd|update|uselabel|var|var_mkcompanion|var_p|varbasic|varfcast|vargranger|varirf|varirf_add|varirf_cgraph|varirf_create|varirf_ctable|varirf_describe|varirf_dir|varirf_drop|varirf_erase|varirf_graph|varirf_ograph|varirf_rename|varirf_set|varirf_table|varlmar|varnorm|varsoc|varstable|varstable_w|varstable_w2|varwle|vec|vec_fevd|vec_mkphi|vec_p|vec_p_w|vecirf_create|veclmar|veclmar_w|vecnorm|vecnorm_w|vecrank|vecstable|verinst|vers|versi|versio|version|view|viewsource|vif|vwls|wdatetof|webdescribe|webseek|webuse|wh|whelp|whi|which|wilc_st|wilcoxon|win|wind|windo|window|winexec|wntestb|wntestq|xchart|xcorr|xi|xmlsav|xmlsave|xmluse|xpose|xsh|xshe|xshel|xshell|xt_iis|xt_tis|xtab_p|xtabond|xtbin_p|xtclog|xtcloglog|xtcloglog_d2|xtcloglog_pa_p|xtcloglog_re_p|xtcnt_p|xtcorr|xtdata|xtdes|xtfront_p|xtfrontier|xtgee|xtgee_elink|xtgee_estat|xtgee_makeivar|xtgee_p|xtgee_plink|xtgls|xtgls_p|xthaus|xthausman|xtht_p|xthtaylor|xtile|xtint_p|xtintreg|xtintreg_d2|xtintreg_p|xtivreg|xtline|xtline_ex|xtlogit|xtlogit_d2|xtlogit_fe_p|xtlogit_pa_p|xtlogit_re_p|xtmixed|xtmixed_estat|xtmixed_p|xtnb_fe|xtnb_lf|xtnbreg|xtnbreg_pa_p|xtnbreg_refe_p|xtpcse|xtpcse_p|xtpois|xtpoisson|xtpoisson_d2|xtpoisson_pa_p|xtpoisson_refe_p|xtpred|xtprobit|xtprobit_d2|xtprobit_re_p|xtps_fe|xtps_lf|xtps_ren|xtps_ren_8|xtrar_p|xtrc|xtrc_p|xtrchh|xtrefe_p|yx|yxview__barlike_draw|yxview_area_draw|yxview_bar_draw|yxview_dot_draw|yxview_dropline_draw|yxview_function_draw|yxview_iarrow_draw|yxview_ilabels_draw|yxview_normal_draw|yxview_pcarrow_draw|yxview_pcbarrow_draw|yxview_pccapsym_draw|yxview_pcscatter_draw|yxview_pcspike_draw|yxview_rarea_draw|yxview_rbar_draw|yxview_rbarm_draw|yxview_rcap_draw|yxview_rcapsym_draw|yxview_rconnected_draw|yxview_rline_draw|yxview_rscatter_draw|yxview_rspike_draw|yxview_spike_draw|yxview_sunflower_draw|zap_s|zinb|zinb_llf|zinb_plf|zip|zip_llf|zip_p|zip_plf|zt_ct_5|zt_hc_5|zt_hcd_5|zt_is_5|zt_iss_5|zt_sho_5|zt_smp_5|ztnb|ztnb_p|ztp|ztp_p|prtab|prchange|eststo|estout|esttab|estadd|estpost|ivregress|xtreg|xtreg_be|xtreg_fe|xtreg_ml|xtreg_pa_p|xtreg_re|xtregar|xtrere_p|xtset|xtsf_ll|xtsf_llti|xtsum|xttab|xttest0|xttobit|xttobit_p|xttrans)\\b",
+          "match": "\\b(about|ac|acprplot|ado|adopath|adoupdate|alpha|ameans|ano??|anova??|anova_terms|anovadef|aorder|app??|appen??|append|arch|arch_dr|arch_estat|arch_p|archlm|areg|areg_p|args|arima|arima_dr|arima_estat|arima_p|asmprobit|asmprobit_estat|asmprobit_lf|asmprobit_mfx__dlg|asmprobit_p|avplots??|bcskew0|bgodfrey|binreg|bip0_lf|biplot|bipp_lf|bipr_lf|bipr_p|biprobit|bitesti??|bitowt|blogit|bmemsize|boot|bootsamp|boxco_l|boxco_p|boxcox|boxcox_p|bprobit|br|break|brier|brow??|browse??|brr|brrstat|bs|bsampl_w|bsample|bsqreg|bstat|bstrap|ca|ca_estat|ca_p|cabiplot|camat|canon|canon_estat|canon_p|caprojection|cat|cc|cchart|cci|cd|censobs_table|centile|cf|char|chdir|checkdlgfiles|checkestimationsample|checkhlpfiles|checksum|chelp|cii??|cl|class|classutil|clear|clis??|clist|clog|clog_lf|clog_p|clogi|clogi_sw|clogit|clogit_lf|clogit_p|clogitp|clogl_sw|cloglog|clonevar|clslistarray|cluster|cluster_measures|cluster_stop|cluster_tree|cluster_tree_8|clustermat|cmdlog|cnre??|cnreg|cnreg_p|cnreg_sw|cnsreg|codebook|collaps4|collapse|colormult_nb|colormult_nw|compare|compress|confi??|confirm??|conren|const??|constra??|constrain??|constraint|contract|copy|copyright|copysource|corc??|corr|corr2data|corr_anti|corr_kmo|corr_smc|correl??|correlat??|correlate|corrgram|coun??|count|cprplot|crc|cretu??|creturn??|cross|cs|cscript|cscript_log|csi|ct|ct_is|ctset|ctst_st|cttost|cumsp|cumul|cusum|cutil|d|datasign??|datasignat??|datasignatur??|datasignature|datetof|db|dbeta|dec??|decod??|decode|deff|desc??|descri??|describe??|dfbeta|dfgls|dfuller|di|di_g|dir|dirstats|dis|discard|disp|disp_res|disp_s|displa??|display|doe??|doedi??|doedit|dotplot|dprobit|drawnorm|ds|ds_util|dstdize|duplicates|durbina|dwstat|dydx|edi??|edit|eivreg|emdef|enc??|encod??|encode|eq|erase|ereg|ereg_lf|ereg_p|ereg_sw|ereghet|ereghet_glf|ereghet_glf_sh|ereghet_gp|ereghet_ilf|ereghet_ilf_sh|ereghet_ip|eretu??|ereturn??|erro??|error|est|est_cfexist|est_cfname|est_clickable|est_expand|est_hold|est_table|est_unhold|est_unholdok|estat|estat_default|estat_summ|estat_vce_only|esti|estimates|etodow|etof|etomdy|expand|expandcl|fact??|factor??|factor_estat|factor_p|factor_pca_rotated|factor_rotate|factormat|fcast|fcast_compute|fcast_graph|fdadesc??|fdadescri??|fdadescribe??|fdasave??|fdause|fh_st|file|filefilter|fillin|find_hlp_file|findfile|findit|fit|fli??|flist??|fpredict|frac_adj|frac_chk|frac_cox|frac_ddp|frac_dis|frac_dv|frac_in|frac_mun|frac_pp|frac_pq|frac_pv|frac_wgt|frac_xo|fracgen|fracplot|fracpoly|fracpred|fron_ex|fron_hn|fron_p|fron_tn2??|frontier|ftodate|ftoe|ftomdy|ftowdate|gamhet_glf|gamhet_gp|gamhet_ilf|gamhet_ip|gamma|gamma_d2|gamma_p|gamma_sw|gammahet|gdi_hexagon|gdi_spokes|genrank|genstd|genvmean|gettoken|gladder|glim_l01|glim_l02|glim_l03|glim_l04|glim_l05|glim_l06|glim_l07|glim_l08|glim_l09|glim_l10|glim_l11|glim_l12|glim_lf|glim_mu|glim_nw1|glim_nw2|glim_nw3|glim_p|glim_v1|glim_v2|glim_v3|glim_v4|glim_v5|glim_v6|glim_v7|glm|glm_p|glm_sw|glmpred|glogit|glogit_p|gmeans|gnbre_lf|gnbreg|gnbreg_p|gomp_lf|gompe_sw|gomper_p|gompertz|gompertzhet|gomphet_glf|gomphet_glf_sh|gomphet_gp|gomphet_ilf|gomphet_ilf_sh|gomphet_ip|gphdot|gphpen|gphprint|gprefs|gprobi_p|gprobit|gr7??|gr_copy|gr_current|gr_db|gr_describe|gr_dir|gr_draw|gr_draw_replay|gr_drop|gr_edit|gr_editviewopts|gr_example2??|gr_export|gr_print|gr_qscheme|gr_query|gr_read|gr_rename|gr_replay|gr_save|gr_set|gr_setscheme|gr_table|gr_undo|gr_use|graph|grebar|greigen|grmeanby|gs_fileinfo|gs_filetype|gs_graphinfo|gs_stat|gsort|gwood|h|hareg|hausman|haver|he|heck_d2|heckma_p|heckman|heckp_lf|heckpr_p|heckprob|help??|hereg|hetpr_lf|hetpr_p|hetprob|hettest|hexdump|hilite|hist|histogram|hlogit|hlu|hmeans|hotel|hotelling|hprobit|hreg|hsearch|icd9|icd9_ff|icd9p|iis|impute|imtest|inbase|include|infi??|infile??|infix|inpu??|input|ins|insheet|inspe??|inspect??|integ|inten|intreg|intreg_p|intrg2_ll|intrg_ll2??|ipolate|iqreg|irf??|irf_create|irfm|iri|is_svy|is_svysum|isid|istdize|ivprobit|ivprobit_p|ivreg|ivreg_footnote|ivtob_lf|ivtobit|ivtobit_p|jacknife|jknife|jkstat|joinby|kalarma1|kap|kapmeier|kappa|kapwgt|kdensity|ksm|ksmirnov|ktau|kwallis|labelbook|ladder|levelsof|leverage|lfit|lfit_p|li|lincom|line|linktest|list??|lloghet_glf|lloghet_glf_sh|lloghet_gp|lloghet_ilf|lloghet_ilf_sh|lloghet_ip|llogi_sw|llogis_p|llogist|llogistic|llogistichet|lnorm_lf|lnorm_sw|lnorma_p|lnormal|lnormalhet|lnormhet_glf|lnormhet_glf_sh|lnormhet_gp|lnormhet_ilf|lnormhet_ilf_sh|lnormhet_ip|lnskew0|loadingplot|(?<!\\.)log|logi|logis_lf|logistic|logistic_p|logit|logit_estat|logit_p|loglogs|logrank|loneway|lookfor|lookup|lowess|lpredict|lrecomp|lroc|lrtest|ls|lsens|lsens_x|lstat|ltable|ltriang|lv|lvr2plot|ma??|macr??|macro|makecns|man|manova|manovatest|mantel|mark|markin|markout|marksample|mat|mat_capp|mat_order|mat_put_rr|mat_rapp|mata|mata_clear|mata_describe|mata_drop|mata_matdescribe|mata_matsave|mata_matuse|mata_memory|mata_mlib|mata_mosave|mata_rename|mata_which|matalabel|matcproc|matlist|matname|matri??|matrix|matrix_input__dlg|matstrik|mcci??|md0_|md1_|md1debug_|md2_|md2debug_|mds|mds_estat|mds_p|mdsconfig|mdslong|mdsmat|mdsshepard|mdytoe|mdytof|me_derd|means??|median|memory|memsize|mfp|mfx|mhelp|mhodds|minbound|mixed_ll|mixed_ll_reparm|mkassert|mkdir|mkmat|mkspline|ml|ml_adjs|ml_bhhhs|ml_c_d|ml_check|ml_clear|ml_cnt|ml_debug|ml_defd|ml_e0|ml_e0_bfgs|ml_e0_cycle|ml_e0_dfp|ml_e0i|ml_e1|ml_e1_bfgs|ml_e1_bhhh|ml_e1_cycle|ml_e1_dfp|ml_e2|ml_e2_cycle|ml_ebfg0|ml_ebfr0|ml_ebfr1|ml_ebh0q|ml_ebhh0|ml_ebhr0|ml_ebr0i|ml_ecr0i|ml_edfp0|ml_edfr0|ml_edfr1|ml_edr0i|ml_eds|ml_eer0i|ml_egr0i|ml_elf|ml_elf_bfgs|ml_elf_bhhh|ml_elf_cycle|ml_elf_dfp|ml_elfi|ml_elfs|ml_enr0i|ml_enrr0|ml_erdu0|ml_erdu0_bfgs|ml_erdu0_bhhhq??|ml_erdu0_cycle|ml_erdu0_dfp|ml_erdu0_nrbfgs|ml_exde|ml_footnote|ml_geqnr|ml_grad0|ml_graph|ml_hbhhh|ml_hd0|ml_hold|ml_init|ml_inv|ml_log|ml_max|ml_mlout|ml_mlout_8|ml_model|ml_nb0|ml_opt|ml_p|ml_plot|ml_query|ml_rdgrd|ml_repor|ml_s_e|ml_score|ml_searc|ml_technique|ml_unhold|mleval|mlf_|mlmatbysum|mlmatsum|mlogi??|mlogit|mlogit_footnote|mlogit_p|mlopts|mlsum|mlvecsum|mnl0_|more??|move??|mprobit|mprobit_lf|mprobit_p|mrdu0_|mrdu1_|mvdecode|mvencode|mvreg|mvreg_estat|nbreg|nbreg_al|nbreg_lf|nbreg_p|nbreg_sw|nestreg|net|newey|newey_p|news|nl|nlcom|nlcom_p|nlexp2a??|nlexp3|nlgom3|nlgom4|nlinit|nllog3|nllog4|nlog_rd|nlogit|nlogit_p|nlogitgen|nlogittree|nlpred|nobreak|notes_dlg|nptrend|numlabel|numlist|old_ver|olog??|ologi|ologi_sw|ologit|ologit_p|ologitp|one??|onewa??|oneway|op_colnm|op_comp|op_diff|op_inv|op_str|opro??|oprob|oprob_sw|oprobi|oprobi_p|oprobitp??|opts_exclusive|order|orthog|orthpoly|out??|outfi??|outfile??|outsh??|outshee??|outsheet|ovtest|pac|palette|parse_dissim|pause|pca|pca_display|pca_estat|pca_p|pca_rotate|pcamat|pchart|pchi|pcorr|pctile|pentium|pergram|personal|peto_st|pkcollapse|pkcross|pkequiv|pkexamine|pkshape|pksumm|plugin|pnorm|poisgof|poiss_lf|poiss_sw|poisso_p|poisson|poisson_estat|post|postclose|postfile|postutil|pperron|prais|prais_e2??|prais_p|predict|predictnl|preserve|print|probi??|probit|probit_estat|probit_p|proc_time|procoverlay|procrustes|procrustes_estat|procrustes_p|profiler|prop|proportion|prtesti??|pwcorr|pwd|qs|qbys??|qchi|qladder|qnorm|qqplot|qreg|qreg_c|qreg_p|qreg_sw|qu|quadchk|quantile|quer??|query|range|ranksum|ratio|rchart|rcof|recast|recode|reg3??|reg3_p|regdw|regre??|regre_p2|regres|regres_p|regress|regress_estat|regriv_p|remap|rena??|rename??|renpfix|repeat|reshape|restore|retu??|return??|rmdir|robvar|roccomp|rocf_lf|rocfit|rocgold|rocplot|roctab|rologit|rologit_p|rota??|rotate??|rotatemat|rreg|rreg_p|run??|runtest|rvfplot|rvpplot|safesum|sample|sampsi|savedresults|sc|scatter|scm_mine|sco|scob_lf|scob_p|scobi_sw|scobit|score??|scoreplot|scoreplot_help|scree|screeplot|screeplot_help|sdtesti??|se|search|separate|seperate|serrbar|serset|set|set_defaults|sfrancia|she??|shell??|shewhart|signestimationsample|signrank|signtest|simul|sktest|sleep|slogit|slogit_d2|slogit_p|smooth|snapspan|sor??|sort|spearman|spikeplot|spikeplt|spline_x|split|sqreg|sqreg_p|sretu??|sreturn??|ssc|st|st_ct|st_hcd??|st_hcd_sh|st_is|st_issys|st_note|st_promo|st_set|st_show|st_smpl|st_subid|stack|stbase|stci|stcox|stcox_estat|stcox_fr|stcox_fr_ll|stcox_p|stcox_sw|stcoxkm|stcstat|stcurve??|stdes|stem|stepwise|stfill|stgen|stir|stjoin|stmc|stmh|stphplot|stphtest|stptime|strate|streg|streg_sw|streset|sts|stset|stsplit|stsum|sttocc|sttoct|stvary|su|suest|summ??|summar??|summariz??|summarize|sunflower|sureg|survcurv|survsum|svar|svar_p|svmat|svy_disp|svy_dreg|svy_est|svy_est_7|svy_estat|svy_get|svy_gnbreg_p|svy_head|svy_header|svy_heckman_p|svy_heckprob_p|svy_intreg_p|svy_ivreg_p|svy_logistic_p|svy_logit_p|svy_mlogit_p|svy_nbreg_p|svy_ologit_p|svy_oprobit_p|svy_poisson_p|svy_probit_p|svy_regress_p|svy_sub|svy_sub_7|svy_x|svy_x_7|svy_x_p|svydes|svygen|svygnbreg|svyheckman|svyheckprob|svyintreg|svyintrg|svyivreg|svylc|svylog_p|svylogit|svymarkout|svymean|svymlog|svymlogit|svynbreg|svyolog|svyologit|svyoprob|svyoprobit|svyopts|svypois|svypoisson|svyprobit|svyprobt|svyprop|svyratio|svyreg|svyreg_p|svyregress|svyset|svytab|svytest|svytotal|sw|swilk|symmetry|symmi|symplot|sysdescribe|sysdir|sysuse|szroeter|tab??|tab1|tab2|tab_or|tabdi??|tabdisp??|tabi|table|tabodds|tabstat|tabul??|tabulat??|tabulate|tes??|test|testnl|testparm|teststd|tetrachoric|time_it|timer|tis|tobi??|tobit|tobit_p|tobit_sw|tokeni??|tokenize??|total|translate|translator|transmap|treat_ll|treatr_p|treatreg|trim|trnb_cons|trnb_mean|trpoiss_d2|trunc_ll|truncr_p|truncreg|tsappend|tset|tsfill|tsline|tsline_ex|tsreport|tsrevar|tsrline|tsset|tssmooth|tsunab|ttesti??|tut_chk|tut_wait|tutorial|tw|tware_st|two|twoway|twoway__fpfit_serset|twoway__function_gen|twoway__histogram_gen|twoway__ipoint_serset|twoway__ipoints_serset|twoway__kdensity_gen|twoway__lfit_serset|twoway__normgen_gen|twoway__pci_serset|twoway__qfit_serset|twoway__scatteri_serset|twoway__sunflower_gen|twoway_ksm_serset|typ??|type|typeof|unab|unabbrev|unabcmd|update|uselabel|var|var_mkcompanion|var_p|varbasic|varfcast|vargranger|varirf|varirf_add|varirf_cgraph|varirf_create|varirf_ctable|varirf_describe|varirf_dir|varirf_drop|varirf_erase|varirf_graph|varirf_ograph|varirf_rename|varirf_set|varirf_table|varlmar|varnorm|varsoc|varstable|varstable_w2??|varwle|vec|vec_fevd|vec_mkphi|vec_p|vec_p_w|vecirf_create|veclmar|veclmar_w|vecnorm|vecnorm_w|vecrank|vecstable|verinst|versi??|version??|view|viewsource|vif|vwls|wdatetof|webdescribe|webseek|webuse|wh|whelp|whi|which|wilc_st|wilcoxon|wind??|window??|winexec|wntestb|wntestq|xchart|xcorr|xi|xmlsave??|xmluse|xpose|xshe??|xshell??|xt_iis|xt_tis|xtab_p|xtabond|xtbin_p|xtclog|xtcloglog|xtcloglog_d2|xtcloglog_pa_p|xtcloglog_re_p|xtcnt_p|xtcorr|xtdata|xtdes|xtfront_p|xtfrontier|xtgee|xtgee_elink|xtgee_estat|xtgee_makeivar|xtgee_p|xtgee_plink|xtgls|xtgls_p|xthaus|xthausman|xtht_p|xthtaylor|xtile|xtint_p|xtintreg|xtintreg_d2|xtintreg_p|xtivreg|xtline|xtline_ex|xtlogit|xtlogit_d2|xtlogit_fe_p|xtlogit_pa_p|xtlogit_re_p|xtmixed|xtmixed_estat|xtmixed_p|xtnb_fe|xtnb_lf|xtnbreg|xtnbreg_pa_p|xtnbreg_refe_p|xtpcse|xtpcse_p|xtpois|xtpoisson|xtpoisson_d2|xtpoisson_pa_p|xtpoisson_refe_p|xtpred|xtprobit|xtprobit_d2|xtprobit_re_p|xtps_fe|xtps_lf|xtps_ren|xtps_ren_8|xtrar_p|xtrc|xtrc_p|xtrchh|xtrefe_p|yx|yxview__barlike_draw|yxview_area_draw|yxview_bar_draw|yxview_dot_draw|yxview_dropline_draw|yxview_function_draw|yxview_iarrow_draw|yxview_ilabels_draw|yxview_normal_draw|yxview_pcarrow_draw|yxview_pcbarrow_draw|yxview_pccapsym_draw|yxview_pcscatter_draw|yxview_pcspike_draw|yxview_rarea_draw|yxview_rbar_draw|yxview_rbarm_draw|yxview_rcap_draw|yxview_rcapsym_draw|yxview_rconnected_draw|yxview_rline_draw|yxview_rscatter_draw|yxview_rspike_draw|yxview_spike_draw|yxview_sunflower_draw|zap_s|zinb|zinb_llf|zinb_plf|zip|zip_llf|zip_p|zip_plf|zt_ct_5|zt_hc_5|zt_hcd_5|zt_is_5|zt_iss_5|zt_sho_5|zt_smp_5|ztnb|ztnb_p|ztp|ztp_p|prtab|prchange|eststo|estout|esttab|estadd|estpost|ivregress|xtreg|xtreg_be|xtreg_fe|xtreg_ml|xtreg_pa_p|xtreg_re|xtregar|xtrere_p|xtset|xtsf_ll|xtsf_llti|xtsum|xttab|xttest0|xttobit|xttobit_p|xttrans)\\b",
           "name": "keyword.control.flow.stata"
         }
       ]
@@ -1548,7 +1548,7 @@
     "functions": {
       "patterns": [
         {
-          "begin": "\\b((abbrev|abs|acos|acosh|asin|asinh|atan|atan2|atanh|autocode|betaden|binomial|binomialp|binomialtail|binormalbofd|byteorder|c|cauchy|cauchyden|cauchytail|Cdhms|ceil|char|chi2|chi2den|chi2tail|Chms|cholesky|chop|clip|clock|Clock|cloglog|Cmdyhms|cofC|Cofc|cofd|Cofd|coleqnumb|collatorlocale|collatorversion|colnfreeparms|colnumb|colsof|comb|cond|corr|cos|cosh|daily|date|day|det|dgammapda|dgammapdada|dgammapdadx|dgammapdx|dgammapdxdx|dhms|diag|diag0cnt|digamma|dofb|dofc|dofC|dofh|dofm|dofq|dofw|dofy|dow|doy|dunnettprob|e|el|epsdouble|epsfloat|exp|exponential|exponentialden|exponentialtail|F|Fden|fileexists|fileread|filereaderror|filewrite|float|floor|fmtwidth|Ftail|gammaden|gammap|gammaptail|get|hadamard|halfyear|halfyearly|hh|hhC|hms|hofd|hours|hypergeometric|hypergeometricp|I|ibeta|ibetatail|igaussian|igaussianden|igaussiantail|indexnot|inlist|inrange|int|inv|invbinomial|invbinomialtail|invcauchy|invcauchytail|invchi2|invchi2tail|invcloglog|invdunnettprob|invexponential|invexponentialtail|invF|invFtail|invgammap|invgammaptail|invibeta|invibetatail|invigaussian|invigaussiantail|invlaplace|invlaplacetail|invlogistic|invlogistictail|invlogit|invnbinomial|invnbinomialtail|invnchi2|invnchi2tail|invnF|invnFtail|invnibeta|invnormal|invnt|invnttail|invpoisson|invpoissontail|invsym|invt|invttail|invtukeyprob|invweibull|invweibullph|invweibullphtail|invweibulltail|irecode|issymmetric|itrim|J|laplace|laplaceden|laplacetail|length|ln|lncauchyden|lnfactorial|lngamma|lnigammaden|lnigaussianden|lniwishartden|lnlaplaceden|lnmvnormalden|lnnormal|lnnormalden|lnwishartden|log|log10|logistic|logisticden|logistictail|logit|lower|ltrim|matmissing|matrix|matuniform|max|maxbyte|maxdouble|maxfloat|maxint|maxlong|mdy|mdyhms|mi|min|minbyte|mindouble|minfloat|minint|minlong|minutes|missing|mm|mmC|mod|mofd|month|monthly|mreldif|msofhours|msofminutes|msofseconds|nbetaden|nbinomial|nbinomialp|nbinomialtail|nchi2|nchi2den|nchi2tail|nF|nFden|nFtail|nibeta|normal|normalden|npnchi2|npnF|npnt|nt|ntden|nttail|nullmat|plural|poisson|poissonp|poissontail|proper|qofd|quarter|quarterly|r|rbeta|rbinomial|rcauchy|rchi2|real|recode|regexs|reldif|replay|return|reverse|rexponential|rgamma|rhypergeometric|rigaussian|rlaplace|rlogistic|rnbinomial|rnormal|round|roweqnumb|rownfreeparms|rownumb|rowsof|rpoisson|rt|rtrim|runiform|runiformint|rweibull|rweibullph|s|scalar|seconds|sign|sin|sinh|smallestdouble|soundex|sqrt|ss|ssC|string|stritrim|strlen|strlower|strltrim|strmatch|strofreal|strpos|strproper|strreverse|strrpos|strrtrim|strtoname|strtrim|strupper|subinstr|subinword|substr|sum|sweep|t|tan|tanh|tc|tC|td|tden|th|tin|tm|tobytes|tq|trace|trigamma|trim|trunc|ttail|tukeyprob|tw|twithin|uchar|udstrlen|udsubstr|uisdigit|uisletter|upper|ustrcompare|ustrcompareex|ustrfix|ustrfrom|ustrinvalidcnt|ustrleft|ustrlen|ustrlower|ustrltrim|ustrnormalize|ustrpos|ustrregexs|ustrreverse|ustrright|ustrrpos|ustrrtrim|ustrsortkey|ustrsortkeyex|ustrtitle|ustrto|ustrtohex|ustrtoname|ustrtrim|ustrunescape|ustrupper|ustrword|ustrwordcount|usubinstr|usubstr|vec|vecdiag|week|weekly|weibull|weibullden|weibullph|weibullphden|weibullphtail|weibulltail|wofd|word|wordbreaklocale|wordcount|year|yearly|yh|ym|yofd|yq|yw)|([\\w&&[^0-9]]\\w{0,31}))(\\()",
+          "begin": "\\b((abbrev|abs|acosh??|asinh??|atan2??|atanh|autocode|betaden|binomialp??|binomialtail|binormalbofd|byteorder|c|cauchy|cauchyden|cauchytail|Cdhms|ceil|char|chi2|chi2den|chi2tail|Chms|cholesky|chop|clip|clock|Clock|cloglog|Cmdyhms|cofC|Cofc|cofd|Cofd|coleqnumb|collatorlocale|collatorversion|colnfreeparms|colnumb|colsof|comb|cond|corr|cosh??|daily|date|day|det|dgammapda|dgammapdada|dgammapdadx|dgammapdx|dgammapdxdx|dhms|diag|diag0cnt|digamma|dofb|dofc|dofC|dofh|dofm|dofq|dofw|dofy|dow|doy|dunnettprob|el??|epsdouble|epsfloat|exp|exponential|exponentialden|exponentialtail|F|Fden|fileexists|fileread|filereaderror|filewrite|float|floor|fmtwidth|Ftail|gammaden|gammap|gammaptail|get|hadamard|halfyear|halfyearly|hhC??|hms|hofd|hours|hypergeometricp??|I|ibeta|ibetatail|igaussian|igaussianden|igaussiantail|indexnot|inlist|inrange|int|inv|invbinomial|invbinomialtail|invcauchy|invcauchytail|invchi2|invchi2tail|invcloglog|invdunnettprob|invexponential|invexponentialtail|invF|invFtail|invgammap|invgammaptail|invibeta|invibetatail|invigaussian|invigaussiantail|invlaplace|invlaplacetail|invlogistic|invlogistictail|invlogit|invnbinomial|invnbinomialtail|invnchi2|invnchi2tail|invnF|invnFtail|invnibeta|invnormal|invnt|invnttail|invpoisson|invpoissontail|invsym|invt|invttail|invtukeyprob|invweibull|invweibullph|invweibullphtail|invweibulltail|irecode|issymmetric|itrim|J|laplace|laplaceden|laplacetail|length|ln|lncauchyden|lnfactorial|lngamma|lnigammaden|lnigaussianden|lniwishartden|lnlaplaceden|lnmvnormalden|lnnormal|lnnormalden|lnwishartden|log|log10|logistic|logisticden|logistictail|logit|lower|ltrim|matmissing|matrix|matuniform|max|maxbyte|maxdouble|maxfloat|maxint|maxlong|mdy|mdyhms|min??|minbyte|mindouble|minfloat|minint|minlong|minutes|missing|mmC??|mod|mofd|month|monthly|mreldif|msofhours|msofminutes|msofseconds|nbetaden|nbinomialp??|nbinomialtail|nchi2|nchi2den|nchi2tail|nF|nFden|nFtail|nibeta|normal|normalden|npnchi2|npnF|npnt|nt|ntden|nttail|nullmat|plural|poissonp??|poissontail|proper|qofd|quarter|quarterly|r|rbeta|rbinomial|rcauchy|rchi2|real|recode|regexs|reldif|replay|return|reverse|rexponential|rgamma|rhypergeometric|rigaussian|rlaplace|rlogistic|rnbinomial|rnormal|round|roweqnumb|rownfreeparms|rownumb|rowsof|rpoisson|rt|rtrim|runiform|runiformint|rweibull|rweibullph|s|scalar|seconds|sign|sinh??|smallestdouble|soundex|sqrt|ssC??|string|stritrim|strlen|strlower|strltrim|strmatch|strofreal|strpos|strproper|strreverse|strrpos|strrtrim|strtoname|strtrim|strupper|subinstr|subinword|substr|sum|sweep|t|tanh??|tc|tC|td|tden|th|tin|tm|tobytes|tq|trace|trigamma|trim|trunc|ttail|tukeyprob|tw|twithin|uchar|udstrlen|udsubstr|uisdigit|uisletter|upper|ustrcompare|ustrcompareex|ustrfix|ustrfrom|ustrinvalidcnt|ustrleft|ustrlen|ustrlower|ustrltrim|ustrnormalize|ustrpos|ustrregexs|ustrreverse|ustrright|ustrrpos|ustrrtrim|ustrsortkey|ustrsortkeyex|ustrtitle|ustrto|ustrtohex|ustrtoname|ustrtrim|ustrunescape|ustrupper|ustrword|ustrwordcount|usubinstr|usubstr|vec|vecdiag|week|weekly|weibull|weibullden|weibullph|weibullphden|weibullphtail|weibulltail|wofd|word|wordbreaklocale|wordcount|year|yearly|yh|ym|yofd|yq|yw)|([\\w&&[^0-9]]\\w{0,31}))(\\()",
           "beginCaptures": {
             "2": {
               "name": "support.function.builtin.stata"
@@ -1682,7 +1682,7 @@
     "macro-commands": {
       "patterns": [
         {
-          "begin": "\\b(loc(a(?:l|))?)\\s+([$'()`{}\\w]+)\\s*(?=[:=])",
+          "begin": "\\b(loc(al?)?)\\s+([$'()`{}\\w]+)\\s*(?=[:=])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1734,7 +1734,7 @@
           ]
         },
         {
-          "begin": "\\b(gl(o(?:bal|ba|b|))?)\\s+(?=[$`\\w])",
+          "begin": "\\b(gl(o(?:bal?|b?))?)\\s+(?=[$`\\w])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1758,7 +1758,7 @@
           ]
         },
         {
-          "begin": "\\b(loc(a(?:l|))?)\\s+(\\+\\+|--)?(?=[$`\\w])",
+          "begin": "\\b(loc(al?)?)\\s+(\\+\\+|--)?(?=[$`\\w])",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.stata"
@@ -1806,7 +1806,7 @@
           ]
         },
         {
-          "begin": "\\b(ma(c(?:ro|r|))?)\\s+(drop|l(i(?:st|s|))?)\\s*(?=\\s)",
+          "begin": "\\b(ma(c(?:ro?|))?)\\s+(drop|l(i(?:st?|))?)\\s*(?=\\s)",
           "beginCaptures": {
             "0": {
               "name": "keyword.macro.stata"
@@ -1850,7 +1850,7 @@
           "name": "keyword.macro.extendedfcn.stata"
         },
         {
-          "match": "\\b(t(y(?:pe|p|))?|f(o(?:rmat|rma|rm|r|))?|val(u(?:e|))?\\s+l(a(?:ble|bl|b|))?|var(i(?:able|abl|ab|a|))?\\s+l(a(?:bel|be|b|))?|data\\s+l(a(?:ble|bl|b|))?|sort(e(?:dby|db|d|))?|lab(e(?:l|))?|maxlength|constraint|char)\\b",
+          "match": "\\b(t(y(?:pe?|))?|f(o(?:rmat?|rm?|))?|val(ue?)?\\s+l(a(?:ble?|b?))?|var(i(?:able?|ab?|))?\\s+l(a(?:bel?|b?))?|data\\s+l(a(?:ble?|b?))?|sort(e(?:dby?|d?))?|lab(el?)?|maxlength|constraint|char)\\b",
           "name": "keyword.macro.extendedfcn.stata"
         },
         {
@@ -1862,7 +1862,7 @@
           "name": "keyword.macro.extendedfcn.stata"
         },
         {
-          "match": "\\b(env(i(?:ronment|ronmen|ronme|ronm|ron|ro|r|))?)\\b",
+          "match": "\\b(env(i(?:ronment?|ronme?|ron?|r?))?)\\b",
           "name": "keyword.macro.extendedfcn.stata"
         },
         {
@@ -1881,7 +1881,7 @@
               "name": "entity.name.type.class.stata"
             }
           },
-          "match": "\\b(list)\\s+(uniq|dups|sort|clean|retok(e(?:nize|niz|ni|n|))?|sizeof)\\s+(\\w{1,32})"
+          "match": "\\b(list)\\s+(uniq|dups|sort|clean|retok(e(?:nize?|ni?|))?|sizeof)\\s+(\\w{1,32})"
         },
         {
           "captures": {
@@ -1898,7 +1898,7 @@
               "name": "entity.name.type.class.stata"
             }
           },
-          "match": "\\b(list)\\s+(\\w{1,32})\\s+([-\\&|]|===|==|in)\\s+(\\w{1,32})"
+          "match": "\\b(list)\\s+(\\w{1,32})\\s+([-\\&|]|===?|in)\\s+(\\w{1,32})"
         },
         {
           "captures": {
@@ -1924,7 +1924,7 @@
           "match": "\\b(list\\s+posof)\\s+(\")(\\w+)(\")\\s+(in)\\s+(\\w{1,32})"
         },
         {
-          "match": "\\b(rown(a(?:mes|me|m|))?|coln(a(?:mes|me|m|))?|rowf(u(?:llnames|llname|llnam|llna|lln|ll|l|))?|colf(u(?:llnames|llname|llnam|llna|lln|ll|l|))?|roweq?|coleq?|rownumb|colnumb|roweqnumb|coleqnumb|rownfreeparms|colnfreeparms|rownlfs|colnlfs|rowsof|colsof|rowvarlist|colvarlist|rowlfnames|collfnames)\\b",
+          "match": "\\b(rown(a(?:mes?|m?))?|coln(a(?:mes?|m?))?|rowf(u(?:llnames?|llnam?|lln?|l?))?|colf(u(?:llnames?|llnam?|lln?|l?))?|roweq?|coleq?|rownumb|colnumb|roweqnumb|coleqnumb|rownfreeparms|colnfreeparms|rownlfs|colnlfs|rowsof|colsof|rowvarlist|colvarlist|rowlfnames|collfnames)\\b",
           "name": "keyword.macro.extendedfcn.stata"
         },
         {
@@ -1947,7 +1947,7 @@
               ]
             }
           },
-          "match": "\\b((copy|(u(?:d|))?strlen)\\s+(loc(a(?:l|))?|gl(o(?:bal|ba|b|))?))\\s+([^']+)"
+          "match": "\\b((copy|(ud?)?strlen)\\s+(loc(al?)?|gl(o(?:bal?|b?))?))\\s+([^']+)"
         },
         {
           "captures": {
@@ -1979,7 +1979,7 @@
           "match": "(word|piece)\\s+(['`\\s\\w]+)\\s+(of)"
         },
         {
-          "begin": "\\b(subinstr\\s+(loc(a(?:l|))?|gl(o(?:bal|ba|b|))?))\\s+(\\w{1,32})",
+          "begin": "\\b(subinstr\\s+(loc(al?)?|gl(o(?:bal?|b?))?))\\s+(\\w{1,32})",
           "beginCaptures": {
             "1": {
               "name": "keyword.macro.extendedfcn.stata"
@@ -2020,7 +2020,7 @@
                   "name": "punctuation.definition.parameters.end.stata"
                 }
               },
-              "match": "(c(?:ount|oun|ou|o|))(\\()(local|loca|loc|global|globa|glob|glo|gl)\\s+(\\w{1,32})(\\))"
+              "match": "(c(?:ount?|ou?|))(\\()(local?|loc|global?|glob?|gl)\\s+(\\w{1,32})(\\))"
             }
           ]
         },
@@ -2276,7 +2276,7 @@
               "name": "punctuation.definition.string.begin.stata"
             }
           },
-          "end": "(?:\\\\|)'",
+          "end": "\\\\?'",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.stata"
@@ -2336,7 +2336,7 @@
           "name": "keyword.operator.logical.stata"
         },
         {
-          "match": "<=|>=|:=|==|!=|~=|[<=>]|!!|!",
+          "match": "<=|>=|:=|==|!=|~=|[<=>]|!!?",
           "name": "keyword.operator.comparison.stata"
         },
         {
@@ -2344,7 +2344,7 @@
           "name": "keyword.operator.parentheses.stata"
         },
         {
-          "match": "(#(?:#|))",
+          "match": "(##?)",
           "name": "keyword.operator.factor-variables.stata"
         },
         {
@@ -2376,7 +2376,7 @@
     "reserved-names": {
       "patterns": [
         {
-          "match": "\\b(_all|_b|byte|_coef|_cons|double|float|if|in|int|long|_n|_N|_pi|_pred|_rc|_skip|str[0-9]+|strL|using|with)\\b",
+          "match": "\\b(_all|_b|byte|_coef|_cons|double|float|if|int??|long|_n|_N|_pi|_pred|_rc|_skip|str[0-9]+|strL|using|with)\\b",
           "name": "invalid.illegal.name.stata"
         },
         {

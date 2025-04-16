@@ -209,7 +209,7 @@
     "color": {
       "patterns": [
         {
-          "begin": "\\b(rgb|rgba|hsl|hsla)(\\()",
+          "begin": "\\b(rgba??|hsla??)(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.color.css"
@@ -650,7 +650,7 @@
           ]
         },
         {
-          "begin": "(matrix|matrix3d|perspective|rotate|rotate3d|rotate[Xx]|rotate[Yy]|rotate[Zz]|scale|scale3d|scale[Xx]|scale[Yy]|scale[Zz]|skew|skew[Xx]|skew[Yy]|translate|translate3d|translate[Xx]|translate[Yy]|translate[Zz])(\\()",
+          "begin": "(matrix|matrix3d|perspective|rotate|rotate3d|rotate[Xx]|rotate[Yy]|rotate[Zz]|scale|scale3d|scale[Xx]|scale[Yy]|scale[Zz]|skew[Xx]??|skew[Yy]|translate|translate3d|translate[Xx]|translate[Yy]|translate[Zz])(\\()",
           "beginCaptures": {
             "1": {
               "name": "support.function.transform.css"
@@ -674,7 +674,7 @@
           ]
         },
         {
-          "match": "(url|local|format|counter|counters|attr|calc)(?=\\()",
+          "match": "(url|local|format|counters??|attr|calc)(?=\\()",
           "name": "support.function.misc.css"
         },
         {
@@ -690,7 +690,7 @@
           "name": "support.function.filter.css"
         },
         {
-          "match": "(matrix|matrix3d|perspective|rotate|rotate3d|rotate[Xx]|rotate[Yy]|rotate[Zz]|scale|scale3d|scale[Xx]|scale[Yy]|scale[Zz]|skew|skew[Xx]|skew[Yy]|translate|translate3d|translate[Xx]|translate[Yy]|translate[Zz])(?=\\()",
+          "match": "(matrix|matrix3d|perspective|rotate|rotate3d|rotate[Xx]|rotate[Yy]|rotate[Zz]|scale|scale3d|scale[Xx]|scale[Yy]|scale[Zz]|skew[Xx]??|skew[Yy]|translate|translate3d|translate[Xx]|translate[Yy]|translate[Zz])(?=\\()",
           "name": "support.function.transform.css"
         },
         {
@@ -915,7 +915,7 @@
     "selector": {
       "patterns": [
         {
-          "match": "(?=\\w)(?<![-\\w])(a|abbr|acronym|address|area|article|aside|audio|b|base|bdi|bdo|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|data|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|main|map|mark|math|menu|menuitem|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|rb|rp|rt|rtc|ruby|s|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|svg|table|tbody|td|template|textarea|tfoot|th|thead|time|title|tr|track|tt|u|ul|var|video|wbr)(?<=\\w)(?![-\\w])",
+          "match": "(?=\\w)(?<![-\\w])(a|abbr|acronym|address|area|article|aside|audio|b|base|bdi|bdo|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|data|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|main|map|mark|math|menu|menuitem|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|rb|rp|rtc??|ruby|s|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|svg|table|tbody|td|template|textarea|tfoot|th|thead|time|title|tr|track|tt|ul??|var|video|wbr)(?<=\\w)(?![-\\w])",
           "name": "entity.name.tag.css"
         },
         {
@@ -1180,7 +1180,7 @@
       "name": "variable.stylus"
     },
     "variable_declaration": {
-      "begin": "^[^\\n\\S]*(\\$?[-A-Z_a-z][-0-9A-Z_a-z]*)[^\\n\\S]*((?:|[:?])=)",
+      "begin": "^[^\\n\\S]*(\\$?[-A-Z_a-z][-0-9A-Z_a-z]*)[^\\n\\S]*([:?]??=)",
       "beginCaptures": {
         "1": {
           "name": "variable.stylus"
