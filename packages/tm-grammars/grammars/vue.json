@@ -6,9 +6,6 @@
       "include": "#vue-comments"
     },
     {
-      "include": "text.html.basic#comment"
-    },
-    {
       "include": "#self-closing-tag"
     },
     {
@@ -974,6 +971,16 @@
       "patterns": [
         {
           "include": "#vue-comments-key-value"
+        },
+        {
+          "begin": "<!--",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.vue"
+            }
+          },
+          "end": "-->",
+          "name": "comment.block.vue"
         }
       ]
     },
