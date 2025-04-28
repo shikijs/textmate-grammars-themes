@@ -132,6 +132,9 @@
           "include": "#comment"
         },
         {
+          "include": "#comment-invalid"
+        },
+        {
           "include": "#expression"
         }
       ]
@@ -151,6 +154,9 @@
           "include": "#comment"
         },
         {
+          "include": "#comment-invalid"
+        },
+        {
           "include": "#other-rule-definition"
         },
         {
@@ -163,8 +169,12 @@
       "name": "variable.parameter.talon"
     },
     "comment": {
-      "match": "(\\s*#.*)$",
+      "match": "^\\s*(#.*)$",
       "name": "comment.line.number-sign.talon"
+    },
+    "comment-invalid": {
+      "match": "(\\s*#.*)$",
+      "name": "invalid.illegal"
     },
     "context": {
       "captures": {
@@ -182,6 +192,9 @@
           "patterns": [
             {
               "include": "#comment"
+            },
+            {
+              "include": "#comment-invalid"
             },
             {
               "include": "#regexp"
@@ -472,6 +485,9 @@
           "include": "#comment"
         },
         {
+          "include": "#comment-invalid"
+        },
+        {
           "include": "#qstring-long"
         },
         {
@@ -515,7 +531,7 @@
           ]
         }
       },
-      "match": "([.0-9A-Z_a-z])(_(list|\\d+))?",
+      "match": "([.0-9A-Z_a-z])(_(list|\\d+)(?=[^.0-9A-Z_a-z]))?",
       "name": "variable.parameter.talon"
     }
   },

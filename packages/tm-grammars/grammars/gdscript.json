@@ -161,9 +161,6 @@
           "include": "#comment"
         },
         {
-          "include": "#self"
-        },
-        {
           "include": "#func"
         },
         {
@@ -428,7 +425,7 @@
     },
     "func": {
       "match": "\\bfunc\\b",
-      "name": "keyword.language.gdscript"
+      "name": "keyword.language.gdscript storage.type.function.gdscript"
     },
     "function_arguments": {
       "begin": "(\\()",
@@ -619,7 +616,7 @@
       ]
     },
     "keywords": {
-      "match": "\\b(?:class|class_name|abstract|is|onready|tool|static|export|as|void|enum|assert|breakpoint|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace|super)\\b",
+      "match": "\\b(?:class|class_name|abstract|is|onready|tool|static|export|as|void|enum|assert|breakpoint|sync|remote|master|puppet|slave|remotesync|mastersync|puppetsync|trait|namespace|super|self)\\b",
       "name": "keyword.language.gdscript"
     },
     "lambda_declaration": {
@@ -746,11 +743,11 @@
         {
           "begin": "([\"'])",
           "end": "\\1",
-          "name": "string.quoted.gdscript meta.literal.nodepath.gdscript constant.character.escape",
+          "name": "string.quoted.gdscript meta.literal.nodepath.gdscript constant.character.escape.gdscript",
           "patterns": [
             {
               "match": "%",
-              "name": "keyword.control.flow"
+              "name": "keyword.control.flow.gdscript"
             }
           ]
         },
@@ -899,10 +896,6 @@
           "include": "#any_variable"
         }
       ]
-    },
-    "self": {
-      "match": "\\bself\\b",
-      "name": "variable.language.gdscript"
     },
     "signal_declaration": {
       "begin": "\\s*(signal)\\s+([A-Z_a-z]\\w*)\\s*(?=\\()",

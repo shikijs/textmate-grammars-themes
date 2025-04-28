@@ -313,18 +313,18 @@ export const grammars = [
     source: 'https://github.com/luggage66/vscode-awk/blob/eff8c0f160ae16592c8d9963fd77046137fd2612/syntaxes/awk.tmLanguage',
   },
   {
-    byteSize: 55697,
+    byteSize: 56368,
     displayName: 'Ballerina',
     funding: [
     ],
-    hash: 'gOAutnr266vUWuNN8ZcTIpP7nvURVB3uXidMTbA2--8',
-    lastUpdate: '2023-08-21T05:23:05Z',
+    hash: 'w5lbbESsUkfaU0k7NA4ML8vZaUqG6hlpAy1QTpNvpKM',
+    lastUpdate: '2025-04-24T17:27:26Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/ballerina-platform/ballerina-grammar/master/LICENSE',
     name: 'ballerina',
     scopeName: 'source.ballerina',
-    sha: '42ddcc1c63c86bdd6ba712e86bf965f5063831d3',
-    source: 'https://github.com/ballerina-platform/ballerina-grammar/blob/42ddcc1c63c86bdd6ba712e86bf965f5063831d3/syntaxes/ballerina.tmLanguage',
+    sha: '4bf70d328ae9e5a93219e44c031ab3776c76727a',
+    source: 'https://github.com/ballerina-platform/ballerina-grammar/blob/4bf70d328ae9e5a93219e44c031ab3776c76727a/syntaxes/ballerina.tmLanguage',
   },
   {
     aliases: [
@@ -1213,7 +1213,7 @@ export const grammars = [
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
   },
   {
-    byteSize: 18306,
+    byteSize: 18274,
     displayName: 'GDScript',
     funding: [
       {
@@ -1221,14 +1221,14 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'tVujk0LmJvJsIjBXZN1SEK6tpw-Jg7oL2kO6cDucLQE',
-    lastUpdate: '2025-03-04T23:56:21Z',
+    hash: 'C_YJPTJfva14j7AhQ0pJLbiwX1uL1H0hZsnaYumnsTg',
+    lastUpdate: '2025-04-26T20:00:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: '0203cec2938650a3ec3af4e1f14a98a7b929fffc',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/0203cec2938650a3ec3af4e1f14a98a7b929fffc/syntaxes/GDScript.tmLanguage.json',
+    sha: '911a34fda4d4ffacb04dc7fa4737347ac95ddb40',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/911a34fda4d4ffacb04dc7fa4737347ac95ddb40/syntaxes/GDScript.tmLanguage.json',
   },
   {
     byteSize: 6048,
@@ -1317,18 +1317,18 @@ export const grammars = [
     source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
   },
   {
-    byteSize: 2482,
+    byteSize: 2431,
     displayName: 'Gleam',
     funding: [
     ],
-    hash: 'NYwZnnPvs5pXlOkyEdhZbvCOXaOmIaqYTwLlTCvG0ho',
-    lastUpdate: '2025-03-13T17:03:24Z',
+    hash: '5CxvaGjTP1Hpz0F3sOfovl9SwolHVBwOv29G_2CckEM',
+    lastUpdate: '2025-04-08T10:34:41Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
     name: 'gleam',
     scopeName: 'source.gleam',
-    sha: '79dce69097e64ee228784cb36ae0ef346eb0bf25',
-    source: 'https://github.com/gleam-lang/vscode-gleam/blob/79dce69097e64ee228784cb36ae0ef346eb0bf25/syntaxes/gleam.tmLanguage.json',
+    sha: 'aa487ed82aeaec8dbac62e796689daf55abf1aa9',
+    source: 'https://github.com/gleam-lang/vscode-gleam/blob/aa487ed82aeaec8dbac62e796689daf55abf1aa9/syntaxes/gleam.tmLanguage.json',
   },
   {
     aliases: [
@@ -3671,7 +3671,7 @@ export const grammars = [
     aliases: [
       'talon',
     ],
-    byteSize: 6342,
+    byteSize: 6551,
     categories: [
       'scripting',
       'dsl',
@@ -3680,14 +3680,14 @@ export const grammars = [
     displayName: 'TalonScript',
     funding: [
     ],
-    hash: '48eZ5T_g0tyhVg5yrGBrY_-2QzQf0_HZAb1m2e5sF-Q',
-    lastUpdate: '2025-02-08T02:47:13Z',
+    hash: 'jl1yCDh9RCZO20Hu2pYjcBa5ivcpZgaN5yOqdDOeRKs',
+    lastUpdate: '2025-04-26T13:47:08Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/mirober/vscode-TalonScript/master/LICENSE',
     name: 'talonscript',
     scopeName: 'source.talon',
-    sha: '2ac0a7b9e7dd2ea59d5a1d79934c1f407493a0fa',
-    source: 'https://github.com/mrob95/vscode-TalonScript/blob/2ac0a7b9e7dd2ea59d5a1d79934c1f407493a0fa/syntaxes/talon.tmLanguage.json',
+    sha: '91f3a6faaf926c02582f36ee155f2c4a02b9cc48',
+    source: 'https://github.com/mrob95/vscode-TalonScript/blob/91f3a6faaf926c02582f36ee155f2c4a02b9cc48/syntaxes/talon.tmLanguage.json',
   },
   {
     byteSize: 3178,
