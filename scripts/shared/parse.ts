@@ -6,9 +6,12 @@ import { parse as jsoncParse } from 'jsonc-parser'
 
 export function parseJsonc(jsonc: string) {
   const errors: ParseError[] = []
-  const result = jsoncParse(jsonc, errors, { allowTrailingComma: true })
+  const result = jsoncParse(jsonc, errors, {
+    allowEmptyContent: true,
+    allowTrailingComma: true,
+  })
   if (errors.length)
-    throw new Error(`Failed to parse JSONC:\n${jsonc.slice(0, 100)}\n${errors[0]}`)
+    throw new Error(`Failed to parse JSONC:\n${jsonc.slice(0, 300)}\n${errors[0]}`)
   return result
 }
 
