@@ -162,7 +162,7 @@
           ]
         },
         {
-          "begin": "^\\s*(?:(override)\\s*)?(define)\\s*(\\S+)\\s*((?:|[+:?])=)?(?=\\s)",
+          "begin": "^\\s*(?:(override)\\s*)?(define)\\s*(\\S+)\\s*([+:?]??=)?(?=\\s)",
           "captures": {
             "1": {
               "name": "keyword.control.override.makefile"
@@ -254,7 +254,7 @@
           ]
         },
         {
-          "begin": "^\\s*(if(?:|n)(?:eq|def))(?=\\s)",
+          "begin": "^\\s*(ifn??(?:eq|def))(?=\\s)",
           "captures": {
             "1": {
               "name": "keyword.control.$1.makefile"
@@ -280,7 +280,7 @@
               ]
             },
             {
-              "begin": "^\\s*else(?=\\s)\\s*(if(?:|n)(?:eq|def))*(?=\\s)",
+              "begin": "^\\s*else(?=\\s)\\s*(ifn??(?:eq|def))*(?=\\s)",
               "beginCaptures": {
                 "0": {
                   "name": "keyword.control.else.makefile"

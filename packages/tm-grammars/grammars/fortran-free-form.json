@@ -2443,7 +2443,7 @@
           ]
         },
         {
-          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|[<>]|<=|[-+/]|//|\\*\\*|\\*)|(\\S.*))\\s*(\\))",
+          "begin": "(?i)\\G\\s*\\b(operator)\\s*(\\()\\s*(?:(\\.[a-z]+\\.|==|/=|>=|[<>]|<=|[-+/]|//|\\*\\*?)|(\\S.*))\\s*(\\))",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.operator.fortran"
@@ -3388,11 +3388,11 @@
     "logical-operators": {
       "patterns": [
         {
-          "match": "(?i)(\\s*\\.(and|eq|eqv|le|lt|ge|gt|ne|neqv|not|or)\\.)",
+          "match": "(?i)(\\s*\\.(and|eqv??|le|lt|ge|gt|ne|neqv|not|or)\\.)",
           "name": "keyword.logical.fortran"
         },
         {
-          "match": "(==|/=|>=|(?<!=)>|<=|<)",
+          "match": "(==|/=|>=|(?<!=)>|<=?)",
           "name": "keyword.logical.fortran.modern"
         }
       ]

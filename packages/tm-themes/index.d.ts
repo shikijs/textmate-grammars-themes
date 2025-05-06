@@ -9,6 +9,7 @@ export interface ThemeInfo {
   type: 'dark' | 'light'
   displayName: string
   source: string
+  sourceApi: string
   licenseUrl?: string
   license?: string
   funding?: FundingLink[]

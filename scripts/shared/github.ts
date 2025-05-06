@@ -207,6 +207,7 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
     }
 
     info.source = `https://github.com/${repo}/blob/${info.sha || branch}/${path}`
+    info.sourceApi = `https://api.github.com/repos/${repo}/contents/${path}?ref=${encodeURIComponent(info.sha || branch)}`
 
     return info
   }
@@ -218,6 +219,7 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
 
 export function parseGitHubUrl(url: string): { repo: string, path: string, branch: string } {
   const m = url.match(/github\.com\/([^/]+\/[^/]+)\/blob\/([^/]+)\/(.+)/)
+    || url.match(/api\.github\.com\/repos\/([^/]+\/[^/]+)\/contents\/(.+)/)
   if (!m)
     throw new Error(`Invalid GitHub URL: ${url}`)
   return {

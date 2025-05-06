@@ -809,7 +809,7 @@
           ]
         },
         {
-          "begin": "^\\s*(graph|flowchart)\\s+([\\p{Letter}\\ 0-9]+)",
+          "begin": "^\\s*(graph|flowchart)\\s+([\\p{Letter}\\ 0-9]+)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.mermaid"
@@ -1080,6 +1080,53 @@
               },
               "comment": "(Click)(Entity)(Link)?(Tooltip)",
               "match": "(?i)\\s*(click)\\s+(\\b[-\\w]+\\b\\s*)(\\b\\w+\\b)?\\s(\"*.*\")"
+            },
+            {
+              "begin": "\\s*(\\@\\{)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "comment": "ExtendedNodeShapes",
+              "end": "(\\})",
+              "endCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "entity.name.function.mermaid"
+                    },
+                    "3": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  },
+                  "comment": "(shape)(shape name)(comma)?",
+                  "match": "(?i)\\s*(shape\\s*\\:)([^\\,\\}]*)(\\,)?"
+                },
+                {
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "string"
+                    },
+                    "3": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  },
+                  "comment": "(label)(label text)(comma)?",
+                  "match": "(?i)\\s*(label\\s*\\:)([^\\,\\}]*)(\\,)?"
+                }
+              ]
             }
           ]
         },

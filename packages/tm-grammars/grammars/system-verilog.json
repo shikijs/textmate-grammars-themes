@@ -443,7 +443,7 @@
           "name": "constant.numeric.decimal.systemverilog"
         },
         {
-          "match": "\\b\\d[.\\d]*[\\t\\n\\r ]*(?:[fmnpu]|)s\\b",
+          "match": "\\b\\d[.\\d]*[\\t\\n\\r ]*(?:[fnpu]|m?)s\\b",
           "name": "constant.numeric.time.systemverilog"
         },
         {
@@ -611,7 +611,7 @@
       ]
     },
     "functions": {
-      "match": "[\\t\\n\\r ]*\\b(?!while|for|if|iff|else|case|casex|casez)([A-Z_a-z][$0-9A-Z_a-z]*)(?=[\\t\\n\\r ]*\\()",
+      "match": "[\\t\\n\\r ]*\\b(?!while|for|iff??|else|casex??|casez)([A-Z_a-z][$0-9A-Z_a-z]*)(?=[\\t\\n\\r ]*\\()",
       "name": "entity.name.function.systemverilog"
     },
     "identifiers": {
@@ -898,11 +898,11 @@
           "name": "keyword.operator.logical.systemverilog"
         },
         {
-          "match": "@|##|#|->|<->",
+          "match": "@|##?|->|<->",
           "name": "keyword.operator.channel.systemverilog"
         },
         {
-          "match": "(?:[-%\\&*+/^|]|>>>|>>|<<<|<<|<|)=",
+          "match": "(?:[-%\\&*+/^|]|>>>?|<<<?|<?)=",
           "name": "keyword.operator.assignment.systemverilog"
         },
         {
@@ -922,15 +922,15 @@
           "name": "keyword.operator.logical.systemverilog"
         },
         {
-          "match": "<<<|<<|>>>|>>",
+          "match": "<<<?|>>>?",
           "name": "keyword.operator.bitwise.shift.systemverilog"
         },
         {
-          "match": "~&|~\\||~|\\^~|~\\^|[\\&^{|]|'\\{|[:?}]",
+          "match": "~&|~\\|?|\\^~|~\\^|[\\&^{|]|'\\{|[:?}]",
           "name": "keyword.operator.bitwise.systemverilog"
         },
         {
-          "match": "<=|<|>=|>|==\\?|!=\\?|===|!==|==|!=",
+          "match": "<=?|>=?|==\\?|!=\\?|===|!==|==|!=",
           "name": "keyword.operator.comparison.systemverilog"
         }
       ]
@@ -1133,7 +1133,7 @@
               "name": "constant.character.escape.systemverilog"
             },
             {
-              "match": "%(\\d+\\$)?[- #'+0]*[,:;_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh|h|ll|[Ljltz])?[%B-HLMOPS-VXZb-hlmops-vxz]",
+              "match": "%(\\d+\\$)?[- #'+0]*[,:;_]?((-?\\d+)|\\*(-?\\d+\\$)?)?(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?(hh?|ll|[Ljltz])?[%B-HLMOPS-VXZb-hlmops-vxz]",
               "name": "constant.character.format.placeholder.systemverilog"
             },
             {
@@ -1168,7 +1168,7 @@
           "name": "keyword.control.systemverilog"
         }
       },
-      "match": "[\\t\\n\\r ]*\\b(initial|always|always_comb|always_ff|always_latch|final|assign|deassign|force|release|wait|forever|repeat|alias|while|for|if|iff|else|case|casex|casez|default|endcase|return|break|continue|do|foreach|clocking|coverpoint|property|bins|binsof|illegal_bins|ignore_bins|randcase|matches|solve|before|expect|cross|ref|srandom|struct|chandle|tagged|extern|throughout|timeprecision|timeunit|priority|type|union|wait_order|triggered|randsequence|context|pure|wildcard|new|forkjoin|unique|unique0|priority)\\b"
+      "match": "[\\t\\n\\r ]*\\b(initial|always|always_comb|always_ff|always_latch|final|assign|deassign|force|release|wait|forever|repeat|alias|while|for|iff??|else|casex??|casez|default|endcase|return|break|continue|do|foreach|clocking|coverpoint|property|bins|binsof|illegal_bins|ignore_bins|randcase|matches|solve|before|expect|cross|ref|srandom|struct|chandle|tagged|extern|throughout|timeprecision|timeunit|priority|type|union|wait_order|triggered|randsequence|context|pure|wildcard|new|forkjoin|unique0??|priority)\\b"
     },
     "sv-control-begin": {
       "captures": {
@@ -1244,7 +1244,7 @@
       "match": "[\\t\\n\\r ]*\\b(option)\\."
     },
     "sv-rand": {
-      "match": "[\\t\\n\\r ]*\\brand(?:|c)\\b",
+      "match": "[\\t\\n\\r ]*\\brandc??\\b",
       "name": "storage.type.rand.systemverilog"
     },
     "sv-std": {

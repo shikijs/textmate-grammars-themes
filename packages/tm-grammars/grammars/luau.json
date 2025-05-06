@@ -248,7 +248,7 @@
           ]
         },
         {
-          "match": "\\b(__(?:add|call|concat|div|eq|index|le|len|lt|metatable|mod|mode|mul|newindex|pow|sub|tostring|unm|iter|idiv))\\b",
+          "match": "\\b(__(?:add|call|concat|div|eq|index|len??|lt|metatable|mode??|mul|newindex|pow|sub|tostring|unm|iter|idiv))\\b",
           "name": "variable.language.metamethod.luau"
         },
         {
@@ -338,7 +338,7 @@
           "name": "keyword.operator.logical.luau keyword.operator.wordlike.luau"
         },
         {
-          "match": "(?<=[^.]\\.|:)\\b(__(?:add|call|concat|div|eq|index|le|len|lt|metatable|mod|mode|mul|newindex|pow|sub|tostring|unm))\\b",
+          "match": "(?<=[^.]\\.|:)\\b(__(?:add|call|concat|div|eq|index|len??|lt|metatable|mode??|mul|newindex|pow|sub|tostring|unm))\\b",
           "name": "variable.language.metamethod.luau"
         },
         {
@@ -425,7 +425,7 @@
           "name": "keyword.operator.comparison.luau"
         },
         {
-          "match": "(?:[-+/]|//|[%*^]|\\.\\.|)=",
+          "match": "(?:[-+]|//??|[%*^]|\\.\\.|)=",
           "name": "keyword.operator.assignment.luau"
         },
         {
@@ -481,7 +481,7 @@
           "name": "constant.language.luau"
         },
         {
-          "match": "(?<![^.]\\.|:)\\b(bit32\\.(?:arshift|band|bnot|bor|btest|bxor|extract|lrotate|lshift|replace|rrotate|rshift|countlz|countrz|byteswap)|coroutine\\.(?:create|isyieldable|resume|running|status|wrap|yield|close)|debug\\.(?:info|loadmodule|profilebegin|profileend|traceback)|math\\.(?:abs|acos|asin|atan|atan2|ceil|clamp|cos|cosh|deg|exp|floor|fmod|frexp|ldexp|log|log10|max|min|modf|noise|pow|rad|random|randomseed|round|sign|sin|sinh|sqrt|tan|tanh)|os\\.(?:clock|date|difftime|time)|string\\.(?:byte|char|find|format|gmatch|gsub|len|lower|match|pack|packsize|rep|reverse|split|sub|unpack|upper)|table\\.(?:concat|create|find|foreach|foreachi|getn|insert|maxn|move|pack|remove|sort|unpack|clear|freeze|isfrozen|clone)|task\\.(?:spawn|synchronize|desynchronize|wait|defer|delay)|utf8\\.(?:char|codepoint|codes|graphemes|len|nfcnormalize|nfdnormalize|offset)|buffer\\.(?:create|fromstring|tostring|len|readi8|readu8|readi16|readu16|readi32|readu32|readf32|readf64|writei8|writeu8|writei16|writeu16|writei32|writeu32|writef32|writef64|readstring|writestring|copy|fill))\\b",
+          "match": "(?<![^.]\\.|:)\\b(bit32\\.(?:arshift|band|bnot|bor|btest|bxor|extract|lrotate|lshift|replace|rrotate|rshift|countlz|countrz|byteswap)|coroutine\\.(?:create|isyieldable|resume|running|status|wrap|yield|close)|debug\\.(?:info|loadmodule|profilebegin|profileend|traceback)|math\\.(?:abs|acos|asin|atan2??|ceil|clamp|cosh??|deg|exp|floor|fmod|frexp|ldexp|log|log10|max|min|modf|noise|pow|rad|random|randomseed|round|sign|sinh??|sqrt|tanh??)|os\\.(?:clock|date|difftime|time)|string\\.(?:byte|char|find|format|gmatch|gsub|len|lower|match|pack|packsize|rep|reverse|split|sub|unpack|upper)|table\\.(?:concat|create|find|foreachi??|getn|insert|maxn|move|pack|remove|sort|unpack|clear|freeze|isfrozen|clone)|task\\.(?:spawn|synchronize|desynchronize|wait|defer|delay)|utf8\\.(?:char|codepoint|codes|graphemes|len|nfcnormalize|nfdnormalize|offset)|buffer\\.(?:create|fromstring|tostring|len|readi8|readu8|readi16|readu16|readi32|readu32|readf32|readf64|writei8|writeu8|writei16|writeu16|writei32|writeu32|writef32|writef64|readstring|writestring|copy|fill))\\b",
           "name": "support.function.luau"
         },
         {

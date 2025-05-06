@@ -7,15 +7,16 @@
 #444444        <-
 #DBD7CACC       
 #B8A965        data.frame
-#DBD7CACC      (
+#444444        (
 #B8A965        table
-#DBD7CACC      (Year.Release))
+#444444        (
+#DBD7CACC      Year.Release
+#444444        ))
 #DBD7CACC      p 
 #444444        <-
 #DBD7CACC       game 
 #CB7676        %>%
-#DBD7CACC        
-#BD976A        select
+#DBD7CACC        select
 #444444        (
 #DBD7CACC      Year.Release
 #444444        ,
@@ -23,37 +24,39 @@
 #444444        )
 #DBD7CACC       
 #CB7676        %>%
-#DBD7CACC        
-#BD976A        group_by
+#DBD7CACC        group_by
 #444444        (
 #DBD7CACC      Year.Release
 #444444        )
 #DBD7CACC       
 #CB7676        %>%
-#DBD7CACC        
-#BD976A        summarise
+#DBD7CACC        summarise
 #444444        (
 #BD976A        Total.Sales
 #DBD7CACC       
 #444444        =
 #DBD7CACC       
 #B8A965        sum
-#DBD7CACC      (Global.Sales
-#444444        )
-#DBD7CACC      )
+#444444        (
+#DBD7CACC      Global.Sales
+#444444        ))
 #DBD7CACC      q 
 #444444        <-
 #DBD7CACC       
 #B8A965        cbind.data.frame
-#DBD7CACC      (p, counts
+#444444        (
+#DBD7CACC      p
+#444444        ,
+#DBD7CACC       counts
 #444444        [
 #4C9A91        2
-#444444        ]
-#DBD7CACC      )  
+#444444        ])
+#DBD7CACC        
 #758575DD      # Add counts to data frame
 #B8A965        names
-#DBD7CACC      (q)
-#444444        [
+#444444        (
+#DBD7CACC      q
+#444444        )[
 #4C9A91        3
 #444444        ]
 #DBD7CACC       
@@ -68,15 +71,16 @@
 #444444        <-
 #DBD7CACC       
 #B8A965        as.numeric
-#DBD7CACC      (q
+#444444        (
+#DBD7CACC      q
 #4D9375        $
-#DBD7CACC      count)
-#BD976A        ggplot
+#DBD7CACC      count
+#444444        )
+#DBD7CACC      ggplot
 #444444        (
 #DBD7CACC      q
 #444444        ,
-#DBD7CACC       
-#BD976A        aes
+#DBD7CACC       aes
 #444444        (
 #BD976A        x
 #DBD7CACC       
@@ -99,8 +103,7 @@
 #444444        ))
 #DBD7CACC       
 #CB7676        +
-#DBD7CACC        
-#BD976A        geom_col
+#DBD7CACC        geom_col
 #444444        (
 #BD976A        fill
 #DBD7CACC       
@@ -112,16 +115,14 @@
 #444444        )
 #DBD7CACC       
 #CB7676        +
-#DBD7CACC        
-#BD976A        geom_point
+#DBD7CACC        geom_point
 #444444        (
 #BD976A        y
 #DBD7CACC       
 #444444        =
 #DBD7CACC       q
 #4D9375        $
-#BD976A        count
-#DBD7CACC       
+#DBD7CACC      count 
 #CB7676        *
 #DBD7CACC       
 #4C9A91        500000
@@ -152,8 +153,7 @@
 #444444        )
 #DBD7CACC       
 #CB7676        +
-#DBD7CACC        
-#BD976A        geom_text
+#DBD7CACC        geom_text
 #444444        (
 #BD976A        y
 #DBD7CACC       
@@ -176,14 +176,12 @@
 #CB7676        +
 #DBD7CACC        
 #758575DD      # Position of the text: count of games each year
-#DBD7CACC        
-#BD976A        theme
+#DBD7CACC        theme
 #444444        (
 #BD976A        axis.text.x
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        element_text
+#DBD7CACC       element_text
 #444444        (
 #BD976A        angle
 #DBD7CACC       
@@ -195,8 +193,7 @@
 #BD976A        panel.background
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        element_rect
+#DBD7CACC       element_rect
 #444444        (
 #BD976A        fill
 #DBD7CACC       
@@ -210,20 +207,17 @@
 #BD976A        panel.grid.major
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        element_blank
+#DBD7CACC       element_blank
 #444444        (),
 #DBD7CACC              
 #BD976A        panel.grid.minor
 #DBD7CACC       
 #444444        =
-#DBD7CACC       
-#BD976A        element_blank
+#DBD7CACC       element_blank
 #444444        ())
 #DBD7CACC       
 #CB7676        +
-#DBD7CACC        
-#BD976A        scale_x_discrete
+#DBD7CACC        scale_x_discrete
 #444444        (
 #C98A7D77      "
 #C98A7D        Year.Release
@@ -235,11 +229,13 @@
 #444444        =
 #DBD7CACC       
 #B8A965        as.character
-#DBD7CACC      (Year.Release
-#444444        )
-#DBD7CACC      , 
+#444444        (
+#DBD7CACC      Year.Release
+#444444        ),
+#DBD7CACC       
 #BD976A        breaks
 #DBD7CACC       
 #444444        =
-#DBD7CACC       Year.Release)
+#DBD7CACC       Year.Release
+#444444        )
 #758575DD      # From https://gexijin.github.io/learnR/the-game-sales-dataset.html#analysis-of-sales

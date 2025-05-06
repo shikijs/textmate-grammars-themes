@@ -23,7 +23,7 @@
       ]
     },
     {
-      "match": "[2-6]>&1|>>|>|<<|[<>]|>\\||[1-6]>|[1-6]>>",
+      "match": "[2-6]>&1|>>?|<<|[<>]|>\\||[1-6]>|[1-6]>>",
       "name": "keyword.operator.redirection.powershell"
     },
     {
@@ -217,7 +217,7 @@
           "name": "entity.name.function"
         }
       },
-      "match": "(?<![-\\w])((?i:class)|[%?])\\s+((?:[-_\\p{L}\\d]|)+)\\b"
+      "match": "(?<![-\\w])((?i:class)|[%?])\\s+([-_\\p{L}\\d]?{1,})\\b"
     },
     {
       "match": "(?<!\\w)-(?i:is(?:not)?|as)\\b",

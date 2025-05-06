@@ -116,7 +116,17 @@ async function fetchGrammar(source: GrammarSource, oldMeta: GrammarInfo[]) {
       fileUrl = grammar.path
     }
     else {
-      raw = await fetch(`${info.source}?raw=true`).then(r => r.text())
+      raw = await fetch(info.sourceApi, {
+        headers: {
+          Accept: 'application/vnd.github.raw+json',
+          Authorization: `Token ${process.env.GITHUB_TOKEN}`,
+        },
+      })
+        .then((r) => {
+          if (r.status > 299)
+            throw new Error(`Failed to fetch ${info.sourceApi} (${r.status} ${r.statusText})`)
+          return r.text()
+        })
     }
     try {
       parsed = parseFile(fileUrl, raw)

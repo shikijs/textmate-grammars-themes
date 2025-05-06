@@ -75,11 +75,11 @@
           "name": "invalid.deprecated.function.gnuplot"
         },
         {
-          "match": "\\b(?:abs|acos|acosh|airy|arg|asin|asinh|atan|atan2|atanh|EllipticK|EllipticE|EllipticPi|besj0|besj1|besy0|besy1|ceil|cos|cosh|erf|erfc|exp|expint|floor|gamma|ibeta|inverf|igamma|imag|invnorm|int|lambertw|lgamma|log|log10|norm|rand|real|sgn|sin|sinh|sqrt|tan|tanh|voigt|cerf|cdawson|faddeeva|erfi|VP)\\b",
+          "match": "\\b(?:abs|acosh??|airy|arg|asinh??|atan2??|atanh|EllipticK|EllipticE|EllipticPi|besj0|besj1|besy0|besy1|ceil|cosh??|erfc??|exp|expint|floor|gamma|ibeta|inverf|igamma|imag|invnorm|int|lambertw|lgamma|log|log10|norm|rand|real|sgn|sinh??|sqrt|tanh??|voigt|cerf|cdawson|faddeeva|erfi|VP)\\b",
           "name": "support.function.math.gnuplot"
         },
         {
-          "match": "\\b(?:gprintf|sprintf|strlen|strstrt|substr|strftime|strptime|system|word|words)\\b",
+          "match": "\\b(?:gprintf|sprintf|strlen|strstrt|substr|strftime|strptime|system|words??)\\b",
           "name": "support.function.string.gnuplot"
         },
         {
@@ -99,7 +99,7 @@
           "name": "keyword.operator.bitwise.gnuplot"
         },
         {
-          "match": "(==|!=|<=|<|>=|>)",
+          "match": "(==|!=|<=?|>=?)",
           "name": "keyword.operator.comparison.gnuplot"
         },
         {
@@ -740,7 +740,7 @@
           "name": "invalid.deprecated.options.gnuplot"
         },
         {
-          "match": "\\G\\s*\\b(?:angles|arrow|autoscale|border|boxwidth|clip|cntr(label|param)|color(box|sequence)?|contour|(dash|line)type|datafile|decimal(sign)?|dgrid3d|dummy|encoding|(error)?bars|fit|fontpath|format|grid|hidden3d|history|(iso)?samples|jitter|key|label|link|loadpath|locale|logscale|mapping|[blrt]margin|margins|micro|minus(sign)?|mono(chrome)?|mouse|multiplot|nonlinear|object|offsets|origin|output|parametric|([pr])axis|pm3d|palette|pointintervalbox|pointsize|polar|print|psdir|size|style|surface|table|terminal|termoption|theta|tics|timestamp|timefmt|title|view|xyplane|zero|(no)?(m)?(x|x2|y|y2|z|cb|[rt])tics|(x|x2|y|y2|z|cb)data|(x|x2|y|y2|z|cb|r)label|(x|x2|y|y2|z|cb)dtics|(x|x2|y|y2|z|cb)mtics|(x|x2|y|y2|z|cb|[rtuv])range|(x|x2|y|y2|z)?zeroaxis)\\b",
+          "match": "\\G\\s*\\b(?:angles|arrow|autoscale|border|boxwidth|clip|cntr(label|param)|color(box|sequence)?|contour|(dash|line)type|datafile|decimal(sign)?|dgrid3d|dummy|encoding|(error)?bars|fit|fontpath|format|grid|hidden3d|history|(iso)?samples|jitter|key|label|link|loadpath|locale|logscale|mapping|[blrt]margin|margins|micro|minus(sign)?|mono(chrome)?|mouse|multiplot|nonlinear|object|offsets|origin|output|parametric|([pr])axis|pm3d|palette|pointintervalbox|pointsize|polar|print|psdir|size|style|surface|table|terminal|termoption|theta|tics|timestamp|timefmt|title|view|xyplane|zero|(no)?(m)?(x2??|y2??|z|cb|[rt])tics|(x2??|y2??|z|cb)data|(x2??|y2??|z|cb|r)label|(x2??|y2??|z|cb)dtics|(x2??|y2??|z|cb)mtics|(x2??|y2??|z|cb|[rtuv])range|(x2??|y2??|z)?zeroaxis)\\b",
           "name": "support.class.options.gnuplot"
         }
       ]

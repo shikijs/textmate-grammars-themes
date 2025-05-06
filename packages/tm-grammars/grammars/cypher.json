@@ -78,11 +78,11 @@
           "name": "support.function.collection.cypher"
         },
         {
-          "match": "(?i)\\b(ABS|ACOS|ASIN|ATAN|ATAN2|COS|COT|DEGREES|E|EXP|FLOOR|HAVERSIN|LOG|LOG10|PI|RADIANS|RAND|ROUND|SIGN|SIN|SQRT|TAN)(?=\\s*\\()",
+          "match": "(?i)\\b(ABS|ACOS|ASIN|ATAN2??|COS|COT|DEGREES|E|EXP|FLOOR|HAVERSIN|LOG|LOG10|PI|RADIANS|RAND|ROUND|SIGN|SIN|SQRT|TAN)(?=\\s*\\()",
           "name": "support.function.math.cypher"
         },
         {
-          "match": "(?i)\\b(COUNT|sum|avg|max|min|stdev|stdevp|percentileDisc|percentileCont|collect)(?=\\s*\\()",
+          "match": "(?i)\\b(COUNT|sum|avg|max|min|stdevp??|percentileDisc|percentileCont|collect)(?=\\s*\\()",
           "name": "support.function.aggregation.cypher"
         },
         {
@@ -184,7 +184,7 @@
           "name": "keyword.operator.math.cypher"
         },
         {
-          "match": "(<=|=>|<>|[<>]|=~|=)",
+          "match": "(<=|=>|<>|[<>]|=~?)",
           "name": "keyword.operator.compare.cypher"
         },
         {
@@ -200,11 +200,11 @@
     "path-patterns": {
       "patterns": [
         {
-          "match": "(<--|-->|--)",
+          "match": "(<--|-->?)",
           "name": "support.function.relationship-pattern.cypher"
         },
         {
-          "begin": "((?:<|)-)(\\[)",
+          "begin": "(<?-)(\\[)",
           "beginCaptures": {
             "1": {
               "name": "support.function.relationship-pattern-start.cypher"
@@ -213,7 +213,7 @@
               "name": "keyword.operator.relationship-pattern-start.cypher"
             }
           },
-          "end": "(])(-(?:>|))",
+          "end": "(])(->?)",
           "endCaptures": {
             "1": {
               "name": "keyword.operator.relationship-pattern-end.cypher"

@@ -314,7 +314,7 @@
       ]
     },
     "fenced_code_block_basic": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(html|htm|shtml|xhtml|inc|tmpl|tpl)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(html?|shtml|xhtml|inc|tmpl|tpl)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -413,7 +413,7 @@
       ]
     },
     "fenced_code_block_clojure": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(cl(?:j|js|ojure))((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(cl(?:js??|ojure))((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -1040,7 +1040,7 @@
       ]
     },
     "fenced_code_block_js": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(js|jsx|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?})((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(jsx??|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?})((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -1106,7 +1106,7 @@
       ]
     },
     "fenced_code_block_json": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(json|json5|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(json5??|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -1502,7 +1502,7 @@
       ]
     },
     "fenced_code_block_php": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(php|php3|php4|php5|phpt|phtml|aw|ctp)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(php3??|php4|php5|phpt|phtml|aw|ctp)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -1604,7 +1604,7 @@
       ]
     },
     "fenced_code_block_python": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi|\\{\\.python.+?})((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(python|py3??|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gypi??|\\{\\.python.+?})((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -1703,7 +1703,7 @@
       ]
     },
     "fenced_code_block_ruby": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(ruby|rbx??|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -2117,7 +2117,7 @@
       ]
     },
     "fenced_code_block_xsl": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(xsl(?:|t))((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(xslt??)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"
@@ -2150,7 +2150,7 @@
       ]
     },
     "fenced_code_block_yaml": {
-      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(y(?:a|)ml)((\\s+|[,:?{])[^`]*)?$)",
+      "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(ya?ml)((\\s+|[,:?{])[^`]*)?$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.markdown"

@@ -125,7 +125,7 @@
           "name": "support.type.python"
         },
         {
-          "match": "(?<!\\.)\\b(uint248|HashMap|bytes22|int88|bytes24|bytes11|int24|bytes28|bytes19|uint136|decimal|uint40|uint168|uint120|int112|bytes4|uint192|String|int104|bytes29|int120|uint232|bytes8|bool|bytes14|int56|uint32|int232|uint48|bytes17|bytes12|uint24|int160|int72|int256|uint56|uint80|uint104|uint144|uint200|bytes20|uint160|bytes18|bytes16|uint8|int40|Bytes|uint72|bytes2|bytes23|int48|bytes6|bytes13|int192|bytes15|uint96|address|uint64|uint88|bytes7|int64|bytes32|bytes30|int176|int248|uint128|int8|int136|int216|bytes31|int144|bytes1|int168|bytes5|uint216|int200|bytes25|uint112|int128|bytes10|uint16|DynArray|int16|int32|int208|int184|bytes9|int224|bytes3|int80|uint152|bytes21|int96|uint256|uint176|uint240|bytes27|bytes26|int240|uint224|uint184|uint208|int152)\\b",
+          "match": "(?<!\\.)\\b(uint248|HashMap|bytes22|int88|bytes24|bytes11|int24|bytes28|bytes19|uint136|decimal|uint40|uint168|uint120|int112|bytes4|uint192|String|int104|bytes29|int120|uint232|bytes8|bool|bytes14|int56|uint32|int232|uint48|bytes17|bytes12|uint24|int160|int72|int256|uint56|uint80|uint104|uint144|uint200|bytes20|uint160|bytes18|bytes16|uint8|int40|Bytes|uint72|bytes23??|int48|bytes6|bytes13|int192|bytes15|uint96|address|uint64|uint88|bytes7|int64|bytes32|bytes30|int176|int248|uint128|int8|int136|int216|bytes31|int144|bytes1|int168|bytes5|uint216|int200|bytes25|uint112|int128|bytes10|uint16|DynArray|int16|int32|int208|int184|bytes9|int224|bytes3|int80|uint152|bytes21|int96|uint256|uint176|uint240|bytes27|bytes26|int240|uint224|uint184|uint208|int152)\\b",
           "name": "support.type.basetype.vyper"
         },
         {
@@ -203,7 +203,7 @@
       "name": "meta.class.inheritance.python",
       "patterns": [
         {
-          "match": "(\\*(?:\\*|))",
+          "match": "(\\*\\*?)",
           "name": "keyword.operator.unpacking.arguments.python"
         },
         {
@@ -2263,7 +2263,7 @@
               "name": "keyword.operator.positional.parameter.python"
             },
             {
-              "match": "(\\*(?:\\*|))",
+              "match": "(\\*\\*?)",
               "name": "keyword.operator.unpacking.parameter.python"
             },
             {
@@ -2422,7 +2422,7 @@
           "name": "support.function.magic.python"
         }
       },
-      "match": "\\b(__(?:abs|add|aenter|aexit|aiter|and|anext|await|bool|call|ceil|class_getitem|cmp|coerce|complex|contains|copy|deepcopy|del|delattr|delete|delitem|delslice|dir|div|divmod|enter|eq|exit|float|floor|floordiv|format|ge|get|getattr|getattribute|getinitargs|getitem|getnewargs|getslice|getstate|gt|hash|hex|iadd|iand|idiv|ifloordiv||ilshift|imod|imul|index|init|instancecheck|int|invert|ior|ipow|irshift|isub|iter|itruediv|ixor|le|len|long|lshift|lt|missing|mod|mul|ne|neg|new|next|nonzero|oct|or|pos|pow|radd|rand|rdiv|rdivmod|reduce|reduce_ex|repr|reversed|rfloordiv||rlshift|rmod|rmul|ror|round|rpow|rrshift|rshift|rsub|rtruediv|rxor|set|setattr|setitem|set_name|setslice|setstate|sizeof|str|sub|subclasscheck|truediv|trunc|unicode|xor|matmul|rmatmul|imatmul|init_subclass|set_name|fspath|bytes|prepare|length_hint)__)\\b"
+      "match": "\\b(__(?:abs|add|aenter|aexit|aiter|and|anext|await|bool|call|ceil|class_getitem|cmp|coerce|complex|contains|copy|deepcopy|del|delattr|delete|delitem|delslice|dir|div|divmod|enter|eq|exit|float|floor|floordiv|format|get??|getattr|getattribute|getinitargs|getitem|getnewargs|getslice|getstate|gt|hash|hex|iadd|iand|idiv|ifloordiv||ilshift|imod|imul|index|init|instancecheck|int|invert|ior|ipow|irshift|isub|iter|itruediv|ixor|len??|long|lshift|lt|missing|mod|mul|neg??|new|next|nonzero|oct|or|pos|pow|radd|rand|rdiv|rdivmod|reduce|reduce_ex|repr|reversed|rfloordiv||rlshift|rmod|rmul|ror|round|rpow|rrshift|rshift|rsub|rtruediv|rxor|set|setattr|setitem|set_name|setslice|setstate|sizeof|str|sub|subclasscheck|truediv|trunc|unicode|xor|matmul|rmatmul|imatmul|init_subclass|set_name|fspath|bytes|prepare|length_hint)__)\\b"
     },
     "magic-names": {
       "patterns": [
@@ -2671,7 +2671,7 @@
           "name": "keyword.operator.positional.parameter.python"
         },
         {
-          "match": "(\\*(?:\\*|))",
+          "match": "(\\*\\*?)",
           "name": "keyword.operator.unpacking.parameter.python"
         },
         {

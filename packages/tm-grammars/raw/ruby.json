@@ -69,12 +69,12 @@
         "1": {
           "name": "variable.ruby"
         },
-        "3": {
+        "2": {
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
       "comment": "A local variable and/or assignment",
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*((&&|\\|\\|)=)"
+      "match": "^\\s*([_a-z][A-Za-z0-9_]*)\\s*((&&|\\|\\|)=)"
     },
     {
       "captures": {
@@ -84,24 +84,24 @@
         "3": {
           "name": "variable.ruby"
         },
-        "5": {
+        "4": {
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
       "comment": "A local variable and/or assignment in a condition",
-      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*((&&|\\|\\|)=)"
+      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([_a-z][A-Za-z0-9_]*)\\s*((&&|\\|\\|)=)"
     },
     {
       "captures": {
         "1": {
           "name": "variable.ruby"
         },
-        "3": {
+        "2": {
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
       "comment": "A local variable operation assignment (+=, -=, *=, /=)",
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*((\\+|\\*|-|\\/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
+      "match": "^\\s*([_a-z][A-Za-z0-9_]*)\\s*((\\+|\\*|-|\\/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
     },
     {
       "captures": {
@@ -111,12 +111,12 @@
         "3": {
           "name": "variable.ruby"
         },
-        "5": {
+        "4": {
           "name": "keyword.operator.assignment.augmented.ruby"
         }
       },
       "comment": "A local variable operation assignment in a condition",
-      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*((\\+|\\*|-|\\/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
+      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([_a-z][A-Za-z0-9_]*)\\s*((\\+|\\*|-|\\/|%|\\*\\*|&|\\||\\^|<<|>>)=)"
     },
     {
       "captures": {
@@ -125,7 +125,7 @@
         }
       },
       "comment": "A local variable assignment",
-      "match": "^\\s*([a-z]([A-Za-z0-9_])*)\\s*(?==[^=>])"
+      "match": "^\\s*([_a-z][A-Za-z0-9_]*)\\s*(?==[^=>])"
     },
     {
       "captures": {
@@ -137,7 +137,7 @@
         }
       },
       "comment": "A local variable assignment in a condition",
-      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([a-z]([A-Za-z0-9_])*)\\s*=[^=>]"
+      "match": "(?<!\\.)\\b(case|if|elsif|unless|until|while)\\b\\s*(\\()*?\\s*([_a-z][A-Za-z0-9_]*)\\s*=[^=>]"
     },
     {
       "captures": {
@@ -1589,17 +1589,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "text.html",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1627,17 +1626,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "text.haml",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1665,17 +1663,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "text.xml",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1703,17 +1700,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.sql",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1741,17 +1737,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)(?:GRAPHQL|GQL))\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.graphql",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1779,17 +1774,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.css",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1817,17 +1811,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.cpp",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1855,17 +1848,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.c",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1893,17 +1885,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)(?:JS|JAVASCRIPT))\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.js",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1931,17 +1922,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.js.jquery",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -1969,17 +1959,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)(?:SH|SHELL))\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.shell",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -2007,17 +1996,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.lua",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -2045,17 +2033,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.ruby",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -2083,17 +2070,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)(?:YAML|YML))\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "source.yaml",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -2121,17 +2107,16 @@
           "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.ruby"
+              "name": "string.definition.begin.ruby"
             }
           },
           "contentName": "text.slim",
           "end": "^\\s*\\2$\\n?",
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.ruby"
+              "name": "string.definition.end.ruby"
             }
           },
-          "name": "string.unquoted.heredoc.ruby",
           "patterns": [
             {
               "include": "#heredoc"
@@ -2153,16 +2138,16 @@
       "begin": "(?>=\\s*<<([\"'`]?)(\\w+)\\1)",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.ruby"
+          "name": "string.definition.begin.ruby"
         }
       },
+      "contentName": "string.unquoted.heredoc.ruby",
       "end": "^\\2$",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.ruby"
+          "name": "string.definition.end.ruby"
         }
       },
-      "name": "string.unquoted.heredoc.ruby",
       "patterns": [
         {
           "include": "#heredoc"
@@ -2179,7 +2164,7 @@
       "begin": "(?>((<<[-~]([\"'`]?)(\\w+)\\3,\\s?)*<<[-~]([\"'`]?)(\\w+)\\5))(.*)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.string.begin.ruby"
+          "name": "string.definition.begin.ruby"
         },
         "7": {
           "patterns": [
@@ -2190,13 +2175,13 @@
         }
       },
       "comment": "heredoc with multiple inputs and indented terminator",
+      "contentName": "string.unquoted.heredoc.ruby",
       "end": "^\\s*\\6$",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.ruby"
+          "name": "string.definition.end.ruby"
         }
       },
-      "name": "string.unquoted.heredoc.ruby",
       "patterns": [
         {
           "include": "#heredoc"
@@ -3193,5 +3178,5 @@
     }
   },
   "scopeName": "source.ruby",
-  "version": "https://github.com/Shopify/ruby-lsp/commit/958bb1aa0c7aa4b6119c947b69afa7f12b19dceb"
+  "version": "https://github.com/Shopify/ruby-lsp/commit/2d5552a22f71ac75086c7f03d404df51e23f6535"
 }

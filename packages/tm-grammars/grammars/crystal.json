@@ -246,7 +246,7 @@
       "name": "support.class.crystal"
     },
     {
-      "match": "(?<!\\.)\\b(abort|at_exit|caller|exit|gets|loop|main|p|pp|print|printf|puts|raise|rand|read_line|sleep|spawn|sprintf|system|debugger|record|spawn)\\b(?![!:?])",
+      "match": "(?<!\\.)\\b(abort|at_exit|caller|exit|gets|loop|main|pp??|printf??|puts|raise|rand|read_line|sleep|spawn|sprintf|system|debugger|record|spawn)\\b(?![!:?])",
       "name": "support.function.kernel.crystal"
     },
     {
@@ -1308,7 +1308,7 @@
       ]
     },
     {
-      "begin": "(?<=\\{|\\{\\s|[^0-9A-Z_a-z]do|^do|[^0-9A-Z_a-z]do\\s|^do\\s)(\\|)",
+      "begin": "(?<=\\{\\s??|[^0-9A-Z_a-z]do|^do|[^0-9A-Z_a-z]do\\s|^do\\s)(\\|)",
       "captures": {
         "1": {
           "name": "punctuation.separator.variable.crystal"
@@ -1342,7 +1342,7 @@
       "name": "keyword.operator.assignment.augmented.crystal"
     },
     {
-      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===|==|=~|!=|!~|(?<=[\\t ])\\?",
+      "match": "<=>|<(?![<=])|>(?![<=>])|<=|>=|===?|=~|!=|!~|(?<=[\\t ])\\?",
       "name": "keyword.operator.comparison.crystal"
     },
     {

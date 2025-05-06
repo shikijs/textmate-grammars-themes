@@ -210,7 +210,7 @@
       "patterns": [
         {
           "begin": "\\[<",
-          "end": "(?:>|)]",
+          "end": ">?]",
           "name": "support.function.attribute.fsharp",
           "patterns": [
             {
@@ -728,7 +728,7 @@
           ]
         },
         {
-          "begin": "\\b(use|use!|and|and!)\\s+(\\[[^-=]*]|[_[:alpha:]]([.0-9_[:alpha:]]+)*|``[_[:alpha:]]([.0-9_`[:alpha:]\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(use!??|and!??)\\s+(\\[[^-=]*]|[_[:alpha:]]([.0-9_[:alpha:]]+)*|``[_[:alpha:]]([.0-9_`[:alpha:]\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -949,7 +949,7 @@
           ]
         },
         {
-          "match": "\\b(private|to|public|internal|function|yield!|yield|class|exception|match|delegate|of|new|in|as|if|then|else|elif|for|begin|end|inherit|do|let!|return!|return|interface|with|abstract|enum|member|try|finally|and|when|or|use|use!|struct|while|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
+          "match": "\\b(private|to|public|internal|function|yield!?|class|exception|match|delegate|of|new|in|as|if|then|else|elif|for|begin|end|inherit|do|let!|return!?|interface|with|abstract|enum|member|try|finally|and|when|or|use!??|struct|while|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
           "name": "keyword.fsharp"
         },
         {
@@ -1054,11 +1054,11 @@
           "name": "storage.modifier"
         },
         {
-          "match": "\\b(private|to|public|internal|function|class|exception|delegate|of|new|as|begin|end|inherit|let!|interface|abstract|enum|member|and|when|or|use|use!|struct|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
+          "match": "\\b(private|to|public|internal|function|class|exception|delegate|of|new|as|begin|end|inherit|let!|interface|abstract|enum|member|and|when|or|use!??|struct|mutable|assert|base|done|downcast|downto|extern|fixed|global|lazy|upcast|not)(?!')\\b",
           "name": "keyword.fsharp"
         },
         {
-          "match": "\\b(match|yield|yield!|with|if|then|else|elif|for|in|return!|return|try|finally|while|do)(?!')\\b",
+          "match": "\\b(match|yield!??|with|if|then|else|elif|for|in|return!?|try|finally|while|do)(?!')\\b",
           "name": "keyword.control"
         },
         {
@@ -1066,7 +1066,7 @@
           "name": "keyword.symbol.arrow.fsharp"
         },
         {
-          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~-|<<<|>>>|\\|>|:>|:\\?>|[]:;\\[]|<>|[=@]|\\|\\||&&|[%\\&_{|}]|\\.\\.|[!*-\\-/>^]|>=|>>|<|<=|[()]|<<)[.?]*",
+          "match": "[.?]*(&&&|\\|\\|\\||\\^\\^\\^|~~~|~\\+|~-|<<<|>>>|\\|>|:>|:\\?>|[]:;\\[]|<>|[=@]|\\|\\||&&|[%\\&_{|}]|\\.\\.|[!*-\\-/>^]|>=|>>|<=??|[()]|<<)[.?]*",
           "name": "keyword.symbol.fsharp"
         }
       ]

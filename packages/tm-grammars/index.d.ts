@@ -21,6 +21,7 @@ export interface GrammarInfo {
   categories?: GrammarCategory[]
   scopeName: string
   source: string
+  sourceApi: string
   aliases?: string[]
   licenseUrl?: string
   license?: string

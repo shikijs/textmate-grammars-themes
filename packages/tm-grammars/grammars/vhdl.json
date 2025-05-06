@@ -761,7 +761,7 @@
           "name": "standard.library.language.vhdl"
         },
         {
-          "match": "([-+]|<=|=|=>|:=|>=|[\\&/<>|]|(\\*{1,2}))",
+          "match": "([-+]|<=|=>??|:=|>=|[\\&/<>|]|(\\*{1,2}))",
           "name": "keyword.operator.vhdl"
         }
       ]
@@ -1395,7 +1395,7 @@
           "name": "support.function.ieee.numeric_std.vhdl"
         },
         {
-          "match": "\\b(?i:arccos(h?)|arcsin(h?)|arctan|arctanh|cbrt|ceil|cos|cosh|exp|floor|log10|log2|log|realmax|realmin|round|sign|sin|sinh|sqrt|tan|tanh|trunc)\\b",
+          "match": "\\b(?i:arccos(h?)|arcsin(h?)|arctanh??|cbrt|ceil|cosh??|exp|floor|log10|log2?|realmax|realmin|round|sign|sinh??|sqrt|tanh??|trunc)\\b",
           "name": "support.function.ieee.math_real.vhdl"
         },
         {
@@ -1415,7 +1415,7 @@
           "name": "support.type.std.textio.vhdl"
         },
         {
-          "match": "\\b(?i:std_(?:|u)logic(?:|_vector))\\b",
+          "match": "\\b(?i:std_u??logic(?:|_vector))\\b",
           "name": "support.type.ieee.std_logic_1164.vhdl"
         },
         {

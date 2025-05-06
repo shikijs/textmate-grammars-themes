@@ -9,15 +9,15 @@
   "name": "mipsasm",
   "patterns": [
     {
-      "match": "\\b(mul|abs|div|divu|mulo|mulou|neg|negu|not|rem|remu|rol|ror|li|seq|sge|sgeu|sgt|sgtu|sle|sleu|sne|b|beqz|bge|bgeu|bgt|bgtu|ble|bleu|blt|bltu|bnez|la|ld|ulh|ulhu|ulw|sd|ush|usw|move|mfc1\\.d|l\\.d|l\\.s|s\\.d|s\\.s)\\b",
+      "match": "\\b(mul|abs|divu??|mulou??|negu??|not|remu??|rol|ror|li|seq|sgeu??|sgtu??|sleu??|sne|b|beqz|bgeu??|bgtu??|bleu??|bltu??|bnez|la|ld|ulhu??|ulw|sd|ush|usw|move|mfc1\\.d|l\\.d|l\\.s|s\\.d|s\\.s)\\b",
       "name": "support.function.pseudo.mips"
     },
     {
-      "match": "\\b(abs\\.d|abs\\.s|add|add\\.d|add\\.s|addi|addiu|addu|and|andi|bc1f|bc1t|beq|bgez|bgezal|bgtz|blez|bltz|bltzal|bne|break|c\\.eq\\.d|c\\.eq\\.s|c\\.le\\.d|c\\.le\\.s|c\\.lt\\.d|c\\.lt\\.s|ceil\\.w\\.d|ceil\\.w\\.s|clo|clz|cvt\\.d\\.s|cvt\\.d\\.w|cvt\\.s\\.d|cvt\\.s\\.w|cvt\\.w\\.d|cvt\\.w\\.s|div|div\\.d|div\\.s|divu|eret|floor\\.w\\.d|floor\\.w\\.s|j|jal|jalr|jr|lb|lbu|lh|lhu|ll|lui|lw|lwc1|lwl|lwr|madd|maddu|mfc0|mfc1|mfhi|mflo|mov\\.d|mov\\.s|movf|movf\\.d|movf\\.s|movn|movn\\.d|movn\\.s|movt|movt\\.d|movt\\.s|movz|movz\\.d|movz\\.s|msub|mtc0|mtc1|mthi|mtlo|mul|mul\\.d|mul\\.s|mult|multu|neg\\.d|neg\\.s|nop|nor|or|ori|round\\.w\\.d|round\\.w\\.s|sb|sc|sdc1|sh|sll|sllv|slt|slti|sltiu|sltu|sqrt\\.d|sqrt\\.s|sra|srav|srl|srlv|sub|sub\\.d|sub\\.s|subu|sw|swc1|swl|swr|syscall|teq|teqi|tge|tgei|tgeiu|tgeu|tlt|tlti|tltiu|tltu|trunc\\.w\\.d|trunc\\.w\\.s|xor|xori)\\b",
+      "match": "\\b(abs\\.d|abs\\.s|add|add\\.d|add\\.s|addiu??|addu|andi??|bc1f|bc1t|beq|bgez|bgezal|bgtz|blez|bltz|bltzal|bne|break|c\\.eq\\.d|c\\.eq\\.s|c\\.le\\.d|c\\.le\\.s|c\\.lt\\.d|c\\.lt\\.s|ceil\\.w\\.d|ceil\\.w\\.s|clo|clz|cvt\\.d\\.s|cvt\\.d\\.w|cvt\\.s\\.d|cvt\\.s\\.w|cvt\\.w\\.d|cvt\\.w\\.s|div|div\\.d|div\\.s|divu|eret|floor\\.w\\.d|floor\\.w\\.s|j|jalr??|jr|lbu??|lhu??|ll|lui|lw|lwc1|lwl|lwr|maddu??|mfc0|mfc1|mfhi|mflo|mov\\.d|mov\\.s|movf|movf\\.d|movf\\.s|movn|movn\\.d|movn\\.s|movt|movt\\.d|movt\\.s|movz|movz\\.d|movz\\.s|msub|mtc0|mtc1|mthi|mtlo|mul|mul\\.d|mul\\.s|multu??|neg\\.d|neg\\.s|nop|nor|ori??|round\\.w\\.d|round\\.w\\.s|sb|sc|sdc1|sh|sllv??|slti??|sltiu|sltu|sqrt\\.d|sqrt\\.s|srav??|srlv??|sub|sub\\.d|sub\\.s|subu|sw|swc1|swl|swr|syscall|teqi??|tgei??|tgeiu|tgeu|tlti??|tltiu|tltu|trunc\\.w\\.d|trunc\\.w\\.s|xori??)\\b",
       "name": "support.function.mips"
     },
     {
-      "match": "\\.(ascii|asciiz|byte|data|double|float|half|kdata|ktext|space|text|word|set\\s*(noat|at))\\b",
+      "match": "\\.(asciiz??|byte|data|double|float|half|kdata|ktext|space|text|word|set\\s*(noat|at))\\b",
       "name": "storage.type.mips"
     },
     {

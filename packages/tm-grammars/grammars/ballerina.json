@@ -699,15 +699,15 @@
           "name": "keyword.operator.assignment.compound.ballerina"
         },
         {
-          "match": "(?:[\\&^]|<<|>>|>>>|\\|)=",
+          "match": "(?:[\\&^]|<<|>>>??|\\|)=",
           "name": "keyword.operator.assignment.compound.bitwise.ballerina"
         },
         {
-          "match": "<<|>>>|>>",
+          "match": "<<|>>>?",
           "name": "keyword.operator.bitwise.shift.ballerina"
         },
         {
-          "match": "[!=]=(?:=|)",
+          "match": "[!=]==?",
           "name": "keyword.operator.comparison.ballerina"
         },
         {
@@ -1554,7 +1554,7 @@
           "name": "meta.arrow.ballerina storage.type.function.arrow.ballerina"
         },
         {
-          "match": "([-!%+]|~=|===|==|=|!=|!==|[\\&<>|]|\\?:|\\.\\.\\.|<=|>=|&&|\\|\\||~|>>|>>>)",
+          "match": "([-!%+]|~=|===?|=|!==??|[\\&<>|]|\\?:|\\.\\.\\.|<=|>=|&&|\\|\\||~|>>>??)",
           "name": "keyword.operator.ballerina"
         },
         {
@@ -2497,7 +2497,7 @@
     "regex-unicode-properties-general-category": {
       "patterns": [
         {
-          "match": "(Lu|Ll|Lt|Lm|Lo|L|Mn|Mc|Me|M|Nd|Nl|No|N|Pc|Pd|Ps|Pe|Pi|Pf|Po|P|Sm|Sc|Sk|So|S|Zs|Zl|Zp|Z|Cf|Cc|Cn|Co|C)",
+          "match": "(Lu|Ll|Lt|Lm|Lo?|Mn|Mc|Me?|Nd|Nl|No?|Pc|Pd|Ps|Pe|Pi|Pf|Po?|Sm|Sc|Sk|So?|Zs|Zl|Zp?|Cf|Cc|Cn|Co?)",
           "name": "constant.other.unicode-property-general-category.regexp.ballerina"
         }
       ]

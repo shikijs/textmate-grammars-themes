@@ -1604,15 +1604,15 @@
           "name": "keyword.operator.assignment.compound.js"
         },
         {
-          "match": "(?:[\\&^]|<<|>>|>>>|\\|)=",
+          "match": "(?:[\\&^]|<<|>>>??|\\|)=",
           "name": "keyword.operator.assignment.compound.bitwise.js"
         },
         {
-          "match": "<<|>>>|>>",
+          "match": "<<|>>>?",
           "name": "keyword.operator.bitwise.shift.js"
         },
         {
-          "match": "[!=]=(?:=|)",
+          "match": "[!=]==?",
           "name": "keyword.operator.comparison.js"
         },
         {
@@ -2626,7 +2626,7 @@
           "name": "keyword.operator.expression.instanceof.js"
         }
       },
-      "end": "(?<=\\))|(?=[-\\])+,:;>?}]|\\|\\||&&|!==|$|([!=]=(?:=|))|(([\\&^|~]\\s*)?[$_[:alpha:]][$_[:alnum:]]*\\s+instanceof(?![$_[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|((?<![$_[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))function((\\s+[$_[:alpha:]][$_[:alnum:]]*)|(\\s*\\())))",
+      "end": "(?<=\\))|(?=[-\\])+,:;>?}]|\\|\\||&&|!==|$|([!=]==?)|(([\\&^|~]\\s*)?[$_[:alpha:]][$_[:alnum:]]*\\s+instanceof(?![$_[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|((?<![$_[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))function((\\s+[$_[:alpha:]][$_[:alnum:]]*)|(\\s*\\())))",
       "patterns": [
         {
           "include": "#type"

@@ -129,7 +129,7 @@
               "name": "keyword.control.jinja"
             }
           },
-          "match": "(?<=\\{%(?:-|))\\s*\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?!\\s*[,=])"
+          "match": "(?<=\\{%-?)\\s*\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?!\\s*[,=])"
         },
         {
           "match": "\\b(and|else|if|in|import|not|or|recursive|with(out)?\\s+context)\\b",
@@ -148,7 +148,7 @@
           "name": "variable.other.jinja"
         },
         {
-          "match": "([-+]|\\*\\*|\\*|//|[%/])",
+          "match": "([-+]|\\*\\*?|//|[%/])",
           "name": "keyword.operator.arithmetic.jinja"
         },
         {

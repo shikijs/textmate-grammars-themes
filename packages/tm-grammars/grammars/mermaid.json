@@ -172,7 +172,7 @@
                   "name": "string"
                 }
               },
-              "match": "(?i)([-\\w]+)\\s(\"(?:\\d+|\\*|0..\\d+|1..\\d+|1..\\*)\")?\\s?(--o|--\\*|<--|-->|<\\.\\.|\\.\\.>|<\\|\\.\\.|\\.\\.\\|>|<\\|--|--\\|>|--\\*|--|\\.\\.|\\*--|o--)\\s(\"(?:\\d+|\\*|0..\\d+|1..\\d+|1..\\*)\")?\\s?([-\\w]+)\\s?(:)?\\s(.*)$"
+              "match": "(?i)([-\\w]+)\\s(\"(?:\\d+|\\*|0..\\d+|1..\\d+|1..\\*)\")?\\s?(--o|--\\*|<--|-->|<\\.\\.|\\.\\.>|<\\|\\.\\.|\\.\\.\\|>|<\\|--|--\\|>|--\\*?|\\.\\.|\\*--|o--)\\s(\"(?:\\d+|\\*|0..\\d+|1..\\d+|1..\\*)\")?\\s?([-\\w]+)\\s?(:)?\\s(.*)$"
             },
             {
               "captures": {
@@ -779,7 +779,7 @@
           ]
         },
         {
-          "begin": "^\\s*(graph|flowchart)\\s+([ 0-9\\p{L}]+)",
+          "begin": "^\\s*(graph|flowchart)\\s+([ 0-9\\p{L}]+)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.mermaid"
@@ -841,7 +841,7 @@
               "name": "keyword.control.mermaid"
             },
             {
-              "begin": "(?i)\\b((?:(?!--|==)[-\\w])+\\b\\s*)(\\(\\[|\\[\\[|\\[\\(|\\[|\\(+|[>{]|\\(\\()",
+              "begin": "(?i)\\b((?:(?!--|==)[-\\w])+\\b\\s*)(\\(\\[|\\[\\[|\\[\\(?|\\(+|[>{]|\\(\\()",
               "beginCaptures": {
                 "1": {
                   "name": "variable"
@@ -1034,6 +1034,50 @@
                 }
               },
               "match": "(?i)\\s*(click)\\s+\\b([-\\w]+\\b\\s*)(\\b\\w+\\b)?\\s(\"*.*\")"
+            },
+            {
+              "begin": "\\s*(@\\{)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "end": "(})",
+              "endCaptures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "patterns": [
+                {
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "entity.name.function.mermaid"
+                    },
+                    "3": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  },
+                  "match": "(?i)\\s*(shape\\s*:)([^,}]*)(,)?"
+                },
+                {
+                  "captures": {
+                    "1": {
+                      "name": "keyword.control.mermaid"
+                    },
+                    "2": {
+                      "name": "string"
+                    },
+                    "3": {
+                      "name": "keyword.control.mermaid"
+                    }
+                  },
+                  "match": "(?i)\\s*(label\\s*:)([^,}]*)(,)?"
+                }
+              ]
             }
           ]
         },

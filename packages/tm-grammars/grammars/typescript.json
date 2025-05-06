@@ -1656,15 +1656,15 @@
           "name": "keyword.operator.assignment.compound.ts"
         },
         {
-          "match": "(?:[\\&^]|<<|>>|>>>|\\|)=",
+          "match": "(?:[\\&^]|<<|>>>??|\\|)=",
           "name": "keyword.operator.assignment.compound.bitwise.ts"
         },
         {
-          "match": "<<|>>>|>>",
+          "match": "<<|>>>?",
           "name": "keyword.operator.bitwise.shift.ts"
         },
         {
-          "match": "[!=]=(?:=|)",
+          "match": "[!=]==?",
           "name": "keyword.operator.comparison.ts"
         },
         {
@@ -2675,7 +2675,7 @@
           "name": "keyword.operator.expression.instanceof.ts"
         }
       },
-      "end": "(?<=\\))|(?=[-\\])+,:;>?}]|\\|\\||&&|!==|$|([!=]=(?:=|))|(([\\&^|~]\\s*)?[$_[:alpha:]][$_[:alnum:]]*\\s+instanceof(?![$_[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|((?<![$_[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))function((\\s+[$_[:alpha:]][$_[:alnum:]]*)|(\\s*\\())))",
+      "end": "(?<=\\))|(?=[-\\])+,:;>?}]|\\|\\||&&|!==|$|([!=]==?)|(([\\&^|~]\\s*)?[$_[:alpha:]][$_[:alnum:]]*\\s+instanceof(?![$_[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.)))|((?<![$_[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))function((\\s+[$_[:alpha:]][$_[:alnum:]]*)|(\\s*\\())))",
       "patterns": [
         {
           "include": "#type"

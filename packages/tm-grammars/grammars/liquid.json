@@ -3,8 +3,8 @@
   "fileTypes": [
     "liquid"
   ],
-  "foldingStartMarker": "\\{%-?\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)[^%()}]+%}",
-  "foldingStopMarker": "\\{%\\s*(end(?:capture|case|comment|for|form|if|javascript|paginate|schema|style))[^%()}]+%}",
+  "foldingStartMarker": "\\{%-?\\s*(capture|case|comment|form??|if|javascript|paginate|schema|style)[^%()}]+%}",
+  "foldingStopMarker": "\\{%\\s*(end(?:capture|case|comment|form??|if|javascript|paginate|schema|style))[^%()}]+%}",
   "injections": {
     "L:meta.embedded.block.js, L:meta.embedded.block.css, L:meta.embedded.block.html, L:string.quoted": {
       "patterns": [
@@ -742,7 +742,7 @@
               "name": "keyword.control.other.liquid"
             }
           },
-          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(capture|case|comment|for|form|if|javascript|paginate|schema|style)\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(capture|case|comment|form??|if|javascript|paginate|schema|style)\\b"
         },
         {
           "captures": {
@@ -750,7 +750,7 @@
               "name": "keyword.control.other.liquid"
             }
           },
-          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(end(?:capture|case|comment|for|form|if|javascript|paginate|schema|style))\\b"
+          "match": "(?:(?<=\\{%)|(?<=\\{%-)|^)\\s*(end(?:capture|case|comment|form??|if|javascript|paginate|schema|style))\\b"
         },
         {
           "captures": {
@@ -1044,7 +1044,7 @@
     "variable_lookup": {
       "patterns": [
         {
-          "match": "\\b(additional_checkout_buttons|address|all_country_option_tags|all_products|article|articles|block|blog|blogs|canonical_url|cart|checkout|collection|collections|comment|content_for_additional_checkout_buttons|content_for_header|content_for_index|content_for_layout|country_option_tags|currency|current_page|current_tags|customer|customer_address|discount_allocation|discount_application|external_video|font|forloop|form|fulfillment|gift_card|handle|image|images|line_item|link|linklist|linklists|location|localization|metafield|model|model_source|order|page|page_description|page_image|page_title|pages|paginate|part|policy|powered_by_link|predictive_search|product|product_option|product_variant|recommendations|request|routes|script|scripts|search|section|selling_plan|selling_plan_allocation|selling_plan_group|settings|shipping_method|shop|shop_locale|store_availability|tablerow|tax_line|template|theme|transaction|unit_price_measurement|variant|video|video_source)\\b",
+          "match": "\\b(additional_checkout_buttons|address|all_country_option_tags|all_products|articles??|block|blogs??|canonical_url|cart|checkout|collections??|comment|content_for_additional_checkout_buttons|content_for_header|content_for_index|content_for_layout|country_option_tags|currency|current_page|current_tags|customer|customer_address|discount_allocation|discount_application|external_video|font|forloop|form|fulfillment|gift_card|handle|images??|line_item|link|linklists??|location|localization|metafield|model|model_source|order|page|page_description|page_image|page_title|pages|paginate|part|policy|powered_by_link|predictive_search|product|product_option|product_variant|recommendations|request|routes|scripts??|search|section|selling_plan|selling_plan_allocation|selling_plan_group|settings|shipping_method|shop|shop_locale|store_availability|tablerow|tax_line|template|theme|transaction|unit_price_measurement|variant|video|video_source)\\b",
           "name": "variable.language.liquid"
         },
         {

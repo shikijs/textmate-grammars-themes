@@ -537,33 +537,38 @@
                   ]
                 },
                 {
-                  "begin": "^\\s*(\\|)(([^\\[]*?)((?<!\\|)\\|(?!\\|)))?",
+                  "begin": "^\\s*(\\|)",
                   "beginCaptures": {
                     "1": {
-                      "name": "punctuation.definition.tag.wikitext"
-                    },
-                    "3": {
-                      "patterns": [
-                        {
-                          "include": "$self"
-                        },
-                        {
-                          "include": "text.html.basic#attribute"
-                        }
-                      ]
-                    },
-                    "4": {
                       "name": "punctuation.definition.tag.wikitext"
                     }
                   },
                   "end": "$",
                   "patterns": [
                     {
-                      "include": "$self"
+                      "captures": {
+                        "1": {
+                          "patterns": [
+                            {
+                              "include": "$self"
+                            },
+                            {
+                              "include": "text.html.basic#attribute"
+                            }
+                          ]
+                        },
+                        "2": {
+                          "name": "punctuation.definition.tag.wikitext"
+                        }
+                      },
+                      "match": "\\s*([^\\|]+)\\s*(?<!\\|)(\\|)(?!\\|)"
                     },
                     {
                       "match": "\\|\\|",
-                      "name": "keyword.operator.wikitext"
+                      "name": "punctuation.definition.tag.wikitext"
+                    },
+                    {
+                      "include": "$self"
                     }
                   ]
                 }

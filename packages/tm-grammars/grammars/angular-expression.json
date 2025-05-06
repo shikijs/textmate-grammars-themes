@@ -118,15 +118,15 @@
           "name": "keyword.operator.assignment.compound.ts"
         },
         {
-          "match": "(?:[\\&^]|<<|>>|>>>|\\|)=",
+          "match": "(?:[\\&^]|<<|>>>??|\\|)=",
           "name": "keyword.operator.assignment.compound.bitwise.ts"
         },
         {
-          "match": "<<|>>>|>>",
+          "match": "<<|>>>?",
           "name": "keyword.operator.bitwise.shift.ts"
         },
         {
-          "match": "[!=]=(?:=|)",
+          "match": "[!=]==?",
           "name": "keyword.operator.comparison.ts"
         },
         {
@@ -504,7 +504,7 @@
       ]
     },
     "punctuationAccessor": {
-      "match": "(?:[!?]|)\\.",
+      "match": "(?:\\?|!?)\\.",
       "name": "punctuation.accessor.ts"
     },
     "punctuationComma": {
