@@ -269,6 +269,9 @@
           "include": "#mnemonics-esi"
         },
         {
+          "include": "#mnemonics-speculation"
+        },
+        {
           "include": "#mnemonics-intel-manual-listing"
         },
         {
@@ -1065,6 +1068,14 @@
         {
           "match": "(?i)\\b(capabilities|enteraccs|exitac|senter|sexit|parameters|smctrl|wakeup)\\b",
           "name": "support.constant.smx"
+        }
+      ]
+    },
+    "mnemonics-speculation": {
+      "patterns": [
+        {
+          "match": "(?i)\\bib(pb|hf)\\b",
+          "name": "keyword.operator.word.mnemonic.speculation"
         }
       ]
     },

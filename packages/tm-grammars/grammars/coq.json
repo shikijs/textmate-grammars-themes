@@ -98,6 +98,20 @@
       "match": "\\b(Ltac)\\s+(([_ \\p{L}])(['0-9_ \\p{L}])*)"
     },
     {
+      "captures": {
+        "1": {
+          "name": "keyword.source.coq"
+        },
+        "2": {
+          "name": "keyword.source.coq"
+        },
+        "3": {
+          "name": "entity.name.function.ltac"
+        }
+      },
+      "match": "\\b(Ltac2)\\s+(mutable\\s+)?(rec\\s+)?(([_ \\p{L}])(['0-9_ \\p{L}])*)"
+    },
+    {
       "match": "\\b(Hint(\\s+Mode)?|Create\\s+HintDb|Constructors|Resolve|Rewrite|Ltac2??|Implicit(\\s+Types)?|Set|Unset|Remove\\s+Printing|Arguments|((Tactic|Reserved)\\s+)?Notation|Infix|Section|Module(\\s+Type)?|End|Check|Print(\\s+All)?|Eval|Compute|Search|Universe|Coercions|Generalizable(\\s+(All|Variable))?|Existing(\\s+(Class|Instance))?|Canonical|About|Locate|Collection|Typeclasses\\s+(Opaque|Transparent))\\b",
       "name": "keyword.source.coq"
     },

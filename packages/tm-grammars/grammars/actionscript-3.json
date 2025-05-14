@@ -485,7 +485,7 @@
       "name": "keyword.operator.actionscript.3"
     },
     "metadata": {
-      "begin": "\\[\\s*\\b(\\w+)\\b",
+      "begin": "(?<=(?:^|[;{}]|\\*/)\\s*)\\[\\s*\\b([$A-Z_a-z][$0-9A-Z_a-z]+)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.actionscript.3"
