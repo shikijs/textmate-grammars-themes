@@ -226,7 +226,25 @@
           "include": "#attributes-keyvalue"
         },
         {
+          "include": "#attributes-attach"
+        },
+        {
           "include": "#attributes-interpolated"
+        }
+      ]
+    },
+    "attributes-attach": {
+      "begin": "(?<![:=])\\s*(\\{@attach\\s)",
+      "captures": {
+        "1": {
+          "name": "entity.other.attribute-name.svelte"
+        }
+      },
+      "contentName": "meta.embedded.expression.svelte source.ts",
+      "end": "(})",
+      "patterns": [
+        {
+          "include": "source.ts"
         }
       ]
     },
