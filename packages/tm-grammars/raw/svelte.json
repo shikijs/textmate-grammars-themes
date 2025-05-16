@@ -756,12 +756,57 @@
     "special-tags-modes": {
       "patterns": [
         {
-          "begin": "(?<=(if|key|then|catch|snippet|html|render).*?)\\G",
+          "begin": "(?<=(if|key|then|catch|html|render).*?)\\G",
           "end": "(?=})",
           "name": "meta.embedded.expression.svelte source.ts",
           "patterns": [
             {
               "include": "source.ts"
+            }
+          ]
+        },
+        {
+          "begin": "(?<=snippet.*?)\\G",
+          "end": "(?=})",
+          "name": "meta.embedded.expression.svelte source.ts",
+          "patterns": [
+            {
+              "captures": {
+                "1": {
+                  "name": "entity.name.function.ts"
+                }
+              },
+              "match": "\\G\\s*([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=<)"
+            },
+            {
+              "begin": "(?<=<)",
+              "contentName": "meta.type.parameters.ts",
+              "end": "(?=>)",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
+            },
+            {
+              "begin": "(?<=>\\s*\\()",
+              "end": "(?=})",
+              "name": "meta.embedded.expression.svelte source.ts",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
+            },
+            {
+              "begin": "\\G",
+              "end": "(?=})",
+              "name": "meta.embedded.expression.svelte source.ts",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
             }
           ]
         },
