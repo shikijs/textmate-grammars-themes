@@ -1479,22 +1479,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/MarioSchwalbe/vscode-gnuplot/contents/syntaxes/gnuplot.tmLanguage?ref=c62c1a61c9b6b4658b43d76c397dc2ad43523b6a',
   },
   {
-    byteSize: 42916,
+    byteSize: 42922,
     categories: [
       'general',
     ],
     displayName: 'Go',
     funding: [
     ],
-    hash: 'P1xtPaitXdqOrKjN5CDRDdzj9Z-lAI6HyUnDc0pptxc',
-    lastUpdate: '2025-04-02T13:41:58Z',
+    hash: 'J0n54TuV-DKt344UglKfo-xeSh-J59PfLujbCH6hYug',
+    lastUpdate: '2025-05-22T08:27:50Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
-    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/go/syntaxes/go.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75',
+    sha: '2a17434963b1f2f383e37050c59fa5cd9edcc331',
+    source: 'https://github.com/microsoft/vscode/blob/2a17434963b1f2f383e37050c59fa5cd9edcc331/extensions/go/syntaxes/go.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=2a17434963b1f2f383e37050c59fa5cd9edcc331',
   },
   {
     aliases: [
@@ -2221,7 +2221,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/less/syntaxes/less.tmLanguage.json?ref=03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
   },
   {
-    byteSize: 16986,
+    byteSize: 17349,
     displayName: 'Liquid',
     embedded: [
       'html',
@@ -2231,15 +2231,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'S1NVkJ7UFCKJOJOCG9GPDd8-GXqt9lr57LA_yVZm8-c',
-    lastUpdate: '2025-04-10T16:13:50Z',
+    hash: '3Gmm1MUQO84mr1AMl2f51_1mUwO7wxMBhZMynY4DnwU',
+    lastUpdate: '2025-05-12T22:03:09Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md',
     name: 'liquid',
     scopeName: 'text.html.liquid',
-    sha: '38264742ed4f048e4f4e910067c9503b9506eb62',
-    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/38264742ed4f048e4f4e910067c9503b9506eb62/grammars/liquid.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/Shopify/liquid-tm-grammar/contents/grammars/liquid.tmLanguage.json?ref=38264742ed4f048e4f4e910067c9503b9506eb62',
+    sha: '099adcf0d4beacd078a22432eaeab08d6f1e6da5',
+    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/099adcf0d4beacd078a22432eaeab08d6f1e6da5/grammars/liquid.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/Shopify/liquid-tm-grammar/contents/grammars/liquid.tmLanguage.json?ref=099adcf0d4beacd078a22432eaeab08d6f1e6da5',
   },
   {
     byteSize: 4637,

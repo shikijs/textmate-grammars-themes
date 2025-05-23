@@ -1761,7 +1761,7 @@
     "operators": {
       "patterns": [
         {
-          "match": "([\\&*]+)(?!\\d)(?=[]\\[\\w]|<-)",
+          "match": "(?<!\\w)[\\&*]+(?!\\d)(?=[]\\[\\w]|<-)",
           "name": "keyword.operator.address.go"
         },
         {
