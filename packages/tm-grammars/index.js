@@ -697,22 +697,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/qingpeng9802/vscode-common-lisp/contents/syntaxes/commonlisp.tmLanguage.json?ref=79d04dc9ca80d98e65c4f28b3d67a24a7829b18f',
   },
   {
-    byteSize: 5203,
+    byteSize: 5235,
     categories: [
       'general',
     ],
     displayName: 'Coq',
     funding: [
     ],
-    hash: 'CLukU5_Rri26_Sg4Y1ye0bOlGZG80zIiispfgJXXkc0',
-    lastUpdate: '2025-05-09T08:17:16Z',
+    hash: 'rKbKow-2GyoGjnPqSklzBqUqs4b7pjSO0VNBGOM6O2I',
+    lastUpdate: '2025-05-22T15:18:27Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rocq-prover/vscoq/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/rocq-prover/vsrocq/main/LICENSE',
     name: 'coq',
     scopeName: 'source.coq',
-    sha: 'e41917563836906011e78002b203b89fdd4bf699',
-    source: 'https://github.com/coq-community/vscoq/blob/e41917563836906011e78002b203b89fdd4bf699/client/syntax/coq.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/coq-community/vscoq/contents/client/syntax/coq.tmLanguage.json?ref=e41917563836906011e78002b203b89fdd4bf699',
+    sha: '201351854c2f8397701d8cf51d923f5a7946a8a2',
+    source: 'https://github.com/coq-community/vscoq/blob/201351854c2f8397701d8cf51d923f5a7946a8a2/client/syntax/coq.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/coq-community/vscoq/contents/client/syntax/coq.tmLanguage.json?ref=201351854c2f8397701d8cf51d923f5a7946a8a2',
   },
   {
     aliases: [
