@@ -1000,6 +1000,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web'],
   },
   {
+    name: 'surrealql',
+    displayName: 'SurrealQL',
+    aliases: ['surql'],
+    source: 'https://github.com/surrealdb/surrealql-grammar/blob/main/syntaxes/surrealql.tmLanguage.json',
+    categories: ['dsl'],
+  },
+  {
     name: 'svelte',
     displayName: 'Svelte',
     source: 'https://github.com/sveltejs/language-tools/blob/master/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml',
