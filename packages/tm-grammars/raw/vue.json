@@ -1017,19 +1017,19 @@
           "include": "#vue-directives-control"
         },
         {
+          "include": "#vue-directives-generic-attr"
+        },
+        {
           "include": "#vue-directives-style-attr"
         },
         {
           "include": "#vue-directives-original"
-        },
-        {
-          "include": "#vue-directives-generic-attr"
         }
       ]
     },
     "vue-directives-control": {
-      "begin": "(v-for)|(v-if|v-else-if|v-else)",
-      "captures": {
+      "begin": "(?:(v-for)|(v-if|v-else-if|v-else))(?==)",
+      "beginCaptures": {
         "1": {
           "name": "keyword.control.loop.vue"
         },
@@ -1037,7 +1037,7 @@
           "name": "keyword.control.conditional.vue"
         }
       },
-      "end": "(?=\\s*+[^=\\s])",
+      "end": "(?=\\s*[^=\\s])",
       "name": "meta.attribute.directive.control.vue",
       "patterns": [
         {
@@ -1101,7 +1101,7 @@
     },
     "vue-directives-generic-attr": {
       "begin": "\\b(generic)\\s*(=)",
-      "captures": {
+      "beginCaptures": {
         "1": {
           "name": "entity.other.attribute-name.html.vue"
         },
@@ -1186,11 +1186,6 @@
         }
       },
       "end": "(?=\\s*[^=\\s])",
-      "endCaptures": {
-        "1": {
-          "name": "punctuation.definition.string.end.html.vue"
-        }
-      },
       "name": "meta.attribute.directive.vue",
       "patterns": [
         {
@@ -1209,7 +1204,7 @@
     },
     "vue-directives-style-attr": {
       "begin": "\\b(style)\\s*(=)",
-      "captures": {
+      "beginCaptures": {
         "1": {
           "name": "entity.other.attribute-name.html.vue"
         },
