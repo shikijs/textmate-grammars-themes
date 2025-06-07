@@ -4322,6 +4322,33 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/vuejs/vetur/contents/syntaxes/vue-html.tmLanguage.json?ref=53ee52746b1f26f44391c3764bc7bd06d4ddaa46',
   },
   {
+    byteSize: 173528,
+    categories: [
+      'web',
+    ],
+    displayName: 'Vue Vine',
+    embedded: [
+      'css',
+      'scss',
+      'less',
+      'stylus',
+      'postcss',
+      'vue',
+      'javascript',
+    ],
+    funding: [
+    ],
+    hash: 'U1HP16zN4l73ecsb2V0lU8nzBGeUa3XejHxnSYvJrrg',
+    lastUpdate: '2025-06-04T11:52:37Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/vue-vine/assets/main/LICENSE',
+    name: 'vue-vine',
+    scopeName: 'source.vue-vine',
+    sha: '2921493f703bfcf64aed5644f275e7e65f2e0a48',
+    source: 'https://github.com/vue-vine/assets/blob/2921493f703bfcf64aed5644f275e7e65f2e0a48/grammars/vue-vine.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/vue-vine/assets/contents/grammars/vue-vine.tmLanguage.json?ref=2921493f703bfcf64aed5644f275e7e65f2e0a48',
+  },
+  {
     aliases: [
       'vy',
     ],
