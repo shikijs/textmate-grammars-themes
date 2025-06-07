@@ -1096,6 +1096,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web'],
   },
   {
+    name: 'vue-vine',
+    source: 'https://github.com/vue-vine/assets/blob/main/grammars/vue-vine.tmLanguage.json',
+    categories: ['web'],
+  },
+  {
     name: 'vue',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue.tmLanguage.json',
     categories: ['web'],
