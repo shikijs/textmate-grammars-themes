@@ -3752,6 +3752,30 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/d4rkr00t/language-stylus/contents/syntaxes/stylus.json?ref=198a851f385aee857332f3ce5dd981ff67720ead',
   },
   {
+    aliases: [
+      'surql',
+    ],
+    byteSize: 16689,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'SurrealQL',
+    embedded: [
+      'javascript',
+    ],
+    funding: [
+    ],
+    hash: 'I_kxiF6r9UNsiRdny_k6sSnVVbxqe482r2cYKTKol0k',
+    lastUpdate: '2024-03-11T11:10:59Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/surrealdb/surrealql-grammar/main/LICENSE',
+    name: 'surrealql',
+    scopeName: 'source.surrealql',
+    sha: '1cedb13a8dc16869bf67dbb5510d4eb5d6fca737',
+    source: 'https://github.com/surrealdb/surrealql-grammar/blob/1cedb13a8dc16869bf67dbb5510d4eb5d6fca737/syntaxes/surrealql.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/surrealdb/surrealql-grammar/contents/syntaxes/surrealql.tmLanguage.json?ref=1cedb13a8dc16869bf67dbb5510d4eb5d6fca737',
+  },
+  {
     byteSize: 17212,
     categories: [
       'web',
