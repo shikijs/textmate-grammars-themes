@@ -5,5093 +5,5145 @@
 
 export const grammars = [
   {
-    byteSize: 15483,
-    displayName: 'ABAP',
-    funding: [
+    "byteSize": 15483,
+    "displayName": "ABAP",
+    "funding": [
     ],
-    hash: 'pRc5lIY0C5D4se6NrjyyO2_x8nAxQBJxt-m-P252jrQ',
-    lastUpdate: '2024-12-25T10:52:53Z',
-    name: 'abap',
-    scopeName: 'source.abap',
-    sha: '92e17e62a9449d2a6f87bfb30b4f920986c24018',
-    source: 'https://github.com/pvl/abap.tmbundle/blob/92e17e62a9449d2a6f87bfb30b4f920986c24018/Syntaxes/ABAP.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/pvl/abap.tmbundle/contents/Syntaxes/ABAP.tmLanguage?ref=92e17e62a9449d2a6f87bfb30b4f920986c24018',
+    "hash": "pRc5lIY0C5D4se6NrjyyO2_x8nAxQBJxt-m-P252jrQ",
+    "lastUpdate": "2024-12-25T10:52:53Z",
+    "name": "abap",
+    "scopeName": "source.abap",
+    "sha": "92e17e62a9449d2a6f87bfb30b4f920986c24018",
+    "source": "https://github.com/pvl/abap.tmbundle/blob/92e17e62a9449d2a6f87bfb30b4f920986c24018/Syntaxes/ABAP.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/pvl/abap.tmbundle/contents/Syntaxes/ABAP.tmLanguage?ref=92e17e62a9449d2a6f87bfb30b4f920986c24018"
   },
   {
-    byteSize: 13643,
-    categories: [
-      'scripting',
+    "byteSize": 13643,
+    "categories": [
+      "scripting"
     ],
-    displayName: 'ActionScript',
-    funding: [
+    "displayName": "ActionScript",
+    "funding": [
       {
-        handle: 'josht',
-        name: 'Patreon',
-        url: 'https://patreon.com/josht',
-      },
+        "handle": "josht",
+        "name": "Patreon",
+        "url": "https://patreon.com/josht"
+      }
     ],
-    hash: '9HG1Ob3W2vJtopt2ReqK_rdiB8U8zS1iGCxPVcv7Uyg',
-    lastUpdate: '2025-05-12T17:28:50Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE',
-    name: 'actionscript-3',
-    scopeName: 'source.actionscript.3',
-    sha: 'e7e35cc16363f07b2e536d7224a96c81354a316f',
-    source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/e7e35cc16363f07b2e536d7224a96c81354a316f/distribution/src/assembly/syntaxes/AS3.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/BowlerHatLLC/vscode-as3mxml/contents/distribution/src/assembly/syntaxes/AS3.tmLanguage?ref=e7e35cc16363f07b2e536d7224a96c81354a316f',
+    "hash": "9HG1Ob3W2vJtopt2ReqK_rdiB8U8zS1iGCxPVcv7Uyg",
+    "lastUpdate": "2025-05-12T17:28:50Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE",
+    "name": "actionscript-3",
+    "scopeName": "source.actionscript.3",
+    "sha": "e7e35cc16363f07b2e536d7224a96c81354a316f",
+    "source": "https://github.com/BowlerHatLLC/vscode-as3mxml/blob/e7e35cc16363f07b2e536d7224a96c81354a316f/distribution/src/assembly/syntaxes/AS3.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/BowlerHatLLC/vscode-as3mxml/contents/distribution/src/assembly/syntaxes/AS3.tmLanguage?ref=e7e35cc16363f07b2e536d7224a96c81354a316f"
   },
   {
-    byteSize: 46477,
-    displayName: 'Ada',
-    funding: [
+    "byteSize": 46477,
+    "displayName": "Ada",
+    "funding": [
     ],
-    hash: 'ZyX-cf17ubqm7YZ9pPZh6lNPhB95BXX6hUVGz3GjZ1c',
-    lastUpdate: '2024-12-20T16:34:23Z',
-    license: 'GPL-3.0',
-    licenseUrl: 'https://raw.githubusercontent.com/AdaCore/ada_language_server/master/LICENSE',
-    name: 'ada',
-    scopeName: 'source.ada',
-    sha: '9329f709cf1aef897bfca679c54e0c3d17f2205f',
-    source: 'https://github.com/AdaCore/ada_language_server/blob/9329f709cf1aef897bfca679c54e0c3d17f2205f/integration/vscode/ada/advanced/ada.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/AdaCore/ada_language_server/contents/integration/vscode/ada/advanced/ada.tmLanguage.json?ref=9329f709cf1aef897bfca679c54e0c3d17f2205f',
+    "hash": "ZyX-cf17ubqm7YZ9pPZh6lNPhB95BXX6hUVGz3GjZ1c",
+    "lastUpdate": "2024-12-20T16:34:23Z",
+    "license": "GPL-3.0",
+    "licenseUrl": "https://raw.githubusercontent.com/AdaCore/ada_language_server/master/LICENSE",
+    "name": "ada",
+    "scopeName": "source.ada",
+    "sha": "9329f709cf1aef897bfca679c54e0c3d17f2205f",
+    "source": "https://github.com/AdaCore/ada_language_server/blob/9329f709cf1aef897bfca679c54e0c3d17f2205f/integration/vscode/ada/advanced/ada.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/AdaCore/ada_language_server/contents/integration/vscode/ada/advanced/ada.tmLanguage.json?ref=9329f709cf1aef897bfca679c54e0c3d17f2205f"
   },
   {
-    byteSize: 701,
-    categories: [
-      'web',
+    "byteSize": 701,
+    "categories": [
+      "web"
     ],
-    displayName: 'Angular HTML',
-    embedded: [
-      'html',
-      'angular-expression',
-      'angular-let-declaration',
-      'angular-template',
-      'angular-template-blocks',
+    "displayName": "Angular HTML",
+    "embedded": [
+      "html",
+      "angular-expression",
+      "angular-let-declaration",
+      "angular-template",
+      "angular-template-blocks"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'iXKjoGStKw-aTPBuMVV4H_ABQOLZLUogRJt3r9vTTrw',
-    lastUpdate: '2018-10-04T09:01:56Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt',
-    name: 'angular-html',
-    scopeName: 'text.html.derivative.ng',
-    sha: 'cfc2a2212de9ea10943af58ebd1817a5ad196463',
-    source: 'https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/onivim/vscode-exthost/contents/extensions/html/syntaxes/html-derivative.tmLanguage.json?ref=cfc2a2212de9ea10943af58ebd1817a5ad196463',
+    "hash": "iXKjoGStKw-aTPBuMVV4H_ABQOLZLUogRJt3r9vTTrw",
+    "lastUpdate": "2018-10-04T09:01:56Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/onivim/vscode-exthost/master/LICENSE.txt",
+    "name": "angular-html",
+    "scopeName": "text.html.derivative.ng",
+    "sha": "cfc2a2212de9ea10943af58ebd1817a5ad196463",
+    "source": "https://github.com/onivim/vscode-exthost/blob/cfc2a2212de9ea10943af58ebd1817a5ad196463/extensions/html/syntaxes/html-derivative.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/onivim/vscode-exthost/contents/extensions/html/syntaxes/html-derivative.tmLanguage.json?ref=cfc2a2212de9ea10943af58ebd1817a5ad196463"
   },
   {
-    byteSize: 163882,
-    categories: [
-      'web',
+    "byteSize": 163882,
+    "categories": [
+      "web"
     ],
-    displayName: 'Angular TypeScript',
-    embedded: [
-      'angular-expression',
-      'angular-inline-style',
-      'angular-inline-template',
-      'angular-let-declaration',
-      'angular-template',
-      'angular-template-blocks',
+    "displayName": "Angular TypeScript",
+    "embedded": [
+      "angular-expression",
+      "angular-inline-style",
+      "angular-inline-template",
+      "angular-let-declaration",
+      "angular-template",
+      "angular-template-blocks"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'CZE5A9g78Qbs6QDtpVDBRfU0rVVLBGDV1VoTA3QUeS0',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'angular-ts',
-    scopeName: 'source.ts.ng',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
+    "hash": "CZE5A9g78Qbs6QDtpVDBRfU0rVVLBGDV1VoTA3QUeS0",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "angular-ts",
+    "scopeName": "source.ts.ng",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
   },
   {
-    byteSize: 12116,
-    displayName: 'Apache Conf',
-    funding: [
+    "byteSize": 12116,
+    "displayName": "Apache Conf",
+    "funding": [
     ],
-    hash: 'uEO5vBVUt8RPRL7iXch1j4mJ4RcZgxzRcZn-1r9wnvY',
-    lastUpdate: '2020-05-30T18:14:18Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/colinta/ApacheConf.tmLanguage/main/LICENSE',
-    name: 'apache',
-    scopeName: 'source.apacheconf',
-    sha: '1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07',
-    source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07/ApacheConf.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/colinta/ApacheConf.tmLanguage/contents/ApacheConf.tmLanguage?ref=1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07',
+    "hash": "uEO5vBVUt8RPRL7iXch1j4mJ4RcZgxzRcZn-1r9wnvY",
+    "lastUpdate": "2020-05-30T18:14:18Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/colinta/ApacheConf.tmLanguage/main/LICENSE",
+    "name": "apache",
+    "scopeName": "source.apacheconf",
+    "sha": "1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07",
+    "source": "https://github.com/colinta/ApacheConf.tmLanguage/blob/1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07/ApacheConf.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/colinta/ApacheConf.tmLanguage/contents/ApacheConf.tmLanguage?ref=1fdb47b6fe2cea20cfedbc522bff3ff1ed656c07"
   },
   {
-    byteSize: 44656,
-    displayName: 'Apex',
-    funding: [
+    "byteSize": 44656,
+    "displayName": "Apex",
+    "funding": [
     ],
-    hash: 'sntncG6da5fKwL0nKGu1R4B9g5820bT29fgFrgNfGKs',
-    lastUpdate: '2025-05-27T18:18:24Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/forcedotcom/apex-tmLanguage/main/LICENSE',
-    name: 'apex',
-    scopeName: 'source.apex',
-    sha: '55c38da229689630908091adb87c04821eb7312a',
-    source: 'https://github.com/forcedotcom/apex-tmLanguage/blob/55c38da229689630908091adb87c04821eb7312a/grammars/apex.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/forcedotcom/apex-tmLanguage/contents/grammars/apex.tmLanguage?ref=55c38da229689630908091adb87c04821eb7312a',
+    "hash": "sntncG6da5fKwL0nKGu1R4B9g5820bT29fgFrgNfGKs",
+    "lastUpdate": "2025-05-27T18:18:24Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/forcedotcom/apex-tmLanguage/main/LICENSE",
+    "name": "apex",
+    "scopeName": "source.apex",
+    "sha": "55c38da229689630908091adb87c04821eb7312a",
+    "source": "https://github.com/forcedotcom/apex-tmLanguage/blob/55c38da229689630908091adb87c04821eb7312a/grammars/apex.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/forcedotcom/apex-tmLanguage/contents/grammars/apex.tmLanguage?ref=55c38da229689630908091adb87c04821eb7312a"
   },
   {
-    byteSize: 23233,
-    displayName: 'APL',
-    embedded: [
-      'html',
-      'xml',
-      'css',
-      'javascript',
-      'json',
+    "byteSize": 23233,
+    "displayName": "APL",
+    "embedded": [
+      "html",
+      "xml",
+      "css",
+      "javascript",
+      "json"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'Y9Gj7bIUEWvf2tQC6Y-qzkNJZfEHzgzUeNZPvUKL88U',
-    lastUpdate: '2019-05-06T11:54:42Z',
-    name: 'apl',
-    scopeName: 'source.apl',
-    sha: '13541242d9ffae225e89ebba23f9abaa4c60697e',
-    source: 'https://github.com/kimmolinna/vscode-apl-language/blob/13541242d9ffae225e89ebba23f9abaa4c60697e/syntaxes/apl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/kimmolinna/vscode-apl-language/contents/syntaxes/apl.tmLanguage.json?ref=13541242d9ffae225e89ebba23f9abaa4c60697e',
+    "hash": "Y9Gj7bIUEWvf2tQC6Y-qzkNJZfEHzgzUeNZPvUKL88U",
+    "lastUpdate": "2019-05-06T11:54:42Z",
+    "name": "apl",
+    "scopeName": "source.apl",
+    "sha": "13541242d9ffae225e89ebba23f9abaa4c60697e",
+    "source": "https://github.com/kimmolinna/vscode-apl-language/blob/13541242d9ffae225e89ebba23f9abaa4c60697e/syntaxes/apl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/kimmolinna/vscode-apl-language/contents/syntaxes/apl.tmLanguage.json?ref=13541242d9ffae225e89ebba23f9abaa4c60697e"
   },
   {
-    byteSize: 28463,
-    categories: [
-      'scripting',
+    "byteSize": 28463,
+    "categories": [
+      "scripting"
     ],
-    displayName: 'AppleScript',
-    funding: [
+    "displayName": "AppleScript",
+    "funding": [
     ],
-    hash: 'afF98nWF0zzXioLT4bVJRgSks_XYqnnDdZNQfUGX5x8',
-    lastUpdate: '2019-09-03T19:15:57Z',
-    name: 'applescript',
-    scopeName: 'source.applescript',
-    sha: '4947cad7494eba084c21cfe04689b4efce96700f',
-    source: 'https://github.com/textmate/applescript.tmbundle/blob/4947cad7494eba084c21cfe04689b4efce96700f/Syntaxes/AppleScript.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/applescript.tmbundle/contents/Syntaxes/AppleScript.tmLanguage?ref=4947cad7494eba084c21cfe04689b4efce96700f',
+    "hash": "afF98nWF0zzXioLT4bVJRgSks_XYqnnDdZNQfUGX5x8",
+    "lastUpdate": "2019-09-03T19:15:57Z",
+    "name": "applescript",
+    "scopeName": "source.applescript",
+    "sha": "4947cad7494eba084c21cfe04689b4efce96700f",
+    "source": "https://github.com/textmate/applescript.tmbundle/blob/4947cad7494eba084c21cfe04689b4efce96700f/Syntaxes/AppleScript.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/applescript.tmbundle/contents/Syntaxes/AppleScript.tmLanguage?ref=4947cad7494eba084c21cfe04689b4efce96700f"
   },
   {
-    byteSize: 6053,
-    displayName: 'Ara',
-    funding: [
+    "byteSize": 6053,
+    "displayName": "Ara",
+    "funding": [
     ],
-    hash: 'Ce8_i9nQY0lCigBwgVOalKF9ps9FtO9ni9G7zQ4jiKA',
-    lastUpdate: '2023-01-14T07:35:56Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/ara-lang/highlighting/main/LICENSE-APACHE',
-    name: 'ara',
-    scopeName: 'source.ara',
-    sha: 'ed1dbedcf03d0b67207e41fe2e11218cc925dc0d',
-    source: 'https://github.com/ara-lang/highlighting/blob/ed1dbedcf03d0b67207e41fe2e11218cc925dc0d/syntaxes/ara.json',
-    sourceApi: 'https://api.github.com/repos/ara-lang/highlighting/contents/syntaxes/ara.json?ref=ed1dbedcf03d0b67207e41fe2e11218cc925dc0d',
+    "hash": "Ce8_i9nQY0lCigBwgVOalKF9ps9FtO9ni9G7zQ4jiKA",
+    "lastUpdate": "2023-01-14T07:35:56Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/ara-lang/highlighting/main/LICENSE-APACHE",
+    "name": "ara",
+    "scopeName": "source.ara",
+    "sha": "ed1dbedcf03d0b67207e41fe2e11218cc925dc0d",
+    "source": "https://github.com/ara-lang/highlighting/blob/ed1dbedcf03d0b67207e41fe2e11218cc925dc0d/syntaxes/ara.json",
+    "sourceApi": "https://api.github.com/repos/ara-lang/highlighting/contents/syntaxes/ara.json?ref=ed1dbedcf03d0b67207e41fe2e11218cc925dc0d"
   },
   {
-    aliases: [
-      'adoc',
+    "aliases": [
+      "adoc"
     ],
-    byteSize: 83855,
-    categories: [
-      'markup',
+    "byteSize": 83855,
+    "categories": [
+      "markup"
     ],
-    displayName: 'AsciiDoc',
-    embedded: [
-      'html',
-      'yaml',
-      'csv',
-      'c',
-      'clojure',
-      'coffee',
-      'cpp',
-      'css',
-      'csharp',
-      'diff',
-      'docker',
-      'elixir',
-      'elm',
-      'erlang',
-      'go',
-      'groovy',
-      'haskell',
-      'java',
-      'javascript',
-      'json',
-      'jsx',
-      'julia',
-      'kotlin',
-      'less',
-      'make',
-      'objective-c',
-      'ocaml',
-      'perl',
-      'python',
-      'r',
-      'ruby',
-      'rust',
-      'sass',
-      'scala',
-      'scss',
-      'shellscript',
-      'sql',
-      'swift',
-      'toml',
-      'typescript',
-      'xml',
+    "displayName": "AsciiDoc",
+    "embedded": [
+      "html",
+      "yaml",
+      "csv",
+      "c",
+      "clojure",
+      "coffee",
+      "cpp",
+      "css",
+      "csharp",
+      "diff",
+      "docker",
+      "elixir",
+      "elm",
+      "erlang",
+      "go",
+      "groovy",
+      "haskell",
+      "java",
+      "javascript",
+      "json",
+      "jsx",
+      "julia",
+      "kotlin",
+      "less",
+      "make",
+      "objective-c",
+      "ocaml",
+      "perl",
+      "python",
+      "r",
+      "ruby",
+      "rust",
+      "sass",
+      "scala",
+      "scss",
+      "shellscript",
+      "sql",
+      "swift",
+      "toml",
+      "typescript",
+      "xml"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'yC0uteSxftlz0SkmV1QWc4O8YEYKK_z9Jkm7uKKcM4A',
-    lastUpdate: '2025-04-06T16:02:02Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/asciidoctor/asciidoctor-vscode/master/LICENSE',
-    name: 'asciidoc',
-    scopeName: 'text.asciidoc',
-    sha: 'd9b169e4c367a605eba9039b40440330b11aa775',
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/d9b169e4c367a605eba9039b40440330b11aa775/syntaxes/Asciidoctor.json',
-    sourceApi: 'https://api.github.com/repos/asciidoctor/asciidoctor-vscode/contents/syntaxes/Asciidoctor.json?ref=d9b169e4c367a605eba9039b40440330b11aa775',
+    "hash": "yC0uteSxftlz0SkmV1QWc4O8YEYKK_z9Jkm7uKKcM4A",
+    "lastUpdate": "2025-04-06T16:02:02Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/asciidoctor/asciidoctor-vscode/master/LICENSE",
+    "name": "asciidoc",
+    "scopeName": "text.asciidoc",
+    "sha": "d9b169e4c367a605eba9039b40440330b11aa775",
+    "source": "https://github.com/asciidoctor/asciidoctor-vscode/blob/d9b169e4c367a605eba9039b40440330b11aa775/syntaxes/Asciidoctor.json",
+    "sourceApi": "https://api.github.com/repos/asciidoctor/asciidoctor-vscode/contents/syntaxes/Asciidoctor.json?ref=d9b169e4c367a605eba9039b40440330b11aa775"
   },
   {
-    byteSize: 39351,
-    displayName: 'Assembly',
-    funding: [
+    "byteSize": 39351,
+    "displayName": "Assembly",
+    "funding": [
     ],
-    hash: 'GdzSW5YuURSasEA2f9c7QFbm1Aky0hJtS3UKEUdPGu8',
-    lastUpdate: '2025-05-13T08:44:30Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/13xforever/x86_64-assembly-vscode/master/LICENSE.txt',
-    name: 'asm',
-    scopeName: 'source.asm.x86_64',
-    sha: '5c1958f4283d260f5dc88fa4f5f31c620e061a5a',
-    source: 'https://github.com/13xforever/x86_64-assembly-vscode/blob/5c1958f4283d260f5dc88fa4f5f31c620e061a5a/syntaxes/language-x86_64-assembly.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/13xforever/x86_64-assembly-vscode/contents/syntaxes/language-x86_64-assembly.tmLanguage?ref=5c1958f4283d260f5dc88fa4f5f31c620e061a5a',
+    "hash": "GdzSW5YuURSasEA2f9c7QFbm1Aky0hJtS3UKEUdPGu8",
+    "lastUpdate": "2025-05-13T08:44:30Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/13xforever/x86_64-assembly-vscode/master/LICENSE.txt",
+    "name": "asm",
+    "scopeName": "source.asm.x86_64",
+    "sha": "5c1958f4283d260f5dc88fa4f5f31c620e061a5a",
+    "source": "https://github.com/13xforever/x86_64-assembly-vscode/blob/5c1958f4283d260f5dc88fa4f5f31c620e061a5a/syntaxes/language-x86_64-assembly.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/13xforever/x86_64-assembly-vscode/contents/syntaxes/language-x86_64-assembly.tmLanguage?ref=5c1958f4283d260f5dc88fa4f5f31c620e061a5a"
   },
   {
-    byteSize: 23414,
-    categories: [
-      'web',
+    "byteSize": 23414,
+    "categories": [
+      "web"
     ],
-    displayName: 'Astro',
-    embedded: [
-      'json',
-      'javascript',
-      'typescript',
-      'stylus',
-      'sass',
-      'css',
-      'scss',
-      'less',
-      'postcss',
-      'tsx',
+    "displayName": "Astro",
+    "embedded": [
+      "json",
+      "javascript",
+      "typescript",
+      "stylus",
+      "sass",
+      "css",
+      "scss",
+      "less",
+      "postcss",
+      "tsx"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@withastro',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/withastro',
-      },
-      {
-        handle: 'astrodotbuild',
-        name: 'Open Collective',
-        url: 'https://opencollective.com/astrodotbuild',
+        "handle": "@withastro",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/withastro"
       },
       {
-        handle: 'u/gh/withastro',
-        name: 'thanks.dev',
-        url: 'https://thanks.dev/d/u/gh/withastro',
-      },
-    ],
-    hash: '9iVJZbAxHEKF0gzTQGHv5GsvZW6UYtKzNJKAnGoiqkM',
-    lastUpdate: '2024-03-23T17:37:42Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/withastro/language-tools/main/LICENSE',
-    name: 'astro',
-    scopeName: 'source.astro',
-    sha: '8e55c37cbcf134dedf0068781245da5a9d46d081',
-    source: 'https://github.com/withastro/language-tools/blob/8e55c37cbcf134dedf0068781245da5a9d46d081/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
-    sourceApi: 'https://api.github.com/repos/withastro/language-tools/contents/packages/vscode/syntaxes/astro.tmLanguage.src.yaml?ref=8e55c37cbcf134dedf0068781245da5a9d46d081',
-  },
-  {
-    byteSize: 5280,
-    displayName: 'AWK',
-    funding: [
-    ],
-    hash: '_DA0vZBWyjyGqKfg_rg5olmORXPxaP2kfr43gnmJf6Q',
-    lastUpdate: '2016-01-20T17:08:42Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/luggage66/vscode-awk/master/LICENSE.txt',
-    name: 'awk',
-    scopeName: 'source.awk',
-    sha: 'eff8c0f160ae16592c8d9963fd77046137fd2612',
-    source: 'https://github.com/luggage66/vscode-awk/blob/eff8c0f160ae16592c8d9963fd77046137fd2612/syntaxes/awk.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/luggage66/vscode-awk/contents/syntaxes/awk.tmLanguage?ref=eff8c0f160ae16592c8d9963fd77046137fd2612',
-  },
-  {
-    byteSize: 56350,
-    displayName: 'Ballerina',
-    funding: [
-    ],
-    hash: 'w5lbbESsUkfaU0k7NA4ML8vZaUqG6hlpAy1QTpNvpKM',
-    lastUpdate: '2025-04-24T17:27:26Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/ballerina-platform/ballerina-grammar/master/LICENSE',
-    name: 'ballerina',
-    scopeName: 'source.ballerina',
-    sha: '4bf70d328ae9e5a93219e44c031ab3776c76727a',
-    source: 'https://github.com/ballerina-platform/ballerina-grammar/blob/4bf70d328ae9e5a93219e44c031ab3776c76727a/syntaxes/ballerina.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/ballerina-platform/ballerina-grammar/contents/syntaxes/ballerina.tmLanguage?ref=4bf70d328ae9e5a93219e44c031ab3776c76727a',
-  },
-  {
-    aliases: [
-      'batch',
-    ],
-    byteSize: 12586,
-    categories: [
-      'scripting',
-    ],
-    displayName: 'Batch File',
-    funding: [
-    ],
-    hash: '5sWGWSwg33Merq9aEnYnb9lhkgzz_6em5Tas59Hmnl8',
-    lastUpdate: '2021-05-04T11:41:54Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'bat',
-    scopeName: 'source.batchfile',
-    sha: 'df15c8e832a341633acd2e9bb26e1b275d09cfe0',
-    source: 'https://github.com/microsoft/vscode/blob/df15c8e832a341633acd2e9bb26e1b275d09cfe0/extensions/bat/syntaxes/batchfile.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/bat/syntaxes/batchfile.tmLanguage.json?ref=df15c8e832a341633acd2e9bb26e1b275d09cfe0',
-  },
-  {
-    byteSize: 9893,
-    displayName: 'Beancount',
-    funding: [
-    ],
-    hash: 'Dzy3xN5rJaeXRnHW_5C63i4jP3ijzPfc2gWdjLCnCQg',
-    lastUpdate: '2024-01-11T08:43:22Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE',
-    name: 'beancount',
-    scopeName: 'text.beancount',
-    sha: 'ffc762e047bb09ed5d16508b302aef16a6057139',
-    source: 'https://github.com/Lencerf/vscode-beancount/blob/ffc762e047bb09ed5d16508b302aef16a6057139/syntaxes/beancount.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/Lencerf/vscode-beancount/contents/syntaxes/beancount.tmLanguage?ref=ffc762e047bb09ed5d16508b302aef16a6057139',
-  },
-  {
-    aliases: [
-      'be',
-    ],
-    byteSize: 2112,
-    displayName: 'Berry',
-    funding: [
-    ],
-    hash: 'smk-mipL2yBr6UqoaY5w57jLWadIVcRDn9NEja0mr-s',
-    lastUpdate: '2023-07-16T13:39:37Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/berry-lang/berry/master/LICENSE',
-    name: 'berry',
-    scopeName: 'source.berry',
-    sha: 'a0f5c044a3b593deaf87292ca6f04c2343e53dc8',
-    source: 'https://github.com/berry-lang/berry/blob/a0f5c044a3b593deaf87292ca6f04c2343e53dc8/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
-    sourceApi: 'https://api.github.com/repos/berry-lang/berry/contents/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json?ref=a0f5c044a3b593deaf87292ca6f04c2343e53dc8',
-  },
-  {
-    byteSize: 4621,
-    categories: [
-      'markup',
-    ],
-    displayName: 'BibTeX',
-    funding: [
-    ],
-    hash: 'ercXfCfOI0O4LNB5C-Q4PU6993MvdmiX2in2wXzyRsQ',
-    lastUpdate: '2025-04-02T13:41:58Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'bibtex',
-    scopeName: 'text.bibtex',
-    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
-    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/Bibtex.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/Bibtex.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75',
-  },
-  {
-    byteSize: 3978,
-    displayName: 'Bicep',
-    funding: [
-    ],
-    hash: 's08ulLSLCbTEIf04bcZKEKLOh_wf4P-O9IctLXBIgUk',
-    lastUpdate: '2025-04-07T23:18:55Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Azure/bicep/main/LICENSE',
-    name: 'bicep',
-    scopeName: 'source.bicep',
-    sha: '8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e',
-    source: 'https://github.com/Azure/bicep/blob/8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e/src/textmate/bicep.tmlanguage',
-    sourceApi: 'https://api.github.com/repos/Azure/bicep/contents/src/textmate/bicep.tmlanguage?ref=8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e',
-  },
-  {
-    byteSize: 101282,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'Blade',
-    embedded: [
-      'html-derivative',
-      'html',
-      'xml',
-      'sql',
-      'javascript',
-      'json',
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'ksB2H6rifgJnrJ0oWImwNJNltRItj9OzZOdUaPmd6W4',
-    lastUpdate: '2024-06-01T01:31:57Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/laravel/vs-code-extension/main/LICENSE.md',
-    name: 'blade',
-    scopeName: 'text.html.php.blade',
-    sha: 'fa52467b5f7393407c9acc9b95d3794f67e266da',
-    source: 'https://github.com/laravel/vs-code-extension/blob/fa52467b5f7393407c9acc9b95d3794f67e266da/syntaxes/blade.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/laravel/vs-code-extension/contents/syntaxes/blade.tmLanguage.json?ref=fa52467b5f7393407c9acc9b95d3794f67e266da',
-  },
-  {
-    aliases: [
-      '1c',
-    ],
-    byteSize: 33379,
-    categories: [
-      'general',
-      'dsl',
-    ],
-    displayName: '1C (Enterprise)',
-    embedded: [
-      'sdbl',
-    ],
-    funding: [
-    ],
-    hash: '6Guw8KjRDh1WLCJNIRbihihSjCFKHO4zgRV_ZnG6EkM',
-    lastUpdate: '2024-11-05T21:35:36Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
-    name: 'bsl',
-    scopeName: 'source.bsl',
-    sha: '2cde5a65a17b82b5363affadf5a620ebb0a026dc',
-    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/2cde5a65a17b82b5363affadf5a620ebb0a026dc/syntaxes/1c.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/1c-syntax/vsc-language-1c-bsl/contents/syntaxes/1c.tmLanguage.json?ref=2cde5a65a17b82b5363affadf5a620ebb0a026dc',
-  },
-  {
-    byteSize: 69561,
-    categories: [
-      'general',
-    ],
-    displayName: 'C',
-    funding: [
-    ],
-    hash: 'OPzGZcqTiD4eJlHJlZ7dcE4aoM06lYU4lqeZAi906w0',
-    lastUpdate: '2022-06-10T13:55:11Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'c',
-    scopeName: 'source.c',
-    sha: 'bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-    source: 'https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/cpp/syntaxes/c.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/c.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-  },
-  {
-    aliases: [
-      'cdc',
-    ],
-    byteSize: 10104,
-    displayName: 'Cadence',
-    funding: [
-    ],
-    hash: '-5DoZ6uCQ1jVa4T63q-jVa0yCe3Nt0ysw2TKfoYq5_U',
-    lastUpdate: '2022-07-04T20:41:15Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/onflow/vscode-cadence/master/LICENSE',
-    name: 'cadence',
-    scopeName: 'source.cadence',
-    sha: 'e227d66c0346d2229da8c81a116abefdcda5f443',
-    source: 'https://github.com/onflow/vscode-cadence/blob/e227d66c0346d2229da8c81a116abefdcda5f443/extension/language/syntaxes/cadence.tmGrammar.json',
-    sourceApi: 'https://api.github.com/repos/onflow/vscode-cadence/contents/extension/language/syntaxes/cadence.tmGrammar.json?ref=e227d66c0346d2229da8c81a116abefdcda5f443',
-  },
-  {
-    byteSize: 2727,
-    categories: [
-      'general',
-    ],
-    displayName: 'Cairo',
-    embedded: [
-      'python',
-    ],
-    funding: [
-    ],
-    hash: 'nPcmYvxJaVabwBVHr77SvQQCOPbDnSBlQoWnGUVa1BQ',
-    lastUpdate: '2024-08-18T08:38:43Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/starkware-libs/cairo-lang/master/LICENSE.txt',
-    name: 'cairo',
-    scopeName: 'source.cairo0',
-    sha: '4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5',
-    source: 'https://github.com/starkware-libs/cairo-lang/blob/4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/starkware-libs/cairo-lang/contents/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json?ref=4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5',
-  },
-  {
-    byteSize: 13623,
-    categories: [
-      'lisp',
-    ],
-    displayName: 'Clarity',
-    funding: [
-    ],
-    hash: 'wXvuKP9Wh52za_AKE1BIeY1Uje64DTH9-BMzVBbcaD0',
-    lastUpdate: '2024-06-28T13:13:11Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hirosystems/clarity.tmbundle/main/LICENSE',
-    name: 'clarity',
-    scopeName: 'source.clar',
-    sha: '52508cc05304780d80a5dc817fcc35c6760c5459',
-    source: 'https://github.com/hirosystems/clarity.tmbundle/blob/52508cc05304780d80a5dc817fcc35c6760c5459/Syntaxes/clarity.JSON-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hirosystems/clarity.tmbundle/contents/Syntaxes/clarity.JSON-tmLanguage?ref=52508cc05304780d80a5dc817fcc35c6760c5459',
-  },
-  {
-    aliases: [
-      'clj',
-    ],
-    byteSize: 6160,
-    categories: [
-      'general',
-      'lisp',
-    ],
-    displayName: 'Clojure',
-    funding: [
-    ],
-    hash: '3lOZnNEp7Jzsjqes6BT17qIMoGKnLIB4XI3vT0M7zjY',
-    lastUpdate: '2022-01-31T15:49:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'clojure',
-    scopeName: 'source.clojure',
-    sha: 'a1a4c0a63b1ad59e84f54b874744fe35dea9abe1',
-    source: 'https://github.com/microsoft/vscode/blob/a1a4c0a63b1ad59e84f54b874744fe35dea9abe1/extensions/clojure/syntaxes/clojure.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/clojure/syntaxes/clojure.tmLanguage.json?ref=a1a4c0a63b1ad59e84f54b874744fe35dea9abe1',
-  },
-  {
-    byteSize: 9603,
-    categories: [
-      'config',
-    ],
-    displayName: 'CMake',
-    funding: [
-    ],
-    hash: 'fFhrWGgXTtJlEAwErDHxukPGbvnJmZ7kw5RCEdLtf18',
-    lastUpdate: '2017-11-20T20:37:32Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/twxs/vs.language.cmake/master/LICENSE',
-    name: 'cmake',
-    scopeName: 'source.cmake',
-    sha: '19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f',
-    source: 'https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/twxs/vs.language.cmake/contents/syntaxes/CMake.tmLanguage?ref=19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f',
-  },
-  {
-    byteSize: 38202,
-    displayName: 'COBOL',
-    embedded: [
-      'html',
-      'java',
-    ],
-    funding: [
-    ],
-    hash: 'lF4T2DcSya3MJshKUUA3tcpCB6ZfKFXlg9dIw1Zyn1o',
-    lastUpdate: '2025-03-27T20:12:33Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
-    name: 'cobol',
-    scopeName: 'source.cobol',
-    sha: '439cc876fb63b73244502fe67aae909c4a458e49',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/439cc876fb63b73244502fe67aae909c4a458e49/syntaxes/COBOL.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=439cc876fb63b73244502fe67aae909c4a458e49',
-  },
-  {
-    byteSize: 471,
-    displayName: 'CODEOWNERS',
-    funding: [
-    ],
-    hash: 't0TQSGVW7tx-vUnKt0e6t_uVq_DZ-p4HzmS9nvTZSZQ',
-    lastUpdate: '2018-12-19T21:50:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jasonnutter/vscode-codeowners/master/LICENSE.txt',
-    name: 'codeowners',
-    scopeName: 'text.codeowners',
-    sha: '219dee0ab25c1bfad0b9de84180117e71221a653',
-    source: 'https://github.com/jasonnutter/vscode-codeowners/blob/219dee0ab25c1bfad0b9de84180117e71221a653/syntaxes/codeowners.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/jasonnutter/vscode-codeowners/contents/syntaxes/codeowners.tmLanguage.json?ref=219dee0ab25c1bfad0b9de84180117e71221a653',
-  },
-  {
-    aliases: [
-      'ql',
-    ],
-    byteSize: 26403,
-    displayName: 'CodeQL',
-    funding: [
-    ],
-    hash: '-UAFXDV3T70s_QFR2FhF3zzwXLuGVWQ7RVYHPhx7SP4',
-    lastUpdate: '2025-01-20T17:49:31Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/github/vscode-codeql/main/LICENSE.md',
-    name: 'codeql',
-    scopeName: 'source.ql',
-    sha: 'a6266bbcc88702619ceb580253a65e8f83333c1b',
-    source: 'https://github.com/github/vscode-codeql/blob/a6266bbcc88702619ceb580253a65e8f83333c1b/syntaxes/ql.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/github/vscode-codeql/contents/syntaxes/ql.tmLanguage.json?ref=a6266bbcc88702619ceb580253a65e8f83333c1b',
-  },
-  {
-    aliases: [
-      'coffeescript',
-    ],
-    byteSize: 26497,
-    categories: [
-      'web',
-      'scripting',
-      'general',
-    ],
-    displayName: 'CoffeeScript',
-    embedded: [
-      'javascript',
-    ],
-    funding: [
-    ],
-    hash: 'CNu5pwwMrAElRw_9PuH_Y8T1cAnxAkV0bxLBzHlvVGs',
-    lastUpdate: '2019-01-25T23:34:58Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'coffee',
-    scopeName: 'source.coffee',
-    sha: 'ff58f5083f57b50e6a100ab60454dfb72fe21e80',
-    source: 'https://github.com/microsoft/vscode/blob/ff58f5083f57b50e6a100ab60454dfb72fe21e80/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json?ref=ff58f5083f57b50e6a100ab60454dfb72fe21e80',
-  },
-  {
-    aliases: [
-      'lisp',
-    ],
-    byteSize: 22067,
-    categories: [
-      'general',
-      'lisp',
-    ],
-    displayName: 'Common Lisp',
-    funding: [
-    ],
-    hash: 'FiiqYQ7m09ijKw0Lk7MVyTY1GWpzJr6b1T1RGklNVmY',
-    lastUpdate: '2024-05-10T18:29:42Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/qingpeng9802/vscode-common-lisp/master/LICENSE',
-    name: 'common-lisp',
-    scopeName: 'source.commonlisp',
-    sha: '79d04dc9ca80d98e65c4f28b3d67a24a7829b18f',
-    source: 'https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/qingpeng9802/vscode-common-lisp/contents/syntaxes/commonlisp.tmLanguage.json?ref=79d04dc9ca80d98e65c4f28b3d67a24a7829b18f',
-  },
-  {
-    byteSize: 5235,
-    categories: [
-      'general',
-    ],
-    displayName: 'Coq',
-    funding: [
-    ],
-    hash: 'rKbKow-2GyoGjnPqSklzBqUqs4b7pjSO0VNBGOM6O2I',
-    lastUpdate: '2025-05-22T15:18:27Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rocq-prover/vsrocq/main/LICENSE',
-    name: 'coq',
-    scopeName: 'source.coq',
-    sha: '201351854c2f8397701d8cf51d923f5a7946a8a2',
-    source: 'https://github.com/coq-community/vscoq/blob/201351854c2f8397701d8cf51d923f5a7946a8a2/client/syntax/coq.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/coq-community/vscoq/contents/client/syntax/coq.tmLanguage.json?ref=201351854c2f8397701d8cf51d923f5a7946a8a2',
-  },
-  {
-    aliases: [
-      'c++',
-    ],
-    byteSize: 381659,
-    categories: [
-      'general',
-    ],
-    displayName: 'C++',
-    embedded: [
-      'cpp-macro',
-      'regexp',
-      'glsl',
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'XdIxlLlMGqa2--CibpJwA9BNIdxNO-Ac4eUD-ySRlDQ',
-    lastUpdate: '2023-03-29T09:38:06Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'cpp',
-    scopeName: 'source.cpp',
-    sha: '6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
-    source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/cpp.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
-  },
-  {
-    byteSize: 28049,
-    displayName: 'Crystal',
-    embedded: [
-      'html',
-      'sql',
-      'css',
-      'c',
-      'javascript',
-      'shellscript',
-    ],
-    funding: [
-    ],
-    hash: '_fLlqnE9huThsGOmjuY0fmrZC_WpbM1R6Ugttm0Gh_A',
-    lastUpdate: '2024-02-26T14:51:19Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/crystal-lang-tools/vscode-crystal-lang/master/LICENSE',
-    name: 'crystal',
-    scopeName: 'source.crystal',
-    sha: 'c920b0931ec5f05b78447dbff31b172c64f1d734',
-    source: 'https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/c920b0931ec5f05b78447dbff31b172c64f1d734/syntaxes/crystal.json',
-    sourceApi: 'https://api.github.com/repos/crystal-lang-tools/vscode-crystal-lang/contents/syntaxes/crystal.json?ref=c920b0931ec5f05b78447dbff31b172c64f1d734',
-  },
-  {
-    aliases: [
-      'c#',
-      'cs',
-    ],
-    byteSize: 82327,
-    categories: [
-      'general',
-    ],
-    displayName: 'C#',
-    funding: [
-    ],
-    hash: 'kbih3rZQme5EYFEHLPfQ--OrzcmCUFAhnqnT5WTwEyc',
-    lastUpdate: '2025-02-28T12:20:44Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'csharp',
-    scopeName: 'source.cs',
-    sha: 'a26707320440021f45b508767c94c2634eb6e897',
-    source: 'https://github.com/microsoft/vscode/blob/a26707320440021f45b508767c94c2634eb6e897/extensions/csharp/syntaxes/csharp.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/csharp/syntaxes/csharp.tmLanguage.json?ref=a26707320440021f45b508767c94c2634eb6e897',
-  },
-  {
-    byteSize: 48053,
-    categories: [
-      'web',
-    ],
-    displayName: 'CSS',
-    funding: [
-    ],
-    hash: 'u3SSRC1E7eqV_opOqHy6Rql1MKhXWAE012EJdcHfKyc',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'css',
-    scopeName: 'source.css',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/css/syntaxes/css.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
-  },
-  {
-    byteSize: 1017,
-    categories: [
-      'data',
-    ],
-    displayName: 'CSV',
-    funding: [
-    ],
-    hash: '66NcixdWcxdDsGeZ9TYVByGptlmFnAPtRk0mfRvVkMQ',
-    lastUpdate: '2019-01-31T01:50:13Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
-    name: 'csv',
-    scopeName: 'text.csv',
-    sha: '3bdafafa12940a75166089b64bdd80b1d3b071db',
-    source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/3bdafafa12940a75166089b64bdd80b1d3b071db/syntaxes/csv.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mechatroner/vscode_rainbow_csv/contents/syntaxes/csv.tmLanguage.json?ref=3bdafafa12940a75166089b64bdd80b1d3b071db',
-  },
-  {
-    byteSize: 15455,
-    displayName: 'CUE',
-    funding: [
-    ],
-    hash: 'Xvdnh60Hf25u7c-opsMgYVIBMkqs52lLmX1X4qx7jss',
-    lastUpdate: '2024-09-04T15:25:05Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/cue-lang/vscode-cue/master/LICENSE',
-    name: 'cue',
-    scopeName: 'source.cue',
-    sha: 'a9ee96a7e61fb8acd39f7403144d0b6f45652987',
-    source: 'https://github.com/cue-lang/vscode-cue/blob/a9ee96a7e61fb8acd39f7403144d0b6f45652987/extension/syntaxes/cue.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/cue-lang/vscode-cue/contents/extension/syntaxes/cue.tmLanguage.json?ref=a9ee96a7e61fb8acd39f7403144d0b6f45652987',
-  },
-  {
-    aliases: [
-      'cql',
-    ],
-    byteSize: 5662,
-    displayName: 'Cypher',
-    funding: [
-    ],
-    hash: 'Pm4tANPp8-1KIbrJG4uiFCA0t89ILo2uUiC3s3s6-bo',
-    lastUpdate: '2023-01-17T10:10:13Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/adam-cowley/neo4j-vscode/main/LICENSE',
-    name: 'cypher',
-    scopeName: 'source.cypher',
-    sha: 'ad90d275ac76c740018e78f78722343f730270e0',
-    source: 'https://github.com/adam-cowley/neo4j-vscode/blob/ad90d275ac76c740018e78f78722343f730270e0/cypher/cypher.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/adam-cowley/neo4j-vscode/contents/cypher/cypher.tmLanguage?ref=ad90d275ac76c740018e78f78722343f730270e0',
-  },
-  {
-    byteSize: 42093,
-    displayName: 'D',
-    funding: [
-      {
-        handle: '@WebFreak001',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/WebFreak001',
+        "handle": "astrodotbuild",
+        "name": "Open Collective",
+        "url": "https://opencollective.com/astrodotbuild"
       },
       {
-        handle: 'WebFreak',
-        name: 'Patreon',
-        url: 'https://patreon.com/WebFreak',
-      },
+        "handle": "u/gh/withastro",
+        "name": "thanks.dev",
+        "url": "https://thanks.dev/d/u/gh/withastro"
+      }
     ],
-    hash: '0die406NmL02tZUAnLzynqqBbqoMxkGCmyTHZAYoc6Q',
-    lastUpdate: '2025-03-01T00:26:27Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Pure-D/code-d/master/LICENSE.md',
-    name: 'd',
-    scopeName: 'source.d',
-    sha: '71992a1a52a3025f3333e4025eee0f255a8cda03',
-    source: 'https://github.com/Pure-D/code-d/blob/71992a1a52a3025f3333e4025eee0f255a8cda03/syntaxes/d.json',
-    sourceApi: 'https://api.github.com/repos/Pure-D/code-d/contents/syntaxes/d.json?ref=71992a1a52a3025f3333e4025eee0f255a8cda03',
+    "hash": "9iVJZbAxHEKF0gzTQGHv5GsvZW6UYtKzNJKAnGoiqkM",
+    "lastUpdate": "2024-03-23T17:37:42Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/withastro/language-tools/main/LICENSE",
+    "name": "astro",
+    "scopeName": "source.astro",
+    "sha": "8e55c37cbcf134dedf0068781245da5a9d46d081",
+    "source": "https://github.com/withastro/language-tools/blob/8e55c37cbcf134dedf0068781245da5a9d46d081/packages/vscode/syntaxes/astro.tmLanguage.src.yaml",
+    "sourceApi": "https://api.github.com/repos/withastro/language-tools/contents/packages/vscode/syntaxes/astro.tmLanguage.src.yaml?ref=8e55c37cbcf134dedf0068781245da5a9d46d081"
   },
   {
-    byteSize: 7428,
-    categories: [
-      'general',
+    "byteSize": 5280,
+    "displayName": "AWK",
+    "funding": [
     ],
-    displayName: 'Dart',
-    funding: [
-    ],
-    hash: '3m3sTAphXXlBsFFMCtTIU16Je7izYC7XGBPP7TYBUdM',
-    lastUpdate: '2024-12-06T15:55:37Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'dart',
-    scopeName: 'source.dart',
-    sha: '8270a86019db7551da42b71d15c6080a414d8c81',
-    source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/dart/syntaxes/dart.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81',
+    "hash": "_DA0vZBWyjyGqKfg_rg5olmORXPxaP2kfr43gnmJf6Q",
+    "lastUpdate": "2016-01-20T17:08:42Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/luggage66/vscode-awk/master/LICENSE.txt",
+    "name": "awk",
+    "scopeName": "source.awk",
+    "sha": "eff8c0f160ae16592c8d9963fd77046137fd2612",
+    "source": "https://github.com/luggage66/vscode-awk/blob/eff8c0f160ae16592c8d9963fd77046137fd2612/syntaxes/awk.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/luggage66/vscode-awk/contents/syntaxes/awk.tmLanguage?ref=eff8c0f160ae16592c8d9963fd77046137fd2612"
   },
   {
-    byteSize: 5245,
-    displayName: 'DAX',
-    funding: [
+    "byteSize": 56350,
+    "displayName": "Ballerina",
+    "funding": [
     ],
-    hash: 'UFsarX0ylIyGOIOBe_JGQzfQdBMpVNQNT1cz3sgqXQg',
-    lastUpdate: '2021-08-10T18:28:52Z',
-    name: 'dax',
-    scopeName: 'source.dax',
-    sha: '7fd39aa84552617daa258189b2550dcdbd14149a',
-    source: 'https://github.com/huyza/dax-language/blob/7fd39aa84552617daa258189b2550dcdbd14149a/syntaxes/dax.grammer.json',
-    sourceApi: 'https://api.github.com/repos/huyza/dax-language/contents/syntaxes/dax.grammer.json?ref=7fd39aa84552617daa258189b2550dcdbd14149a',
+    "hash": "w5lbbESsUkfaU0k7NA4ML8vZaUqG6hlpAy1QTpNvpKM",
+    "lastUpdate": "2025-04-24T17:27:26Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/ballerina-platform/ballerina-grammar/master/LICENSE",
+    "name": "ballerina",
+    "scopeName": "source.ballerina",
+    "sha": "4bf70d328ae9e5a93219e44c031ab3776c76727a",
+    "source": "https://github.com/ballerina-platform/ballerina-grammar/blob/4bf70d328ae9e5a93219e44c031ab3776c76727a/syntaxes/ballerina.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/ballerina-platform/ballerina-grammar/contents/syntaxes/ballerina.tmLanguage?ref=4bf70d328ae9e5a93219e44c031ab3776c76727a"
   },
   {
-    byteSize: 1731,
-    categories: [
-      'config',
+    "aliases": [
+      "batch"
     ],
-    displayName: 'Desktop',
-    funding: [
+    "byteSize": 12586,
+    "categories": [
+      "scripting"
+    ],
+    "displayName": "Batch File",
+    "funding": [
+    ],
+    "hash": "5sWGWSwg33Merq9aEnYnb9lhkgzz_6em5Tas59Hmnl8",
+    "lastUpdate": "2021-05-04T11:41:54Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "bat",
+    "scopeName": "source.batchfile",
+    "sha": "df15c8e832a341633acd2e9bb26e1b275d09cfe0",
+    "source": "https://github.com/microsoft/vscode/blob/df15c8e832a341633acd2e9bb26e1b275d09cfe0/extensions/bat/syntaxes/batchfile.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/bat/syntaxes/batchfile.tmLanguage.json?ref=df15c8e832a341633acd2e9bb26e1b275d09cfe0"
+  },
+  {
+    "byteSize": 9893,
+    "displayName": "Beancount",
+    "funding": [
+    ],
+    "hash": "Dzy3xN5rJaeXRnHW_5C63i4jP3ijzPfc2gWdjLCnCQg",
+    "lastUpdate": "2024-01-11T08:43:22Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE",
+    "name": "beancount",
+    "scopeName": "text.beancount",
+    "sha": "ffc762e047bb09ed5d16508b302aef16a6057139",
+    "source": "https://github.com/Lencerf/vscode-beancount/blob/ffc762e047bb09ed5d16508b302aef16a6057139/syntaxes/beancount.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/Lencerf/vscode-beancount/contents/syntaxes/beancount.tmLanguage?ref=ffc762e047bb09ed5d16508b302aef16a6057139"
+  },
+  {
+    "aliases": [
+      "be"
+    ],
+    "byteSize": 2112,
+    "displayName": "Berry",
+    "funding": [
+    ],
+    "hash": "smk-mipL2yBr6UqoaY5w57jLWadIVcRDn9NEja0mr-s",
+    "lastUpdate": "2023-07-16T13:39:37Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/berry-lang/berry/master/LICENSE",
+    "name": "berry",
+    "scopeName": "source.berry",
+    "sha": "a0f5c044a3b593deaf87292ca6f04c2343e53dc8",
+    "source": "https://github.com/berry-lang/berry/blob/a0f5c044a3b593deaf87292ca6f04c2343e53dc8/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json",
+    "sourceApi": "https://api.github.com/repos/berry-lang/berry/contents/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json?ref=a0f5c044a3b593deaf87292ca6f04c2343e53dc8"
+  },
+  {
+    "byteSize": 4621,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "BibTeX",
+    "funding": [
+    ],
+    "hash": "ercXfCfOI0O4LNB5C-Q4PU6993MvdmiX2in2wXzyRsQ",
+    "lastUpdate": "2025-04-02T13:41:58Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "bibtex",
+    "scopeName": "text.bibtex",
+    "sha": "9a2c94d213696a4453b6d9988b003d98e7646e75",
+    "source": "https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/Bibtex.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/Bibtex.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75"
+  },
+  {
+    "byteSize": 3978,
+    "displayName": "Bicep",
+    "funding": [
+    ],
+    "hash": "s08ulLSLCbTEIf04bcZKEKLOh_wf4P-O9IctLXBIgUk",
+    "lastUpdate": "2025-04-07T23:18:55Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Azure/bicep/main/LICENSE",
+    "name": "bicep",
+    "scopeName": "source.bicep",
+    "sha": "8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e",
+    "source": "https://github.com/Azure/bicep/blob/8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e/src/textmate/bicep.tmlanguage",
+    "sourceApi": "https://api.github.com/repos/Azure/bicep/contents/src/textmate/bicep.tmlanguage?ref=8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e"
+  },
+  {
+    "byteSize": 101282,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "Blade",
+    "embedded": [
+      "html-derivative",
+      "html",
+      "xml",
+      "sql",
+      "javascript",
+      "json",
+      "css"
+    ],
+    "funding": [
+    ],
+    "hash": "ksB2H6rifgJnrJ0oWImwNJNltRItj9OzZOdUaPmd6W4",
+    "lastUpdate": "2024-06-01T01:31:57Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/laravel/vs-code-extension/main/LICENSE.md",
+    "name": "blade",
+    "scopeName": "text.html.php.blade",
+    "sha": "fa52467b5f7393407c9acc9b95d3794f67e266da",
+    "source": "https://github.com/laravel/vs-code-extension/blob/fa52467b5f7393407c9acc9b95d3794f67e266da/syntaxes/blade.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/laravel/vs-code-extension/contents/syntaxes/blade.tmLanguage.json?ref=fa52467b5f7393407c9acc9b95d3794f67e266da"
+  },
+  {
+    "aliases": [
+      "bx",
+      "bxs"
+    ],
+    "byteSize": 14420,
+    "categories": [
+      "general",
+      "web"
+    ],
+    "displayName": "BoxLang",
+    "embedded": [
+      "boxlang-template"
+    ],
+    "funding": [
+    ],
+    "hash": "i_odOVq5YhQf-IT9VFsTjpR9sJzhJ4BlLfGcY2OiKMo",
+    "lastUpdate": "2025-06-21T12:47:54Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/ortus-boxlang/boxlang.tmbundle/development/license.txt",
+    "name": "boxlang",
+    "scopeName": "source.boxlang",
+    "sha": "231211a12c8eb243366d04b78a54b263ee5af372",
+    "source": "https://github.com/ortus-boxlang/boxlang.tmbundle/blob/231211a12c8eb243366d04b78a54b263ee5af372/Syntaxes/boxlang.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/ortus-boxlang/boxlang.tmbundle/contents/Syntaxes/boxlang.tmLanguage.json?ref=231211a12c8eb243366d04b78a54b263ee5af372"
+  },
+  {
+    "aliases": [
+      "bxm"
+    ],
+    "byteSize": 13769,
+    "categories": [
+      "general",
+      "markup",
+      "web"
+    ],
+    "displayName": "BoxLang Templating",
+    "embedded": [
+      "boxlang"
+    ],
+    "funding": [
+    ],
+    "hash": "Ya06e_9ZlMeKagOYnSkmClgdSzn26EFK1qpXG9mmF_0",
+    "lastUpdate": "2025-06-21T12:47:54Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/ortus-boxlang/boxlang.tmbundle/development/license.txt",
+    "name": "boxlang-template",
+    "scopeName": "source.boxlang.template",
+    "sha": "231211a12c8eb243366d04b78a54b263ee5af372",
+    "source": "https://github.com/ortus-boxlang/boxlang.tmbundle/blob/231211a12c8eb243366d04b78a54b263ee5af372/Syntaxes/boxlang-template.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/ortus-boxlang/boxlang.tmbundle/contents/Syntaxes/boxlang-template.tmLanguage.json?ref=231211a12c8eb243366d04b78a54b263ee5af372"
+  },
+  {
+    "aliases": [
+      "1c"
+    ],
+    "byteSize": 33379,
+    "categories": [
+      "general",
+      "dsl"
+    ],
+    "displayName": "1C (Enterprise)",
+    "embedded": [
+      "sdbl"
+    ],
+    "funding": [
+    ],
+    "hash": "6Guw8KjRDh1WLCJNIRbihihSjCFKHO4zgRV_ZnG6EkM",
+    "lastUpdate": "2024-11-05T21:35:36Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md",
+    "name": "bsl",
+    "scopeName": "source.bsl",
+    "sha": "2cde5a65a17b82b5363affadf5a620ebb0a026dc",
+    "source": "https://github.com/1c-syntax/vsc-language-1c-bsl/blob/2cde5a65a17b82b5363affadf5a620ebb0a026dc/syntaxes/1c.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/1c-syntax/vsc-language-1c-bsl/contents/syntaxes/1c.tmLanguage.json?ref=2cde5a65a17b82b5363affadf5a620ebb0a026dc"
+  },
+  {
+    "byteSize": 69561,
+    "categories": [
+      "general"
+    ],
+    "displayName": "C",
+    "funding": [
+    ],
+    "hash": "OPzGZcqTiD4eJlHJlZ7dcE4aoM06lYU4lqeZAi906w0",
+    "lastUpdate": "2022-06-10T13:55:11Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "c",
+    "scopeName": "source.c",
+    "sha": "bd1abe08c38bb5deccf65610f8f3c03d2338d20d",
+    "source": "https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/cpp/syntaxes/c.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/c.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d"
+  },
+  {
+    "aliases": [
+      "cdc"
+    ],
+    "byteSize": 10104,
+    "displayName": "Cadence",
+    "funding": [
+    ],
+    "hash": "-5DoZ6uCQ1jVa4T63q-jVa0yCe3Nt0ysw2TKfoYq5_U",
+    "lastUpdate": "2022-07-04T20:41:15Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/onflow/vscode-cadence/master/LICENSE",
+    "name": "cadence",
+    "scopeName": "source.cadence",
+    "sha": "e227d66c0346d2229da8c81a116abefdcda5f443",
+    "source": "https://github.com/onflow/vscode-cadence/blob/e227d66c0346d2229da8c81a116abefdcda5f443/extension/language/syntaxes/cadence.tmGrammar.json",
+    "sourceApi": "https://api.github.com/repos/onflow/vscode-cadence/contents/extension/language/syntaxes/cadence.tmGrammar.json?ref=e227d66c0346d2229da8c81a116abefdcda5f443"
+  },
+  {
+    "byteSize": 2727,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Cairo",
+    "embedded": [
+      "python"
+    ],
+    "funding": [
+    ],
+    "hash": "nPcmYvxJaVabwBVHr77SvQQCOPbDnSBlQoWnGUVa1BQ",
+    "lastUpdate": "2024-08-18T08:38:43Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/starkware-libs/cairo-lang/master/LICENSE.txt",
+    "name": "cairo",
+    "scopeName": "source.cairo0",
+    "sha": "4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5",
+    "source": "https://github.com/starkware-libs/cairo-lang/blob/4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/starkware-libs/cairo-lang/contents/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json?ref=4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5"
+  },
+  {
+    "byteSize": 13623,
+    "categories": [
+      "lisp"
+    ],
+    "displayName": "Clarity",
+    "funding": [
+    ],
+    "hash": "wXvuKP9Wh52za_AKE1BIeY1Uje64DTH9-BMzVBbcaD0",
+    "lastUpdate": "2024-06-28T13:13:11Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/hirosystems/clarity.tmbundle/main/LICENSE",
+    "name": "clarity",
+    "scopeName": "source.clar",
+    "sha": "52508cc05304780d80a5dc817fcc35c6760c5459",
+    "source": "https://github.com/hirosystems/clarity.tmbundle/blob/52508cc05304780d80a5dc817fcc35c6760c5459/Syntaxes/clarity.JSON-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/hirosystems/clarity.tmbundle/contents/Syntaxes/clarity.JSON-tmLanguage?ref=52508cc05304780d80a5dc817fcc35c6760c5459"
+  },
+  {
+    "aliases": [
+      "clj"
+    ],
+    "byteSize": 6160,
+    "categories": [
+      "general",
+      "lisp"
+    ],
+    "displayName": "Clojure",
+    "funding": [
+    ],
+    "hash": "3lOZnNEp7Jzsjqes6BT17qIMoGKnLIB4XI3vT0M7zjY",
+    "lastUpdate": "2022-01-31T15:49:23Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "clojure",
+    "scopeName": "source.clojure",
+    "sha": "a1a4c0a63b1ad59e84f54b874744fe35dea9abe1",
+    "source": "https://github.com/microsoft/vscode/blob/a1a4c0a63b1ad59e84f54b874744fe35dea9abe1/extensions/clojure/syntaxes/clojure.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/clojure/syntaxes/clojure.tmLanguage.json?ref=a1a4c0a63b1ad59e84f54b874744fe35dea9abe1"
+  },
+  {
+    "byteSize": 9603,
+    "categories": [
+      "config"
+    ],
+    "displayName": "CMake",
+    "funding": [
+    ],
+    "hash": "fFhrWGgXTtJlEAwErDHxukPGbvnJmZ7kw5RCEdLtf18",
+    "lastUpdate": "2017-11-20T20:37:32Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/twxs/vs.language.cmake/master/LICENSE",
+    "name": "cmake",
+    "scopeName": "source.cmake",
+    "sha": "19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f",
+    "source": "https://github.com/twxs/vs.language.cmake/blob/19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f/syntaxes/CMake.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/twxs/vs.language.cmake/contents/syntaxes/CMake.tmLanguage?ref=19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f"
+  },
+  {
+    "byteSize": 38202,
+    "displayName": "COBOL",
+    "embedded": [
+      "html",
+      "java"
+    ],
+    "funding": [
+    ],
+    "hash": "lF4T2DcSya3MJshKUUA3tcpCB6ZfKFXlg9dIw1Zyn1o",
+    "lastUpdate": "2025-03-27T20:12:33Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE",
+    "name": "cobol",
+    "scopeName": "source.cobol",
+    "sha": "439cc876fb63b73244502fe67aae909c4a458e49",
+    "source": "https://github.com/spgennard/vscode_cobol/blob/439cc876fb63b73244502fe67aae909c4a458e49/syntaxes/COBOL.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=439cc876fb63b73244502fe67aae909c4a458e49"
+  },
+  {
+    "byteSize": 471,
+    "displayName": "CODEOWNERS",
+    "funding": [
+    ],
+    "hash": "t0TQSGVW7tx-vUnKt0e6t_uVq_DZ-p4HzmS9nvTZSZQ",
+    "lastUpdate": "2018-12-19T21:50:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/jasonnutter/vscode-codeowners/master/LICENSE.txt",
+    "name": "codeowners",
+    "scopeName": "text.codeowners",
+    "sha": "219dee0ab25c1bfad0b9de84180117e71221a653",
+    "source": "https://github.com/jasonnutter/vscode-codeowners/blob/219dee0ab25c1bfad0b9de84180117e71221a653/syntaxes/codeowners.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/jasonnutter/vscode-codeowners/contents/syntaxes/codeowners.tmLanguage.json?ref=219dee0ab25c1bfad0b9de84180117e71221a653"
+  },
+  {
+    "aliases": [
+      "ql"
+    ],
+    "byteSize": 26403,
+    "displayName": "CodeQL",
+    "funding": [
+    ],
+    "hash": "-UAFXDV3T70s_QFR2FhF3zzwXLuGVWQ7RVYHPhx7SP4",
+    "lastUpdate": "2025-01-20T17:49:31Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/github/vscode-codeql/main/LICENSE.md",
+    "name": "codeql",
+    "scopeName": "source.ql",
+    "sha": "a6266bbcc88702619ceb580253a65e8f83333c1b",
+    "source": "https://github.com/github/vscode-codeql/blob/a6266bbcc88702619ceb580253a65e8f83333c1b/syntaxes/ql.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/github/vscode-codeql/contents/syntaxes/ql.tmLanguage.json?ref=a6266bbcc88702619ceb580253a65e8f83333c1b"
+  },
+  {
+    "aliases": [
+      "coffeescript"
+    ],
+    "byteSize": 26497,
+    "categories": [
+      "web",
+      "scripting",
+      "general"
+    ],
+    "displayName": "CoffeeScript",
+    "embedded": [
+      "javascript"
+    ],
+    "funding": [
+    ],
+    "hash": "CNu5pwwMrAElRw_9PuH_Y8T1cAnxAkV0bxLBzHlvVGs",
+    "lastUpdate": "2019-01-25T23:34:58Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "coffee",
+    "scopeName": "source.coffee",
+    "sha": "ff58f5083f57b50e6a100ab60454dfb72fe21e80",
+    "source": "https://github.com/microsoft/vscode/blob/ff58f5083f57b50e6a100ab60454dfb72fe21e80/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json?ref=ff58f5083f57b50e6a100ab60454dfb72fe21e80"
+  },
+  {
+    "aliases": [
+      "lisp"
+    ],
+    "byteSize": 22067,
+    "categories": [
+      "general",
+      "lisp"
+    ],
+    "displayName": "Common Lisp",
+    "funding": [
+    ],
+    "hash": "FiiqYQ7m09ijKw0Lk7MVyTY1GWpzJr6b1T1RGklNVmY",
+    "lastUpdate": "2024-05-10T18:29:42Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/qingpeng9802/vscode-common-lisp/master/LICENSE",
+    "name": "common-lisp",
+    "scopeName": "source.commonlisp",
+    "sha": "79d04dc9ca80d98e65c4f28b3d67a24a7829b18f",
+    "source": "https://github.com/qingpeng9802/vscode-common-lisp/blob/79d04dc9ca80d98e65c4f28b3d67a24a7829b18f/syntaxes/commonlisp.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/qingpeng9802/vscode-common-lisp/contents/syntaxes/commonlisp.tmLanguage.json?ref=79d04dc9ca80d98e65c4f28b3d67a24a7829b18f"
+  },
+  {
+    "byteSize": 5235,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Coq",
+    "funding": [
+    ],
+    "hash": "rKbKow-2GyoGjnPqSklzBqUqs4b7pjSO0VNBGOM6O2I",
+    "lastUpdate": "2025-05-22T15:18:27Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/rocq-prover/vsrocq/main/LICENSE",
+    "name": "coq",
+    "scopeName": "source.coq",
+    "sha": "201351854c2f8397701d8cf51d923f5a7946a8a2",
+    "source": "https://github.com/coq-community/vscoq/blob/201351854c2f8397701d8cf51d923f5a7946a8a2/client/syntax/coq.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/coq-community/vscoq/contents/client/syntax/coq.tmLanguage.json?ref=201351854c2f8397701d8cf51d923f5a7946a8a2"
+  },
+  {
+    "aliases": [
+      "c++"
+    ],
+    "byteSize": 381659,
+    "categories": [
+      "general"
+    ],
+    "displayName": "C++",
+    "embedded": [
+      "cpp-macro",
+      "regexp",
+      "glsl",
+      "sql"
+    ],
+    "funding": [
+    ],
+    "hash": "XdIxlLlMGqa2--CibpJwA9BNIdxNO-Ac4eUD-ySRlDQ",
+    "lastUpdate": "2023-03-29T09:38:06Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "cpp",
+    "scopeName": "source.cpp",
+    "sha": "6ac83c7c7dda9f27ca1fe9d98675253e010b75d1",
+    "source": "https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/cpp.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1"
+  },
+  {
+    "byteSize": 28049,
+    "displayName": "Crystal",
+    "embedded": [
+      "html",
+      "sql",
+      "css",
+      "c",
+      "javascript",
+      "shellscript"
+    ],
+    "funding": [
+    ],
+    "hash": "_fLlqnE9huThsGOmjuY0fmrZC_WpbM1R6Ugttm0Gh_A",
+    "lastUpdate": "2024-02-26T14:51:19Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/crystal-lang-tools/vscode-crystal-lang/master/LICENSE",
+    "name": "crystal",
+    "scopeName": "source.crystal",
+    "sha": "c920b0931ec5f05b78447dbff31b172c64f1d734",
+    "source": "https://github.com/crystal-lang-tools/vscode-crystal-lang/blob/c920b0931ec5f05b78447dbff31b172c64f1d734/syntaxes/crystal.json",
+    "sourceApi": "https://api.github.com/repos/crystal-lang-tools/vscode-crystal-lang/contents/syntaxes/crystal.json?ref=c920b0931ec5f05b78447dbff31b172c64f1d734"
+  },
+  {
+    "aliases": [
+      "c#",
+      "cs"
+    ],
+    "byteSize": 82327,
+    "categories": [
+      "general"
+    ],
+    "displayName": "C#",
+    "funding": [
+    ],
+    "hash": "kbih3rZQme5EYFEHLPfQ--OrzcmCUFAhnqnT5WTwEyc",
+    "lastUpdate": "2025-02-28T12:20:44Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "csharp",
+    "scopeName": "source.cs",
+    "sha": "a26707320440021f45b508767c94c2634eb6e897",
+    "source": "https://github.com/microsoft/vscode/blob/a26707320440021f45b508767c94c2634eb6e897/extensions/csharp/syntaxes/csharp.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/csharp/syntaxes/csharp.tmLanguage.json?ref=a26707320440021f45b508767c94c2634eb6e897"
+  },
+  {
+    "byteSize": 48053,
+    "categories": [
+      "web"
+    ],
+    "displayName": "CSS",
+    "funding": [
+    ],
+    "hash": "u3SSRC1E7eqV_opOqHy6Rql1MKhXWAE012EJdcHfKyc",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "css",
+    "scopeName": "source.css",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/css/syntaxes/css.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
+  },
+  {
+    "byteSize": 1017,
+    "categories": [
+      "data"
+    ],
+    "displayName": "CSV",
+    "funding": [
+    ],
+    "hash": "66NcixdWcxdDsGeZ9TYVByGptlmFnAPtRk0mfRvVkMQ",
+    "lastUpdate": "2019-01-31T01:50:13Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE",
+    "name": "csv",
+    "scopeName": "text.csv",
+    "sha": "3bdafafa12940a75166089b64bdd80b1d3b071db",
+    "source": "https://github.com/mechatroner/vscode_rainbow_csv/blob/3bdafafa12940a75166089b64bdd80b1d3b071db/syntaxes/csv.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/mechatroner/vscode_rainbow_csv/contents/syntaxes/csv.tmLanguage.json?ref=3bdafafa12940a75166089b64bdd80b1d3b071db"
+  },
+  {
+    "byteSize": 15455,
+    "displayName": "CUE",
+    "funding": [
+    ],
+    "hash": "Xvdnh60Hf25u7c-opsMgYVIBMkqs52lLmX1X4qx7jss",
+    "lastUpdate": "2024-09-04T15:25:05Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/cue-lang/vscode-cue/master/LICENSE",
+    "name": "cue",
+    "scopeName": "source.cue",
+    "sha": "a9ee96a7e61fb8acd39f7403144d0b6f45652987",
+    "source": "https://github.com/cue-lang/vscode-cue/blob/a9ee96a7e61fb8acd39f7403144d0b6f45652987/extension/syntaxes/cue.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/cue-lang/vscode-cue/contents/extension/syntaxes/cue.tmLanguage.json?ref=a9ee96a7e61fb8acd39f7403144d0b6f45652987"
+  },
+  {
+    "aliases": [
+      "cql"
+    ],
+    "byteSize": 5662,
+    "displayName": "Cypher",
+    "funding": [
+    ],
+    "hash": "Pm4tANPp8-1KIbrJG4uiFCA0t89ILo2uUiC3s3s6-bo",
+    "lastUpdate": "2023-01-17T10:10:13Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/adam-cowley/neo4j-vscode/main/LICENSE",
+    "name": "cypher",
+    "scopeName": "source.cypher",
+    "sha": "ad90d275ac76c740018e78f78722343f730270e0",
+    "source": "https://github.com/adam-cowley/neo4j-vscode/blob/ad90d275ac76c740018e78f78722343f730270e0/cypher/cypher.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/adam-cowley/neo4j-vscode/contents/cypher/cypher.tmLanguage?ref=ad90d275ac76c740018e78f78722343f730270e0"
+  },
+  {
+    "byteSize": 42093,
+    "displayName": "D",
+    "funding": [
       {
-        name: 'paypal.com',
-        url: 'https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ',
-      },
-    ],
-    hash: 'D94fkVMf-9GNupFzOFUY2sjScS_cdzXCMDkUpuqJsu4',
-    lastUpdate: '2021-07-19T18:36:02Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nico-castell/desktop-file-support/main/LICENSE',
-    name: 'desktop',
-    scopeName: 'source.desktop',
-    sha: '63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e',
-    source: 'https://github.com/nico-castell/desktop-file-support/blob/63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e/syntaxes/desktop.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nico-castell/desktop-file-support/contents/syntaxes/desktop.tmLanguage.json?ref=63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e',
-  },
-  {
-    byteSize: 2437,
-    categories: [
-      'utility',
-    ],
-    displayName: 'Diff',
-    funding: [
-    ],
-    hash: 'ik4Zxh07S4K9d2EaC3faq6jOYa_Cdx65dLnwf1DIQl0',
-    lastUpdate: '2021-11-12T09:59:52Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'diff',
-    scopeName: 'source.diff',
-    sha: '4549bd26c7b799284e0ebd8dc1e0310e6a8707a1',
-    source: 'https://github.com/microsoft/vscode/blob/4549bd26c7b799284e0ebd8dc1e0310e6a8707a1/extensions/diff/syntaxes/diff.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/diff/syntaxes/diff.tmLanguage.json?ref=4549bd26c7b799284e0ebd8dc1e0310e6a8707a1',
-  },
-  {
-    aliases: [
-      'dockerfile',
-    ],
-    byteSize: 1618,
-    categories: [
-      'config',
-    ],
-    displayName: 'Dockerfile',
-    funding: [
-    ],
-    hash: 'soI4MtWZhWB7exGgkfjWQWhTePeB-HRF606X_aVPOiU',
-    lastUpdate: '2024-12-06T15:55:37Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'docker',
-    scopeName: 'source.dockerfile',
-    sha: '8270a86019db7551da42b71d15c6080a414d8c81',
-    source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/docker/syntaxes/docker.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/docker/syntaxes/docker.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81',
-  },
-  {
-    byteSize: 1331,
-    displayName: 'dotEnv',
-    funding: [
-    ],
-    hash: 'sAz2IEDNM4YTm3TmMr4sQFJ2rPeOr44g6NvxpOEX9hc',
-    lastUpdate: '2023-06-15T08:23:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/dotenv-org/dotenv-vscode/master/LICENSE',
-    name: 'dotenv',
-    scopeName: 'source.dotenv',
-    sha: 'e7e41baa5b23e01c1ff0567a4e596c24860e7def',
-    source: 'https://github.com/dotenv-org/dotenv-vscode/blob/e7e41baa5b23e01c1ff0567a4e596c24860e7def/syntaxes/dotenv.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/dotenv-org/dotenv-vscode/contents/syntaxes/dotenv.tmLanguage.json?ref=e7e41baa5b23e01c1ff0567a4e596c24860e7def',
-  },
-  {
-    byteSize: 9940,
-    displayName: 'Dream Maker',
-    funding: [
-    ],
-    hash: 'skTA6ka9a0pVfuEJFTzEQ0Rj8KxU1MpMukIWR0TFX88',
-    lastUpdate: '2017-01-06T06:55:48Z',
-    name: 'dream-maker',
-    scopeName: 'source.dm',
-    sha: '22d2bf0325f65697ea542856280f66e9e098f4a2',
-    source: 'https://github.com/gbasood/vscode-atomic-dreams/blob/22d2bf0325f65697ea542856280f66e9e098f4a2/syntaxes/dm.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/gbasood/vscode-atomic-dreams/contents/syntaxes/dm.tmLanguage.json?ref=22d2bf0325f65697ea542856280f66e9e098f4a2',
-  },
-  {
-    byteSize: 2020,
-    displayName: 'Edge',
-    embedded: [
-      'typescript',
-      'html',
-      'html-derivative',
-    ],
-    funding: [
-    ],
-    hash: 'rERYpL1kih8CnUACM8Re174NSo_mzI-kTN0JliXl-n0',
-    lastUpdate: '2024-02-05T08:06:04Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/edge-js/edge-vscode/main/LICENSE.md',
-    name: 'edge',
-    scopeName: 'text.html.edge',
-    sha: '04352c41981ca664598674556afa63bd393a10f3',
-    source: 'https://github.com/edge-js/edge-vscode/blob/04352c41981ca664598674556afa63bd393a10f3/syntaxes/edge.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/edge-js/edge-vscode/contents/syntaxes/edge.tmLanguage.json?ref=04352c41981ca664598674556afa63bd393a10f3',
-  },
-  {
-    byteSize: 15558,
-    displayName: 'Elixir',
-    embedded: [
-      'html',
-    ],
-    funding: [
-    ],
-    hash: '4uthCzdDmmvhZHrxEBFBncM1mcjkNvrfueFhWuQAtHM',
-    lastUpdate: '2021-12-27T20:12:19Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/elixir-editors/elixir-tmbundle/master/LICENSE',
-    name: 'elixir',
-    scopeName: 'source.elixir',
-    sha: '43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9',
-    source: 'https://github.com/elixir-editors/elixir-tmbundle/blob/43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9/Syntaxes/Elixir.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/elixir-editors/elixir-tmbundle/contents/Syntaxes/Elixir.tmLanguage?ref=43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9',
-  },
-  {
-    byteSize: 10519,
-    displayName: 'Elm',
-    embedded: [
-      'glsl',
-    ],
-    funding: [
-      {
-        handle: '@razzeee',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/razzeee',
-      },
-      {
-        handle: '@jmbockhorst',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/jmbockhorst',
-      },
-      {
-        handle: 'elm-tooling',
-        name: 'Open Collective',
-        url: 'https://opencollective.com/elm-tooling',
-      },
-    ],
-    hash: '01GDlYkz2tOgywtDnt9PetCbuXvfjv0SXdYk3bKfsyc',
-    lastUpdate: '2020-08-01T18:50:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/elm-tooling/elm-language-client-vscode/main/LICENSE',
-    name: 'elm',
-    scopeName: 'source.elm',
-    sha: 'c70351314682c2e0fae8a402ebb301da79821c37',
-    source: 'https://github.com/elm-tooling/elm-language-client-vscode/blob/c70351314682c2e0fae8a402ebb301da79821c37/syntaxes/elm-syntax.json',
-    sourceApi: 'https://api.github.com/repos/elm-tooling/elm-language-client-vscode/contents/syntaxes/elm-syntax.json?ref=c70351314682c2e0fae8a402ebb301da79821c37',
-  },
-  {
-    aliases: [
-      'elisp',
-    ],
-    byteSize: 778654,
-    categories: [
-      'lisp',
-    ],
-    displayName: 'Emacs Lisp',
-    funding: [
-    ],
-    hash: 'lXLyyDffGwt78bhdP_UWfs6Ft7iM8g01EnZ1o6pOen8',
-    lastUpdate: '2023-09-07T13:17:43Z',
-    license: 'ISC',
-    licenseUrl: 'https://raw.githubusercontent.com/Alhadis/language-emacs-lisp/master/LICENSE.md',
-    name: 'emacs-lisp',
-    scopeName: 'source.emacs.lisp',
-    sha: '07ef9e419b80478a0976acbc6ef9d190b07e508e',
-    source: 'https://github.com/Alhadis/language-emacs-lisp/blob/07ef9e419b80478a0976acbc6ef9d190b07e508e/grammars/emacs-lisp.cson',
-    sourceApi: 'https://api.github.com/repos/Alhadis/language-emacs-lisp/contents/grammars/emacs-lisp.cson?ref=07ef9e419b80478a0976acbc6ef9d190b07e508e',
-  },
-  {
-    byteSize: 1942,
-    displayName: 'ERB',
-    embedded: [
-      'html',
-      'ruby',
-    ],
-    funding: [
-    ],
-    hash: '7NF4L3Y_pG3G-FSFStkuzzBZM71kSNmC6oTjAOzneo8',
-    lastUpdate: '2014-10-30T18:38:50Z',
-    name: 'erb',
-    scopeName: 'text.html.erb',
-    sha: 'ecf0f1df23984bcff9b51552e35d9696cb0d9539',
-    source: 'https://github.com/textmate/ruby.tmbundle/blob/ecf0f1df23984bcff9b51552e35d9696cb0d9539/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/ruby.tmbundle/contents/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage?ref=ecf0f1df23984bcff9b51552e35d9696cb0d9539',
-  },
-  {
-    aliases: [
-      'erl',
-    ],
-    byteSize: 36508,
-    displayName: 'Erlang',
-    funding: [
-    ],
-    hash: 'oHouv8LT1FlEh39LYc_RlJPvnLFp8rw0EZh-LmZqAZo',
-    lastUpdate: '2025-04-23T12:34:14Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/erlang-ls/grammar/main/LICENSE',
-    name: 'erlang',
-    scopeName: 'source.erlang',
-    sha: '6115175e7e574f69637eaee3db7731915c6f03aa',
-    source: 'https://github.com/erlang-ls/grammar/blob/6115175e7e574f69637eaee3db7731915c6f03aa/Erlang.plist',
-    sourceApi: 'https://api.github.com/repos/erlang-ls/grammar/contents/Erlang.plist?ref=6115175e7e574f69637eaee3db7731915c6f03aa',
-  },
-  {
-    byteSize: 4634,
-    categories: [
-      'lisp',
-    ],
-    displayName: 'Fennel',
-    funding: [
-    ],
-    hash: 'NSwYpgTmjTcA7_9scAlPkIZ4yYpx0YR2ah_Yl3CnuCo',
-    lastUpdate: '2021-05-05T22:44:42Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/kongeor/vsc-fennel/master/LICENSE',
-    name: 'fennel',
-    scopeName: 'source.fnl',
-    sha: '664148923d7bd72531120d0cba712c6dba6f698d',
-    source: 'https://github.com/kongeor/vsc-fennel/blob/664148923d7bd72531120d0cba712c6dba6f698d/syntaxes/fennel.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/kongeor/vsc-fennel/contents/syntaxes/fennel.tmLanguage.json?ref=664148923d7bd72531120d0cba712c6dba6f698d',
-  },
-  {
-    byteSize: 3971,
-    categories: [
-      'scripting',
-    ],
-    displayName: 'Fish',
-    funding: [
-    ],
-    hash: 'ybTgKA2dGQNcghVfgive4rQ1_thBexLLS8e9KZymy3o',
-    lastUpdate: '2022-01-23T01:18:50Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/bmalehorn/vscode-fish/master/LICENSE',
-    name: 'fish',
-    scopeName: 'source.fish',
-    sha: '2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718',
-    source: 'https://github.com/bmalehorn/vscode-fish/blob/2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718/syntaxes/fish.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/bmalehorn/vscode-fish/contents/syntaxes/fish.tmLanguage.json?ref=2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718',
-  },
-  {
-    aliases: [
-      'ftl',
-    ],
-    byteSize: 3466,
-    displayName: 'Fluent',
-    funding: [
-    ],
-    hash: 'sFuhS1T50P-OrHVnVvME3LtC0dyV0N2HhpW-R666xDA',
-    lastUpdate: '2022-07-23T20:00:33Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/macabeus/vscode-fluent/master/LICENSE',
-    name: 'fluent',
-    scopeName: 'source.ftl',
-    sha: '8544ea296a7769a359f43ddff4dc4b6c61f5cf59',
-    source: 'https://github.com/macabeus/vscode-fluent/blob/8544ea296a7769a359f43ddff4dc4b6c61f5cf59/syntaxes/fluent.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/macabeus/vscode-fluent/contents/syntaxes/fluent.tmLanguage.json?ref=8544ea296a7769a359f43ddff4dc4b6c61f5cf59',
-  },
-  {
-    aliases: [
-      'f',
-      'for',
-      'f77',
-    ],
-    byteSize: 903,
-    displayName: 'Fortran (Fixed Form)',
-    embedded: [
-      'fortran-free-form',
-    ],
-    funding: [
-    ],
-    hash: 'blGoriEW3zDismfKI7bNrms7dB556ug8Y3guSD6_66o',
-    lastUpdate: '2021-11-09T22:09:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
-    name: 'fortran-fixed-form',
-    scopeName: 'source.fortran.fixed',
-    sha: 'e642012094fc0a7379f204bb4e61243005afb1da',
-    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/e642012094fc0a7379f204bb4e61243005afb1da/syntaxes/fortran_fixed-form.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/fortran-lang/vscode-fortran-support/contents/syntaxes/fortran_fixed-form.tmLanguage.json?ref=e642012094fc0a7379f204bb4e61243005afb1da',
-  },
-  {
-    aliases: [
-      'f90',
-      'f95',
-      'f03',
-      'f08',
-      'f18',
-    ],
-    byteSize: 84130,
-    displayName: 'Fortran (Free Form)',
-    funding: [
-    ],
-    hash: 'KcLieNVdT4NJ1daIMfcBpqJrM9jO10c8MtqDSrPoo-4',
-    lastUpdate: '2023-05-09T01:04:12Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE',
-    name: 'fortran-free-form',
-    scopeName: 'source.fortran.free',
-    sha: 'f7fb41579770a0d8c75b9f295d167b31147b4f33',
-    source: 'https://github.com/fortran-lang/vscode-fortran-support/blob/f7fb41579770a0d8c75b9f295d167b31147b4f33/syntaxes/fortran_free-form.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/fortran-lang/vscode-fortran-support/contents/syntaxes/fortran_free-form.tmLanguage.json?ref=f7fb41579770a0d8c75b9f295d167b31147b4f33',
-  },
-  {
-    aliases: [
-      'f#',
-      'fs',
-    ],
-    byteSize: 24440,
-    categories: [
-      'general',
-    ],
-    displayName: 'F#',
-    embedded: [
-      'markdown',
-    ],
-    funding: [
-    ],
-    hash: 'vC35xKFiu851Z2Tg_ZmO4u7K-Dmd0a4zxrvo9IebCmI',
-    lastUpdate: '2024-09-27T08:27:11Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'fsharp',
-    scopeName: 'source.fsharp',
-    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
-    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/fsharp/syntaxes/fsharp.tmLanguage.json?ref=e67b1982e1ab318288b8196ad503273dcb168049',
-  },
-  {
-    byteSize: 4831,
-    displayName: 'GDResource',
-    embedded: [
-      'gdshader',
-      'gdscript',
-    ],
-    funding: [
-      {
-        name: 'fund.godotengine.org',
-        url: 'https://fund.godotengine.org/',
-      },
-    ],
-    hash: 'a_SeHnF7ntduTw1bSSQ1QYbiRbAMaNhHDGGkiFyTX6A',
-    lastUpdate: '2023-12-06T14:53:10Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
-    name: 'gdresource',
-    scopeName: 'source.gdresource',
-    sha: 'e7e2d0439dea0fb3a568378554c81e0a17348a84',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDResource.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84',
-  },
-  {
-    byteSize: 18247,
-    displayName: 'GDScript',
-    funding: [
-      {
-        name: 'fund.godotengine.org',
-        url: 'https://fund.godotengine.org/',
-      },
-    ],
-    hash: 'C_YJPTJfva14j7AhQ0pJLbiwX1uL1H0hZsnaYumnsTg',
-    lastUpdate: '2025-04-26T20:00:15Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
-    name: 'gdscript',
-    scopeName: 'source.gdscript',
-    sha: '911a34fda4d4ffacb04dc7fa4737347ac95ddb40',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/911a34fda4d4ffacb04dc7fa4737347ac95ddb40/syntaxes/GDScript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDScript.tmLanguage.json?ref=911a34fda4d4ffacb04dc7fa4737347ac95ddb40',
-  },
-  {
-    byteSize: 6048,
-    displayName: 'GDShader',
-    funding: [
-      {
-        name: 'fund.godotengine.org',
-        url: 'https://fund.godotengine.org/',
-      },
-    ],
-    hash: 'LZmhmd07-B6US6utFu4ht9r-2bH9mOUXPDYOVgMveE4',
-    lastUpdate: '2023-12-06T14:53:10Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
-    name: 'gdshader',
-    scopeName: 'source.gdshader',
-    sha: 'e7e2d0439dea0fb3a568378554c81e0a17348a84',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDShader.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDShader.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84',
-  },
-  {
-    byteSize: 3180,
-    displayName: 'Genie',
-    funding: [
-    ],
-    hash: 'cSG3F5p3cQP-wb_nhNPpbf1IGyS80WYKsZOlPMK7zUw',
-    lastUpdate: '2021-05-28T08:53:39Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE',
-    name: 'genie',
-    scopeName: 'source.genie',
-    sha: '8f825e95648326df2572d0522632251cdff4a43b',
-    source: 'https://github.com/vala-lang/vala-vscode/blob/8f825e95648326df2572d0522632251cdff4a43b/syntaxes/genie.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/vala-lang/vala-vscode/contents/syntaxes/genie.YAML-tmLanguage?ref=8f825e95648326df2572d0522632251cdff4a43b',
-  },
-  {
-    byteSize: 11828,
-    displayName: 'Gherkin',
-    funding: [
-    ],
-    hash: 'kAQBzDukdMOmsMtYO5IbdajQPFZNlNwvhw3ahduxtkY',
-    lastUpdate: '2024-05-18T13:15:07Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/alexkrechik/VSCucumberAutoComplete/master/LICENSE',
-    name: 'gherkin',
-    scopeName: 'text.gherkin.feature',
-    sha: 'fbb554addf81e8961b58b1577924af10fecf9694',
-    source: 'https://github.com/alexkrechik/VSCucumberAutoComplete/blob/fbb554addf81e8961b58b1577924af10fecf9694/syntaxes/feature.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/alexkrechik/VSCucumberAutoComplete/contents/syntaxes/feature.tmLanguage.json?ref=fbb554addf81e8961b58b1577924af10fecf9694',
-  },
-  {
-    byteSize: 1088,
-    categories: [
-      'utility',
-    ],
-    displayName: 'Git Commit Message',
-    embedded: [
-      'diff',
-    ],
-    funding: [
-    ],
-    hash: 'ZcrXd-PzuCcTwhg4S-WOs0gxUsw4wSxH6r1chHi0J5k',
-    lastUpdate: '2023-02-07T12:40:16Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'git-commit',
-    scopeName: 'text.git-commit',
-    sha: 'f8c3f89468fea14103d8790d59ea8594d6e644eb',
-    source: 'https://github.com/microsoft/vscode/blob/f8c3f89468fea14103d8790d59ea8594d6e644eb/extensions/git-base/syntaxes/git-commit.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/git-base/syntaxes/git-commit.tmLanguage.json?ref=f8c3f89468fea14103d8790d59ea8594d6e644eb',
-  },
-  {
-    byteSize: 821,
-    categories: [
-      'utility',
-    ],
-    displayName: 'Git Rebase Message',
-    embedded: [
-      'shellscript',
-    ],
-    funding: [
-    ],
-    hash: 'CvWgyCdOyGONazHztOhNEl79vNMa5wvhzwewgXO5wSU',
-    lastUpdate: '2021-11-12T10:35:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'git-rebase',
-    scopeName: 'text.git-rebase',
-    sha: 'e95c74c4c7af876e79ec58df262464467c06df28',
-    source: 'https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/git-base/syntaxes/git-rebase.tmLanguage.json?ref=e95c74c4c7af876e79ec58df262464467c06df28',
-  },
-  {
-    byteSize: 2427,
-    displayName: 'Gleam',
-    funding: [
-    ],
-    hash: '5CxvaGjTP1Hpz0F3sOfovl9SwolHVBwOv29G_2CckEM',
-    lastUpdate: '2025-04-08T10:34:41Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt',
-    name: 'gleam',
-    scopeName: 'source.gleam',
-    sha: 'aa487ed82aeaec8dbac62e796689daf55abf1aa9',
-    source: 'https://github.com/gleam-lang/vscode-gleam/blob/aa487ed82aeaec8dbac62e796689daf55abf1aa9/syntaxes/gleam.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/gleam-lang/vscode-gleam/contents/syntaxes/gleam.tmLanguage.json?ref=aa487ed82aeaec8dbac62e796689daf55abf1aa9',
-  },
-  {
-    aliases: [
-      'gjs',
-    ],
-    byteSize: 19510,
-    displayName: 'Glimmer JS',
-    embedded: [
-      'javascript',
-      'typescript',
-      'css',
-      'html',
-    ],
-    funding: [
-    ],
-    hash: 'Rh-VLWUoGI94oKJ2tfWuIo3fV3KC_zZkwTPpUfNaJ4c',
-    lastUpdate: '2024-03-15T16:05:31Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
-    name: 'glimmer-js',
-    scopeName: 'source.gjs',
-    sha: '76fce7b360ce09a78789e7d5217b8955d1a5d95f',
-    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/76fce7b360ce09a78789e7d5217b8955d1a5d95f/syntaxes/source.gjs.json',
-    sourceApi: 'https://api.github.com/repos/lifeart/vsc-ember-syntax/contents/syntaxes/source.gjs.json?ref=76fce7b360ce09a78789e7d5217b8955d1a5d95f',
-  },
-  {
-    aliases: [
-      'gts',
-    ],
-    byteSize: 19510,
-    displayName: 'Glimmer TS',
-    embedded: [
-      'typescript',
-      'css',
-      'javascript',
-      'html',
-    ],
-    funding: [
-    ],
-    hash: 'CsAOWdSqIiz2mJIUZyeB4A938gMh5DD8wgDQkeFQ2MI',
-    lastUpdate: '2024-03-15T16:05:31Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE',
-    name: 'glimmer-ts',
-    scopeName: 'source.gts',
-    sha: '76fce7b360ce09a78789e7d5217b8955d1a5d95f',
-    source: 'https://github.com/lifeart/vsc-ember-syntax/blob/76fce7b360ce09a78789e7d5217b8955d1a5d95f/syntaxes/source.gts.json',
-    sourceApi: 'https://api.github.com/repos/lifeart/vsc-ember-syntax/contents/syntaxes/source.gts.json?ref=76fce7b360ce09a78789e7d5217b8955d1a5d95f',
-  },
-  {
-    byteSize: 3468,
-    displayName: 'GLSL',
-    embedded: [
-      'c',
-    ],
-    funding: [
-    ],
-    hash: 'tXXikCZ951EMKDZ_Ym3LfQU9fu1XitnpTY-1YVkm3pE',
-    lastUpdate: '2014-07-27T13:53:58Z',
-    name: 'glsl',
-    scopeName: 'source.glsl',
-    sha: '6998d3bbd204e26746a5ca580cda4c650b9057b1',
-    source: 'https://github.com/polym0rph/GLSL.tmbundle/blob/6998d3bbd204e26746a5ca580cda4c650b9057b1/Syntaxes/GLSL.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/polym0rph/GLSL.tmbundle/contents/Syntaxes/GLSL.tmLanguage?ref=6998d3bbd204e26746a5ca580cda4c650b9057b1',
-  },
-  {
-    byteSize: 14063,
-    displayName: 'Gnuplot',
-    funding: [
-    ],
-    hash: 'cPHMVVoTiyyspvPQ0fj4iuT7HEuDM650NaeJZnJOMBk',
-    lastUpdate: '2018-07-01T23:29:26Z',
-    license: 'GPL-3.0',
-    licenseUrl: 'https://raw.githubusercontent.com/MarioSchwalbe/vscode-gnuplot/master/LICENSE',
-    name: 'gnuplot',
-    scopeName: 'source.gnuplot',
-    sha: 'c62c1a61c9b6b4658b43d76c397dc2ad43523b6a',
-    source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/MarioSchwalbe/vscode-gnuplot/contents/syntaxes/gnuplot.tmLanguage?ref=c62c1a61c9b6b4658b43d76c397dc2ad43523b6a',
-  },
-  {
-    byteSize: 42922,
-    categories: [
-      'general',
-    ],
-    displayName: 'Go',
-    funding: [
-    ],
-    hash: 'J0n54TuV-DKt344UglKfo-xeSh-J59PfLujbCH6hYug',
-    lastUpdate: '2025-05-22T08:27:50Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'go',
-    scopeName: 'source.go',
-    sha: '2a17434963b1f2f383e37050c59fa5cd9edcc331',
-    source: 'https://github.com/microsoft/vscode/blob/2a17434963b1f2f383e37050c59fa5cd9edcc331/extensions/go/syntaxes/go.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=2a17434963b1f2f383e37050c59fa5cd9edcc331',
-  },
-  {
-    aliases: [
-      'gql',
-    ],
-    byteSize: 17316,
-    categories: [
-      'web',
-    ],
-    displayName: 'GraphQL',
-    embedded: [
-      'javascript',
-      'typescript',
-      'jsx',
-      'tsx',
-    ],
-    funding: [
-    ],
-    hash: 'b9qRFzMVMbOCX9H1IPZUeBMLCoq503vMCYoHQHe3DuU',
-    lastUpdate: '2021-09-27T21:24:32Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/graphql/vscode-graphql/master/LICENSE',
-    name: 'graphql',
-    scopeName: 'source.graphql',
-    sha: '4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d',
-    source: 'https://github.com/prisma-labs/vscode-graphql/blob/4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d/grammars/graphql.json',
-    sourceApi: 'https://api.github.com/repos/prisma-labs/vscode-graphql/contents/grammars/graphql.json?ref=4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d',
-  },
-  {
-    byteSize: 18601,
-    categories: [
-      'general',
-    ],
-    displayName: 'Groovy',
-    funding: [
-    ],
-    hash: 'U3BVAuoRkZsF04KWRHCWXN2SIvQ_bnGHVrFkKJSpxoA',
-    lastUpdate: '2018-02-12T15:54:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'groovy',
-    scopeName: 'source.groovy',
-    sha: '8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-    source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/groovy/syntaxes/groovy.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/groovy/syntaxes/groovy.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-  },
-  {
-    byteSize: 78514,
-    categories: [
-      'general',
-    ],
-    displayName: 'Hack',
-    embedded: [
-      'html',
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'gNkiY6PguCWpVcU2FaMywfe40NooGs465UGtLXyimIs',
-    lastUpdate: '2025-01-09T20:28:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/slackhq/vscode-hack/master/LICENSE.md',
-    name: 'hack',
-    scopeName: 'source.hack',
-    sha: '2da10a05b70c9aae672f25bc218fe92d44522408',
-    source: 'https://github.com/slackhq/vscode-hack/blob/2da10a05b70c9aae672f25bc218fe92d44522408/syntaxes/hack.json',
-    sourceApi: 'https://api.github.com/repos/slackhq/vscode-hack/contents/syntaxes/hack.json?ref=2da10a05b70c9aae672f25bc218fe92d44522408',
-  },
-  {
-    byteSize: 7719,
-    categories: [
-      'markup',
-      'web',
-    ],
-    displayName: 'Ruby Haml',
-    embedded: [
-      'ruby',
-      'javascript',
-      'sass',
-      'coffee',
-      'markdown',
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'cuMt1-vymWDQu_x-fYi4KGN_RVDXHIFEAStk2b0nPm4',
-    lastUpdate: '2022-06-22T00:28:44Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/karuna/haml-vscode/master/LICENSE.md',
-    name: 'haml',
-    scopeName: 'text.haml',
-    sha: 'aa45415aefd691af0a501ea4f98e434490623e0d',
-    source: 'https://github.com/karuna/haml-vscode/blob/aa45415aefd691af0a501ea4f98e434490623e0d/syntaxes/haml.json',
-    sourceApi: 'https://api.github.com/repos/karuna/haml-vscode/contents/syntaxes/haml.json?ref=aa45415aefd691af0a501ea4f98e434490623e0d',
-  },
-  {
-    aliases: [
-      'hbs',
-    ],
-    byteSize: 11676,
-    categories: [
-      'web',
-    ],
-    displayName: 'Handlebars',
-    embedded: [
-      'html',
-      'css',
-      'javascript',
-      'yaml',
-    ],
-    funding: [
-    ],
-    hash: 'KX3RYFYTiXlgNxVzeZZIndYFhy1i-F4gtFdOqTLsd6g',
-    lastUpdate: '2019-05-16T17:17:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'handlebars',
-    scopeName: 'text.html.handlebars',
-    sha: '45db52ba6bd211cecd03897caee0531350071721',
-    source: 'https://github.com/microsoft/vscode/blob/45db52ba6bd211cecd03897caee0531350071721/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json?ref=45db52ba6bd211cecd03897caee0531350071721',
-  },
-  {
-    aliases: [
-      'hs',
-    ],
-    byteSize: 39448,
-    categories: [
-      'general',
-    ],
-    displayName: 'Haskell',
-    funding: [
-      {
-        handle: '@octref',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/octref',
-      },
-    ],
-    hash: 'VFdGTeq07oXEUKIYs3BND-TIwLTZNJfggsyX-L-l7m8',
-    lastUpdate: '2020-08-20T04:20:28Z',
-    license: 'BSD-3-Clause',
-    licenseUrl: 'https://raw.githubusercontent.com/octref/language-haskell/master/LICENSE',
-    name: 'haskell',
-    scopeName: 'source.haskell',
-    sha: 'ae87982aac2bf5cf6334c067e49c5ec8fc08b871',
-    source: 'https://github.com/octref/language-haskell/blob/ae87982aac2bf5cf6334c067e49c5ec8fc08b871/syntaxes/haskell.json',
-    sourceApi: 'https://api.github.com/repos/octref/language-haskell/contents/syntaxes/haskell.json?ref=ae87982aac2bf5cf6334c067e49c5ec8fc08b871',
-  },
-  {
-    byteSize: 34325,
-    categories: [
-      'general',
-    ],
-    displayName: 'Haxe',
-    funding: [
-    ],
-    hash: 'ZoDVReE0Qv4n3FnoACb8-c7BVU0LF_65LDNWK20cSIU',
-    lastUpdate: '2025-04-14T23:57:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md',
-    name: 'haxe',
-    scopeName: 'source.hx',
-    sha: '7f326b233cf60a1ff1ccee98744da820f7c1c2e0',
-    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/7f326b233cf60a1ff1ccee98744da820f7c1c2e0/haxe.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/vshaxe/haxe-TmLanguage/contents/haxe.YAML-tmLanguage?ref=7f326b233cf60a1ff1ccee98744da820f7c1c2e0',
-  },
-  {
-    byteSize: 9714,
-    displayName: 'HashiCorp HCL',
-    funding: [
-    ],
-    hash: 'JEpbBBvXuu1GaBPvG3ssLLL0ZZWeY5IPk2143RKxrUE',
-    lastUpdate: '2024-12-20T01:03:46Z',
-    license: 'MPL-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE',
-    name: 'hcl',
-    scopeName: 'source.hcl',
-    sha: '2ec7cd10c9d6134e836bf85eb0f5aa010512bff4',
-    source: 'https://github.com/hashicorp/syntax/blob/2ec7cd10c9d6134e836bf85eb0f5aa010512bff4/syntaxes/hcl.tmGrammar.json',
-    sourceApi: 'https://api.github.com/repos/hashicorp/syntax/contents/syntaxes/hcl.tmGrammar.json?ref=2ec7cd10c9d6134e836bf85eb0f5aa010512bff4',
-  },
-  {
-    byteSize: 11647,
-    categories: [
-      'data',
-    ],
-    displayName: 'Hjson',
-    funding: [
-    ],
-    hash: 'QYX-XOBzWh1gYv7FnNo09S_qiwKg_6Yxb9PgkKjUX3Q',
-    lastUpdate: '2018-10-25T15:31:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hjson/textmate-hjson/master/LICENSE',
-    name: 'hjson',
-    scopeName: 'source.hjson',
-    sha: '196075169c9a9f9ab04c8e7423b67ea72c976237',
-    source: 'https://github.com/hjson/textmate-hjson/blob/196075169c9a9f9ab04c8e7423b67ea72c976237/Syntaxes/Hjson.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hjson/textmate-hjson/contents/Syntaxes/Hjson.tmLanguage?ref=196075169c9a9f9ab04c8e7423b67ea72c976237',
-  },
-  {
-    byteSize: 6998,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'HLSL',
-    funding: [
-    ],
-    hash: '1ufx9HNPGOjyTvasAcZ8RWFih7y8GWMHH7izCjrmvIU',
-    lastUpdate: '2020-02-03T12:01:47Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'hlsl',
-    scopeName: 'source.hlsl',
-    sha: 'efa12b2f49ec6ee84ed1e7bbd948808efec452f6',
-    source: 'https://github.com/microsoft/vscode/blob/efa12b2f49ec6ee84ed1e7bbd948808efec452f6/extensions/hlsl/syntaxes/hlsl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/hlsl/syntaxes/hlsl.tmLanguage.json?ref=efa12b2f49ec6ee84ed1e7bbd948808efec452f6',
-  },
-  {
-    byteSize: 56371,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'HTML',
-    embedded: [
-      'javascript',
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'U0W1Sp44h4zOVrAkoq8kGlwON2FKk4kKnybHQGgyXJA',
-    lastUpdate: '2022-12-07T13:44:00Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'html',
-    scopeName: 'text.html.basic',
-    sha: '45324363153075dab0482312ae24d8c068d81e4f',
-    source: 'https://github.com/microsoft/vscode/blob/45324363153075dab0482312ae24d8c068d81e4f/extensions/html/syntaxes/html.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/html/syntaxes/html.tmLanguage.json?ref=45324363153075dab0482312ae24d8c068d81e4f',
-  },
-  {
-    byteSize: 707,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'HTML (Derivative)',
-    embedded: [
-      'html',
-    ],
-    funding: [
-    ],
-    hash: 'NZPXWfQuvta0UKNCRaEoo5hvbyf3dfz79uFTSGOc0XM',
-    lastUpdate: '2025-04-02T13:41:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'html-derivative',
-    scopeName: 'text.html.derivative',
-    sha: '4064f172528461afc6944383d07521f6a30da89c',
-    source: 'https://github.com/microsoft/vscode/blob/4064f172528461afc6944383d07521f6a30da89c/extensions/html/syntaxes/html-derivative.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/html/syntaxes/html-derivative.tmLanguage.json?ref=4064f172528461afc6944383d07521f6a30da89c',
-  },
-  {
-    byteSize: 3982,
-    categories: [
-      'web',
-      'utility',
-    ],
-    displayName: 'HTTP',
-    embedded: [
-      'shellscript',
-      'json',
-      'xml',
-      'graphql',
-    ],
-    funding: [
-    ],
-    hash: 'iGFs3g0C-BeL3j7Jsq9gwEVFktxsZmL68YTnpTrt30U',
-    lastUpdate: '2024-10-10T11:38:26Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Huachao/vscode-restclient/master/LICENSE',
-    name: 'http',
-    scopeName: 'source.http',
-    sha: '6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df',
-    source: 'https://github.com/Huachao/vscode-restclient/blob/6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df/syntaxes/http.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/Huachao/vscode-restclient/contents/syntaxes/http.tmLanguage.json?ref=6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df',
-  },
-  {
-    byteSize: 1581,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'HXML',
-    embedded: [
-      'haxe',
-    ],
-    funding: [
-    ],
-    hash: 'R7A411-UB7mCZGKPofDLwTWZdASwlJaZ7K28VJJy5Iw',
-    lastUpdate: '2020-06-27T14:36:19Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md',
-    name: 'hxml',
-    scopeName: 'source.hxml',
-    sha: 'cf8117cb69876af5fbac537860ffc73928fe2571',
-    source: 'https://github.com/vshaxe/haxe-TmLanguage/blob/cf8117cb69876af5fbac537860ffc73928fe2571/hxml.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/vshaxe/haxe-TmLanguage/contents/hxml.YAML-tmLanguage?ref=cf8117cb69876af5fbac537860ffc73928fe2571',
-  },
-  {
-    byteSize: 2475,
-    categories: [
-      'lisp',
-    ],
-    displayName: 'Hy',
-    funding: [
-    ],
-    hash: '6m-QAFhD62IxqxJTIJflqKe9vm0ESFp4V0bivcOXx40',
-    lastUpdate: '2024-11-04T03:16:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hylang/vscode-hy/master/LICENSE.md',
-    name: 'hy',
-    scopeName: 'source.hy',
-    sha: '8f99630793b7483cf4cac10a655da6fed08a4f9f',
-    source: 'https://github.com/hylang/vscode-hy/blob/8f99630793b7483cf4cac10a655da6fed08a4f9f/syntaxes/hy.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/hylang/vscode-hy/contents/syntaxes/hy.tmLanguage.json?ref=8f99630793b7483cf4cac10a655da6fed08a4f9f',
-  },
-  {
-    byteSize: 48264,
-    categories: [
-      'web',
-    ],
-    displayName: 'Imba',
-    funding: [
-    ],
-    hash: 'vXxSbKpwxlwW-eZpfTJc7xKmnqPIyYwLAnsVRK7T3Ro',
-    lastUpdate: '2025-03-06T08:51:50Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/imba/imba/master/LICENSE',
-    name: 'imba',
-    scopeName: 'source.imba',
-    sha: '183643518e567f0e125046b47b6d81f1aa7bdbb1',
-    source: 'https://github.com/imba/imba/blob/183643518e567f0e125046b47b6d81f1aa7bdbb1/packages/vscode-imba/syntaxes/imba.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/imba/imba/contents/packages/vscode-imba/syntaxes/imba.tmLanguage.json?ref=183643518e567f0e125046b47b6d81f1aa7bdbb1',
-  },
-  {
-    aliases: [
-      'properties',
-    ],
-    byteSize: 1408,
-    categories: [
-      'data',
-    ],
-    displayName: 'INI',
-    funding: [
-    ],
-    hash: 'JHALzUuwDy3Tt5W5yp6JMMxqUd5cF-XTOd0O3bneo0E',
-    lastUpdate: '2018-02-12T15:54:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'ini',
-    scopeName: 'source.ini',
-    sha: '8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-    source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/ini/syntaxes/ini.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ini/syntaxes/ini.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-  },
-  {
-    byteSize: 26339,
-    categories: [
-      'general',
-    ],
-    displayName: 'Java',
-    funding: [
-    ],
-    hash: 'OGtN9YfDYh7eJ_TIi2bFicIvgM_U6DZNrlDCHzlK1V0',
-    lastUpdate: '2023-12-13T12:08:01Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'java',
-    scopeName: 'source.java',
-    sha: '3c86ede5f554f6e196c832394e126b291a1de606',
-    source: 'https://github.com/microsoft/vscode/blob/3c86ede5f554f6e196c832394e126b291a1de606/extensions/java/syntaxes/java.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/java/syntaxes/java.tmLanguage.json?ref=3c86ede5f554f6e196c832394e126b291a1de606',
-  },
-  {
-    aliases: [
-      'js',
-    ],
-    byteSize: 159323,
-    categories: [
-      'web',
-      'scripting',
-      'general',
-    ],
-    displayName: 'JavaScript',
-    funding: [
-    ],
-    hash: 'HIo9PZGVK_m6dUZAv28Uhk-RQm0ePcwzhgtqoNXhbN8',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'javascript',
-    scopeName: 'source.js',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/javascript/syntaxes/JavaScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
-  },
-  {
-    byteSize: 4769,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'Jinja',
-    embedded: [
-      'jinja-html',
-    ],
-    funding: [
-      {
-        handle: '@samuelcolvin',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/samuelcolvin',
-      },
-    ],
-    hash: 'ipF8WBL1Wxt-LZ8t-Ocr6XcvPcDPW4aqJz_FSYRX65s',
-    lastUpdate: '2022-08-30T14:06:56Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
-    name: 'jinja',
-    scopeName: 'source.jinja',
-    sha: 'be729c88f723602e7b5df2e9dc5e8c016c31c38f',
-    source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/be729c88f723602e7b5df2e9dc5e8c016c31c38f/syntaxes/jinja.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/samuelcolvin/jinjahtml-vscode/contents/syntaxes/jinja.tmLanguage.json?ref=be729c88f723602e7b5df2e9dc5e8c016c31c38f',
-  },
-  {
-    byteSize: 9343,
-    categories: [
-      'data',
-      'web',
-    ],
-    displayName: 'Jison',
-    embedded: [
-      'javascript',
-    ],
-    funding: [
-    ],
-    hash: 'H_zxjxUffgS5Lf5yhFG7s69aBMCyeUnz2Xkem5WImdw',
-    lastUpdate: '2020-04-29T00:41:44Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/cdibbs/language-jison/master/LICENSE.md',
-    name: 'jison',
-    scopeName: 'source.jison',
-    sha: '9d4cb4b044832320a51fabb6e533fc299425f552',
-    source: 'https://github.com/cdibbs/language-jison/blob/9d4cb4b044832320a51fabb6e533fc299425f552/grammars/jison.cson',
-    sourceApi: 'https://api.github.com/repos/cdibbs/language-jison/contents/grammars/jison.cson?ref=9d4cb4b044832320a51fabb6e533fc299425f552',
-  },
-  {
-    byteSize: 2705,
-    categories: [
-      'web',
-      'data',
-    ],
-    displayName: 'JSON',
-    funding: [
-    ],
-    hash: 'XlQwavRPXYv3R198mgsjnEPYAfi0oM6JquTVrg4N7O8',
-    lastUpdate: '2020-11-05T13:50:48Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'json',
-    scopeName: 'source.json',
-    sha: 'd6af4893ed9a3545163a4cb748fa5548bd1e51a5',
-    source: 'https://github.com/microsoft/vscode/blob/d6af4893ed9a3545163a4cb748fa5548bd1e51a5/extensions/json/syntaxes/JSON.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSON.tmLanguage.json?ref=d6af4893ed9a3545163a4cb748fa5548bd1e51a5',
-  },
-  {
-    byteSize: 3118,
-    categories: [
-      'data',
-      'web',
-    ],
-    displayName: 'JSON5',
-    funding: [
-    ],
-    hash: 'PaLYtXhTZ5CbO7KXvgMhN-RIA9kg64q9A0I6dwr7K1c',
-    lastUpdate: '2016-10-01T11:46:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mrmlnc/vscode-json5/master/LICENSE',
-    name: 'json5',
-    scopeName: 'source.json5',
-    sha: 'e884b89929103ff009322c393080ff45a4544e88',
-    source: 'https://github.com/mrmlnc/vscode-json5/blob/e884b89929103ff009322c393080ff45a4544e88/syntaxes/json5.json',
-    sourceApi: 'https://api.github.com/repos/mrmlnc/vscode-json5/contents/syntaxes/json5.json?ref=e884b89929103ff009322c393080ff45a4544e88',
-  },
-  {
-    byteSize: 2990,
-    categories: [
-      'web',
-      'data',
-    ],
-    displayName: 'JSON with Comments',
-    funding: [
-    ],
-    hash: 'eg4m2wjJdSDvOTaJG6rTUJq_uIsKAMtDz-V18vY7_8s',
-    lastUpdate: '2023-05-25T08:02:57Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsonc',
-    scopeName: 'source.json.comments',
-    sha: '0adddd82816db666c52038e8277312dc55da2756',
-    source: 'https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONC.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSONC.tmLanguage.json?ref=0adddd82816db666c52038e8277312dc55da2756',
-  },
-  {
-    byteSize: 2892,
-    categories: [
-      'web',
-      'data',
-    ],
-    displayName: 'JSON Lines',
-    funding: [
-    ],
-    hash: 'xy0ogWMEJ4PUvS_KVMM1u7FZQ8qbIf1g7fO3fyOHenQ',
-    lastUpdate: '2023-05-25T08:02:57Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsonl',
-    scopeName: 'source.json.lines',
-    sha: '0adddd82816db666c52038e8277312dc55da2756',
-    source: 'https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONL.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSONL.tmLanguage.json?ref=0adddd82816db666c52038e8277312dc55da2756',
-  },
-  {
-    byteSize: 3372,
-    displayName: 'Jsonnet',
-    funding: [
-    ],
-    hash: '9SDm3drlL3Auu2OLKlJC8blF0uK_YcB1m018rS96Rlk',
-    lastUpdate: '2017-03-12T08:07:55Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/heptio/vscode-jsonnet/master/LICENSE',
-    name: 'jsonnet',
-    scopeName: 'source.jsonnet',
-    sha: '39088f9cde9f483c8e0efeb67a3fd561cd873aad',
-    source: 'https://github.com/heptio/vscode-jsonnet/blob/39088f9cde9f483c8e0efeb67a3fd561cd873aad/syntaxes/jsonnet.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/heptio/vscode-jsonnet/contents/syntaxes/jsonnet.tmLanguage.json?ref=39088f9cde9f483c8e0efeb67a3fd561cd873aad',
-  },
-  {
-    aliases: [
-      'fsl',
-    ],
-    byteSize: 2129,
-    displayName: 'JSSM',
-    funding: [
-    ],
-    hash: 'MYY8qS_cQ9Bq93QihgAiV-expUaG8rTQP-kdFpP8lXQ',
-    lastUpdate: '2017-08-20T01:05:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/StoneCypher/sublime-jssm/master/LICENSE',
-    name: 'jssm',
-    scopeName: 'source.jssm',
-    sha: '2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef',
-    source: 'https://github.com/StoneCypher/sublime-jssm/blob/2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef/jssm.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/StoneCypher/sublime-jssm/contents/jssm.tmLanguage?ref=2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef',
-  },
-  {
-    byteSize: 162317,
-    categories: [
-      'web',
-    ],
-    displayName: 'JSX',
-    funding: [
-    ],
-    hash: 'Wz2i7sb74EitHUjZ6JP7H8OpDCjRDlx0ox8WHhGKbB8',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'jsx',
-    scopeName: 'source.js.jsx',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
-  },
-  {
-    aliases: [
-      'jl',
-    ],
-    byteSize: 28932,
-    categories: [
-      'web',
-      'data',
-    ],
-    displayName: 'Julia',
-    embedded: [
-      'cpp',
-      'python',
-      'javascript',
-      'r',
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'aB_mtu2loWjMjR8oX2WG58b-cjX8UAHy14Y05kAlzkc',
-    lastUpdate: '2025-05-02T13:29:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'julia',
-    scopeName: 'source.julia',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/julia/syntaxes/julia.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-  },
-  {
-    aliases: [
-      'kt',
-      'kts',
-    ],
-    byteSize: 8386,
-    categories: [
-      'general',
-    ],
-    displayName: 'Kotlin',
-    funding: [
-    ],
-    hash: '77NT4lEuDbyUc7b4E-KvGB5s5S2dH40bjAHI3Ovi2Gs',
-    lastUpdate: '2024-02-06T09:51:18Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/fwcd/vscode-kotlin/main/LICENSE',
-    name: 'kotlin',
-    scopeName: 'source.kotlin',
-    sha: '626e20d5c51a4379c4c0ee293aa89e58b5232aec',
-    source: 'https://github.com/fwcd/vscode-kotlin/blob/626e20d5c51a4379c4c0ee293aa89e58b5232aec/syntaxes/kotlin.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/fwcd/vscode-kotlin/contents/syntaxes/kotlin.tmLanguage.json?ref=626e20d5c51a4379c4c0ee293aa89e58b5232aec',
-  },
-  {
-    aliases: [
-      'kql',
-    ],
-    byteSize: 14619,
-    displayName: 'Kusto',
-    funding: [
-    ],
-    hash: 'txmhw13e588xXfoForFReDBKcV-4Ze_Zqmau2GPFyKA',
-    lastUpdate: '2024-12-28T02:00:10Z',
-    name: 'kusto',
-    scopeName: 'source.kusto',
-    sha: '2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6',
-    source: 'https://github.com/rosshamish/kuskus/blob/2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6',
-  },
-  {
-    byteSize: 66408,
-    categories: [
-      'markup',
-    ],
-    displayName: 'LaTeX',
-    embedded: [
-      'tex',
-      'shellscript',
-      'css',
-      'gnuplot',
-      'haskell',
-      'html',
-      'java',
-      'julia',
-      'javascript',
-      'lua',
-      'python',
-      'ruby',
-      'rust',
-      'typescript',
-      'xml',
-      'yaml',
-      'scala',
-    ],
-    funding: [
-    ],
-    hash: 'cJfwTz1j1ZpDDS2kKqTfrGAnD46c-fX5UauLirBUYVY',
-    lastUpdate: '2025-05-02T13:29:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'latex',
-    scopeName: 'text.tex.latex',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-  },
-  {
-    aliases: [
-      'lean4',
-    ],
-    byteSize: 3839,
-    categories: [
-      'general',
-    ],
-    displayName: 'Lean 4',
-    funding: [
-    ],
-    hash: 'cKkHgeEf9Qy3it5oOWbTfm5CS3z0F7NiEapi61fQJHE',
-    lastUpdate: '2024-04-19T14:33:46Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/leanprover/vscode-lean4/master/LICENSE',
-    name: 'lean',
-    scopeName: 'source.lean4',
-    sha: '2255bc20c9d28d868d04fb91428652a95cc87a92',
-    source: 'https://github.com/leanprover/vscode-lean4/blob/2255bc20c9d28d868d04fb91428652a95cc87a92/vscode-lean4/syntaxes/lean4.json',
-    sourceApi: 'https://api.github.com/repos/leanprover/vscode-lean4/contents/vscode-lean4/syntaxes/lean4.json?ref=2255bc20c9d28d868d04fb91428652a95cc87a92',
-  },
-  {
-    byteSize: 94797,
-    categories: [
-      'web',
-    ],
-    displayName: 'Less',
-    funding: [
-    ],
-    hash: 'fDhYrU2qlFKVRm-dw25I325rbqsvOhRErfFJL1kwTFQ',
-    lastUpdate: '2024-08-30T20:03:00Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'less',
-    scopeName: 'source.css.less',
-    sha: '03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
-    source: 'https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/less/syntaxes/less.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/less/syntaxes/less.tmLanguage.json?ref=03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c',
-  },
-  {
-    byteSize: 17349,
-    displayName: 'Liquid',
-    embedded: [
-      'html',
-      'css',
-      'json',
-      'javascript',
-    ],
-    funding: [
-    ],
-    hash: '3Gmm1MUQO84mr1AMl2f51_1mUwO7wxMBhZMynY4DnwU',
-    lastUpdate: '2025-05-12T22:03:09Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md',
-    name: 'liquid',
-    scopeName: 'text.html.liquid',
-    sha: '099adcf0d4beacd078a22432eaeab08d6f1e6da5',
-    source: 'https://github.com/Shopify/liquid-tm-grammar/blob/099adcf0d4beacd078a22432eaeab08d6f1e6da5/grammars/liquid.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/Shopify/liquid-tm-grammar/contents/grammars/liquid.tmLanguage.json?ref=099adcf0d4beacd078a22432eaeab08d6f1e6da5',
-  },
-  {
-    byteSize: 4637,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'LLVM IR',
-    funding: [
-    ],
-    hash: 'OzTi2eTMlc2BMi_JGth-c8BuPlOejpPjPZ5jz_RCDn0',
-    lastUpdate: '2024-05-30T11:17:37Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/llvm/llvm-project/main/LICENSE.TXT',
-    name: 'llvm',
-    scopeName: 'source.llvm',
-    sha: '2705c605da2854a6b044fdf5978dea0472fd0ab1',
-    source: 'https://github.com/llvm/llvm-project/blob/2705c605da2854a6b044fdf5978dea0472fd0ab1/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/llvm/llvm-project/contents/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml?ref=2705c605da2854a6b044fdf5978dea0472fd0ab1',
-  },
-  {
-    byteSize: 2577,
-    categories: [
-      'utility',
-    ],
-    displayName: 'Log file',
-    funding: [
-    ],
-    hash: 'g_yhgZpw_1m6V68MlOZEXN1FyOEUekSjFH511ql6VQk',
-    lastUpdate: '2025-04-25T18:28:10Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/LICENSE',
-    name: 'log',
-    scopeName: 'text.log',
-    sha: '396c8552ff99d0e07142fdd940d75dae212dd28c',
-    source: 'https://github.com/emilast/vscode-logfile-highlighter/blob/396c8552ff99d0e07142fdd940d75dae212dd28c/syntaxes/log.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/emilast/vscode-logfile-highlighter/contents/syntaxes/log.tmLanguage?ref=396c8552ff99d0e07142fdd940d75dae212dd28c',
-  },
-  {
-    byteSize: 3016,
-    displayName: 'Logo',
-    funding: [
-    ],
-    hash: 'b1oBA4S24HPEDseeUz6ZC06VUX21vnp-v78RC99oejw',
-    lastUpdate: '2011-11-14T07:42:34Z',
-    name: 'logo',
-    scopeName: 'source.logo',
-    sha: '3205e987ed2a2aa11accdd55a7d094832441f89c',
-    source: 'https://github.com/textmate/logo.tmbundle/blob/3205e987ed2a2aa11accdd55a7d094832441f89c/Syntaxes/Logo.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/logo.tmbundle/contents/Syntaxes/Logo.tmLanguage?ref=3205e987ed2a2aa11accdd55a7d094832441f89c',
-  },
-  {
-    byteSize: 14507,
-    categories: [
-      'scripting',
-    ],
-    displayName: 'Lua',
-    embedded: [
-      'c',
-    ],
-    funding: [
-    ],
-    hash: 'djaDPp_QvYFI1fCREXw5frRA7bhilbEfP9mnpBIv5w4',
-    lastUpdate: '2024-04-26T11:52:52Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'lua',
-    scopeName: 'source.lua',
-    sha: '5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-    source: 'https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/lua/syntaxes/lua.tmLanguage.json?ref=5c213a1e84928c7a7d11ca5b282ca602d40c1352',
-  },
-  {
-    byteSize: 12179,
-    displayName: 'Luau',
-    funding: [
-    ],
-    hash: 'eelZmFocP1Xp2P1PWhe7E5P3pj4UYhzPjykeOvFrxAc',
-    lastUpdate: '2024-11-11T20:13:41Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md',
-    name: 'luau',
-    scopeName: 'source.luau',
-    sha: '050f326bc904342c9344b6e1ece96b9143b57086',
-    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/050f326bc904342c9344b6e1ece96b9143b57086/Luau.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/JohnnyMorganz/Luau.tmLanguage/contents/Luau.tmLanguage?ref=050f326bc904342c9344b6e1ece96b9143b57086',
-  },
-  {
-    aliases: [
-      'makefile',
-    ],
-    byteSize: 8610,
-    categories: [
-      'config',
-    ],
-    displayName: 'Makefile',
-    funding: [
-    ],
-    hash: 'fjY_DK_r3g7e4bw-JpoAMxUjHQl4jCVd3wzimrhC-CU',
-    lastUpdate: '2023-01-10T10:50:28Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'make',
-    scopeName: 'source.makefile',
-    sha: '91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5',
-    source: 'https://github.com/microsoft/vscode/blob/91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5/extensions/make/syntaxes/make.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/make/syntaxes/make.tmLanguage.json?ref=91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5',
-  },
-  {
-    aliases: [
-      'md',
-    ],
-    byteSize: 53093,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'Markdown',
-    embedded: [
-      'css',
-      'html',
-      'ini',
-      'java',
-      'lua',
-      'make',
-      'perl',
-      'r',
-      'ruby',
-      'php',
-      'sql',
-      'vb',
-      'xml',
-      'xsl',
-      'yaml',
-      'bat',
-      'clojure',
-      'coffee',
-      'c',
-      'cpp',
-      'diff',
-      'docker',
-      'git-commit',
-      'git-rebase',
-      'go',
-      'groovy',
-      'pug',
-      'javascript',
-      'json',
-      'jsonc',
-      'less',
-      'objective-c',
-      'swift',
-      'scss',
-      'raku',
-      'powershell',
-      'python',
-      'julia',
-      'regexp',
-      'rust',
-      'scala',
-      'shellscript',
-      'typescript',
-      'tsx',
-      'csharp',
-      'fsharp',
-      'dart',
-      'handlebars',
-      'log',
-      'erlang',
-      'elixir',
-      'latex',
-      'bibtex',
-      'html-derivative',
-    ],
-    funding: [
-    ],
-    hash: 'cGCUtsGg_b4H29ujDU5qUoy9_T7BBjDlWGom_FxjMTA',
-    lastUpdate: '2024-07-08T18:33:21Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'markdown',
-    scopeName: 'text.html.markdown',
-    sha: '1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58',
-    source: 'https://github.com/microsoft/vscode/blob/1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json?ref=1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58',
-  },
-  {
-    byteSize: 16149,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'Marko',
-    embedded: [
-      'css',
-      'less',
-      'scss',
-      'javascript',
-    ],
-    funding: [
-    ],
-    hash: 'Nj7T7NDhnvoDGm8ryfQBsKa3QTLSHa5qEfkwif69iQM',
-    lastUpdate: '2023-03-24T17:23:39Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/marko-js/marko-tmbundle/master/LICENSE',
-    name: 'marko',
-    scopeName: 'text.marko',
-    sha: 'dd3a0c39e656bedd276d3bcbdea92a2d627755c7',
-    source: 'https://github.com/marko-js/marko-tmbundle/blob/dd3a0c39e656bedd276d3bcbdea92a2d627755c7/Syntaxes/marko.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/marko-js/marko-tmbundle/contents/Syntaxes/marko.tmLanguage?ref=dd3a0c39e656bedd276d3bcbdea92a2d627755c7',
-  },
-  {
-    byteSize: 15279,
-    displayName: 'MATLAB',
-    funding: [
-    ],
-    hash: 'POEDzVszVkwcMTi0VV1sm1F8A0nheo0vB-tLsFzzxqk',
-    lastUpdate: '2020-02-01T01:40:30Z',
-    name: 'matlab',
-    scopeName: 'source.matlab',
-    sha: '69dbf20c1eb19efd629c0438a2a493e60617e8de',
-    source: 'https://github.com/mathworks/MATLAB-Language-grammar/blob/69dbf20c1eb19efd629c0438a2a493e60617e8de/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/mathworks/MATLAB-Language-grammar/contents/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage?ref=69dbf20c1eb19efd629c0438a2a493e60617e8de',
-  },
-  {
-    byteSize: 19108,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'MDC',
-    embedded: [
-      'markdown',
-      'yaml',
-      'html-derivative',
-    ],
-    funding: [
-    ],
-    hash: 'nwlm7swdVMmPwJth5yJFbQFefOIZKt1CCvXRjLYXfBA',
-    lastUpdate: '2025-02-24T11:33:21Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nuxtlabs/vscode-mdc/main/LICENSE',
-    name: 'mdc',
-    scopeName: 'text.markdown.mdc.standalone',
-    sha: '96f619ccd8df724e5bd94eb28b87e03b769a8c41',
-    source: 'https://github.com/nuxtlabs/vscode-mdc/blob/96f619ccd8df724e5bd94eb28b87e03b769a8c41/syntaxes/mdc.standalone.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nuxtlabs/vscode-mdc/contents/syntaxes/mdc.standalone.tmLanguage.json?ref=96f619ccd8df724e5bd94eb28b87e03b769a8c41',
-  },
-  {
-    byteSize: 130777,
-    categories: [
-      'web',
-      'markup',
-    ],
-    displayName: 'MDX',
-    embedded: [
-      'tsx',
-      'toml',
-      'yaml',
-      'c',
-      'clojure',
-      'coffee',
-      'cpp',
-      'csharp',
-      'css',
-      'diff',
-      'docker',
-      'elixir',
-      'elm',
-      'erlang',
-      'go',
-      'graphql',
-      'haskell',
-      'html',
-      'ini',
-      'java',
-      'javascript',
-      'json',
-      'julia',
-      'kotlin',
-      'less',
-      'lua',
-      'make',
-      'markdown',
-      'objective-c',
-      'perl',
-      'python',
-      'r',
-      'ruby',
-      'rust',
-      'scala',
-      'scss',
-      'shellscript',
-      'shellsession',
-      'sql',
-      'xml',
-      'swift',
-      'typescript',
-    ],
-    funding: [
-    ],
-    hash: 'BDWf61vomuMLV_y5RDOTOnJO8Z9wwzLSjfQkClTrbwE',
-    lastUpdate: '2024-11-11T13:02:29Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license',
-    name: 'mdx',
-    scopeName: 'source.mdx',
-    sha: 'c78b1e5df644d24fa76716bbe26f4b48a6fc1610',
-    source: 'https://github.com/wooorm/markdown-tm-language/blob/c78b1e5df644d24fa76716bbe26f4b48a6fc1610/source.mdx.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/wooorm/markdown-tm-language/contents/source.mdx.tmLanguage?ref=c78b1e5df644d24fa76716bbe26f4b48a6fc1610',
-  },
-  {
-    aliases: [
-      'mmd',
-    ],
-    byteSize: 26637,
-    displayName: 'Mermaid',
-    funding: [
-    ],
-    hash: 'tj-olbuGtaCrR3LH9SyEltdAQHnKIUzCrD8cnmTptxg',
-    lastUpdate: '2022-06-10T19:46:22Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/LICENSE',
-    name: 'mermaid',
-    scopeName: 'markdown.mermaid.codeblock',
-    sha: '8b62f487cb7a89afcd152febfbf47f5d4787657f',
-    source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/8b62f487cb7a89afcd152febfbf47f5d4787657f/syntaxes/mermaid.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/bpruitt-goddard/vscode-mermaid-syntax-highlight/contents/syntaxes/mermaid.tmLanguage.yaml?ref=8b62f487cb7a89afcd152febfbf47f5d4787657f',
-  },
-  {
-    aliases: [
-      'mips',
-    ],
-    byteSize: 2965,
-    displayName: 'MIPS Assembly',
-    funding: [
-    ],
-    hash: '-ltLAd_ZtyIHINouC1quUlIDQlPVWCh9YPy8kIDGOGI',
-    lastUpdate: '2011-11-14T07:25:17Z',
-    name: 'mipsasm',
-    scopeName: 'source.mips',
-    sha: 'eb7601016a109bf912a48a1c21988f3c4a59fb3a',
-    source: 'https://github.com/textmate/mips.tmbundle/blob/eb7601016a109bf912a48a1c21988f3c4a59fb3a/Syntaxes/MIPS.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/mips.tmbundle/contents/Syntaxes/MIPS.tmLanguage?ref=eb7601016a109bf912a48a1c21988f3c4a59fb3a',
-  },
-  {
-    byteSize: 67515,
-    displayName: 'Mojo',
-    funding: [
-    ],
-    hash: 'FVRo1lHOW-NnZ8zGKJD0mc7HRLydcDroAKVt76Ag-5k',
-    lastUpdate: '2024-03-18T01:05:25Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/modular/mojo-syntax/main/LICENSE',
-    name: 'mojo',
-    scopeName: 'source.mojo',
-    sha: '46eccdaeda2b1587e9b82808cdb35670f359d16d',
-    source: 'https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json',
-    sourceApi: 'https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=46eccdaeda2b1587e9b82808cdb35670f359d16d',
-  },
-  {
-    byteSize: 16547,
-    displayName: 'Move',
-    funding: [
-    ],
-    hash: 'XPMUc2shR1_6bdiCwT1JVRtamdRciHbc-mkSxk-Ulzc',
-    lastUpdate: '2024-09-17T09:24:46Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
-    name: 'move',
-    scopeName: 'source.move',
-    sha: '4b04e9d614901097ffc0663fef40bd3e5d87779e',
-    source: 'https://github.com/damirka/move-syntax/blob/4b04e9d614901097ffc0663fef40bd3e5d87779e/syntaxes/move.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=4b04e9d614901097ffc0663fef40bd3e5d87779e',
-  },
-  {
-    aliases: [
-      'nar',
-    ],
-    byteSize: 3464,
-    displayName: 'Narrat Language',
-    funding: [
-    ],
-    hash: 'sHtK94ywyfA-zlVFZC_dniA3QWzHpFL7X3ncKaRsw5k',
-    lastUpdate: '2022-08-06T14:25:00Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/liana-p/narrat-syntax-highlighting-vscode/main/LICENSE',
-    name: 'narrat',
-    scopeName: 'source.narrat',
-    sha: '00d4b410338fc50ca0ce77a1f7e873c1fb66d376',
-    source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/00d4b410338fc50ca0ce77a1f7e873c1fb66d376/syntaxes/narrat.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/liana-p/narrat-syntax-highlighting-vscode/contents/syntaxes/narrat.tmLanguage.yaml?ref=00d4b410338fc50ca0ce77a1f7e873c1fb66d376',
-  },
-  {
-    aliases: [
-      'nf',
-    ],
-    byteSize: 3734,
-    displayName: 'Nextflow',
-    funding: [
-    ],
-    hash: 'RROCU5zG8d3QE0R5QHLqs2KQct5xu1u22WVrKzwj24U',
-    lastUpdate: '2025-05-14T20:20:54Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md',
-    name: 'nextflow',
-    scopeName: 'source.nextflow',
-    sha: '0880603119990bbf6fc30f02382c2149eeb215fb',
-    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/0880603119990bbf6fc30f02382c2149eeb215fb/syntaxes/nextflow.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/nextflow.tmLanguage.json?ref=0880603119990bbf6fc30f02382c2149eeb215fb',
-  },
-  {
-    byteSize: 34690,
-    categories: [
-      'config',
-    ],
-    displayName: 'Nginx',
-    embedded: [
-      'lua',
-    ],
-    funding: [
-    ],
-    hash: 'gXO0PAbCsPBgxfB02Yy-6gQZbgP4vMRQ4vdtu1W2YtU',
-    lastUpdate: '2024-02-28T17:19:46Z',
-    license: 'GPL-3.0',
-    licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-nginx-conf-hint/main/LICENSE',
-    name: 'nginx',
-    scopeName: 'source.nginx',
-    sha: '49159c02fd09dce264ded7802c9499a0f09646f5',
-    source: 'https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/49159c02fd09dce264ded7802c9499a0f09646f5/src/syntax/nginx.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hangxingliu/vscode-nginx-conf-hint/contents/src/syntax/nginx.tmLanguage?ref=49159c02fd09dce264ded7802c9499a0f09646f5',
-  },
-  {
-    byteSize: 21277,
-    displayName: 'Nim',
-    embedded: [
-      'c',
-      'html',
-      'xml',
-      'javascript',
-      'css',
-      'glsl',
-      'markdown',
-    ],
-    funding: [
-    ],
-    hash: 'jdht28-QtoGq59m2JirMxLcb7ekOYcWQ8TdY26FydTo',
-    lastUpdate: '2020-08-30T02:33:21Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/pragmagic/vscode-nim/master/LICENSE',
-    name: 'nim',
-    scopeName: 'source.nim',
-    sha: '0272a0544ddf147fde98f8a8f2b624b7dcb19eb3',
-    source: 'https://github.com/pragmagic/vscode-nim/blob/0272a0544ddf147fde98f8a8f2b624b7dcb19eb3/syntaxes/nim.json',
-    sourceApi: 'https://api.github.com/repos/pragmagic/vscode-nim/contents/syntaxes/nim.json?ref=0272a0544ddf147fde98f8a8f2b624b7dcb19eb3',
-  },
-  {
-    byteSize: 14306,
-    displayName: 'Nix',
-    funding: [
-      {
-        handle: 'nix-community',
-        name: 'Open Collective',
-        url: 'https://opencollective.com/nix-community',
-      },
-    ],
-    hash: 'Nh1Q0JSdPVZi9v00kkQ8yY9b5doEIFZeKSzqIiDmVXU',
-    lastUpdate: '2025-02-02T04:56:34Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
-    name: 'nix',
-    scopeName: 'source.nix',
-    sha: 'ac1ed65aa92655748200cd62bd54e5ca051781bc',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/ac1ed65aa92655748200cd62bd54e5ca051781bc/syntaxes/nix.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/syntaxes/nix.YAML-tmLanguage?ref=ac1ed65aa92655748200cd62bd54e5ca051781bc',
-  },
-  {
-    aliases: [
-      'nu',
-    ],
-    byteSize: 19113,
-    displayName: 'nushell',
-    funding: [
-    ],
-    hash: 'juKsDoL5GNPdtLAsdqQxopy2VATA6yPTnze7qGrdGhs',
-    lastUpdate: '2025-03-26T21:36:28Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
-    name: 'nushell',
-    scopeName: 'source.nushell',
-    sha: 'b03d40225eeec75f08c24720b734cd462c946ead',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/b03d40225eeec75f08c24720b734cd462c946ead/syntaxes/nushell.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nushell/vscode-nushell-lang/contents/syntaxes/nushell.tmLanguage.json?ref=b03d40225eeec75f08c24720b734cd462c946ead',
-  },
-  {
-    aliases: [
-      'objc',
-    ],
-    byteSize: 103064,
-    categories: [
-      'general',
-    ],
-    displayName: 'Objective-C',
-    funding: [
-    ],
-    hash: '2_a-Pa63UVJJ-C_fmS6BjnrsdwidK2GRQXHFEEnJp7U',
-    lastUpdate: '2022-06-10T13:55:11Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'objective-c',
-    scopeName: 'source.objc',
-    sha: 'bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-    source: 'https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/objective-c/syntaxes/objective-c.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-  },
-  {
-    byteSize: 167425,
-    categories: [
-      'general',
-    ],
-    displayName: 'Objective-C++',
-    funding: [
-    ],
-    hash: 'EIilxr2ZlXxgi8SU8BDhhuVmu3yeaBQ2UAe1Kquz4g0',
-    lastUpdate: '2022-06-10T13:55:11Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'objective-cpp',
-    scopeName: 'source.objcpp',
-    sha: 'bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-    source: 'https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
-  },
-  {
-    byteSize: 60396,
-    categories: [
-      'general',
-    ],
-    displayName: 'OCaml',
-    funding: [
-    ],
-    hash: 'bilHYpjR_Hhw-RuTo-pqnsv6Y6uo0tRJU3KnsUZwR88',
-    lastUpdate: '2019-08-17T12:45:56Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/reasonml-editor/vscode-reasonml/master/LICENSE',
-    name: 'ocaml',
-    scopeName: 'source.ocaml',
-    sha: '14af625ec50ed9968b957b4d6336c5338d81af45',
-    source: 'https://github.com/reasonml-editor/vscode-reasonml/blob/14af625ec50ed9968b957b4d6336c5338d81af45/syntaxes/ocaml.json',
-    sourceApi: 'https://api.github.com/repos/reasonml-editor/vscode-reasonml/contents/syntaxes/ocaml.json?ref=14af625ec50ed9968b957b4d6336c5338d81af45',
-  },
-  {
-    byteSize: 3982,
-    categories: [
-      'general',
-    ],
-    displayName: 'Pascal',
-    funding: [
-      {
-        handle: '@alefragnani',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/alefragnani',
+        "handle": "@WebFreak001",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/WebFreak001"
       },
       {
-        handle: 'alefragnani',
-        name: 'Patreon',
-        url: 'https://patreon.com/alefragnani',
+        "handle": "WebFreak",
+        "name": "Patreon",
+        "url": "https://patreon.com/WebFreak"
+      }
+    ],
+    "hash": "0die406NmL02tZUAnLzynqqBbqoMxkGCmyTHZAYoc6Q",
+    "lastUpdate": "2025-03-01T00:26:27Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Pure-D/code-d/master/LICENSE.md",
+    "name": "d",
+    "scopeName": "source.d",
+    "sha": "71992a1a52a3025f3333e4025eee0f255a8cda03",
+    "source": "https://github.com/Pure-D/code-d/blob/71992a1a52a3025f3333e4025eee0f255a8cda03/syntaxes/d.json",
+    "sourceApi": "https://api.github.com/repos/Pure-D/code-d/contents/syntaxes/d.json?ref=71992a1a52a3025f3333e4025eee0f255a8cda03"
+  },
+  {
+    "byteSize": 7428,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Dart",
+    "funding": [
+    ],
+    "hash": "3m3sTAphXXlBsFFMCtTIU16Je7izYC7XGBPP7TYBUdM",
+    "lastUpdate": "2024-12-06T15:55:37Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "dart",
+    "scopeName": "source.dart",
+    "sha": "8270a86019db7551da42b71d15c6080a414d8c81",
+    "source": "https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/dart/syntaxes/dart.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81"
+  },
+  {
+    "byteSize": 5245,
+    "displayName": "DAX",
+    "funding": [
+    ],
+    "hash": "UFsarX0ylIyGOIOBe_JGQzfQdBMpVNQNT1cz3sgqXQg",
+    "lastUpdate": "2021-08-10T18:28:52Z",
+    "name": "dax",
+    "scopeName": "source.dax",
+    "sha": "7fd39aa84552617daa258189b2550dcdbd14149a",
+    "source": "https://github.com/huyza/dax-language/blob/7fd39aa84552617daa258189b2550dcdbd14149a/syntaxes/dax.grammer.json",
+    "sourceApi": "https://api.github.com/repos/huyza/dax-language/contents/syntaxes/dax.grammer.json?ref=7fd39aa84552617daa258189b2550dcdbd14149a"
+  },
+  {
+    "byteSize": 1731,
+    "categories": [
+      "config"
+    ],
+    "displayName": "Desktop",
+    "funding": [
+      {
+        "name": "paypal.com",
+        "url": "https://www.paypal.com/donate?hosted_button_id=C38RSCD9QGZBQ"
+      }
+    ],
+    "hash": "D94fkVMf-9GNupFzOFUY2sjScS_cdzXCMDkUpuqJsu4",
+    "lastUpdate": "2021-07-19T18:36:02Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nico-castell/desktop-file-support/main/LICENSE",
+    "name": "desktop",
+    "scopeName": "source.desktop",
+    "sha": "63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e",
+    "source": "https://github.com/nico-castell/desktop-file-support/blob/63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e/syntaxes/desktop.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/nico-castell/desktop-file-support/contents/syntaxes/desktop.tmLanguage.json?ref=63720f5f05313de22b68ecbd0ca3d3ed8ba57e7e"
+  },
+  {
+    "byteSize": 2437,
+    "categories": [
+      "utility"
+    ],
+    "displayName": "Diff",
+    "funding": [
+    ],
+    "hash": "ik4Zxh07S4K9d2EaC3faq6jOYa_Cdx65dLnwf1DIQl0",
+    "lastUpdate": "2021-11-12T09:59:52Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "diff",
+    "scopeName": "source.diff",
+    "sha": "4549bd26c7b799284e0ebd8dc1e0310e6a8707a1",
+    "source": "https://github.com/microsoft/vscode/blob/4549bd26c7b799284e0ebd8dc1e0310e6a8707a1/extensions/diff/syntaxes/diff.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/diff/syntaxes/diff.tmLanguage.json?ref=4549bd26c7b799284e0ebd8dc1e0310e6a8707a1"
+  },
+  {
+    "aliases": [
+      "dockerfile"
+    ],
+    "byteSize": 1618,
+    "categories": [
+      "config"
+    ],
+    "displayName": "Dockerfile",
+    "funding": [
+    ],
+    "hash": "soI4MtWZhWB7exGgkfjWQWhTePeB-HRF606X_aVPOiU",
+    "lastUpdate": "2024-12-06T15:55:37Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "docker",
+    "scopeName": "source.dockerfile",
+    "sha": "8270a86019db7551da42b71d15c6080a414d8c81",
+    "source": "https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/docker/syntaxes/docker.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/docker/syntaxes/docker.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81"
+  },
+  {
+    "byteSize": 1331,
+    "displayName": "dotEnv",
+    "funding": [
+    ],
+    "hash": "sAz2IEDNM4YTm3TmMr4sQFJ2rPeOr44g6NvxpOEX9hc",
+    "lastUpdate": "2023-06-15T08:23:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/dotenv-org/dotenv-vscode/master/LICENSE",
+    "name": "dotenv",
+    "scopeName": "source.dotenv",
+    "sha": "e7e41baa5b23e01c1ff0567a4e596c24860e7def",
+    "source": "https://github.com/dotenv-org/dotenv-vscode/blob/e7e41baa5b23e01c1ff0567a4e596c24860e7def/syntaxes/dotenv.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/dotenv-org/dotenv-vscode/contents/syntaxes/dotenv.tmLanguage.json?ref=e7e41baa5b23e01c1ff0567a4e596c24860e7def"
+  },
+  {
+    "byteSize": 9940,
+    "displayName": "Dream Maker",
+    "funding": [
+    ],
+    "hash": "skTA6ka9a0pVfuEJFTzEQ0Rj8KxU1MpMukIWR0TFX88",
+    "lastUpdate": "2017-01-06T06:55:48Z",
+    "name": "dream-maker",
+    "scopeName": "source.dm",
+    "sha": "22d2bf0325f65697ea542856280f66e9e098f4a2",
+    "source": "https://github.com/gbasood/vscode-atomic-dreams/blob/22d2bf0325f65697ea542856280f66e9e098f4a2/syntaxes/dm.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/gbasood/vscode-atomic-dreams/contents/syntaxes/dm.tmLanguage.json?ref=22d2bf0325f65697ea542856280f66e9e098f4a2"
+  },
+  {
+    "byteSize": 2020,
+    "displayName": "Edge",
+    "embedded": [
+      "typescript",
+      "html",
+      "html-derivative"
+    ],
+    "funding": [
+    ],
+    "hash": "rERYpL1kih8CnUACM8Re174NSo_mzI-kTN0JliXl-n0",
+    "lastUpdate": "2024-02-05T08:06:04Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/edge-js/edge-vscode/main/LICENSE.md",
+    "name": "edge",
+    "scopeName": "text.html.edge",
+    "sha": "04352c41981ca664598674556afa63bd393a10f3",
+    "source": "https://github.com/edge-js/edge-vscode/blob/04352c41981ca664598674556afa63bd393a10f3/syntaxes/edge.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/edge-js/edge-vscode/contents/syntaxes/edge.tmLanguage.json?ref=04352c41981ca664598674556afa63bd393a10f3"
+  },
+  {
+    "byteSize": 15558,
+    "displayName": "Elixir",
+    "embedded": [
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "4uthCzdDmmvhZHrxEBFBncM1mcjkNvrfueFhWuQAtHM",
+    "lastUpdate": "2021-12-27T20:12:19Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/elixir-editors/elixir-tmbundle/master/LICENSE",
+    "name": "elixir",
+    "scopeName": "source.elixir",
+    "sha": "43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9",
+    "source": "https://github.com/elixir-editors/elixir-tmbundle/blob/43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9/Syntaxes/Elixir.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/elixir-editors/elixir-tmbundle/contents/Syntaxes/Elixir.tmLanguage?ref=43c8cd957d5ac6e1abbd8730fc7a08c81a6e76c9"
+  },
+  {
+    "byteSize": 10519,
+    "displayName": "Elm",
+    "embedded": [
+      "glsl"
+    ],
+    "funding": [
+      {
+        "handle": "@razzeee",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/razzeee"
       },
       {
-        name: 'paypal.com',
-        url: 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted',
-      },
-    ],
-    hash: 'k6fsB6wbz0Ch4QETubTB-h_wE_nGUPQFYxexGb2XgKw',
-    lastUpdate: '2025-02-16T13:44:19Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/LICENSE.md',
-    name: 'pascal',
-    scopeName: 'source.pascal',
-    sha: 'f2d6345bd9fe83932f4d04fcacf98ce7d74b8034',
-    source: 'https://github.com/alefragnani/vscode-language-pascal/blob/f2d6345bd9fe83932f4d04fcacf98ce7d74b8034/syntaxes/pascal.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/alefragnani/vscode-language-pascal/contents/syntaxes/pascal.tmLanguage?ref=f2d6345bd9fe83932f4d04fcacf98ce7d74b8034',
-  },
-  {
-    byteSize: 41869,
-    categories: [
-      'general',
-    ],
-    displayName: 'Perl',
-    embedded: [
-      'html',
-      'xml',
-      'css',
-      'javascript',
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'rxHwLwef3W3ydOe0Cui_0wexusq8QNAUn6joHAL50QE',
-    lastUpdate: '2021-04-06T09:30:15Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'perl',
-    scopeName: 'source.perl',
-    sha: 'e637ff1bf7f481134849625e982ec80df9b35bc8',
-    source: 'https://github.com/microsoft/vscode/blob/e637ff1bf7f481134849625e982ec80df9b35bc8/extensions/perl/syntaxes/perl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl.tmLanguage.json?ref=e637ff1bf7f481134849625e982ec80df9b35bc8',
-  },
-  {
-    byteSize: 107314,
-    categories: [
-      'general',
-      'web',
-    ],
-    displayName: 'PHP',
-    embedded: [
-      'html',
-      'xml',
-      'sql',
-      'javascript',
-      'json',
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'pCKg4Z-l4DRDfr4UqipCw-DTFD8lc1OWySjLslEPA3s',
-    lastUpdate: '2025-05-02T13:29:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'php',
-    scopeName: 'source.php',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/php/syntaxes/php.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-  },
-  {
-    byteSize: 8125,
-    displayName: 'PL/SQL',
-    funding: [
-    ],
-    hash: '6Bx4PDNOIVQ81uKRH-yVaZbXroGX91RocNAYizSbtiw',
-    lastUpdate: '2019-03-31T11:02:30Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/zabel-xyz/plsql-language/master/LICENSE',
-    name: 'plsql',
-    scopeName: 'source.plsql.oracle',
-    sha: '256a6b8f04f2bdc5e60ce921646a5068957078d7',
-    source: 'https://github.com/zabel-xyz/plsql-language/blob/256a6b8f04f2bdc5e60ce921646a5068957078d7/syntaxes/plsql.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/zabel-xyz/plsql-language/contents/syntaxes/plsql.tmLanguage?ref=256a6b8f04f2bdc5e60ce921646a5068957078d7',
-  },
-  {
-    aliases: [
-      'pot',
-      'potx',
-    ],
-    byteSize: 3030,
-    categories: [
-      'utility',
-    ],
-    displayName: 'Gettext PO',
-    funding: [
-    ],
-    hash: 'UtB-hxdk9Xagag_qUZU7YPFBq4K8xipvzJexqziLhxI',
-    lastUpdate: '2014-11-13T07:01:18Z',
-    name: 'po',
-    scopeName: 'source.po',
-    sha: '08bb69558d82ada8d4f36b8869f871ce69014749',
-    source: 'https://github.com/textmate/gettext.tmbundle/blob/08bb69558d82ada8d4f36b8869f871ce69014749/Syntaxes/Gettext.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/gettext.tmbundle/contents/Syntaxes/Gettext.tmLanguage?ref=08bb69558d82ada8d4f36b8869f871ce69014749',
-  },
-  {
-    byteSize: 4474,
-    displayName: 'Polar',
-    funding: [
-    ],
-    hash: 'DQUP8OT3OUp5E56R38as_QPH84LMyKSXf0OAQZLGKOY',
-    lastUpdate: '2025-02-04T19:52:05Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/osohq/polar-grammar/main/LICENSE',
-    name: 'polar',
-    scopeName: 'source.polar',
-    sha: '1a87b3a7f2b47aea681a0f627b2297f77171d1c3',
-    source: 'https://github.com/osohq/polar-grammar/blob/1a87b3a7f2b47aea681a0f627b2297f77171d1c3/syntaxes/polar.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/osohq/polar-grammar/contents/syntaxes/polar.tmLanguage.json?ref=1a87b3a7f2b47aea681a0f627b2297f77171d1c3',
-  },
-  {
-    byteSize: 6193,
-    categories: [
-      'web',
-    ],
-    displayName: 'PostCSS',
-    funding: [
-      {
-        handle: '@octref',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/octref',
+        "handle": "@jmbockhorst",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/jmbockhorst"
       },
       {
-        handle: 'vuejs/vetur',
-        name: 'IssueHunt',
-        url: 'https://issuehunt.io/r/vuejs/vetur',
-      },
+        "handle": "elm-tooling",
+        "name": "Open Collective",
+        "url": "https://opencollective.com/elm-tooling"
+      }
     ],
-    hash: 'U_8P6H3mHis15SN-uJCmyI0t3RyMW6vk7cijo_YNMtY',
-    lastUpdate: '2019-03-17T05:02:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE',
-    name: 'postcss',
-    scopeName: 'source.css.postcss',
-    sha: '8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c',
-    source: 'https://github.com/vuejs/vetur/blob/8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c/syntaxes/vue-postcss.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/vetur/contents/syntaxes/vue-postcss.json?ref=8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c',
+    "hash": "01GDlYkz2tOgywtDnt9PetCbuXvfjv0SXdYk3bKfsyc",
+    "lastUpdate": "2020-08-01T18:50:23Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/elm-tooling/elm-language-client-vscode/main/LICENSE",
+    "name": "elm",
+    "scopeName": "source.elm",
+    "sha": "c70351314682c2e0fae8a402ebb301da79821c37",
+    "source": "https://github.com/elm-tooling/elm-language-client-vscode/blob/c70351314682c2e0fae8a402ebb301da79821c37/syntaxes/elm-syntax.json",
+    "sourceApi": "https://api.github.com/repos/elm-tooling/elm-language-client-vscode/contents/syntaxes/elm-syntax.json?ref=c70351314682c2e0fae8a402ebb301da79821c37"
   },
   {
-    byteSize: 5631,
-    displayName: 'PowerQuery',
-    funding: [
+    "aliases": [
+      "elisp"
     ],
-    hash: 'ylh2bBUlAa4ERZFYwNC46r7Cs4v5a-siyl8e9IeA12A',
-    lastUpdate: '2019-04-24T13:39:36Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/powerquery-language/master/LICENSE',
-    name: 'powerquery',
-    scopeName: 'source.powerquery',
-    sha: 'eed9810b5f78dfb63319bdbce80bca50419dfa50',
-    source: 'https://github.com/microsoft/powerquery-language/blob/eed9810b5f78dfb63319bdbce80bca50419dfa50/PowerQuery.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/powerquery-language/contents/PowerQuery.tmLanguage.json?ref=eed9810b5f78dfb63319bdbce80bca50419dfa50',
+    "byteSize": 778654,
+    "categories": [
+      "lisp"
+    ],
+    "displayName": "Emacs Lisp",
+    "funding": [
+    ],
+    "hash": "lXLyyDffGwt78bhdP_UWfs6Ft7iM8g01EnZ1o6pOen8",
+    "lastUpdate": "2023-09-07T13:17:43Z",
+    "license": "ISC",
+    "licenseUrl": "https://raw.githubusercontent.com/Alhadis/language-emacs-lisp/master/LICENSE.md",
+    "name": "emacs-lisp",
+    "scopeName": "source.emacs.lisp",
+    "sha": "07ef9e419b80478a0976acbc6ef9d190b07e508e",
+    "source": "https://github.com/Alhadis/language-emacs-lisp/blob/07ef9e419b80478a0976acbc6ef9d190b07e508e/grammars/emacs-lisp.cson",
+    "sourceApi": "https://api.github.com/repos/Alhadis/language-emacs-lisp/contents/grammars/emacs-lisp.cson?ref=07ef9e419b80478a0976acbc6ef9d190b07e508e"
   },
   {
-    aliases: [
-      'ps',
-      'ps1',
+    "byteSize": 1942,
+    "displayName": "ERB",
+    "embedded": [
+      "html",
+      "ruby"
     ],
-    byteSize: 19624,
-    displayName: 'PowerShell',
-    funding: [
+    "funding": [
     ],
-    hash: '3i4Vda2_-8ALBGd0UryNSQU_Vqi7i7dZePksCbjSdj8',
-    lastUpdate: '2021-11-02T14:27:57Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'powershell',
-    scopeName: 'source.powershell',
-    sha: '9efc116de0ea4998616ebe3b17ee5b92f7dc1161',
-    source: 'https://github.com/microsoft/vscode/blob/9efc116de0ea4998616ebe3b17ee5b92f7dc1161/extensions/powershell/syntaxes/powershell.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/powershell/syntaxes/powershell.tmLanguage.json?ref=9efc116de0ea4998616ebe3b17ee5b92f7dc1161',
+    "hash": "7NF4L3Y_pG3G-FSFStkuzzBZM71kSNmC6oTjAOzneo8",
+    "lastUpdate": "2014-10-30T18:38:50Z",
+    "name": "erb",
+    "scopeName": "text.html.erb",
+    "sha": "ecf0f1df23984bcff9b51552e35d9696cb0d9539",
+    "source": "https://github.com/textmate/ruby.tmbundle/blob/ecf0f1df23984bcff9b51552e35d9696cb0d9539/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/ruby.tmbundle/contents/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage?ref=ecf0f1df23984bcff9b51552e35d9696cb0d9539"
   },
   {
-    byteSize: 6116,
-    displayName: 'Prisma',
-    funding: [
+    "aliases": [
+      "erl"
     ],
-    hash: '3QywjyKuwMm0RnrMcQpXr52isTRGNqQfal3qfJYiLzE',
-    lastUpdate: '2025-05-21T13:42:02Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/prisma/language-tools/main/LICENSE',
-    name: 'prisma',
-    scopeName: 'source.prisma',
-    sha: '1e0059be6522d1dac98ff45cd78ab962599a815e',
-    source: 'https://github.com/prisma/language-tools/blob/1e0059be6522d1dac98ff45cd78ab962599a815e/packages/vscode/syntaxes/prisma.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/prisma/language-tools/contents/packages/vscode/syntaxes/prisma.tmLanguage.json?ref=1e0059be6522d1dac98ff45cd78ab962599a815e',
+    "byteSize": 36508,
+    "displayName": "Erlang",
+    "funding": [
+    ],
+    "hash": "oHouv8LT1FlEh39LYc_RlJPvnLFp8rw0EZh-LmZqAZo",
+    "lastUpdate": "2025-04-23T12:34:14Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/erlang-ls/grammar/main/LICENSE",
+    "name": "erlang",
+    "scopeName": "source.erlang",
+    "sha": "6115175e7e574f69637eaee3db7731915c6f03aa",
+    "source": "https://github.com/erlang-ls/grammar/blob/6115175e7e574f69637eaee3db7731915c6f03aa/Erlang.plist",
+    "sourceApi": "https://api.github.com/repos/erlang-ls/grammar/contents/Erlang.plist?ref=6115175e7e574f69637eaee3db7731915c6f03aa"
   },
   {
-    byteSize: 11206,
-    displayName: 'Prolog',
-    funding: [
+    "byteSize": 4634,
+    "categories": [
+      "lisp"
     ],
-    hash: '_wslbJVOrtScDJRsUlHr7_JQoqR612h_JoBAwkG1zcc',
-    lastUpdate: '2018-06-02T15:08:48Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/arthwang/vsc-prolog/master/LICENSE.txt',
-    name: 'prolog',
-    scopeName: 'source.prolog',
-    sha: '5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7',
-    source: 'https://github.com/arthwang/vsc-prolog/blob/5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7/syntaxes/prolog.swi.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/arthwang/vsc-prolog/contents/syntaxes/prolog.swi.tmLanguage.json?ref=5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7',
+    "displayName": "Fennel",
+    "funding": [
+    ],
+    "hash": "NSwYpgTmjTcA7_9scAlPkIZ4yYpx0YR2ah_Yl3CnuCo",
+    "lastUpdate": "2021-05-05T22:44:42Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/kongeor/vsc-fennel/master/LICENSE",
+    "name": "fennel",
+    "scopeName": "source.fnl",
+    "sha": "664148923d7bd72531120d0cba712c6dba6f698d",
+    "source": "https://github.com/kongeor/vsc-fennel/blob/664148923d7bd72531120d0cba712c6dba6f698d/syntaxes/fennel.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/kongeor/vsc-fennel/contents/syntaxes/fennel.tmLanguage.json?ref=664148923d7bd72531120d0cba712c6dba6f698d"
   },
   {
-    aliases: [
-      'protobuf',
+    "byteSize": 3971,
+    "categories": [
+      "scripting"
     ],
-    byteSize: 6241,
-    displayName: 'Protocol Buffer 3',
-    funding: [
+    "displayName": "Fish",
+    "funding": [
     ],
-    hash: 'fGoQjk71Pi8UmDDojIWtwmyC1q-_0T4dVBep6tpH82A',
-    lastUpdate: '2022-02-08T19:51:15Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/zxh0/vscode-proto3/master/LICENSE.txt',
-    name: 'proto',
-    scopeName: 'source.proto',
-    sha: 'ead0fb5f46a56adbe30d5a8a63d68e7131912159',
-    source: 'https://github.com/zxh0/vscode-proto3/blob/ead0fb5f46a56adbe30d5a8a63d68e7131912159/syntaxes/proto3.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/zxh0/vscode-proto3/contents/syntaxes/proto3.tmLanguage.json?ref=ead0fb5f46a56adbe30d5a8a63d68e7131912159',
+    "hash": "ybTgKA2dGQNcghVfgive4rQ1_thBexLLS8e9KZymy3o",
+    "lastUpdate": "2022-01-23T01:18:50Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/bmalehorn/vscode-fish/master/LICENSE",
+    "name": "fish",
+    "scopeName": "source.fish",
+    "sha": "2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718",
+    "source": "https://github.com/bmalehorn/vscode-fish/blob/2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718/syntaxes/fish.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/bmalehorn/vscode-fish/contents/syntaxes/fish.tmLanguage.json?ref=2fe4ccc72fdcd9b9f54fbb2c05fe9b350c32d718"
   },
   {
-    aliases: [
-      'jade',
+    "aliases": [
+      "ftl"
     ],
-    byteSize: 13039,
-    categories: [
-      'web',
-      'markup',
+    "byteSize": 3466,
+    "displayName": "Fluent",
+    "funding": [
     ],
-    displayName: 'Pug',
-    embedded: [
-      'javascript',
-      'css',
-      'sass',
-      'scss',
-      'stylus',
-      'coffee',
-      'html',
-    ],
-    funding: [
-    ],
-    hash: 'DtlOh-9gzldDDvpIVJ5nH2fKApsu1XLeCcEdXJ2SE7k',
-    lastUpdate: '2023-03-29T09:38:06Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'pug',
-    scopeName: 'text.pug',
-    sha: '6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
-    source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/pug/syntaxes/pug.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/pug/syntaxes/pug.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
+    "hash": "sFuhS1T50P-OrHVnVvME3LtC0dyV0N2HhpW-R666xDA",
+    "lastUpdate": "2022-07-23T20:00:33Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/macabeus/vscode-fluent/master/LICENSE",
+    "name": "fluent",
+    "scopeName": "source.ftl",
+    "sha": "8544ea296a7769a359f43ddff4dc4b6c61f5cf59",
+    "source": "https://github.com/macabeus/vscode-fluent/blob/8544ea296a7769a359f43ddff4dc4b6c61f5cf59/syntaxes/fluent.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/macabeus/vscode-fluent/contents/syntaxes/fluent.tmLanguage.json?ref=8544ea296a7769a359f43ddff4dc4b6c61f5cf59"
   },
   {
-    byteSize: 11065,
-    displayName: 'Puppet',
-    funding: [
+    "aliases": [
+      "f",
+      "for",
+      "f77"
+    ],
+    "byteSize": 903,
+    "displayName": "Fortran (Fixed Form)",
+    "embedded": [
+      "fortran-free-form"
+    ],
+    "funding": [
+    ],
+    "hash": "blGoriEW3zDismfKI7bNrms7dB556ug8Y3guSD6_66o",
+    "lastUpdate": "2021-11-09T22:09:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE",
+    "name": "fortran-fixed-form",
+    "scopeName": "source.fortran.fixed",
+    "sha": "e642012094fc0a7379f204bb4e61243005afb1da",
+    "source": "https://github.com/fortran-lang/vscode-fortran-support/blob/e642012094fc0a7379f204bb4e61243005afb1da/syntaxes/fortran_fixed-form.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/fortran-lang/vscode-fortran-support/contents/syntaxes/fortran_fixed-form.tmLanguage.json?ref=e642012094fc0a7379f204bb4e61243005afb1da"
+  },
+  {
+    "aliases": [
+      "f90",
+      "f95",
+      "f03",
+      "f08",
+      "f18"
+    ],
+    "byteSize": 84130,
+    "displayName": "Fortran (Free Form)",
+    "funding": [
+    ],
+    "hash": "KcLieNVdT4NJ1daIMfcBpqJrM9jO10c8MtqDSrPoo-4",
+    "lastUpdate": "2023-05-09T01:04:12Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/fortran-lang/vscode-fortran-support/main/LICENSE",
+    "name": "fortran-free-form",
+    "scopeName": "source.fortran.free",
+    "sha": "f7fb41579770a0d8c75b9f295d167b31147b4f33",
+    "source": "https://github.com/fortran-lang/vscode-fortran-support/blob/f7fb41579770a0d8c75b9f295d167b31147b4f33/syntaxes/fortran_free-form.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/fortran-lang/vscode-fortran-support/contents/syntaxes/fortran_free-form.tmLanguage.json?ref=f7fb41579770a0d8c75b9f295d167b31147b4f33"
+  },
+  {
+    "aliases": [
+      "f#",
+      "fs"
+    ],
+    "byteSize": 24440,
+    "categories": [
+      "general"
+    ],
+    "displayName": "F#",
+    "embedded": [
+      "markdown"
+    ],
+    "funding": [
+    ],
+    "hash": "vC35xKFiu851Z2Tg_ZmO4u7K-Dmd0a4zxrvo9IebCmI",
+    "lastUpdate": "2024-09-27T08:27:11Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "fsharp",
+    "scopeName": "source.fsharp",
+    "sha": "e67b1982e1ab318288b8196ad503273dcb168049",
+    "source": "https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/fsharp/syntaxes/fsharp.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/fsharp/syntaxes/fsharp.tmLanguage.json?ref=e67b1982e1ab318288b8196ad503273dcb168049"
+  },
+  {
+    "byteSize": 4831,
+    "displayName": "GDResource",
+    "embedded": [
+      "gdshader",
+      "gdscript"
+    ],
+    "funding": [
       {
-        handle: '@octref',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/octref',
-      },
+        "name": "fund.godotengine.org",
+        "url": "https://fund.godotengine.org/"
+      }
     ],
-    hash: 'VcoXuMecc-7qIFw9YPb6d4HDfJxCxPC9j8rGSk0GEaU',
-    lastUpdate: '2020-08-20T04:40:24Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/octref/puppet-vscode/main/LICENSE',
-    name: 'puppet',
-    scopeName: 'source.puppet',
-    sha: '42e02ef6c02aefb0dcf03f8367fdc106d7213a6c',
-    source: 'https://github.com/octref/puppet-vscode/blob/42e02ef6c02aefb0dcf03f8367fdc106d7213a6c/syntaxes/puppet.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/octref/puppet-vscode/contents/syntaxes/puppet.tmLanguage?ref=42e02ef6c02aefb0dcf03f8367fdc106d7213a6c',
+    "hash": "a_SeHnF7ntduTw1bSSQ1QYbiRbAMaNhHDGGkiFyTX6A",
+    "lastUpdate": "2023-12-06T14:53:10Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE",
+    "name": "gdresource",
+    "scopeName": "source.gdresource",
+    "sha": "e7e2d0439dea0fb3a568378554c81e0a17348a84",
+    "source": "https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDResource.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDResource.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84"
   },
   {
-    byteSize: 21697,
-    displayName: 'PureScript',
-    funding: [
-    ],
-    hash: 'LNhY2u12fXmMKLJU5g4gFx4FNryU4UT6pvoyF_2qcEQ',
-    lastUpdate: '2025-03-07T08:17:45Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/nwolverson/vscode-language-purescript/master/LICENSE.md',
-    name: 'purescript',
-    scopeName: 'source.purescript',
-    sha: '52a2ab241ee6f9b5f8b91a02d9227654357965ee',
-    source: 'https://github.com/nwolverson/vscode-language-purescript/blob/52a2ab241ee6f9b5f8b91a02d9227654357965ee/syntaxes/purescript.json',
-    sourceApi: 'https://api.github.com/repos/nwolverson/vscode-language-purescript/contents/syntaxes/purescript.json?ref=52a2ab241ee6f9b5f8b91a02d9227654357965ee',
-  },
-  {
-    aliases: [
-      'py',
-    ],
-    byteSize: 68139,
-    categories: [
-      'general',
-    ],
-    displayName: 'Python',
-    funding: [
-    ],
-    hash: '3QzSFtH7MOitfK3QFoKA6FykhVLrWwPSBlDvFLG9otI',
-    lastUpdate: '2022-10-20T22:45:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'python',
-    scopeName: 'source.python',
-    sha: 'cf4c9e469d521fa5f33353737e8157eb0789ad02',
-    source: 'https://github.com/microsoft/vscode/blob/cf4c9e469d521fa5f33353737e8157eb0789ad02/extensions/python/syntaxes/MagicPython.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/python/syntaxes/MagicPython.tmLanguage.json?ref=cf4c9e469d521fa5f33353737e8157eb0789ad02',
-  },
-  {
-    byteSize: 5032,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'QML',
-    embedded: [
-      'javascript',
-    ],
-    funding: [
-    ],
-    hash: 'ewvNUVmfhbtxZQ-fcKpY8FjdSOSfRk8yDxQtTJ2RQ0I',
-    lastUpdate: '2022-08-26T21:14:57Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
-    name: 'qml',
-    scopeName: 'source.qml',
-    sha: '51408001e908800c00ce9f68f66e511545ea29fe',
-    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/51408001e908800c00ce9f68f66e511545ea29fe/syntaxes/qml.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qml.tmLanguage.json?ref=51408001e908800c00ce9f68f66e511545ea29fe',
-  },
-  {
-    byteSize: 902,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'QML Directory',
-    funding: [
-    ],
-    hash: 'cfzguECWzd9g56cb-N_MxwfE_J6RhaYEX0RKOb2Qazk',
-    lastUpdate: '2022-08-26T21:28:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
-    name: 'qmldir',
-    scopeName: 'source.qmldir',
-    sha: 'b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b',
-    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b/syntaxes/qmldir.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qmldir.tmLanguage.json?ref=b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b',
-  },
-  {
-    byteSize: 7288,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'Qt Style Sheets',
-    funding: [
-    ],
-    hash: '0Osg1Uny4y1ZnUND_3HZ-CeB_dS7MAaKpLNqQiVI_vs',
-    lastUpdate: '2023-02-15T15:05:28Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE',
-    name: 'qss',
-    scopeName: 'source.qss',
-    sha: 'f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d',
-    source: 'https://github.com/seanwu1105/vscode-qt-for-python/blob/f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d/syntaxes/qss.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qss.tmLanguage.json?ref=f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d',
-  },
-  {
-    byteSize: 51954,
-    categories: [
-      'data',
-    ],
-    displayName: 'R',
-    funding: [
-    ],
-    hash: 'AAd2Vg7DnvcVg46BpcfWZjaqRz5qQn9G1KIHOL897lE',
-    lastUpdate: '2025-05-15T10:04:36Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'r',
-    scopeName: 'source.r',
-    sha: '43996d742238554ea84e501a1bd1d289553e5365',
-    source: 'https://github.com/microsoft/vscode/blob/43996d742238554ea84e501a1bd1d289553e5365/extensions/r/syntaxes/r.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/r/syntaxes/r.tmLanguage.json?ref=43996d742238554ea84e501a1bd1d289553e5365',
-  },
-  {
-    byteSize: 89526,
-    categories: [
-      'lisp',
-    ],
-    displayName: 'Racket',
-    funding: [
+    "byteSize": 18247,
+    "displayName": "GDScript",
+    "funding": [
       {
-        handle: '@eugleo',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/eugleo',
-      },
+        "name": "fund.godotengine.org",
+        "url": "https://fund.godotengine.org/"
+      }
     ],
-    hash: 'p_5dFXjTI0y4d2TBVA-RH2dysDpT5OkhF2K9pelO2_A',
-    lastUpdate: '2025-04-10T11:19:24Z',
-    license: 'GPL-3.0',
-    licenseUrl: 'https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE',
-    name: 'racket',
-    scopeName: 'source.racket',
-    sha: '1b850db7f6e7c3ba8a1b47fe2781800a21f669a8',
-    source: 'https://github.com/Eugleo/magic-racket/blob/1b850db7f6e7c3ba8a1b47fe2781800a21f669a8/syntaxes/racket.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/Eugleo/magic-racket/contents/syntaxes/racket.tmLanguage.json?ref=1b850db7f6e7c3ba8a1b47fe2781800a21f669a8',
+    "hash": "C_YJPTJfva14j7AhQ0pJLbiwX1uL1H0hZsnaYumnsTg",
+    "lastUpdate": "2025-04-26T20:00:15Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE",
+    "name": "gdscript",
+    "scopeName": "source.gdscript",
+    "sha": "911a34fda4d4ffacb04dc7fa4737347ac95ddb40",
+    "source": "https://github.com/godotengine/godot-vscode-plugin/blob/911a34fda4d4ffacb04dc7fa4737347ac95ddb40/syntaxes/GDScript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDScript.tmLanguage.json?ref=911a34fda4d4ffacb04dc7fa4737347ac95ddb40"
   },
   {
-    aliases: [
-      'perl6',
-    ],
-    byteSize: 10193,
-    categories: [
-      'general',
-    ],
-    displayName: 'Raku',
-    funding: [
-    ],
-    hash: 'LoAP3GDbGymp6axP10ev3THDgeiY4Iy7lk80jfv_LDo',
-    lastUpdate: '2018-02-12T15:54:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'raku',
-    scopeName: 'source.perl.6',
-    sha: '8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-    source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/perl/syntaxes/perl6.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl6.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-  },
-  {
-    byteSize: 24883,
-    displayName: 'ASP.NET Razor',
-    embedded: [
-      'html',
-      'csharp',
-    ],
-    funding: [
-    ],
-    hash: 'twTvHeUmuJ6w9-C3OQrlEYFDpIg30cjsX4XTI_OTAhQ',
-    lastUpdate: '2025-01-16T21:40:52Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/dotnet/razor/main/LICENSE.txt',
-    name: 'razor',
-    scopeName: 'text.aspnetcorerazor',
-    sha: '9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c',
-    source: 'https://github.com/dotnet/razor/blob/9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/dotnet/razor/contents/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json?ref=9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c',
-  },
-  {
-    byteSize: 2239,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'Windows Registry Script',
-    funding: [
-    ],
-    hash: '25tsOXM-UcNHDq_UJSUuCgDdOQUWCtXgL7nCQ_P4pSo',
-    lastUpdate: '2020-02-08T20:48:08Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mihai-vlc/reg-vscode/master/LICENSE',
-    name: 'reg',
-    scopeName: 'source.reg',
-    sha: '896096fc6756329d82c71a913663a1c0ac678f74',
-    source: 'https://github.com/mihai-vlc/reg-vscode/blob/896096fc6756329d82c71a913663a1c0ac678f74/syntaxes/reg.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/mihai-vlc/reg-vscode/contents/syntaxes/reg.tmLanguage?ref=896096fc6756329d82c71a913663a1c0ac678f74',
-  },
-  {
-    aliases: [
-      'regex',
-    ],
-    byteSize: 7716,
-    displayName: 'RegExp',
-    funding: [
-    ],
-    hash: 'XF5cnlMsNTxKxQnlquEwGS2vJdRushREWG10JFx3-_Q',
-    lastUpdate: '2020-02-16T01:06:09Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/MagicStack/MagicPython/master/LICENSE',
-    name: 'regexp',
-    scopeName: 'source.regexp.python',
-    sha: 'c9b3409deb69acec31bbf7913830e93a046b30cc',
-    source: 'https://github.com/MagicStack/MagicPython/blob/c9b3409deb69acec31bbf7913830e93a046b30cc/grammars/MagicRegExp.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/MagicStack/MagicPython/contents/grammars/MagicRegExp.tmLanguage?ref=c9b3409deb69acec31bbf7913830e93a046b30cc',
-  },
-  {
-    byteSize: 3220,
-    displayName: 'Rel',
-    funding: [
-    ],
-    hash: 'uGzg7INvpWWnNxRU2Kmz6KmEX6huFy6NiKaKxKuAQls',
-    lastUpdate: '2021-08-25T10:18:43Z',
-    name: 'rel',
-    scopeName: 'source.rel',
-    sha: '63dda4dee48c67b037357f47b562185484555ea9',
-    source: 'https://github.com/relationalai-oss/rel_vscode/blob/63dda4dee48c67b037357f47b562185484555ea9/syntaxes/rel.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/relationalai-oss/rel_vscode/contents/syntaxes/rel.tmLanguage.json?ref=63dda4dee48c67b037357f47b562185484555ea9',
-  },
-  {
-    byteSize: 6482,
-    displayName: 'RISC-V',
-    funding: [
-    ],
-    hash: 'kOeYkUe5DqM2rZ8bAA1j2_Z_EOMJERq9xjEJ1FeQzNA',
-    lastUpdate: '2020-10-28T01:05:27Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/zhuanhao-wu/vscode-riscv-support/master/LICENSE',
-    name: 'riscv',
-    scopeName: 'source.riscv',
-    sha: '2736b60e45ff2ef738d784055e136cf38d6290cd',
-    source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/2736b60e45ff2ef738d784055e136cf38d6290cd/syntaxes/riscv.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/zhuanhao-wu/vscode-riscv-support/contents/syntaxes/riscv.tmLanguage?ref=2736b60e45ff2ef738d784055e136cf38d6290cd',
-  },
-  {
-    byteSize: 9291,
-    categories: [
-      'markup',
-    ],
-    displayName: 'reStructuredText',
-    embedded: [
-      'html-derivative',
-      'cpp',
-      'python',
-      'javascript',
-      'shellscript',
-      'yaml',
-      'cmake',
-      'ruby',
-    ],
-    funding: [
-    ],
-    hash: 'A9cQWHyJJd5LTidoyLqC2wC6QJn6qQq9Sf34ZKpGs6k',
-    lastUpdate: '2023-10-02T14:56:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'rst',
-    scopeName: 'source.rst',
-    sha: '48e93f756b764991ede33ad09781a863aca6907a',
-    source: 'https://github.com/microsoft/vscode/blob/48e93f756b764991ede33ad09781a863aca6907a/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/restructuredtext/syntaxes/rst.tmLanguage.json?ref=48e93f756b764991ede33ad09781a863aca6907a',
-  },
-  {
-    aliases: [
-      'rb',
-    ],
-    byteSize: 43665,
-    categories: [
-      'general',
-    ],
-    displayName: 'Ruby',
-    embedded: [
-      'html',
-      'haml',
-      'xml',
-      'sql',
-      'graphql',
-      'css',
-      'cpp',
-      'c',
-      'javascript',
-      'shellscript',
-      'lua',
-      'yaml',
-    ],
-    funding: [
-    ],
-    hash: 'WjBpiLVK_j0CJniEfi0ahwHHZ2-CmM6shS1RN8lyjbk',
-    lastUpdate: '2025-05-02T13:29:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'ruby',
-    scopeName: 'source.ruby',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/ruby/syntaxes/ruby.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-  },
-  {
-    aliases: [
-      'rs',
-    ],
-    byteSize: 14689,
-    categories: [
-      'general',
-    ],
-    displayName: 'Rust',
-    funding: [
-    ],
-    hash: 'hEnoZ2o9jfmY0i-WSjKXX16_nc3Q8XRmkaR7EqOXOic',
-    lastUpdate: '2025-04-02T13:41:58Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'rust',
-    scopeName: 'source.rust',
-    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
-    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/rust/syntaxes/rust.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/rust/syntaxes/rust.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75',
-  },
-  {
-    byteSize: 8819,
-    displayName: 'SAS',
-    embedded: [
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'i6tM05j0-1bm-tP160aqDftWYowbeIEOe6venFCXoeM',
-    lastUpdate: '2019-03-13T21:39:48Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rpardee/sas/master/LICENSE',
-    name: 'sas',
-    scopeName: 'source.sas',
-    sha: '49f6e733c6c0b918a2a825ca2f63dba704f3e8c0',
-    source: 'https://github.com/rpardee/sas/blob/49f6e733c6c0b918a2a825ca2f63dba704f3e8c0/syntaxes/sas.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/rpardee/sas/contents/syntaxes/sas.tmLanguage?ref=49f6e733c6c0b918a2a825ca2f63dba704f3e8c0',
-  },
-  {
-    byteSize: 8971,
-    categories: [
-      'web',
-    ],
-    displayName: 'Sass',
-    funding: [
-    ],
-    hash: 'nIaSVgwSUF9bxC4JlF_onMFmoMGkePl5o2jVXasjn7U',
-    lastUpdate: '2025-01-19T21:07:24Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/TheRealSyler/vscode-sass-indented/master/LICENSE',
-    name: 'sass',
-    scopeName: 'source.sass',
-    sha: 'f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f',
-    source: 'https://github.com/TheRealSyler/vscode-sass-indented/blob/f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f/syntaxes/sass.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/TheRealSyler/vscode-sass-indented/contents/syntaxes/sass.tmLanguage.json?ref=f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f',
-  },
-  {
-    byteSize: 26953,
-    displayName: 'Scala',
-    funding: [
-    ],
-    hash: 'bckZSnzUUJqEd61PYjbPBojEBTMTX18mNDgcxxR3GTk',
-    lastUpdate: '2025-01-13T17:26:01Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/scala/vscode-scala-syntax/main/LICENSE.md',
-    name: 'scala',
-    scopeName: 'source.scala',
-    sha: '1d4029f21c9c57ce3e05486968b5de2847c25c62',
-    source: 'https://github.com/scala/vscode-scala-syntax/blob/1d4029f21c9c57ce3e05486968b5de2847c25c62/syntaxes/Scala.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/scala/vscode-scala-syntax/contents/syntaxes/Scala.tmLanguage.json?ref=1d4029f21c9c57ce3e05486968b5de2847c25c62',
-  },
-  {
-    byteSize: 6924,
-    categories: [
-      'general',
-      'lisp',
-    ],
-    displayName: 'Scheme',
-    funding: [
-    ],
-    hash: 'mSEYUEWcYupyCrtFdHOZgGcw0mjlXHFzhtQLo_14DRI',
-    lastUpdate: '2018-12-25T09:02:00Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/tinyjiahao/vscode-scheme/master/LICENSE.md',
-    name: 'scheme',
-    scopeName: 'source.scheme',
-    sha: '4e21683666e1e2edfa21d040ecd427f628e7b5ff',
-    source: 'https://github.com/sjhuangx/vscode-scheme/blob/4e21683666e1e2edfa21d040ecd427f628e7b5ff/syntaxes/scheme.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/sjhuangx/vscode-scheme/contents/syntaxes/scheme.tmLanguage?ref=4e21683666e1e2edfa21d040ecd427f628e7b5ff',
-  },
-  {
-    byteSize: 26425,
-    categories: [
-      'web',
-    ],
-    displayName: 'SCSS',
-    embedded: [
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'ojpzVw7DV4kIFqnExv4x1FZW_vQDZbN8wQ_hXmDOelg',
-    lastUpdate: '2019-11-12T14:37:21Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'scss',
-    scopeName: 'source.css.scss',
-    sha: 'cf8d61ebd2f022f4ce8280171f0360d1fe0a206d',
-    source: 'https://github.com/microsoft/vscode/blob/cf8d61ebd2f022f4ce8280171f0360d1fe0a206d/extensions/scss/syntaxes/scss.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/scss/syntaxes/scss.tmLanguage.json?ref=cf8d61ebd2f022f4ce8280171f0360d1fe0a206d',
-  },
-  {
-    aliases: [
-      '1c-query',
-    ],
-    byteSize: 4478,
-    categories: [
-      'dsl',
-    ],
-    displayName: '1C (Query)',
-    funding: [
-    ],
-    hash: 'MCJM4tptI9FmvrSpoOKQ1Lp4wlC5MUNwCa7pFSO2LAQ',
-    lastUpdate: '2024-11-05T21:37:20Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md',
-    name: 'sdbl',
-    scopeName: 'source.sdbl',
-    sha: 'c60d42089e5139942ff5b1db3a0a3ca8dd094ce6',
-    source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/c60d42089e5139942ff5b1db3a0a3ca8dd094ce6/syntaxes/1c-query.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/1c-syntax/vsc-language-1c-bsl/contents/syntaxes/1c-query.tmLanguage.json?ref=c60d42089e5139942ff5b1db3a0a3ca8dd094ce6',
-  },
-  {
-    aliases: [
-      'shader',
-    ],
-    byteSize: 5626,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'ShaderLab',
-    embedded: [
-      'hlsl',
-    ],
-    funding: [
-    ],
-    hash: 'cqQ73LKaXWV-o5k6k6_AWo561GijsBZkYUf5eiUO-D4',
-    lastUpdate: '2018-02-12T15:54:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'shaderlab',
-    scopeName: 'source.shaderlab',
-    sha: '8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-    source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-  },
-  {
-    aliases: [
-      'bash',
-      'sh',
-      'shell',
-      'zsh',
-    ],
-    byteSize: 39917,
-    categories: [
-      'scripting',
-    ],
-    displayName: 'Shell',
-    funding: [
-    ],
-    hash: 'l2mgA5XXHIrmKj-timscPGHz7KfiXx4aiwaMJPdNyws',
-    lastUpdate: '2024-07-29T09:33:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'shellscript',
-    scopeName: 'source.shell',
-    sha: '9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
-    source: 'https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json?ref=9473445f7d3dcb5c579f42ece8b6c18c43c63ed3',
-  },
-  {
-    aliases: [
-      'console',
-    ],
-    byteSize: 513,
-    categories: [
-      'scripting',
-    ],
-    displayName: 'Shell Session',
-    embedded: [
-      'shellscript',
-    ],
-    funding: [
-    ],
-    hash: 'Lm5oOVZarS8iB09z9zzooOSsm-WfE6MWvTrAcHpj8HE',
-    lastUpdate: '2021-12-19T08:29:21Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hronro/sublime-linguist-syntax/master/LICENSE',
-    name: 'shellsession',
-    scopeName: 'text.shell-session',
-    sha: '9c84f1d69dbe89bc23292f129cf2d408a9c7afe1',
-    source: 'https://github.com/hronro/sublime-linguist-syntax/blob/9c84f1d69dbe89bc23292f129cf2d408a9c7afe1/syntaxes/ShellSession.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hronro/sublime-linguist-syntax/contents/syntaxes/ShellSession.tmLanguage?ref=9c84f1d69dbe89bc23292f129cf2d408a9c7afe1',
-  },
-  {
-    byteSize: 6369,
-    displayName: 'Smalltalk',
-    funding: [
-    ],
-    hash: 'WMV13hGsAzro32NaRTbaIusl9X4PulDcK7uh7EAtwDE',
-    lastUpdate: '2025-05-01T21:08:27Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/leocamello/vscode-smalltalk/master/LICENSE',
-    name: 'smalltalk',
-    scopeName: 'source.smalltalk',
-    sha: '15ff58e2236127f682a33da12e931d74e0d17979',
-    source: 'https://github.com/leocamello/vscode-smalltalk/blob/15ff58e2236127f682a33da12e931d74e0d17979/syntaxes/smalltalk.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/leocamello/vscode-smalltalk/contents/syntaxes/smalltalk.tmLanguage.json?ref=15ff58e2236127f682a33da12e931d74e0d17979',
-  },
-  {
-    byteSize: 15577,
-    displayName: 'Solidity',
-    funding: [
-    ],
-    hash: 'aH4qktB-Xw5cophFFvNZgABSmMAi0LqHZigO4esKQ7w',
-    lastUpdate: '2025-03-26T16:21:49Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/juanfranblanco/vscode-solidity/master/License.txt',
-    name: 'solidity',
-    scopeName: 'source.solidity',
-    sha: '00abfad973f7a2f4fd105e05641344e160020369',
-    source: 'https://github.com/juanfranblanco/vscode-solidity/blob/00abfad973f7a2f4fd105e05641344e160020369/syntaxes/solidity.json',
-    sourceApi: 'https://api.github.com/repos/juanfranblanco/vscode-solidity/contents/syntaxes/solidity.json?ref=00abfad973f7a2f4fd105e05641344e160020369',
-  },
-  {
-    aliases: [
-      'closure-templates',
-    ],
-    byteSize: 6555,
-    displayName: 'Closure Templates',
-    embedded: [
-      'html',
-    ],
-    funding: [
-    ],
-    hash: 'AnsZA19YLsxPCDntTSGbCkpqqcOo7RXDRMMS5CUFS9Y',
-    lastUpdate: '2017-05-27T18:02:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mthadley/language-closure-templates/master/LICENSE',
-    name: 'soy',
-    scopeName: 'text.html.soy',
-    sha: '7caf3a1fad0245c4196d3766ba0f481762fbc92e',
-    source: 'https://github.com/mthadley/language-closure-templates/blob/7caf3a1fad0245c4196d3766ba0f481762fbc92e/grammars/closure-templates.json',
-    sourceApi: 'https://api.github.com/repos/mthadley/language-closure-templates/contents/grammars/closure-templates.json?ref=7caf3a1fad0245c4196d3766ba0f481762fbc92e',
-  },
-  {
-    byteSize: 1330,
-    displayName: 'SPARQL',
-    embedded: [
-      'turtle',
-    ],
-    funding: [
-    ],
-    hash: 'VbH370sCYIbxj_0vTaSJ8XXypmOh647sGV4iyvCJe9Q',
-    lastUpdate: '2022-11-21T15:24:11Z',
-    name: 'sparql',
-    scopeName: 'source.sparql',
-    sha: 'a1963c610cde0eab23c44fc01ab36652565524de',
-    source: 'https://github.com/stardog-union/stardog-vsc/blob/a1963c610cde0eab23c44fc01ab36652565524de/stardog-rdf-grammars/syntaxes/sparql.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/stardog-union/stardog-vsc/contents/stardog-rdf-grammars/syntaxes/sparql.tmLanguage.json?ref=a1963c610cde0eab23c44fc01ab36652565524de',
-  },
-  {
-    aliases: [
-      'spl',
-    ],
-    byteSize: 3259,
-    displayName: 'Splunk Query Language',
-    funding: [
-    ],
-    hash: 'WD5_rGbg1Aa0HZb9cYo-8gG-a7Cm8_AUpiSGUvQAnDw',
-    lastUpdate: '2022-08-09T09:12:38Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/arcsector/vscode-splunk-search-syntax/master/LICENSE.txt',
-    name: 'splunk',
-    scopeName: 'source.splunk_search',
-    sha: 'b1f68ff035950e6a98e0db4af1a338cb1c3c1858',
-    source: 'https://github.com/arcsector/vscode-splunk-search-syntax/blob/b1f68ff035950e6a98e0db4af1a338cb1c3c1858/syntaxes/splunk_search.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/arcsector/vscode-splunk-search-syntax/contents/syntaxes/splunk_search.tmLanguage?ref=b1f68ff035950e6a98e0db4af1a338cb1c3c1858',
-  },
-  {
-    byteSize: 22872,
-    categories: [
-      'dsl',
-    ],
-    displayName: 'SQL',
-    funding: [
-    ],
-    hash: '7l8Vwy4WmHUCiUQwZrtcjpjinHeUCUmxmFxfHhnkKZ8',
-    lastUpdate: '2025-05-02T13:29:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'sql',
-    scopeName: 'source.sql',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/sql/syntaxes/sql.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/sql/syntaxes/sql.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-  },
-  {
-    byteSize: 3509,
-    displayName: 'SSH Config',
-    funding: [
-    ],
-    hash: 'mghKeapZ8a2z0zYQ0YmyK3WPzEs-p7q8dxVLvDQqRPw',
-    lastUpdate: '2018-10-09T21:04:51Z',
-    name: 'ssh-config',
-    scopeName: 'source.ssh-config',
-    sha: '212a0000c50e0c877303b2c4fcead539d2af2670',
-    source: 'https://github.com/textmate/ssh-config.tmbundle/blob/212a0000c50e0c877303b2c4fcead539d2af2670/Syntaxes/SSH-Config.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/ssh-config.tmbundle/contents/Syntaxes/SSH-Config.tmLanguage?ref=212a0000c50e0c877303b2c4fcead539d2af2670',
-  },
-  {
-    byteSize: 55701,
-    displayName: 'Stata',
-    embedded: [
-      'sql',
-    ],
-    funding: [
-    ],
-    hash: 'TNykDgetaA0aZGCO0AHTHaqH_4bYP3m6oh5eNf8-zUI',
-    lastUpdate: '2018-06-12T13:58:33Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/kylebarron/language-stata/master/LICENSE',
-    name: 'stata',
-    scopeName: 'source.stata',
-    sha: 'dd98de502bc1bf2a205f3f023afb98c7aa5b42ee',
-    source: 'https://github.com/kylebarron/language-stata/blob/dd98de502bc1bf2a205f3f023afb98c7aa5b42ee/grammars/stata.json',
-    sourceApi: 'https://api.github.com/repos/kylebarron/language-stata/contents/grammars/stata.json?ref=dd98de502bc1bf2a205f3f023afb98c7aa5b42ee',
-  },
-  {
-    aliases: [
-      'styl',
-    ],
-    byteSize: 30406,
-    categories: [
-      'web',
-    ],
-    displayName: 'Stylus',
-    funding: [
+    "byteSize": 6048,
+    "displayName": "GDShader",
+    "funding": [
       {
-        handle: 'stylus',
-        name: 'Open Collective',
-        url: 'https://opencollective.com/stylus',
-      },
+        "name": "fund.godotengine.org",
+        "url": "https://fund.godotengine.org/"
+      }
     ],
-    hash: 'NGG3_wNKZA0InTo9QebZeIpg-8Vcx0J9REFazvyKhOE',
-    lastUpdate: '2021-11-19T11:55:44Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/d4rkr00t/language-stylus/master/LICENSE',
-    name: 'stylus',
-    scopeName: 'source.stylus',
-    sha: '198a851f385aee857332f3ce5dd981ff67720ead',
-    source: 'https://github.com/d4rkr00t/language-stylus/blob/198a851f385aee857332f3ce5dd981ff67720ead/syntaxes/stylus.json',
-    sourceApi: 'https://api.github.com/repos/d4rkr00t/language-stylus/contents/syntaxes/stylus.json?ref=198a851f385aee857332f3ce5dd981ff67720ead',
+    "hash": "LZmhmd07-B6US6utFu4ht9r-2bH9mOUXPDYOVgMveE4",
+    "lastUpdate": "2023-12-06T14:53:10Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE",
+    "name": "gdshader",
+    "scopeName": "source.gdshader",
+    "sha": "e7e2d0439dea0fb3a568378554c81e0a17348a84",
+    "source": "https://github.com/godotengine/godot-vscode-plugin/blob/e7e2d0439dea0fb3a568378554c81e0a17348a84/syntaxes/GDShader.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDShader.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84"
   },
   {
-    byteSize: 17212,
-    categories: [
-      'web',
+    "byteSize": 3180,
+    "displayName": "Genie",
+    "funding": [
     ],
-    displayName: 'Svelte',
-    embedded: [
-      'javascript',
-      'typescript',
-      'coffee',
-      'stylus',
-      'sass',
-      'css',
-      'scss',
-      'less',
-      'postcss',
-      'pug',
-      'markdown',
+    "hash": "cSG3F5p3cQP-wb_nhNPpbf1IGyS80WYKsZOlPMK7zUw",
+    "lastUpdate": "2021-05-28T08:53:39Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE",
+    "name": "genie",
+    "scopeName": "source.genie",
+    "sha": "8f825e95648326df2572d0522632251cdff4a43b",
+    "source": "https://github.com/vala-lang/vala-vscode/blob/8f825e95648326df2572d0522632251cdff4a43b/syntaxes/genie.YAML-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/vala-lang/vala-vscode/contents/syntaxes/genie.YAML-tmLanguage?ref=8f825e95648326df2572d0522632251cdff4a43b"
+  },
+  {
+    "byteSize": 11828,
+    "displayName": "Gherkin",
+    "funding": [
     ],
-    funding: [
+    "hash": "kAQBzDukdMOmsMtYO5IbdajQPFZNlNwvhw3ahduxtkY",
+    "lastUpdate": "2024-05-18T13:15:07Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/alexkrechik/VSCucumberAutoComplete/master/LICENSE",
+    "name": "gherkin",
+    "scopeName": "text.gherkin.feature",
+    "sha": "fbb554addf81e8961b58b1577924af10fecf9694",
+    "source": "https://github.com/alexkrechik/VSCucumberAutoComplete/blob/fbb554addf81e8961b58b1577924af10fecf9694/syntaxes/feature.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/alexkrechik/VSCucumberAutoComplete/contents/syntaxes/feature.tmLanguage.json?ref=fbb554addf81e8961b58b1577924af10fecf9694"
+  },
+  {
+    "byteSize": 1088,
+    "categories": [
+      "utility"
+    ],
+    "displayName": "Git Commit Message",
+    "embedded": [
+      "diff"
+    ],
+    "funding": [
+    ],
+    "hash": "ZcrXd-PzuCcTwhg4S-WOs0gxUsw4wSxH6r1chHi0J5k",
+    "lastUpdate": "2023-02-07T12:40:16Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "git-commit",
+    "scopeName": "text.git-commit",
+    "sha": "f8c3f89468fea14103d8790d59ea8594d6e644eb",
+    "source": "https://github.com/microsoft/vscode/blob/f8c3f89468fea14103d8790d59ea8594d6e644eb/extensions/git-base/syntaxes/git-commit.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/git-base/syntaxes/git-commit.tmLanguage.json?ref=f8c3f89468fea14103d8790d59ea8594d6e644eb"
+  },
+  {
+    "byteSize": 821,
+    "categories": [
+      "utility"
+    ],
+    "displayName": "Git Rebase Message",
+    "embedded": [
+      "shellscript"
+    ],
+    "funding": [
+    ],
+    "hash": "CvWgyCdOyGONazHztOhNEl79vNMa5wvhzwewgXO5wSU",
+    "lastUpdate": "2021-11-12T10:35:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "git-rebase",
+    "scopeName": "text.git-rebase",
+    "sha": "e95c74c4c7af876e79ec58df262464467c06df28",
+    "source": "https://github.com/microsoft/vscode/blob/e95c74c4c7af876e79ec58df262464467c06df28/extensions/git-base/syntaxes/git-rebase.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/git-base/syntaxes/git-rebase.tmLanguage.json?ref=e95c74c4c7af876e79ec58df262464467c06df28"
+  },
+  {
+    "byteSize": 2427,
+    "displayName": "Gleam",
+    "funding": [
+    ],
+    "hash": "5CxvaGjTP1Hpz0F3sOfovl9SwolHVBwOv29G_2CckEM",
+    "lastUpdate": "2025-04-08T10:34:41Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/gleam-lang/vscode-gleam/main/LICENSE.txt",
+    "name": "gleam",
+    "scopeName": "source.gleam",
+    "sha": "aa487ed82aeaec8dbac62e796689daf55abf1aa9",
+    "source": "https://github.com/gleam-lang/vscode-gleam/blob/aa487ed82aeaec8dbac62e796689daf55abf1aa9/syntaxes/gleam.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/gleam-lang/vscode-gleam/contents/syntaxes/gleam.tmLanguage.json?ref=aa487ed82aeaec8dbac62e796689daf55abf1aa9"
+  },
+  {
+    "aliases": [
+      "gjs"
+    ],
+    "byteSize": 19510,
+    "displayName": "Glimmer JS",
+    "embedded": [
+      "javascript",
+      "typescript",
+      "css",
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "Rh-VLWUoGI94oKJ2tfWuIo3fV3KC_zZkwTPpUfNaJ4c",
+    "lastUpdate": "2024-03-15T16:05:31Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE",
+    "name": "glimmer-js",
+    "scopeName": "source.gjs",
+    "sha": "76fce7b360ce09a78789e7d5217b8955d1a5d95f",
+    "source": "https://github.com/lifeart/vsc-ember-syntax/blob/76fce7b360ce09a78789e7d5217b8955d1a5d95f/syntaxes/source.gjs.json",
+    "sourceApi": "https://api.github.com/repos/lifeart/vsc-ember-syntax/contents/syntaxes/source.gjs.json?ref=76fce7b360ce09a78789e7d5217b8955d1a5d95f"
+  },
+  {
+    "aliases": [
+      "gts"
+    ],
+    "byteSize": 19510,
+    "displayName": "Glimmer TS",
+    "embedded": [
+      "typescript",
+      "css",
+      "javascript",
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "CsAOWdSqIiz2mJIUZyeB4A938gMh5DD8wgDQkeFQ2MI",
+    "lastUpdate": "2024-03-15T16:05:31Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/lifeart/vsc-ember-syntax/master/LICENSE",
+    "name": "glimmer-ts",
+    "scopeName": "source.gts",
+    "sha": "76fce7b360ce09a78789e7d5217b8955d1a5d95f",
+    "source": "https://github.com/lifeart/vsc-ember-syntax/blob/76fce7b360ce09a78789e7d5217b8955d1a5d95f/syntaxes/source.gts.json",
+    "sourceApi": "https://api.github.com/repos/lifeart/vsc-ember-syntax/contents/syntaxes/source.gts.json?ref=76fce7b360ce09a78789e7d5217b8955d1a5d95f"
+  },
+  {
+    "byteSize": 3468,
+    "displayName": "GLSL",
+    "embedded": [
+      "c"
+    ],
+    "funding": [
+    ],
+    "hash": "tXXikCZ951EMKDZ_Ym3LfQU9fu1XitnpTY-1YVkm3pE",
+    "lastUpdate": "2014-07-27T13:53:58Z",
+    "name": "glsl",
+    "scopeName": "source.glsl",
+    "sha": "6998d3bbd204e26746a5ca580cda4c650b9057b1",
+    "source": "https://github.com/polym0rph/GLSL.tmbundle/blob/6998d3bbd204e26746a5ca580cda4c650b9057b1/Syntaxes/GLSL.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/polym0rph/GLSL.tmbundle/contents/Syntaxes/GLSL.tmLanguage?ref=6998d3bbd204e26746a5ca580cda4c650b9057b1"
+  },
+  {
+    "byteSize": 14063,
+    "displayName": "Gnuplot",
+    "funding": [
+    ],
+    "hash": "cPHMVVoTiyyspvPQ0fj4iuT7HEuDM650NaeJZnJOMBk",
+    "lastUpdate": "2018-07-01T23:29:26Z",
+    "license": "GPL-3.0",
+    "licenseUrl": "https://raw.githubusercontent.com/MarioSchwalbe/vscode-gnuplot/master/LICENSE",
+    "name": "gnuplot",
+    "scopeName": "source.gnuplot",
+    "sha": "c62c1a61c9b6b4658b43d76c397dc2ad43523b6a",
+    "source": "https://github.com/MarioSchwalbe/vscode-gnuplot/blob/c62c1a61c9b6b4658b43d76c397dc2ad43523b6a/syntaxes/gnuplot.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/MarioSchwalbe/vscode-gnuplot/contents/syntaxes/gnuplot.tmLanguage?ref=c62c1a61c9b6b4658b43d76c397dc2ad43523b6a"
+  },
+  {
+    "byteSize": 42922,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Go",
+    "funding": [
+    ],
+    "hash": "J0n54TuV-DKt344UglKfo-xeSh-J59PfLujbCH6hYug",
+    "lastUpdate": "2025-05-22T08:27:50Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "go",
+    "scopeName": "source.go",
+    "sha": "2a17434963b1f2f383e37050c59fa5cd9edcc331",
+    "source": "https://github.com/microsoft/vscode/blob/2a17434963b1f2f383e37050c59fa5cd9edcc331/extensions/go/syntaxes/go.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=2a17434963b1f2f383e37050c59fa5cd9edcc331"
+  },
+  {
+    "aliases": [
+      "gql"
+    ],
+    "byteSize": 17316,
+    "categories": [
+      "web"
+    ],
+    "displayName": "GraphQL",
+    "embedded": [
+      "javascript",
+      "typescript",
+      "jsx",
+      "tsx"
+    ],
+    "funding": [
+    ],
+    "hash": "b9qRFzMVMbOCX9H1IPZUeBMLCoq503vMCYoHQHe3DuU",
+    "lastUpdate": "2021-09-27T21:24:32Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/graphql/vscode-graphql/master/LICENSE",
+    "name": "graphql",
+    "scopeName": "source.graphql",
+    "sha": "4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d",
+    "source": "https://github.com/prisma-labs/vscode-graphql/blob/4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d/grammars/graphql.json",
+    "sourceApi": "https://api.github.com/repos/prisma-labs/vscode-graphql/contents/grammars/graphql.json?ref=4569aef2364b42b6acd8188e4a6ca9b0ba3c6a1d"
+  },
+  {
+    "byteSize": 18601,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Groovy",
+    "funding": [
+    ],
+    "hash": "U3BVAuoRkZsF04KWRHCWXN2SIvQ_bnGHVrFkKJSpxoA",
+    "lastUpdate": "2018-02-12T15:54:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "groovy",
+    "scopeName": "source.groovy",
+    "sha": "8fdf170a0850c1cc027382f31650aaf300d3ae2a",
+    "source": "https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/groovy/syntaxes/groovy.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/groovy/syntaxes/groovy.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a"
+  },
+  {
+    "byteSize": 78514,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Hack",
+    "embedded": [
+      "html",
+      "sql"
+    ],
+    "funding": [
+    ],
+    "hash": "gNkiY6PguCWpVcU2FaMywfe40NooGs465UGtLXyimIs",
+    "lastUpdate": "2025-01-09T20:28:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/slackhq/vscode-hack/master/LICENSE.md",
+    "name": "hack",
+    "scopeName": "source.hack",
+    "sha": "2da10a05b70c9aae672f25bc218fe92d44522408",
+    "source": "https://github.com/slackhq/vscode-hack/blob/2da10a05b70c9aae672f25bc218fe92d44522408/syntaxes/hack.json",
+    "sourceApi": "https://api.github.com/repos/slackhq/vscode-hack/contents/syntaxes/hack.json?ref=2da10a05b70c9aae672f25bc218fe92d44522408"
+  },
+  {
+    "byteSize": 7719,
+    "categories": [
+      "markup",
+      "web"
+    ],
+    "displayName": "Ruby Haml",
+    "embedded": [
+      "ruby",
+      "javascript",
+      "sass",
+      "coffee",
+      "markdown",
+      "css"
+    ],
+    "funding": [
+    ],
+    "hash": "cuMt1-vymWDQu_x-fYi4KGN_RVDXHIFEAStk2b0nPm4",
+    "lastUpdate": "2022-06-22T00:28:44Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/karuna/haml-vscode/master/LICENSE.md",
+    "name": "haml",
+    "scopeName": "text.haml",
+    "sha": "aa45415aefd691af0a501ea4f98e434490623e0d",
+    "source": "https://github.com/karuna/haml-vscode/blob/aa45415aefd691af0a501ea4f98e434490623e0d/syntaxes/haml.json",
+    "sourceApi": "https://api.github.com/repos/karuna/haml-vscode/contents/syntaxes/haml.json?ref=aa45415aefd691af0a501ea4f98e434490623e0d"
+  },
+  {
+    "aliases": [
+      "hbs"
+    ],
+    "byteSize": 11676,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Handlebars",
+    "embedded": [
+      "html",
+      "css",
+      "javascript",
+      "yaml"
+    ],
+    "funding": [
+    ],
+    "hash": "KX3RYFYTiXlgNxVzeZZIndYFhy1i-F4gtFdOqTLsd6g",
+    "lastUpdate": "2019-05-16T17:17:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "handlebars",
+    "scopeName": "text.html.handlebars",
+    "sha": "45db52ba6bd211cecd03897caee0531350071721",
+    "source": "https://github.com/microsoft/vscode/blob/45db52ba6bd211cecd03897caee0531350071721/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/handlebars/syntaxes/Handlebars.tmLanguage.json?ref=45db52ba6bd211cecd03897caee0531350071721"
+  },
+  {
+    "aliases": [
+      "hs"
+    ],
+    "byteSize": 39448,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Haskell",
+    "funding": [
       {
-        handle: 'svelte',
-        name: 'Open Collective',
-        url: 'https://opencollective.com/svelte',
-      },
+        "handle": "@octref",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/octref"
+      }
     ],
-    hash: '0REAGQRigcVrpIfAV_QYJ3J-rEkN03Z_V8qzrkNrFKs',
-    lastUpdate: '2025-05-15T13:57:51Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/sveltejs/language-tools/master/LICENSE',
-    name: 'svelte',
-    scopeName: 'source.svelte',
-    sha: 'd12a9ae276c9f4c6a62964bbdca074424cbab123',
-    source: 'https://github.com/sveltejs/language-tools/blob/d12a9ae276c9f4c6a62964bbdca074424cbab123/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml',
-    sourceApi: 'https://api.github.com/repos/sveltejs/language-tools/contents/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml?ref=d12a9ae276c9f4c6a62964bbdca074424cbab123',
+    "hash": "VFdGTeq07oXEUKIYs3BND-TIwLTZNJfggsyX-L-l7m8",
+    "lastUpdate": "2020-08-20T04:20:28Z",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "https://raw.githubusercontent.com/octref/language-haskell/master/LICENSE",
+    "name": "haskell",
+    "scopeName": "source.haskell",
+    "sha": "ae87982aac2bf5cf6334c067e49c5ec8fc08b871",
+    "source": "https://github.com/octref/language-haskell/blob/ae87982aac2bf5cf6334c067e49c5ec8fc08b871/syntaxes/haskell.json",
+    "sourceApi": "https://api.github.com/repos/octref/language-haskell/contents/syntaxes/haskell.json?ref=ae87982aac2bf5cf6334c067e49c5ec8fc08b871"
   },
   {
-    byteSize: 83229,
-    categories: [
-      'general',
+    "byteSize": 34333,
+    "categories": [
+      "general"
     ],
-    displayName: 'Swift',
-    funding: [
+    "displayName": "Haxe",
+    "funding": [
+    ],
+    "hash": "aB-5qQJHo-TykMD4PvdnfJVq9Un2D9eirVguJkjqr4c",
+    "lastUpdate": "2025-06-20T19:08:21Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md",
+    "name": "haxe",
+    "scopeName": "source.hx",
+    "sha": "67b4ee73be516277095b03056f183ffe8a6dd1ac",
+    "source": "https://github.com/vshaxe/haxe-TmLanguage/blob/67b4ee73be516277095b03056f183ffe8a6dd1ac/haxe.YAML-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/vshaxe/haxe-TmLanguage/contents/haxe.YAML-tmLanguage?ref=67b4ee73be516277095b03056f183ffe8a6dd1ac"
+  },
+  {
+    "byteSize": 9714,
+    "displayName": "HashiCorp HCL",
+    "funding": [
+    ],
+    "hash": "JEpbBBvXuu1GaBPvG3ssLLL0ZZWeY5IPk2143RKxrUE",
+    "lastUpdate": "2024-12-20T01:03:46Z",
+    "license": "MPL-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE",
+    "name": "hcl",
+    "scopeName": "source.hcl",
+    "sha": "2ec7cd10c9d6134e836bf85eb0f5aa010512bff4",
+    "source": "https://github.com/hashicorp/syntax/blob/2ec7cd10c9d6134e836bf85eb0f5aa010512bff4/syntaxes/hcl.tmGrammar.json",
+    "sourceApi": "https://api.github.com/repos/hashicorp/syntax/contents/syntaxes/hcl.tmGrammar.json?ref=2ec7cd10c9d6134e836bf85eb0f5aa010512bff4"
+  },
+  {
+    "byteSize": 11647,
+    "categories": [
+      "data"
+    ],
+    "displayName": "Hjson",
+    "funding": [
+    ],
+    "hash": "QYX-XOBzWh1gYv7FnNo09S_qiwKg_6Yxb9PgkKjUX3Q",
+    "lastUpdate": "2018-10-25T15:31:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/hjson/textmate-hjson/master/LICENSE",
+    "name": "hjson",
+    "scopeName": "source.hjson",
+    "sha": "196075169c9a9f9ab04c8e7423b67ea72c976237",
+    "source": "https://github.com/hjson/textmate-hjson/blob/196075169c9a9f9ab04c8e7423b67ea72c976237/Syntaxes/Hjson.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/hjson/textmate-hjson/contents/Syntaxes/Hjson.tmLanguage?ref=196075169c9a9f9ab04c8e7423b67ea72c976237"
+  },
+  {
+    "byteSize": 6998,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "HLSL",
+    "funding": [
+    ],
+    "hash": "1ufx9HNPGOjyTvasAcZ8RWFih7y8GWMHH7izCjrmvIU",
+    "lastUpdate": "2020-02-03T12:01:47Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "hlsl",
+    "scopeName": "source.hlsl",
+    "sha": "efa12b2f49ec6ee84ed1e7bbd948808efec452f6",
+    "source": "https://github.com/microsoft/vscode/blob/efa12b2f49ec6ee84ed1e7bbd948808efec452f6/extensions/hlsl/syntaxes/hlsl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/hlsl/syntaxes/hlsl.tmLanguage.json?ref=efa12b2f49ec6ee84ed1e7bbd948808efec452f6"
+  },
+  {
+    "byteSize": 56371,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "HTML",
+    "embedded": [
+      "javascript",
+      "css"
+    ],
+    "funding": [
+    ],
+    "hash": "U0W1Sp44h4zOVrAkoq8kGlwON2FKk4kKnybHQGgyXJA",
+    "lastUpdate": "2022-12-07T13:44:00Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "html",
+    "scopeName": "text.html.basic",
+    "sha": "45324363153075dab0482312ae24d8c068d81e4f",
+    "source": "https://github.com/microsoft/vscode/blob/45324363153075dab0482312ae24d8c068d81e4f/extensions/html/syntaxes/html.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/html/syntaxes/html.tmLanguage.json?ref=45324363153075dab0482312ae24d8c068d81e4f"
+  },
+  {
+    "byteSize": 707,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "HTML (Derivative)",
+    "embedded": [
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "NZPXWfQuvta0UKNCRaEoo5hvbyf3dfz79uFTSGOc0XM",
+    "lastUpdate": "2025-04-02T13:41:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "html-derivative",
+    "scopeName": "text.html.derivative",
+    "sha": "4064f172528461afc6944383d07521f6a30da89c",
+    "source": "https://github.com/microsoft/vscode/blob/4064f172528461afc6944383d07521f6a30da89c/extensions/html/syntaxes/html-derivative.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/html/syntaxes/html-derivative.tmLanguage.json?ref=4064f172528461afc6944383d07521f6a30da89c"
+  },
+  {
+    "byteSize": 3982,
+    "categories": [
+      "web",
+      "utility"
+    ],
+    "displayName": "HTTP",
+    "embedded": [
+      "shellscript",
+      "json",
+      "xml",
+      "graphql"
+    ],
+    "funding": [
+    ],
+    "hash": "iGFs3g0C-BeL3j7Jsq9gwEVFktxsZmL68YTnpTrt30U",
+    "lastUpdate": "2024-10-10T11:38:26Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Huachao/vscode-restclient/master/LICENSE",
+    "name": "http",
+    "scopeName": "source.http",
+    "sha": "6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df",
+    "source": "https://github.com/Huachao/vscode-restclient/blob/6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df/syntaxes/http.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/Huachao/vscode-restclient/contents/syntaxes/http.tmLanguage.json?ref=6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df"
+  },
+  {
+    "byteSize": 1581,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "HXML",
+    "embedded": [
+      "haxe"
+    ],
+    "funding": [
+    ],
+    "hash": "R7A411-UB7mCZGKPofDLwTWZdASwlJaZ7K28VJJy5Iw",
+    "lastUpdate": "2020-06-27T14:36:19Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vshaxe/haxe-TmLanguage/master/LICENSE.md",
+    "name": "hxml",
+    "scopeName": "source.hxml",
+    "sha": "cf8117cb69876af5fbac537860ffc73928fe2571",
+    "source": "https://github.com/vshaxe/haxe-TmLanguage/blob/cf8117cb69876af5fbac537860ffc73928fe2571/hxml.YAML-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/vshaxe/haxe-TmLanguage/contents/hxml.YAML-tmLanguage?ref=cf8117cb69876af5fbac537860ffc73928fe2571"
+  },
+  {
+    "byteSize": 2475,
+    "categories": [
+      "lisp"
+    ],
+    "displayName": "Hy",
+    "funding": [
+    ],
+    "hash": "6m-QAFhD62IxqxJTIJflqKe9vm0ESFp4V0bivcOXx40",
+    "lastUpdate": "2024-11-04T03:16:03Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/hylang/vscode-hy/master/LICENSE.md",
+    "name": "hy",
+    "scopeName": "source.hy",
+    "sha": "8f99630793b7483cf4cac10a655da6fed08a4f9f",
+    "source": "https://github.com/hylang/vscode-hy/blob/8f99630793b7483cf4cac10a655da6fed08a4f9f/syntaxes/hy.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/hylang/vscode-hy/contents/syntaxes/hy.tmLanguage.json?ref=8f99630793b7483cf4cac10a655da6fed08a4f9f"
+  },
+  {
+    "byteSize": 48264,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Imba",
+    "funding": [
+    ],
+    "hash": "vXxSbKpwxlwW-eZpfTJc7xKmnqPIyYwLAnsVRK7T3Ro",
+    "lastUpdate": "2025-03-06T08:51:50Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/imba/imba/master/LICENSE",
+    "name": "imba",
+    "scopeName": "source.imba",
+    "sha": "183643518e567f0e125046b47b6d81f1aa7bdbb1",
+    "source": "https://github.com/imba/imba/blob/183643518e567f0e125046b47b6d81f1aa7bdbb1/packages/vscode-imba/syntaxes/imba.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/imba/imba/contents/packages/vscode-imba/syntaxes/imba.tmLanguage.json?ref=183643518e567f0e125046b47b6d81f1aa7bdbb1"
+  },
+  {
+    "aliases": [
+      "properties"
+    ],
+    "byteSize": 1408,
+    "categories": [
+      "data"
+    ],
+    "displayName": "INI",
+    "funding": [
+    ],
+    "hash": "JHALzUuwDy3Tt5W5yp6JMMxqUd5cF-XTOd0O3bneo0E",
+    "lastUpdate": "2018-02-12T15:54:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "ini",
+    "scopeName": "source.ini",
+    "sha": "8fdf170a0850c1cc027382f31650aaf300d3ae2a",
+    "source": "https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/ini/syntaxes/ini.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/ini/syntaxes/ini.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a"
+  },
+  {
+    "byteSize": 26339,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Java",
+    "funding": [
+    ],
+    "hash": "OGtN9YfDYh7eJ_TIi2bFicIvgM_U6DZNrlDCHzlK1V0",
+    "lastUpdate": "2023-12-13T12:08:01Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "java",
+    "scopeName": "source.java",
+    "sha": "3c86ede5f554f6e196c832394e126b291a1de606",
+    "source": "https://github.com/microsoft/vscode/blob/3c86ede5f554f6e196c832394e126b291a1de606/extensions/java/syntaxes/java.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/java/syntaxes/java.tmLanguage.json?ref=3c86ede5f554f6e196c832394e126b291a1de606"
+  },
+  {
+    "aliases": [
+      "js"
+    ],
+    "byteSize": 159323,
+    "categories": [
+      "web",
+      "scripting",
+      "general"
+    ],
+    "displayName": "JavaScript",
+    "funding": [
+    ],
+    "hash": "HIo9PZGVK_m6dUZAv28Uhk-RQm0ePcwzhgtqoNXhbN8",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "javascript",
+    "scopeName": "source.js",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/javascript/syntaxes/JavaScript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/javascript/syntaxes/JavaScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
+  },
+  {
+    "byteSize": 4769,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "Jinja",
+    "embedded": [
+      "jinja-html"
+    ],
+    "funding": [
       {
-        handle: '@jtbandes',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/jtbandes',
+        "handle": "@samuelcolvin",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/samuelcolvin"
+      }
+    ],
+    "hash": "ipF8WBL1Wxt-LZ8t-Ocr6XcvPcDPW4aqJz_FSYRX65s",
+    "lastUpdate": "2022-08-30T14:06:56Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE",
+    "name": "jinja",
+    "scopeName": "source.jinja",
+    "sha": "be729c88f723602e7b5df2e9dc5e8c016c31c38f",
+    "source": "https://github.com/samuelcolvin/jinjahtml-vscode/blob/be729c88f723602e7b5df2e9dc5e8c016c31c38f/syntaxes/jinja.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/samuelcolvin/jinjahtml-vscode/contents/syntaxes/jinja.tmLanguage.json?ref=be729c88f723602e7b5df2e9dc5e8c016c31c38f"
+  },
+  {
+    "byteSize": 9343,
+    "categories": [
+      "data",
+      "web"
+    ],
+    "displayName": "Jison",
+    "embedded": [
+      "javascript"
+    ],
+    "funding": [
+    ],
+    "hash": "H_zxjxUffgS5Lf5yhFG7s69aBMCyeUnz2Xkem5WImdw",
+    "lastUpdate": "2020-04-29T00:41:44Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/cdibbs/language-jison/master/LICENSE.md",
+    "name": "jison",
+    "scopeName": "source.jison",
+    "sha": "9d4cb4b044832320a51fabb6e533fc299425f552",
+    "source": "https://github.com/cdibbs/language-jison/blob/9d4cb4b044832320a51fabb6e533fc299425f552/grammars/jison.cson",
+    "sourceApi": "https://api.github.com/repos/cdibbs/language-jison/contents/grammars/jison.cson?ref=9d4cb4b044832320a51fabb6e533fc299425f552"
+  },
+  {
+    "byteSize": 2705,
+    "categories": [
+      "web",
+      "data"
+    ],
+    "displayName": "JSON",
+    "funding": [
+    ],
+    "hash": "XlQwavRPXYv3R198mgsjnEPYAfi0oM6JquTVrg4N7O8",
+    "lastUpdate": "2020-11-05T13:50:48Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "json",
+    "scopeName": "source.json",
+    "sha": "d6af4893ed9a3545163a4cb748fa5548bd1e51a5",
+    "source": "https://github.com/microsoft/vscode/blob/d6af4893ed9a3545163a4cb748fa5548bd1e51a5/extensions/json/syntaxes/JSON.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSON.tmLanguage.json?ref=d6af4893ed9a3545163a4cb748fa5548bd1e51a5"
+  },
+  {
+    "byteSize": 3118,
+    "categories": [
+      "data",
+      "web"
+    ],
+    "displayName": "JSON5",
+    "funding": [
+    ],
+    "hash": "PaLYtXhTZ5CbO7KXvgMhN-RIA9kg64q9A0I6dwr7K1c",
+    "lastUpdate": "2016-10-01T11:46:03Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mrmlnc/vscode-json5/master/LICENSE",
+    "name": "json5",
+    "scopeName": "source.json5",
+    "sha": "e884b89929103ff009322c393080ff45a4544e88",
+    "source": "https://github.com/mrmlnc/vscode-json5/blob/e884b89929103ff009322c393080ff45a4544e88/syntaxes/json5.json",
+    "sourceApi": "https://api.github.com/repos/mrmlnc/vscode-json5/contents/syntaxes/json5.json?ref=e884b89929103ff009322c393080ff45a4544e88"
+  },
+  {
+    "byteSize": 2990,
+    "categories": [
+      "web",
+      "data"
+    ],
+    "displayName": "JSON with Comments",
+    "funding": [
+    ],
+    "hash": "eg4m2wjJdSDvOTaJG6rTUJq_uIsKAMtDz-V18vY7_8s",
+    "lastUpdate": "2023-05-25T08:02:57Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "jsonc",
+    "scopeName": "source.json.comments",
+    "sha": "0adddd82816db666c52038e8277312dc55da2756",
+    "source": "https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONC.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSONC.tmLanguage.json?ref=0adddd82816db666c52038e8277312dc55da2756"
+  },
+  {
+    "byteSize": 2892,
+    "categories": [
+      "web",
+      "data"
+    ],
+    "displayName": "JSON Lines",
+    "funding": [
+    ],
+    "hash": "xy0ogWMEJ4PUvS_KVMM1u7FZQ8qbIf1g7fO3fyOHenQ",
+    "lastUpdate": "2023-05-25T08:02:57Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "jsonl",
+    "scopeName": "source.json.lines",
+    "sha": "0adddd82816db666c52038e8277312dc55da2756",
+    "source": "https://github.com/microsoft/vscode/blob/0adddd82816db666c52038e8277312dc55da2756/extensions/json/syntaxes/JSONL.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/json/syntaxes/JSONL.tmLanguage.json?ref=0adddd82816db666c52038e8277312dc55da2756"
+  },
+  {
+    "byteSize": 3372,
+    "displayName": "Jsonnet",
+    "funding": [
+    ],
+    "hash": "9SDm3drlL3Auu2OLKlJC8blF0uK_YcB1m018rS96Rlk",
+    "lastUpdate": "2017-03-12T08:07:55Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/heptio/vscode-jsonnet/master/LICENSE",
+    "name": "jsonnet",
+    "scopeName": "source.jsonnet",
+    "sha": "39088f9cde9f483c8e0efeb67a3fd561cd873aad",
+    "source": "https://github.com/heptio/vscode-jsonnet/blob/39088f9cde9f483c8e0efeb67a3fd561cd873aad/syntaxes/jsonnet.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/heptio/vscode-jsonnet/contents/syntaxes/jsonnet.tmLanguage.json?ref=39088f9cde9f483c8e0efeb67a3fd561cd873aad"
+  },
+  {
+    "aliases": [
+      "fsl"
+    ],
+    "byteSize": 2129,
+    "displayName": "JSSM",
+    "funding": [
+    ],
+    "hash": "MYY8qS_cQ9Bq93QihgAiV-expUaG8rTQP-kdFpP8lXQ",
+    "lastUpdate": "2017-08-20T01:05:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/StoneCypher/sublime-jssm/master/LICENSE",
+    "name": "jssm",
+    "scopeName": "source.jssm",
+    "sha": "2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef",
+    "source": "https://github.com/StoneCypher/sublime-jssm/blob/2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef/jssm.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/StoneCypher/sublime-jssm/contents/jssm.tmLanguage?ref=2be02a59d284229bbbfb3dc6c2bdcec9b2c263ef"
+  },
+  {
+    "byteSize": 162317,
+    "categories": [
+      "web"
+    ],
+    "displayName": "JSX",
+    "funding": [
+    ],
+    "hash": "Wz2i7sb74EitHUjZ6JP7H8OpDCjRDlx0ox8WHhGKbB8",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "jsx",
+    "scopeName": "source.js.jsx",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/javascript/syntaxes/JavaScriptReact.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
+  },
+  {
+    "aliases": [
+      "jl"
+    ],
+    "byteSize": 28932,
+    "categories": [
+      "web",
+      "data"
+    ],
+    "displayName": "Julia",
+    "embedded": [
+      "cpp",
+      "python",
+      "javascript",
+      "r",
+      "sql"
+    ],
+    "funding": [
+    ],
+    "hash": "aB_mtu2loWjMjR8oX2WG58b-cjX8UAHy14Y05kAlzkc",
+    "lastUpdate": "2025-05-02T13:29:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "julia",
+    "scopeName": "source.julia",
+    "sha": "0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4",
+    "source": "https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/julia/syntaxes/julia.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4"
+  },
+  {
+    "aliases": [
+      "kt",
+      "kts"
+    ],
+    "byteSize": 8386,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Kotlin",
+    "funding": [
+    ],
+    "hash": "77NT4lEuDbyUc7b4E-KvGB5s5S2dH40bjAHI3Ovi2Gs",
+    "lastUpdate": "2024-02-06T09:51:18Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/fwcd/vscode-kotlin/main/LICENSE",
+    "name": "kotlin",
+    "scopeName": "source.kotlin",
+    "sha": "626e20d5c51a4379c4c0ee293aa89e58b5232aec",
+    "source": "https://github.com/fwcd/vscode-kotlin/blob/626e20d5c51a4379c4c0ee293aa89e58b5232aec/syntaxes/kotlin.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/fwcd/vscode-kotlin/contents/syntaxes/kotlin.tmLanguage.json?ref=626e20d5c51a4379c4c0ee293aa89e58b5232aec"
+  },
+  {
+    "aliases": [
+      "kql"
+    ],
+    "byteSize": 14619,
+    "displayName": "Kusto",
+    "funding": [
+    ],
+    "hash": "txmhw13e588xXfoForFReDBKcV-4Ze_Zqmau2GPFyKA",
+    "lastUpdate": "2024-12-28T02:00:10Z",
+    "name": "kusto",
+    "scopeName": "source.kusto",
+    "sha": "2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6",
+    "source": "https://github.com/rosshamish/kuskus/blob/2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6"
+  },
+  {
+    "byteSize": 66408,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "LaTeX",
+    "embedded": [
+      "tex",
+      "shellscript",
+      "css",
+      "gnuplot",
+      "haskell",
+      "html",
+      "java",
+      "julia",
+      "javascript",
+      "lua",
+      "python",
+      "ruby",
+      "rust",
+      "typescript",
+      "xml",
+      "yaml",
+      "scala"
+    ],
+    "funding": [
+    ],
+    "hash": "cJfwTz1j1ZpDDS2kKqTfrGAnD46c-fX5UauLirBUYVY",
+    "lastUpdate": "2025-05-02T13:29:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "latex",
+    "scopeName": "text.tex.latex",
+    "sha": "0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4",
+    "source": "https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/latex/syntaxes/LaTeX.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4"
+  },
+  {
+    "aliases": [
+      "lean4"
+    ],
+    "byteSize": 3812,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Lean 4",
+    "funding": [
+    ],
+    "hash": "SnWD9GhPJlnzbk6TOGpTaOOff3GusHGksvA8Ix6BKhg",
+    "lastUpdate": "2025-06-09T10:00:33Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/leanprover/vscode-lean4/master/LICENSE",
+    "name": "lean",
+    "scopeName": "source.lean4",
+    "sha": "b8fc2226dc1b76c29ddb63829a4d6adadadec9cd",
+    "source": "https://github.com/leanprover/vscode-lean4/blob/b8fc2226dc1b76c29ddb63829a4d6adadadec9cd/vscode-lean4/syntaxes/lean4.json",
+    "sourceApi": "https://api.github.com/repos/leanprover/vscode-lean4/contents/vscode-lean4/syntaxes/lean4.json?ref=b8fc2226dc1b76c29ddb63829a4d6adadadec9cd"
+  },
+  {
+    "byteSize": 94797,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Less",
+    "funding": [
+    ],
+    "hash": "fDhYrU2qlFKVRm-dw25I325rbqsvOhRErfFJL1kwTFQ",
+    "lastUpdate": "2024-08-30T20:03:00Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "less",
+    "scopeName": "source.css.less",
+    "sha": "03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c",
+    "source": "https://github.com/microsoft/vscode/blob/03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c/extensions/less/syntaxes/less.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/less/syntaxes/less.tmLanguage.json?ref=03dc55030b3b2b5c4779d4ac1e2e46cd1f5a6b7c"
+  },
+  {
+    "byteSize": 17349,
+    "displayName": "Liquid",
+    "embedded": [
+      "html",
+      "css",
+      "json",
+      "javascript"
+    ],
+    "funding": [
+    ],
+    "hash": "3Gmm1MUQO84mr1AMl2f51_1mUwO7wxMBhZMynY4DnwU",
+    "lastUpdate": "2025-05-12T22:03:09Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Shopify/liquid-tm-grammar/main/LICENSE.md",
+    "name": "liquid",
+    "scopeName": "text.html.liquid",
+    "sha": "099adcf0d4beacd078a22432eaeab08d6f1e6da5",
+    "source": "https://github.com/Shopify/liquid-tm-grammar/blob/099adcf0d4beacd078a22432eaeab08d6f1e6da5/grammars/liquid.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/Shopify/liquid-tm-grammar/contents/grammars/liquid.tmLanguage.json?ref=099adcf0d4beacd078a22432eaeab08d6f1e6da5"
+  },
+  {
+    "byteSize": 4637,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "LLVM IR",
+    "funding": [
+    ],
+    "hash": "OzTi2eTMlc2BMi_JGth-c8BuPlOejpPjPZ5jz_RCDn0",
+    "lastUpdate": "2024-05-30T11:17:37Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/llvm/llvm-project/main/LICENSE.TXT",
+    "name": "llvm",
+    "scopeName": "source.llvm",
+    "sha": "2705c605da2854a6b044fdf5978dea0472fd0ab1",
+    "source": "https://github.com/llvm/llvm-project/blob/2705c605da2854a6b044fdf5978dea0472fd0ab1/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml",
+    "sourceApi": "https://api.github.com/repos/llvm/llvm-project/contents/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml?ref=2705c605da2854a6b044fdf5978dea0472fd0ab1"
+  },
+  {
+    "byteSize": 2577,
+    "categories": [
+      "utility"
+    ],
+    "displayName": "Log file",
+    "funding": [
+    ],
+    "hash": "g_yhgZpw_1m6V68MlOZEXN1FyOEUekSjFH511ql6VQk",
+    "lastUpdate": "2025-04-25T18:28:10Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/emilast/vscode-logfile-highlighter/master/LICENSE",
+    "name": "log",
+    "scopeName": "text.log",
+    "sha": "396c8552ff99d0e07142fdd940d75dae212dd28c",
+    "source": "https://github.com/emilast/vscode-logfile-highlighter/blob/396c8552ff99d0e07142fdd940d75dae212dd28c/syntaxes/log.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/emilast/vscode-logfile-highlighter/contents/syntaxes/log.tmLanguage?ref=396c8552ff99d0e07142fdd940d75dae212dd28c"
+  },
+  {
+    "byteSize": 3016,
+    "displayName": "Logo",
+    "funding": [
+    ],
+    "hash": "b1oBA4S24HPEDseeUz6ZC06VUX21vnp-v78RC99oejw",
+    "lastUpdate": "2011-11-14T07:42:34Z",
+    "name": "logo",
+    "scopeName": "source.logo",
+    "sha": "3205e987ed2a2aa11accdd55a7d094832441f89c",
+    "source": "https://github.com/textmate/logo.tmbundle/blob/3205e987ed2a2aa11accdd55a7d094832441f89c/Syntaxes/Logo.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/logo.tmbundle/contents/Syntaxes/Logo.tmLanguage?ref=3205e987ed2a2aa11accdd55a7d094832441f89c"
+  },
+  {
+    "byteSize": 14507,
+    "categories": [
+      "scripting"
+    ],
+    "displayName": "Lua",
+    "embedded": [
+      "c"
+    ],
+    "funding": [
+    ],
+    "hash": "djaDPp_QvYFI1fCREXw5frRA7bhilbEfP9mnpBIv5w4",
+    "lastUpdate": "2024-04-26T11:52:52Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "lua",
+    "scopeName": "source.lua",
+    "sha": "5c213a1e84928c7a7d11ca5b282ca602d40c1352",
+    "source": "https://github.com/microsoft/vscode/blob/5c213a1e84928c7a7d11ca5b282ca602d40c1352/extensions/lua/syntaxes/lua.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/lua/syntaxes/lua.tmLanguage.json?ref=5c213a1e84928c7a7d11ca5b282ca602d40c1352"
+  },
+  {
+    "byteSize": 12179,
+    "displayName": "Luau",
+    "funding": [
+    ],
+    "hash": "eelZmFocP1Xp2P1PWhe7E5P3pj4UYhzPjykeOvFrxAc",
+    "lastUpdate": "2024-11-11T20:13:41Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md",
+    "name": "luau",
+    "scopeName": "source.luau",
+    "sha": "050f326bc904342c9344b6e1ece96b9143b57086",
+    "source": "https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/050f326bc904342c9344b6e1ece96b9143b57086/Luau.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/JohnnyMorganz/Luau.tmLanguage/contents/Luau.tmLanguage?ref=050f326bc904342c9344b6e1ece96b9143b57086"
+  },
+  {
+    "aliases": [
+      "makefile"
+    ],
+    "byteSize": 8610,
+    "categories": [
+      "config"
+    ],
+    "displayName": "Makefile",
+    "funding": [
+    ],
+    "hash": "fjY_DK_r3g7e4bw-JpoAMxUjHQl4jCVd3wzimrhC-CU",
+    "lastUpdate": "2023-01-10T10:50:28Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "make",
+    "scopeName": "source.makefile",
+    "sha": "91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5",
+    "source": "https://github.com/microsoft/vscode/blob/91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5/extensions/make/syntaxes/make.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/make/syntaxes/make.tmLanguage.json?ref=91db8ea85fee30ebb3c7a5e7939aa2a8d79811c5"
+  },
+  {
+    "aliases": [
+      "md"
+    ],
+    "byteSize": 53093,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "Markdown",
+    "embedded": [
+      "css",
+      "html",
+      "ini",
+      "java",
+      "lua",
+      "make",
+      "perl",
+      "r",
+      "ruby",
+      "php",
+      "sql",
+      "vb",
+      "xml",
+      "xsl",
+      "yaml",
+      "bat",
+      "clojure",
+      "coffee",
+      "c",
+      "cpp",
+      "diff",
+      "docker",
+      "git-commit",
+      "git-rebase",
+      "go",
+      "groovy",
+      "pug",
+      "javascript",
+      "json",
+      "jsonc",
+      "less",
+      "objective-c",
+      "swift",
+      "scss",
+      "raku",
+      "powershell",
+      "python",
+      "julia",
+      "regexp",
+      "rust",
+      "scala",
+      "shellscript",
+      "typescript",
+      "tsx",
+      "csharp",
+      "fsharp",
+      "dart",
+      "handlebars",
+      "log",
+      "erlang",
+      "elixir",
+      "latex",
+      "bibtex",
+      "html-derivative"
+    ],
+    "funding": [
+    ],
+    "hash": "cGCUtsGg_b4H29ujDU5qUoy9_T7BBjDlWGom_FxjMTA",
+    "lastUpdate": "2024-07-08T18:33:21Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "markdown",
+    "scopeName": "text.html.markdown",
+    "sha": "1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58",
+    "source": "https://github.com/microsoft/vscode/blob/1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json?ref=1cd7cf5decbe06cb42efdb03c44d19e4f9b2ba58"
+  },
+  {
+    "byteSize": 16149,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "Marko",
+    "embedded": [
+      "css",
+      "less",
+      "scss",
+      "javascript"
+    ],
+    "funding": [
+    ],
+    "hash": "Nj7T7NDhnvoDGm8ryfQBsKa3QTLSHa5qEfkwif69iQM",
+    "lastUpdate": "2023-03-24T17:23:39Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/marko-js/marko-tmbundle/master/LICENSE",
+    "name": "marko",
+    "scopeName": "text.marko",
+    "sha": "dd3a0c39e656bedd276d3bcbdea92a2d627755c7",
+    "source": "https://github.com/marko-js/marko-tmbundle/blob/dd3a0c39e656bedd276d3bcbdea92a2d627755c7/Syntaxes/marko.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/marko-js/marko-tmbundle/contents/Syntaxes/marko.tmLanguage?ref=dd3a0c39e656bedd276d3bcbdea92a2d627755c7"
+  },
+  {
+    "byteSize": 15279,
+    "displayName": "MATLAB",
+    "funding": [
+    ],
+    "hash": "POEDzVszVkwcMTi0VV1sm1F8A0nheo0vB-tLsFzzxqk",
+    "lastUpdate": "2020-02-01T01:40:30Z",
+    "name": "matlab",
+    "scopeName": "source.matlab",
+    "sha": "69dbf20c1eb19efd629c0438a2a493e60617e8de",
+    "source": "https://github.com/mathworks/MATLAB-Language-grammar/blob/69dbf20c1eb19efd629c0438a2a493e60617e8de/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/mathworks/MATLAB-Language-grammar/contents/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage?ref=69dbf20c1eb19efd629c0438a2a493e60617e8de"
+  },
+  {
+    "byteSize": 19108,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "MDC",
+    "embedded": [
+      "markdown",
+      "yaml",
+      "html-derivative"
+    ],
+    "funding": [
+    ],
+    "hash": "nwlm7swdVMmPwJth5yJFbQFefOIZKt1CCvXRjLYXfBA",
+    "lastUpdate": "2025-02-24T11:33:21Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nuxtlabs/vscode-mdc/main/LICENSE",
+    "name": "mdc",
+    "scopeName": "text.markdown.mdc.standalone",
+    "sha": "96f619ccd8df724e5bd94eb28b87e03b769a8c41",
+    "source": "https://github.com/nuxtlabs/vscode-mdc/blob/96f619ccd8df724e5bd94eb28b87e03b769a8c41/syntaxes/mdc.standalone.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/nuxtlabs/vscode-mdc/contents/syntaxes/mdc.standalone.tmLanguage.json?ref=96f619ccd8df724e5bd94eb28b87e03b769a8c41"
+  },
+  {
+    "byteSize": 130777,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "MDX",
+    "embedded": [
+      "tsx",
+      "toml",
+      "yaml",
+      "c",
+      "clojure",
+      "coffee",
+      "cpp",
+      "csharp",
+      "css",
+      "diff",
+      "docker",
+      "elixir",
+      "elm",
+      "erlang",
+      "go",
+      "graphql",
+      "haskell",
+      "html",
+      "ini",
+      "java",
+      "javascript",
+      "json",
+      "julia",
+      "kotlin",
+      "less",
+      "lua",
+      "make",
+      "markdown",
+      "objective-c",
+      "perl",
+      "python",
+      "r",
+      "ruby",
+      "rust",
+      "scala",
+      "scss",
+      "shellscript",
+      "shellsession",
+      "sql",
+      "xml",
+      "swift",
+      "typescript"
+    ],
+    "funding": [
+    ],
+    "hash": "BDWf61vomuMLV_y5RDOTOnJO8Z9wwzLSjfQkClTrbwE",
+    "lastUpdate": "2024-11-11T13:02:29Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/wooorm/markdown-tm-language/main/license",
+    "name": "mdx",
+    "scopeName": "source.mdx",
+    "sha": "c78b1e5df644d24fa76716bbe26f4b48a6fc1610",
+    "source": "https://github.com/wooorm/markdown-tm-language/blob/c78b1e5df644d24fa76716bbe26f4b48a6fc1610/source.mdx.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/wooorm/markdown-tm-language/contents/source.mdx.tmLanguage?ref=c78b1e5df644d24fa76716bbe26f4b48a6fc1610"
+  },
+  {
+    "aliases": [
+      "mmd"
+    ],
+    "byteSize": 26637,
+    "displayName": "Mermaid",
+    "funding": [
+    ],
+    "hash": "tj-olbuGtaCrR3LH9SyEltdAQHnKIUzCrD8cnmTptxg",
+    "lastUpdate": "2022-06-10T19:46:22Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/master/LICENSE",
+    "name": "mermaid",
+    "scopeName": "markdown.mermaid.codeblock",
+    "sha": "8b62f487cb7a89afcd152febfbf47f5d4787657f",
+    "source": "https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/8b62f487cb7a89afcd152febfbf47f5d4787657f/syntaxes/mermaid.tmLanguage.yaml",
+    "sourceApi": "https://api.github.com/repos/bpruitt-goddard/vscode-mermaid-syntax-highlight/contents/syntaxes/mermaid.tmLanguage.yaml?ref=8b62f487cb7a89afcd152febfbf47f5d4787657f"
+  },
+  {
+    "aliases": [
+      "mips"
+    ],
+    "byteSize": 2965,
+    "displayName": "MIPS Assembly",
+    "funding": [
+    ],
+    "hash": "-ltLAd_ZtyIHINouC1quUlIDQlPVWCh9YPy8kIDGOGI",
+    "lastUpdate": "2011-11-14T07:25:17Z",
+    "name": "mipsasm",
+    "scopeName": "source.mips",
+    "sha": "eb7601016a109bf912a48a1c21988f3c4a59fb3a",
+    "source": "https://github.com/textmate/mips.tmbundle/blob/eb7601016a109bf912a48a1c21988f3c4a59fb3a/Syntaxes/MIPS.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/mips.tmbundle/contents/Syntaxes/MIPS.tmLanguage?ref=eb7601016a109bf912a48a1c21988f3c4a59fb3a"
+  },
+  {
+    "byteSize": 67515,
+    "displayName": "Mojo",
+    "funding": [
+    ],
+    "hash": "FVRo1lHOW-NnZ8zGKJD0mc7HRLydcDroAKVt76Ag-5k",
+    "lastUpdate": "2024-03-18T01:05:25Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/modular/mojo-syntax/main/LICENSE",
+    "name": "mojo",
+    "scopeName": "source.mojo",
+    "sha": "46eccdaeda2b1587e9b82808cdb35670f359d16d",
+    "source": "https://github.com/modularml/mojo-syntax/blob/46eccdaeda2b1587e9b82808cdb35670f359d16d/syntaxes/mojo.syntax.json",
+    "sourceApi": "https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=46eccdaeda2b1587e9b82808cdb35670f359d16d"
+  },
+  {
+    "byteSize": 16547,
+    "displayName": "Move",
+    "funding": [
+    ],
+    "hash": "XPMUc2shR1_6bdiCwT1JVRtamdRciHbc-mkSxk-Ulzc",
+    "lastUpdate": "2024-09-17T09:24:46Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE",
+    "name": "move",
+    "scopeName": "source.move",
+    "sha": "4b04e9d614901097ffc0663fef40bd3e5d87779e",
+    "source": "https://github.com/damirka/move-syntax/blob/4b04e9d614901097ffc0663fef40bd3e5d87779e/syntaxes/move.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=4b04e9d614901097ffc0663fef40bd3e5d87779e"
+  },
+  {
+    "aliases": [
+      "nar"
+    ],
+    "byteSize": 3464,
+    "displayName": "Narrat Language",
+    "funding": [
+    ],
+    "hash": "sHtK94ywyfA-zlVFZC_dniA3QWzHpFL7X3ncKaRsw5k",
+    "lastUpdate": "2022-08-06T14:25:00Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/liana-p/narrat-syntax-highlighting-vscode/main/LICENSE",
+    "name": "narrat",
+    "scopeName": "source.narrat",
+    "sha": "00d4b410338fc50ca0ce77a1f7e873c1fb66d376",
+    "source": "https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/00d4b410338fc50ca0ce77a1f7e873c1fb66d376/syntaxes/narrat.tmLanguage.yaml",
+    "sourceApi": "https://api.github.com/repos/liana-p/narrat-syntax-highlighting-vscode/contents/syntaxes/narrat.tmLanguage.yaml?ref=00d4b410338fc50ca0ce77a1f7e873c1fb66d376"
+  },
+  {
+    "aliases": [
+      "nf"
+    ],
+    "byteSize": 3734,
+    "displayName": "Nextflow",
+    "funding": [
+    ],
+    "hash": "RROCU5zG8d3QE0R5QHLqs2KQct5xu1u22WVrKzwj24U",
+    "lastUpdate": "2025-05-14T20:20:54Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md",
+    "name": "nextflow",
+    "scopeName": "source.nextflow",
+    "sha": "0880603119990bbf6fc30f02382c2149eeb215fb",
+    "source": "https://github.com/nextflow-io/vscode-language-nextflow/blob/0880603119990bbf6fc30f02382c2149eeb215fb/syntaxes/nextflow.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/nextflow.tmLanguage.json?ref=0880603119990bbf6fc30f02382c2149eeb215fb"
+  },
+  {
+    "byteSize": 34690,
+    "categories": [
+      "config"
+    ],
+    "displayName": "Nginx",
+    "embedded": [
+      "lua"
+    ],
+    "funding": [
+    ],
+    "hash": "gXO0PAbCsPBgxfB02Yy-6gQZbgP4vMRQ4vdtu1W2YtU",
+    "lastUpdate": "2024-02-28T17:19:46Z",
+    "license": "GPL-3.0",
+    "licenseUrl": "https://raw.githubusercontent.com/hangxingliu/vscode-nginx-conf-hint/main/LICENSE",
+    "name": "nginx",
+    "scopeName": "source.nginx",
+    "sha": "49159c02fd09dce264ded7802c9499a0f09646f5",
+    "source": "https://github.com/hangxingliu/vscode-nginx-conf-hint/blob/49159c02fd09dce264ded7802c9499a0f09646f5/src/syntax/nginx.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/hangxingliu/vscode-nginx-conf-hint/contents/src/syntax/nginx.tmLanguage?ref=49159c02fd09dce264ded7802c9499a0f09646f5"
+  },
+  {
+    "byteSize": 21277,
+    "displayName": "Nim",
+    "embedded": [
+      "c",
+      "html",
+      "xml",
+      "javascript",
+      "css",
+      "glsl",
+      "markdown"
+    ],
+    "funding": [
+    ],
+    "hash": "jdht28-QtoGq59m2JirMxLcb7ekOYcWQ8TdY26FydTo",
+    "lastUpdate": "2020-08-30T02:33:21Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/pragmagic/vscode-nim/master/LICENSE",
+    "name": "nim",
+    "scopeName": "source.nim",
+    "sha": "0272a0544ddf147fde98f8a8f2b624b7dcb19eb3",
+    "source": "https://github.com/pragmagic/vscode-nim/blob/0272a0544ddf147fde98f8a8f2b624b7dcb19eb3/syntaxes/nim.json",
+    "sourceApi": "https://api.github.com/repos/pragmagic/vscode-nim/contents/syntaxes/nim.json?ref=0272a0544ddf147fde98f8a8f2b624b7dcb19eb3"
+  },
+  {
+    "byteSize": 14306,
+    "displayName": "Nix",
+    "funding": [
+      {
+        "handle": "nix-community",
+        "name": "Open Collective",
+        "url": "https://opencollective.com/nix-community"
+      }
+    ],
+    "hash": "Nh1Q0JSdPVZi9v00kkQ8yY9b5doEIFZeKSzqIiDmVXU",
+    "lastUpdate": "2025-02-02T04:56:34Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE",
+    "name": "nix",
+    "scopeName": "source.nix",
+    "sha": "ac1ed65aa92655748200cd62bd54e5ca051781bc",
+    "source": "https://github.com/nix-community/vscode-nix-ide/blob/ac1ed65aa92655748200cd62bd54e5ca051781bc/syntaxes/nix.YAML-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/nix-community/vscode-nix-ide/contents/syntaxes/nix.YAML-tmLanguage?ref=ac1ed65aa92655748200cd62bd54e5ca051781bc"
+  },
+  {
+    "aliases": [
+      "nu"
+    ],
+    "byteSize": 19113,
+    "displayName": "nushell",
+    "funding": [
+    ],
+    "hash": "juKsDoL5GNPdtLAsdqQxopy2VATA6yPTnze7qGrdGhs",
+    "lastUpdate": "2025-03-26T21:36:28Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE",
+    "name": "nushell",
+    "scopeName": "source.nushell",
+    "sha": "b03d40225eeec75f08c24720b734cd462c946ead",
+    "source": "https://github.com/nushell/vscode-nushell-lang/blob/b03d40225eeec75f08c24720b734cd462c946ead/syntaxes/nushell.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/nushell/vscode-nushell-lang/contents/syntaxes/nushell.tmLanguage.json?ref=b03d40225eeec75f08c24720b734cd462c946ead"
+  },
+  {
+    "aliases": [
+      "objc"
+    ],
+    "byteSize": 103064,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Objective-C",
+    "funding": [
+    ],
+    "hash": "2_a-Pa63UVJJ-C_fmS6BjnrsdwidK2GRQXHFEEnJp7U",
+    "lastUpdate": "2022-06-10T13:55:11Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "objective-c",
+    "scopeName": "source.objc",
+    "sha": "bd1abe08c38bb5deccf65610f8f3c03d2338d20d",
+    "source": "https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/objective-c/syntaxes/objective-c.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d"
+  },
+  {
+    "byteSize": 167425,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Objective-C++",
+    "funding": [
+    ],
+    "hash": "EIilxr2ZlXxgi8SU8BDhhuVmu3yeaBQ2UAe1Kquz4g0",
+    "lastUpdate": "2022-06-10T13:55:11Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "objective-cpp",
+    "scopeName": "source.objcpp",
+    "sha": "bd1abe08c38bb5deccf65610f8f3c03d2338d20d",
+    "source": "https://github.com/microsoft/vscode/blob/bd1abe08c38bb5deccf65610f8f3c03d2338d20d/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/objective-c/syntaxes/objective-c++.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d"
+  },
+  {
+    "byteSize": 60396,
+    "categories": [
+      "general"
+    ],
+    "displayName": "OCaml",
+    "funding": [
+    ],
+    "hash": "bilHYpjR_Hhw-RuTo-pqnsv6Y6uo0tRJU3KnsUZwR88",
+    "lastUpdate": "2019-08-17T12:45:56Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/reasonml-editor/vscode-reasonml/master/LICENSE",
+    "name": "ocaml",
+    "scopeName": "source.ocaml",
+    "sha": "14af625ec50ed9968b957b4d6336c5338d81af45",
+    "source": "https://github.com/reasonml-editor/vscode-reasonml/blob/14af625ec50ed9968b957b4d6336c5338d81af45/syntaxes/ocaml.json",
+    "sourceApi": "https://api.github.com/repos/reasonml-editor/vscode-reasonml/contents/syntaxes/ocaml.json?ref=14af625ec50ed9968b957b4d6336c5338d81af45"
+  },
+  {
+    "byteSize": 3982,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Pascal",
+    "funding": [
+      {
+        "handle": "@alefragnani",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/alefragnani"
       },
       {
-        handle: 'jtbandes',
-        name: 'Ko-fi',
-        url: 'https://ko-fi.com/jtbandes',
-      },
-    ],
-    hash: 'dBsZHPG49TUEZuXklYZNJ-Ij8D6dqUiLpOcS-Q3qE4g',
-    lastUpdate: '2025-01-18T23:17:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jtbandes/swift-tmlanguage/main/LICENSE.md',
-    name: 'swift',
-    scopeName: 'source.swift',
-    sha: 'b8d2889b4af1d8bad41578317a6adade642555a3',
-    source: 'https://github.com/jtbandes/swift-tmlanguage/blob/b8d2889b4af1d8bad41578317a6adade642555a3/Swift.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/jtbandes/swift-tmlanguage/contents/Swift.tmLanguage.yaml?ref=b8d2889b4af1d8bad41578317a6adade642555a3',
-  },
-  {
-    byteSize: 24776,
-    displayName: 'SystemVerilog',
-    funding: [
-      {
-        name: 'buymeacoffee.com',
-        url: 'https://www.buymeacoffee.com/mshr.h',
-      },
-    ],
-    hash: 'FYkYDo6EFlHVoxuuAMSKFp-HV69nSmh8P6qpie72JKY',
-    lastUpdate: '2024-11-09T08:32:52Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE',
-    name: 'system-verilog',
-    scopeName: 'source.systemverilog',
-    sha: 'a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2',
-    source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2/syntaxes/systemverilog.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mshr-h/vscode-verilog-hdl-support/contents/syntaxes/systemverilog.tmLanguage.json?ref=a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2',
-  },
-  {
-    byteSize: 7571,
-    categories: [
-      'config',
-    ],
-    displayName: 'Systemd Units',
-    funding: [
-    ],
-    hash: 'xEWVNFNIxfbQnn89_9rzS3yUP-QQdUy_fpmGSdQ0NEA',
-    lastUpdate: '2025-01-08T14:10:18Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hangxingliu/vscode-systemd/main/LICENSE',
-    name: 'systemd',
-    scopeName: 'source.systemd',
-    sha: '62ace1156b5afa0ec9932e3a55cfc00c0123c457',
-    source: 'https://github.com/hangxingliu/vscode-systemd/blob/62ace1156b5afa0ec9932e3a55cfc00c0123c457/src/syntax/systemd.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hangxingliu/vscode-systemd/contents/src/syntax/systemd.tmLanguage?ref=62ace1156b5afa0ec9932e3a55cfc00c0123c457',
-  },
-  {
-    aliases: [
-      'talon',
-    ],
-    byteSize: 6551,
-    categories: [
-      'scripting',
-      'dsl',
-      'config',
-    ],
-    displayName: 'TalonScript',
-    funding: [
-    ],
-    hash: 'jl1yCDh9RCZO20Hu2pYjcBa5ivcpZgaN5yOqdDOeRKs',
-    lastUpdate: '2025-04-26T13:47:08Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mirober/vscode-TalonScript/master/LICENSE',
-    name: 'talonscript',
-    scopeName: 'source.talon',
-    sha: '91f3a6faaf926c02582f36ee155f2c4a02b9cc48',
-    source: 'https://github.com/mrob95/vscode-TalonScript/blob/91f3a6faaf926c02582f36ee155f2c4a02b9cc48/syntaxes/talon.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mrob95/vscode-TalonScript/contents/syntaxes/talon.tmLanguage.json?ref=91f3a6faaf926c02582f36ee155f2c4a02b9cc48',
-  },
-  {
-    byteSize: 3178,
-    displayName: 'Tasl',
-    funding: [
-    ],
-    hash: 'lTfZFXNHelZOahZd_ux53Y5OrhSl-TtiF8A9zsaIo5M',
-    lastUpdate: '2021-11-08T06:00:28Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/underlay/vscode-tasl/main/LICENSE',
-    name: 'tasl',
-    scopeName: 'source.tasl',
-    sha: 'dde4b7c0b762c2e667584095362dd49ebfacece7',
-    source: 'https://github.com/underlay/vscode-tasl/blob/dde4b7c0b762c2e667584095362dd49ebfacece7/syntaxes/tasl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/underlay/vscode-tasl/contents/syntaxes/tasl.tmLanguage.json?ref=dde4b7c0b762c2e667584095362dd49ebfacece7',
-  },
-  {
-    byteSize: 4214,
-    displayName: 'Tcl',
-    funding: [
-    ],
-    hash: '9Q8ndCV-Ahd5uO5D21Vu2dVz3iTwfmHahseoXLtMBqY',
-    lastUpdate: '2017-04-03T11:19:09Z',
-    name: 'tcl',
-    scopeName: 'source.tcl',
-    sha: 'f18820ad14678bc033f0a35524820c90fe50f18b',
-    source: 'https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/sleutho/tcl/contents/syntaxes/tcl.tmLanguage?ref=f18820ad14678bc033f0a35524820c90fe50f18b',
-  },
-  {
-    byteSize: 23527,
-    displayName: 'Templ',
-    embedded: [
-      'go',
-      'javascript',
-      'css',
-    ],
-    funding: [
-    ],
-    hash: 'AN7Y3py_iR7Fen9uHp6HAfw_qFcHoXM7KM18aVrswnA',
-    lastUpdate: '2025-04-08T08:46:52Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
-    name: 'templ',
-    scopeName: 'source.templ',
-    sha: '257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f',
-    source: 'https://github.com/templ-go/templ-vscode/blob/257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f/syntaxes/templ.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/templ-go/templ-vscode/contents/syntaxes/templ.tmLanguage.json?ref=257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f',
-  },
-  {
-    aliases: [
-      'tf',
-      'tfvars',
-    ],
-    byteSize: 11048,
-    displayName: 'Terraform',
-    funding: [
-    ],
-    hash: 'XA4Wuzq6bxq86jTca5wIvIs-D-ylBxZ8_wWxbmc-_so',
-    lastUpdate: '2024-09-17T14:22:47Z',
-    license: 'MPL-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE',
-    name: 'terraform',
-    scopeName: 'source.hcl.terraform',
-    sha: 'cc2b4d4fe389f14b8a13937f4e0d7b2811b57588',
-    source: 'https://github.com/hashicorp/syntax/blob/cc2b4d4fe389f14b8a13937f4e0d7b2811b57588/syntaxes/terraform.tmGrammar.json',
-    sourceApi: 'https://api.github.com/repos/hashicorp/syntax/contents/syntaxes/terraform.tmGrammar.json?ref=cc2b4d4fe389f14b8a13937f4e0d7b2811b57588',
-  },
-  {
-    byteSize: 9201,
-    categories: [
-      'markup',
-    ],
-    displayName: 'TeX',
-    embedded: [
-      'r',
-    ],
-    funding: [
-    ],
-    hash: 'Y5ZU6BTLorSinHZmf19U95bX0VZusgT6fg_-JtScnG8',
-    lastUpdate: '2025-04-02T13:41:58Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'tex',
-    scopeName: 'text.tex',
-    sha: '9a2c94d213696a4453b6d9988b003d98e7646e75',
-    source: 'https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/TeX.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/TeX.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75',
-  },
-  {
-    byteSize: 6126,
-    categories: [
-      'data',
-    ],
-    displayName: 'TOML',
-    funding: [
-    ],
-    hash: 'C_JDgO5Lg3hS0asTQMVojCrTdYDHIEJnUrBTUNF1-4w',
-    lastUpdate: '2020-05-25T19:51:56Z',
-    name: 'toml',
-    scopeName: 'source.toml',
-    sha: 'e82b64c1e86396220786846201e9aa3f0a2d9ca2',
-    source: 'https://github.com/textmate/toml.tmbundle/blob/e82b64c1e86396220786846201e9aa3f0a2d9ca2/Syntaxes/TOML.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/toml.tmbundle/contents/Syntaxes/TOML.tmLanguage?ref=e82b64c1e86396220786846201e9aa3f0a2d9ca2',
-  },
-  {
-    aliases: [
-      'lit',
-    ],
-    byteSize: 121,
-    categories: [
-      'web',
-    ],
-    displayName: 'TypeScript with Tags',
-    embedded: [
-      'typescript',
-      'es-tag-css',
-      'es-tag-glsl',
-      'es-tag-html',
-      'es-tag-sql',
-      'es-tag-xml',
-    ],
-    name: 'ts-tags',
-    scopeName: 'source.ts.tags',
-  },
-  {
-    byteSize: 633,
-    categories: [
-      'data',
-    ],
-    displayName: 'TSV',
-    funding: [
-    ],
-    hash: 'qWlxLbvKBJxjZKEXj0kkJcHcPOdGrbWFAB0wf0Ec5KQ',
-    lastUpdate: '2018-06-05T03:29:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE',
-    name: 'tsv',
-    scopeName: 'text.tsv',
-    sha: '00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3',
-    source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3/syntaxes/tsv.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mechatroner/vscode_rainbow_csv/contents/syntaxes/tsv.tmLanguage.json?ref=00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3',
-  },
-  {
-    byteSize: 160061,
-    categories: [
-      'web',
-    ],
-    displayName: 'TSX',
-    funding: [
-    ],
-    hash: 'M9cElYonNsDV9nzerxuM3dtqePPCyEk-eK2_IzeiJfo',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'tsx',
-    scopeName: 'source.tsx',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
-  },
-  {
-    byteSize: 3578,
-    displayName: 'Turtle',
-    funding: [
-    ],
-    hash: 'y_GUbNkwiArKhbhLIlb73y7T8TIqUem9EMo3BTG6wbs',
-    lastUpdate: '2022-11-21T15:21:23Z',
-    name: 'turtle',
-    scopeName: 'source.turtle',
-    sha: '3f1364b08bdbf4b4d77f123682db7d2b708b2f6e',
-    source: 'https://github.com/stardog-union/stardog-vsc/blob/3f1364b08bdbf4b4d77f123682db7d2b708b2f6e/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/stardog-union/stardog-vsc/contents/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json?ref=3f1364b08bdbf4b4d77f123682db7d2b708b2f6e',
-  },
-  {
-    byteSize: 20063,
-    displayName: 'Twig',
-    embedded: [
-      'css',
-      'javascript',
-      'scss',
-      'php',
-      'python',
-      'ruby',
-    ],
-    funding: [
-      {
-        handle: '@mblode',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/mblode',
-      },
-    ],
-    hash: 'j5aB9jrDmbhbUN__mn16N9YKAv4Xhch9VWwoDHhLkU4',
-    lastUpdate: '2023-11-03T21:57:59Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mblode/vscode-twig-language-2/master/LICENSE.md',
-    name: 'twig',
-    scopeName: 'text.html.twig',
-    sha: '82ae07ffe96656181ad8265c1fff008c8d1cdbba',
-    source: 'https://github.com/mblode/vscode-twig-language-2/blob/82ae07ffe96656181ad8265c1fff008c8d1cdbba/src/syntaxes/twig.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/mblode/vscode-twig-language-2/contents/src/syntaxes/twig.tmLanguage?ref=82ae07ffe96656181ad8265c1fff008c8d1cdbba',
-  },
-  {
-    aliases: [
-      'ts',
-    ],
-    byteSize: 163871,
-    categories: [
-      'web',
-      'scripting',
-      'general',
-    ],
-    displayName: 'TypeScript',
-    funding: [
-    ],
-    hash: 'AJ9y77GwIbSXydPeC63OBqQyKunnZoz1MlEF6MkbhQk',
-    lastUpdate: '2024-10-25T09:35:17Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'typescript',
-    scopeName: 'source.ts',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
-  },
-  {
-    aliases: [
-      'tsp',
-    ],
-    byteSize: 22749,
-    displayName: 'TypeSpec',
-    funding: [
-    ],
-    hash: 'LAIE6LoenvYC7l_FgB4wgVkaRSSb9LryPZilOjJps-Y',
-    lastUpdate: '2025-03-07T20:50:42Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
-    name: 'typespec',
-    scopeName: 'source.tsp',
-    sha: 'b4b7705c61f186590c6a6d086a131cd71ee4c48c',
-    source: 'https://github.com/microsoft/typespec/blob/b4b7705c61f186590c6a6d086a131cd71ee4c48c/grammars/typespec.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=b4b7705c61f186590c6a6d086a131cd71ee4c48c',
-  },
-  {
-    aliases: [
-      'typ',
-    ],
-    byteSize: 8021,
-    displayName: 'Typst',
-    funding: [
-    ],
-    hash: 'CZhGN3v0QYURr0GlkYpxqlfn2BciqQajWeuiJLk2HQ4',
-    lastUpdate: '2023-08-11T05:56:51Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nvarner/typst-lsp/master/LICENSE-MIT.txt',
-    name: 'typst',
-    scopeName: 'source.typst',
-    sha: '6972d4b9c2cbcb0551e203067f09ec84ca8f9df3',
-    source: 'https://github.com/nvarner/typst-lsp/blob/6972d4b9c2cbcb0551e203067f09ec84ca8f9df3/editors/vscode/typst.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nvarner/typst-lsp/contents/editors/vscode/typst.tmLanguage.json?ref=6972d4b9c2cbcb0551e203067f09ec84ca8f9df3',
-  },
-  {
-    byteSize: 12744,
-    displayName: 'V',
-    funding: [
-    ],
-    hash: 'rZsyeKnT17_9HRGMDyL9XboadtgzNTsfCp8LTIzyenM',
-    lastUpdate: '2023-01-09T21:56:12Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vlang/vscode-vlang/master/LICENSE',
-    name: 'v',
-    scopeName: 'source.v',
-    sha: 'b1f529602bc6536ad8967373302e151e77179598',
-    source: 'https://github.com/vlang/vscode-vlang/blob/b1f529602bc6536ad8967373302e151e77179598/syntaxes/v.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/vlang/vscode-vlang/contents/syntaxes/v.tmLanguage.json?ref=b1f529602bc6536ad8967373302e151e77179598',
-  },
-  {
-    byteSize: 3194,
-    displayName: 'Vala',
-    funding: [
-    ],
-    hash: 'nvvCviZWuIUKoImAes958pcpo1xKr2uE4H0_worqV8Q',
-    lastUpdate: '2021-05-28T08:53:39Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE',
-    name: 'vala',
-    scopeName: 'source.vala',
-    sha: '8f825e95648326df2572d0522632251cdff4a43b',
-    source: 'https://github.com/vala-lang/vala-vscode/blob/8f825e95648326df2572d0522632251cdff4a43b/syntaxes/vala.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/vala-lang/vala-vscode/contents/syntaxes/vala.YAML-tmLanguage?ref=8f825e95648326df2572d0522632251cdff4a43b',
-  },
-  {
-    aliases: [
-      'cmd',
-    ],
-    byteSize: 5835,
-    categories: [
-      'general',
-      'scripting',
-    ],
-    displayName: 'Visual Basic',
-    funding: [
-    ],
-    hash: 'dZp_a9mwDwlERpADaBuoJZOdpxW4NzJzqKMblRZo-3U',
-    lastUpdate: '2024-01-26T12:06:22Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'vb',
-    scopeName: 'source.asp.vb.net',
-    sha: '35d97bc7e439fce0f50f42074041ab2d8571b20a',
-    source: 'https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json?ref=35d97bc7e439fce0f50f42074041ab2d8571b20a',
-  },
-  {
-    byteSize: 5734,
-    displayName: 'Verilog',
-    funding: [
-      {
-        name: 'buymeacoffee.com',
-        url: 'https://www.buymeacoffee.com/mshr.h',
-      },
-    ],
-    hash: 'fEXXkb7Yvck2TLu9TxCuyyFO5Ptb3-FrKpxQPRDfpY8',
-    lastUpdate: '2024-10-26T13:17:15Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE',
-    name: 'verilog',
-    scopeName: 'source.verilog',
-    sha: '26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77',
-    source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77/syntaxes/verilog.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mshr-h/vscode-verilog-hdl-support/contents/syntaxes/verilog.tmLanguage.json?ref=26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77',
-  },
-  {
-    byteSize: 23535,
-    displayName: 'VHDL',
-    funding: [
-    ],
-    hash: 'QPCtz4p5lsdE9TDKtmNVvvA-02X9p61edg7qcuIEpSU',
-    lastUpdate: '2025-03-25T11:18:04Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/LICENSE.txt',
-    name: 'vhdl',
-    scopeName: 'source.vhdl',
-    sha: 'b787559a47d64c7baf2a9ac0f4cac8e2e721cddc',
-    source: 'https://github.com/jonasjj/awesome-vhdl/blob/b787559a47d64c7baf2a9ac0f4cac8e2e721cddc/syntaxes/vhdl.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/jonasjj/awesome-vhdl/contents/syntaxes/vhdl.tmLanguage?ref=b787559a47d64c7baf2a9ac0f4cac8e2e721cddc',
-  },
-  {
-    aliases: [
-      'vim',
-      'vimscript',
-    ],
-    byteSize: 20049,
-    displayName: 'Vim Script',
-    funding: [
-    ],
-    hash: 'SFAhLb2k8KuQ2NWIZ_snmY5d-7feKUPW8clGzBrX9pM',
-    lastUpdate: '2018-04-21T00:11:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/dunstontc/viml/master/LICENSE',
-    name: 'viml',
-    scopeName: 'source.viml',
-    sha: '8762570fc7d6f1009a3c93efd2a337330d88b88e',
-    source: 'https://github.com/dunstontc/viml/blob/8762570fc7d6f1009a3c93efd2a337330d88b88e/syntaxes/viml.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/dunstontc/viml/contents/syntaxes/viml.tmLanguage.json?ref=8762570fc7d6f1009a3c93efd2a337330d88b88e',
-  },
-  {
-    byteSize: 17502,
-    categories: [
-      'web',
-    ],
-    displayName: 'Vue',
-    embedded: [
-      'markdown',
-      'pug',
-      'stylus',
-      'sass',
-      'css',
-      'scss',
-      'less',
-      'javascript',
-      'typescript',
-      'jsx',
-      'tsx',
-      'coffee',
-      'json',
-      'jsonc',
-      'json5',
-      'yaml',
-      'toml',
-      'graphql',
-      'html-derivative',
-      'html',
-      'markdown-vue',
-      'vue-directives',
-      'vue-interpolations',
-      'vue-sfc-style-variable-injection',
-    ],
-    funding: [
-      {
-        handle: '@johnsoncodehk',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/johnsoncodehk',
-      },
-    ],
-    hash: 'KHfEDoogCSYyexyR3IjXNHrvqyAJvnehsvIumJgQqqw',
-    lastUpdate: '2025-06-02T14:48:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
-    name: 'vue',
-    scopeName: 'source.vue',
-    sha: 'd94c100f416f5dbe9adfbdb24305537ee9cc326e',
-    source: 'https://github.com/vuejs/language-tools/blob/d94c100f416f5dbe9adfbdb24305537ee9cc326e/extensions/vscode/syntaxes/vue.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue.tmLanguage.json?ref=d94c100f416f5dbe9adfbdb24305537ee9cc326e',
-  },
-  {
-    byteSize: 8233,
-    categories: [
-      'web',
-    ],
-    displayName: 'Vue HTML',
-    embedded: [
-      'vue',
-      'javascript',
-    ],
-    funding: [
-      {
-        handle: '@octref',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/octref',
+        "handle": "alefragnani",
+        "name": "Patreon",
+        "url": "https://patreon.com/alefragnani"
       },
       {
-        handle: 'vuejs/vetur',
-        name: 'IssueHunt',
-        url: 'https://issuehunt.io/r/vuejs/vetur',
-      },
+        "name": "paypal.com",
+        "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=vscode%20extensions&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"
+      }
     ],
-    hash: 'DH6dID0MZKIX5ED_QdNJ2hHA-G_dw43lB6u6yjCSHjo',
-    lastUpdate: '2020-08-20T02:58:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE',
-    name: 'vue-html',
-    scopeName: 'text.html.vue-html',
-    sha: '53ee52746b1f26f44391c3764bc7bd06d4ddaa46',
-    source: 'https://github.com/vuejs/vetur/blob/53ee52746b1f26f44391c3764bc7bd06d4ddaa46/syntaxes/vue-html.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/vetur/contents/syntaxes/vue-html.tmLanguage.json?ref=53ee52746b1f26f44391c3764bc7bd06d4ddaa46',
+    "hash": "k6fsB6wbz0Ch4QETubTB-h_wE_nGUPQFYxexGb2XgKw",
+    "lastUpdate": "2025-02-16T13:44:19Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/alefragnani/vscode-language-pascal/master/LICENSE.md",
+    "name": "pascal",
+    "scopeName": "source.pascal",
+    "sha": "f2d6345bd9fe83932f4d04fcacf98ce7d74b8034",
+    "source": "https://github.com/alefragnani/vscode-language-pascal/blob/f2d6345bd9fe83932f4d04fcacf98ce7d74b8034/syntaxes/pascal.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/alefragnani/vscode-language-pascal/contents/syntaxes/pascal.tmLanguage?ref=f2d6345bd9fe83932f4d04fcacf98ce7d74b8034"
   },
   {
-    byteSize: 173528,
-    categories: [
-      'web',
+    "byteSize": 41869,
+    "categories": [
+      "general"
     ],
-    displayName: 'Vue Vine',
-    embedded: [
-      'css',
-      'scss',
-      'less',
-      'stylus',
-      'postcss',
-      'vue',
-      'javascript',
+    "displayName": "Perl",
+    "embedded": [
+      "html",
+      "xml",
+      "css",
+      "javascript",
+      "sql"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'U1HP16zN4l73ecsb2V0lU8nzBGeUa3XejHxnSYvJrrg',
-    lastUpdate: '2025-06-04T11:52:37Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vue-vine/assets/main/LICENSE',
-    name: 'vue-vine',
-    scopeName: 'source.vue-vine',
-    sha: '2921493f703bfcf64aed5644f275e7e65f2e0a48',
-    source: 'https://github.com/vue-vine/assets/blob/2921493f703bfcf64aed5644f275e7e65f2e0a48/grammars/vue-vine.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/vue-vine/assets/contents/grammars/vue-vine.tmLanguage.json?ref=2921493f703bfcf64aed5644f275e7e65f2e0a48',
+    "hash": "rxHwLwef3W3ydOe0Cui_0wexusq8QNAUn6joHAL50QE",
+    "lastUpdate": "2021-04-06T09:30:15Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "perl",
+    "scopeName": "source.perl",
+    "sha": "e637ff1bf7f481134849625e982ec80df9b35bc8",
+    "source": "https://github.com/microsoft/vscode/blob/e637ff1bf7f481134849625e982ec80df9b35bc8/extensions/perl/syntaxes/perl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl.tmLanguage.json?ref=e637ff1bf7f481134849625e982ec80df9b35bc8"
   },
   {
-    aliases: [
-      'vy',
+    "byteSize": 107314,
+    "categories": [
+      "general",
+      "web"
     ],
-    byteSize: 72723,
-    displayName: 'Vyper',
-    funding: [
+    "displayName": "PHP",
+    "embedded": [
+      "html",
+      "xml",
+      "sql",
+      "javascript",
+      "json",
+      "css"
     ],
-    hash: 'Lp9P8cytSRUIyyfRuA9owosKbz3Z9bHf2v9DuDV5KAU',
-    lastUpdate: '2024-07-02T07:02:19Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/tintinweb/vscode-vyper/master/LICENSE',
-    name: 'vyper',
-    scopeName: 'source.vyper',
-    sha: '3df08ea46fc7df1a5e7f35365e615624849d1c1b',
-    source: 'https://github.com/tintinweb/vscode-vyper/blob/3df08ea46fc7df1a5e7f35365e615624849d1c1b/syntaxes/vyper.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/tintinweb/vscode-vyper/contents/syntaxes/vyper.tmLanguage.json?ref=3df08ea46fc7df1a5e7f35365e615624849d1c1b',
+    "funding": [
+    ],
+    "hash": "pCKg4Z-l4DRDfr4UqipCw-DTFD8lc1OWySjLslEPA3s",
+    "lastUpdate": "2025-05-02T13:29:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "php",
+    "scopeName": "source.php",
+    "sha": "0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4",
+    "source": "https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/php/syntaxes/php.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4"
   },
   {
-    byteSize: 11450,
-    categories: [
-      'web',
+    "byteSize": 8125,
+    "displayName": "PL/SQL",
+    "funding": [
     ],
-    displayName: 'WebAssembly',
-    funding: [
-    ],
-    hash: 'kE6pGlRzFLpLCut0oj3kN3xAysZDhchfsVLhs7TCb5g',
-    lastUpdate: '2023-10-31T03:53:56Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE',
-    name: 'wasm',
-    scopeName: 'source.wat',
-    sha: '9d0ace1ff113f4a3e95797675039cd94ec257078',
-    source: 'https://github.com/wasmerio/vscode-wasm/blob/9d0ace1ff113f4a3e95797675039cd94ec257078/syntaxes/wat.json',
-    sourceApi: 'https://api.github.com/repos/wasmerio/vscode-wasm/contents/syntaxes/wat.json?ref=9d0ace1ff113f4a3e95797675039cd94ec257078',
+    "hash": "6Bx4PDNOIVQ81uKRH-yVaZbXroGX91RocNAYizSbtiw",
+    "lastUpdate": "2019-03-31T11:02:30Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/zabel-xyz/plsql-language/master/LICENSE",
+    "name": "plsql",
+    "scopeName": "source.plsql.oracle",
+    "sha": "256a6b8f04f2bdc5e60ce921646a5068957078d7",
+    "source": "https://github.com/zabel-xyz/plsql-language/blob/256a6b8f04f2bdc5e60ce921646a5068957078d7/syntaxes/plsql.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/zabel-xyz/plsql-language/contents/syntaxes/plsql.tmLanguage?ref=256a6b8f04f2bdc5e60ce921646a5068957078d7"
   },
   {
-    aliases: [
-      '文言',
+    "aliases": [
+      "pot",
+      "potx"
     ],
-    byteSize: 2054,
-    displayName: 'Wenyan',
-    funding: [
+    "byteSize": 3030,
+    "categories": [
+      "utility"
     ],
-    hash: 'B79P2r6JD2MSZ2ibGYAKdETlZja7QZhyl8NJUD-x5Y0',
-    lastUpdate: '2020-09-07T17:31:32Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/wenyan-lang/highlight/master/LICENSE',
-    name: 'wenyan',
-    scopeName: 'source.wenyan',
-    sha: '5100e8a803978b4f5b009adac035d1f27f591760',
-    source: 'https://github.com/wenyan-lang/highlight/blob/5100e8a803978b4f5b009adac035d1f27f591760/wenyan.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/wenyan-lang/highlight/contents/wenyan.tmLanguage.json?ref=5100e8a803978b4f5b009adac035d1f27f591760',
+    "displayName": "Gettext PO",
+    "funding": [
+    ],
+    "hash": "UtB-hxdk9Xagag_qUZU7YPFBq4K8xipvzJexqziLhxI",
+    "lastUpdate": "2014-11-13T07:01:18Z",
+    "name": "po",
+    "scopeName": "source.po",
+    "sha": "08bb69558d82ada8d4f36b8869f871ce69014749",
+    "source": "https://github.com/textmate/gettext.tmbundle/blob/08bb69558d82ada8d4f36b8869f871ce69014749/Syntaxes/Gettext.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/gettext.tmbundle/contents/Syntaxes/Gettext.tmLanguage?ref=08bb69558d82ada8d4f36b8869f871ce69014749"
   },
   {
-    byteSize: 4934,
-    categories: [
-      'web',
+    "byteSize": 4474,
+    "displayName": "Polar",
+    "funding": [
     ],
-    displayName: 'WGSL',
-    funding: [
-    ],
-    hash: 'zGS2Zz9Ee14NcK-YPx6MyPKN3eCMGPvsoXP9aAR-zmo',
-    lastUpdate: '2023-07-22T16:16:43Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/PolyMeilex/vscode-wgsl/master/LICENSE',
-    name: 'wgsl',
-    scopeName: 'source.wgsl',
-    sha: '04222c48533ca541d6dc97043ea096471517e079',
-    source: 'https://github.com/PolyMeilex/vscode-wgsl/blob/04222c48533ca541d6dc97043ea096471517e079/syntaxes/wgsl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/PolyMeilex/vscode-wgsl/contents/syntaxes/wgsl.tmLanguage.json?ref=04222c48533ca541d6dc97043ea096471517e079',
+    "hash": "DQUP8OT3OUp5E56R38as_QPH84LMyKSXf0OAQZLGKOY",
+    "lastUpdate": "2025-02-04T19:52:05Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/osohq/polar-grammar/main/LICENSE",
+    "name": "polar",
+    "scopeName": "source.polar",
+    "sha": "1a87b3a7f2b47aea681a0f627b2297f77171d1c3",
+    "source": "https://github.com/osohq/polar-grammar/blob/1a87b3a7f2b47aea681a0f627b2297f77171d1c3/syntaxes/polar.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/osohq/polar-grammar/contents/syntaxes/polar.tmLanguage.json?ref=1a87b3a7f2b47aea681a0f627b2297f77171d1c3"
   },
   {
-    aliases: [
-      'mediawiki',
-      'wiki',
+    "byteSize": 6193,
+    "categories": [
+      "web"
     ],
-    byteSize: 54270,
-    categories: [
-      'markup',
-    ],
-    displayName: 'Wikitext',
-    embedded: [
-      'html',
-      'css',
-      'ini',
-      'java',
-      'lua',
-      'make',
-      'perl',
-      'r',
-      'ruby',
-      'php',
-      'sql',
-      'vb',
-      'xml',
-      'xsl',
-      'yaml',
-      'bat',
-      'clojure',
-      'coffee',
-      'c',
-      'cpp',
-      'diff',
-      'docker',
-      'go',
-      'groovy',
-      'pug',
-      'javascript',
-      'jsonc',
-      'less',
-      'objective-c',
-      'swift',
-      'scss',
-      'raku',
-      'powershell',
-      'python',
-      'julia',
-      'rust',
-      'scala',
-      'shellscript',
-      'typescript',
-      'csharp',
-      'fsharp',
-      'dart',
-      'handlebars',
-      'markdown',
-      'erlang',
-      'elixir',
-      'latex',
-      'bibtex',
-      'json',
-    ],
-    funding: [
+    "displayName": "PostCSS",
+    "funding": [
       {
-        handle: 'rwfholme',
-        name: 'Patreon',
-        url: 'https://patreon.com/rwfholme',
+        "handle": "@octref",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/octref"
       },
       {
-        name: 'frederisk.github.io',
-        url: 'https://frederisk.github.io/donate/cryptocurrency',
+        "handle": "vuejs/vetur",
+        "name": "IssueHunt",
+        "url": "https://issuehunt.io/r/vuejs/vetur"
+      }
+    ],
+    "hash": "U_8P6H3mHis15SN-uJCmyI0t3RyMW6vk7cijo_YNMtY",
+    "lastUpdate": "2019-03-17T05:02:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE",
+    "name": "postcss",
+    "scopeName": "source.css.postcss",
+    "sha": "8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c",
+    "source": "https://github.com/vuejs/vetur/blob/8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c/syntaxes/vue-postcss.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/vetur/contents/syntaxes/vue-postcss.json?ref=8ccae3ba50b65837d4cd4acc71a3b84cd3bee27c"
+  },
+  {
+    "byteSize": 5631,
+    "displayName": "PowerQuery",
+    "funding": [
+    ],
+    "hash": "ylh2bBUlAa4ERZFYwNC46r7Cs4v5a-siyl8e9IeA12A",
+    "lastUpdate": "2019-04-24T13:39:36Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/powerquery-language/master/LICENSE",
+    "name": "powerquery",
+    "scopeName": "source.powerquery",
+    "sha": "eed9810b5f78dfb63319bdbce80bca50419dfa50",
+    "source": "https://github.com/microsoft/powerquery-language/blob/eed9810b5f78dfb63319bdbce80bca50419dfa50/PowerQuery.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/powerquery-language/contents/PowerQuery.tmLanguage.json?ref=eed9810b5f78dfb63319bdbce80bca50419dfa50"
+  },
+  {
+    "aliases": [
+      "ps",
+      "ps1"
+    ],
+    "byteSize": 19624,
+    "displayName": "PowerShell",
+    "funding": [
+    ],
+    "hash": "3i4Vda2_-8ALBGd0UryNSQU_Vqi7i7dZePksCbjSdj8",
+    "lastUpdate": "2021-11-02T14:27:57Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "powershell",
+    "scopeName": "source.powershell",
+    "sha": "9efc116de0ea4998616ebe3b17ee5b92f7dc1161",
+    "source": "https://github.com/microsoft/vscode/blob/9efc116de0ea4998616ebe3b17ee5b92f7dc1161/extensions/powershell/syntaxes/powershell.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/powershell/syntaxes/powershell.tmLanguage.json?ref=9efc116de0ea4998616ebe3b17ee5b92f7dc1161"
+  },
+  {
+    "byteSize": 6116,
+    "displayName": "Prisma",
+    "funding": [
+    ],
+    "hash": "3QywjyKuwMm0RnrMcQpXr52isTRGNqQfal3qfJYiLzE",
+    "lastUpdate": "2025-05-21T13:42:02Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/prisma/language-tools/main/LICENSE",
+    "name": "prisma",
+    "scopeName": "source.prisma",
+    "sha": "1e0059be6522d1dac98ff45cd78ab962599a815e",
+    "source": "https://github.com/prisma/language-tools/blob/1e0059be6522d1dac98ff45cd78ab962599a815e/packages/vscode/syntaxes/prisma.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/prisma/language-tools/contents/packages/vscode/syntaxes/prisma.tmLanguage.json?ref=1e0059be6522d1dac98ff45cd78ab962599a815e"
+  },
+  {
+    "byteSize": 11206,
+    "displayName": "Prolog",
+    "funding": [
+    ],
+    "hash": "_wslbJVOrtScDJRsUlHr7_JQoqR612h_JoBAwkG1zcc",
+    "lastUpdate": "2018-06-02T15:08:48Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/arthwang/vsc-prolog/master/LICENSE.txt",
+    "name": "prolog",
+    "scopeName": "source.prolog",
+    "sha": "5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7",
+    "source": "https://github.com/arthwang/vsc-prolog/blob/5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7/syntaxes/prolog.swi.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/arthwang/vsc-prolog/contents/syntaxes/prolog.swi.tmLanguage.json?ref=5e15f731d5ef8e0f3974589b84ddefe6a2bf78c7"
+  },
+  {
+    "aliases": [
+      "protobuf"
+    ],
+    "byteSize": 6241,
+    "displayName": "Protocol Buffer 3",
+    "funding": [
+    ],
+    "hash": "fGoQjk71Pi8UmDDojIWtwmyC1q-_0T4dVBep6tpH82A",
+    "lastUpdate": "2022-02-08T19:51:15Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/zxh0/vscode-proto3/master/LICENSE.txt",
+    "name": "proto",
+    "scopeName": "source.proto",
+    "sha": "ead0fb5f46a56adbe30d5a8a63d68e7131912159",
+    "source": "https://github.com/zxh0/vscode-proto3/blob/ead0fb5f46a56adbe30d5a8a63d68e7131912159/syntaxes/proto3.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/zxh0/vscode-proto3/contents/syntaxes/proto3.tmLanguage.json?ref=ead0fb5f46a56adbe30d5a8a63d68e7131912159"
+  },
+  {
+    "aliases": [
+      "jade"
+    ],
+    "byteSize": 13039,
+    "categories": [
+      "web",
+      "markup"
+    ],
+    "displayName": "Pug",
+    "embedded": [
+      "javascript",
+      "css",
+      "sass",
+      "scss",
+      "stylus",
+      "coffee",
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "DtlOh-9gzldDDvpIVJ5nH2fKApsu1XLeCcEdXJ2SE7k",
+    "lastUpdate": "2023-03-29T09:38:06Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "pug",
+    "scopeName": "text.pug",
+    "sha": "6ac83c7c7dda9f27ca1fe9d98675253e010b75d1",
+    "source": "https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/pug/syntaxes/pug.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/pug/syntaxes/pug.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1"
+  },
+  {
+    "byteSize": 11065,
+    "displayName": "Puppet",
+    "funding": [
+      {
+        "handle": "@octref",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/octref"
+      }
+    ],
+    "hash": "VcoXuMecc-7qIFw9YPb6d4HDfJxCxPC9j8rGSk0GEaU",
+    "lastUpdate": "2020-08-20T04:40:24Z",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/octref/puppet-vscode/main/LICENSE",
+    "name": "puppet",
+    "scopeName": "source.puppet",
+    "sha": "42e02ef6c02aefb0dcf03f8367fdc106d7213a6c",
+    "source": "https://github.com/octref/puppet-vscode/blob/42e02ef6c02aefb0dcf03f8367fdc106d7213a6c/syntaxes/puppet.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/octref/puppet-vscode/contents/syntaxes/puppet.tmLanguage?ref=42e02ef6c02aefb0dcf03f8367fdc106d7213a6c"
+  },
+  {
+    "byteSize": 21697,
+    "displayName": "PureScript",
+    "funding": [
+    ],
+    "hash": "LNhY2u12fXmMKLJU5g4gFx4FNryU4UT6pvoyF_2qcEQ",
+    "lastUpdate": "2025-03-07T08:17:45Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/nwolverson/vscode-language-purescript/master/LICENSE.md",
+    "name": "purescript",
+    "scopeName": "source.purescript",
+    "sha": "52a2ab241ee6f9b5f8b91a02d9227654357965ee",
+    "source": "https://github.com/nwolverson/vscode-language-purescript/blob/52a2ab241ee6f9b5f8b91a02d9227654357965ee/syntaxes/purescript.json",
+    "sourceApi": "https://api.github.com/repos/nwolverson/vscode-language-purescript/contents/syntaxes/purescript.json?ref=52a2ab241ee6f9b5f8b91a02d9227654357965ee"
+  },
+  {
+    "aliases": [
+      "py"
+    ],
+    "byteSize": 68139,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Python",
+    "funding": [
+    ],
+    "hash": "3QzSFtH7MOitfK3QFoKA6FykhVLrWwPSBlDvFLG9otI",
+    "lastUpdate": "2022-10-20T22:45:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "python",
+    "scopeName": "source.python",
+    "sha": "cf4c9e469d521fa5f33353737e8157eb0789ad02",
+    "source": "https://github.com/microsoft/vscode/blob/cf4c9e469d521fa5f33353737e8157eb0789ad02/extensions/python/syntaxes/MagicPython.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/python/syntaxes/MagicPython.tmLanguage.json?ref=cf4c9e469d521fa5f33353737e8157eb0789ad02"
+  },
+  {
+    "byteSize": 5032,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "QML",
+    "embedded": [
+      "javascript"
+    ],
+    "funding": [
+    ],
+    "hash": "ewvNUVmfhbtxZQ-fcKpY8FjdSOSfRk8yDxQtTJ2RQ0I",
+    "lastUpdate": "2022-08-26T21:14:57Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE",
+    "name": "qml",
+    "scopeName": "source.qml",
+    "sha": "51408001e908800c00ce9f68f66e511545ea29fe",
+    "source": "https://github.com/seanwu1105/vscode-qt-for-python/blob/51408001e908800c00ce9f68f66e511545ea29fe/syntaxes/qml.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qml.tmLanguage.json?ref=51408001e908800c00ce9f68f66e511545ea29fe"
+  },
+  {
+    "byteSize": 902,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "QML Directory",
+    "funding": [
+    ],
+    "hash": "cfzguECWzd9g56cb-N_MxwfE_J6RhaYEX0RKOb2Qazk",
+    "lastUpdate": "2022-08-26T21:28:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE",
+    "name": "qmldir",
+    "scopeName": "source.qmldir",
+    "sha": "b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b",
+    "source": "https://github.com/seanwu1105/vscode-qt-for-python/blob/b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b/syntaxes/qmldir.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qmldir.tmLanguage.json?ref=b301e7b18493ba59c4f52e49c3f73b6cd23d4c4b"
+  },
+  {
+    "byteSize": 7288,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "Qt Style Sheets",
+    "funding": [
+    ],
+    "hash": "0Osg1Uny4y1ZnUND_3HZ-CeB_dS7MAaKpLNqQiVI_vs",
+    "lastUpdate": "2023-02-15T15:05:28Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/seanwu1105/vscode-qt-for-python/master/LICENSE",
+    "name": "qss",
+    "scopeName": "source.qss",
+    "sha": "f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d",
+    "source": "https://github.com/seanwu1105/vscode-qt-for-python/blob/f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d/syntaxes/qss.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/seanwu1105/vscode-qt-for-python/contents/syntaxes/qss.tmLanguage.json?ref=f0a56a97d10f58ab7b4b6e2ab6ce34ca4c9d521d"
+  },
+  {
+    "byteSize": 51954,
+    "categories": [
+      "data"
+    ],
+    "displayName": "R",
+    "funding": [
+    ],
+    "hash": "AAd2Vg7DnvcVg46BpcfWZjaqRz5qQn9G1KIHOL897lE",
+    "lastUpdate": "2025-05-15T10:04:36Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "r",
+    "scopeName": "source.r",
+    "sha": "43996d742238554ea84e501a1bd1d289553e5365",
+    "source": "https://github.com/microsoft/vscode/blob/43996d742238554ea84e501a1bd1d289553e5365/extensions/r/syntaxes/r.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/r/syntaxes/r.tmLanguage.json?ref=43996d742238554ea84e501a1bd1d289553e5365"
+  },
+  {
+    "byteSize": 89526,
+    "categories": [
+      "lisp"
+    ],
+    "displayName": "Racket",
+    "funding": [
+      {
+        "handle": "@eugleo",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/eugleo"
+      }
+    ],
+    "hash": "p_5dFXjTI0y4d2TBVA-RH2dysDpT5OkhF2K9pelO2_A",
+    "lastUpdate": "2025-04-10T11:19:24Z",
+    "license": "GPL-3.0",
+    "licenseUrl": "https://raw.githubusercontent.com/Eugleo/magic-racket/master/LICENSE",
+    "name": "racket",
+    "scopeName": "source.racket",
+    "sha": "1b850db7f6e7c3ba8a1b47fe2781800a21f669a8",
+    "source": "https://github.com/Eugleo/magic-racket/blob/1b850db7f6e7c3ba8a1b47fe2781800a21f669a8/syntaxes/racket.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/Eugleo/magic-racket/contents/syntaxes/racket.tmLanguage.json?ref=1b850db7f6e7c3ba8a1b47fe2781800a21f669a8"
+  },
+  {
+    "aliases": [
+      "perl6"
+    ],
+    "byteSize": 10193,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Raku",
+    "funding": [
+    ],
+    "hash": "LoAP3GDbGymp6axP10ev3THDgeiY4Iy7lk80jfv_LDo",
+    "lastUpdate": "2018-02-12T15:54:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "raku",
+    "scopeName": "source.perl.6",
+    "sha": "8fdf170a0850c1cc027382f31650aaf300d3ae2a",
+    "source": "https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/perl/syntaxes/perl6.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl6.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a"
+  },
+  {
+    "byteSize": 24883,
+    "displayName": "ASP.NET Razor",
+    "embedded": [
+      "html",
+      "csharp"
+    ],
+    "funding": [
+    ],
+    "hash": "twTvHeUmuJ6w9-C3OQrlEYFDpIg30cjsX4XTI_OTAhQ",
+    "lastUpdate": "2025-01-16T21:40:52Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/dotnet/razor/main/LICENSE.txt",
+    "name": "razor",
+    "scopeName": "text.aspnetcorerazor",
+    "sha": "9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c",
+    "source": "https://github.com/dotnet/razor/blob/9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/dotnet/razor/contents/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json?ref=9b1e979b6c3fe7cfbe30f595b9b0994d20bd482c"
+  },
+  {
+    "byteSize": 2239,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "Windows Registry Script",
+    "funding": [
+    ],
+    "hash": "25tsOXM-UcNHDq_UJSUuCgDdOQUWCtXgL7nCQ_P4pSo",
+    "lastUpdate": "2020-02-08T20:48:08Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mihai-vlc/reg-vscode/master/LICENSE",
+    "name": "reg",
+    "scopeName": "source.reg",
+    "sha": "896096fc6756329d82c71a913663a1c0ac678f74",
+    "source": "https://github.com/mihai-vlc/reg-vscode/blob/896096fc6756329d82c71a913663a1c0ac678f74/syntaxes/reg.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/mihai-vlc/reg-vscode/contents/syntaxes/reg.tmLanguage?ref=896096fc6756329d82c71a913663a1c0ac678f74"
+  },
+  {
+    "aliases": [
+      "regex"
+    ],
+    "byteSize": 7716,
+    "displayName": "RegExp",
+    "funding": [
+    ],
+    "hash": "XF5cnlMsNTxKxQnlquEwGS2vJdRushREWG10JFx3-_Q",
+    "lastUpdate": "2020-02-16T01:06:09Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/MagicStack/MagicPython/master/LICENSE",
+    "name": "regexp",
+    "scopeName": "source.regexp.python",
+    "sha": "c9b3409deb69acec31bbf7913830e93a046b30cc",
+    "source": "https://github.com/MagicStack/MagicPython/blob/c9b3409deb69acec31bbf7913830e93a046b30cc/grammars/MagicRegExp.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/MagicStack/MagicPython/contents/grammars/MagicRegExp.tmLanguage?ref=c9b3409deb69acec31bbf7913830e93a046b30cc"
+  },
+  {
+    "byteSize": 3220,
+    "displayName": "Rel",
+    "funding": [
+    ],
+    "hash": "uGzg7INvpWWnNxRU2Kmz6KmEX6huFy6NiKaKxKuAQls",
+    "lastUpdate": "2021-08-25T10:18:43Z",
+    "name": "rel",
+    "scopeName": "source.rel",
+    "sha": "63dda4dee48c67b037357f47b562185484555ea9",
+    "source": "https://github.com/relationalai-oss/rel_vscode/blob/63dda4dee48c67b037357f47b562185484555ea9/syntaxes/rel.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/relationalai-oss/rel_vscode/contents/syntaxes/rel.tmLanguage.json?ref=63dda4dee48c67b037357f47b562185484555ea9"
+  },
+  {
+    "byteSize": 6482,
+    "displayName": "RISC-V",
+    "funding": [
+    ],
+    "hash": "kOeYkUe5DqM2rZ8bAA1j2_Z_EOMJERq9xjEJ1FeQzNA",
+    "lastUpdate": "2020-10-28T01:05:27Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/zhuanhao-wu/vscode-riscv-support/master/LICENSE",
+    "name": "riscv",
+    "scopeName": "source.riscv",
+    "sha": "2736b60e45ff2ef738d784055e136cf38d6290cd",
+    "source": "https://github.com/zhuanhao-wu/vscode-riscv-support/blob/2736b60e45ff2ef738d784055e136cf38d6290cd/syntaxes/riscv.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/zhuanhao-wu/vscode-riscv-support/contents/syntaxes/riscv.tmLanguage?ref=2736b60e45ff2ef738d784055e136cf38d6290cd"
+  },
+  {
+    "byteSize": 9291,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "reStructuredText",
+    "embedded": [
+      "html-derivative",
+      "cpp",
+      "python",
+      "javascript",
+      "shellscript",
+      "yaml",
+      "cmake",
+      "ruby"
+    ],
+    "funding": [
+    ],
+    "hash": "A9cQWHyJJd5LTidoyLqC2wC6QJn6qQq9Sf34ZKpGs6k",
+    "lastUpdate": "2023-10-02T14:56:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "rst",
+    "scopeName": "source.rst",
+    "sha": "48e93f756b764991ede33ad09781a863aca6907a",
+    "source": "https://github.com/microsoft/vscode/blob/48e93f756b764991ede33ad09781a863aca6907a/extensions/restructuredtext/syntaxes/rst.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/restructuredtext/syntaxes/rst.tmLanguage.json?ref=48e93f756b764991ede33ad09781a863aca6907a"
+  },
+  {
+    "aliases": [
+      "rb"
+    ],
+    "byteSize": 43665,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Ruby",
+    "embedded": [
+      "html",
+      "haml",
+      "xml",
+      "sql",
+      "graphql",
+      "css",
+      "cpp",
+      "c",
+      "javascript",
+      "shellscript",
+      "lua",
+      "yaml"
+    ],
+    "funding": [
+    ],
+    "hash": "WjBpiLVK_j0CJniEfi0ahwHHZ2-CmM6shS1RN8lyjbk",
+    "lastUpdate": "2025-05-02T13:29:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "ruby",
+    "scopeName": "source.ruby",
+    "sha": "0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4",
+    "source": "https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/ruby/syntaxes/ruby.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4"
+  },
+  {
+    "aliases": [
+      "rs"
+    ],
+    "byteSize": 14689,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Rust",
+    "funding": [
+    ],
+    "hash": "hEnoZ2o9jfmY0i-WSjKXX16_nc3Q8XRmkaR7EqOXOic",
+    "lastUpdate": "2025-04-02T13:41:58Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "rust",
+    "scopeName": "source.rust",
+    "sha": "9a2c94d213696a4453b6d9988b003d98e7646e75",
+    "source": "https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/rust/syntaxes/rust.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/rust/syntaxes/rust.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75"
+  },
+  {
+    "byteSize": 8819,
+    "displayName": "SAS",
+    "embedded": [
+      "sql"
+    ],
+    "funding": [
+    ],
+    "hash": "i6tM05j0-1bm-tP160aqDftWYowbeIEOe6venFCXoeM",
+    "lastUpdate": "2019-03-13T21:39:48Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/rpardee/sas/master/LICENSE",
+    "name": "sas",
+    "scopeName": "source.sas",
+    "sha": "49f6e733c6c0b918a2a825ca2f63dba704f3e8c0",
+    "source": "https://github.com/rpardee/sas/blob/49f6e733c6c0b918a2a825ca2f63dba704f3e8c0/syntaxes/sas.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/rpardee/sas/contents/syntaxes/sas.tmLanguage?ref=49f6e733c6c0b918a2a825ca2f63dba704f3e8c0"
+  },
+  {
+    "byteSize": 8971,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Sass",
+    "funding": [
+    ],
+    "hash": "nIaSVgwSUF9bxC4JlF_onMFmoMGkePl5o2jVXasjn7U",
+    "lastUpdate": "2025-01-19T21:07:24Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/TheRealSyler/vscode-sass-indented/master/LICENSE",
+    "name": "sass",
+    "scopeName": "source.sass",
+    "sha": "f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f",
+    "source": "https://github.com/TheRealSyler/vscode-sass-indented/blob/f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f/syntaxes/sass.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/TheRealSyler/vscode-sass-indented/contents/syntaxes/sass.tmLanguage.json?ref=f0e50cfaca4b64a1d49f8d938f188d6fd0bcfb6f"
+  },
+  {
+    "byteSize": 26953,
+    "displayName": "Scala",
+    "funding": [
+    ],
+    "hash": "bckZSnzUUJqEd61PYjbPBojEBTMTX18mNDgcxxR3GTk",
+    "lastUpdate": "2025-01-13T17:26:01Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/scala/vscode-scala-syntax/main/LICENSE.md",
+    "name": "scala",
+    "scopeName": "source.scala",
+    "sha": "1d4029f21c9c57ce3e05486968b5de2847c25c62",
+    "source": "https://github.com/scala/vscode-scala-syntax/blob/1d4029f21c9c57ce3e05486968b5de2847c25c62/syntaxes/Scala.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/scala/vscode-scala-syntax/contents/syntaxes/Scala.tmLanguage.json?ref=1d4029f21c9c57ce3e05486968b5de2847c25c62"
+  },
+  {
+    "byteSize": 6924,
+    "categories": [
+      "general",
+      "lisp"
+    ],
+    "displayName": "Scheme",
+    "funding": [
+    ],
+    "hash": "mSEYUEWcYupyCrtFdHOZgGcw0mjlXHFzhtQLo_14DRI",
+    "lastUpdate": "2018-12-25T09:02:00Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/tinyjiahao/vscode-scheme/master/LICENSE.md",
+    "name": "scheme",
+    "scopeName": "source.scheme",
+    "sha": "4e21683666e1e2edfa21d040ecd427f628e7b5ff",
+    "source": "https://github.com/sjhuangx/vscode-scheme/blob/4e21683666e1e2edfa21d040ecd427f628e7b5ff/syntaxes/scheme.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/sjhuangx/vscode-scheme/contents/syntaxes/scheme.tmLanguage?ref=4e21683666e1e2edfa21d040ecd427f628e7b5ff"
+  },
+  {
+    "byteSize": 26425,
+    "categories": [
+      "web"
+    ],
+    "displayName": "SCSS",
+    "embedded": [
+      "css"
+    ],
+    "funding": [
+    ],
+    "hash": "ojpzVw7DV4kIFqnExv4x1FZW_vQDZbN8wQ_hXmDOelg",
+    "lastUpdate": "2019-11-12T14:37:21Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "scss",
+    "scopeName": "source.css.scss",
+    "sha": "cf8d61ebd2f022f4ce8280171f0360d1fe0a206d",
+    "source": "https://github.com/microsoft/vscode/blob/cf8d61ebd2f022f4ce8280171f0360d1fe0a206d/extensions/scss/syntaxes/scss.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/scss/syntaxes/scss.tmLanguage.json?ref=cf8d61ebd2f022f4ce8280171f0360d1fe0a206d"
+  },
+  {
+    "aliases": [
+      "1c-query"
+    ],
+    "byteSize": 4478,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "1C (Query)",
+    "funding": [
+    ],
+    "hash": "MCJM4tptI9FmvrSpoOKQ1Lp4wlC5MUNwCa7pFSO2LAQ",
+    "lastUpdate": "2024-11-05T21:37:20Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/develop/LICENSE.md",
+    "name": "sdbl",
+    "scopeName": "source.sdbl",
+    "sha": "c60d42089e5139942ff5b1db3a0a3ca8dd094ce6",
+    "source": "https://github.com/1c-syntax/vsc-language-1c-bsl/blob/c60d42089e5139942ff5b1db3a0a3ca8dd094ce6/syntaxes/1c-query.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/1c-syntax/vsc-language-1c-bsl/contents/syntaxes/1c-query.tmLanguage.json?ref=c60d42089e5139942ff5b1db3a0a3ca8dd094ce6"
+  },
+  {
+    "aliases": [
+      "shader"
+    ],
+    "byteSize": 5626,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "ShaderLab",
+    "embedded": [
+      "hlsl"
+    ],
+    "funding": [
+    ],
+    "hash": "cqQ73LKaXWV-o5k6k6_AWo561GijsBZkYUf5eiUO-D4",
+    "lastUpdate": "2018-02-12T15:54:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "shaderlab",
+    "scopeName": "source.shaderlab",
+    "sha": "8fdf170a0850c1cc027382f31650aaf300d3ae2a",
+    "source": "https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/shaderlab/syntaxes/shaderlab.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a"
+  },
+  {
+    "aliases": [
+      "bash",
+      "sh",
+      "shell",
+      "zsh"
+    ],
+    "byteSize": 39917,
+    "categories": [
+      "scripting"
+    ],
+    "displayName": "Shell",
+    "funding": [
+    ],
+    "hash": "l2mgA5XXHIrmKj-timscPGHz7KfiXx4aiwaMJPdNyws",
+    "lastUpdate": "2024-07-29T09:33:03Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "shellscript",
+    "scopeName": "source.shell",
+    "sha": "9473445f7d3dcb5c579f42ece8b6c18c43c63ed3",
+    "source": "https://github.com/microsoft/vscode/blob/9473445f7d3dcb5c579f42ece8b6c18c43c63ed3/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json?ref=9473445f7d3dcb5c579f42ece8b6c18c43c63ed3"
+  },
+  {
+    "aliases": [
+      "console"
+    ],
+    "byteSize": 513,
+    "categories": [
+      "scripting"
+    ],
+    "displayName": "Shell Session",
+    "embedded": [
+      "shellscript"
+    ],
+    "funding": [
+    ],
+    "hash": "Lm5oOVZarS8iB09z9zzooOSsm-WfE6MWvTrAcHpj8HE",
+    "lastUpdate": "2021-12-19T08:29:21Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/hronro/sublime-linguist-syntax/master/LICENSE",
+    "name": "shellsession",
+    "scopeName": "text.shell-session",
+    "sha": "9c84f1d69dbe89bc23292f129cf2d408a9c7afe1",
+    "source": "https://github.com/hronro/sublime-linguist-syntax/blob/9c84f1d69dbe89bc23292f129cf2d408a9c7afe1/syntaxes/ShellSession.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/hronro/sublime-linguist-syntax/contents/syntaxes/ShellSession.tmLanguage?ref=9c84f1d69dbe89bc23292f129cf2d408a9c7afe1"
+  },
+  {
+    "byteSize": 6369,
+    "displayName": "Smalltalk",
+    "funding": [
+    ],
+    "hash": "WMV13hGsAzro32NaRTbaIusl9X4PulDcK7uh7EAtwDE",
+    "lastUpdate": "2025-05-01T21:08:27Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/leocamello/vscode-smalltalk/master/LICENSE",
+    "name": "smalltalk",
+    "scopeName": "source.smalltalk",
+    "sha": "15ff58e2236127f682a33da12e931d74e0d17979",
+    "source": "https://github.com/leocamello/vscode-smalltalk/blob/15ff58e2236127f682a33da12e931d74e0d17979/syntaxes/smalltalk.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/leocamello/vscode-smalltalk/contents/syntaxes/smalltalk.tmLanguage.json?ref=15ff58e2236127f682a33da12e931d74e0d17979"
+  },
+  {
+    "byteSize": 15577,
+    "displayName": "Solidity",
+    "funding": [
+    ],
+    "hash": "aH4qktB-Xw5cophFFvNZgABSmMAi0LqHZigO4esKQ7w",
+    "lastUpdate": "2025-03-26T16:21:49Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/juanfranblanco/vscode-solidity/master/License.txt",
+    "name": "solidity",
+    "scopeName": "source.solidity",
+    "sha": "00abfad973f7a2f4fd105e05641344e160020369",
+    "source": "https://github.com/juanfranblanco/vscode-solidity/blob/00abfad973f7a2f4fd105e05641344e160020369/syntaxes/solidity.json",
+    "sourceApi": "https://api.github.com/repos/juanfranblanco/vscode-solidity/contents/syntaxes/solidity.json?ref=00abfad973f7a2f4fd105e05641344e160020369"
+  },
+  {
+    "aliases": [
+      "closure-templates"
+    ],
+    "byteSize": 6555,
+    "displayName": "Closure Templates",
+    "embedded": [
+      "html"
+    ],
+    "funding": [
+    ],
+    "hash": "AnsZA19YLsxPCDntTSGbCkpqqcOo7RXDRMMS5CUFS9Y",
+    "lastUpdate": "2017-05-27T18:02:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mthadley/language-closure-templates/master/LICENSE",
+    "name": "soy",
+    "scopeName": "text.html.soy",
+    "sha": "7caf3a1fad0245c4196d3766ba0f481762fbc92e",
+    "source": "https://github.com/mthadley/language-closure-templates/blob/7caf3a1fad0245c4196d3766ba0f481762fbc92e/grammars/closure-templates.json",
+    "sourceApi": "https://api.github.com/repos/mthadley/language-closure-templates/contents/grammars/closure-templates.json?ref=7caf3a1fad0245c4196d3766ba0f481762fbc92e"
+  },
+  {
+    "byteSize": 1330,
+    "displayName": "SPARQL",
+    "embedded": [
+      "turtle"
+    ],
+    "funding": [
+    ],
+    "hash": "VbH370sCYIbxj_0vTaSJ8XXypmOh647sGV4iyvCJe9Q",
+    "lastUpdate": "2022-11-21T15:24:11Z",
+    "name": "sparql",
+    "scopeName": "source.sparql",
+    "sha": "a1963c610cde0eab23c44fc01ab36652565524de",
+    "source": "https://github.com/stardog-union/stardog-vsc/blob/a1963c610cde0eab23c44fc01ab36652565524de/stardog-rdf-grammars/syntaxes/sparql.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/stardog-union/stardog-vsc/contents/stardog-rdf-grammars/syntaxes/sparql.tmLanguage.json?ref=a1963c610cde0eab23c44fc01ab36652565524de"
+  },
+  {
+    "aliases": [
+      "spl"
+    ],
+    "byteSize": 3259,
+    "displayName": "Splunk Query Language",
+    "funding": [
+    ],
+    "hash": "WD5_rGbg1Aa0HZb9cYo-8gG-a7Cm8_AUpiSGUvQAnDw",
+    "lastUpdate": "2022-08-09T09:12:38Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/arcsector/vscode-splunk-search-syntax/master/LICENSE.txt",
+    "name": "splunk",
+    "scopeName": "source.splunk_search",
+    "sha": "b1f68ff035950e6a98e0db4af1a338cb1c3c1858",
+    "source": "https://github.com/arcsector/vscode-splunk-search-syntax/blob/b1f68ff035950e6a98e0db4af1a338cb1c3c1858/syntaxes/splunk_search.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/arcsector/vscode-splunk-search-syntax/contents/syntaxes/splunk_search.tmLanguage?ref=b1f68ff035950e6a98e0db4af1a338cb1c3c1858"
+  },
+  {
+    "byteSize": 22872,
+    "categories": [
+      "dsl"
+    ],
+    "displayName": "SQL",
+    "funding": [
+    ],
+    "hash": "7l8Vwy4WmHUCiUQwZrtcjpjinHeUCUmxmFxfHhnkKZ8",
+    "lastUpdate": "2025-05-02T13:29:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "sql",
+    "scopeName": "source.sql",
+    "sha": "0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4",
+    "source": "https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/sql/syntaxes/sql.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/sql/syntaxes/sql.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4"
+  },
+  {
+    "byteSize": 3509,
+    "displayName": "SSH Config",
+    "funding": [
+    ],
+    "hash": "mghKeapZ8a2z0zYQ0YmyK3WPzEs-p7q8dxVLvDQqRPw",
+    "lastUpdate": "2018-10-09T21:04:51Z",
+    "name": "ssh-config",
+    "scopeName": "source.ssh-config",
+    "sha": "212a0000c50e0c877303b2c4fcead539d2af2670",
+    "source": "https://github.com/textmate/ssh-config.tmbundle/blob/212a0000c50e0c877303b2c4fcead539d2af2670/Syntaxes/SSH-Config.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/ssh-config.tmbundle/contents/Syntaxes/SSH-Config.tmLanguage?ref=212a0000c50e0c877303b2c4fcead539d2af2670"
+  },
+  {
+    "byteSize": 55701,
+    "displayName": "Stata",
+    "embedded": [
+      "sql"
+    ],
+    "funding": [
+    ],
+    "hash": "TNykDgetaA0aZGCO0AHTHaqH_4bYP3m6oh5eNf8-zUI",
+    "lastUpdate": "2018-06-12T13:58:33Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/kylebarron/language-stata/master/LICENSE",
+    "name": "stata",
+    "scopeName": "source.stata",
+    "sha": "dd98de502bc1bf2a205f3f023afb98c7aa5b42ee",
+    "source": "https://github.com/kylebarron/language-stata/blob/dd98de502bc1bf2a205f3f023afb98c7aa5b42ee/grammars/stata.json",
+    "sourceApi": "https://api.github.com/repos/kylebarron/language-stata/contents/grammars/stata.json?ref=dd98de502bc1bf2a205f3f023afb98c7aa5b42ee"
+  },
+  {
+    "aliases": [
+      "styl"
+    ],
+    "byteSize": 30406,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Stylus",
+    "funding": [
+      {
+        "handle": "stylus",
+        "name": "Open Collective",
+        "url": "https://opencollective.com/stylus"
+      }
+    ],
+    "hash": "NGG3_wNKZA0InTo9QebZeIpg-8Vcx0J9REFazvyKhOE",
+    "lastUpdate": "2021-11-19T11:55:44Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/d4rkr00t/language-stylus/master/LICENSE",
+    "name": "stylus",
+    "scopeName": "source.stylus",
+    "sha": "198a851f385aee857332f3ce5dd981ff67720ead",
+    "source": "https://github.com/d4rkr00t/language-stylus/blob/198a851f385aee857332f3ce5dd981ff67720ead/syntaxes/stylus.json",
+    "sourceApi": "https://api.github.com/repos/d4rkr00t/language-stylus/contents/syntaxes/stylus.json?ref=198a851f385aee857332f3ce5dd981ff67720ead"
+  },
+  {
+    "byteSize": 17212,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Svelte",
+    "embedded": [
+      "javascript",
+      "typescript",
+      "coffee",
+      "stylus",
+      "sass",
+      "css",
+      "scss",
+      "less",
+      "postcss",
+      "pug",
+      "markdown"
+    ],
+    "funding": [
+      {
+        "handle": "svelte",
+        "name": "Open Collective",
+        "url": "https://opencollective.com/svelte"
+      }
+    ],
+    "hash": "0REAGQRigcVrpIfAV_QYJ3J-rEkN03Z_V8qzrkNrFKs",
+    "lastUpdate": "2025-05-15T13:57:51Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/sveltejs/language-tools/master/LICENSE",
+    "name": "svelte",
+    "scopeName": "source.svelte",
+    "sha": "d12a9ae276c9f4c6a62964bbdca074424cbab123",
+    "source": "https://github.com/sveltejs/language-tools/blob/d12a9ae276c9f4c6a62964bbdca074424cbab123/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml",
+    "sourceApi": "https://api.github.com/repos/sveltejs/language-tools/contents/packages/svelte-vscode/syntaxes/svelte.tmLanguage.src.yaml?ref=d12a9ae276c9f4c6a62964bbdca074424cbab123"
+  },
+  {
+    "byteSize": 83229,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Swift",
+    "funding": [
+      {
+        "handle": "@jtbandes",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/jtbandes"
       },
       {
-        name: 'paypal.me',
-        url: 'https://www.paypal.me/rwfholmejp',
+        "handle": "jtbandes",
+        "name": "Ko-fi",
+        "url": "https://ko-fi.com/jtbandes"
+      }
+    ],
+    "hash": "dBsZHPG49TUEZuXklYZNJ-Ij8D6dqUiLpOcS-Q3qE4g",
+    "lastUpdate": "2025-01-18T23:17:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/jtbandes/swift-tmlanguage/main/LICENSE.md",
+    "name": "swift",
+    "scopeName": "source.swift",
+    "sha": "b8d2889b4af1d8bad41578317a6adade642555a3",
+    "source": "https://github.com/jtbandes/swift-tmlanguage/blob/b8d2889b4af1d8bad41578317a6adade642555a3/Swift.tmLanguage.yaml",
+    "sourceApi": "https://api.github.com/repos/jtbandes/swift-tmlanguage/contents/Swift.tmLanguage.yaml?ref=b8d2889b4af1d8bad41578317a6adade642555a3"
+  },
+  {
+    "byteSize": 24776,
+    "displayName": "SystemVerilog",
+    "funding": [
+      {
+        "name": "buymeacoffee.com",
+        "url": "https://www.buymeacoffee.com/mshr.h"
+      }
+    ],
+    "hash": "FYkYDo6EFlHVoxuuAMSKFp-HV69nSmh8P6qpie72JKY",
+    "lastUpdate": "2024-11-09T08:32:52Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE",
+    "name": "system-verilog",
+    "scopeName": "source.systemverilog",
+    "sha": "a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2",
+    "source": "https://github.com/mshr-h/vscode-verilog-hdl-support/blob/a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2/syntaxes/systemverilog.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/mshr-h/vscode-verilog-hdl-support/contents/syntaxes/systemverilog.tmLanguage.json?ref=a63b28cd8f15d9ec4861b2f802e8bf6ce4f6d2f2"
+  },
+  {
+    "byteSize": 7571,
+    "categories": [
+      "config"
+    ],
+    "displayName": "Systemd Units",
+    "funding": [
+    ],
+    "hash": "xEWVNFNIxfbQnn89_9rzS3yUP-QQdUy_fpmGSdQ0NEA",
+    "lastUpdate": "2025-01-08T14:10:18Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/hangxingliu/vscode-systemd/main/LICENSE",
+    "name": "systemd",
+    "scopeName": "source.systemd",
+    "sha": "62ace1156b5afa0ec9932e3a55cfc00c0123c457",
+    "source": "https://github.com/hangxingliu/vscode-systemd/blob/62ace1156b5afa0ec9932e3a55cfc00c0123c457/src/syntax/systemd.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/hangxingliu/vscode-systemd/contents/src/syntax/systemd.tmLanguage?ref=62ace1156b5afa0ec9932e3a55cfc00c0123c457"
+  },
+  {
+    "aliases": [
+      "talon"
+    ],
+    "byteSize": 6551,
+    "categories": [
+      "scripting",
+      "dsl",
+      "config"
+    ],
+    "displayName": "TalonScript",
+    "funding": [
+    ],
+    "hash": "jl1yCDh9RCZO20Hu2pYjcBa5ivcpZgaN5yOqdDOeRKs",
+    "lastUpdate": "2025-04-26T13:47:08Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mirober/vscode-TalonScript/master/LICENSE",
+    "name": "talonscript",
+    "scopeName": "source.talon",
+    "sha": "91f3a6faaf926c02582f36ee155f2c4a02b9cc48",
+    "source": "https://github.com/mrob95/vscode-TalonScript/blob/91f3a6faaf926c02582f36ee155f2c4a02b9cc48/syntaxes/talon.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/mrob95/vscode-TalonScript/contents/syntaxes/talon.tmLanguage.json?ref=91f3a6faaf926c02582f36ee155f2c4a02b9cc48"
+  },
+  {
+    "byteSize": 3178,
+    "displayName": "Tasl",
+    "funding": [
+    ],
+    "hash": "lTfZFXNHelZOahZd_ux53Y5OrhSl-TtiF8A9zsaIo5M",
+    "lastUpdate": "2021-11-08T06:00:28Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/underlay/vscode-tasl/main/LICENSE",
+    "name": "tasl",
+    "scopeName": "source.tasl",
+    "sha": "dde4b7c0b762c2e667584095362dd49ebfacece7",
+    "source": "https://github.com/underlay/vscode-tasl/blob/dde4b7c0b762c2e667584095362dd49ebfacece7/syntaxes/tasl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/underlay/vscode-tasl/contents/syntaxes/tasl.tmLanguage.json?ref=dde4b7c0b762c2e667584095362dd49ebfacece7"
+  },
+  {
+    "byteSize": 4214,
+    "displayName": "Tcl",
+    "funding": [
+    ],
+    "hash": "9Q8ndCV-Ahd5uO5D21Vu2dVz3iTwfmHahseoXLtMBqY",
+    "lastUpdate": "2017-04-03T11:19:09Z",
+    "name": "tcl",
+    "scopeName": "source.tcl",
+    "sha": "f18820ad14678bc033f0a35524820c90fe50f18b",
+    "source": "https://github.com/sleutho/tcl/blob/f18820ad14678bc033f0a35524820c90fe50f18b/syntaxes/tcl.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/sleutho/tcl/contents/syntaxes/tcl.tmLanguage?ref=f18820ad14678bc033f0a35524820c90fe50f18b"
+  },
+  {
+    "byteSize": 23527,
+    "displayName": "Templ",
+    "embedded": [
+      "go",
+      "javascript",
+      "css"
+    ],
+    "funding": [
+    ],
+    "hash": "AN7Y3py_iR7Fen9uHp6HAfw_qFcHoXM7KM18aVrswnA",
+    "lastUpdate": "2025-04-08T08:46:52Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE",
+    "name": "templ",
+    "scopeName": "source.templ",
+    "sha": "257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f",
+    "source": "https://github.com/templ-go/templ-vscode/blob/257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f/syntaxes/templ.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/templ-go/templ-vscode/contents/syntaxes/templ.tmLanguage.json?ref=257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f"
+  },
+  {
+    "aliases": [
+      "tf",
+      "tfvars"
+    ],
+    "byteSize": 11048,
+    "displayName": "Terraform",
+    "funding": [
+    ],
+    "hash": "XA4Wuzq6bxq86jTca5wIvIs-D-ylBxZ8_wWxbmc-_so",
+    "lastUpdate": "2024-09-17T14:22:47Z",
+    "license": "MPL-2.0",
+    "licenseUrl": "https://raw.githubusercontent.com/hashicorp/syntax/main/LICENSE",
+    "name": "terraform",
+    "scopeName": "source.hcl.terraform",
+    "sha": "cc2b4d4fe389f14b8a13937f4e0d7b2811b57588",
+    "source": "https://github.com/hashicorp/syntax/blob/cc2b4d4fe389f14b8a13937f4e0d7b2811b57588/syntaxes/terraform.tmGrammar.json",
+    "sourceApi": "https://api.github.com/repos/hashicorp/syntax/contents/syntaxes/terraform.tmGrammar.json?ref=cc2b4d4fe389f14b8a13937f4e0d7b2811b57588"
+  },
+  {
+    "byteSize": 9201,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "TeX",
+    "embedded": [
+      "r"
+    ],
+    "funding": [
+    ],
+    "hash": "Y5ZU6BTLorSinHZmf19U95bX0VZusgT6fg_-JtScnG8",
+    "lastUpdate": "2025-04-02T13:41:58Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "tex",
+    "scopeName": "text.tex",
+    "sha": "9a2c94d213696a4453b6d9988b003d98e7646e75",
+    "source": "https://github.com/microsoft/vscode/blob/9a2c94d213696a4453b6d9988b003d98e7646e75/extensions/latex/syntaxes/TeX.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/TeX.tmLanguage.json?ref=9a2c94d213696a4453b6d9988b003d98e7646e75"
+  },
+  {
+    "byteSize": 6126,
+    "categories": [
+      "data"
+    ],
+    "displayName": "TOML",
+    "funding": [
+    ],
+    "hash": "C_JDgO5Lg3hS0asTQMVojCrTdYDHIEJnUrBTUNF1-4w",
+    "lastUpdate": "2020-05-25T19:51:56Z",
+    "name": "toml",
+    "scopeName": "source.toml",
+    "sha": "e82b64c1e86396220786846201e9aa3f0a2d9ca2",
+    "source": "https://github.com/textmate/toml.tmbundle/blob/e82b64c1e86396220786846201e9aa3f0a2d9ca2/Syntaxes/TOML.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/toml.tmbundle/contents/Syntaxes/TOML.tmLanguage?ref=e82b64c1e86396220786846201e9aa3f0a2d9ca2"
+  },
+  {
+    "aliases": [
+      "lit"
+    ],
+    "byteSize": 121,
+    "categories": [
+      "web"
+    ],
+    "displayName": "TypeScript with Tags",
+    "embedded": [
+      "typescript",
+      "es-tag-css",
+      "es-tag-glsl",
+      "es-tag-html",
+      "es-tag-sql",
+      "es-tag-xml"
+    ],
+    "name": "ts-tags",
+    "scopeName": "source.ts.tags"
+  },
+  {
+    "byteSize": 633,
+    "categories": [
+      "data"
+    ],
+    "displayName": "TSV",
+    "funding": [
+    ],
+    "hash": "qWlxLbvKBJxjZKEXj0kkJcHcPOdGrbWFAB0wf0Ec5KQ",
+    "lastUpdate": "2018-06-05T03:29:03Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mechatroner/vscode_rainbow_csv/master/LICENSE",
+    "name": "tsv",
+    "scopeName": "text.tsv",
+    "sha": "00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3",
+    "source": "https://github.com/mechatroner/vscode_rainbow_csv/blob/00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3/syntaxes/tsv.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/mechatroner/vscode_rainbow_csv/contents/syntaxes/tsv.tmLanguage.json?ref=00d4c947f1bbe6a4a73599bd97fb31bdfbe262f3"
+  },
+  {
+    "byteSize": 160061,
+    "categories": [
+      "web"
+    ],
+    "displayName": "TSX",
+    "funding": [
+    ],
+    "hash": "M9cElYonNsDV9nzerxuM3dtqePPCyEk-eK2_IzeiJfo",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "tsx",
+    "scopeName": "source.tsx",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
+  },
+  {
+    "byteSize": 3578,
+    "displayName": "Turtle",
+    "funding": [
+    ],
+    "hash": "y_GUbNkwiArKhbhLIlb73y7T8TIqUem9EMo3BTG6wbs",
+    "lastUpdate": "2022-11-21T15:21:23Z",
+    "name": "turtle",
+    "scopeName": "source.turtle",
+    "sha": "3f1364b08bdbf4b4d77f123682db7d2b708b2f6e",
+    "source": "https://github.com/stardog-union/stardog-vsc/blob/3f1364b08bdbf4b4d77f123682db7d2b708b2f6e/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/stardog-union/stardog-vsc/contents/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json?ref=3f1364b08bdbf4b4d77f123682db7d2b708b2f6e"
+  },
+  {
+    "byteSize": 20063,
+    "displayName": "Twig",
+    "embedded": [
+      "css",
+      "javascript",
+      "scss",
+      "php",
+      "python",
+      "ruby"
+    ],
+    "funding": [
+      {
+        "handle": "@mblode",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/mblode"
+      }
+    ],
+    "hash": "j5aB9jrDmbhbUN__mn16N9YKAv4Xhch9VWwoDHhLkU4",
+    "lastUpdate": "2023-11-03T21:57:59Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mblode/vscode-twig-language-2/master/LICENSE.md",
+    "name": "twig",
+    "scopeName": "text.html.twig",
+    "sha": "82ae07ffe96656181ad8265c1fff008c8d1cdbba",
+    "source": "https://github.com/mblode/vscode-twig-language-2/blob/82ae07ffe96656181ad8265c1fff008c8d1cdbba/src/syntaxes/twig.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/mblode/vscode-twig-language-2/contents/src/syntaxes/twig.tmLanguage?ref=82ae07ffe96656181ad8265c1fff008c8d1cdbba"
+  },
+  {
+    "aliases": [
+      "ts"
+    ],
+    "byteSize": 163871,
+    "categories": [
+      "web",
+      "scripting",
+      "general"
+    ],
+    "displayName": "TypeScript",
+    "funding": [
+    ],
+    "hash": "AJ9y77GwIbSXydPeC63OBqQyKunnZoz1MlEF6MkbhQk",
+    "lastUpdate": "2024-10-25T09:35:17Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "typescript",
+    "scopeName": "source.ts",
+    "sha": "210541906e5a96ab39f9c753f921b1bd35f4138b",
+    "source": "https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b"
+  },
+  {
+    "aliases": [
+      "tsp"
+    ],
+    "byteSize": 22749,
+    "displayName": "TypeSpec",
+    "funding": [
+    ],
+    "hash": "LAIE6LoenvYC7l_FgB4wgVkaRSSb9LryPZilOjJps-Y",
+    "lastUpdate": "2025-03-07T20:50:42Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE",
+    "name": "typespec",
+    "scopeName": "source.tsp",
+    "sha": "b4b7705c61f186590c6a6d086a131cd71ee4c48c",
+    "source": "https://github.com/microsoft/typespec/blob/b4b7705c61f186590c6a6d086a131cd71ee4c48c/grammars/typespec.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=b4b7705c61f186590c6a6d086a131cd71ee4c48c"
+  },
+  {
+    "aliases": [
+      "typ"
+    ],
+    "byteSize": 8021,
+    "displayName": "Typst",
+    "funding": [
+    ],
+    "hash": "CZhGN3v0QYURr0GlkYpxqlfn2BciqQajWeuiJLk2HQ4",
+    "lastUpdate": "2023-08-11T05:56:51Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/nvarner/typst-lsp/master/LICENSE-MIT.txt",
+    "name": "typst",
+    "scopeName": "source.typst",
+    "sha": "6972d4b9c2cbcb0551e203067f09ec84ca8f9df3",
+    "source": "https://github.com/nvarner/typst-lsp/blob/6972d4b9c2cbcb0551e203067f09ec84ca8f9df3/editors/vscode/typst.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/nvarner/typst-lsp/contents/editors/vscode/typst.tmLanguage.json?ref=6972d4b9c2cbcb0551e203067f09ec84ca8f9df3"
+  },
+  {
+    "byteSize": 12744,
+    "displayName": "V",
+    "funding": [
+    ],
+    "hash": "rZsyeKnT17_9HRGMDyL9XboadtgzNTsfCp8LTIzyenM",
+    "lastUpdate": "2023-01-09T21:56:12Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vlang/vscode-vlang/master/LICENSE",
+    "name": "v",
+    "scopeName": "source.v",
+    "sha": "b1f529602bc6536ad8967373302e151e77179598",
+    "source": "https://github.com/vlang/vscode-vlang/blob/b1f529602bc6536ad8967373302e151e77179598/syntaxes/v.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/vlang/vscode-vlang/contents/syntaxes/v.tmLanguage.json?ref=b1f529602bc6536ad8967373302e151e77179598"
+  },
+  {
+    "byteSize": 3194,
+    "displayName": "Vala",
+    "funding": [
+    ],
+    "hash": "nvvCviZWuIUKoImAes958pcpo1xKr2uE4H0_worqV8Q",
+    "lastUpdate": "2021-05-28T08:53:39Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vala-lang/vala-vscode/master/LICENSE",
+    "name": "vala",
+    "scopeName": "source.vala",
+    "sha": "8f825e95648326df2572d0522632251cdff4a43b",
+    "source": "https://github.com/vala-lang/vala-vscode/blob/8f825e95648326df2572d0522632251cdff4a43b/syntaxes/vala.YAML-tmLanguage",
+    "sourceApi": "https://api.github.com/repos/vala-lang/vala-vscode/contents/syntaxes/vala.YAML-tmLanguage?ref=8f825e95648326df2572d0522632251cdff4a43b"
+  },
+  {
+    "aliases": [
+      "cmd"
+    ],
+    "byteSize": 5835,
+    "categories": [
+      "general",
+      "scripting"
+    ],
+    "displayName": "Visual Basic",
+    "funding": [
+    ],
+    "hash": "dZp_a9mwDwlERpADaBuoJZOdpxW4NzJzqKMblRZo-3U",
+    "lastUpdate": "2024-01-26T12:06:22Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "vb",
+    "scopeName": "source.asp.vb.net",
+    "sha": "35d97bc7e439fce0f50f42074041ab2d8571b20a",
+    "source": "https://github.com/microsoft/vscode/blob/35d97bc7e439fce0f50f42074041ab2d8571b20a/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json?ref=35d97bc7e439fce0f50f42074041ab2d8571b20a"
+  },
+  {
+    "byteSize": 5734,
+    "displayName": "Verilog",
+    "funding": [
+      {
+        "name": "buymeacoffee.com",
+        "url": "https://www.buymeacoffee.com/mshr.h"
+      }
+    ],
+    "hash": "fEXXkb7Yvck2TLu9TxCuyyFO5Ptb3-FrKpxQPRDfpY8",
+    "lastUpdate": "2024-10-26T13:17:15Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/mshr-h/vscode-verilog-hdl-support/main/LICENSE",
+    "name": "verilog",
+    "scopeName": "source.verilog",
+    "sha": "26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77",
+    "source": "https://github.com/mshr-h/vscode-verilog-hdl-support/blob/26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77/syntaxes/verilog.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/mshr-h/vscode-verilog-hdl-support/contents/syntaxes/verilog.tmLanguage.json?ref=26cc4a3ec01b12aea5b8ffb7edeee3373eb71d77"
+  },
+  {
+    "byteSize": 23535,
+    "displayName": "VHDL",
+    "funding": [
+    ],
+    "hash": "QPCtz4p5lsdE9TDKtmNVvvA-02X9p61edg7qcuIEpSU",
+    "lastUpdate": "2025-03-25T11:18:04Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/LICENSE.txt",
+    "name": "vhdl",
+    "scopeName": "source.vhdl",
+    "sha": "b787559a47d64c7baf2a9ac0f4cac8e2e721cddc",
+    "source": "https://github.com/jonasjj/awesome-vhdl/blob/b787559a47d64c7baf2a9ac0f4cac8e2e721cddc/syntaxes/vhdl.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/jonasjj/awesome-vhdl/contents/syntaxes/vhdl.tmLanguage?ref=b787559a47d64c7baf2a9ac0f4cac8e2e721cddc"
+  },
+  {
+    "aliases": [
+      "vim",
+      "vimscript"
+    ],
+    "byteSize": 20049,
+    "displayName": "Vim Script",
+    "funding": [
+    ],
+    "hash": "SFAhLb2k8KuQ2NWIZ_snmY5d-7feKUPW8clGzBrX9pM",
+    "lastUpdate": "2018-04-21T00:11:03Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/dunstontc/viml/master/LICENSE",
+    "name": "viml",
+    "scopeName": "source.viml",
+    "sha": "8762570fc7d6f1009a3c93efd2a337330d88b88e",
+    "source": "https://github.com/dunstontc/viml/blob/8762570fc7d6f1009a3c93efd2a337330d88b88e/syntaxes/viml.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/dunstontc/viml/contents/syntaxes/viml.tmLanguage.json?ref=8762570fc7d6f1009a3c93efd2a337330d88b88e"
+  },
+  {
+    "byteSize": 17502,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Vue",
+    "embedded": [
+      "markdown",
+      "pug",
+      "stylus",
+      "sass",
+      "css",
+      "scss",
+      "less",
+      "javascript",
+      "typescript",
+      "jsx",
+      "tsx",
+      "coffee",
+      "json",
+      "jsonc",
+      "json5",
+      "yaml",
+      "toml",
+      "graphql",
+      "html-derivative",
+      "html",
+      "markdown-vue",
+      "vue-directives",
+      "vue-interpolations",
+      "vue-sfc-style-variable-injection"
+    ],
+    "funding": [
+      {
+        "handle": "@johnsoncodehk",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/johnsoncodehk"
+      }
+    ],
+    "hash": "UGImjGi_8Q0YvPtYYSMIb5OOkBV7rBx20qTFinnl9e8",
+    "lastUpdate": "2025-06-22T17:23:59Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE",
+    "name": "vue",
+    "scopeName": "source.vue",
+    "sha": "e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a",
+    "source": "https://github.com/vuejs/language-tools/blob/e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a/extensions/vscode/syntaxes/vue.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue.tmLanguage.json?ref=e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a"
+  },
+  {
+    "byteSize": 8233,
+    "categories": [
+      "web"
+    ],
+    "displayName": "Vue HTML",
+    "embedded": [
+      "vue",
+      "javascript"
+    ],
+    "funding": [
+      {
+        "handle": "@octref",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/octref"
       },
+      {
+        "handle": "vuejs/vetur",
+        "name": "IssueHunt",
+        "url": "https://issuehunt.io/r/vuejs/vetur"
+      }
     ],
-    hash: '7FEF24FCePvZx65qbV-zRw4XpNOHPKrGrvnloUNNjIk',
-    lastUpdate: '2025-05-06T03:23:45Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Frederisk/Wikitext-VSCode-Extension/master/LICENSE.txt',
-    name: 'wikitext',
-    scopeName: 'source.wikitext',
-    sha: '40e726bfe904a1e3b9a3141b4920f5061ce60e52',
-    source: 'https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/40e726bfe904a1e3b9a3141b4920f5061ce60e52/syntaxes/wikitext.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/Frederisk/Wikitext-VSCode-Extension/contents/syntaxes/wikitext.tmLanguage.yaml?ref=40e726bfe904a1e3b9a3141b4920f5061ce60e52',
+    "hash": "DH6dID0MZKIX5ED_QdNJ2hHA-G_dw43lB6u6yjCSHjo",
+    "lastUpdate": "2020-08-20T02:58:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/vetur/master/LICENSE",
+    "name": "vue-html",
+    "scopeName": "text.html.vue-html",
+    "sha": "53ee52746b1f26f44391c3764bc7bd06d4ddaa46",
+    "source": "https://github.com/vuejs/vetur/blob/53ee52746b1f26f44391c3764bc7bd06d4ddaa46/syntaxes/vue-html.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/vetur/contents/syntaxes/vue-html.tmLanguage.json?ref=53ee52746b1f26f44391c3764bc7bd06d4ddaa46"
   },
   {
-    byteSize: 20891,
-    categories: [
-      'web',
+    "byteSize": 173528,
+    "categories": [
+      "web"
     ],
-    displayName: 'WebAssembly Interface Types',
-    funding: [
+    "displayName": "Vue Vine",
+    "embedded": [
+      "css",
+      "scss",
+      "less",
+      "stylus",
+      "postcss",
+      "vue",
+      "javascript"
     ],
-    hash: 'TOoD2Ik1UwLCr7YKz_8IbCq_v1PafpOoKJpM8BnW_4A',
-    lastUpdate: '2024-02-01T13:18:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE',
-    name: 'wit',
-    scopeName: 'source.wit',
-    sha: '5a67ac3f5ade246b44308768b034204612f3a0c9',
-    source: 'https://github.com/wasmerio/vscode-wasm/blob/5a67ac3f5ade246b44308768b034204612f3a0c9/syntaxes/wit.json',
-    sourceApi: 'https://api.github.com/repos/wasmerio/vscode-wasm/contents/syntaxes/wit.json?ref=5a67ac3f5ade246b44308768b034204612f3a0c9',
+    "funding": [
+    ],
+    "hash": "U1HP16zN4l73ecsb2V0lU8nzBGeUa3XejHxnSYvJrrg",
+    "lastUpdate": "2025-06-04T11:52:37Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vue-vine/assets/main/LICENSE",
+    "name": "vue-vine",
+    "scopeName": "source.vue-vine",
+    "sha": "2921493f703bfcf64aed5644f275e7e65f2e0a48",
+    "source": "https://github.com/vue-vine/assets/blob/2921493f703bfcf64aed5644f275e7e65f2e0a48/grammars/vue-vine.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/vue-vine/assets/contents/grammars/vue-vine.tmLanguage.json?ref=2921493f703bfcf64aed5644f275e7e65f2e0a48"
   },
   {
-    aliases: [
-      'wl',
+    "aliases": [
+      "vy"
     ],
-    byteSize: 260649,
-    displayName: 'Wolfram',
-    funding: [
+    "byteSize": 72723,
+    "displayName": "Vyper",
+    "funding": [
     ],
-    hash: '4EsRwaeJNObVwipuppkHqiUNQ95VUMZsSJRYuCaBHKk',
-    lastUpdate: '2022-10-11T17:11:31Z',
-    license: 'NOASSERTION',
-    licenseUrl: 'https://raw.githubusercontent.com/WolframResearch/vscode-wolfram/master/LICENSE',
-    name: 'wolfram',
-    scopeName: 'source.wolfram',
-    sha: '8b55fb1724d971a303120b3f5b981d654c308c59',
-    source: 'https://github.com/WolframResearch/vscode-wolfram/blob/8b55fb1724d971a303120b3f5b981d654c308c59/syntaxes/wolfram.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/WolframResearch/vscode-wolfram/contents/syntaxes/wolfram.tmLanguage.json?ref=8b55fb1724d971a303120b3f5b981d654c308c59',
+    "hash": "Lp9P8cytSRUIyyfRuA9owosKbz3Z9bHf2v9DuDV5KAU",
+    "lastUpdate": "2024-07-02T07:02:19Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/tintinweb/vscode-vyper/master/LICENSE",
+    "name": "vyper",
+    "scopeName": "source.vyper",
+    "sha": "3df08ea46fc7df1a5e7f35365e615624849d1c1b",
+    "source": "https://github.com/tintinweb/vscode-vyper/blob/3df08ea46fc7df1a5e7f35365e615624849d1c1b/syntaxes/vyper.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/tintinweb/vscode-vyper/contents/syntaxes/vyper.tmLanguage.json?ref=3df08ea46fc7df1a5e7f35365e615624849d1c1b"
   },
   {
-    byteSize: 5210,
-    categories: [
-      'markup',
-      'data',
+    "byteSize": 11450,
+    "categories": [
+      "web"
     ],
-    displayName: 'XML',
-    embedded: [
-      'java',
+    "displayName": "WebAssembly",
+    "funding": [
     ],
-    funding: [
-    ],
-    hash: '_nNqtZ45_CxqaXtcvPLxN7m5F1cVTUYJqyQkmKbmADs',
-    lastUpdate: '2018-10-04T10:00:39Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'xml',
-    scopeName: 'text.xml',
-    sha: '10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9',
-    source: 'https://github.com/microsoft/vscode/blob/10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9/extensions/xml/syntaxes/xml.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/xml/syntaxes/xml.tmLanguage.json?ref=10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9',
+    "hash": "kE6pGlRzFLpLCut0oj3kN3xAysZDhchfsVLhs7TCb5g",
+    "lastUpdate": "2023-10-31T03:53:56Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE",
+    "name": "wasm",
+    "scopeName": "source.wat",
+    "sha": "9d0ace1ff113f4a3e95797675039cd94ec257078",
+    "source": "https://github.com/wasmerio/vscode-wasm/blob/9d0ace1ff113f4a3e95797675039cd94ec257078/syntaxes/wat.json",
+    "sourceApi": "https://api.github.com/repos/wasmerio/vscode-wasm/contents/syntaxes/wat.json?ref=9d0ace1ff113f4a3e95797675039cd94ec257078"
   },
   {
-    byteSize: 1228,
-    categories: [
-      'markup',
+    "aliases": [
+      "文言"
     ],
-    displayName: 'XSL',
-    embedded: [
-      'xml',
+    "byteSize": 2054,
+    "displayName": "Wenyan",
+    "funding": [
     ],
-    funding: [
-    ],
-    hash: 'PlMS1u4Tq--zUcxG_1JcsLmMe_iykwHUfrQW6x-o6BI',
-    lastUpdate: '2018-02-12T15:54:35Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'xsl',
-    scopeName: 'text.xml.xsl',
-    sha: '8fdf170a0850c1cc027382f31650aaf300d3ae2a',
-    source: 'https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/xml/syntaxes/xsl.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/xml/syntaxes/xsl.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
+    "hash": "B79P2r6JD2MSZ2ibGYAKdETlZja7QZhyl8NJUD-x5Y0",
+    "lastUpdate": "2020-09-07T17:31:32Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/wenyan-lang/highlight/master/LICENSE",
+    "name": "wenyan",
+    "scopeName": "source.wenyan",
+    "sha": "5100e8a803978b4f5b009adac035d1f27f591760",
+    "source": "https://github.com/wenyan-lang/highlight/blob/5100e8a803978b4f5b009adac035d1f27f591760/wenyan.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/wenyan-lang/highlight/contents/wenyan.tmLanguage.json?ref=5100e8a803978b4f5b009adac035d1f27f591760"
   },
   {
-    aliases: [
-      'yml',
+    "byteSize": 4934,
+    "categories": [
+      "web"
     ],
-    byteSize: 9979,
-    categories: [
-      'data',
+    "displayName": "WGSL",
+    "funding": [
     ],
-    displayName: 'YAML',
-    funding: [
-    ],
-    hash: 'tXcqIxeekCus8i1OqercLVaC4ngtqvKMupM6OARKpCc',
-    lastUpdate: '2017-08-24T17:48:19Z',
-    name: 'yaml',
-    scopeName: 'source.yaml',
-    sha: 'e54ceae3b719506dba7e481a77cea4a8b576ae46',
-    source: 'https://github.com/textmate/yaml.tmbundle/blob/e54ceae3b719506dba7e481a77cea4a8b576ae46/Syntaxes/YAML.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/textmate/yaml.tmbundle/contents/Syntaxes/YAML.tmLanguage?ref=e54ceae3b719506dba7e481a77cea4a8b576ae46',
+    "hash": "zGS2Zz9Ee14NcK-YPx6MyPKN3eCMGPvsoXP9aAR-zmo",
+    "lastUpdate": "2023-07-22T16:16:43Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/PolyMeilex/vscode-wgsl/master/LICENSE",
+    "name": "wgsl",
+    "scopeName": "source.wgsl",
+    "sha": "04222c48533ca541d6dc97043ea096471517e079",
+    "source": "https://github.com/PolyMeilex/vscode-wgsl/blob/04222c48533ca541d6dc97043ea096471517e079/syntaxes/wgsl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/PolyMeilex/vscode-wgsl/contents/syntaxes/wgsl.tmLanguage.json?ref=04222c48533ca541d6dc97043ea096471517e079"
   },
   {
-    byteSize: 3707,
-    displayName: 'ZenScript',
-    funding: [
+    "aliases": [
+      "mediawiki",
+      "wiki"
     ],
-    hash: 'VD-jnkGuPBRRv-s1tVw6WUfptdZde-IFtO8VYPCJWr0',
-    lastUpdate: '2021-03-26T19:17:04Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/CraftTweaker/ZenScript-tmLanguage/master/LICENSE',
-    name: 'zenscript',
-    scopeName: 'source.zenscript',
-    sha: '5a7bcb775a6fb37470e56f904e70d8b8b9e6b047',
-    source: 'https://github.com/CraftTweaker/ZenScript-tmLanguage/blob/5a7bcb775a6fb37470e56f904e70d8b8b9e6b047/zenscript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/CraftTweaker/ZenScript-tmLanguage/contents/zenscript.tmLanguage.json?ref=5a7bcb775a6fb37470e56f904e70d8b8b9e6b047',
+    "byteSize": 54270,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "Wikitext",
+    "embedded": [
+      "html",
+      "css",
+      "ini",
+      "java",
+      "lua",
+      "make",
+      "perl",
+      "r",
+      "ruby",
+      "php",
+      "sql",
+      "vb",
+      "xml",
+      "xsl",
+      "yaml",
+      "bat",
+      "clojure",
+      "coffee",
+      "c",
+      "cpp",
+      "diff",
+      "docker",
+      "go",
+      "groovy",
+      "pug",
+      "javascript",
+      "jsonc",
+      "less",
+      "objective-c",
+      "swift",
+      "scss",
+      "raku",
+      "powershell",
+      "python",
+      "julia",
+      "rust",
+      "scala",
+      "shellscript",
+      "typescript",
+      "csharp",
+      "fsharp",
+      "dart",
+      "handlebars",
+      "markdown",
+      "erlang",
+      "elixir",
+      "latex",
+      "bibtex",
+      "json"
+    ],
+    "funding": [
+      {
+        "handle": "rwfholme",
+        "name": "Patreon",
+        "url": "https://patreon.com/rwfholme"
+      },
+      {
+        "name": "frederisk.github.io",
+        "url": "https://frederisk.github.io/donate/cryptocurrency"
+      },
+      {
+        "name": "paypal.me",
+        "url": "https://www.paypal.me/rwfholmejp"
+      }
+    ],
+    "hash": "7FEF24FCePvZx65qbV-zRw4XpNOHPKrGrvnloUNNjIk",
+    "lastUpdate": "2025-05-06T03:23:45Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/Frederisk/Wikitext-VSCode-Extension/master/LICENSE.txt",
+    "name": "wikitext",
+    "scopeName": "source.wikitext",
+    "sha": "40e726bfe904a1e3b9a3141b4920f5061ce60e52",
+    "source": "https://github.com/Frederisk/Wikitext-VSCode-Extension/blob/40e726bfe904a1e3b9a3141b4920f5061ce60e52/syntaxes/wikitext.tmLanguage.yaml",
+    "sourceApi": "https://api.github.com/repos/Frederisk/Wikitext-VSCode-Extension/contents/syntaxes/wikitext.tmLanguage.yaml?ref=40e726bfe904a1e3b9a3141b4920f5061ce60e52"
   },
   {
-    byteSize: 5080,
-    categories: [
-      'general',
+    "byteSize": 20891,
+    "categories": [
+      "web"
     ],
-    displayName: 'Zig',
-    funding: [
+    "displayName": "WebAssembly Interface Types",
+    "funding": [
     ],
-    hash: 'MYBEhnUcMbs7yuQe35hVUAo-imdK-h-io-5N73Y8cuk',
-    lastUpdate: '2024-07-03T07:57:24Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE',
-    name: 'zig',
-    scopeName: 'source.zig',
-    sha: '4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd',
-    source: 'https://github.com/ziglang/vscode-zig/blob/4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd/syntaxes/zig.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/ziglang/vscode-zig/contents/syntaxes/zig.tmLanguage.json?ref=4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd',
+    "hash": "TOoD2Ik1UwLCr7YKz_8IbCq_v1PafpOoKJpM8BnW_4A",
+    "lastUpdate": "2024-02-01T13:18:23Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/wasmerio/vscode-wasm/master/LICENSE",
+    "name": "wit",
+    "scopeName": "source.wit",
+    "sha": "5a67ac3f5ade246b44308768b034204612f3a0c9",
+    "source": "https://github.com/wasmerio/vscode-wasm/blob/5a67ac3f5ade246b44308768b034204612f3a0c9/syntaxes/wit.json",
+    "sourceApi": "https://api.github.com/repos/wasmerio/vscode-wasm/contents/syntaxes/wit.json?ref=5a67ac3f5ade246b44308768b034204612f3a0c9"
   },
+  {
+    "aliases": [
+      "wl"
+    ],
+    "byteSize": 260649,
+    "displayName": "Wolfram",
+    "funding": [
+    ],
+    "hash": "4EsRwaeJNObVwipuppkHqiUNQ95VUMZsSJRYuCaBHKk",
+    "lastUpdate": "2022-10-11T17:11:31Z",
+    "license": "NOASSERTION",
+    "licenseUrl": "https://raw.githubusercontent.com/WolframResearch/vscode-wolfram/master/LICENSE",
+    "name": "wolfram",
+    "scopeName": "source.wolfram",
+    "sha": "8b55fb1724d971a303120b3f5b981d654c308c59",
+    "source": "https://github.com/WolframResearch/vscode-wolfram/blob/8b55fb1724d971a303120b3f5b981d654c308c59/syntaxes/wolfram.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/WolframResearch/vscode-wolfram/contents/syntaxes/wolfram.tmLanguage.json?ref=8b55fb1724d971a303120b3f5b981d654c308c59"
+  },
+  {
+    "byteSize": 5210,
+    "categories": [
+      "markup",
+      "data"
+    ],
+    "displayName": "XML",
+    "embedded": [
+      "java"
+    ],
+    "funding": [
+    ],
+    "hash": "_nNqtZ45_CxqaXtcvPLxN7m5F1cVTUYJqyQkmKbmADs",
+    "lastUpdate": "2018-10-04T10:00:39Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "xml",
+    "scopeName": "text.xml",
+    "sha": "10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9",
+    "source": "https://github.com/microsoft/vscode/blob/10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9/extensions/xml/syntaxes/xml.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/xml/syntaxes/xml.tmLanguage.json?ref=10a1d2a50a2882f5ae85bdb51eb04d3064fb9de9"
+  },
+  {
+    "byteSize": 1228,
+    "categories": [
+      "markup"
+    ],
+    "displayName": "XSL",
+    "embedded": [
+      "xml"
+    ],
+    "funding": [
+    ],
+    "hash": "PlMS1u4Tq--zUcxG_1JcsLmMe_iykwHUfrQW6x-o6BI",
+    "lastUpdate": "2018-02-12T15:54:35Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "xsl",
+    "scopeName": "text.xml.xsl",
+    "sha": "8fdf170a0850c1cc027382f31650aaf300d3ae2a",
+    "source": "https://github.com/microsoft/vscode/blob/8fdf170a0850c1cc027382f31650aaf300d3ae2a/extensions/xml/syntaxes/xsl.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/xml/syntaxes/xsl.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a"
+  },
+  {
+    "aliases": [
+      "yml"
+    ],
+    "byteSize": 9979,
+    "categories": [
+      "data"
+    ],
+    "displayName": "YAML",
+    "funding": [
+    ],
+    "hash": "tXcqIxeekCus8i1OqercLVaC4ngtqvKMupM6OARKpCc",
+    "lastUpdate": "2017-08-24T17:48:19Z",
+    "name": "yaml",
+    "scopeName": "source.yaml",
+    "sha": "e54ceae3b719506dba7e481a77cea4a8b576ae46",
+    "source": "https://github.com/textmate/yaml.tmbundle/blob/e54ceae3b719506dba7e481a77cea4a8b576ae46/Syntaxes/YAML.tmLanguage",
+    "sourceApi": "https://api.github.com/repos/textmate/yaml.tmbundle/contents/Syntaxes/YAML.tmLanguage?ref=e54ceae3b719506dba7e481a77cea4a8b576ae46"
+  },
+  {
+    "byteSize": 3707,
+    "displayName": "ZenScript",
+    "funding": [
+    ],
+    "hash": "VD-jnkGuPBRRv-s1tVw6WUfptdZde-IFtO8VYPCJWr0",
+    "lastUpdate": "2021-03-26T19:17:04Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/CraftTweaker/ZenScript-tmLanguage/master/LICENSE",
+    "name": "zenscript",
+    "scopeName": "source.zenscript",
+    "sha": "5a7bcb775a6fb37470e56f904e70d8b8b9e6b047",
+    "source": "https://github.com/CraftTweaker/ZenScript-tmLanguage/blob/5a7bcb775a6fb37470e56f904e70d8b8b9e6b047/zenscript.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/CraftTweaker/ZenScript-tmLanguage/contents/zenscript.tmLanguage.json?ref=5a7bcb775a6fb37470e56f904e70d8b8b9e6b047"
+  },
+  {
+    "byteSize": 5080,
+    "categories": [
+      "general"
+    ],
+    "displayName": "Zig",
+    "funding": [
+    ],
+    "hash": "MYBEhnUcMbs7yuQe35hVUAo-imdK-h-io-5N73Y8cuk",
+    "lastUpdate": "2024-07-03T07:57:24Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/ziglang/vscode-zig/master/LICENSE",
+    "name": "zig",
+    "scopeName": "source.zig",
+    "sha": "4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd",
+    "source": "https://github.com/ziglang/vscode-zig/blob/4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd/syntaxes/zig.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/ziglang/vscode-zig/contents/syntaxes/zig.tmLanguage.json?ref=4874aafc7cc3e59ffc155d34eb98c81c0ca4ffcd"
+  }
 ]
 
 export const injections = [
   {
-    byteSize: 18243,
-    embeddedIn: [
-      'angular-ts',
-      'angular-html',
+    "byteSize": 18243,
+    "embeddedIn": [
+      "angular-ts",
+      "angular-html"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: '1vvZP8DNhaqPIwUTbWHJLkJtzAqvTiLTCfn0x0erWfo',
-    lastUpdate: '2025-03-20T21:49:14Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-expression',
-    scopeName: 'expression.ng',
-    sha: '39057fc2dbb37125778fb2c5c517c661f9399996',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/39057fc2dbb37125778fb2c5c517c661f9399996/syntaxes/expression.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/expression.json?ref=39057fc2dbb37125778fb2c5c517c661f9399996',
+    "hash": "1vvZP8DNhaqPIwUTbWHJLkJtzAqvTiLTCfn0x0erWfo",
+    "lastUpdate": "2025-03-20T21:49:14Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-expression",
+    "scopeName": "expression.ng",
+    "sha": "39057fc2dbb37125778fb2c5c517c661f9399996",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/39057fc2dbb37125778fb2c5c517c661f9399996/syntaxes/expression.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/expression.json?ref=39057fc2dbb37125778fb2c5c517c661f9399996"
   },
   {
-    byteSize: 1196,
-    embedded: [
-      'scss',
+    "byteSize": 1196,
+    "embedded": [
+      "scss"
     ],
-    embeddedIn: [
-      'angular-ts',
+    "embeddedIn": [
+      "angular-ts"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'cEK5b2Y1J0E0IKzXAyXzKS0EsvSddB7g1nMehYM9u3o',
-    injectTo: [
-      'source.ts.ng',
+    "hash": "cEK5b2Y1J0E0IKzXAyXzKS0EsvSddB7g1nMehYM9u3o",
+    "injectTo": [
+      "source.ts.ng"
     ],
-    lastUpdate: '2023-11-03T16:23:10Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-inline-style',
-    scopeName: 'inline-styles.ng',
-    sha: 'f0422f5f571f79a904510944452f06fb36beff22',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/inline-styles.json?ref=f0422f5f571f79a904510944452f06fb36beff22',
+    "lastUpdate": "2023-11-03T16:23:10Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-inline-style",
+    "scopeName": "inline-styles.ng",
+    "sha": "f0422f5f571f79a904510944452f06fb36beff22",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/f0422f5f571f79a904510944452f06fb36beff22/syntaxes/inline-styles.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/inline-styles.json?ref=f0422f5f571f79a904510944452f06fb36beff22"
   },
   {
-    byteSize: 970,
-    embedded: [
-      'angular-html',
-      'angular-template',
+    "byteSize": 970,
+    "embedded": [
+      "angular-html",
+      "angular-template"
     ],
-    embeddedIn: [
-      'angular-ts',
+    "embeddedIn": [
+      "angular-ts"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'kZe6Ps27KKUklDQSuoG4jc3GSuO4MJtcZqgOCdMc4n4',
-    injectTo: [
-      'source.ts.ng',
+    "hash": "kZe6Ps27KKUklDQSuoG4jc3GSuO4MJtcZqgOCdMc4n4",
+    "injectTo": [
+      "source.ts.ng"
     ],
-    lastUpdate: '2024-07-11T14:44:50Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-inline-template',
-    scopeName: 'inline-template.ng',
-    sha: 'a18c61752e65ddcbeb31217f47f29fa38fe26c42',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/inline-template.json?ref=a18c61752e65ddcbeb31217f47f29fa38fe26c42',
+    "lastUpdate": "2024-07-11T14:44:50Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-inline-template",
+    "scopeName": "inline-template.ng",
+    "sha": "a18c61752e65ddcbeb31217f47f29fa38fe26c42",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/a18c61752e65ddcbeb31217f47f29fa38fe26c42/syntaxes/inline-template.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/inline-template.json?ref=a18c61752e65ddcbeb31217f47f29fa38fe26c42"
   },
   {
-    byteSize: 871,
-    embedded: [
-      'angular-expression',
+    "byteSize": 871,
+    "embedded": [
+      "angular-expression"
     ],
-    embeddedIn: [
-      'angular-ts',
-      'angular-html',
+    "embeddedIn": [
+      "angular-ts",
+      "angular-html"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'vIHg7i8Gh67SGb4fRSbzQ0KFD3to2OhazPPHJ2wKybQ',
-    injectTo: [
-      'text.html.derivative',
-      'text.html.derivative.ng',
-      'source.ts.ng',
+    "hash": "vIHg7i8Gh67SGb4fRSbzQ0KFD3to2OhazPPHJ2wKybQ",
+    "injectTo": [
+      "text.html.derivative",
+      "text.html.derivative.ng",
+      "source.ts.ng"
     ],
-    lastUpdate: '2025-03-20T00:20:23Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-let-declaration',
-    scopeName: 'template.let.ng',
-    sha: '0aa2aa572dedcad4c5fc3c6825227396f4e99f21',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/0aa2aa572dedcad4c5fc3c6825227396f4e99f21/syntaxes/let-declaration.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/let-declaration.json?ref=0aa2aa572dedcad4c5fc3c6825227396f4e99f21',
+    "lastUpdate": "2025-03-20T00:20:23Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-let-declaration",
+    "scopeName": "template.let.ng",
+    "sha": "0aa2aa572dedcad4c5fc3c6825227396f4e99f21",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/0aa2aa572dedcad4c5fc3c6825227396f4e99f21/syntaxes/let-declaration.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/let-declaration.json?ref=0aa2aa572dedcad4c5fc3c6825227396f4e99f21"
   },
   {
-    byteSize: 475,
-    embedded: [
-      'angular-expression',
+    "byteSize": 475,
+    "embedded": [
+      "angular-expression"
     ],
-    embeddedIn: [
-      'angular-ts',
-      'angular-html',
+    "embeddedIn": [
+      "angular-ts",
+      "angular-html"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'qqsrKCSqpCW3qUzeiS9Su7uSo-V-xUMEQu5fr37QWVk',
-    injectTo: [
-      'text.html.derivative',
-      'text.html.derivative.ng',
-      'source.ts.ng',
+    "hash": "qqsrKCSqpCW3qUzeiS9Su7uSo-V-xUMEQu5fr37QWVk",
+    "injectTo": [
+      "text.html.derivative",
+      "text.html.derivative.ng",
+      "source.ts.ng"
     ],
-    lastUpdate: '2024-02-02T18:05:10Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-template',
-    scopeName: 'template.ng',
-    sha: '28739e438742bee69faceda5fd15445682451397',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template.json?ref=28739e438742bee69faceda5fd15445682451397',
+    "lastUpdate": "2024-02-02T18:05:10Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-template",
+    "scopeName": "template.ng",
+    "sha": "28739e438742bee69faceda5fd15445682451397",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template.json?ref=28739e438742bee69faceda5fd15445682451397"
   },
   {
-    byteSize: 1912,
-    embedded: [
-      'angular-expression',
-      'angular-template',
+    "byteSize": 1912,
+    "embedded": [
+      "angular-expression",
+      "angular-template"
     ],
-    embeddedIn: [
-      'angular-ts',
-      'angular-html',
+    "embeddedIn": [
+      "angular-ts",
+      "angular-html"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'vPsHDcdaWqfeF3R-5kseCGXAx-_AmVrKHe7xmrl37n4',
-    injectTo: [
-      'text.html.derivative',
-      'text.html.derivative.ng',
-      'source.ts.ng',
+    "hash": "vPsHDcdaWqfeF3R-5kseCGXAx-_AmVrKHe7xmrl37n4",
+    "injectTo": [
+      "text.html.derivative",
+      "text.html.derivative.ng",
+      "source.ts.ng"
     ],
-    lastUpdate: '2025-03-20T01:26:00Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
-    name: 'angular-template-blocks',
-    scopeName: 'template.blocks.ng',
-    sha: '8c84410f61ed87e261a83458af10af18cbf669a9',
-    source: 'https://github.com/angular/vscode-ng-language-service/blob/8c84410f61ed87e261a83458af10af18cbf669a9/syntaxes/template-blocks.json',
-    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template-blocks.json?ref=8c84410f61ed87e261a83458af10af18cbf669a9',
+    "lastUpdate": "2025-03-20T01:26:00Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE",
+    "name": "angular-template-blocks",
+    "scopeName": "template.blocks.ng",
+    "sha": "8c84410f61ed87e261a83458af10af18cbf669a9",
+    "source": "https://github.com/angular/vscode-ng-language-service/blob/8c84410f61ed87e261a83458af10af18cbf669a9/syntaxes/template-blocks.json",
+    "sourceApi": "https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template-blocks.json?ref=8c84410f61ed87e261a83458af10af18cbf669a9"
   },
   {
-    byteSize: 212961,
-    displayName: 'C++',
-    embedded: [
-      'regexp',
-      'glsl',
-      'sql',
+    "byteSize": 212961,
+    "displayName": "C++",
+    "embedded": [
+      "regexp",
+      "glsl",
+      "sql"
     ],
-    embeddedIn: [
-      'cpp',
+    "embeddedIn": [
+      "cpp"
     ],
-    funding: [
+    "funding": [
     ],
-    hash: 'Jv3E86GgoJg0DJmwMbyBo2ME5pnZfPIAh2vPxgl8Uew',
-    lastUpdate: '2023-03-29T09:38:06Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
-    name: 'cpp-macro',
-    scopeName: 'source.cpp.embedded.macro',
-    sha: '6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
-    source: 'https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1',
+    "hash": "Jv3E86GgoJg0DJmwMbyBo2ME5pnZfPIAh2vPxgl8Uew",
+    "lastUpdate": "2023-03-29T09:38:06Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt",
+    "name": "cpp-macro",
+    "scopeName": "source.cpp.embedded.macro",
+    "sha": "6ac83c7c7dda9f27ca1fe9d98675253e010b75d1",
+    "source": "https://github.com/microsoft/vscode/blob/6ac83c7c7dda9f27ca1fe9d98675253e010b75d1/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/cpp.embedded.macro.tmLanguage.json?ref=6ac83c7c7dda9f27ca1fe9d98675253e010b75d1"
   },
   {
-    byteSize: 1688,
-    embedded: [
-      'typescript',
-      'css',
-      'javascript',
+    "byteSize": 1688,
+    "embedded": [
+      "typescript",
+      "css",
+      "javascript"
     ],
-    embeddedIn: [
-      'ts-tags',
+    "embeddedIn": [
+      "ts-tags"
     ],
-    funding: [
+    "funding": [
       {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
+        "handle": "nonholy",
+        "name": "Buy Me A Coffee",
+        "url": "https://www.buymeacoffee.com/nonholy"
+      }
     ],
-    hash: 'B33J57T_tklLO_E9V9Et2ymf3sVxZkTm7U_uePnoAKg',
-    injectTo: [
-      'source.ts',
-      'source.js',
+    "hash": "B33J57T_tklLO_E9V9Et2ymf3sVxZkTm7U_uePnoAKg",
+    "injectTo": [
+      "source.ts",
+      "source.js"
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
-    name: 'es-tag-css',
-    scopeName: 'inline.es6-css',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-css.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-css.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    "lastUpdate": "2024-05-10T19:00:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE",
+    "name": "es-tag-css",
+    "scopeName": "inline.es6-css",
+    "sha": "b8f51210b53ce64e789949d4be33b7ecb42cf177",
+    "source": "https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-css.json",
+    "sourceApi": "https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-css.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177"
   },
   {
-    byteSize: 1564,
-    embedded: [
-      'typescript',
-      'glsl',
-      'javascript',
+    "byteSize": 1564,
+    "embedded": [
+      "typescript",
+      "glsl",
+      "javascript"
     ],
-    embeddedIn: [
-      'ts-tags',
+    "embeddedIn": [
+      "ts-tags"
     ],
-    funding: [
+    "funding": [
       {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
+        "handle": "nonholy",
+        "name": "Buy Me A Coffee",
+        "url": "https://www.buymeacoffee.com/nonholy"
+      }
     ],
-    hash: 'hePKONWvWX8eqqcTKy2dllrqKD8jg3_TlMrcP_RDKjk',
-    injectTo: [
-      'source.ts',
-      'source.js',
+    "hash": "hePKONWvWX8eqqcTKy2dllrqKD8jg3_TlMrcP_RDKjk",
+    "injectTo": [
+      "source.ts",
+      "source.js"
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
-    name: 'es-tag-glsl',
-    scopeName: 'inline.es6-glsl',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-glsl.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-glsl.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    "lastUpdate": "2024-05-10T19:00:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE",
+    "name": "es-tag-glsl",
+    "scopeName": "inline.es6-glsl",
+    "sha": "b8f51210b53ce64e789949d4be33b7ecb42cf177",
+    "source": "https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-glsl.json",
+    "sourceApi": "https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-glsl.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177"
   },
   {
-    byteSize: 1875,
-    embedded: [
-      'typescript',
-      'html',
-      'javascript',
+    "byteSize": 1875,
+    "embedded": [
+      "typescript",
+      "html",
+      "javascript"
     ],
-    embeddedIn: [
-      'ts-tags',
+    "embeddedIn": [
+      "ts-tags"
     ],
-    funding: [
+    "funding": [
       {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
+        "handle": "nonholy",
+        "name": "Buy Me A Coffee",
+        "url": "https://www.buymeacoffee.com/nonholy"
+      }
     ],
-    hash: 'xkssZVFlKrqdsW7mG-hjClsRjz15LULXAMageIdcxgk',
-    injectTo: [
-      'source.ts',
-      'source.js',
+    "hash": "xkssZVFlKrqdsW7mG-hjClsRjz15LULXAMageIdcxgk",
+    "injectTo": [
+      "source.ts",
+      "source.js"
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
-    name: 'es-tag-html',
-    scopeName: 'inline.es6-html',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-html.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-html.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    "lastUpdate": "2024-05-10T19:00:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE",
+    "name": "es-tag-html",
+    "scopeName": "inline.es6-html",
+    "sha": "b8f51210b53ce64e789949d4be33b7ecb42cf177",
+    "source": "https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-html.json",
+    "sourceApi": "https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-html.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177"
   },
   {
-    byteSize: 1483,
-    embedded: [
-      'typescript',
-      'sql',
+    "byteSize": 1483,
+    "embedded": [
+      "typescript",
+      "sql"
     ],
-    embeddedIn: [
-      'ts-tags',
+    "embeddedIn": [
+      "ts-tags"
     ],
-    funding: [
+    "funding": [
       {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
+        "handle": "nonholy",
+        "name": "Buy Me A Coffee",
+        "url": "https://www.buymeacoffee.com/nonholy"
+      }
     ],
-    hash: '0nxyIHxbOwBjqkgBtKCL-xZPOJ9b-LNJTDdi7VEkB6w',
-    injectTo: [
-      'source.ts',
-      'source.js',
+    "hash": "0nxyIHxbOwBjqkgBtKCL-xZPOJ9b-LNJTDdi7VEkB6w",
+    "injectTo": [
+      "source.ts",
+      "source.js"
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
-    name: 'es-tag-sql',
-    scopeName: 'inline.es6-sql',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-sql.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-sql.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    "lastUpdate": "2024-05-10T19:00:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE",
+    "name": "es-tag-sql",
+    "scopeName": "inline.es6-sql",
+    "sha": "b8f51210b53ce64e789949d4be33b7ecb42cf177",
+    "source": "https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-sql.json",
+    "sourceApi": "https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-sql.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177"
   },
   {
-    byteSize: 1070,
-    embedded: [
-      'xml',
+    "byteSize": 1070,
+    "embedded": [
+      "xml"
     ],
-    embeddedIn: [
-      'ts-tags',
+    "embeddedIn": [
+      "ts-tags"
     ],
-    funding: [
+    "funding": [
       {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
+        "handle": "nonholy",
+        "name": "Buy Me A Coffee",
+        "url": "https://www.buymeacoffee.com/nonholy"
+      }
     ],
-    hash: '6V5G0X0AFzB0XIS4HnLK_Ob9K58aNFlP-AMQ--3d6PQ',
-    injectTo: [
-      'source.ts',
-      'source.js',
+    "hash": "6V5G0X0AFzB0XIS4HnLK_Ob9K58aNFlP-AMQ--3d6PQ",
+    "injectTo": [
+      "source.ts",
+      "source.js"
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
-    name: 'es-tag-xml',
-    scopeName: 'inline.es6-xml',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-xml.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-xml.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    "lastUpdate": "2024-05-10T19:00:53Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE",
+    "name": "es-tag-xml",
+    "scopeName": "inline.es6-xml",
+    "sha": "b8f51210b53ce64e789949d4be33b7ecb42cf177",
+    "source": "https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-xml.json",
+    "sourceApi": "https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-xml.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177"
   },
   {
-    byteSize: 465,
-    displayName: 'jinja-html',
-    embedded: [
-      'html',
+    "byteSize": 465,
+    "displayName": "jinja-html",
+    "embedded": [
+      "html"
     ],
-    embeddedIn: [
-      'jinja',
+    "embeddedIn": [
+      "jinja"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@samuelcolvin',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/samuelcolvin',
-      },
+        "handle": "@samuelcolvin",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/samuelcolvin"
+      }
     ],
-    hash: 'NHF6XTRxdaRUJVYro_puMcUCbTeUW3qYffyB0lvlc7E',
-    lastUpdate: '2022-08-17T08:07:37Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE',
-    name: 'jinja-html',
-    scopeName: 'text.html.jinja',
-    sha: '64ad369cd167bba2e614944db6d925b7dc6483b4',
-    source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/64ad369cd167bba2e614944db6d925b7dc6483b4/syntaxes/jinja-html.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/samuelcolvin/jinjahtml-vscode/contents/syntaxes/jinja-html.tmLanguage.json?ref=64ad369cd167bba2e614944db6d925b7dc6483b4',
+    "hash": "NHF6XTRxdaRUJVYro_puMcUCbTeUW3qYffyB0lvlc7E",
+    "lastUpdate": "2022-08-17T08:07:37Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/samuelcolvin/jinjahtml-vscode/main/LICENSE",
+    "name": "jinja-html",
+    "scopeName": "text.html.jinja",
+    "sha": "64ad369cd167bba2e614944db6d925b7dc6483b4",
+    "source": "https://github.com/samuelcolvin/jinjahtml-vscode/blob/64ad369cd167bba2e614944db6d925b7dc6483b4/syntaxes/jinja-html.tmLanguage.json",
+    "sourceApi": "https://api.github.com/repos/samuelcolvin/jinjahtml-vscode/contents/syntaxes/jinja-html.tmLanguage.json?ref=64ad369cd167bba2e614944db6d925b7dc6483b4"
   },
   {
-    byteSize: 679,
-    embeddedIn: [
-      'vue',
+    "byteSize": 679,
+    "embeddedIn": [
+      "vue"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@johnsoncodehk',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/johnsoncodehk',
-      },
+        "handle": "@johnsoncodehk",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/johnsoncodehk"
+      }
     ],
-    hash: '6Vh7U-PsUrX-jvaOsOdoCQUWZZHmCSluZ3HHym1PDOY',
-    injectTo: [
-      'text.html.markdown',
+    "hash": "lDEfjiOc6tXqb5Zu8J90l9YyoXeLgOQXSpxRfylvSuQ",
+    "injectTo": [
+      "text.html.markdown"
     ],
-    lastUpdate: '2024-07-20T08:14:06Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
-    name: 'markdown-vue',
-    scopeName: 'markdown.vue.codeblock',
-    sha: 'e23ff4d13001ffe78d893bb707d839ead29e0e40',
-    source: 'https://github.com/vuejs/language-tools/blob/e23ff4d13001ffe78d893bb707d839ead29e0e40/extensions/vscode/syntaxes/markdown-vue.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/markdown-vue.json?ref=e23ff4d13001ffe78d893bb707d839ead29e0e40',
+    "lastUpdate": "2025-06-22T17:23:59Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE",
+    "name": "markdown-vue",
+    "scopeName": "markdown.vue.codeblock",
+    "sha": "e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a",
+    "source": "https://github.com/vuejs/language-tools/blob/e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a/extensions/vscode/syntaxes/markdown-vue.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/markdown-vue.json?ref=e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a"
   },
   {
-    byteSize: 366,
-    embeddedIn: [
-      'vue',
+    "byteSize": 366,
+    "embeddedIn": [
+      "vue"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@johnsoncodehk',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/johnsoncodehk',
-      },
+        "handle": "@johnsoncodehk",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/johnsoncodehk"
+      }
     ],
-    hash: 'EQr11jkalELHqITxNiwO5WTiu8V0-dycLEGglmdyzr0',
-    injectTo: [
-      'source.vue',
-      'text.html.markdown',
-      'text.html.derivative',
-      'text.pug',
+    "hash": "EQr11jkalELHqITxNiwO5WTiu8V0-dycLEGglmdyzr0",
+    "injectTo": [
+      "source.vue",
+      "text.html.markdown",
+      "text.html.derivative",
+      "text.pug"
     ],
-    lastUpdate: '2024-02-29T13:15:16Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
-    name: 'vue-directives',
-    scopeName: 'vue.directives',
-    sha: 'd5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1',
-    source: 'https://github.com/vuejs/language-tools/blob/d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1/extensions/vscode/syntaxes/vue-directives.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-directives.json?ref=d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1',
+    "lastUpdate": "2024-02-29T13:15:16Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE",
+    "name": "vue-directives",
+    "scopeName": "vue.directives",
+    "sha": "d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1",
+    "source": "https://github.com/vuejs/language-tools/blob/d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1/extensions/vscode/syntaxes/vue-directives.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-directives.json?ref=d5ab9edcf4a18d9c25c143a37cc3ec95229fc6b1"
   },
   {
-    byteSize: 349,
-    embeddedIn: [
-      'vue',
+    "byteSize": 349,
+    "embeddedIn": [
+      "vue"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@johnsoncodehk',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/johnsoncodehk',
-      },
+        "handle": "@johnsoncodehk",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/johnsoncodehk"
+      }
     ],
-    hash: 'PFtNnp1Hcim_t0GEPZ7YBnhEn7O2LPreOLlIi9_KJ4k',
-    injectTo: [
-      'source.vue',
-      'text.html.markdown',
-      'text.html.derivative',
-      'text.pug',
+    "hash": "AOxSxWP_quajnQ8O6u0WX2tELvd4iUXKbNN5bUn9iI8",
+    "injectTo": [
+      "source.vue",
+      "text.html.markdown",
+      "text.html.derivative",
+      "text.pug"
     ],
-    lastUpdate: '2023-10-23T14:34:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
-    name: 'vue-interpolations',
-    scopeName: 'vue.interpolations',
-    sha: 'ce5623e52a31c99797052727a817d422266f210d',
-    source: 'https://github.com/vuejs/language-tools/blob/ce5623e52a31c99797052727a817d422266f210d/extensions/vscode/syntaxes/vue-interpolations.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-interpolations.json?ref=ce5623e52a31c99797052727a817d422266f210d',
+    "lastUpdate": "2025-06-22T17:23:59Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE",
+    "name": "vue-interpolations",
+    "scopeName": "vue.interpolations",
+    "sha": "e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a",
+    "source": "https://github.com/vuejs/language-tools/blob/e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a/extensions/vscode/syntaxes/vue-interpolations.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-interpolations.json?ref=e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a"
   },
   {
-    byteSize: 792,
-    embedded: [
-      'javascript',
+    "byteSize": 792,
+    "embedded": [
+      "javascript"
     ],
-    embeddedIn: [
-      'vue',
+    "embeddedIn": [
+      "vue"
     ],
-    funding: [
+    "funding": [
       {
-        handle: '@johnsoncodehk',
-        name: 'GitHub Sponsors',
-        url: 'https://github.com/sponsors/johnsoncodehk',
-      },
+        "handle": "@johnsoncodehk",
+        "name": "GitHub Sponsors",
+        "url": "https://github.com/sponsors/johnsoncodehk"
+      }
     ],
-    hash: 'NcPL8DaCRMu25QT0V55Rdy5EZ0no3qGb8CWlnX7N7jc',
-    injectTo: [
-      'source.vue',
+    "hash": "Stm0I6vg_732YIjt5Hi6aMZ9htIm_TqjsAv8fdxr67w",
+    "injectTo": [
+      "source.vue"
     ],
-    lastUpdate: '2023-10-23T14:34:03Z',
-    license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE',
-    name: 'vue-sfc-style-variable-injection',
-    scopeName: 'vue.sfc.style.variable.injection',
-    sha: 'ce5623e52a31c99797052727a817d422266f210d',
-    source: 'https://github.com/vuejs/language-tools/blob/ce5623e52a31c99797052727a817d422266f210d/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json',
-    sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json?ref=ce5623e52a31c99797052727a817d422266f210d',
-  },
+    "lastUpdate": "2025-06-22T17:23:59Z",
+    "license": "MIT",
+    "licenseUrl": "https://raw.githubusercontent.com/vuejs/language-tools/master/LICENSE",
+    "name": "vue-sfc-style-variable-injection",
+    "scopeName": "vue.sfc.style.variable.injection",
+    "sha": "e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a",
+    "source": "https://github.com/vuejs/language-tools/blob/e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json",
+    "sourceApi": "https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/vue-sfc-style-variable-injection.json?ref=e85556a2e4bf0d6c981bdbd95c8a0b1e85e7ae8a"
+  }
 ]

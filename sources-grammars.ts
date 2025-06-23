@@ -436,6 +436,20 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'boxlang',
+    displayName: 'BoxLang',
+    aliases: ['bx', 'bxs'],
+    source: 'https://github.com/ortus-boxlang/boxlang.tmbundle/blob/development/Syntaxes/boxlang.tmLanguage.json',
+    categories: ['general', 'web'],
+  },
+  {
+    name: 'boxlang-template',
+    displayName: 'BoxLang Templating',
+    aliases: ['bxm'],
+    source: 'https://github.com/ortus-boxlang/boxlang.tmbundle/blob/development/Syntaxes/boxlang-template.tmLanguage.json',
+    categories: ['general', 'markup', 'web'],
+  },
+  {
     name: 'bsl',
     displayName: '1C (Enterprise)',
     aliases: ['1c'],
