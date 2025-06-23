@@ -1,0 +1,756 @@
+{
+  "displayName": "BoxLang",
+  "fileTypes": [
+    "bx",
+    "bxs"
+  ],
+  "foldingStartMarker": "(\\{\\s*$|^\\s*// \\{\\{\\{)",
+  "foldingStopMarker": "^\\s*(\\}|// \\}\\}\\}$)",
+  "keyEquivalent": "^~B",
+  "name": "boxlang",
+  "patterns": [
+    {
+      "include": "#import"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#classes"
+    },
+    {
+      "include": "#annotations"
+    },
+    {
+      "include": "#components"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#interpolation"
+    },
+    {
+      "include": "#closures"
+    },
+    {
+      "include": "#map-keys"
+    },
+    {
+      "include": "#component-islands"
+    }
+  ],
+  "repository": {
+    "annotations": {
+      "patterns": [
+        {
+          "begin": "@([a-zA-Z_][a-zA-Z0-9_\\.]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.annotation.boxlang"
+            }
+          },
+          "end": "(?=\\s|$|;)",
+          "name": "meta.annotation.boxlang",
+          "patterns": [
+            {
+              "begin": "\\(",
+              "end": "\\)",
+              "patterns": [
+                {
+                  "include": "#strings"
+                },
+                {
+                  "include": "#numbers"
+                },
+                {
+                  "include": "#expressions"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "begin": "(?i)\\b(class|interface)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.class.boxlang"
+            },
+            "2": {
+              "name": "entity.name.type.class.boxlang"
+            }
+          },
+          "end": "(?={)",
+          "name": "meta.class.boxlang",
+          "patterns": [
+            {
+              "match": "(?i)\\b(abstract|final)\\b",
+              "name": "storage.modifier.boxlang"
+            }
+          ]
+        },
+        {
+          "match": "(?i)\\bnew\\b",
+          "name": "keyword.other.boxlang"
+        }
+      ]
+    },
+    "closures": {
+      "begin": "\\{(?=.*?->)",
+      "end": "\\}",
+      "name": "meta.closure.boxlang",
+      "patterns": [
+        {
+          "match": "->",
+          "name": "keyword.operator.arrow.boxlang"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*\\*",
+          "end": "\\*/",
+          "name": "comment.block.documentation.boxlang",
+          "patterns": [
+            {
+              "match": "@\\w+",
+              "name": "storage.type.class.boxlang"
+            }
+          ]
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.boxlang"
+        },
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.boxlang"
+        }
+      ]
+    },
+    "component-attributes": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "entity.other.attribute-name.boxlang"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.boxlang"
+            }
+          },
+          "match": "([a-zA-Z_][a-zA-Z0-9_]*)\\s*(=|:)\\s*",
+          "name": "meta.attribute.boxlang"
+        }
+      ]
+    },
+    "component-islands": {
+      "begin": "```",
+      "end": "```",
+      "name": "meta.template.embedded.boxlang",
+      "patterns": [
+        {
+          "include": "source.boxlang.template"
+        }
+      ]
+    },
+    "components": {
+      "patterns": [
+        {
+          "begin": "(?i)\\b(bx:)(async|cache|debug|io|jdbc|net|system|xml|zip|query|http|httpparam|file|directory|image|document|pdf|chart|search|schedule|application|session|cookie|error|log|mail|mailparam|ftp|ldap|object|component|interface|function|property|import|include|transaction|lock|thread|try|catch|finally|rethrow|throw|loop|switch|case|defaultcase|setting|param|invoke|invokeargument|content|output|silent|processingdirective|location|abort|exit|dump|trace|timer|stopwatch)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.boxlang"
+            },
+            "2": {
+              "name": "support.class.component.global.boxlang"
+            }
+          },
+          "end": "(?=\\s|{|;)",
+          "name": "meta.component.global.boxlang",
+          "patterns": [
+            {
+              "include": "#component-attributes"
+            }
+          ]
+        },
+        {
+          "begin": "(?i)\\b(bx:)([a-zA-Z_][a-zA-Z0-9_]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.boxlang"
+            },
+            "2": {
+              "name": "entity.name.tag.boxlang"
+            }
+          },
+          "end": "(?=\\s|{|;)",
+          "name": "meta.component.boxlang",
+          "patterns": [
+            {
+              "include": "#component-attributes"
+            }
+          ]
+        }
+      ]
+    },
+    "expressions": {
+      "patterns": [
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#closures"
+        },
+        {
+          "include": "#map-keys"
+        },
+        {
+          "include": "#variables"
+        }
+      ]
+    },
+    "function-parameters": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "storage.modifier.boxlang"
+            },
+            "2": {
+              "name": "storage.type.boxlang"
+            },
+            "3": {
+              "name": "variable.parameter.boxlang"
+            },
+            "4": {
+              "name": "keyword.operator.assignment.boxlang"
+            }
+          },
+          "match": "(?i)\\b(required)?\\s*([a-zA-Z_][a-zA-Z0-9_]*)?\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(=)?",
+          "name": "meta.function.parameter.boxlang"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "begin": "(?i)\\b(function)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.function.boxlang"
+            },
+            "2": {
+              "name": "entity.name.function.boxlang"
+            },
+            "3": {
+              "name": "punctuation.definition.parameters.begin.boxlang"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.parameters.end.boxlang"
+            }
+          },
+          "name": "meta.function.boxlang",
+          "patterns": [
+            {
+              "include": "#function-parameters"
+            }
+          ]
+        },
+        {
+          "begin": "(?i)\\b(function)\\s*(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.function.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.parameters.begin.boxlang"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.parameters.end.boxlang"
+            }
+          },
+          "name": "meta.function.anonymous.boxlang",
+          "patterns": [
+            {
+              "include": "#function-parameters"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.parameters.begin.boxlang"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#function-parameters"
+                }
+              ]
+            },
+            "3": {
+              "name": "storage.type.function.arrow.boxlang"
+            }
+          },
+          "match": "(\\()([^)]*)\\)\\s*(=>|->)",
+          "name": "meta.function.arrow.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.string.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(ArrayAppend|ArrayAvg|ArrayClear|ArrayContains|ArrayContainsNoCase|ArrayDelete|ArrayDeleteAt|ArrayDeleteNoCase|ArrayEach|ArrayEvery|ArrayFilter|ArrayFind|ArrayFindAll|ArrayFindAllNoCase|ArrayFindNoCase|ArrayFirst|ArrayInsertAt|ArrayIsDefined|ArrayIsEmpty|ArrayLast|ArrayLen|ArrayMap|ArrayMax|ArrayMerge|ArrayMin|ArrayNew|ArrayPrepend|ArrayReduce|ArrayResize|ArrayReverse|ArraySet|ArraySlice|ArraySort|ArraySum|ArraySwap|ArrayToList|ArrayUnique|Asc|Char|Compare|CompareNoCase|Find|FindNoCase|FindOneOf|GetToken|Insert|LCase|Left|Len|ListAppend|ListChangeDelims|ListContains|ListContainsNoCase|ListDeleteAt|ListFind|ListFindNoCase|ListFirst|ListGetAt|ListInsertAt|ListLast|ListLen|ListPrepend|ListQualify|ListRest|ListSetAt|ListSort|ListToArray|ListValueCount|ListValueCountNoCase|LJustify|LTrim|Mid|REFind|REFindNoCase|REMatch|REMatchNoCase|REReplace|REReplaceNoCase|RemoveChars|RepeatString|Replace|ReplaceList|ReplaceNoCase|Reverse|Right|RJustify|RTrim|SpanExcluding|SpanIncluding|StripCR|Trim|UCase|Val|Wrap)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.math.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(Abs|Acos|Asin|Atan|Atan2|Ceiling|Cos|DecrementValue|Exp|Fix|FormatBaseN|IncrementValue|InputBaseN|Int|Log|Log10|Max|Min|Pi|Pow|Rand|Randomize|RandRange|Round|Sgn|Sin|Sqr|Tan|BitAnd|BitMaskClear|BitMaskRead|BitMaskSet|BitNot|BitOr|BitSHLN|BitSHRN|BitXor|DecimalFormat|DollarFormat|NumberFormat)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.datetime.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(CreateDate|CreateDateTime|CreateODBCDate|CreateODBCDateTime|CreateODBCTime|CreateTime|CreateTimeSpan|DateAdd|DateCompare|DateConvert|DateDiff|DateFormat|DatePart|Day|DayOfWeek|DayOfYear|DaysInMonth|DaysInYear|FirstDayOfMonth|GetHttpTimeString|GetTickCount|GetTimezoneInfo|Hour|IsDate|IsLeapYear|LSDateFormat|LSParseDateTime|LSTimeFormat|Minute|Month|MonthAsString|Now|ParseDateTime|Quarter|Second|TimeFormat|Week|Year)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.decision.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(IIf|IsArray|IsBinary|IsBoolean|IsCustomFunction|IsDate|IsDefined|IsEmpty|IsJSON|IsNull|IsNumeric|IsObject|IsQuery|IsSimpleValue|IsStruct|IsValid|IsXML|IsXmlAttribute|IsXmlDoc|IsXmlElem|IsXmlNode|IsXmlRoot)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.conversion.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(BinaryDecode|BinaryEncode|CharsetDecode|CharsetEncode|HTMLCodeFormat|HTMLEditFormat|JSStringFormat|ParagraphFormat|URLDecode|URLEncodedFormat|XMLFormat|ToBase64|ToString|ToBinary)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.struct.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(Duplicate|StructAppend|StructClear|StructCopy|StructCount|StructDelete|StructFind|StructFindKey|StructFindValue|StructGet|StructInsert|StructIsEmpty|StructKeyArray|StructKeyExists|StructKeyList|StructNew|StructSort|StructUpdate)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.query.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(QueryAddColumn|QueryAddRow|QueryNew|QuerySetCell|ValueList)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.file.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(DirectoryExists|FileExists|GetDirectoryFromPath|GetFileFromPath|GetTempDirectory|GetTempFile|ExpandPath)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.system.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(CreateObject|GetBaseTemplatePath|GetCurrentTemplatePath|GetFunctionList|GetMetaData|Hash|Serialize|SetEncoding|SetLocale|SystemExecute|WriteOutput|WriteDump|Evaluate|Invoke)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.cache.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(CacheClear|CacheDelete|CacheGet|CacheGetAll|CacheGetMetadata|CacheIdExists|CachePut|CacheRemove|CacheRemoveAll)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.encryption.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(Decrypt|Encrypt|GenerateSecretKey)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "support.function.global.xml-zip.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "(?i)\\b(XMLChildPos|XMLElemNew|XMLGetNodeType|XMLNew|XMLParse|XMLSearch|XMLTransform|XMLValidate|Zip|Unzip|IsZipFile)\\s*(\\()",
+          "name": "meta.function-call.global-bif.boxlang"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.function.boxlang"
+            },
+            "2": {
+              "name": "punctuation.definition.arguments.begin.boxlang"
+            }
+          },
+          "match": "([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+          "name": "meta.function-call.boxlang"
+        }
+      ]
+    },
+    "import": {
+      "patterns": [
+        {
+          "begin": "(import)\\b\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.import.boxlang"
+            }
+          },
+          "end": "\\s*(?:$|(;))",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.terminator.boxlang"
+            }
+          },
+          "name": "meta.import.boxlang",
+          "patterns": [
+            {
+              "match": "\\b(as)\\b",
+              "name": "keyword.other.import.alias.boxlang"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.boxlang"
+            },
+            {
+              "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
+              "name": "storage.modifier.import.boxlang"
+            }
+          ]
+        }
+      ]
+    },
+    "interpolation": {
+      "begin": "#",
+      "end": "#",
+      "name": "meta.embedded.line.boxlang",
+      "patterns": [
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "(?i)\\b(if|else|elseif|switch|case|default|for|while|do|break|continue|return|try|catch|finally|throw|rethrow)\\b",
+          "name": "keyword.control.boxlang"
+        },
+        {
+          "match": "(?i)\\b(import|include|as|in|instanceof|castas|does|not|contain|contains|than|to|when|assert|param|abort|exit|lock|thread|transaction|throws|extends|implements|writedump|echo|println|writeoutput)\\b",
+          "name": "keyword.other.boxlang"
+        },
+        {
+          "match": "(?i)\\b(public|private|remote|package|static|final|abstract|required)\\b",
+          "name": "storage.modifier.boxlang"
+        },
+        {
+          "match": "(?i)\\b(class|interface|function|property|var)\\b",
+          "name": "storage.type.boxlang"
+        },
+        {
+          "match": "(?i)\\b(any|array|boolean|numeric|query|string|struct|date|binary|guid|uuid|function|closure|lambda|class)\\b",
+          "name": "storage.type.primitive.boxlang"
+        },
+        {
+          "match": "(?i)\\b(true|false|null|yes|no)\\b",
+          "name": "constant.language.boxlang"
+        },
+        {
+          "match": "(?i)\\b(variables|request|server|application|session|client|form|url|cgi|cookie)\\b",
+          "name": "variable.language.scope.boxlang"
+        }
+      ]
+    },
+    "map-keys": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "constant.other.key.boxlang"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.boxlang"
+            }
+          },
+          "match": "(\\w+)\\s*(:)",
+          "name": "meta.map.key.boxlang"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b0[xX][0-9a-fA-F]+[LlFfDd]?\\b",
+          "name": "constant.numeric.hex.boxlang"
+        },
+        {
+          "match": "(\\+|-)?\\b\\d+\\.\\d+([eE][+-]?\\d+)?[LlFfDdGg]?\\b",
+          "name": "constant.numeric.float.boxlang"
+        },
+        {
+          "match": "(\\+|-)?\\.\\d+([eE][+-]?\\d+)?[LlFfDdGg]?\\b",
+          "name": "constant.numeric.float.boxlang"
+        },
+        {
+          "match": "(\\+|-)?\\b\\d+([_]?\\d)*[LlFfDdGg]?\\b",
+          "name": "constant.numeric.integer.boxlang"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "(?i)\\b(and|or|not|xor|eqv|imp)\\b|&&|\\|\\||!",
+          "name": "keyword.operator.logical.boxlang"
+        },
+        {
+          "match": "(?i)\\b(eq|equal|neq|gt|gte|ge|lt|lte|le|is)\\b|===|==|!=|<>|>=|<=|>|<|<=>",
+          "name": "keyword.operator.comparison.boxlang"
+        },
+        {
+          "match": "==~|=~",
+          "name": "keyword.operator.match.boxlang"
+        },
+        {
+          "match": "\\+\\+|--|\\+|\\-|\\*|/|%|\\\\|\\^|(?i)\\bmod\\b",
+          "name": "keyword.operator.arithmetic.boxlang"
+        },
+        {
+          "match": "=|\\+=|\\-=|\\*=|/=|%=|&=",
+          "name": "keyword.operator.assignment.boxlang"
+        },
+        {
+          "match": "&",
+          "name": "keyword.operator.string.boxlang"
+        },
+        {
+          "match": "=>|->",
+          "name": "keyword.operator.arrow.boxlang"
+        },
+        {
+          "match": "\\?:",
+          "name": "keyword.operator.elvis.boxlang"
+        },
+        {
+          "match": "\\?|:",
+          "name": "keyword.operator.ternary.boxlang"
+        },
+        {
+          "match": "\\.\\.",
+          "name": "keyword.operator.range.boxlang"
+        },
+        {
+          "match": "\\*:",
+          "name": "keyword.operator.spread.boxlang"
+        },
+        {
+          "match": "\\bb[&|^~]\\b|\\bb<<\\b|\\bb>>\\b|\\bb>>>\\b",
+          "name": "keyword.operator.bitwise.boxlang"
+        },
+        {
+          "match": "\\?\\.",
+          "name": "keyword.operator.safe-navigation.boxlang"
+        },
+        {
+          "match": "\\.",
+          "name": "keyword.operator.access.boxlang"
+        }
+      ]
+    },
+    "regexp": {
+      "patterns": [
+        {
+          "begin": "/(?=[^/]+/)",
+          "end": "/",
+          "name": "string.regexp.boxlang",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.boxlang"
+            }
+          ]
+        }
+      ]
+    },
+    "string-interpolation": {
+      "patterns": [
+        {
+          "begin": "#",
+          "end": "#",
+          "name": "meta.embedded.line.boxlang",
+          "patterns": [
+            {
+              "include": "#expressions"
+            }
+          ]
+        },
+        {
+          "begin": "\\$\\{",
+          "end": "\\}",
+          "name": "variable.other.interpolated.boxlang",
+          "patterns": [
+            {
+              "include": "#expressions"
+            }
+          ]
+        },
+        {
+          "match": "\\$\\w+",
+          "name": "variable.other.interpolated.boxlang"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.boxlang",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.boxlang"
+            },
+            {
+              "include": "#string-interpolation"
+            }
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.boxlang",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.boxlang"
+            },
+            {
+              "include": "#string-interpolation"
+            }
+          ]
+        },
+        {
+          "include": "#regexp"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
+          "name": "variable.other.boxlang"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.boxlang",
+  "uuid": "78CA4076-12A0-4022-8CF7-2D345CA64DBC"
+}
