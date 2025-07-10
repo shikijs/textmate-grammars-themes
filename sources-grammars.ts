@@ -758,7 +758,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'marko',
-    source: 'https://github.com/marko-js/marko-tmbundle/blob/master/Syntaxes/marko.tmLanguage',
+    source: 'https://github.com/marko-js/language-server/blob/main/packages/vscode/syntaxes/marko.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
