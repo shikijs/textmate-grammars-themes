@@ -139,7 +139,7 @@
       ]
     },
     "iffalse-block": {
-      "begin": "(?<=^\\s*)((\\\\)iffalse)(?!\\s*[{}]\\s*\\\\fi)",
+      "begin": "(?<=^\\s*)((\\\\)iffalse)(?!\\s*[{}]\\s*\\\\fi\\b)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.tex"
@@ -149,7 +149,7 @@
         }
       },
       "contentName": "comment.line.percentage.tex",
-      "end": "((\\\\)(?:else|fi))",
+      "end": "((\\\\)(?:else|fi))\\b",
       "endCaptures": {
         "1": {
           "name": "keyword.control.tex"
