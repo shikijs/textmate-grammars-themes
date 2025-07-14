@@ -2557,7 +2557,7 @@ export const grammars = [
     aliases: [
       'mmd',
     ],
-    byteSize: 26637,
+    byteSize: 26853,
     displayName: 'Mermaid',
     funding: [
     ],

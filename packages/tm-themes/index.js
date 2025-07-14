@@ -35,6 +35,8 @@ export const themes = [
     ],
     hash: 'VUJdjYtTbgaJyT34ikNEc3EdNtcxGK-x-NIchzYei50',
     lastUpdate: '2020-08-24T08:44:55Z',
+    license: 'GPL-3.0',
+    licenseUrl: 'https://raw.githubusercontent.com/marqu3ss/Aurora-X/master/LICENSE',
     name: 'aurora-x',
     sha: '118727efadf48872adcd81f6c00be580097d6592',
     source: 'https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json',
@@ -337,7 +339,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21795,
+    byteSize: 21883,
     displayName: 'Gruvbox Dark Hard',
     funding: [
       {
@@ -362,7 +364,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21799,
+    byteSize: 21887,
     displayName: 'Gruvbox Dark Medium',
     funding: [
       {
@@ -387,7 +389,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21795,
+    byteSize: 21883,
     displayName: 'Gruvbox Dark Soft',
     funding: [
       {
@@ -412,7 +414,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 21798,
+    byteSize: 21886,
     displayName: 'Gruvbox Light Hard',
     funding: [
       {
@@ -437,7 +439,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21802,
+    byteSize: 21890,
     displayName: 'Gruvbox Light Medium',
     funding: [
       {
@@ -462,7 +464,7 @@ export const themes = [
     type: 'light',
   },
   {
-    byteSize: 21798,
+    byteSize: 21886,
     displayName: 'Gruvbox Light Soft',
     funding: [
       {
