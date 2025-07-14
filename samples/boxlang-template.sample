@@ -1,0 +1,20 @@
+<bx:query name="getRecentPosts" datasource="blog">
+select title, posted, slug from posts
+order by posted desc
+limit 10
+</bx:query>
+
+<bx:component template="tags/layout.bxm" title="My Awesome BoxLang Blog">
+
+<h2>Blog Posts</h2>
+
+<bx:loop query="getRecentPosts">
+	<p>
+		<bx:output>
+		    <a href="post.bxm/#slug#">#title#</a>
+		</bx:output>
+	</p>
+</bx:loop>
+
+</bx:component>
+<!--- https://github.com/ortus-boxlang/bx-demos/blob/master/webapps/simple_blog_1/index.bxm --->
