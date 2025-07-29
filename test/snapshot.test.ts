@@ -11,7 +11,6 @@ import theme from '../packages/tm-themes/themes/vitesse-black.json'
 const sampleDir = fileURLToPath(new URL('../samples', import.meta.url))
 
 const JS_ENGINE_EXPECT_FAIL: string[] = [
-  'swift',
 ]
 
 const JS_ENGINE_EXPECT_MISMATCH: string[] = [

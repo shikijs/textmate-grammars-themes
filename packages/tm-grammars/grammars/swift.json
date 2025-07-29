@@ -1126,6 +1126,10 @@
       "name": "meta.function-result.swift",
       "patterns": [
         {
+          "match": "\\bsending\\b",
+          "name": "storage.modifier.swift"
+        },
+        {
           "include": "#declarations-available-types"
         }
       ]
@@ -1196,6 +1200,9 @@
       "name": "meta.generic-argument-clause.swift",
       "patterns": [
         {
+          "include": "#literals-numeric"
+        },
+        {
           "include": "#declarations-available-types"
         }
       ]
@@ -1220,6 +1227,10 @@
         },
         {
           "include": "#declarations-generic-where-clause"
+        },
+        {
+          "match": "\\blet\\b",
+          "name": "keyword.other.declaration-specifier.swift"
         },
         {
           "match": "\\beach\\b",
@@ -1436,6 +1447,9 @@
           "end": "(?!\\G)$|(?=[={}]|(?!\\G)\\bwhere\\b)",
           "patterns": [
             {
+              "include": "#attributes"
+            },
+            {
               "include": "#comments"
             },
             {
@@ -1466,6 +1480,9 @@
       "end": "(?!\\G)(?!/[*/])|(?=[,={}]|(?!\\G)\\bwhere\\b)",
       "name": "meta.inheritance-list.more-types",
       "patterns": [
+        {
+          "include": "#attributes"
+        },
         {
           "include": "#comments"
         },
@@ -1698,6 +1715,10 @@
           "begin": ":\\s*(?!\\s)",
           "end": "(?=[),])",
           "patterns": [
+            {
+              "match": "\\bsending\\b",
+              "name": "storage.modifier.swift"
+            },
             {
               "include": "#declarations-available-types"
             },
@@ -2748,7 +2769,7 @@
           "name": "keyword.control.branch.swift"
         },
         {
-          "match": "(?<!\\.)\\b(?:continue|break|fallthrough|return)\\b",
+          "match": "(?<!\\.)\\b(?:continue|break|fallthrough|return|yield)\\b",
           "name": "keyword.control.transfer.swift"
         },
         {
@@ -2828,7 +2849,7 @@
           "name": "storage.modifier.swift"
         },
         {
-          "match": "\\binit[!?]|\\binit\\b|(?<!\\.)\\b(?:func|deinit|subscript|didSet|get|set|willSet)\\b",
+          "match": "\\binit[!?]|\\binit\\b|(?<!\\.)\\b(?:func|deinit|subscript|didSet|get|set|willSet|yielding\\s+borrow|yielding\\s+mutate)\\b",
           "name": "storage.type.function.swift"
         },
         {
@@ -3014,15 +3035,34 @@
             "1": {
               "name": "punctuation.definition.string.begin.regexp.swift"
             },
-            "8": {
+            "3": {
+              "name": "punctuation.definition.string.end.regexp.swift"
+            }
+          },
+          "match": "(/)(?!\\s)(?!/)(?:\\\\\\s(?=/)|(?<guts>(?>(?:\\\\Q(?:(?!\\\\E)(?!/).)*+(?:\\\\E|(?=/))|\\\\.|\\(\\?#[^)]*\\)|\\(\\?(?>\\{(?:[^{].*?|\\{[^{].*?}|\\{\\{[^{].*?}}|\\{\\{\\{[^{].*?}}}|\\{\\{\\{\\{[^{].*?}}}}|\\{\\{\\{\\{\\{.+?}}}}})})(?:\\[(?!\\d)\\w+])?[<>X]?\\)|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\])+])+])+])+]|\\(\\g<guts>?+\\)|(?:(?!/)[^()\\[\\\\])+)+))?+(?<!\\s))(/)",
+          "name": "string.regexp.line.swift"
+        },
+        {
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "include": "#literals-regular-expression-literal-regex-guts"
+                }
+              ]
+            },
+            "1": {
+              "name": "punctuation.definition.string.begin.regexp.swift"
+            },
+            "4": {
               "name": "punctuation.definition.string.end.regexp.swift"
             },
-            "9": {
+            "5": {
               "name": "invalid.illegal.returns-not-allowed.regexp"
             }
           },
-          "match": "(?x)\n(?!/\\s)         # non-extended regex literals may not start with a space or tab\n(?!//)          # disambiguation with line comments (redundant since comment rules occur earlier)\n(((\\#+)?)/)     # (1) for captures, (2) for matching end, (3) for conditionals\n(\\\\\\s)? # (4) may start with an escaped space or tab\n(?<guts>\n  (?>   # no backtracking, avoids issues with negative lookbehind at end\n    (?:\n      \\\\Q\n        (?:(?!\\\\E)(?!/\\2).)*+\n        (?:\\\\E\n          # A quoted sequence may not have a closing E, in which case it extends to the end of the regex\n          | (?(3)|(?<!\\s))(?=/\\2)\n        )\n      | \\\\.\n      | \\(\\?\\#[^)]*\\)\n      | \\(\\?\n          # InterpolatedCallout\n          (?>(\\{(?:\\g<-1>|(?!{).*?)\\}))\n          (?:\\[(?!\\d)\\w+\\])?\n          [X<>]?\n        \\)\n      | (?<class>\\[ (?:\\\\. | [^\\[\\]] | \\g<class>)+ \\])\n      | \\(\\g<guts>?+\\)\n      | (?:(?!/\\2)[^()\\[\\\\])+  # any character (until end)\n    )+\n  )\n)?+\n# may end with a space only if it is an extended literal or contains only a single escaped space\n(?(3)|(?(5)(?<!\\s)))\n(/\\2)     # (12)\n| \\#+/.+(\\n)",
-          "name": "string.regexp.line.swift"
+          "match": "((#+)/)(?<guts>(?>(?:\\\\Q(?:(?!\\\\E)(?!/\\2).)*+(?:\\\\E|(?=/\\2))|\\\\.|\\(\\?#[^)]*\\)|\\(\\?(?>\\{(?:[^{].*?|\\{[^{].*?}|\\{\\{[^{].*?}}|\\{\\{\\{[^{].*?}}}|\\{\\{\\{\\{[^{].*?}}}}|\\{\\{\\{\\{\\{.+?}}}}})})(?:\\[(?!\\d)\\w+])?[<>X]?\\)|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\]|\\[(?:\\\\.|[^]\\[\\\\])+])+])+])+]|\\(\\g<guts>?+\\)|(?:(?!/\\2)[^()\\[\\\\])+)+))?+(/\\2)|#+/.+(\\n)",
+          "name": "string.regexp.line.extended.swift"
         }
       ]
     },
