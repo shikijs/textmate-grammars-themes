@@ -429,6 +429,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Azure/bicep/contents/src/textmate/bicep.tmlanguage?ref=8fa65e7d52ef16bedfb8f77a4b16b28d90bcb64e',
   },
   {
+    aliases: [
+      'bird',
+    ],
+    byteSize: 14458,
+    categories: [
+      'config',
+    ],
+    displayName: 'BIRD2 Configuration',
+    funding: [
+    ],
+    hash: 'qzXw8BLZn_vVEp6-O1-M-AAqUqkPPPkWKPN9WZAd90Q',
+    lastUpdate: '2025-08-02T19:46:34Z',
+    license: 'MPL-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/bird-chinese-community/BIRD-tm-language-grammar/main/LICENSE',
+    name: 'bird2',
+    scopeName: 'source.bird2',
+    sha: '4de13e428b0ceb527cef194b9723a035575143f6',
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/4de13e428b0ceb527cef194b9723a035575143f6/Syntaxes/bird2.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/Syntaxes/bird2.tmLanguage.json?ref=4de13e428b0ceb527cef194b9723a035575143f6',
+  },
+  {
     byteSize: 101282,
     categories: [
       'web',
