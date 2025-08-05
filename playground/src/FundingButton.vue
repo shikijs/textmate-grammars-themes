@@ -13,6 +13,13 @@ defineProps<{
     v-if="funding && funding.length > 0"
     class="group"
     relative flex
+    delay="0"
+    placement="bottom-start"
+    theme="dropdown"
+    :triggers="['hover', 'touch']"
+    :popper-triggers="['hover', 'touch']"
+    :overflow-padding="10"
+    :arrow-padding="8"
   >
     <button
       title="Funding"
@@ -28,7 +35,7 @@ defineProps<{
     </button>
 
     <template #popper>
-      <div p2 class="vp-doc text-sm">
+      <div p3 class="vp-doc text-sm">
         <strong block mb-2>Support {{ name }} development:</strong>
         <div
           v-for="link, i in funding"
