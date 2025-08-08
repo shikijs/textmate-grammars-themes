@@ -1234,7 +1234,7 @@ export const grammars = [
       'f#',
       'fs',
     ],
-    byteSize: 24440,
+    byteSize: 24445,
     categories: [
       'general',
     ],
@@ -1244,15 +1244,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'vC35xKFiu851Z2Tg_ZmO4u7K-Dmd0a4zxrvo9IebCmI',
-    lastUpdate: '2024-09-27T08:27:11Z',
+    hash: 'IdA1HONloBSmgPayQ9n6p6PrbnNP7TcBalYNwsSSw_c',
+    lastUpdate: '2025-08-06T10:03:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'fsharp',
     scopeName: 'source.fsharp',
-    sha: 'e67b1982e1ab318288b8196ad503273dcb168049',
-    source: 'https://github.com/microsoft/vscode/blob/e67b1982e1ab318288b8196ad503273dcb168049/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/fsharp/syntaxes/fsharp.tmLanguage.json?ref=e67b1982e1ab318288b8196ad503273dcb168049',
+    sha: '731203bcde39d5f9788b66df093d6c9b24a2710e',
+    source: 'https://github.com/microsoft/vscode/blob/731203bcde39d5f9788b66df093d6c9b24a2710e/extensions/fsharp/syntaxes/fsharp.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/fsharp/syntaxes/fsharp.tmLanguage.json?ref=731203bcde39d5f9788b66df093d6c9b24a2710e',
   },
   {
     byteSize: 4831,
@@ -2148,7 +2148,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=2628495122cd3b0cc4b4c6ba6e0f6efd621ed9f6',
   },
   {
-    byteSize: 66408,
+    byteSize: 66412,
     categories: [
       'markup',
     ],
@@ -2174,15 +2174,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'cJfwTz1j1ZpDDS2kKqTfrGAnD46c-fX5UauLirBUYVY',
-    lastUpdate: '2025-05-02T13:29:24Z',
+    hash: 'hYPhMgY3VDOLdMqOFpfOIviEWGpCsvy89XuNawkTL9g',
+    lastUpdate: '2025-08-06T10:03:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
+    sha: '731203bcde39d5f9788b66df093d6c9b24a2710e',
+    source: 'https://github.com/microsoft/vscode/blob/731203bcde39d5f9788b66df093d6c9b24a2710e/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=731203bcde39d5f9788b66df093d6c9b24a2710e',
   },
   {
     aliases: [

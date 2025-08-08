@@ -254,22 +254,8 @@
     "comments": {
       "patterns": [
         {
-          "beginCaptures": {
-            "1": {
-              "name": "comment.block.fsharp"
-            }
-          },
-          "match": "(\\(\\*{3}.*\\*{3}\\))",
-          "name": "comment.literate.command.fsharp"
-        },
-        {
           "begin": "^\\s*(\\(\\*\\*(?!\\)))((?!\\*\\)).)*$",
           "beginCaptures": {
-            "1": {
-              "name": "comment.block.fsharp"
-            }
-          },
-          "endCaptures": {
             "1": {
               "name": "comment.block.fsharp"
             }
@@ -280,7 +266,12 @@
               "include": "text.html.markdown"
             }
           ],
-          "while": "^(?!\\s*(\\*)+\\)\\s*$)"
+          "while": "^(?!\\s*(\\*)+\\)\\s*$)",
+          "whileCaptures": {
+            "1": {
+              "name": "comment.block.fsharp"
+            }
+          }
         },
         {
           "begin": "(\\(\\*(?!\\)))",
@@ -453,9 +444,12 @@
             },
             "2": {
               "name": "entity.name.type.fsharp"
+            },
+            "4": {
+              "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(:)\\s*([?[:alpha:]0-9'`^._ ]+)"
+          "match": "(:)\\s*([?[:alpha:]0-9'`^._ ]+)(\\|\\s*(null))?"
         },
         {
           "captures": {
@@ -699,7 +693,7 @@
     "definition": {
       "patterns": [
         {
-          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and|member val|member inline|static member inline|static member val|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9\\._`\\s]+|(?<=,)\\s)*)?",
+          "begin": "\\b(let mutable|static let mutable|static let|let inline|let|and inline|and|member val|member inline|static member inline|static member val|static member|default|member|override|let!)(\\s+rec|mutable)?(\\s+\\[\\<.*\\>\\])?\\s*(private|internal|public)?\\s+(\\[[^-=]*\\]|[_[:alpha:]]([_[:alpha:]0-9\\._]+)*|``[_[:alpha:]]([_[:alpha:]0-9\\._`\\s]+|(?<=,)\\s)*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.fsharp"
@@ -717,7 +711,7 @@
               "name": "variable.fsharp"
             }
           },
-          "end": "\\s*((with\\b)|(=|\\n+=|(?<=\\=)))",
+          "end": "\\s*((with inline|with)\\b|(=|\\n+=|(?<=\\=)))",
           "endCaptures": {
             "2": {
               "name": "keyword.fsharp"
@@ -1170,9 +1164,12 @@
             },
             "4": {
               "name": "entity.name.type.fsharp"
+            },
+            "7": {
+              "name": "entity.name.type.fsharp"
             }
           },
-          "match": "(\\?{0,1})([[:alpha:]0-9'`^._]+|``[[:alpha:]0-9'`^:,._ ]+``)\\s*(:{0,1})(\\s*([?[:alpha:]0-9'`<>._ ]+)){0,1}"
+          "match": "(\\?{0,1})([[:alpha:]0-9'`^._]+|``[[:alpha:]0-9'`^:,._ ]+``)\\s*(:{0,1})(\\s*([?[:alpha:]0-9'`<>._ ]+)){0,1}(\\|\\s*(null))?"
         },
         {
           "include": "#keywords"
@@ -1841,5 +1838,5 @@
     }
   },
   "scopeName": "source.fsharp",
-  "version": "https://github.com/ionide/ionide-fsgrammar/commit/c62c78404d0b2c14816aae61ac0688663a5990a3"
+  "version": "https://github.com/ionide/ionide-fsgrammar/commit/be3c51d2c28d3aaacd89ecd067e766bebe387f89"
 }
