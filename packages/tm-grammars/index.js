@@ -3327,6 +3327,34 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/zhuanhao-wu/vscode-riscv-support/contents/syntaxes/riscv.tmLanguage?ref=2736b60e45ff2ef738d784055e136cf38d6290cd',
   },
   {
+    byteSize: 4345,
+    categories: [
+      'general',
+    ],
+    displayName: 'ROS Interface',
+    funding: [
+      {
+        handle: '@jtbandes',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/jtbandes',
+      },
+      {
+        handle: 'jtbandes',
+        name: 'Ko-fi',
+        url: 'https://ko-fi.com/jtbandes',
+      },
+    ],
+    hash: 'cckZHXKUMZz-Zrwu74OrOjjCgDXiZrw-hrsh8iTqYJs',
+    lastUpdate: '2025-08-12T01:37:06Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/jtbandes/ros-tmlanguage/main/LICENSE.md',
+    name: 'rosmsg',
+    scopeName: 'source.rosmsg',
+    sha: '8bdf199109556466840be73f48c7bb1a8e58356c',
+    source: 'https://github.com/jtbandes/ros-tmlanguage/blob/8bdf199109556466840be73f48c7bb1a8e58356c/ROS%20Interface.tmLanguage.yaml',
+    sourceApi: 'https://api.github.com/repos/jtbandes/ros-tmlanguage/contents/ROS%20Interface.tmLanguage.yaml?ref=8bdf199109556466840be73f48c7bb1a8e58356c',
+  },
+  {
     byteSize: 9291,
     categories: [
       'markup',

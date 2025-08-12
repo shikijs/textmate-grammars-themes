@@ -267,6 +267,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'rosmsg',
+    source: 'https://github.com/jtbandes/ros-tmlanguage/blob/main/ROS%20Interface.tmLanguage.yaml',
+    categories: ['general'],
+  },
+  {
     name: 'rst',
     displayName: 'reStructuredText',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
