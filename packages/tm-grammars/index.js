@@ -3907,7 +3907,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/sleutho/tcl/contents/syntaxes/tcl.tmLanguage?ref=f18820ad14678bc033f0a35524820c90fe50f18b',
   },
   {
-    byteSize: 23527,
+    byteSize: 23588,
     displayName: 'Templ',
     embedded: [
       'go',
@@ -3916,15 +3916,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'AN7Y3py_iR7Fen9uHp6HAfw_qFcHoXM7KM18aVrswnA',
-    lastUpdate: '2025-04-08T08:46:52Z',
+    hash: 'RQozWCZV8DFIVCyvBW0ISIYibu_sKvT1BHxEFzt675c',
+    lastUpdate: '2025-08-11T13:54:58Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/templ-go/templ-vscode/main/LICENSE',
     name: 'templ',
     scopeName: 'source.templ',
-    sha: '257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f',
-    source: 'https://github.com/templ-go/templ-vscode/blob/257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f/syntaxes/templ.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/templ-go/templ-vscode/contents/syntaxes/templ.tmLanguage.json?ref=257a6388f92d85bdbea3bc6b76e6b3f32d2aab3f',
+    sha: 'd0af70c97ed384e93892c46b93d622ffaba5d93c',
+    source: 'https://github.com/templ-go/templ-vscode/blob/d0af70c97ed384e93892c46b93d622ffaba5d93c/syntaxes/templ.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/templ-go/templ-vscode/contents/syntaxes/templ.tmLanguage.json?ref=d0af70c97ed384e93892c46b93d622ffaba5d93c',
   },
   {
     aliases: [
