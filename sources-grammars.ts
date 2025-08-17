@@ -396,7 +396,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'asciidoc',
     aliases: ['adoc'],
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/Asciidoctor.json',
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/asciidoc.tmLanguage.json',
     categories: ['markup'],
   },
   {
