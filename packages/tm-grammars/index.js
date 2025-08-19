@@ -2128,6 +2128,29 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=f8bb386a48f799f890d00f217a90f615c9b3866c',
   },
   {
+    byteSize: 3424,
+    categories: [
+      'markup',
+    ],
+    displayName: 'KDL',
+    funding: [
+      {
+        handle: '@zkat',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/zkat',
+      },
+    ],
+    hash: 'Ct0aTVdpW2QTQS9PVefrrxtxH20F0ut0vz3yP_vH26g',
+    lastUpdate: '2024-12-18T21:36:48Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/kdl-org/vscode-kdl/main/LICENSE',
+    name: 'kdl',
+    scopeName: 'source.kdl',
+    sha: 'b986286d526d3dba7f5121956a52ce300c3418f0',
+    source: 'https://github.com/kdl-org/vscode-kdl/blob/b986286d526d3dba7f5121956a52ce300c3418f0/syntaxes/kdl.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/kdl-org/vscode-kdl/contents/syntaxes/kdl.tmLanguage.json?ref=b986286d526d3dba7f5121956a52ce300c3418f0',
+  },
+  {
     aliases: [
       'kt',
       'kts',

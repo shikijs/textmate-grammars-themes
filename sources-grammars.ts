@@ -721,6 +721,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
   },
   {
+    name: 'kdl',
+    displayName: 'KDL',
+    source: 'https://github.com/kdl-org/vscode-kdl/blob/main/syntaxes/kdl.tmLanguage.json',
+    categories: ['markup'],
+  },
+  {
     name: 'kotlin',
     aliases: ['kt', 'kts'],
     source: 'https://github.com/fwcd/vscode-kotlin/blob/main/syntaxes/kotlin.tmLanguage.json',
