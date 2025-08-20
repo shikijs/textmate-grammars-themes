@@ -615,7 +615,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/twxs/vs.language.cmake/contents/syntaxes/CMake.tmLanguage?ref=19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f',
   },
   {
-    byteSize: 38202,
+    byteSize: 38215,
     displayName: 'COBOL',
     embedded: [
       'html',
@@ -623,15 +623,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'lF4T2DcSya3MJshKUUA3tcpCB6ZfKFXlg9dIw1Zyn1o',
-    lastUpdate: '2025-03-27T20:12:33Z',
+    hash: 'eWw0cwpULrxH1b6u9F-vrb5XaWbIVyEKZpovABNnAyw',
+    lastUpdate: '2025-08-19T20:53:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: '439cc876fb63b73244502fe67aae909c4a458e49',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/439cc876fb63b73244502fe67aae909c4a458e49/syntaxes/COBOL.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=439cc876fb63b73244502fe67aae909c4a458e49',
+    sha: '28a53ee742017ec60055f2aaaf174aaf62e83c45',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/28a53ee742017ec60055f2aaaf174aaf62e83c45/syntaxes/COBOL.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=28a53ee742017ec60055f2aaaf174aaf62e83c45',
   },
   {
     byteSize: 471,
