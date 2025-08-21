@@ -1296,7 +1296,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDResource.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84',
   },
   {
-    byteSize: 18399,
+    byteSize: 18386,
     displayName: 'GDScript',
     funding: [
       {
@@ -1304,15 +1304,15 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'cwjeE3SEHVu-azaP1WQK3Z7NH_bTyMtQZ-HnzioNOMM',
-    lastUpdate: '2025-06-29T17:29:35Z',
+    hash: 'LNIkyOPS3qovW3lQymCNJAlxNDqRZZSGs2p3J1K25-s',
+    lastUpdate: '2025-08-20T19:33:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
     name: 'gdscript',
     scopeName: 'source.gdscript',
-    sha: '45db62bfa312b820548ef7d12be18e8caf4214c1',
-    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/45db62bfa312b820548ef7d12be18e8caf4214c1/syntaxes/GDScript.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDScript.tmLanguage.json?ref=45db62bfa312b820548ef7d12be18e8caf4214c1',
+    sha: '9d7187970a22c14f10332768af397b78f1c36f7b',
+    source: 'https://github.com/godotengine/godot-vscode-plugin/blob/9d7187970a22c14f10332768af397b78f1c36f7b/syntaxes/GDScript.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDScript.tmLanguage.json?ref=9d7187970a22c14f10332768af397b78f1c36f7b',
   },
   {
     byteSize: 6048,
@@ -2447,7 +2447,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json?ref=f8bb386a48f799f890d00f217a90f615c9b3866c',
   },
   {
-    byteSize: 24516,
+    byteSize: 24517,
     categories: [
       'web',
       'markup',
@@ -2461,15 +2461,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'vZmWLup6buuus6mn5_NxYbPmhzL-nbcpNpV7wMjEPOA',
-    lastUpdate: '2025-08-13T18:19:47Z',
+    hash: 'U_sUTKrlLQT0i7EPXN56MPaEdgBW7zTqmjQO0PWIFCI',
+    lastUpdate: '2025-08-20T17:00:28Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/marko-js/language-server/main/LICENSE',
     name: 'marko',
     scopeName: 'text.marko',
-    sha: 'ca1a4b54177d257340c7a453651589ac0df07d1a',
-    source: 'https://github.com/marko-js/language-server/blob/ca1a4b54177d257340c7a453651589ac0df07d1a/packages/vscode/syntaxes/marko.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/marko-js/language-server/contents/packages/vscode/syntaxes/marko.tmLanguage.json?ref=ca1a4b54177d257340c7a453651589ac0df07d1a',
+    sha: '41346af504380f2b0ccf60939eef42b5b99fdf58',
+    source: 'https://github.com/marko-js/language-server/blob/41346af504380f2b0ccf60939eef42b5b99fdf58/packages/vscode/syntaxes/marko.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/marko-js/language-server/contents/packages/vscode/syntaxes/marko.tmLanguage.json?ref=41346af504380f2b0ccf60939eef42b5b99fdf58',
   },
   {
     byteSize: 15279,
