@@ -910,6 +910,17 @@
           "include": "#declarations-available-types"
         },
         {
+          "include": "#literals-numeric"
+        },
+        {
+          "match": "\\b_\\b",
+          "name": "support.variable.inferred.swift"
+        },
+        {
+          "match": "(?<=\\s)\\bof\\b(?=\\s+[(\\[_\\p{L}\\d\\p{N}\\p{M}])",
+          "name": "keyword.other.inline-array.swift"
+        },
+        {
           "begin": ":",
           "beginCaptures": {
             "0": {
@@ -2775,6 +2786,10 @@
         {
           "match": "(?<!\\.)\\b(?:while|for|in|each)\\b",
           "name": "keyword.control.loop.swift"
+        },
+        {
+          "match": "(?<=\\s)\\bof\\b(?=\\s+[(\\[_\\p{L}\\d\\p{N}\\p{M}])",
+          "name": "keyword.other.inline-array.swift"
         },
         {
           "match": "\\bany\\b(?=\\s*`?[_\\p{L}])",
