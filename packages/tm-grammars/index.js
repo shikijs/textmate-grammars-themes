@@ -2624,19 +2624,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=46eccdaeda2b1587e9b82808cdb35670f359d16d',
   },
   {
-    byteSize: 16547,
+    byteSize: 16846,
     displayName: 'Move',
     funding: [
     ],
-    hash: 'XPMUc2shR1_6bdiCwT1JVRtamdRciHbc-mkSxk-Ulzc',
-    lastUpdate: '2024-09-17T09:24:46Z',
+    hash: 'i3tZNX7e61PIemrTwZaW3GE1nLwrwqVVa1w_j1C0T5k',
+    lastUpdate: '2025-09-03T19:57:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '4b04e9d614901097ffc0663fef40bd3e5d87779e',
-    source: 'https://github.com/damirka/move-syntax/blob/4b04e9d614901097ffc0663fef40bd3e5d87779e/syntaxes/move.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=4b04e9d614901097ffc0663fef40bd3e5d87779e',
+    sha: '364a93befb35c34c22a775576842236474f5a1ac',
+    source: 'https://github.com/damirka/move-syntax/blob/364a93befb35c34c22a775576842236474f5a1ac/syntaxes/move.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=364a93befb35c34c22a775576842236474f5a1ac',
   },
   {
     aliases: [
