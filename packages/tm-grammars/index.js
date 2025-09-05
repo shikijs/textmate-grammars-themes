@@ -2743,19 +2743,19 @@ export const grammars = [
     aliases: [
       'nu',
     ],
-    byteSize: 19113,
+    byteSize: 19621,
     displayName: 'nushell',
     funding: [
     ],
-    hash: 'juKsDoL5GNPdtLAsdqQxopy2VATA6yPTnze7qGrdGhs',
-    lastUpdate: '2025-03-26T21:36:28Z',
+    hash: 'r-ulS2r8Igm0EQVD405j4elF7FB3_2cGKJEd8Kg1loQ',
+    lastUpdate: '2025-09-04T15:56:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nushell/vscode-nushell-lang/main/LICENSE',
     name: 'nushell',
     scopeName: 'source.nushell',
-    sha: 'b03d40225eeec75f08c24720b734cd462c946ead',
-    source: 'https://github.com/nushell/vscode-nushell-lang/blob/b03d40225eeec75f08c24720b734cd462c946ead/syntaxes/nushell.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nushell/vscode-nushell-lang/contents/syntaxes/nushell.tmLanguage.json?ref=b03d40225eeec75f08c24720b734cd462c946ead',
+    sha: 'aa3a5eb7865394601b7d810e8a426fc729d85921',
+    source: 'https://github.com/nushell/vscode-nushell-lang/blob/aa3a5eb7865394601b7d810e8a426fc729d85921/syntaxes/nushell.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nushell/vscode-nushell-lang/contents/syntaxes/nushell.tmLanguage.json?ref=aa3a5eb7865394601b7d810e8a426fc729d85921',
   },
   {
     aliases: [
