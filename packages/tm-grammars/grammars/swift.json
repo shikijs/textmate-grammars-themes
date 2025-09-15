@@ -960,12 +960,18 @@
       ]
     },
     "declarations-extension": {
-      "begin": "\\b(extension)\\s+((?<q>`?)[_\\p{L}][_\\p{L}\\p{N}\\p{M}]*(\\k<q>))",
+      "begin": "\\b(extension)\\s+",
       "beginCaptures": {
         "1": {
           "name": "storage.type.$1.swift"
-        },
-        "2": {
+        }
+      },
+      "end": "(?<=})",
+      "name": "meta.definition.type.$1.swift",
+      "patterns": [
+        {
+          "begin": "\\G(?!\\s*[\\n:{])",
+          "end": "(?=\\s*[\\n:{])|(?!\\G)(?=\\s*where\\b)",
           "name": "entity.name.type.swift",
           "patterns": [
             {
@@ -973,16 +979,6 @@
             }
           ]
         },
-        "3": {
-          "name": "punctuation.definition.identifier.swift"
-        },
-        "4": {
-          "name": "punctuation.definition.identifier.swift"
-        }
-      },
-      "end": "(?<=})",
-      "name": "meta.definition.type.$1.swift",
-      "patterns": [
         {
           "include": "#comments"
         },
