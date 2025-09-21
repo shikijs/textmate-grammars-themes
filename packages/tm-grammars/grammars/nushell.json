@@ -410,15 +410,18 @@
       ]
     },
     "function": {
-      "begin": "((?:export\\s+)?def(?:\\s+--\\w+)*)\\s+([-\\w]+|\"[- \\w]+\"|'[- \\w]+'|`[- \\w]+`)(\\s+--\\w+)*",
+      "begin": "((?:export\\s+)?def)(?:\\s+(--\\w+(?:\\s+--\\w+)*))?\\s+([-\\w]+|\"[- \\w]+\"|'[- \\w]+'|`[- \\w]+`)(?:\\s+(--\\w+(?:\\s+--\\w+)*))?",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.nushell"
         },
         "2": {
-          "name": "entity.name.type.nushell"
+          "name": "entity.name.function.nushell"
         },
         "3": {
+          "name": "entity.name.type.nushell"
+        },
+        "4": {
           "name": "entity.name.function.nushell"
         }
       },
