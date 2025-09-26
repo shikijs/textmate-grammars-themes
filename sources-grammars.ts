@@ -434,7 +434,7 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'bird2',
     displayName: 'BIRD2 Configuration',
     aliases: ['bird'],
-    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/main/Syntaxes/bird2.tmLanguage.json',
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/main/grammars/bird2.tmLanguage.json',
     categories: ['config'],
   },
   {

@@ -1,7 +1,13 @@
 {
   "displayName": "BIRD2 Configuration",
   "fileTypes": [
-    ".conf"
+    "conf",
+    "bird",
+    "bird2",
+    "bird3",
+    "bird.conf",
+    "bird2.conf",
+    "bird3.conf"
   ],
   "foldingStartMarker": "\\{\\s*$",
   "foldingStopMarker": "^\\s*}",
@@ -45,6 +51,9 @@
     },
     {
       "include": "#next-hop-statements"
+    },
+    {
+      "include": "#neighbor-statements"
     },
     {
       "include": "#import-export-statements"
@@ -466,6 +475,52 @@
           "name": "meta.import-statement.bird"
         },
         {
+          "begin": "\\b(import)\\s+(filter)\\s*\\{",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.import-export.bird"
+            },
+            "2": {
+              "name": "keyword.control.filter.bird"
+            }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.block.end.bird"
+            }
+          },
+          "name": "meta.import-filter-inline.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(export)\\s+(where)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.import-export.bird"
+            },
+            "2": {
+              "name": "keyword.control.where.bird"
+            }
+          },
+          "end": ";",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.terminator.statement.bird"
+            }
+          },
+          "name": "meta.export-where-clause.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
           "captures": {
             "1": {
               "name": "keyword.control.import-export.bird"
@@ -535,6 +590,46 @@
         {
           "match": "\\b(?:first|last|last_nonaggregated|len|asn|data1??|data2|is_v4|ip|src|dst|rd|maxlen|type|mask|min|max)\\b",
           "name": "support.variable.property.bird"
+        }
+      ]
+    },
+    "neighbor-statements": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.neighbor.bird"
+            },
+            "2": {
+              "name": "constant.numeric.ip-address.bird"
+            },
+            "3": {
+              "name": "meta.interface-reference.bird"
+            },
+            "4": {
+              "name": "string.quoted.single.interface.bird"
+            },
+            "5": {
+              "name": "keyword.control.as.bird"
+            },
+            "6": {
+              "name": "constant.numeric.asn.bird"
+            }
+          },
+          "match": "\\b(neighbor)\\s+([.:\\h]+)\\s*(%\\s*'([^']+)')?\\s+(as)\\s+([0-9]+)\\b",
+          "name": "meta.neighbor-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.source.bird"
+            },
+            "2": {
+              "name": "constant.numeric.ip-address.bird"
+            }
+          },
+          "match": "\\b(source address)\\s+([.:\\h]+)\\b",
+          "name": "meta.source-address-statement.bird"
         }
       ]
     },
@@ -680,6 +775,38 @@
     "protocol-definitions": {
       "patterns": [
         {
+          "begin": "\\b(protocol)\\s+([A-Z_a-z][0-9A-Z_a-z]*)\\s+([A-Z_a-z][0-9A-Z_a-z]*)\\s+(from)\\s+([A-Z_a-z][0-9A-Z_a-z]*)\\s*\\{",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.protocol.bird"
+            },
+            "2": {
+              "name": "entity.name.type.protocol.bird"
+            },
+            "3": {
+              "name": "entity.name.function.protocol.bird"
+            },
+            "4": {
+              "name": "keyword.control.template-reference.bird"
+            },
+            "5": {
+              "name": "entity.name.function.template.bird"
+            }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.block.end.bird"
+            }
+          },
+          "name": "meta.protocol-definition-with-template.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
           "begin": "\\b(protocol)\\s+([A-Z_a-z][0-9A-Z_a-z]*)\\s+([A-Z_a-z][0-9A-Z_a-z]*)\\s*\\{",
           "beginCaptures": {
             "1": {
@@ -764,7 +891,7 @@
           "name": "string.quoted.double.bird",
           "patterns": [
             {
-              "match": "\\\\.",
+              "match": "\\.",
               "name": "constant.character.escape.bird"
             }
           ]
@@ -801,7 +928,7 @@
           "name": "keyword.control.flow.bird"
         },
         {
-          "match": "\\b(?:table|define|include|attribute|eval|ipv4|ipv6|local|as)\\b",
+          "match": "\\b(?:table|define|include|attribute|eval|ipv4|ipv6|local|as|from|where|cost|limit|action)\\b",
           "name": "keyword.control.structure.bird"
         }
       ]
