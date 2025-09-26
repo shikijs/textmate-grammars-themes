@@ -568,7 +568,7 @@
           ]
         },
         {
-          "include": "#type_param"
+          "include": "#fun_type_param"
         },
         {
           "begin": "\\(",
@@ -604,6 +604,31 @@
         {
           "match": "\\b(acquires)\\b",
           "name": "storage.modifier"
+        }
+      ]
+    },
+    "fun_type_param": {
+      "begin": "<",
+      "end": ">",
+      "name": "meta.fun_generic_param.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        },
+        {
+          "include": "#phantom"
+        },
+        {
+          "include": "#capitalized"
+        },
+        {
+          "include": "#module_access"
+        },
+        {
+          "include": "#abilities"
         }
       ]
     },
@@ -756,9 +781,14 @@
           "name": "constant.language.boolean.move"
         },
         {
-          "begin": "vector\\[",
+          "begin": "\\b(vector)\\b\\[",
+          "captures": {
+            "1": {
+              "name": "support.type.vector.move"
+            }
+          },
           "end": "]",
-          "name": "meta.vector.literal.macro.move",
+          "name": "meta.vector.literal.move",
           "patterns": [
             {
               "include": "#expr"

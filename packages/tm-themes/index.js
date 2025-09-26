@@ -5,7 +5,7 @@
 
 export const themes = [
   {
-    byteSize: 8801,
+    byteSize: 8916,
     displayName: 'Andromeeda',
     funding: [
       {
@@ -18,14 +18,14 @@ export const themes = [
         url: 'https://www.paypal.me/EliverLara/',
       },
     ],
-    hash: 'FOHim49cZc4pzYIwAkx62AtcyEqWqIyuu_Q5aeBHVmg',
-    lastUpdate: '2024-03-13T01:26:57Z',
+    hash: 'qgmtUfkFXSw9Xeh8CmtbwBXux4wdJiooJI5JlXdv2FE',
+    lastUpdate: '2025-08-24T20:05:00Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
     name: 'andromeeda',
-    sha: '94008ecde515dd2306e51d60fbb965bca2a516ad',
-    source: 'https://github.com/EliverLara/Andromeda/blob/94008ecde515dd2306e51d60fbb965bca2a516ad/themes/Andromeda-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=94008ecde515dd2306e51d60fbb965bca2a516ad',
+    sha: '7d71470cd030df73b9b2774c89499fc4d0ef8d1c',
+    source: 'https://github.com/EliverLara/Andromeda/blob/7d71470cd030df73b9b2774c89499fc4d0ef8d1c/themes/Andromeda-color-theme.json',
+    sourceApi: 'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=7d71470cd030df73b9b2774c89499fc4d0ef8d1c',
     type: 'dark',
   },
   {
@@ -59,7 +59,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 46786,
+    byteSize: 47268,
     displayName: 'Catppuccin Frappé',
     funding: [
       {
@@ -73,18 +73,18 @@ export const themes = [
         url: 'https://opencollective.com/catppuccin',
       },
     ],
-    hash: 'PCgZkuvED9Fevufh0Lwdn8-D0_7JyoHua9HvHmUirMQ',
-    lastUpdate: '2025-03-28T21:50:28Z',
+    hash: '3jKsje8MwXQQEuUTDcX46fbZ7yRr3OKReAMPC6WAa9o',
+    lastUpdate: '2025-08-27T23:37:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-frappe',
-    sha: '8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
-    source: 'https://github.com/catppuccin/vscode/blob/8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
+    sha: '44894f62eb04bbc6321342c78ae493b5982bf843',
+    source: 'https://github.com/catppuccin/vscode/blob/44894f62eb04bbc6321342c78ae493b5982bf843/packages/catppuccin-vsc/package.json',
+    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=44894f62eb04bbc6321342c78ae493b5982bf843',
     type: 'dark',
   },
   {
-    byteSize: 46784,
+    byteSize: 47266,
     displayName: 'Catppuccin Latte',
     funding: [
       {
@@ -98,18 +98,18 @@ export const themes = [
         url: 'https://opencollective.com/catppuccin',
       },
     ],
-    hash: 'DXkM4IqaQUm4TM7yX_bRe-MZsIIaR8xFu3Uw8ZvZ60M',
-    lastUpdate: '2025-03-28T21:50:28Z',
+    hash: 'f5tpvyGeCZBubEroug55sIAuW0Br5tCkKt5lFNlaCb4',
+    lastUpdate: '2025-08-27T23:37:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-latte',
-    sha: '8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
-    source: 'https://github.com/catppuccin/vscode/blob/8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
+    sha: '44894f62eb04bbc6321342c78ae493b5982bf843',
+    source: 'https://github.com/catppuccin/vscode/blob/44894f62eb04bbc6321342c78ae493b5982bf843/packages/catppuccin-vsc/package.json',
+    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=44894f62eb04bbc6321342c78ae493b5982bf843',
     type: 'light',
   },
   {
-    byteSize: 46791,
+    byteSize: 47273,
     displayName: 'Catppuccin Macchiato',
     funding: [
       {
@@ -123,18 +123,18 @@ export const themes = [
         url: 'https://opencollective.com/catppuccin',
       },
     ],
-    hash: 'l_hRXOhTsO0IntcLCR0XX5Lqb8peziUdlYBtpblO3yU',
-    lastUpdate: '2025-03-28T21:50:28Z',
+    hash: 'C7n9XK4Vwg52tDpdGIGuVJg-EhTrr9PCUiyiQkzs0N4',
+    lastUpdate: '2025-08-27T23:37:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-macchiato',
-    sha: '8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
-    source: 'https://github.com/catppuccin/vscode/blob/8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
+    sha: '44894f62eb04bbc6321342c78ae493b5982bf843',
+    source: 'https://github.com/catppuccin/vscode/blob/44894f62eb04bbc6321342c78ae493b5982bf843/packages/catppuccin-vsc/package.json',
+    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=44894f62eb04bbc6321342c78ae493b5982bf843',
     type: 'dark',
   },
   {
-    byteSize: 46783,
+    byteSize: 47265,
     displayName: 'Catppuccin Mocha',
     funding: [
       {
@@ -148,14 +148,14 @@ export const themes = [
         url: 'https://opencollective.com/catppuccin',
       },
     ],
-    hash: 'pjwVUpoakA1jDxpRScRDfoLRUZEMdiRCEpF0RhEbSLY',
-    lastUpdate: '2025-03-28T21:50:28Z',
+    hash: 'GjDo9KUu3y1EAyFzLrcw7QeUfiCNqkbs73VLF1Q7PjU',
+    lastUpdate: '2025-08-27T23:37:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-mocha',
-    sha: '8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
-    source: 'https://github.com/catppuccin/vscode/blob/8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=8ac8c5e1db78174c98c55ecd9c1bd3a6f2cbbc0b',
+    sha: '44894f62eb04bbc6321342c78ae493b5982bf843',
+    source: 'https://github.com/catppuccin/vscode/blob/44894f62eb04bbc6321342c78ae493b5982bf843/packages/catppuccin-vsc/package.json',
+    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=44894f62eb04bbc6321342c78ae493b5982bf843',
     type: 'dark',
   },
   {

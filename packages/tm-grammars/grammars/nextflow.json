@@ -190,6 +190,9 @@
           "include": "#workflow-def"
         },
         {
+          "include": "#params-def"
+        },
+        {
           "include": "#output-def"
         },
         {
@@ -209,6 +212,21 @@
       },
       "end": "}",
       "name": "output.nextflow",
+      "patterns": [
+        {
+          "include": "source.nextflow-groovy#groovy"
+        }
+      ]
+    },
+    "params-def": {
+      "begin": "^\\s*(params)\\s*\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.nextflow"
+        }
+      },
+      "end": "}",
+      "name": "params.nextflow",
       "patterns": [
         {
           "include": "source.nextflow-groovy#groovy"

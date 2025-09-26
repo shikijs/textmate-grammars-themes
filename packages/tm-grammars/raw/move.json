@@ -596,7 +596,7 @@
           ]
         },
         {
-          "include": "#type_param"
+          "include": "#fun_type_param"
         },
         {
           "begin": "[(]",
@@ -634,6 +634,32 @@
           "comment": "Keyword acquires",
           "match": "\\b(acquires)\\b",
           "name": "storage.modifier"
+        }
+      ]
+    },
+    "fun_type_param": {
+      "begin": "<",
+      "comment": "Generic type param for functions (before the parens)",
+      "end": ">",
+      "name": "meta.fun_generic_param.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        },
+        {
+          "include": "#phantom"
+        },
+        {
+          "include": "#capitalized"
+        },
+        {
+          "include": "#module_access"
+        },
+        {
+          "include": "#abilities"
         }
       ]
     },
@@ -808,10 +834,15 @@
           "name": "constant.language.boolean.move"
         },
         {
-          "begin": "vector\\[",
-          "comment": "vector literal (macro?)",
+          "begin": "(\\bvector\\b)\\[",
+          "captures": {
+            "1": {
+              "name": "support.type.vector.move"
+            }
+          },
+          "comment": "vector literal",
           "end": "\\]",
-          "name": "meta.vector.literal.macro.move",
+          "name": "meta.vector.literal.move",
           "patterns": [
             {
               "include": "#expr"

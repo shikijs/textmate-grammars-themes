@@ -910,6 +910,17 @@
           "include": "#declarations-available-types"
         },
         {
+          "include": "#literals-numeric"
+        },
+        {
+          "match": "\\b_\\b",
+          "name": "support.variable.inferred.swift"
+        },
+        {
+          "match": "(?<=\\s)\\bof\\b(?=\\s+[(\\[_\\p{L}\\d\\p{N}\\p{M}])",
+          "name": "keyword.other.inline-array.swift"
+        },
+        {
           "begin": ":",
           "beginCaptures": {
             "0": {
@@ -949,12 +960,18 @@
       ]
     },
     "declarations-extension": {
-      "begin": "\\b(extension)\\s+((?<q>`?)[_\\p{L}][_\\p{L}\\p{N}\\p{M}]*(\\k<q>))",
+      "begin": "\\b(extension)\\s+",
       "beginCaptures": {
         "1": {
           "name": "storage.type.$1.swift"
-        },
-        "2": {
+        }
+      },
+      "end": "(?<=})",
+      "name": "meta.definition.type.$1.swift",
+      "patterns": [
+        {
+          "begin": "\\G(?!\\s*[\\n:{])",
+          "end": "(?=\\s*[\\n:{])|(?!\\G)(?=\\s*where\\b)",
           "name": "entity.name.type.swift",
           "patterns": [
             {
@@ -962,16 +979,6 @@
             }
           ]
         },
-        "3": {
-          "name": "punctuation.definition.identifier.swift"
-        },
-        "4": {
-          "name": "punctuation.definition.identifier.swift"
-        }
-      },
-      "end": "(?<=})",
-      "name": "meta.definition.type.$1.swift",
-      "patterns": [
         {
           "include": "#comments"
         },
@@ -2777,6 +2784,10 @@
           "name": "keyword.control.loop.swift"
         },
         {
+          "match": "(?<=\\s)\\bof\\b(?=\\s+[(\\[_\\p{L}\\d\\p{N}\\p{M}])",
+          "name": "keyword.other.inline-array.swift"
+        },
+        {
           "match": "\\bany\\b(?=\\s*`?[_\\p{L}])",
           "name": "keyword.other.operator.type.existential.swift"
         },
@@ -3902,13 +3913,10 @@
             }
           },
           "contentName": "source.swift",
-          "end": "(\\))",
+          "end": "\\)",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.swift"
-            },
-            "1": {
-              "name": "source.swift"
             }
           },
           "name": "meta.embedded.line.swift",
@@ -3946,13 +3954,10 @@
             }
           },
           "contentName": "source.swift",
-          "end": "(\\))",
+          "end": "\\)",
           "endCaptures": {
             "0": {
               "name": "punctuation.section.embedded.end.swift"
-            },
-            "1": {
-              "name": "source.swift"
             }
           },
           "name": "meta.embedded.line.swift",
