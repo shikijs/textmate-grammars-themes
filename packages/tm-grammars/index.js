@@ -450,22 +450,22 @@ export const grammars = [
     aliases: [
       'bird',
     ],
-    byteSize: 16379,
+    byteSize: 16465,
     categories: [
       'config',
     ],
     displayName: 'BIRD2 Configuration',
     funding: [
     ],
-    hash: 'aGmRA3wO-5NyJsl1WAs58Clh3swWCOiu5OEjZD90swg',
-    lastUpdate: '2025-09-25T10:28:33Z',
+    hash: 'aZeLWzKe0MfMsf4TugV0UubLbnVfmdqzqwjWy3i1kNg',
+    lastUpdate: '2025-09-26T03:40:53Z',
     license: 'MPL-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/bird-chinese-community/BIRD-tm-language-grammar/main/LICENSE',
     name: 'bird2',
     scopeName: 'source.bird2',
-    sha: '10f96cc617c4a7d8da53c836e7f5c77715c7b780',
-    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/10f96cc617c4a7d8da53c836e7f5c77715c7b780/grammars/bird2.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/grammars/bird2.tmLanguage.json?ref=10f96cc617c4a7d8da53c836e7f5c77715c7b780',
+    sha: '2e82aed3f306941105072adf685a91d75bca0bf6',
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/2e82aed3f306941105072adf685a91d75bca0bf6/grammars/bird2.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/grammars/bird2.tmLanguage.json?ref=2e82aed3f306941105072adf685a91d75bca0bf6',
   },
   {
     byteSize: 101282,
