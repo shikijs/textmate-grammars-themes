@@ -1563,7 +1563,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/groovy/syntaxes/groovy.tmLanguage.json?ref=8fdf170a0850c1cc027382f31650aaf300d3ae2a',
   },
   {
-    byteSize: 78514,
+    byteSize: 78521,
     categories: [
       'general',
     ],
@@ -1574,15 +1574,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'gNkiY6PguCWpVcU2FaMywfe40NooGs465UGtLXyimIs',
-    lastUpdate: '2025-01-09T20:28:53Z',
+    hash: '4cow1qubTp3mJy1NyOmcIjB2tJ_R_KJ8CqV25-f_c1I',
+    lastUpdate: '2025-09-25T13:02:01Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/slackhq/vscode-hack/master/LICENSE.md',
     name: 'hack',
     scopeName: 'source.hack',
-    sha: '2da10a05b70c9aae672f25bc218fe92d44522408',
-    source: 'https://github.com/slackhq/vscode-hack/blob/2da10a05b70c9aae672f25bc218fe92d44522408/syntaxes/hack.json',
-    sourceApi: 'https://api.github.com/repos/slackhq/vscode-hack/contents/syntaxes/hack.json?ref=2da10a05b70c9aae672f25bc218fe92d44522408',
+    sha: 'b518393296112ec3189d97a6051e06c4dd5b46d6',
+    source: 'https://github.com/slackhq/vscode-hack/blob/b518393296112ec3189d97a6051e06c4dd5b46d6/syntaxes/hack.json',
+    sourceApi: 'https://api.github.com/repos/slackhq/vscode-hack/contents/syntaxes/hack.json?ref=b518393296112ec3189d97a6051e06c4dd5b46d6',
   },
   {
     byteSize: 7719,
