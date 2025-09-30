@@ -1,0 +1,66 @@
+#758575DD      #goal definition
+#B8A965        nav_msgs/Goals
+#DBD7CACC       
+#BD976A        poses
+#CB7676        string
+#DBD7CACC       
+#BD976A        behavior_tree
+#79B8FF        ---
+#758575DD      #result definition
+#758575DD      # Error codes
+#758575DD      # Note: The expected priority order of the errors should match the message order
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        NONE
+#DBD7CACC      =
+#4C9A91        0
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        UNKNOWN
+#DBD7CACC      =
+#4C9A91        9100
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        FAILED_TO_LOAD_BEHAVIOR_TREE
+#DBD7CACC      =
+#4C9A91        9101
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        TF_ERROR
+#DBD7CACC      =
+#4C9A91        9102
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        TIMEOUT
+#DBD7CACC      =
+#4C9A91        9103
+#CB7676        uint16
+#DBD7CACC       
+#BD976A        error_code
+#CB7676        string
+#DBD7CACC       
+#BD976A        error_msg
+#B8A965        WaypointStatus
+#DBD7CACC      [] 
+#BD976A        waypoint_statuses
+#79B8FF        ---
+#758575DD      #feedback definition
+#B8A965        geometry_msgs/PoseStamped
+#DBD7CACC       
+#BD976A        current_pose
+#B8A965        builtin_interfaces/Duration
+#DBD7CACC       
+#BD976A        navigation_time
+#B8A965        builtin_interfaces/Duration
+#DBD7CACC       
+#BD976A        estimated_time_remaining
+#CB7676        int16
+#DBD7CACC       
+#BD976A        number_of_recoveries
+#CB7676        float32
+#DBD7CACC       
+#BD976A        distance_remaining
+#CB7676        int16
+#DBD7CACC       
+#BD976A        number_of_poses_remaining
+#758575DD      # From https://github.com/ros-navigation/navigation2/blob/f7b665406c46494b0f6fbfe80bd16d4f0d85e1df/nav2_msgs/action/NavigateThroughPoses.action
