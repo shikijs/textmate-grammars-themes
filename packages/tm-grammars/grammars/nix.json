@@ -363,32 +363,14 @@
         {
           "begin": "/\\*([^*]|\\*[^/])*",
           "end": "\\*/",
-          "name": "comment.block.nix",
-          "patterns": [
-            {
-              "include": "#comment-remark"
-            }
-          ]
+          "name": "comment.block.nix"
         },
         {
           "begin": "#",
           "end": "$",
-          "name": "comment.line.number-sign.nix",
-          "patterns": [
-            {
-              "include": "#comment-remark"
-            }
-          ]
+          "name": "comment.line.number-sign.nix"
         }
       ]
-    },
-    "comment-remark": {
-      "captures": {
-        "1": {
-          "name": "markup.bold.comment.nix"
-        }
-      },
-      "match": "(TODO|FIXME|BUG|!!!):?"
     },
     "constants": {
       "patterns": [
@@ -650,7 +632,7 @@
     "function-for-sure": {
       "patterns": [
         {
-          "begin": "(?=(\\b[A-Z_a-z][-'0-9A-Z_a-z]*\\s*[:@]|\\{[^}]*}\\s*:|\\{[^\"#'/=}]*[,?]))",
+          "begin": "(?=(\\b[A-Z_a-z][-'0-9A-Z_a-z]*\\s*[:@]|\\{[^\"'}]*}\\s*:|\\{[^\"#'/=}]*[,?]))",
           "end": "(?=([]),;}]|\\b(else|then)\\b))",
           "patterns": [
             {

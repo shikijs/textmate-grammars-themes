@@ -2720,24 +2720,29 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/pragmagic/vscode-nim/contents/syntaxes/nim.json?ref=0272a0544ddf147fde98f8a8f2b624b7dcb19eb3',
   },
   {
-    byteSize: 14306,
+    byteSize: 14119,
     displayName: 'Nix',
     funding: [
+      {
+        handle: '@nix-community',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/nix-community',
+      },
       {
         handle: 'nix-community',
         name: 'Open Collective',
         url: 'https://opencollective.com/nix-community',
       },
     ],
-    hash: 'Nh1Q0JSdPVZi9v00kkQ8yY9b5doEIFZeKSzqIiDmVXU',
-    lastUpdate: '2025-02-02T04:56:34Z',
+    hash: '0WgBLxfmz8u9-ng9T0owSVCfTcASbKnyk98W8vMYek4',
+    lastUpdate: '2025-09-29T09:06:25Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
     name: 'nix',
     scopeName: 'source.nix',
-    sha: 'ac1ed65aa92655748200cd62bd54e5ca051781bc',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/ac1ed65aa92655748200cd62bd54e5ca051781bc/syntaxes/nix.YAML-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/syntaxes/nix.YAML-tmLanguage?ref=ac1ed65aa92655748200cd62bd54e5ca051781bc',
+    sha: 'fe0a5763cbe937ffcb00846b053b9928fc919f7e',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/fe0a5763cbe937ffcb00846b053b9928fc919f7e/syntaxes/nix.YAML-tmLanguage',
+    sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/syntaxes/nix.YAML-tmLanguage?ref=fe0a5763cbe937ffcb00846b053b9928fc919f7e',
   },
   {
     aliases: [
