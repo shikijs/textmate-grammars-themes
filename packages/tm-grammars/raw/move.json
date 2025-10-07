@@ -9,16 +9,13 @@
       "include": "#comments"
     },
     {
+      "include": "#extend_module"
+    },
+    {
       "include": "#module"
     },
     {
       "include": "#script"
-    },
-    {
-      "include": "#annotation"
-    },
-    {
-      "include": "#comments"
     },
     {
       "include": "#annotation"
@@ -114,6 +111,9 @@
       "end": "\\]",
       "name": "support.constant.annotation.move",
       "patterns": [
+        {
+          "include": "#comments"
+        },
         {
           "comment": "Annotation name",
           "match": "\\b(\\w+)\\s*(?=\\=)",
@@ -461,6 +461,24 @@
         },
         {
           "include": "#expr_generic"
+        }
+      ]
+    },
+    "extend_module": {
+      "begin": "\\b(extend)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.type.extend.move"
+        }
+      },
+      "end": "(?<=[;}])",
+      "name": "meta.extend_module.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#module"
         }
       ]
     },
@@ -879,10 +897,13 @@
       "captures": {
         "2": {
           "name": "support.function.macro.move"
+        },
+        "3": {
+          "name": "support.function.operator.macro.move"
         }
       },
       "comment": "Macro fun call",
-      "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)!",
+      "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)(!)",
       "name": "meta.macro.call"
     },
     "match_expression": {
@@ -1058,32 +1079,6 @@
       "comment": "Use of module type or method",
       "match": "\\b(\\w+)::(\\w+)\\b",
       "name": "meta.module_access.move"
-    },
-    "module_label": {
-      "begin": "^\\s*(module)\\b",
-      "comment": "Module label, inline module definition",
-      "end": ";\\s*$",
-      "name": "meta.module.label.move",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#escaped_identifier"
-        },
-        {
-          "begin": "(?<=\\bmodule\\b)",
-          "comment": "Module namespace / address",
-          "end": "(?=[(::){])",
-          "name": "constant.other.move"
-        },
-        {
-          "begin": "(?<=::)",
-          "comment": "Module name",
-          "end": "(?=[\\s{])",
-          "name": "entity.name.type.move"
-        }
-      ]
     },
     "move_copy": {
       "comment": "Keywords move and copy",
