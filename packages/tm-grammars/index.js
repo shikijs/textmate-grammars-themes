@@ -2263,22 +2263,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Shopify/liquid-tm-grammar/contents/grammars/liquid.tmLanguage.json?ref=099adcf0d4beacd078a22432eaeab08d6f1e6da5',
   },
   {
-    byteSize: 4637,
+    byteSize: 4658,
     categories: [
       'dsl',
     ],
     displayName: 'LLVM IR',
     funding: [
     ],
-    hash: 'OzTi2eTMlc2BMi_JGth-c8BuPlOejpPjPZ5jz_RCDn0',
-    lastUpdate: '2024-05-30T11:17:37Z',
+    hash: 'sT1GTEgVEI15cBtqoPdhEe6CwKyj63fmfKtijngLnjo',
+    lastUpdate: '2025-10-07T10:51:42Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/llvm/llvm-project/main/LICENSE.TXT',
     name: 'llvm',
     scopeName: 'source.llvm',
-    sha: '2705c605da2854a6b044fdf5978dea0472fd0ab1',
-    source: 'https://github.com/llvm/llvm-project/blob/2705c605da2854a6b044fdf5978dea0472fd0ab1/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
-    sourceApi: 'https://api.github.com/repos/llvm/llvm-project/contents/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml?ref=2705c605da2854a6b044fdf5978dea0472fd0ab1',
+    sha: '224873d7acab430d29c978136418c40fa028a40d',
+    source: 'https://github.com/llvm/llvm-project/blob/224873d7acab430d29c978136418c40fa028a40d/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml',
+    sourceApi: 'https://api.github.com/repos/llvm/llvm-project/contents/llvm/utils/vscode/llvm/syntaxes/ll.tmLanguage.yaml?ref=224873d7acab430d29c978136418c40fa028a40d',
   },
   {
     byteSize: 2577,
