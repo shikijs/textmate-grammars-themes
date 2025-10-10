@@ -557,22 +557,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/starkware-libs/cairo-lang/contents/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json?ref=4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5',
   },
   {
-    byteSize: 13782,
+    byteSize: 13789,
     categories: [
       'lisp',
     ],
     displayName: 'Clarity',
     funding: [
     ],
-    hash: 'EIV7nYF1broDJdu7cJQjrtckUiO8F2du4GJVG4ahhtc',
-    lastUpdate: '2025-10-06T16:56:04Z',
+    hash: 'x-e0LcAtKvpExm7uqO0sFoqbgwmPXGlaQn2KuzxQyfw',
+    lastUpdate: '2025-10-09T17:14:05Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/hirosystems/clarity.tmbundle/main/LICENSE',
     name: 'clarity',
     scopeName: 'source.clar',
-    sha: '57d06c1522fd93659d213dc192a631650a2acb85',
-    source: 'https://github.com/hirosystems/clarity.tmbundle/blob/57d06c1522fd93659d213dc192a631650a2acb85/Syntaxes/clarity.JSON-tmLanguage',
-    sourceApi: 'https://api.github.com/repos/hirosystems/clarity.tmbundle/contents/Syntaxes/clarity.JSON-tmLanguage?ref=57d06c1522fd93659d213dc192a631650a2acb85',
+    sha: 'a187c9ccbbfeb91550f138c8d606888a902b7c98',
+    source: 'https://github.com/hirosystems/clarity.tmbundle/blob/a187c9ccbbfeb91550f138c8d606888a902b7c98/Syntaxes/clarity.JSON-tmLanguage',
+    sourceApi: 'https://api.github.com/repos/hirosystems/clarity.tmbundle/contents/Syntaxes/clarity.JSON-tmLanguage?ref=a187c9ccbbfeb91550f138c8d606888a902b7c98',
   },
   {
     aliases: [
