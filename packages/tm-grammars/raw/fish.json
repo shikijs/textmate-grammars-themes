@@ -72,31 +72,56 @@
     {
       "captures": {
         "2": {
+          "name": "keyword.operator.pipe.fish"
+        },
+        "3": {
           "name": "keyword.control.fish"
         },
-        "4": {
+        "5": {
           "name": "support.function.command.fish"
         }
       },
       "comment": "name of command, either a function or a binary",
-      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|[;]\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!]))([a-zA-Z_\\-0-9\\[\\].]+)"
+      "match": "(^\\s*|&&\\s*|(\\|)\\s*|\\(\\s*|[;]\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!]))([a-zA-Z_\\-0-9\\[\\].]+)"
     },
     {
-      "comment": "keywords that affect control flow",
-      "match": "(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![?!])",
+      "captures": {
+        "2": {
+          "name": "keyword.control.fish"
+        }
+      },
+      "comment": "command-expecting keywords (allow subsequent keywords)",
+      "match": "(^\\s*|&&\\s*|(?<=\\|)\\s*|\\(\\s*|[;]\\s*|(?<=\\b(?:while|if|and|or|not)\\b)\\s+)(?<!\\.)\\b(while|if|and|or|not)\\b(?![?!])"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.control.fish"
+        }
+      },
+      "comment": "regular keywords (command position only)",
+      "match": "(^\\s*|&&\\s*|(?<=\\|)\\s*|\\(\\s*|[;]\\s*)(?<!\\.)\\b(function|else|switch|case|for|begin|end|continue|break|return|source|exit|wait)\\b(?![?!])"
+    },
+    {
+      "comment": "in keyword (special case for 'for' loops)",
+      "match": "\\b(in)\\b(?![?!])",
       "name": "keyword.control.fish"
     },
     {
-      "match": "(?<!\\.)\\bfunction\\b(?![?!])",
-      "name": "storage.type.fish"
+      "captures": {
+        "1": {
+          "name": "keyword.operator.redirect.fish"
+        },
+        "2": {
+          "name": "keyword.operator.redirect.target.fish"
+        }
+      },
+      "comment": "IO Redirection with simple target",
+      "match": "(<|(?:>|\\^|>>|\\^\\^)(?:&[012\\-])?|[012](?:<|>|>>)(?:&[012\\-])?)\\s*(?!\\()([a-zA-Z0-9_./\\-]+)"
     },
     {
-      "match": "\\|",
-      "name": "keyword.operator.pipe.fish"
-    },
-    {
-      "comment": "IO Redirection",
-      "match": "(?x:\n<|# Standard Input\n(>|\\^|>>|\\^\\^)(&[012\\-])?| # Redirection of stderr\n[012](<|>|>>)(&[012\\-])? # Redirect input/output of file descriptors\n)",
+      "comment": "IO Redirection without target",
+      "match": "(?x:\n<|(>|\\^|>>|\\^\\^)(&[012\\-])?|[012](<|>|>>)(&[012\\-])?)",
       "name": "keyword.operator.redirect.fish"
     },
     {

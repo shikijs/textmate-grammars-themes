@@ -65,25 +65,47 @@
     {
       "captures": {
         "2": {
+          "name": "keyword.operator.pipe.fish"
+        },
+        "3": {
           "name": "keyword.control.fish"
         },
-        "4": {
+        "5": {
           "name": "support.function.command.fish"
         }
       },
-      "match": "(^\\s*|&&\\s*|\\|\\s*|\\(\\s*|;\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![!?]))([-\\].0-9A-\\[_a-z]+)"
+      "match": "(^\\s*|&&\\s*|(\\|)\\s*|\\(\\s*|;\\s*|\\b(if|while)\\b\\s+)(?!(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![!?]))([-\\].0-9A-\\[_a-z]+)"
     },
     {
-      "match": "(?<!\\.)\\b(function|while|if|else|switch|case|for|in|begin|end|continue|break|return|source|exit|wait|and|or|not)\\b(?![!?])",
+      "captures": {
+        "2": {
+          "name": "keyword.control.fish"
+        }
+      },
+      "match": "(^\\s*|&&\\s*|(?<=\\|)\\s*|\\(\\s*|;\\s*|(?<=\\b(?:while|if|and|or|not)\\b)\\s+)(?<!\\.)\\b(while|if|and|or|not)\\b(?![!?])"
+    },
+    {
+      "captures": {
+        "2": {
+          "name": "keyword.control.fish"
+        }
+      },
+      "match": "(^\\s*|&&\\s*|(?<=\\|)\\s*|\\(\\s*|;\\s*)(?<!\\.)\\b(function|else|switch|case|for|begin|end|continue|break|return|source|exit|wait)\\b(?![!?])"
+    },
+    {
+      "match": "\\b(in)\\b(?![!?])",
       "name": "keyword.control.fish"
     },
     {
-      "match": "(?<!\\.)\\bfunction\\b(?![!?])",
-      "name": "storage.type.fish"
-    },
-    {
-      "match": "\\|",
-      "name": "keyword.operator.pipe.fish"
+      "captures": {
+        "1": {
+          "name": "keyword.operator.redirect.fish"
+        },
+        "2": {
+          "name": "keyword.operator.redirect.target.fish"
+        }
+      },
+      "match": "(<|(?:[>^]|>>|\\^\\^)(?:&[-012])?|[012](?:[<>]|>>)(?:&[-012])?)\\s*(?!\\()([\\--9A-Z_a-z]+)"
     },
     {
       "match": "<|([>^]|>>|\\^\\^)(&[-012])?|[012]([<>]|>>)(&[-012])?",
