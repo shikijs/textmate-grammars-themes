@@ -1804,6 +1804,28 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Huachao/vscode-restclient/contents/syntaxes/http.tmLanguage.json?ref=6649589e4d3f97d9c0d68a4f7ffe03fa2919c4df',
   },
   {
+    byteSize: 3205,
+    categories: [
+      'web',
+      'utility',
+    ],
+    displayName: 'Hurl',
+    embedded: [
+      'graphql',
+      'xml',
+      'csv',
+    ],
+    funding: [
+    ],
+    hash: 'SU2VNJT2rBK9kdhsuxFerB7zqB05sEQL94-wWHiB1v8',
+    lastUpdate: '2025-10-08T13:05:49Z',
+    name: 'hurl',
+    scopeName: 'source.hurl',
+    sha: 'dec5d90bea8a13d21fd8365d5a0d2d35453653c1',
+    source: 'https://github.com/nikeee/language-hurl/blob/dec5d90bea8a13d21fd8365d5a0d2d35453653c1/grammars/hurl.tmlanguage.json',
+    sourceApi: 'https://api.github.com/repos/nikeee/language-hurl/contents/grammars/hurl.tmlanguage.json?ref=dec5d90bea8a13d21fd8365d5a0d2d35453653c1',
+  },
+  {
     byteSize: 1581,
     categories: [
       'dsl',

@@ -123,6 +123,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'hurl',
+    source: 'https://github.com/nikeee/language-hurl/blob/main/grammars/hurl.tmlanguage.json',
+    categories: ['web', 'utility'],
+  },
+  {
     name: 'ini',
     displayName: 'INI',
     aliases: ['properties'],
