@@ -1167,22 +1167,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/kongeor/vsc-fennel/contents/syntaxes/fennel.tmLanguage.json?ref=664148923d7bd72531120d0cba712c6dba6f698d',
   },
   {
-    byteSize: 6146,
+    byteSize: 9072,
     categories: [
       'scripting',
     ],
     displayName: 'Fish',
     funding: [
     ],
-    hash: 'gLC6DZLi_rN4pBKvSyp1CBSC1rO1UB6pErRskqXsydo',
-    lastUpdate: '2025-10-13T05:02:18Z',
+    hash: 'lSNvqrsTEzMrf2vx4kqTHYqPiQ5p8Ci8zp79inZXhLI',
+    lastUpdate: '2025-10-14T18:51:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/bmalehorn/vscode-fish/master/LICENSE',
     name: 'fish',
     scopeName: 'source.fish',
-    sha: '888213a73202e394bf9b80f09fb8b5c0f130d1b6',
-    source: 'https://github.com/bmalehorn/vscode-fish/blob/888213a73202e394bf9b80f09fb8b5c0f130d1b6/syntaxes/fish.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/bmalehorn/vscode-fish/contents/syntaxes/fish.tmLanguage.json?ref=888213a73202e394bf9b80f09fb8b5c0f130d1b6',
+    sha: 'af7f414d21859f116e8975470976062f7553c620',
+    source: 'https://github.com/bmalehorn/vscode-fish/blob/af7f414d21859f116e8975470976062f7553c620/syntaxes/fish.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/bmalehorn/vscode-fish/contents/syntaxes/fish.tmLanguage.json?ref=af7f414d21859f116e8975470976062f7553c620',
   },
   {
     aliases: [
