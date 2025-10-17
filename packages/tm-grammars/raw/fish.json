@@ -87,7 +87,7 @@
         {
           "comment": "single character character escape sequences",
           "match": "\\\\[abefnrtv $*?~#(){}\\[\\]<>^&|;\"']",
-          "name": "constant.character.escape.single.fish"
+          "name": "constant.character.escape.string.fish"
         },
         {
           "comment": "escapes the ascii character with the specified value (hexadecimal)",
@@ -224,21 +224,18 @@
           "name": "punctuation.definition.slice.begin.fish"
         }
       },
-      "comment": "List variable slice $variable[...]",
+      "comment": "List variable slice $variable[...] outside of strings",
       "end": "(?<!\\\\)((\\\\\\\\)*)(\\])",
       "endCaptures": {
         "1": {
-          "name": "constant.character.escape.single.fish"
+          "name": "constant.character.escape.string.fish"
         },
         "3": {
           "name": "punctuation.definition.slice.end.fish"
         }
       },
-      "name": "meta.embedded.slice.fish",
+      "name": "meta.embedded.slice.fish variable.interpolation.fish",
       "patterns": [
-        {
-          "include": "#slice-range-operator"
-        },
         {
           "include": "#string-double"
         },
@@ -259,10 +256,37 @@
         }
       ]
     },
-    "slice-range-operator": {
-      "comment": "Range operator .. in slice context",
-      "match": "\\.\\.",
-      "name": "keyword.control.fish"
+    "slice-string-double": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.slice.begin.fish"
+        }
+      },
+      "comment": "List variable slice $variable[...] inside double-quoted strings",
+      "end": "(?<!\\\\)((\\\\\\\\)*)(\\])",
+      "endCaptures": {
+        "1": {
+          "name": "constant.character.escape.string.fish"
+        },
+        "3": {
+          "name": "punctuation.definition.slice.end.fish"
+        }
+      },
+      "name": "meta.embedded.slice.fish variable.interpolation.string.fish",
+      "patterns": [
+        {
+          "include": "#subshell"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "comment": "https://fishshell.com/docs/current/#quotes",
+          "match": "\\\\(\\\"|\\$|$|\\\\)",
+          "name": "constant.character.escape.fish"
+        }
+      ]
     },
     "string-double": {
       "begin": "\"",
@@ -284,7 +308,7 @@
           "include": "#subshell"
         },
         {
-          "include": "#variable"
+          "include": "#variable-string-double"
         },
         {
           "comment": "https://fishshell.com/docs/current/#quotes",
@@ -327,7 +351,7 @@
       "end": "(?<!\\\\)((\\\\\\\\)*)(\\))",
       "endCaptures": {
         "1": {
-          "name": "constant.character.escape.single.fish"
+          "name": "constant.character.escape.string.fish"
         },
         "3": {
           "name": "punctuation.definition.subshell.end.fish"
@@ -381,7 +405,7 @@
       "end": "(?<!\\\\)((\\\\\\\\)*)(\\))",
       "endCaptures": {
         "1": {
-          "name": "constant.character.escape.single.fish"
+          "name": "constant.character.escape.string.fish"
         },
         "3": {
           "name": "punctuation.definition.subshell.end.fish"
@@ -484,6 +508,68 @@
             }
           },
           "comment": "Normal variables without slice",
+          "match": "(\\$)[a-zA-Z_][a-zA-Z0-9_]*",
+          "name": "variable.other.normal.fish"
+        }
+      ]
+    },
+    "variable-string-double": {
+      "patterns": [
+        {
+          "begin": "(\\$)(argv|CMD_DURATION|COLUMNS|fish_bind_mode|fish_color_autosuggestion|fish_color_cancel|fish_color_command|fish_color_comment|fish_color_cwd|fish_color_cwd_root|fish_color_end|fish_color_error|fish_color_escape|fish_color_hg_added|fish_color_hg_clean|fish_color_hg_copied|fish_color_hg_deleted|fish_color_hg_dirty|fish_color_hg_modified|fish_color_hg_renamed|fish_color_hg_unmerged|fish_color_hg_untracked|fish_color_history_current|fish_color_host|fish_color_host_remote|fish_color_match|fish_color_normal|fish_color_operator|fish_color_param|fish_color_quote|fish_color_redirection|fish_color_search_match|fish_color_selection|fish_color_status|fish_color_user|fish_color_valid_path|fish_complete_path|fish_function_path|fish_greeting|fish_key_bindings|fish_pager_color_completion|fish_pager_color_description|fish_pager_color_prefix|fish_pager_color_progress|fish_pid|fish_prompt_hg_status_added|fish_prompt_hg_status_copied|fish_prompt_hg_status_deleted|fish_prompt_hg_status_modified|fish_prompt_hg_status_order|fish_prompt_hg_status_unmerged|fish_prompt_hg_status_untracked|FISH_VERSION|history|hostname|IFS|LINES|pipestatus|status|umask|version)\\b(?=\\[)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.variable.fish"
+            },
+            "2": {
+              "name": "variable.language.fish"
+            }
+          },
+          "comment": "Built-in variables with slice inside double-quoted strings",
+          "end": "(?<=\\])",
+          "name": "variable.language.fish",
+          "patterns": [
+            {
+              "include": "#slice-string-double"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.variable.fish"
+            }
+          },
+          "comment": "Built-in variables without slice inside double-quoted strings",
+          "match": "(\\$)(argv|CMD_DURATION|COLUMNS|fish_bind_mode|fish_color_autosuggestion|fish_color_cancel|fish_color_command|fish_color_comment|fish_color_cwd|fish_color_cwd_root|fish_color_end|fish_color_error|fish_color_escape|fish_color_hg_added|fish_color_hg_clean|fish_color_hg_copied|fish_color_hg_deleted|fish_color_hg_dirty|fish_color_hg_modified|fish_color_hg_renamed|fish_color_hg_unmerged|fish_color_hg_untracked|fish_color_history_current|fish_color_host|fish_color_host_remote|fish_color_match|fish_color_normal|fish_color_operator|fish_color_param|fish_color_quote|fish_color_redirection|fish_color_search_match|fish_color_selection|fish_color_status|fish_color_user|fish_color_valid_path|fish_complete_path|fish_function_path|fish_greeting|fish_key_bindings|fish_pager_color_completion|fish_pager_color_description|fish_pager_color_prefix|fish_pager_color_progress|fish_pid|fish_prompt_hg_status_added|fish_prompt_hg_status_copied|fish_prompt_hg_status_deleted|fish_prompt_hg_status_modified|fish_prompt_hg_status_order|fish_prompt_hg_status_unmerged|fish_prompt_hg_status_untracked|FISH_VERSION|history|hostname|IFS|LINES|pipestatus|status|umask|version)\\b",
+          "name": "variable.language.fish"
+        },
+        {
+          "begin": "(\\$)([a-zA-Z_][a-zA-Z0-9_]*)(?=\\[)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.variable.fish"
+            },
+            "2": {
+              "name": "variable.other.normal.fish"
+            }
+          },
+          "comment": "Normal variables with slice inside double-quoted strings",
+          "end": "(?<=\\])",
+          "name": "variable.other.normal.fish",
+          "patterns": [
+            {
+              "include": "#slice-string-double"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.variable.fish"
+            }
+          },
+          "comment": "Normal variables without slice inside double-quoted strings",
           "match": "(\\$)[a-zA-Z_][a-zA-Z0-9_]*",
           "name": "variable.other.normal.fish"
         }
