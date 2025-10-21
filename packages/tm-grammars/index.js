@@ -2206,22 +2206,22 @@ export const grammars = [
     aliases: [
       'lean4',
     ],
-    byteSize: 3812,
+    byteSize: 5553,
     categories: [
       'general',
     ],
     displayName: 'Lean 4',
     funding: [
     ],
-    hash: 'SnWD9GhPJlnzbk6TOGpTaOOff3GusHGksvA8Ix6BKhg',
-    lastUpdate: '2025-06-09T10:00:33Z',
+    hash: 'x_uK2VvS2wLZ-tUKA_og94H7uJQA793WTVzZNLPNWEo',
+    lastUpdate: '2025-10-20T08:26:50Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/leanprover/vscode-lean4/master/LICENSE',
     name: 'lean',
     scopeName: 'source.lean4',
-    sha: 'b8fc2226dc1b76c29ddb63829a4d6adadadec9cd',
-    source: 'https://github.com/leanprover/vscode-lean4/blob/b8fc2226dc1b76c29ddb63829a4d6adadadec9cd/vscode-lean4/syntaxes/lean4.json',
-    sourceApi: 'https://api.github.com/repos/leanprover/vscode-lean4/contents/vscode-lean4/syntaxes/lean4.json?ref=b8fc2226dc1b76c29ddb63829a4d6adadadec9cd',
+    sha: '7071db855efdc3286a22376704b2279633cba614',
+    source: 'https://github.com/leanprover/vscode-lean4/blob/7071db855efdc3286a22376704b2279633cba614/vscode-lean4/syntaxes/lean4.json',
+    sourceApi: 'https://api.github.com/repos/leanprover/vscode-lean4/contents/vscode-lean4/syntaxes/lean4.json?ref=7071db855efdc3286a22376704b2279633cba614',
   },
   {
     byteSize: 94797,
