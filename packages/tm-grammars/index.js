@@ -1902,6 +1902,8 @@ export const grammars = [
   {
     aliases: [
       'js',
+      'cjs',
+      'mjs',
     ],
     byteSize: 159323,
     categories: [
@@ -1912,7 +1914,7 @@ export const grammars = [
     displayName: 'JavaScript',
     funding: [
     ],
-    hash: 'HIo9PZGVK_m6dUZAv28Uhk-RQm0ePcwzhgtqoNXhbN8',
+    hash: 'SHSs1nFDVLpgj0muQZurWFVofgS7mKzxFdkoKKCmfyc',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
@@ -4108,6 +4110,8 @@ export const grammars = [
   {
     aliases: [
       'ts',
+      'cts',
+      'mts',
     ],
     byteSize: 163871,
     categories: [
@@ -4118,7 +4122,7 @@ export const grammars = [
     displayName: 'TypeScript',
     funding: [
     ],
-    hash: 'AJ9y77GwIbSXydPeC63OBqQyKunnZoz1MlEF6MkbhQk',
+    hash: 'dKMZLHa4i_fHhWvcXg-Y2d55GMmlJZkmLkaWN2efAV0',
     lastUpdate: '2024-10-25T09:35:17Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
