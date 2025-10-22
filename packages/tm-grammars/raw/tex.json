@@ -31,6 +31,9 @@
       "name": "keyword.control.newline.tex"
     },
     {
+      "include": "#ifnextchar"
+    },
+    {
       "include": "#macro-general"
     }
   ],
@@ -174,6 +177,10 @@
           "include": "#conditionals"
         }
       ]
+    },
+    "ifnextchar": {
+      "match": "\\\\@ifnextchar[({\\[]",
+      "name": "keyword.control.ifnextchar.tex"
     },
     "macro-control": {
       "captures": {
@@ -367,5 +374,5 @@
     }
   },
   "scopeName": "text.tex",
-  "version": "https://github.com/jlelong/vscode-latex-basics/commit/6bd99800f7b2cbd0e36cecb56fe1936da5affadb"
+  "version": "https://github.com/jlelong/vscode-latex-basics/commit/ca85e20304afcb5c6a28a6e0b9fc1ead8f124001"
 }
