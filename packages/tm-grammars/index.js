@@ -2551,7 +2551,7 @@ export const grammars = [
     hash: 'nwlm7swdVMmPwJth5yJFbQFefOIZKt1CCvXRjLYXfBA',
     lastUpdate: '2025-02-24T11:33:21Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nuxtlabs/vscode-mdc/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/nuxt-content/vscode-mdc/main/LICENSE',
     name: 'mdc',
     scopeName: 'text.markdown.mdc.standalone',
     sha: '96f619ccd8df724e5bd94eb28b87e03b769a8c41',
@@ -2899,18 +2899,6 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/alefragnani/vscode-language-pascal/contents/syntaxes/pascal.tmLanguage?ref=f2d6345bd9fe83932f4d04fcacf98ce7d74b8034',
   },
   {
-    byteSize: 38175,
-    hash: '63691bf7139547b8d9f28d07cd06a57f65752dec',
-    lastUpdate: '2025-08-25T21:23:58Z',
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/apple/pkl.tmbundle/refs/heads/main/LICENSE.txt',
-    name: 'pkl',
-    scopeName: 'source.pkl',
-    sha: '3a2e98457537ae1e37644ffb05ea786659c4095f',
-    source: 'https://github.com/apple/pkl.tmbundle/blob/3a2e98457537ae1e37644ffb05ea786659c4095f/Syntaxes/pkl.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/apple/pkl.tmbundle/contents/Syntaxes/pkl.tmLanguage?ref=3a2e98457537ae1e37644ffb05ea786659c4095f',
-  },
-  {
     byteSize: 41869,
     categories: [
       'general',
@@ -2961,6 +2949,24 @@ export const grammars = [
     sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
     source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/php/syntaxes/php.tmLanguage.json',
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
+  },
+  {
+    byteSize: 9546,
+    categories: [
+      'data',
+    ],
+    displayName: 'Pkl',
+    funding: [
+    ],
+    hash: '-KSZ6s_4k8ymotf-Ux9i9YEST0hgUmdP8tDq7R61L3w',
+    lastUpdate: '2024-02-21T10:36:39Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/apple/pkl.tmbundle/main/LICENSE.txt',
+    name: 'pkl',
+    scopeName: 'source.pkl',
+    sha: '4ed6ca67ec7579b7a3a86b96ee89874ae825f15f',
+    source: 'https://github.com/apple/pkl.tmbundle/blob/4ed6ca67ec7579b7a3a86b96ee89874ae825f15f/Syntaxes/pkl.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/apple/pkl.tmbundle/contents/Syntaxes/pkl.tmLanguage?ref=4ed6ca67ec7579b7a3a86b96ee89874ae825f15f',
   },
   {
     byteSize: 8125,
@@ -4744,6 +4750,11 @@ export const grammars = [
     ],
     displayName: 'Zig',
     funding: [
+      {
+        handle: '@ziglang',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/ziglang',
+      },
     ],
     hash: 'aisnyg_jQlaNk-4VsmHWabgAcnIi1kTmRcOoPN-rHiU',
     lastUpdate: '2025-07-08T20:23:36Z',
