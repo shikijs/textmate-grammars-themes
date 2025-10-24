@@ -1,0 +1,230 @@
+#758575DD      # Perform basic authentication with login `bob` and password `secret`.
+#4D9375        GET
+#DBD7CACC       
+#C98A7D        https://example.org/protected
+#80A665        [BasicAuth]
+#4D9375        bob
+#444444        :
+#4D9375         
+#C98A7D        secret
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org
+#758575DD      # Some random comments before body
+#B8A965        base64,TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIG
+#B8A965        FkaXBpc2NpbmcgZWxpdC4gSW4gbWFsZXN1YWRhLCBuaXNsIHZlbCBkaWN0dW0g
+#B8A965        aGVuZHJlcml0LCBlc3QganVzdG8gYmliZW5kdW0gbWV0dXMsIG5lYyBydXRydW
+#B8A965        0gdG9ydG9yIG1hc3NhIGlkIG1ldHVzLiA=;
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/graphql
+#C98A7D        ```
+#B8A965        graphql
+#C98A7D        {
+#C98A7D          human(id: "1000") {
+#C98A7D            name
+#C98A7D            height(unit: FOOT)
+#C98A7D          }
+#C98A7D        }
+#C98A7D        ```
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        PUT
+#DBD7CACC       
+#C98A7D        https://example.org
+#758575DD      # Send a café, encoded in UTF-8
+#B8A965        hex,636166c3a90a;
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/InStock
+#C98A7D        ```
+#B8A965        json
+#C98A7D        {
+#C98A7D          "a": 1
+#C98A7D        }
+#C98A7D        ```
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/InStock
+#DBD7CACC      {
+#DBD7CACC        
+#C98A7D        "a"
+#DBD7CACC      : 1
+#DBD7CACC      }
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/upload
+#4D9375        Content-Type
+#444444        :
+#4D9375         
+#C98A7D        multipart/form-data; boundary="boundary"
+#C98A7D        ```
+#C98A7D        --boundary
+#C98A7D        Content-Disposition: form-data; name="key1"
+#C98A7D        value1
+#C98A7D        --boundary
+#C98A7D        Content-Disposition: form-data; name="upload1"; filename="data.txt"
+#C98A7D        Content-Type: text/plain
+#C98A7D        Hello World!
+#C98A7D        --boundary
+#C98A7D        Content-Disposition: form-data; name="upload2"; filename="data.html"
+#C98A7D        Content-Type: text/html
+#C98A7D        <div>Hello <b>World</b>!</div>
+#C98A7D        --boundary--
+#C98A7D        ```
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/models
+#C98A7D        ```
+#C98A7D        Year,Make,Model,Description,Price
+#C98A7D        1997,Ford,E350,"ac, abs, moon",3000.00
+#C98A7D        1999,Chevy,"Venture ""Extended Edition""","",4900.00
+#C98A7D        1999,Chevy,"Venture ""Extended Edition, Very Large""",,5000.00
+#C98A7D        1996,Jeep,Grand Cherokee,"MUST SELL! air, moon roof, loaded",4799.00
+#C98A7D        ```
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/helloworld
+#C98A7D        `Hello world!`
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/InStock
+#4D9375        Content-Type
+#444444        :
+#4D9375         
+#C98A7D        application/soap+xml; charset=utf-8
+#4D9375        SOAPAction
+#444444        :
+#4D9375         
+#C98A7D        "http://www.w3.org/2003/05/soap-envelope"
+#C98A7D        ```
+#B8A965        xml
+#C98A7D        <?xml version="1.0" encoding="UTF-8"?>
+#C98A7D        <soap:Envelope
+#C98A7D          xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+#C98A7D          xmlns:m="https://example.org"
+#C98A7D        >
+#C98A7D          <soap:Header></soap:Header>
+#C98A7D          <soap:Body>
+#C98A7D            <m:GetStockPrice>
+#C98A7D              <m:StockName>GOOG</m:StockName>
+#C98A7D            </m:GetStockPrice>
+#C98A7D          </soap:Body>
+#C98A7D        </soap:Envelope>
+#C98A7D        ```
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/InStock
+#4D9375        Content-Type
+#444444        :
+#4D9375         
+#C98A7D        application/soap+xml; charset=utf-8
+#4D9375        SOAPAction
+#444444        :
+#4D9375         
+#C98A7D        "http://www.w3.org/2003/05/soap-envelope"
+#DBD7CACC      <?xml version=
+#C98A7D        "1.0"
+#DBD7CACC       encoding=
+#C98A7D        "UTF-8"
+#DBD7CACC      ?>
+#DBD7CACC      <soap:Envelope
+#DBD7CACC        xmlns:soap=
+#C98A7D        "http://www.w3.org/2003/05/soap-envelope"
+#DBD7CACC        xmlns:m=
+#C98A7D        "https://example.org"
+#DBD7CACC      >
+#DBD7CACC        <soap:Header></soap:Header>
+#DBD7CACC        <soap:Body>
+#DBD7CACC          <m:GetStockPrice>
+#DBD7CACC            <m:StockName>GOOG</m:StockName>
+#DBD7CACC          </m:GetStockPrice>
+#DBD7CACC        </soap:Body>
+#DBD7CACC      </soap:Envelope>
+#4D9375        HTTP
+#4C9A91         200
+#758575DD      # this is a comment
+#758575DD      # these are also comments:
+#758575DD      # "asdasd"
+#758575DD      # `asdasd`
+#758575DD      # csrf_token: xpath "string(//meta[@name='_csrf_token']/@content)"
+#758575DD      # GET https://example.org/api/health
+#758575DD      # Run a GET request with cookies section:
+#4D9375        GET
+#DBD7CACC       
+#C98A7D        https://example.org/index.html
+#80A665        [Cookies]
+#4D9375        theme
+#444444        :
+#4D9375         
+#C98A7D        light
+#4D9375        sessionToken
+#444444        :
+#4D9375         
+#C98A7D        abc123
+#758575DD      # Run the same GET request with a header:
+#4D9375        GET
+#DBD7CACC       
+#C98A7D        https://example.org/index.html
+#4D9375        Cookie
+#444444        :
+#4D9375         
+#C98A7D        theme=light; sessionToken=abc123
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/contact/{{foo }}?q={{ bar }}
+#80A665        [Form]
+#4D9375        default
+#444444        :
+#4D9375         
+#C98A7D        false
+#4D9375        token
+#444444        :
+#4D9375         
+#C98A7D        {{token}}
+#4D9375        token2
+#444444        :
+#4D9375         
+#C98A7D        {{ token2 }}
+#4D9375        email
+#444444        :
+#4D9375         
+#C98A7D        john.doe@rookie.org
+#4D9375        number
+#444444        :
+#4D9375         
+#C98A7D        33611223344
+#4D9375        POST
+#DBD7CACC       
+#C98A7D        https://example.org/upload
+#80A665        [Multipart]
+#4D9375        field1
+#444444        :
+#4D9375         
+#C98A7D        value1
+#4D9375        field2
+#444444        :
+#4D9375         
+#C98A7D        file,example.txt;
+#758575DD      # One can specify the file content type:
+#4D9375        field3
+#444444        :
+#4D9375         
+#C98A7D        file,example.zip; application/zip
+#4D9375        GET
+#DBD7CACC       
+#C98A7D        https://example.org
+#4D9375        HTTP
+#4D9375        HTTP
+#4C9A91         200
+#4D9375        HTTP/1.1
+#4C9A91         200
+#758575DD      # From: https://github.com/nikeee/language-hurl, https://hurl.dev
