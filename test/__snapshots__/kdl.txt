@@ -1,0 +1,76 @@
+#4D9375        package
+#DBD7CACC       {
+#4D9375          name
+#DBD7CACC       
+#C98A7D        my-pkg
+#4D9375          version
+#DBD7CACC       
+#C98A7D        "1.2.3"
+#4D9375          dependencies
+#DBD7CACC       {
+#DBD7CACC          
+#758575DD      // Nodes can have standalone values as well as
+#DBD7CACC          
+#758575DD      // key/value pairs.
+#4D9375            lodash
+#DBD7CACC       
+#C98A7D        "^3.2.1"
+#DBD7CACC       
+#BD976A        optional
+#444444        =
+#4D9375        #true
+#DBD7CACC       
+#BD976A        alias
+#444444        =
+#C98A7D        underscore
+#DBD7CACC        }
+#4D9375          scripts
+#DBD7CACC       {
+#DBD7CACC          
+#758575DD      // "Raw" and dedented multi-line strings are supported.
+#4D9375            message
+#DBD7CACC       
+#C98A7D        """
+#C98A7D              hello
+#C98A7D              world
+#C98A7D              """
+#4D9375            build
+#DBD7CACC       
+#C98A7D        #"""
+#C98A7D              echo "foo"
+#C98A7D              node -c "console.log('hello, world!');"
+#C98A7D              echo "foo" > some-file.txt
+#C98A7D              """#
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      // `\` breaks up a single node across multiple lines.
+#4D9375          the-matrix
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC       \
+#4D9375                     4
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC       \
+#4D9375                     7
+#DBD7CACC       
+#4C9A91        8
+#DBD7CACC       
+#4C9A91        9
+#DBD7CACC        
+#758575DD      // "Slashdash" comments operate at the node level,
+#DBD7CACC        
+#758575DD      // with just `/-`.
+#758575DD        /-this-is-commented {
+#758575DD          this entire node {
+#758575DD            is gone
+#758575DD          }
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // From https://kdl.dev/
