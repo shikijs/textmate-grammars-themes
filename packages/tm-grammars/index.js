@@ -2854,6 +2854,18 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/alefragnani/vscode-language-pascal/contents/syntaxes/pascal.tmLanguage?ref=f2d6345bd9fe83932f4d04fcacf98ce7d74b8034',
   },
   {
+    byteSize: 38175,
+    hash: '63691bf7139547b8d9f28d07cd06a57f65752dec',
+    lastUpdate: '2025-08-25T21:23:58Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/apple/pkl.tmbundle/refs/heads/main/LICENSE.txt',
+    name: 'pkl',
+    scopeName: 'source.pkl',
+    sha: '3a2e98457537ae1e37644ffb05ea786659c4095f',
+    source: 'https://github.com/apple/pkl.tmbundle/blob/3a2e98457537ae1e37644ffb05ea786659c4095f/Syntaxes/pkl.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/apple/pkl.tmbundle/contents/Syntaxes/pkl.tmLanguage?ref=3a2e98457537ae1e37644ffb05ea786659c4095f',
+  },
+  {
     byteSize: 41869,
     categories: [
       'general',

@@ -237,6 +237,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general', 'web'],
   },
   {
+    name: 'pkl',
+    source: 'https://github.com/apple/pkl.tmbundle/blob/main/Syntaxes/pkl.tmLanguage',
+    categories: ['data'],
+  },
+  {
     name: 'powershell',
     aliases: ['ps', 'ps1'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/powershell/syntaxes/powershell.tmLanguage.json',
