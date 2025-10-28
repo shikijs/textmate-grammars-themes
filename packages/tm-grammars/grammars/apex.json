@@ -992,16 +992,26 @@
       ]
     },
     "implements-class": {
-      "begin": "(implements)\\b\\s+([_[:alpha:]][_[:alnum:]]*)",
+      "begin": "(implements)\\b",
       "beginCaptures": {
         "1": {
           "name": "keyword.other.implements.apex"
-        },
-        "2": {
-          "name": "entity.name.type.implements.apex"
         }
       },
-      "end": "(?=\\{|extends)"
+      "end": "(?=\\{|extends)",
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.type.implements.apex"
+            },
+            "2": {
+              "name": "punctuation.separator.comma.apex"
+            }
+          },
+          "match": "([_[:alpha:]][_[:alnum:]]*)\\b\\s*(,)?"
+        }
+      ]
     },
     "indexer-declaration": {
       "begin": "(?<return_type>(?<type_name>(?:ref\\s+)?(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*)*)\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<indexer_name>this)\\s*(?=\\[)",
@@ -2365,7 +2375,7 @@
       ]
     },
     "switch-statement": {
-      "begin": "(switch)\\b\\s+(on)\\b\\s+(?:(['().?_[:alnum:]]+)\\s*)?(\\{)",
+      "begin": "(switch)\\b\\s+(on)\\b\\s+(.*)(\\{)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.apex"
@@ -2940,19 +2950,20 @@
       ]
     },
     "when-string": {
-      "begin": "(when)\\b(\\s*)((')['*,._\\s[:alnum:]]+)",
+      "begin": "(when)\\b\\s*('[^\\n']*')(,)?",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.switch.when.apex"
         },
         "2": {
-          "name": "punctuation.whitespace.apex"
+          "patterns": [
+            {
+              "include": "#string-literal"
+            }
+          ]
         },
         "3": {
           "patterns": [
-            {
-              "include": "#when-string-statement"
-            },
             {
               "include": "#punctuation-comma"
             }
@@ -2966,25 +2977,6 @@
         },
         {
           "include": "#expression"
-        }
-      ]
-    },
-    "when-string-statement": {
-      "patterns": [
-        {
-          "begin": "'",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.begin.apex"
-            }
-          },
-          "end": "'",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.end.apex"
-            }
-          },
-          "name": "string.quoted.single.apex"
         }
       ]
     },
