@@ -836,7 +836,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'nix',
     displayName: 'Nix',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/syntaxes/nix.YAML-tmLanguage',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/nix.tmLanguage.json',
   },
   {
     name: 'nushell',
@@ -1387,6 +1387,15 @@ export const sourcesInjections: GrammarSource[] = [
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-xml.json',
     embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
+  },
+  // ========== Others ==========
+  {
+    name: 'markdown-nix',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/injection.json',
+    embeddedIn: ['nix'],
+    injectTo: [
+      'text.html.markdown',
+    ],
   },
 ]
 
