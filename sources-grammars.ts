@@ -231,6 +231,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'openscad',
+    aliases: ['scad'],
+    source: 'https://github.com/tbuser/openscad.tmbundle/blob/master/Syntaxes/OpenSCAD.tmLanguage',
+    categories: ['dsl'],
+  },
+  {
     name: 'perl',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl.tmLanguage.json',
     categories: ['general'],
