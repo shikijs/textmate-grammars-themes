@@ -3503,8 +3503,134 @@
         },
         {
           "include": "#preprocessor-pragma-checksum"
+        },
+        {
+          "include": "#preprocessor-app-directive"
         }
       ]
+    },
+    "preprocessor-app-directive": {
+      "begin": "\\s*(:)\\s*",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.separator.colon.cs"
+        }
+      },
+      "end": "(?=$)",
+      "patterns": [
+        {
+          "include": "#preprocessor-app-directive-package"
+        },
+        {
+          "include": "#preprocessor-app-directive-property"
+        },
+        {
+          "include": "#preprocessor-app-directive-project"
+        },
+        {
+          "include": "#preprocessor-app-directive-sdk"
+        },
+        {
+          "include": "#preprocessor-app-directive-generic"
+        }
+      ]
+    },
+    "preprocessor-app-directive-generic": {
+      "captures": {
+        "1": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(.*)?\\s*"
+    },
+    "preprocessor-app-directive-package": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.package.cs"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#preprocessor-app-directive-package-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.separator.at.cs"
+        },
+        "4": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(package)\\b\\s*([_[:alpha:]][._[:alnum:]]*)?(@)?(.*)?\\s*"
+    },
+    "preprocessor-app-directive-package-name": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.dot.cs"
+            },
+            "2": {
+              "name": "entity.name.variable.preprocessor.symbol.cs"
+            }
+          },
+          "match": "(\\.)([_[:alpha:]][_[:alnum:]]*)"
+        },
+        {
+          "match": "[_[:alpha:]][_[:alnum:]]*",
+          "name": "entity.name.variable.preprocessor.symbol.cs"
+        }
+      ]
+    },
+    "preprocessor-app-directive-project": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.project.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(project)\\b\\s*(.*)?\\s*"
+    },
+    "preprocessor-app-directive-property": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.property.cs"
+        },
+        "2": {
+          "name": "entity.name.variable.preprocessor.symbol.cs"
+        },
+        "3": {
+          "name": "punctuation.separator.equals.cs"
+        },
+        "4": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(property)\\b\\s*([_[:alpha:]][_[:alnum:]]*)?(=)?(.*)?\\s*"
+    },
+    "preprocessor-app-directive-sdk": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.sdk.cs"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#preprocessor-app-directive-package-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.separator.at.cs"
+        },
+        "4": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(sdk)\\b\\s*([_[:alpha:]][._[:alnum:]]*)?(@)?(.*)?\\s*"
     },
     "preprocessor-define-or-undef": {
       "captures": {

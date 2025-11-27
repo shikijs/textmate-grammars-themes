@@ -454,6 +454,9 @@
           "include": "#operator-unary"
         },
         {
+          "include": "#operator-binary"
+        },
+        {
           "include": "#constants"
         },
         {
@@ -493,8 +496,7 @@
           "include": "#attrset-or-function"
         },
         {
-          "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=?|<=?|>=?|&&|\\|\\||->|//|\\?|\\+\\+|[-*]|/(?=([^*]|$))|\\+)",
-          "name": "keyword.operator.nix"
+          "include": "#operator-binary"
         },
         {
           "include": "#constants"
@@ -974,6 +976,10 @@
           "include": "#expression-cont"
         }
       ]
+    },
+    "operator-binary": {
+      "match": "(\\bor\\b|\\.|\\|>|<\\||==|!=?|<=?|>=?|&&|\\|\\||->|//|\\?|\\+\\+|[-*]|/(?=([^*]|$))|\\+)",
+      "name": "keyword.operator.nix"
     },
     "operator-unary": {
       "match": "([-!])",
