@@ -1,0 +1,85 @@
+#DBD7CACC      Logo
+#444444        (
+#4C9A91        50
+#444444        );
+#4D9375        module
+#DBD7CACC       Logo(size=50, $fn=100) {
+#DBD7CACC        hole 
+#CB7676        =
+#DBD7CACC       size/
+#4C9A91        2
+#444444        ;
+#DBD7CACC        cylinderHeight 
+#CB7676        =
+#DBD7CACC       size 
+#CB7676        *
+#DBD7CACC       
+#4C9A91        1.25
+#444444        ;
+#DBD7CACC        
+#B8A965        difference
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        sphere
+#444444        (
+#DBD7CACC      d
+#CB7676        =
+#DBD7CACC      size
+#444444        );
+#DBD7CACC          
+#B8A965        cylinder
+#444444        (
+#DBD7CACC      d
+#CB7676        =
+#DBD7CACC      hole, h
+#CB7676        =
+#DBD7CACC      cylinderHeight, center
+#CB7676        =
+#4D9375        true
+#444444        );
+#DBD7CACC          #
+#B8A965        rotate
+#444444        ([
+#4C9A91        90
+#DBD7CACC      , 
+#4C9A91        0
+#DBD7CACC      , 
+#4C9A91        0
+#444444        ])
+#DBD7CACC       
+#B8A965        cylinder
+#444444        (
+#DBD7CACC      d
+#CB7676        =
+#DBD7CACC      hole, h
+#CB7676        =
+#DBD7CACC      cylinderHeight, center
+#CB7676        =
+#4D9375        true
+#444444        );
+#DBD7CACC          
+#B8A965        rotate
+#444444        ([
+#4C9A91        0
+#DBD7CACC      , 
+#4C9A91        90
+#DBD7CACC      , 
+#4C9A91        0
+#444444        ])
+#DBD7CACC       
+#B8A965        cylinder
+#444444        (
+#DBD7CACC      d
+#CB7676        =
+#DBD7CACC      hole, h
+#CB7676        =
+#DBD7CACC      cylinderHeight, center
+#CB7676        =
+#4D9375        true
+#444444        );
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/openscad/openscad/blob/6d8ff058743023a0e0013caa6954b57474be45ec/examples/Basics/logo.scad
