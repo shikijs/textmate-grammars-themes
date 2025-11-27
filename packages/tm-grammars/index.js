@@ -2867,6 +2867,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/reasonml-editor/vscode-reasonml/contents/syntaxes/ocaml.json?ref=14af625ec50ed9968b957b4d6336c5338d81af45',
   },
   {
+    aliases: [
+      'scad',
+    ],
+    byteSize: 2637,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'OpenSCAD',
+    funding: [
+    ],
+    hash: 'juKVb0uQFvXICuId-VedskQEspI25G9Ph7vB0L93e9I',
+    lastUpdate: '2017-06-24T16:48:11Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/tbuser/openscad.tmbundle/master/LICENSE',
+    name: 'openscad',
+    scopeName: 'source.scad',
+    sha: '5962175ed355c2d58dc1991801c229809363e999',
+    source: 'https://github.com/tbuser/openscad.tmbundle/blob/5962175ed355c2d58dc1991801c229809363e999/Syntaxes/OpenSCAD.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/tbuser/openscad.tmbundle/contents/Syntaxes/OpenSCAD.tmLanguage?ref=5962175ed355c2d58dc1991801c229809363e999',
+  },
+  {
     byteSize: 3982,
     categories: [
       'general',
