@@ -11,6 +11,10 @@ Packages are **automatically updated and published** every day (if there are cha
 
 ## Contribute
 
+- [Add a new grammar](#add-a-new-grammar)
+- [Add a new theme](#add-a-new-theme)
+- [Fix a grammar or theme](#fix-a-grammar-or-theme)
+
 ### Add a new grammar
 
 > [!NOTE]
@@ -52,6 +56,14 @@ GITHUB_TOKEN=your-personal-access-token
 6. Run `pnpm run fetch` to download the theme.
 7. Run `pnpm run play` to start the playground. Select the new theme in the right column to verify the accuracy and confirm that the theme works as expected.
 8. Send in the PR!
+
+### Fix a grammar or theme
+
+We don't maintain the grammars and themes in this repository. This repository only normalizes the grammars and themes from their original repositories and re-distributes them as npm packages. If you want to fix a grammar or theme, you should submit a PR to the original repository.
+
+You can find the original repository and source file locations in [sources-grammars.ts](./sources-grammars.ts) and [sources-themes.ts](./sources-themes.ts).
+
+After upstream PR is merged, this repository will be automatically synced and updated.
 
 ## License
 
