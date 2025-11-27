@@ -439,7 +439,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'berry',
     aliases: ['be'],
-    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
+    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.2.0/syntaxes/berry.json',
   },
   {
     name: 'bicep',
