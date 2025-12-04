@@ -1,0 +1,380 @@
+#758575DD      # Copyright 2018 The Chromium Authors
+#758575DD      # Use of this source code is governed by a BSD-style license that can be
+#758575DD      # found in the LICENSE file.
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/buildflag_header.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/config/cast.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/config/chrome_build.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/config/chromeos/args.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/config/features.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/util/process_version.gni"
+#DBD7CACC      )
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build_overrides/build.gni"
+#DBD7CACC      )
+#4D9375        if
+#DBD7CACC       (
+#BD976A        is_ios
+#DBD7CACC      ) {
+#DBD7CACC        
+#B8A965        import
+#DBD7CACC      (
+#C98A7D        "//build/config/ios/ios_sdk.gni"
+#DBD7CACC      )
+#DBD7CACC      }
+#B8A965        source_set
+#DBD7CACC      (
+#C98A7D        "buildflag_header_h"
+#DBD7CACC      ) {
+#DBD7CACC        
+#C99076        sources
+#DBD7CACC       = [ 
+#C98A7D        "buildflag.h"
+#DBD7CACC       ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "branding_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "branding_buildflags.h"
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       (
+#BD976A        is_chrome_branded
+#DBD7CACC      ) {
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       = [
+#DBD7CACC            
+#C98A7D        "CHROMIUM_BRANDING=false"
+#DBD7CACC      ,
+#DBD7CACC            
+#C98A7D        "GOOGLE_CHROME_BRANDING=true"
+#DBD7CACC      ,
+#DBD7CACC          ]
+#DBD7CACC        } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       = [
+#DBD7CACC            
+#C98A7D        "CHROMIUM_BRANDING=true"
+#DBD7CACC      ,
+#DBD7CACC            
+#C98A7D        "GOOGLE_CHROME_BRANDING=false"
+#DBD7CACC      ,
+#DBD7CACC          ]
+#DBD7CACC        }
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       (
+#BD976A        is_chrome_for_testing
+#DBD7CACC      ) {
+#DBD7CACC          
+#B8A965        assert
+#DBD7CACC      (!
+#BD976A        is_chrome_branded
+#DBD7CACC      ,
+#DBD7CACC                 
+#C98A7D        "`is_chrome_for_testing` is incompatible with `is_chrome_branded`"
+#DBD7CACC      )
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       += [ 
+#C98A7D        "CHROME_FOR_TESTING=true"
+#DBD7CACC       ]
+#DBD7CACC        } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       += [ 
+#C98A7D        "CHROME_FOR_TESTING=false"
+#DBD7CACC       ]
+#DBD7CACC        }
+#DBD7CACC        
+#758575DD      # Note: `GOOGLE_CHROME_FOR_TESTING_BRANDING` and `CHROMIUM_BRANDING` are not
+#DBD7CACC        
+#758575DD      # mutually exclusive.
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       (
+#BD976A        is_chrome_for_testing_branded
+#DBD7CACC      ) {
+#DBD7CACC          
+#B8A965        assert
+#DBD7CACC      (
+#BD976A        is_chrome_for_testing
+#DBD7CACC      ,
+#DBD7CACC                 
+#C98A7D        "`is_chrome_for_testing_branded` requires `is_chrome_for_testing`"
+#DBD7CACC      )
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       += [ 
+#C98A7D        "GOOGLE_CHROME_FOR_TESTING_BRANDING=true"
+#DBD7CACC       ]
+#DBD7CACC        } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC          
+#BD976A        flags
+#DBD7CACC       += [ 
+#C98A7D        "GOOGLE_CHROME_FOR_TESTING_BRANDING=false"
+#DBD7CACC       ]
+#DBD7CACC        }
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       += [ 
+#C98A7D        "ENABLE_BUILTIN_SEARCH_PROVIDER_ASSETS=
+#4D9375        $
+#C98A7D        enable_builtin_search_provider_assets
+#C98A7D        "
+#DBD7CACC       ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "blink_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "blink_buildflags.h"
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [ 
+#C98A7D        "USE_BLINK=
+#4D9375        $
+#C98A7D        use_blink
+#C98A7D        "
+#DBD7CACC       ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "chromecast_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "chromecast_buildflags.h"
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [
+#DBD7CACC          
+#C98A7D        "IS_CASTOS=
+#4D9375        $
+#C98A7D        is_castos
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC          
+#C98A7D        "IS_CAST_ANDROID=
+#4D9375        $
+#C98A7D        is_cast_android
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC          
+#C98A7D        "ENABLE_CAST_RECEIVER=
+#4D9375        $
+#C98A7D        enable_cast_receiver
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC        ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "chromeos_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "chromeos_buildflags.h"
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [
+#DBD7CACC          
+#C98A7D        "IS_CHROMEOS_DEVICE=
+#4D9375        $
+#C98A7D        is_chromeos_device
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC          
+#758575DD      # TODO(b:354842935): Remove once all the occurrence of IS_CHROMEOS_ASH is
+#DBD7CACC          
+#758575DD      # removed from cc files.
+#DBD7CACC          
+#C98A7D        "IS_CHROMEOS_ASH=
+#4D9375        $
+#C98A7D        is_chromeos
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC          
+#C98A7D        "IS_CHROMEOS_WITH_HW_DETAILS=
+#4D9375        $
+#C98A7D        is_chromeos_with_hw_details
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC          
+#C98A7D        "IS_REVEN=
+#4D9375        $
+#C98A7D        is_reven
+#C98A7D        "
+#DBD7CACC      ,
+#DBD7CACC        ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "robolectric_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "robolectric_buildflags.h"
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [ 
+#C98A7D        "IS_ROBOLECTRIC=
+#4D9375        $
+#C98A7D        is_robolectric
+#C98A7D        "
+#DBD7CACC       ]
+#DBD7CACC      }
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "ios_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "ios_buildflags.h"
+#DBD7CACC        
+#BD976A        _is_ios_app_extension
+#DBD7CACC       = 
+#BD976A        is_ios
+#DBD7CACC       && 
+#BD976A        ios_is_app_extension
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [ 
+#C98A7D        "IS_IOS_APP_EXTENSION=
+#4D9375        $
+#C98A7D        _is_ios_app_extension
+#C98A7D        "
+#DBD7CACC       ]
+#DBD7CACC      }
+#758575DD      #
+#758575DD      # NOTE: IS_DESKTOP_ANDROID should be used sparingly.
+#758575DD      #
+#758575DD      # General Recommendation:
+#758575DD      #   Avoid using this build time flag whenever possible. Rely on runtime
+#758575DD      #   detection of features such as:
+#758575DD      #     - Large screen availability
+#758575DD      #     - Input modalities (e.g., touch, keyboard, mouse)
+#758575DD      #     - Relevant Android system flags.
+#758575DD      #
+#758575DD      # DO:
+#758575DD      #   - Use this flag ONLY for features with substantial binary size impact,
+#758575DD      #     such as DevTools or Extensions, which contain significant code and
+#758575DD      #     resource sizes.
+#758575DD      #
+#758575DD      # DON'T:
+#758575DD      #   - Use this flag to enable feature flags or experiments.
+#758575DD      #   - Use this flag in code shared with Android WebView.
+#758575DD      #     Restrict its usage to the //chrome code directory whenever possible.
+#758575DD      #
+#758575DD      # If you're unsure please reach out to is-android-desktop-help@google.com
+#758575DD      #
+#80A665        buildflag_header
+#DBD7CACC      (
+#C98A7D        "android_buildflags"
+#DBD7CACC      ) {
+#DBD7CACC        
+#BD976A        header
+#DBD7CACC       = 
+#C98A7D        "android_buildflags.h"
+#DBD7CACC        
+#BD976A        flags
+#DBD7CACC       = [ 
+#C98A7D        "IS_DESKTOP_ANDROID=
+#4D9375        $
+#C98A7D        is_desktop_android
+#C98A7D        "
+#DBD7CACC       ]
+#DBD7CACC      }
+#4D9375        if
+#DBD7CACC       (
+#BD976A        build_with_chromium
+#DBD7CACC      ) {
+#DBD7CACC        
+#B8A965        group
+#DBD7CACC      (
+#C98A7D        "gold_common_pytype"
+#DBD7CACC      ) {
+#DBD7CACC          
+#C99076        testonly
+#DBD7CACC       = 
+#BD976A        true
+#DBD7CACC          
+#C99076        data
+#DBD7CACC       = [ 
+#C98A7D        "//build/skia_gold_common/"
+#DBD7CACC       ]
+#DBD7CACC          
+#C99076        data_deps
+#DBD7CACC       = [ 
+#C98A7D        "//testing:pytype_dependencies"
+#DBD7CACC       ]
+#DBD7CACC        }
+#DBD7CACC      }
+#4D9375        if
+#DBD7CACC       (
+#BD976A        is_chromeos
+#DBD7CACC      ) {
+#DBD7CACC        
+#80A665        process_version
+#DBD7CACC      (
+#C98A7D        "version_metadata"
+#DBD7CACC      ) {
+#DBD7CACC          
+#C99076        sources
+#DBD7CACC       = [ 
+#C98A7D        "//chrome/VERSION"
+#DBD7CACC       ]
+#DBD7CACC          
+#BD976A        template_file
+#DBD7CACC       = 
+#C98A7D        "metadata.json.in"
+#DBD7CACC          
+#BD976A        output
+#DBD7CACC       = 
+#C98A7D        "
+#4D9375        $
+#C98A7D        root_out_dir
+#C98A7D        /metadata.json"
+#DBD7CACC          
+#BD976A        process_only
+#DBD7CACC       = 
+#BD976A        true
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      # From https://github.com/chromium/chromium/blob/main/build/BUILD.gn

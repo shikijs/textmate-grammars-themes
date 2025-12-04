@@ -1485,6 +1485,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/polym0rph/GLSL.tmbundle/contents/Syntaxes/GLSL.tmLanguage?ref=6998d3bbd204e26746a5ca580cda4c650b9057b1',
   },
   {
+    byteSize: 3859,
+    categories: [
+      'config',
+    ],
+    displayName: 'GN',
+    funding: [
+    ],
+    hash: 'iiB9Hg69Ju8C4_ykLZdfiakpysGRb9Ws8gOTnfjDz-c',
+    lastUpdate: '2025-01-05T14:44:58Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/google/gn-language-server/main/LICENSE',
+    name: 'gn',
+    scopeName: 'source.gn',
+    sha: '0087216f6a22547c5bf878c537ecc3932954d9f9',
+    source: 'https://github.com/google/gn-language-server/blob/0087216f6a22547c5bf878c537ecc3932954d9f9/vscode-gn/syntaxes/gn.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/google/gn-language-server/contents/vscode-gn/syntaxes/gn.tmLanguage.json?ref=0087216f6a22547c5bf878c537ecc3932954d9f9',
+  },
+  {
     byteSize: 14063,
     displayName: 'Gnuplot',
     funding: [
