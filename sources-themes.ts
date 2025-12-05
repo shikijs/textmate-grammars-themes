@@ -18,9 +18,49 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
   },
   {
+    name: 'ayu-light',
+    displayName: 'Ayu Light',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-light.json',
+  },
+  {
+    name: 'ayu-mirage',
+    displayName: 'Ayu Mirage',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-mirage.json',
+  },
+  {
     name: 'dark-plus',
     displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
+  },
+  {
+    name: 'horizon-bold',
+    displayName: 'Horizon Bold',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bold.json',
+  },
+  {
+    name: 'horizon-bright-bold',
+    displayName: 'Horizon Bright Bold',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright-bold.json',
+  },
+  {
+    name: 'horizon-bright-italic',
+    displayName: 'Horizon Bright Italic',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright-italic.json',
+  },
+  {
+    name: 'horizon-bright',
+    displayName: 'Horizon Bright',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
+  },
+  {
+    name: 'horizon-italic',
+    displayName: 'Horizon Italic',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-italic.json',
+  },
+  {
+    name: 'horizon',
+    displayName: 'Horizon',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
   },
   {
     name: 'laserwave',
@@ -72,7 +112,6 @@ export const sourcesVSCode: ThemeSource[] = [
 
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
-
   {
     name: 'everforest-dark',
     displayName: 'Everforest Dark',
