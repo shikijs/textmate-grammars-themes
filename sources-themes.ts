@@ -112,6 +112,7 @@ export const sourcesVSCode: ThemeSource[] = [
 
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
+
   {
     name: 'everforest-dark',
     displayName: 'Everforest Dark',
