@@ -1208,6 +1208,13 @@ export const sourcesMarketplace: GrammarSource[] = [
       grammar: 'mermaid',
     },
   },
+  {
+    name: 'moonbit',
+    displayName: 'MoonBit',
+    aliases: ['mbt'],
+    source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/main/grammars/moonbit.tmLanguage.json',
+    categories: ['general'],
+  },
 ]
 
 /**

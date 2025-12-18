@@ -2671,6 +2671,18 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=46eccdaeda2b1587e9b82808cdb35670f359d16d',
   },
   {
+    aliases: [
+      'mbt',
+    ],
+    byteSize: 10075,
+    categories: [
+      'general',
+    ],
+    displayName: 'MoonBit',
+    name: 'moonbit',
+    scopeName: 'source.moonbit',
+  },
+  {
     byteSize: 16813,
     displayName: 'Move',
     funding: [
