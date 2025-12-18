@@ -1211,7 +1211,7 @@ export const sourcesMarketplace: GrammarSource[] = [
   {
     name: 'moonbit',
     displayName: 'MoonBit',
-    aliases: ['mbt'],
+    aliases: ['mbt', 'mbti'],
     source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/main/grammars/moonbit.tmLanguage.json',
     categories: ['general'],
   },
