@@ -1,0 +1,12 @@
+iconst_0
+istore_1
+iload_1
+bipush 100
+if_icmpgt 26
+getstatic #7 // Field java/lang/System.out:Ljava/io/PrintStream;
+iload_1
+invokedynamic #13,  0             // InvokeDynamic #0:makeConcatWithConstants:(I)Ljava/lang/String;
+invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+iinc          1, 1
+goto          2
+return
