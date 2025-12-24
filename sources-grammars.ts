@@ -138,7 +138,7 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'java-bytecode',
     displayName: 'Java Bytecode',
     aliases: ['jvm-bytecode'],
-    source: 'https://github.com/mcgambing/Java-Bytecode/blob/master/java-bytecode.tmLanguage',
+    source: 'https://github.com/mcgambing/Java-Bytecode/blob/master/java-bytecode.tmLanguage.json',
     categories: ['general'],
   },
   {

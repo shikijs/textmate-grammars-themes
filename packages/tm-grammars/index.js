@@ -1925,20 +1925,20 @@ export const grammars = [
     aliases: [
       'jvm-bytecode',
     ],
-    byteSize: 2319,
+    byteSize: 3175,
     categories: [
       'general',
     ],
     displayName: 'Java Bytecode',
     funding: [
     ],
-    hash: 'ZNsg0OEscRVt12-PjS0exZqWqyMmBFV4b-vMm9Q7iC0',
-    lastUpdate: '2025-12-23T23:46:56Z',
+    hash: 'nSRc4KwWoKwwD7gGziUxfg4hLfLjZv7HnOxk6HdmQlo',
+    lastUpdate: '2025-12-24T02:18:46Z',
     name: 'java-bytecode',
     scopeName: 'source.java.bytecode',
-    sha: '35c751b022e57d8a61b9209a3e5cf990a58486b6',
-    source: 'https://github.com/mcgambing/Java-Bytecode/blob/35c751b022e57d8a61b9209a3e5cf990a58486b6/java-bytecode.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/mcgambing/Java-Bytecode/contents/java-bytecode.tmLanguage?ref=35c751b022e57d8a61b9209a3e5cf990a58486b6',
+    sha: 'f5ccaf34fcf18257a65c4feadf376e4fdad56170',
+    source: 'https://github.com/mcgambing/Java-Bytecode/blob/f5ccaf34fcf18257a65c4feadf376e4fdad56170/java-bytecode.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/mcgambing/Java-Bytecode/contents/java-bytecode.tmLanguage.json?ref=f5ccaf34fcf18257a65c4feadf376e4fdad56170',
   },
   {
     aliases: [
