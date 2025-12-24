@@ -1,0 +1,92 @@
+{
+  "displayName": "Java Bytecode",
+  "fileTypes": [
+    "javap"
+  ],
+  "name": "java-bytecode",
+  "patterns": [
+    {
+      "match": "\\b(new(?:|array))\\b",
+      "name": "support.function"
+    },
+    {
+      "match": "\\b(anewarray|arraylength|athrow|bipush|breakpoint|checkcast|d2f|d2i|d2l|dadd|dcmpg|dcmpl|ddiv|dmul|dneg|drem|dsub|dup2??|dup2_x1|dup2_x2|dup_x1|dup_x2|f2d|f2i|f2l|fadd|fcmpg|fcmpl|fdiv|fmul|fneg|frem|fsub|goto|goto_w|i2b|i2c|i2d|i2f|i2l|i2s|iadd|iand|idiv|if_acmpeq|if_acmpne|if_icmpeq|if_icmpge|if_icmpgt|if_icmple|if_icmplt|if_icmpne|ifeq|ifge|ifgt|ifle|iflt|ifne|ifnonnull|ifnull|iinc|impdep1|impdep2|imul|ineg|instanceof|ior|irem|ishl|ishr|isub|iushr|ixor|jsr|jsr_w|l2d|l2f|l2i|ladd|land|lcmp|ldc|ldc_w|ldc2_w|ldiv|lmul|lneg|lookupswitch|lor|lrem|lshl|lshr|lsub|lushr|lxor|monitorenter|monitorexit|multianewarray|pop2??|sipush|swap|tableswitch|wide)\\b",
+      "name": "keyword"
+    },
+    {
+      "match": "\\b(class|private|public|protected|static|void|int|double|float|byte|char|abstract|interface|short)\\b",
+      "name": "keyword.java"
+    },
+    {
+      "match": "\\b(areturn|return|dreturn|freturn|ireturn|lreturn|ret)\\b",
+      "name": "storage.type"
+    },
+    {
+      "match": "\\b(getfield|getstatic|putfield|putstatic)\\b",
+      "name": "storage.type"
+    },
+    {
+      "match": "\\b(aastore|bastore|castore|dastore|fastore|iastore|lastore|sastore|astore(?:_\\d)?|dstore(?:_\\d)?|istore(?:_\\d)?|lstore(?:_\\d)?|fstore(?:_\\d)?)\\b",
+      "name": "variable.parameter"
+    },
+    {
+      "match": "\\b(iconst_m1|aconst_null|iconst_\\d|lconst_\\d|fconst_\\d|dconst_\\d)\\b",
+      "name": "constant.language"
+    },
+    {
+      "match": "\\b(aaload|baload|caload|daload|faload|fload(?:_\\d)?|iaload|laload|saload|lload(?:_\\d)?|iload(?:_\\d)?|dload(?:_\\d)?|aload(?:_\\d)?)\\b",
+      "name": "variable.parameter"
+    },
+    {
+      "match": "\\b(invoke(?:interface|special|static|virtual|dynamic))\\b",
+      "name": "entity.name.function"
+    },
+    {
+      "match": "Code:",
+      "name": "comment.code"
+    },
+    {
+      "match": "nop",
+      "name": "comment.nop"
+    },
+    {
+      "match": "\\d+(:)",
+      "name": "comment.line"
+    },
+    {
+      "match": "//.*$",
+      "name": "comment.ordinary"
+    },
+    {
+      "match": "\\b(\\d+|#\\d+)\\b",
+      "name": "argument"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "support.function"
+        },
+        "2": {
+          "name": "variable.parameter"
+        },
+        "3": {
+          "name": "entity.other.inherited-class"
+        }
+      },
+      "match": "\\b(\\w+(?:/[<>\\w]+)+)(?:\\(([/\\w]*);?\\))?([^;]*)",
+      "name": "classmatcher"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.untitled"
+        }
+      ]
+    }
+  ],
+  "scopeName": "source.java.bytecode"
+}

@@ -942,7 +942,7 @@
       "name": "invalid.illegal.character-not-allowed-here.marko"
     },
     "invalid-close-tag": {
-      "begin": "\\s*</.*?",
+      "begin": "\\s*</[^>]*",
       "end": ">",
       "name": "invalid.illegal.character-not-allowed-here.marko"
     },
@@ -1336,7 +1336,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1385,7 +1385,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1434,7 +1434,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1483,7 +1483,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1532,7 +1532,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1581,7 +1581,7 @@
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
-          "end": "/>|(?<=</\\2??>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1598,7 +1598,7 @@
                   "name": "punctuation.definition.tag.end.marko"
                 }
               },
-              "end": "\\s*(</)([-#$.0-:@-Z_a-z]+)?(.*?)(>)",
+              "end": "\\s*(</)([-#$.0-:@-Z_a-z]+)?([^>]*)(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.begin.marko"

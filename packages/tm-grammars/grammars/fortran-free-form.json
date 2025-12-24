@@ -2662,7 +2662,7 @@
                   "patterns": [
                     {
                       "begin": "(?!(\\s*([\\n!;])))",
-                      "end": "(?=[\\n!;])",
+                      "end": "\\s*(?=[\\n!;])",
                       "patterns": [
                         {
                           "captures": {
@@ -2673,7 +2673,7 @@
                               "name": "invalid.error.label.else.fortran"
                             }
                           },
-                          "match": "\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
+                          "match": "(?i)\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
                         },
                         {
                           "include": "#invalid-word"
@@ -5547,10 +5547,18 @@
                       "name": "keyword.control.elsewhere.fortran"
                     }
                   },
-                  "end": "(?=[\\n!;])",
+                  "end": "\\s*(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#parentheses"
+                    },
+                    {
+                      "captures": {
+                        "1": {
+                          "name": "meta.label.elsewhere.fortran"
+                        }
+                      },
+                      "match": "(?i)(\\s*[a-z]\\w*)?"
                     },
                     {
                       "include": "#invalid-word"

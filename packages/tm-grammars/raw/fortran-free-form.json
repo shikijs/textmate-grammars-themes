@@ -2751,7 +2751,7 @@
                     {
                       "begin": "(?!(\\s*(;|!|\\n)))",
                       "comment": "rest of else line",
-                      "end": "(?=[;!\\n])",
+                      "end": "\\s*(?=[;!\\n])",
                       "patterns": [
                         {
                           "captures": {
@@ -2763,7 +2763,7 @@
                             }
                           },
                           "comment": "capture the label if present",
-                          "match": "\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
+                          "match": "(?i)\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
                         },
                         {
                           "include": "#invalid-word"
@@ -5746,10 +5746,19 @@
                       "name": "keyword.control.elsewhere.fortran"
                     }
                   },
-                  "end": "(?=[;!\\n])",
+                  "end": "\\s*(?=[;!\\n])",
                   "patterns": [
                     {
                       "include": "#parentheses"
+                    },
+                    {
+                      "captures": {
+                        "1": {
+                          "name": "meta.label.elsewhere.fortran"
+                        }
+                      },
+                      "comment": "capture the label if present",
+                      "match": "(?i)(\\s*[a-z]\\w*)?"
                     },
                     {
                       "include": "#invalid-word"
