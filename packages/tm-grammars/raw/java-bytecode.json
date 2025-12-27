@@ -18,10 +18,10 @@
         },
         {
           "match": "\\b(new|newarray)\\b",
-          "name": "support.function.constructor"
+          "name": "keyword.instantiate"
         },
         {
-          "match": "\\b(anewarray|arraylength|athrow|bipush|breakpoint|checkcast|d2f|d2i|d2l|dadd|dcmpg|dcmpl|ddiv|dmul|dneg|drem|dsub|dup|dup2|dup2_x1|dup2_x2|dup_x1|dup_x2|f2d|f2i|f2l|fadd|fcmpg|fcmpl|fdiv|fmul|fneg|frem|fsub|goto|goto_w|i2b|i2c|i2d|i2f|i2l|i2s|iadd|iand|idiv|if_acmpeq|if_acmpne|if_icmpeq|if_icmpge|if_icmpgt|if_icmple|if_icmplt|if_icmpne|ifeq|ifge|ifgt|ifle|iflt|ifne|ifnonnull|ifnull|iinc|impdep1|impdep2|imul|ineg|instanceof|ior|irem|ishl|ishr|isub|iushr|ixor|jsr|jsr_w|l2d|l2f|l2i|ladd|land|lcmp|ldc|ldc_w|ldc2_w|ldiv|lmul|lneg|lookupswitch|lor|lrem|lshl|lshr|lsub|lushr|lxor|monitorenter|monitorexit|multianewarray|pop|pop2|sipush|swap|tableswitch|wide)\\b",
+          "match": "\\b(aaload|aaload_\\d*|aastore|aastore_\\d*|aconst_null|aload(?:_\\d*)?|anewarray|arraylength|astore(?:_\\d*)?|athrow|baload|bastore|bipush|breakpoint|caload|castore|checkcast|d2f|d2i|d2l|dadd|daload|dastore|dcmpg|dcmpl|dconst_0|dconst_1|ddiv|dmul|dneg|drem|dstore(?:_\\d*)?|dsub|dup|dup_x1|dup_x2|dup2|dup2_x1|dup2_x2|f2d|f2i|f2l|fadd|faload|fastore|fcmpg|fcmpl|fconst_0|fconst_1|fconst_2|fdiv|fmul|fneg|frem|fstore(?:_\\d*)?|fsub|getfield|getstatic|goto|goto_w|i2b|i2c|i2d|i2f|i2l|i2s|iadd|iaload|iand|iastore|iconst_m1|iconst_0|iconst_1|iconst_2|iconst_3|iconst_4|iconst_5|idiv|if_acmpeq|if_acmpne|if_icmpeq|if_icmpge|if_icmpgt|if_icmple|if_icmplt|if_icmpne|ifeq|ifge|ifgt|ifle|iflt|ifne|ifnonnull|ifnull|iinc|impdep1|impdep2|imul|ineg|instanceof|ior|irem|ishl|ishr|istore(?:_\\d*)?|isub|iushr|ixor|jsr|jsr_w|l2d|l2f|l2i|ladd|laload|land|lastore|lcmp|lconst_0|lconst_1|ldc|ldc_w|ldc2_w|ldiv|lload(?:_\\d*)?|lmul|lneg|lookupswitch|lor|lrem|lshl|lshr|lsub|lushr|lxor|monitorenter|monitorexit|multianewarray|nop|pop|pop2|ret|return|sipush|swap|tableswitch|wide|areturn|dreturn|freturn|ireturn|lreturn|invokeinterface|invokespecial|invokestatic|invokevirtual|invokedynamic)\\b",
           "name": "keyword.bytecode"
         },
         {
@@ -37,20 +37,16 @@
           "name": "storage.modifier"
         },
         {
-          "match": "\\b(aastore|bastore|castore|dastore|fastore|iastore|lastore|sastore|astore(?:_\\d)?|dstore(?:_\\d)?|istore(?:_\\d)?|lstore(?:_\\d)?|fstore(?:_\\d)?)\\b",
-          "name": "variable.store"
+          "match": "\\b(aastore|bastore|castore|dastore|fastore|iastore|lastore|sastore|astore(?:_\\d)?)\\b",
+          "name": "storage.store"
         },
         {
-          "match": "\\b(iconst_m1|aconst_null|iconst_\\d|lconst_\\d|fconst_\\d|dconst_\\d)\\b",
-          "name": "constant.language"
-        },
-        {
-          "match": "\\b(aaload|baload|caload|daload|faload|fload(?:_\\d)?|iaload|laload|saload|lload(?:_\\d)?|iload(?:_\\d)?|dload(?:_\\d)?|aload(?:_\\d)?)\\b",
-          "name": "variable.load"
+          "match": "\\b(aaload|baload|caload|daload|faload|iaload|laload|saload|aload(?:_\\d)?)\\b",
+          "name": "storage.load"
         },
         {
           "match": "\\b(invokeinterface|invokespecial|invokestatic|invokevirtual|invokedynamic)\\b",
-          "name": "function.call"
+          "name": "keyword.call"
         },
         {
           "match": "Code(?::)",
@@ -62,7 +58,7 @@
         },
         {
           "match": "\\d+(:)",
-          "name": "label.line"
+          "name": "comment.code.label"
         },
         {
           "match": "//.*$",
@@ -74,93 +70,11 @@
         },
         {
           "match": "[\\(\\)]",
-          "name": "punctuation.brackets"
+          "name": "keyword.java"
         },
         {
           "match": ";",
-          "name": "punctuation.semicolon"
-        },
-        {
-          "captures": {
-            "1": {
-              "name": "support.class"
-            },
-            "10": {
-              "name": "label.name"
-            },
-            "11": {
-              "name": "support.function"
-            },
-            "12": {
-              "name": "keyword.java"
-            },
-            "13": {
-              "name": "keyword.return"
-            },
-            "14": {
-              "name": "keyword.bytecode"
-            },
-            "15": {
-              "name": "storage.modifier"
-            },
-            "16": {
-              "name": "support.function.constructor"
-            },
-            "17": {
-              "name": "variable.store"
-            },
-            "18": {
-              "name": "constant.language"
-            },
-            "19": {
-              "name": "variable.load"
-            },
-            "2": {
-              "name": "variable.parameter"
-            },
-            "20": {
-              "name": "function.call"
-            },
-            "21": {
-              "name": "comment.code.label"
-            },
-            "22": {
-              "name": "comment.nop"
-            },
-            "23": {
-              "name": "label.line"
-            },
-            "24": {
-              "name": "comment.line.double"
-            },
-            "25": {
-              "name": "punctuation.brackets"
-            },
-            "26": {
-              "name": "punctuation.semicolon"
-            },
-            "3": {
-              "name": "function.name"
-            },
-            "4": {
-              "name": "annotation.keyword"
-            },
-            "5": {
-              "name": "constant.numeric"
-            },
-            "6": {
-              "name": "comment.line"
-            },
-            "7": {
-              "name": "comment.block"
-            },
-            "8": {
-              "name": "string.quoted.double"
-            },
-            "9": {
-              "name": "constant.character.escape"
-            }
-          }
+          "name": "keyword.java"
         },
         {
           "begin": "\"",
@@ -178,5 +92,5 @@
   },
   "scopeName": "source.java.bytecode",
   "uuid": "63357d86-fa78-4c49-867c-819f38185648",
-  "version": "1.0"
+  "version": "1.1"
 }

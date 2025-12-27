@@ -1925,20 +1925,20 @@ export const grammars = [
     aliases: [
       'jvm-bytecode',
     ],
-    byteSize: 3175,
+    byteSize: 2569,
     categories: [
       'general',
     ],
     displayName: 'Java Bytecode',
     funding: [
     ],
-    hash: 'nSRc4KwWoKwwD7gGziUxfg4hLfLjZv7HnOxk6HdmQlo',
-    lastUpdate: '2025-12-24T02:18:46Z',
+    hash: '20GSW2bwnTV4jdNitZRkAc7RpV1rII73JNacnH41qsw',
+    lastUpdate: '2025-12-27T07:39:54Z',
     name: 'java-bytecode',
     scopeName: 'source.java.bytecode',
-    sha: 'f5ccaf34fcf18257a65c4feadf376e4fdad56170',
-    source: 'https://github.com/mcgambing/Java-Bytecode/blob/f5ccaf34fcf18257a65c4feadf376e4fdad56170/java-bytecode.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/mcgambing/Java-Bytecode/contents/java-bytecode.tmLanguage.json?ref=f5ccaf34fcf18257a65c4feadf376e4fdad56170',
+    sha: 'b987bfa9876c01aa3639e8eb11c147ff8c73bd14',
+    source: 'https://github.com/mcgambing/Java-Bytecode/blob/b987bfa9876c01aa3639e8eb11c147ff8c73bd14/java-bytecode.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/mcgambing/Java-Bytecode/contents/java-bytecode.tmLanguage.json?ref=b987bfa9876c01aa3639e8eb11c147ff8c73bd14',
   },
   {
     aliases: [
@@ -5157,7 +5157,7 @@ export const injections = [
     sourceApi: 'https://api.github.com/repos/samuelcolvin/jinjahtml-vscode/contents/syntaxes/jinja-html.tmLanguage.json?ref=64ad369cd167bba2e614944db6d925b7dc6483b4',
   },
   {
-    byteSize: 758,
+    byteSize: 762,
     embeddedIn: [
       'nix',
     ],
@@ -5173,18 +5173,18 @@ export const injections = [
         url: 'https://opencollective.com/nix-community',
       },
     ],
-    hash: '95Wg9FZDtvXzoId97SOAeAeh_DXOacoRIoegekMo8U8',
+    hash: 'DMlADX6qy6bA28KDzggjqBPECFdf0NGLer3B-6YXu04',
     injectTo: [
       'text.html.markdown',
     ],
-    lastUpdate: '2025-11-08T10:22:14Z',
+    lastUpdate: '2025-11-08T15:24:23Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nix-community/vscode-nix-ide/main/LICENSE',
     name: 'markdown-nix',
     scopeName: 'markdown.nix.codeblock',
-    sha: 'effbf3494a43250a537834805b305793994b9ca8',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/effbf3494a43250a537834805b305793994b9ca8/dist/injection.json',
-    sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/dist/injection.json?ref=effbf3494a43250a537834805b305793994b9ca8',
+    sha: 'e2aff510787a01beb97c6227adbb96e38a60fac4',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/e2aff510787a01beb97c6227adbb96e38a60fac4/dist/injection.json',
+    sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/dist/injection.json?ref=e2aff510787a01beb97c6227adbb96e38a60fac4',
   },
   {
     byteSize: 682,
