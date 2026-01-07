@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: Force update
+        required: false
+        default: 'false'
 
 jobs:
   update-grammars:
@@ -26,10 +31,19 @@ jobs:
       - name: pnpm setup
         uses: pnpm/action-setup@v4
 
+      - run: npm i -g npm@latest
+
       - name: install
         run: pnpm install
 
       - run: pnpm run fetch
+        if: inputs.force != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
+        timeout-minutes: 2
+
+      - run: pnpm run fetch:force
+        if: inputs.force == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
         timeout-minutes: 2
@@ -48,7 +62,4 @@ jobs:
           message: 'feat: update Themes and Grammars [ci skip]'
 
       - run: pnpm -r publish
-        if: ${{ steps.bump.outputs.CHANGED }}
-        env:
-          NPM_CONFIG_PROVENANCE: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ steps.bump.outputs.CHANGED || inputs.force == 'true' }}
