@@ -33,31 +33,6 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
   },
   {
-    name: 'horizon-bold',
-    displayName: 'Horizon Bold',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bold.json',
-  },
-  {
-    name: 'horizon-bright-bold',
-    displayName: 'Horizon Bright Bold',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright-bold.json',
-  },
-  {
-    name: 'horizon-bright-italic',
-    displayName: 'Horizon Bright Italic',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright-italic.json',
-  },
-  {
-    name: 'horizon-bright',
-    displayName: 'Horizon Bright',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
-  },
-  {
-    name: 'horizon-italic',
-    displayName: 'Horizon Italic',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-italic.json',
-  },
-  {
     name: 'horizon',
     displayName: 'Horizon',
     source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
