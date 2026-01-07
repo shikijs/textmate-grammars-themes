@@ -661,6 +661,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/polym0rph/GLSL.tmbundle/blob/master/Syntaxes/GLSL.tmLanguage',
   },
   {
+    name: 'gn',
+    displayName: 'GN',
+    source: 'https://github.com/google/gn-language-server/blob/main/vscode-gn/syntaxes/gn.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'gnuplot',
     displayName: 'Gnuplot',
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/master/syntaxes/gnuplot.tmLanguage',
