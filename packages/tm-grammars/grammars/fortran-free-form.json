@@ -198,13 +198,31 @@
     "IO-statements": {
       "patterns": [
         {
-          "begin": "(?i)\\b(?:(backspace)|(close)|(endfile)|(format)|(inquire)|(open)|(read)|(rewind)|(write))\\s*(?=\\()",
+          "begin": "(?i)\\b(format)(?=\\s*[!\\&(])",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.format.fortran"
+            }
+          },
+          "end": "(?=[\\n!;])",
+          "name": "meta.statement.IO.fortran",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#line-continuation-operator"
+            },
+            {
+              "include": "#format-parentheses"
+            }
+          ]
+        },
+        {
+          "begin": "(?i)\\b(?:(backspace)|(close)|(endfile)|(inquire)|(open)|(read)|(rewind)|(write))\\s*(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.backspace.fortran"
-            },
-            "10": {
-              "name": "punctuation.parentheses.left.fortran"
             },
             "2": {
               "name": "keyword.control.close.fortran"
@@ -213,22 +231,22 @@
               "name": "keyword.control.endfile.fortran"
             },
             "4": {
-              "name": "keyword.control.format.fortran"
-            },
-            "5": {
               "name": "keyword.control.inquire.fortran"
             },
-            "6": {
+            "5": {
               "name": "keyword.control.open.fortran"
             },
-            "7": {
+            "6": {
               "name": "keyword.control.read.fortran"
             },
-            "8": {
+            "7": {
               "name": "keyword.control.rewind.fortran"
             },
-            "9": {
+            "8": {
               "name": "keyword.control.write.fortran"
+            },
+            "9": {
+              "name": "punctuation.parentheses.left.fortran"
             }
           },
           "end": "(?=[\\n!;])",
@@ -398,7 +416,7 @@
       "match": "(-)|(\\+)|/(?![/=\\\\])|(\\*\\*)|(\\*)"
     },
     "array-constructor": {
-      "begin": "(?=\\s*(\\[|\\(/))",
+      "begin": "(?<!\\n)(?=\\s*(\\[|\\(/))",
       "end": "(?<!\\G)",
       "name": "meta.contructor.array",
       "patterns": [
@@ -699,6 +717,7 @@
     "call-statement": {
       "patterns": [
         {
+          "applyEndPatternLast": 1,
           "begin": "(?i)\\s*\\b(call)\\b",
           "beginCaptures": {
             "1": {
@@ -709,25 +728,34 @@
           "name": "meta.statement.control.call.fortran",
           "patterns": [
             {
-              "begin": "(?i)\\G\\s*([a-z]\\w*)(%)([a-z]\\w*)\\b\\s*(?=\\()",
-              "beginCaptures": {
-                "1": {
-                  "name": "variable.other.fortran"
-                },
-                "2": {
-                  "name": "keyword.accessor.fortran"
-                },
-                "3": {
-                  "name": "entity.name.function.subroutine.fortran"
-                }
-              },
-              "end": "(?<!\\G)",
-              "endCaptures": {
-                "1": {
-                  "name": "punctuation.parentheses.right.fortran"
-                }
-              },
+              "begin": "(?i)(?=\\s*[a-z]\\w*\\s*%)",
+              "end": "(?=[\\n!;])",
               "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#line-continuation-operator"
+                },
+                {
+                  "captures": {
+                    "1": {
+                      "name": "variable.other.fortran"
+                    },
+                    "2": {
+                      "name": "keyword.accessor.fortran"
+                    }
+                  },
+                  "match": "(?i)\\s*([a-z]\\w*)\\s*(%)"
+                },
+                {
+                  "captures": {
+                    "1": {
+                      "name": "entity.name.function.subroutine.fortran"
+                    }
+                  },
+                  "match": "(?i)\\s*([a-z]\\w*)"
+                },
                 {
                   "include": "#parentheses-dummy-variables"
                 }
@@ -2274,6 +2302,104 @@
         }
       ]
     },
+    "format-descriptor": {
+      "begin": "\\(/",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.bracket.left.fortran"
+        }
+      },
+      "contentName": "meta.format-descriptor.fortran",
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.bracket.right.fortran"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#parentheses"
+        },
+        {
+          "include": "#intrinsic-functions"
+        },
+        {
+          "include": "#variable"
+        }
+      ]
+    },
+    "format-descriptors": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.other.format-descriptor.fortran"
+            }
+          },
+          "match": "(?i)(?:\\b|(?<=\\d)|(?<=P))(EN|ES|EX|DT|DC|DP|RC|RD|RN|RP|RU|RZ|BN|BZ|SP|SS|TL|TR|[ABD-GILOPQSTXZ])(?=$|[^A-Z_a-z]|[D-G](?i))"
+        },
+        {
+          "match": "/",
+          "name": "keyword.operator.format.newline.fortran"
+        },
+        {
+          "match": ":",
+          "name": "keyword.operator.format.separator.fortran"
+        },
+        {
+          "match": "[$\\\\]",
+          "name": "keyword.other.format-descriptor.nonstandard.fortran"
+        },
+        {
+          "match": "(?i)(?:\\b|(?<=\\d))\\d+H",
+          "name": "keyword.other.format-descriptor.legacy.fortran"
+        }
+      ]
+    },
+    "format-parentheses": {
+      "begin": "\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.parentheses.left.fortran"
+        }
+      },
+      "end": "(\\))",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.parentheses.right.fortran"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#line-continuation-operator"
+        },
+        {
+          "match": "(?:\\b|[-+])\\d+(?=[A-Za-z])",
+          "name": "constant.numeric.fortran"
+        },
+        {
+          "include": "#format-descriptors"
+        },
+        {
+          "include": "#format-parentheses"
+        },
+        {
+          "include": "#parentheses-common"
+        }
+      ]
+    },
     "function-definition": {
       "begin": "(?i)(?=([^\\n!\"':;](?!\\bend)(?!\\bsubroutine\\b))*\\bfunction\\b)",
       "end": "(?=[\\n!;])",
@@ -2662,7 +2788,7 @@
                   "patterns": [
                     {
                       "begin": "(?!(\\s*([\\n!;])))",
-                      "end": "(?=[\\n!;])",
+                      "end": "\\s*(?=[\\n!;])",
                       "patterns": [
                         {
                           "captures": {
@@ -2673,7 +2799,7 @@
                               "name": "invalid.error.label.else.fortran"
                             }
                           },
-                          "match": "\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
+                          "match": "(?i)\\s*([a-z]\\w*)?\\s*\\b(\\w*)\\b"
                         },
                         {
                           "include": "#invalid-word"
@@ -3785,6 +3911,19 @@
       },
       "patterns": [
         {
+          "include": "#array-constructor"
+        },
+        {
+          "include": "#parentheses"
+        },
+        {
+          "include": "#parentheses-common"
+        }
+      ]
+    },
+    "parentheses-common": {
+      "patterns": [
+        {
           "include": "#comments"
         },
         {
@@ -3792,12 +3931,6 @@
         },
         {
           "include": "#operators"
-        },
-        {
-          "include": "#array-constructor"
-        },
-        {
-          "include": "#parentheses"
         },
         {
           "include": "#intrinsic-functions"
@@ -3825,25 +3958,13 @@
           "include": "#procedure-call-dummy-variable"
         },
         {
-          "include": "#comments"
-        },
-        {
-          "include": "#constants"
-        },
-        {
-          "include": "#operators"
-        },
-        {
           "include": "#array-constructor"
         },
         {
           "include": "#parentheses"
         },
         {
-          "include": "#intrinsic-functions"
-        },
-        {
-          "include": "#variable"
+          "include": "#parentheses-common"
         }
       ]
     },
@@ -5547,10 +5668,18 @@
                       "name": "keyword.control.elsewhere.fortran"
                     }
                   },
-                  "end": "(?=[\\n!;])",
+                  "end": "\\s*(?=[\\n!;])",
                   "patterns": [
                     {
                       "include": "#parentheses"
+                    },
+                    {
+                      "captures": {
+                        "1": {
+                          "name": "meta.label.elsewhere.fortran"
+                        }
+                      },
+                      "match": "(?i)(\\s*[a-z]\\w*)?"
                     },
                     {
                       "include": "#invalid-word"
