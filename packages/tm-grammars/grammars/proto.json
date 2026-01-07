@@ -71,7 +71,7 @@
           "include": "#comments"
         },
         {
-          "begin": "([A-Za-z][0-9A-Z_a-z]*)\\s*(=)\\s*(0[Xx]\\h+|[0-9]+)",
+          "begin": "([A-Za-z][0-9A-Z_a-z]*)\\s*(=)\\s*(-?0[Xx]\\h+|-?[0-9]+)",
           "beginCaptures": {
             "1": {
               "name": "variable.other.proto"
@@ -98,7 +98,7 @@
       ]
     },
     "field": {
-      "begin": "\\s*(optional|repeated|required)?\\s*\\b([.\\w]+)\\s+(\\w+)\\s*(=)\\s*(0[Xx]\\h+|[0-9]+)",
+      "begin": "\\s*(optional|repeated|required)?\\s*(\\.?[.\\w]+)\\s+(\\w+)\\s*(=)\\s*(0[Xx]\\h+|[0-9]+)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.proto"
@@ -150,7 +150,7 @@
       ]
     },
     "ident": {
-      "match": "[A-Za-z][0-9A-Z_a-z]*",
+      "match": "\\.?[A-Za-z][.0-9A-Z_a-z]*",
       "name": "entity.name.class.proto"
     },
     "import": {
@@ -202,7 +202,7 @@
       ]
     },
     "mapfield": {
-      "begin": "\\s*(map)\\s*(<)\\s*([.\\w]+)\\s*,\\s*([.\\w]+)\\s*(>)\\s+(\\w+)\\s*(=)\\s*(\\d+)",
+      "begin": "\\s*(map)\\s*(<)\\s*(\\.?[.\\w]+)\\s*,\\s*(\\.?[.\\w]+)\\s*(>)\\s+(\\w+)\\s*(=)\\s*(\\d+)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.proto"
@@ -470,7 +470,7 @@
       "name": "storage.type.proto"
     },
     "string": {
-      "match": "('(['[^']])*')|(\"([\"[^\"]])*\")",
+      "match": "([\"'])(?:\\\\.|[^\\\\])*?\\1",
       "name": "string.quoted.double.proto"
     },
     "subMsgOption": {

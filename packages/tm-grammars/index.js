@@ -585,7 +585,7 @@ export const grammars = [
     hash: 'x-e0LcAtKvpExm7uqO0sFoqbgwmPXGlaQn2KuzxQyfw',
     lastUpdate: '2025-10-09T17:14:05Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/hirosystems/clarity.tmbundle/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/stx-labs/clarity.tmbundle/main/LICENSE',
     name: 'clarity',
     scopeName: 'source.clar',
     sha: 'a187c9ccbbfeb91550f138c8d606888a902b7c98',
@@ -2661,7 +2661,7 @@ export const grammars = [
     aliases: [
       'mmd',
     ],
-    byteSize: 26853,
+    byteSize: 27756,
     displayName: 'Mermaid',
     funding: [
     ],
@@ -2709,14 +2709,24 @@ export const grammars = [
   {
     aliases: [
       'mbt',
+      'mbti',
     ],
-    byteSize: 10075,
+    byteSize: 5253,
     categories: [
       'general',
     ],
     displayName: 'MoonBit',
+    funding: [
+    ],
+    hash: 'GdNpxS43j1J7RQ97qIz_9dS4iDIGZ4E-L4JEPR5x5b0',
+    lastUpdate: '2025-11-04T03:43:34Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/moonbitlang/moonbit-tmLanguage/main/LICENSE',
     name: 'moonbit',
     scopeName: 'source.moonbit',
+    sha: 'd9501977864ee8196d4f40551cfc4561f7499bc7',
+    source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/d9501977864ee8196d4f40551cfc4561f7499bc7/grammars/moonbit.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/moonbitlang/moonbit-tmLanguage/contents/grammars/moonbit.tmLanguage.json?ref=d9501977864ee8196d4f40551cfc4561f7499bc7',
   },
   {
     byteSize: 16813,
@@ -4492,7 +4502,6 @@ export const grammars = [
     ],
     displayName: 'Vue HTML',
     embedded: [
-      'vue',
       'javascript',
     ],
     funding: [
@@ -4529,7 +4538,6 @@ export const grammars = [
       'less',
       'stylus',
       'postcss',
-      'vue',
       'javascript',
     ],
     funding: [
