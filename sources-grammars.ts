@@ -278,8 +278,10 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'r',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/r/syntaxes/r.tmLanguage.json',
+    source: 'https://github.com/posit-dev/positron/blob/main/extensions/positron-r/syntaxes/r.tmGrammar.gen.json',
     categories: ['data'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/posit-dev/positron/refs/heads/main/extensions/positron-r/syntaxes/LICENSE.md',
   },
   {
     name: 'raku',

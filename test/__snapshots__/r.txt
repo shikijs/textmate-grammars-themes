@@ -1,241 +1,253 @@
-#DBD7CACC      Year.Release 
-#444444        <-
-#DBD7CACC       game
-#4D9375        $
-#DBD7CACC      Year.Release
-#DBD7CACC      counts 
-#444444        <-
+#BD976A        Year.Release
 #DBD7CACC       
-#B8A965        data.frame
-#444444        (
-#B8A965        table
-#444444        (
-#DBD7CACC      Year.Release
-#444444        ))
-#DBD7CACC      p 
-#444444        <-
-#DBD7CACC       game 
-#CB7676        %>%
-#DBD7CACC        select
-#444444        (
-#DBD7CACC      Year.Release
-#444444        ,
-#DBD7CACC       Global.Sales
-#444444        )
+#CB7676        <-
+#DBD7CACC       
+#BD976A        game
+#CB7676        $
+#BD976A        Year.Release
+#BD976A        counts
+#DBD7CACC       
+#CB7676        <-
+#DBD7CACC       
+#80A665        data.frame
+#DBD7CACC      (
+#80A665        table
+#DBD7CACC      (
+#BD976A        Year.Release
+#DBD7CACC      ))
+#BD976A        p
+#DBD7CACC       
+#CB7676        <-
+#DBD7CACC       
+#BD976A        game
 #DBD7CACC       
 #CB7676        %>%
-#DBD7CACC        group_by
-#444444        (
-#DBD7CACC      Year.Release
-#444444        )
+#DBD7CACC        
+#80A665        select
+#DBD7CACC      (
+#BD976A        Year.Release
+#CB7676        ,
 #DBD7CACC       
+#BD976A        Global.Sales
+#DBD7CACC      ) 
 #CB7676        %>%
-#DBD7CACC        summarise
-#444444        (
+#DBD7CACC        
+#80A665        group_by
+#DBD7CACC      (
+#BD976A        Year.Release
+#DBD7CACC      ) 
+#CB7676        %>%
+#DBD7CACC        
+#80A665        summarise
+#DBD7CACC      (
 #BD976A        Total.Sales
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
-#B8A965        sum
-#444444        (
-#DBD7CACC      Global.Sales
-#444444        ))
-#DBD7CACC      q 
-#444444        <-
+#80A665        sum
+#DBD7CACC      (
+#BD976A        Global.Sales
+#DBD7CACC      ))
+#BD976A        q
 #DBD7CACC       
-#B8A965        cbind.data.frame
-#444444        (
-#DBD7CACC      p
-#444444        ,
-#DBD7CACC       counts
-#444444        [
+#CB7676        <-
+#DBD7CACC       
+#80A665        cbind.data.frame
+#DBD7CACC      (
+#BD976A        p
+#CB7676        ,
+#DBD7CACC       
+#BD976A        counts
+#DBD7CACC      [
 #4C9A91        2
-#444444        ])
-#DBD7CACC        
+#DBD7CACC      ])  
 #758575DD      # Add counts to data frame
-#B8A965        names
-#444444        (
-#DBD7CACC      q
-#444444        )[
+#80A665        names
+#DBD7CACC      (
+#BD976A        q
+#DBD7CACC      )[
 #4C9A91        3
-#444444        ]
+#DBD7CACC      ] 
+#CB7676        <-
 #DBD7CACC       
-#444444        <-
+#C98A7D        "count"
+#BD976A        q
+#CB7676        $
+#BD976A        count
 #DBD7CACC       
-#C98A7D77      "
-#C98A7D        count
-#C98A7D77      "
-#DBD7CACC      q
-#4D9375        $
-#DBD7CACC      count 
-#444444        <-
+#CB7676        <-
 #DBD7CACC       
-#B8A965        as.numeric
-#444444        (
-#DBD7CACC      q
-#4D9375        $
-#DBD7CACC      count
-#444444        )
-#DBD7CACC      ggplot
-#444444        (
-#DBD7CACC      q
-#444444        ,
-#DBD7CACC       aes
-#444444        (
+#80A665        as.numeric
+#DBD7CACC      (
+#BD976A        q
+#CB7676        $
+#BD976A        count
+#DBD7CACC      )
+#80A665        ggplot
+#DBD7CACC      (
+#BD976A        q
+#CB7676        ,
+#DBD7CACC       
+#80A665        aes
+#DBD7CACC      (
 #BD976A        x
 #DBD7CACC       
-#444444        =
-#DBD7CACC       Year.Release
-#444444        ,
+#CB7676        =
+#DBD7CACC       
+#BD976A        Year.Release
+#CB7676        ,
 #DBD7CACC       
 #BD976A        y
 #DBD7CACC       
-#444444        =
-#DBD7CACC       Total.Sales
-#444444        ,
+#CB7676        =
+#DBD7CACC       
+#BD976A        Total.Sales
+#CB7676        ,
 #DBD7CACC       
 #BD976A        label
 #DBD7CACC       
-#444444        =
-#DBD7CACC       q
-#4D9375        $
-#DBD7CACC      count
-#444444        ))
+#CB7676        =
 #DBD7CACC       
+#BD976A        q
+#CB7676        $
+#BD976A        count
+#DBD7CACC      )) 
 #CB7676        +
-#DBD7CACC        geom_col
-#444444        (
+#DBD7CACC        
+#80A665        geom_col
+#DBD7CACC      (
 #BD976A        fill
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
-#C98A7D77      "
-#C98A7D        green
-#C98A7D77      "
-#444444        )
-#DBD7CACC       
+#C98A7D        "green"
+#DBD7CACC      ) 
 #CB7676        +
-#DBD7CACC        geom_point
-#444444        (
+#DBD7CACC        
+#80A665        geom_point
+#DBD7CACC      (
 #BD976A        y
 #DBD7CACC       
-#444444        =
-#DBD7CACC       q
-#4D9375        $
-#DBD7CACC      count 
+#CB7676        =
+#DBD7CACC       
+#BD976A        q
+#CB7676        $
+#BD976A        count
+#DBD7CACC       
 #CB7676        *
 #DBD7CACC       
 #4C9A91        500000
-#444444        ,
+#CB7676        ,
 #DBD7CACC       
 #BD976A        size
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
 #4C9A91        3
-#444444        ,
+#CB7676        ,
 #DBD7CACC       
 #BD976A        shape
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
 #4C9A91        21
-#444444        ,
+#CB7676        ,
 #DBD7CACC       
 #BD976A        fill
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
-#C98A7D77      "
-#C98A7D        Yellow
-#C98A7D77      "
-#DBD7CACC       
-#444444        )
-#DBD7CACC       
+#C98A7D        "Yellow"
+#DBD7CACC       ) 
 #CB7676        +
-#DBD7CACC        geom_text
-#444444        (
+#DBD7CACC        
+#80A665        geom_text
+#DBD7CACC      (
 #BD976A        y
 #DBD7CACC       
-#444444        =
+#CB7676        =
+#DBD7CACC       (
+#BD976A        q
+#CB7676        $
+#BD976A        count
 #DBD7CACC       
-#444444        (
-#DBD7CACC      q
-#4D9375        $
-#DBD7CACC      count 
 #CB7676        +
 #DBD7CACC       
 #4C9A91        50
-#444444        )
-#DBD7CACC       
+#DBD7CACC      ) 
 #CB7676        *
 #DBD7CACC       
 #4C9A91        500000
-#444444        )
-#DBD7CACC       
+#DBD7CACC      ) 
 #CB7676        +
 #DBD7CACC        
 #758575DD      # Position of the text: count of games each year
-#DBD7CACC        theme
-#444444        (
+#DBD7CACC        
+#80A665        theme
+#DBD7CACC      (
 #BD976A        axis.text.x
 #DBD7CACC       
-#444444        =
-#DBD7CACC       element_text
-#444444        (
+#CB7676        =
+#DBD7CACC       
+#80A665        element_text
+#DBD7CACC      (
 #BD976A        angle
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
 #4C9A91        90
-#444444        ),
+#DBD7CACC      )
+#CB7676        ,
 #DBD7CACC              
 #BD976A        panel.background
 #DBD7CACC       
-#444444        =
-#DBD7CACC       element_rect
-#444444        (
+#CB7676        =
+#DBD7CACC       
+#80A665        element_rect
+#DBD7CACC      (
 #BD976A        fill
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
-#C98A7D77      "
-#C98A7D        purple
-#C98A7D77      "
-#444444        ),
+#C98A7D        "purple"
+#DBD7CACC      )
+#CB7676        ,
 #DBD7CACC              
 #BD976A        panel.grid.major
 #DBD7CACC       
-#444444        =
-#DBD7CACC       element_blank
-#444444        (),
+#CB7676        =
+#DBD7CACC       
+#80A665        element_blank
+#DBD7CACC      ()
+#CB7676        ,
 #DBD7CACC              
 #BD976A        panel.grid.minor
 #DBD7CACC       
-#444444        =
-#DBD7CACC       element_blank
-#444444        ())
+#CB7676        =
 #DBD7CACC       
+#80A665        element_blank
+#DBD7CACC      ()) 
 #CB7676        +
-#DBD7CACC        scale_x_discrete
-#444444        (
-#C98A7D77      "
-#C98A7D        Year.Release
-#C98A7D77      "
-#444444        ,
+#DBD7CACC        
+#80A665        scale_x_discrete
+#DBD7CACC      (
+#C98A7D        "Year.Release"
+#CB7676        ,
 #DBD7CACC       
 #BD976A        labels
 #DBD7CACC       
-#444444        =
+#CB7676        =
 #DBD7CACC       
-#B8A965        as.character
-#444444        (
-#DBD7CACC      Year.Release
-#444444        ),
+#80A665        as.character
+#DBD7CACC      (
+#BD976A        Year.Release
+#DBD7CACC      )
+#CB7676        ,
 #DBD7CACC       
 #BD976A        breaks
 #DBD7CACC       
-#444444        =
-#DBD7CACC       Year.Release
-#444444        )
+#CB7676        =
+#DBD7CACC       
+#BD976A        Year.Release
+#DBD7CACC      )
 #758575DD      # From https://gexijin.github.io/learnR/the-game-sales-dataset.html#analysis-of-sales
