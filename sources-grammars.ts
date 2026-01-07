@@ -468,6 +468,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c.tmLanguage.json',
     categories: ['general', 'dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'cadence',
@@ -987,6 +989,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c-query'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c-query.tmLanguage.json',
     categories: ['dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'shellsession',

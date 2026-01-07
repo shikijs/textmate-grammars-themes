@@ -195,15 +195,16 @@ export async function resolveSourceGitHub(source: GrammarSource | ThemeSource, o
     info.hash = hash
     info.lastUpdate = commit.date
 
-    const license = await getLicenseUrl(repo)
-      .catch(() => undefined)
-
     info.funding = await getFundingInfo(repo)
       .catch(() => [])
 
-    if (license) {
-      info.licenseUrl = license.download_url!
-      info.license = license.license!.spdx_id!
+    if (!info.licenseUrl) {
+      const license = await getLicenseUrl(repo)
+        .catch(() => undefined)
+      if (license) {
+        info.licenseUrl = license.download_url!
+        info.license = license.license!.spdx_id!
+      }
     }
 
     info.source = `https://github.com/${repo}/blob/${info.sha || branch}/${path}`
