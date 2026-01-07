@@ -1,0 +1,223 @@
+#758575DD      // MoonBit sample - a Rust-like language for WebAssembly
+#758575DD      // Type definitions
+#4D9375        struct
+#DBD7CACC       
+#5DA994        Point
+#DBD7CACC       {
+#DBD7CACC        
+#BD976A        x
+#DBD7CACC       : 
+#5DA994        Int
+#DBD7CACC        
+#BD976A        y
+#DBD7CACC       : 
+#5DA994        Int
+#DBD7CACC      } 
+#4D9375        derive
+#DBD7CACC      (
+#B8A965        Show
+#DBD7CACC      , 
+#B8A965        Eq
+#DBD7CACC      )
+#4D9375        enum
+#DBD7CACC       
+#5DA994        Color
+#DBD7CACC       {
+#DBD7CACC        
+#5DA994        Red
+#DBD7CACC        
+#5DA994        Green
+#DBD7CACC        
+#5DA994        Blue
+#DBD7CACC        
+#5DA994        RGB
+#DBD7CACC      (
+#BD976A        r
+#DBD7CACC      ~ : 
+#5DA994        Int
+#DBD7CACC      , 
+#BD976A        g
+#DBD7CACC      ~ : 
+#5DA994        Int
+#DBD7CACC      , 
+#BD976A        b
+#DBD7CACC      ~ : 
+#5DA994        Int
+#DBD7CACC      )
+#DBD7CACC      }
+#758575DD      // Trait definition
+#4D9375        trait
+#DBD7CACC       
+#5DA994        Printable
+#DBD7CACC       {
+#DBD7CACC        
+#80A665        to_string
+#DBD7CACC      (
+#5DA994        Self
+#444444        )
+#DBD7CACC       
+#444444        ->
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC      }
+#758575DD      // Implementation
+#4D9375        impl
+#DBD7CACC       
+#5DA994        Printable
+#DBD7CACC       
+#4D9375        for
+#DBD7CACC       
+#5DA994        Point
+#DBD7CACC       
+#4D9375        with
+#DBD7CACC       
+#80A665        to_string
+#DBD7CACC      (
+#BD976A        self
+#444444        )
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        "Point(
+#444444        \{
+#C98A7D        self.x
+#444444        }
+#C98A7D        , 
+#444444        \{
+#C98A7D        self.y
+#444444        }
+#C98A7D        )"
+#DBD7CACC      }
+#758575DD      // Function with pattern matching
+#4D9375        fn
+#DBD7CACC       
+#80A665        describe
+#DBD7CACC      (
+#BD976A        opt
+#DBD7CACC       : 
+#5DA994        Int?
+#DBD7CACC      ) 
+#444444        ->
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        match
+#DBD7CACC       
+#BD976A        opt
+#DBD7CACC       {
+#DBD7CACC          
+#5DA994        Some
+#DBD7CACC      (
+#BD976A        n
+#DBD7CACC      ) 
+#444444        =>
+#DBD7CACC       
+#C98A7D        "Got 
+#444444        \{
+#C98A7D        n
+#444444        }
+#C98A7D        "
+#DBD7CACC          
+#5DA994        None
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#C98A7D        "Nothing"
+#DBD7CACC        }
+#DBD7CACC      }
+#758575DD      // Main function
+#4D9375        fn
+#DBD7CACC       
+#80A665        main
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        point
+#DBD7CACC       
+#444444        =
+#DBD7CACC       { 
+#BD976A        x
+#DBD7CACC      : 
+#4C9A91        10
+#DBD7CACC      , 
+#BD976A        y
+#DBD7CACC      : 
+#4C9A91        20
+#DBD7CACC       }
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        message
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        describe
+#DBD7CACC      (
+#5DA994        Some
+#DBD7CACC      (
+#4C9A91        42
+#444444        )
+#DBD7CACC      )
+#DBD7CACC        
+#80A665        println
+#DBD7CACC      (
+#BD976A        point
+#DBD7CACC      .
+#80A665        to_string
+#DBD7CACC      (
+#444444        ))
+#DBD7CACC        
+#80A665        println
+#DBD7CACC      (
+#BD976A        message
+#444444        )
+#DBD7CACC      }
+#758575DD      // Test block
+#4D9375        test
+#DBD7CACC       
+#C98A7D        "basic arithmetic"
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        let
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        2
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC        
+#80A665        assert_eq
+#DBD7CACC      (
+#BD976A        x
+#DBD7CACC      , 
+#4C9A91        7
+#444444        )
+#DBD7CACC      }
+#758575DD      // Async function
+#4D9375        async
+#DBD7CACC       
+#4D9375        fn
+#DBD7CACC       
+#80A665        fetch_data
+#DBD7CACC      () 
+#444444        ->
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC       
+#4D9375        raise
+#DBD7CACC       
+#5DA994        Error
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        "data"
+#DBD7CACC      }
+#758575DD      // From https://docs.moonbitlang.com/

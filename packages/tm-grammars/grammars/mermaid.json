@@ -458,7 +458,7 @@
               "match": "(?i)^\\s*([-\\w]+)\\s*(\\[)?\\s*([-\\w]+|\"[-\\w\\s]+\")?\\s*(])?$"
             },
             {
-              "begin": "(?i)\\s+([-\\w]+)\\s*(\\[)?\\s*([-\\w]+|\"[-\\w\\s]+\")?\\s*(])?\\s*(\\{)",
+              "begin": "(?i)\\s*([-\\w]+)\\s*(\\[)?\\s*([-\\w]+|\"[-\\w\\s]+\")?\\s*(])?\\s*(\\{)",
               "beginCaptures": {
                 "1": {
                   "name": "variable"
@@ -498,7 +498,7 @@
                       "name": "string"
                     }
                   },
-                  "match": "(?i)\\s*([-\\w]+)\\s+([-\\w]+)\\s+([FPU]K(?:,\\s*[FPU]K){0,2})?\\s*(\"[!-(*-/:-?\\\\^\\w\\s]*\")?\\s*"
+                  "match": "(?i)\\s*([-\\w]+)\\s+([-\\w]+)\\s+([FPU]K(?:,\\s*[FPU]K){0,2})?\\s*(\"[^\\n\\r\"]*\")?\\s*"
                 },
                 {
                   "match": "%%.*",
@@ -1078,6 +1078,70 @@
                   "match": "(?i)\\s*(label\\s*:)([^,}]*)(,)?"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "begin": "^\\s*(mindmap)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.mermaid"
+            }
+          },
+          "end": "(^|\\G)(?=\\s*[:`~]{3,}\\s*$)",
+          "patterns": [
+            {
+              "match": "%%.*",
+              "name": "comment"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "string"
+                }
+              },
+              "match": "(?i)(\\s*:::)(\\s*[!-$\\&'*-/;-?\\\\^\\w\\s]*)"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "keyword.control.mermaid"
+                },
+                "2": {
+                  "name": "punctuation.parenthesis.open.mermaid"
+                },
+                "3": {
+                  "name": "string"
+                },
+                "4": {
+                  "name": "punctuation.parenthesis.close.mermaid"
+                }
+              },
+              "match": "(?i)(\\s*::icon)(\\s*\\()(\\s*[!-$\\&'*-/;-?\\\\^\\w\\s]*)(\\s*\\))"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.control.mermaid"
+                },
+                "3": {
+                  "name": "string"
+                },
+                "4": {
+                  "name": "keyword.control.mermaid"
+                }
+              },
+              "match": "(?i)(\\s*[!-$\\&'*-/:-?\\\\^\\w\\s]*)(\\s*\\({1,2}|\\){1,2}|\\{\\{|\\[)(\\s*[!-$\\&'*-/:-?\\\\^\\w\\s]*)(\\s*\\){1,2}|\\({1,2}|}}|])"
+            },
+            {
+              "match": "^(\\s*[!-$\\&'*-/:-?\\\\^\\w\\s]*)",
+              "name": "string"
             }
           ]
         },
@@ -2001,7 +2065,7 @@
       ]
     },
     "mermaid-code-block": {
-      "begin": "(?i)(?<=[`~])mermaid(\\s+[^`~]*)?$",
+      "begin": "(?i)(?<=[`~])\\s*mermaid(\\s+[^`~]*)?$",
       "contentName": "meta.embedded.block.mermaid",
       "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
       "patterns": [
@@ -2011,7 +2075,7 @@
       ]
     },
     "mermaid-code-block-with-attributes": {
-      "begin": "(?i)(?<=[`~])\\{\\s*\\.?mermaid(\\s+[^`~]*)?$",
+      "begin": "(?i)(?<=[`~])\\s*\\{\\s*\\.?mermaid(\\s+[^`~]*)?$",
       "contentName": "meta.embedded.block.mermaid",
       "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
       "patterns": [

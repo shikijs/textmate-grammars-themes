@@ -19,6 +19,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'c3',
+    displayName: 'C3',
+    source: 'https://github.com/c3lang/vscode-c3/blob/main/syntaxes/c3.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'cairo',
     displayName: 'Cairo',
     source: 'https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
@@ -272,8 +278,10 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'r',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/r/syntaxes/r.tmLanguage.json',
+    source: 'https://github.com/posit-dev/positron/blob/main/extensions/positron-r/syntaxes/r.tmGrammar.gen.json',
     categories: ['data'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/posit-dev/positron/refs/heads/main/extensions/positron-r/syntaxes/LICENSE.md',
   },
   {
     name: 'raku',
@@ -462,6 +470,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c.tmLanguage.json',
     categories: ['general', 'dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'cadence',
@@ -653,6 +663,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/polym0rph/GLSL.tmbundle/blob/master/Syntaxes/GLSL.tmLanguage',
   },
   {
+    name: 'gn',
+    displayName: 'GN',
+    source: 'https://github.com/google/gn-language-server/blob/main/vscode-gn/syntaxes/gn.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'gnuplot',
     displayName: 'Gnuplot',
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/master/syntaxes/gnuplot.tmLanguage',
@@ -795,7 +811,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'mdc',
     displayName: 'MDC',
-    source: 'https://github.com/nuxtlabs/vscode-mdc/blob/main/syntaxes/mdc.standalone.tmLanguage.json',
+    source: 'https://github.com/nuxt-content/vscode-mdc/blob/main/syntaxes/mdc.standalone.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
@@ -981,6 +997,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c-query'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c-query.tmLanguage.json',
     categories: ['dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'shellsession',
@@ -1207,6 +1225,13 @@ export const sourcesMarketplace: GrammarSource[] = [
       name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
       grammar: 'mermaid',
     },
+  },
+  {
+    name: 'moonbit',
+    displayName: 'MoonBit',
+    aliases: ['mbt', 'mbti'],
+    source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/main/grammars/moonbit.tmLanguage.json',
+    categories: ['general'],
   },
 ]
 

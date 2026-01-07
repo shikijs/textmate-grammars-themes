@@ -8,11 +8,11 @@
   "name": "markdown-nix",
   "patterns": [
     {
-      "include": "#nixCodeBlock"
+      "include": "#nix-code-block"
     }
   ],
   "repository": {
-    "nixCodeBlock": {
+    "nix-code-block": {
       "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(nix)(\\s+[^`~]*)?$)",
       "beginCaptures": {
         "3": {
