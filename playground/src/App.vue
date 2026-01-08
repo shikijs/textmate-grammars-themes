@@ -6,6 +6,7 @@ import { createOnigurumaEngine } from '@shikijs/engine-oniguruma'
 import { grammars, injections } from '../../packages/tm-grammars/index'
 import { themes } from '../../packages/tm-themes/index'
 import Badge from './Badge.vue'
+import FundingButton from './FundingButton.vue'
 import SegmentControl from './SegmentControl.vue'
 import { engine, engineJsForgiving, grammar, isDark, theme } from './state'
 
@@ -302,14 +303,7 @@ if (import.meta.hot) {
                 <button text-left @click="openGrammar()">
                   <code>{{ grammar }}</code>
                 </button>
-                <!-- TODO: Add funding links -->
-                <!-- <div text-xs>
-                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
-                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
-                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
-                    </a>
-                  </span>
-                </div> -->
+                <FundingButton :name="`${grammarObject?.displayName} grammar`" :funding="grammarObject?.funding" />
               </div>
               <div v-if="embedded.length < 15" flex="~ col" ml-2 border="l base">
                 <div v-for="e in embedded" :key="e" flex="~ items-center gap-2">
@@ -333,14 +327,7 @@ if (import.meta.hot) {
                 <button text-left @click="openTheme()">
                   <code>{{ theme }}</code>
                 </button>
-                <!-- TODO: Add funding links -->
-                <!-- <div text-xs>
-                  <span v-for="(link, index) in grammarObject?.funding" :key="index">
-                    <a :href="link.url" target="_blank" hover="text-pink" flex="~ items-center gap-1">
-                      <div i-carbon-favorite /> <b>{{ link.handle || link.name }}</b>
-                    </a>
-                  </span>
-                </div> -->
+                <FundingButton :name="`${themeObject?.displayName} theme`" :funding="themeObject?.funding" />
               </div>
             </div>
             <div text-right op50>

@@ -180,6 +180,9 @@
     "nextflow": {
       "patterns": [
         {
+          "include": "#record-def"
+        },
+        {
           "include": "#enum-def"
         },
         {
@@ -190,6 +193,9 @@
         },
         {
           "include": "#workflow-def"
+        },
+        {
+          "include": "#params-def"
         },
         {
           "include": "#output-def"
@@ -211,6 +217,21 @@
       },
       "end": "}",
       "name": "output.nextflow",
+      "patterns": [
+        {
+          "include": "source.nextflow-groovy#groovy"
+        }
+      ]
+    },
+    "params-def": {
+      "begin": "^\\s*(params)\\s*{",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.nextflow"
+        }
+      },
+      "end": "}",
+      "name": "params.nextflow",
       "patterns": [
         {
           "include": "source.nextflow-groovy#groovy"
@@ -247,6 +268,24 @@
       "patterns": [
         {
           "include": "#process-body"
+        }
+      ]
+    },
+    "record-def": {
+      "begin": "^\\s*(record)\\s+(\\w+)\\s*{",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.nextflow"
+        },
+        "2": {
+          "name": "storage.type.groovy"
+        }
+      },
+      "end": "}",
+      "name": "record.nextflow",
+      "patterns": [
+        {
+          "include": "source.nextflow-groovy#groovy"
         }
       ]
     },

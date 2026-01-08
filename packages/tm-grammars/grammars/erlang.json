@@ -369,6 +369,7 @@
           "name": "invalid.illegal.string.erlang"
         }
       },
+      "contentName": "meta.embedded.block.markdown",
       "end": "^(\\s*(\\7))\\s*(\\)\\s*)?(\\.)",
       "endCaptures": {
         "1": {
@@ -384,9 +385,7 @@
       "name": "meta.directive.doc.erlang",
       "patterns": [
         {
-          "begin": "\\G",
-          "contentName": "comment.block.documentation.erlang",
-          "while": "^()(?!\\s*(\\5))"
+          "include": "text.html.markdown"
         }
       ]
     },

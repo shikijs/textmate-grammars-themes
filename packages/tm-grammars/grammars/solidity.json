@@ -704,9 +704,6 @@
           "include": "#type-modifier-transient"
         },
         {
-          "include": "#type-modifier-extend-scope"
-        },
-        {
           "include": "#type-modifier-payable"
         },
         {
@@ -997,19 +994,6 @@
         }
       ]
     },
-    "number": {
-      "patterns": [
-        {
-          "include": "#number-decimal"
-        },
-        {
-          "include": "#number-hex"
-        },
-        {
-          "include": "#number-scientific"
-        }
-      ]
-    },
     "number-decimal": {
       "match": "\\b([0-9_]+(\\.[0-9_]+)?)\\b",
       "name": "constant.numeric.decimal"
@@ -1156,7 +1140,7 @@
     "type-primitive": {
       "patterns": [
         {
-          "begin": "\\b(address|string\\d*|bytes\\d*|int\\d*|uint\\d*|bool|hash\\d*)\\b\\[](\\()",
+          "begin": "\\b(address|string\\d*|bytes\\d*|int\\d*|uint\\d*|bool\\d*)\\b\\[](\\()",
           "beginCaptures": {
             "1": {
               "name": "support.type.primitive"
@@ -1179,7 +1163,7 @@
           ]
         },
         {
-          "match": "\\b(address|string\\d*|bytes\\d*|int\\d*|uint\\d*|bool|hash\\d*)\\b",
+          "match": "\\b(address|string\\d*|bytes\\d*|int\\d*|uint\\d*|bool\\d*)\\b",
           "name": "support.type.primitive"
         }
       ]

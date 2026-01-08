@@ -10,6 +10,9 @@ export interface GrammarSource {
   aliases?: string[]
   scopeName?: string
 
+  license?: string
+  licenseUrl?: string
+
   /**
    * Download from marketplace.
    */

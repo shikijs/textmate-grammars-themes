@@ -23,8 +23,8 @@ await fs.mkdir(dirOutput, { recursive: true })
 const oldMeta = process.argv.includes('--force')
   ? []
   : await import('../../packages/tm-themes/index.js')
-    .then(m => m.themes)
-    .catch(() => [] as ThemeInfo[])
+      .then(m => m.themes)
+      .catch(() => [] as ThemeInfo[])
 
 let changed = false
 

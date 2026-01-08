@@ -39,6 +39,9 @@
       "include": "#function_type_declaration"
     },
     {
+      "include": "#function_type_declaration_arrow_first"
+    },
+    {
       "include": "#typed_hole"
     },
     {
@@ -78,13 +81,13 @@
       "include": "#markup_newline"
     },
     {
+      "include": "#string_double_colon_parens"
+    },
+    {
       "include": "#double_colon_parens"
     },
     {
       "include": "#double_colon_inlined"
-    },
-    {
-      "include": "#double_colon_orphan"
     },
     {
       "include": "#comments"
@@ -397,27 +400,25 @@
                   ]
                 }
               },
-              "match": "(::|∷)(.*)(?=<-|\"\"\")"
+              "match": "(::|∷)(.*?)(?=<-| \"\"\")"
             }
           ]
         },
         {
           "patterns": [
             {
-              "captures": {
+              "begin": "(::|∷)",
+              "beginCaptures": {
                 "1": {
                   "name": "keyword.other.double-colon.purescript"
-                },
-                "2": {
-                  "name": "meta.type-signature.purescript",
-                  "patterns": [
-                    {
-                      "include": "#type_signature"
-                    }
-                  ]
                 }
               },
-              "match": "(::|∷)(.*)"
+              "end": "(?=^([\\s\\S]))",
+              "patterns": [
+                {
+                  "include": "#type_signature"
+                }
+              ]
             }
           ]
         }
@@ -464,7 +465,7 @@
               ]
             }
           },
-          "match": "\\((?<paren>(?:[^()]|\\(\\g<paren>\\))*)(::|∷)(?<paren2>(?:[^()]|\\(\\g<paren2>\\))*)\\)"
+          "match": "\\((?<paren>(?:[^()]|\\(\\g<paren>\\))*)(::|∷)(?<paren2>(?:[^()}]|\\(\\g<paren2>\\))*)\\)"
         }
       ]
     },
@@ -503,7 +504,7 @@
     "foreign_import_data": {
       "patterns": [
         {
-          "begin": "^(\\s*)(foreign)\\s+(import)\\s+(data)(?:\\s+([\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*)\\s*(::|∷))?",
+          "begin": "^(\\s*)(foreign)\\s+(import)\\s+(data)\\s(?:\\s+([\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*)\\s*(::|∷))?",
           "beginCaptures": {
             "2": {
               "name": "keyword.other.purescript"
@@ -549,7 +550,7 @@
               "name": "punctuation.definition.entity.purescript"
             }
           },
-          "match": "(`)(?:[\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*(?:\\.[\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*)*\\.)?[_\\p{Ll}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*(`)",
+          "match": "(`)(?:[\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*(?:\\.[\\p{Lu}\\p{Lt}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*)*\\.)?[_\\p{Ll}]['_\\p{Ll}\\p{Lu}\\p{Lt}\\d]*.*(`)",
           "name": "keyword.operator.function.infix.purescript"
         }
       ]
@@ -563,6 +564,35 @@
               "name": "entity.name.function.purescript"
             },
             "3": {
+              "name": "keyword.other.double-colon.purescript"
+            }
+          },
+          "contentName": "meta.type-signature.purescript",
+          "end": "^(?!\\1[\\t ]|[\\t ]*$)",
+          "name": "meta.function.type-declaration.purescript",
+          "patterns": [
+            {
+              "include": "#double_colon"
+            },
+            {
+              "include": "#type_signature"
+            },
+            {
+              "include": "#record_types"
+            },
+            {
+              "include": "#row_types"
+            }
+          ]
+        }
+      ]
+    },
+    "function_type_declaration_arrow_first": {
+      "patterns": [
+        {
+          "begin": "^(\\s*)\\s(::|∷)(?!.*<-)",
+          "beginCaptures": {
+            "2": {
               "name": "keyword.other.double-colon.purescript"
             }
           },
@@ -621,7 +651,7 @@
               "include": "#data_ctor"
             },
             {
-              "match": "\\d+",
+              "match": " \\d+ ",
               "name": "constant.numeric.purescript"
             },
             {
@@ -928,6 +958,29 @@
               "include": "#type_signature"
             }
           ]
+        }
+      ]
+    },
+    "string_double_colon_parens": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "$self"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "$self"
+                }
+              ]
+            }
+          },
+          "match": "\\((.*?)(\"(?:[ -\\[\\]-~]|(\\\\(?:NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[\"\\&'\\\\abfnrtv]))|(\\\\o[0-7]+)|(\\\\x\\h+)|(\\^[@-_]))*(::|∷)([ -\\[\\]-~]|(\\\\(?:NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[\"\\&'\\\\abfnrtv]))|(\\\\o[0-7]+)|(\\\\x\\h+)|(\\^[@-_]))*\")"
         }
       ]
     },

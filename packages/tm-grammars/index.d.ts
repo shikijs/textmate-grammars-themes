@@ -1,13 +1,13 @@
-export type GrammarCategory =
-  | 'web'
-  | 'markup'
-  | 'general'
-  | 'scripting'
-  | 'data'
-  | 'dsl'
-  | 'utility'
-  | 'config'
-  | 'lisp'
+export type GrammarCategory
+  = | 'web'
+    | 'markup'
+    | 'general'
+    | 'scripting'
+    | 'data'
+    | 'dsl'
+    | 'utility'
+    | 'config'
+    | 'lisp'
 
 export interface FundingLink {
   name: string

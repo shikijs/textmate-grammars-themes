@@ -428,7 +428,21 @@
           "name": "constant.numeric.date.day.beancount"
         },
         "6": {
-          "name": "support.function.directive.beancount"
+          "name": "support.function.directive.beancount",
+          "patterns": [
+            {
+              "match": "txn|\\*",
+              "name": "support.function.directive.txn.completed.beancount"
+            },
+            {
+              "match": "!",
+              "name": "support.function.directive.txn.incomplete.beancount"
+            },
+            {
+              "match": "P",
+              "name": "support.function.directive.txn.padding.beancount"
+            }
+          ]
         },
         "7": {
           "name": "string.quoted.tiers.beancount"

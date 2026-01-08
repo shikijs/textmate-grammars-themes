@@ -31,8 +31,8 @@ export async function run() {
   const oldMeta = process.argv.includes('--force')
     ? []
     : await import('../../packages/tm-grammars/index.js')
-      .then(m => [...m.grammars, ...m.injections])
-      .catch(() => [] as GrammarInfo[])
+        .then(m => [...m.grammars, ...m.injections])
+        .catch(() => [] as GrammarInfo[])
 
   let changed = false
 

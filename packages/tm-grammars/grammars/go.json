@@ -29,7 +29,7 @@
           ]
         }
       },
-      "match": "(?<=\\brange\\b|\\bswitch\\b|;|\\bif\\b|\\bfor\\b|[<>]|<=|>=|==|!=|\\w[-%*+/]|\\w[-%*+/]=|\\|\\||&&)\\s*((?![]\\[]+)[-\\]!%*+./:<=>\\[_[:alnum:]]+)\\s*(?=\\{)"
+      "match": "(?<=\\brange\\b|;|\\bif\\b|\\bfor\\b|[<>]|<=|>=|==|!=|\\w[-%*+/]|\\w[-%*+/]=|\\|\\||&&)\\s*((?![]\\[]+)[-\\]!%*+./:<=>\\[_[:alnum:]]+)\\s*(?=\\{)"
     },
     "brackets": {
       "patterns": [
@@ -373,40 +373,6 @@
         }
       },
       "match": "(?<!\\w)(\\([]*\\[]+{0,1}[.\\w]+(?:\\[(?:[]*.\\[{}\\w]+(?:,\\s*[]*.\\[{}\\w]+)*)?])?\\))(?=\\()"
-    },
-    "field_hover": {
-      "captures": {
-        "1": {
-          "patterns": [
-            {
-              "include": "#type-declarations"
-            },
-            {
-              "match": "\\w+",
-              "name": "variable.other.property.go"
-            }
-          ]
-        },
-        "2": {
-          "patterns": [
-            {
-              "match": "\\binvalid\\b\\s+\\btype\\b",
-              "name": "invalid.field.go"
-            },
-            {
-              "include": "#type-declarations-without-brackets"
-            },
-            {
-              "include": "#parameter-variable-types"
-            },
-            {
-              "match": "\\w+",
-              "name": "entity.name.type.go"
-            }
-          ]
-        }
-      },
-      "match": "(?<=^\\bfield\\b)\\s+([*.\\w]+)\\s+([\\s\\S]+)"
     },
     "function_declaration": {
       "begin": "^\\b(func)\\b\\s*(\\([^)]+\\)\\s*)?(?:(\\w+)(?=[(\\[]))?",
@@ -1051,10 +1017,67 @@
           "include": "#property_variables"
         },
         {
-          "include": "#switch_select_case_variables"
+          "include": "#switch_variables"
         },
         {
           "include": "#other_variables"
+        }
+      ]
+    },
+    "hover": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.property.go"
+                }
+              ]
+            },
+            "2": {
+              "patterns": [
+                {
+                  "match": "\\binvalid\\b\\s+\\btype\\b",
+                  "name": "invalid.field.go"
+                },
+                {
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "include": "#parameter-variable-types"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^\\bfield\\b)\\s+([*.\\w]+)\\s+([\\s\\S]+)"
+        },
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#type-declarations-without-brackets"
+                },
+                {
+                  "include": "#parameter-variable-types"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.type.go"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^\\breturns\\b)\\s+([\\s\\S]+)"
         }
       ]
     },
@@ -1848,7 +1871,7 @@
               ]
             }
           },
-          "match": "\\b([.\\w]+)(\\[(?:[]*.\\[{}\\w]+(?:,\\s*[]*.\\[{}\\w]+)*)?])?(?=\\{)(?<!\\b(?:struct|interface)\\b)"
+          "match": "\\b(?!(?:struct|interface)\\b)([.\\w]+)(?<brackets>\\[(?:[^]\\[]|\\g<brackets>)*])?(?=\\{)"
         }
       ]
     },
@@ -2181,7 +2204,7 @@
           "include": "#group-variables"
         },
         {
-          "include": "#field_hover"
+          "include": "#hover"
         }
       ]
     },
@@ -2294,7 +2317,7 @@
     "struct_variable_types_fields_multi": {
       "patterns": [
         {
-          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[]*\\[]+{0,1})\\b(struct)\\b\\s*(\\{)",
+          "begin": "\\b(\\w+(?:,\\s*\\b\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s*[]*\\[]+{0,1})\\b(struct)\\b\\s*(\\{)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2330,7 +2353,7 @@
           ]
         },
         {
-          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[]*\\[]+{0,1})\\b(interface)\\b\\s*(\\{)",
+          "begin": "\\b(\\w+(?:,\\s*\\b\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s*[]*\\[]+{0,1})\\b(interface)\\b\\s*(\\{)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2366,7 +2389,7 @@
           ]
         },
         {
-          "begin": "(\\w+(?:,\\s*\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s+[]*\\[]+{0,1})\\b(func)\\b\\s*(\\()",
+          "begin": "\\b(\\w+(?:,\\s*\\b\\w+)*(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\s*[]*\\[]+{0,1})\\b(func)\\b\\s*(\\()",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2508,12 +2531,12 @@
                       ]
                     }
                   },
-                  "match": "((?:\\w+,\\s*)+{0,1}\\w+\\s+)?((?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\S+;?)"
+                  "match": "((?:\\w+,\\s*)+{0,1}\\w+\\s+)?((?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[^/\\s]+;?)"
                 }
               ]
             }
           },
-          "match": "(?<=\\{)((?:\\s*(?:(?:\\w+,\\s*)+{0,1}\\w+\\s+)?(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}\\S+;?)+)\\s*(?=})"
+          "match": "(?<=\\{)((?:\\s*(?:(?:\\w+,\\s*)+{0,1}\\w+\\s+)?(?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[^/\\s]+;?)+)\\s*(?=})"
         },
         {
           "captures": {
@@ -2559,7 +2582,7 @@
               ]
             }
           },
-          "match": "((?:\\w+,\\s*)+{0,1}\\w+\\s+)([^\"/`]+)"
+          "match": "\\b(\\w+(?:\\s*,\\s*\\b\\w+)*)\\s*([^\"/`]+)"
         }
       ]
     },
@@ -2611,32 +2634,7 @@
           ]
         }
       },
-      "match": "(?:((?<=\\.)\\b\\w+)|\\b(\\w+))(\\[(?:[]\"'*.\\[{}\\w]+(?:,\\s*[]*.\\[{}\\w]+)*)?])?(?=\\()"
-    },
-    "switch_select_case_variables": {
-      "captures": {
-        "1": {
-          "name": "keyword.control.go"
-        },
-        "2": {
-          "patterns": [
-            {
-              "include": "#type-declarations"
-            },
-            {
-              "include": "#support_functions"
-            },
-            {
-              "include": "#variable_assignment"
-            },
-            {
-              "match": "\\w+",
-              "name": "variable.other.go"
-            }
-          ]
-        }
-      },
-      "match": "^\\s*\\b(case)\\b\\s+([\\s\\S]+:\\s*(?:/[*/].*)?)$"
+      "match": "(?:((?<=\\.)\\b\\w+)|\\b(\\w+))(?<brackets>\\[(?:[^]\\[]|\\g<brackets>)*])?(?=\\()"
     },
     "switch_types": {
       "begin": "(?<=\\bswitch\\b)\\s*(\\w+\\s*:=)?\\s*([-\\]%\\&(-+./<>\\[|\\w]+)(\\.\\(\\btype\\b\\)\\s*)(\\{)",
@@ -2745,6 +2743,100 @@
         },
         {
           "include": "$self"
+        }
+      ]
+    },
+    "switch_variables": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.go"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "include": "#support_functions"
+                },
+                {
+                  "include": "#variable_assignment"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.go"
+                }
+              ]
+            }
+          },
+          "match": "^\\s*\\b(case)\\b\\s+([\\s\\S]+:\\s*(?:/[*/].*)?)$"
+        },
+        {
+          "begin": "(?<=\\bswitch\\b)\\s*((?:[.\\w]+(?:\\s*[-!%\\&+,/:<=>|]+\\s*[.\\w]+)*\\s*[-!%\\&+,/:<=>|]+)?\\s*[-\\]%\\&(-+./<>\\[|\\w]+{0,1}\\s*(?:;\\s*[-\\]%\\&(-+./<>\\[|\\w]+\\s*)?)(\\{)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#support_functions"
+                },
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "include": "#variable_assignment"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.go"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.definition.begin.bracket.curly.go"
+            }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.end.bracket.curly.go"
+            }
+          },
+          "patterns": [
+            {
+              "begin": "\\bcase\\b",
+              "beginCaptures": {
+                "0": {
+                  "name": "keyword.control.go"
+                }
+              },
+              "end": ":",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.other.colon.go"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#support_functions"
+                },
+                {
+                  "include": "#type-declarations"
+                },
+                {
+                  "include": "#variable_assignment"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "variable.other.go"
+                }
+              ]
+            },
+            {
+              "include": "$self"
+            }
+          ]
         }
       ]
     },
@@ -2859,7 +2951,31 @@
         "2": {
           "patterns": [
             {
-              "include": "#type-declarations"
+              "include": "#type-declarations-without-brackets"
+            },
+            {
+              "match": "\\(",
+              "name": "punctuation.definition.begin.bracket.round.go"
+            },
+            {
+              "match": "\\)",
+              "name": "punctuation.definition.end.bracket.round.go"
+            },
+            {
+              "match": "\\[",
+              "name": "punctuation.definition.begin.bracket.square.go"
+            },
+            {
+              "match": "]",
+              "name": "punctuation.definition.end.bracket.square.go"
+            },
+            {
+              "match": "\\{",
+              "name": "punctuation.definition.begin.bracket.curly.go"
+            },
+            {
+              "match": "}",
+              "name": "punctuation.definition.end.bracket.curly.go"
             },
             {
               "match": "\\w+",
@@ -2868,7 +2984,7 @@
           ]
         }
       },
-      "match": "(?<=\\.\\()(?:\\b(type)\\b|((?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[]*.\\[\\w]+))(?=\\))"
+      "match": "(?<=\\.\\()(?:\\b(type)\\b|((?:\\s*[]*\\[]+{0,1}(?:<-\\s*)?\\bchan\\b(?:\\s*<-)?\\s*)+{0,1}[]*\\[]+{0,1}[.\\w]+(?:\\[(?:[]*.\\[{}\\w]+(?:,\\s*[]*.\\[{}\\w]+)*)?])?))(?=\\))"
     },
     "var_assignment": {
       "patterns": [

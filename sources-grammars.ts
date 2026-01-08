@@ -19,6 +19,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'c3',
+    displayName: 'C3',
+    source: 'https://github.com/c3lang/vscode-c3/blob/main/syntaxes/c3.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'cairo',
     displayName: 'Cairo',
     source: 'https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
@@ -123,6 +129,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'hurl',
+    source: 'https://github.com/nikeee/language-hurl/blob/main/grammars/hurl.tmlanguage.json',
+    categories: ['web', 'utility'],
+  },
+  {
     name: 'ini',
     displayName: 'INI',
     aliases: ['properties'],
@@ -137,7 +148,7 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'javascript',
     displayName: 'JavaScript',
-    aliases: ['js'],
+    aliases: ['js', 'cjs', 'mjs'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/javascript/syntaxes/JavaScript.tmLanguage.json',
     categories: ['web', 'scripting', 'general'],
   },
@@ -226,6 +237,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'openscad',
+    aliases: ['scad'],
+    source: 'https://github.com/tbuser/openscad.tmbundle/blob/master/Syntaxes/OpenSCAD.tmLanguage',
+    categories: ['dsl'],
+  },
+  {
     name: 'perl',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl.tmLanguage.json',
     categories: ['general'],
@@ -235,6 +252,11 @@ export const sourcesVSCode: GrammarSource[] = [
     displayName: 'PHP',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/php/syntaxes/php.tmLanguage.json',
     categories: ['general', 'web'],
+  },
+  {
+    name: 'pkl',
+    source: 'https://github.com/apple/pkl.tmbundle/blob/main/Syntaxes/pkl.tmLanguage',
+    categories: ['data'],
   },
   {
     name: 'powershell',
@@ -256,14 +278,21 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'r',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/r/syntaxes/r.tmLanguage.json',
+    source: 'https://github.com/posit-dev/positron/blob/main/extensions/positron-r/syntaxes/r.tmGrammar.gen.json',
     categories: ['data'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/posit-dev/positron/refs/heads/main/extensions/positron-r/syntaxes/LICENSE.md',
   },
   {
     name: 'raku',
     displayName: 'Raku',
     aliases: ['perl6'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl6.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
+    name: 'rosmsg',
+    source: 'https://github.com/jtbandes/ros-tmlanguage/blob/main/ROS%20Interface.tmLanguage.yaml',
     categories: ['general'],
   },
   {
@@ -331,7 +360,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'typescript',
-    aliases: ['ts'],
+    aliases: ['ts', 'cts', 'mts'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json',
     categories: ['web', 'scripting', 'general'],
   },
@@ -396,7 +425,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'asciidoc',
     aliases: ['adoc'],
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/Asciidoctor.json',
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/asciidoc.tmLanguage.json',
     categories: ['markup'],
   },
   {
@@ -424,7 +453,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'berry',
     aliases: ['be'],
-    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.1.0/syntaxes/berry.json',
+    source: 'https://github.com/berry-lang/berry/blob/master/tools/plugins/vscode/skiars.berry-1.2.0/syntaxes/berry.json',
   },
   {
     name: 'bicep',
@@ -441,6 +470,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c.tmLanguage.json',
     categories: ['general', 'dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'cadence',
@@ -632,6 +663,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/polym0rph/GLSL.tmbundle/blob/master/Syntaxes/GLSL.tmLanguage',
   },
   {
+    name: 'gn',
+    displayName: 'GN',
+    source: 'https://github.com/google/gn-language-server/blob/main/vscode-gn/syntaxes/gn.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'gnuplot',
     displayName: 'Gnuplot',
     source: 'https://github.com/MarioSchwalbe/vscode-gnuplot/blob/master/syntaxes/gnuplot.tmLanguage',
@@ -721,6 +758,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
   },
   {
+    name: 'kdl',
+    displayName: 'KDL',
+    source: 'https://github.com/kdl-org/vscode-kdl/blob/main/syntaxes/kdl.tmLanguage.json',
+    categories: ['markup'],
+  },
+  {
     name: 'kotlin',
     aliases: ['kt', 'kts'],
     source: 'https://github.com/fwcd/vscode-kotlin/blob/main/syntaxes/kotlin.tmLanguage.json',
@@ -758,7 +801,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'marko',
-    source: 'https://github.com/marko-js/marko-tmbundle/blob/master/Syntaxes/marko.tmLanguage',
+    source: 'https://github.com/marko-js/language-server/blob/main/packages/vscode/syntaxes/marko.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
@@ -768,7 +811,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'mdc',
     displayName: 'MDC',
-    source: 'https://github.com/nuxtlabs/vscode-mdc/blob/main/syntaxes/mdc.standalone.tmLanguage.json',
+    source: 'https://github.com/nuxt-content/vscode-mdc/blob/main/syntaxes/mdc.standalone.tmLanguage.json',
     categories: ['web', 'markup'],
   },
   {
@@ -815,7 +858,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'nix',
     displayName: 'Nix',
-    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/syntaxes/nix.YAML-tmLanguage',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/nix.tmLanguage.json',
   },
   {
     name: 'nushell',
@@ -954,6 +997,8 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['1c-query'],
     source: 'https://github.com/1c-syntax/vsc-language-1c-bsl/blob/master/syntaxes/1c-query.tmLanguage.json',
     categories: ['dsl'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/1c-syntax/vsc-language-1c-bsl/refs/heads/master/LICENSE.md',
   },
   {
     name: 'shellsession',
@@ -1103,6 +1148,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web'],
   },
   {
+    name: 'vue-vine',
+    source: 'https://github.com/vue-vine/assets/blob/main/grammars/vue-vine.tmLanguage.json',
+    categories: ['web'],
+  },
+  {
     name: 'vue',
     source: 'https://github.com/vuejs/language-tools/blob/master/extensions/vscode/syntaxes/vue.tmLanguage.json',
     categories: ['web'],
@@ -1182,6 +1232,13 @@ export const sourcesMarketplace: GrammarSource[] = [
       name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
       grammar: 'mermaid',
     },
+  },
+  {
+    name: 'moonbit',
+    displayName: 'MoonBit',
+    aliases: ['mbt', 'mbti'],
+    source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/main/grammars/moonbit.tmLanguage.json',
+    categories: ['general'],
   },
 ]
 
@@ -1368,6 +1425,15 @@ export const sourcesInjections: GrammarSource[] = [
     source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-xml.json',
     embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
+  },
+  // ========== Others ==========
+  {
+    name: 'markdown-nix',
+    source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/injection.json',
+    embeddedIn: ['nix'],
+    injectTo: [
+      'text.html.markdown',
+    ],
   },
 ]
 

@@ -1,0 +1,192 @@
+#4D9375        import
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        ref
+#444444        ,
+#DBD7CACC       
+#BD976A        computed
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        vue
+#C98A7D77      '
+#CB7676        function
+#DBD7CACC       
+#80A665        ChildComp
+#444444        (
+#BD976A        props
+#444444        : {
+#444444          
+#BD976A        foo
+#444444        : 
+#5DA994        string
+#444444          
+#BD976A        bar
+#CB7676        ?
+#444444        : 
+#5DA994        boolean
+#444444        })
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        ref
+#444444        (
+#4C9A91        0
+#444444        )
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        double
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        computed
+#444444        (()
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4C9A91        2
+#444444        )
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#80A665        vine
+#C98A7D77      `
+#BD976A            
+#444444        <
+#4D9375        div
+#444444         
+#BD976A        class
+#444444        =
+#C98A7D77      "
+#C98A7D        child-comp
+#C98A7D77      "
+#444444        >
+#BD976A              
+#444444        <
+#4D9375        h3
+#444444        >
+#BD976A         {{ foo }} 
+#444444        </
+#4D9375        h3
+#444444        >
+#BD976A              
+#444444        <
+#4D9375        p
+#444444        >
+#BD976A         Count = {{ count }} 
+#444444        </
+#4D9375        p
+#444444        >
+#BD976A              
+#444444        <
+#4D9375        p
+#444444         
+#BD976A        v-show
+#444444        =
+#C98A7D77      "
+#C98A7D        bar
+#C98A7D77      "
+#444444        >
+#BD976A         Double = {{ double }} 
+#444444        </
+#4D9375        p
+#444444        >
+#BD976A            
+#444444        </
+#4D9375        div
+#444444        >
+#BD976A          
+#C98A7D77      `
+#444444        }
+#4D9375        export
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        App
+#444444        ()
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        msg
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        ref
+#444444        (
+#C98A7D77      ''
+#444444        )
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#80A665        vine
+#C98A7D77      `
+#BD976A            
+#444444        <
+#4D9375        div
+#444444         
+#BD976A        class
+#444444        =
+#C98A7D77      "
+#C98A7D        app
+#C98A7D77      "
+#444444        >
+#BD976A              
+#444444        <
+#B8A965        ChildComp
+#444444         
+#BD976A        foo
+#444444        =
+#C98A7D77      "
+#C98A7D        hello world
+#C98A7D77      "
+#444444         
+#BD976A        bar
+#444444         />
+#BD976A              
+#444444        <
+#4D9375        input
+#444444         
+#BD976A        v-model
+#444444        =
+#C98A7D77      "
+#C98A7D        msg
+#C98A7D77      "
+#444444         
+#BD976A        type
+#444444        =
+#C98A7D77      "
+#C98A7D        text
+#C98A7D77      "
+#444444         />
+#BD976A              
+#444444        <
+#4D9375        p
+#444444        >
+#BD976A         Message: {{ msg }} 
+#444444        </
+#4D9375        p
+#444444        >
+#BD976A            
+#444444        </
+#4D9375        div
+#444444        >
+#BD976A          
+#C98A7D77      `
+#444444        }

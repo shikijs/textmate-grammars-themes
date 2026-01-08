@@ -121,7 +121,7 @@
       "match": "(?i)\\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|double\\sprecision|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b|\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar|float|interval)\\((\\d+)\\)|\\b(char|number|varchar\\d?)\\b(?:\\((\\d+)\\))?|\\b(numeric|decimal)\\b(?:\\((\\d+),(\\d+)\\))?|\\b(times?)\\b(?:\\((\\d+)\\))?(\\swith(?:out)?\\stime\\szone\\b)?|\\b(timestamp)(s|tz)?\\b(?:\\((\\d+)\\))?(\\s(with(?:|out))\\stime\\szone\\b)?"
     },
     {
-      "match": "(?i:\\b((?:primary|foreign)\\s+key|references|on\\sdelete(\\s+cascade)?|nocheck|check|constraint|collate|default)\\b)",
+      "match": "(?i:\\b((?:primary|foreign)\\s+key|references|on\\s+(delete|update)(\\s+cascade)?|nocheck|check|constraint|collate|default)\\b)",
       "name": "storage.modifier.sql"
     },
     {
@@ -153,7 +153,7 @@
       "name": "keyword.other.data-integrity.sql"
     },
     {
-      "match": "(?i:^\\s*(comment\\s+on\\s+(table|column|aggregate|constraint|database|domain|function|index|operator|rule|schema|sequence|trigger|type|view))\\s+.*?\\s+(is)\\s+)",
+      "match": "(?i:^\\s*(comment\\s+on\\s+(table|column|aggregate|constraint|database|domain|function|index|operator|rule|schema|sequence|trigger|type|view))\\s+)",
       "name": "keyword.other.object-comments.sql"
     },
     {

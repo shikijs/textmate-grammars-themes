@@ -115,6 +115,92 @@
     "strings": {
       "patterns": [
         {
+          "begin": "f(?=[\"'])",
+          "patterns": [
+            {
+              "begin": "\"",
+              "end": "\"",
+              "name": "string.quoted.other.berry",
+              "patterns": [
+                {
+                  "match": "(\\\\x\\h{2})|(\\\\[0-7]{3})|(\\\\\\\\)|(\\\\\")|(\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)",
+                  "name": "constant.character.escape.berry"
+                },
+                {
+                  "match": "\\{\\{[^}]*}}",
+                  "name": "string.quoted.other.berry"
+                },
+                {
+                  "begin": "\\{",
+                  "end": "}",
+                  "name": "keyword.other.unit.berry",
+                  "patterns": [
+                    {
+                      "include": "#keywords"
+                    },
+                    {
+                      "include": "#numbers"
+                    },
+                    {
+                      "include": "#identifier"
+                    },
+                    {
+                      "include": "#operator"
+                    },
+                    {
+                      "include": "#member"
+                    },
+                    {
+                      "include": "#function"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "begin": "'",
+              "end": "'",
+              "name": "string.quoted.other.berry",
+              "patterns": [
+                {
+                  "match": "(\\\\x\\h{2})|(\\\\[0-7]{3})|(\\\\\\\\)|(\\\\\")|(\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)",
+                  "name": "constant.character.escape.berry"
+                },
+                {
+                  "match": "\\{\\{[^}]*}}",
+                  "name": "string.quoted.other.berry"
+                },
+                {
+                  "begin": "\\{",
+                  "end": "}",
+                  "name": "keyword.other.unit.berry",
+                  "patterns": [
+                    {
+                      "include": "#keywords"
+                    },
+                    {
+                      "include": "#numbers"
+                    },
+                    {
+                      "include": "#identifier"
+                    },
+                    {
+                      "include": "#operator"
+                    },
+                    {
+                      "include": "#member"
+                    },
+                    {
+                      "include": "#function"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "while": "\\G|^[\\t ]*(?=[\"'])"
+        },
+        {
           "begin": "([\"'])",
           "end": "\\1",
           "name": "string.quoted.double.berry",
@@ -122,46 +208,6 @@
             {
               "match": "(\\\\x\\h{2})|(\\\\[0-7]{3})|(\\\\\\\\)|(\\\\\")|(\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)",
               "name": "constant.character.escape.berry"
-            }
-          ]
-        },
-        {
-          "begin": "f([\"'])",
-          "end": "\\1",
-          "name": "string.quoted.other.berry",
-          "patterns": [
-            {
-              "match": "(\\\\x\\h{2})|(\\\\[0-7]{3})|(\\\\\\\\)|(\\\\\")|(\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)",
-              "name": "constant.character.escape.berry"
-            },
-            {
-              "match": "\\{\\{[^}]*}}",
-              "name": "string.quoted.other.berry"
-            },
-            {
-              "begin": "\\{",
-              "end": "}",
-              "name": "keyword.other.unit.berry",
-              "patterns": [
-                {
-                  "include": "#keywords"
-                },
-                {
-                  "include": "#numbers"
-                },
-                {
-                  "include": "#identifier"
-                },
-                {
-                  "include": "#operator"
-                },
-                {
-                  "include": "#member"
-                },
-                {
-                  "include": "#function"
-                }
-              ]
             }
           ]
         }

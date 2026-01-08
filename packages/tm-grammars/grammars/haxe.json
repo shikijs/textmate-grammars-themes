@@ -1002,7 +1002,7 @@
         {
           "begin": "(?<=trace|$type|if|while|for|super)\\s*(\\()",
           "beginCaptures": {
-            "2": {
+            "1": {
               "name": "meta.brace.round.hx"
             }
           },
@@ -1021,7 +1021,7 @@
         {
           "begin": "(?<=catch)\\s*(\\()",
           "beginCaptures": {
-            "2": {
+            "1": {
               "name": "meta.brace.round.hx"
             }
           },
@@ -1043,7 +1043,7 @@
         {
           "begin": "(?<=cast)\\s*(\\()",
           "beginCaptures": {
-            "2": {
+            "1": {
               "name": "meta.brace.round.hx"
             }
           },
@@ -1184,7 +1184,7 @@
       ]
     },
     "keywords-accessor": {
-      "match": "\\b(default|get|set|dynamic|never|null)\\b",
+      "match": "\\b(private|default|get|set|dynamic|never|null)\\b",
       "name": "storage.type.property.hx"
     },
     "macro-reification": {
