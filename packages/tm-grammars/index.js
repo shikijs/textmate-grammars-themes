@@ -3959,7 +3959,7 @@ export const grammars = [
     aliases: [
       'surql',
     ],
-    byteSize: 16689,
+    byteSize: 21423,
     categories: [
       'dsl',
     ],
@@ -3969,15 +3969,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'I_kxiF6r9UNsiRdny_k6sSnVVbxqe482r2cYKTKol0k',
-    lastUpdate: '2024-03-11T11:10:59Z',
+    hash: 'snSnKnrRcZkn22pIEuCMIsQZPgo1HhN59MWMJ7v-2Fs',
+    lastUpdate: '2026-01-08T14:31:52Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/surrealdb/surrealql-grammar/main/LICENSE',
     name: 'surrealql',
     scopeName: 'source.surrealql',
-    sha: '1cedb13a8dc16869bf67dbb5510d4eb5d6fca737',
-    source: 'https://github.com/surrealdb/surrealql-grammar/blob/1cedb13a8dc16869bf67dbb5510d4eb5d6fca737/syntaxes/surrealql.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/surrealdb/surrealql-grammar/contents/syntaxes/surrealql.tmLanguage.json?ref=1cedb13a8dc16869bf67dbb5510d4eb5d6fca737',
+    sha: 'afb9c5362be1b291da3a6b7eb71902cc460759ed',
+    source: 'https://github.com/surrealdb/surrealql-grammar/blob/afb9c5362be1b291da3a6b7eb71902cc460759ed/syntaxes/surrealql.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/surrealdb/surrealql-grammar/contents/syntaxes/surrealql.tmLanguage.json?ref=afb9c5362be1b291da3a6b7eb71902cc460759ed',
   },
   {
     byteSize: 17434,
