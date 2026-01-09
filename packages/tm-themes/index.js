@@ -59,6 +59,36 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 19842,
+    displayName: 'Ayu Light',
+    funding: [
+    ],
+    hash: 'VQSmhINi1It4WAW9te6lUw57oBXi3A7dklQ-w9sv6Gs',
+    lastUpdate: '2026-01-03T15:11:07Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
+    name: 'ayu-light',
+    sha: '716376562d9c698cb66166f77fd84836717f1258',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/716376562d9c698cb66166f77fd84836717f1258/ayu-light.json',
+    sourceApi: 'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-light.json?ref=716376562d9c698cb66166f77fd84836717f1258',
+    type: 'light',
+  },
+  {
+    byteSize: 19781,
+    displayName: 'Ayu Mirage',
+    funding: [
+    ],
+    hash: '3YIc0bSQ8TIRobLw3OvYmpHFuovhOichYRvyc9XSM98',
+    lastUpdate: '2026-01-03T15:11:07Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
+    name: 'ayu-mirage',
+    sha: '716376562d9c698cb66166f77fd84836717f1258',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/716376562d9c698cb66166f77fd84836717f1258/ayu-mirage.json',
+    sourceApi: 'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-mirage.json?ref=716376562d9c698cb66166f77fd84836717f1258',
+    type: 'dark',
+  },
+  {
     byteSize: 47198,
     displayName: 'Catppuccin Frappé',
     funding: [
@@ -487,6 +517,21 @@ export const themes = [
     source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
     sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'light',
+  },
+  {
+    byteSize: 8720,
+    displayName: 'Horizon',
+    funding: [
+    ],
+    hash: '3q8AzFpmEpKQDZ6S4XM5-5D2Rw73_dU66vQ4_2cTkkM',
+    lastUpdate: '2022-12-25T15:13:11Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/alexandernanberg/horizon-theme-vscode/master/LICENSE',
+    name: 'horizon',
+    sha: '83c848d0efd5d57ac7c9d868b53ae375d8a27692',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/83c848d0efd5d57ac7c9d868b53ae375d8a27692/themes/horizon.json',
+    sourceApi: 'https://api.github.com/repos/alexandernanberg/horizon-theme-vscode/contents/themes/horizon.json?ref=83c848d0efd5d57ac7c9d868b53ae375d8a27692',
+    type: 'dark',
   },
   {
     byteSize: 35362,
