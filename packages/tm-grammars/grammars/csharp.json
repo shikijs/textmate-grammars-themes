@@ -313,7 +313,7 @@
       ]
     },
     "array-creation-expression": {
-      "begin": "\\b(new|stackalloc)\\b\\s*(?<type_name>(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)?\\s*(?=\\[)",
+      "begin": "\\b(new|stackalloc)\\b\\s*(?<type_name>(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\*\\s*)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)?\\s*(?=\\[)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.expression.$1.cs"
@@ -441,7 +441,7 @@
       ]
     },
     "attribute-section": {
-      "begin": "(\\[)(assembly|module|field|event|method|param|property|return|type)?(:)?",
+      "begin": "(\\[)(assembly|module|field|event|method|param|property|return|typevar|type)?(:)?",
       "beginCaptures": {
         "1": {
           "name": "punctuation.squarebracket.open.cs"
@@ -495,6 +495,33 @@
         }
       ]
     },
+    "base-class-constructor-call": {
+      "begin": "(?:(@?[_[:alpha:]][_[:alnum:]]*)\\s*(\\.))*(@?[_[:alpha:]][_[:alnum:]]*)\\s*(<(?<type_args>[^()<>]|\\((?:[^()<>]|<[^()<>]*>|\\([^()<>]*\\))*\\)|<\\g<type_args>*>)*>\\s*)?(?=\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.type.cs"
+        },
+        "2": {
+          "name": "punctuation.accessor.cs"
+        },
+        "3": {
+          "name": "entity.name.type.cs"
+        },
+        "4": {
+          "patterns": [
+            {
+              "include": "#type-arguments"
+            }
+          ]
+        }
+      },
+      "end": "(?<=\\))",
+      "patterns": [
+        {
+          "include": "#argument-list"
+        }
+      ]
+    },
     "base-types": {
       "begin": ":",
       "beginCaptures": {
@@ -504,6 +531,9 @@
       },
       "end": "(?=\\{|where|;)",
       "patterns": [
+        {
+          "include": "#base-class-constructor-call"
+        },
         {
           "include": "#type"
         },
@@ -871,7 +901,13 @@
           "include": "#type-declarations"
         },
         {
+          "include": "#constructor-declaration"
+        },
+        {
           "include": "#property-declaration"
+        },
+        {
+          "include": "#fixed-size-buffer-declaration"
         },
         {
           "include": "#field-declaration"
@@ -884,9 +920,6 @@
         },
         {
           "include": "#variable-initializer"
-        },
-        {
-          "include": "#constructor-declaration"
         },
         {
           "include": "#destructor-declaration"
@@ -1042,17 +1075,14 @@
       ]
     },
     "constructor-declaration": {
-      "begin": "(?=@?[_[:alpha:]][_[:alnum:]]*\\s*\\()",
+      "begin": "(@?[_[:alpha:]][_[:alnum:]]*)\\s*(?=\\(|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.cs"
+        }
+      },
       "end": "(?<=})|(?=;)",
       "patterns": [
-        {
-          "captures": {
-            "1": {
-              "name": "entity.name.function.cs"
-            }
-          },
-          "match": "(@?[_[:alpha:]][_[:alnum:]]*)\\b"
-        },
         {
           "begin": "(:)",
           "beginCaptures": {
@@ -1697,6 +1727,12 @@
           "include": "#is-expression"
         },
         {
+          "include": "#boolean-literal"
+        },
+        {
+          "include": "#null-literal"
+        },
+        {
           "include": "#anonymous-method-expression"
         },
         {
@@ -1889,6 +1925,33 @@
         }
       ]
     },
+    "fixed-size-buffer-declaration": {
+      "begin": "\\b(fixed)\\b\\s+(?<type_name>(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*)\\s+(\\g<identifier>)\\s*(?=\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.fixed.cs"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#type"
+            }
+          ]
+        },
+        "6": {
+          "name": "entity.name.variable.field.cs"
+        }
+      },
+      "end": "(?=;)",
+      "patterns": [
+        {
+          "include": "#bracketed-argument-list"
+        },
+        {
+          "include": "#comment"
+        }
+      ]
+    },
     "fixed-statement": {
       "begin": "\\b(fixed)\\b",
       "beginCaptures": {
@@ -1957,6 +2020,15 @@
                 },
                 {
                   "include": "#local-variable-declaration"
+                },
+                {
+                  "include": "#local-tuple-var-deconstruction"
+                },
+                {
+                  "include": "#tuple-deconstruction-assignment"
+                },
+                {
+                  "include": "#expression"
                 }
               ]
             },
@@ -2726,6 +2798,9 @@
         },
         {
           "include": "#local-tuple-var-deconstruction"
+        },
+        {
+          "include": "#local-tuple-declaration-deconstruction"
         }
       ]
     },
@@ -2776,6 +2851,18 @@
         }
       ]
     },
+    "local-tuple-declaration-deconstruction": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#tuple-declaration-deconstruction-element-list"
+            }
+          ]
+        }
+      },
+      "match": "(?<tuple>\\((?:[^()]|\\g<tuple>)+\\))\\s*(?!=[=>])(?==)"
+    },
     "local-tuple-var-deconstruction": {
       "begin": "\\b(var)\\b\\s*(?<tuple>\\((?:[^()]|\\g<tuple>)+\\))\\s*(?=[);=])",
       "beginCaptures": {
@@ -2801,7 +2888,7 @@
       ]
     },
     "local-variable-declaration": {
-      "begin": "(?:(?:\\b(ref)\\s+(?:\\b(readonly)\\s+)?)?\\b(var)\\b|(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*[*?]\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>)(?=[),;=])",
+      "begin": "(?:(?:\\b(ref)\\s+(?:\\b(readonly)\\s+)?)?\\b(var)\\b|(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\*\\s*)*(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*))\\s+(\\g<identifier>)\\s*(?!=>)(?=[),;=])",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.ref.cs"
@@ -3469,7 +3556,7 @@
       "name": "meta.preprocessor.cs",
       "patterns": [
         {
-          "include": "#comment"
+          "include": "#preprocessor-comment"
         },
         {
           "include": "#preprocessor-define-or-undef"
@@ -3632,6 +3719,29 @@
       },
       "match": "\\b(sdk)\\b\\s*([_[:alpha:]][._[:alnum:]]*)?(@)?(.*)?\\s*"
     },
+    "preprocessor-comment": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.cs"
+            }
+          },
+          "match": "(//).*(?=$)",
+          "name": "comment.line.double-slash.cs"
+        },
+        {
+          "begin": "/\\*",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.cs"
+            }
+          },
+          "end": "\\*/",
+          "name": "comment.block.cs"
+        }
+      ]
+    },
     "preprocessor-define-or-undef": {
       "captures": {
         "1": {
@@ -3726,7 +3836,7 @@
       "end": "(?=$)",
       "patterns": [
         {
-          "include": "#comment"
+          "include": "#preprocessor-comment"
         },
         {
           "include": "#preprocessor-expression"
@@ -3911,10 +4021,13 @@
           "name": "storage.modifier.$1.cs"
         },
         {
-          "begin": "\\b(get)\\b\\s*(?=[;{]|=>|//|/\\*|$)",
+          "begin": "(?:\\b(readonly)\\s+)?\\b(get)\\b\\s*(?=[;{]|=>|//|/\\*|$)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.accessor.$1.cs"
+              "name": "storage.modifier.readonly.cs"
+            },
+            "2": {
+              "name": "storage.type.accessor.get.cs"
             }
           },
           "end": "(?<=[;}])|(?=})",

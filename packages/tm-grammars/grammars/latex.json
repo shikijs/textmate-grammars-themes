@@ -74,7 +74,7 @@
     "all-balanced-env": {
       "patterns": [
         {
-          "begin": "\\s*((\\\\)begin)(\\{)((?:\\+?array|equation|(?:IEEE|sub)?eqnarray|multline|align|aligned|alignat|alignedat|flalign|flaligned|flalignat|split|gather|gathered|\\+?cases|(?:display)?math|\\+?[A-Za-z]*matrix|[BVbpv]?NiceMatrix|[BVbpv]?NiceArray|(?:arg)?m(?:ini|axi))[!*]?)(})(\\s*\\n)?",
+          "begin": "\\s*((\\\\)begin)(\\{)((?:\\+?array|equation|(?:IEEE|sub)?eqnarray|multline|align|aligned|alignat|alignedat|flalign|flaligned|flalignat|split|gather|gathered|(?:[+dr]|dr)?cases|(?:display)?math|\\+?[A-Za-z]*matrix|[BVbpv]?NiceMatrix|[BVbpv]?NiceArray|(?:arg)?m(?:ini|axi))[!*]?)(})(\\s*\\n)?",
           "captures": {
             "1": {
               "name": "support.function.be.latex"
@@ -323,7 +323,7 @@
           },
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"
@@ -359,7 +359,7 @@
           },
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"
@@ -434,6 +434,47 @@
             }
           },
           "match": "((?:\\([^)]*\\)){0,2})((?:\\[[^]]*]){0,2})(\\{)([-.:_\\p{Alphabetic}\\p{N}]+)(})(.*)"
+        }
+      ]
+    },
+    "braces": {
+      "begin": "(?<!\\\\)\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.group.begin.latex"
+        }
+      },
+      "end": "(?<!\\\\)}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.group.end.latex"
+        }
+      },
+      "name": "meta.group.braces.latex",
+      "patterns": [
+        {
+          "include": "#text-font-macro"
+        },
+        {
+          "include": "#citation-macro"
+        },
+        {
+          "include": "#references-macro"
+        },
+        {
+          "include": "#label-macro"
+        },
+        {
+          "include": "#macro-with-args-tokenizer"
+        },
+        {
+          "include": "#all-other-macro"
+        },
+        {
+          "include": "text.tex"
+        },
+        {
+          "include": "#braces"
         }
       ]
     },
@@ -3680,7 +3721,7 @@
           "include": "#column-specials"
         },
         {
-          "include": "text.tex#braces"
+          "include": "#braces"
         },
         {
           "include": "text.tex"
@@ -3813,7 +3854,7 @@
           "include": "#column-specials"
         },
         {
-          "include": "text.tex#braces"
+          "include": "#braces"
         },
         {
           "include": "text.tex"
@@ -4023,7 +4064,7 @@
       "name": "meta.function.section.$3.latex",
       "patterns": [
         {
-          "include": "text.tex#braces"
+          "include": "#braces"
         },
         {
           "include": "$self"
@@ -4137,7 +4178,7 @@
           "name": "meta.function.emph.latex",
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"
@@ -4167,7 +4208,7 @@
           "name": "meta.function.textit.latex",
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"
@@ -4197,7 +4238,7 @@
           "name": "meta.function.textbf.latex",
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"
@@ -4227,7 +4268,7 @@
           "name": "meta.function.texttt.latex",
           "patterns": [
             {
-              "include": "text.tex#braces"
+              "include": "#braces"
             },
             {
               "include": "$self"

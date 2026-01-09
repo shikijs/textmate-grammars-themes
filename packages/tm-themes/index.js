@@ -5,7 +5,7 @@
 
 export const themes = [
   {
-    byteSize: 8916,
+    byteSize: 8955,
     displayName: 'Andromeeda',
     funding: [
       {
@@ -18,14 +18,14 @@ export const themes = [
         url: 'https://www.paypal.me/EliverLara/',
       },
     ],
-    hash: 'qgmtUfkFXSw9Xeh8CmtbwBXux4wdJiooJI5JlXdv2FE',
-    lastUpdate: '2025-08-24T20:05:00Z',
+    hash: 'JNa5tmkFrwURbGnjeOcFLuVbi6SkXKY_fyrwqWgOUAY',
+    lastUpdate: '2025-10-18T01:22:22Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
     name: 'andromeeda',
-    sha: '7d71470cd030df73b9b2774c89499fc4d0ef8d1c',
-    source: 'https://github.com/EliverLara/Andromeda/blob/7d71470cd030df73b9b2774c89499fc4d0ef8d1c/themes/Andromeda-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=7d71470cd030df73b9b2774c89499fc4d0ef8d1c',
+    sha: '5a7e7059b4e14f4623eb647464570df70992528a',
+    source: 'https://github.com/EliverLara/Andromeda/blob/5a7e7059b4e14f4623eb647464570df70992528a/themes/Andromeda-color-theme.json',
+    sourceApi: 'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=5a7e7059b4e14f4623eb647464570df70992528a',
     type: 'dark',
   },
   {
