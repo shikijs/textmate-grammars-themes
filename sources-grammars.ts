@@ -291,6 +291,12 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'ron',
+    displayName: 'RON',
+    source: 'https://github.com/a5huynh/vscode-ron/blob/master/syntaxes/ron.tmGrammar.json',
+    categories: ['data'],
+  },
+  {
     name: 'rosmsg',
     source: 'https://github.com/jtbandes/ros-tmlanguage/blob/main/ROS%20Interface.tmLanguage.yaml',
     categories: ['general'],
