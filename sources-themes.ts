@@ -18,9 +18,24 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
   },
   {
+    name: 'ayu-light',
+    displayName: 'Ayu Light',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-light.json',
+  },
+  {
+    name: 'ayu-mirage',
+    displayName: 'Ayu Mirage',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-mirage.json',
+  },
+  {
     name: 'dark-plus',
     displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
+  },
+  {
+    name: 'horizon',
+    displayName: 'Horizon',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
   },
   {
     name: 'laserwave',
