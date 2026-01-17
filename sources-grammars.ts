@@ -871,6 +871,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'odin',
+    displayName: 'Odin',
+    source: 'https://github.com/DanielGavin/ols/blob/master/editors/vscode/syntaxes/odin.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'pascal',
     source: 'https://github.com/alefragnani/vscode-language-pascal/blob/master/syntaxes/pascal.tmLanguage',
     categories: ['general'],
