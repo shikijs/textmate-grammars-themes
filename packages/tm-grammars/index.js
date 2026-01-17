@@ -2928,6 +2928,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/reasonml-editor/vscode-reasonml/contents/syntaxes/ocaml.json?ref=14af625ec50ed9968b957b4d6336c5338d81af45',
   },
   {
+    byteSize: 16000,
+    categories: [
+      'general',
+    ],
+    displayName: 'Odin',
+    funding: [
+    ],
+    hash: '5sffQfBmHX2fJYQS-iu7TUQgjU7XLrS2k6-4Dv4Mdeg',
+    lastUpdate: '2025-01-13T00:20:53Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/DanielGavin/ols/master/LICENSE',
+    name: 'odin',
+    scopeName: 'source.odin',
+    sha: 'd26a19b38c581e28f67609cbb2d5ac933a9373d1',
+    source: 'https://github.com/DanielGavin/ols/blob/d26a19b38c581e28f67609cbb2d5ac933a9373d1/editors/vscode/syntaxes/odin.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/DanielGavin/ols/contents/editors/vscode/syntaxes/odin.tmLanguage.json?ref=d26a19b38c581e28f67609cbb2d5ac933a9373d1',
+  },
+  {
     aliases: [
       'scad',
     ],
