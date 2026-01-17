@@ -2729,19 +2729,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/moonbitlang/moonbit-tmLanguage/contents/grammars/moonbit.tmLanguage.json?ref=d9501977864ee8196d4f40551cfc4561f7499bc7',
   },
   {
-    byteSize: 16813,
+    byteSize: 16984,
     displayName: 'Move',
     funding: [
     ],
-    hash: 'K0JUL4aFlk--6C-7T-PzCAfCOU3jrLLsmgbiUF8lipE',
-    lastUpdate: '2025-10-06T10:13:45Z',
+    hash: 'ouIM8NfAr6qJ7pJHtywBiDvafSQmrrzSgfhcOgRWTuM',
+    lastUpdate: '2026-01-16T12:25:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
     name: 'move',
     scopeName: 'source.move',
-    sha: '8b90e571e35f7bbda165a1ddd1794e5176831a90',
-    source: 'https://github.com/damirka/move-syntax/blob/8b90e571e35f7bbda165a1ddd1794e5176831a90/syntaxes/move.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=8b90e571e35f7bbda165a1ddd1794e5176831a90',
+    sha: '03e44307aefd99bac3c10bda4430a22c92d6d476',
+    source: 'https://github.com/damirka/move-syntax/blob/03e44307aefd99bac3c10bda4430a22c92d6d476/syntaxes/move.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/damirka/move-syntax/contents/syntaxes/move.tmLanguage.json?ref=03e44307aefd99bac3c10bda4430a22c92d6d476',
   },
   {
     aliases: [

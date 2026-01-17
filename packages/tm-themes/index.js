@@ -44,18 +44,18 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 19777,
+    byteSize: 19755,
     displayName: 'Ayu Dark',
     funding: [
     ],
-    hash: '5NJC_sAaMHNMdkHSYAF53RHxm0I_8BmTA7MPchfq938',
+    hash: '1kvETpyescgs8XeNjhH6XsmqP5Ez7-BCcWtYCwGcJaE',
     lastUpdate: '2026-01-03T15:11:07Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
     name: 'ayu-dark',
-    sha: '716376562d9c698cb66166f77fd84836717f1258',
-    source: 'https://github.com/ayu-theme/vscode-ayu/blob/716376562d9c698cb66166f77fd84836717f1258/ayu-dark.json',
-    sourceApi: 'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-dark.json?ref=716376562d9c698cb66166f77fd84836717f1258',
+    sha: '71c8559847400454012f7a6be5b6cab50bba4946',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/71c8559847400454012f7a6be5b6cab50bba4946/ayu-dark.json',
+    sourceApi: 'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-dark.json?ref=71c8559847400454012f7a6be5b6cab50bba4946',
     type: 'dark',
   },
   {
