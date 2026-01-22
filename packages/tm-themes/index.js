@@ -21,41 +21,48 @@ export const themes = [
     hash: 'JNa5tmkFrwURbGnjeOcFLuVbi6SkXKY_fyrwqWgOUAY',
     lastUpdate: '2025-10-18T01:22:22Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/EliverLara/Andromeda/master/LICENSE.md',
     name: 'andromeeda',
     sha: '5a7e7059b4e14f4623eb647464570df70992528a',
-    source: 'https://github.com/EliverLara/Andromeda/blob/5a7e7059b4e14f4623eb647464570df70992528a/themes/Andromeda-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=5a7e7059b4e14f4623eb647464570df70992528a',
+    source:
+      'https://github.com/EliverLara/Andromeda/blob/5a7e7059b4e14f4623eb647464570df70992528a/themes/Andromeda-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/EliverLara/Andromeda/contents/themes/Andromeda-color-theme.json?ref=5a7e7059b4e14f4623eb647464570df70992528a',
     type: 'dark',
   },
   {
     byteSize: 13599,
     displayName: 'Aurora X',
-    funding: [
-    ],
+    funding: [],
     hash: 'VUJdjYtTbgaJyT34ikNEc3EdNtcxGK-x-NIchzYei50',
     lastUpdate: '2020-08-24T08:44:55Z',
     license: 'GPL-3.0',
-    licenseUrl: 'https://raw.githubusercontent.com/marqu3ss/Aurora-X/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/marqu3ss/Aurora-X/master/LICENSE',
     name: 'aurora-x',
     sha: '118727efadf48872adcd81f6c00be580097d6592',
-    source: 'https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/marqu3ss/Aurora-X/contents/themes/Aurora%20X-color-theme.json?ref=118727efadf48872adcd81f6c00be580097d6592',
+    source:
+      'https://github.com/marqu3ss/Aurora-X/blob/118727efadf48872adcd81f6c00be580097d6592/themes/Aurora%20X-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/marqu3ss/Aurora-X/contents/themes/Aurora%20X-color-theme.json?ref=118727efadf48872adcd81f6c00be580097d6592',
     type: 'dark',
   },
   {
     byteSize: 19755,
     displayName: 'Ayu Dark',
-    funding: [
-    ],
+    funding: [],
     hash: '1kvETpyescgs8XeNjhH6XsmqP5Ez7-BCcWtYCwGcJaE',
     lastUpdate: '2026-01-03T15:11:07Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/ayu-theme/vscode-ayu/master/LICENSE',
     name: 'ayu-dark',
     sha: '71c8559847400454012f7a6be5b6cab50bba4946',
-    source: 'https://github.com/ayu-theme/vscode-ayu/blob/71c8559847400454012f7a6be5b6cab50bba4946/ayu-dark.json',
-    sourceApi: 'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-dark.json?ref=71c8559847400454012f7a6be5b6cab50bba4946',
+    source:
+      'https://github.com/ayu-theme/vscode-ayu/blob/71c8559847400454012f7a6be5b6cab50bba4946/ayu-dark.json',
+    sourceApi:
+      'https://api.github.com/repos/ayu-theme/vscode-ayu/contents/ayu-dark.json?ref=71c8559847400454012f7a6be5b6cab50bba4946',
     type: 'dark',
   },
   {
@@ -76,11 +83,14 @@ export const themes = [
     hash: 'XmV3fBVMvetfaLSizU63VRNcj6Pw4Mt6H7LXO_Kx_AY',
     lastUpdate: '2025-10-12T22:40:53Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-frappe',
     sha: '155479e33394c54eab2bcc40c2d8de9c17ab4599',
-    source: 'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
+    source:
+      'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
+    sourceApi:
+      'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
     type: 'dark',
   },
   {
@@ -101,11 +111,14 @@ export const themes = [
     hash: 'PyqWOeMnvP1qCZ2nO81xLdX-IlYsUMTL6-qMd3my2TQ',
     lastUpdate: '2025-10-12T22:40:53Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-latte',
     sha: '155479e33394c54eab2bcc40c2d8de9c17ab4599',
-    source: 'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
+    source:
+      'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
+    sourceApi:
+      'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
     type: 'light',
   },
   {
@@ -126,11 +139,14 @@ export const themes = [
     hash: '6XJroq0YK7RbrVCsk-wjxfyiFPO0TlsPo8Q0Y6kLZBw',
     lastUpdate: '2025-10-12T22:40:53Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-macchiato',
     sha: '155479e33394c54eab2bcc40c2d8de9c17ab4599',
-    source: 'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
+    source:
+      'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
+    sourceApi:
+      'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
     type: 'dark',
   },
   {
@@ -151,191 +167,218 @@ export const themes = [
     hash: '5nSuiYcQBzdrL-PFbpF1y0jwUkQ732ZQBCDHHrP92Q8',
     lastUpdate: '2025-10-12T22:40:53Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/catppuccin/vscode/main/LICENSE',
     name: 'catppuccin-mocha',
     sha: '155479e33394c54eab2bcc40c2d8de9c17ab4599',
-    source: 'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
-    sourceApi: 'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
+    source:
+      'https://github.com/catppuccin/vscode/blob/155479e33394c54eab2bcc40c2d8de9c17ab4599/packages/catppuccin-vsc/package.json',
+    sourceApi:
+      'https://api.github.com/repos/catppuccin/vscode/contents/packages/catppuccin-vsc/package.json?ref=155479e33394c54eab2bcc40c2d8de9c17ab4599',
     type: 'dark',
   },
   {
     byteSize: 9037,
     displayName: 'Dark Plus',
-    funding: [
-    ],
+    funding: [],
     hash: '47yoOY9wrROQ7vjmwIwjIWC07zcOr0Eb5KEUtW0Ca28',
     lastUpdate: '2025-11-13T17:35:32Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dark-plus',
     sha: 'e061feef09c2a09a59d0a88ab186aa880b3c56c3',
-    source: 'https://github.com/microsoft/vscode/blob/e061feef09c2a09a59d0a88ab186aa880b3c56c3/extensions/theme-defaults/themes/dark_plus.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-defaults/themes/dark_plus.json?ref=e061feef09c2a09a59d0a88ab186aa880b3c56c3',
+    source:
+      'https://github.com/microsoft/vscode/blob/e061feef09c2a09a59d0a88ab186aa880b3c56c3/extensions/theme-defaults/themes/dark_plus.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-defaults/themes/dark_plus.json?ref=e061feef09c2a09a59d0a88ab186aa880b3c56c3',
     type: 'dark',
   },
   {
     byteSize: 21006,
     displayName: 'Dracula Theme',
-    funding: [
-    ],
+    funding: [],
     hash: 'z0956tzwuw7az3ARt7wPQZPPZjAdXj0PD9TZwq-0v0A',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
     name: 'dracula',
     sha: '61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
-    source: 'https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml',
-    sourceApi: 'https://api.github.com/repos/dracula/visual-studio-code/contents/src/dracula.yml?ref=61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
+    source:
+      'https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml',
+    sourceApi:
+      'https://api.github.com/repos/dracula/visual-studio-code/contents/src/dracula.yml?ref=61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
     type: 'dark',
   },
   {
     byteSize: 21016,
     displayName: 'Dracula Theme Soft',
-    funding: [
-    ],
+    funding: [],
     hash: 't1Vr8knQeHOFfYojUMsPjqZmGC0AKaIwMffM4GQ7uos',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/dracula/visual-studio-code/main/LICENSE',
     name: 'dracula-soft',
     sha: '61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
-    source: 'https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml',
-    sourceApi: 'https://api.github.com/repos/dracula/visual-studio-code/contents/src/dracula.yml?ref=61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
+    source:
+      'https://github.com/dracula/visual-studio-code/blob/61743d6ea21cde34d9ad1009ec784ffe6f5e457c/src/dracula.yml',
+    sourceApi:
+      'https://api.github.com/repos/dracula/visual-studio-code/contents/src/dracula.yml?ref=61743d6ea21cde34d9ad1009ec784ffe6f5e457c',
     type: 'dark',
   },
   {
     byteSize: 53685,
     displayName: 'Everforest Dark',
-    funding: [
-    ],
+    funding: [],
     hash: 'zuStoqdej8hZ5pSdFL0b_7w70z6cgUfxyLQ6l36aFxc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
     name: 'everforest-dark',
     sha: 'b039b30727868d77108ec85f0be66e6d80a9bc1f',
-    source: 'https://github.com/sainnhe/everforest-vscode/blob/b039b30727868d77108ec85f0be66e6d80a9bc1f/themes/everforest-dark.json',
-    sourceApi: 'https://api.github.com/repos/sainnhe/everforest-vscode/contents/themes/everforest-dark.json?ref=b039b30727868d77108ec85f0be66e6d80a9bc1f',
+    source:
+      'https://github.com/sainnhe/everforest-vscode/blob/b039b30727868d77108ec85f0be66e6d80a9bc1f/themes/everforest-dark.json',
+    sourceApi:
+      'https://api.github.com/repos/sainnhe/everforest-vscode/contents/themes/everforest-dark.json?ref=b039b30727868d77108ec85f0be66e6d80a9bc1f',
     type: 'dark',
   },
   {
     byteSize: 53688,
     displayName: 'Everforest Light',
-    funding: [
-    ],
+    funding: [],
     hash: '5fIl20vLOTn2ZuDclhbVsK07LHRRrLF258dI4pS5eZc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/sainnhe/everforest-vscode/master/LICENSE',
     name: 'everforest-light',
     sha: 'b039b30727868d77108ec85f0be66e6d80a9bc1f',
-    source: 'https://github.com/sainnhe/everforest-vscode/blob/b039b30727868d77108ec85f0be66e6d80a9bc1f/themes/everforest-light.json',
-    sourceApi: 'https://api.github.com/repos/sainnhe/everforest-vscode/contents/themes/everforest-light.json?ref=b039b30727868d77108ec85f0be66e6d80a9bc1f',
+    source:
+      'https://github.com/sainnhe/everforest-vscode/blob/b039b30727868d77108ec85f0be66e6d80a9bc1f/themes/everforest-light.json',
+    sourceApi:
+      'https://api.github.com/repos/sainnhe/everforest-vscode/contents/themes/everforest-light.json?ref=b039b30727868d77108ec85f0be66e6d80a9bc1f',
     type: 'light',
   },
   {
     byteSize: 11345,
     displayName: 'GitHub Dark',
-    funding: [
-    ],
+    funding: [],
     hash: 'zyKaBTjmsJSq5QiKmReFfJptymPJY57o3cSENDoUNtw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-dark',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'dark',
   },
   {
     byteSize: 14375,
     displayName: 'GitHub Dark Default',
-    funding: [
-    ],
+    funding: [],
     hash: '4E6NvYDQnRlRuJX3caPQld2IWB1MeyUb0TJIgpAWp_s',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-dark-default',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'dark',
   },
   {
     byteSize: 14373,
     displayName: 'GitHub Dark Dimmed',
-    funding: [
-    ],
+    funding: [],
     hash: 'NWaEL-yV7O-l_sSndpdHaH4V9sMIlIpIWxJpGEpbjak',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-dark-dimmed',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'dark',
   },
   {
     byteSize: 14535,
     displayName: 'GitHub Dark High Contrast',
-    funding: [
-    ],
+    funding: [],
     hash: 'nYfBiBCNKAly85hhr-BSfSzDU0n4wF0vZxsDsB6sS5g',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-dark-high-contrast',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'dark',
   },
   {
     byteSize: 11124,
     displayName: 'GitHub Light',
-    funding: [
-    ],
+    funding: [],
     hash: 'JzFpVMN1jRIJm7oKVQM9dcvbI22K776ImM75RjZP27k',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-light',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'light',
   },
   {
     byteSize: 14096,
     displayName: 'GitHub Light Default',
-    funding: [
-    ],
+    funding: [],
     hash: 'hirg13mpTH9XvQX3HtD0FIA9AxnHxK60FnLIz_GZ2s4',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-light-default',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'light',
   },
   {
     byteSize: 14215,
     displayName: 'GitHub Light High Contrast',
-    funding: [
-    ],
+    funding: [],
     hash: 'h_omJ2HPaBGoluj9BbOFTlShurKQEg8a-CEgRyxKUjw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/primer/github-vscode-theme/main/LICENSE',
     name: 'github-light-high-contrast',
     sha: 'f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
-    source: 'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
-    sourceApi: 'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
+    source:
+      'https://github.com/primer/github-vscode-theme/blob/f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8/src/theme.js',
+    sourceApi:
+      'https://api.github.com/repos/primer/github-vscode-theme/contents/src/theme.js?ref=f7a67d67fc2302a0ec36ddfb7bdd57142f4575e8',
     type: 'light',
   },
   {
@@ -356,11 +399,14 @@ export const themes = [
     hash: '3ztm_oHkNarXr39Tpb8WkrxPtlwhjSX-4K-xvwoVZiM',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-dark-hard',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'dark',
   },
   {
@@ -381,11 +427,14 @@ export const themes = [
     hash: 'eCWEnDlKTKkY1esmzCl6bzqwulLegKHjgsnpFwuicMo',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-dark-medium',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'dark',
   },
   {
@@ -406,11 +455,14 @@ export const themes = [
     hash: 'eq8GMndteUw1xmNWP6JMIpm4L72UMnIJcfc5m1V4P3A',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-dark-soft',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'dark',
   },
   {
@@ -431,11 +483,14 @@ export const themes = [
     hash: 'LNoH9VD-BiP09VpuTeCwam8110rtB_rSR_HKX4siT2w',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-light-hard',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'light',
   },
   {
@@ -456,11 +511,14 @@ export const themes = [
     hash: 'DrULV_No7pbpf_humQ9XBFgB0xbHEZbWbV0b80m6VVA',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-light-medium',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'light',
   },
   {
@@ -481,11 +539,14 @@ export const themes = [
     hash: 'Vvb65EHk_HAHPp8d81dZVhE_ZvaxKeu7YpjCdAt9y-w',
     lastUpdate: '2025-04-10T06:24:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/jdinhify/vscode-theme-gruvbox/main/LICENSE',
     name: 'gruvbox-light-soft',
     sha: 'f0d6e1fc1f325da636b90591eccc45d2f44738fd',
-    source: 'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
-    sourceApi: 'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
+    source:
+      'https://github.com/jdinhify/vscode-theme-gruvbox/blob/f0d6e1fc1f325da636b90591eccc45d2f44738fd/src/main.ts',
+    sourceApi:
+      'https://api.github.com/repos/jdinhify/vscode-theme-gruvbox/contents/src/main.ts?ref=f0d6e1fc1f325da636b90591eccc45d2f44738fd',
     type: 'light',
   },
   {
@@ -511,86 +572,99 @@ export const themes = [
     hash: 'yD27Y-MmNsLs7ty9UozFBYWTcrgU4E59_Aas_46qqy0',
     lastUpdate: '2023-11-10T11:20:23Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/withastro/houston-vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/withastro/houston-vscode/main/LICENSE',
     name: 'houston',
     sha: 'd297233be95e3f8fdecc22e4ffa92bb0e7265592',
-    source: 'https://github.com/withastro/houston-vscode/blob/d297233be95e3f8fdecc22e4ffa92bb0e7265592/themes/houston.json',
-    sourceApi: 'https://api.github.com/repos/withastro/houston-vscode/contents/themes/houston.json?ref=d297233be95e3f8fdecc22e4ffa92bb0e7265592',
+    source:
+      'https://github.com/withastro/houston-vscode/blob/d297233be95e3f8fdecc22e4ffa92bb0e7265592/themes/houston.json',
+    sourceApi:
+      'https://api.github.com/repos/withastro/houston-vscode/contents/themes/houston.json?ref=d297233be95e3f8fdecc22e4ffa92bb0e7265592',
     type: 'dark',
   },
   {
     byteSize: 17067,
     displayName: 'Kanagawa Dragon',
-    funding: [
-    ],
+    funding: [],
     hash: '5bb_koviyjSDDS1Ra7sUpUhuNjyQMQ8LvWdF0vK7I88',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
     name: 'kanagawa-dragon',
     sha: '6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
-    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-dragon-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-dragon-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
+    source:
+      'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-dragon-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-dragon-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
     type: 'dark',
   },
   {
     byteSize: 17066,
     displayName: 'Kanagawa Lotus',
-    funding: [
-    ],
+    funding: [],
     hash: '6xsFcqh1kmixPMl0Wgo18lFWyNoVJ2QDEmC0hw7qKuw',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
     name: 'kanagawa-lotus',
     sha: '6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
-    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-lotus-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-lotus-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
+    source:
+      'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-lotus-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-lotus-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
     type: 'light',
   },
   {
     byteSize: 17063,
     displayName: 'Kanagawa Wave',
-    funding: [
-    ],
+    funding: [],
     hash: '7VbMqE7JFJzJEhQJVkxLemHPraBRuxAsRrVhAu8oLYI',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/metapho-re/kanagawa-vscode-theme/main/LICENSE',
     name: 'kanagawa-wave',
     sha: '6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
-    source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-wave-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-wave-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
+    source:
+      'https://github.com/metapho-re/kanagawa-vscode-theme/blob/6ea302d7087c3e37c84a3bfc09225250bb9fc7b9/themes/kanagawa-wave-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/metapho-re/kanagawa-vscode-theme/contents/themes/kanagawa-wave-color-theme.json?ref=6ea302d7087c3e37c84a3bfc09225250bb9fc7b9',
     type: 'dark',
   },
   {
     byteSize: 11439,
     displayName: 'LaserWave',
-    funding: [
-    ],
+    funding: [],
     hash: 'Seeh-rUB09h0bkMIQQGnHMer_7_cB5Cm-VLrKaSysGw',
     lastUpdate: '2022-11-07T01:48:57Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Jaredk3nt/laserwave/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/Jaredk3nt/laserwave/master/LICENSE',
     name: 'laserwave',
     sha: 'f768285c659425fbb6ec5642085df4902f8a8d92',
-    source: 'https://github.com/Jaredk3nt/laserwave/blob/f768285c659425fbb6ec5642085df4902f8a8d92/themes/LaserWave-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/Jaredk3nt/laserwave/contents/themes/LaserWave-color-theme.json?ref=f768285c659425fbb6ec5642085df4902f8a8d92',
+    source:
+      'https://github.com/Jaredk3nt/laserwave/blob/f768285c659425fbb6ec5642085df4902f8a8d92/themes/LaserWave-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/Jaredk3nt/laserwave/contents/themes/LaserWave-color-theme.json?ref=f768285c659425fbb6ec5642085df4902f8a8d92',
     type: 'dark',
   },
   {
     byteSize: 9881,
     displayName: 'Light Plus',
-    funding: [
-    ],
+    funding: [],
     hash: 'YAj58fRkK9lYjNJ2VnK-8AwJ6DnEGO-RUZQ4MYg4Ul4',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'light-plus',
     sha: '09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
-    source: 'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-defaults/themes/light_plus.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-defaults/themes/light_plus.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
+    source:
+      'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-defaults/themes/light_plus.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-defaults/themes/light_plus.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
     type: 'light',
   },
   {
@@ -611,11 +685,14 @@ export const themes = [
     hash: 'mKsHZKREB1cNw-dFvU6NTmk5iciXb-qdIlQuk5OrucY',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
     name: 'material-theme',
     sha: 'f09de7a2970defaed43d8e293b4d3ac4e350e71b',
-    source: 'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
-    sourceApi: 'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
+    source:
+      'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
     type: 'dark',
   },
   {
@@ -636,11 +713,14 @@ export const themes = [
     hash: 'UUKYX026ig6MexHF46MMG4BbQ2g-ZcIPVaLQ4fd3vjw',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
     name: 'material-theme-darker',
     sha: 'f09de7a2970defaed43d8e293b4d3ac4e350e71b',
-    source: 'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
-    sourceApi: 'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
+    source:
+      'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
     type: 'dark',
   },
   {
@@ -661,11 +741,14 @@ export const themes = [
     hash: 'yCZVpXw6aBfqamS9GoDw4md3tRlbwV0dkateuUf-UVQ',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
     name: 'material-theme-lighter',
     sha: 'f09de7a2970defaed43d8e293b4d3ac4e350e71b',
-    source: 'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
-    sourceApi: 'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
+    source:
+      'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
     type: 'light',
   },
   {
@@ -686,11 +769,14 @@ export const themes = [
     hash: '2b-SLiUo0JXJyqgP-LT-XNdEyU7oEZxF0PJiOkIOiHE',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
     name: 'material-theme-ocean',
     sha: 'f09de7a2970defaed43d8e293b4d3ac4e350e71b',
-    source: 'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
-    sourceApi: 'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
+    source:
+      'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
     type: 'dark',
   },
   {
@@ -711,56 +797,65 @@ export const themes = [
     hash: '8iW38C_gQULFfct2bFmRNrfeKomDHoHQchKMCnYZYhI',
     lastUpdate: '2020-12-14T16:11:18Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vsc-material-theme/main/LICENSE',
     name: 'material-theme-palenight',
     sha: 'f09de7a2970defaed43d8e293b4d3ac4e350e71b',
-    source: 'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
-    sourceApi: 'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
+    source:
+      'https://github.com/antfu/vsc-material-theme/blob/f09de7a2970defaed43d8e293b4d3ac4e350e71b/src/material.theme.config.ts',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vsc-material-theme/contents/src/material.theme.config.ts?ref=f09de7a2970defaed43d8e293b4d3ac4e350e71b',
     type: 'dark',
   },
   {
     byteSize: 6231,
     displayName: 'Min Dark',
-    funding: [
-    ],
+    funding: [],
     hash: 'FEbBLoKZxEvYa4b-QJYBcie75a0ffsvTXiabxTk_FnA',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
     name: 'min-dark',
     sha: '4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
-    source: 'https://github.com/misolori/min-theme/blob/4641b5d395b9a3506572ec717e80ae8c7cdaae2a/themes/min-dark.json',
-    sourceApi: 'https://api.github.com/repos/misolori/min-theme/contents/themes/min-dark.json?ref=4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
+    source:
+      'https://github.com/misolori/min-theme/blob/4641b5d395b9a3506572ec717e80ae8c7cdaae2a/themes/min-dark.json',
+    sourceApi:
+      'https://api.github.com/repos/misolori/min-theme/contents/themes/min-dark.json?ref=4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
     type: 'dark',
   },
   {
     byteSize: 6909,
     displayName: 'Min Light',
-    funding: [
-    ],
+    funding: [],
     hash: '2LHfOz1iq7nuKWuhx86kJSIrbSIXKMoJPi86uQBzziM',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/miguelsolorio/min-theme/master/LICENSE',
     name: 'min-light',
     sha: '4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
-    source: 'https://github.com/misolori/min-theme/blob/4641b5d395b9a3506572ec717e80ae8c7cdaae2a/themes/min-light.json',
-    sourceApi: 'https://api.github.com/repos/misolori/min-theme/contents/themes/min-light.json?ref=4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
+    source:
+      'https://github.com/misolori/min-theme/blob/4641b5d395b9a3506572ec717e80ae8c7cdaae2a/themes/min-light.json',
+    sourceApi:
+      'https://api.github.com/repos/misolori/min-theme/contents/themes/min-light.json?ref=4641b5d395b9a3506572ec717e80ae8c7cdaae2a',
     type: 'light',
   },
   {
     byteSize: 7824,
     displayName: 'Monokai',
-    funding: [
-    ],
+    funding: [],
     hash: 'KibaWhWqApZw_IOWOjAhC3GCVn4CPg0Hz5Zvyi_qNFg',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'monokai',
     sha: '09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
-    source: 'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-monokai/themes/monokai-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-monokai/themes/monokai-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
+    source:
+      'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-monokai/themes/monokai-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-monokai/themes/monokai-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
     type: 'dark',
   },
   {
@@ -776,41 +871,71 @@ export const themes = [
     hash: 'jQrCN5XBlMEznW7YhHqmI6_zmW5qAlIibADYwNnBiTY',
     lastUpdate: '2024-12-31T21:18:40Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE.md',
     name: 'night-owl',
     sha: 'd298950d6378c36c027f1387e307ebf3f145fc90',
-    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/d298950d6378c36c027f1387e307ebf3f145fc90/themes/Night%20Owl-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/sdras/night-owl-vscode-theme/contents/themes/Night%20Owl-color-theme.json?ref=d298950d6378c36c027f1387e307ebf3f145fc90',
+    source:
+      'https://github.com/sdras/night-owl-vscode-theme/blob/d298950d6378c36c027f1387e307ebf3f145fc90/themes/Night%20Owl-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/sdras/night-owl-vscode-theme/contents/themes/Night%20Owl-color-theme.json?ref=d298950d6378c36c027f1387e307ebf3f145fc90',
     type: 'dark',
+  },
+  {
+    byteSize: 25842,
+    displayName: 'Night Owl Light',
+    funding: [
+      {
+        handle: '@sdras',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/sdras',
+      },
+    ],
+    hash: 'dYHbLc_KlUFirnBal4ukskZgg43RUS-ZHmzhkmu5ArA',
+    lastUpdate: '2024-12-31T21:18:40Z',
+    license: 'MIT',
+    licenseUrl:
+      'https://raw.githubusercontent.com/sdras/night-owl-vscode-theme/main/LICENSE.md',
+    name: 'night-owl-light',
+    sha: 'd298950d6378c36c027f1387e307ebf3f145fc90',
+    source:
+      'https://github.com/sdras/night-owl-vscode-theme/blob/d298950d6378c36c027f1387e307ebf3f145fc90/themes/Night%20Owl-Light-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/sdras/night-owl-vscode-theme/contents/themes/Night%20Owl-Light-color-theme.json?ref=d298950d6378c36c027f1387e307ebf3f145fc90',
+    type: 'light',
   },
   {
     byteSize: 26663,
     displayName: 'Nord',
-    funding: [
-    ],
+    funding: [],
     hash: 'iFA3XJ9vT-uwIbCQitJQox3xRoGOQ7zGQ8RW_WKcRo0',
     lastUpdate: '2023-04-10T15:56:38Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/nordtheme/visual-studio-code/develop/license',
+    licenseUrl:
+      'https://raw.githubusercontent.com/nordtheme/visual-studio-code/develop/license',
     name: 'nord',
     sha: '27045851c5154fe2d9b116e7491c596cdcd72275',
-    source: 'https://github.com/arcticicestudio/nord-visual-studio-code/blob/27045851c5154fe2d9b116e7491c596cdcd72275/themes/nord-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/arcticicestudio/nord-visual-studio-code/contents/themes/nord-color-theme.json?ref=27045851c5154fe2d9b116e7491c596cdcd72275',
+    source:
+      'https://github.com/arcticicestudio/nord-visual-studio-code/blob/27045851c5154fe2d9b116e7491c596cdcd72275/themes/nord-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/arcticicestudio/nord-visual-studio-code/contents/themes/nord-color-theme.json?ref=27045851c5154fe2d9b116e7491c596cdcd72275',
     type: 'dark',
   },
   {
     byteSize: 33727,
     displayName: 'One Dark Pro',
-    funding: [
-    ],
+    funding: [],
     hash: 'efCCoMpMwkxZgFGGEY0gVcMdqZlrr6caG1_UaiKwtus',
     lastUpdate: '2025-02-01T14:01:22Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/Binaryify/OneDark-Pro/master/LICENSE.txt',
     name: 'one-dark-pro',
     sha: 'd64c6d3c42e0d2f1a6a032af1ebfbb7f8e0acae6',
-    source: 'https://github.com/Binaryify/OneDark-Pro/blob/d64c6d3c42e0d2f1a6a032af1ebfbb7f8e0acae6/themes/OneDark-Pro.json',
-    sourceApi: 'https://api.github.com/repos/Binaryify/OneDark-Pro/contents/themes/OneDark-Pro.json?ref=d64c6d3c42e0d2f1a6a032af1ebfbb7f8e0acae6',
+    source:
+      'https://github.com/Binaryify/OneDark-Pro/blob/d64c6d3c42e0d2f1a6a032af1ebfbb7f8e0acae6/themes/OneDark-Pro.json',
+    sourceApi:
+      'https://api.github.com/repos/Binaryify/OneDark-Pro/contents/themes/OneDark-Pro.json?ref=d64c6d3c42e0d2f1a6a032af1ebfbb7f8e0acae6',
     type: 'dark',
   },
   {
@@ -826,11 +951,14 @@ export const themes = [
     hash: 'Pd7HK9OmiYrVuXUnRsBmOSayMVqwsM7XIKrMj5bWi1Y',
     lastUpdate: '2022-10-08T13:48:47Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/akamud/vscode-theme-onelight/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/akamud/vscode-theme-onelight/master/LICENSE',
     name: 'one-light',
     sha: 'f1ff6b87c6379a22b34354bbf64d355cd2adc611',
-    source: 'https://github.com/akamud/vscode-theme-onelight/blob/f1ff6b87c6379a22b34354bbf64d355cd2adc611/themes/OneLight.json',
-    sourceApi: 'https://api.github.com/repos/akamud/vscode-theme-onelight/contents/themes/OneLight.json?ref=f1ff6b87c6379a22b34354bbf64d355cd2adc611',
+    source:
+      'https://github.com/akamud/vscode-theme-onelight/blob/f1ff6b87c6379a22b34354bbf64d355cd2adc611/themes/OneLight.json',
+    sourceApi:
+      'https://api.github.com/repos/akamud/vscode-theme-onelight/contents/themes/OneLight.json?ref=f1ff6b87c6379a22b34354bbf64d355cd2adc611',
     type: 'light',
   },
   {
@@ -850,41 +978,48 @@ export const themes = [
     hash: 'X8CzgJ4ahYdtR-TDwCyfBgsVp5f0bT4Tg921h7ZnYwM',
     lastUpdate: '2024-03-31T09:02:26Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/will-stone/plastic/main/LICENSE',
     name: 'plastic',
     sha: '30eaf248a3ee319c85ddf254dd0cb64a443d1571',
-    source: 'https://github.com/will-stone/plastic/blob/30eaf248a3ee319c85ddf254dd0cb64a443d1571/themes/main.json',
-    sourceApi: 'https://api.github.com/repos/will-stone/plastic/contents/themes/main.json?ref=30eaf248a3ee319c85ddf254dd0cb64a443d1571',
+    source:
+      'https://github.com/will-stone/plastic/blob/30eaf248a3ee319c85ddf254dd0cb64a443d1571/themes/main.json',
+    sourceApi:
+      'https://api.github.com/repos/will-stone/plastic/contents/themes/main.json?ref=30eaf248a3ee319c85ddf254dd0cb64a443d1571',
     type: 'dark',
   },
   {
     byteSize: 33434,
     displayName: 'Poimandres',
-    funding: [
-    ],
+    funding: [],
     hash: 'Z7S37sG_7EHzYSYm-8GjXDFWRLknzf3Bp4YeDFTwPyQ',
     lastUpdate: '2022-09-25T11:26:55Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/drcmda/poimandres-theme/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/drcmda/poimandres-theme/main/LICENSE',
     name: 'poimandres',
     sha: '574213aba50e3a46a95fa86a69025a0fae046a8a',
-    source: 'https://github.com/drcmda/poimandres-theme/blob/574213aba50e3a46a95fa86a69025a0fae046a8a/themes/poimandres-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/drcmda/poimandres-theme/contents/themes/poimandres-color-theme.json?ref=574213aba50e3a46a95fa86a69025a0fae046a8a',
+    source:
+      'https://github.com/drcmda/poimandres-theme/blob/574213aba50e3a46a95fa86a69025a0fae046a8a/themes/poimandres-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/drcmda/poimandres-theme/contents/themes/poimandres-color-theme.json?ref=574213aba50e3a46a95fa86a69025a0fae046a8a',
     type: 'dark',
   },
   {
     byteSize: 6202,
     displayName: 'Red',
-    funding: [
-    ],
+    funding: [],
     hash: 'OXzKdFN5lRaTzY3wPRHXyQC2o6UH2JeHz30B29MKatI',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'red',
     sha: '09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
-    source: 'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-red/themes/Red-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-red/themes/Red-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
+    source:
+      'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-red/themes/Red-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-red/themes/Red-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
     type: 'dark',
   },
   {
@@ -905,11 +1040,14 @@ export const themes = [
     hash: 'SK0kXgK7t3IiDQ9fnGFGOIqgzYuNhI_vzrES2_nGaX0',
     lastUpdate: '2025-11-02T22:05:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
     name: 'rose-pine',
     sha: 'a7885d3cec4eade6872f307729b64070cdab0de1',
-    source: 'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
+    source:
+      'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
     type: 'dark',
   },
   {
@@ -930,11 +1068,14 @@ export const themes = [
     hash: 'Mh961n7YzawSocfp8VFrsg94q-ph6VQlHBE5hv2M3Eo',
     lastUpdate: '2025-11-02T22:05:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
     name: 'rose-pine-dawn',
     sha: 'a7885d3cec4eade6872f307729b64070cdab0de1',
-    source: 'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-dawn-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-dawn-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
+    source:
+      'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-dawn-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-dawn-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
     type: 'light',
   },
   {
@@ -955,131 +1096,150 @@ export const themes = [
     hash: '6b4lYg6ZQ1C7g2zzyHYHnhtgFoEf0KWeWciPt3Ol1oE',
     lastUpdate: '2025-11-02T22:05:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/rose-pine/vscode/main/LICENSE',
     name: 'rose-pine-moon',
     sha: 'a7885d3cec4eade6872f307729b64070cdab0de1',
-    source: 'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-moon-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-moon-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
+    source:
+      'https://github.com/rose-pine/vscode/blob/a7885d3cec4eade6872f307729b64070cdab0de1/themes/rose-pine-moon-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/rose-pine/vscode/contents/themes/rose-pine-moon-color-theme.json?ref=a7885d3cec4eade6872f307729b64070cdab0de1',
     type: 'dark',
   },
   {
     byteSize: 9057,
     displayName: 'Slack Dark',
-    funding: [
-    ],
+    funding: [],
     hash: '6_NXtXzYfaXODzejPIruwGDpZAS2Fgs77p5zyE1-DpE',
     lastUpdate: '2021-05-20T16:06:42Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
+    licenseUrl:
+      'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
     name: 'slack-dark',
     sha: '28cd093d2aac9bfe0d3b96d468efa73a1d6639c2',
-    source: 'https://github.com/slack-theme/visual-studio-code/blob/28cd093d2aac9bfe0d3b96d468efa73a1d6639c2/themes/dark-mode.json',
-    sourceApi: 'https://api.github.com/repos/slack-theme/visual-studio-code/contents/themes/dark-mode.json?ref=28cd093d2aac9bfe0d3b96d468efa73a1d6639c2',
+    source:
+      'https://github.com/slack-theme/visual-studio-code/blob/28cd093d2aac9bfe0d3b96d468efa73a1d6639c2/themes/dark-mode.json',
+    sourceApi:
+      'https://api.github.com/repos/slack-theme/visual-studio-code/contents/themes/dark-mode.json?ref=28cd093d2aac9bfe0d3b96d468efa73a1d6639c2',
     type: 'dark',
   },
   {
     byteSize: 9371,
     displayName: 'Slack Ochin',
-    funding: [
-    ],
+    funding: [],
     hash: 'HGn3arwZByocvHN-it3J2uXPSxVaM62AUAEMTL6UbY0',
     lastUpdate: '2021-06-12T21:35:10Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
+    licenseUrl:
+      'https://raw.githubusercontent.com/slack-theme/visual-studio-code/master/License',
     name: 'slack-ochin',
     sha: '572452d0da20d384858b28ad14e110ee5daac411',
-    source: 'https://github.com/slack-theme/visual-studio-code/blob/572452d0da20d384858b28ad14e110ee5daac411/themes/ochin.json',
-    sourceApi: 'https://api.github.com/repos/slack-theme/visual-studio-code/contents/themes/ochin.json?ref=572452d0da20d384858b28ad14e110ee5daac411',
+    source:
+      'https://github.com/slack-theme/visual-studio-code/blob/572452d0da20d384858b28ad14e110ee5daac411/themes/ochin.json',
+    sourceApi:
+      'https://api.github.com/repos/slack-theme/visual-studio-code/contents/themes/ochin.json?ref=572452d0da20d384858b28ad14e110ee5daac411',
     type: 'light',
   },
   {
     byteSize: 20713,
     displayName: 'Snazzy Light',
-    funding: [
-    ],
+    funding: [],
     hash: '9JKQGPGVc9RSHhcVFFIpgxzYlkktmBBQT716vYb8WHQ',
     lastUpdate: '2023-10-08T19:14:47Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/loilo/vscode-snazzy-light/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/loilo/vscode-snazzy-light/master/LICENSE',
     name: 'snazzy-light',
     sha: '516646af7e1a114871698ce9090182c582899c71',
-    source: 'https://github.com/loilo/vscode-snazzy-light/blob/516646af7e1a114871698ce9090182c582899c71/themes/Snazzy-Light-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/loilo/vscode-snazzy-light/contents/themes/Snazzy-Light-color-theme.json?ref=516646af7e1a114871698ce9090182c582899c71',
+    source:
+      'https://github.com/loilo/vscode-snazzy-light/blob/516646af7e1a114871698ce9090182c582899c71/themes/Snazzy-Light-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/loilo/vscode-snazzy-light/contents/themes/Snazzy-Light-color-theme.json?ref=516646af7e1a114871698ce9090182c582899c71',
     type: 'light',
   },
   {
     byteSize: 6786,
     displayName: 'Solarized Dark',
-    funding: [
-    ],
+    funding: [],
     hash: 'A40ugjIXS3_Bnnln8gPrgVkcVwZmwthNGAGs0zsBb8Q',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'solarized-dark',
     sha: '09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
-    source: 'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
+    source:
+      'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
     type: 'dark',
   },
   {
     byteSize: 6420,
     displayName: 'Solarized Light',
-    funding: [
-    ],
+    funding: [],
     hash: 'S2NOeLAIK92omOWhh9CxZjFsllXpN_QTQkfsYdPM12c',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'solarized-light',
     sha: '09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
-    source: 'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-solarized-light/themes/solarized-light-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
+    source:
+      'https://github.com/microsoft/vscode/blob/09fe3fcbc1514bc35742dc4325d05b7d7adfcad2/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/microsoft/vscode/contents/extensions/theme-solarized-light/themes/solarized-light-color-theme.json?ref=09fe3fcbc1514bc35742dc4325d05b7d7adfcad2',
     type: 'light',
   },
   {
     byteSize: 13976,
     displayName: 'Synthwave \'84',
-    funding: [
-    ],
+    funding: [],
     hash: 'rXOK8Tj30ibvONSW7GPeGc8udCa5x9Wv53Gdv3GpKfI',
     lastUpdate: '2022-07-27T08:21:45Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE',
+    licenseUrl:
+      'https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/LICENSE',
     name: 'synthwave-84',
     sha: '7eaf45c07650295625e1e5ea73274fc50f9ea3c1',
-    source: 'https://github.com/robb0wen/synthwave-vscode/blob/7eaf45c07650295625e1e5ea73274fc50f9ea3c1/themes/synthwave-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/robb0wen/synthwave-vscode/contents/themes/synthwave-color-theme.json?ref=7eaf45c07650295625e1e5ea73274fc50f9ea3c1',
+    source:
+      'https://github.com/robb0wen/synthwave-vscode/blob/7eaf45c07650295625e1e5ea73274fc50f9ea3c1/themes/synthwave-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/robb0wen/synthwave-vscode/contents/themes/synthwave-color-theme.json?ref=7eaf45c07650295625e1e5ea73274fc50f9ea3c1',
     type: 'dark',
   },
   {
     byteSize: 35605,
     displayName: 'Tokyo Night',
-    funding: [
-    ],
+    funding: [],
     hash: 'TCdTUUA8-O4PQA5FCUpSOb0M4JombaZ2u9YnUdnKmnI',
     lastUpdate: '2025-02-05T19:34:14Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/tokyo-night/tokyo-night-vscode-theme/master/LICENSE.txt',
+    licenseUrl:
+      'https://raw.githubusercontent.com/tokyo-night/tokyo-night-vscode-theme/master/LICENSE.txt',
     name: 'tokyo-night',
     sha: 'da5546bc4163a02a30d6f3ced90d4ef7dfcb8460',
-    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/da5546bc4163a02a30d6f3ced90d4ef7dfcb8460/themes/tokyo-night-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/enkia/tokyo-night-vscode-theme/contents/themes/tokyo-night-color-theme.json?ref=da5546bc4163a02a30d6f3ced90d4ef7dfcb8460',
+    source:
+      'https://github.com/enkia/tokyo-night-vscode-theme/blob/da5546bc4163a02a30d6f3ced90d4ef7dfcb8460/themes/tokyo-night-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/enkia/tokyo-night-vscode-theme/contents/themes/tokyo-night-color-theme.json?ref=da5546bc4163a02a30d6f3ced90d4ef7dfcb8460',
     type: 'dark',
   },
   {
     byteSize: 12632,
     displayName: 'Vesper',
-    funding: [
-    ],
+    funding: [],
     hash: 'kJIzTDdvM1rTKx3fFpH3Dpq8PBW5apySCrT2Apo7tHc',
     lastUpdate: '2025-01-16T15:07:46Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/raunofreiberg/vesper/main/LICENSE.md',
     name: 'vesper',
     sha: '61a2783a2e62afe8af47579494595e439a58f3ff',
-    source: 'https://github.com/raunofreiberg/vesper/blob/61a2783a2e62afe8af47579494595e439a58f3ff/themes/Vesper-dark-color-theme.json',
-    sourceApi: 'https://api.github.com/repos/raunofreiberg/vesper/contents/themes/Vesper-dark-color-theme.json?ref=61a2783a2e62afe8af47579494595e439a58f3ff',
+    source:
+      'https://github.com/raunofreiberg/vesper/blob/61a2783a2e62afe8af47579494595e439a58f3ff/themes/Vesper-dark-color-theme.json',
+    sourceApi:
+      'https://api.github.com/repos/raunofreiberg/vesper/contents/themes/Vesper-dark-color-theme.json?ref=61a2783a2e62afe8af47579494595e439a58f3ff',
     type: 'dark',
   },
   {
@@ -1095,11 +1255,14 @@ export const themes = [
     hash: 'PbXaTHC8ftCpObIk78QP3U-IcoDCbgdBIWghUfr6JzU',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
     name: 'vitesse-black',
     sha: '625a5e6fffd15e440e574f353ae0ba777b41d47f',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-black.json',
-    sourceApi: 'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-black.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
+    source:
+      'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-black.json',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-black.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
     type: 'dark',
   },
   {
@@ -1115,11 +1278,14 @@ export const themes = [
     hash: 'hAHFaaEAj_0pdxweV6SmgoAlzeJoSrV5X9QTI5atqcU',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
     name: 'vitesse-dark',
     sha: '625a5e6fffd15e440e574f353ae0ba777b41d47f',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-dark.json',
-    sourceApi: 'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-dark.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
+    source:
+      'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-dark.json',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-dark.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
     type: 'dark',
   },
   {
@@ -1135,11 +1301,14 @@ export const themes = [
     hash: 'CIJ5derYw8_T-sC51bAPLeLglZRyko80PAnMgJWrMcs',
     lastUpdate: '2024-08-16T00:04:38Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
+    licenseUrl:
+      'https://raw.githubusercontent.com/antfu/vscode-theme-vitesse/main/LICENSE.md',
     name: 'vitesse-light',
     sha: '625a5e6fffd15e440e574f353ae0ba777b41d47f',
-    source: 'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-light.json',
-    sourceApi: 'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-light.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
+    source:
+      'https://github.com/antfu/vscode-theme-vitesse/blob/625a5e6fffd15e440e574f353ae0ba777b41d47f/themes/vitesse-light.json',
+    sourceApi:
+      'https://api.github.com/repos/antfu/vscode-theme-vitesse/contents/themes/vitesse-light.json?ref=625a5e6fffd15e440e574f353ae0ba777b41d47f',
     type: 'light',
   },
 ]
