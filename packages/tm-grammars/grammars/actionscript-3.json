@@ -119,6 +119,9 @@
           "include": "#class_declaration"
         },
         {
+          "include": "#declaration_code_block"
+        },
+        {
           "include": "#metadata"
         },
         {
@@ -183,6 +186,9 @@
         },
         {
           "include": "#object_literal"
+        },
+        {
+          "include": "#conditional_compilation"
         }
       ]
     },
@@ -210,13 +216,56 @@
         }
       ]
     },
-    "code_block": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*\\*(?!/)",
+          "end": "\\*/",
+          "name": "comment.block.documentation.actionscript.3",
+          "patterns": [
+            {
+              "match": "@(copy|default|eventType|example|exampleText|includeExample|inheritDoc|internal|param|private|return|see|since|throws)\\b",
+              "name": "keyword.other.documentation.actionscript.3.asdoc"
+            }
+          ]
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.actionscript.3"
+        },
+        {
+          "match": "//.*",
+          "name": "comment.line.actionscript.3"
+        }
+      ]
+    },
+    "conditional_compilation": {
+      "captures": {
+        "2": {
+          "name": "constant.other.actionscript.3"
+        },
+        "3": {
+          "name": "constant.other.actionscript.3"
+        }
+      },
+      "match": "(^|\\s+|;)\\b(\\w+)\\b::\\b(\\w+)\\b",
+      "name": "meta.conditional.actionscript.3"
+    },
+    "control_keywords": {
+      "match": "\\b(if|else|do|while|for|each|continue|return|switch|case|default|break|try|catch|finally|throw|with)\\b",
+      "name": "keyword.control.actionscript.3"
+    },
+    "declaration_code_block": {
       "begin": "\\{",
       "end": "}",
       "name": "meta.code_block.actionscript.3",
       "patterns": [
         {
-          "include": "#code_block"
+          "include": "#method"
+        },
+        {
+          "include": "#variable_declaration"
         },
         {
           "include": "#comments"
@@ -226,9 +275,6 @@
         },
         {
           "include": "#regexp"
-        },
-        {
-          "include": "#variable_declaration"
         },
         {
           "include": "#numbers"
@@ -288,34 +334,6 @@
           "include": "#import"
         }
       ]
-    },
-    "comments": {
-      "patterns": [
-        {
-          "begin": "/\\*\\*(?!/)",
-          "end": "\\*/",
-          "name": "comment.block.documentation.actionscript.3",
-          "patterns": [
-            {
-              "match": "@(copy|default|eventType|example|exampleText|includeExample|inheritDoc|internal|param|private|return|see|since|throws)\\b",
-              "name": "keyword.other.documentation.actionscript.3.asdoc"
-            }
-          ]
-        },
-        {
-          "begin": "/\\*",
-          "end": "\\*/",
-          "name": "comment.block.actionscript.3"
-        },
-        {
-          "match": "//.*",
-          "name": "comment.line.actionscript.3"
-        }
-      ]
-    },
-    "control_keywords": {
-      "match": "\\b(if|else|do|while|for|each|continue|return|switch|case|default|break|try|catch|finally|throw|with)\\b",
-      "name": "keyword.control.actionscript.3"
     },
     "dynamic_type": {
       "captures": {
@@ -480,6 +498,85 @@
       "match": "\\b(super|this|arguments)\\b",
       "name": "variable.language.actionscript.3"
     },
+    "local_code_block": {
+      "begin": "\\{",
+      "end": "}",
+      "name": "meta.code_block.actionscript.3",
+      "patterns": [
+        {
+          "include": "#local_code_block"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#regexp"
+        },
+        {
+          "include": "#variable_declaration"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#primitive_types"
+        },
+        {
+          "include": "#primitive_error_types"
+        },
+        {
+          "include": "#dynamic_type"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#language_constants"
+        },
+        {
+          "include": "#language_variables"
+        },
+        {
+          "include": "#guess_type"
+        },
+        {
+          "include": "#guess_constant"
+        },
+        {
+          "include": "#other_operators"
+        },
+        {
+          "include": "#arithmetic_operators"
+        },
+        {
+          "include": "#logical_operators"
+        },
+        {
+          "include": "#array_access_operators"
+        },
+        {
+          "include": "#vector_creation_operators"
+        },
+        {
+          "include": "#control_keywords"
+        },
+        {
+          "include": "#other_keywords"
+        },
+        {
+          "include": "#use_namespace"
+        },
+        {
+          "include": "#functions"
+        },
+        {
+          "include": "#import"
+        }
+      ]
+    },
     "logical_operators": {
       "match": "([!\\&<>?^|~])",
       "name": "keyword.operator.actionscript.3"
@@ -542,7 +639,7 @@
           "include": "#functions"
         },
         {
-          "include": "#code_block"
+          "include": "#local_code_block"
         }
       ]
     },
