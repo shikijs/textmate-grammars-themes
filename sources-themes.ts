@@ -124,6 +124,11 @@ export const sourcesCommunity: ThemeSource[] = [
     name: 'one-light',
     displayName: 'One Light',
     source: 'https://github.com/akamud/vscode-theme-onelight/blob/master/themes/OneLight.json',
+    patch: (theme) => {
+      const item = theme.tokenColors.find((i: any) => i.scope.includes('invalid.illegal'))
+      if (item)
+        item.settings.foreground = '#50A14F'
+    },
     type: 'light',
   },
   {
