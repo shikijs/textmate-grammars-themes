@@ -3518,6 +3518,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/zhuanhao-wu/vscode-riscv-support/contents/syntaxes/riscv.tmLanguage?ref=2736b60e45ff2ef738d784055e136cf38d6290cd',
   },
   {
+    byteSize: 2772,
+    categories: [
+      'data',
+    ],
+    displayName: 'RON',
+    funding: [
+    ],
+    hash: 'HL82Y_UVPRaA2ZqOGhP4RoM33ySM-vaNlTCoj66jalQ',
+    lastUpdate: '2023-10-04T14:30:21Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/a5huynh/vscode-ron/master/LICENSE.md',
+    name: 'ron',
+    scopeName: 'source.ron',
+    sha: 'fa66afd2173e9027b77cac2dc78e1d86c6de2943',
+    source: 'https://github.com/a5huynh/vscode-ron/blob/fa66afd2173e9027b77cac2dc78e1d86c6de2943/syntaxes/ron.tmGrammar.json',
+    sourceApi: 'https://api.github.com/repos/a5huynh/vscode-ron/contents/syntaxes/ron.tmGrammar.json?ref=fa66afd2173e9027b77cac2dc78e1d86c6de2943',
+  },
+  {
     byteSize: 4345,
     categories: [
       'general',
