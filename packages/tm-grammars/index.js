@@ -1291,6 +1291,10 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/fsharp/syntaxes/fsharp.tmLanguage.json?ref=e6cffb21362b6d7addb977ff7db14f0681228780',
   },
   {
+    aliases: [
+      'tscn',
+      'tres',
+    ],
     byteSize: 4831,
     displayName: 'GDResource',
     embedded: [
@@ -1303,7 +1307,7 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'a_SeHnF7ntduTw1bSSQ1QYbiRbAMaNhHDGGkiFyTX6A',
+    hash: 'K3yEhkkUmdhMDjUAd1kTwsoIawQUQi2CQbI833X-2DQ',
     lastUpdate: '2023-12-06T14:53:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
@@ -1314,6 +1318,9 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/godotengine/godot-vscode-plugin/contents/syntaxes/GDResource.tmLanguage.json?ref=e7e2d0439dea0fb3a568378554c81e0a17348a84',
   },
   {
+    aliases: [
+      'gd',
+    ],
     byteSize: 18386,
     displayName: 'GDScript',
     funding: [
@@ -1322,7 +1329,7 @@ export const grammars = [
         url: 'https://fund.godotengine.org/',
       },
     ],
-    hash: 'LNIkyOPS3qovW3lQymCNJAlxNDqRZZSGs2p3J1K25-s',
+    hash: '3AfjbYHDxHmNv8h7yF8aIHKJxOkaCG6ys64zW8BXpp0',
     lastUpdate: '2025-08-20T19:33:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/godotengine/godot-vscode-plugin/master/LICENSE',
