@@ -255,6 +255,12 @@ export const sourcesMarketplace: ThemeSource[] = [
   ),
 ]
 
+export const sources = [
+  ...sourcesVSCode,
+  ...sourcesCommunity,
+  ...sourcesMarketplace,
+]
+
 function generateMarketplaceSource(
   pkg: string,
   source: string,
