@@ -1,5 +1,4 @@
 import type { ThemeSource } from './scripts/themes/types'
-
 // @keep-sorted { "keys": ["name"] }
 export const sourcesVSCode: ThemeSource[] = [
   {
@@ -54,6 +53,17 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
   },
   {
+    name: 'night-owl-light',
+    displayName: 'Night Owl Light',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-Light-color-theme.json',
+    patch: (theme) => {
+      const globalSetting = theme.tokenColors.find((i: any) => !i.scope && i.settings.background === '#011627')
+      if (globalSetting)
+        delete globalSetting.settings.background
+      return theme
+    },
+  },
+  {
     name: 'night-owl',
     displayName: 'Night Owl',
     source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
@@ -87,7 +97,6 @@ export const sourcesVSCode: ThemeSource[] = [
 
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
-
   {
     name: 'everforest-dark',
     displayName: 'Everforest Dark',
