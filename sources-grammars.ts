@@ -626,10 +626,12 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'gdresource',
     displayName: 'GDResource',
+    aliases: ['tscn', 'tres'],
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDResource.tmLanguage.json',
   },
   {
     name: 'gdscript',
+    aliases: ['gd'],
     source: 'https://github.com/godotengine/godot-vscode-plugin/blob/master/syntaxes/GDScript.tmLanguage.json',
   },
   {
