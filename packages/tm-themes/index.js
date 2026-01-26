@@ -859,7 +859,7 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 25238,
+    byteSize: 25240,
     displayName: 'One Light',
     funding: [
       {
@@ -868,7 +868,7 @@ export const themes = [
         url: 'https://github.com/sponsors/akamud',
       },
     ],
-    hash: 'Pd7HK9OmiYrVuXUnRsBmOSayMVqwsM7XIKrMj5bWi1Y',
+    hash: 'BTC5SDDFLqjKJtv_okGv6wRd9SRe-eREhVdph6Fl0tg',
     lastUpdate: '2022-10-08T13:48:47Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/akamud/vscode-theme-onelight/master/LICENSE',
