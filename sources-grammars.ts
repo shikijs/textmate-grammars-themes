@@ -871,6 +871,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'odin',
+    displayName: 'Odin',
+    source: 'https://github.com/DanielGavin/ols/blob/master/editors/vscode/syntaxes/odin.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'pascal',
     source: 'https://github.com/alefragnani/vscode-language-pascal/blob/master/syntaxes/pascal.tmLanguage',
     categories: ['general'],
@@ -1043,6 +1049,13 @@ export const sourcesCommunity: GrammarSource[] = [
     aliases: ['styl'],
     source: 'https://github.com/d4rkr00t/language-stylus/blob/master/syntaxes/stylus.json',
     categories: ['web'],
+  },
+  {
+    name: 'surrealql',
+    displayName: 'SurrealQL',
+    aliases: ['surql'],
+    source: 'https://github.com/surrealdb/surrealql-grammar/blob/main/syntaxes/surrealql.tmLanguage.json',
+    categories: ['dsl'],
   },
   {
     name: 'svelte',

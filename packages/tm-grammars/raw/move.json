@@ -806,29 +806,47 @@
           "name": "constant.numeric.move"
         },
         {
-          "begin": "\\bb\"",
-          "comment": "vector ascii bytestring literal",
+          "begin": "\"",
+          "comment": "String literal",
           "end": "\"",
-          "name": "meta.vector.literal.ascii.move",
+          "name": "meta.string.literal.move",
           "patterns": [
-            {
-              "comment": "character escape",
-              "match": "\\\\.",
-              "name": "constant.character.escape.move"
-            },
-            {
-              "comment": "Special symbol escape",
-              "match": "\\\\[nrt\\0\"]",
-              "name": "constant.character.escape.move"
-            },
             {
               "comment": "HEX Escape",
               "match": "\\\\x[a-fA-F0-9][A-Fa-f0-9]",
               "name": "constant.character.escape.hex.move"
             },
             {
-              "comment": "ASCII Character",
-              "match": "[\\x00-\\x7F]",
+              "comment": "character escape",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "comment": "Any symbol",
+              "match": ".",
+              "name": "string.quoted.double.raw.move"
+            }
+          ]
+        },
+        {
+          "begin": "\\bb\"",
+          "comment": "vector ascii bytestring literal",
+          "end": "\"",
+          "name": "meta.vector.literal.ascii.move",
+          "patterns": [
+            {
+              "comment": "HEX Escape",
+              "match": "\\\\x[a-fA-F0-9][A-Fa-f0-9]",
+              "name": "constant.character.escape.hex.move"
+            },
+            {
+              "comment": "character escape",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "comment": "Any symbol",
+              "match": ".",
               "name": "string.quoted.double.raw.move"
             }
           ]

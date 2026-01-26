@@ -761,24 +761,39 @@
           "name": "constant.numeric.move"
         },
         {
-          "begin": "\\bb\"",
+          "begin": "\"",
           "end": "\"",
-          "name": "meta.vector.literal.ascii.move",
+          "name": "meta.string.literal.move",
           "patterns": [
-            {
-              "match": "\\\\.",
-              "name": "constant.character.escape.move"
-            },
-            {
-              "match": "\\\\[\\x00\"nrt]",
-              "name": "constant.character.escape.move"
-            },
             {
               "match": "\\\\x\\h\\h",
               "name": "constant.character.escape.hex.move"
             },
             {
-              "match": "[\\x00-\\x7F]",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "match": ".",
+              "name": "string.quoted.double.raw.move"
+            }
+          ]
+        },
+        {
+          "begin": "\\bb\"",
+          "end": "\"",
+          "name": "meta.vector.literal.ascii.move",
+          "patterns": [
+            {
+              "match": "\\\\x\\h\\h",
+              "name": "constant.character.escape.hex.move"
+            },
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "match": ".",
               "name": "string.quoted.double.raw.move"
             }
           ]
