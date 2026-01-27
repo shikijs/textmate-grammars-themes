@@ -32,6 +32,11 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
   },
   {
+    name: 'horizon-bright',
+    displayName: 'Horizon Bright',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
+  },
+  {
     name: 'horizon',
     displayName: 'Horizon',
     source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
