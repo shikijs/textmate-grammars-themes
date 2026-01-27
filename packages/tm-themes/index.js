@@ -31,7 +31,8 @@ export const themes = [
   {
     byteSize: 13599,
     displayName: 'Aurora X',
-    funding: [],
+    funding: [
+    ],
     hash: 'VUJdjYtTbgaJyT34ikNEc3EdNtcxGK-x-NIchzYei50',
     lastUpdate: '2020-08-24T08:44:55Z',
     license: 'GPL-3.0',
@@ -45,7 +46,8 @@ export const themes = [
   {
     byteSize: 19755,
     displayName: 'Ayu Dark',
-    funding: [],
+    funding: [
+    ],
     hash: '1kvETpyescgs8XeNjhH6XsmqP5Ez7-BCcWtYCwGcJaE',
     lastUpdate: '2026-01-03T15:11:07Z',
     license: 'MIT',
@@ -189,7 +191,8 @@ export const themes = [
   {
     byteSize: 9037,
     displayName: 'Dark Plus',
-    funding: [],
+    funding: [
+    ],
     hash: '47yoOY9wrROQ7vjmwIwjIWC07zcOr0Eb5KEUtW0Ca28',
     lastUpdate: '2025-11-13T17:35:32Z',
     license: 'MIT',
@@ -203,7 +206,8 @@ export const themes = [
   {
     byteSize: 21006,
     displayName: 'Dracula Theme',
-    funding: [],
+    funding: [
+    ],
     hash: 'z0956tzwuw7az3ARt7wPQZPPZjAdXj0PD9TZwq-0v0A',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
@@ -217,7 +221,8 @@ export const themes = [
   {
     byteSize: 21016,
     displayName: 'Dracula Theme Soft',
-    funding: [],
+    funding: [
+    ],
     hash: 't1Vr8knQeHOFfYojUMsPjqZmGC0AKaIwMffM4GQ7uos',
     lastUpdate: '2023-07-15T21:35:24Z',
     license: 'MIT',
@@ -231,7 +236,8 @@ export const themes = [
   {
     byteSize: 53685,
     displayName: 'Everforest Dark',
-    funding: [],
+    funding: [
+    ],
     hash: 'zuStoqdej8hZ5pSdFL0b_7w70z6cgUfxyLQ6l36aFxc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
@@ -245,7 +251,8 @@ export const themes = [
   {
     byteSize: 53688,
     displayName: 'Everforest Light',
-    funding: [],
+    funding: [
+    ],
     hash: '5fIl20vLOTn2ZuDclhbVsK07LHRRrLF258dI4pS5eZc',
     lastUpdate: '2022-12-13T08:22:03Z',
     license: 'MIT',
@@ -259,7 +266,8 @@ export const themes = [
   {
     byteSize: 11345,
     displayName: 'GitHub Dark',
-    funding: [],
+    funding: [
+    ],
     hash: 'zyKaBTjmsJSq5QiKmReFfJptymPJY57o3cSENDoUNtw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -273,7 +281,8 @@ export const themes = [
   {
     byteSize: 14375,
     displayName: 'GitHub Dark Default',
-    funding: [],
+    funding: [
+    ],
     hash: '4E6NvYDQnRlRuJX3caPQld2IWB1MeyUb0TJIgpAWp_s',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -287,7 +296,8 @@ export const themes = [
   {
     byteSize: 14373,
     displayName: 'GitHub Dark Dimmed',
-    funding: [],
+    funding: [
+    ],
     hash: 'NWaEL-yV7O-l_sSndpdHaH4V9sMIlIpIWxJpGEpbjak',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -301,7 +311,8 @@ export const themes = [
   {
     byteSize: 14535,
     displayName: 'GitHub Dark High Contrast',
-    funding: [],
+    funding: [
+    ],
     hash: 'nYfBiBCNKAly85hhr-BSfSzDU0n4wF0vZxsDsB6sS5g',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -315,7 +326,8 @@ export const themes = [
   {
     byteSize: 11124,
     displayName: 'GitHub Light',
-    funding: [],
+    funding: [
+    ],
     hash: 'JzFpVMN1jRIJm7oKVQM9dcvbI22K776ImM75RjZP27k',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -329,7 +341,8 @@ export const themes = [
   {
     byteSize: 14096,
     displayName: 'GitHub Light Default',
-    funding: [],
+    funding: [
+    ],
     hash: 'hirg13mpTH9XvQX3HtD0FIA9AxnHxK60FnLIz_GZ2s4',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -343,7 +356,8 @@ export const themes = [
   {
     byteSize: 14215,
     displayName: 'GitHub Light High Contrast',
-    funding: [],
+    funding: [
+    ],
     hash: 'h_omJ2HPaBGoluj9BbOFTlShurKQEg8a-CEgRyxKUjw',
     lastUpdate: '2024-10-03T00:31:58Z',
     license: 'MIT',
@@ -520,6 +534,21 @@ export const themes = [
     type: 'dark',
   },
   {
+    byteSize: 8726,
+    displayName: 'Horizon Bright',
+    funding: [
+    ],
+    hash: 'dnYWqEdDsrn18HO6wb7n06cuDZVaaBNjcwzQT0NAlYs',
+    lastUpdate: '2022-12-25T15:13:11Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/alexandernanberg/horizon-theme-vscode/master/LICENSE',
+    name: 'horizon-bright',
+    sha: '83c848d0efd5d57ac7c9d868b53ae375d8a27692',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/83c848d0efd5d57ac7c9d868b53ae375d8a27692/themes/horizon-bright.json',
+    sourceApi: 'https://api.github.com/repos/alexandernanberg/horizon-theme-vscode/contents/themes/horizon-bright.json?ref=83c848d0efd5d57ac7c9d868b53ae375d8a27692',
+    type: 'dark',
+  },
+  {
     byteSize: 35362,
     displayName: 'Houston',
     funding: [
@@ -552,7 +581,8 @@ export const themes = [
   {
     byteSize: 17067,
     displayName: 'Kanagawa Dragon',
-    funding: [],
+    funding: [
+    ],
     hash: '5bb_koviyjSDDS1Ra7sUpUhuNjyQMQ8LvWdF0vK7I88',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
@@ -566,7 +596,8 @@ export const themes = [
   {
     byteSize: 17066,
     displayName: 'Kanagawa Lotus',
-    funding: [],
+    funding: [
+    ],
     hash: '6xsFcqh1kmixPMl0Wgo18lFWyNoVJ2QDEmC0hw7qKuw',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
@@ -580,7 +611,8 @@ export const themes = [
   {
     byteSize: 17063,
     displayName: 'Kanagawa Wave',
-    funding: [],
+    funding: [
+    ],
     hash: '7VbMqE7JFJzJEhQJVkxLemHPraBRuxAsRrVhAu8oLYI',
     lastUpdate: '2025-01-05T23:31:24Z',
     license: 'MIT',
@@ -594,7 +626,8 @@ export const themes = [
   {
     byteSize: 11439,
     displayName: 'LaserWave',
-    funding: [],
+    funding: [
+    ],
     hash: 'Seeh-rUB09h0bkMIQQGnHMer_7_cB5Cm-VLrKaSysGw',
     lastUpdate: '2022-11-07T01:48:57Z',
     license: 'MIT',
@@ -608,7 +641,8 @@ export const themes = [
   {
     byteSize: 9881,
     displayName: 'Light Plus',
-    funding: [],
+    funding: [
+    ],
     hash: 'YAj58fRkK9lYjNJ2VnK-8AwJ6DnEGO-RUZQ4MYg4Ul4',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -747,7 +781,8 @@ export const themes = [
   {
     byteSize: 6231,
     displayName: 'Min Dark',
-    funding: [],
+    funding: [
+    ],
     hash: 'FEbBLoKZxEvYa4b-QJYBcie75a0ffsvTXiabxTk_FnA',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
@@ -761,7 +796,8 @@ export const themes = [
   {
     byteSize: 6909,
     displayName: 'Min Light',
-    funding: [],
+    funding: [
+    ],
     hash: '2LHfOz1iq7nuKWuhx86kJSIrbSIXKMoJPi86uQBzziM',
     lastUpdate: '2021-07-15T23:42:09Z',
     license: 'MIT',
@@ -775,7 +811,8 @@ export const themes = [
   {
     byteSize: 7824,
     displayName: 'Monokai',
-    funding: [],
+    funding: [
+    ],
     hash: 'KibaWhWqApZw_IOWOjAhC3GCVn4CPg0Hz5Zvyi_qNFg',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -829,7 +866,8 @@ export const themes = [
   {
     byteSize: 26663,
     displayName: 'Nord',
-    funding: [],
+    funding: [
+    ],
     hash: 'iFA3XJ9vT-uwIbCQitJQox3xRoGOQ7zGQ8RW_WKcRo0',
     lastUpdate: '2023-04-10T15:56:38Z',
     license: 'MIT',
@@ -843,7 +881,8 @@ export const themes = [
   {
     byteSize: 33727,
     displayName: 'One Dark Pro',
-    funding: [],
+    funding: [
+    ],
     hash: 'efCCoMpMwkxZgFGGEY0gVcMdqZlrr6caG1_UaiKwtus',
     lastUpdate: '2025-02-01T14:01:22Z',
     license: 'MIT',
@@ -901,7 +940,8 @@ export const themes = [
   {
     byteSize: 33434,
     displayName: 'Poimandres',
-    funding: [],
+    funding: [
+    ],
     hash: 'Z7S37sG_7EHzYSYm-8GjXDFWRLknzf3Bp4YeDFTwPyQ',
     lastUpdate: '2022-09-25T11:26:55Z',
     license: 'MIT',
@@ -915,7 +955,8 @@ export const themes = [
   {
     byteSize: 6202,
     displayName: 'Red',
-    funding: [],
+    funding: [
+    ],
     hash: 'OXzKdFN5lRaTzY3wPRHXyQC2o6UH2JeHz30B29MKatI',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -1004,7 +1045,8 @@ export const themes = [
   {
     byteSize: 9057,
     displayName: 'Slack Dark',
-    funding: [],
+    funding: [
+    ],
     hash: '6_NXtXzYfaXODzejPIruwGDpZAS2Fgs77p5zyE1-DpE',
     lastUpdate: '2021-05-20T16:06:42Z',
     license: 'MIT',
@@ -1018,7 +1060,8 @@ export const themes = [
   {
     byteSize: 9371,
     displayName: 'Slack Ochin',
-    funding: [],
+    funding: [
+    ],
     hash: 'HGn3arwZByocvHN-it3J2uXPSxVaM62AUAEMTL6UbY0',
     lastUpdate: '2021-06-12T21:35:10Z',
     license: 'MIT',
@@ -1032,7 +1075,8 @@ export const themes = [
   {
     byteSize: 20713,
     displayName: 'Snazzy Light',
-    funding: [],
+    funding: [
+    ],
     hash: '9JKQGPGVc9RSHhcVFFIpgxzYlkktmBBQT716vYb8WHQ',
     lastUpdate: '2023-10-08T19:14:47Z',
     license: 'MIT',
@@ -1046,7 +1090,8 @@ export const themes = [
   {
     byteSize: 6786,
     displayName: 'Solarized Dark',
-    funding: [],
+    funding: [
+    ],
     hash: 'A40ugjIXS3_Bnnln8gPrgVkcVwZmwthNGAGs0zsBb8Q',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -1060,7 +1105,8 @@ export const themes = [
   {
     byteSize: 6420,
     displayName: 'Solarized Light',
-    funding: [],
+    funding: [
+    ],
     hash: 'S2NOeLAIK92omOWhh9CxZjFsllXpN_QTQkfsYdPM12c',
     lastUpdate: '2024-12-11T16:53:04Z',
     license: 'MIT',
@@ -1074,7 +1120,8 @@ export const themes = [
   {
     byteSize: 13976,
     displayName: 'Synthwave \'84',
-    funding: [],
+    funding: [
+    ],
     hash: 'rXOK8Tj30ibvONSW7GPeGc8udCa5x9Wv53Gdv3GpKfI',
     lastUpdate: '2022-07-27T08:21:45Z',
     license: 'MIT',
@@ -1088,7 +1135,8 @@ export const themes = [
   {
     byteSize: 35605,
     displayName: 'Tokyo Night',
-    funding: [],
+    funding: [
+    ],
     hash: 'TCdTUUA8-O4PQA5FCUpSOb0M4JombaZ2u9YnUdnKmnI',
     lastUpdate: '2025-02-05T19:34:14Z',
     license: 'MIT',
@@ -1102,7 +1150,8 @@ export const themes = [
   {
     byteSize: 12632,
     displayName: 'Vesper',
-    funding: [],
+    funding: [
+    ],
     hash: 'kJIzTDdvM1rTKx3fFpH3Dpq8PBW5apySCrT2Apo7tHc',
     lastUpdate: '2025-01-16T15:07:46Z',
     license: 'MIT',
