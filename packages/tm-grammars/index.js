@@ -2184,15 +2184,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '6jSdmL6c5ZYTLF-xyRSCFEXfSlWR4AHcqlk1g_8DvJM',
-    lastUpdate: '2025-07-08T10:59:18Z',
+    hash: 'WzMeEKyqMMakVkAe34NXJ8wyFTR7gOVwLZzwvEYKhlI',
+    lastUpdate: '2026-01-30T15:33:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'julia',
     scopeName: 'source.julia',
-    sha: 'f8bb386a48f799f890d00f217a90f615c9b3866c',
-    source: 'https://github.com/microsoft/vscode/blob/f8bb386a48f799f890d00f217a90f615c9b3866c/extensions/julia/syntaxes/julia.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=f8bb386a48f799f890d00f217a90f615c9b3866c',
+    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
+    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/julia/syntaxes/julia.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
     byteSize: 3424,
@@ -2256,7 +2256,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=ff48034975f387ba79258776e5d452bee43a6233',
   },
   {
-    byteSize: 69577,
+    byteSize: 69620,
     categories: [
       'markup',
     ],
@@ -2282,15 +2282,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'rXU1aLyRVLYt-KojT3JTq157SVVK2HPu5Pul4ZZfruo',
-    lastUpdate: '2026-01-08T16:24:04Z',
+    hash: 'XaHC25wkMYEpMch-VaIUnsUEBs-ahZ1A8MzHozOoixc',
+    lastUpdate: '2026-01-30T15:33:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'latex',
     scopeName: 'text.tex.latex',
-    sha: 'c8fdd1650c06321d687ddfd1eff06aae4b616256',
-    source: 'https://github.com/microsoft/vscode/blob/c8fdd1650c06321d687ddfd1eff06aae4b616256/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
+    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
+    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/latex/syntaxes/LaTeX.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/LaTeX.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
     aliases: [
@@ -3602,7 +3602,7 @@ export const grammars = [
     aliases: [
       'rb',
     ],
-    byteSize: 43665,
+    byteSize: 43704,
     categories: [
       'general',
     ],
@@ -3623,15 +3623,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'WjBpiLVK_j0CJniEfi0ahwHHZ2-CmM6shS1RN8lyjbk',
-    lastUpdate: '2025-05-02T13:29:24Z',
+    hash: 'NlOw44zs3PYED6ePXEzbPBGm5RVNPsrNtqZD4qyumjk',
+    lastUpdate: '2026-01-30T15:33:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
     scopeName: 'source.ruby',
-    sha: '0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
-    source: 'https://github.com/microsoft/vscode/blob/0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4/extensions/ruby/syntaxes/ruby.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=0ac234bbd0b6dd67efa40d1b593f9808f9dfdaf4',
+    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
+    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/ruby/syntaxes/ruby.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
     aliases: [
@@ -4214,7 +4214,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/hashicorp/syntax/contents/syntaxes/terraform.tmGrammar.json?ref=cc2b4d4fe389f14b8a13937f4e0d7b2811b57588',
   },
   {
-    byteSize: 9327,
+    byteSize: 9335,
     categories: [
       'markup',
     ],
@@ -4224,15 +4224,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'Kn5BOHTNHEic6vkAOxZdFdGk6G-_TpDmliQkRfXBBy8',
-    lastUpdate: '2025-11-07T11:31:19Z',
+    hash: 'CABaml1FuXsF-3bzNVxDH66oKAN30D7MVsXHm8YzVSA',
+    lastUpdate: '2026-01-30T15:33:10Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'tex',
     scopeName: 'text.tex',
-    sha: '2716852bf1179651402288d6363b5b63873bb36e',
-    source: 'https://github.com/microsoft/vscode/blob/2716852bf1179651402288d6363b5b63873bb36e/extensions/latex/syntaxes/TeX.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/TeX.tmLanguage.json?ref=2716852bf1179651402288d6363b5b63873bb36e',
+    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
+    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/latex/syntaxes/TeX.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/TeX.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
     byteSize: 6126,
