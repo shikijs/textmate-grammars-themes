@@ -75,28 +75,37 @@
           "name": "comment.block.documentation.moonbit",
           "patterns": [
             {
-              "begin": "\\s*```",
+              "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(mbt\\s+test|mbt\\s+test(async)|mbt|moonbit\\s+test|moonbit\\s+test(async)|moonbit|)(\\s+[^`~]*)?$)",
               "beginCaptures": {
-                "0": {
-                  "name": "markup.fenced_code.block.markdown"
+                "3": {
+                  "name": "punctuation.definition.markdown"
+                },
+                "5": {
+                  "name": "fenced_code.block.language"
+                },
+                "6": {
+                  "name": "fenced_code.block.language.attributes"
                 }
               },
-              "end": "\\s*```",
+              "end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
               "endCaptures": {
-                "0": {
-                  "name": "markup.fenced_code.block.markdown"
+                "3": {
+                  "name": "punctuation.definition.markdown"
                 }
               },
-              "name": "meta.embedded.line.moonbit",
+              "name": "markup.fenced_code.block.markdown",
               "patterns": [
                 {
-                  "include": "$self"
+                  "begin": "(^|\\G)(\\s*)(.*)",
+                  "contentName": "meta.embedded.block.moonbit",
+                  "patterns": [
+                    {
+                      "include": "$self"
+                    }
+                  ],
+                  "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)"
                 }
               ]
-            },
-            {
-              "match": ".*",
-              "name": "comment.block.documentation.moonbit"
             }
           ],
           "while": "///"
@@ -260,7 +269,7 @@
           "name": "keyword.control.moonbit"
         },
         {
-          "match": "\\b(type!|lexmatch\\?|(type|typealias|let|const|enum|struct|import|trait|traitalias|derive|test|impl|with|fnalias|recur|suberror|letrec|and)\\b)",
+          "match": "\\b(type!|lexmatch\\?|(type|typealias|let|const|enum|struct|import|trait|traitalias|derive|test|impl|with|fnalias|recur|suberror|letrec|and|where|declare)\\b)",
           "name": "keyword.moonbit"
         },
         {
