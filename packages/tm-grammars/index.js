@@ -2540,7 +2540,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json?ref=6d8ab9737d58fc5eaf07e2ae6553b38183a5de47',
   },
   {
-    byteSize: 24563,
+    byteSize: 24595,
     categories: [
       'web',
       'markup',
@@ -2554,15 +2554,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'HeM3kU1ljtGaxKdsSB4Rr9aZY-Jcx05ZZISr1uiJikc',
-    lastUpdate: '2025-12-12T21:56:28Z',
+    hash: 'pFlPhE-EC8y6JaB0VraIj0xEyiIno0i84Fss6fWKDog',
+    lastUpdate: '2026-02-03T18:55:02Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/marko-js/language-server/main/LICENSE',
     name: 'marko',
     scopeName: 'text.marko',
-    sha: '62fa7dde1be962c54bcf20e71ae5f77f724ab277',
-    source: 'https://github.com/marko-js/language-server/blob/62fa7dde1be962c54bcf20e71ae5f77f724ab277/packages/vscode/syntaxes/marko.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/marko-js/language-server/contents/packages/vscode/syntaxes/marko.tmLanguage.json?ref=62fa7dde1be962c54bcf20e71ae5f77f724ab277',
+    sha: '1a79f9b6b7d28bc1942ac6e4b5dd674615380f06',
+    source: 'https://github.com/marko-js/language-server/blob/1a79f9b6b7d28bc1942ac6e4b5dd674615380f06/packages/vscode/syntaxes/marko.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/marko-js/language-server/contents/packages/vscode/syntaxes/marko.tmLanguage.json?ref=1a79f9b6b7d28bc1942ac6e4b5dd674615380f06',
   },
   {
     byteSize: 15279,
