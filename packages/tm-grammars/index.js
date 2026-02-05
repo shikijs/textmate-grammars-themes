@@ -2578,7 +2578,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/mathworks/MATLAB-Language-grammar/contents/Matlab.tmbundle/Syntaxes/MATLAB.tmLanguage?ref=69dbf20c1eb19efd629c0438a2a493e60617e8de',
   },
   {
-    byteSize: 19108,
+    byteSize: 19106,
     categories: [
       'web',
       'markup',
@@ -2591,15 +2591,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'ET6VMHYCEsvNshYJjvs9uz3fZmZaCvY1bfyNbcUJ2ak',
-    lastUpdate: '2025-02-24T11:33:21Z',
+    hash: '_C3dM6kecRsLJGQ2figMiSumLc2e7VWi7efBkMnVwpw',
+    lastUpdate: '2026-02-04T11:23:15Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nuxt-content/vscode-mdc/main/LICENSE',
     name: 'mdc',
     scopeName: 'text.markdown.mdc.standalone',
-    sha: '96f619ccd8df724e5bd94eb28b87e03b769a8c41',
-    source: 'https://github.com/nuxt-content/vscode-mdc/blob/96f619ccd8df724e5bd94eb28b87e03b769a8c41/syntaxes/mdc.standalone.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nuxt-content/vscode-mdc/contents/syntaxes/mdc.standalone.tmLanguage.json?ref=96f619ccd8df724e5bd94eb28b87e03b769a8c41',
+    sha: '842f78ae4e8b1bbb1974b203ad0c7548fae02b8b',
+    source: 'https://github.com/nuxt-content/vscode-mdc/blob/842f78ae4e8b1bbb1974b203ad0c7548fae02b8b/syntaxes/mdc.standalone.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nuxt-content/vscode-mdc/contents/syntaxes/mdc.standalone.tmLanguage.json?ref=842f78ae4e8b1bbb1974b203ad0c7548fae02b8b',
   },
   {
     byteSize: 130777,
