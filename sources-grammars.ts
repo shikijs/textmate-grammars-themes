@@ -353,6 +353,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['markup'],
   },
   {
+    name: 'textwire',
+    source: 'https://github.com/textwire/vscode-textwire/blob/master/syntaxes/textwire.tmLanguage.json',
+    categories: ['web', 'markup', 'dsl'],
+  },
+  {
     name: 'tsv',
     displayName: 'TSV',
     source: 'https://github.com/mechatroner/vscode_rainbow_csv/blob/master/syntaxes/tsv.tmLanguage.json',

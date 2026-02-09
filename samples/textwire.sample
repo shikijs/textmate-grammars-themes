@@ -1,0 +1,97 @@
+@use('layouts/base')
+
+@insert('title', 'Book Store')
+@insert("description", 'This is a book store description here')
+
+@insert('content')
+    <div>Hey main</div>
+    <div>
+        <h1>Nice one</h1>
+        <p>Hey there</p>
+
+        @dump(user, book)
+
+        @if(true)
+            <span>{{ [1, 3.3, true, false, nil, user] }}</span>
+            <span>{{ x = 10; y = 20 }}</span>
+            <span>{{ false && false || true ? 'Yes' : 'No' }}</span>
+            <span>{{ true; false; nil }}</span>
+            <span>{{ nice.upper() }}</span>
+            <span>{{ { first, "nice": 2 } }}</span>
+            <span>{{ true ? 1 : 2 }}</span>
+            <span>{{ x++ }}</span>
+            <span>{{ -1 + 2.23 }}</span>
+            <span>{{ --x }}</span>
+            <span>{{ obj.key }}</span>
+            <span>{{ x < y }}</span>
+        @elseif(false)
+            <span>Nothing</span>
+        @else
+            <span>{{ "Nice" }}</span>
+        @end
+
+        @reserve('content')
+
+        @each(user in users)
+            <span>{{ user.name.upper() }}</span>
+
+            @breakIf(true)
+            @continueIf(true)
+            @break
+            @continue
+        @end
+
+        <h2>Each Statement</h2>
+        @each(user in users)
+            <span>{{ user.name.upper() }}</span>
+        @else
+            <span>No users</span>
+        @end
+
+        <h2>Escapes</h2>
+        \{{ 1 + 2 }}
+        \@insert()
+        {{ "She is really \"nice\"" }}
+
+        <h2>Function Calls</h2>
+        <ul>
+            <li>{{ "nice".upper().split('i') }}</li>
+            <li>{{ defined(user) }}</li>
+            <li>@if(defined(env))env@end</li>
+        </ul>
+
+        <h2>Comments</h2>
+        <!-- HTML comment -->
+        <!-- <h2>Nice</h2> -->
+        {{-- Textwire comment --}}
+        {{-- <h2>Nice</h2> --}}
+
+        @for(i = 0; i < 10; i++)
+            @if(true)
+                <span>NICE</span>
+            @end
+
+            <span>{{ user.name.upper() }}</span>
+        @else
+            <span>No users</span>
+            @component("book", { book })
+                <div>Nice</div>
+
+                @slot
+
+                @slot("nice")
+                    <div>nice</div>
+                @end
+            @end
+        @end
+
+        <h2>For Loop</h2>
+        @for(i = 0; i < 10; i++)
+            @break
+        @else
+            <span>nice</span>
+        @end
+    </div>
+@end
+
+# From https://textwire.github.io/docs/v3/language-elements/syntax/

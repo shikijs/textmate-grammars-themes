@@ -1,0 +1,217 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "displayName": "Textwire",
+  "fileTypes": [
+    "tw.html",
+    "tw"
+  ],
+  "injections": {
+    "text.html.basic.tw - (comment.block.tw), L:(text.html.basic.tw - comment.block.tw), L:(source.js.embedded.html - comment.block.tw)": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expression"
+        },
+        {
+          "include": "#directives"
+        }
+      ]
+    }
+  },
+  "name": "textwire",
+  "patterns": [
+    {
+      "include": "text.html.basic"
+    }
+  ],
+  "repository": {
+    "arrays": {
+      "begin": "\\[",
+      "end": "]",
+      "patterns": [
+        {
+          "include": "#language"
+        }
+      ]
+    },
+    "commas": {
+      "match": ",",
+      "name": "variable.other.tw"
+    },
+    "comments": {
+      "begin": "{{--",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.tw"
+        }
+      },
+      "end": "--}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.tw"
+        }
+      },
+      "name": "comment.block.tw"
+    },
+    "directives": {
+      "patterns": [
+        {
+          "begin": "(?<![\\\\@])(@(if|elseif|for|use|each|breakIf|continueIf|insert|reserve|component|slot|dump)) ?(\\()",
+          "beginCaptures": {
+            "0": {
+              "name": "entity.name.function.member.tw"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.function.member.tw"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#language"
+            }
+          ]
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.function.member.tw"
+            }
+          },
+          "match": "\\b\\w*(@(else|end|break|continue|slot))\\b"
+        },
+        {
+          "match": "(?<![\\\\@])(@(else|end|break|continue|slot))",
+          "name": "entity.name.function.member.tw"
+        }
+      ]
+    },
+    "expression": {
+      "begin": "(?<![\\\\{]){{",
+      "beginCaptures": {
+        "0": {
+          "name": "support.function.construct.begin.tw"
+        }
+      },
+      "end": "}}",
+      "endCaptures": {
+        "0": {
+          "name": "support.function.construct.begin.tw"
+        }
+      },
+      "name": "keyword.tw",
+      "patterns": [
+        {
+          "include": "#language"
+        }
+      ]
+    },
+    "functions": {
+      "begin": "([A-Za-z_][A-Za-z0-9_]*)\\s*\\(",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.function.member.tw"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "entity.name.function.member.tw"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#language"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "captures": {
+            "0": {
+              "name": "constant.language.tw"
+            }
+          },
+          "match": "\\b(?:true|false|nil|in)\\b"
+        }
+      ]
+    },
+    "language": {
+      "patterns": [
+        {
+          "include": "#functions"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#arrays"
+        },
+        {
+          "include": "#objects"
+        },
+        {
+          "include": "#commas"
+        },
+        {
+          "include": "#variables"
+        }
+      ]
+    },
+    "numbers": {
+      "match": "\\b[\\d.]+\\b",
+      "name": "constant.numeric.tw"
+    },
+    "objects": {
+      "begin": "{",
+      "end": "}",
+      "patterns": [
+        {
+          "include": "#language"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.tw",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.tw"
+            }
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.tw",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.tw"
+            }
+          ]
+        }
+      ]
+    },
+    "variables": {
+      "match": "\\b\\w+\\.?\\b",
+      "name": "variable.other.tw"
+    }
+  },
+  "scopeName": "text.html.basic.tw"
+}

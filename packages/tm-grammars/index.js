@@ -4235,6 +4235,29 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/latex/syntaxes/TeX.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
+    byteSize: 2557,
+    categories: [
+      'web',
+      'markup',
+      'dsl',
+    ],
+    displayName: 'Textwire',
+    embedded: [
+      'html',
+    ],
+    funding: [
+    ],
+    hash: 'Td6ZjdgMAYpoVRv5AaqaISzt2xYl5WEN4NYcbLymoDQ',
+    lastUpdate: '2025-01-11T15:04:17Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/textwire/vscode-textwire/master/LICENSE',
+    name: 'textwire',
+    scopeName: 'text.html.basic.tw',
+    sha: 'cab6d1b1ccf247ed62de2554c2fa70e66b56c4cd',
+    source: 'https://github.com/textwire/vscode-textwire/blob/cab6d1b1ccf247ed62de2554c2fa70e66b56c4cd/syntaxes/textwire.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/textwire/vscode-textwire/contents/syntaxes/textwire.tmLanguage.json?ref=cab6d1b1ccf247ed62de2554c2fa70e66b56c4cd',
+  },
+  {
     byteSize: 6126,
     categories: [
       'data',
