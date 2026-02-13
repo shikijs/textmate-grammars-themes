@@ -191,7 +191,7 @@ export const grammars = [
     aliases: [
       'adoc',
     ],
-    byteSize: 124122,
+    byteSize: 124136,
     categories: [
       'markup',
     ],
@@ -259,15 +259,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'WbWiZum9RBOdhWMuEwntEcbLWSRnuV8OhSyerEpVODs',
-    lastUpdate: '2025-08-12T14:16:08Z',
+    hash: 'XfAgexyRI2sjDnjAenVqiDrb5R-3Gm4XIUi-pOVWGfE',
+    lastUpdate: '2026-02-12T15:52:53Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/asciidoctor/asciidoctor-vscode/master/LICENSE',
     name: 'asciidoc',
     scopeName: 'text.asciidoc',
-    sha: 'cd590636a008cedd949e9bd36c95ca97fbba89d3',
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/cd590636a008cedd949e9bd36c95ca97fbba89d3/syntaxes/asciidoc.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/asciidoctor/asciidoctor-vscode/contents/syntaxes/asciidoc.tmLanguage.json?ref=cd590636a008cedd949e9bd36c95ca97fbba89d3',
+    sha: 'a946c878b12f6e5915d5d04e9b75953b417aa4c2',
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/a946c878b12f6e5915d5d04e9b75953b417aa4c2/syntaxes/asciidoc.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/asciidoctor/asciidoctor-vscode/contents/syntaxes/asciidoc.tmLanguage.json?ref=a946c878b12f6e5915d5d04e9b75953b417aa4c2',
   },
   {
     byteSize: 39351,
