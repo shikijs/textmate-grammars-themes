@@ -766,6 +766,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
   },
   {
+    name: 'just',
+    displayName: 'Just',
+    source: 'https://github.com/nefrob/vscode-just/blob/main/syntaxes/just.tmLanguage.json',
+  },
+  {
     name: 'kdl',
     displayName: 'KDL',
     source: 'https://github.com/kdl-org/vscode-kdl/blob/main/syntaxes/kdl.tmLanguage.json',

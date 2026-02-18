@@ -2195,6 +2195,32 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
+    byteSize: 10138,
+    categories: [
+      'dsl',
+    ],
+    displayName: 'Just',
+    embedded: [
+      'shellscript',
+      'javascript',
+      'typescript',
+      'perl',
+      'python',
+      'ruby',
+    ],
+    funding: [
+    ],
+    hash: 'OgsRftPPDE2CD4lfnmVZ3L9J_nKEzmmtGnSW_8moGZk',
+    lastUpdate: '2026-02-01T19:45:11Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/nefrob/vscode-just/main/LICENSE',
+    name: 'just',
+    scopeName: 'source.just',
+    sha: 'c0a00dba51884e5887783c48dddf585dead998c6',
+    source: 'https://github.com/nefrob/vscode-just/blob/c0a00dba51884e5887783c48dddf585dead998c6/syntaxes/just.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nefrob/vscode-just/contents/syntaxes/just.tmLanguage.json?ref=c0a00dba51884e5887783c48dddf585dead998c6',
+  },
+  {
     byteSize: 3424,
     categories: [
       'markup',
