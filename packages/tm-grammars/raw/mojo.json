@@ -1865,13 +1865,16 @@
       ]
     },
     "generator": {
-      "begin": "\\bfor\\b",
+      "begin": "(?:\\b(comptime)\\s+)?\\bfor\\b",
       "beginCaptures": {
         "0": {
           "name": "keyword.control.flow.python"
+        },
+        "1": {
+          "name": "storage.modifier.declaration.python"
         }
       },
-      "comment": "Match \"for ... in\" construct used in generators and for loops to\ncorrectly identify the \"in\" as a control flow keyword.\n",
+      "comment": "Match \"for ... in\" construct used in generators and for loops to\ncorrectly identify the \"in\" as a control flow keyword.\nCapture 0 = entire match (e.g. \"for\" or \"comptime for\"), capture 1 = optional \"comptime\" prefix.\nWhen \"comptime\" is absent, capture 1 is empty and its scope is not applied.\n",
       "end": "\\bin\\b",
       "endCaptures": {
         "0": {
@@ -1896,7 +1899,7 @@
           "name": "keyword.control.import.python"
         }
       },
-      "match": "(?x)\n  \\b(?:\n    (\n      and | assert | async | await | break | class | struct | trait | continue | del | elif | else | except | finally | for | from | global\n      | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])\n      | nonlocal | not | or | pass | raise | return | try | while | with\n      | yield\n    ) | (def | fn | capturing | raises) | (\n      as | import\n    )\n  )\\b\n"
+      "match": "(?x)\n  \\b(?:\n    (\n      and | assert | async | await | break | class | struct | trait | continue | del | elif | else | except | finally | for | from | global\n      | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])\n      | nonlocal | not | or | pass | raise | return | try | while | with\n      | yield\n    ) | (def | fn | capturing | raises | comptime) | (\n      as | import\n    )\n  )\\b\n"
     },
     "illegal-object-name": {
       "comment": "It's illegal to name class or function \"True\"",
@@ -3619,10 +3622,38 @@
               "name": "storage.modifier.declaration.python"
             },
             "2": {
-              "name": "variable.other.python"
+              "name": "keyword.control.flow.python"
             }
           },
-          "match": "\\b(var|let|alias|comptime) \\s*([[:alpha:]_]\\w*)\\b"
+          "match": "\\b(comptime)\\s+(if|for|assert)\\b"
+        },
+        {
+          "begin": "\\b(var|let|alias|comptime)\\s+(?=[[:alpha:]_(])",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.declaration.python"
+            }
+          },
+          "comment": "Variable declarations: var/let/alias/comptime followed by one or more names,\nincluding tuple destructuring like 'comptime a, b = ...' or 'comptime (a, b) = ...'.\n",
+          "end": "(?=[=:\\n#])",
+          "patterns": [
+            {
+              "match": "\\b([[:alpha:]_]\\w*)\\b",
+              "name": "variable.other.python"
+            },
+            {
+              "match": ",",
+              "name": "punctuation.separator.comma.python"
+            },
+            {
+              "match": "\\(",
+              "name": "punctuation.parenthesis.begin.python"
+            },
+            {
+              "match": "\\)",
+              "name": "punctuation.parenthesis.end.python"
+            }
+          ]
         }
       ]
     },

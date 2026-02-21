@@ -1847,10 +1847,13 @@
       ]
     },
     "generator": {
-      "begin": "\\bfor\\b",
+      "begin": "(?:\\b(comptime)\\s+)?\\bfor\\b",
       "beginCaptures": {
         "0": {
           "name": "keyword.control.flow.python"
+        },
+        "1": {
+          "name": "storage.modifier.declaration.python"
         }
       },
       "end": "\\bin\\b",
@@ -1877,7 +1880,7 @@
           "name": "keyword.control.import.python"
         }
       },
-      "match": "\\b(?:(and|assert|async|await|break|class|struct|trait|continue|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(def|fn|capturing|raises)|(as|import))\\b"
+      "match": "\\b(?:(and|assert|async|await|break|class|struct|trait|continue|del|elif|else|except|finally|for|from|global|if|in|is|(?<=\\.)lambda|lambda(?=\\s*[.=])|nonlocal|not|or|pass|raise|return|try|while|with|yield)|(def|fn|capturing|raises|comptime)|(as|import))\\b"
     },
     "illegal-object-name": {
       "match": "\\b(True|False|None)\\b",
@@ -3589,10 +3592,37 @@
               "name": "storage.modifier.declaration.python"
             },
             "2": {
-              "name": "variable.other.python"
+              "name": "keyword.control.flow.python"
             }
           },
-          "match": "\\b(var|let|alias|comptime) \\s*([_[:alpha:]]\\w*)\\b"
+          "match": "\\b(comptime)\\s+(if|for|assert)\\b"
+        },
+        {
+          "begin": "\\b(var|let|alias|comptime)\\s+(?=[(_[:alpha:]])",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.declaration.python"
+            }
+          },
+          "end": "(?=[\\n#:=])",
+          "patterns": [
+            {
+              "match": "\\b([_[:alpha:]]\\w*)\\b",
+              "name": "variable.other.python"
+            },
+            {
+              "match": ",",
+              "name": "punctuation.separator.comma.python"
+            },
+            {
+              "match": "\\(",
+              "name": "punctuation.parenthesis.begin.python"
+            },
+            {
+              "match": "\\)",
+              "name": "punctuation.parenthesis.end.python"
+            }
+          ]
         }
       ]
     },

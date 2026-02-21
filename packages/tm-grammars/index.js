@@ -2699,19 +2699,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/textmate/mips.tmbundle/contents/Syntaxes/MIPS.tmLanguage?ref=eb7601016a109bf912a48a1c21988f3c4a59fb3a',
   },
   {
-    byteSize: 67524,
+    byteSize: 68006,
     displayName: 'Mojo',
     funding: [
     ],
-    hash: 'h_XAV5rJGlX27v_1kFlnJOVIxan8syBzSvsmvpfXKA8',
-    lastUpdate: '2025-12-08T00:33:23Z',
+    hash: 'JIPlKOaWcUycPSG-GR4id_vRtoHo4jEsjDPe8r-2U7c',
+    lastUpdate: '2026-02-20T18:14:48Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/modular/mojo-syntax/main/LICENSE',
     name: 'mojo',
     scopeName: 'source.mojo',
-    sha: 'bd0aaab252fbbc6d84d4e4922ec535d17fe7e832',
-    source: 'https://github.com/modularml/mojo-syntax/blob/bd0aaab252fbbc6d84d4e4922ec535d17fe7e832/syntaxes/mojo.syntax.json',
-    sourceApi: 'https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=bd0aaab252fbbc6d84d4e4922ec535d17fe7e832',
+    sha: '48cdeac4f6b542e0b50666a5725fdfadf6188836',
+    source: 'https://github.com/modularml/mojo-syntax/blob/48cdeac4f6b542e0b50666a5725fdfadf6188836/syntaxes/mojo.syntax.json',
+    sourceApi: 'https://api.github.com/repos/modularml/mojo-syntax/contents/syntaxes/mojo.syntax.json?ref=48cdeac4f6b542e0b50666a5725fdfadf6188836',
   },
   {
     aliases: [
