@@ -28,7 +28,7 @@
   "name": "es-tag-sql",
   "patterns": [
     {
-      "begin": "(?i)\\b(\\w+\\.sql)\\s*(`)",
+      "begin": "(?i)\\b((?:\\w+\\.sql)|sql)\\s*(`)",
       "beginCaptures": {
         "1": {
           "name": "variable.parameter"
@@ -54,41 +54,7 @@
       ]
     },
     {
-      "begin": "(?i)\\b(sql)\\s*(`)",
-      "beginCaptures": {
-        "1": {
-          "name": "entity.name.function.tagged-template.ts"
-        },
-        "2": {
-          "name": "string.template.ts punctuation.definition.string.template.begin.ts"
-        }
-      },
-      "end": "(`)",
-      "endCaptures": {
-        "1": {
-          "name": "string.template.ts punctuation.definition.string.template.end.ts"
-        }
-      },
-      "patterns": [
-        {
-          "include": "source.ts#template-substitution-element"
-        },
-        {
-          "include": "source.ts#string-character-escape"
-        },
-        {
-          "include": "source.sql"
-        },
-        {
-          "include": "source.plpgsql.postgres"
-        },
-        {
-          "match": "."
-        }
-      ]
-    },
-    {
-      "begin": "(?i)(\\s?/?\\*?\\s?((?:|inline-)sql)\\s?\\*?/?\\s?)(`)",
+      "begin": "(?i)(\\s?(?:(?:/\\*)|(?://))\\s?((?:|inline-)sql)\\s?\\*?/?\\s?)(`)",
       "beginCaptures": {
         "1": {
           "name": "comment.block"
