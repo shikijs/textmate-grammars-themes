@@ -47,3 +47,12 @@ class MyElement extends LitElement {
 }
 
 // from: https://lit.dev/docs/v1/components/decorators/
+
+const users = await sql`
+  SELECT
+    *
+  FROM
+    users
+  WHERE
+    id = ${id}
+`;

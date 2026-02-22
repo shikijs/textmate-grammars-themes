@@ -38,3 +38,11 @@
 #DBD7CACC        }
 #DBD7CACC      }
 #DBD7CACC      // from: https://lit.dev/docs/v1/components/decorators/
+#DBD7CACC      const users = await sql`
+#DBD7CACC        SELECT
+#DBD7CACC          *
+#DBD7CACC        FROM
+#DBD7CACC          users
+#DBD7CACC        WHERE
+#DBD7CACC          id = ${id}
+#DBD7CACC      `;
