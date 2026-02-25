@@ -479,7 +479,7 @@
       ]
     },
     "citation-macro": {
-      "begin": "((\\\\)(?:[Aa]uto|foot|full|no|ref|short|[Tt]ext|[Pp]aren|[Ss]mart)?[Cc]ite(?:al)?(?:[pst]|author|year(?:par)?|title)?[ANP]*\\*?)((?:(?:\\([^)]*\\)){0,2}(?:\\[[^]]*]){0,2}\\{[-.:_\\p{Alphabetic}\\p{N}]*})*)(<[^]<>]*>)?((?:\\[[^]]*])*)(\\{)",
+      "begin": "((\\\\)(?:[Aa]uto|foot|full|footfull|no|ref|short|[Tt]ext|[Pp]aren|[Ss]mart|[FPfp]vol|vol)?[Cc]ite(?:al)?(?:[pst]|author|year(?:par)?|title|url|date)?[ANP]*\\*?)((?:(?:\\([^)]*\\)){0,2}(?:\\[[^]]*]){0,2}\\{[-.:_\\p{Alphabetic}\\p{N}]*})*)(<[^]<>]*>)?((?:\\[[^]]*])*)(\\{)",
       "captures": {
         "1": {
           "name": "keyword.control.cite.latex"
@@ -2720,7 +2720,7 @@
               "name": "punctuation.definition.verb.latex"
             }
           },
-          "match": "((\\\\)(?:(?:py|pycon|pylab|pylabcon|sympy|sympycon)[cv]?|pyq|pycq|pyif))((?:\\[[^\\[]*?])?)(?:([^A-Za-{])(.*?)(\\4)|(\\{)(.*?)(}))",
+          "match": "((\\\\)(?:(?:py|pycon|pylab|pylabcon|sympy|sympycon)[cv]?|pyq|pycq|pyif))((?:\\[[^\\[]*?])?)(?:([^](),;A-\\[a-{}\\s])(.*?)(\\4)|(\\{)(.*?)(}))",
           "name": "meta.function.verb.latex"
         },
         {

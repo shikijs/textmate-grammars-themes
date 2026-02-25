@@ -485,7 +485,7 @@
       ]
     },
     "citation-macro": {
-      "begin": "((\\\\)(?:[aA]uto|foot|full|no|ref|short|[tT]ext|[pP]aren|[sS]mart)?[cC]ite(?:al)?(?:p|s|t|author|year(?:par)?|title)?[ANP]*\\*?)((?:(?:\\([^\\)]*\\)){0,2}(?:\\[[^\\]]*\\]){0,2}\\{[\\p{Alphabetic}\\p{Number}_:.-]*\\})*)(<[^\\]<>]*>)?((?:\\[[^\\]]*\\])*)(\\{)",
+      "begin": "((\\\\)(?:[aA]uto|foot|full|footfull|no|ref|short|[tT]ext|[pP]aren|[sS]mart|[fFpP]vol|vol)?[cC]ite(?:al)?(?:p|s|t|author|year(?:par)?|title|url|date)?[ANP]*\\*?)((?:(?:\\([^\\)]*\\)){0,2}(?:\\[[^\\]]*\\]){0,2}\\{[\\p{Alphabetic}\\p{Number}_:.-]*\\})*)(<[^\\]<>]*>)?((?:\\[[^\\]]*\\])*)(\\{)",
       "captures": {
         "1": {
           "name": "keyword.control.cite.latex"
@@ -2728,7 +2728,7 @@
               "name": "punctuation.definition.verb.latex"
             }
           },
-          "match": "((\\\\)(?:(?:py|pycon|pylab|pylabcon|sympy|sympycon)[cv]?|pyq|pycq|pyif))((?:\\[[^\\[]*?\\])?)(?:(?:([^a-zA-Z\\{])(.*?)(\\4))|(?:(\\{)(.*?)(\\})))",
+          "match": "((\\\\)(?:(?:py|pycon|pylab|pylabcon|sympy|sympycon)[cv]?|pyq|pycq|pyif))((?:\\[[^\\[]*?\\])?)(?:(?:([^a-zA-Z\\{\\}\\[\\](),;\\s])(.*?)(\\4))|(?:(\\{)(.*?)(\\})))",
           "name": "meta.function.verb.latex"
         },
         {
@@ -4424,5 +4424,5 @@
     }
   },
   "scopeName": "text.tex.latex",
-  "version": "https://github.com/jlelong/vscode-latex-basics/commit/620451dfbdcd7eb36dcd79633e38c62099c13e0e"
+  "version": "https://github.com/jlelong/vscode-latex-basics/commit/1f62731d63abfd134e03f4744fcbccadac4e0153"
 }

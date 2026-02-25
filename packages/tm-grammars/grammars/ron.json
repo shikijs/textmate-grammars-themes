@@ -25,7 +25,7 @@
           "include": "#value"
         },
         {
-          "include": "#object-name"
+          "include": "#struct-name"
         },
         {
           "meta_scope": "meta.structure.array.ron"
@@ -35,13 +35,23 @@
     "block_comment": {
       "begin": "/\\*",
       "end": "\\*/",
-      "name": "comment.block.ron"
+      "name": "comment.block.ron",
+      "patterns": [
+        {
+          "include": "#block_comment"
+        }
+      ]
     },
     "character": {
       "begin": "'",
       "contentName": "constant.character.ron",
       "end": "'",
-      "name": "string.quoted.single"
+      "name": "string.quoted.single",
+      "patterns": [
+        {
+          "include": "#escapes"
+        }
+      ]
     },
     "constant": {
       "match": "\\b(true|false)\\b",
@@ -65,13 +75,13 @@
           "include": "#value"
         },
         {
-          "include": "#object-name"
+          "include": "#struct-name"
         },
         {
           "include": "#object"
         },
         {
-          "include": "#tag-name"
+          "include": "#enum-variant"
         },
         {
           "match": ",",
@@ -82,6 +92,10 @@
           "name": "punctuation.separator.dictionary.key-value.ron"
         }
       ]
+    },
+    "enum-variant": {
+      "match": "[_a-z][0-9A-Z_a-z]*",
+      "name": "entity.name.tag.ron"
     },
     "escapes": {
       "captures": {
@@ -125,7 +139,13 @@
           "include": "#number"
         },
         {
-          "include": "#object-name"
+          "include": "#raw_string"
+        },
+        {
+          "include": "#struct-field"
+        },
+        {
+          "include": "#struct-name"
         },
         {
           "include": "#object"
@@ -137,7 +157,7 @@
           "include": "#character"
         },
         {
-          "include": "#tag-name"
+          "include": "#enum-variant"
         }
       ]
     },
@@ -147,20 +167,36 @@
       "name": "comment.line.double-slash.ron"
     },
     "number": {
-      "match": "-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[Ee][-+]?\\d+)?)?",
-      "name": "constant.numeric.ron"
+      "patterns": [
+        {
+          "match": "-?\\b0x[_\\h]+\\b",
+          "name": "constant.numeric.hex.ron"
+        },
+        {
+          "match": "-?\\b0b[01_]+\\b",
+          "name": "constant.numeric.binary.ron"
+        },
+        {
+          "match": "-?\\b0o[0-7_]+\\b",
+          "name": "constant.numeric.octal.ron"
+        },
+        {
+          "match": "-?\\b[0-9][0-9_]*(?:\\.[0-9][0-9_]*)?(?:[Ee][-+]?[0-9_]+)?\\b",
+          "name": "constant.numeric.ron"
+        }
+      ]
     },
     "object": {
       "begin": "\\(",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.section.dictionary.begin.ron"
+          "name": "punctuation.section.parens.begin.ron"
         }
       },
       "end": "\\)",
       "endCaptures": {
         "0": {
-          "name": "punctuation.section.dictionary.end.ron"
+          "name": "punctuation.section.parens.end.ron"
         }
       },
       "patterns": [
@@ -171,19 +207,52 @@
           "include": "#dictionary"
         },
         {
-          "include": "#tag-name"
+          "include": "#struct-field"
         },
         {
-          "include": "#object-name"
+          "include": "#struct-name"
+        },
+        {
+          "include": "#enum-variant"
         },
         {
           "include": "#object"
         }
       ]
     },
-    "object-name": {
-      "match": "[A-Z_a-z][0-9A-Z_a-z]*",
-      "name": "entity.name.class.ron"
+    "raw_string": {
+      "patterns": [
+        {
+          "begin": "r#{5}\"",
+          "end": "\"#{5}",
+          "name": "string.quoted.other.raw.ron"
+        },
+        {
+          "begin": "r#{4}\"",
+          "end": "\"#{4}",
+          "name": "string.quoted.other.raw.ron"
+        },
+        {
+          "begin": "r#{3}\"",
+          "end": "\"#{3}",
+          "name": "string.quoted.other.raw.ron"
+        },
+        {
+          "begin": "r#{2}\"",
+          "end": "\"#{2}",
+          "name": "string.quoted.other.raw.ron"
+        },
+        {
+          "begin": "r#\"",
+          "end": "\"#",
+          "name": "string.quoted.other.raw.ron"
+        },
+        {
+          "begin": "r\"",
+          "end": "\"",
+          "name": "string.quoted.other.raw.ron"
+        }
+      ]
     },
     "string": {
       "begin": "(b?)(\")",
@@ -195,9 +264,20 @@
         }
       ]
     },
-    "tag-name": {
-      "match": "[_a-z][0-9A-Z_a-z]*",
-      "name": "entity.name.tag.ron"
+    "struct-field": {
+      "captures": {
+        "1": {
+          "name": "variable.other.member.ron"
+        },
+        "2": {
+          "name": "punctuation.separator.key-value.ron"
+        }
+      },
+      "match": "([_a-z][0-9A-Z_a-z]*)\\s*(:)"
+    },
+    "struct-name": {
+      "match": "[A-Z][0-9A-Z_a-z]*",
+      "name": "entity.name.type.ron"
     },
     "value": {
       "patterns": [
@@ -221,6 +301,9 @@
         },
         {
           "include": "#object"
+        },
+        {
+          "include": "#raw_string"
         },
         {
           "include": "#string"

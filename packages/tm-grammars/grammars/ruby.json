@@ -475,7 +475,7 @@
       ]
     },
     {
-      "begin": "(?<![)\\w])((/))(?![*+?])(?=(?:\\\\/|[^/])*+/[eimnosux]*\\s*(?:[]#),.:?}]|\\|\\||&&|<=>|=>|==|=~|!~|!=|;|$|if|else|elsif|then|do|end|unless|while|until|or|and)|$)",
+      "begin": "(?<![)\\w])((/))(?![*+?])(?!\\s*$)(?=(?:\\\\/|[^/])*+/[eimnosux]*\\s*(?:[]#),.:?}]|\\|\\||&&|<=>|=>|==|=~|!~|!=|;|$|if|else|elsif|then|do|end|unless|while|until|or|and))",
       "captures": {
         "1": {
           "name": "string.regexp.interpolated.ruby"
@@ -1542,12 +1542,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.html",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)HTML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1578,12 +1578,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.haml",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)HAML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1614,12 +1614,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.xml",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)XML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1650,12 +1650,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.sql",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SQL)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1686,12 +1686,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.graphql",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)G(?:RAPHQL|QL))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1722,12 +1722,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.css",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)CSS)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1758,12 +1758,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.cpp",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)CPP)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1794,12 +1794,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)C)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.c",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)C)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)C)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1830,12 +1830,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.js",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)J(?:S|AVASCRIPT))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1866,12 +1866,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.js.jquery",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)JQUERY)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1902,12 +1902,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.shell",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SH(?:|ELL))\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1938,12 +1938,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.lua",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)LUA)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -1974,12 +1974,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.ruby",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)RUBY)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -2010,12 +2010,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)YA?ML)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)YA?ML)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.yaml",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)YA?ML)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)YA?ML)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -2046,12 +2046,12 @@
       ]
     },
     {
-      "begin": "(?=(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1))",
+      "begin": "(?=(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1))",
       "end": "(?!\\G)",
       "name": "meta.embedded.block.slim",
       "patterns": [
         {
-          "begin": "(?><<[-~]([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1)",
+          "begin": "(?><<[-~]?([\"'`]?)((?:[_\\w]+_|)SLIM)\\b\\1)",
           "beginCaptures": {
             "0": {
               "name": "string.definition.begin.ruby"
@@ -2108,7 +2108,7 @@
       ]
     },
     {
-      "begin": "(?>((<<[-~]([\"'`]?)(\\w+)\\3,\\s?)*<<[-~]([\"'`]?)(\\w+)\\5))(.*)",
+      "begin": "(?>((<<[-~]?([\"'`]?)(\\w+)\\3,\\s?)*<<[-~]?([\"'`]?)(\\w+)\\5))(.*)",
       "beginCaptures": {
         "1": {
           "name": "string.definition.begin.ruby"
