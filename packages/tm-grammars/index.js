@@ -2217,9 +2217,6 @@ export const grammars = [
   },
   {
     byteSize: 10138,
-    categories: [
-      'dsl',
-    ],
     displayName: 'Just',
     embedded: [
       'shellscript',
@@ -2231,7 +2228,7 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'OgsRftPPDE2CD4lfnmVZ3L9J_nKEzmmtGnSW_8moGZk',
+    hash: '0bv6CQN7ORxjgt6EPrIYmGl0Z7Po_B_cRef3rSV6oeQ',
     lastUpdate: '2026-02-01T19:45:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nefrob/vscode-just/main/LICENSE',
@@ -2821,6 +2818,9 @@ export const grammars = [
     ],
     byteSize: 4207,
     displayName: 'Nextflow',
+    embedded: [
+      'nextflow-groovy',
+    ],
     funding: [
     ],
     hash: 'dIl9b467F9tUIovXx2AfndUrOo3zniv96pOWnzymxA4',
@@ -2832,6 +2832,20 @@ export const grammars = [
     sha: '720a2bd501837ca815acf4a225d9f3ba71a2adb0',
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/720a2bd501837ca815acf4a225d9f3ba71a2adb0/syntaxes/nextflow.tmLanguage.json',
     sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/nextflow.tmLanguage.json?ref=720a2bd501837ca815acf4a225d9f3ba71a2adb0',
+  },
+  {
+    byteSize: 10082,
+    funding: [
+    ],
+    hash: 'nBAO1E3y5W9QK8vy9T4b7puqDTGVFk4XijarIerk-W8',
+    lastUpdate: '2025-07-13T20:28:30Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md',
+    name: 'nextflow-groovy',
+    scopeName: 'source.nextflow-groovy',
+    sha: '406586f401aa7c808814d1148ade0fe05446605c',
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/406586f401aa7c808814d1148ade0fe05446605c/syntaxes/groovy.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/groovy.tmLanguage.json?ref=406586f401aa7c808814d1148ade0fe05446605c',
   },
   {
     byteSize: 34690,

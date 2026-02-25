@@ -1,0 +1,511 @@
+#758575DD      # Basic BIRD2 configuration file
+#4D9375        router
+#DBD7CACC       
+#4D9375        id
+#DBD7CACC       
+#4C9A91        192
+#CB7676        .
+#4C9A91        168
+#CB7676        .
+#4C9A91        1
+#CB7676        .
+#4C9A91        1
+#444444        ;
+#4D9375        log
+#DBD7CACC          
+#4D9375        syslog
+#DBD7CACC       
+#4D9375        all
+#444444        ;
+#4D9375        debug
+#DBD7CACC        
+#4D9375        protocols
+#DBD7CACC       
+#4D9375        all
+#444444        ;
+#758575DD      # Community list definition
+#4D9375        define
+#DBD7CACC       
+#BD976A        LOCAL_PREF_HIGH
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [(
+#4C9A91        65001
+#444444        ,
+#4C9A91        100
+#444444        ),
+#DBD7CACC       
+#444444        (
+#4C9A91        65001
+#444444        ,
+#4C9A91        200
+#444444        )];
+#4D9375        define
+#DBD7CACC       
+#BD976A        AS_PATH_FILTER
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [=
+#DBD7CACC       
+#4C9A91        65001
+#DBD7CACC       
+#4C9A91        65002
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#444444        =];
+#4D9375        define
+#DBD7CACC       
+#BD976A        MY_ASN
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        65001
+#444444        ;
+#4D9375        define
+#DBD7CACC       
+#BD976A        TEST_STR
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        test
+#C98A7D77      "
+#444444        ;
+#4D9375        define
+#DBD7CACC       
+#BD976A        PREFIX_LIST
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        [
+#DBD7CACC        
+#4C9A91        10
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        8
+#CB7676        +
+#444444        ,
+#DBD7CACC        
+#4C9A91        172
+#CB7676        .
+#4C9A91        16
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        12
+#CB7676        +
+#444444        ,
+#DBD7CACC        
+#4C9A91        192
+#CB7676        .
+#4C9A91        168
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        16
+#CB7676        +
+#444444        ,
+#DBD7CACC        
+#4C9A91        2001::/32
+#444444        {
+#4C9A91        33
+#444444        ,
+#4C9A91        128
+#444444        }
+#444444        ];
+#758575DD      # Define a protocol
+#4D9375        protocol
+#DBD7CACC       
+#5DA994        static
+#DBD7CACC       
+#80A665        static_routes
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        ipv4
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        table
+#DBD7CACC        
+#BD976A        master4
+#444444        ;
+#DBD7CACC          
+#BD976A        export
+#DBD7CACC       
+#4D9375        all
+#444444        ;
+#DBD7CACC          
+#BD976A        import
+#DBD7CACC       
+#4D9375        none
+#444444        ;
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#CB7676        route
+#DBD7CACC       
+#4C9A91        10
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        8
+#DBD7CACC       
+#4D9375        via
+#DBD7CACC       
+#4C9A91        192
+#CB7676        .
+#4C9A91        168
+#CB7676        .
+#4C9A91        1
+#CB7676        .
+#4C9A91        254
+#444444        ;
+#DBD7CACC        
+#CB7676        route
+#DBD7CACC       
+#4C9A91        172
+#CB7676        .
+#4C9A91        16
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        12
+#DBD7CACC       
+#4D9375        blackhole
+#444444        ;
+#444444        }
+#758575DD      # BGP protocol with AS path filtering
+#4D9375        protocol
+#DBD7CACC       
+#5DA994        bgp
+#DBD7CACC       
+#80A665        peer1
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        local
+#DBD7CACC          
+#4D9375        as
+#DBD7CACC       
+#4C9A91        65001
+#444444        ;
+#DBD7CACC        
+#4D9375        neighbor
+#DBD7CACC       
+#4C9A91        192.168.1.2
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#4C9A91        65002
+#444444        ;
+#DBD7CACC        
+#4D9375        ipv4
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        export
+#DBD7CACC       
+#B8A965        filter
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#4D9375        if
+#DBD7CACC           
+#B8A965        bgp_path
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#444444        [=
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4C9A91        65003
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#444444        =]
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#4D9375        reject
+#444444        ;
+#DBD7CACC            
+#4D9375        accept
+#444444        ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#BD976A        import
+#DBD7CACC       
+#4D9375        all
+#444444        ;
+#DBD7CACC        
+#444444        }
+#444444        }
+#758575DD      # OSPF protocol
+#4D9375        protocol
+#DBD7CACC       
+#4D9375        ospf
+#DBD7CACC       
+#BD976A        v2
+#DBD7CACC       
+#BD976A        ospf1
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        ipv4
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        export
+#DBD7CACC       
+#4D9375        all
+#444444        ;
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#4D9375        area
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        interface
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        eth0
+#C98A7D77      "
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#4D9375        hello
+#DBD7CACC       
+#4C9A91        10
+#444444        ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC        
+#444444        }
+#444444        }
+#4D9375        protocol
+#DBD7CACC       
+#5DA994        bgp
+#DBD7CACC       
+#80A665        Upstream
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        local
+#DBD7CACC          
+#4D9375        as
+#DBD7CACC       
+#4C9A91        65001
+#444444        ;
+#DBD7CACC        
+#4D9375        neighbor
+#DBD7CACC       
+#4C9A91        203.0.113.1
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#4C9A91        174
+#444444        ;
+#DBD7CACC        
+#4D9375        ipv4
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#4D9375        import
+#DBD7CACC       
+#4D9375        filter
+#DBD7CACC       {
+#DBD7CACC            
+#4D9375        if
+#DBD7CACC           
+#B8A965        bgp_path
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#BD976A        AS_PATH_FILTER
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#4D9375        reject
+#444444        ;
+#DBD7CACC            
+#4D9375        accept
+#444444        ;
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        export
+#DBD7CACC       
+#4D9375        filter
+#DBD7CACC       
+#80A665        export_filter
+#444444        ;
+#DBD7CACC        
+#444444        }
+#444444        }
+#4D9375        protocol
+#DBD7CACC       
+#5DA994        kernel
+#DBD7CACC       
+#80A665        Kernel
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        ipv4
+#444444        ;
+#DBD7CACC        
+#4D9375        scan
+#DBD7CACC       
+#4D9375        time
+#DBD7CACC       
+#4C9A91        10
+#444444        ;
+#444444        }
+#758575DD      # Filter and function definitions
+#4D9375        function
+#DBD7CACC       
+#80A665        is_private_network
+#DBD7CACC      () 
+#CB7676        ->
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC           
+#B8A965        net
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#4C9A91        10
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        8
+#CB7676        +
+#444444        ,
+#DBD7CACC       
+#4C9A91        172
+#CB7676        .
+#4C9A91        16
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        12
+#CB7676        +
+#444444        ,
+#DBD7CACC       
+#4C9A91        192
+#CB7676        .
+#4C9A91        168
+#CB7676        .
+#4C9A91        0
+#CB7676        .
+#4C9A91        0
+#CB7676        /
+#4C9A91        16
+#CB7676        +
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#4D9375        return
+#DBD7CACC       
+#4D9375        true
+#444444        ;
+#DBD7CACC        
+#4D9375        return
+#DBD7CACC       
+#4D9375        false
+#444444        ;
+#444444        }
+#4D9375        filter
+#DBD7CACC       
+#80A665        export_filter
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#80A665        is_private_network
+#DBD7CACC      () 
+#4D9375        then
+#DBD7CACC       
+#4D9375        reject
+#444444        ;
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#B8A965        bgp_path
+#CB7676        .
+#B8A965        len
+#DBD7CACC       
+#CB7676        >
+#DBD7CACC       
+#4C9A91        10
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#4D9375        reject
+#444444        ;
+#DBD7CACC        
+#4D9375        if
+#DBD7CACC       
+#B8A965        bgp_community
+#DBD7CACC       
+#CB7676        ~
+#DBD7CACC       
+#444444        [(
+#4C9A91        65001
+#444444        ,
+#4C9A91        100
+#444444        )]
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        bgp_local_pref
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        200
+#444444        ;
+#DBD7CACC          
+#4D9375        accept
+#444444        ;
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#4D9375        accept
+#444444        ;
+#444444        }
+#758575DD      # From https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/main/sample/basic.conf
