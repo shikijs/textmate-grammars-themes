@@ -854,6 +854,10 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/main/syntaxes/narrat.tmLanguage.yaml',
   },
   {
+    name: 'nextflow-groovy',
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/main/syntaxes/groovy.tmLanguage.json',
+  },
+  {
     name: 'nextflow',
     aliases: ['nf'],
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/main/syntaxes/nextflow.tmLanguage.json',
