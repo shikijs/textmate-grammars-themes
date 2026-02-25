@@ -466,6 +466,13 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/Azure/bicep/blob/main/src/textmate/bicep.tmlanguage',
   },
   {
+    name: 'bird2',
+    displayName: 'BIRD2 Configuration',
+    aliases: ['bird'],
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/main/grammars/bird2.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'blade',
     source: 'https://github.com/laravel/vs-code-extension/blob/main/syntaxes/blade.tmLanguage.json',
     categories: ['web', 'markup'],
