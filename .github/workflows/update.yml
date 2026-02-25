@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: Force update
+        required: false
+        default: 'false'
 
 jobs:
   update-grammars:
@@ -20,16 +25,25 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 22.x
           registry-url: 'https://registry.npmjs.org'
 
       - name: pnpm setup
         uses: pnpm/action-setup@v4
 
+      - run: npm i -g npm@latest
+
       - name: install
         run: pnpm install
 
       - run: pnpm run fetch
+        if: inputs.force != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
+        timeout-minutes: 2
+
+      - run: pnpm run fetch:force
+        if: inputs.force == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.FETCH_GITHUB_TOKEN }}
         timeout-minutes: 2
@@ -39,6 +53,7 @@ jobs:
         run: pnpm run bump
 
       - run: pnpm run test -u
+        continue-on-error: true
 
       - uses: EndBug/add-and-commit@v9
         if: ${{ steps.bump.outputs.CHANGED }}
@@ -47,8 +62,4 @@ jobs:
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           message: 'feat: update Themes and Grammars [ci skip]'
 
-      - run: pnpm -r publish
-        if: ${{ steps.bump.outputs.CHANGED }}
-        env:
-          NPM_CONFIG_PROVENANCE: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm -r publish --no-git-checks

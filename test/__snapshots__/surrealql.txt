@@ -1,0 +1,161 @@
+#758575DD      -- Query 1: Using record links to select from the seller table
+#4D9375        SELECT
+#DBD7CACC        name,
+#DBD7CACC        seller.name
+#4D9375        FROM
+#DBD7CACC       product 
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 2: Using graph relations to select from the person and product table
+#4D9375        SELECT
+#DBD7CACC          time.created_at 
+#4D9375        as
+#DBD7CACC       order_date,
+#DBD7CACC          product_name,
+#DBD7CACC          
+#CB7676        <-
+#DBD7CACC      person.name 
+#4D9375        as
+#DBD7CACC       person_name,
+#DBD7CACC          
+#CB7676        ->
+#DBD7CACC      product.details
+#4D9375        FROM
+#DBD7CACC       
+#4D9375        order
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 3: Conditional filtering based on an embedded object property.
+#4D9375        SELECT
+#DBD7CACC        name,
+#DBD7CACC        email
+#4D9375        FROM
+#DBD7CACC       person
+#4D9375        WHERE
+#DBD7CACC       address.country 
+#CB7676        ?=
+#DBD7CACC       
+#C98A7D        "England"
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 4: Conditional filtering using relationships.
+#4D9375        SELECT
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#4D9375        FROM
+#DBD7CACC       review
+#4D9375        WHERE
+#DBD7CACC       
+#CB7676        ->
+#DBD7CACC      product.sub_category 
+#CB7676        ?=
+#DBD7CACC       
+#C98A7D        "Activewear"
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 5: Count orders based on order status
+#4D9375        SELECT
+#DBD7CACC       
+#B8A965        count
+#DBD7CACC      () 
+#4D9375        FROM
+#DBD7CACC       
+#4D9375        order
+#4D9375        WHERE
+#DBD7CACC       order_status 
+#4D9375        IN
+#DBD7CACC       [ 
+#C98A7D        "processed"
+#444444        ,
+#DBD7CACC       
+#C98A7D        "shipped"
+#DBD7CACC      ]
+#4D9375        GROUP
+#DBD7CACC       
+#4D9375        ALL
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 6: Get a deduplicated list of products that were ordered
+#4D9375        SELECT
+#DBD7CACC          
+#B8A965        array::distinct
+#DBD7CACC      (product_name) 
+#4D9375        as
+#DBD7CACC       ordered_products
+#4D9375        FROM
+#DBD7CACC       
+#4D9375        order
+#4D9375        GROUP
+#DBD7CACC       
+#4D9375        ALL
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 7: Get the average price per product category
+#4D9375        SELECT
+#DBD7CACC          
+#CB7676        ->
+#DBD7CACC      product.category 
+#4D9375        AS
+#DBD7CACC       product_category,
+#DBD7CACC          
+#B8A965        math::mean
+#DBD7CACC      (price) 
+#4D9375        AS
+#DBD7CACC       avg_price
+#4D9375        FROM
+#DBD7CACC       
+#4D9375        order
+#4D9375        GROUP
+#DBD7CACC       
+#4D9375        BY
+#DBD7CACC       product_category
+#4D9375        ORDER
+#DBD7CACC       
+#4D9375        BY
+#DBD7CACC       avg_price 
+#4D9375        DESC
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- Query 8: encapsulating logic in a function
+#4D9375        RETURN
+#DBD7CACC       
+#B8A965        fn::number_of_unfulfilled_orders
+#DBD7CACC      ();
+#758575DD      -- Query 9: using a custom fuction for currency conversion
+#4D9375        SELECT
+#DBD7CACC          product_name,
+#DBD7CACC          
+#B8A965        fn::pound_to_usd
+#DBD7CACC      (price) 
+#4D9375        AS
+#DBD7CACC       price_usd
+#4D9375        FROM
+#DBD7CACC       
+#4D9375        order
+#DBD7CACC       
+#4D9375        LIMIT
+#DBD7CACC       
+#4C9A91        4
+#DBD7CACC      ;
+#758575DD      -- From https://surrealdb.com/docs/surrealql/demo#sample-queries

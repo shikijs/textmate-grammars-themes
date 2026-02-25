@@ -178,6 +178,9 @@
     "nextflow": {
       "patterns": [
         {
+          "include": "#record-def"
+        },
+        {
           "include": "#enum-def"
         },
         {
@@ -263,6 +266,24 @@
       "patterns": [
         {
           "include": "#process-body"
+        }
+      ]
+    },
+    "record-def": {
+      "begin": "^\\s*(record)\\s+(\\w+)\\s*\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.nextflow"
+        },
+        "2": {
+          "name": "storage.type.groovy"
+        }
+      },
+      "end": "}",
+      "name": "record.nextflow",
+      "patterns": [
+        {
+          "include": "source.nextflow-groovy#groovy"
         }
       ]
     },

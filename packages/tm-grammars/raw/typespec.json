@@ -18,7 +18,7 @@
           "name": "keyword.operator.assignment.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.alias-id.typespec",
       "patterns": [
         {
@@ -36,7 +36,7 @@
           "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.alias-statement.typespec",
       "patterns": [
         {
@@ -57,7 +57,7 @@
           "name": "entity.name.tag.tsp"
         }
       },
-      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.augment-decorator-statement.typespec",
       "patterns": [
         {
@@ -116,7 +116,7 @@
           "name": "variable.name.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.const-statement.typespec",
       "patterns": [
         {
@@ -140,7 +140,7 @@
           "name": "entity.name.tag.tsp"
         }
       },
-      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=([_$[:alpha:]]|`))|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.decorator.typespec",
       "patterns": [
         {
@@ -164,7 +164,7 @@
           "name": "entity.name.function.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.decorator-declaration-statement.typespec",
       "patterns": [
         {
@@ -176,13 +176,16 @@
       ]
     },
     "directive": {
-      "begin": "\\s*(#\\b[_$[:alpha:]][_$[:alnum:]]*\\b)",
+      "begin": "\\s*(#)(\\b[_$[:alpha:]][_$[:alnum:]]*\\b)",
       "beginCaptures": {
         "1": {
           "name": "keyword.directive.name.tsp"
+        },
+        "2": {
+          "name": "keyword.directive.name.tsp"
         }
       },
-      "end": "$|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "$|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.directive.typespec",
       "patterns": [
         {
@@ -307,7 +310,7 @@
           "name": "keyword.operator.type.annotation.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.enum-member.typespec",
       "patterns": [
         {
@@ -328,7 +331,7 @@
           "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.enum-statement.typespec",
       "patterns": [
         {
@@ -396,7 +399,7 @@
           "name": "entity.name.function.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.function-declaration-statement.typespec",
       "patterns": [
         {
@@ -421,7 +424,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.import-statement.typespec",
       "patterns": [
         {
@@ -489,7 +492,7 @@
           "name": "entity.name.function.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.interface-member.typespec",
       "patterns": [
         {
@@ -507,7 +510,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.interface-statement.typespec",
       "patterns": [
         {
@@ -594,7 +597,7 @@
           "name": "string.quoted.double.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.model-property.typespec",
       "patterns": [
         {
@@ -618,7 +621,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.model-statement.typespec",
       "patterns": [
         {
@@ -657,7 +660,7 @@
     },
     "namespace-name": {
       "begin": "(?=([_$[:alpha:]]|`))",
-      "end": "((?=\\{)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b))",
+      "end": "((?=\\{)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b))",
       "name": "meta.namespace-name.typespec",
       "patterns": [
         {
@@ -675,7 +678,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "((?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b))",
+      "end": "((?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b))",
       "name": "meta.namespace-statement.typespec",
       "patterns": [
         {
@@ -735,7 +738,7 @@
           "name": "keyword.operator.type.annotation.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.object-literal-property.typespec",
       "patterns": [
         {
@@ -753,7 +756,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.operation-heritage.typespec",
       "patterns": [
         {
@@ -819,7 +822,7 @@
           "name": "entity.name.function.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.operation-statement.typespec",
       "patterns": [
         {
@@ -908,7 +911,7 @@
           "name": "entity.name.function.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.scalar-constructor.typespec",
       "patterns": [
         {
@@ -947,7 +950,7 @@
           "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.scalar-statement.typespec",
       "patterns": [
         {
@@ -971,7 +974,7 @@
           "name": "keyword.operator.spread.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.spread-operator.typespec",
       "patterns": [
         {
@@ -1179,7 +1182,7 @@
           "name": "keyword.operator.assignment.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "endCaptures": {
         "0": {
           "name": "keyword.operator.assignment.tsp"
@@ -1231,7 +1234,7 @@
           "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.type-parameter.typespec",
       "patterns": [
         {
@@ -1252,7 +1255,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.type-parameter-constraint.typespec",
       "patterns": [
         {
@@ -1267,7 +1270,7 @@
           "name": "keyword.operator.assignment.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.type-parameter-default.typespec",
       "patterns": [
         {
@@ -1305,7 +1308,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.typeof.typespec",
       "patterns": [
         {
@@ -1358,7 +1361,7 @@
           "name": "entity.name.type.tsp"
         }
       },
-      "end": "(?<=\\})|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?<=\\})|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.union-statement.typespec",
       "patterns": [
         {
@@ -1379,7 +1382,7 @@
           "name": "keyword.operator.type.annotation.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.union-variant.typespec",
       "patterns": [
         {
@@ -1397,7 +1400,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.using-statement.typespec",
       "patterns": [
         {
@@ -1418,7 +1421,7 @@
           "name": "keyword.other.tsp"
         }
       },
-      "end": "(?=>)|(?=,|;|@|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
+      "end": "(?=>)|(?=,|;|@|#[a-z]|\\)|\\}|\\b(?:extern)\\b|\\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\\b)",
       "name": "meta.valueof.typespec",
       "patterns": [
         {

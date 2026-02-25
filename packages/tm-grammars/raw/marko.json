@@ -118,7 +118,7 @@
       ]
     },
     {
-      "begin": "^\\s*(?:((?:static|server|client)\\b)|(?=(?:class|import|export)\\b))",
+      "begin": "^\\s*(?:((?:static|server|client)(?![a-zA-Z0-9_$@-]))|(?=(?:class|import|export)[^a-zA-Z0-9_$@-]))",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.static.marko"
@@ -658,7 +658,7 @@
           "comment": "A concise html tag.",
           "patterns": [
             {
-              "begin": "^(\\s*)(?=html-comment\\b)",
+              "begin": "^(\\s*)(?=html-comment[^a-zA-Z0-9_$@-])",
               "comment": "Concise Marko html-comment tag",
               "patterns": [
                 {
@@ -674,7 +674,7 @@
               "while": "(?=^(?:\\s*[})\\]`]|\\*/|\\s*$|\\1\\s+(\\S|$)))"
             },
             {
-              "begin": "^(\\s*)(?=(?:html-)?style\\b[^\\s]*\\.less\\b)",
+              "begin": "^(\\s*)(?=style\\b[^\\s]*\\.less\\b)",
               "comment": "Concise style tag less",
               "patterns": [
                 {
@@ -690,7 +690,7 @@
               "while": "(?=^(?:\\s*[})\\]`]|\\*/|\\s*$|\\1\\s+(\\S|$)))"
             },
             {
-              "begin": "^(\\s*)(?=(?:html-)?style\\b[^\\s]*\\.scss\\b)",
+              "begin": "^(\\s*)(?=style\\b[^\\s]*\\.scss\\b)",
               "comment": "Concise style tag scss",
               "patterns": [
                 {
@@ -706,7 +706,7 @@
               "while": "(?=^(?:\\s*[})\\]`]|\\*/|\\s*$|\\1\\s+(\\S|$)))"
             },
             {
-              "begin": "^(\\s*)(?=(?:html-)?style\\b[^\\s]*\\.[tj]s\\b)",
+              "begin": "^(\\s*)(?=style\\b[^\\s]*\\.[tj]s\\b)",
               "comment": "Concise style tag js/ts",
               "patterns": [
                 {
@@ -722,7 +722,7 @@
               "while": "(?=^(?:\\s*[})\\]`]|\\*/|\\s*$|\\1\\s+(\\S|$)))"
             },
             {
-              "begin": "^(\\s*)(?=(?:html-)?style\\b)",
+              "begin": "^(\\s*)(?=(?:html-)?style[^a-zA-Z0-9_$@-])",
               "comment": "Concise style tag",
               "patterns": [
                 {
@@ -738,7 +738,7 @@
               "while": "(?=^(?:\\s*[})\\]`]|\\*/|\\s*$|\\1\\s+(\\S|$)))"
             },
             {
-              "begin": "^(\\s*)(?=(?:html-)?script\\b)",
+              "begin": "^(\\s*)(?=(?:html-)?script[^a-zA-Z0-9_$@-])",
               "comment": "Concise script tag",
               "patterns": [
                 {
@@ -989,7 +989,7 @@
       "name": "invalid.illegal.character-not-allowed-here.marko"
     },
     "invalid-close-tag": {
-      "begin": "\\s*</.*?",
+      "begin": "\\s*</[^>]*",
       "end": ">",
       "name": "invalid.illegal.character-not-allowed-here.marko"
     },
@@ -1330,7 +1330,7 @@
       "comment": "Matches an HTML tag and its contents",
       "patterns": [
         {
-          "begin": "\\s*(<)(?=(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr|const|debug|id|let|lifecycle|log|return)\\b)",
+          "begin": "\\s*(<)(?=(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr|const|debug|id|let|lifecycle|log|return)[^a-zA-Z0-9_$@-])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
@@ -1350,7 +1350,7 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=html-comment\\b)",
+          "begin": "\\s*(<)(?=html-comment[^a-zA-Z0-9_$@-])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
@@ -1400,14 +1400,14 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=((?:html-)?style)\\b[^\\s]*\\.less\\b)",
+          "begin": "\\s*(<)(?=style[^\\s]*\\.less\\b)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
           "comment": "HTML style tag with less",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</style>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1426,7 +1426,7 @@
               },
               "comment": "Style body content",
               "contentName": "source.less",
-              "end": "\\s*(</)((?:html-)?style)?(>)",
+              "end": "\\s*(</)(style)?(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.begin.marko"
@@ -1451,14 +1451,14 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=((?:html-)?style)\\b[^\\s]*\\.scss\\b)",
+          "begin": "\\s*(<)(?=style[^\\s]*\\.scss\\b)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
           "comment": "HTML style tag with scss",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</style>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1477,7 +1477,7 @@
               },
               "comment": "Style body content",
               "contentName": "source.scss",
-              "end": "\\s*(</)((?:html-)?style)?(>)",
+              "end": "\\s*(</)(style)?(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.begin.marko"
@@ -1502,14 +1502,14 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=((?:html-)?style)\\b[^\\s]*\\.[tj]s\\b)",
+          "begin": "\\s*(<)(?=style[^\\s]*\\.[tj]s\\b)",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
           "comment": "HTML style tag with js/ts",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</style>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1553,14 +1553,14 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=((?:html-)?style)\\b)",
+          "begin": "\\s*(<)(?=((?:html-)?style)[^a-zA-Z0-9_$@-])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
           "comment": "HTML style tag",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1604,14 +1604,14 @@
           ]
         },
         {
-          "begin": "\\s*(<)(?=((?:html-)?script)\\b)",
+          "begin": "\\s*(<)(?=((?:html-)?script)[^a-zA-Z0-9_$@-])",
           "beginCaptures": {
             "1": {
               "name": "punctuation.definition.tag.begin.marko"
             }
           },
           "comment": "HTML script tag",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1662,7 +1662,7 @@
             }
           },
           "comment": "HTML normal tag",
-          "end": "/>|(?<=</>|</\\2>)",
+          "end": "/>|(?<=</>)|(?<=</\\2>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.tag.end.marko"
@@ -1680,7 +1680,7 @@
                 }
               },
               "comment": "Body content",
-              "end": "\\s*(</)([a-zA-Z0-9_$:@.#-]+)?(.*?)(>)",
+              "end": "\\s*(</)([a-zA-Z0-9_$:@.#-]+)?([^>]*)(>)",
               "endCaptures": {
                 "1": {
                   "name": "punctuation.definition.tag.begin.marko"
@@ -1732,15 +1732,15 @@
             "3": {
               "patterns": [
                 {
-                  "match": "(script|style|html-script|html-style|html-comment)(?=\\b)(?![-:@])",
+                  "match": "(script|style|html-script|html-style|html-comment)(?![a-zA-Z0-9_$@-])",
                   "name": "support.type.builtin.marko"
                 },
                 {
-                  "match": "(for|if|while|else-if|else|try|await|return)(?=\\b)(?![-:@])",
+                  "match": "(for|if|while|else-if|else|try|await|return)(?![a-zA-Z0-9_$@-])",
                   "name": "keyword.control.flow.marko"
                 },
                 {
-                  "match": "(const|context|debug|define|id|let|log|lifecycle)(?=\\b)(?![-:@])",
+                  "match": "(const|context|debug|define|id|let|log|lifecycle)(?![a-zA-Z0-9_$@-])",
                   "name": "support.function.marko"
                 },
                 {

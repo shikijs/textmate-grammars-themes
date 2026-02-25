@@ -1,0 +1,527 @@
+#4D9375        import
+#DBD7CACC       
+#80A665        std
+#444444        ::
+#80A665        io
+#444444        ,
+#DBD7CACC       
+#80A665        std
+#444444        ::
+#80A665        math
+#444444        ::
+#80A665        random
+#444444        ;
+#4D9375        enum
+#DBD7CACC       
+#5DA994        Action
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#444444        (
+#B8A965        String
+#DBD7CACC       
+#BD976A        abbrev
+#444444        ,
+#DBD7CACC       
+#B8A965        String
+#DBD7CACC       
+#BD976A        full
+#444444        )
+#444444        {
+#DBD7CACC          
+#BD976A        ROCK
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        r
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Rock
+#C98A7D77      "
+#DBD7CACC       
+#444444        },
+#DBD7CACC          
+#BD976A        PAPER
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        p
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Paper
+#C98A7D77      "
+#DBD7CACC       
+#444444        },
+#DBD7CACC          
+#BD976A        SCISSORS
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        s
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Scissors
+#C98A7D77      "
+#DBD7CACC       
+#444444        },
+#444444        }
+#CB7676        const
+#DBD7CACC       
+#BD976A        ROUNDS
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        3
+#444444        ;
+#4D9375        fn
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC       
+#80A665        main
+#444444        ()
+#444444        {
+#DBD7CACC          
+#CB7676        int
+#DBD7CACC       
+#BD976A        p_score
+#444444        ;
+#DBD7CACC          
+#CB7676        int
+#DBD7CACC       
+#BD976A        c_score
+#444444        ;
+#DBD7CACC          
+#CB7676        int
+#DBD7CACC       
+#BD976A        rounds
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        ROUNDS
+#444444        ;
+#DBD7CACC          
+#80A665        io
+#444444        ::
+#80A665        printfn
+#444444        (
+#C98A7D77      "
+#C98A7D        Let's play Rock-Paper-Scissors!
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#BD976A        rounds
+#DBD7CACC       
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#444444        )
+#DBD7CACC          
+#444444        {
+#DBD7CACC              
+#80A665        io
+#444444        ::
+#80A665        printfn
+#444444        (
+#C98A7D77      "
+#C98A7D        Best out of %d, %d rounds remaining. 
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        ROUNDS
+#444444        ,
+#DBD7CACC       
+#BD976A        rounds
+#444444        );
+#DBD7CACC              
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        What is your guess? [r]ock, [p]aper, or [s]cissors?
+#C98A7D77      "
+#444444        );
+#DBD7CACC              
+#B8A965        Action
+#DBD7CACC       
+#BD976A        guess
+#444444        ;
+#DBD7CACC              
+#4D9375        while
+#DBD7CACC       
+#444444        (
+#4D9375        true
+#444444        )
+#DBD7CACC              
+#444444        {
+#DBD7CACC                  
+#B8A965        String
+#CB7676        ?
+#DBD7CACC       
+#BD976A        s
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#80A665        io
+#444444        ::
+#80A665        treadline
+#444444        ();
+#DBD7CACC                  
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#4D9375        catch
+#DBD7CACC       
+#BD976A        s
+#444444        )
+#DBD7CACC       
+#4D9375        return
+#DBD7CACC       
+#4C9A91        1
+#444444        ;
+#DBD7CACC                  
+#4D9375        if
+#DBD7CACC       
+#444444        (
+#4D9375        try
+#DBD7CACC       
+#BD976A        current_guess
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        Action
+#444444        .
+#80A665        lookup_field
+#444444        (
+#BD976A        abbrev
+#444444        ,
+#DBD7CACC       
+#BD976A        s
+#444444        ))
+#DBD7CACC                  
+#444444        {
+#DBD7CACC                      
+#BD976A        guess
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        current_guess
+#444444        ;
+#DBD7CACC                      
+#4D9375        break
+#444444        ;
+#DBD7CACC                  
+#444444        }
+#DBD7CACC                  
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        input invalid.
+#C98A7D77      "
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#80A665        io
+#444444        ::
+#80A665        printfn
+#444444        (
+#C98A7D77      "
+#C98A7D        Player: %s
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        guess
+#444444        .
+#BD976A        full
+#444444        );
+#DBD7CACC              
+#B8A965        Action
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#B8A965        Action
+#444444        .
+#80A665        from_ordinal
+#444444        (
+#80A665        rand
+#444444        (
+#4C9A91        3
+#444444        ));
+#DBD7CACC              
+#80A665        io
+#444444        ::
+#80A665        printfn
+#444444        (
+#C98A7D77      "
+#C98A7D        Computer: %s
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        comp
+#444444        .
+#BD976A        full
+#444444        );
+#DBD7CACC              
+#4D9375        switch
+#DBD7CACC              
+#444444        {
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        ROCK
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        SCISSORS
+#444444        :
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        SCISSORS
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        PAPER
+#444444        :
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        PAPER
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        ROCK
+#444444        :
+#DBD7CACC                       
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        Computer Score!
+#C98A7D77      "
+#444444        );
+#DBD7CACC                       
+#BD976A        c_score
+#CB7676        ++
+#444444        ;
+#DBD7CACC                       
+#BD976A        rounds
+#CB7676        --
+#444444        ;
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        ROCK
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        SCISSORS
+#444444        :
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        SCISSORS
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        PAPER
+#444444        :
+#DBD7CACC                  
+#4D9375        case
+#DBD7CACC       
+#BD976A        guess
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        PAPER
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#BD976A        comp
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#BD976A        ROCK
+#444444        :
+#DBD7CACC                      
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        Player Score!
+#C98A7D77      "
+#444444        );
+#DBD7CACC                      
+#BD976A        p_score
+#CB7676        ++
+#444444        ;
+#DBD7CACC                      
+#BD976A        rounds
+#CB7676        --
+#444444        ;
+#DBD7CACC                  
+#4D9375        default
+#444444        :
+#DBD7CACC                      
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        Tie!
+#C98A7D77      "
+#444444        );
+#DBD7CACC              
+#444444        }
+#DBD7CACC              
+#80A665        io
+#444444        ::
+#80A665        printfn
+#444444        (
+#C98A7D77      "
+#C98A7D        Score: Player: %d, Computer: %d
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#BD976A        p_score
+#444444        ,
+#DBD7CACC       
+#BD976A        c_score
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#4D9375        switch
+#DBD7CACC          
+#444444        {
+#DBD7CACC              
+#4D9375        case
+#DBD7CACC       
+#BD976A        p_score
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        c_score
+#444444        :
+#DBD7CACC       
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        COMPUTER WINS GAME!
+#C98A7D77      "
+#444444        );
+#DBD7CACC              
+#4D9375        case
+#DBD7CACC       
+#BD976A        p_score
+#DBD7CACC       
+#CB7676        >
+#DBD7CACC       
+#BD976A        c_score
+#444444        :
+#DBD7CACC       
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        PLAYER WINS GAME!
+#C98A7D77      "
+#444444        );
+#DBD7CACC              
+#4D9375        default
+#444444        :
+#DBD7CACC                      
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        GAME TIED!
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#80A665        io
+#444444        ::
+#80A665        printn
+#444444        (
+#C98A7D77      "
+#C98A7D        Thank you for playing.
+#C98A7D77      "
+#444444        );
+#DBD7CACC          
+#4D9375        return
+#DBD7CACC       
+#4C9A91        0
+#444444        ;
+#444444        }
+#758575DD      // From https://c3-lang.org/language-overview/examples/#rock-paper-scissors

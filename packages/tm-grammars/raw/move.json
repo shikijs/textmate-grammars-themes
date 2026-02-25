@@ -9,16 +9,13 @@
       "include": "#comments"
     },
     {
+      "include": "#extend_module"
+    },
+    {
       "include": "#module"
     },
     {
       "include": "#script"
-    },
-    {
-      "include": "#annotation"
-    },
-    {
-      "include": "#comments"
     },
     {
       "include": "#annotation"
@@ -114,6 +111,9 @@
       "end": "\\]",
       "name": "support.constant.annotation.move",
       "patterns": [
+        {
+          "include": "#comments"
+        },
         {
           "comment": "Annotation name",
           "match": "\\b(\\w+)\\s*(?=\\=)",
@@ -464,6 +464,24 @@
         }
       ]
     },
+    "extend_module": {
+      "begin": "\\b(extend)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.type.extend.move"
+        }
+      },
+      "end": "(?<=[;}])",
+      "name": "meta.extend_module.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#module"
+        }
+      ]
+    },
     "friend": {
       "begin": "\\b(friend)\\b",
       "beginCaptures": {
@@ -788,29 +806,47 @@
           "name": "constant.numeric.move"
         },
         {
-          "begin": "\\bb\"",
-          "comment": "vector ascii bytestring literal",
+          "begin": "\"",
+          "comment": "String literal",
           "end": "\"",
-          "name": "meta.vector.literal.ascii.move",
+          "name": "meta.string.literal.move",
           "patterns": [
-            {
-              "comment": "character escape",
-              "match": "\\\\.",
-              "name": "constant.character.escape.move"
-            },
-            {
-              "comment": "Special symbol escape",
-              "match": "\\\\[nrt\\0\"]",
-              "name": "constant.character.escape.move"
-            },
             {
               "comment": "HEX Escape",
               "match": "\\\\x[a-fA-F0-9][A-Fa-f0-9]",
               "name": "constant.character.escape.hex.move"
             },
             {
-              "comment": "ASCII Character",
-              "match": "[\\x00-\\x7F]",
+              "comment": "character escape",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "comment": "Any symbol",
+              "match": ".",
+              "name": "string.quoted.double.raw.move"
+            }
+          ]
+        },
+        {
+          "begin": "\\bb\"",
+          "comment": "vector ascii bytestring literal",
+          "end": "\"",
+          "name": "meta.vector.literal.ascii.move",
+          "patterns": [
+            {
+              "comment": "HEX Escape",
+              "match": "\\\\x[a-fA-F0-9][A-Fa-f0-9]",
+              "name": "constant.character.escape.hex.move"
+            },
+            {
+              "comment": "character escape",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "comment": "Any symbol",
+              "match": ".",
               "name": "string.quoted.double.raw.move"
             }
           ]
@@ -879,10 +915,13 @@
       "captures": {
         "2": {
           "name": "support.function.macro.move"
+        },
+        "3": {
+          "name": "support.function.operator.macro.move"
         }
       },
       "comment": "Macro fun call",
-      "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)!",
+      "match": "(\\b|\\.)([a-z][A-Za-z0-9_]*)(!)",
       "name": "meta.macro.call"
     },
     "match_expression": {
@@ -1058,32 +1097,6 @@
       "comment": "Use of module type or method",
       "match": "\\b(\\w+)::(\\w+)\\b",
       "name": "meta.module_access.move"
-    },
-    "module_label": {
-      "begin": "^\\s*(module)\\b",
-      "comment": "Module label, inline module definition",
-      "end": ";\\s*$",
-      "name": "meta.module.label.move",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#escaped_identifier"
-        },
-        {
-          "begin": "(?<=\\bmodule\\b)",
-          "comment": "Module namespace / address",
-          "end": "(?=[(::){])",
-          "name": "constant.other.move"
-        },
-        {
-          "begin": "(?<=::)",
-          "comment": "Module name",
-          "end": "(?=[\\s{])",
-          "name": "entity.name.type.move"
-        }
-      ]
     },
     "move_copy": {
       "comment": "Keywords move and copy",

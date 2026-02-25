@@ -9,16 +9,13 @@
       "include": "#comments"
     },
     {
+      "include": "#extend_module"
+    },
+    {
       "include": "#module"
     },
     {
       "include": "#script"
-    },
-    {
-      "include": "#annotation"
-    },
-    {
-      "include": "#comments"
     },
     {
       "include": "#annotation"
@@ -110,6 +107,9 @@
       "end": "]",
       "name": "support.constant.annotation.move",
       "patterns": [
+        {
+          "include": "#comments"
+        },
         {
           "match": "\\b(\\w+)\\s*(?==)",
           "name": "meta.annotation.name.move"
@@ -441,6 +441,24 @@
         }
       ]
     },
+    "extend_module": {
+      "begin": "\\b(extend)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.type.extend.move"
+        }
+      },
+      "end": "(?<=[;}])",
+      "name": "meta.extend_module.move",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#module"
+        }
+      ]
+    },
     "friend": {
       "begin": "\\b(friend)\\b",
       "beginCaptures": {
@@ -743,24 +761,39 @@
           "name": "constant.numeric.move"
         },
         {
-          "begin": "\\bb\"",
+          "begin": "\"",
           "end": "\"",
-          "name": "meta.vector.literal.ascii.move",
+          "name": "meta.string.literal.move",
           "patterns": [
-            {
-              "match": "\\\\.",
-              "name": "constant.character.escape.move"
-            },
-            {
-              "match": "\\\\[\\x00\"nrt]",
-              "name": "constant.character.escape.move"
-            },
             {
               "match": "\\\\x\\h\\h",
               "name": "constant.character.escape.hex.move"
             },
             {
-              "match": "[\\x00-\\x7F]",
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "match": ".",
+              "name": "string.quoted.double.raw.move"
+            }
+          ]
+        },
+        {
+          "begin": "\\bb\"",
+          "end": "\"",
+          "name": "meta.vector.literal.ascii.move",
+          "patterns": [
+            {
+              "match": "\\\\x\\h\\h",
+              "name": "constant.character.escape.hex.move"
+            },
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.move"
+            },
+            {
+              "match": ".",
               "name": "string.quoted.double.raw.move"
             }
           ]
@@ -823,9 +856,12 @@
       "captures": {
         "2": {
           "name": "support.function.macro.move"
+        },
+        "3": {
+          "name": "support.function.operator.macro.move"
         }
       },
-      "match": "(\\b|\\.)([a-z][0-9A-Z_a-z]*)!",
+      "match": "(\\b|\\.)([a-z][0-9A-Z_a-z]*)(!)",
       "name": "meta.macro.call"
     },
     "match_expression": {
@@ -991,29 +1027,6 @@
       },
       "match": "\\b(\\w+)::(\\w+)\\b",
       "name": "meta.module_access.move"
-    },
-    "module_label": {
-      "begin": "^\\s*(module)\\b",
-      "end": ";\\s*$",
-      "name": "meta.module.label.move",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#escaped_identifier"
-        },
-        {
-          "begin": "(?<=\\bmodule\\b)",
-          "end": "(?=[():{])",
-          "name": "constant.other.move"
-        },
-        {
-          "begin": "(?<=::)",
-          "end": "(?=[{\\s])",
-          "name": "entity.name.type.move"
-        }
-      ]
     },
     "move_copy": {
       "match": "\\b(move|copy)\\b",

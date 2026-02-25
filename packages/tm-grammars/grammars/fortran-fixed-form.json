@@ -26,6 +26,43 @@
       "include": "#comments"
     },
     {
+      "begin": "(?i)^(?=.{5}|(?<!^)\\t)\\s*(?:([0-9]{1,5})\\s+)?(format)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "constant.numeric.fortran"
+        },
+        "2": {
+          "name": "keyword.control.format.fortran"
+        }
+      },
+      "end": "(?=^(?![^\\n!#]{5}\\S))",
+      "name": "meta.statement.IO.fortran",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#line-header"
+        },
+        {
+          "match": "!.*$",
+          "name": "comment.line.fortran"
+        },
+        {
+          "include": "source.fortran.free#string-constant"
+        },
+        {
+          "include": "source.fortran.free#numeric-constant"
+        },
+        {
+          "include": "source.fortran.free#operators"
+        },
+        {
+          "include": "source.fortran.free#format-parentheses"
+        }
+      ]
+    },
+    {
       "include": "#line-header"
     },
     {

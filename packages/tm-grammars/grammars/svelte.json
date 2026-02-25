@@ -22,15 +22,26 @@
     "L:(meta.script.svelte | meta.style.svelte) (meta.lang.ts | meta.lang.typescript) - (meta source)": {
       "patterns": [
         {
-          "begin": "(?<=>)(?!</)",
+          "begin": "(?<=>)(?=[^\\n]+</(s(?:cript|tyle))[>\\s])",
           "contentName": "source.ts",
-          "end": "(?=</)",
+          "end": "(?=</(s(?:cript|tyle))[>\\s])",
           "name": "meta.embedded.block.svelte",
           "patterns": [
             {
               "include": "source.ts"
             }
           ]
+        },
+        {
+          "begin": "(?<=>)(?!</)",
+          "contentName": "source.ts",
+          "name": "meta.embedded.block.svelte",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ],
+          "while": "^(?!\\s*</(s(?:cript|tyle))[>\\s])"
         }
       ]
     },
@@ -220,6 +231,9 @@
     "attributes": {
       "patterns": [
         {
+          "include": "#attributes-comments"
+        },
+        {
           "include": "#attributes-directives"
         },
         {
@@ -245,6 +259,19 @@
       "patterns": [
         {
           "include": "source.ts"
+        }
+      ]
+    },
+    "attributes-comments": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.svelte"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.svelte"
         }
       ]
     },

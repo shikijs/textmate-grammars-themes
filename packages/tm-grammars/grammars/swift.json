@@ -3757,7 +3757,7 @@
           ]
         },
         {
-          "begin": "#\"\"\"",
+          "begin": "#\"\"\"(?!#)(?=(?:[^\"]|\"(?!#))*$)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.swift"
@@ -3792,7 +3792,7 @@
           ]
         },
         {
-          "begin": "(##+)\"\"\"",
+          "begin": "(?<!#)(##+)\"\"\"(?!\\1)(?=(?:[^\"]|\"(?!\\1))*$)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.swift"
@@ -3843,7 +3843,7 @@
           ]
         },
         {
-          "begin": "(##+)\"",
+          "begin": "(?<!#)(##+)\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.raw.swift"

@@ -1,5 +1,4 @@
 import type { ThemeSource } from './scripts/themes/types'
-
 // @keep-sorted { "keys": ["name"] }
 export const sourcesVSCode: ThemeSource[] = [
   {
@@ -18,9 +17,29 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-dark.json',
   },
   {
+    name: 'ayu-light',
+    displayName: 'Ayu Light',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-light.json',
+  },
+  {
+    name: 'ayu-mirage',
+    displayName: 'Ayu Mirage',
+    source: 'https://github.com/ayu-theme/vscode-ayu/blob/master/ayu-mirage.json',
+  },
+  {
     name: 'dark-plus',
     displayName: 'Dark Plus',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
+  },
+  {
+    name: 'horizon-bright',
+    displayName: 'Horizon Bright',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
+  },
+  {
+    name: 'horizon',
+    displayName: 'Horizon',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
   },
   {
     name: 'laserwave',
@@ -37,6 +56,17 @@ export const sourcesVSCode: ThemeSource[] = [
     name: 'monokai',
     displayName: 'Monokai',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
+  },
+  {
+    name: 'night-owl-light',
+    displayName: 'Night Owl Light',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-Light-color-theme.json',
+    patch: (theme) => {
+      const globalSetting = theme.tokenColors.find((i: any) => !i.scope && i.settings.background === '#011627')
+      if (globalSetting)
+        delete globalSetting.settings.background
+      return theme
+    },
   },
   {
     name: 'night-owl',
@@ -72,7 +102,6 @@ export const sourcesVSCode: ThemeSource[] = [
 
 // @keep-sorted { "keys": ["name"] }
 export const sourcesCommunity: ThemeSource[] = [
-
   {
     name: 'everforest-dark',
     displayName: 'Everforest Dark',
@@ -124,6 +153,11 @@ export const sourcesCommunity: ThemeSource[] = [
     name: 'one-light',
     displayName: 'One Light',
     source: 'https://github.com/akamud/vscode-theme-onelight/blob/master/themes/OneLight.json',
+    patch: (theme) => {
+      const item = theme.tokenColors.find((i: any) => i.scope.includes('invalid.illegal'))
+      if (item)
+        item.settings.foreground = '#50A14F'
+    },
     type: 'light',
   },
   {
