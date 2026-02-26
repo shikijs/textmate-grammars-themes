@@ -1446,7 +1446,7 @@ export const sourcesInjections: GrammarSource[] = [
   },
   {
     name: 'es-tag-sql',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-sql.json',
+    source: 'https://github.com/frigus02/vscode-sql-tagged-template-literals/blob/main/extension-syntax-only/syntaxes/grammar.json',
     embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },
