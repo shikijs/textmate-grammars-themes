@@ -534,11 +534,11 @@ export const themes = [
     type: 'dark',
   },
   {
-    byteSize: 8726,
+    byteSize: 8727,
     displayName: 'Horizon Bright',
     funding: [
     ],
-    hash: 'dnYWqEdDsrn18HO6wb7n06cuDZVaaBNjcwzQT0NAlYs',
+    hash: '3dbPBtPQPwEpJpqhjcJ_TtOXtACsioXYAfUihmcSwoU',
     lastUpdate: '2022-12-25T15:13:11Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/alexandernanberg/horizon-theme-vscode/master/LICENSE',
@@ -546,7 +546,7 @@ export const themes = [
     sha: '83c848d0efd5d57ac7c9d868b53ae375d8a27692',
     source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/83c848d0efd5d57ac7c9d868b53ae375d8a27692/themes/horizon-bright.json',
     sourceApi: 'https://api.github.com/repos/alexandernanberg/horizon-theme-vscode/contents/themes/horizon-bright.json?ref=83c848d0efd5d57ac7c9d868b53ae375d8a27692',
-    type: 'dark',
+    type: 'light',
   },
   {
     byteSize: 35362,
