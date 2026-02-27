@@ -1,0 +1,148 @@
+{
+  "displayName": "JSON-LD",
+  "name": "jsonld",
+  "scopeName": "source.jsonld",
+  "fileTypes": ["jsonld", "json-ld"],
+  "patterns": [{ "include": "#value" }],
+  "repository": {
+    "array": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.array.begin.json" }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.array.end.json" }
+      },
+      "name": "meta.structure.array.json",
+      "patterns": [
+        { "include": "#value" },
+        { "match": ",", "name": "punctuation.separator.array.json" },
+        { "match": "[^\\]\\s]", "name": "invalid.illegal.expected-array-separator.json" }
+      ]
+    },
+
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*\\*(?!/)",
+          "captures": { "0": { "name": "punctuation.definition.comment.json" } },
+          "end": "\\*/",
+          "name": "comment.block.documentation.json"
+        },
+        {
+          "begin": "/\\*",
+          "captures": { "0": { "name": "punctuation.definition.comment.json" } },
+          "end": "\\*/",
+          "name": "comment.block.json"
+        },
+        {
+          "match": "(//).*$\\n?",
+          "captures": { "1": { "name": "punctuation.definition.comment.json" } },
+          "name": "comment.line.double-slash.js"
+        }
+      ]
+    },
+
+    "constant": {
+      "match": "\\b(?:true|false|null)\\b",
+      "name": "constant.language.json"
+    },
+
+    "number": {
+      "match": "-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[Ee][-+]?\\d+)?)?",
+      "name": "constant.numeric.json"
+    },
+
+    "object": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.dictionary.begin.json" }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.dictionary.end.json" }
+      },
+      "name": "meta.structure.dictionary.json",
+      "patterns": [
+        { "include": "#jsonldObjectKey" },
+        { "include": "#comments" },
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": { "name": "punctuation.separator.dictionary.key-value.json" }
+          },
+          "end": "(,)|(?=\\})",
+          "endCaptures": {
+            "1": { "name": "punctuation.separator.dictionary.pair.json" }
+          },
+          "name": "meta.structure.dictionary.value.json",
+          "patterns": [
+            { "include": "#value" },
+            { "match": "[^,\\s]", "name": "invalid.illegal.expected-dictionary-separator.json" }
+          ]
+        },
+        { "match": "[^\\}\\s]", "name": "invalid.illegal.expected-dictionary-separator.json" }
+      ]
+    },
+
+    "jsonldObjectKey": {
+      "patterns": [
+        {
+          "match": "(\\\")(@(?:context|id|type|graph|value|language|container|list|set|reverse|index|base|vocab|included|nest|prefix|propagate|protected|version|direction|none))(\\\")(?=\\s*:)",
+          "name": "meta.object-literal.key.jsonld",
+          "captures": {
+            "1": { "name": "punctuation.support.type.property-name.begin.json" },
+            "2": { "name": "keyword.control" },
+            "3": { "name": "punctuation.support.type.property-name.end.json" }
+          }
+        },
+        { "include": "#objectkey" }
+      ]
+    },
+
+    "objectkey": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": { "name": "punctuation.support.type.property-name.begin.json" }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": { "name": "punctuation.support.type.property-name.end.json" }
+      },
+      "name": "string.json support.type.property-name.json",
+      "patterns": [{ "include": "#stringcontent" }]
+    },
+
+    "string": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.json" }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.json" }
+      },
+      "name": "string.quoted.double.json",
+      "patterns": [{ "include": "#stringcontent" }]
+    },
+
+    "stringcontent": {
+      "patterns": [
+        { "match": "\\\\(?:[\"/\\\\bfnrt]|u\\h{4})", "name": "constant.character.escape.json" },
+        { "match": "\\\\.", "name": "invalid.illegal.unrecognized-string-escape.json" }
+      ]
+    },
+
+    "value": {
+      "patterns": [
+        { "include": "#constant" },
+        { "include": "#number" },
+        { "include": "#string" },
+        { "include": "#array" },
+        { "include": "#object" },
+        { "include": "#comments" }
+      ]
+    }
+  }
+}
