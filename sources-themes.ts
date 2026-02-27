@@ -1,6 +1,7 @@
 import type { ThemeSource } from './scripts/themes/types'
+
 // @keep-sorted { "keys": ["name"] }
-export const sourcesVSCode: ThemeSource[] = [
+export const sourcesCommunity: ThemeSource[] = [
   {
     name: 'andromeeda',
     displayName: 'Andromeeda',
@@ -32,77 +33,6 @@ export const sourcesVSCode: ThemeSource[] = [
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json',
   },
   {
-    name: 'horizon-bright',
-    displayName: 'Horizon Bright',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
-  },
-  {
-    name: 'horizon',
-    displayName: 'Horizon',
-    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
-  },
-  {
-    name: 'laserwave',
-    displayName: 'LaserWave',
-    source: 'https://github.com/Jaredk3nt/laserwave/blob/master/themes/LaserWave-color-theme.json',
-    type: 'dark',
-  },
-  {
-    name: 'light-plus',
-    displayName: 'Light Plus',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
-  },
-  {
-    name: 'monokai',
-    displayName: 'Monokai',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
-  },
-  {
-    name: 'night-owl-light',
-    displayName: 'Night Owl Light',
-    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-Light-color-theme.json',
-    patch: (theme) => {
-      const globalSetting = theme.tokenColors.find((i: any) => !i.scope && i.settings.background === '#011627')
-      if (globalSetting)
-        delete globalSetting.settings.background
-      return theme
-    },
-  },
-  {
-    name: 'night-owl',
-    displayName: 'Night Owl',
-    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
-  },
-  {
-    name: 'red',
-    displayName: 'Red',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
-  },
-  {
-    name: 'solarized-dark',
-    displayName: 'Solarized Dark',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
-  },
-  {
-    name: 'solarized-light',
-    displayName: 'Solarized Light',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
-  },
-  {
-    name: 'synthwave-84',
-    displayName: 'Synthwave \'84',
-    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
-  },
-  {
-    name: 'tokyo-night',
-    displayName: 'Tokyo Night',
-    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-color-theme.json',
-  },
-]
-
-// @keep-sorted { "keys": ["name"] }
-export const sourcesCommunity: ThemeSource[] = [
-  {
     name: 'everforest-dark',
     displayName: 'Everforest Dark',
     source: 'https://github.com/sainnhe/everforest-vscode/blob/master/themes/everforest-dark.json',
@@ -113,6 +43,17 @@ export const sourcesCommunity: ThemeSource[] = [
     displayName: 'Everforest Light',
     source: 'https://github.com/sainnhe/everforest-vscode/blob/master/themes/everforest-light.json',
     type: 'light',
+  },
+  {
+    name: 'horizon-bright',
+    displayName: 'Horizon Bright',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon-bright.json',
+    type: 'light',
+  },
+  {
+    name: 'horizon',
+    displayName: 'Horizon',
+    source: 'https://github.com/alexandernanberg/horizon-theme-vscode/blob/master/themes/horizon.json',
   },
   {
     name: 'houston',
@@ -134,12 +75,34 @@ export const sourcesCommunity: ThemeSource[] = [
     source: 'https://github.com/metapho-re/kanagawa-vscode-theme/blob/main/themes/kanagawa-wave-color-theme.json',
   },
   {
+    name: 'laserwave',
+    displayName: 'LaserWave',
+    source: 'https://github.com/Jaredk3nt/laserwave/blob/master/themes/LaserWave-color-theme.json',
+    type: 'dark',
+  },
+  {
     name: 'min-dark',
     source: 'https://github.com/misolori/min-theme/blob/master/themes/min-dark.json',
   },
   {
     name: 'min-light',
     source: 'https://github.com/misolori/min-theme/blob/master/themes/min-light.json',
+  },
+  {
+    name: 'night-owl-light',
+    displayName: 'Night Owl Light',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-Light-color-theme.json',
+    patch: (theme) => {
+      const globalSetting = theme.tokenColors.find((i: any) => !i.scope && i.settings.background === '#011627')
+      if (globalSetting)
+        delete globalSetting.settings.background
+      return theme
+    },
+  },
+  {
+    name: 'night-owl',
+    displayName: 'Night Owl',
+    source: 'https://github.com/sdras/night-owl-vscode-theme/blob/main/themes/Night%20Owl-color-theme.json',
   },
   {
     name: 'nord',
@@ -200,6 +163,16 @@ export const sourcesCommunity: ThemeSource[] = [
     displayName: 'Snazzy Light',
     source: 'https://github.com/loilo/vscode-snazzy-light/blob/master/themes/Snazzy-Light-color-theme.json',
     type: 'light',
+  },
+  {
+    name: 'synthwave-84',
+    displayName: 'Synthwave \'84',
+    source: 'https://github.com/robb0wen/synthwave-vscode/blob/master/themes/synthwave-color-theme.json',
+  },
+  {
+    name: 'tokyo-night',
+    displayName: 'Tokyo Night',
+    source: 'https://github.com/enkia/tokyo-night-vscode-theme/blob/master/themes/tokyo-night-color-theme.json',
   },
   {
     name: 'vesper',
@@ -278,6 +251,35 @@ export const sourcesMarketplace: ThemeSource[] = [
       'Gruvbox Light Soft',
     ],
   ),
+]
+
+// @keep-sorted { "keys": ["name"] }
+export const sourcesVSCode: ThemeSource[] = [
+  {
+    name: 'light-plus',
+    displayName: 'Light Plus',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/light_plus.json',
+  },
+  {
+    name: 'monokai',
+    displayName: 'Monokai',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-monokai/themes/monokai-color-theme.json',
+  },
+  {
+    name: 'red',
+    displayName: 'Red',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-red/themes/Red-color-theme.json',
+  },
+  {
+    name: 'solarized-dark',
+    displayName: 'Solarized Dark',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-dark/themes/solarized-dark-color-theme.json',
+  },
+  {
+    name: 'solarized-light',
+    displayName: 'Solarized Light',
+    source: 'https://github.com/microsoft/vscode/blob/main/extensions/theme-solarized-light/themes/solarized-light-color-theme.json',
+  },
 ]
 
 export const sources = [
