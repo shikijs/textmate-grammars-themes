@@ -21,7 +21,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: lts/*
 
       - name: Setup
         run: npm i -g @antfu/ni
@@ -40,7 +40,7 @@ jobs:
 
     strategy:
       matrix:
-        node: [22.x]
+        node: [lts/*]
         os: [ubuntu-latest]
       fail-fast: false
 
