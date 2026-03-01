@@ -450,22 +450,22 @@ export const grammars = [
     aliases: [
       'bird',
     ],
-    byteSize: 16474,
+    byteSize: 19153,
     categories: [
       'config',
     ],
     displayName: 'BIRD2 Configuration',
     funding: [
     ],
-    hash: 'RPCcGQ6UGeD_poiC9GaDEohu-RR2Wui7cDr0_uUV5Fw',
-    lastUpdate: '2026-02-26T13:14:25Z',
+    hash: 'VpcN6rBjsbh4DfdqrSS2YDg0ubRt5lOPOaFnlqQ4hSg',
+    lastUpdate: '2026-02-28T19:04:32Z',
     license: 'MPL-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/bird-chinese-community/BIRD-tm-language-grammar/main/LICENSE',
     name: 'bird2',
     scopeName: 'source.bird2',
-    sha: '17a8d1d61d4bc1ba719e0025e3f8b283c68eddde',
-    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/17a8d1d61d4bc1ba719e0025e3f8b283c68eddde/grammars/bird2.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/grammars/bird2.tmLanguage.json?ref=17a8d1d61d4bc1ba719e0025e3f8b283c68eddde',
+    sha: 'efd72e31c81f0fedafbb32eed36f4df0eff524f6',
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/efd72e31c81f0fedafbb32eed36f4df0eff524f6/grammars/bird2.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/grammars/bird2.tmLanguage.json?ref=efd72e31c81f0fedafbb32eed36f4df0eff524f6',
   },
   {
     byteSize: 102405,
@@ -654,7 +654,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/twxs/vs.language.cmake/contents/syntaxes/CMake.tmLanguage?ref=19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f',
   },
   {
-    byteSize: 38215,
+    byteSize: 38196,
     displayName: 'COBOL',
     embedded: [
       'html',
@@ -662,15 +662,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'eWw0cwpULrxH1b6u9F-vrb5XaWbIVyEKZpovABNnAyw',
-    lastUpdate: '2025-08-19T20:53:00Z',
+    hash: 'mDjJhsj2XiWtp1jA7C_DzZNi4Hy7Cc3USupqpk7GUNg',
+    lastUpdate: '2026-02-28T19:27:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: '28a53ee742017ec60055f2aaaf174aaf62e83c45',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/28a53ee742017ec60055f2aaaf174aaf62e83c45/syntaxes/COBOL.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=28a53ee742017ec60055f2aaaf174aaf62e83c45',
+    sha: '7020540cc77e04fb2edc8503f906d51fa840bbe5',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/7020540cc77e04fb2edc8503f906d51fa840bbe5/syntaxes/COBOL.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=7020540cc77e04fb2edc8503f906d51fa840bbe5',
   },
   {
     byteSize: 471,

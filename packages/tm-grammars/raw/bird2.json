@@ -23,10 +23,10 @@
       "include": "#strings"
     },
     {
-      "include": "#numbers"
+      "include": "#ip-addresses"
     },
     {
-      "include": "#ip-addresses"
+      "include": "#prefixes"
     },
     {
       "include": "#vpn-rd"
@@ -38,7 +38,7 @@
       "include": "#bgp-paths"
     },
     {
-      "include": "#prefixes"
+      "include": "#print-statements"
     },
     {
       "include": "#template-definitions"
@@ -62,16 +62,13 @@
       "include": "#import-export-statements"
     },
     {
-      "include": "#structural-keywords"
+      "include": "#variable-declarations"
     },
     {
-      "include": "#functional-keywords"
+      "include": "#method-calls"
     },
     {
-      "include": "#semantic-modifiers"
-    },
-    {
-      "include": "#builtin-functions"
+      "include": "#function-calls"
     },
     {
       "include": "#method-properties"
@@ -83,10 +80,22 @@
       "include": "#data-types"
     },
     {
-      "include": "#operators"
+      "include": "#constants"
     },
     {
-      "include": "#constants"
+      "include": "#structural-keywords"
+    },
+    {
+      "include": "#protocol-phrases"
+    },
+    {
+      "include": "#functional-keywords"
+    },
+    {
+      "include": "#semantic-modifiers"
+    },
+    {
+      "include": "#builtin-functions"
     },
     {
       "include": "#filter-names"
@@ -95,22 +104,16 @@
       "include": "#user-variables"
     },
     {
-      "include": "#function-calls"
+      "include": "#operators"
     },
     {
-      "include": "#method-calls"
-    },
-    {
-      "include": "#variable-declarations"
+      "include": "#numbers"
     },
     {
       "include": "#symbols"
     },
     {
       "include": "#blocks"
-    },
-    {
-      "include": "#print-statements"
     }
   ],
   "repository": {
@@ -140,7 +143,10 @@
               "name": "constant.numeric.asn.bird"
             },
             {
-              "include": "#numbers"
+              "include": "#operators"
+            },
+            {
+              "include": "#symbols"
             }
           ]
         }
@@ -221,7 +227,7 @@
     "builtin-functions": {
       "patterns": [
         {
-          "match": "\\b(?:defined|unset|print|printn|roa_check|aspa_check|aspa_check_downstream|aspa_check_upstream|from_hex|format|prepend|add|delete|filter|empty|reset|bt_assert|bt_test_suite|bt_test_same)\\b",
+          "match": "\\b(?:defined|unset|roa_check|aspa_check|aspa_check_downstream|aspa_check_upstream|from_hex|format|append|prepend|add|delete|empty|reset|bt_assert|bt_test_suite|bt_test_same)\\b",
           "name": "support.function.builtin.bird"
         }
       ]
@@ -229,7 +235,11 @@
     "bytestrings": {
       "patterns": [
         {
-          "match": "\\b(?:hex:)?(?:[0-9a-fA-F]{2}[:\\-\\s\\.]*){2,}[0-9a-fA-F]{2}\\b",
+          "match": "\\bhex:[0-9a-fA-F]{2}(?:[:\\-\\s\\.]*[0-9a-fA-F]{2})*\\b",
+          "name": "constant.numeric.bytestring.bird"
+        },
+        {
+          "match": "\\b(?:[0-9a-fA-F]{2}[:\\-\\s\\.]*){15,}[0-9a-fA-F]{2}\\b",
           "name": "constant.numeric.bytestring.bird"
         },
         {
@@ -310,7 +320,7 @@
     "data-types": {
       "patterns": [
         {
-          "match": "\\b(?:int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\b",
+          "match": "\\b(?:(?:int|pair|quad|ip|prefix|ec|lc|rd|enum)\\s+set|int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\b",
           "name": "storage.type.bird"
         }
       ]
@@ -318,7 +328,7 @@
     "filter-definitions": {
       "patterns": [
         {
-          "begin": "\\b(filter)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "begin": "\\b(filter)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s*\\{",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.filter.bird"
@@ -372,7 +382,7 @@
     "function-definitions": {
       "patterns": [
         {
-          "begin": "\\b(function)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+          "begin": "\\b(function)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))(?=\\s*\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.function.bird"
@@ -390,8 +400,18 @@
           "name": "meta.function-definition.bird",
           "patterns": [
             {
-              "begin": "\\G(?=\\()",
+              "begin": "\\(",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.parameters.begin.bird"
+                }
+              },
               "end": "\\)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.definition.parameters.end.bird"
+                }
+              },
               "name": "meta.function-parameters.bird",
               "patterns": [
                 {
@@ -427,7 +447,7 @@
     "functional-keywords": {
       "patterns": [
         {
-          "match": "\\b(?:static|rip|ospf|bgp|babel|rpki|bfd|device|direct|kernel|pipe|perf|mrt|aggregator|l3vpn|radv)\\b",
+          "match": "\\b(?:static|rip|ospf|bgp|babel|rpki|bfd|bmp|device|direct|kernel|pipe|perf|mrt|aggregator|l3vpn|radv)\\b",
           "name": "keyword.control.protocol-type.bird"
         },
         {
@@ -437,6 +457,10 @@
         {
           "match": "\\b(?:interface|type|wired|wireless|tunnel|rxcost|limit|hello|update|interval|port|tx|class|dscp|priority|rx|buffer|length|check|link|rtt|cost|min|max|decay|send|timestamps)\\b",
           "name": "keyword.other.interface.bird"
+        },
+        {
+          "match": "\\b(?:refresh|retry|expire|transport|ssh|tcp|user|address|version|ignore|private|public|key)\\b|\\b(?:local\\s+address|ignore\\s+max\\s+length|min\\s+version|max\\s+version|bird\\s+private\\s+key|remote\\s+public\\s+key)\\b",
+          "name": "keyword.other.rpki.bird"
         },
         {
           "match": "\\b(?:authentication|none|mac|permissive|password|generate|accept|from|to|algorithm|hmac|sha1|sha256|sha384|sha512|blake2s128|blake2s256|blake2b256|blake2b512)\\b",
@@ -478,7 +502,7 @@
               "name": "entity.name.function.filter.bird"
             }
           },
-          "match": "\\b(import)\\s+(filter)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+          "match": "\\b(import)\\s+(filter)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\b",
           "name": "meta.import-statement.bird"
         },
         {
@@ -539,7 +563,7 @@
               "name": "entity.name.function.filter.bird"
             }
           },
-          "match": "\\b(export)\\s+(filter)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+          "match": "\\b(export)\\s+(filter)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\b",
           "name": "meta.export-statement.bird"
         }
       ]
@@ -559,7 +583,7 @@
           "name": "constant.numeric.ip.ipv6.bird"
         },
         {
-          "match": "(?:[0-9a-fA-F]{0,4}:){1,6}::(?:[0-9a-fA-F]{0,4}:){0,5}[0-9a-fA-F]{0,4}(?:/[0-9]{1,3})?\\b",
+          "match": "\\b(?:[0-9a-fA-F]{0,4}:){1,6}::(?:[0-9a-fA-F]{0,4}:){0,5}[0-9a-fA-F]{0,4}(?:/[0-9]{1,3})?\\b",
           "name": "constant.numeric.ip.ipv6.bird"
         }
       ]
@@ -595,7 +619,7 @@
     "method-properties": {
       "patterns": [
         {
-          "match": "\\b(?:first|last|last_nonaggregated|len|asn|data|data1|data2|is_v4|ip|src|dst|rd|maxlen|type|mask|min|max)\\b",
+          "match": "(?<=\\.)\\s*(?:first|last|last_nonaggregated|len|asn|data|data1|data2|is_v4|ip|src|dst|rd|maxlen|type|mask|min|max)\\b(?!\\s*\\()",
           "name": "support.variable.property.bird"
         }
       ]
@@ -722,12 +746,16 @@
     "operators": {
       "patterns": [
         {
-          "match": "(?:==|!=|<=|>=|<|>|=|~|!~)",
+          "match": "(?:==|!=|<=|>=|!~|=|~|<|>)",
           "name": "keyword.operator.comparison.bird"
         },
         {
           "match": "(?:&&|\\|\\||!|->)",
           "name": "keyword.operator.logical.bird"
+        },
+        {
+          "match": "(?:\\+\\+)",
+          "name": "keyword.operator.concat.bird"
         },
         {
           "match": "(?:\\+|\\-|\\*|/|%)",
@@ -736,10 +764,6 @@
         {
           "match": "\\.\\.",
           "name": "keyword.operator.range.bird"
-        },
-        {
-          "match": "=",
-          "name": "keyword.operator.assignment.bird"
         },
         {
           "match": "\\.",
@@ -782,7 +806,7 @@
     "protocol-definitions": {
       "patterns": [
         {
-          "begin": "\\b(protocol)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+(from)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "begin": "\\b(protocol)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s+(from)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s*\\{",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.protocol.bird"
@@ -814,7 +838,7 @@
           ]
         },
         {
-          "begin": "\\b(protocol)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "begin": "\\b(protocol)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s*\\{",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.protocol.bird"
@@ -864,6 +888,22 @@
         }
       ]
     },
+    "protocol-phrases": {
+      "patterns": [
+        {
+          "match": "\\b(?:strict\\s+bind|zero\\s+udp6\\s+checksum\\s+rx|idle\\s+tx\\s+interval|multiplier|keyed|meticulous)\\b",
+          "name": "keyword.other.bfd.phrase.bird"
+        },
+        {
+          "match": "\\b(?:send\\s+timestamps|rtt\\s+(?:cost|min|max|decay)|next\\s+hop\\s+prefer|prefer|native)\\b",
+          "name": "keyword.other.babel.phrase.bird"
+        },
+        {
+          "match": "\\b(?:next\\s+hop\\s+(?:self|address|ibgp|ebgp)|link\\s+local\\s+next\\s+hop\\s+format|import\\s+table|export\\s+table|base\\s+table|add\\s+paths|aigp\\s+originate|long\\s+lived\\s+graceful\\s+restart|long\\s+lived\\s+stale\\s+time|dynamic\\s+name(?:\\s+digits)?|free\\s+bind|ttl\\s+security|multihop\\s+password|rr\\s+client|rs\\s+client|advertise\\s+hostname|interpret\\s+communities|deterministic\\s+med|default\\s+bgp_local_pref|default\\s+bgp_med|med\\s+metric|igp\\s+metric|missing\\s+lladdr|gateway\\s+address|forwarding\\s+addressed|gateway\\s+recursive|allow\\s+local\\s+as|allow\\s+bogus\\s+as|originate\\s+community|full\\s+route\\s+table|capabilities|primary)\\b",
+          "name": "keyword.other.bgp.phrase.bird"
+        }
+      ]
+    },
     "route-attributes": {
       "patterns": [
         {
@@ -904,19 +944,8 @@
           ]
         },
         {
-          "begin": "'",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.begin.bird"
-            }
-          },
-          "end": "'",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.end.bird"
-            }
-          },
-          "name": "string.quoted.single.bird"
+          "match": "'[0-9A-Za-z_.:-]+'",
+          "name": "entity.name.symbol.quoted.bird"
         }
       ]
     },
@@ -951,7 +980,39 @@
     "template-definitions": {
       "patterns": [
         {
-          "begin": "\\b(template)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "begin": "\\b(template)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s+(from)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s*\\{",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.template.bird"
+            },
+            "2": {
+              "name": "entity.name.type.protocol.bird"
+            },
+            "3": {
+              "name": "entity.name.function.template.bird"
+            },
+            "4": {
+              "name": "keyword.control.template-reference.bird"
+            },
+            "5": {
+              "name": "entity.name.function.template.bird"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.block.end.bird"
+            }
+          },
+          "name": "meta.template-definition-with-from.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(template)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+((?:[a-zA-Z_][a-zA-Z0-9_]*|'[0-9A-Za-z_.:-]+'))\\s*\\{",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.template.bird"
@@ -969,7 +1030,30 @@
               "name": "punctuation.definition.block.end.bird"
             }
           },
-          "name": "meta.template-definition.bird",
+          "name": "meta.template-definition-with-name.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(template)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.template.bird"
+            },
+            "2": {
+              "name": "entity.name.type.protocol.bird"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.block.end.bird"
+            }
+          },
+          "name": "meta.template-definition-anonymous.bird",
           "patterns": [
             {
               "include": "$self"
@@ -997,7 +1081,7 @@
               "name": "variable.other.declaration.bird"
             }
           },
-          "match": "\\b(int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\\s*=|;)",
+          "match": "\\b((?:(?:int|pair|quad|ip|prefix|ec|lc|rd|enum)\\s+set)|int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\\s*=|;)",
           "name": "meta.variable-declaration.bird"
         }
       ]
@@ -1008,5 +1092,5 @@
     }
   },
   "scopeName": "source.bird2",
-  "version": "1.0.6-20250808"
+  "version": "1.0.8-20260301"
 }

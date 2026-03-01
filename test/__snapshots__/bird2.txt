@@ -3,13 +3,7 @@
 #DBD7CACC       
 #4D9375        id
 #DBD7CACC       
-#4C9A91        192
-#CB7676        .
-#4C9A91        168
-#CB7676        .
-#4C9A91        1
-#CB7676        .
-#4C9A91        1
+#4C9A91        192.168.1.1
 #444444        ;
 #4D9375        log
 #DBD7CACC          
@@ -82,39 +76,15 @@
 #DBD7CACC       
 #444444        [
 #DBD7CACC        
-#4C9A91        10
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        8
+#4C9A91        10.0.0.0/8
 #CB7676        +
 #444444        ,
 #DBD7CACC        
-#4C9A91        172
-#CB7676        .
-#4C9A91        16
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        12
+#4C9A91        172.16.0.0/12
 #CB7676        +
 #444444        ,
 #DBD7CACC        
-#4C9A91        192
-#CB7676        .
-#4C9A91        168
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        16
+#4C9A91        192.168.0.0/16
 #CB7676        +
 #444444        ,
 #DBD7CACC        
@@ -156,38 +126,16 @@
 #DBD7CACC        
 #CB7676        route
 #DBD7CACC       
-#4C9A91        10
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        8
+#4C9A91        10.0.0.0/8
 #DBD7CACC       
 #4D9375        via
 #DBD7CACC       
-#4C9A91        192
-#CB7676        .
-#4C9A91        168
-#CB7676        .
-#4C9A91        1
-#CB7676        .
-#4C9A91        254
+#4C9A91        192.168.1.254
 #444444        ;
 #DBD7CACC        
 #CB7676        route
 #DBD7CACC       
-#4C9A91        172
-#CB7676        .
-#4C9A91        16
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        12
+#4C9A91        172.16.0.0/12
 #DBD7CACC       
 #4D9375        blackhole
 #444444        ;
@@ -222,7 +170,7 @@
 #DBD7CACC          
 #BD976A        export
 #DBD7CACC       
-#B8A965        filter
+#BD976A        filter
 #DBD7CACC       
 #444444        {
 #DBD7CACC            
@@ -384,7 +332,8 @@
 #4D9375        function
 #DBD7CACC       
 #80A665        is_private_network
-#DBD7CACC      () 
+#444444        ()
+#DBD7CACC       
 #CB7676        ->
 #DBD7CACC       
 #CB7676        bool
@@ -399,39 +348,15 @@
 #DBD7CACC       
 #444444        [
 #DBD7CACC       
-#4C9A91        10
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        8
+#4C9A91        10.0.0.0/8
 #CB7676        +
 #444444        ,
 #DBD7CACC       
-#4C9A91        172
-#CB7676        .
-#4C9A91        16
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        12
+#4C9A91        172.16.0.0/12
 #CB7676        +
 #444444        ,
 #DBD7CACC       
-#4C9A91        192
-#CB7676        .
-#4C9A91        168
-#CB7676        .
-#4C9A91        0
-#CB7676        .
-#4C9A91        0
-#CB7676        /
-#4C9A91        16
+#4C9A91        192.168.0.0/16
 #CB7676        +
 #DBD7CACC       
 #444444        ]
@@ -465,8 +390,8 @@
 #4D9375        if
 #DBD7CACC       
 #B8A965        bgp_path
-#CB7676        .
-#B8A965        len
+#DBD7CACC      .
+#BD976A        len
 #DBD7CACC       
 #CB7676        >
 #DBD7CACC       
