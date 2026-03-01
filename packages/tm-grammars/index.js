@@ -2834,10 +2834,11 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/nextflow.tmLanguage.json?ref=720a2bd501837ca815acf4a225d9f3ba71a2adb0',
   },
   {
-    byteSize: 10082,
+    byteSize: 10114,
+    displayName: 'Nextflow Groovy',
     funding: [
     ],
-    hash: 'nBAO1E3y5W9QK8vy9T4b7puqDTGVFk4XijarIerk-W8',
+    hash: 'AGeG2wfKfMTgsK2GZVynvB72TtCa4s5-PkIU5cebHHo',
     lastUpdate: '2025-07-13T20:28:30Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md',
