@@ -862,6 +862,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'nextflow-groovy',
+    displayName: 'Nextflow Groovy',
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/main/syntaxes/groovy.tmLanguage.json',
   },
   {
