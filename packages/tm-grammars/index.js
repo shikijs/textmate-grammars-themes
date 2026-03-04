@@ -844,22 +844,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/csharp/syntaxes/csharp.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
   },
   {
-    byteSize: 48053,
+    byteSize: 48071,
     categories: [
       'web',
     ],
     displayName: 'CSS',
     funding: [
     ],
-    hash: 'u3SSRC1E7eqV_opOqHy6Rql1MKhXWAE012EJdcHfKyc',
-    lastUpdate: '2024-10-25T09:35:17Z',
+    hash: 'IJUBWedoYZmur-nXJaBVbyX-Y3FhL5IfQAJiyLTuFqo',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'css',
     scopeName: 'source.css',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/css/syntaxes/css.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/css/syntaxes/css.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 1017,
@@ -938,22 +938,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Pure-D/code-d/contents/syntaxes/d.json?ref=71992a1a52a3025f3333e4025eee0f255a8cda03',
   },
   {
-    byteSize: 7428,
+    byteSize: 8207,
     categories: [
       'general',
     ],
     displayName: 'Dart',
     funding: [
     ],
-    hash: '3m3sTAphXXlBsFFMCtTIU16Je7izYC7XGBPP7TYBUdM',
-    lastUpdate: '2024-12-06T15:55:37Z',
+    hash: 'wT6RAzzGZJdEqp9K0zK108SDYuJA6zsNkEiovvJX_NM',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: '8270a86019db7551da42b71d15c6080a414d8c81',
-    source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/dart/syntaxes/dart.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 5245,
@@ -1564,22 +1564,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/MarioSchwalbe/vscode-gnuplot/contents/syntaxes/gnuplot.tmLanguage?ref=c62c1a61c9b6b4658b43d76c397dc2ad43523b6a',
   },
   {
-    byteSize: 44508,
+    byteSize: 44514,
     categories: [
       'general',
     ],
     displayName: 'Go',
     funding: [
     ],
-    hash: 'BWkqe8YLn7R00ywSgzr6JC28-COlIKvUmwRSIF1RHUk',
-    lastUpdate: '2026-01-08T16:24:04Z',
+    hash: 'AOD_cNWC35XxOyYtXnHYfeuC_jH72XaPRjMCbmVnWxw',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: 'c8fdd1650c06321d687ddfd1eff06aae4b616256',
-    source: 'https://github.com/microsoft/vscode/blob/c8fdd1650c06321d687ddfd1eff06aae4b616256/extensions/go/syntaxes/go.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/go/syntaxes/go.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     aliases: [
@@ -3093,7 +3093,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl.tmLanguage.json?ref=e637ff1bf7f481134849625e982ec80df9b35bc8',
   },
   {
-    byteSize: 107369,
+    byteSize: 107624,
     categories: [
       'general',
       'web',
@@ -3109,15 +3109,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'HaW8Dipb0AWtfltNutRlATwFXiAjiRNnPp6aEV1Z718',
-    lastUpdate: '2026-01-08T16:24:04Z',
+    hash: '-D2KAshvpHINT9nUEJPPU_EOUUWCViWaToCfM6O5Ngk',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'php',
     scopeName: 'source.php',
-    sha: 'c8fdd1650c06321d687ddfd1eff06aae4b616256',
-    source: 'https://github.com/microsoft/vscode/blob/c8fdd1650c06321d687ddfd1eff06aae4b616256/extensions/php/syntaxes/php.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/php/syntaxes/php.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 9546,
@@ -3664,7 +3664,7 @@ export const grammars = [
     aliases: [
       'rb',
     ],
-    byteSize: 43704,
+    byteSize: 44410,
     categories: [
       'general',
     ],
@@ -3685,15 +3685,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'NlOw44zs3PYED6ePXEzbPBGm5RVNPsrNtqZD4qyumjk',
-    lastUpdate: '2026-01-30T15:33:10Z',
+    hash: 'ciI2lA1LbZZ_KlAO6o7qy_FeegJX3Y8PMMT3jhmvYGg',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
     scopeName: 'source.ruby',
-    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
-    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/ruby/syntaxes/ruby.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/ruby/syntaxes/ruby.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     aliases: [
