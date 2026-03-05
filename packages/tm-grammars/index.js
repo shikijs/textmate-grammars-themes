@@ -2291,13 +2291,13 @@ export const grammars = [
     displayName: 'Kusto',
     funding: [
     ],
-    hash: '-pSzql14VPHbAMKbU5oE7Pl-jjVICutK4730o896oAU',
-    lastUpdate: '2025-12-15T04:55:51Z',
+    hash: 'KHNrUU6sUN7pAZ39Ea8H8bltx8FBoZ2yMWzEYPZhlFU',
+    lastUpdate: '2026-03-04T08:08:03Z',
     name: 'kusto',
     scopeName: 'source.kusto',
-    sha: 'ff48034975f387ba79258776e5d452bee43a6233',
-    source: 'https://github.com/rosshamish/kuskus/blob/ff48034975f387ba79258776e5d452bee43a6233/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=ff48034975f387ba79258776e5d452bee43a6233',
+    sha: '2a5d25aa9e1680b90e77b2477d710d11af8fcd88',
+    source: 'https://github.com/rosshamish/kuskus/blob/2a5d25aa9e1680b90e77b2477d710d11af8fcd88/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=2a5d25aa9e1680b90e77b2477d710d11af8fcd88',
   },
   {
     byteSize: 69620,
