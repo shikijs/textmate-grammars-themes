@@ -2094,7 +2094,7 @@
             }
           },
           "contentName": "meta.function-call.php",
-          "end": "\\)",
+          "end": "\\)|(?=\\?>)",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.arguments.end.bracket.round.php"
@@ -2190,16 +2190,33 @@
       ]
     },
     "invoke-call": {
-      "captures": {
+      "begin": "(?i)((\\$+)[_a-z\\x7F-\\x{10FFFF}][0-9_a-z\\x7F-\\x{10FFFF}]*)\\s*(\\()",
+      "beginCaptures": {
         "1": {
           "name": "variable.other.php"
         },
         "2": {
           "name": "punctuation.definition.variable.php"
+        },
+        "3": {
+          "name": "punctuation.definition.arguments.begin.bracket.round.php"
         }
       },
-      "match": "(?i)((\\$+)[_a-z\\x7F-\\x{10FFFF}][0-9_a-z\\x7F-\\x{10FFFF}]*)(?=\\s*\\()",
-      "name": "meta.function-call.invoke.php"
+      "end": "\\)|(?=\\?>)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.arguments.end.bracket.round.php"
+        }
+      },
+      "name": "meta.function-call.invoke.php",
+      "patterns": [
+        {
+          "include": "#named-arguments"
+        },
+        {
+          "include": "$self"
+        }
+      ]
     },
     "match_statement": {
       "patterns": [

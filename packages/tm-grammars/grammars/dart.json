@@ -53,6 +53,12 @@
       "include": "#constants-and-special-vars"
     },
     {
+      "include": "#class-identifier-with-optional-factory-method"
+    },
+    {
+      "include": "#function-identifier"
+    },
+    {
       "include": "#operators"
     },
     {
@@ -83,6 +89,49 @@
           "beginCaptures": {
             "1": {
               "name": "support.class.dart"
+            }
+          },
+          "end": "(?!<)",
+          "patterns": [
+            {
+              "include": "#type-args"
+            }
+          ]
+        }
+      ]
+    },
+    "class-identifier-with-optional-factory-method": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "support.class.dart"
+            },
+            "2": {
+              "name": "entity.name.function.dart"
+            }
+          },
+          "match": "(?<!\\$)\\b(bool|num|int|double|dynamic)\\b(?!\\$)\\s*(factory\\b)?"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "storage.type.primitive.dart"
+            },
+            "2": {
+              "name": "entity.name.function.dart"
+            }
+          },
+          "match": "(?<!\\$)\\b(void)\\b(?!\\$)\\s*(factory\\b)?"
+        },
+        {
+          "begin": "(?<![$0-9A-Z_a-z])([$_]*[A-Z][$0-9A-Z_a-z]*)\\b\\s*(factory\\b)?",
+          "beginCaptures": {
+            "1": {
+              "name": "support.class.dart"
+            },
+            "2": {
+              "name": "entity.name.function.dart"
             }
           },
           "end": "(?!<)",
@@ -192,12 +241,6 @@
         {
           "match": "(?<!\\$)\\b((0([Xx])\\h[_\\h]*)|(([0-9][0-9_]*\\.?[0-9_]*)|(\\.[0-9][0-9_]*))(([Ee])([-+])?[0-9][0-9_]*)?)\\b(?!\\$)",
           "name": "constant.numeric.dart"
-        },
-        {
-          "include": "#class-identifier"
-        },
-        {
-          "include": "#function-identifier"
         }
       ]
     },
@@ -259,6 +302,12 @@
           "include": "#constants-and-special-vars"
         },
         {
+          "include": "#class-identifier-with-optional-factory-method"
+        },
+        {
+          "include": "#function-identifier"
+        },
+        {
           "include": "#strings"
         },
         {
@@ -292,6 +341,10 @@
             }
           },
           "match": "([$_]*[a-z][$0-9A-Z_a-z]*)(<(?:[$0-9<>?A-Z_a-z]|,\\s*|\\s+extends\\s+)+>)?[!?]?\\("
+        },
+        {
+          "match": "(?<=\\.)new\\b",
+          "name": "entity.name.function.dart"
         }
       ]
     },
@@ -318,8 +371,8 @@
           "name": "keyword.control.dart"
         },
         {
-          "match": "(?<!\\$)\\b(new)\\b(?!\\$)",
-          "name": "keyword.control.new.dart"
+          "match": "(?<![$.])\\b(new)\\b(?!\\$)",
+          "name": "keyword.new.dart"
         },
         {
           "match": "(?<!\\$)\\b(return)\\b(?!\\$)",
@@ -334,7 +387,7 @@
           "name": "storage.modifier.dart"
         },
         {
-          "match": "(?<!\\$)\\bv(?:oid|ar)\\b(?!\\$)",
+          "match": "(?<!\\$)\\bvar\\b(?!\\$)",
           "name": "storage.type.primitive.dart"
         }
       ]

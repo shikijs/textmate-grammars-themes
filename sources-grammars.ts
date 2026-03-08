@@ -466,6 +466,13 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/Azure/bicep/blob/main/src/textmate/bicep.tmlanguage',
   },
   {
+    name: 'bird2',
+    displayName: 'BIRD2 Configuration',
+    aliases: ['bird'],
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/main/grammars/bird2.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'blade',
     source: 'https://github.com/laravel/vs-code-extension/blob/main/syntaxes/blade.tmLanguage.json',
     categories: ['web', 'markup'],
@@ -766,6 +773,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/StoneCypher/sublime-jssm/blob/master/jssm.tmLanguage',
   },
   {
+    name: 'just',
+    displayName: 'Just',
+    source: 'https://github.com/nefrob/vscode-just/blob/main/syntaxes/just.tmLanguage.json',
+  },
+  {
     name: 'kdl',
     displayName: 'KDL',
     source: 'https://github.com/kdl-org/vscode-kdl/blob/main/syntaxes/kdl.tmLanguage.json',
@@ -847,6 +859,11 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'narrat',
     aliases: ['nar'],
     source: 'https://github.com/liana-p/narrat-syntax-highlighting-vscode/blob/main/syntaxes/narrat.tmLanguage.yaml',
+  },
+  {
+    name: 'nextflow-groovy',
+    displayName: 'Nextflow Groovy',
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/main/syntaxes/groovy.tmLanguage.json',
   },
   {
     name: 'nextflow',
@@ -1436,7 +1453,7 @@ export const sourcesInjections: GrammarSource[] = [
   },
   {
     name: 'es-tag-sql',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/master/syntaxes/es6-inline-sql.json',
+    source: 'https://github.com/frigus02/vscode-sql-tagged-template-literals/blob/main/extension-syntax-only/syntaxes/grammar.json',
     embeddedIn: ['ts-tags'],
     injectTo: ['source.ts', 'source.js'],
   },

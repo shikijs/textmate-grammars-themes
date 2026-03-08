@@ -447,6 +447,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Azure/bicep/contents/src/textmate/bicep.tmlanguage?ref=6252abb94141fc6e774a53652404be30f1cb9000',
   },
   {
+    aliases: [
+      'bird',
+    ],
+    byteSize: 22168,
+    categories: [
+      'config',
+    ],
+    displayName: 'BIRD2 Configuration',
+    funding: [
+    ],
+    hash: 'XhHFQH5CdTRnA0c8OmJl30YHnPSvufToX47E6q5zxxo',
+    lastUpdate: '2026-03-06T15:06:29Z',
+    license: 'MPL-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/bird-chinese-community/BIRD-tm-language-grammar/main/LICENSE',
+    name: 'bird2',
+    scopeName: 'source.bird2',
+    sha: '1aa378ed0add766bee2271acece94d5068cf3de9',
+    source: 'https://github.com/bird-chinese-community/BIRD-tm-language-grammar/blob/1aa378ed0add766bee2271acece94d5068cf3de9/grammars/bird2.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/bird-chinese-community/BIRD-tm-language-grammar/contents/grammars/bird2.tmLanguage.json?ref=1aa378ed0add766bee2271acece94d5068cf3de9',
+  },
+  {
     byteSize: 102405,
     categories: [
       'web',
@@ -633,7 +654,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/twxs/vs.language.cmake/contents/syntaxes/CMake.tmLanguage?ref=19b1b8fe2d68d72cf294d0c3c22f0a3fc54f8f6f',
   },
   {
-    byteSize: 38215,
+    byteSize: 38196,
     displayName: 'COBOL',
     embedded: [
       'html',
@@ -641,15 +662,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'eWw0cwpULrxH1b6u9F-vrb5XaWbIVyEKZpovABNnAyw',
-    lastUpdate: '2025-08-19T20:53:00Z',
+    hash: 'mDjJhsj2XiWtp1jA7C_DzZNi4Hy7Cc3USupqpk7GUNg',
+    lastUpdate: '2026-02-28T19:27:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/spgennard/vscode_cobol/main/LICENSE',
     name: 'cobol',
     scopeName: 'source.cobol',
-    sha: '28a53ee742017ec60055f2aaaf174aaf62e83c45',
-    source: 'https://github.com/spgennard/vscode_cobol/blob/28a53ee742017ec60055f2aaaf174aaf62e83c45/syntaxes/COBOL.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=28a53ee742017ec60055f2aaaf174aaf62e83c45',
+    sha: '7020540cc77e04fb2edc8503f906d51fa840bbe5',
+    source: 'https://github.com/spgennard/vscode_cobol/blob/7020540cc77e04fb2edc8503f906d51fa840bbe5/syntaxes/COBOL.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/spgennard/vscode_cobol/contents/syntaxes/COBOL.tmLanguage.json?ref=7020540cc77e04fb2edc8503f906d51fa840bbe5',
   },
   {
     byteSize: 471,
@@ -823,22 +844,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/csharp/syntaxes/csharp.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
   },
   {
-    byteSize: 48053,
+    byteSize: 48071,
     categories: [
       'web',
     ],
     displayName: 'CSS',
     funding: [
     ],
-    hash: 'u3SSRC1E7eqV_opOqHy6Rql1MKhXWAE012EJdcHfKyc',
-    lastUpdate: '2024-10-25T09:35:17Z',
+    hash: 'IJUBWedoYZmur-nXJaBVbyX-Y3FhL5IfQAJiyLTuFqo',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'css',
     scopeName: 'source.css',
-    sha: '210541906e5a96ab39f9c753f921b1bd35f4138b',
-    source: 'https://github.com/microsoft/vscode/blob/210541906e5a96ab39f9c753f921b1bd35f4138b/extensions/css/syntaxes/css.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=210541906e5a96ab39f9c753f921b1bd35f4138b',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/css/syntaxes/css.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/css/syntaxes/css.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 1017,
@@ -917,22 +938,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Pure-D/code-d/contents/syntaxes/d.json?ref=71992a1a52a3025f3333e4025eee0f255a8cda03',
   },
   {
-    byteSize: 7428,
+    byteSize: 8207,
     categories: [
       'general',
     ],
     displayName: 'Dart',
     funding: [
     ],
-    hash: '3m3sTAphXXlBsFFMCtTIU16Je7izYC7XGBPP7TYBUdM',
-    lastUpdate: '2024-12-06T15:55:37Z',
+    hash: 'wT6RAzzGZJdEqp9K0zK108SDYuJA6zsNkEiovvJX_NM',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'dart',
     scopeName: 'source.dart',
-    sha: '8270a86019db7551da42b71d15c6080a414d8c81',
-    source: 'https://github.com/microsoft/vscode/blob/8270a86019db7551da42b71d15c6080a414d8c81/extensions/dart/syntaxes/dart.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=8270a86019db7551da42b71d15c6080a414d8c81',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/dart/syntaxes/dart.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/dart/syntaxes/dart.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 5245,
@@ -1111,22 +1132,22 @@ export const grammars = [
     aliases: [
       'elisp',
     ],
-    byteSize: 778654,
+    byteSize: 778680,
     categories: [
       'lisp',
     ],
     displayName: 'Emacs Lisp',
     funding: [
     ],
-    hash: 'lXLyyDffGwt78bhdP_UWfs6Ft7iM8g01EnZ1o6pOen8',
-    lastUpdate: '2023-09-07T13:17:43Z',
+    hash: 'a7i7VtNcfpgrbtBo4bRZ_HJ09FCPs3G-5jW3JzH2reU',
+    lastUpdate: '2026-03-06T05:40:52Z',
     license: 'ISC',
     licenseUrl: 'https://raw.githubusercontent.com/Alhadis/language-emacs-lisp/master/LICENSE.md',
     name: 'emacs-lisp',
     scopeName: 'source.emacs.lisp',
-    sha: '07ef9e419b80478a0976acbc6ef9d190b07e508e',
-    source: 'https://github.com/Alhadis/language-emacs-lisp/blob/07ef9e419b80478a0976acbc6ef9d190b07e508e/grammars/emacs-lisp.cson',
-    sourceApi: 'https://api.github.com/repos/Alhadis/language-emacs-lisp/contents/grammars/emacs-lisp.cson?ref=07ef9e419b80478a0976acbc6ef9d190b07e508e',
+    sha: '890a50f6a77504c65549a35b9bc7a9525ff43710',
+    source: 'https://github.com/Alhadis/language-emacs-lisp/blob/890a50f6a77504c65549a35b9bc7a9525ff43710/grammars/emacs-lisp.cson',
+    sourceApi: 'https://api.github.com/repos/Alhadis/language-emacs-lisp/contents/grammars/emacs-lisp.cson?ref=890a50f6a77504c65549a35b9bc7a9525ff43710',
   },
   {
     byteSize: 1942,
@@ -1543,22 +1564,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/MarioSchwalbe/vscode-gnuplot/contents/syntaxes/gnuplot.tmLanguage?ref=c62c1a61c9b6b4658b43d76c397dc2ad43523b6a',
   },
   {
-    byteSize: 44508,
+    byteSize: 44514,
     categories: [
       'general',
     ],
     displayName: 'Go',
     funding: [
     ],
-    hash: 'BWkqe8YLn7R00ywSgzr6JC28-COlIKvUmwRSIF1RHUk',
-    lastUpdate: '2026-01-08T16:24:04Z',
+    hash: 'AOD_cNWC35XxOyYtXnHYfeuC_jH72XaPRjMCbmVnWxw',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'go',
     scopeName: 'source.go',
-    sha: 'c8fdd1650c06321d687ddfd1eff06aae4b616256',
-    source: 'https://github.com/microsoft/vscode/blob/c8fdd1650c06321d687ddfd1eff06aae4b616256/extensions/go/syntaxes/go.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/go/syntaxes/go.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/go/syntaxes/go.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     aliases: [
@@ -2195,6 +2216,29 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
+    byteSize: 10138,
+    displayName: 'Just',
+    embedded: [
+      'shellscript',
+      'javascript',
+      'typescript',
+      'perl',
+      'python',
+      'ruby',
+    ],
+    funding: [
+    ],
+    hash: '0bv6CQN7ORxjgt6EPrIYmGl0Z7Po_B_cRef3rSV6oeQ',
+    lastUpdate: '2026-02-01T19:45:11Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/nefrob/vscode-just/main/LICENSE',
+    name: 'just',
+    scopeName: 'source.just',
+    sha: 'c0a00dba51884e5887783c48dddf585dead998c6',
+    source: 'https://github.com/nefrob/vscode-just/blob/c0a00dba51884e5887783c48dddf585dead998c6/syntaxes/just.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nefrob/vscode-just/contents/syntaxes/just.tmLanguage.json?ref=c0a00dba51884e5887783c48dddf585dead998c6',
+  },
+  {
     byteSize: 3424,
     categories: [
       'markup',
@@ -2247,13 +2291,13 @@ export const grammars = [
     displayName: 'Kusto',
     funding: [
     ],
-    hash: '-pSzql14VPHbAMKbU5oE7Pl-jjVICutK4730o896oAU',
-    lastUpdate: '2025-12-15T04:55:51Z',
+    hash: 'KHNrUU6sUN7pAZ39Ea8H8bltx8FBoZ2yMWzEYPZhlFU',
+    lastUpdate: '2026-03-04T08:08:03Z',
     name: 'kusto',
     scopeName: 'source.kusto',
-    sha: 'ff48034975f387ba79258776e5d452bee43a6233',
-    source: 'https://github.com/rosshamish/kuskus/blob/ff48034975f387ba79258776e5d452bee43a6233/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=ff48034975f387ba79258776e5d452bee43a6233',
+    sha: '2a5d25aa9e1680b90e77b2477d710d11af8fcd88',
+    source: 'https://github.com/rosshamish/kuskus/blob/2a5d25aa9e1680b90e77b2477d710d11af8fcd88/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/rosshamish/kuskus/contents/kusto-syntax-highlighting/syntaxes/kusto.tmLanguage.json?ref=2a5d25aa9e1680b90e77b2477d710d11af8fcd88',
   },
   {
     byteSize: 69620,
@@ -2774,6 +2818,9 @@ export const grammars = [
     ],
     byteSize: 4207,
     displayName: 'Nextflow',
+    embedded: [
+      'nextflow-groovy',
+    ],
     funding: [
     ],
     hash: 'dIl9b467F9tUIovXx2AfndUrOo3zniv96pOWnzymxA4',
@@ -2785,6 +2832,21 @@ export const grammars = [
     sha: '720a2bd501837ca815acf4a225d9f3ba71a2adb0',
     source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/720a2bd501837ca815acf4a225d9f3ba71a2adb0/syntaxes/nextflow.tmLanguage.json',
     sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/nextflow.tmLanguage.json?ref=720a2bd501837ca815acf4a225d9f3ba71a2adb0',
+  },
+  {
+    byteSize: 10114,
+    displayName: 'Nextflow Groovy',
+    funding: [
+    ],
+    hash: 'AGeG2wfKfMTgsK2GZVynvB72TtCa4s5-PkIU5cebHHo',
+    lastUpdate: '2025-07-13T20:28:30Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/nextflow-io/vscode-language-nextflow/main/LICENSE.md',
+    name: 'nextflow-groovy',
+    scopeName: 'source.nextflow-groovy',
+    sha: '406586f401aa7c808814d1148ade0fe05446605c',
+    source: 'https://github.com/nextflow-io/vscode-language-nextflow/blob/406586f401aa7c808814d1148ade0fe05446605c/syntaxes/groovy.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nextflow-io/vscode-language-nextflow/contents/syntaxes/groovy.tmLanguage.json?ref=406586f401aa7c808814d1148ade0fe05446605c',
   },
   {
     byteSize: 34690,
@@ -3031,7 +3093,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/perl/syntaxes/perl.tmLanguage.json?ref=e637ff1bf7f481134849625e982ec80df9b35bc8',
   },
   {
-    byteSize: 107369,
+    byteSize: 107624,
     categories: [
       'general',
       'web',
@@ -3047,15 +3109,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'HaW8Dipb0AWtfltNutRlATwFXiAjiRNnPp6aEV1Z718',
-    lastUpdate: '2026-01-08T16:24:04Z',
+    hash: '-D2KAshvpHINT9nUEJPPU_EOUUWCViWaToCfM6O5Ngk',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'php',
     scopeName: 'source.php',
-    sha: 'c8fdd1650c06321d687ddfd1eff06aae4b616256',
-    source: 'https://github.com/microsoft/vscode/blob/c8fdd1650c06321d687ddfd1eff06aae4b616256/extensions/php/syntaxes/php.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/php/syntaxes/php.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/php/syntaxes/php.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     byteSize: 9546,
@@ -3602,7 +3664,7 @@ export const grammars = [
     aliases: [
       'rb',
     ],
-    byteSize: 43704,
+    byteSize: 44410,
     categories: [
       'general',
     ],
@@ -3623,15 +3685,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'NlOw44zs3PYED6ePXEzbPBGm5RVNPsrNtqZD4qyumjk',
-    lastUpdate: '2026-01-30T15:33:10Z',
+    hash: 'ciI2lA1LbZZ_KlAO6o7qy_FeegJX3Y8PMMT3jhmvYGg',
+    lastUpdate: '2026-03-03T13:56:43Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/vscode/main/LICENSE.txt',
     name: 'ruby',
     scopeName: 'source.ruby',
-    sha: '609f17a76734f092792a33c891af40bbcaea0c64',
-    source: 'https://github.com/microsoft/vscode/blob/609f17a76734f092792a33c891af40bbcaea0c64/extensions/ruby/syntaxes/ruby.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
+    sha: '091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
+    source: 'https://github.com/microsoft/vscode/blob/091ef378baaa141c8bc4bbe9775d4cb3bd655a80/extensions/ruby/syntaxes/ruby.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/ruby/syntaxes/ruby.tmLanguage.json?ref=091ef378baaa141c8bc4bbe9775d4cb3bd655a80',
   },
   {
     aliases: [
@@ -4376,19 +4438,19 @@ export const grammars = [
     aliases: [
       'tsp',
     ],
-    byteSize: 23113,
+    byteSize: 24118,
     displayName: 'TypeSpec',
     funding: [
     ],
-    hash: 'pb7DzDEP2tnhNd0zOSyqK9jQVS1KdayEdnLbCbJx0IM',
-    lastUpdate: '2025-11-06T20:39:50Z',
+    hash: 'j0xy9vKxncy7FgXsZXhGGcnuOuhegyJ5lKckYxlACTg',
+    lastUpdate: '2026-03-02T17:26:05Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
     name: 'typespec',
     scopeName: 'source.tsp',
-    sha: '2894420921882652a568ed22d5e245b26781b398',
-    source: 'https://github.com/microsoft/typespec/blob/2894420921882652a568ed22d5e245b26781b398/grammars/typespec.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=2894420921882652a568ed22d5e245b26781b398',
+    sha: '9bca04b6dd0c966b982b1ca920b59e245c050bed',
+    source: 'https://github.com/microsoft/typespec/blob/9bca04b6dd0c966b982b1ca920b59e245c050bed/grammars/typespec.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=9bca04b6dd0c966b982b1ca920b59e245c050bed',
   },
   {
     aliases: [
@@ -5176,7 +5238,7 @@ export const injections = [
     sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-html.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
   },
   {
-    byteSize: 1483,
+    byteSize: 8046,
     embedded: [
       'typescript',
       'sql',
@@ -5185,25 +5247,20 @@ export const injections = [
       'ts-tags',
     ],
     funding: [
-      {
-        handle: 'nonholy',
-        name: 'Buy Me A Coffee',
-        url: 'https://www.buymeacoffee.com/nonholy',
-      },
     ],
-    hash: '0nxyIHxbOwBjqkgBtKCL-xZPOJ9b-LNJTDdi7VEkB6w',
+    hash: '2AGJ4IowJ_RdN6clwFAQCc7RJnAZdQLa2nleUqKl7BI',
     injectTo: [
       'source.ts',
       'source.js',
     ],
-    lastUpdate: '2024-05-10T19:00:53Z',
+    lastUpdate: '2021-02-26T11:51:19Z',
     license: 'MIT',
-    licenseUrl: 'https://raw.githubusercontent.com/0x00000001A/es6-string-html/master/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/frigus02/vscode-sql-tagged-template-literals/main/LICENSE',
     name: 'es-tag-sql',
-    scopeName: 'inline.es6-sql',
-    sha: 'b8f51210b53ce64e789949d4be33b7ecb42cf177',
-    source: 'https://github.com/0x00000001A/es6-string-html/blob/b8f51210b53ce64e789949d4be33b7ecb42cf177/syntaxes/es6-inline-sql.json',
-    sourceApi: 'https://api.github.com/repos/0x00000001A/es6-string-html/contents/syntaxes/es6-inline-sql.json?ref=b8f51210b53ce64e789949d4be33b7ecb42cf177',
+    scopeName: 'inline.tagged-template-sql',
+    sha: '80e8ddcb034a3bc66382789d2ca251d0266a9f56',
+    source: 'https://github.com/frigus02/vscode-sql-tagged-template-literals/blob/80e8ddcb034a3bc66382789d2ca251d0266a9f56/extension-syntax-only/syntaxes/grammar.json',
+    sourceApi: 'https://api.github.com/repos/frigus02/vscode-sql-tagged-template-literals/contents/extension-syntax-only/syntaxes/grammar.json?ref=80e8ddcb034a3bc66382789d2ca251d0266a9f56',
   },
   {
     byteSize: 1070,
