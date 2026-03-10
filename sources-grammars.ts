@@ -415,6 +415,14 @@ export const sourcesCommunity: GrammarSource[] = [
     licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
   },
   {
+    name: 'ahk2',
+    displayName: 'AutoHotkey2',
+    source: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/syntaxes/ahk2.tmLanguage.json',
+    categories: ['scripting'],
+    license: 'GNU',
+    licenseUrl: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/LICENSE',
+  },
+  {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
   },
