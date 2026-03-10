@@ -460,8 +460,7 @@
               "name": "comment.block.documentation.c3"
             },
             {
-              "begin": "([\"`])",
-              "end": "\\1",
+              "match": "`[^`]*`|\"[^\"]*\"",
               "name": "comment.block.documentation.c3"
             }
           ]
@@ -523,8 +522,7 @@
               "name": "comment.block.documentation.c3"
             },
             {
-              "begin": "([\"`])",
-              "end": "\\1",
+              "match": "`[^`]*`|\"[^\"]*\"",
               "name": "comment.block.documentation.c3"
             }
           ]
@@ -812,7 +810,7 @@
           "name": "keyword.control.ct.c3"
         },
         {
-          "match": "\\b(?:assert|asm|catch|inline|import|module|interface|try|var)\\b",
+          "match": "\\b(?:assert|asm|catch|inline|import|module|interface|try|var|constdef)\\b",
           "name": "keyword.other.c3"
         },
         {

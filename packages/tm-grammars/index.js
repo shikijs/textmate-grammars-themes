@@ -539,22 +539,22 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/cpp/syntaxes/c.tmLanguage.json?ref=bd1abe08c38bb5deccf65610f8f3c03d2338d20d',
   },
   {
-    byteSize: 24945,
+    byteSize: 24952,
     categories: [
       'general',
     ],
     displayName: 'C3',
     funding: [
     ],
-    hash: 'Pg_Zxy5SyZTu7tkR5AJ0Ks233_EPsoPBBOsGDE8aA9E',
-    lastUpdate: '2026-01-29T20:59:22Z',
+    hash: 'fCb17Mqoyyb6IijYNWrscl5S7E8_50OVQscXLGzW0JA',
+    lastUpdate: '2026-03-09T07:18:55Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/c3lang/vscode-c3/main/LICENSE',
     name: 'c3',
     scopeName: 'source.c3',
-    sha: '8ae9a31008b499ef1b9a4cdcc1df8ba75eb2d10f',
-    source: 'https://github.com/c3lang/vscode-c3/blob/8ae9a31008b499ef1b9a4cdcc1df8ba75eb2d10f/syntaxes/c3.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/c3lang/vscode-c3/contents/syntaxes/c3.tmLanguage.json?ref=8ae9a31008b499ef1b9a4cdcc1df8ba75eb2d10f',
+    sha: '2c2f7b68b1ab502a26cf1c9a68969c63d291048b',
+    source: 'https://github.com/c3lang/vscode-c3/blob/2c2f7b68b1ab502a26cf1c9a68969c63d291048b/syntaxes/c3.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/c3lang/vscode-c3/contents/syntaxes/c3.tmLanguage.json?ref=2c2f7b68b1ab502a26cf1c9a68969c63d291048b',
   },
   {
     aliases: [
