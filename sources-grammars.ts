@@ -405,7 +405,15 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'ada',
     source: 'https://github.com/AdaCore/ada_language_server/blob/master/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
-
+  {
+    name: 'ahk',
+    displayName: 'AutoHotkey',
+    aliases: ['ahk1'],
+    source: 'https://github.com/mark-wiemer/ahkpp/blob/main/language/ahk.tmLanguage.yaml',
+    categories: ['scripting'],
+    license: 'MIT',
+    licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
+  },
   {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',

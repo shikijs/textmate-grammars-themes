@@ -56,6 +56,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/AdaCore/ada_language_server/contents/integration/vscode/ada/advanced/ada.tmLanguage.json?ref=9329f709cf1aef897bfca679c54e0c3d17f2205f',
   },
   {
+    aliases: [
+      'ahk1',
+    ],
+    byteSize: 29771,
+    categories: [
+      'scripting',
+    ],
+    displayName: 'AutoHotkey',
+    funding: [
+    ],
+    hash: 'UaxGHlhmumEMRAG46ahPi19zWUaOHAFgLuFKYEnaU50',
+    lastUpdate: '2023-07-27T01:11:41Z',
+    license: 'MIT',
+    licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
+    name: 'ahk',
+    scopeName: 'source.ahk',
+    sha: '14855ed6635fd7a7db55c9d219496832d1495a76',
+    source: 'https://github.com/mark-wiemer/ahkpp/blob/14855ed6635fd7a7db55c9d219496832d1495a76/language/ahk.tmLanguage.yaml',
+    sourceApi: 'https://api.github.com/repos/mark-wiemer/ahkpp/contents/language/ahk.tmLanguage.yaml?ref=14855ed6635fd7a7db55c9d219496832d1495a76',
+  },
+  {
     byteSize: 701,
     categories: [
       'web',
