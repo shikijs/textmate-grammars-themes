@@ -2467,19 +2467,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/lua/syntaxes/lua.tmLanguage.json?ref=c8fdd1650c06321d687ddfd1eff06aae4b616256',
   },
   {
-    byteSize: 13420,
+    byteSize: 14334,
     displayName: 'Luau',
     funding: [
     ],
-    hash: 'fcoc2SJIPcgfpzJHpvOdsz8oJCv1OVBZh6g_OOX-UX4',
-    lastUpdate: '2026-01-06T21:37:04Z',
+    hash: 'wRSDb7Qt5UyV2I7KWEXefbZfNcmFVtHyppnZ7t09w4s',
+    lastUpdate: '2026-03-14T19:02:06Z',
     license: 'NOASSERTION',
     licenseUrl: 'https://raw.githubusercontent.com/JohnnyMorganz/Luau.tmLanguage/main/LICENSE.md',
     name: 'luau',
     scopeName: 'source.luau',
-    sha: '1887144227f4e4444f1bf74fb978449e28e46cd4',
-    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/1887144227f4e4444f1bf74fb978449e28e46cd4/Luau.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/JohnnyMorganz/Luau.tmLanguage/contents/Luau.tmLanguage?ref=1887144227f4e4444f1bf74fb978449e28e46cd4',
+    sha: '89f575d4577595889a232c18862b824d13d0c38b',
+    source: 'https://github.com/JohnnyMorganz/Luau.tmLanguage/blob/89f575d4577595889a232c18862b824d13d0c38b/Luau.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/JohnnyMorganz/Luau.tmLanguage/contents/Luau.tmLanguage?ref=89f575d4577595889a232c18862b824d13d0c38b',
   },
   {
     aliases: [

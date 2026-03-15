@@ -42,6 +42,9 @@
       "include": "#standard_library"
     },
     {
+      "include": "#generics-instantiation"
+    },
+    {
       "include": "#identifier"
     },
     {
@@ -88,14 +91,8 @@
           "name": "comment.block.luau",
           "patterns": [
             {
-              "begin": "(```luau?)\\s+",
+              "begin": "(```luau?)\\s*$",
               "beginCaptures": {
-                "1": {
-                  "name": "comment.luau"
-                }
-              },
-              "end": "(```)",
-              "endCaptures": {
                 "1": {
                   "name": "comment.luau"
                 }
@@ -105,7 +102,17 @@
                 {
                   "include": "source.luau"
                 }
-              ]
+              ],
+              "while": "^(?!\\s*```)"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "comment.luau"
+                }
+              },
+              "match": "(```)",
+              "name": "keyword.operator.other.luau"
             },
             {
               "include": "#doc_comment_tags"
@@ -277,10 +284,32 @@
         }
       ]
     },
+    "generics-instantiation": {
+      "begin": "(<<)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.typeparameters.begin.luau"
+        }
+      },
+      "end": "(>>)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.typeparameters.end.luau"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#type_literal"
+        }
+      ]
+    },
     "identifier": {
       "patterns": [
         {
-          "match": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:[\"'({]|\\[\\[))",
+          "match": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:<<|[\"'({]|\\[\\[))",
           "name": "entity.name.function.luau"
         },
         {
@@ -591,7 +620,7 @@
       ]
     },
     "type-alias-declaration": {
-      "begin": "^\\b(?:(export)\\s+)?(type)\\b",
+      "begin": "(?<![^.]\\.|:)\\b(?:(export)\\s+)?(type)\\b(?=\\s+(?!function\\b)[A-Z_a-z][0-9A-Z_a-z]*)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.visibility.luau"
@@ -600,7 +629,7 @@
           "name": "storage.type.luau"
         }
       },
-      "end": "(?=\\s*$)|(?=\\s*;)",
+      "end": "(?=[]),}](?!\\s*[\\&|]))|(?=\\s*;)|(?=\\s*\\b(?:break|continue|do|else|elseif|end|for|function|if|in|local|repeat|return|then|until|while)\\b)|(?=^\\s*$)|(?=^\\s*(?:@|\\b(?:export\\s+)?type\\b))|(?=^\\s*[A-Z_a-z][0-9A-Z_a-z]*(?:\\.[A-Z_a-z][0-9A-Z_a-z]*)*\\s*(?:(?:[-%*+/^]|\\.\\.)?=(?!=)|[(:\\[]))",
       "patterns": [
         {
           "include": "#type_literal"
@@ -612,7 +641,7 @@
       ]
     },
     "type-function": {
-      "begin": "^\\b(?:(export)\\s+)?(type)\\s+(function)\\b",
+      "begin": "(?<![^.]\\.|:)\\b(?:(export)\\s+)?(type)\\s+(function)\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.visibility.luau"
@@ -686,7 +715,7 @@
       ]
     },
     "type_annotation": {
-      "begin": ":(?!\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:[\"'({]|\\[\\[)))",
+      "begin": ":(?!\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:<<|[\"'({]|\\[\\[)))",
       "end": "(?<=\\))(?!\\s*->)|[;=]|$|(?=\\breturn\\b)|(?=\\bend\\b)",
       "patterns": [
         {
@@ -704,7 +733,7 @@
           "name": "keyword.operator.typecast.luau"
         }
       },
-      "end": "(?=^|[-\\])+,:;>?}](?!\\s*[\\&|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
+      "end": "(?=[]),}](?!\\s*[\\&|]))|(?=\\s*;)|(?=\\s*\\b(?:break|continue|do|else|elseif|end|for|function|if|in|local|repeat|return|then|until|while)\\b)|(?=^\\s*$)|(?=^\\s*(?:@|\\b(?:export\\s+)?type\\b))|(?=^\\s*[A-Z_a-z][0-9A-Z_a-z]*(?:\\.[A-Z_a-z][0-9A-Z_a-z]*)*\\s*(?:(?:[-%*+/^]|\\.\\.)?=(?!=)|[(:\\[]))",
       "patterns": [
         {
           "include": "#type_literal"
