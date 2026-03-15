@@ -775,6 +775,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'just',
     displayName: 'Just',
+    aliases: ['justfile'],
     source: 'https://github.com/nefrob/vscode-just/blob/main/syntaxes/just.tmLanguage.json',
   },
   {
