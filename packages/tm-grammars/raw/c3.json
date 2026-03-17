@@ -255,6 +255,61 @@
         }
       ]
     },
+    "contract_expression": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#function"
+        },
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#builtin"
+        },
+        {
+          "include": "#real_literal"
+        },
+        {
+          "include": "#integer_literal"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#path"
+        },
+        {
+          "include": "#function_call"
+        },
+        {
+          "include": "#variable"
+        },
+        {
+          "include": "#parens"
+        },
+        {
+          "include": "#brackets"
+        },
+        {
+          "include": "#block"
+        },
+        {
+          "include": "#punctuation"
+        },
+        {
+          "include": "#leftover_at_ident"
+        }
+      ]
+    },
     "control_statements": {
       "patterns": [
         {
@@ -448,7 +503,7 @@
               "end": "(?=:|\\*>|$)",
               "patterns": [
                 {
-                  "include": "#expression"
+                  "include": "#contract_expression"
                 }
               ]
             },
@@ -510,7 +565,7 @@
               "end": "(?=:|\\*>|$)",
               "patterns": [
                 {
-                  "include": "#expression"
+                  "include": "#contract_expression"
                 }
               ]
             },
@@ -811,7 +866,7 @@
           "name": "keyword.control.ct.c3"
         },
         {
-          "match": "\\b(?:assert|asm|catch|inline|import|module|interface|try|var|constdef)\\b",
+          "match": "\\b(?:assert|asm|catch|inline|import|module|interface|try|var)\\b",
           "name": "keyword.other.c3"
         },
         {
@@ -1814,6 +1869,79 @@
                     }
                   },
                   "end": "(?=,)",
+                  "patterns": [
+                    {
+                      "include": "#expression"
+                    }
+                  ]
+                },
+                {
+                  "include": "#attribute"
+                },
+                {
+                  "match": "(?:\\b_*[A-Z][_A-Z0-9]*\\b)",
+                  "name": "variable.other.constant.c3"
+                },
+                {
+                  "match": ",",
+                  "name": "punctuation.separator.c3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "begin": "(?=\\bconstdef\\b)",
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "begin": "\\bconstdef\\b",
+              "beginCaptures": {
+                "0": {
+                  "name": "keyword.declaration.constdef.c3"
+                }
+              },
+              "end": "(?=\\{)",
+              "name": "meta.constdef.c3",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "match": "(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)",
+                  "name": "entity.name.type.enum.c3"
+                },
+                {
+                  "include": "#attribute"
+                }
+              ]
+            },
+            {
+              "begin": "\\{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.block.begin.c3"
+                }
+              },
+              "end": "\\}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.block.end.c3"
+                }
+              },
+              "name": "meta.constdef.body.c3",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "begin": "=",
+                  "beginCaptures": {
+                    "0": {
+                      "name": "keyword.operator.assignment.c3"
+                    }
+                  },
+                  "end": "(?=,|\\})",
                   "patterns": [
                     {
                       "include": "#expression"
