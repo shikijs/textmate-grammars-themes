@@ -1446,6 +1446,12 @@ export const sourcesInjections: GrammarSource[] = [
     injectTo: ['source.ts', 'source.js'],
   },
   {
+    name: 'es-tag-graphql',
+    source: 'https://github.com/graphql/graphiql/blob/main/packages/vscode-graphql-syntax/grammars/graphql.js.json',
+    embeddedIn: ['ts-tags'],
+    injectTo: ['source.ts', 'source.js'],
+  },
+  {
     name: 'es-tag-sql',
     source: 'https://github.com/frigus02/vscode-sql-tagged-template-literals/blob/main/extension-syntax-only/syntaxes/grammar.json',
     embeddedIn: ['ts-tags'],
