@@ -260,7 +260,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'powershell',
-    aliases: ['ps', 'ps1'],
+    aliases: ['ps', 'ps1', 'pwsh'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/powershell/syntaxes/powershell.tmLanguage.json',
   },
   {
