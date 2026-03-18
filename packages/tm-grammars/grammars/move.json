@@ -24,6 +24,9 @@
       "include": "#entry"
     },
     {
+      "include": "#package_visibility"
+    },
+    {
       "include": "#public-scope"
     },
     {
@@ -52,6 +55,9 @@
     },
     {
       "include": "#macro"
+    },
+    {
+      "include": "#inline"
     },
     {
       "include": "#fun"
@@ -99,6 +105,18 @@
         },
         {
           "include": "#module"
+        }
+      ]
+    },
+    "address_literal": {
+      "patterns": [
+        {
+          "match": "\\b0x\\h+\\b",
+          "name": "constant.other.move"
+        },
+        {
+          "match": "\\b[A-Za-z][0-9A-Z_a-z]*\\b(?=::)",
+          "name": "constant.other.move"
         }
       ]
     },
@@ -175,6 +193,10 @@
           "include": "#block-comments"
         }
       ]
+    },
+    "compound_assignment": {
+      "match": "[-+]=",
+      "name": "keyword.operator.assignment.compound.move"
     },
     "const": {
       "begin": "\\b(const)\\b",
@@ -360,6 +382,9 @@
           "include": "#types"
         },
         {
+          "include": "#compound_assignment"
+        },
+        {
           "include": "#literals"
         },
         {
@@ -390,6 +415,9 @@
           "include": "#method_call"
         },
         {
+          "include": "#pattern_wildcard"
+        },
+        {
           "include": "#path_access"
         },
         {
@@ -416,6 +444,9 @@
         },
         {
           "include": "#paren"
+        },
+        {
+          "include": "#struct_pack"
         },
         {
           "include": "#block"
@@ -753,11 +784,11 @@
           "name": "support.constant.address.name.move"
         },
         {
-          "match": "0x[_\\h]+(?:u(?:8|16|32|64|128|256))?",
+          "match": "(?<![]).}\\w])-?0x[_\\h]+(?:[iu](?:8|16|32|64|128|256))?",
           "name": "constant.numeric.hex.move"
         },
         {
-          "match": "(?<!\\w|(?<!\\.)\\.)[0-9][0-9_]*(?:\\.(?!\\.)(?:[0-9][0-9_]*)?)?(?:[Ee][-+]?[0-9_]+)?(?:u(?:8|16|32|64|128|256))?",
+          "match": "(?<!\\w|(?<!\\.)\\.|[])}])-?[0-9][0-9_]*(?:\\.(?!\\.)(?:[0-9][0-9_]*)?)?(?:[Ee][-+]?[0-9_]+)?(?:[iu](?:8|16|32|64|128|256))?",
           "name": "constant.numeric.move"
         },
         {
@@ -889,7 +920,7 @@
           "name": "meta.match.block.move",
           "patterns": [
             {
-              "match": "\\b(=>)\\b",
+              "match": "=>",
               "name": "operator.match.move"
             },
             {
@@ -977,6 +1008,9 @@
               "include": "#entry"
             },
             {
+              "include": "#package_visibility"
+            },
+            {
               "include": "#public-scope"
             },
             {
@@ -1005,6 +1039,9 @@
             },
             {
               "include": "#macro"
+            },
+            {
+              "include": "#inline"
             },
             {
               "include": "#fun"
@@ -1040,6 +1077,10 @@
       "match": "\\b(native)\\b",
       "name": "storage.modifier.visibility.native.move"
     },
+    "package_visibility": {
+      "match": "\\b(package)\\b",
+      "name": "keyword.control.public.scope.move"
+    },
     "packed_field": {
       "match": "[a-z][0-9_a-z]+\\s*:\\s*(?=\\s)",
       "name": "meta.struct.field.move"
@@ -1055,15 +1096,19 @@
       ]
     },
     "path_access": {
-      "match": "\\.[a-z][0-9_a-z]*\\b",
+      "match": "\\.(?:[a-z][0-9_a-z]*|[0-9]+)\\b",
       "name": "meta.path.access.move"
+    },
+    "pattern_wildcard": {
+      "match": "\\b_\\b|\\.\\.",
+      "name": "keyword.control.move"
     },
     "phantom": {
       "match": "\\b(phantom)\\b",
       "name": "keyword.control.phantom.move"
     },
     "primitives": {
-      "match": "\\b(u8|u16|u32|u64|u128|u256|address|bool|signer)\\b",
+      "match": "\\b(u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address|bool|signer)\\b",
       "name": "support.type.primitives.move"
     },
     "public": {
@@ -1116,7 +1161,13 @@
               "include": "#import"
             },
             {
+              "include": "#inline"
+            },
+            {
               "include": "#fun"
+            },
+            {
+              "include": "#package_visibility"
             }
           ]
         }
@@ -1264,7 +1315,7 @@
       "name": "keyword.control.move.spec"
     },
     "spec_types": {
-      "match": "\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|address)\\b",
+      "match": "\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address)\\b",
       "name": "support.type.vector.move"
     },
     "struct": {
@@ -1365,6 +1416,15 @@
       "patterns": [
         {
           "include": "#comments"
+        },
+        {
+          "include": "#packed_field"
+        },
+        {
+          "include": "#pattern_wildcard"
+        },
+        {
+          "include": "#expr"
         }
       ]
     },

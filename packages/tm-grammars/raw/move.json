@@ -24,6 +24,9 @@
       "include": "#entry"
     },
     {
+      "include": "#package_visibility"
+    },
+    {
       "include": "#public-scope"
     },
     {
@@ -52,6 +55,9 @@
     },
     {
       "include": "#macro"
+    },
+    {
+      "include": "#inline"
     },
     {
       "include": "#fun"
@@ -103,6 +109,19 @@
         },
         {
           "include": "#module"
+        }
+      ]
+    },
+    "address_literal": {
+      "comment": "Address literal or named address",
+      "patterns": [
+        {
+          "match": "\\b0x[A-Fa-f0-9]+\\b",
+          "name": "constant.other.move"
+        },
+        {
+          "match": "\\b[a-zA-Z][A-Za-z_0-9]*\\b(?=::)",
+          "name": "constant.other.move"
         }
       ]
     },
@@ -187,6 +206,11 @@
           "include": "#block-comments"
         }
       ]
+    },
+    "compound_assignment": {
+      "comment": "Move 2 compound assignment operators",
+      "match": "(?:\\+=|-=)",
+      "name": "keyword.operator.assignment.compound.move"
     },
     "const": {
       "begin": "\\b(const)\\b",
@@ -380,6 +404,9 @@
           "include": "#types"
         },
         {
+          "include": "#compound_assignment"
+        },
+        {
           "include": "#literals"
         },
         {
@@ -410,6 +437,9 @@
           "include": "#method_call"
         },
         {
+          "include": "#pattern_wildcard"
+        },
+        {
           "include": "#path_access"
         },
         {
@@ -438,6 +468,9 @@
         },
         {
           "include": "#paren"
+        },
+        {
+          "include": "#struct_pack"
         },
         {
           "include": "#block"
@@ -797,12 +830,12 @@
         },
         {
           "comment": "Hex literal",
-          "match": "0x[_a-fA-F0-9]+(?:u(?:8|16|32|64|128|256))?",
+          "match": "(?<![\\w.)\\]}])(?:-)?0x[_a-fA-F0-9]+(?:[iu](?:8|16|32|64|128|256))?",
           "name": "constant.numeric.hex.move"
         },
         {
           "comment": "Numeric literal",
-          "match": "(?<!(?:\\w|(?:(?<!\\.)\\.)))[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:[u](?:8|16|32|64|128|256))?",
+          "match": "(?<!(?:\\w|(?:(?<!\\.)\\.)|[)\\]}]))(?:-)?[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:[iu](?:8|16|32|64|128|256))?",
           "name": "constant.numeric.move"
         },
         {
@@ -952,7 +985,7 @@
           "patterns": [
             {
               "comment": "arrow operator",
-              "match": "\\b(=>)\\b",
+              "match": "=>",
               "name": "operator.match.move"
             },
             {
@@ -1046,6 +1079,9 @@
               "include": "#entry"
             },
             {
+              "include": "#package_visibility"
+            },
+            {
               "include": "#public-scope"
             },
             {
@@ -1074,6 +1110,9 @@
             },
             {
               "include": "#macro"
+            },
+            {
+              "include": "#inline"
             },
             {
               "include": "#fun"
@@ -1113,6 +1152,11 @@
       "match": "\\b(native)\\b",
       "name": "storage.modifier.visibility.native.move"
     },
+    "package_visibility": {
+      "comment": "Move 2 bare package visibility",
+      "match": "\\b(package)\\b",
+      "name": "keyword.control.public.scope.move"
+    },
     "packed_field": {
       "comment": "[ident]: ",
       "match": "[a-z][a-z0-9_]+\\s*:\\s*(?=\\s)",
@@ -1130,8 +1174,13 @@
     },
     "path_access": {
       "comment": "<expr>.[ident] access",
-      "match": "\\.[a-z][_a-z0-9]*\\b",
+      "match": "\\.(?:[a-z][_a-z0-9]*|[0-9]+)\\b",
       "name": "meta.path.access.move"
+    },
+    "pattern_wildcard": {
+      "comment": "Move 2 wildcard patterns",
+      "match": "\\b_\\b|\\.\\.",
+      "name": "keyword.control.move"
     },
     "phantom": {
       "comment": "Keyword phantom inside type parameters",
@@ -1140,7 +1189,7 @@
     },
     "primitives": {
       "comment": "Primitive types",
-      "match": "\\b(u8|u16|u32|u64|u128|u256|address|bool|signer)\\b",
+      "match": "\\b(u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address|bool|signer)\\b",
       "name": "support.type.primitives.move"
     },
     "public": {
@@ -1197,7 +1246,13 @@
               "include": "#import"
             },
             {
+              "include": "#inline"
+            },
+            {
               "include": "#fun"
+            },
+            {
+              "include": "#package_visibility"
             }
           ]
         }
@@ -1354,7 +1409,7 @@
     },
     "spec_types": {
       "comment": "Spec-only types",
-      "match": "\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|address)\\b",
+      "match": "\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address)\\b",
       "name": "support.type.vector.move"
     },
     "struct": {
@@ -1460,6 +1515,15 @@
       "patterns": [
         {
           "include": "#comments"
+        },
+        {
+          "include": "#packed_field"
+        },
+        {
+          "include": "#pattern_wildcard"
+        },
+        {
+          "include": "#expr"
         }
       ]
     },
