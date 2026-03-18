@@ -2780,11 +2780,11 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/moonbitlang/moonbit-tmLanguage/contents/grammars/moonbit.tmLanguage.json?ref=75c3fca1a0136c6ee4b6a01021b6a5aa25810117',
   },
   {
-    byteSize: 16984,
+    byteSize: 17830,
     displayName: 'Move',
     funding: [
     ],
-    hash: 'ouIM8NfAr6qJ7pJHtywBiDvafSQmrrzSgfhcOgRWTuM',
+    hash: 'r-uNw2IrlTeIAAs2i9g5Czimq23zKgCbDicGVYYCuIc',
     lastUpdate: '2026-01-16T12:25:32Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/damirka/move-syntax/main/LICENSE',
