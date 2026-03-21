@@ -848,7 +848,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'mojo',
     displayName: 'Mojo',
-    source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
+    source: 'https://github.com/modular/vscode-mojo/blob/main/syntaxes/mojo.syntax.json',
   },
   {
     name: 'move',
