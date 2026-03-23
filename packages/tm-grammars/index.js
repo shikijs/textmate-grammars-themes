@@ -2216,7 +2216,7 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/julia/syntaxes/julia.tmLanguage.json?ref=609f17a76734f092792a33c891af40bbcaea0c64',
   },
   {
-    byteSize: 10138,
+    byteSize: 10126,
     displayName: 'Just',
     embedded: [
       'shellscript',
@@ -2228,15 +2228,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: '0bv6CQN7ORxjgt6EPrIYmGl0Z7Po_B_cRef3rSV6oeQ',
-    lastUpdate: '2026-02-01T19:45:11Z',
+    hash: 'IKkLJPOalornx6XgQoXm73smgG9aVR6HpYbPPOj7Hn8',
+    lastUpdate: '2026-03-22T20:32:03Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/nefrob/vscode-just/main/LICENSE',
     name: 'just',
     scopeName: 'source.just',
-    sha: 'c0a00dba51884e5887783c48dddf585dead998c6',
-    source: 'https://github.com/nefrob/vscode-just/blob/c0a00dba51884e5887783c48dddf585dead998c6/syntaxes/just.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/nefrob/vscode-just/contents/syntaxes/just.tmLanguage.json?ref=c0a00dba51884e5887783c48dddf585dead998c6',
+    sha: 'f71d9d5591d6293c583ec7c119c42e6f6dfe6c51',
+    source: 'https://github.com/nefrob/vscode-just/blob/f71d9d5591d6293c583ec7c119c42e6f6dfe6c51/syntaxes/just.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/nefrob/vscode-just/contents/syntaxes/just.tmLanguage.json?ref=f71d9d5591d6293c583ec7c119c42e6f6dfe6c51',
   },
   {
     byteSize: 3424,
