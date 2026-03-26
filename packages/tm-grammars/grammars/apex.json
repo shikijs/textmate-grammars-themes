@@ -1328,6 +1328,9 @@
           "include": "#numeric-literal"
         },
         {
+          "include": "#multiline-string-literal"
+        },
+        {
           "include": "#string-literal"
         }
       ]
@@ -1568,6 +1571,29 @@
     "method-name-custom": {
       "match": "@?[_[:alpha:]][_[:alnum:]]*",
       "name": "entity.name.function.apex"
+    },
+    "multiline-string-literal": {
+      "begin": "'''",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.apex"
+        }
+      },
+      "end": "'''",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.apex"
+        }
+      },
+      "name": "string.quoted.single.multiline.apex",
+      "patterns": [
+        {
+          "include": "#string-character-escape"
+        },
+        {
+          "include": "#string-template-expression"
+        }
+      ]
     },
     "named-argument": {
       "begin": "(@?[_[:alpha:]][_[:alnum:]]*)\\s*(:)",
@@ -2258,7 +2284,7 @@
       "name": "constant.character.escape.apex"
     },
     "string-literal": {
-      "begin": "'",
+      "begin": "'(?!'')",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.apex"
@@ -2277,6 +2303,30 @@
       "patterns": [
         {
           "include": "#string-character-escape"
+        },
+        {
+          "include": "#string-template-expression"
+        }
+      ]
+    },
+    "string-template-expression": {
+      "begin": "\\$\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.begin.apex"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.template-expression.end.apex"
+        }
+      },
+      "name": "meta.template-expression.apex",
+      "patterns": [
+        {
+          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "name": "variable.other.readwrite.apex"
         }
       ]
     },
