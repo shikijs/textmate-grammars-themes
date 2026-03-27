@@ -3612,6 +3612,12 @@
           "include": "#preprocessor-app-directive-property"
         },
         {
+          "include": "#preprocessor-app-directive-exclude"
+        },
+        {
+          "include": "#preprocessor-app-directive-include"
+        },
+        {
           "include": "#preprocessor-app-directive-project"
         },
         {
@@ -3622,6 +3628,17 @@
         }
       ]
     },
+    "preprocessor-app-directive-exclude": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.exclude.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(exclude)\\b\\s*(.*)?\\s*"
+    },
     "preprocessor-app-directive-generic": {
       "captures": {
         "1": {
@@ -3629,6 +3646,17 @@
         }
       },
       "match": "\\b(.*)?\\s*"
+    },
+    "preprocessor-app-directive-include": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.include.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(include)\\b\\s*(.*)?\\s*"
     },
     "preprocessor-app-directive-package": {
       "captures": {

@@ -3617,6 +3617,12 @@
           "include": "#preprocessor-app-directive-property"
         },
         {
+          "include": "#preprocessor-app-directive-exclude"
+        },
+        {
+          "include": "#preprocessor-app-directive-include"
+        },
+        {
           "include": "#preprocessor-app-directive-project"
         },
         {
@@ -3627,6 +3633,17 @@
         }
       ]
     },
+    "preprocessor-app-directive-exclude": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.exclude.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(exclude)\\b\\s*(.*)?\\s*"
+    },
     "preprocessor-app-directive-generic": {
       "captures": {
         "1": {
@@ -3634,6 +3651,17 @@
         }
       },
       "match": "\\b(.*)?\\s*"
+    },
+    "preprocessor-app-directive-include": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.include.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(include)\\b\\s*(.*)?\\s*"
     },
     "preprocessor-app-directive-package": {
       "captures": {
@@ -5984,5 +6012,5 @@
     }
   },
   "scopeName": "source.cs",
-  "version": "https://github.com/dotnet/csharp-tmLanguage/commit/2e6860d87d4019b0b793b1e21e9e5c82185a01aa"
+  "version": "https://github.com/dotnet/csharp-tmLanguage/commit/32ee13e806edf480ef9423adcf5ecf61ba39561b"
 }

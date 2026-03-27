@@ -3821,6 +3821,9 @@
           "include": "#documentclass-usepackage-macro"
         },
         {
+          "include": "#unbalanced-env"
+        },
+        {
           "include": "#input-macro"
         },
         {
@@ -4289,6 +4292,23 @@
         }
       ]
     },
+    "unbalanced-env": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#macro-with-args-tokenizer"
+                }
+              ]
+            }
+          },
+          "match": "(\\s*\\\\(?:begin|end)\\{(\\p{Alphabetic}+\\*?)\\})",
+          "name": "meta.function.environment.general.latex"
+        }
+      ]
+    },
     "verb-macro": {
       "patterns": [
         {
@@ -4424,5 +4444,5 @@
     }
   },
   "scopeName": "text.tex.latex",
-  "version": "https://github.com/jlelong/vscode-latex-basics/commit/1f62731d63abfd134e03f4744fcbccadac4e0153"
+  "version": "https://github.com/jlelong/vscode-latex-basics/commit/3eb98ef3aeceedbe3366d6a5192ad6d2948721e8"
 }

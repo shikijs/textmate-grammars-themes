@@ -3812,6 +3812,9 @@
           "include": "#documentclass-usepackage-macro"
         },
         {
+          "include": "#unbalanced-env"
+        },
+        {
           "include": "#input-macro"
         },
         {
@@ -4274,6 +4277,23 @@
               "include": "$self"
             }
           ]
+        }
+      ]
+    },
+    "unbalanced-env": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#macro-with-args-tokenizer"
+                }
+              ]
+            }
+          },
+          "match": "(\\s*\\\\(?:begin|end)\\{(\\p{Alphabetic}+\\*?)})",
+          "name": "meta.function.environment.general.latex"
         }
       ]
     },
