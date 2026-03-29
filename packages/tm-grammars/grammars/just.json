@@ -181,12 +181,12 @@
             }
           },
           "contentName": "source.js",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.js"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?deno.*)$",
@@ -196,12 +196,12 @@
             }
           },
           "contentName": "source.ts",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.ts"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?perl.*)$",
@@ -211,12 +211,12 @@
             }
           },
           "contentName": "source.perl",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.perl"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?python.*)$",
@@ -226,12 +226,12 @@
             }
           },
           "contentName": "source.python",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.python"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?ruby.*)$",
@@ -241,12 +241,12 @@
             }
           },
           "contentName": "source.ruby",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.ruby"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?(?:|ba|z|fi)sh.*)$",
@@ -256,12 +256,12 @@
             }
           },
           "contentName": "source.shell",
-          "end": "(?=^\\S)",
           "patterns": [
             {
               "include": "source.shell"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         }
       ]
     },

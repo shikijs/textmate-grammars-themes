@@ -185,12 +185,12 @@
           },
           "comment": "JavaScript",
           "contentName": "source.js",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.js"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?deno.*)$",
@@ -201,12 +201,12 @@
           },
           "comment": "Deno",
           "contentName": "source.ts",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.ts"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?perl.*)$",
@@ -217,12 +217,12 @@
           },
           "comment": "Perl",
           "contentName": "source.perl",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.perl"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?python.*)$",
@@ -233,12 +233,12 @@
           },
           "comment": "Python",
           "contentName": "source.python",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.python"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?ruby.*)$",
@@ -249,12 +249,12 @@
           },
           "comment": "Ruby",
           "contentName": "source.ruby",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.ruby"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         },
         {
           "begin": "^\\s+(#!/usr/bin/env\\s+(?:-S\\s+)?(?:sh|bash|zsh|fish).*)$",
@@ -265,12 +265,12 @@
           },
           "comment": "Shell",
           "contentName": "source.shell",
-          "end": "(?=^[^\\s])",
           "patterns": [
             {
               "include": "source.shell"
             }
-          ]
+          ],
+          "while": "^(?=\\s*$|\\s)"
         }
       ]
     },
