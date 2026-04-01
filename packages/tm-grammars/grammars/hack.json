@@ -263,6 +263,15 @@
               "end": "(?=[),])",
               "patterns": [
                 {
+                  "begin": "\\(",
+                  "end": "\\)",
+                  "patterns": [
+                    {
+                      "include": "#language"
+                    }
+                  ]
+                },
+                {
                   "include": "#language"
                 }
               ]
@@ -318,7 +327,7 @@
               "name": "punctuation.definition.type.php"
             }
           },
-          "end": "(?=[;{])",
+          "end": "(?=[;{]|\\bwhere\\b)",
           "patterns": [
             {
               "include": "#comments"
@@ -554,7 +563,7 @@
           "include": "#comments"
         },
         {
-          "begin": "(?=^\\s*<<)",
+          "begin": "(?=^\\s*<<[^<])",
           "end": "(?<=>>)",
           "patterns": [
             {
@@ -930,6 +939,44 @@
           "name": "keyword.control.exception.php"
         },
         {
+          "begin": "(?i)\\b(const)\\s+(?=[\\\\_a-z])",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.php"
+            }
+          },
+          "end": "(;)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.terminator.expression.php"
+            }
+          },
+          "name": "meta.const.php",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "constant.other.php"
+                }
+              },
+              "match": "(?i)([_a-z][0-9_a-z]*)\\s*(?==(?!=))"
+            },
+            {
+              "include": "#type-annotation"
+            },
+            {
+              "match": "=",
+              "name": "keyword.operator.assignment.php"
+            },
+            {
+              "include": "#language"
+            }
+          ]
+        },
+        {
           "begin": "(?i)\\s*(?:(public|internal)\\s+)?(function)\\s*(?=\\()",
           "beginCaptures": {
             "1": {
@@ -1054,6 +1101,9 @@
               "patterns": [
                 {
                   "include": "#function-return-type"
+                },
+                {
+                  "include": "#where-clause"
                 }
               ]
             }
@@ -2182,10 +2232,6 @@
       "name": "support.type.php",
       "patterns": [
         {
-          "match": "\\b(?:bool|int|float|string|resource|mixed|arraykey|nonnull|dict|vec|keyset)\\b",
-          "name": "support.type.php"
-        },
-        {
           "begin": "([A-Z_a-z][0-9A-Z_a-z]*)<",
           "beginCaptures": {
             "1": {
@@ -2198,6 +2244,10 @@
               "include": "#type-annotation"
             }
           ]
+        },
+        {
+          "match": "\\b(?:bool|int|float|string|resource|mixed|arraykey|nonnull|dict|vec|keyset)\\b",
+          "name": "support.type.php"
         },
         {
           "begin": "(shape\\()",
@@ -2369,6 +2419,34 @@
           "patterns": [
             {
               "include": "#language"
+            }
+          ]
+        }
+      ]
+    },
+    "where-clause": {
+      "patterns": [
+        {
+          "begin": "\\b(where)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.where.php"
+            }
+          },
+          "end": "(?=[;{])",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "match": "\\b(as|super)\\b",
+              "name": "storage.modifier.php"
+            },
+            {
+              "include": "#type-annotation"
+            },
+            {
+              "include": "#class-name"
             }
           ]
         }
