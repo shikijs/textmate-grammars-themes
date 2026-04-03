@@ -243,6 +243,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['dsl'],
   },
   {
+    name: 'org',
+    source: 'https://github.com/vscode-org-mode/vscode-org-mode/blob/develop/syntaxes/org.tmLanguage.json',
+    categories: ['markup'],
+  },
+  {
     name: 'perl',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl.tmLanguage.json',
     categories: ['general'],
