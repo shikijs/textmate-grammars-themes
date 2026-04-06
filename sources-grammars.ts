@@ -854,6 +854,113 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'move',
     displayName: 'Move',
     source: 'https://github.com/damirka/move-syntax/blob/main/syntaxes/move.tmLanguage.json',
+    // TODO: Drop this patch once the upstream grammar fully supports Move 2 syntax.
+    patch: (grammar) => {
+      const repository = grammar.repository || (grammar.repository = {})
+
+      function insertIncludeBefore(patterns: any[] | undefined, include: string, beforeInclude: string) {
+        if (!patterns || patterns.some(pattern => pattern.include === include))
+          return
+
+        const index = patterns.findIndex(pattern => pattern.include === beforeInclude)
+        patterns.splice(index < 0 ? patterns.length : index, 0, { include })
+      }
+
+      function insertIncludeAfter(patterns: any[] | undefined, include: string, afterInclude: string) {
+        if (!patterns || patterns.some(pattern => pattern.include === include))
+          return
+
+        const index = patterns.findIndex(pattern => pattern.include === afterInclude)
+        patterns.splice(index < 0 ? patterns.length : index + 1, 0, { include })
+      }
+
+      function findNamedPattern(patterns: any[] | undefined, name: string) {
+        return patterns?.find(pattern => pattern.name === name)
+      }
+
+      if (!repository.address_literal) {
+        repository.address_literal = {
+          comment: 'Address literal or named address',
+          patterns: [
+            {
+              name: 'constant.other.move',
+              match: '\\b0x[A-Fa-f0-9]+\\b',
+            },
+            {
+              name: 'constant.other.move',
+              match: '\\b[a-zA-Z][A-Za-z_0-9]*\\b(?=::)',
+            },
+          ],
+        }
+      }
+
+      if (!repository.pattern_wildcard) {
+        repository.pattern_wildcard = {
+          name: 'keyword.control.move',
+          comment: 'Move 2 wildcard patterns',
+          match: '\\b_\\b|\\.\\.',
+        }
+      }
+
+      if (!repository.package_visibility) {
+        repository.package_visibility = {
+          name: 'keyword.control.public.scope.move',
+          comment: 'Move 2 bare package visibility',
+          match: '\\b(package)\\b',
+        }
+      }
+
+      if (!repository.compound_assignment) {
+        repository.compound_assignment = {
+          name: 'keyword.operator.assignment.compound.move',
+          comment: 'Move 2 compound assignment operators',
+          match: '(?:\\+=|-=)',
+        }
+      }
+
+      const rootPatterns = grammar.patterns as any[] | undefined
+      const exprPatterns = repository.expr?.patterns as any[] | undefined
+      const pathAccess = repository.path_access
+      const structPackPatterns = repository.struct_pack?.patterns as any[] | undefined
+      const matchBlockPatterns = findNamedPattern(repository.match_expression?.patterns, 'meta.match.block.move')?.patterns as any[] | undefined
+      const moduleScopePatterns = findNamedPattern(repository.module?.patterns, 'meta.module_scope.move')?.patterns as any[] | undefined
+      const scriptScopePatterns = findNamedPattern(repository.script?.patterns, 'meta.script_scope.move')?.patterns as any[] | undefined
+
+      insertIncludeBefore(rootPatterns, '#package_visibility', '#public-scope')
+      insertIncludeBefore(rootPatterns, '#inline', '#fun')
+      insertIncludeBefore(moduleScopePatterns, '#package_visibility', '#public-scope')
+      insertIncludeBefore(moduleScopePatterns, '#inline', '#fun')
+      insertIncludeBefore(scriptScopePatterns, '#package_visibility', '#public-scope')
+      insertIncludeBefore(scriptScopePatterns, '#inline', '#fun')
+      insertIncludeBefore(exprPatterns, '#compound_assignment', '#literals')
+      insertIncludeBefore(exprPatterns, '#pattern_wildcard', '#path_access')
+      insertIncludeBefore(exprPatterns, '#struct_pack', '#block')
+      insertIncludeAfter(structPackPatterns, '#packed_field', '#comments')
+      insertIncludeAfter(structPackPatterns, '#pattern_wildcard', '#packed_field')
+      insertIncludeAfter(structPackPatterns, '#expr', '#pattern_wildcard')
+
+      if (repository.primitives?.match === '\\b(u8|u16|u32|u64|u128|u256|address|bool|signer)\\b')
+        repository.primitives.match = '\\b(u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address|bool|signer)\\b'
+
+      if (repository.spec_types?.match === '\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|address)\\b')
+        repository.spec_types.match = '\\b(range|num|vector|bool|u8|u16|u32|u64|u128|u256|i8|i16|i32|i64|i128|i256|address)\\b'
+
+      const literalPatterns = repository.literals?.patterns as any[] | undefined
+      const hexLiteral = findNamedPattern(literalPatterns, 'constant.numeric.hex.move')
+      if (hexLiteral?.match === '0x[_a-fA-F0-9]+(?:u(?:8|16|32|64|128|256))?')
+        hexLiteral.match = '(?<![\\w.)\\]}])(?:-)?0x[_a-fA-F0-9]+(?:[iu](?:8|16|32|64|128|256))?'
+
+      const numericLiteral = findNamedPattern(literalPatterns, 'constant.numeric.move')
+      if (numericLiteral?.match === '(?<!(?:\\w|(?:(?<!\\.)\\.)))[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:[u](?:8|16|32|64|128|256))?')
+        numericLiteral.match = '(?<!(?:\\w|(?:(?<!\\.)\\.)|[)\\]}]))(?:-)?[0-9][_0-9]*(?:\\.(?!\\.)(?:[0-9][_0-9]*)?)?(?:[eE][+\\-]?[_0-9]+)?(?:[iu](?:8|16|32|64|128|256))?'
+
+      if (pathAccess?.match === '\\.[a-z][_a-z0-9]*\\b')
+        pathAccess.match = '\\.(?:[a-z][_a-z0-9]*|[0-9]+)\\b'
+
+      const arrowPattern = findNamedPattern(matchBlockPatterns, 'operator.match.move')
+      if (arrowPattern?.match === '\\b(=>)\\b')
+        arrowPattern.match = '=>'
+    },
   },
   {
     name: 'narrat',

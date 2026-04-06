@@ -1,15 +1,47 @@
 module 0xCAFE::BasicCoin {
-     // Only included in compilation for testing. Similar to #[cfg(testing)]
+    // Only included in compilation for testing. Similar to #[cfg(testing)]
     // in Rust. Imports the `Signer` module from the MoveStdlib package.
     #[test_only]
     use std::signer;
+    friend 0xCAFE::Friend;
+
+    enum Shape has copy, drop {
+        Circle { radius: u64, color: u8 },
+        Rectangle(u64, u64),
+    }
 
     struct Coin has key {
         value: u64,
     }
 
+    struct Wrapped(u64) has copy, drop;
+
     public fun mint(account: signer, value: u64) {
         move_to(&account, Coin { value })
+    }
+
+    public(package) inline fun area(shape: Shape, values: vector<u64>): u64 {
+        let first = values[0];
+        let wrapped = Wrapped(first);
+        let coin = Coin { value: first };
+        let Coin { value, .. } = coin;
+        let total = match (shape) {
+            Circle { radius, .. } => radius,
+            Rectangle(width, height) if width > height => wrapped.0 + width,
+            _ => 0,
+        };
+        total + value
+    }
+
+    package fun same_visibility(shape: Shape, values: vector<u64>): u64 {
+        area(shape, values)
+    }
+
+    package fun signed_math(): i64 {
+        let mut total = -1i64;
+        total += 2i64;
+        total -= -0x1i64;
+        total
     }
 
     // Declare a unit test. It takes a signer called `account` with an

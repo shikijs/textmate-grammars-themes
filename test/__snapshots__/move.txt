@@ -3,7 +3,7 @@
 #DBD7CACC      ::
 #5DA994        BasicCoin
 #DBD7CACC       {
-#DBD7CACC           
+#DBD7CACC          
 #758575DD      // Only included in compilation for testing. Similar to #[cfg(testing)]
 #DBD7CACC          
 #758575DD      // in Rust. Imports the `Signer` module from the MoveStdlib package.
@@ -11,7 +11,42 @@
 #C99076        #[test_only]
 #DBD7CACC          
 #CB7676        use
-#DBD7CACC       std::signer;
+#DBD7CACC       
+#C99076        std
+#DBD7CACC      ::signer;
+#DBD7CACC          
+#CB7676        friend
+#DBD7CACC       
+#C99076        0xCAFE
+#DBD7CACC      ::
+#5DA994        Friend
+#DBD7CACC      ;
+#DBD7CACC          
+#4D9375        enum
+#DBD7CACC       
+#5DA994        Shape
+#DBD7CACC       
+#4D9375        has
+#DBD7CACC       
+#B8A965        copy
+#DBD7CACC      , 
+#B8A965        drop
+#DBD7CACC       {
+#DBD7CACC              
+#5DA994        Circle
+#DBD7CACC       { radius: 
+#B8A965        u64
+#DBD7CACC      , color: 
+#B8A965        u8
+#DBD7CACC       },
+#DBD7CACC              
+#80A665        Rectangle
+#DBD7CACC      (
+#B8A965        u64
+#DBD7CACC      , 
+#B8A965        u64
+#DBD7CACC      ),
+#DBD7CACC          }
 #DBD7CACC          
 #CB7676        struct
 #DBD7CACC       
@@ -25,6 +60,19 @@
 #B8A965        u64
 #DBD7CACC      ,
 #DBD7CACC          }
+#DBD7CACC          
+#CB7676        struct
+#DBD7CACC       
+#5DA994        Wrapped
+#DBD7CACC      (
+#B8A965        u64
+#DBD7CACC      ) 
+#CB7676        has
+#DBD7CACC       
+#B8A965        copy
+#DBD7CACC      , 
+#B8A965        drop
+#DBD7CACC      ;
 #DBD7CACC          
 #CB7676        public
 #DBD7CACC       
@@ -41,6 +89,117 @@
 #DBD7CACC      (&account, 
 #5DA994        Coin
 #DBD7CACC       { value })
+#DBD7CACC          }
+#DBD7CACC          
+#CB7676        public
+#DBD7CACC      (
+#4D9375        package
+#DBD7CACC      ) 
+#CB7676        inline
+#DBD7CACC       
+#CB7676        fun
+#DBD7CACC       
+#80A665        area
+#DBD7CACC      (shape: 
+#5DA994        Shape
+#DBD7CACC      , values: 
+#B8A965        vector
+#DBD7CACC      <
+#B8A965        u64
+#DBD7CACC      >): 
+#B8A965        u64
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       first = values[
+#4C9A91        0
+#DBD7CACC      ];
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       wrapped = 
+#5DA994        Wrapped
+#DBD7CACC      (first);
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       coin = 
+#5DA994        Coin
+#DBD7CACC       { value: first };
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       
+#5DA994        Coin
+#DBD7CACC       { value, 
+#4D9375        ..
+#DBD7CACC       } = coin;
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       total = 
+#4D9375        match
+#DBD7CACC       (shape) {
+#DBD7CACC                  
+#5DA994        Circle
+#DBD7CACC       { radius, 
+#4D9375        ..
+#DBD7CACC       } => radius,
+#DBD7CACC                  
+#5DA994        Rectangle
+#DBD7CACC      (width, height) 
+#4D9375        if
+#DBD7CACC       width > height => wrapped.0 + width,
+#DBD7CACC                  
+#4D9375        _
+#DBD7CACC       => 
+#4C9A91        0
+#DBD7CACC      ,
+#DBD7CACC              };
+#DBD7CACC              total + value
+#DBD7CACC          }
+#DBD7CACC          
+#4D9375        package
+#DBD7CACC       
+#CB7676        fun
+#DBD7CACC       
+#80A665        same_visibility
+#DBD7CACC      (shape: 
+#5DA994        Shape
+#DBD7CACC      , values: 
+#B8A965        vector
+#DBD7CACC      <
+#B8A965        u64
+#DBD7CACC      >): 
+#B8A965        u64
+#DBD7CACC       {
+#DBD7CACC              
+#80A665        area
+#DBD7CACC      (shape, values)
+#DBD7CACC          }
+#DBD7CACC          
+#4D9375        package
+#DBD7CACC       
+#CB7676        fun
+#DBD7CACC       
+#80A665        signed_math
+#DBD7CACC      (): 
+#B8A965        i64
+#DBD7CACC       {
+#DBD7CACC              
+#4D9375        let
+#DBD7CACC       
+#CB7676        mut
+#DBD7CACC       total = 
+#4C9A91        -1i64
+#DBD7CACC      ;
+#DBD7CACC              total 
+#CB7676        +=
+#DBD7CACC       
+#4C9A91        2i64
+#DBD7CACC      ;
+#DBD7CACC              total 
+#CB7676        -=
+#DBD7CACC       
+#4C9A91        -0x1i64
+#DBD7CACC      ;
+#DBD7CACC              total
 #DBD7CACC          }
 #DBD7CACC          
 #758575DD      // Declare a unit test. It takes a signer called `account` with an
