@@ -398,6 +398,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'actionscript-3',
     displayName: 'ActionScript',
+    aliases: ['actionscript', 'as3'],
     source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/main/distribution/src/assembly/syntaxes/AS3.tmLanguage',
     categories: ['scripting'],
   },
