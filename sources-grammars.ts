@@ -31,6 +31,15 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'chapel',
+    displayName: 'Chapel',
+    aliases: ['chpl'],
+    source: 'https://github.com/chapel-lang/chapel-vscode/blob/main/syntaxes/chapel.tmLanguage.json',
+    categories: ['general'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-vscode/main/LICENSE',
+  },
+  {
     name: 'clojure',
     aliases: ['clj'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
@@ -491,29 +500,6 @@ export const sourcesCommunity: GrammarSource[] = [
     displayName: 'Cadence',
     aliases: ['cdc'],
     source: 'https://github.com/onflow/vscode-cadence/blob/master/extension/language/syntaxes/cadence.tmGrammar.json',
-  },
-  {
-    name: 'chapel',
-    displayName: 'Chapel',
-    aliases: ['chpl'],
-    source: 'https://github.com/chapel-lang/chapel-tmbundle/blob/master/Syntaxes/Chapel.tmLanguage',
-    categories: ['general'],
-    license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-tmbundle/master/LICENSE',
-    // Bring upstream grammar (last touched 2022-12) up to Chapel 2.8 spec.
-    patch(grammar) {
-      for (const p of grammar.patterns ?? []) {
-        if (p.name === 'keyword.control.chapel') {
-          p.match = p.match.replace('|zip)', '|init|deinit|postinit|implements|interface|zip)')
-        }
-        else if (p.name === 'keyword.operator.assignment.augmented.chapel') {
-          p.match = p.match.replace('|//\\=', '')
-        }
-        else if (p.name === 'keyword.operator.arithmetic.chapel') {
-          p.match = '\\+|-|\\*\\*|\\*|/|%|<<|>>|&&|\\|\\||&|\\||\\^|~|<\\=>|\\.\\.<|\\.\\.|#'
-        }
-      }
-    },
   },
   {
     name: 'clarity',

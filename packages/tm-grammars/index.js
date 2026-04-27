@@ -599,22 +599,25 @@ export const grammars = [
     aliases: [
       'chpl',
     ],
-    byteSize: 5754,
+    byteSize: 6236,
     categories: [
       'general',
     ],
     displayName: 'Chapel',
+    embedded: [
+      'c',
+    ],
     funding: [
     ],
-    hash: 'fnQ2Qw6-uB3p7LmWYm1g9JcGEEIToLe_0VgMc_ls_WI',
-    lastUpdate: '2022-12-02T00:13:21Z',
+    hash: 'qSGfqmsMVw0PVeFa8l7VGv-3hAyHbklVL7vUZU2lTt8',
+    lastUpdate: '2025-08-28T15:13:41Z',
     license: 'Apache-2.0',
-    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-tmbundle/master/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-vscode/main/LICENSE',
     name: 'chapel',
     scopeName: 'source.chapel',
-    sha: 'ca430c728e47866a505a747a6df9cde3c6cec54d',
-    source: 'https://github.com/chapel-lang/chapel-tmbundle/blob/ca430c728e47866a505a747a6df9cde3c6cec54d/Syntaxes/Chapel.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/chapel-lang/chapel-tmbundle/contents/Syntaxes/Chapel.tmLanguage?ref=ca430c728e47866a505a747a6df9cde3c6cec54d',
+    sha: 'c933a6c379df844d564644ee6c6df4e6055ceb33',
+    source: 'https://github.com/chapel-lang/chapel-vscode/blob/c933a6c379df844d564644ee6c6df4e6055ceb33/syntaxes/chapel.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/chapel-lang/chapel-vscode/contents/syntaxes/chapel.tmLanguage.json?ref=c933a6c379df844d564644ee6c6df4e6055ceb33',
   },
   {
     byteSize: 13789,
