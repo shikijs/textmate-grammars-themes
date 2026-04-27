@@ -493,6 +493,29 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/onflow/vscode-cadence/blob/master/extension/language/syntaxes/cadence.tmGrammar.json',
   },
   {
+    name: 'chapel',
+    displayName: 'Chapel',
+    aliases: ['chpl'],
+    source: 'https://github.com/chapel-lang/chapel-tmbundle/blob/master/Syntaxes/Chapel.tmLanguage',
+    categories: ['general'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-tmbundle/master/LICENSE',
+    // Bring upstream grammar (last touched 2022-12) up to Chapel 2.8 spec.
+    patch(grammar) {
+      for (const p of grammar.patterns ?? []) {
+        if (p.name === 'keyword.control.chapel') {
+          p.match = p.match.replace('|zip)', '|init|deinit|postinit|implements|interface|zip)')
+        }
+        else if (p.name === 'keyword.operator.assignment.augmented.chapel') {
+          p.match = p.match.replace('|//\\=', '')
+        }
+        else if (p.name === 'keyword.operator.arithmetic.chapel') {
+          p.match = '\\+|-|\\*\\*|\\*|/|%|<<|>>|&&|\\|\\||&|\\||\\^|~|<\\=>|\\.\\.<|\\.\\.|#'
+        }
+      }
+    },
+  },
+  {
     name: 'clarity',
     displayName: 'Clarity',
     source: 'https://github.com/hirosystems/clarity.tmbundle/blob/main/Syntaxes/clarity.JSON-tmLanguage',

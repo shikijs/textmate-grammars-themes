@@ -596,6 +596,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/starkware-libs/cairo-lang/contents/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json?ref=4ea4fe8e167845a3402ae2ea0a8b6004aad18dd5',
   },
   {
+    aliases: [
+      'chpl',
+    ],
+    byteSize: 5754,
+    categories: [
+      'general',
+    ],
+    displayName: 'Chapel',
+    funding: [
+    ],
+    hash: 'fnQ2Qw6-uB3p7LmWYm1g9JcGEEIToLe_0VgMc_ls_WI',
+    lastUpdate: '2022-12-02T00:13:21Z',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-tmbundle/master/LICENSE',
+    name: 'chapel',
+    scopeName: 'source.chapel',
+    sha: 'ca430c728e47866a505a747a6df9cde3c6cec54d',
+    source: 'https://github.com/chapel-lang/chapel-tmbundle/blob/ca430c728e47866a505a747a6df9cde3c6cec54d/Syntaxes/Chapel.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/chapel-lang/chapel-tmbundle/contents/Syntaxes/Chapel.tmLanguage?ref=ca430c728e47866a505a747a6df9cde3c6cec54d',
+  },
+  {
     byteSize: 13789,
     categories: [
       'lisp',

@@ -1,0 +1,271 @@
+#4D9375        use
+#DBD7CACC       Random;
+#CB7676        config
+#DBD7CACC       
+#CB7676        const
+#DBD7CACC       n 
+#444444        =
+#DBD7CACC       
+#4C9A91        10
+#DBD7CACC      ;
+#CB7676        const
+#DBD7CACC       D 
+#444444        =
+#DBD7CACC       {
+#4C9A91        1
+#CB7676        ..
+#DBD7CACC      n, 
+#4C9A91        1
+#CB7676        ..
+#DBD7CACC      n};
+#CB7676        const
+#DBD7CACC       halfOpen 
+#444444        =
+#DBD7CACC       
+#4C9A91        0
+#CB7676        ..<
+#DBD7CACC      n;
+#CB7676        var
+#DBD7CACC       A
+#CB7676        :
+#DBD7CACC       
+#CB7676        [
+#DBD7CACC      D
+#CB7676        ]
+#DBD7CACC       
+#CB7676        real
+#DBD7CACC      ;
+#DBD7CACC      fillRandom
+#444444        (
+#DBD7CACC      A);
+#4D9375        record
+#DBD7CACC       Point {
+#DBD7CACC        
+#CB7676        var
+#DBD7CACC       x, y
+#CB7676        :
+#DBD7CACC       
+#CB7676        real
+#DBD7CACC      ;
+#DBD7CACC        
+#4D9375        proc
+#DBD7CACC       
+#80A665        init
+#DBD7CACC      (x
+#CB7676        :
+#DBD7CACC       
+#CB7676        real
+#DBD7CACC      , y
+#CB7676        :
+#DBD7CACC       
+#CB7676        real
+#DBD7CACC      ) {
+#DBD7CACC          
+#C99076        this
+#DBD7CACC      .x 
+#444444        =
+#DBD7CACC       x;
+#DBD7CACC          
+#C99076        this
+#DBD7CACC      .y 
+#444444        =
+#DBD7CACC       y;
+#DBD7CACC        }
+#DBD7CACC        
+#4D9375        proc
+#DBD7CACC       
+#80A665        norm
+#DBD7CACC      () 
+#4D9375        do
+#DBD7CACC       
+#4D9375        return
+#DBD7CACC       
+#B8A965        sqrt
+#444444        (
+#DBD7CACC      x
+#CB7676        **
+#4C9A91        2
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       y
+#CB7676        **
+#4C9A91        2
+#DBD7CACC      );
+#DBD7CACC      }
+#4D9375        class
+#DBD7CACC       Tree {
+#DBD7CACC        
+#CB7676        var
+#DBD7CACC       val
+#CB7676        :
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC      ;
+#DBD7CACC        
+#CB7676        var
+#DBD7CACC       left, right
+#CB7676        :
+#DBD7CACC       
+#4D9375        owned
+#DBD7CACC       Tree?;
+#DBD7CACC        
+#4D9375        proc
+#DBD7CACC       
+#80A665        deinit
+#DBD7CACC      () { 
+#B8A965        writeln
+#444444        (
+#C98A7D77      "
+#C98A7D        Freeing 
+#C98A7D77      "
+#DBD7CACC      , val); }
+#DBD7CACC      }
+#4D9375        iter
+#DBD7CACC       fibonacci
+#444444        (
+#DBD7CACC      count
+#CB7676        :
+#DBD7CACC       
+#CB7676        int
+#DBD7CACC      ) {
+#DBD7CACC        
+#CB7676        var
+#DBD7CACC       (cur, next) 
+#444444        =
+#DBD7CACC       (
+#4C9A91        0
+#DBD7CACC      , 
+#4C9A91        1
+#DBD7CACC      );
+#DBD7CACC        
+#4D9375        for
+#DBD7CACC       
+#4C9A91        1
+#CB7676        ..
+#DBD7CACC      count {
+#DBD7CACC          
+#4D9375        yield
+#DBD7CACC       cur;
+#DBD7CACC          (cur, next) 
+#444444        =
+#DBD7CACC       (next, cur 
+#CB7676        +
+#DBD7CACC       next);
+#DBD7CACC        }
+#DBD7CACC      }
+#CB7676        var
+#DBD7CACC       total 
+#444444        =
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4D9375        reduce
+#DBD7CACC       A;
+#4D9375        forall
+#DBD7CACC       (i, j) 
+#4D9375        in
+#DBD7CACC       D 
+#4D9375        do
+#DBD7CACC        A
+#CB7676        [
+#DBD7CACC      i, j
+#CB7676        ]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       i 
+#CB7676        ==
+#DBD7CACC       j 
+#4D9375        then
+#DBD7CACC       
+#4C9A91        1.0
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       A
+#CB7676        [
+#DBD7CACC      i, j
+#CB7676        ]
+#DBD7CACC      ;
+#CB7676        var
+#DBD7CACC       done
+#CB7676        :
+#DBD7CACC       
+#4D9375        sync
+#DBD7CACC       
+#CB7676        bool
+#DBD7CACC      ;
+#4D9375        cobegin
+#DBD7CACC       {
+#DBD7CACC        { A
+#CB7676        [
+#4C9A91        1
+#DBD7CACC      , 
+#CB7676        ..]
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0.0
+#DBD7CACC      ; done.writeEF
+#444444        (
+#4D9375        true
+#DBD7CACC      ); }
+#DBD7CACC        { done.readFE
+#444444        (
+#DBD7CACC      ); 
+#B8A965        writeln
+#444444        (
+#C98A7D77      "
+#C98A7D        Done
+#C98A7D77      "
+#DBD7CACC      ); }
+#DBD7CACC      }
+#4D9375        coforall
+#DBD7CACC       loc 
+#4D9375        in
+#DBD7CACC       
+#C99076        Locales
+#DBD7CACC       
+#4D9375        do
+#DBD7CACC       
+#4D9375        on
+#DBD7CACC       loc {
+#DBD7CACC        
+#B8A965        writeln
+#444444        (
+#C98A7D77      "
+#C98A7D        Locale 
+#C98A7D77      "
+#DBD7CACC      , loc.id, 
+#C98A7D77      "
+#C98A7D        : 
+#C98A7D77      "
+#DBD7CACC      , 
+#C99076        here
+#DBD7CACC      .maxTaskPar, 
+#C98A7D77      "
+#C98A7D         tasks
+#C98A7D77      "
+#DBD7CACC      );
+#DBD7CACC      }
+#B8A965        writeln
+#444444        (
+#C98A7D77      "
+#C98A7D        Sum: 
+#C98A7D77      "
+#DBD7CACC      , total, 
+#C98A7D77      "
+#C98A7D         ok=
+#C98A7D77      "
+#DBD7CACC      , n 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        5
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       total 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      );
+#758575DD      // From https://github.com/chapel-lang/chapel/tree/main/test/release/examples/primers

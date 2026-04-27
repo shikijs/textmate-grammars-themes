@@ -1,0 +1,47 @@
+use Random;
+
+config const n = 10;
+const D = {1..n, 1..n};
+const halfOpen = 0..<n;
+var A: [D] real;
+fillRandom(A);
+
+record Point {
+  var x, y: real;
+  proc init(x: real, y: real) {
+    this.x = x;
+    this.y = y;
+  }
+  proc norm() do return sqrt(x**2 + y**2);
+}
+
+class Tree {
+  var val: int;
+  var left, right: owned Tree?;
+  proc deinit() { writeln("Freeing ", val); }
+}
+
+iter fibonacci(count: int) {
+  var (cur, next) = (0, 1);
+  for 1..count {
+    yield cur;
+    (cur, next) = (next, cur + next);
+  }
+}
+
+var total = + reduce A;
+forall (i, j) in D do
+  A[i, j] = if i == j then 1.0 else A[i, j];
+
+var done: sync bool;
+cobegin {
+  { A[1, ..] = 0.0; done.writeEF(true); }
+  { done.readFE(); writeln("Done"); }
+}
+
+coforall loc in Locales do on loc {
+  writeln("Locale ", loc.id, ": ", here.maxTaskPar, " tasks");
+}
+
+writeln("Sum: ", total, " ok=", n > 5 && total > 0);
+// From https://github.com/chapel-lang/chapel/tree/main/test/release/examples/primers
