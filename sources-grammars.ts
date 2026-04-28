@@ -31,6 +31,15 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['general'],
   },
   {
+    name: 'chapel',
+    displayName: 'Chapel',
+    aliases: ['chpl'],
+    source: 'https://github.com/chapel-lang/chapel-vscode/blob/main/syntaxes/chapel.tmLanguage.json',
+    categories: ['general'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-vscode/main/LICENSE',
+  },
+  {
     name: 'clojure',
     aliases: ['clj'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/clojure/syntaxes/clojure.tmLanguage.json',
