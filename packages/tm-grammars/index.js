@@ -56,6 +56,62 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/AdaCore/ada_language_server/contents/integration/vscode/ada/advanced/ada.tmLanguage.json?ref=9329f709cf1aef897bfca679c54e0c3d17f2205f',
   },
   {
+    aliases: [
+      'ahk1',
+    ],
+    byteSize: 29771,
+    categories: [
+      'scripting',
+    ],
+    displayName: 'AutoHotkey',
+    funding: [
+    ],
+    hash: 'UaxGHlhmumEMRAG46ahPi19zWUaOHAFgLuFKYEnaU50',
+    lastUpdate: '2023-07-27T01:11:41Z',
+    license: 'MIT',
+    licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
+    name: 'ahk',
+    scopeName: 'source.ahk',
+    sha: '14855ed6635fd7a7db55c9d219496832d1495a76',
+    source: 'https://github.com/mark-wiemer/ahkpp/blob/14855ed6635fd7a7db55c9d219496832d1495a76/language/ahk.tmLanguage.yaml',
+    sourceApi: 'https://api.github.com/repos/mark-wiemer/ahkpp/contents/language/ahk.tmLanguage.yaml?ref=14855ed6635fd7a7db55c9d219496832d1495a76',
+  },
+  {
+    byteSize: 43602,
+    categories: [
+      'scripting',
+    ],
+    displayName: 'AutoHotkey2',
+    funding: [
+      {
+        handle: '@thqby',
+        name: 'GitHub Sponsors',
+        url: 'https://github.com/sponsors/thqby',
+      },
+      {
+        name: 'qr.alipay.com',
+        url: 'https://qr.alipay.com/fkx19566u7ctegoppmu5i13',
+      },
+      {
+        name: 'github.com',
+        url: 'https://github.com/thqby/vscode-autohotkey2-lsp/raw/main/pic/alipay.jpg',
+      },
+      {
+        name: 'paypal.me',
+        url: 'https://www.paypal.me/thqby',
+      },
+    ],
+    hash: 'B709e4z6XuIb1HkiiRhmVJJB0Esjb2t5F2-nIuQAk_s',
+    lastUpdate: '2026-02-26T11:32:06Z',
+    license: 'GNU',
+    licenseUrl: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/LICENSE',
+    name: 'ahk2',
+    scopeName: 'source.ahk2',
+    sha: '4b990894b1b2692f33d358671e82e54e67571477',
+    source: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/4b990894b1b2692f33d358671e82e54e67571477/syntaxes/ahk2.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/thqby/vscode-autohotkey2-lsp/contents/syntaxes/ahk2.tmLanguage.json?ref=4b990894b1b2692f33d358671e82e54e67571477',
+  },
+  {
     byteSize: 701,
     categories: [
       'web',
