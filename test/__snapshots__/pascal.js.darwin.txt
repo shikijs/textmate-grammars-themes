@@ -1,0 +1,160 @@
+#758575DD      {*****************************************************************************
+#758575DD       * A Pascal quicksort.
+#758575DD       *****************************************************************************}
+#DBD7CACC      PROGRAM Sort(input, output);
+#DBD7CACC          CONST
+#DBD7CACC              
+#758575DD      { Max array size. }
+#DBD7CACC              MaxElts = 
+#4C9A91        50
+#DBD7CACC      ;
+#DBD7CACC          TYPE
+#DBD7CACC              
+#758575DD      { Type of the element array. }
+#DBD7CACC              IntArrType = ARRAY [
+#4C9A91        1
+#DBD7CACC      ..MaxElts] OF Integer;
+#DBD7CACC          VAR
+#DBD7CACC              
+#758575DD      { Indexes, exchange temp, array size. }
+#DBD7CACC              i, j, tmp, size: 
+#CB7676        integer
+#DBD7CACC      ;
+#DBD7CACC              
+#758575DD      { Array of ints }
+#DBD7CACC              arr: IntArrType;
+#DBD7CACC          
+#758575DD      { Read in the integers. }
+#DBD7CACC          PROCEDURE ReadArr(VAR size: Integer; VAR a: IntArrType);
+#DBD7CACC              BEGIN
+#DBD7CACC                  size := 
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC                  WHILE NOT eof DO BEGIN
+#DBD7CACC                      readln(a[size]);
+#DBD7CACC                      IF NOT eof THEN
+#DBD7CACC                          size := size + 
+#4C9A91        1
+#DBD7CACC                  END
+#DBD7CACC              END;
+#DBD7CACC          
+#758575DD      { Use quicksort to sort the array of integers. }
+#DBD7CACC          PROCEDURE Quicksort(size: Integer; VAR arr: IntArrType);
+#DBD7CACC              
+#758575DD      { This does the actual work of the quicksort.  It takes the
+#758575DD                parameters which define the range of the array to work on,
+#758575DD                and references the array as a global. }
+#DBD7CACC              PROCEDURE QuicksortRecur(start, stop: 
+#CB7676        integer
+#DBD7CACC      );
+#DBD7CACC                  VAR
+#DBD7CACC                      m: 
+#CB7676        integer
+#DBD7CACC      ;
+#DBD7CACC                      
+#758575DD      { The location separating the high and low parts. }
+#DBD7CACC                      splitpt: 
+#CB7676        integer
+#DBD7CACC      ;
+#DBD7CACC                  
+#758575DD      { The quicksort split algorithm.  Takes the range, and
+#758575DD                    returns the split point. }
+#DBD7CACC                  FUNCTION Split(start, stop: 
+#CB7676        integer
+#DBD7CACC      ): 
+#CB7676        integer
+#DBD7CACC      ;
+#DBD7CACC                      VAR
+#DBD7CACC                          left, right: 
+#CB7676        integer
+#DBD7CACC      ;       
+#758575DD      { Scan pointers. }
+#DBD7CACC                          pivot: 
+#CB7676        integer
+#DBD7CACC      ;             
+#758575DD      { Pivot value. }
+#DBD7CACC                      
+#758575DD      { Interchange the parameters. }
+#DBD7CACC                      PROCEDURE swap(VAR a, b: 
+#CB7676        integer
+#DBD7CACC      );
+#DBD7CACC                          VAR
+#DBD7CACC                              t: 
+#CB7676        integer
+#DBD7CACC      ;
+#DBD7CACC                          BEGIN
+#DBD7CACC                              t := a;
+#DBD7CACC                              a := b;
+#DBD7CACC                              b := t
+#DBD7CACC                          END;
+#DBD7CACC                      BEGIN 
+#758575DD      { Split }
+#DBD7CACC                          
+#758575DD      { Set up the pointers for the hight and low sections, and
+#758575DD                            get the pivot value. }
+#DBD7CACC                          pivot := arr[start];
+#DBD7CACC                          left := start + 
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC                          right := stop;
+#DBD7CACC                          
+#758575DD      { Look for pairs out of place and swap 'em. }
+#DBD7CACC                          WHILE left <= right DO BEGIN
+#DBD7CACC                              WHILE (left <= stop) 
+#CB7676        AND
+#DBD7CACC       (arr[left] < pivot) DO
+#DBD7CACC                                  left := left + 
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC                              WHILE (right > start) 
+#CB7676        AND
+#DBD7CACC       (arr[right] >= pivot) DO
+#DBD7CACC                                  right := right - 
+#4C9A91        1
+#DBD7CACC      ;
+#DBD7CACC                              IF left < right THEN
+#DBD7CACC                                  swap(arr[left], arr[right]);
+#DBD7CACC                          END;
+#DBD7CACC                          
+#758575DD      { Put the pivot between the halves. }
+#DBD7CACC                          swap(arr[start], arr[right]);
+#DBD7CACC                          
+#758575DD      { This is how you return function values in pascal.
+#758575DD                            Yeccch. }
+#DBD7CACC                          Split := right
+#DBD7CACC                      END;
+#DBD7CACC                  BEGIN 
+#758575DD      { QuicksortRecur }
+#DBD7CACC                      
+#758575DD      { If there's anything to do... }
+#DBD7CACC                      IF start < stop THEN BEGIN
+#DBD7CACC                          splitpt := Split(start, stop);
+#DBD7CACC                          QuicksortRecur(start, splitpt-
+#4C9A91        1
+#DBD7CACC      );
+#DBD7CACC                          QuicksortRecur(splitpt+
+#4C9A91        1
+#DBD7CACC      , stop);
+#DBD7CACC                      END
+#DBD7CACC                  END;
+#DBD7CACC              BEGIN 
+#758575DD      { Quicksort }
+#DBD7CACC                  QuicksortRecur(
+#4C9A91        1
+#DBD7CACC      , size)
+#DBD7CACC              END;
+#DBD7CACC          BEGIN
+#DBD7CACC              
+#758575DD      { Read }
+#DBD7CACC              ReadArr(size, arr);
+#DBD7CACC              
+#758575DD      { Sort the contents. }
+#DBD7CACC              Quicksort(size, arr);
+#DBD7CACC              
+#758575DD      { Print. }
+#DBD7CACC              FOR i := 
+#4C9A91        1
+#DBD7CACC       TO size DO
+#DBD7CACC                  writeln(arr[i])
+#DBD7CACC          END.
+#758575DD      { From http://sandbox.mc.edu/~bennet/cs404/doc/qsort_pas.html }
