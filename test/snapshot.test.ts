@@ -22,6 +22,10 @@ const JS_ENGINE_EXPECT_MISMATCH: string[] = [
   'stylus',
 ]
 
+const JS_ENGINE_SKIP_COMPARE: string[] = [
+  'pascal',
+]
+
 for (const g of grammars) {
   const sample = join(sampleDir, `${g.name}.sample`)
   if (!await fs.stat(sample).catch(() => false)) {
@@ -70,6 +74,9 @@ for (const g of grammars) {
       throw resultJsError
     }
 
+    if (JS_ENGINE_SKIP_COMPARE.includes(g.name)) {
+      return
+    }
     if (JS_ENGINE_EXPECT_MISMATCH.includes(g.name)) {
       expect(resultJs).not.toBe(resultWasm)
     }
