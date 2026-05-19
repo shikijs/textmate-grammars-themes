@@ -4,7 +4,7 @@ import type { GrammarSource } from './scripts/grammars/types'
 export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'bat',
-    aliases: ['batch'],
+    aliases: ['batch', 'cmd'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/bat/syntaxes/batchfile.tmLanguage.json',
     categories: ['scripting'],
   },
@@ -29,6 +29,15 @@ export const sourcesVSCode: GrammarSource[] = [
     displayName: 'Cairo',
     source: 'https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/lang/ide/vscode-cairo/syntaxes/cairo.tmLanguage.json',
     categories: ['general'],
+  },
+  {
+    name: 'chapel',
+    displayName: 'Chapel',
+    aliases: ['chpl'],
+    source: 'https://github.com/chapel-lang/chapel-vscode/blob/main/syntaxes/chapel.tmLanguage.json',
+    categories: ['general'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/chapel-lang/chapel-vscode/main/LICENSE',
   },
   {
     name: 'clojure',
@@ -243,6 +252,11 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['dsl'],
   },
   {
+    name: 'org',
+    source: 'https://github.com/vscode-org-mode/vscode-org-mode/blob/develop/syntaxes/org.tmLanguage.json',
+    categories: ['markup'],
+  },
+  {
     name: 'perl',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/perl/syntaxes/perl.tmLanguage.json',
     categories: ['general'],
@@ -260,7 +274,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'powershell',
-    aliases: ['ps', 'ps1'],
+    aliases: ['ps', 'ps1', 'pwsh'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/powershell/syntaxes/powershell.tmLanguage.json',
   },
   {
@@ -373,7 +387,6 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'vb',
     displayName: 'Visual Basic',
-    aliases: ['cmd'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
     categories: ['general', 'scripting'],
   },
@@ -398,6 +411,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'actionscript-3',
     displayName: 'ActionScript',
+    aliases: ['actionscript', 'as3'],
     source: 'https://github.com/BowlerHatLLC/vscode-as3mxml/blob/main/distribution/src/assembly/syntaxes/AS3.tmLanguage',
     categories: ['scripting'],
   },
@@ -405,7 +419,23 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'ada',
     source: 'https://github.com/AdaCore/ada_language_server/blob/master/integration/vscode/ada/advanced/ada.tmLanguage.json',
   },
-
+  {
+    name: 'ahk',
+    displayName: 'AutoHotkey',
+    aliases: ['ahk1'],
+    source: 'https://github.com/mark-wiemer/ahkpp/blob/main/language/ahk.tmLanguage.yaml',
+    categories: ['scripting'],
+    license: 'MIT',
+    licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
+  },
+  {
+    name: 'ahk2',
+    displayName: 'AutoHotkey2',
+    source: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/syntaxes/ahk2.tmLanguage.json',
+    categories: ['scripting'],
+    license: 'GNU',
+    licenseUrl: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/LICENSE',
+  },
   {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
@@ -775,6 +805,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'just',
     displayName: 'Just',
+    aliases: ['justfile'],
     source: 'https://github.com/nefrob/vscode-just/blob/main/syntaxes/just.tmLanguage.json',
   },
   {
@@ -848,7 +879,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'mojo',
     displayName: 'Mojo',
-    source: 'https://github.com/modularml/mojo-syntax/blob/main/syntaxes/mojo.syntax.json',
+    source: 'https://github.com/modular/vscode-mojo/blob/main/syntaxes/mojo.syntax.json',
   },
   {
     name: 'move',

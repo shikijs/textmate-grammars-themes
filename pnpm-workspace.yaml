@@ -1,3 +1,5 @@
+minimumReleaseAge: 0
+
 shellEmulator: true
 trustPolicy: no-downgrade
 
@@ -6,66 +8,74 @@ packages:
   - packages/*
   - examples/*
 
+overrides:
+  chokidar: 5.0.0
+  oxc-resolver: ^11.19.1
+
 catalog:
-  '@antfu/eslint-config': ^6.7.3
-  '@antfu/ni': ^28.1.0
+  '@antfu/eslint-config': ^9.0.0
+  '@antfu/ni': ^30.1.0
   '@antfu/utils': ^9.3.0
-  '@iconify-json/carbon': ^1.2.15
+  '@iconify-json/carbon': ^1.2.21
   '@iconify-json/svg-spinners': ^1.2.4
-  '@shikijs/core': ^3.20.0
-  '@shikijs/engine-javascript': ^3.20.0
-  '@shikijs/engine-oniguruma': ^3.20.0
-  '@types/adm-zip': ^0.5.7
+  '@shikijs/core': ^4.1.0
+  '@shikijs/engine-javascript': ^4.1.0
+  '@shikijs/engine-oniguruma': ^4.1.0
+  '@types/adm-zip': ^0.5.8
   '@types/cson': ^7.20.3
   '@types/js-yaml': ^4.0.9
-  '@types/node': ^25.0.3
+  '@types/node': ^25.9.0
   '@types/semver': ^7.7.1
-  '@unocss/eslint-config': ^66.5.12
-  '@unocss/eslint-plugin': ^66.5.12
-  '@unocss/reset': ^66.5.12
-  '@vitejs/plugin-vue': ^6.0.3
+  '@unocss/eslint-config': ^66.6.8
+  '@unocss/eslint-plugin': ^66.6.8
+  '@unocss/reset': ^66.6.8
+  '@vitejs/plugin-vue': ^6.0.7
   '@vue-macros/volar': ^3.1.2
-  '@vueuse/core': ^14.1.0
-  adm-zip: ^0.5.16
-  bumpp: ^10.3.2
+  '@vueuse/core': ^14.3.0
+  adm-zip: ^0.5.17
+  bumpp: ^11.1.0
   chalk: ^5.6.2
   cson: ^8.4.0
-  dotenv: ^17.2.3
-  eslint: ^9.39.2
+  dotenv: ^17.4.2
+  eslint: ^10.4.0
   fast-glob: ^3.3.3
   fast-plist: ^0.1.3
   floating-vue: ^5.2.2
   js-yaml: ^4.1.1
   json-stable-stringify: ^1.3.0
   jsonc-parser: ^3.3.1
-  lint-staged: ^16.2.7
+  lint-staged: ^17.0.5
   octokit: ^5.0.5
   ofetch: ^1.5.1
   ohash: ^2.0.11
-  oniguruma-parser: ^0.12.1
-  oniguruma-to-es: ^4.3.4
-  p-limit: ^7.2.0
-  pnpm: ^10.27.0
-  rimraf: ^6.1.2
-  semver: ^7.7.3
-  simple-git: ^3.30.0
+  oniguruma-parser: ^0.12.2
+  oniguruma-to-es: ^4.3.6
+  p-limit: ^7.3.0
+  pnpm: ^11.1.3
+  rimraf: ^6.1.3
+  semver: ^7.8.0
+  simple-git: ^3.36.0
   simple-git-hooks: ^2.13.1
-  tsx: ^4.21.0
-  typescript: ^5.9.3
+  tsx: ^4.22.2
+  typescript: ^6.0.3
   unbuild: ^3.6.1
-  unocss: ^66.5.12
-  unplugin-auto-import: ^20.3.0
-  unplugin-vue-components: ^30.0.0
+  unocss: ^66.6.8
+  unplugin-auto-import: ^21.0.0
+  unplugin-vue-components: ^32.0.0
   unplugin-vue-macros: ^2.14.5
   unplugin-vue-router: ^0.19.2
-  vite: ^7.3.0
-  vitest: ^4.0.16
-  vue: ^3.5.26
-  vue-router: ^4.6.4
-  vue-tsc: ^3.2.2
-  yaml: ^2.8.2
+  vite: ^8.0.13
+  vitest: ^4.1.6
+  vue: ^3.5.34
+  vue-router: ^5.0.7
+  vue-tsc: ^3.3.0
+  yaml: ^2.9.0
 
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
   - unrs-resolver
+
+allowBuilds:
+  esbuild: true
+  simple-git-hooks: true

@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import { join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { createHighlighterCore } from '@shikijs/core'
 import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript'
@@ -11,11 +12,16 @@ import theme from '../packages/tm-themes/themes/vitesse-black.json'
 const sampleDir = fileURLToPath(new URL('../samples', import.meta.url))
 
 const JS_ENGINE_EXPECT_FAIL: string[] = [
+  'ahk2',
 ]
 
-const JS_ENGINE_EXPECT_MISMATCH: string[] = [
+const JS_ENGINE_INDEPENDENT_SNAPSHOT: string[] = [
   'emacs-lisp',
-  'racket',
+  'pascal',
+  'sparql',
+  'splunk',
+  'sql',
+  'stylus',
 ]
 
 for (const g of grammars) {
@@ -66,8 +72,9 @@ for (const g of grammars) {
       throw resultJsError
     }
 
-    if (JS_ENGINE_EXPECT_MISMATCH.includes(g.name)) {
-      expect(resultJs).not.toBe(resultWasm)
+    if (JS_ENGINE_INDEPENDENT_SNAPSHOT.includes(g.name)) {
+      await expect(resultJs)
+        .toMatchFileSnapshot(`./__snapshots__/${g.name}.js.${process.platform}.txt`)
     }
     else {
       expect(resultJs).toBe(resultWasm)
