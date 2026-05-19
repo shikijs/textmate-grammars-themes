@@ -4,7 +4,7 @@ import type { GrammarSource } from './scripts/grammars/types'
 export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'bat',
-    aliases: ['batch'],
+    aliases: ['batch', 'cmd'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/bat/syntaxes/batchfile.tmLanguage.json',
     categories: ['scripting'],
   },
@@ -373,7 +373,6 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'vb',
     displayName: 'Visual Basic',
-    aliases: ['cmd'],
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/vb/syntaxes/asp-vb-net.tmLanguage.json',
     categories: ['general', 'scripting'],
   },
