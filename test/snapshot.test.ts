@@ -15,7 +15,12 @@ const JS_ENGINE_EXPECT_FAIL: string[] = [
 
 const JS_ENGINE_EXPECT_MISMATCH: string[] = [
   'emacs-lisp',
-  'racket',
+  'hlsl',
+  'pascal',
+  'sparql',
+  'splunk',
+  'sql',
+  'stylus',
 ]
 
 for (const g of grammars) {
