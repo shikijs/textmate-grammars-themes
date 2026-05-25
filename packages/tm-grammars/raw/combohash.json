@@ -1,0 +1,54 @@
+{
+    "displayName": "Combo Hash",
+    "fileTypes": [
+      "combo",
+      "hash",
+      "hashes"
+    ],
+    "foldingStartMarker": "--next",
+    "foldingStopMarker": "\\n\\n",
+    "name": "combohash",
+    "patterns": [
+      {
+        "captures": {
+          "1": {
+            "name": "variable.username.combo"
+          },
+          "2": {
+            "name": "punctuation.separator.colon.combo"
+          },
+          "3": {
+            "name": "string.password.combo"
+          }
+        },
+        "match": "^(\\w+)?(:)(.+?)(?=\\s*#|$)"
+      },
+      {
+        "captures": {
+          "1": {
+            "name": "keyword.hash.dollar"
+          }
+        },
+        "match": "\\$"
+      },
+      {
+        "captures": {
+          "1": {
+            "name": "constant.numeric.hash"
+          }
+        },
+        "match": "^\\d+"
+      },
+      {
+        "captures": {
+          "1": {
+            "name": "comment.line.number-sign.combohash"
+          }
+        },
+        "match": "\\s*(#).*$",
+        "name": "comment.line.combohash"
+      }
+    ],
+    "scopeName": "source.combohash"
+  }
+  
