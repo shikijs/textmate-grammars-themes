@@ -1014,6 +1014,15 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/dotnet/razor/blob/main/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json',
   },
   {
+    name: 'rbs',
+    displayName: 'RBS',
+    aliases: ['ruby-signature'],
+    source: 'https://github.com/soutaro/vscode-rbs-syntax/blob/master/syntaxes/rbs.tmLanguage.json',
+    categories: ['general'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/soutaro/vscode-rbs-syntax/master/LICENSE',
+  },
+  {
     name: 'reg',
     displayName: 'Windows Registry Script',
     source: 'https://github.com/mihai-vlc/reg-vscode/blob/master/syntaxes/reg.tmLanguage',

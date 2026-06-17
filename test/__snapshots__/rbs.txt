@@ -1,0 +1,101 @@
+#758575DD      # Signatures for a small greeting library.
+#4D9375        use
+#DBD7CACC       RBS::Namespace 
+#4D9375        as
+#DBD7CACC       NS
+#4D9375        type
+#DBD7CACC       name = String | Symbol
+#4D9375        type
+#DBD7CACC       mode = 
+#C98A7D        "r"
+#DBD7CACC       | 
+#C98A7D        "w"
+#DBD7CACC       | 
+#C98A7D        "rw"
+#4D9375        interface 
+#80A665        _Greetable
+#DBD7CACC        
+#4D9375        def
+#80A665         greet
+#DBD7CACC      : () -> String
+#4D9375        end
+#4D9375        class 
+#80A665        Container
+#DBD7CACC      [
+#4D9375        out
+#DBD7CACC       T]
+#DBD7CACC        
+#4D9375        def
+#80A665         get
+#DBD7CACC      : () -> T
+#4D9375        end
+#4D9375        module 
+#80A665        Greeting
+#DBD7CACC        VERSION: String
+#DBD7CACC        
+#4D9375        class 
+#80A665        Person
+#DBD7CACC          
+#4D9375        include 
+#BD976A        Comparable
+#DBD7CACC          
+#4D9375        extend 
+#BD976A        Forwardable
+#DBD7CACC          
+#4D9375        attr_reader
+#DBD7CACC       name: name
+#DBD7CACC          
+#4D9375        attr_accessor
+#DBD7CACC       age: Integer?
+#DBD7CACC          @nickname: String?
+#DBD7CACC          
+#4D9375        def
+#80A665         initialize
+#DBD7CACC      : (name: name, ?age: Integer?) -> 
+#4D9375        void
+#DBD7CACC          
+#4D9375        def
+#80A665         greet
+#DBD7CACC      : (?prefix: String) { (String) -> 
+#4D9375        void
+#DBD7CACC       } -> String
+#DBD7CACC          
+#4D9375        def
+#80A665         self.anonymous
+#DBD7CACC      : () -> 
+#4D9375        instance
+#DBD7CACC          
+#4D9375        def
+#80A665         self.factory
+#DBD7CACC      : () -> 
+#4D9375        singleton
+#DBD7CACC      (Person)
+#DBD7CACC          
+#4D9375        def
+#80A665         to_raw
+#DBD7CACC      : () -> 
+#4D9375        untyped
+#DBD7CACC          
+#4D9375        def
+#80A665         valid?
+#DBD7CACC      : () -> 
+#4D9375        bool
+#DBD7CACC          
+#4D9375        def
+#80A665         reset
+#DBD7CACC      : () -> 
+#4D9375        void
+#DBD7CACC          
+#4D9375        private
+#DBD7CACC       
+#4D9375        def
+#80A665         secret
+#DBD7CACC      : () -> 
+#4D9375        bool
+#DBD7CACC          
+#4D9375        alias
+#DBD7CACC       display greet
+#DBD7CACC        
+#4D9375        end
+#4D9375        end
+#758575DD      # From https://github.com/ruby/rbs/blob/master/docs/syntax.md
