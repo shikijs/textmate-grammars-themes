@@ -1073,6 +1073,14 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/leocamello/vscode-smalltalk/blob/master/syntaxes/smalltalk.tmLanguage.json',
   },
   {
+    name: 'smithy',
+    displayName: 'Smithy',
+    source: 'https://github.com/smithy-lang/smithy-vscode/blob/main/syntaxes/smithy.tmLanguage.json',
+    categories: ['web'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://github.com/smithy-lang/smithy-vscode/blob/main/LICENSE',
+  },
+  {
     name: 'solidity',
     source: 'https://github.com/juanfranblanco/vscode-solidity/blob/master/syntaxes/solidity.json',
   },
