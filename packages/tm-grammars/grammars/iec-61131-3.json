@@ -1,0 +1,251 @@
+{
+  "aliases": [
+    "iecst"
+  ],
+  "displayName": "IEC 61131-3",
+  "fileTypes": [
+    "iec",
+    "st",
+    "iecst"
+  ],
+  "name": "iec-61131-3",
+  "patterns": [
+    {
+      "include": "#comment-line"
+    },
+    {
+      "include": "#comment-block-paren"
+    },
+    {
+      "include": "#comment-block-slash"
+    },
+    {
+      "include": "#pragma"
+    },
+    {
+      "include": "#string-single"
+    },
+    {
+      "include": "#string-double"
+    },
+    {
+      "include": "#typed-duration"
+    },
+    {
+      "include": "#typed-datetime"
+    },
+    {
+      "include": "#boolean-null"
+    },
+    {
+      "include": "#numeric-literal"
+    },
+    {
+      "include": "#path-expression"
+    },
+    {
+      "include": "#keyword-control"
+    },
+    {
+      "include": "#variable-language"
+    },
+    {
+      "include": "#keyword-object"
+    },
+    {
+      "include": "#storage-modifier"
+    },
+    {
+      "include": "#storage-type"
+    },
+    {
+      "include": "#keyword-operator"
+    },
+    {
+      "include": "#operator-symbol"
+    }
+  ],
+  "repository": {
+    "boolean-null": {
+      "match": "\\b(?i:true|false|null)\\b",
+      "name": "constant.language.iec-61131-3"
+    },
+    "comment-block-paren": {
+      "begin": "\\(\\*",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.iec-61131-3"
+        }
+      },
+      "end": "\\*\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.iec-61131-3"
+        }
+      },
+      "name": "comment.block.iec-61131-3"
+    },
+    "comment-block-slash": {
+      "begin": "/\\*",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.iec-61131-3"
+        }
+      },
+      "end": "\\*/",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.iec-61131-3"
+        }
+      },
+      "name": "comment.block.iec-61131-3"
+    },
+    "comment-line": {
+      "begin": "//",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.iec-61131-3"
+        }
+      },
+      "end": "$",
+      "name": "comment.line.double-slash.iec-61131-3"
+    },
+    "keyword-control": {
+      "match": "\\b(?i:by|case|continue|do|else|elsif|end_case|end_for|end_if|end_repeat|end_while|exit|for|if|of|repeat|return|then|to|until|while)\\b",
+      "name": "keyword.control.iec-61131-3"
+    },
+    "keyword-object": {
+      "match": "\\b(?i:var|end_var|end|ref_to|array|action|class|configuration|end_action|end_class|end_configuration|end_function|end_function_block|end_interface|end_method|end_namespace|end_program|end_resource|end_step|end_struct|end_transition|end_type|extends|from|function|function_block|implements|initial_step|interface|method|namespace|on|program|resource|step|super|task|transition|type|using|with|var_access|var_config|var_external|var_global|var_input|var_in_out|var_output|var_temp)\\b",
+      "name": "keyword.other.object.iec-61131-3"
+    },
+    "keyword-operator": {
+      "match": "\\b(?i:and|mod|not|or|ref|xor)\\b",
+      "name": "keyword.operator.word.iec-61131-3"
+    },
+    "numeric-literal": {
+      "patterns": [
+        {
+          "match": "\\b16#\\h(?:_?\\h)*\\b",
+          "name": "constant.numeric.hex.iec-61131-3"
+        },
+        {
+          "match": "\\b2#[01](?:_?[01])*\\b",
+          "name": "constant.numeric.binary.iec-61131-3"
+        },
+        {
+          "match": "\\b8#[0-7](?:_?[0-7])*\\b",
+          "name": "constant.numeric.octal.iec-61131-3"
+        },
+        {
+          "match": "\\b[0-9](?:_?[0-9])*(?:\\.[0-9](?:_?[0-9])*)?(?:[Ee][-+]?[0-9](?:_?[0-9])*)?\\b",
+          "name": "constant.numeric.float.iec-61131-3"
+        },
+        {
+          "match": "\\b[0-9](?:_?[0-9])*\\b",
+          "name": "constant.numeric.integer.iec-61131-3"
+        }
+      ]
+    },
+    "operator-symbol": {
+      "match": "=>|:=|\\?=|<>|<=|>=|[-#\\&*+./<=>^]|\\*\\*|\\.\\.|\\\\\\\\??",
+      "name": "keyword.operator.iec-61131-3"
+    },
+    "path-expression": {
+      "match": "\\b%(?:[IMQimq][BDLWXbdlwx]?[0-9]+(\\.[0-9]+)*|[IMQimq][BDLWXbdlwx]?\\*|\\*|[BDLWXbdlwx][0-9]+(\\.[0-9]+)?)\\b",
+      "name": "variable.language.path.iec-61131-3"
+    },
+    "pragma": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.pragma.begin.iec-61131-3"
+        }
+      },
+      "contentName": "string.unquoted.pragma.iec-61131-3",
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.pragma.end.iec-61131-3"
+        }
+      },
+      "name": "meta.pragma.iec-61131-3",
+      "patterns": [
+        {
+          "match": "\\$[${}]",
+          "name": "constant.character.escape.iec-61131-3"
+        }
+      ]
+    },
+    "storage-modifier": {
+      "match": "\\b(?i:overlap|final|f_edge|r_edge|abstract|at|constant|internal|non_retain|override|private|protected|public|read_only|read_write|retain)\\b",
+      "name": "storage.modifier.iec-61131-3"
+    },
+    "storage-type": {
+      "match": "\\b(?i:bool|byte|char|date_and_time|date|dint|dt|dword|int|ldate_and_time|ldate|ldt|lint|lreal|ltime_of_day|ltime|ltod|lword|real|sint|string|time_of_day|time|tod|udint|uint|ulint|usint|wchar|word|wstring)\\b",
+      "name": "storage.type.iec-61131-3"
+    },
+    "string-double": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.iec-61131-3"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.iec-61131-3"
+        }
+      },
+      "name": "string.quoted.double.iec-61131-3",
+      "patterns": [
+        {
+          "match": "\\$(?:[\"$'LNPRTlnprt]|\\h{4})",
+          "name": "constant.character.escape.iec-61131-3"
+        }
+      ]
+    },
+    "string-single": {
+      "begin": "'",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.iec-61131-3"
+        }
+      },
+      "end": "'",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.iec-61131-3"
+        }
+      },
+      "name": "string.quoted.single.iec-61131-3",
+      "patterns": [
+        {
+          "match": "\\$(?:[\"$'LNPRTlnprt]|\\h{2})",
+          "name": "constant.character.escape.iec-61131-3"
+        }
+      ]
+    },
+    "typed-datetime": {
+      "match": "\\b(?i:ldate_and_time|date_and_time|ltime_of_day|time_of_day|ldate|ldt|ltod|date|tod|dt)#[0-9]+-[0-9]+-[0-9]+(?:-[0-9]+:[0-9]+:[0-9]+)?\\b",
+      "name": "constant.other.date.iec-61131-3"
+    },
+    "typed-duration": {
+      "match": "\\b(?i:l?t(?:ime|)#[-+]?(?:[0-9](?:_?[0-9])*(?:\\.[0-9](?:_?[0-9])*)?(?:[dh]|ms|us|ns|m(?!s)|s))+)\\b",
+      "name": "constant.other.duration.iec-61131-3"
+    },
+    "variable-language": {
+      "patterns": [
+        {
+          "match": "\\b(?i:this)\\b",
+          "name": "variable.language.this.iec-61131-3"
+        },
+        {
+          "match": "\\b_\\b",
+          "name": "variable.language.anonymous.iec-61131-3"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.iec-61131-3"
+}
