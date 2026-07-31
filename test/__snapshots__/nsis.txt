@@ -1,0 +1,315 @@
+#758575DD      ; NSIS Example Installer Script
+#4D9375        !include
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        MUI2.nsh
+#C98A7D77      "
+#4D9375        !include
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        LogicLib.nsh
+#C98A7D77      "
+#4D9375        !define
+#DBD7CACC       
+#C99076        PRODUCT_NAME
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        My Application
+#C98A7D77      "
+#4D9375        !define
+#DBD7CACC       
+#C99076        PRODUCT_VERSION
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1.0.0
+#C98A7D77      "
+#4D9375        !define
+#DBD7CACC       
+#C99076        PRODUCT_PUBLISHER
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Example Corp
+#C98A7D77      "
+#4D9375        Name
+#DBD7CACC       
+#C98A7D77      "
+#C99076        ${PRODUCT_NAME}
+#C98A7D         
+#C99076        ${PRODUCT_VERSION}
+#C98A7D77      "
+#4D9375        OutFile
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        setup.exe
+#C98A7D77      "
+#4D9375        InstallDir
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $PROGRAMFILES
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#4D9375        InstallDirRegKey
+#DBD7CACC       
+#BD976A        HKLM
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Software\
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        InstallDir
+#C98A7D77      "
+#4D9375        RequestExecutionLevel
+#DBD7CACC       
+#BD976A        admin
+#4D9375        Unicode
+#DBD7CACC       
+#4D9375        true
+#758575DD      ; Interface settings
+#4D9375        !insertmacro
+#DBD7CACC       MUI_PAGE_WELCOME
+#4D9375        !insertmacro
+#DBD7CACC       MUI_PAGE_LICENSE 
+#C98A7D77      "
+#C98A7D        license.txt
+#C98A7D77      "
+#4D9375        !insertmacro
+#DBD7CACC       MUI_PAGE_DIRECTORY
+#4D9375        !insertmacro
+#DBD7CACC       MUI_PAGE_INSTFILES
+#4D9375        !insertmacro
+#DBD7CACC       MUI_PAGE_FINISH
+#4D9375        !insertmacro
+#DBD7CACC       MUI_LANGUAGE 
+#C98A7D77      "
+#C98A7D        English
+#C98A7D77      "
+#758575DD      /*
+#758575DD        Main installation section
+#758575DD      */
+#4D9375        Section
+#DBD7CACC       
+#C98A7D        "Application Files"
+#DBD7CACC       
+#80A665        SecMain
+#4D9375          SetOutPath
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D77      "
+#4D9375          File /r
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        dist\*.*
+#C98A7D77      "
+#4D9375          File
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        README.md
+#C98A7D77      "
+#4D9375          WriteRegStr
+#DBD7CACC       
+#BD976A        HKLM
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Software\
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        InstallDir
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D77      "
+#4D9375          WriteRegStr
+#DBD7CACC       
+#BD976A        HKLM
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Software\
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Version
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C99076        ${PRODUCT_VERSION}
+#C98A7D77      "
+#DBD7CACC        
+#758575DD      ; Create uninstaller
+#4D9375          WriteUninstaller
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D        \uninstall.exe
+#C98A7D77      "
+#DBD7CACC        
+#758575DD      ; Start menu shortcuts
+#4D9375          CreateDirectory
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $SMPROGRAMS
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#4D9375          CreateShortCut
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $SMPROGRAMS
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D        .lnk
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D        \app.exe
+#C98A7D77      "
+#4D9375          CreateShortCut
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $SMPROGRAMS
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D        \Uninstall.lnk
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D        \uninstall.exe
+#C98A7D77      "
+#4D9375        SectionEnd
+#4D9375        Section
+#DBD7CACC       
+#C98A7D        "Desktop Shortcut"
+#DBD7CACC       
+#80A665        SecDesktop
+#4D9375          CreateShortCut
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $DESKTOP
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D        .lnk
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D        \app.exe
+#C98A7D77      "
+#4D9375        SectionEnd
+#4D9375        Function
+#DBD7CACC       
+#80A665        .onInit
+#DBD7CACC        
+#4D9375        Var
+#DBD7CACC       /GLOBAL 
+#80A665        PREV_VERSION
+#4D9375          ReadRegStr
+#DBD7CACC       
+#BD976A        $PREV_VERSION
+#DBD7CACC       
+#BD976A        HKLM
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Software\
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Version
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        ${If}
+#DBD7CACC       
+#BD976A        $PREV_VERSION
+#DBD7CACC       
+#CB7676        !=
+#DBD7CACC       
+#C98A7D77      ""
+#4D9375            MessageBox
+#DBD7CACC       
+#BD976A        MB_YESNO
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Version $PREV_VERSION is already installed. Continue?
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        IDYES
+#DBD7CACC       +
+#4C9A91        2
+#4D9375              Abort
+#DBD7CACC        
+#4D9375        ${EndIf}
+#4D9375        FunctionEnd
+#4D9375        Section
+#DBD7CACC       "
+#C98A7D        Uninstall
+#DBD7CACC      "
+#4D9375          RMDir /r
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $INSTDIR
+#C98A7D77      "
+#4D9375          Delete
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $DESKTOP
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D        .lnk
+#C98A7D77      "
+#4D9375          RMDir /r
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $SMPROGRAMS
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#4D9375          DeleteRegKey
+#DBD7CACC       
+#BD976A        HKLM
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Software\
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        ${If}
+#DBD7CACC       
+#C99076        ${FileExists}
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $APPDATA
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#4D9375            MessageBox
+#DBD7CACC       
+#BD976A        MB_YESNO
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Remove application data?
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        IDNO
+#DBD7CACC       +
+#4C9A91        2
+#4D9375              RMDir /r
+#DBD7CACC       
+#C98A7D77      "
+#C99076        $APPDATA
+#C98A7D        \
+#C99076        ${PRODUCT_NAME}
+#C98A7D77      "
+#DBD7CACC        
+#4D9375        ${EndIf}
+#4D9375        SectionEnd

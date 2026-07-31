@@ -1,0 +1,447 @@
+#4D9375        $
+#B8A965        version
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        2
+#C98A7D77      "
+#4D9375        namespace
+#DBD7CACC       
+#5DA994        example.weather
+#758575DD      /// Provides weather forecasts.
+#444444        @
+#CB7676        paginated
+#444444        (
+#B8A965        inputToken
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        nextToken
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        outputToken
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        nextToken
+#C98A7D77      "
+#444444        ,
+#DBD7CACC       
+#B8A965        pageSize
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        pageSize
+#C98A7D77      "
+#444444        )
+#4D9375        service
+#DBD7CACC       
+#5DA994        Weather
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        version
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        2006-03-01
+#C98A7D77      "
+#DBD7CACC          
+#B8A965        resources
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#5DA994        City
+#DBD7CACC          
+#444444        ]
+#DBD7CACC          
+#B8A965        operations
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#5DA994        GetCurrentTime
+#DBD7CACC          
+#444444        ]
+#444444        }
+#4D9375        resource
+#DBD7CACC       
+#5DA994        City
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        identifiers
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        cityId
+#444444        :
+#DBD7CACC       
+#5DA994        CityId
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#B8A965        properties
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        coordinates
+#444444        :
+#DBD7CACC       
+#5DA994        CityCoordinates
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#B8A965        read
+#444444        :
+#DBD7CACC       
+#5DA994        GetCity
+#DBD7CACC          
+#B8A965        list
+#444444        :
+#DBD7CACC       
+#5DA994        ListCities
+#DBD7CACC          
+#B8A965        resources
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#5DA994        Forecast
+#DBD7CACC          
+#444444        ]
+#444444        }
+#4D9375        resource
+#DBD7CACC       
+#5DA994        Forecast
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        identifiers
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        cityId
+#444444        :
+#DBD7CACC       
+#5DA994        CityId
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#B8A965        properties
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#B8A965        chanceOfRain
+#444444        :
+#DBD7CACC       
+#5DA994        Float
+#DBD7CACC       
+#444444        }
+#DBD7CACC          
+#B8A965        read
+#444444        :
+#DBD7CACC       
+#5DA994        GetForecast
+#444444        }
+#758575DD      // "pattern" is a trait.
+#444444        @
+#CB7676        pattern
+#444444        (
+#C98A7D77      "
+#C98A7D        ^[A-Za-z0-9 ]+$
+#C98A7D77      "
+#444444        )
+#4D9375        string
+#DBD7CACC       
+#5DA994        CityId
+#444444        @
+#CB7676        readonly
+#4D9375        operation
+#DBD7CACC       
+#5DA994        GetCity
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        input
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#5DA994        for
+#DBD7CACC       
+#5DA994        City
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#758575DD      // "cityId" provides the identifier for the resource and
+#DBD7CACC              
+#758575DD      // has to be marked as required.
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              $
+#5DA994        cityId
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#B8A965        output
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#5DA994        for
+#DBD7CACC       
+#5DA994        City
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#758575DD      // "required" is used on output to indicate if the service
+#DBD7CACC              
+#758575DD      // will always provide a value for the member.
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              @
+#5DA994        notProperty
+#DBD7CACC              
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              $
+#5DA994        coordinates
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#B8A965        errors
+#444444        :
+#DBD7CACC       
+#444444        [
+#DBD7CACC              
+#5DA994        NoSuchResource
+#DBD7CACC          
+#444444        ]
+#444444        }
+#758575DD      // This structure is nested within GetCityOutput.
+#4D9375        structure
+#DBD7CACC       
+#5DA994        CityCoordinates
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#444444        @
+#CB7676        required
+#DBD7CACC          
+#B8A965        latitude
+#444444        :
+#DBD7CACC       
+#5DA994        Float
+#DBD7CACC          
+#444444        @
+#CB7676        required
+#DBD7CACC          
+#B8A965        longitude
+#444444        :
+#DBD7CACC       
+#5DA994        Float
+#444444        }
+#758575DD      // "error" is a trait that is used to specialize
+#758575DD      // a structure as an error.
+#444444        @
+#CB7676        error
+#444444        (
+#C98A7D77      "
+#C98A7D        client
+#C98A7D77      "
+#444444        )
+#4D9375        structure
+#DBD7CACC       
+#5DA994        NoSuchResource
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#444444        @
+#CB7676        required
+#DBD7CACC          
+#B8A965        resourceType
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#444444        }
+#758575DD      // The paginated trait indicates that the operation may
+#758575DD      // return truncated results.
+#444444        @
+#CB7676        readonly
+#444444        @
+#CB7676        paginated
+#444444        (
+#B8A965        items
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        items
+#C98A7D77      "
+#444444        )
+#4D9375        operation
+#DBD7CACC       
+#5DA994        ListCities
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        input
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#B8A965        nextToken
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC              
+#B8A965        pageSize
+#444444        :
+#DBD7CACC       
+#5DA994        Integer
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#B8A965        output
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#B8A965        nextToken
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              
+#B8A965        items
+#444444        :
+#DBD7CACC       
+#5DA994        CitySummaries
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // CitySummaries is a list of CitySummary structures.
+#4D9375        list
+#DBD7CACC       
+#5DA994        CitySummaries
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        member
+#444444        :
+#DBD7CACC       
+#5DA994        CitySummary
+#444444        }
+#758575DD      // CitySummary contains a reference to a City.
+#444444        @
+#CB7676        references
+#444444        ([
+#DBD7CACC          
+#444444        {
+#DBD7CACC              
+#B8A965        resource
+#444444        :
+#DBD7CACC       
+#5DA994        City
+#DBD7CACC          
+#444444        }
+#444444        ])
+#4D9375        structure
+#DBD7CACC       
+#5DA994        CitySummary
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#444444        @
+#CB7676        required
+#DBD7CACC          
+#B8A965        cityId
+#444444        :
+#DBD7CACC       
+#5DA994        CityId
+#DBD7CACC          
+#444444        @
+#CB7676        required
+#DBD7CACC          
+#B8A965        name
+#444444        :
+#DBD7CACC       
+#5DA994        String
+#444444        }
+#444444        @
+#CB7676        readonly
+#4D9375        operation
+#DBD7CACC       
+#5DA994        GetCurrentTime
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        output
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#444444        {
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              
+#B8A965        time
+#444444        :
+#DBD7CACC       
+#5DA994        Timestamp
+#DBD7CACC          
+#444444        }
+#444444        }
+#444444        @
+#CB7676        readonly
+#4D9375        operation
+#DBD7CACC       
+#5DA994        GetForecast
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#B8A965        input
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#5DA994        for
+#DBD7CACC       
+#5DA994        Forecast
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#758575DD      // "cityId" provides the only identifier for the resource since
+#DBD7CACC              
+#758575DD      // a Forecast doesn't have its own.
+#DBD7CACC              @
+#5DA994        required
+#DBD7CACC              $
+#5DA994        cityId
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#B8A965        output
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#5DA994        for
+#DBD7CACC       
+#5DA994        Forecast
+#DBD7CACC       
+#444444        {
+#DBD7CACC              $
+#5DA994        chanceOfRain
+#DBD7CACC          
+#444444        }
+#444444        }
+#758575DD      // From https://github.com/smithy-lang/smithy-examples/blob/main/quickstart-examples/quickstart-cli/models/weather.smithy

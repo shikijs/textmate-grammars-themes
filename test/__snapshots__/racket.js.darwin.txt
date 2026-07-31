@@ -1,0 +1,100 @@
+#4D9375        #lang
+#DBD7CACC       racket
+#444444        (
+#B8A965        provide
+#DBD7CACC       time-it
+#444444        )
+#444444        (
+#B8A965        require
+#DBD7CACC       
+#444444        (
+#B8A965        for-syntax
+#DBD7CACC       syntax/parse
+#444444        ))
+#444444        (
+#CB7676        define-syntax
+#DBD7CACC       
+#444444        (
+#80A665        time-it
+#DBD7CACC       
+#BD976A        stx
+#444444        )
+#DBD7CACC        
+#444444        (
+#DBD7CACC      syntax-parse stx
+#DBD7CACC          
+#444444        [(
+#B8A965        _
+#DBD7CACC       task
+#444444        )
+#DBD7CACC           
+#B8A965        #'
+#444444        (
+#DBD7CACC      thunk-time-it 
+#444444        (
+#CB7676        λ
+#DBD7CACC       
+#444444        ()
+#DBD7CACC       task
+#444444        ))]))
+#444444        (
+#CB7676        define
+#DBD7CACC       
+#444444        (
+#80A665        thunk-time-it
+#DBD7CACC       
+#BD976A        task
+#444444        )
+#DBD7CACC        
+#444444        (
+#CB7676        define
+#DBD7CACC       
+#C99076        before
+#DBD7CACC       
+#444444        (
+#DBD7CACC      cim
+#444444        ))
+#DBD7CACC        
+#444444        (
+#CB7676        define
+#DBD7CACC       
+#C99076        answer
+#DBD7CACC       
+#444444        (
+#DBD7CACC      task
+#444444        ))
+#DBD7CACC        
+#444444        (
+#CB7676        define
+#DBD7CACC       
+#C99076        delta
+#DBD7CACC        
+#444444        (
+#B8A965        -
+#DBD7CACC       
+#444444        (
+#DBD7CACC      cim
+#444444        )
+#DBD7CACC       before
+#444444        ))
+#DBD7CACC        
+#444444        (
+#B8A965        printf
+#DBD7CACC       
+#C98A7D        "time: 
+#C99076        ~a
+#C98A7D         ms
+#C99076        \n
+#C98A7D        "
+#DBD7CACC       delta
+#444444        )
+#DBD7CACC        answer
+#444444        )
+#444444        (
+#CB7676        define
+#DBD7CACC       
+#C99076        cim
+#DBD7CACC       
+#B8A965        current-inexact-milliseconds
+#444444        )
+#758575DD      ;; From https://racket-lang.org/#little-macros
