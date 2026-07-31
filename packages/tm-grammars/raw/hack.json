@@ -878,7 +878,7 @@
               "name": "keyword.control.php"
             }
           },
-          "match": "\\s*\\b(await|break|c(ase|ontinue)|concurrent|default|do|else|for(each)?|if|nameof|return|switch|use|while)\\b"
+          "match": "\\s*\\b(await|break|c(ase|ontinue)|concurrent|de(fault|lay)|do|else|for(each)?|if|nameof|return|switch|use|while)\\b"
         },
         {
           "begin": "(?i)\\b((?:require|include)(?:_once)?)\\b\\s*",
@@ -1266,7 +1266,7 @@
           "name": "keyword.operator.logical.php"
         },
         {
-          "begin": "(?i)\\b(as|is)\\b\\s+(?=[\\\\$a-z_])",
+          "begin": "(?i)\\b(as|is|upcast)\\b\\s+(?=[\\\\$a-z_~?])",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.type.php"
@@ -1283,7 +1283,7 @@
           ]
         },
         {
-          "match": "(?i)\\b(is|as)\\b",
+          "match": "(?i)\\b(is|as|upcast)\\b",
           "name": "keyword.operator.type.php"
         },
         {

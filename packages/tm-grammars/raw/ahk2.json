@@ -217,7 +217,8 @@
       ]
     },
     "class_block": {
-      "begin": "(?<=^([ \t]*\\*/)?[ \t]*(?i:export[ \t]+(default[ \t]+)?)?)(?i:(class))[ \t]+(\\$?\\w+(\\.\\w+)*)",
+      "applyEndPatternLast": 1,
+      "begin": "(?<=^([ \t]*\\*/)?[ \t]*(?i:export[ \t]+(default[ \t]+)?)?)(?i:(class|struct))[ \t]+(\\$?\\w+)",
       "beginCaptures": {
         "3": {
           "name": "storage.type.class.ahk2"
@@ -226,23 +227,24 @@
           "name": "entity.name.type.class.ahk2"
         }
       },
-      "end": "}",
+      "end": "(})|(?=^[ \t]*[^{ \t\r\n])",
       "endCaptures": {
-        "0": {
+        "1": {
           "name": "punctuation.definition.block.class.end.ahk2"
         }
       },
       "name": "meta.block.class.ahk2",
       "patterns": [
         {
-          "begin": "\\G(?!\\{)",
-          "end": "(?=\\{)",
+          "applyEndPatternLast": 1,
+          "begin": "\\G(?!{)",
+          "end": "(?={)|(?=^[ \t]*[^{ \t\r\n])",
           "patterns": [
             {
               "include": "#comments"
             },
             {
-              "begin": "\\G[ \t]*(<)",
+              "begin": "\\G(<)",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.definition.typeparameters.begin.ahk2"
@@ -1925,7 +1927,7 @@
               "name": "punctuation.definition.directive.ahk2"
             }
           },
-          "match": "^[ \t]*((#)(?i:clipboardtimeout|criticalobject(sleeptime|timeout)|hotif|hotiftimeout|inputlevel|initexec|maxthreads|maxthreadsbuffer|maxthreadsperhotkey|notrayicon|structpack|suspendexempt|usehook|usestdlib|warn|warncontinuableexception|winactivateforce))\\b"
+          "match": "^[ \t]*((#)(?i:clipboardtimeout|criticalobject(sleeptime|timeout)|hotif|hotiftimeout|import|inputlevel|initexec|maxthreads|maxthreadsbuffer|maxthreadsperhotkey|notrayicon|structpack|suspendexempt|usehook|usestdlib|warn|warncontinuableexception|winactivateforce))\\b"
         },
         {
           "begin": "^[ \t]*((#)(?i:dllimport))([ \t]+(\\w+))?",

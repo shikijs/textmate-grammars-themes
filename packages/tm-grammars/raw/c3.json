@@ -36,7 +36,7 @@
     "attribute": {
       "patterns": [
         {
-          "begin": "@(?:(?:align|allow_deprecated|benchmark|bigendian|builtin|callconv|cname|compact|const|deprecated|dynamic|export|extern|finalizer|format|if|inline|init|jump|link|littleendian|local|maydiscard|naked|noalias|nodiscard|noinit|noinline|nopadding|norecurse|noreturn|nosanitize|nostrip|obfuscate|operator|operator_r|operator_s|optional|overlap|packed|private|public|pure|reflect|safeinfer|safemacro|simd|section|structlike|tag|test|unused|used|wasm|weak|winmain)\\b|(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b))",
+          "begin": "@(?:(?:align|allow_deprecated|benchmark|bigendian|builtin|callconv|cname|compact|const|constinit|deprecated|dynamic|export|finalizer|format|if|inline|init|jump|link|littleendian|local|maydiscard|mustinit|naked|noalias|nodiscard|noinit|noinline|nopadding|norecurse|noreturn|nosanitize|nostrip|obfuscate|operator|operator_r|operator_s|optional|overlap|packed|private|public|pure|reflect|safeinfer|safemacro|simd|section|tag|test|unused|used|wasm|weak|weaklink|winmain)\\b|(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b))",
           "beginCaptures": {
             "0": {
               "name": "keyword.annotation.c3"
@@ -858,7 +858,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "\\$(?:alignof|assert|assignable|default|defined|echo|embed|eval|error|exec|extnameof|feature|include|is_const|kindof|nameof|offsetof|qnameof|sizeof|stringify|vacount|vaconst|vaarg|vaexpr|vasplat)\\b",
+          "match": "\\$(?:alignof|assert|assignable|default|defined|echo|embed|eval|error|exec|expand|extnameof|feature|include|reflect|is_const|kindof|nameof|offsetof|qnameof|sizeof|stringify|vacount|vaconst|vaarg|vaexpr|vasplat)\\b",
           "name": "keyword.other.ct.c3"
         },
         {
@@ -1761,14 +1761,17 @@
           "include": "#structlike"
         },
         {
-          "begin": "(?=\\benum\\b)",
+          "begin": "(?=\\b(?:enum|constdef)\\b)",
           "end": "(?<=\\})",
           "patterns": [
             {
-              "begin": "\\benum\\b",
+              "begin": "\\b(enum)|(constdef)\\b",
               "beginCaptures": {
-                "0": {
+                "1": {
                   "name": "keyword.declaration.enum.c3"
+                },
+                "2": {
+                  "name": "keyword.declaration.constdef.c3"
                 }
               },
               "end": "(?=\\{)",
@@ -1825,7 +1828,7 @@
                           "include": "#comments"
                         },
                         {
-                          "match": "\\b(?:inline|const)\\b",
+                          "match": "\\binline\\b",
                           "name": "storage.modifier.c3"
                         },
                         {
@@ -1868,7 +1871,7 @@
                       "name": "keyword.operator.assignment.c3"
                     }
                   },
-                  "end": "(?=,)",
+                  "end": "(?=[,}])",
                   "patterns": [
                     {
                       "include": "#expression"
@@ -1876,77 +1879,7 @@
                   ]
                 },
                 {
-                  "include": "#attribute"
-                },
-                {
-                  "match": "(?:\\b_*[A-Z][_A-Z0-9]*\\b)",
-                  "name": "variable.other.constant.c3"
-                },
-                {
-                  "match": ",",
-                  "name": "punctuation.separator.c3"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "begin": "(?=\\bconstdef\\b)",
-          "end": "(?<=\\})",
-          "patterns": [
-            {
-              "begin": "\\bconstdef\\b",
-              "beginCaptures": {
-                "0": {
-                  "name": "keyword.declaration.constdef.c3"
-                }
-              },
-              "end": "(?=\\{)",
-              "name": "meta.constdef.c3",
-              "patterns": [
-                {
-                  "include": "#comments"
-                },
-                {
-                  "match": "(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)",
-                  "name": "entity.name.type.enum.c3"
-                },
-                {
-                  "include": "#attribute"
-                }
-              ]
-            },
-            {
-              "begin": "\\{",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.section.block.begin.c3"
-                }
-              },
-              "end": "\\}",
-              "endCaptures": {
-                "0": {
-                  "name": "punctuation.section.block.end.c3"
-                }
-              },
-              "name": "meta.constdef.body.c3",
-              "patterns": [
-                {
-                  "include": "#comments"
-                },
-                {
-                  "begin": "=",
-                  "beginCaptures": {
-                    "0": {
-                      "name": "keyword.operator.assignment.c3"
-                    }
-                  },
-                  "end": "(?=,|\\})",
-                  "patterns": [
-                    {
-                      "include": "#expression"
-                    }
-                  ]
+                  "include": "#block"
                 },
                 {
                   "include": "#attribute"
@@ -2046,10 +1979,7 @@
     "type": {
       "patterns": [
         {
-          "include": "#path"
-        },
-        {
-          "begin": "\\b(void|bool|char|double|float|float16|bfloat|int128|ichar|int|iptr|isz|long|short|uint128|uint|ulong|uptr|ushort|usz|float128|any|fault|typeid)\\b|(\\$?\\b(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)\\b)",
+          "begin": "\\b(void|bool|char|double|float|float16|bfloat|int128|ichar|int|iptr|isz|sz|long|short|uint128|uint|ulong|uptr|ushort|usz|float128|any|fault|typeid|untypedlist)\\b|(\\$?\\b(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)\\b)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.built-in.primitive.c3"
@@ -2058,7 +1988,7 @@
               "name": "support.type.c3"
             }
           },
-          "end": "(?=\\*>|[^ \\t*\\[?{])",
+          "end": "(?=\\*>|[^ \\t*\\[?{:]|:(?!:))",
           "patterns": [
             {
               "include": "#comments"
@@ -2068,46 +1998,52 @@
             },
             {
               "include": "#type_suffix"
+            },
+            {
+              "include": "#type_access"
             }
           ]
         },
         {
           "include": "#type_expr"
+        },
+        {
+          "include": "#path"
         }
       ]
+    },
+    "type_access": {
+      "captures": {
+        "1": {
+          "name": "punctuation.accessor.c3"
+        },
+        "2": {
+          "name": "variable.other.constant.c3"
+        }
+      },
+      "match": "(::)\\s*((?:\\b_*[a-z][_a-zA-Z0-9]*\\b))"
     },
     "type_expr": {
       "patterns": [
         {
-          "begin": "\\$(?:typeof|typefrom|evaltype)\\b",
+          "begin": "\\$(?:Typeof|Typefrom|typeof|typefrom|evaltype|vatype)\\b",
           "beginCaptures": {
             "0": {
-              "name": "storage.type.c3"
+              "name": "support.type.c3"
             }
           },
-          "end": "(?<=\\))",
+          "end": "(?=[^ \\t*\\[?(:]|:(?!:))",
           "patterns": [
             {
               "include": "#parens"
-            }
-          ]
-        },
-        {
-          "begin": "\\$vatype\\b",
-          "beginCaptures": {
-            "0": {
-              "name": "storage.type.c3"
-            }
-          },
-          "end": "(?<=\\])",
-          "patterns": [
+            },
             {
-              "include": "#brackets"
+              "include": "#type_suffix"
+            },
+            {
+              "include": "#type_access"
             }
           ]
-        },
-        {
-          "include": "#type_suffix"
         }
       ]
     },
@@ -2117,7 +2053,7 @@
           "include": "#path"
         },
         {
-          "begin": "\\b(void|bool|char|double|float|float16|bfloat|int128|ichar|int|iptr|isz|long|short|uint128|uint|ulong|uptr|ushort|usz|float128|any|fault|typeid)\\b|(\\$?\\b(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)\\b)",
+          "begin": "\\b(void|bool|char|double|float|float16|bfloat|int128|ichar|int|iptr|isz|sz|long|short|uint128|uint|ulong|uptr|ushort|usz|float128|any|fault|typeid|untypedlist)\\b|(\\$?\\b(?:\\b_*[A-Z][_A-Z0-9]*[a-z][_a-zA-Z0-9]*\\b)\\b)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.built-in.primitive.c3"
@@ -2126,7 +2062,7 @@
               "name": "support.type.c3"
             }
           },
-          "end": "(?=[^ \\t*\\[?@])",
+          "end": "(?=[^ \\t*\\[?])",
           "patterns": [
             {
               "include": "#comments"

@@ -1,5 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "aliases": [
+    "comark"
+  ],
   "displayName": "MDC",
   "injectionSelector": "L:text.html.markdown",
   "name": "mdc",
@@ -110,8 +113,29 @@
           "name": "punctuation.definition.tag.end.component"
         }
       },
-      "match": "(?x)(               # attributes\n    ({)\n      ([^{]*)\n    (})\n  )",
+      "match": "(?x)(               # attributes\n    ({)\n      ((?:[^{}'\"]+|'[^']*'|\"[^\"]*\")*)\n    (})\n  )",
       "name": "attributes.mdc"
+    },
+    "binding": {
+      "captures": {
+        "1": {
+          "name": "punctuation.section.embedded.begin.mdc"
+        },
+        "2": {
+          "name": "variable.other.mdc"
+        },
+        "3": {
+          "name": "keyword.operator.logical.mdc"
+        },
+        "4": {
+          "name": "string.unquoted.mdc"
+        },
+        "5": {
+          "name": "punctuation.section.embedded.end.mdc"
+        }
+      },
+      "match": "(?x)\n  (\\{\\{)                       # opening braces\n  \\s*\n  ((?:[^|}]|\\|(?!\\|))+?)       # variable / dot-path\n  \\s*\n  (?:\n    (\\|\\|)                     # default operator\n    \\s*\n    ([^}]+?)                     # default value\n    \\s*\n  )?\n  (\\}\\})                        # closing braces",
+      "name": "meta.binding.mdc"
     },
     "block": {
       "patterns": [
@@ -163,7 +187,7 @@
       "while": "(^|\\G)\\s*(>) ?"
     },
     "component_block": {
-      "begin": "(?x)\n  (^|\\G)(\\s*)\n  (:{2,})     # component colons\n  (?i:\n    (\\w[\\w\\d-]+)   # component name\n    (                 # folowing spaces or attributes\n        \\s*\n      | \\s*({[^{]*})\n    )\n    $\n  )",
+      "begin": "(?x)\n  (^|\\G)(\\s*)\n  (:{2,})     # component colons\n  (?i:\n    (\\w[\\w\\d-]+)   # component name\n    (                 # folowing spaces or attributes\n        \\s*\n      | \\s*(\\{(?:[^{}'\"]+|'[^']*'|\"[^\"]*\")*\\})\n    )\n    $\n  )",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.tag.start.mdc"
@@ -257,7 +281,7 @@
           ]
         }
       },
-      "match": "(?x)\n  (^|\\G|\\s+)\n  (:)              # component colon\n  (?i:             # component name\n    (\\w[\\w\\d-]*)\n  )\n  (\n      ({[^}]*})        # attributes\n      (\\[[^\\]]*\\])? # slot\n      # reverse order\n    | (\\[[^\\]]*\\])  # slot\n      ({[^}]*})?       # attributes\n  )?\n  \\s",
+      "match": "(?x)\n  (^|\\G|\\s+)\n  (:)              # component colon\n  (?i:             # component name\n    (\\w[\\w\\d-]*)\n  )\n  (\n      (\\{(?:[^{}'\"]+|'[^']*'|\"[^\"]*\")*\\}) # attributes\n      (\\[[^\\]]*\\])?                          # slot\n    | (\\[[^\\]]*\\])                           # slot\n      (\\{(?:[^{}'\"]+|'[^']*'|\"[^\"]*\")*\\})? # attributes\n  )?\n  \\s",
       "name": "inline.component.mdc"
     },
     "entities": {
@@ -472,6 +496,9 @@
     "inline": {
       "patterns": [
         {
+          "include": "#binding"
+        },
+        {
           "include": "#component_inline"
         },
         {
@@ -479,6 +506,9 @@
         },
         {
           "include": "#attributes"
+        },
+        {
+          "include": "text.html.markdown#inline"
         }
       ]
     },
@@ -527,7 +557,7 @@
       "name": "meta.paragraph.markdown",
       "patterns": [
         {
-          "include": "text.html.markdown#inline"
+          "include": "#inline"
         },
         {
           "include": "text.html.derivative"

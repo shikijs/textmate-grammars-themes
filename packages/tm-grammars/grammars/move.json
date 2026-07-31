@@ -102,6 +102,10 @@
         }
       ]
     },
+    "address_literal": {
+      "match": "\\b0x\\h+\\b",
+      "name": "support.constant.address.base16.move"
+    },
     "annotation": {
       "begin": "#\\[",
       "end": "]",
@@ -369,9 +373,6 @@
           "include": "#move_copy"
         },
         {
-          "include": "#resource_methods"
-        },
-        {
           "include": "#self_access"
         },
         {
@@ -513,9 +514,6 @@
       "patterns": [
         {
           "include": "#comments"
-        },
-        {
-          "include": "#resource_methods"
         },
         {
           "include": "#self_access"
@@ -724,10 +722,6 @@
         }
       ]
     },
-    "inline": {
-      "match": "\\b(inline)\\b",
-      "name": "storage.modifier.visibility.inline.move"
-    },
     "label": {
       "match": "'[a-z][0-9_a-z]*",
       "name": "string.quoted.single.label.move"
@@ -745,6 +739,10 @@
       "name": "meta.literal.move",
       "patterns": [
         {
+          "match": "@[0-9][0-9_]*",
+          "name": "support.constant.address.decimal.move"
+        },
+        {
           "match": "@0x\\h+",
           "name": "support.constant.address.base16.move"
         },
@@ -753,12 +751,28 @@
           "name": "support.constant.address.name.move"
         },
         {
-          "match": "0x[_\\h]+(?:u(?:8|16|32|64|128|256))?",
-          "name": "constant.numeric.hex.move"
+          "captures": {
+            "1": {
+              "name": "constant.numeric.hex.move"
+            },
+            "2": {
+              "name": "entity.name.type.integer.move"
+            }
+          },
+          "match": "\\b(0x[_\\h]+)([iu](8|16|32|64|128|256))?\\b",
+          "name": "meta.constant.numeric.hex.move"
         },
         {
-          "match": "(?<!\\w|(?<!\\.)\\.)[0-9][0-9_]*(?:\\.(?!\\.)(?:[0-9][0-9_]*)?)?(?:[Ee][-+]?[0-9_]+)?(?:u(?:8|16|32|64|128|256))?",
-          "name": "constant.numeric.move"
+          "captures": {
+            "1": {
+              "name": "constant.numeric.decimal.move"
+            },
+            "2": {
+              "name": "entity.name.type.integer.move"
+            }
+          },
+          "match": "\\b([0-9][0-9_]*)([iu](8|16|32|64|128|256))?\\b",
+          "name": "meta.constant.numeric.move"
         },
         {
           "begin": "\"",
@@ -889,7 +903,7 @@
           "name": "meta.match.block.move",
           "patterns": [
             {
-              "match": "\\b(=>)\\b",
+              "match": "=>",
               "name": "operator.match.move"
             },
             {
@@ -1063,7 +1077,7 @@
       "name": "keyword.control.phantom.move"
     },
     "primitives": {
-      "match": "\\b(u8|u16|u32|u64|u128|u256|address|bool|signer)\\b",
+      "match": "\\b([iu](8|16|32|64|128|256)|address|bool|signer)\\b",
       "name": "support.type.primitives.move"
     },
     "public": {
@@ -1423,8 +1437,8 @@
           "name": "variable.language.self.use.fun.move"
         },
         {
-          "match": "\\b(_______[a-z][0-9_a-z]+)\\b",
-          "name": "entity.name.function.use.move"
+          "match": "\\b([a-z][0-9_a-z]*)\\b",
+          "name": "meta.entity.name.function.use.move"
         },
         {
           "include": "#types"

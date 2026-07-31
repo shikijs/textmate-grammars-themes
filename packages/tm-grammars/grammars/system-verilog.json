@@ -172,7 +172,7 @@
               "name": "storage.type.interface.systemverilog"
             }
           },
-          "match": "[\\t\\n\\r ]*\\b([A-Z_a-z][$0-9A-Z_a-z]*)[\\t\\n\\r ]+[A-Z_a-z][\\t\\n ,0-9=A-Z_a-z]*"
+          "match": "[\\t\\n\\r ]*(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])[\\t\\n\\r ]+[A-Z_a-z][\\t\\n $,0-9=A-Z_a-z]*"
         },
         {
           "include": "#storage-scope"
@@ -188,7 +188,7 @@
           "name": "entity.name.type.module.systemverilog"
         }
       },
-      "match": "[\\t\\n\\r ]*\\b(bind)[\\t\\n\\r ]+([A-Z_a-z][$.0-9A-Z_a-z]*)\\b",
+      "match": "[\\t\\n\\r ]*\\b(bind)[\\t\\n\\r ]+([A-Z_a-z][$.0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])",
       "name": "meta.definition.systemverilog"
     },
     "built-ins": {
@@ -295,7 +295,7 @@
               "name": "keyword.operator.param.systemverilog"
             }
           },
-          "match": "[\\t\\n\\r ]+\\b([A-Z_a-z][$0-9A-Z_a-z]*)[\\t\\n\\r ]*(#)\\(",
+          "match": "[\\t\\n\\r ]+(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])[\\t\\n\\r ]*(#)\\(",
           "name": "meta.typedef.class.systemverilog"
         },
         {
@@ -377,7 +377,7 @@
               "name": "variable.other.constant.preprocessor.systemverilog"
             }
           },
-          "match": "(`)(ifdef|ifndef|elsif|define|undef|pragma)[\\t\\n\\r ]+([A-Z_a-z][$0-9A-Z_a-z]*)\\b"
+          "match": "(`)(ifdef|ifndef|elsif|define|undef|pragma)[\\t\\n\\r ]+([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])"
         },
         {
           "captures": {
@@ -420,7 +420,7 @@
               "name": "variable.other.constant.preprocessor.systemverilog"
             }
           },
-          "match": "(`)([A-Z_a-z][$0-9A-Z_a-z]*)\\b"
+          "match": "(`)([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])"
         }
       ]
     },
@@ -594,7 +594,7 @@
               "name": "entity.name.function.systemverilog"
             }
           },
-          "match": "[\\t\\n\\r ]*(?:\\b([A-Z_a-z][$0-9A-Z_a-z]*)(::))?([A-Z_a-z][$0-9A-Z_a-z]*\\b[\\t\\n\\r ]+)?(?:\\b((?:|un)signed)\\b[\\t\\n\\r ]*)?(?:(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])[\\t\\n\\r ]*)?\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b[\\t\\n\\r ]*(?=[(;])"
+          "match": "[\\t\\n\\r ]*(?:(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(::))?([A-Z_a-z][$0-9A-Z_a-z]*(?![$0-9A-Z_a-z])[\\t\\n\\r ]+)?(?:\\b((?:|un)signed)\\b[\\t\\n\\r ]*)?(?:(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])[\\t\\n\\r ]*)?(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])[\\t\\n\\r ]*(?=[(;])"
         },
         {
           "include": "#keywords"
@@ -617,7 +617,7 @@
     "identifiers": {
       "patterns": [
         {
-          "match": "\\b[A-Z_a-z][$0-9A-Z_a-z]*\\b",
+          "match": "(?<![$0-9A-Z_a-z])[A-Z_a-z][$0-9A-Z_a-z]*(?![$0-9A-Z_a-z])",
           "name": "variable.other.identifier.systemverilog"
         },
         {
@@ -738,7 +738,7 @@
       ]
     },
     "module-declaration": {
-      "begin": "[\\t\\n\\r ]*\\b((?:macro)?module|interface|program|package|modport)[\\t\\n\\r ]+(?:((?:st|autom)atic)[\\t\\n\\r ]+)?([A-Z_a-z][$0-9A-Z_a-z]*)\\b",
+      "begin": "[\\t\\n\\r ]*\\b((?:macro)?module|interface|program|package|modport)[\\t\\n\\r ]+(?:((?:st|autom)atic)[\\t\\n\\r ]+)?([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.systemverilog"
@@ -828,7 +828,7 @@
           "include": "#port-net-parameter"
         },
         {
-          "match": "\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b(?=[\\t\\n\\r ]*(\\(|$))",
+          "match": "(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])(?=[\\t\\n\\r ]*(\\(|$))",
           "name": "variable.other.module.systemverilog"
         },
         {
@@ -837,7 +837,7 @@
       ]
     },
     "module-parameters": {
-      "begin": "[\\t\\n\\r ]*\\b(?:(bind)[\\t\\n\\r ]+([A-Z_a-z][$.0-9A-Z_a-z]*)[\\t\\n\\r ]+)?([A-Z_a-z][$0-9A-Z_a-z]*)[\\t\\n\\r ]+(?!intersect|and|or|throughout|within)(?=#[^#])",
+      "begin": "^[\\t ]*\\b(?:(bind)[\\t ]+([A-Z_a-z][$.0-9A-Z_a-z]*)[\\t ]+)?(?!\\b(?:intersect|and|or|throughout|within)\\b)([A-Z_a-z][$0-9A-Z_a-z]*)[\\t ]*(?=#[^#]|$)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.systemverilog"
@@ -858,7 +858,7 @@
       "name": "meta.module.parameters.systemverilog",
       "patterns": [
         {
-          "match": "\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b(?=[\\t\\n\\r ]*\\()",
+          "match": "(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])(?=[\\t\\n\\r ]*\\()",
           "name": "variable.other.module.systemverilog"
         },
         {
@@ -883,7 +883,7 @@
           "include": "#port-net-parameter"
         },
         {
-          "match": "\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b(?=[\\t\\n\\r ]*$)",
+          "match": "(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])(?=[\\t\\n\\r ]*$)",
           "name": "variable.other.module.systemverilog"
         },
         {
@@ -1042,7 +1042,7 @@
               ]
             }
           },
-          "match": ",?[\\t\\n\\r ]*(?:\\b(output|input|inout|ref)\\b[\\t\\n\\r ]*)?(?:\\b(localparam|parameter|var|supply[01]|tri|triand|trior|trireg|tri[01]|uwire|wire|wand|wor)\\b[\\t\\n\\r ]*)?(?:\\b([A-Z_a-z][$0-9A-Z_a-z]*)(::))?(?:([A-Z_a-z][$0-9A-Z_a-z]*)\\b[\\t\\n\\r ]*)?(?:\\b((?:|un)signed)\\b[\\t\\n\\r ]*)?(?:(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])[\\t\\n\\r ]*)?(?<!(?<!#)[-!%\\&(*+/:<-?^|~][\\t\\n\\r ]*)\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b[\\t\\n\\r ]*(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])?[\\t\\n\\r ]*(?=[),/;=]|$)",
+          "match": ",?[\\t\\n\\r ]*(?:\\b(output|input|inout|ref)\\b[\\t\\n\\r ]*)?(?:\\b(localparam|parameter|var|supply[01]|tri|triand|trior|trireg|tri[01]|uwire|wire|wand|wor)\\b[\\t\\n\\r ]*)?(?:(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(::))?(?:([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])[\\t\\n\\r ]*)?(?:\\b((?:|un)signed)\\b[\\t\\n\\r ]*)?(?:(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])[\\t\\n\\r ]*)?(?<!(?<!#)[-!%\\&(*+/:<-?^|~][\\t\\n\\r ]*)(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])[\\t\\n\\r ]*(\\[[]\\t\\n\\r $%'-+\\--:A-\\[_-z]*])?[\\t\\n\\r ]*(?=[),/;=]|$)",
           "name": "meta.port-net-parameter.declaration.systemverilog"
         }
       ]
@@ -1096,7 +1096,7 @@
           "name": "entity.name.function.systemverilog"
         }
       },
-      "match": "[\\t\\n\\r ]*\\b(sequence)[\\t\\n\\r ]+([A-Z_a-z][$0-9A-Z_a-z]*)\\b",
+      "match": "[\\t\\n\\r ]*\\b(sequence)[\\t\\n\\r ]+([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])",
       "name": "meta.sequence.systemverilog"
     },
     "storage-scope": {
@@ -1108,7 +1108,7 @@
           "name": "keyword.operator.scope.systemverilog"
         }
       },
-      "match": "\\b([A-Z_a-z][$0-9A-Z_a-z]*)(::)",
+      "match": "(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(::)",
       "name": "meta.scope.systemverilog"
     },
     "strings": {
@@ -1224,7 +1224,7 @@
           "name": "entity.name.type.class.systemverilog"
         }
       },
-      "match": "[\\t\\n\\r ]*\\b(primitive|package|constraint|interface|covergroup|program)[\\t\\n\\r ]+\\b([A-Z_a-z][$0-9A-Z_a-z]*)\\b",
+      "match": "[\\t\\n\\r ]*\\b(primitive|package|constraint|interface|covergroup|program)[\\t\\n\\r ]+(?<![$0-9A-Z_a-z])([A-Z_a-z][$0-9A-Z_a-z]*)(?![$0-9A-Z_a-z])",
       "name": "meta.definition.systemverilog"
     },
     "sv-local": {
@@ -1252,7 +1252,7 @@
       "name": "support.class.systemverilog"
     },
     "system-tf": {
-      "match": "\\$[$0-9A-Z_a-z][$0-9A-Z_a-z]*\\b",
+      "match": "(?<![$0-9A-Z_a-z])\\$[$0-9A-Z_a-z]+(?![$0-9A-Z_a-z])",
       "name": "support.function.systemverilog"
     },
     "tables": {

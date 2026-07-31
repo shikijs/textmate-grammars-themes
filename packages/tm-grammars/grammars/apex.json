@@ -1573,7 +1573,7 @@
       "name": "entity.name.function.apex"
     },
     "multiline-string-literal": {
-      "begin": "'''",
+      "begin": "'''(?=$)",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.apex"
@@ -1585,13 +1585,10 @@
           "name": "punctuation.definition.string.end.apex"
         }
       },
-      "name": "string.quoted.single.multiline.apex",
+      "name": "string.quoted.single.apex string.quoted.single.multiline.apex",
       "patterns": [
         {
           "include": "#string-character-escape"
-        },
-        {
-          "include": "#string-template-expression"
         }
       ]
     },
@@ -2310,7 +2307,7 @@
       ]
     },
     "string-template-expression": {
-      "begin": "\\$\\{",
+      "begin": "(?<!\\\\)\\$\\{",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.template-expression.begin.apex"
@@ -2325,7 +2322,7 @@
       "name": "meta.template-expression.apex",
       "patterns": [
         {
-          "match": "@?[_[:alpha:]][_[:alnum:]]*",
+          "match": "\\G@?[A-Z_a-z][0-9A-Z_a-z]*(?:\\.[A-Z_a-z][0-9A-Z_a-z]*)*",
           "name": "variable.other.readwrite.apex"
         }
       ]
@@ -3087,6 +3084,9 @@
         "2": {
           "patterns": [
             {
+              "include": "#multiline-string-literal"
+            },
+            {
               "include": "#string-literal"
             }
           ]
@@ -3100,6 +3100,9 @@
         },
         "5": {
           "patterns": [
+            {
+              "include": "#multiline-string-literal"
+            },
             {
               "include": "#string-literal"
             }

@@ -22,6 +22,9 @@ const JS_ENGINE_INDEPENDENT_SNAPSHOT: string[] = [
   'splunk',
   'sql',
   'stylus',
+  'racket',
+  'cobol',
+  'hlsl',
 ]
 
 for (const g of grammars) {

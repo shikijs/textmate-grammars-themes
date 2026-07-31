@@ -299,10 +299,13 @@
           "name": "storage.type.is.gdscript"
         },
         "2": {
+          "name": "storage.type.not.gdscript"
+        },
+        "3": {
           "name": "entity.name.type.class.gdscript"
         }
       },
-      "match": "\\s+(is)\\s+([a-zA-Z_]\\w*)"
+      "match": "\\s+(is)\\s+(not?)\\s+\\s+([a-zA-Z_]\\w*)"
     },
     "class_name": {
       "captures": {
@@ -485,8 +488,8 @@
       ]
     },
     "function_call": {
-      "begin": "(?=\\b[a-zA-Z_]\\w*\\b\\()",
-      "comment": "Regular function call of the type \"name(args)\"",
+      "begin": "(?=\\b[a-zA-Z_]\\w*\\b\\s*\\()",
+      "comment": "Regular function call of the type \"name(args)\" — allows optional whitespace between name and parens",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -513,7 +516,7 @@
           "name": "entity.name.function.gdscript"
         }
       },
-      "end": "(:)",
+      "end": "(:)|\n",
       "endCaptures": {
         "1": {
           "name": "punctuation.section.function.begin.gdscript"
@@ -665,7 +668,7 @@
     },
     "letter": {
       "match": "\\b(?:true|false|null)\\b",
-      "name": "constant.language.gdscript"
+      "name": "constant.language.literal.gdscript"
     },
     "line_continuation": {
       "patterns": [
@@ -718,10 +721,10 @@
     "match_keyword": {
       "captures": {
         "1": {
-          "name": "keyword.control.gdscript"
+          "name": "keyword.control.flow.gdscript"
         }
       },
-      "match": "^\n\\s*(match)"
+      "match": "(?:^|:)\\s*(match)\\b"
     },
     "nodepath_function": {
       "begin": "(get_node_or_null|has_node|has_node_and_resource|find_node|get_node)\\s*(\\()",
@@ -977,7 +980,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "(?x)\n  ^\\s*(\n    case | match\n  )(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n"
+          "match": "(?x)\n  (?:^|:)\\s*(\n    case | match\n  )(?=\\s*([-+\\w\\d(\\[{'\":#]|$))\\b\n"
         }
       ]
     },

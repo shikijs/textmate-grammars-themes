@@ -77,26 +77,20 @@
             {
               "begin": "^(={4,})\\s*$",
               "comment": "example block",
-              "end": "(?<=\\1)",
+              "end": "^(\\1)$",
               "patterns": [
                 {
-                  "include": "#inlines"
-                },
-                {
-                  "include": "#list"
+                  "include": "$self"
                 }
               ]
             },
             {
               "begin": "^(-{2})\\s*$",
               "comment": "open block",
-              "end": "(?<=\\1)",
+              "end": "^(\\1)$",
               "patterns": [
                 {
-                  "include": "#inlines"
-                },
-                {
-                  "include": "#list"
+                  "include": "$self"
                 }
               ]
             }
@@ -109,7 +103,7 @@
               "name": "entity.name.function.asciidoc"
             }
           },
-          "end": "^\\p{Blank}*$",
+          "end": "^\\p{Blank}*$|(?=^/{2})",
           "name": "markup.admonition.asciidoc",
           "patterns": [
             {
@@ -263,6 +257,17 @@
           "name": "markup.substitution.attribute-reference.asciidoc"
         },
         {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.attribute-reference.begin.asciidoc"
+            },
+            "2": {
+              "name": "support.constant.attribute-name.asciidoc"
+            },
+            "3": {
+              "name": "punctuation.definition.attribute-reference.end.asciidoc"
+            }
+          },
           "match": "(?<!\\\\)(\\{)(\\w+(?:[\\-]\\w+)*)(?<!\\\\)(\\})",
           "name": "markup.substitution.attribute-reference.asciidoc"
         }
@@ -300,7 +305,7 @@
             }
           },
           "contentName": "string.unquoted.asciidoc",
-          "end": "\\]|^$",
+          "end": "(?<!\\\\)\\]|^$",
           "name": "markup.macro.inline.bibtex.asciidoc"
         }
       ]
@@ -354,7 +359,7 @@
             }
           },
           "comment": "attributes",
-          "match": "(?<=\\{|,|.|#|\"|'|%)([^\\],.#%]+)",
+          "match": "(?<=\\{|,|.|#|\"|'|%)((?:[^\\],.#%]|\\](?=[ \\t]*\\S))+)",
           "name": "markup.meta.attribute-list.asciidoc"
         }
       ]
@@ -642,7 +647,7 @@
             }
           },
           "contentName": "string.unquoted.asciidoc",
-          "end": "\\]|^$",
+          "end": "(?<!\\\\)\\]|^$",
           "name": "markup.other.footnote.asciidoc",
           "patterns": [
             {
@@ -699,7 +704,7 @@
               "name": "punctuation.separator.asciidoc"
             }
           },
-          "match": "^(\\p{Word}+)(::)(\\S*?)(\\[)((?:\\\\\\]|[^\\]])*?)(\\])$",
+          "match": "^(\\p{Word}+)(::)(\\S*?)(\\[)((?:\\\\\\]|[^\\]])*?)(\\])[ \\t]*$",
           "name": "markup.macro.block.general.asciidoc"
         }
       ]
@@ -780,6 +785,106 @@
         }
       ]
     },
+    "indexterm-concealed": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.indexterm.begin.asciidoc"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#attribute-reference"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.definition.indexterm.end.asciidoc"
+            }
+          },
+          "comment": "concealed index term: (((primary, secondary, tertiary)))",
+          "match": "(?<!\\\\)(\\(\\(\\()(.*?)(\\)\\)\\))",
+          "name": "markup.other.indexterm.concealed.asciidoc"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.function.asciidoc"
+            },
+            "2": {
+              "name": "punctuation.separator.asciidoc"
+            },
+            "3": {
+              "name": "punctuation.definition.indexterm.begin.asciidoc"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#attribute-reference"
+                }
+              ]
+            },
+            "5": {
+              "name": "punctuation.definition.indexterm.end.asciidoc"
+            }
+          },
+          "comment": "concealed index term macro: indexterm:[primary, secondary, tertiary]",
+          "match": "(?<!\\\\)(indexterm)(:)(\\[)((?:\\\\\\]|[^\\]])*?)(\\])",
+          "name": "markup.other.indexterm.concealed.asciidoc"
+        }
+      ]
+    },
+    "indexterm-flow": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.indexterm.begin.asciidoc"
+            },
+            "2": {
+              "name": "markup.other.indexterm.flow.asciidoc",
+              "patterns": [
+                {
+                  "include": "#attribute-reference"
+                }
+              ]
+            },
+            "3": {
+              "name": "punctuation.definition.indexterm.end.asciidoc"
+            }
+          },
+          "comment": "flow (visible) index term: ((primary)); reject a preceding ( so the inside of a concealed (((…))) (incl. escaped \\(((…))) ) is not matched",
+          "match": "(?<![\\\\(])(\\(\\()([^(].*?)(\\)\\))"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.function.asciidoc"
+            },
+            "2": {
+              "name": "punctuation.separator.asciidoc"
+            },
+            "3": {
+              "name": "punctuation.definition.indexterm.begin.asciidoc"
+            },
+            "4": {
+              "name": "markup.other.indexterm.flow.asciidoc",
+              "patterns": [
+                {
+                  "include": "#attribute-reference"
+                }
+              ]
+            },
+            "5": {
+              "name": "punctuation.definition.indexterm.end.asciidoc"
+            }
+          },
+          "comment": "flow (visible) index term macro: indexterm2:[primary]",
+          "match": "(?<!\\\\)(indexterm2)(:)(\\[)((?:\\\\\\]|[^\\]])*?)(\\])"
+        }
+      ]
+    },
     "inlines": {
       "patterns": [
         {
@@ -811,6 +916,12 @@
         },
         {
           "include": "#footnote-macro"
+        },
+        {
+          "include": "#indexterm-concealed"
+        },
+        {
+          "include": "#indexterm-flow"
         },
         {
           "include": "#image-macro"
@@ -972,33 +1083,33 @@
       "patterns": [
         {
           "captures": {
-            "1": {
-              "name": "markup.list.bullet.asciidoc"
+            "0": {
+              "name": "punctuation.definition.list.begin.asciidoc punctuation.definition.list.begin.markdown"
             },
-            "2": {
-              "name": "markup.todo.box.asciidoc"
+            "1": {
+              "name": "punctuation.definition.metadata.asciidoc punctuation.definition.metadata.markdown"
             }
           },
           "match": "^\\s*(-)\\p{Blank}(\\[[\\p{Blank}\\*x]\\])(?=\\p{Blank})",
-          "name": "markup.todo.asciidoc"
+          "name": "markup.list.todo.asciidoc"
         },
         {
           "captures": {
-            "1": {
-              "name": "markup.list.bullet.asciidoc"
+            "0": {
+              "name": "punctuation.definition.list.begin.asciidoc punctuation.definition.list.begin.markdown"
             }
           },
           "match": "^\\p{Blank}*(-|\\*{1,5}|\\u2022{1,5})(?=\\p{Blank})",
-          "name": "markup.list.asciidoc"
+          "name": "markup.list.unnumbered.asciidoc markup.list.unnumbered.markdown"
         },
         {
           "captures": {
-            "1": {
-              "name": "markup.list.bullet.asciidoc"
+            "0": {
+              "name": "punctuation.definition.list.begin.asciidoc punctuation.definition.list.begin.markdown"
             }
           },
           "match": "^\\p{Blank}*(\\.{1,5}|\\d+\\.|[a-zA-Z]\\.|[IVXivx]+\\))(?=\\p{Blank})",
-          "name": "markup.list.asciidoc"
+          "name": "markup.list.numbered.asciidoc markup.list.numbered.markdown"
         },
         {
           "captures": {
@@ -1025,7 +1136,7 @@
       "patterns": [
         {
           "begin": "(?=(?>(?:^\\[(listing)((?:,|#|\\.|%)[^\\]]+)*\\]$)))",
-          "end": "((?<=--)$|^\\p{Blank}*$)",
+          "end": "((?<=--|\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.block.listing.asciidoc",
           "patterns": [
             {
@@ -1046,6 +1157,11 @@
             {
               "begin": "^(-{4,})\\s*$",
               "comment": "listing block",
+              "end": "^(\\1)$"
+            },
+            {
+              "begin": "^(\\.{4,})\\s*$",
+              "comment": "literal block",
               "end": "^(\\1)$"
             },
             {
@@ -1296,7 +1412,7 @@
             }
           },
           "contentName": "string.unquoted.asciidoc",
-          "end": "\\]|^$",
+          "end": "(?<!\\\\)\\]|^$",
           "name": "markup.macro.inline.passthrough.asciidoc",
           "patterns": [
             {
@@ -1366,7 +1482,7 @@
     "quote-paragraph": {
       "patterns": [
         {
-          "begin": "(?=(?>(?:^\\[(quote|verse)((?:,|#|\\.|%)([^,\\]]+))*\\]$)))",
+          "begin": "(?=(?>(?:^\\[(quote|verse)((?:,|#|\\.|%)(?:[^,\\]]|\\](?=[ \\t]*\\S))+)*\\]$)))",
           "end": "((?<=____|\"\"|--)$|^\\p{Blank}*$)",
           "name": "markup.italic.quotes.asciidoc",
           "patterns": [
@@ -1380,7 +1496,7 @@
                   ]
                 }
               },
-              "match": "^\\[(quote|verse)((?:,|#|\\.|%)([^,\\]]+))*\\]$"
+              "match": "^\\[(quote|verse)((?:,|#|\\.|%)(?:[^,\\]]|\\](?=[ \\t]*\\S))+)*\\]$"
             },
             {
               "include": "#block-title"
@@ -1418,6 +1534,32 @@
               "begin": "^(-{2})\\s*$",
               "comment": "open block",
               "end": "(?<=\\1)$",
+              "patterns": [
+                {
+                  "include": "#inlines"
+                },
+                {
+                  "include": "#list"
+                }
+              ]
+            },
+            {
+              "begin": "^(-{4,})\\s*$",
+              "comment": "listing-style verse delimiter",
+              "end": "^(\\1)$",
+              "patterns": [
+                {
+                  "include": "#inlines"
+                },
+                {
+                  "include": "#list"
+                }
+              ]
+            },
+            {
+              "begin": "^(\\.{4,})\\s*$",
+              "comment": "literal-style verse delimiter",
+              "end": "^(\\1)$",
               "patterns": [
                 {
                   "include": "#inlines"
@@ -1519,7 +1661,7 @@
     "source-asciidoctor": {
       "patterns": [
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(css|css.erb))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(css|css.erb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.css.asciidoc",
           "patterns": [
@@ -1534,17 +1676,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(css|css.erb))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(css|css.erb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -1614,7 +1753,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(html|htm|shtml|xhtml|inc|tmpl|tpl))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(html|htm|shtml|xhtml|inc|tmpl|tpl))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.basic.asciidoc",
           "patterns": [
@@ -1629,17 +1768,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(html|htm|shtml|xhtml|inc|tmpl|tpl))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(html|htm|shtml|xhtml|inc|tmpl|tpl))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -1709,7 +1845,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(ini|conf))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(ini|conf))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.ini.asciidoc",
           "patterns": [
@@ -1724,17 +1860,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(ini|conf))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(ini|conf))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -1804,7 +1937,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(java|bsh))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(java|bsh))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.java.asciidoc",
           "patterns": [
@@ -1819,17 +1952,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(java|bsh))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(java|bsh))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -1899,7 +2029,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(lua))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(lua))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.lua.asciidoc",
           "patterns": [
@@ -1914,17 +2044,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(lua))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(lua))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -1994,7 +2121,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(Makefile|makefile|GNUmakefile|OCamlMakefile))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(Makefile|makefile|GNUmakefile|OCamlMakefile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.makefile.asciidoc",
           "patterns": [
@@ -2009,17 +2136,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(Makefile|makefile|GNUmakefile|OCamlMakefile))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(Makefile|makefile|GNUmakefile|OCamlMakefile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2089,7 +2213,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(perl|pl|pm|pod|t|PL|psgi|vcl))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(perl|pl|pm|pod|t|PL|psgi|vcl))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.perl.asciidoc",
           "patterns": [
@@ -2104,17 +2228,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(perl|pl|pm|pod|t|PL|psgi|vcl))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(perl|pl|pm|pod|t|PL|psgi|vcl))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2184,7 +2305,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(R|r|s|S|Rprofile|\\{\\.r.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(R|r|s|S|Rprofile|\\{\\.r.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.r.asciidoc",
           "patterns": [
@@ -2199,17 +2320,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(R|r|s|S|Rprofile|\\{\\.r.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(R|r|s|S|Rprofile|\\{\\.r.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2279,7 +2397,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.ruby.asciidoc",
           "patterns": [
@@ -2294,17 +2412,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(ruby|rb|rbx|rjs|Rakefile|rake|cgi|fcgi|gemspec|irbrc|Capfile|ru|prawn|Cheffile|Gemfile|Guardfile|Hobofile|Vagrantfile|Appraisals|Rantfile|Berksfile|Berksfile.lock|Thorfile|Puppetfile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2374,7 +2489,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(php|php3|php4|php5|phpt|phtml|aw|ctp))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(php|php3|php4|php5|phpt|phtml|aw|ctp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.php.asciidoc",
           "patterns": [
@@ -2389,17 +2504,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(php|php3|php4|php5|phpt|phtml|aw|ctp))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(php|php3|php4|php5|phpt|phtml|aw|ctp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2478,7 +2590,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(sql|ddl|dml))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(sql|ddl|dml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.sql.asciidoc",
           "patterns": [
@@ -2493,17 +2605,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(sql|ddl|dml))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(sql|ddl|dml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2573,7 +2682,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(vb))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(vb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.vs_net.asciidoc",
           "patterns": [
@@ -2588,17 +2697,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(vb))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(vb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2668,7 +2774,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(xml|xsd|tld|jsp|pt|cpt|dtml|rss|opml))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(xml|xsd|tld|jsp|pt|cpt|dtml|rss|opml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.xml.asciidoc",
           "patterns": [
@@ -2683,17 +2789,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(xml|xsd|tld|jsp|pt|cpt|dtml|rss|opml))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(xml|xsd|tld|jsp|pt|cpt|dtml|rss|opml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2763,7 +2866,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(xsl|xslt))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(xsl|xslt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.xsl.asciidoc",
           "patterns": [
@@ -2778,17 +2881,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(xsl|xslt))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(xsl|xslt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2858,7 +2958,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(yaml|yml))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(yaml|yml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.yaml.asciidoc",
           "patterns": [
@@ -2873,17 +2973,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(yaml|yml))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(yaml|yml))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -2953,7 +3050,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(bat|batch))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(bat|batch))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.dosbatch.asciidoc",
           "patterns": [
@@ -2968,17 +3065,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(bat|batch))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(bat|batch))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3048,7 +3142,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(clj|cljs|clojure))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(clj|cljs|clojure))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.clojure.asciidoc",
           "patterns": [
@@ -3063,17 +3157,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(clj|cljs|clojure))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(clj|cljs|clojure))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3143,7 +3234,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(coffee|Cakefile|coffee.erb))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(coffee|Cakefile|coffee.erb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.coffee.asciidoc",
           "patterns": [
@@ -3158,17 +3249,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(coffee|Cakefile|coffee.erb))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(coffee|Cakefile|coffee.erb))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3238,7 +3326,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(c|h))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(c|h))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.c.asciidoc",
           "patterns": [
@@ -3253,17 +3341,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(c|h))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(c|h))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3333,7 +3418,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(cpp|c\\+\\+|cxx))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(cpp|c\\+\\+|cxx))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.cpp.asciidoc",
           "patterns": [
@@ -3348,17 +3433,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(cpp|c\\+\\+|cxx))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(cpp|c\\+\\+|cxx))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3428,7 +3510,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(patch|diff|rej))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(patch|diff|rej))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.diff.asciidoc",
           "patterns": [
@@ -3443,17 +3525,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(patch|diff|rej))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(patch|diff|rej))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3523,7 +3602,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(dockerfile|Dockerfile))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(dockerfile|Dockerfile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.dockerfile.asciidoc",
           "patterns": [
@@ -3538,17 +3617,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(dockerfile|Dockerfile))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(dockerfile|Dockerfile))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3618,7 +3694,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(COMMIT_EDITMSG|MERGE_MSG))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(COMMIT_EDITMSG|MERGE_MSG))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.git_commit.asciidoc",
           "patterns": [
@@ -3633,17 +3709,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(COMMIT_EDITMSG|MERGE_MSG))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(COMMIT_EDITMSG|MERGE_MSG))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3713,7 +3786,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(git-rebase-todo))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(git-rebase-todo))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.git_rebase.asciidoc",
           "patterns": [
@@ -3728,17 +3801,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(git-rebase-todo))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(git-rebase-todo))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3808,7 +3878,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(go|golang))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(go|golang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.go.asciidoc",
           "patterns": [
@@ -3823,17 +3893,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(go|golang))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(go|golang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3903,7 +3970,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(groovy|gvy))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(groovy|gvy))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.groovy.asciidoc",
           "patterns": [
@@ -3918,17 +3985,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(groovy|gvy))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(groovy|gvy))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -3998,7 +4062,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(jade|pug))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(jade|pug))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.pug.asciidoc",
           "patterns": [
@@ -4013,17 +4077,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(jade|pug))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(jade|pug))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4093,7 +4154,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(js|jsx|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(js|jsx|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.js.asciidoc",
           "patterns": [
@@ -4108,17 +4169,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(js|jsx|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(js|jsx|javascript|es6|mjs|cjs|dataviewjs|\\{\\.js.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4188,7 +4246,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(regexp))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(regexp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.js_regexp.asciidoc",
           "patterns": [
@@ -4203,17 +4261,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(regexp))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(regexp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4283,7 +4338,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(json|json5|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(json|json5|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.json.asciidoc",
           "patterns": [
@@ -4298,17 +4353,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(json|json5|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(json|json5|sublime-settings|sublime-menu|sublime-keymap|sublime-mousemap|sublime-theme|sublime-build|sublime-project|sublime-completions))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4378,7 +4430,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(jsonc))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(jsonc))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.jsonc.asciidoc",
           "patterns": [
@@ -4393,17 +4445,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(jsonc))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(jsonc))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4473,7 +4522,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(less))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(less))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.less.asciidoc",
           "patterns": [
@@ -4488,17 +4537,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(less))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(less))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4568,7 +4614,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(objectivec|objective-c|mm|objc|obj-c|m|h))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(objectivec|objective-c|mm|objc|obj-c|m|h))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.objc.asciidoc",
           "patterns": [
@@ -4583,17 +4629,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(objectivec|objective-c|mm|objc|obj-c|m|h))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(objectivec|objective-c|mm|objc|obj-c|m|h))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4663,7 +4706,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(swift))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(swift))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.swift.asciidoc",
           "patterns": [
@@ -4678,17 +4721,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(swift))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(swift))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4758,7 +4798,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(scss))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(scss))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.scss.asciidoc",
           "patterns": [
@@ -4773,17 +4813,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(scss))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(scss))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4853,7 +4890,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(perl6|p6|pl6|pm6|nqp))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(perl6|p6|pl6|pm6|nqp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.perl6.asciidoc",
           "patterns": [
@@ -4868,17 +4905,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(perl6|p6|pl6|pm6|nqp))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(perl6|p6|pl6|pm6|nqp))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -4948,7 +4982,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(powershell|ps1|psm1|psd1|pwsh))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(powershell|ps1|psm1|psd1|pwsh))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.powershell.asciidoc",
           "patterns": [
@@ -4963,17 +4997,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(powershell|ps1|psm1|psd1|pwsh))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(powershell|ps1|psm1|psd1|pwsh))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5043,7 +5074,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi|\\{\\.python.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi|\\{\\.python.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.python.asciidoc",
           "patterns": [
@@ -5058,17 +5089,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi|\\{\\.python.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(python|py|py3|rpy|pyw|cpy|SConstruct|Sconstruct|sconstruct|SConscript|gyp|gypi|\\{\\.python.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5138,7 +5166,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(julia|\\{\\.julia.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(julia|\\{\\.julia.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.julia.asciidoc",
           "patterns": [
@@ -5153,17 +5181,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(julia|\\{\\.julia.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(julia|\\{\\.julia.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5233,7 +5258,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(re))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(re))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.regexp_python.asciidoc",
           "patterns": [
@@ -5248,17 +5273,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(re))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(re))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5328,7 +5350,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(rust|rs|\\{\\.rust.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(rust|rs|\\{\\.rust.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.rust.asciidoc",
           "patterns": [
@@ -5343,17 +5365,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(rust|rs|\\{\\.rust.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(rust|rs|\\{\\.rust.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5423,7 +5442,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(scala|sbt))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(scala|sbt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.scala.asciidoc",
           "patterns": [
@@ -5438,17 +5457,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(scala|sbt))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(scala|sbt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5518,7 +5534,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(shell|sh|bash|zsh|bashrc|bash_profile|bash_login|profile|bash_logout|.textmate_init|\\{\\.bash.+?\\}))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(shell|sh|bash|zsh|bashrc|bash_profile|bash_login|profile|bash_logout|.textmate_init|\\{\\.bash.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.shell.asciidoc",
           "patterns": [
@@ -5533,17 +5549,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(shell|sh|bash|zsh|bashrc|bash_profile|bash_login|profile|bash_logout|.textmate_init|\\{\\.bash.+?\\}))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(shell|sh|bash|zsh|bashrc|bash_profile|bash_login|profile|bash_logout|.textmate_init|\\{\\.bash.+?\\}))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5613,7 +5626,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(typescript|ts))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(typescript|ts))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.ts.asciidoc",
           "patterns": [
@@ -5628,17 +5641,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(typescript|ts))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(typescript|ts))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5708,7 +5718,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(tsx))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(tsx))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.tsx.asciidoc",
           "patterns": [
@@ -5723,17 +5733,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(tsx))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(tsx))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5803,7 +5810,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(cs|csharp|c#))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(cs|csharp|c#))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.csharp.asciidoc",
           "patterns": [
@@ -5818,17 +5825,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(cs|csharp|c#))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(cs|csharp|c#))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5898,7 +5902,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(fs|fsharp|f#))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(fs|fsharp|f#))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.fsharp.asciidoc",
           "patterns": [
@@ -5913,17 +5917,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(fs|fsharp|f#))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(fs|fsharp|f#))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -5993,7 +5994,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(dart))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(dart))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.dart.asciidoc",
           "patterns": [
@@ -6008,17 +6009,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(dart))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(dart))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6088,7 +6086,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(handlebars|hbs))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(handlebars|hbs))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.handlebars.asciidoc",
           "patterns": [
@@ -6103,17 +6101,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(handlebars|hbs))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(handlebars|hbs))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6183,7 +6178,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(markdown|md))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(markdown|md))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.markdown.asciidoc",
           "patterns": [
@@ -6198,17 +6193,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(markdown|md))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(markdown|md))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6278,7 +6270,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(log))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(log))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.log.asciidoc",
           "patterns": [
@@ -6293,17 +6285,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(log))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(log))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6373,7 +6362,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(erlang))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(erlang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.erlang.asciidoc",
           "patterns": [
@@ -6388,17 +6377,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(erlang))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(erlang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6468,7 +6454,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(elixir))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(elixir))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.elixir.asciidoc",
           "patterns": [
@@ -6483,17 +6469,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(elixir))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(elixir))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6563,7 +6546,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(latex|tex))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(latex|tex))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.latex.asciidoc",
           "patterns": [
@@ -6578,17 +6561,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(latex|tex))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(latex|tex))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6658,7 +6638,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(bibtex))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(bibtex))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.bibtex.asciidoc",
           "patterns": [
@@ -6673,17 +6653,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(bibtex))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(bibtex))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6753,7 +6730,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(twig))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(twig))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.twig.asciidoc",
           "patterns": [
@@ -6768,17 +6745,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(twig))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(twig))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6848,7 +6822,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(yang))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(yang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.yang.asciidoc",
           "patterns": [
@@ -6863,17 +6837,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(yang))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(yang))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -6943,7 +6914,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(abap))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(abap))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.abap.asciidoc",
           "patterns": [
@@ -6958,17 +6929,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(abap))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(abap))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -7038,7 +7006,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(restructuredtext|rst))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(restructuredtext|rst))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.restructuredtext.asciidoc",
           "patterns": [
@@ -7053,17 +7021,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(restructuredtext|rst))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(restructuredtext|rst))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -7133,7 +7098,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(haskell))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(haskell))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.haskell.asciidoc",
           "patterns": [
@@ -7148,17 +7113,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(haskell))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(haskell))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -7228,7 +7190,7 @@
           ]
         },
         {
-          "begin": "(?=(?>(?:^\\[(source)(?:,|#)\\p{Blank}*(?i:(kotlin|kt))((?:,|#)[^\\]]+)*\\]$)))",
+          "begin": "(?=^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(kotlin|kt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$)",
           "end": "((?<=--|\\.\\.\\.\\.)$|^\\p{Blank}*$)",
           "name": "markup.code.kotlin.asciidoc",
           "patterns": [
@@ -7243,17 +7205,14 @@
                   ]
                 }
               },
-              "match": "^\\[(source)(?:,|#)\\p{Blank}*(?i:(kotlin|kt))((?:,|#)([^,\\]]+))*\\]$"
-            },
-            {
-              "include": "#inlines"
+              "match": "^\\[([^,]+|)\\p{Blank}*,\\p{Blank}*(?i:(kotlin|kt))(\\p{Blank}*,\\p{Blank}*[^\\]]*)?\\]$"
             },
             {
               "include": "#block-title"
             },
             {
               "begin": "(^|\\G)(-{4,})\\s*$",
-              "comment": "listing block",
+              "comment": "listing block explicit delimiter",
               "end": "(^|\\G)(\\2)\\s*$",
               "patterns": [
                 {
@@ -8574,7 +8533,7 @@
             }
           },
           "contentName": "string.unquoted.asciidoc",
-          "end": "\\]|^$",
+          "end": "(?<!\\\\)\\]|^$",
           "name": "markup.macro.inline.stem.asciidoc"
         }
       ]
@@ -9037,7 +8996,7 @@
             }
           },
           "contentName": "string.unquoted.asciidoc",
-          "end": "\\]|^$",
+          "end": "(?<!\\\\)\\]|^$",
           "name": "markup.reference.xref.asciidoc"
         }
       ]

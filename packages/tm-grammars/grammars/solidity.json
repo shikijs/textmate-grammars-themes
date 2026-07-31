@@ -537,6 +537,15 @@
           "include": "#type-primitive"
         },
         {
+          "include": "#declaration-storage-mapping"
+        },
+        {
+          "include": "#type-function"
+        },
+        {
+          "include": "#type-modifier-access"
+        },
+        {
           "include": "#type-modifier-extended-scope"
         },
         {
@@ -726,13 +735,13 @@
     "declaration-storage-mapping": {
       "patterns": [
         {
-          "begin": "\\b(mapping)\\b",
+          "begin": "\\b(mapping)\\s*\\(",
           "beginCaptures": {
             "1": {
               "name": "storage.type.mapping"
             }
           },
-          "end": "(?=\\))",
+          "end": "\\)",
           "patterns": [
             {
               "include": "#declaration-storage-mapping"
@@ -741,10 +750,10 @@
               "include": "#type-primitive"
             },
             {
-              "include": "#punctuation"
+              "include": "#operator"
             },
             {
-              "include": "#operator"
+              "include": "#punctuation"
             }
           ]
         },
@@ -1110,6 +1119,26 @@
         {
           "match": "'(?:\\\\'|[^'])*'",
           "name": "string.quoted.single"
+        }
+      ]
+    },
+    "type-function": {
+      "begin": "\\b(function)\\s*\\(",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type.function"
+        }
+      },
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#type-function"
+        },
+        {
+          "include": "#type-primitive"
+        },
+        {
+          "include": "#punctuation"
         }
       ]
     },

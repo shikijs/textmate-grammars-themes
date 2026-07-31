@@ -48,9 +48,6 @@
       "include": "#dynamic_type"
     },
     {
-      "include": "#primitive_functions"
-    },
-    {
       "include": "#language_constants"
     },
     {
@@ -88,6 +85,12 @@
     },
     {
       "include": "#functions"
+    },
+    {
+      "include": "#primitive_functions"
+    },
+    {
+      "include": "#function_call"
     }
   ],
   "repository": {
@@ -149,9 +152,6 @@
           "include": "#dynamic_type"
         },
         {
-          "include": "#primitive_functions"
-        },
-        {
           "include": "#language_constants"
         },
         {
@@ -189,6 +189,12 @@
         },
         {
           "include": "#conditional_compilation"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#function_call"
         }
       ]
     },
@@ -289,9 +295,6 @@
           "include": "#dynamic_type"
         },
         {
-          "include": "#primitive_functions"
-        },
-        {
           "include": "#language_constants"
         },
         {
@@ -332,6 +335,12 @@
         },
         {
           "include": "#import"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#function_call"
         }
       ]
     },
@@ -374,6 +383,14 @@
           "include": "#comments"
         }
       ]
+    },
+    "function_call": {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.actionscript.3"
+        }
+      },
+      "match": "\\b([A-Za-z0-9_\\$]+)(?=\\s*\\()"
     },
     "functions": {
       "begin": "(?x) \\b(function)\\b (?:\\s+\\b(get|set)\\b\\s+)? \\s* ([a-zA-Z0-9_\\$]+\\b)?",
@@ -533,9 +550,6 @@
           "include": "#dynamic_type"
         },
         {
-          "include": "#primitive_functions"
-        },
-        {
           "include": "#language_constants"
         },
         {
@@ -576,6 +590,12 @@
         },
         {
           "include": "#import"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#function_call"
         }
       ]
     },
@@ -696,9 +716,6 @@
           "include": "#dynamic_type"
         },
         {
-          "include": "#primitive_functions"
-        },
-        {
           "include": "#language_constants"
         },
         {
@@ -727,6 +744,12 @@
         },
         {
           "include": "#variable_declaration"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#function_call"
         }
       ]
     },
@@ -776,9 +799,6 @@
           "include": "#dynamic_type"
         },
         {
-          "include": "#primitive_functions"
-        },
-        {
           "include": "#language_constants"
         },
         {
@@ -798,6 +818,12 @@
         },
         {
           "include": "#functions"
+        },
+        {
+          "include": "#primitive_functions"
+        },
+        {
+          "include": "#function_call"
         }
       ]
     },

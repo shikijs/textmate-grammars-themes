@@ -366,6 +366,9 @@
       "name": "invalid.illegal.bad-angle-bracket.html"
     },
     {
+      "include": "#twig-verbatim"
+    },
+    {
       "include": "#twig-print-tag"
     },
     {
@@ -861,10 +864,13 @@
     "twig-functions": {
       "captures": {
         "1": {
+          "name": "keyword.operator.logical.twig"
+        },
+        "2": {
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=is\\s)(defined|empty|even|iterable|odd)"
+      "match": "(?<=is\\s)(?:(not)\\s+)?(defined|empty|even|iterable|odd|null|same\\s+as)"
     },
     "twig-functions-warg": {
       "begin": "(?<=[\\s\\(\\[\\{:,])(attribute|block|constant|cycle|date|divisible by|dump|include|max|min|parent|random|range|same as|source|template_from_string)(\\()",
@@ -990,7 +996,7 @@
       ]
     },
     "twig-keywords": {
-      "match": "(?<=\\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\\s)",
+      "match": "(?<=\\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|types|use|with)(?=\\s)",
       "name": "keyword.control.twig"
     },
     "twig-macros": {
@@ -1389,6 +1395,34 @@
           "name": "string.quoted.double.twig"
         }
       ]
+    },
+    "twig-verbatim": {
+      "begin": "(\\{%-?)\\s*(verbatim)\\s*(-?%\\})",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.twig"
+        },
+        "2": {
+          "name": "keyword.control.twig"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.twig"
+        }
+      },
+      "contentName": "string.unquoted.verbatim.twig",
+      "end": "(\\{%-?)\\s*(endverbatim)\\s*(-?%\\})",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.twig"
+        },
+        "2": {
+          "name": "keyword.control.twig"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.twig"
+        }
+      },
+      "name": "meta.tag.template.verbatim.twig"
     }
   },
   "scopeName": "text.html.twig",

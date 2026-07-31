@@ -80,10 +80,10 @@
       "include": "#constants"
     },
     {
-      "include": "#structural-keywords"
+      "include": "#protocol-phrases"
     },
     {
-      "include": "#protocol-phrases"
+      "include": "#structural-keywords"
     },
     {
       "include": "#functional-keywords"
@@ -224,7 +224,7 @@
     "builtin-functions": {
       "patterns": [
         {
-          "match": "\\b(?:defined|unset|roa_check|aspa_check|aspa_check_downstream|aspa_check_upstream|from_hex|format|append|prepend|add|delete|empty|reset|bt_assert|bt_test_suite|bt_test_same)\\b",
+          "match": "\\b(?:defined|unset|roa_check|aspa_check|aspa_check_downstream|aspa_check_upstream|from_hex|format|append|prepend|add|delete|empty|reset|bt_assert|bt_check_assign|bt_test_suite|bt_test_same)\\b",
           "name": "support.function.builtin.bird"
         }
       ]
@@ -285,15 +285,15 @@
           "name": "constant.language.special.bird"
         },
         {
-          "match": "\\bSCOPE_(?:HOST|LINK|SITE|ORGANIZATION|UNIVERSE)\\b",
+          "match": "\\bSCOPE_(?:HOST|LINK|SITE|ORGANIZATION|UNIVERSE|UNDEFINED)\\b",
           "name": "constant.language.scope.bird"
         },
         {
-          "match": "\\bRTS_(?:STATIC|INHERIT|DEVICE|RIP|OSPF|OSPF_IA|OSPF_EXT1|OSPF_EXT2|BGP|PIPE|BABEL)\\b",
+          "match": "\\bRTS_(?:STATIC|INHERIT|DEVICE|STATIC_DEVICE|REDIRECT|RIP|OSPF|OSPF_IA|OSPF_EXT1|OSPF_EXT2|BGP|PIPE|BABEL|RPKI|L3VPN|AGGREGATED|BRIDGE|EVPN)\\b",
           "name": "constant.language.source.bird"
         },
         {
-          "match": "\\bRTD_(?:ROUTER|DEVICE|MULTIPATH|BLACKHOLE|UNREACHABLE|PROHIBIT)\\b",
+          "match": "\\bRTD_(?:UNICAST|ROUTER|DEVICE|MULTIPATH|BLACKHOLE|UNREACHABLE|PROHIBIT)\\b",
           "name": "constant.language.dest.bird"
         },
         {
@@ -305,7 +305,23 @@
           "name": "constant.language.aspa.bird"
         },
         {
-          "match": "\\bNET_(?:IP4|IP6|IP6_SADR|VPN4|VPN6|ROA4|ROA6|FLOW4|FLOW6|MPLS)\\b",
+          "match": "\\bORIGIN_(?:IGP|EGP|INCOMPLETE)\\b",
+          "name": "constant.language.bgp-origin.bird"
+        },
+        {
+          "match": "\\bRA_PREF_(?:LOW|MEDIUM|HIGH)\\b",
+          "name": "constant.language.ra-preference.bird"
+        },
+        {
+          "match": "\\bAF_IPV[46]\\b",
+          "name": "constant.language.address-family.bird"
+        },
+        {
+          "match": "\\bKBR_SRC_(?:BIRD|LOCAL|STATIC|DYNAMIC)\\b",
+          "name": "constant.language.bridge-source.bird"
+        },
+        {
+          "match": "\\bNET_(?:IP4|IP6|IP6_SADR|VPN4|VPN6|ROA4|ROA6|FLOW4|FLOW6|MPLS|ETH|ASPA|EVPN|EVPN_EAD|EVPN_MAC|EVPN_IMET|EVPN_ES|NEIGHBOR)\\b",
           "name": "constant.language.net-type.bird"
         },
         {
@@ -317,7 +333,7 @@
     "data-types": {
       "patterns": [
         {
-          "match": "\\b(?:(?:int|pair|quad|ip|prefix|ec|lc|rd|enum)\\s+set|int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\b",
+          "match": "\\b(?:(?:int|pair|quad|ip|prefix|mac|ec|lc|rd|enum)\\s+set|int|bool|ip|prefix|mac|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\b",
           "name": "storage.type.bird"
         }
       ]
@@ -444,7 +460,7 @@
     "functional-keywords": {
       "patterns": [
         {
-          "match": "\\b(?:static|rip|ospf|bgp|babel|rpki|bfd|bmp|device|direct|kernel|pipe|perf|mrt|aggregator|l3vpn|radv)\\b",
+          "match": "\\b(?:static|rip|ospf|bgp|babel|rpki|bfd|bmp|device|direct|kernel|pipe|perf|mrt|aggregator|l3vpn|radv|bridge|evpn)\\b",
           "name": "keyword.control.protocol-type.bird"
         },
         {
@@ -456,11 +472,15 @@
           "name": "keyword.other.interface.bird"
         },
         {
-          "match": "\\b(?:(?:refresh|retry|expire|transport|ssh|tcp|user|address|version|ignore|private|public|key)|(?:local\\s+address|ignore\\s+max\\s+length|min\\s+version|max\\s+version|bird\\s+private\\s+key|remote\\s+public\\s+key))\\b",
+          "match": "\\bpreferred\\b",
+          "name": "keyword.other.device.bird"
+        },
+        {
+          "match": "\\b(?:(?:refresh\\s+keep|retry\\s+keep|expire\\s+keep|transport\\s+tcp|transport\\s+ssh|authentication\\s+none|authentication\\s+md5|local\\s+address|ignore\\s+max\\s+length|min\\s+version|max\\s+version|bird\\s+private\\s+key|remote\\s+public\\s+key)|(?:refresh|retry|expire|transport|ssh|tcp|user|address|version|ignore|private|public|key))\\b",
           "name": "keyword.other.rpki.bird"
         },
         {
-          "match": "\\b(?:authentication|none|mac|permissive|password|generate|accept|from|to|algorithm|hmac|sha1|sha256|sha384|sha512|blake2s128|blake2s256|blake2b256|blake2b512)\\b",
+          "match": "\\b(?:cmac\\s+aes128|authentication|none|mac|permissive|ao|password|keys??|secret|deprecated|preferred|generate|accept|from|to|algorithm|hmac|cmac|aes128|sha1|sha224|sha256|sha384|sha512|blake2s128|blake2s256|blake2b256|blake2b512)\\b",
           "name": "keyword.other.auth.bird"
         },
         {
@@ -468,7 +488,7 @@
           "name": "keyword.other.time.bird"
         },
         {
-          "match": "\\b(?:hostname|description|debug|log|syslog|stderr|bird|protocols|tables|channels|timeouts|passwords|bfd|confederation|cluster|stub|dead|neighbors|area|md5|multihop|passive|rfc1583compat|tick|ls|retransmit|transmit|ack|state|database|summary|external|nssa|translator|always|candidate|never|role|stability|election|action|warn|block|disable|keep|filtered|receive|modify|add|delete|withdraw|unreachable|blackhole|prohibit|unreach|igp_metric|localpref|med|origin|community|large_community|ext_community|as_path|prepend|weight|gateway|scope|onlink|recursive|multipath|igp|channel|sadr|src|learn|persist|via|ng)\\b",
+          "match": "\\b(?:hostname|description|debug|log|syslog|stderr|udp|cli|bird|protocols|tables|channels|timeouts|passwords|bfd|confederation|cluster|stub|dead|neighbors|area|md5|multihop|passive|rfc1583compat|tick|ls|retransmit|transmit|ack|state|database|summary|external|nssa|translator|always|candidate|never|role|stability|election|action|warn|warning|auth|bug|fatal|info|trace|block|disable|keep|filtered|receive|modify|add|delete|withdraw|unreachable|blackhole|prohibit|unreach|igp_metric|localpref|med|origin|community|large_community|ext_community|as_path|prepend|weight|gateway|scope|onlink|recursive|multipath|igp|channel|sadr|src|learn|persist|via|ng|threads?|group|cork|threshold|settle|digest|fixed|ping|wakeup|scheduling|sockets|allocator|timers|mrtdump|timeformat|preexport|noexport|exported|stats|count|rpki|reload)\\b",
           "name": "keyword.other.config.bird"
         },
         {
@@ -476,7 +496,7 @@
           "name": "keyword.other.flowspec.bird"
         },
         {
-          "match": "\\b(?:vpn4|vpn6|mpls|aspa|roa4|roa6)\\b",
+          "match": "\\b(?:ipv4-mpls|ipv6-mpls|ipv6-sadr|vpn4-mc|vpn4-mpls|vpn6-mc|vpn6-mpls|ipv4_mc|ipv6_mc|vpn4|vpn6|mpls|aspa|roa4|roa6|eth|evpn|neighbor|pri|sec)\\b",
           "name": "keyword.other.address.bird"
         },
         {
@@ -542,6 +562,26 @@
             }
           },
           "name": "meta.export-where-clause.bird",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(export\\s+in)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.import-export.bird"
+            }
+          },
+          "end": ";",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.terminator.statement.bird"
+            }
+          },
+          "name": "meta.export-prefilter-clause.bird",
           "patterns": [
             {
               "include": "$self"
@@ -616,7 +656,7 @@
     "method-properties": {
       "patterns": [
         {
-          "match": "(?<=\\.)\\s*(?:first|last|last_nonaggregated|len|asn|data1??|data2|is_v4|ip|src|dst|rd|maxlen|type|mask|min|max)\\b(?!\\s*\\()",
+          "match": "(?<=\\.)\\s*(?:first|last|last_nonaggregated|len|asn|data1??|data2|is_v4|ip|src|dst|rd|maxlen|type|mask|min|max|mac|vlan_id|evpn_type|evpn_tag|evpn_esi|router_ip)\\b(?!\\s*\\()",
           "name": "support.variable.property.bird"
         }
       ]
@@ -800,6 +840,36 @@
         {
           "captures": {
             "1": {
+              "name": "keyword.control.neighbor.bird"
+            },
+            "2": {
+              "name": "entity.name.symbol.neighbor-address.bird"
+            },
+            "3": {
+              "name": "keyword.other.semantic-modifier.bird"
+            }
+          },
+          "match": "\\b(neighbor)\\s+([.:\\h]+|(?:'[-.0-:A-Z_a-z]+'|(?!(?:as|range)\\b)[A-Z_a-z][0-9A-Z_a-z]*))\\s+((?:in|ex)ternal)\\b",
+          "name": "meta.neighbor-role-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.neighbor.bird"
+            },
+            "2": {
+              "name": "entity.name.symbol.neighbor-address.bird"
+            },
+            "3": {
+              "name": "keyword.other.semantic-modifier.bird"
+            }
+          },
+          "match": "\\b(neighbor)\\s+([.:\\h]+|(?:'[-.0-:A-Z_a-z]+'|(?!(?:as|range)\\b)[A-Z_a-z][0-9A-Z_a-z]*))\\s+(onlink)\\b",
+          "name": "meta.neighbor-onlink-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
               "name": "keyword.control.source.bird"
             },
             "2": {
@@ -864,8 +934,44 @@
               "name": "keyword.other.semantic-modifier.bird"
             }
           },
+          "match": "\\b(next hop prefer)\\s+(global|local|native|ipv6)\\b",
+          "name": "meta.next-hop-prefer-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.routing.bird"
+            },
+            "2": {
+              "name": "keyword.other.semantic-modifier.bird"
+            }
+          },
+          "match": "\\b(next hop keep)(?:\\s+([ei]bgp))?\\b",
+          "name": "meta.next-hop-keep-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.routing.bird"
+            },
+            "2": {
+              "name": "keyword.other.semantic-modifier.bird"
+            }
+          },
           "match": "\\b(extended next hop)\\s+(o(?:n|ff))\\b",
           "name": "meta.extended-next-hop-statement.bird"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.routing.bird"
+            },
+            "2": {
+              "name": "keyword.other.semantic-modifier.bird"
+            }
+          },
+          "match": "\\b(require extended next hop)\\s+(yes|no|on|off|true|false)\\b",
+          "name": "meta.require-extended-next-hop-statement.bird"
         }
       ]
     },
@@ -901,6 +1007,10 @@
           "name": "keyword.operator.logical.bird"
         },
         {
+          "match": "(?<!&)&(?!&)|(?<!\\|)\\|(?!\\|)",
+          "name": "keyword.operator.bitwise.bird"
+        },
+        {
           "match": "\\+\\+",
           "name": "keyword.operator.concat.bird"
         },
@@ -921,7 +1031,7 @@
     "prefixes": {
       "patterns": [
         {
-          "match": "\\b(?:(?:[0-9]{1,3}\\.){3}[0-9]{1,3}|(?:\\h{0,4}:)+\\h{0,4})/[0-9]{1,3}(?:[-+]|\\{[0-9]+,[0-9]+})?\\b",
+          "match": "(?<![0-:A-Z_a-z])(?:(?:[0-9]{1,3}\\.){3}[0-9]{1,3}|(?:\\h{0,4}:){1,7}\\h{0,4})/[0-9]{1,3}(?:[-+]|\\{[0-9]+,[0-9]+})?(?![0-9A-Z_a-z])",
           "name": "constant.numeric.prefix.bird"
         }
       ]
@@ -1038,31 +1148,155 @@
     "protocol-phrases": {
       "patterns": [
         {
-          "match": "\\b(?:strict\\s+bind|zero\\s+udp6\\s+checksum\\s+rx|idle\\s+tx\\s+interval|multiplier|keyed|meticulous)\\b",
+          "match": "\\b(?:strict\\s+bind|zero\\s+udp6\\s+checksum\\s+rx|idle\\s+tx\\s+interval|min\\s+rx\\s+interval|min\\s+tx\\s+interval|accept\\s+ipv4|accept\\s+multihop|authentication\\s+meticulous\\s+keyed\\s+sha1|keyed\\s+md5|keyed\\s+sha1|meticulous\\s+keyed\\s+md5|meticulous\\s+keyed\\s+sha1|express\\s+thread\\s+group|multiplier|keyed|meticulous)\\b",
           "name": "keyword.other.bfd.phrase.bird"
         },
         {
-          "match": "\\b(?:send\\s+timestamps|rtt\\s+(?:cost|min|max|decay)|next\\s+hop\\s+prefer|prefer|native)\\b",
+          "match": "\\b(?:hello\\s+interval|update\\s+interval|send\\s+timestamps|rtt\\s+(?:cost|min|max|decay)|next\\s+hop\\s+prefer\\s+ipv6|next\\s+hop\\s+prefer|next\\s+hop\\s+ipv4|next\\s+hop\\s+ipv6|authentication\\s+mac\\s+permissive|authentication\\s+mac|randomize\\s+router\\s+id|show\\s+babel\\s+interfaces|show\\s+babel\\s+neighbors|show\\s+babel\\s+entries|show\\s+babel\\s+routes|prefer|native)\\b",
           "name": "keyword.other.babel.phrase.bird"
         },
         {
-          "match": "\\b(?:next\\s+hop\\s+(?:self|address|ibgp|ebgp)|link\\s+local\\s+next\\s+hop\\s+format|import\\s+table|export\\s+table|base\\s+table|add\\s+paths|aigp\\s+originate|long\\s+lived\\s+graceful\\s+restart|long\\s+lived\\s+stale\\s+time|dynamic\\s+name(?:\\s+digits)?|free\\s+bind|ttl\\s+security|multihop\\s+password|rr\\s+client|rs\\s+client|advertise\\s+hostname|interpret\\s+communities|deterministic\\s+med|default\\s+bgp_local_pref|default\\s+bgp_med|med\\s+metric|igp\\s+metric|missing\\s+lladdr|gateway\\s+address|forwarding\\s+addressed|gateway\\s+recursive|allow\\s+local\\s+as|allow\\s+bogus\\s+as|originate\\s+community|full\\s+route\\s+table|capabilities|primary)\\b",
+          "match": "\\b(?:ipv4\\s+multicast|ipv4\\s+mpls|ipv6\\s+multicast|ipv6\\s+mpls|vpn4\\s+multicast|vpn4\\s+mpls|vpn6\\s+multicast|vpn6\\s+mpls|rr\\s+cluster\\s+id|confederation\\s+member|hold\\s+time|min\\s+hold\\s+time|startup\\s+hold\\s+time|path\\s+metric|prefer\\s+older|connect\\s+delay\\s+time|connect\\s+retry\\s+time|keepalive\\s+time|min\\s+keepalive\\s+time|send\\s+hold\\s+time|error\\s+forget\\s+time|error\\s+wait\\s+time|min\\s+graceful\\s+restart\\s+time|max\\s+graceful\\s+restart\\s+time|long\\s+lived\\s+graceful\\s+restart\\s+aware|min\\s+long\\s+lived\\s+stale\\s+time|max\\s+long\\s+lived\\s+stale\\s+time|disable\\s+rx|send\\s+id|recv\\s+id|next\\s+hop\\s+self|next\\s+hop\\s+address|next\\s+hop\\s+ibgp|next\\s+hop\\s+ebgp|next\\s+hop\\s+prefer\\s+global|next\\s+hop\\s+prefer\\s+local|next\\s+hop\\s+keep|link\\s+local\\s+next\\s+hop\\s+format|import\\s+table|export\\s+table|base\\s+table|igp\\s+table|add\\s+paths\\s+rx|add\\s+paths\\s+tx|add\\s+paths|require\\s+add\\s+paths|gateway\\s+direct|aigp\\s+originate|long\\s+lived\\s+graceful\\s+restart|long\\s+lived\\s+stale\\s+time|dynamic\\s+name(?:\\s+digits)?|free\\s+bind|ttl\\s+security|multihop\\s+password|authentication\\s+ao|tx\\s+size\\s+warning|rr\\s+client|rs\\s+client|advertise\\s+hostname|interpret\\s+communities|deterministic\\s+med|default\\s+bgp_local_pref|default\\s+bgp_med|med\\s+metric|igp\\s+metric|missing\\s+lladdr|gateway\\s+address|forwarding\\s+addressed|gateway\\s+recursive|allow\\s+local\\s+as|allow\\s+bogus\\s+as|allow\\s+bgp_local_pref|allow\\s+bgp_med|allow\\s+as\\s+sets|enable\\s+route\\s+refresh|enable\\s+enhanced\\s+route\\s+refresh|require\\s+route\\s+refresh|require\\s+enhanced\\s+route\\s+refresh|enable\\s+as4|require\\s+as4|enable\\s+extended\\s+messages|require\\s+extended\\s+messages|require\\s+hostname|require\\s+graceful\\s+restart|require\\s+long\\s+lived\\s+graceful\\s+restart|require\\s+extended\\s+next\\s+hop|disable\\s+after\\s+error|disable\\s+after\\s+cease|prefix\\s+limit\\s+hit|administrative\\s+shutdown|peer\\s+deconfigured|administrative\\s+reset|connection\\s+rejected|configuration\\s+change|connection\\s+collision|out\\s+of\\s+resources|enforce\\s+first\\s+as|neighbor\\s+range|interface\\s+range|originate\\s+community|full\\s+route\\s+table|link\\s+local\\s+next\\s+hop\\s+format\\s+(?:native|single|double)|mandatory|secondary|validate|capabilities|primary|aigp|setkey|drop|single|double)\\b",
           "name": "keyword.other.bgp.phrase.bird"
+        },
+        {
+          "match": "\\b(?:local\\s+role|require\\s+roles)\\b",
+          "name": "keyword.other.bgp-role.phrase.bird"
+        },
+        {
+          "match": "\\b(?:provider|customer|rs_server|rs_client)\\b",
+          "name": "constant.language.bgp-role.bird"
+        },
+        {
+          "match": "\\b(?:mpls\\s+domain|label\\s+range\\s+static|label\\s+range\\s+dynamic|label\\s+range|label\\s+policy|static\\s+label|dynamic\\s+label)\\b",
+          "name": "keyword.other.mpls.phrase.bird"
+        },
+        {
+          "match": "\\b(?:recursive\\s+mpls|show\\s+static|igp\\s+table|check\\s+link)\\b",
+          "name": "keyword.other.static.phrase.bird"
+        },
+        {
+          "match": "\\b(?:generate\\s+from|generate\\s+to|accept\\s+from|accept\\s+to)\\b",
+          "name": "keyword.other.auth-window.phrase.bird"
+        },
+        {
+          "match": "\\b(?:import\\s+|export\\s+)limit\\b",
+          "name": "keyword.other.channel-limit.phrase.bird"
+        },
+        {
+          "match": "\\btx(?:\\s+class|\\s+dscp|\\s+priority)\\b",
+          "name": "keyword.other.socket.phrase.bird"
+        },
+        {
+          "match": "\\b(?:rx\\s+buffer|tx\\s+length|check\\s+link)\\b",
+          "name": "keyword.other.interface.phrase.bird"
+        },
+        {
+          "match": "\\b(?:debug\\s+latency\\s+limit|debug\\s+latency|debug\\s+show\\s+route|debug\\s+protocols|debug\\s+channels|debug\\s+tables|debug\\s+commands|debug\\s+all|debug\\s+(?:events|filters|interfaces|off|packets|routes|states)|watchdog\\s+warning|watchdog\\s+timeout|states|routes|filters|interfaces|events|packets|messages)\\b",
+          "name": "keyword.other.diagnostics.phrase.bird"
+        },
+        {
+          "match": "\\b(?:min\\s+settle\\s+time|max\\s+settle\\s+time|gc\\s+threshold|gc\\s+period|export\\s+settle\\s+time|sorted|trie|roa)\\b",
+          "name": "keyword.other.table.phrase.bird"
+        },
+        {
+          "match": "\\b(?:peer\\s+table|aggregate\\s+on|merge\\s+by)\\b",
+          "name": "keyword.other.aggregator.phrase.bird"
+        },
+        {
+          "match": "\\b(?:merge\\s+paths\\s+limit|merge\\s+paths|kernel\\s+table|netlink\\s+rx\\s+buffer)\\b",
+          "name": "keyword.other.kernel.phrase.bird"
+        },
+        {
+          "match": "\\b(?:route\\s+distinguisher|import\\s+target|export\\s+target|route\\s+target)\\b",
+          "name": "keyword.other.l3vpn.phrase.bird"
+        },
+        {
+          "match": "\\b(?:encapsulation\\s+vxlan|vlan\\s+filtering|vlan\\s+range|vni|vid|bridge\\s+device|kbr\\s+source)\\b",
+          "name": "keyword.other.evpn-bridge.phrase.bird"
+        },
+        {
+          "match": "\\b(?:tunnel\\s+device|router\\s+address|evpn\\s+(?:ead|mac|imet|es)|tag)\\b",
+          "name": "keyword.other.evpn.phrase.bird"
+        },
+        {
+          "match": "\\b(?:monitoring\\s+rib\\s+in\\s+pre_policy|monitoring\\s+rib\\s+in\\s+post_policy|system\\s+description|system\\s+name|tx\\s+buffer\\s+limit|station\\s+address|station)\\b",
+          "name": "keyword.other.bmp.phrase.bird"
+        },
+        {
+          "match": "\\b(?:solicited\\s+ra\\s+unicast|router\\s+discovery|min\\s+ra\\s+interval|max\\s+ra\\s+interval|min\\s+delay|link\\s+mtu|default\\s+lifetime|route\\s+lifetime|default\\s+preference|route\\s+preference|prefix\\s+linger\\s+time|route\\s+linger\\s+time|current\\s+hop\\s+limit|propagate\\s+routes|other\\s+config|reachable\\s+time|retrans\\s+timer|valid\\s+lifetime|preferred\\s+lifetime|lifetime\\s+mult|pd\\s+preferred|rdnss\\s+local|dnssl\\s+local|custom\\s+option\\s+type|custom\\s+option\\s+local|managed|trigger|sensitive|autonomous|skip|low|medium|high|rdnss|dnssl|domain|lifetime|value|ns)\\b",
+          "name": "keyword.other.radv.phrase.bird"
+        },
+        {
+          "match": "\\b(?:rip\\s+ng|mode\\s+multicast|mode\\s+broadcast|version\\s+only|check\\s+zero|update\\s+time|timeout\\s+time|garbage\\s+time|retransmit\\s+time|split\\s+horizon|poison\\s+reverse|demand\\s+circuit|ecmp\\s+limit|ecmp\\s+weight|infinity|show\\s+rip\\s+interfaces|show\\s+rip\\s+neighbors|ttl\\s+security\\s+tx\\s+only|authentication\\s+plaintext|authentication\\s+cryptographic)\\b",
+          "name": "keyword.other.rip.phrase.bird"
+        },
+        {
+          "match": "\\b(?:link\\s+lsa\\s+suppression|stub\\s+router|graceful\\s+restart\\s+aware|graceful\\s+restart\\s+time|ecmp\\s+limit|merge\\s+external|rfc5838|vpn\\s+pe|instance\\s+id|default\\s+nssa|default\\s+cost2?|stub\\s+cost|summary|networks|stubnet|hidden|translator\\s+stability|virtual\\s+link|transmit\\s+delay|dead\\s+count|poll|type\\s+bcast|type\\s+nbma|type\\s+pointopoint|type\\s+ptp|type\\s+ptmp|type\\s+pointomultipoint|eligible|real\\s+broadcast|ptp\\s+netmask|ptp\\s+address|strict\\s+nonbroadcast|rx\\s+buffer\\s+normal|rx\\s+buffer\\s+large|authentication\\s+simple|show\\s+ospf\\s+interface|show\\s+ospf\\s+neighbors|show\\s+ospf\\s+topology\\s+all|show\\s+ospf\\s+topology|show\\s+ospf\\s+state\\s+all|show\\s+ospf\\s+state|show\\s+ospf\\s+lsadb\\s+global|show\\s+ospf\\s+lsadb\\s+area|show\\s+ospf\\s+lsadb\\s+link|show\\s+ospf\\s+lsadb\\s+type|show\\s+ospf\\s+lsadb\\s+lsid|show\\s+ospf\\s+lsadb\\s+self|show\\s+ospf\\s+lsadb\\s+router|show\\s+ospf\\s+lsadb|show\\s+ospf|ospf\\s+v2|ospf\\s+v3|instance|tag|v2|v3)\\b",
+          "name": "keyword.other.ospf.phrase.bird"
+        },
+        {
+          "match": "\\b(?:aspa\\s+providers|transit\\s+providers|route\\s+aspa)\\b",
+          "name": "keyword.other.aspa.phrase.bird"
+        },
+        {
+          "match": "\\b(?:next\\s+header|icmp\\s+type|icmp\\s+code|tcp\\s+flags)\\b",
+          "name": "keyword.other.flowspec.phrase.bird"
+        },
+        {
+          "match": "\\b(?:thread\\s+group|show\\s+threads\\s+all|show\\s+threads|cork\\s+threshold|route\\s+refresh\\s+export\\s+settle\\s+time|digest\\s+settle\\s+time|filter\\s+stacks|max\\s+generation)\\b",
+          "name": "keyword.other.threading.phrase.bird"
+        },
+        {
+          "match": "\\b(?:always\\s+add\\s+path|filename)\\b",
+          "name": "keyword.other.mrt.phrase.bird"
+        },
+        {
+          "match": "\\b(?:mode\\s+import|mode\\s+export|exp\\s+from|exp\\s+to|threshold\\s+min|threshold\\s+max|repeat)\\b",
+          "name": "keyword.other.perf.phrase.bird"
+        },
+        {
+          "match": "\\b(?:router\\s+id\\s+from|graceful\\s+restart\\s+wait|vrf\\s+default|receive\\s+limit|import\\s+keep\\s+filtered|export\\s+in|rpki\\s+reload|mrtdump\\s+protocols)\\b",
+          "name": "keyword.other.operations.phrase.bird"
+        },
+        {
+          "match": "\\bshow(?:\\s+status|\\s+protocols\\s+all|\\s+protocols|\\s+interfaces\\s+summary|\\s+interfaces|\\s+symbols\\s+table|\\s+symbols\\s+filter|\\s+symbols\\s+function|\\s+symbols\\s+protocol|\\s+symbols\\s+template|\\s+symbols|\\s+route\\s+for|\\s+route\\s+in|\\s+route\\s+table|\\s+route\\s+filter|\\s+route\\s+where|\\s+route\\s+all|\\s+route\\s+primary|\\s+route\\s+filtered|\\s+route\\s+import|\\s+route\\s+export|\\s+route\\s+exported|\\s+route\\s+preexport|\\s+route\\s+noexport|\\s+route\\s+protocol|\\s+route\\s+stats|\\s+route\\s+count|\\s+bfd\\s+sessions\\s+address|\\s+bfd\\s+sessions\\s+direct|\\s+bfd\\s+sessions\\s+multihop|\\s+bfd\\s+sessions\\s+interface|\\s+bfd\\s+sessions\\s+dev|\\s+bfd\\s+sessions\\s+all|\\s+bfd\\s+sessions\\s+ipv4|\\s+bfd\\s+sessions\\s+ipv6|\\s+bfd\\s+sessions|\\s+mpls\\s+ranges|\\s+memory|\\s+route)\\b",
+          "name": "keyword.other.cli-show.phrase.bird"
+        },
+        {
+          "match": "\\breload(?:\\s+filters\\s+in|\\s+filters\\s+out|\\s+filters|\\s+bgp\\s+in|\\s+bgp\\s+out|\\s+bgp|\\s+in|\\s+out)\\b",
+          "name": "keyword.other.cli-reload.phrase.bird"
+        },
+        {
+          "match": "\\bpartial\\b",
+          "name": "keyword.other.cli-reload-modifier.bird"
+        },
+        {
+          "match": "\\b(?:dump\\s+tables|dump\\s+attribute\\s+stats|dump\\s+ao\\s+keys|dump\\s+filter\\s+all|dump\\s+resources|dump\\s+sockets|dump\\s+events|dump\\s+interfaces|dump\\s+neighbors|dump\\s+attributes|dump\\s+routes|dump\\s+protocols|mrt\\s+dump\\s+table|mrt\\s+dump\\s+where|mrt\\s+dump\\s+to|mrt\\s+dump\\s+filter|mrt\\s+dump|timeformat\\s+route|timeformat\\s+protocol|timeformat\\s+base|timeformat\\s+log|timeformat\\s+iso|configure\\s+soft\\s+timeout|configure\\s+soft|configure\\s+timeout|configure\\s+confirm|configure\\s+undo|configure\\s+status|configure\\s+check|restrict|echo|enable|disable|restart|debug|mrtdump|quit|exit|help)\\b",
+          "name": "keyword.other.cli-dump.phrase.bird"
+        },
+        {
+          "match": "\\b(?:configure|down|graceful\\s+restart|timeformat\\s+(?:short|long|ms|us))\\b",
+          "name": "keyword.other.cli-control.phrase.bird"
         }
       ]
     },
     "route-attributes": {
       "patterns": [
         {
-          "match": "\\b(?:net|scope|preference|from|gw|proto|source|dest|ifname|ifindex|weight|gw_mpls|gw_mpls_stack|onlink|igp_metric|mpls_label|mpls_policy|mpls_class|bgp_path|bgp_origin|bgp_next_hop|bgp_med|bgp_local_pref|bgp_community|bgp_ext_community|bgp_large_community|bgp_originator_id|bgp_cluster_list|ospf_metric1|ospf_metric2|ospf_tag|ospf_router_id|rip_metric|rip_tag|mypath|mylclist)\\b",
+          "match": "\\b(?:net|scope|preference|from|gw|proto|source|dest|ifname|ifindex|weight|gw_mpls|gw_mpls_stack|onlink|igp_metric|local_metric|nexthop|hostentry|flowspec_valid|aspa_providers|roa_aggregated|mpls_label|mpls_policy|mpls_class|bgp_path|bgp_origin|bgp_next_hop|bgp_med|bgp_local_pref|bgp_community|bgp_ext_community|bgp_large_community|bgp_originator_id|bgp_cluster_list|bgp_atomic_aggr|bgp_aggregator|bgp_aigp|bgp_pmsi_tunnel|bgp_otc|bgp_mpls_label_stack|bgp_mp_reach_nlri|bgp_mp_unreach_nlri|bgp_as4_path|bgp_as4_aggregator|bgp_unknown_0x\\h{2}|ospf_metric1|ospf_metric2|ospf_tag|ospf_router_id|rip_metric|rip_tag|rip_from|babel_metric|babel_router_id|babel_seqno|radv_preference|radv_lifetime|ra_preference|ra_lifetime|krt_source|krt_metric|krt_prefsrc|krt_realm|krt_scope|krt_mtu|krt_window|krt_rtt|krt_rttvar|krt_ssthresh|krt_sstresh|krt_cwnd|krt_advmss|krt_reordering|krt_hoplimit|krt_initcwnd|krt_rto_min|krt_initrwnd|krt_quickack|krt_congctl|krt_fastopen_no_cookie|krt_lock_mtu|krt_lock_window|krt_lock_rtt|krt_lock_rttvar|krt_lock_ssthresh|krt_lock_sstresh|krt_lock_cwnd|krt_lock_advmss|krt_lock_reordering|krt_lock_hoplimit|krt_lock_initcwnd|krt_lock_rto_min|krt_lock_initrwnd|krt_lock_quickack|krt_lock_congctl|krt_lock_fastopen_no_cookie|krt_feature_allfrag|krt_feature_ecn|kbr_source|iface_type|iface_bridge_vlan_filtering|iface_vxlan_id|iface_vxlan_learning|iface_vxlan_ip_addr|mypath|mylclist)\\b",
           "name": "support.variable.route-attribute.bird"
+        },
+        {
+          "match": "\\b(?:proto_name|proto_protocol_name|proto_protocol_type|proto_main_table_id|proto_state|proto_last_modified|proto_info|proto_proto_id|ea_proto_channel_list|proto_channel_id|channel_in_keep|rtable|proto_bgp_rem_id|proto_bgp_rem_as|proto_bgp_loc_as|proto_bgp_rem_ip|bgp_afi|bgp_peer_type|bgp_extended_next_hop|bgp_add_path_rx|bgp_in_conn_local_open_msg|bgp_in_conn_remote_open_msg|bgp_out_conn_local_open_msg|bgp_out_conn_remote_open_msg|bgp_in_conn_state|bgp_out_conn_state|bgp_in_conn_sk|bgp_out_conn_sk|bgp_state_startup|bgp_close_bmp|bgp_as4_session|bgp_as4_in_conn|bgp_as4_out_conn)\\b",
+          "name": "support.variable.runtime.bird"
         }
       ]
     },
     "semantic-modifiers": {
       "patterns": [
         {
-          "match": "\\b(?:self|on|off|remote|extended)\\b",
+          "match": "\\b(?:self|on|off|remote|extended|native|ipv6|internal|external)\\b",
           "name": "keyword.other.semantic-modifier.bird"
         }
       ]
@@ -1085,7 +1319,7 @@
           "name": "string.quoted.double.bird",
           "patterns": [
             {
-              "match": "\\.",
+              "match": "\\\\.",
               "name": "constant.character.escape.bird"
             }
           ]
@@ -1111,7 +1345,7 @@
           "name": "keyword.control.flow.bird"
         },
         {
-          "match": "\\b(?:protocol|table|define|include|attribute|eval|ipv4|ipv6|local|as|from|where|cost|limit|action)\\b",
+          "match": "\\b(?:protocol|table|define|include|attribute|eval|ipv6\\s+sadr|ipv4\\s+mpls|ipv6\\s+mpls|vpn4\\s+mpls|vpn6\\s+mpls|ipv4|ipv6|local|as|from|where|cost|limit|action)\\b",
           "name": "keyword.control.structure.bird"
         }
       ]
@@ -1228,7 +1462,7 @@
               "name": "variable.other.declaration.bird"
             }
           },
-          "match": "\\b((?:int|pair|quad|ip|prefix|ec|lc|rd|enum)\\s+set|int|bool|ip|prefix|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\s+([A-Z_a-z][0-9A-Z_a-z]*)(?:\\s*=|;)",
+          "match": "\\b((?:int|pair|quad|ip|prefix|mac|ec|lc|rd|enum)\\s+set|int|bool|ip|prefix|mac|rd|pair|quad|ec|lc|string|bytestring|bgpmask|bgppath|clist|eclist|lclist|set|enum|route)\\s+([A-Z_a-z][0-9A-Z_a-z]*)(?:\\s*=|;)",
           "name": "meta.variable-declaration.bird"
         }
       ]
