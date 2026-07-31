@@ -3002,6 +3002,28 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/nix-community/vscode-nix-ide/contents/dist/nix.tmLanguage.json?ref=effbf3494a43250a537834805b305793994b9ca8',
   },
   {
+    byteSize: 15439,
+    categories: [
+      'scripting',
+    ],
+    displayName: 'NSIS',
+    funding: [
+      {
+        name: 'buymeacoffee.com',
+        url: 'https://www.buymeacoffee.com/idleberg',
+      },
+    ],
+    hash: 'gjxFsHDuKgRqR7hZxmvQ8dRetk4KQf-Qu-TthfbDQ-A',
+    lastUpdate: '2026-07-15T21:41:45+02:00',
+    license: 'Apache-2.0',
+    licenseUrl: 'https://github.com/idleberg/vscode-nsis/blob/main/syntaxes/nsis-license.txt',
+    name: 'nsis',
+    scopeName: 'source.nsis',
+    sha: 'a87d11e5b7c815a4c8321ec4b65746aa892f3e93',
+    source: 'https://github.com/idleberg/vscode-nsis/blob/a87d11e5b7c815a4c8321ec4b65746aa892f3e93/syntaxes/nsis.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/idleberg/vscode-nsis/contents/syntaxes/nsis.tmLanguage?ref=a87d11e5b7c815a4c8321ec4b65746aa892f3e93',
+  },
+  {
     aliases: [
       'nu',
     ],

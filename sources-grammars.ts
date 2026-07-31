@@ -917,6 +917,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/nix.tmLanguage.json',
   },
   {
+    name: 'nsis',
+    displayName: 'NSIS',
+    source: 'https://github.com/idleberg/vscode-nsis/blob/main/syntaxes/nsis.tmLanguage',
+  },
+  {
     name: 'nushell',
     aliases: ['nu'],
     source: 'https://github.com/nushell/vscode-nushell-lang/blob/main/syntaxes/nushell.tmLanguage.json',
