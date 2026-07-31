@@ -53,7 +53,7 @@ export const sourcesVSCode: GrammarSource[] = [
   },
   {
     name: 'coq',
-    source: 'https://github.com/coq-community/vscoq/blob/main/client/syntax/coq.tmLanguage.json',
+    source: 'https://github.com/rocq-prover/vsrocq/blob/main/client/syntax/rocq.tmLanguage.json',
     categories: ['general'],
   },
   {
@@ -461,7 +461,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'asciidoc',
     aliases: ['adoc'],
-    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/master/syntaxes/asciidoc.tmLanguage.json',
+    source: 'https://github.com/asciidoctor/asciidoctor-vscode/blob/main/syntaxes/asciidoc.tmLanguage.json',
     categories: ['markup'],
   },
   {
@@ -1084,7 +1084,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'smalltalk',
-    source: 'https://github.com/leocamello/vscode-smalltalk/blob/master/syntaxes/smalltalk.tmLanguage.json',
+    source: 'https://github.com/leocamello/vscode-smalltalk/blob/master/syntaxes/gnu-smalltalk.YAML-tmLanguage',
   },
   {
     name: 'smithy',
