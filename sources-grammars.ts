@@ -1316,6 +1316,12 @@ export const sourcesMarketplace: GrammarSource[] = [
       name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
       grammar: 'mermaid',
     },
+    // TODO: Remove this once the upstream grammar treats the entire injected
+    // block as mermaid without requiring a fenced code block wrapper.
+    // See https://github.com/shikijs/textmate-grammars-themes/pull/131
+    patch: (grammar) => {
+      (grammar.patterns as any[]).push({ include: '#mermaid' })
+    },
   },
   {
     name: 'moonbit',
