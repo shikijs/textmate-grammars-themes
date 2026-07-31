@@ -3670,6 +3670,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/dotnet/razor/contents/src/Razor/src/Microsoft.VisualStudio.RazorExtension/EmbeddedGrammars/aspnetcorerazor.tmLanguage.json?ref=743f32a68c61809b22fd84e8748c3686ef1bb8b8',
   },
   {
+    aliases: [
+      'ruby-signature',
+    ],
+    byteSize: 3068,
+    categories: [
+      'general',
+    ],
+    displayName: 'RBS',
+    funding: [
+    ],
+    hash: 'Gcs1njs599kUNzYmJo2Kt9Kj4c7hrb44yf140sU6kNA',
+    lastUpdate: '2023-07-08T14:34:47Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/soutaro/vscode-rbs-syntax/master/LICENSE',
+    name: 'rbs',
+    scopeName: 'source.rbs',
+    sha: 'd945dc76ec7eee172c51eb8bea1f206aa2e52925',
+    source: 'https://github.com/soutaro/vscode-rbs-syntax/blob/d945dc76ec7eee172c51eb8bea1f206aa2e52925/syntaxes/rbs.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/soutaro/vscode-rbs-syntax/contents/syntaxes/rbs.tmLanguage.json?ref=d945dc76ec7eee172c51eb8bea1f206aa2e52925',
+  },
+  {
     byteSize: 2239,
     categories: [
       'dsl',
