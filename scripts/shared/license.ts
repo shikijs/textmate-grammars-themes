@@ -40,11 +40,25 @@ async function fetchLicenseContent(url: string): Promise<string> {
   const res = await fetch(rawUrl)
   const contentType = res.headers.get('content-type') || ''
   const content = await res.text()
+
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch license content: license URL "${url}" `
+      + `(fetched as "${rawUrl}") responded with ${res.status} ${res.statusText}: `
+      + `${content.slice(0, 200)}`,
+    )
+  }
   if (contentType.includes('text/html') || isLikelyHtml(content)) {
     throw new Error(
       `Refusing to embed HTML content into NOTICE: license URL "${url}" `
       + `(fetched as "${rawUrl}") returned an HTML page instead of the raw license text. `
       + `Fix the \`licenseUrl\` in the source config to point to the raw file.`,
+    )
+  }
+  if (!content.trim()) {
+    throw new Error(
+      `Refusing to embed empty content into NOTICE: license URL "${url}" `
+      + `(fetched as "${rawUrl}") returned an empty response.`,
     )
   }
   return content
