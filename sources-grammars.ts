@@ -1199,12 +1199,6 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/microsoft/typespec/blob/main/grammars/typespec.json',
   },
   {
-    name: 'typst',
-    displayName: 'Typst',
-    aliases: ['typ'],
-    source: 'https://github.com/nvarner/typst-lsp/blob/master/editors/vscode/typst.tmLanguage.json',
-  },
-  {
     name: 'v',
     source: 'https://github.com/vlang/vscode-vlang/blob/master/syntaxes/v.tmLanguage.json',
   },
@@ -1329,6 +1323,28 @@ export const sourcesMarketplace: GrammarSource[] = [
     aliases: ['mbt', 'mbti'],
     source: 'https://github.com/moonbitlang/moonbit-tmLanguage/blob/main/grammars/moonbit.tmLanguage.json',
     categories: ['general'],
+  },
+  {
+    name: 'typst',
+    displayName: 'Typst',
+    aliases: ['typ'],
+    source: 'https://github.com/Myriad-Dreamin/tinymist/blob/main/editors/vscode/package.json',
+    marketplace: {
+      name: 'myriad-dreamin.tinymist',
+      grammar: 'typst',
+    },
+    patch(grammar) {
+      const replacements: Record<string, string> = {
+        'source.bibtex': 'text.bibtex',
+        'source.fs': 'source.fsharp',
+        'source.twig': 'text.html.twig',
+        'source.typst-code': '#code',
+      }
+      return JSON.parse(JSON.stringify(grammar, (key, value) =>
+        key === 'include'
+          ? replacements[value] ?? value
+          : value))
+    },
   },
 ]
 
