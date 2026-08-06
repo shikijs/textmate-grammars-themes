@@ -2013,6 +2013,28 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/hylang/vscode-hy/contents/syntaxes/hy.tmLanguage.json?ref=8f99630793b7483cf4cac10a655da6fed08a4f9f',
   },
   {
+    aliases: [
+      'iecst',
+      'st',
+    ],
+    byteSize: 5222,
+    categories: [
+      'general',
+    ],
+    displayName: 'IEC 61131-3',
+    funding: [
+    ],
+    hash: 'XWa35KQ2-S4AEWUwREOL_dEQfJyGEODIQ6hHkmoBOh0',
+    lastUpdate: '2026-06-28T06:00:04Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/yunos0987/vscode-iec-61131-3-lang/main/LICENSE',
+    name: 'iec-61131-3',
+    scopeName: 'source.iec-61131-3',
+    sha: '4b05d8593e233f9fc9507c4fea4d65c40533dba4',
+    source: 'https://github.com/yunos0987/vscode-iec-61131-3-lang/blob/4b05d8593e233f9fc9507c4fea4d65c40533dba4/syntaxes/iec-61131-3.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/yunos0987/vscode-iec-61131-3-lang/contents/syntaxes/iec-61131-3.tmLanguage.json?ref=4b05d8593e233f9fc9507c4fea4d65c40533dba4',
+  },
+  {
     byteSize: 48264,
     categories: [
       'web',
