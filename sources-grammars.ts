@@ -426,7 +426,7 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/mark-wiemer/ahkpp/blob/main/language/ahk.tmLanguage.yaml',
     categories: ['scripting'],
     license: 'MIT',
-    licenseUrl: 'https://github.com/mark-wiemer/ahkpp/blob/main/license.md',
+    licenseUrl: 'https://raw.githubusercontent.com/mark-wiemer/ahkpp/main/license.md',
   },
   {
     name: 'ahk2',
@@ -434,7 +434,7 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/syntaxes/ahk2.tmLanguage.json',
     categories: ['scripting'],
     license: 'GNU',
-    licenseUrl: 'https://github.com/thqby/vscode-autohotkey2-lsp/blob/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/thqby/vscode-autohotkey2-lsp/main/LICENSE',
   },
   {
     name: 'apache',
@@ -1092,7 +1092,7 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/smithy-lang/smithy-vscode/blob/main/syntaxes/smithy.tmLanguage.json',
     categories: ['web'],
     license: 'Apache-2.0',
-    licenseUrl: 'https://github.com/smithy-lang/smithy-vscode/blob/main/LICENSE',
+    licenseUrl: 'https://raw.githubusercontent.com/smithy-lang/smithy-vscode/main/LICENSE',
   },
   {
     name: 'solidity',
