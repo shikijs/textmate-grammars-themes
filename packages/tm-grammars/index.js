@@ -2830,19 +2830,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/textmate/mips.tmbundle/contents/Syntaxes/MIPS.tmLanguage?ref=eb7601016a109bf912a48a1c21988f3c4a59fb3a',
   },
   {
-    byteSize: 67749,
+    byteSize: 67736,
     displayName: 'Mojo',
     funding: [
     ],
-    hash: 'Gx_WVzC-1aUy-LoqVZee5kuSQFMGMLDH1SQqsu5X2Do',
-    lastUpdate: '2026-03-23T17:30:19Z',
+    hash: 'kzwR1Ucl5n6IEKfpDpMMed15jrXW8GsPvTsKkq944iU',
+    lastUpdate: '2026-08-03T15:04:06Z',
     license: 'Apache-2.0',
     licenseUrl: 'https://raw.githubusercontent.com/modular/vscode-mojo/main/LICENSE',
     name: 'mojo',
     scopeName: 'source.mojo',
-    sha: 'a4cc82148a335cf3540f51b5f43bda2eb1075758',
-    source: 'https://github.com/modular/vscode-mojo/blob/a4cc82148a335cf3540f51b5f43bda2eb1075758/syntaxes/mojo.syntax.json',
-    sourceApi: 'https://api.github.com/repos/modular/vscode-mojo/contents/syntaxes/mojo.syntax.json?ref=a4cc82148a335cf3540f51b5f43bda2eb1075758',
+    sha: '7661e4e6157718ab1ecc700441138738f4fcbc9b',
+    source: 'https://github.com/modular/vscode-mojo/blob/7661e4e6157718ab1ecc700441138738f4fcbc9b/syntaxes/mojo.syntax.json',
+    sourceApi: 'https://api.github.com/repos/modular/vscode-mojo/contents/syntaxes/mojo.syntax.json?ref=7661e4e6157718ab1ecc700441138738f4fcbc9b',
   },
   {
     aliases: [
