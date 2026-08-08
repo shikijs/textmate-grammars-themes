@@ -116,6 +116,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/thqby/vscode-autohotkey2-lsp/contents/syntaxes/ahk2.tmLanguage.json?ref=60b30aa89671198bca0d3ba9777008f8c2b2983e',
   },
   {
+    byteSize: 4767,
+    categories: [
+      'general',
+    ],
+    displayName: 'AL',
+    funding: [
+    ],
+    hash: '4av5O9survGNdTyJpPjcIiECxCWsp_WqgzzBTiupH0M',
+    lastUpdate: '2025-12-07T14:20:18Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/AL/master/LICENSE.TXT',
+    name: 'al',
+    scopeName: 'source.al',
+    sha: '9aec85d2c7cc27dd7623e2989bd75f76ac353b06',
+    source: 'https://github.com/microsoft/AL/blob/9aec85d2c7cc27dd7623e2989bd75f76ac353b06/grammar/alsyntax.tmlanguage',
+    sourceApi: 'https://api.github.com/repos/microsoft/AL/contents/grammar/alsyntax.tmlanguage?ref=9aec85d2c7cc27dd7623e2989bd75f76ac353b06',
+  },
+  {
     byteSize: 701,
     categories: [
       'web',
