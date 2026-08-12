@@ -146,7 +146,7 @@
         }
       },
       "contentName": "source.ts",
-      "end": "(?=[],;]|/>|(?<=[^=>])>|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&(*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
+      "end": "(?=[],;]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&(*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
       "name": "meta.embedded.ts",
       "patterns": [
         {
@@ -158,6 +158,10 @@
       "patterns": [
         {
           "include": "#javascript-comments"
+        },
+        {
+          "match": "\\basync(?=(?:[\\t ]+[$0-9A-Z_a-z][-$0-9A-Z_a-z]*|[\\t ]*)[\\t ]*(?:<[^<>]*>)?[\\t ]*\\([^()]*\\)[\\t ]*\\{)",
+          "name": "storage.modifier.async.marko"
         },
         {
           "applyEndPatternLast": 1,
@@ -195,7 +199,7 @@
             }
           },
           "contentName": "source.ts",
-          "end": "(?=[],;]|/>|(?<=[^=>])>|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&(*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
+          "end": "(?=[],;]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&(*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
           "name": "meta.marko-spread-attribute",
           "patterns": [
             {
@@ -1180,7 +1184,7 @@
                   "name": "keyword.operator.type.annotation.ts"
                 }
               },
-              "end": "(?=[](,;]|/>|(?<=[^=>])>|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
+              "end": "(?=[](,;]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!%\\&*:?^|~]|[-!%\\&*+/<-?^|~]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[]%).0-9<A-Za-z}]\\s/|[^$.\\w]await|[^$.\\w]async|[^$.\\w]class|[^$.\\w]function|[^$.\\w]keyof|[^$.\\w]new|[^$.\\w]readonly|[^$.\\w]infer|[^$.\\w]typeof|[^$.\\w]void)\\s+(?![\\n!%\\&*+:?^{|~]|[-/<=>]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^,/:;=>]))",
               "patterns": [
                 {
                   "include": "source.ts#type"

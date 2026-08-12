@@ -1052,7 +1052,7 @@
               ]
             },
             {
-              "begin": "(?:\\G|(?<=]))(\\{)([A-Za-z]*)(})",
+              "begin": "(?:\\G|(?<=]))(?:(\\{)([A-Za-z]*)(}))?",
               "beginCaptures": {
                 "1": {
                   "name": "punctuation.definition.arguments.begin.latex"
@@ -3501,6 +3501,27 @@
               ]
             }
           ]
+        },
+        {
+          "begin": "((\\\\)sys_get_shell:nnN(?:TF)?\\s?)(\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "support.function.verb.latex"
+            },
+            "2": {
+              "name": "punctuation.definition.function.latex"
+            },
+            "3": {
+              "name": "punctuation.definition.arguments.begin.latex"
+            }
+          },
+          "contentName": "markup.raw.verb.latex",
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.arguments.end.latex"
+            }
+          }
         }
       ]
     },
@@ -3770,7 +3791,7 @@
       ]
     },
     "newcommand-macro": {
-      "begin": "((\\\\)(?:newcommand|renewcommand|(?:re)?newrobustcmd|DeclareRobustCommand)\\*?)(\\{)((\\\\)\\p{Alphabetic}+\\*?)(})(?:(\\[)[^]]*(])){0,2}(\\{)",
+      "begin": "((\\\\)(?:newcommand|renewcommand|(?:re)?newrobustcmd|DeclareRobustCommand)\\*?)(\\{)?((\\\\)[@\\p{Alphabetic}]+\\*?)(})?(?:(\\[)[^]]*(])){0,2}(\\{)",
       "beginCaptures": {
         "1": {
           "name": "storage.type.function.latex"

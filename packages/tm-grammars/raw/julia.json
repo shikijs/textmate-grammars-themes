@@ -690,7 +690,7 @@
           "name": "string.quoted.other.julia",
           "patterns": [
             {
-              "include": "#string_escaped_char"
+              "include": "#string_escaped_char_raw"
             }
           ]
         },
@@ -713,7 +713,7 @@
           "name": "string.quoted.other.julia",
           "patterns": [
             {
-              "include": "#string_escaped_char"
+              "include": "#string_escaped_char_raw"
             }
           ]
         },
@@ -1056,6 +1056,19 @@
         }
       ]
     },
+    "string_escaped_char_raw": {
+      "comment": "In raw strings, backslashes only escape anything when preceding a quote. An even number of backslashes causes all of them to be escaped and the quote to be literal; an odd number escapes all backslashes (except for the one preceding the quote) and the quote.",
+      "patterns": [
+        {
+          "match": "(\\\\\\\\)*\\\\\"",
+          "name": "constant.character.escape.julia"
+        },
+        {
+          "match": "(\\\\\\\\)+(?=\")",
+          "name": "constant.character.escape.julia"
+        }
+      ]
+    },
     "symbol": {
       "patterns": [
         {
@@ -1086,5 +1099,5 @@
     }
   },
   "scopeName": "source.julia",
-  "version": "https://github.com/JuliaEditorSupport/atom-language-julia/commit/25cc285b5e8accab4ff7725eeb8594f458b45ce4"
+  "version": "https://github.com/JuliaEditorSupport/atom-language-julia/commit/dbaa99358d1dbc2fc6c337f0f6571060dbc4ee1f"
 }

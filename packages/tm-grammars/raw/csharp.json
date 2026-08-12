@@ -1401,7 +1401,7 @@
       ]
     },
     "double-raw-interpolation": {
-      "begin": "(?<=[^\\{][^\\{]|^)((?:\\{)*)(\\{\\{)(?=[^\\{])",
+      "begin": "(?<=[^\\{][^\\{]|^)((?:\\{)*)(\\{\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -2480,7 +2480,7 @@
           "name": "punctuation.definition.string.begin.cs"
         }
       },
-      "end": "(\")|((?:[^\\\\\\n])$)",
+      "end": "(\")|((?:[^\\\\\\n\\{])$)",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.cs"
@@ -2500,7 +2500,7 @@
       ]
     },
     "interpolation": {
-      "begin": "(?<=[^\\{]|^)((?:\\{\\{)*)(\\{)(?=[^\\{])",
+      "begin": "(?<=[^\\{]|^)((?:\\{\\{)*)(\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -3470,6 +3470,31 @@
         }
       ]
     },
+    "parenthesized-type-list": {
+      "begin": "(\\()",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.parenthesis.open.cs"
+        }
+      },
+      "end": "(\\))",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.parenthesis.close.cs"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
     "pattern": {
       "patterns": [
         {
@@ -3626,6 +3651,9 @@
           "include": "#preprocessor-app-directive-project"
         },
         {
+          "include": "#preprocessor-app-directive-ref"
+        },
+        {
           "include": "#preprocessor-app-directive-sdk"
         },
         {
@@ -3730,6 +3758,17 @@
         }
       },
       "match": "\\b(property)\\b\\s*([_[:alpha:]][_[:alnum:]]*)?(=)?(.*)?\\s*"
+    },
+    "preprocessor-app-directive-ref": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.ref.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(ref)\\b\\s*(.*)?\\s*"
     },
     "preprocessor-app-directive-sdk": {
       "captures": {
@@ -4087,7 +4126,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?x)\n\n# The negative lookahead below ensures that we don't match nested types\n# or other declarations as properties.\n(?![[:word:][:space:]]*\\b(?:class|interface|struct|enum|event)\\b)\n\n(?<return_type>\n  (?<type_name>\n    (?:\n      (?:ref\\s+(?:readonly\\s+)?)?   # ref return\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)* | # Are there any more names being dotted into?\n        (?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s* # array suffix?\n        \\[\n          (?:\\s*,\\s*)* # commata for multi-dimensional arrays\n        \\]\n        \\s*\n        (?:\\?)? # arrays can be nullable reference types\n        \\s*\n      )*\n    )\n  )\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<property_name>\\g<identifier>)\\s*\n(?=\\{|=>|//|/\\*|$)",
+      "begin": "(?x)\n\n# The negative lookahead below ensures that we don't match nested types\n# or other declarations as properties.\n(?![[:word:][:space:]]*\\b(?:class|interface|struct|union|enum|event)\\b)\n\n(?<return_type>\n  (?<type_name>\n    (?:\n      (?:ref\\s+(?:readonly\\s+)?)?   # ref return\n      (?:\n        (?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*\\:\\:\\s*)? # alias-qualification\n        (?<name_and_type_args> # identifier + type arguments (if any)\n          \\g<identifier>\\s*\n          (?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?\n        )\n        (?:\\s*\\.\\s*\\g<name_and_type_args>)* | # Are there any more names being dotted into?\n        (?<tuple>\\s*\\((?:[^\\(\\)]|\\g<tuple>)+\\))\n      )\n      (?:\\s*\\?\\s*)? # nullable suffix?\n      (?:\\s* # array suffix?\n        \\[\n          (?:\\s*,\\s*)* # commata for multi-dimensional arrays\n        \\]\n        \\s*\n        (?:\\?)? # arrays can be nullable reference types\n        \\s*\n      )*\n    )\n  )\\s+\n)\n(?<interface_name>\\g<type_name>\\s*\\.\\s*)?\n(?<property_name>\\g<identifier>)\\s*\n(?=\\{|=>|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -4366,7 +4405,7 @@
       ]
     },
     "raw-interpolation": {
-      "begin": "(?<=[^\\{]|^)((?:\\{)*)(\\{)(?=[^\\{])",
+      "begin": "(?<=[^\\{]|^)((?:\\{)*)(\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -5295,6 +5334,9 @@
           "include": "#struct-declaration"
         },
         {
+          "include": "#union-declaration"
+        },
+        {
           "include": "#record-declaration"
         },
         {
@@ -5502,6 +5544,66 @@
         {
           "match": "(?<!\\s)\\?",
           "name": "punctuation.separator.question-mark.cs"
+        }
+      ]
+    },
+    "union-declaration": {
+      "begin": "(?=\\bunion\\b)",
+      "end": "(?<=\\})|(?=;)",
+      "patterns": [
+        {
+          "begin": "(?x)\n(union)\\b\\s+\n(@?[_[:alpha:]][_[:alnum:]]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.union.cs"
+            },
+            "2": {
+              "name": "entity.name.type.union.cs"
+            }
+          },
+          "end": "(?=\\{)|(?=;)",
+          "patterns": [
+            {
+              "include": "#comment"
+            },
+            {
+              "include": "#type-parameter-list"
+            },
+            {
+              "include": "#parenthesized-type-list"
+            },
+            {
+              "include": "#base-types"
+            },
+            {
+              "include": "#generic-constraints"
+            }
+          ]
+        },
+        {
+          "begin": "\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.curlybrace.open.cs"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.curlybrace.close.cs"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#class-or-struct-members"
+            }
+          ]
+        },
+        {
+          "include": "#preprocessor"
+        },
+        {
+          "include": "#comment"
         }
       ]
     },
@@ -6012,5 +6114,5 @@
     }
   },
   "scopeName": "source.cs",
-  "version": "https://github.com/dotnet/csharp-tmLanguage/commit/32ee13e806edf480ef9423adcf5ecf61ba39561b"
+  "version": "https://github.com/dotnet/csharp-tmLanguage/commit/c2719309e91d2e26be21fce0ecaaca86c7b48ce4"
 }
