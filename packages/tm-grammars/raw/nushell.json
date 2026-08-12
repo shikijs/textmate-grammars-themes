@@ -79,18 +79,27 @@
           ]
         },
         {
-          "captures": {
+          "begin": "(?!\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})([^\\s:,|;(){}\\[\"'$#][^\\s:,|;(){}\\[\"']*)\\s*(:)\\s*",
+          "beginCaptures": {
             "1": {
-              "name": "variable.other.nushell"
+              "name": "string.bare.nushell variable.other.nushell"
             },
             "2": {
               "name": "keyword.control.nushell"
             }
           },
-          "match": "(\\w+)\\s*(:)\\s*"
+          "comment": "Blocks and closures are also scanned by this rule, so the negative lookahead keeps a datetime like 2024-01-01T00:00:00Z from being split into key and value.",
+          "end": "(?=[,}])|(?<=[^\\s:])(?=\\s)",
+          "name": "meta.record-entry.nushell",
+          "patterns": [
+            {
+              "include": "#record-value"
+            }
+          ]
         },
         {
-          "captures": {
+          "begin": "(\\$\"((?:[^\"\\\\]|\\\\.)*)\")\\s*(:)\\s*",
+          "beginCaptures": {
             "1": {
               "name": "variable.other.nushell"
             },
@@ -106,11 +115,17 @@
               "name": "keyword.control.nushell"
             }
           },
-          "match": "(\\$\"((?:[^\"\\\\]|\\\\.)*)\")\\s*(:)\\s*",
-          "name": "meta.record-entry.nushell"
+          "end": "(?=[,}])|(?<=[^\\s:])(?=\\s)",
+          "name": "meta.record-entry.nushell",
+          "patterns": [
+            {
+              "include": "#record-value"
+            }
+          ]
         },
         {
-          "captures": {
+          "begin": "(\"(?:[^\"\\\\]|\\\\.)*\")\\s*(:)\\s*",
+          "beginCaptures": {
             "1": {
               "name": "string.quoted.double.nushell variable.other.nushell"
             },
@@ -118,11 +133,17 @@
               "name": "keyword.control.nushell"
             }
           },
-          "match": "(\"(?:[^\"\\\\]|\\\\.)*\")\\s*(:)\\s*",
-          "name": "meta.record-entry.nushell"
+          "end": "(?=[,}])|(?<=[^\\s:])(?=\\s)",
+          "name": "meta.record-entry.nushell",
+          "patterns": [
+            {
+              "include": "#record-value"
+            }
+          ]
         },
         {
-          "captures": {
+          "begin": "(\\$'([^']*)')\\s*(:)\\s*",
+          "beginCaptures": {
             "1": {
               "name": "variable.other.nushell"
             },
@@ -138,11 +159,17 @@
               "name": "keyword.control.nushell"
             }
           },
-          "match": "(\\$'([^']*)')\\s*(:)\\s*",
-          "name": "meta.record-entry.nushell"
+          "end": "(?=[,}])|(?<=[^\\s:])(?=\\s)",
+          "name": "meta.record-entry.nushell",
+          "patterns": [
+            {
+              "include": "#record-value"
+            }
+          ]
         },
         {
-          "captures": {
+          "begin": "('[^']*')\\s*(:)\\s*",
+          "beginCaptures": {
             "1": {
               "name": "string.quoted.single.nushell variable.other.nushell"
             },
@@ -150,8 +177,13 @@
               "name": "keyword.control.nushell"
             }
           },
-          "match": "('[^']*')\\s*(:)\\s*",
-          "name": "meta.record-entry.nushell"
+          "end": "(?=[,}])|(?<=[^\\s:])(?=\\s)",
+          "name": "meta.record-entry.nushell",
+          "patterns": [
+            {
+              "include": "#record-value"
+            }
+          ]
         },
         {
           "include": "#spread"
@@ -708,6 +740,40 @@
     "ranges": {
       "match": "\\.\\.<?",
       "name": "keyword.control.nushell"
+    },
+    "record-value": {
+      "patterns": [
+        {
+          "include": "#variables"
+        },
+        {
+          "include": "#variable-fields"
+        },
+        {
+          "include": "#constant-value"
+        },
+        {
+          "include": "#table"
+        },
+        {
+          "include": "#spread"
+        },
+        {
+          "include": "#ranges"
+        },
+        {
+          "include": "#paren-expression"
+        },
+        {
+          "include": "#braced-expression"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#comment"
+        }
+      ]
     },
     "spread": {
       "match": "\\.\\.\\.(?=[^\\s\\]}])",
