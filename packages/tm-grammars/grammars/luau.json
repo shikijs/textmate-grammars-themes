@@ -140,9 +140,12 @@
       ]
     },
     "const-declaration": {
-      "begin": "\\b(const)\\b",
+      "begin": "\\b(?:(export)\\s+)?(const)\\b",
       "beginCaptures": {
         "1": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "2": {
           "name": "storage.modifier.const.luau"
         }
       },
@@ -235,7 +238,7 @@
       ]
     },
     "function-definition": {
-      "begin": "\\b(?:(local)\\s+|(const)\\s+)?(function)\\b(?![,:])",
+      "begin": "\\b(?:(local)\\s+|(const)\\s+|(export)\\s+)?(function)\\b(?![,:])",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.local.luau"
@@ -244,6 +247,9 @@
           "name": "storage.modifier.const.luau"
         },
         "3": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "4": {
           "name": "keyword.control.luau"
         }
       },
@@ -445,9 +451,12 @@
       ]
     },
     "local-declaration": {
-      "begin": "\\b(local)\\b",
+      "begin": "\\b(?:(export)\\s+)?(local)\\b",
       "beginCaptures": {
         "1": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "2": {
           "name": "storage.modifier.local.luau"
         }
       },
@@ -486,15 +495,19 @@
     "number": {
       "patterns": [
         {
-          "match": "\\b0_*[Xx]_*[A-F_a-f\\d]*(?:i|[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\b0_*[Xx]_*[A-Fa-f\\d][A-F_a-f\\d]*i?",
           "name": "constant.numeric.hex.luau"
         },
         {
-          "match": "\\b0_*[Bb][01_]+(?:i|[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\b0_*[Bb]_*[01][01_]*i?",
           "name": "constant.numeric.binary.luau"
         },
         {
-          "match": "(?:\\d[_\\d]*(?:\\.[_\\d]*)?|\\.\\d[_\\d]*)(?:i|[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\d[_\\d]*i",
+          "name": "constant.numeric.decimal.luau"
+        },
+        {
+          "match": "(?:\\d[_\\d]*(?:\\.[_\\d]*)?|\\.\\d[_\\d]*)(?:[Ee][-+]?_*\\d[_\\d]*)?",
           "name": "constant.numeric.decimal.luau"
         }
       ]
