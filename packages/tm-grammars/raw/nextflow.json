@@ -156,7 +156,7 @@
     },
     "function-def": {
       "applyEndPatternLast": 1,
-      "begin": "(?x:(?<=;|^|{)(?=\\s*\n  (?:\n  (?:def)\n  |\n  (?:\n  (?:\n  (?:boolean|byte|char|short|int|float|long|double)\n  |\n  (?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*) # object type\n  )\n  [\\[\\]]*\n  (?:<.*>)?\n  ) \n  n  )\n  \\s+\n  ([^=]+\\s+)?\\w+\\s*\\(\n  ))",
+      "begin": "(?x:(?<=;|^|{)(?=\\s*\n  (?:\n  (?:def)\n  |\n  (?:\n  (?:\n  (?:boolean|byte|char|short|int|float|long|double)\n  |\n  (?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*) # object type\n  )\n  [\\[\\]]*\n  (?:<.*>)?\n  ) \n  )\n  \\s+\n  ([^=]+\\s+)?\\w+\\s*\\(\n  ))",
       "end": "}|(?=[^{])",
       "name": "meta.definition.method.groovy",
       "patterns": [

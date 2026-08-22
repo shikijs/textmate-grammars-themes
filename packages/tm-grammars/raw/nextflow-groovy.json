@@ -593,6 +593,11 @@
     "string-slashy": {
       "patterns": [
         {
+          "comment": "division, not a slashy string: a slash right after an expression",
+          "match": "(?<=[\\w)\\]}'\"])\\s*/(?![/*])",
+          "name": "keyword.operator.arithmetic.groovy"
+        },
+        {
           "begin": "/(?=[^/]+/([^>]|$))",
           "beginCaptures": {
             "0": {

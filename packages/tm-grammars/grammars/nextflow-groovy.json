@@ -590,6 +590,10 @@
     "string-slashy": {
       "patterns": [
         {
+          "match": "(?<=[]\"')}\\w])\\s*/(?![*/])",
+          "name": "keyword.operator.arithmetic.groovy"
+        },
+        {
           "begin": "/(?=[^/]+/([^>]|$))",
           "beginCaptures": {
             "0": {
