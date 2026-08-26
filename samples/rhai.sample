@@ -1,0 +1,36 @@
+// Build a small order with maps, arrays, closures, and string interpolation.
+import "inventory" as inventory;
+
+const TAX_RATE = 0.2;
+
+fn total(items) {
+  let subtotal = 0.0;
+
+  for item in items {
+    subtotal += item.price;
+  }
+
+  subtotal * (1.0 + TAX_RATE)
+}
+
+let cart = [
+  #{ name: "tea", price: 4.5, tags: ["drink"] },
+  #{ name: "cake", price: 7.0, tags: ["dessert"] },
+];
+
+cart[0].price += 0.5;
+
+let affordable = cart.filter(|item| item.price < 10.0);
+let featured = cart[0]?.name ?? "none";
+let label = switch affordable.len() {
+  0 => "empty",
+  1 => "one item",
+  _ => `${affordable.len()} items`,
+};
+
+if !affordable.is_empty() {
+  print(`${label}; featured: ${featured}; total: ${total(affordable)}`);
+  inventory::reserve(affordable);
+}
+
+// From https://rhai.rs/book/language/
