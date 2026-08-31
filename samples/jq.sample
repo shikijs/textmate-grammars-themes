@@ -1,0 +1,14 @@
+# Select active users and reshape the result.
+def normalize_name:
+  ascii_downcase | gsub("\\s+"; "-");
+
+.users
+| map(select(.active and (.roles | index("admin"))))
+| sort_by(.name)
+| .[] as $user
+| {
+    id: $user.id,
+    slug: ($user.name | normalize_name),
+    label: "\($user.name) (#\($user.id))",
+    access: if $user.disabled then "blocked" else "granted" end
+  }
