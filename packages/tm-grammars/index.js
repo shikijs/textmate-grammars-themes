@@ -4652,19 +4652,19 @@ export const grammars = [
     aliases: [
       'tsp',
     ],
-    byteSize: 24118,
+    byteSize: 24513,
     displayName: 'TypeSpec',
     funding: [
     ],
-    hash: 'j0xy9vKxncy7FgXsZXhGGcnuOuhegyJ5lKckYxlACTg',
-    lastUpdate: '2026-03-02T17:26:05Z',
+    hash: '9Z5ySOhdzZ6qem4q8p-OqjrTN2-biM6nuW25ko0uCs0',
+    lastUpdate: '2026-09-03T18:19:21Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/microsoft/typespec/main/LICENSE',
     name: 'typespec',
     scopeName: 'source.tsp',
-    sha: '9bca04b6dd0c966b982b1ca920b59e245c050bed',
-    source: 'https://github.com/microsoft/typespec/blob/9bca04b6dd0c966b982b1ca920b59e245c050bed/grammars/typespec.json',
-    sourceApi: 'https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=9bca04b6dd0c966b982b1ca920b59e245c050bed',
+    sha: '64f7850fb6e6069965ba8774643241b6a74f881c',
+    source: 'https://github.com/microsoft/typespec/blob/64f7850fb6e6069965ba8774643241b6a74f881c/grammars/typespec.json',
+    sourceApi: 'https://api.github.com/repos/microsoft/typespec/contents/grammars/typespec.json?ref=64f7850fb6e6069965ba8774643241b6a74f881c',
   },
   {
     aliases: [
