@@ -1044,6 +1044,14 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/relationalai-oss/rel_vscode/blob/master/syntaxes/rel.tmLanguage.json',
   },
   {
+    name: 'rhai',
+    displayName: 'Rhai',
+    source: 'https://github.com/rhaiscript/vscode-rhai/blob/master/syntax/rhai.tmLanguage.json',
+    categories: ['scripting', 'general'],
+    license: 'MPL-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/rhaiscript/vscode-rhai/master/LICENSE',
+  },
+  {
     name: 'riscv',
     displayName: 'RISC-V',
     source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/master/syntaxes/riscv.tmLanguage',
