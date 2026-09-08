@@ -7,10 +7,112 @@
   "firstLineMatch": "<!(?i:DOCTYPE)|<(?i:html)|<\\?(?i:php)|\\{\\{|\\{%|\\{#",
   "foldingStartMarker": "(<(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)\\b.*?>|<!--(?!.*--\\s*>)|^<!-- #tminclude (?>.*?-->)$|\\{%\\s+(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim))",
   "foldingStopMarker": "(</(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)>|^(?!.*?<!--).*?--\\s*>|^<!-- end tminclude -->$|\\{%\\s+end(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim))",
+  "injections": {
+    "L:text.html.twig -meta.tag.template -comment.block.twig -string.unquoted.verbatim.twig": {
+      "patterns": [
+        {
+          "include": "#twig-verbatim"
+        },
+        {
+          "include": "#twig-embedded-blocks"
+        },
+        {
+          "include": "#twig-comment-tag"
+        },
+        {
+          "include": "#twig-print-tag"
+        },
+        {
+          "include": "#twig-injected-statement"
+        }
+      ]
+    }
+  },
   "name": "twig",
   "patterns": [
     {
-      "begin": "(<)([0-:A-Za-z]++)(?=[^>]*></\\2>)",
+      "include": "#twig-verbatim"
+    },
+    {
+      "begin": "(\\{%[-~]?)\\s*(js|includejs|javascript)\\s*([-~]?%})",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.tag.twig"
+        },
+        "2": {
+          "name": "keyword.control.twig"
+        },
+        "3": {
+          "name": "punctuation.section.tag.twig"
+        }
+      },
+      "contentName": "source.js.embedded.twig",
+      "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.twig"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "begin": "(\\{%[-~]?)\\s*((?:|include|includehires)css)\\s*([-~]?%})",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.tag.twig"
+        },
+        "2": {
+          "name": "keyword.control.twig"
+        },
+        "3": {
+          "name": "punctuation.section.tag.twig"
+        }
+      },
+      "contentName": "source.css.embedded.twig",
+      "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.twig"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.css"
+        }
+      ]
+    },
+    {
+      "begin": "(\\{%[-~]?)\\s*((?:|include|includehires)scss)\\s*([-~]?%})",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.tag.twig"
+        },
+        "2": {
+          "name": "keyword.control.twig"
+        },
+        "3": {
+          "name": "punctuation.section.tag.twig"
+        }
+      },
+      "contentName": "source.css.scss.embedded.twig",
+      "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.twig"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.css.scss"
+        }
+      ]
+    },
+    {
+      "begin": "(<)([-.0-:A-Za-z]++)(?=[^>]*></\\2>)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.html"
@@ -234,36 +336,6 @@
       ]
     },
     {
-      "begin": "(?i)(?<=\\{%\\s(?:|include)js\\s%})",
-      "end": "(?i)(?=\\{%\\send(?:|include)js\\s%})",
-      "name": "source.js.embedded.twig",
-      "patterns": [
-        {
-          "include": "source.js"
-        }
-      ]
-    },
-    {
-      "begin": "(?i)(?<=\\{%\\s(?:|include|includehires)css\\s%})",
-      "end": "(?i)(?=\\{%\\send(?:|include|includehires)css\\s%})",
-      "name": "source.css.embedded.twig",
-      "patterns": [
-        {
-          "include": "source.css"
-        }
-      ]
-    },
-    {
-      "begin": "(?i)(?<=\\{%\\s(?:|include|includehires)scss\\s%})",
-      "end": "(?i)(?=\\{%\\send(?:|include|includehires)scss\\s%})",
-      "name": "source.css.scss.embedded.twig",
-      "patterns": [
-        {
-          "include": "source.css.scss"
-        }
-      ]
-    },
-    {
       "begin": "(</?)((?i:body|head|html))\\b",
       "captures": {
         "1": {
@@ -328,7 +400,7 @@
       ]
     },
     {
-      "begin": "(</?)([0-:A-Za-z]+)",
+      "begin": "(</?)([-.0-:A-Za-z]+)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -377,6 +449,9 @@
   "repository": {
     "embedded-code": {
       "patterns": [
+        {
+          "include": "#twig-verbatim"
+        },
         {
           "include": "#ruby"
         },
@@ -614,6 +689,21 @@
     "tag-stuff": {
       "patterns": [
         {
+          "begin": "(=)\\s*(?=[^\"'<=>`\\s])",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.key-value.html"
+            }
+          },
+          "contentName": "string.unquoted.html",
+          "end": "(?=[>\\s])",
+          "patterns": [
+            {
+              "include": "#embedded-code"
+            }
+          ]
+        },
+        {
           "include": "#tag-id-attribute"
         },
         {
@@ -694,13 +784,13 @@
       ]
     },
     "twig-comment-tag": {
-      "begin": "\\{#-?",
+      "begin": "\\{#[-~]?",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.comment.begin.twig"
         }
       },
-      "end": "-?#}",
+      "end": "[-~]?#}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.comment.end.twig"
@@ -720,13 +810,95 @@
         }
       ]
     },
+    "twig-embedded-blocks": {
+      "patterns": [
+        {
+          "begin": "(\\{%[-~]?)\\s*(js|includejs|javascript)\\s*([-~]?%})",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.section.tag.twig"
+            },
+            "2": {
+              "name": "keyword.control.twig"
+            },
+            "3": {
+              "name": "punctuation.section.tag.twig"
+            }
+          },
+          "contentName": "source.js.embedded.twig",
+          "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.control.twig"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "begin": "(\\{%[-~]?)\\s*((?:|include|includehires)css)\\s*([-~]?%})",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.section.tag.twig"
+            },
+            "2": {
+              "name": "keyword.control.twig"
+            },
+            "3": {
+              "name": "punctuation.section.tag.twig"
+            }
+          },
+          "contentName": "source.css.embedded.twig",
+          "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.control.twig"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        },
+        {
+          "begin": "(\\{%[-~]?)\\s*((?:|include|includehires)scss)\\s*([-~]?%})",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.section.tag.twig"
+            },
+            "2": {
+              "name": "keyword.control.twig"
+            },
+            "3": {
+              "name": "punctuation.section.tag.twig"
+            }
+          },
+          "contentName": "source.css.scss.embedded.twig",
+          "end": "(\\{%[-~]?)\\s*end\\2\\s*([-~]?%})",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.control.twig"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.css.scss"
+            }
+          ]
+        }
+      ]
+    },
     "twig-filters": {
       "captures": {
         "1": {
           "name": "support.function.twig"
         }
       },
-      "match": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[]),:|}\\s]|\\.\\.|\\*\\*)"
+      "match": "(?<=[]\"')0-9A-Z_a-z\\x7F-ÿ]\\||\\{%\\sfilter\\s)(default|abs|capitalize|e(?:scape)?|first|join|(?:json|url)_encode|keys|last|length|lower|nl2br|number_format|raw|reverse|round|sort|striptags|title|trim|upper)(?=[]),:|}\\s]|\\.\\.|\\*\\*)"
     },
     "twig-filters-ud": {
       "captures": {
@@ -991,8 +1163,70 @@
         }
       ]
     },
+    "twig-injected-statement": {
+      "begin": "\\{%(?![-~]?\\s*end(?:js|javascript|includejs|css|includecss|includehirescss|scss|includescss|includehiresscss)\\b)[-~]?",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.tag.twig"
+        }
+      },
+      "end": "[-~]?%}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.tag.twig"
+        }
+      },
+      "name": "meta.tag.template.block.twig",
+      "patterns": [
+        {
+          "include": "#twig-constants"
+        },
+        {
+          "include": "#twig-keywords"
+        },
+        {
+          "include": "#twig-operators"
+        },
+        {
+          "include": "#twig-functions-warg"
+        },
+        {
+          "include": "#twig-functions"
+        },
+        {
+          "include": "#twig-macros"
+        },
+        {
+          "include": "#twig-filters-warg"
+        },
+        {
+          "include": "#twig-filters"
+        },
+        {
+          "include": "#twig-filters-warg-ud"
+        },
+        {
+          "include": "#twig-filters-ud"
+        },
+        {
+          "include": "#twig-objects"
+        },
+        {
+          "include": "#twig-properties"
+        },
+        {
+          "include": "#twig-strings"
+        },
+        {
+          "include": "#twig-arrays"
+        },
+        {
+          "include": "#twig-hashes"
+        }
+      ]
+    },
     "twig-keywords": {
-      "match": "(?<=\\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|types|use|with)(?=\\s)",
+      "match": "\\b(?:(?:end)?(?:apply|autoescape|block|cache|deprecated|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim|with)|as|do|else|elseif|extends|flush|from|import|include|only|types|use)\\b",
       "name": "keyword.control.twig"
     },
     "twig-macros": {
@@ -1074,6 +1308,10 @@
     "twig-operators": {
       "patterns": [
         {
+          "match": "\\?\\?|\\?:|\\?\\.|<=>|=>|===|!==",
+          "name": "keyword.operator.twig"
+        },
+        {
           "captures": {
             "1": {
               "name": "keyword.operator.arithmetic.twig"
@@ -1132,13 +1370,13 @@
       ]
     },
     "twig-print-tag": {
-      "begin": "\\{\\{-?",
+      "begin": "\\{\\{[-~]?",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.tag.twig"
         }
       },
-      "end": "-?}}",
+      "end": "[-~]?}}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.tag.twig"
@@ -1297,13 +1535,13 @@
       ]
     },
     "twig-statement-tag": {
-      "begin": "\\{%-?",
+      "begin": "\\{%[-~]?",
       "beginCaptures": {
         "0": {
           "name": "punctuation.section.tag.twig"
         }
       },
-      "end": "-?%}",
+      "end": "[-~]?%}",
       "endCaptures": {
         "0": {
           "name": "punctuation.section.tag.twig"
@@ -1361,39 +1599,51 @@
     "twig-strings": {
       "patterns": [
         {
-          "begin": "(?:(?<!\\\\)|(?<=\\\\\\\\))'",
+          "begin": "'",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.twig"
             }
           },
-          "end": "(?:(?<!\\\\)|(?<=\\\\\\\\))'",
+          "end": "'",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.twig"
             }
           },
-          "name": "string.quoted.single.twig"
+          "name": "string.quoted.single.twig",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.twig"
+            }
+          ]
         },
         {
-          "begin": "(?:(?<!\\\\)|(?<=\\\\\\\\))\"",
+          "begin": "\"",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.twig"
             }
           },
-          "end": "(?:(?<!\\\\)|(?<=\\\\\\\\))\"",
+          "end": "\"",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.twig"
             }
           },
-          "name": "string.quoted.double.twig"
+          "name": "string.quoted.double.twig",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.twig"
+            }
+          ]
         }
       ]
     },
     "twig-verbatim": {
-      "begin": "(\\{%-?)\\s*(verbatim)\\s*(-?%})",
+      "begin": "(\\{%[-~]?)\\s*(verbatim)\\s*([-~]?%})",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.twig"
@@ -1406,7 +1656,7 @@
         }
       },
       "contentName": "string.unquoted.verbatim.twig",
-      "end": "(\\{%-?)\\s*(endverbatim)\\s*(-?%})",
+      "end": "(\\{%[-~]?)\\s*(endverbatim)\\s*([-~]?%})",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.tag.twig"
