@@ -1184,6 +1184,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['data'],
   },
   {
+    name: 'tsrx',
+    displayName: 'TSRX',
+    source: 'https://github.com/tsrx-org/tsrx/blob/main/grammars/textmate/tsrx.tmLanguage.json',
+    categories: ['web'],
+  },
+  {
     name: 'turtle',
     source: 'https://github.com/stardog-union/stardog-vsc/blob/master/stardog-rdf-grammars/syntaxes/turtle.tmLanguage.json',
   },

@@ -1,0 +1,230 @@
+#CB7676        type
+#DBD7CACC       
+#5DA994        Todo
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        id
+#444444        : 
+#5DA994        string
+#444444        ;
+#DBD7CACC        
+#BD976A        title
+#444444        : 
+#5DA994        string
+#444444        ;
+#DBD7CACC        
+#BD976A        hidden
+#CB7676        ?
+#444444        : 
+#5DA994        boolean
+#444444        ;
+#444444        };
+#4D9375        export
+#DBD7CACC       
+#CB7676        function
+#DBD7CACC       
+#80A665        TodoList
+#444444        ({
+#DBD7CACC       
+#BD976A        items
+#DBD7CACC       
+#444444        }: { 
+#BD976A        items
+#444444        : 
+#5DA994        Todo
+#444444        [] })
+#DBD7CACC       
+#444444        @{
+#DBD7CACC        
+#CB7676        const
+#DBD7CACC       
+#BD976A        visibleItems
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        items
+#444444        .
+#80A665        filter
+#444444        ((
+#BD976A        item
+#444444        )
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#CB7676        !
+#BD976A        item
+#444444        .
+#BD976A        hidden
+#444444        );
+#DBD7CACC        
+#444444        <
+#4D9375        section
+#444444        >
+#DBD7CACC          
+#444444        <
+#4D9375        h1
+#444444        >
+#DBD7CACC      Todos
+#444444        </
+#4D9375        h1
+#444444        >
+#DBD7CACC          
+#4D9375        @if
+#DBD7CACC       
+#444444        (
+#BD976A        visibleItems
+#444444        .
+#B8A965        length
+#DBD7CACC       
+#80A665        >
+#DBD7CACC       
+#4C9A91        0
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#444444        <
+#4D9375        p
+#444444        >{
+#BD976A        visibleItems
+#444444        .
+#B8A965        length
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#5DA994        string
+#444444        }
+#DBD7CACC       items remaining
+#444444        </
+#4D9375        p
+#444444        >
+#DBD7CACC          
+#444444        }
+#DBD7CACC       
+#4D9375        @else
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      All done!
+#444444        </
+#4D9375        p
+#444444        >
+#DBD7CACC          
+#444444        }
+#DBD7CACC          
+#444444        <
+#4D9375        ul
+#444444        >
+#DBD7CACC            
+#4D9375        @for
+#DBD7CACC       
+#444444        (
+#CB7676        const
+#DBD7CACC       
+#BD976A        item
+#DBD7CACC       
+#CB7676        of
+#DBD7CACC       
+#BD976A        visibleItems
+#444444        ;
+#DBD7CACC       
+#CB7676        index
+#DBD7CACC       
+#BD976A        i
+#444444        ;
+#DBD7CACC       
+#CB7676        key
+#DBD7CACC       
+#BD976A        item
+#444444        .
+#BD976A        id
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#444444        <
+#4D9375        li
+#444444        >{
+#BD976A        i
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#5DA994        string
+#444444        }
+#DBD7CACC      . 
+#444444        {
+#BD976A        item
+#444444        .
+#BD976A        title
+#444444        }</
+#4D9375        li
+#444444        >
+#DBD7CACC            
+#444444        }
+#DBD7CACC       
+#4D9375        @empty
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#444444        <
+#4D9375        li
+#444444        >
+#DBD7CACC      No todos yet
+#444444        </
+#4D9375        li
+#444444        >
+#DBD7CACC            
+#444444        }
+#DBD7CACC          
+#444444        </
+#4D9375        ul
+#444444        >
+#DBD7CACC          
+#444444        <
+#4D9375        style
+#DBD7CACC      >
+#DBD7CACC            
+#BD976A        ul
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        display
+#DBD7CACC      : 
+#BD976A        grid
+#DBD7CACC      ;
+#DBD7CACC              
+#BD976A        gap
+#DBD7CACC      : 0
+#444444        .
+#DBD7CACC      5
+#BD976A        rem
+#DBD7CACC      ;
+#DBD7CACC            
+#444444        }
+#DBD7CACC            
+#BD976A        li
+#DBD7CACC       
+#444444        {
+#DBD7CACC              
+#BD976A        color
+#DBD7CACC      : #42
+#BD976A        b883
+#DBD7CACC      ;
+#DBD7CACC            
+#444444        }
+#DBD7CACC          
+#FDAEB7        </style>
+#DBD7CACC        
+#FDAEB7        </section>
+#FDAEB7        }
+#758575DD      // Adapted from https://github.com/tsrx-org/tsrx#example
