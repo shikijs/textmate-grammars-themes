@@ -2144,6 +2144,25 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/cdibbs/language-jison/contents/grammars/jison.cson?ref=9d4cb4b044832320a51fabb6e533fc299425f552',
   },
   {
+    byteSize: 4224,
+    categories: [
+      'data',
+      'scripting',
+    ],
+    displayName: 'jq',
+    funding: [
+    ],
+    hash: 'IYtdyDYS079w7PyX6pdd3ItxKOxdViqlbZ3JLKssSeo',
+    lastUpdate: '2025-06-03T10:42:27Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/wader/vscode-jq/master/LICENSE',
+    name: 'jq',
+    scopeName: 'source.jq',
+    sha: '467413cdb54dbbf89c1820fbcceb628b0a3f420a',
+    source: 'https://github.com/wader/vscode-jq/blob/467413cdb54dbbf89c1820fbcceb628b0a3f420a/syntaxes/jq.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/wader/vscode-jq/contents/syntaxes/jq.tmLanguage.json?ref=467413cdb54dbbf89c1820fbcceb628b0a3f420a',
+  },
+  {
     byteSize: 2705,
     categories: [
       'web',
