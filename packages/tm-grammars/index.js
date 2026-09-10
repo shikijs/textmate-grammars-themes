@@ -442,19 +442,19 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/microsoft/vscode/contents/extensions/bat/syntaxes/batchfile.tmLanguage.json?ref=df15c8e832a341633acd2e9bb26e1b275d09cfe0',
   },
   {
-    byteSize: 10133,
+    byteSize: 12556,
     displayName: 'Beancount',
     funding: [
     ],
-    hash: 'jpKPT3sRW7Nshq0bSM7Y-mmstCJUMvWOblCqHRnleTY',
-    lastUpdate: '2024-10-02T08:25:15Z',
+    hash: 'Oae9U_FYogMNm9-KQP5sf1p65hQFP85gkIHL4XH_Wgg',
+    lastUpdate: '2026-09-07T21:38:06Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/Lencerf/vscode-beancount/master/LICENSE',
     name: 'beancount',
     scopeName: 'text.beancount',
-    sha: '75fc29960fcf6666e4b06310fac4d49a16c57ca0',
-    source: 'https://github.com/Lencerf/vscode-beancount/blob/75fc29960fcf6666e4b06310fac4d49a16c57ca0/syntaxes/beancount.tmLanguage',
-    sourceApi: 'https://api.github.com/repos/Lencerf/vscode-beancount/contents/syntaxes/beancount.tmLanguage?ref=75fc29960fcf6666e4b06310fac4d49a16c57ca0',
+    sha: '60dcdbd3af273aca0ff628220f2828483101ca47',
+    source: 'https://github.com/Lencerf/vscode-beancount/blob/60dcdbd3af273aca0ff628220f2828483101ca47/syntaxes/beancount.tmLanguage',
+    sourceApi: 'https://api.github.com/repos/Lencerf/vscode-beancount/contents/syntaxes/beancount.tmLanguage?ref=60dcdbd3af273aca0ff628220f2828483101ca47',
   },
   {
     aliases: [
