@@ -1,0 +1,277 @@
+#4D9375        namespace
+#DBD7CACC       Microsoft
+#4D9375        .
+#DBD7CACC      Sales
+#4D9375        .
+#DBD7CACC      Document
+#444444        ;
+#4D9375        using
+#DBD7CACC       Microsoft
+#4D9375        .
+#DBD7CACC      Foundation
+#4D9375        .
+#DBD7CACC      Address
+#444444        ;
+#758575DD      /// <summary>
+#758575DD      /// Stores sales order headers.
+#758575DD      /// </summary>
+#4D9375        table
+#DBD7CACC       
+#4C9A91        50100
+#DBD7CACC       "Sales Order Header"
+#DBD7CACC      {
+#DBD7CACC          Caption = 
+#C98A7D77      '
+#C98A7D        Sales Order Header
+#C98A7D77      '
+#444444        ;
+#DBD7CACC          
+#4D9375        DataClassification
+#DBD7CACC       = CustomerContent
+#444444        ;
+#DBD7CACC          
+#4D9375        fields
+#DBD7CACC          {
+#DBD7CACC              
+#4D9375        field(
+#4C9A91        1
+#444444        ;
+#DBD7CACC       "No."
+#444444        ;
+#DBD7CACC       
+#4D9375        Code
+#DBD7CACC      [
+#4C9A91        20
+#DBD7CACC      ]
+#4D9375        )
+#DBD7CACC              {
+#DBD7CACC                  Caption = 
+#C98A7D77      '
+#C98A7D        No.
+#C98A7D77      '
+#444444        ;
+#DBD7CACC                  NotBlank = true
+#444444        ;
+#DBD7CACC              }
+#DBD7CACC              
+#4D9375        field(
+#4C9A91        2
+#444444        ;
+#DBD7CACC       Amount
+#444444        ;
+#DBD7CACC       
+#4D9375        Decimal)
+#DBD7CACC              {
+#DBD7CACC                  Caption = 
+#C98A7D77      '
+#C98A7D        Amount
+#C98A7D77      '
+#444444        ;
+#DBD7CACC                  MinValue = 
+#4C9A91        0
+#444444        ;
+#DBD7CACC                  
+#4D9375        trigger
+#DBD7CACC       OnValidate
+#4D9375        ()
+#DBD7CACC                  
+#4D9375        begin
+#DBD7CACC                      
+#4D9375        if
+#DBD7CACC       Amount < 
+#4C9A91        0
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC                          Error
+#4D9375        (
+#DBD7CACC      NegativeAmountErr
+#444444        ,
+#DBD7CACC       Amount
+#4D9375        )
+#444444        ;
+#DBD7CACC                  
+#4D9375        end
+#444444        ;
+#DBD7CACC              }
+#DBD7CACC              
+#4D9375        field(
+#4C9A91        3
+#444444        ;
+#DBD7CACC       Status
+#444444        ;
+#DBD7CACC       
+#4D9375        Enum
+#DBD7CACC       "Sales Order Status"
+#4D9375        ) 
+#DBD7CACC      { Caption = 
+#C98A7D77      '
+#C98A7D        Status
+#C98A7D77      '
+#444444        ;
+#DBD7CACC       }
+#DBD7CACC          }
+#DBD7CACC          
+#4D9375        keys
+#DBD7CACC          {
+#DBD7CACC              
+#4D9375        key(
+#DBD7CACC      PK
+#444444        ;
+#DBD7CACC       "No."
+#4D9375        ) 
+#DBD7CACC      { Clustered = true
+#444444        ;
+#DBD7CACC       }
+#DBD7CACC          }
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC              NegativeAmountErr
+#444444        :
+#DBD7CACC       
+#4D9375        Label
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Amount %1 must not be negative.
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       Comment = 
+#C98A7D77      '
+#C98A7D        %1 = amount
+#C98A7D77      '
+#444444        ;
+#444444            
+#758575DD      /// <summary>Totals the lines and applies a discount above a threshold.</summary>
+#DBD7CACC          
+#4D9375        procedure
+#DBD7CACC       CalcTotal
+#4D9375        (
+#DBD7CACC      DiscountPct
+#444444        :
+#DBD7CACC       
+#4D9375        Decimal)
+#444444        :
+#DBD7CACC       
+#4D9375        Decimal
+#DBD7CACC          
+#4D9375        var
+#DBD7CACC              SalesLine
+#444444        :
+#DBD7CACC       
+#4D9375        Record
+#DBD7CACC       "Sales Line"
+#444444        ;
+#DBD7CACC              Total
+#444444        :
+#DBD7CACC       
+#4D9375        Decimal
+#444444        ;
+#DBD7CACC          
+#4D9375        begin
+#DBD7CACC              SalesLine
+#4D9375        .
+#DBD7CACC      SetRange
+#4D9375        (
+#DBD7CACC      "Document No."
+#444444        ,
+#DBD7CACC       "No."
+#4D9375        )
+#444444        ;
+#DBD7CACC              
+#4D9375        if
+#DBD7CACC       SalesLine
+#4D9375        .
+#DBD7CACC      FindSet
+#4D9375        () then
+#DBD7CACC                  
+#4D9375        repeat
+#DBD7CACC                      Total
+#4D9375         += 
+#DBD7CACC      SalesLine
+#4D9375        .
+#DBD7CACC      "Line Amount"
+#444444        ;
+#DBD7CACC                  
+#4D9375        until
+#DBD7CACC       SalesLine
+#4D9375        .
+#DBD7CACC      Next
+#4D9375        () 
+#DBD7CACC      = 
+#4C9A91        0
+#444444        ;
+#DBD7CACC              
+#4D9375        case
+#DBD7CACC       true 
+#4D9375        of
+#DBD7CACC                  Total > 
+#4C9A91        10000
+#444444        :
+#DBD7CACC                      Total
+#4D9375         := 
+#DBD7CACC      Total *
+#4D9375         (
+#4C9A91        1
+#DBD7CACC       - DiscountPct / 
+#4C9A91        100
+#4D9375        )
+#444444        ;
+#DBD7CACC                  Total = 
+#4C9A91        0
+#444444        :
+#DBD7CACC                      Message
+#4D9375        (
+#C98A7D77      '
+#C98A7D        No lines found for %1
+#C98A7D77      '
+#444444        ,
+#DBD7CACC       "No."
+#4D9375        )
+#444444        ;
+#DBD7CACC                  
+#4D9375        else
+#DBD7CACC                      
+#758575DD      /* Nothing to do; a block comment for good measure. */
+#DBD7CACC                      
+#444444        ;
+#DBD7CACC              
+#4D9375        end
+#444444        ;
+#DBD7CACC              
+#4D9375        exit(
+#DBD7CACC      Round
+#4D9375        (
+#DBD7CACC      Total
+#444444        ,
+#DBD7CACC       
+#4C9A91        0.01
+#4D9375        ))
+#444444        ;
+#DBD7CACC          
+#4D9375        end
+#444444        ;
+#DBD7CACC          [IntegrationEvent
+#4D9375        (
+#DBD7CACC      false
+#444444        ,
+#DBD7CACC       false
+#4D9375        )
+#DBD7CACC      ]
+#DBD7CACC          
+#4D9375        local
+#DBD7CACC       
+#4D9375        procedure
+#DBD7CACC       OnAfterCalcTotal
+#4D9375        (var
+#DBD7CACC       Header
+#444444        :
+#DBD7CACC       
+#4D9375        Record
+#DBD7CACC       "Sales Order Header"
+#4D9375        )
+#DBD7CACC          
+#4D9375        begin
+#DBD7CACC          
+#4D9375        end
+#444444        ;
+#DBD7CACC      }
+#758575DD      // Hand-written sample; see https://github.com/microsoft/ALAppExtensions

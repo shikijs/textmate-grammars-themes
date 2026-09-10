@@ -1,0 +1,72 @@
+namespace Microsoft.Sales.Document;
+
+using Microsoft.Foundation.Address;
+
+/// <summary>
+/// Stores sales order headers.
+/// </summary>
+table 50100 "Sales Order Header"
+{
+    Caption = 'Sales Order Header';
+    DataClassification = CustomerContent;
+
+    fields
+    {
+        field(1; "No."; Code[20])
+        {
+            Caption = 'No.';
+            NotBlank = true;
+        }
+        field(2; Amount; Decimal)
+        {
+            Caption = 'Amount';
+            MinValue = 0;
+            trigger OnValidate()
+            begin
+                if Amount < 0 then
+                    Error(NegativeAmountErr, Amount);
+            end;
+        }
+        field(3; Status; Enum "Sales Order Status") { Caption = 'Status'; }
+    }
+
+    keys
+    {
+        key(PK; "No.") { Clustered = true; }
+    }
+
+    var
+        NegativeAmountErr: Label 'Amount %1 must not be negative.', Comment = '%1 = amount';
+
+    /// <summary>Totals the lines and applies a discount above a threshold.</summary>
+    procedure CalcTotal(DiscountPct: Decimal): Decimal
+    var
+        SalesLine: Record "Sales Line";
+        Total: Decimal;
+    begin
+        SalesLine.SetRange("Document No.", "No.");
+        if SalesLine.FindSet() then
+            repeat
+                Total += SalesLine."Line Amount";
+            until SalesLine.Next() = 0;
+
+        case true of
+            Total > 10000:
+                Total := Total * (1 - DiscountPct / 100);
+            Total = 0:
+                Message('No lines found for %1', "No.");
+            else
+                /* Nothing to do; a block comment for good measure. */
+                ;
+        end;
+
+        exit(Round(Total, 0.01));
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterCalcTotal(var Header: Record "Sales Order Header")
+    begin
+    end;
+}
+
+// Hand-written sample; see https://github.com/microsoft/ALAppExtensions
