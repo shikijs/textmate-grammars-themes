@@ -3768,6 +3768,25 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/relationalai-oss/rel_vscode/contents/syntaxes/rel.tmLanguage.json?ref=63dda4dee48c67b037357f47b562185484555ea9',
   },
   {
+    byteSize: 12523,
+    categories: [
+      'scripting',
+      'general',
+    ],
+    displayName: 'Rhai',
+    funding: [
+    ],
+    hash: 'IxFBqKkKE4mn7AzBzJ1BEQm3a2NKm10uhnFqaLPaw8o',
+    lastUpdate: '2026-08-25T22:09:04Z',
+    license: 'MPL-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/rhaiscript/vscode-rhai/master/LICENSE',
+    name: 'rhai',
+    scopeName: 'source.rhai',
+    sha: 'a9d3cc8932b370ae0834954974a69218c3db0908',
+    source: 'https://github.com/rhaiscript/vscode-rhai/blob/a9d3cc8932b370ae0834954974a69218c3db0908/syntax/rhai.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/rhaiscript/vscode-rhai/contents/syntax/rhai.tmLanguage.json?ref=a9d3cc8932b370ae0834954974a69218c3db0908',
+  },
+  {
     byteSize: 6482,
     displayName: 'RISC-V',
     funding: [
