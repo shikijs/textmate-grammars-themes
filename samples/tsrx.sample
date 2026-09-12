@@ -1,0 +1,39 @@
+type Todo = {
+  id: string;
+  title: string;
+  hidden?: boolean;
+};
+
+export function TodoList({ items }: { items: Todo[] }) @{
+  const visibleItems = items.filter((item) => !item.hidden);
+
+  <section>
+    <h1>Todos</h1>
+
+    @if (visibleItems.length > 0) {
+      <p>{visibleItems.length as string} items remaining</p>
+    } @else {
+      <p>All done!</p>
+    }
+
+    <ul>
+      @for (const item of visibleItems; index i; key item.id) {
+        <li>{i + 1 as string}. {item.title}</li>
+      } @empty {
+        <li>No todos yet</li>
+      }
+    </ul>
+
+    <style>
+      ul {
+        display: grid;
+        gap: 0.5rem;
+      }
+      li {
+        color: #42b883;
+      }
+    </style>
+  </section>
+}
+
+// Adapted from https://github.com/tsrx-org/tsrx#example
