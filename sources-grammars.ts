@@ -72,6 +72,84 @@ export const sourcesVSCode: GrammarSource[] = [
     name: 'css',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/css/syntaxes/css.tmLanguage.json',
     categories: ['web'],
+    // TODO: Remove this once the CSS grammar supports the CSS Properties and Values API.
+    patch: (grammar) => {
+      const atRules = grammar.repository?.['at-rules']
+      if (!atRules?.patterns) {
+        throw new Error('Failed to find CSS `at-rules` patterns')
+      }
+
+      if (atRules.patterns.some((pattern: any) =>
+        pattern.patterns?.some((nested: any) => nested.name === 'meta.at-rule.property.body.css'),
+      )) {
+        return
+      }
+
+      atRules.patterns.unshift({
+        begin: '(?i)(?=@property(?:[\\s{;]|/\\*|$))',
+        end: '(?<=})(?!\\G)',
+        patterns: [
+          {
+            name: 'meta.at-rule.property.header.css',
+            begin: '(?i)\\G(@)property',
+            beginCaptures: {
+              0: { name: 'keyword.control.at-rule.property.css' },
+              1: { name: 'punctuation.definition.keyword.css' },
+            },
+            end: '(?=\\s*\\{)',
+            patterns: [
+              { include: '#comment-block' },
+              { include: '#escapes' },
+              {
+                name: 'variable.parameter.property-name.css',
+                match: '--[-A-Z_a-z[^\\x00-\\x7F]](?:[-0-9A-Z_a-z[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.))*',
+              },
+            ],
+          },
+          {
+            name: 'meta.at-rule.property.body.css',
+            begin: '\\{',
+            beginCaptures: {
+              0: { name: 'punctuation.section.property.begin.bracket.curly.css' },
+            },
+            end: '}',
+            endCaptures: {
+              0: { name: 'punctuation.section.property.end.bracket.curly.css' },
+            },
+            patterns: [
+              {
+                name: 'meta.property.css',
+                begin: '(?i)(?<![-\\w])(syntax|inherits|initial-value)(?=\\s*:)',
+                beginCaptures: {
+                  1: { name: 'meta.property-name.css support.type.property-name.css' },
+                },
+                end: '(?=;|})',
+                patterns: [
+                  {
+                    begin: '(:)\\s*',
+                    beginCaptures: {
+                      1: { name: 'punctuation.separator.key-value.css' },
+                    },
+                    contentName: 'meta.property-value.css',
+                    end: '(?=;|})',
+                    patterns: [
+                      { include: '#comment-block' },
+                      {
+                        name: 'constant.language.boolean.css',
+                        match: '(?i)(?<![-\\w])(true|false)(?![-\\w])',
+                      },
+                      { include: '#property-values' },
+                    ],
+                  },
+                ],
+              },
+              { include: '#rule-list-innards' },
+              { include: '$self' },
+            ],
+          },
+        ],
+      })
+    },
   },
   {
     name: 'dart',
