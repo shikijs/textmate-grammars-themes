@@ -773,6 +773,15 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['lisp'],
   },
   {
+    name: 'iec-61131-3',
+    displayName: 'IEC 61131-3',
+    aliases: ['iecst', 'st'],
+    source: 'https://github.com/yunos0987/vscode-iec-61131-3-lang/blob/main/syntaxes/iec-61131-3.tmLanguage.json',
+    categories: ['general'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/yunos0987/vscode-iec-61131-3-lang/main/LICENSE',
+  },
+  {
     name: 'imba',
     source: 'https://github.com/imba/imba/blob/master/packages/vscode-imba/syntaxes/imba.tmLanguage.json',
     categories: ['web'],
