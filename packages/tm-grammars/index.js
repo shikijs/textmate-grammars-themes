@@ -4547,7 +4547,7 @@ export const grammars = [
     scopeName: 'source.ts.tags',
   },
   {
-    byteSize: 180370,
+    byteSize: 179112,
     categories: [
       'web',
     ],
@@ -4558,15 +4558,15 @@ export const grammars = [
     ],
     funding: [
     ],
-    hash: 'L4i5KVU9B0UX5cNqyu3U0pEn-pN1tH2Mapa7g1GNpk0',
-    lastUpdate: '2026-09-05T17:57:43Z',
+    hash: 'FGfLDyl3EIQ_QPoRotpyHNsn5iwul7P37AZ-FSjifs0',
+    lastUpdate: '2026-10-03T05:35:53Z',
     license: 'MIT',
     licenseUrl: 'https://raw.githubusercontent.com/tsrx-org/tsrx/main/LICENSE',
     name: 'tsrx',
     scopeName: 'source.tsrx',
-    sha: '8efcbc85bc3910531715f51c9f592588c2464f4c',
-    source: 'https://github.com/tsrx-org/tsrx/blob/8efcbc85bc3910531715f51c9f592588c2464f4c/grammars/textmate/tsrx.tmLanguage.json',
-    sourceApi: 'https://api.github.com/repos/tsrx-org/tsrx/contents/grammars/textmate/tsrx.tmLanguage.json?ref=8efcbc85bc3910531715f51c9f592588c2464f4c',
+    sha: 'd2c4e37b60dd224999486d7189c61f1d59752c4c',
+    source: 'https://github.com/tsrx-org/tsrx/blob/d2c4e37b60dd224999486d7189c61f1d59752c4c/grammars/textmate/tsrx.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/tsrx-org/tsrx/contents/grammars/textmate/tsrx.tmLanguage.json?ref=d2c4e37b60dd224999486d7189c61f1d59752c4c',
   },
   {
     byteSize: 633,
