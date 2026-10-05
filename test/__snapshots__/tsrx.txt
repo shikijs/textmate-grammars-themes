@@ -1,3 +1,17 @@
+#4D9375        import
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        Details
+#DBD7CACC       
+#444444        }
+#DBD7CACC       
+#4D9375        from
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        ./Details.tsrx
+#C98A7D77      '
+#444444        ;
 #CB7676        type
 #DBD7CACC       
 #5DA994        Todo
@@ -5,23 +19,42 @@
 #444444        =
 #DBD7CACC       
 #444444        {
-#DBD7CACC        
+#DBD7CACC       
 #BD976A        id
 #444444        : 
 #5DA994        string
 #444444        ;
-#DBD7CACC        
+#DBD7CACC       
 #BD976A        title
 #444444        : 
 #5DA994        string
 #444444        ;
-#DBD7CACC        
-#BD976A        hidden
-#CB7676        ?
+#DBD7CACC       
+#BD976A        status
 #444444        : 
-#5DA994        boolean
-#444444        ;
-#444444        };
+#C98A7D77      '
+#C98A7D        open
+#C98A7D77      '
+#444444         | 
+#C98A7D77      '
+#C98A7D        done
+#C98A7D77      '
+#444444         };
+#CB7676        const
+#DBD7CACC       
+#BD976A        theme
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        <
+#4D9375        style
+#444444        >
+#DBD7CACC        .done {
+#DBD7CACC          text-decoration: line-through;
+#DBD7CACC        }
+#444444        </
+#4D9375        style
+#444444        >;
 #4D9375        export
 #DBD7CACC       
 #CB7676        function
@@ -30,18 +63,32 @@
 #444444        ({
 #DBD7CACC       
 #BD976A        items
+#444444        ,
+#DBD7CACC       
+#BD976A        as
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        section
+#C98A7D77      '
 #DBD7CACC       
 #444444        }: { 
 #BD976A        items
 #444444        : 
 #5DA994        Todo
-#444444        [] })
+#444444        []; 
+#BD976A        as
+#CB7676        ?
+#444444        : 
+#5DA994        string
+#444444         })
 #DBD7CACC       
 #444444        @{
 #DBD7CACC        
 #CB7676        const
 #DBD7CACC       
-#BD976A        visibleItems
+#BD976A        open
 #DBD7CACC       
 #444444        =
 #DBD7CACC       
@@ -54,14 +101,41 @@
 #DBD7CACC       
 #444444        =>
 #DBD7CACC       
-#CB7676        !
 #BD976A        item
 #444444        .
-#BD976A        hidden
+#BD976A        status
+#DBD7CACC       
+#CB7676        ===
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        open
+#C98A7D77      '
 #444444        );
 #DBD7CACC        
+#444444        <{
+#BD976A        as
+#444444        }
+#DBD7CACC       
+#BD976A        class
+#444444        =
+#C98A7D77      "
+#C98A7D        todos
+#C98A7D77      "
+#444444        >
+#DBD7CACC          
 #444444        <
-#4D9375        section
+#4D9375        style
+#DBD7CACC       
+#BD976A        apply
+#444444        ={
+#BD976A        theme
+#444444        }>
+#DBD7CACC            li {
+#DBD7CACC              color: #42b883;
+#DBD7CACC            }
+#DBD7CACC          
+#444444        </
+#4D9375        style
 #444444        >
 #DBD7CACC          
 #444444        <
@@ -71,11 +145,12 @@
 #444444        </
 #4D9375        h1
 #444444        >
+#758575DD       // comments sit between children
 #DBD7CACC          
 #4D9375        @if
 #DBD7CACC       
 #444444        (
-#BD976A        visibleItems
+#BD976A        open
 #444444        .
 #B8A965        length
 #DBD7CACC       
@@ -89,13 +164,9 @@
 #444444        <
 #4D9375        p
 #444444        >{
-#BD976A        visibleItems
+#BD976A        open
 #444444        .
 #B8A965        length
-#DBD7CACC       
-#4D9375        as
-#DBD7CACC       
-#5DA994        string
 #444444        }
 #DBD7CACC       items remaining
 #444444        </
@@ -131,7 +202,7 @@
 #DBD7CACC       
 #CB7676        of
 #DBD7CACC       
-#BD976A        visibleItems
+#BD976A        items
 #444444        ;
 #DBD7CACC       
 #CB7676        index
@@ -148,6 +219,48 @@
 #DBD7CACC       
 #444444        {
 #DBD7CACC              
+#4D9375        @switch
+#DBD7CACC       
+#444444        (
+#BD976A        item
+#444444        .
+#BD976A        status
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC                
+#4D9375        @case
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        done
+#C98A7D77      '
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
+#444444        <
+#4D9375        li
+#DBD7CACC       
+#BD976A        class
+#444444        ={
+#BD976A        theme
+#444444        .
+#BD976A        done
+#444444        }>{
+#BD976A        item
+#444444        .
+#BD976A        title
+#444444        }</
+#4D9375        li
+#444444        >
+#DBD7CACC                
+#444444        }
+#DBD7CACC                
+#4D9375        @default
+#444444        :
+#DBD7CACC       
+#444444        {
+#DBD7CACC                  
 #444444        <
 #4D9375        li
 #444444        >{
@@ -156,10 +269,6 @@
 #CB7676        +
 #DBD7CACC       
 #4C9A91        1
-#DBD7CACC       
-#4D9375        as
-#DBD7CACC       
-#5DA994        string
 #444444        }
 #DBD7CACC      . 
 #444444        {
@@ -169,6 +278,10 @@
 #444444        }</
 #4D9375        li
 #444444        >
+#DBD7CACC                
+#444444        }
+#DBD7CACC              
+#444444        }
 #DBD7CACC            
 #444444        }
 #DBD7CACC       
@@ -190,41 +303,65 @@
 #4D9375        ul
 #444444        >
 #DBD7CACC          
+#4D9375        @try
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
 #444444        <
-#4D9375        style
-#DBD7CACC      >
-#DBD7CACC            
-#BD976A        ul
+#B8A965        Details
 #DBD7CACC       
 #444444        {
-#DBD7CACC              
-#BD976A        display
-#DBD7CACC      : 
-#BD976A        grid
-#DBD7CACC      ;
-#DBD7CACC              
-#BD976A        gap
-#DBD7CACC      : 0
-#444444        .
-#DBD7CACC      5
-#BD976A        rem
-#DBD7CACC      ;
-#DBD7CACC            
+#BD976A        items
 #444444        }
-#DBD7CACC            
-#BD976A        li
 #DBD7CACC       
-#444444        {
-#DBD7CACC              
-#BD976A        color
-#DBD7CACC      : #42
-#BD976A        b883
-#DBD7CACC      ;
-#DBD7CACC            
-#444444        }
+#444444        />
 #DBD7CACC          
-#FDAEB7        </style>
+#444444        }
+#DBD7CACC       
+#4D9375        @pending
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#444444        <
+#4D9375        p
+#444444        >
+#DBD7CACC      Loading...
+#444444        </
+#4D9375        p
+#444444        >
+#DBD7CACC          
+#444444        }
+#DBD7CACC       
+#4D9375        @catch
+#DBD7CACC       
+#444444        (
+#BD976A        error
+#444444        ,
+#DBD7CACC       
+#BD976A        reset
+#444444        )
+#DBD7CACC       
+#444444        {
+#DBD7CACC            
+#444444        <
+#4D9375        button
+#DBD7CACC       
+#BD976A        onClick
+#444444        ={()
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#80A665        reset
+#444444        ()}>
+#DBD7CACC      Retry
+#444444        </
+#4D9375        button
+#444444        >
+#DBD7CACC          
+#444444        }
 #DBD7CACC        
-#FDAEB7        </section>
-#FDAEB7        }
-#758575DD      // Adapted from https://github.com/tsrx-org/tsrx#example
+#444444        </{
+#BD976A        as
+#444444        }>
+#444444        }
+#758575DD      // Adapted from https://tsrx.dev/features

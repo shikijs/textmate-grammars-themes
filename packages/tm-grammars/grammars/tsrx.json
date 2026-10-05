@@ -1393,6 +1393,9 @@
         }
       ]
     },
+    "embedded-grammar-fallback": {
+      "match": "(?!)"
+    },
     "enum-declaration": {
       "begin": "(?<![$_[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:\\b(export)\\s+)?(?:\\b(declare)\\s+)?(?:\\b(const)\\s+)?\\b(enum)\\s+([$_[:alpha:]][$_[:alnum:]]*)",
       "beginCaptures": {
@@ -3227,8 +3230,33 @@
       ]
     },
     "jsx-tag-attribute-assignment": {
-      "match": "=(?=\\s*(?:[\"'{]|/\\*|//|\\n))",
+      "match": "=(?=\\s*(?:[\"'<{]|/\\*|//|\\n))",
       "name": "keyword.operator.assignment.js"
+    },
+    "jsx-tag-attribute-element": {
+      "patterns": [
+        {
+          "include": "#jsx-tag-code"
+        },
+        {
+          "include": "#jsx-tag-style"
+        },
+        {
+          "include": "#jsx-tag-script"
+        },
+        {
+          "include": "#jsx-tag-fragment"
+        },
+        {
+          "include": "#jsx-tag-dynamic"
+        },
+        {
+          "include": "#jsx-tag-without-attributes"
+        },
+        {
+          "include": "#jsx-tag"
+        }
+      ]
     },
     "jsx-tag-attribute-name": {
       "captures": {
@@ -3266,6 +3294,9 @@
         },
         {
           "include": "#jsx-evaluated-code"
+        },
+        {
+          "include": "#jsx-tag-attribute-element"
         },
         {
           "include": "#jsx-tag-attributes-illegal"
@@ -3540,6 +3571,9 @@
           "patterns": [
             {
               "include": "source.ts"
+            },
+            {
+              "include": "#embedded-grammar-fallback"
             }
           ]
         },
@@ -3602,6 +3636,9 @@
           "patterns": [
             {
               "include": "source.css"
+            },
+            {
+              "include": "#embedded-grammar-fallback"
             }
           ]
         },

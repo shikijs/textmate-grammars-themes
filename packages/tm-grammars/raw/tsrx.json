@@ -1398,6 +1398,10 @@
         }
       ]
     },
+    "embedded-grammar-fallback": {
+      "comment": "Never matches. A <style> or <script> body includes it after source.css or source.ts so the body rule always has a pattern: without one, a host that has not loaded the CSS or TypeScript grammar drops the body rule, and the tag then never closes.",
+      "match": "(?!)"
+    },
     "enum-declaration": {
       "begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(\\bexport)\\s+)?(?:(\\bdeclare)\\s+)?(?:\\b(const)\\s+)?\\b(enum)\\s+([_$[:alpha:]][_$[:alnum:]]*)",
       "beginCaptures": {
@@ -3232,8 +3236,34 @@
       ]
     },
     "jsx-tag-attribute-assignment": {
-      "match": "=(?=\\s*(?:'|\"|{|/\\*|//|\\n))",
+      "match": "=(?=\\s*(?:'|\"|{|<|/\\*|//|\\n))",
       "name": "keyword.operator.assignment.js"
+    },
+    "jsx-tag-attribute-element": {
+      "comment": "An element or fragment as an attribute value without braces: content=<span>…</span>.",
+      "patterns": [
+        {
+          "include": "#jsx-tag-code"
+        },
+        {
+          "include": "#jsx-tag-style"
+        },
+        {
+          "include": "#jsx-tag-script"
+        },
+        {
+          "include": "#jsx-tag-fragment"
+        },
+        {
+          "include": "#jsx-tag-dynamic"
+        },
+        {
+          "include": "#jsx-tag-without-attributes"
+        },
+        {
+          "include": "#jsx-tag"
+        }
+      ]
     },
     "jsx-tag-attribute-name": {
       "captures": {
@@ -3271,6 +3301,9 @@
         },
         {
           "include": "#jsx-evaluated-code"
+        },
+        {
+          "include": "#jsx-tag-attribute-element"
         },
         {
           "include": "#jsx-tag-attributes-illegal"
@@ -3545,6 +3578,9 @@
           "patterns": [
             {
               "include": "source.ts"
+            },
+            {
+              "include": "#embedded-grammar-fallback"
             }
           ]
         },
@@ -3607,6 +3643,9 @@
           "patterns": [
             {
               "include": "source.css"
+            },
+            {
+              "include": "#embedded-grammar-fallback"
             }
           ]
         },
