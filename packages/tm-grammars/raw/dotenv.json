@@ -28,6 +28,28 @@
           "name": "keyword.operator.assignment.dotenv"
         },
         "3": {
+          "name": "constant.numeric.dotenv"
+        },
+        "4": {
+          "name": "comment.line.dotenv"
+        }
+      },
+      "comment": "Whole unquoted numeric value, excluding IP addresses and mixed text",
+      "match": "^([ \\t]*(?:export[ \\t]+)?[\\w.-]+[ \\t]*)(=)[ \\t]*([+-]?[0-9](?:[0-9_]*[0-9])?(?:\\.[0-9](?:[0-9_]*[0-9])?)?)[ \\t]*(#.*)?$"
+    },
+    {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#key"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.operator.assignment.dotenv"
+        },
+        "3": {
           "name": "property.value.dotenv",
           "patterns": [
             {
