@@ -315,6 +315,10 @@
     "builtin-types-builtin-protocol-type": {
       "patterns": [
         {
+          "match": "\\bActor\\b",
+          "name": "support.type.swift"
+        },
+        {
           "match": "\\b(?:Ra(?:n(?:domAccess(?:Collection|Indexable)|geReplaceable(?:Collection|Indexable))|wRepresentable)|M(?:irrorPath|utable(?:Collection|Indexable))|Bi(?:naryFloatingPoint|twiseOperations|directional(?:Collection|Indexable))|S(?:tr(?:ide|eam)able|igned(?:Number|Integer)|e(?:tAlgebra|quence))|Hashable|C(?:o(?:llection|mparable)|ustom(?:Reflecta|StringConverti|DebugStringConverti|PlaygroundQuickLooka|LeafReflecta)ble|VarArg)|TextOutputStream|I(?:n(?:teger(?:Arithmetic)?|dexable(?:Base)?)|teratorProtocol)|OptionSet|Un(?:signedInteger|icodeCodec)|E(?:quatable|rror|xpressibleBy(?:BooleanLiteral|String(?:Interpolation|Literal)|NilLiteral|IntegerLiteral|DictionaryLiteral|UnicodeScalarLiteral|ExtendedGraphemeClusterLiteral|FloatLiteral|ArrayLiteral))|FloatingPoint|L(?:osslessStringConvertible|azy(?:Sequence|Collection)Protocol)|A(?:nyObject|bsoluteValuable))\\b",
           "name": "support.type.swift"
         },
@@ -843,6 +847,10 @@
         },
         {
           "match": "\\b(?:inout|isolated|borrowing|consuming)\\b",
+          "name": "storage.modifier.swift"
+        },
+        {
+          "match": "\\bnonisolated(?:\\(nonsending\\)|\\b)",
           "name": "storage.modifier.swift"
         },
         {
@@ -2856,12 +2864,33 @@
           "name": "storage.type.$1.swift"
         },
         {
-          "match": "(?<!\\.)\\b(?:inout|static|final|lazy|mutating|nonmutating|optional|indirect|required|override|dynamic|convenience|infix|prefix|postfix|distributed|nonisolated|borrowing|consuming)\\b",
+          "match": "(?<!\\.)\\b(?:inout|static|final|lazy|mutating|nonmutating|optional|indirect|required|override|dynamic|convenience|infix|prefix|postfix|distributed|borrowing|consuming)\\b",
           "name": "storage.modifier.swift"
         },
         {
-          "match": "\\binit[!?]|\\binit\\b|(?<!\\.)\\b(?:func|deinit|subscript|didSet|get|set|willSet|yielding\\s+borrow|yielding\\s+mutate)\\b",
+          "match": "(?<!\\.)\\bnonisolated(?:\\(nonsending\\)|\\b)",
+          "name": "storage.modifier.swift"
+        },
+        {
+          "match": "\\binit[!?]|\\binit\\b|(?<!\\.)\\b(?:func|deinit|subscript|didSet|set|willSet|yielding\\s+borrow|yielding\\s+mutate)\\b",
           "name": "storage.type.function.swift"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "storage.type.function.swift"
+            },
+            "2": {
+              "name": "invalid.illegal.async-must-precede-throws.swift"
+            },
+            "3": {
+              "name": "storage.modifier.async.swift"
+            },
+            "4": {
+              "name": "storage.modifier.exception.swift"
+            }
+          },
+          "match": "\\b(get)(?:\\s+(throws\\s+async)|\\s+(async)(?:\\s+(throws))?)?\\b"
         },
         {
           "match": "(?<!\\.)\\b(?:fileprivate|private|internal|public|open|package)\\b",
@@ -2887,7 +2916,7 @@
           "name": "variable.language.swift"
         },
         {
-          "match": "(?:\\B#(?:file|filePath|fileID|line|column|function|dsohandle)|\\b__(?:FILE|LINE|COLUMN|FUNCTION|DSO_HANDLE)__)\\b",
+          "match": "(?:\\B#(?:file|filePath|fileID|line|column|function|dsohandle|isolation)|\\b__(?:FILE|LINE|COLUMN|FUNCTION|DSO_HANDLE)__)\\b",
           "name": "support.variable.swift"
         },
         {

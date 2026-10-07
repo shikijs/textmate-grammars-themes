@@ -13,15 +13,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
       - name: Set node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
 
       - name: Setup
         run: npm i -g @antfu/ni
@@ -40,18 +40,18 @@ jobs:
 
     strategy:
       matrix:
-        node: [22.x]
+        node: [24.x]
         os: [ubuntu-latest]
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Set node ${{ matrix.node }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node }}
 

@@ -299,10 +299,13 @@
           "name": "storage.type.is.gdscript"
         },
         "2": {
+          "name": "storage.type.not.gdscript"
+        },
+        "3": {
           "name": "entity.name.type.class.gdscript"
         }
       },
-      "match": "\\s+(is)\\s+([A-Z_a-z]\\w*)"
+      "match": "\\s+(is)\\s+(not?)\\s+\\s+([A-Z_a-z]\\w*)"
     },
     "class_name": {
       "captures": {
@@ -485,7 +488,7 @@
       ]
     },
     "function_call": {
-      "begin": "(?=\\b[A-Z_a-z]\\w*\\b\\()",
+      "begin": "(?=\\b[A-Z_a-z]\\w*\\b\\s*\\()",
       "end": "(\\))",
       "endCaptures": {
         "1": {
@@ -512,7 +515,7 @@
           "name": "entity.name.function.gdscript"
         }
       },
-      "end": "(:)",
+      "end": "(:)|\\n",
       "endCaptures": {
         "1": {
           "name": "punctuation.section.function.begin.gdscript"
@@ -663,7 +666,7 @@
     },
     "letter": {
       "match": "\\b(?:true|false|null)\\b",
-      "name": "constant.language.gdscript"
+      "name": "constant.language.literal.gdscript"
     },
     "line_continuation": {
       "patterns": [
@@ -716,10 +719,10 @@
     "match_keyword": {
       "captures": {
         "1": {
-          "name": "keyword.control.gdscript"
+          "name": "keyword.control.flow.gdscript"
         }
       },
-      "match": "^\\n\\s*(match)"
+      "match": "(?:^|:)\\s*(match)\\b"
     },
     "nodepath_function": {
       "begin": "(get_node_or_null|has_node|has_node_and_resource|find_node|get_node)\\s*(\\()",
@@ -975,7 +978,7 @@
               "name": "keyword.control.flow.gdscript"
             }
           },
-          "match": "^\\s*(case|match)(?=\\s*([-\"#'(+:\\[{\\w\\d]|$))\\b"
+          "match": "(?:^|:)\\s*(case|match)(?=\\s*([-\"#'(+:\\[{\\w\\d]|$))\\b"
         }
       ]
     },

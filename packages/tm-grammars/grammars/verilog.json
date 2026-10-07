@@ -23,6 +23,9 @@
     },
     {
       "include": "#operators"
+    },
+    {
+      "include": "#identifiers"
     }
   ],
   "repository": {
@@ -99,13 +102,21 @@
         }
       ]
     },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "(?<![$0-9A-Z_a-z])[A-Z_a-z][$0-9A-Z_a-z]*(?![$0-9A-Z_a-z])",
+          "name": "variable.other.identifier.verilog"
+        }
+      ]
+    },
     "instantiation_patterns": {
       "patterns": [
         {
           "include": "#keywords"
         },
         {
-          "begin": "^\\s*(?!always|and|assign|output|input|inout|wire|module)([A-Za-z][0-9A-Z_a-z]*)\\s+([A-Za-z][0-9A-Z_a-z]*)(?<!begin|if)\\s*(?=\\(|$)",
+          "begin": "^\\s*(?!always|and|assign|output|input|inout|wire|module)([A-Z_a-z][$0-9A-Z_a-z]*)\\s+([A-Z_a-z][$0-9A-Z_a-z]*)(?<!begin|if)\\s*(?=\\(|$)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.tag.module.reference.verilog"
@@ -130,11 +141,14 @@
             },
             {
               "include": "#strings"
+            },
+            {
+              "include": "#identifiers"
             }
           ]
         },
         {
-          "begin": "^\\s*([A-Za-z][0-9A-Z_a-z]*)\\s*(#)(?=\\s*\\()",
+          "begin": "^\\s*([A-Z_a-z][$0-9A-Z_a-z]*)\\s*(#)(?=\\s*\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.tag.module.reference.verilog"
@@ -152,7 +166,7 @@
               "include": "#parenthetical_list"
             },
             {
-              "match": "[A-Za-z][0-9A-Z_a-z]*",
+              "match": "[A-Z_a-z][$0-9A-Z_a-z]*",
               "name": "entity.name.tag.module.identifier.verilog"
             }
           ]
@@ -170,31 +184,31 @@
           "name": "keyword.other.compiler.directive.verilog"
         },
         {
-          "match": "\\$(f(open|close)|readmem([bh])|timeformat|printtimescale|stop|finish|(s|real)?time|realtobits|bitstoreal|rtoi|itor|(f)?(display|write([bh])))\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$(f(open|close)|readmem([bh])|timeformat|printtimescale|stop|finish|(s|real)?time|realtobits|bitstoreal|rtoi|itor|(f)?(display|write([bh])))(?![$0-9A-Z_a-z])",
           "name": "support.function.system.console.tasks.verilog"
         },
         {
-          "match": "\\$(random|dist_(chi_square|erlang|exponential|normal|poisson|t|uniform))\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$(random|dist_(chi_square|erlang|exponential|normal|poisson|t|uniform))(?![$0-9A-Z_a-z])",
           "name": "support.function.system.random_number.tasks.verilog"
         },
         {
-          "match": "\\$((a)?sync\\$((n)?and|(n)or)\\$(array|plane))\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$((a)?sync\\$((n)?and|(n)or)\\$(array|plane))(?![$0-9A-Z_a-z])",
           "name": "support.function.system.pld_modeling.tasks.verilog"
         },
         {
-          "match": "\\$(q_(initialize|add|remove|full|exam))\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$(q_(initialize|add|remove|full|exam))(?![$0-9A-Z_a-z])",
           "name": "support.function.system.stochastic.tasks.verilog"
         },
         {
-          "match": "\\$(hold|nochange|period|recovery|setup(hold)?|skew|width)\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$(hold|nochange|period|recovery|setup(hold)?|skew|width)(?![$0-9A-Z_a-z])",
           "name": "support.function.system.timing.tasks.verilog"
         },
         {
-          "match": "\\$(dump(file|vars|off|on|all|limit|flush))\\b",
+          "match": "(?<![$0-9A-Z_a-z])\\$(dump(file|vars|off|on|all|limit|flush))(?![$0-9A-Z_a-z])",
           "name": "support.function.system.vcd.tasks.verilog"
         },
         {
-          "match": "\\$(countdrivers|list|input|scope|showscopes|(no)?(key|log)|reset(_(?:count|value))?|(inc)?save|restart|showvars|getpattern|sreadmem([bh])|scale)",
+          "match": "(?<![$0-9A-Z_a-z])\\$(countdrivers|list|input|scope|showscopes|(no)?(key|log)|reset(_(?:count|value))?|(inc)?save|restart|showvars|getpattern|sreadmem([bh])|scale)(?![$0-9A-Z_a-z])",
           "name": "support.function.non-standard.tasks.verilog"
         }
       ]
@@ -202,7 +216,7 @@
     "module_pattern": {
       "patterns": [
         {
-          "begin": "\\b(module)\\s+([A-Za-z][0-9A-Z_a-z]*)",
+          "begin": "\\b(module)\\s+([A-Z_a-z][$0-9A-Z_a-z]*)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.module.verilog"
@@ -236,6 +250,9 @@
             },
             {
               "include": "#operators"
+            },
+            {
+              "include": "#identifiers"
             }
           ]
         }
@@ -280,6 +297,9 @@
             },
             {
               "include": "#strings"
+            },
+            {
+              "include": "#identifiers"
             }
           ]
         }

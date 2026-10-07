@@ -7,8 +7,26 @@
       "name": "text.variable"
     },
     {
-      "match": "(\\[)[^]]*(])",
-      "name": "text.bracketed"
+      "applyEndPatternLast": 1,
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.bracket.begin.sql"
+        }
+      },
+      "end": "]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.bracket.end.sql"
+        }
+      },
+      "name": "text.bracketed",
+      "patterns": [
+        {
+          "match": "\\[|]]",
+          "name": "constant.character.bracket.sql"
+        }
+      ]
     },
     {
       "include": "#comments"
@@ -520,7 +538,7 @@
               "name": "punctuation.definition.string.end.sql"
             }
           },
-          "match": "(N)?(')[^']*(')",
+          "match": "(?:(?<![0-9A-Z_a-z])(N))?(')[^']*(')",
           "name": "string.quoted.single.sql"
         },
         {

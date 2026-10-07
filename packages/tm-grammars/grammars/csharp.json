@@ -1396,7 +1396,7 @@
       ]
     },
     "double-raw-interpolation": {
-      "begin": "(?<=[^{][^{]|^)(\\{*)(\\{\\{)(?=[^{])",
+      "begin": "(?<=[^{][^{]|^)(\\{*)(\\{\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -2475,7 +2475,7 @@
           "name": "punctuation.definition.string.begin.cs"
         }
       },
-      "end": "(\")|([^\\n\\\\])$",
+      "end": "(\")|([^\\n\\\\{])$",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.cs"
@@ -2495,7 +2495,7 @@
       ]
     },
     "interpolation": {
-      "begin": "(?<=[^{]|^)((?:\\{\\{)*)(\\{)(?=[^{])",
+      "begin": "(?<=[^{]|^)((?:\\{\\{)*)(\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -3465,6 +3465,31 @@
         }
       ]
     },
+    "parenthesized-type-list": {
+      "begin": "(\\()",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.parenthesis.open.cs"
+        }
+      },
+      "end": "(\\))",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.parenthesis.close.cs"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
     "pattern": {
       "patterns": [
         {
@@ -3612,7 +3637,16 @@
           "include": "#preprocessor-app-directive-property"
         },
         {
+          "include": "#preprocessor-app-directive-exclude"
+        },
+        {
+          "include": "#preprocessor-app-directive-include"
+        },
+        {
           "include": "#preprocessor-app-directive-project"
+        },
+        {
+          "include": "#preprocessor-app-directive-ref"
         },
         {
           "include": "#preprocessor-app-directive-sdk"
@@ -3622,6 +3656,17 @@
         }
       ]
     },
+    "preprocessor-app-directive-exclude": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.exclude.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(exclude)\\b\\s*(.*)?\\s*"
+    },
     "preprocessor-app-directive-generic": {
       "captures": {
         "1": {
@@ -3629,6 +3674,17 @@
         }
       },
       "match": "\\b(.*)?\\s*"
+    },
+    "preprocessor-app-directive-include": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.include.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(include)\\b\\s*(.*)?\\s*"
     },
     "preprocessor-app-directive-package": {
       "captures": {
@@ -3697,6 +3753,17 @@
         }
       },
       "match": "\\b(property)\\b\\s*([_[:alpha:]][_[:alnum:]]*)?(=)?(.*)?\\s*"
+    },
+    "preprocessor-app-directive-ref": {
+      "captures": {
+        "1": {
+          "name": "keyword.preprocessor.ref.cs"
+        },
+        "2": {
+          "name": "string.unquoted.preprocessor.message.cs"
+        }
+      },
+      "match": "\\b(ref)\\b\\s*(.*)?\\s*"
     },
     "preprocessor-app-directive-sdk": {
       "captures": {
@@ -4054,7 +4121,7 @@
       ]
     },
     "property-declaration": {
-      "begin": "(?![[:word:]\\s]*\\b(?:class|interface|struct|enum|event)\\b)(?<return_type>(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|//|/\\*|$)",
+      "begin": "(?![[:word:]\\s]*\\b(?:class|interface|struct|union|enum|event)\\b)(?<return_type>(?<type_name>(?:ref\\s+(?:readonly\\s+)?)?(?:(?:(?<identifier>@?[_[:alpha:]][_[:alnum:]]*)\\s*::\\s*)?(?<name_and_type_args>\\g<identifier>\\s*(?<type_args>\\s*<(?:[^<>]|\\g<type_args>)+>\\s*)?)(?:\\s*\\.\\s*\\g<name_and_type_args>)*|(?<tuple>\\s*\\((?:[^()]|\\g<tuple>)+\\)))(?:\\s*\\?\\s*)?(?:\\s*\\[(?:\\s*,\\s*)*]\\s*\\??\\s*)*)\\s+)(?<interface_name>\\g<type_name>\\s*\\.\\s*)?(?<property_name>\\g<identifier>)\\s*(?=\\{|=>|//|/\\*|$)",
       "beginCaptures": {
         "1": {
           "patterns": [
@@ -4333,7 +4400,7 @@
       ]
     },
     "raw-interpolation": {
-      "begin": "(?<=[^{]|^)(\\{*)(\\{)(?=[^{])",
+      "begin": "(?<=[^{]|^)(\\{*)(\\{)(?!\\{)",
       "beginCaptures": {
         "1": {
           "name": "string.quoted.double.cs"
@@ -5262,6 +5329,9 @@
           "include": "#struct-declaration"
         },
         {
+          "include": "#union-declaration"
+        },
+        {
           "include": "#record-declaration"
         },
         {
@@ -5469,6 +5539,66 @@
         {
           "match": "(?<!\\s)\\?",
           "name": "punctuation.separator.question-mark.cs"
+        }
+      ]
+    },
+    "union-declaration": {
+      "begin": "(?=\\bunion\\b)",
+      "end": "(?<=})|(?=;)",
+      "patterns": [
+        {
+          "begin": "(union)\\b\\s+(@?[_[:alpha:]][_[:alnum:]]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.union.cs"
+            },
+            "2": {
+              "name": "entity.name.type.union.cs"
+            }
+          },
+          "end": "(?=\\{)|(?=;)",
+          "patterns": [
+            {
+              "include": "#comment"
+            },
+            {
+              "include": "#type-parameter-list"
+            },
+            {
+              "include": "#parenthesized-type-list"
+            },
+            {
+              "include": "#base-types"
+            },
+            {
+              "include": "#generic-constraints"
+            }
+          ]
+        },
+        {
+          "begin": "\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.curlybrace.open.cs"
+            }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.curlybrace.close.cs"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#class-or-struct-members"
+            }
+          ]
+        },
+        {
+          "include": "#preprocessor"
+        },
+        {
+          "include": "#comment"
         }
       ]
     },

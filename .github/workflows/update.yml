@@ -19,19 +19,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
           registry-url: 'https://registry.npmjs.org'
 
       - name: pnpm setup
-        uses: pnpm/action-setup@v4
-
-      - run: npm i -g npm@latest
+        uses: pnpm/action-setup@v5
 
       - name: install
         run: pnpm install
@@ -55,7 +53,7 @@ jobs:
       - run: pnpm run test -u
         continue-on-error: true
 
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v10
         if: ${{ steps.bump.outputs.CHANGED }}
         with:
           author_name: GitHub Actions

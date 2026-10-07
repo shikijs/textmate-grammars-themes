@@ -1,5 +1,5 @@
 {
-  "displayName": "Coq",
+  "displayName": "Rocq",
   "fileTypes": [
     "v"
   ],
@@ -7,37 +7,37 @@
   "patterns": [
     {
       "match": "\\b(From|Require|Import|Export|Local|Global|Include)\\b",
-      "name": "keyword.control.import.coq"
+      "name": "keyword.control.import.rocq"
     },
     {
-      "match": "\\b((Open|Close|Delimit|Undelimit|Bind)\\s+Scope)\\b",
-      "name": "keyword.control.import.coq"
+      "match": "\\b((Open|Close|Delimit|Undelimit|Bind|Declare)\\s+Scope)\\b",
+      "name": "keyword.control.import.rocq"
     },
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "2": {
-          "name": "entity.name.function.theorem.coq"
+          "name": "entity.name.function.theorem.rocq"
         }
       },
       "match": "\\b(Theorem|Lemma|Remark|Fact|Corollary|Property|Proposition)\\s+(([_ \\p{L}])(['0-9_ \\p{L}])*)"
     },
     {
       "match": "\\bGoal\\b",
-      "name": "keyword.source.coq"
+      "name": "keyword.source.rocq"
     },
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "2": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "3": {
-          "name": "entity.name.assumption.coq"
+          "name": "entity.name.assumption.rocq"
         }
       },
       "match": "\\b(Parameters?|Axioms?|Conjectures?|Variables?|Hypothesis|Hypotheses)(\\s+Inline)?\\b\\s*\\(?\\s*(([_ \\p{L}])(['0-9_ \\p{L}])*)"
@@ -45,10 +45,10 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "3": {
-          "name": "entity.name.assumption.coq"
+          "name": "entity.name.assumption.rocq"
         }
       },
       "match": "\\b(Context)\\b\\s*`?\\s*([({])?\\s*(([_ \\p{L}])(['0-9_ \\p{L}])*)"
@@ -56,13 +56,13 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "2": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "3": {
-          "name": "entity.name.function.coq"
+          "name": "entity.name.function.rocq"
         }
       },
       "match": "(\\b(?:Program|Local)\\s+)?\\b(Definition|Fixpoint|CoFixpoint|Function|Example|Let(?:(?:\\s+|\\s+Co)Fixpoint)?|Instance|Equations|Equations?)\\s+(([_ \\p{L}])(['0-9_ \\p{L}])*)"
@@ -70,7 +70,7 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         }
       },
       "match": "\\b((Show\\s+)?Obligation\\s+Tactic|Obligations\\s+of|Obligation|Next\\s+Obligation(\\s+of)?|Solve\\s+Obligations(\\s+of)?|Solve\\s+All\\s+Obligations|Admit\\s+Obligations(\\s+of)?|Instance)\\b"
@@ -78,10 +78,10 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "3": {
-          "name": "entity.name.type.coq"
+          "name": "entity.name.type.rocq"
         }
       },
       "match": "\\b(CoInductive|Inductive|Variant|Record|Structure|Class)\\s+(>\\s*)?(([_ \\p{L}])(['0-9_ \\p{L}])*)"
@@ -89,7 +89,7 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "2": {
           "name": "entity.name.function.ltac"
@@ -100,10 +100,10 @@
     {
       "captures": {
         "1": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "2": {
-          "name": "keyword.source.coq"
+          "name": "keyword.source.rocq"
         },
         "3": {
           "name": "entity.name.function.ltac"
@@ -112,28 +112,28 @@
       "match": "\\b(Ltac2)\\s+(mutable\\s+)?(rec\\s+)?(([_ \\p{L}])(['0-9_ \\p{L}])*)"
     },
     {
-      "match": "\\b(Hint(\\s+Mode)?|Create\\s+HintDb|Constructors|Resolve|Rewrite|Ltac2??|Implicit(\\s+Types)?|Set|Unset|Remove\\s+Printing|Arguments|((Tactic|Reserved)\\s+)?Notation|Infix|Section|Module(\\s+Type)?|End|Check|Print(\\s+All)?|Eval|Compute|Search|Universe|Coercions|Generalizable(\\s+(All|Variable))?|Existing(\\s+(Class|Instance))?|Canonical|About|Locate|Collection|Typeclasses\\s+(Opaque|Transparent))\\b",
-      "name": "keyword.source.coq"
+      "match": "\\b(Hint(\\s+Mode)?|Create\\s+HintDb|Constructors|Resolve|Rewrite|Ltac2??|Implicit(\\s+Types?)?|Set|Unset|Remove\\s+Printing|Arguments|((Tactic|Reserved)\\s+)?Notation|Infix|Section|Module(\\s+Type)?|End|Check|Print(\\s+All)?|Eval|Compute|Search|Universe|Coercions|Generalizable(\\s+(All|Variable))?|Existing(\\s+(Class|Instance))?|Canonical|About|Locate|Collection|Typeclasses\\s+(Opaque|Transparent))\\b",
+      "name": "keyword.source.rocq"
     },
     {
       "match": "\\b(Proof|Qed|Defined|Save|Abort(\\s+All)?|Undo(\\s+To)?|Restart|Focus|Unfocus|Unfocused|Show\\s+Proof|Show\\s+Existentials|Show|Unshelve)\\b",
-      "name": "keyword.source.coq"
+      "name": "keyword.source.rocq"
     },
     {
       "match": "\\b(Quit|Drop|Time|Redirect|Timeout|Fail)\\b",
-      "name": "keyword.debug.coq"
+      "name": "keyword.debug.rocq"
     },
     {
       "match": "\\b(admit|Admitted)\\b",
-      "name": "invalid.illegal.admit.coq"
+      "name": "invalid.illegal.admit.rocq"
     },
     {
       "match": "[-*+:<=>{|}¬→↔∧∨≠≤≥]",
-      "name": "keyword.operator.coq"
+      "name": "keyword.operator.rocq"
     },
     {
       "match": "\\b(forall|exists|Type|Set|Prop|nat|bool|option|list|unit|sum|prod|comparison|Empty_set)\\b|[∀∃]",
-      "name": "support.type.coq"
+      "name": "support.type.rocq"
     },
     {
       "match": "\\b(try|repeat|rew|progress|fresh|solve|now|first|tryif|at|once|do|only)\\b",
@@ -153,9 +153,26 @@
     },
     {
       "applyEndPatternLast": 1,
+      "begin": "\\(\\*\\*(?!\\*)",
+      "end": "\\*\\)",
+      "name": "comment.doc.rocq",
+      "patterns": [
+        {
+          "include": "#doc_comment"
+        },
+        {
+          "include": "#block_comment"
+        },
+        {
+          "include": "#block_double_quoted_string"
+        }
+      ]
+    },
+    {
+      "applyEndPatternLast": 1,
       "begin": "\\(\\*(?!#)",
       "end": "\\*\\)",
-      "name": "comment.block.coq",
+      "name": "comment.block.rocq",
       "patterns": [
         {
           "include": "#block_comment"
@@ -175,22 +192,22 @@
     },
     {
       "match": "\\b_\\b",
-      "name": "constant.language.wildcard.coq"
+      "name": "constant.language.wildcard.rocq"
     },
     {
       "begin": "\"",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.coq"
+          "name": "punctuation.definition.string.begin.rocq"
         }
       },
       "end": "\"",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.coq"
+          "name": "punctuation.definition.string.end.rocq"
         }
       },
-      "name": "string.quoted.double.coq"
+      "name": "string.quoted.double.rocq"
     }
   ],
   "repository": {
@@ -198,7 +215,7 @@
       "applyEndPatternLast": 1,
       "begin": "\\(\\*(?!#)",
       "end": "\\*\\)",
-      "name": "comment.block.coq",
+      "name": "comment.block.rocq",
       "patterns": [
         {
           "include": "#block_comment"
@@ -213,17 +230,34 @@
       "begin": "\"",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.coq"
+          "name": "punctuation.definition.string.begin.rocq"
         }
       },
       "end": "\"",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.coq"
+          "name": "punctuation.definition.string.end.rocq"
         }
       },
-      "name": "string.quoted.double.coq"
+      "name": "string.quoted.double.rocq"
+    },
+    "doc_comment": {
+      "applyEndPatternLast": 1,
+      "begin": "\\(\\*\\*(?!\\*)",
+      "end": "\\*\\)",
+      "name": "comment.doc.rocq",
+      "patterns": [
+        {
+          "include": "#doc_comment"
+        },
+        {
+          "include": "#block_comment"
+        },
+        {
+          "include": "#block_double_quoted_string"
+        }
+      ]
     }
   },
-  "scopeName": "source.coq"
+  "scopeName": "source.rocq"
 }

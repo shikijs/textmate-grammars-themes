@@ -155,6 +155,10 @@
       "name": "keyword.control.native.bsl"
     },
     {
+      "match": "(?i)#stack",
+      "name": "keyword.control.stack.bsl"
+    },
+    {
       "match": "(?i:(?<=[^\\wа-яё\\.]|^)(Прервать|Break|Продолжить|Continue|Возврат|Return)(?=[^\\wа-яё\\.]|$))",
       "name": "keyword.control.bsl"
     },
@@ -241,6 +245,9 @@
             }
           },
           "patterns": [
+            {
+              "include": "#annotations"
+            },
             {
               "include": "#basic"
             },

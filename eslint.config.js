@@ -26,7 +26,10 @@ export default antfu(
     rules: {
       'perfectionist/sort-objects': ['error', {
         groups: keysOrders,
-        customGroups: Object.fromEntries(keysOrders.map(key => [key, [key]])),
+        customGroups: keysOrders.map(key => ({
+          groupName: key,
+          elementNamePattern: `^${key}$`,
+        })),
       }],
     },
   },

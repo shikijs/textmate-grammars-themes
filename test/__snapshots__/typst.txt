@@ -1,5 +1,4 @@
-#444444        #
-#4D9375        set
+#4D9375        #set
 #DBD7CACC       
 #80A665        page
 #444444        (
@@ -14,8 +13,7 @@
 #DBD7CACC       
 #4D9375        auto
 #444444        )
-#444444        #
-#4D9375        set
+#4D9375        #set
 #DBD7CACC       
 #80A665        heading
 #444444        (
@@ -26,38 +24,75 @@
 #C98A7D        1.
 #C98A7D77      "
 #444444        )
-#444444        = 
-#4D9375        Fibonacci sequence
+#444444        =
+#4D9375         Fibonacci sequence
 #DBD7CACC      The Fibonacci sequence is defined through the
 #DBD7CACC      recurrence relation 
 #C98A7D77      $
-#C98A7D        F_n = F_(n-1) + F_(n-2)
+#DBD7CACC      F
+#444444        _
+#DBD7CACC      n = F
+#444444        _
+#C99076        (
+#DBD7CACC      n-1
+#C99076        )
+#DBD7CACC       + F
+#444444        _
+#C99076        (
+#DBD7CACC      n-2
+#C99076        )
 #C98A7D77      $
 #DBD7CACC      .
-#DBD7CACC      It can also be expressed in 
-#444444        _
-#DBD7CACC      closed form:
-#444444        _
+#DBD7CACC      It can also be expressed in _closed form:_
 #C98A7D77      $
-#C98A7D         F_n = round(1 / sqrt(5) phi.alt^n), quad
-#C98A7D          phi.alt = (1 + sqrt(5)) / 2 
+#DBD7CACC       F
+#444444        _
+#DBD7CACC      n = 
+#80A665        round
+#444444        (
+#DBD7CACC      1 
+#444444        /
+#DBD7CACC       
+#80A665        sqrt
+#444444        (
+#DBD7CACC      5
+#444444        )
+#DBD7CACC       
+#BD976A        phi
+#CB7676        .
+#BD976A        alt
+#444444        ^
+#DBD7CACC      n
+#444444        )
+#DBD7CACC      , 
+#BD976A        quad
+#DBD7CACC        
+#BD976A        phi
+#CB7676        .
+#BD976A        alt
+#DBD7CACC       = (1 + 
+#80A665        sqrt
+#444444        (
+#DBD7CACC      5
+#444444        )
+#DBD7CACC      ) 
+#444444        /
+#DBD7CACC       2 
 #C98A7D77      $
-#444444        #
-#4D9375        let
+#4D9375        #
+#CB7676        let
 #DBD7CACC       
 #BD976A        count
 #DBD7CACC       
-#444444        =
-#DBD7CACC       
+#444444        = 
 #4C9A91        8
-#444444        #
-#4D9375        let
+#4D9375        #
+#CB7676        let
 #DBD7CACC       
 #BD976A        nums
 #DBD7CACC       
-#444444        =
-#DBD7CACC       
-#80A665        range
+#444444        = 
+#B8A965        range
 #444444        (
 #4C9A91        1
 #444444        ,
@@ -68,17 +103,15 @@
 #DBD7CACC       
 #4C9A91        1
 #444444        )
-#444444        #
-#4D9375        let
+#4D9375        #
+#CB7676        let
 #DBD7CACC       
 #80A665        fib
 #444444        (
 #BD976A        n
 #444444        )
 #DBD7CACC       
-#444444        =
-#DBD7CACC       
-#444444        (
+#444444        = (
 #DBD7CACC        
 #4D9375        if
 #DBD7CACC       
@@ -121,11 +154,9 @@
 #444444        }
 #444444        )
 #DBD7CACC      The first 
-#444444        #
-#80A665        count
+#BD976A        #count
 #DBD7CACC       numbers of the sequence are:
-#444444        #
-#80A665        align
+#80A665        #align
 #444444        (
 #BD976A        center
 #444444        ,
@@ -139,30 +170,32 @@
 #BD976A        count
 #444444        ,
 #DBD7CACC        
-#CB7676        ..
+#444444        ..
 #BD976A        nums
-#DBD7CACC      .
+#CB7676        .
 #80A665        map
 #444444        (
 #BD976A        n
 #DBD7CACC       
-#CB7676        =>
+#444444        =>
 #DBD7CACC       
 #C98A7D77      $
-#C98A7D        F_#n
+#DBD7CACC      F
+#444444        _
+#BD976A        #n
 #C98A7D77      $
 #444444        ),
 #DBD7CACC        
-#CB7676        ..
+#444444        ..
 #BD976A        nums
-#DBD7CACC      .
+#CB7676        .
 #80A665        map
 #444444        (
 #BD976A        n
 #DBD7CACC       
-#CB7676        =>
+#444444        =>
 #DBD7CACC       
-#80A665        str
+#5DA994        str
 #444444        (
 #80A665        fib
 #444444        (

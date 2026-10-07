@@ -1,27 +1,49 @@
 #758575DD      -- Query 1: Using record links to select from the seller table
 #4D9375        SELECT
-#DBD7CACC        name,
-#DBD7CACC        seller.name
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC      ,
+#DBD7CACC        
+#BD976A        seller
+#DBD7CACC      .
+#BD976A        name
 #4D9375        FROM
-#DBD7CACC       product 
+#DBD7CACC       
+#BD976A        product
+#DBD7CACC       
 #4D9375        LIMIT
 #DBD7CACC       
 #4C9A91        4
 #DBD7CACC      ;
 #758575DD      -- Query 2: Using graph relations to select from the person and product table
 #4D9375        SELECT
-#DBD7CACC          time.created_at 
+#DBD7CACC          
+#BD976A        time
+#DBD7CACC      .
+#BD976A        created_at
+#DBD7CACC       
 #4D9375        as
-#DBD7CACC       order_date,
-#DBD7CACC          product_name,
+#DBD7CACC       
+#BD976A        order_date
+#DBD7CACC      ,
+#DBD7CACC          
+#BD976A        product_name
+#DBD7CACC      ,
 #DBD7CACC          
 #CB7676        <-
-#DBD7CACC      person.name 
+#BD976A        person
+#DBD7CACC      .
+#BD976A        name
+#DBD7CACC       
 #4D9375        as
-#DBD7CACC       person_name,
+#DBD7CACC       
+#BD976A        person_name
+#DBD7CACC      ,
 #DBD7CACC          
 #CB7676        ->
-#DBD7CACC      product.details
+#BD976A        product
+#DBD7CACC      .
+#BD976A        details
 #4D9375        FROM
 #DBD7CACC       
 #4D9375        order
@@ -32,12 +54,20 @@
 #DBD7CACC      ;
 #758575DD      -- Query 3: Conditional filtering based on an embedded object property.
 #4D9375        SELECT
-#DBD7CACC        name,
-#DBD7CACC        email
+#DBD7CACC        
+#BD976A        name
+#DBD7CACC      ,
+#DBD7CACC        
+#BD976A        email
 #4D9375        FROM
-#DBD7CACC       person
+#DBD7CACC       
+#BD976A        person
 #4D9375        WHERE
-#DBD7CACC       address.country 
+#DBD7CACC       
+#BD976A        address
+#DBD7CACC      .
+#BD976A        country
+#DBD7CACC       
 #CB7676        ?=
 #DBD7CACC       
 #C98A7D        "England"
@@ -52,11 +82,15 @@
 #CB7676        *
 #DBD7CACC       
 #4D9375        FROM
-#DBD7CACC       review
+#DBD7CACC       
+#BD976A        review
 #4D9375        WHERE
 #DBD7CACC       
 #CB7676        ->
-#DBD7CACC      product.sub_category 
+#BD976A        product
+#DBD7CACC      .
+#BD976A        sub_category
+#DBD7CACC       
 #CB7676        ?=
 #DBD7CACC       
 #C98A7D        "Activewear"
@@ -74,7 +108,9 @@
 #DBD7CACC       
 #4D9375        order
 #4D9375        WHERE
-#DBD7CACC       order_status 
+#DBD7CACC       
+#BD976A        order_status
+#DBD7CACC       
 #4D9375        IN
 #DBD7CACC       [ 
 #C98A7D        "processed"
@@ -94,9 +130,12 @@
 #4D9375        SELECT
 #DBD7CACC          
 #B8A965        array::distinct
-#DBD7CACC      (product_name) 
+#DBD7CACC      (
+#BD976A        product_name
+#DBD7CACC      ) 
 #4D9375        as
-#DBD7CACC       ordered_products
+#DBD7CACC       
+#BD976A        ordered_products
 #4D9375        FROM
 #DBD7CACC       
 #4D9375        order
@@ -112,25 +151,36 @@
 #4D9375        SELECT
 #DBD7CACC          
 #CB7676        ->
-#DBD7CACC      product.category 
+#BD976A        product
+#DBD7CACC      .
+#BD976A        category
+#DBD7CACC       
 #4D9375        AS
-#DBD7CACC       product_category,
+#DBD7CACC       
+#BD976A        product_category
+#DBD7CACC      ,
 #DBD7CACC          
 #B8A965        math::mean
-#DBD7CACC      (price) 
+#DBD7CACC      (
+#BD976A        price
+#DBD7CACC      ) 
 #4D9375        AS
-#DBD7CACC       avg_price
+#DBD7CACC       
+#BD976A        avg_price
 #4D9375        FROM
 #DBD7CACC       
 #4D9375        order
 #4D9375        GROUP
 #DBD7CACC       
 #4D9375        BY
-#DBD7CACC       product_category
+#DBD7CACC       
+#BD976A        product_category
 #4D9375        ORDER
 #DBD7CACC       
 #4D9375        BY
-#DBD7CACC       avg_price 
+#DBD7CACC       
+#BD976A        avg_price
+#DBD7CACC       
 #4D9375        DESC
 #DBD7CACC       
 #4D9375        LIMIT
@@ -144,12 +194,17 @@
 #DBD7CACC      ();
 #758575DD      -- Query 9: using a custom fuction for currency conversion
 #4D9375        SELECT
-#DBD7CACC          product_name,
+#DBD7CACC          
+#BD976A        product_name
+#DBD7CACC      ,
 #DBD7CACC          
 #B8A965        fn::pound_to_usd
-#DBD7CACC      (price) 
+#DBD7CACC      (
+#BD976A        price
+#DBD7CACC      ) 
 #4D9375        AS
-#DBD7CACC       price_usd
+#DBD7CACC       
+#BD976A        price_usd
 #4D9375        FROM
 #DBD7CACC       
 #4D9375        order

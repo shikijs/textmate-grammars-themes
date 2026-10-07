@@ -3,14 +3,70 @@ import type { ThemeInfo } from '../../packages/tm-themes/index'
 import c from 'chalk'
 import { fetch } from 'ofetch'
 import pLimit from 'p-limit'
+import { parseGitHubUrl } from './github'
 
 const badge = c.yellow.bold(' license ')
 
 const _cache = new Map<string, Promise<string>>()
 
+/**
+ * Some `licenseUrl`s point to the HTML "blob" view of a file on github.com
+ * instead of the raw file content (raw.githubusercontent.com). Rewrite
+ * those to the raw URL so we never fetch an HTML page for the NOTICE file.
+ */
+export function toRawGitHubUrl(url: string): string {
+  if (!/^https?:\/\/(?:www\.)?github\.com\//.test(url))
+    return url
+  try {
+    const { repo, branch, path } = parseGitHubUrl(url)
+    return `https://raw.githubusercontent.com/${repo}/${branch}/${path}`
+  }
+  catch {
+    return url
+  }
+}
+
+/**
+ * Detect whether the fetched "license" content is actually an HTML
+ * document (e.g. a GitHub web page, an error page, or a login wall)
+ * rather than the raw license text, so it never leaks into the NOTICE file.
+ */
+export function isLikelyHtml(content: string): boolean {
+  return /^\s*(?:<!DOCTYPE html|<html[\s>])/i.test(content)
+}
+
+async function fetchLicenseContent(url: string): Promise<string> {
+  const rawUrl = toRawGitHubUrl(url)
+  const res = await fetch(rawUrl)
+  const contentType = res.headers.get('content-type') || ''
+  const content = await res.text()
+
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch license content: license URL "${url}" `
+      + `(fetched as "${rawUrl}") responded with ${res.status} ${res.statusText}: `
+      + `${content.slice(0, 200)}`,
+    )
+  }
+  if (contentType.includes('text/html') || isLikelyHtml(content)) {
+    throw new Error(
+      `Refusing to embed HTML content into NOTICE: license URL "${url}" `
+      + `(fetched as "${rawUrl}") returned an HTML page instead of the raw license text. `
+      + `Fix the \`licenseUrl\` in the source config to point to the raw file.`,
+    )
+  }
+  if (!content.trim()) {
+    throw new Error(
+      `Refusing to embed empty content into NOTICE: license URL "${url}" `
+      + `(fetched as "${rawUrl}") returned an empty response.`,
+    )
+  }
+  return content
+}
+
 export function getLicenseContent(url: string) {
   if (!_cache.has(url))
-    _cache.set(url, fetch(url).then(r => r.text()))
+    _cache.set(url, fetchLicenseContent(url))
   return _cache.get(url)!
 }
 

@@ -2,7 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "displayName": "MoonBit",
   "fileTypes": [
-    "mbt"
+    "mbt",
+    "mbtx"
   ],
   "name": "moonbit",
   "patterns": [
@@ -255,6 +256,25 @@
           "name": "meta.embedded.line.moonbit",
           "patterns": [
             {
+              "include": "#interpolation-braces"
+            },
+            {
+              "include": "$self"
+            }
+          ]
+        }
+      ]
+    },
+    "interpolation-braces": {
+      "patterns": [
+        {
+          "begin": "{",
+          "end": "}",
+          "patterns": [
+            {
+              "include": "#interpolation-braces"
+            },
+            {
               "include": "$self"
             }
           ]
@@ -268,11 +288,11 @@
           "name": "keyword.control.moonbit.async"
         },
         {
-          "match": "\\b(guard|if|while|break|continue|return|try|catch|except|raise|noraise|match|lexmatch|using|else|as|in|is|loop|for|async|defer)\\b",
+          "match": "\\b(guard|if|while|break|continue|return|try|catch|except|raise|noraise|nocancel|nobreak|match|lexmatch|lexscan|using|else|as|in|is|loop|for|async|defer|errdefer)\\b",
           "name": "keyword.control.moonbit"
         },
         {
-          "match": "\\b(type!|lexmatch\\?|(type|typealias|let|const|enum|struct|import|trait|traitalias|derive|test|impl|with|fnalias|recur|suberror|letrec|and|where|declare)\\b)",
+          "match": "\\b(type!|(type|let|const|enum|extenum|struct|import|trait|derive|test|impl|with|recur|suberror|letrec|and|where|declare)\\b)",
           "name": "keyword.moonbit"
         },
         {
@@ -316,7 +336,7 @@
     "modules": {
       "patterns": [
         {
-          "match": "@[A-Za-z][A-Za-z0-9_/]*",
+          "match": "@[A-Za-z][A-Za-z0-9_/-]*",
           "name": "entity.name.namespace.moonbit"
         }
       ]

@@ -5,26 +5,50 @@
 #DBD7CACC       ();
 #DBD7CACC          
 #4D9375        reg
-#DBD7CACC       clk;
+#DBD7CACC       
+#BD976A        clk
+#DBD7CACC      ;
 #DBD7CACC          
 #4D9375        reg
-#DBD7CACC       resetn;
+#DBD7CACC       
+#BD976A        resetn
+#DBD7CACC      ;
 #DBD7CACC          
 #4D9375        reg
-#DBD7CACC       d;
+#DBD7CACC       
+#BD976A        d
+#DBD7CACC      ;
 #DBD7CACC          
 #4D9375        wire
-#DBD7CACC       q;
+#DBD7CACC       
+#BD976A        q
+#DBD7CACC      ;
 #444444            
 #758575DD      // Instantiate the design
 #DBD7CACC          
 #4D9375        d_ff
 #DBD7CACC        
 #4D9375        d_ff0
-#DBD7CACC       (   .clk (clk),
-#DBD7CACC                  .resetn (resetn),
-#DBD7CACC                  .d (d),
-#DBD7CACC                  .q (q))
+#DBD7CACC       (   .
+#BD976A        clk
+#DBD7CACC       (
+#BD976A        clk
+#DBD7CACC      ),
+#DBD7CACC                  .
+#BD976A        resetn
+#DBD7CACC       (
+#BD976A        resetn
+#DBD7CACC      ),
+#DBD7CACC                  .
+#BD976A        d
+#DBD7CACC       (
+#BD976A        d
+#DBD7CACC      ),
+#DBD7CACC                  .
+#BD976A        q
+#DBD7CACC       (
+#BD976A        q
+#DBD7CACC      ))
 #444444        ;
 #444444            
 #758575DD      // Create a clock
@@ -32,56 +56,73 @@
 #4D9375        always
 #DBD7CACC       
 #4C9A91        #10
-#DBD7CACC       clk 
+#DBD7CACC       
+#BD976A        clk
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #CB7676        ~
-#DBD7CACC      clk;
+#BD976A        clk
+#DBD7CACC      ;
 #DBD7CACC          
 #4D9375        initial
 #DBD7CACC       
 #4D9375        begin
-#DBD7CACC          resetn 
+#DBD7CACC          
+#BD976A        resetn
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        0
 #DBD7CACC      ;
-#DBD7CACC          d 
+#DBD7CACC          
+#BD976A        d
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        0
 #DBD7CACC      ;
 #DBD7CACC          
 #4C9A91        #10
-#DBD7CACC       resetn 
+#DBD7CACC       
+#BD976A        resetn
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        1
 #DBD7CACC      ;
 #DBD7CACC          
 #4C9A91        #5
-#DBD7CACC            d 
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        1
 #DBD7CACC      ;
 #DBD7CACC          
 #4C9A91        #8
-#DBD7CACC            d 
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        0
 #DBD7CACC      ;
 #DBD7CACC          
 #4C9A91        #2
-#DBD7CACC            d 
+#DBD7CACC            
+#BD976A        d
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        1
 #DBD7CACC      ;
 #DBD7CACC          
 #4C9A91        #10
-#DBD7CACC           d 
+#DBD7CACC           
+#BD976A        d
+#DBD7CACC       
 #CB7676        <=
 #DBD7CACC       
 #4C9A91        0

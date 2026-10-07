@@ -265,7 +265,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "\\b(?<![.:_])(?:function|mutable\\s+struct|struct|macro|quote|abstract\\s+type|primitive\\s+type|module|baremodule|where)\\b",
+          "match": "\\b(?<![.:_])(?:function|mutable\\s+struct|struct|macro|quote|abstract\\s+type|primitive\\s+type|typegroup|module|baremodule|where)\\b",
           "name": "keyword.other.julia"
         },
         {
@@ -680,7 +680,7 @@
           "name": "string.quoted.other.julia",
           "patterns": [
             {
-              "include": "#string_escaped_char"
+              "include": "#string_escaped_char_raw"
             }
           ]
         },
@@ -703,7 +703,7 @@
           "name": "string.quoted.other.julia",
           "patterns": [
             {
-              "include": "#string_escaped_char"
+              "include": "#string_escaped_char_raw"
             }
           ]
         },
@@ -1036,6 +1036,18 @@
       "patterns": [
         {
           "match": "\\\\(\\\\|[0-3]\\d{0,2}|[4-7]\\d?|x\\h{0,2}|u\\h{0,4}|U\\h{0,8}|.)",
+          "name": "constant.character.escape.julia"
+        }
+      ]
+    },
+    "string_escaped_char_raw": {
+      "patterns": [
+        {
+          "match": "(\\\\\\\\)*\\\\\"",
+          "name": "constant.character.escape.julia"
+        },
+        {
+          "match": "(\\\\\\\\)+(?=\")",
           "name": "constant.character.escape.julia"
         }
       ]

@@ -815,10 +815,45 @@
     }
   ],
   "repository": {
+    "capitalized-tag": {
+      "begin": "(<)([A-Z][-0-:A-Za-z]*)(?=\\s|/?>)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.html.vue"
+        },
+        "2": {
+          "name": "entity.name.tag.html.vue"
+        }
+      },
+      "end": "/?>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.tag.end.html.vue"
+        }
+      },
+      "name": "meta.tag.structure.$2.start.html.vue",
+      "patterns": [
+        {
+          "begin": "\\G",
+          "end": "(?=/?>)",
+          "patterns": [
+            {
+              "include": "#vue-directives"
+            },
+            {
+              "include": "text.html.basic#attribute"
+            }
+          ]
+        }
+      ]
+    },
     "html-stuff": {
       "patterns": [
         {
           "include": "#template-tag"
+        },
+        {
+          "include": "#capitalized-tag"
         },
         {
           "include": "text.html.derivative"

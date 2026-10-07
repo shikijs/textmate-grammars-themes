@@ -578,14 +578,26 @@
     "class.builtin:python": {
       "foreground": "#cba6f7"
     },
+    "class:haskell": {
+      "fontStyle": "",
+      "foreground": "#f9e2af"
+    },
     "class:python": {
       "foreground": "#f9e2af"
     },
     "constant.builtin.readonly:nix": {
       "foreground": "#cba6f7"
     },
+    "enum:haskell": {
+      "fontStyle": "italic",
+      "foreground": "#f9e2af"
+    },
     "enumMember": {
       "foreground": "#94e2d5"
+    },
+    "enumMember:haskell": {
+      "fontStyle": "",
+      "foreground": "#89b4fa"
     },
     "function.decorator:python": {
       "foreground": "#fab387"
@@ -595,6 +607,14 @@
     },
     "heading": {
       "foreground": "#f38ba8"
+    },
+    "interface:haskell": {
+      "fontStyle": "",
+      "foreground": "#f5c2e7"
+    },
+    "macro:haskell": {
+      "fontStyle": "",
+      "foreground": "#89b4fa"
     },
     "number": {
       "foreground": "#fab387"
@@ -613,6 +633,10 @@
     },
     "property.readonly:typescriptreact": {
       "foreground": "#cdd6f4"
+    },
+    "property:haskell": {
+      "fontStyle": "italic",
+      "foreground": "#b4befe"
     },
     "selfKeyword": {
       "foreground": "#f38ba8"
@@ -639,6 +663,14 @@
     "type.defaultLibrary:go": {
       "foreground": "#cba6f7"
     },
+    "type:haskell": {
+      "fontStyle": "italic",
+      "foreground": "#f9e2af"
+    },
+    "typeParameter:haskell": {
+      "fontStyle": "",
+      "foreground": "#eba0ac"
+    },
     "variable.defaultLibrary": {
       "foreground": "#eba0ac"
     },
@@ -662,6 +694,9 @@
     },
     "variable.typeHint:python": {
       "foreground": "#f9e2af"
+    },
+    "variable:haskell": {
+      "fontStyle": ""
     }
   },
   "tokenColors": [
@@ -1196,6 +1231,189 @@
       "scope": "meta.objectvalues.graphql constant.object.key.graphql string.unquoted.graphql",
       "settings": {
         "foreground": "#f2cdcd"
+      }
+    },
+    {
+      "scope": [
+        "meta.declaration.data constant.other.haskell",
+        "constant.other.haskell",
+        "meta.declaration.pattern constant.other.haskell",
+        "constant.language.unit.haskell punctuation",
+        "constant.language.unit.unboxed.haskell punctuation"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#89b4fa"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.haskell"
+      ],
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#f9e2af"
+      }
+    },
+    {
+      "scope": [
+        "support.constant.unit.haskell punctuation",
+        "support.constant.unit.haskell keyword.operator.hash",
+        "support.constant.unit.unboxed.haskell punctuation",
+        "support.constant.unit.unboxed.haskell keyword.operator.hash"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#f9e2af"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.generic-type.haskell"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#eba0ac"
+      }
+    },
+    {
+      "scope": [
+        "keyword.other.default.haskell",
+        "keyword.other.role.nominal.haskell",
+        "keyword.other.role.representational.haskell",
+        "keyword.other.role.phantom.haskell"
+      ],
+      "settings": {
+        "foreground": "#f38ba8"
+      }
+    },
+    {
+      "scope": [
+        "keyword.other.preprocessor.haskell",
+        "keyword.other.preprocessor.pragma.haskell"
+      ],
+      "settings": {
+        "foreground": "#f5e0dc"
+      }
+    },
+    {
+      "scope": [
+        "keyword.other.preprocessor.extension.haskell"
+      ],
+      "settings": {
+        "foreground": "#f38ba8"
+      }
+    },
+    {
+      "scope": [
+        "source.haskell meta.preprocessor.c",
+        "source.haskell meta.preprocessor.c punctuation.definition.preprocessor.c"
+      ],
+      "settings": {
+        "foreground": "#f5e0dc"
+      }
+    },
+    {
+      "scope": [
+        "meta.preprocessor.haskell"
+      ],
+      "settings": {
+        "foreground": "#9399b2"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.member.haskell",
+        "variable.other.member.definition.haskell"
+      ],
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#b4befe"
+      }
+    },
+    {
+      "scope": [
+        "keyword.control.else.haskell"
+      ],
+      "settings": {
+        "foreground": "#cba6f7"
+      }
+    },
+    {
+      "scope": [
+        "string.quoted.single.haskell",
+        "string.quoted.single.haskell punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#94e2d5"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.operator.haskell",
+        "storage.type.operator.infix.haskell",
+        "entity.name.function.infix.haskell",
+        "punctuation.backtick.haskell"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#94e2d5"
+      }
+    },
+    {
+      "scope": [
+        "support.constant.tuple.haskell",
+        "support.constant.tuple.unboxed.haskell"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#94e2d5"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator.lambda.haskell",
+        "keyword.operator.pipe.haskell",
+        "keyword.operator.double-dot.haskell",
+        "variable.other.member.wildcard.haskell"
+      ],
+      "settings": {
+        "foreground": "#f38ba8"
+      }
+    },
+    {
+      "scope": [
+        "meta.type-application keyword.operator.prefix.at.haskell",
+        "keyword.operator.infix.tight.at.haskell",
+        "keyword.operator.prefix.tilde.haskell",
+        "keyword.operator.prefix.bang.haskell",
+        "keyword.operator.double-colon.haskell",
+        "keyword.operator.big-arrow.haskell",
+        "meta.function.type-declaration keyword.operator.period.haskell",
+        "meta.type-declaration keyword.operator.period.haskell",
+        "meta.declaration.type keyword.operator.period.haskell"
+      ],
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#9399b2"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator.prefix.dollar.haskell",
+        "keyword.operator.quasi-quotation.begin.haskell",
+        "keyword.operator.quasi-quotation.end.haskell"
+      ],
+      "settings": {
+        "foreground": "#f5c2e7"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator.prefix.minus.haskell"
+      ],
+      "settings": {
+        "foreground": "#fab387"
       }
     },
     {

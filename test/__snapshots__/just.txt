@@ -1,0 +1,858 @@
+#4D9375        set
+#DBD7CACC       
+#BD976A        shell
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       [
+#C98A7D        "sh"
+#DBD7CACC      , 
+#C98A7D        "-c"
+#DBD7CACC      ]
+#4D9375        set
+#DBD7CACC       
+#BD976A        windows-shell
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       [
+#C98A7D        "powershell.exe"
+#DBD7CACC      , 
+#C98A7D        "-NoLogo"
+#DBD7CACC      , 
+#C98A7D        "-Command"
+#DBD7CACC      ]
+#4D9375        set
+#DBD7CACC       
+#BD976A        allow-duplicate-recipes
+#4D9375        set
+#DBD7CACC       
+#BD976A        positional-arguments
+#4D9375        set
+#DBD7CACC       
+#BD976A        dotenv-load
+#4D9375        set
+#DBD7CACC       
+#BD976A        export
+#4D9375        alias
+#DBD7CACC       
+#BD976A        s
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#BD976A        serve
+#BD976A        bt
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '0'
+#4D9375        export
+#DBD7CACC       
+#BD976A        RUST_BACKTRACE_1
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       bt
+#BD976A        log
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        "warn"
+#4D9375        export
+#DBD7CACC       
+#BD976A        JUST_LOG
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       (log 
+#CB7676        +
+#DBD7CACC       
+#C98A7D        "ing"
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#C98A7D        `
+#DBD7CACC      grep loop /etc/networks | cut -f2
+#C98A7D        `
+#DBD7CACC      )
+#BD976A        tmpdir
+#DBD7CACC        
+#444444        :=
+#DBD7CACC       
+#C98A7D        `
+#DBD7CACC      mktemp
+#C98A7D        `
+#BD976A        version
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        "0.2.7"
+#BD976A        tardir
+#DBD7CACC        
+#444444        :=
+#DBD7CACC       tmpdir 
+#CB7676        /
+#DBD7CACC       
+#C98A7D        "awesomesauce-"
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       version
+#BD976A        foo1
+#DBD7CACC          
+#444444        :=
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C98A7D        "tmp"
+#BD976A        foo2_3
+#DBD7CACC        
+#444444        :=
+#DBD7CACC       
+#C98A7D        "a/"
+#BD976A        tarball
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       tardir 
+#CB7676        +
+#DBD7CACC       
+#C98A7D        ".tar.gz"
+#4D9375        export
+#DBD7CACC       
+#BD976A        RUST_BACKTRACE_2
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        "1"
+#BD976A        string-with-tab
+#DBD7CACC                   
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C99076        \t
+#C98A7D        "
+#BD976A        string-with-newline
+#DBD7CACC               
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C99076        \n
+#C98A7D        "
+#BD976A        string-with-carriage-return
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C99076        \r
+#C98A7D        "
+#BD976A        string-with-double-quote
+#DBD7CACC          
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C99076        \"
+#C98A7D        "
+#BD976A        string-with-slash
+#DBD7CACC                 
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C99076        \\
+#C98A7D        "
+#BD976A        string-with-no-newline
+#DBD7CACC            
+#444444        :=
+#DBD7CACC       
+#C98A7D        "\
+#C98A7D        "
+#758575DD      # Newlines in variables
+#BD976A        single
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '
+#C98A7D        hello
+#C98A7D        '
+#BD976A        double
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        "
+#C98A7D        goodbye
+#C98A7D        "
+#BD976A        escapes
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '\t\n\r\"\\'
+#758575DD      # this string will evaluate to `foo\nbar\n`
+#BD976A        x
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '''
+#C98A7D          foo
+#C98A7D          bar
+#C98A7D        '''
+#758575DD      # this string will evaluate to `abc\n  wuv\nxyz\n`
+#BD976A        y
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        """
+#C98A7D          abc
+#C98A7D            wuv
+#C98A7D          xyz
+#C98A7D        """
+#80A665        for
+#CB7676        :
+#DBD7CACC        for file in 
+#C98A7D        `
+#DBD7CACC      ls .
+#C98A7D        `
+#DBD7CACC      ; do \
+#DBD7CACC          echo $file; \
+#DBD7CACC        done
+#80A665        serve
+#CB7676        :
+#DBD7CACC        touch 
+#C98A7D        {{tmpdir}}
+#CB7676        /
+#DBD7CACC      file
+#758575DD      # This backtick evaluates the command `echo foo\necho bar\n`, which produces the value `foo\nbar\n`.
+#BD976A        stuff
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        ``
+#DBD7CACC      `
+#DBD7CACC          echo foo
+#DBD7CACC          echo bar
+#DBD7CACC        
+#C98A7D        ``
+#DBD7CACC      `
+#BD976A        an_arch
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        trim
+#DBD7CACC      (
+#B8A965        lowercase
+#DBD7CACC      (
+#B8A965        justfile
+#DBD7CACC      ())) 
+#CB7676        +
+#DBD7CACC       
+#B8A965        arch
+#DBD7CACC      ()
+#BD976A        trim_end
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        trim_end
+#DBD7CACC      (
+#C98A7D        "99.99954%   "
+#DBD7CACC      )
+#BD976A        home_dir
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        replace
+#DBD7CACC      (
+#B8A965        env_var
+#DBD7CACC      (
+#C98A7D        'HOME'
+#DBD7CACC      ) 
+#CB7676        /
+#DBD7CACC       
+#C98A7D        "yep"
+#DBD7CACC      , 
+#C98A7D        'yep'
+#DBD7CACC      , 
+#C98A7D        ''
+#DBD7CACC      )
+#BD976A        quoted
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        quote
+#DBD7CACC      (
+#C98A7D        "some things beyond
+#C99076        \"
+#C98A7D        $()^%#@!|-+=_*&'`"
+#DBD7CACC      )
+#BD976A        smartphone
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        trim_end_match
+#DBD7CACC      (
+#C98A7D        'blah.txt'
+#DBD7CACC      , 
+#C98A7D        'txt'
+#DBD7CACC      )
+#BD976A        museum
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        trim_start_match
+#DBD7CACC      (
+#B8A965        trim_start
+#DBD7CACC      (
+#B8A965        trim_end_matches
+#DBD7CACC      (
+#C98A7D        '   yep_blah.txt.txt'
+#DBD7CACC      , 
+#C98A7D        '.txt'
+#DBD7CACC      )), 
+#C98A7D        'yep_'
+#DBD7CACC      )
+#BD976A        water
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        trim_start_matches
+#DBD7CACC      (
+#C98A7D        'ssssssoup.txt'
+#DBD7CACC      , 
+#C98A7D        's'
+#DBD7CACC      )
+#BD976A        congress
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        uppercase
+#DBD7CACC      (
+#B8A965        os
+#DBD7CACC      ())
+#BD976A        fam
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        os_family
+#DBD7CACC      ()
+#BD976A        path_1
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        absolute_path
+#DBD7CACC      (
+#C98A7D        'test'
+#DBD7CACC      )
+#BD976A        path_2
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '/tmp/subcommittee.txt'
+#BD976A        ext_z
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        extension
+#DBD7CACC      (path_2)
+#BD976A        exe_name
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        file_name
+#DBD7CACC      (
+#B8A965        just_executable
+#DBD7CACC      ())
+#BD976A        a_stem
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        file_stem
+#DBD7CACC      (path_2)
+#BD976A        a_parent
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        parent_directory
+#DBD7CACC      (path_2)
+#BD976A        sans_ext
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        without_extension
+#DBD7CACC      (path_2)
+#BD976A        camera
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        join
+#DBD7CACC      (
+#C98A7D        'tmp'
+#DBD7CACC      , 
+#C98A7D        'dir1'
+#DBD7CACC      , 
+#C98A7D        'dir2'
+#DBD7CACC      , path_2)
+#BD976A        cleaned
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        clean
+#DBD7CACC      (
+#C98A7D        '/tmp/blah/..///thing.txt'
+#DBD7CACC      )
+#BD976A        id__path
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        '/tmp'
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#B8A965        sha256
+#DBD7CACC      (
+#C98A7D        'blah'
+#DBD7CACC      ) 
+#CB7676        /
+#DBD7CACC       
+#B8A965        sha256_file
+#DBD7CACC      (
+#B8A965        justfile
+#DBD7CACC      ())
+#BD976A        _another_var
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#B8A965        env_var_or_default
+#DBD7CACC      (
+#C98A7D        "HOME"
+#DBD7CACC      , 
+#B8A965        justfile_directory
+#DBD7CACC      ())
+#BD976A        python
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#C98A7D        `
+#DBD7CACC      which python
+#C98A7D        `
+#BD976A        exists
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#B8A965        path_exists
+#DBD7CACC      (
+#B8A965        just_executable
+#DBD7CACC      ()) 
+#CB7676        =~
+#DBD7CACC       
+#C98A7D        '^/User'
+#DBD7CACC       { 
+#B8A965        uuid
+#DBD7CACC      () } 
+#4D9375        else
+#DBD7CACC       { 
+#C98A7D        'yeah'
+#DBD7CACC       }
+#BD976A        foo
+#DBD7CACC         
+#444444        :=
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#B8A965        env_var
+#DBD7CACC      (
+#C98A7D        "_"
+#DBD7CACC      ) 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "/usr/bin/env"
+#DBD7CACC       { 
+#C98A7D        `
+#DBD7CACC      touch /tmp/a_file
+#C98A7D        `
+#DBD7CACC       } 
+#4D9375        else
+#DBD7CACC       { 
+#C98A7D        "dummy-value"
+#DBD7CACC       }
+#BD976A        foo_b
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#C98A7D        "hello"
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "goodbye"
+#DBD7CACC       { 
+#C98A7D        "xyz"
+#DBD7CACC       } 
+#4D9375        else
+#DBD7CACC       { 
+#4D9375        if
+#DBD7CACC       
+#C98A7D        "no"
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "no"
+#DBD7CACC       { 
+#C98A7D        "yep"
+#DBD7CACC      } 
+#4D9375        else
+#DBD7CACC       { 
+#B8A965        error
+#DBD7CACC      (
+#C98A7D        "123"
+#DBD7CACC      ) } }
+#BD976A        foo_c
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#C98A7D        "hello"
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "goodbye"
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        "xyz"
+#DBD7CACC      } 
+#4D9375        else
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#C98A7D        "a"
+#DBD7CACC       
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        "a"
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        "abc"
+#DBD7CACC      } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        "123"
+#DBD7CACC      }
+#80A665        bar
+#CB7676        :
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      echo 
+#C98A7D        {{foo}}
+#80A665        bar2
+#DBD7CACC       
+#BD976A        foo_stuff
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        {{ 
+#4D9375        if
+#C98A7D         foo_stuff 
+#CB7676        ==
+#C98A7D         "bar" { "hello" } 
+#4D9375        else
+#C98A7D         { "goodbye" } }}
+#80A665        executable
+#CB7676        :
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      echo The executable is at: 
+#C98A7D        {{
+#B8A965        just_executable
+#C98A7D        ()}}
+#80A665        rustfmt
+#CB7676        :
+#DBD7CACC        find 
+#C98A7D        {{
+#B8A965        invocation_directory
+#C98A7D        ()}}
+#DBD7CACC       -name \*.rs -exec rustfmt {} \;
+#80A665        test
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        "{{
+#B8A965        home_dir
+#C98A7D        }}"
+#80A665        linewise
+#CB7676        :
+#DBD7CACC        Write-Host 
+#C98A7D        "Hello, world!"
+#80A665        serve2
+#CB7676        :
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      echo 
+#C98A7D        "Starting server with database $DATABASE_ADDRESS on port $SERVER_PORT…"
+#BD976A        shebang
+#DBD7CACC       
+#444444        :=
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#B8A965        os
+#DBD7CACC      () 
+#CB7676        ==
+#DBD7CACC       
+#C98A7D        'windows'
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        'powershell.exe'
+#DBD7CACC      } 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC        
+#C98A7D        '/usr/bin/env pwsh'
+#DBD7CACC      }
+#80A665        shebang
+#CB7676        :
+#DBD7CACC      	#!
+#C98A7D        {{shebang}}
+#DBD7CACC      	$PSV = $PSVersionTable.PSVersion | % {
+#C98A7D        "$_"
+#DBD7CACC       -split 
+#C98A7D        "
+#C99076        \.
+#C98A7D        "
+#DBD7CACC       }
+#DBD7CACC      	$psver = $PSV[0] 
+#CB7676        +
+#DBD7CACC       
+#C98A7D        "."
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       $PSV[
+#4C9A91        1
+#DBD7CACC      ]
+#DBD7CACC      	
+#4D9375        if
+#DBD7CACC       ($PSV[
+#4C9A91        2
+#DBD7CACC      ].Length -lt 
+#4C9A91        4
+#DBD7CACC      ) {
+#DBD7CACC      		$psver 
+#CB7676        +
+#DBD7CACC      = 
+#C98A7D        "."
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       $PSV[
+#4C9A91        2
+#DBD7CACC      ] 
+#CB7676        +
+#DBD7CACC       
+#C98A7D        " Core"
+#DBD7CACC      	} 
+#4D9375        else
+#DBD7CACC       {
+#DBD7CACC      		$psver 
+#CB7676        +
+#DBD7CACC      = 
+#C98A7D        " Desktop"
+#DBD7CACC      	}
+#DBD7CACC      	echo 
+#C98A7D        "PowerShell $psver"
+#4D9375        @
+#80A665        foo
+#CB7676        :
+#DBD7CACC        echo bar
+#4D9375        @
+#80A665        test5
+#DBD7CACC       
+#4D9375        *
+#BD976A        args
+#CB7676        =
+#C98A7D        ''
+#CB7676        :
+#DBD7CACC        bash -c 
+#C98A7D        'while (( "$#" )); do echo - $1; shift; done'
+#DBD7CACC       -- 
+#C98A7D        "$@"
+#80A665        test2
+#DBD7CACC       
+#4D9375        $
+#BD976A        RUST_BACKTRACE
+#CB7676        =
+#C98A7D        "1"
+#CB7676        :
+#DBD7CACC        
+#758575DD      # will print a stack trace if it crashes
+#DBD7CACC        cargo test
+#80A665        notify
+#DBD7CACC       
+#BD976A        m
+#CB7676        =
+#C98A7D        ""
+#CB7676        :
+#DBD7CACC      	keybase chat send --topic-type 
+#C98A7D        "chat"
+#DBD7CACC       --channel <channel> <team> 
+#C98A7D        "upd(<repo>): {{m}}"
+#758575DD      # Sample project script 2
+#80A665        script2
+#DBD7CACC       
+#4D9375        *
+#BD976A        ARGS
+#CB7676        :
+#DBD7CACC          
+#C98A7D        {{ python }}
+#DBD7CACC       script2.py 
+#C98A7D        {{ ARGS }}
+#80A665        braces
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        'I {{{{LOVE}} curly braces!'
+#4D9375        _
+#80A665        braces2
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        '{{'
+#DBD7CACC      I 
+#C98A7D        {{LOVE}}
+#DBD7CACC       curly braces!
+#C98A7D        '}}'
+#4D9375        _
+#80A665        braces3
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        'I {{ "{{" }}LOVE}} curly braces!'
+#80A665        foo2
+#CB7676        :
+#DBD7CACC        
+#CB7676        -
+#DBD7CACC      @cat foo
+#DBD7CACC        echo 
+#C98A7D        'Done!'
+#80A665        test3
+#DBD7CACC       
+#BD976A        target
+#DBD7CACC       
+#BD976A        tests
+#CB7676        =
+#DBD7CACC      path_1
+#CB7676        :
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      echo 
+#C98A7D        'Testing {{target}}:{{tests}}…'
+#DBD7CACC        .
+#CB7676        /
+#DBD7CACC      test --tests 
+#C98A7D        {{tests}}
+#DBD7CACC       
+#C98A7D        {{target}}
+#80A665        test4
+#DBD7CACC       
+#BD976A        triple
+#CB7676        =
+#DBD7CACC      (an_arch 
+#CB7676        +
+#DBD7CACC       
+#C98A7D        "-unknown-unknown"
+#DBD7CACC      ) 
+#BD976A        input
+#CB7676        =
+#DBD7CACC      (an_arch 
+#CB7676        /
+#DBD7CACC       
+#C98A7D        "input.dat"
+#DBD7CACC      )
+#CB7676        :
+#DBD7CACC        .
+#CB7676        /
+#DBD7CACC      test 
+#C98A7D        {{triple}}
+#80A665        variadic
+#DBD7CACC       
+#4D9375        $
+#BD976A        VAR1_1
+#DBD7CACC       
+#BD976A        VAR2
+#DBD7CACC       
+#BD976A        VAR3
+#DBD7CACC       
+#BD976A        VAR4
+#CB7676        =
+#DBD7CACC      (
+#C98A7D        "a"
+#DBD7CACC      ) +
+#4D9375        $
+#BD976A        FLAGS
+#CB7676        =
+#C98A7D        '-q'
+#CB7676        :
+#DBD7CACC       
+#80A665        foo2
+#DBD7CACC       
+#80A665        braces
+#DBD7CACC        cargo test 
+#C98A7D        {{FLAGS}}
+#80A665        time
+#CB7676        :
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      -date 
+#CB7676        +
+#C98A7D        "%H:%S"
+#DBD7CACC        
+#CB7676        -
+#DBD7CACC      cat 
+#CB7676        /
+#DBD7CACC      tmp
+#CB7676        /
+#DBD7CACC      nonexistent_file.txt
+#DBD7CACC        
+#CB7676        @
+#DBD7CACC      echo 
+#C98A7D        "finished"
+#80A665        justwords
+#CB7676        :
+#DBD7CACC        grep just \
+#DBD7CACC          
+#CB7676        -
+#DBD7CACC      -text 
+#CB7676        /
+#DBD7CACC      usr
+#CB7676        /
+#DBD7CACC      share
+#CB7676        /
+#DBD7CACC      dict
+#CB7676        /
+#DBD7CACC      words \
+#DBD7CACC          > 
+#CB7676        /
+#DBD7CACC      tmp
+#CB7676        /
+#DBD7CACC      justwords
+#758575DD      # Subsequent dependencies
+#758575DD      # https://just.systems/man/en/chapter_37.html
+#758575DD      # To test, run `$ just -f test-suite.just b`
+#80A665        a
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        'A!'
+#80A665        b
+#CB7676        :
+#DBD7CACC       
+#80A665        a
+#DBD7CACC       
+#CB7676        &&
+#DBD7CACC       
+#80A665        d
+#DBD7CACC        echo 
+#C98A7D        'B start!'
+#DBD7CACC        just -f 
+#C98A7D        {{
+#B8A965        justfile
+#C98A7D        ()}}
+#DBD7CACC       c
+#DBD7CACC        echo 
+#C98A7D        'B end!'
+#80A665        c
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        'C!'
+#80A665        d
+#CB7676        :
+#DBD7CACC        echo 
+#C98A7D        'D!'
+#758575DD      # From https://github.com/casey/just/blob/master/examples/kitchen-sink.just

@@ -707,22 +707,44 @@
       ]
     },
     "string-interpolation": {
-      "captures": {
-        "1": {
+      "patterns": [
+        {
+          "begin": "(\\$\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.template-expression.begin.v"
+            }
+          },
+          "end": "(})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.template-expression.end.v"
+            }
+          },
+          "name": "meta.string.interpolation.v",
           "patterns": [
             {
-              "match": "\\$\\d[.\\w]+",
-              "name": "invalid.illegal.v"
+              "include": "#operators"
             },
             {
-              "match": "\\$([.\\w]+|\\{.*?})",
-              "name": "variable.other.interpolated.v"
+              "include": "#numbers"
+            },
+            {
+              "include": "#function-exist"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "match": "\\w+",
+              "name": "variable.other.v"
             }
           ]
         }
-      },
-      "match": "(\\$([.\\w]+|\\{.*?}))",
-      "name": "meta.string.interpolation.v"
+      ]
     },
     "string-placeholder": {
       "match": "%(\\[\\d+])?([- #+0]{0,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+])\\*?)?(\\[\\d+])?)?))?[%EFGTUXb-gopqstvx]",
@@ -757,9 +779,6 @@
           "name": "string.quoted.raw.v",
           "patterns": [
             {
-              "include": "#string-interpolation"
-            },
-            {
               "include": "#string-placeholder"
             }
           ]
@@ -774,9 +793,6 @@
           "end": "\"",
           "name": "string.quoted.raw.v",
           "patterns": [
-            {
-              "include": "#string-interpolation"
-            },
             {
               "include": "#string-placeholder"
             }

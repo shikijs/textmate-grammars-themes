@@ -157,6 +157,9 @@
           "include": "#keywords"
         },
         {
+          "include": "#namespace-call"
+        },
+        {
           "include": "#function-call"
         },
         {
@@ -348,6 +351,17 @@
           "name": "markup.underline.link"
         }
       ]
+    },
+    "namespace-call": {
+      "captures": {
+        "1": {
+          "name": "entity.name.namespace.r"
+        },
+        "2": {
+          "name": "keyword.operator"
+        }
+      },
+      "match": "(?<![A-Za-z0-9._])([A-Za-z._][A-Za-z0-9._]*)(:::?)"
     },
     "numbers": {
       "patterns": [

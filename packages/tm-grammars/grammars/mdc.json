@@ -1,4 +1,7 @@
 {
+  "aliases": [
+    "comark"
+  ],
   "displayName": "MDC",
   "injectionSelector": "L:text.html.markdown",
   "name": "mdc",
@@ -109,8 +112,29 @@
           "name": "punctuation.definition.tag.end.component"
         }
       },
-      "match": "((\\{)([^{]*)(}))",
+      "match": "((\\{)((?:[^\"'{}]|'[^']*'|\"[^\"]*\")*)(}))",
       "name": "attributes.mdc"
+    },
+    "binding": {
+      "captures": {
+        "1": {
+          "name": "punctuation.section.embedded.begin.mdc"
+        },
+        "2": {
+          "name": "variable.other.mdc"
+        },
+        "3": {
+          "name": "keyword.operator.logical.mdc"
+        },
+        "4": {
+          "name": "string.unquoted.mdc"
+        },
+        "5": {
+          "name": "punctuation.section.embedded.end.mdc"
+        }
+      },
+      "match": "(\\{\\{)\\s*((?:[^|}]|\\|(?!\\|))+?)\\s*(?:(\\|\\|)\\s*([^}]+?)\\s*)?(}})",
+      "name": "meta.binding.mdc"
     },
     "block": {
       "patterns": [
@@ -162,7 +186,7 @@
       "while": "(^|\\G)\\s*(>) ?"
     },
     "component_block": {
-      "begin": "(^|\\G)(\\s*)(:{2,})(?i:(\\w[-\\w\\d]+)(\\s*|\\s*(\\{[^{]*}))$)",
+      "begin": "(^|\\G)(\\s*)(:{2,})(?i:(\\w[-\\w\\d]+)(\\s*|\\s*(\\{(?:[^\"'{}]|'[^']*'|\"[^\"]*\")*}))$)",
       "beginCaptures": {
         "3": {
           "name": "punctuation.definition.tag.start.mdc"
@@ -256,7 +280,7 @@
           ]
         }
       },
-      "match": "(^|\\G|\\s+)(:)(?i:(\\w[-\\w\\d]*))((\\{[^}]*})(\\[[^]]*])?|(\\[[^]]*])(\\{[^}]*})?)?\\s",
+      "match": "(^|\\G|\\s+)(:)(?i:(\\w[-\\w\\d]*))((\\{(?:[^\"'{}]|'[^']*'|\"[^\"]*\")*})(\\[[^]]*])?|(\\[[^]]*])(\\{(?:[^\"'{}]|'[^']*'|\"[^\"]*\")*})?)?\\s",
       "name": "inline.component.mdc"
     },
     "entities": {
@@ -471,6 +495,9 @@
     "inline": {
       "patterns": [
         {
+          "include": "#binding"
+        },
+        {
           "include": "#component_inline"
         },
         {
@@ -478,6 +505,9 @@
         },
         {
           "include": "#attributes"
+        },
+        {
+          "include": "text.html.markdown#inline"
         }
       ]
     },
@@ -526,7 +556,7 @@
       "name": "meta.paragraph.markdown",
       "patterns": [
         {
-          "include": "text.html.markdown#inline"
+          "include": "#inline"
         },
         {
           "include": "text.html.derivative"

@@ -152,7 +152,7 @@
       },
       "comment": "Attribute value",
       "contentName": "source.ts",
-      "end": "(?=[,;\\]]|/>|(?<=[^=>])>|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{(+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
+      "end": "(?=[,;\\]]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{(+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
       "name": "meta.embedded.ts",
       "patterns": [
         {
@@ -164,6 +164,11 @@
       "patterns": [
         {
           "include": "#javascript-comments"
+        },
+        {
+          "comment": "The async modifier, which only applies when a method follows it",
+          "match": "\\basync(?=(?:[ \\t]+[a-zA-Z0-9_$][a-zA-Z0-9_$-]*|[ \\t]*)[ \\t]*(?:<[^<>]*>)?[ \\t]*\\([^()]*\\)[ \\t]*\\{)",
+          "name": "storage.modifier.async.marko"
         },
         {
           "applyEndPatternLast": 1,
@@ -203,7 +208,7 @@
           },
           "comment": "A ...spread attribute",
           "contentName": "source.ts",
-          "end": "(?=[,;\\]]|/>|(?<=[^=>])>|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{(+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
+          "end": "(?=[,;\\]]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{(+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
           "name": "meta.marko-spread-attribute",
           "patterns": [
             {
@@ -1245,7 +1250,7 @@
                 }
               },
               "comment": "Match type",
-              "end": "(?=[,;\\](]|/>|(?<=[^=>])>|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
+              "end": "(?=[,;\\](]|/>|(?<=[^=>])(?:(?<!\\s)>|>(?!=))|(?<!^|[!~*%&^|?:]|[!~*%&^|?/<>+=-]=|[=>]>|[^.]\\.|[^-]-|[^+]\\+|[a-zA-Z0-9%).<\\]}]\\s/|[^.$\\w]await|[^.$\\w]async|[^.$\\w]class|[^.$\\w]function|[^.$\\w]keyof|[^.$\\w]new|[^.$\\w]readonly|[^.$\\w]infer|[^.$\\w]typeof|[^.$\\w]void)\\s+(?![\\n{+!~*%&^|?:]|[<>/=-]=|[=>]>|\\.[^.]|-[^-]|/[^>]|(?:in|instanceof|satisfies|as|extends)\\s+[^:=/,;>]))",
               "patterns": [
                 {
                   "include": "source.ts#type"

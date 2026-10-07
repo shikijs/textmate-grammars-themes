@@ -24,6 +24,9 @@
       "include": "#local-declaration"
     },
     {
+      "include": "#const-declaration"
+    },
+    {
       "include": "#for-loop"
     },
     {
@@ -40,6 +43,9 @@
     },
     {
       "include": "#standard_library"
+    },
+    {
+      "include": "#generics-instantiation"
     },
     {
       "include": "#identifier"
@@ -88,14 +94,8 @@
           "name": "comment.block.luau",
           "patterns": [
             {
-              "begin": "(```luau?)\\s+",
+              "begin": "(```luau?)\\s*$",
               "beginCaptures": {
-                "1": {
-                  "name": "comment.luau"
-                }
-              },
-              "end": "(```)",
-              "endCaptures": {
                 "1": {
                   "name": "comment.luau"
                 }
@@ -105,7 +105,17 @@
                 {
                   "include": "source.luau"
                 }
-              ]
+              ],
+              "while": "^(?!\\s*```)"
+            },
+            {
+              "captures": {
+                "1": {
+                  "name": "comment.luau"
+                }
+              },
+              "match": "(```)",
+              "name": "keyword.operator.other.luau"
             },
             {
               "include": "#doc_comment_tags"
@@ -126,6 +136,48 @@
           "begin": "--",
           "end": "\\n",
           "name": "comment.line.double-dash.luau"
+        }
+      ]
+    },
+    "const-declaration": {
+      "begin": "\\b(?:(export)\\s+)?(const)\\b",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "2": {
+          "name": "storage.modifier.const.luau"
+        }
+      },
+      "end": "(?=\\s*[;=]|\\s*$)",
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#attribute"
+        },
+        {
+          "begin": "(:)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.operator.type.luau"
+            }
+          },
+          "end": "(?=\\s*[,;=]|\\s*$)",
+          "patterns": [
+            {
+              "include": "#type_literal"
+            }
+          ]
+        },
+        {
+          "match": "\\b([A-Z_][0-9A-Z_]*)\\b",
+          "name": "variable.other.constant.luau"
+        },
+        {
+          "match": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b",
+          "name": "variable.other.readwrite.luau"
         }
       ]
     },
@@ -186,12 +238,18 @@
       ]
     },
     "function-definition": {
-      "begin": "\\b(?:(local)\\s+)?(function)\\b(?![,:])",
+      "begin": "\\b(?:(local)\\s+|(const)\\s+|(export)\\s+)?(function)\\b(?![,:])",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.local.luau"
         },
         "2": {
+          "name": "storage.modifier.const.luau"
+        },
+        "3": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "4": {
           "name": "keyword.control.luau"
         }
       },
@@ -277,10 +335,32 @@
         }
       ]
     },
+    "generics-instantiation": {
+      "begin": "(<<)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.typeparameters.begin.luau"
+        }
+      },
+      "end": "(>>)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.typeparameters.end.luau"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#type_literal"
+        }
+      ]
+    },
     "identifier": {
       "patterns": [
         {
-          "match": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:[\"'({]|\\[\\[))",
+          "match": "\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:<<|[\"'({]|\\[\\[))",
           "name": "entity.name.function.luau"
         },
         {
@@ -329,6 +409,10 @@
           "name": "storage.modifier.local.luau"
         },
         {
+          "match": "\\b(const)\\b",
+          "name": "storage.modifier.const.luau"
+        },
+        {
           "match": "\\b(function)\\b(?![,:])",
           "name": "keyword.control.luau"
         },
@@ -367,9 +451,12 @@
       ]
     },
     "local-declaration": {
-      "begin": "\\b(local)\\b",
+      "begin": "\\b(?:(export)\\s+)?(local)\\b",
       "beginCaptures": {
         "1": {
+          "name": "storage.modifier.visibility.luau"
+        },
+        "2": {
           "name": "storage.modifier.local.luau"
         }
       },
@@ -408,15 +495,19 @@
     "number": {
       "patterns": [
         {
-          "match": "\\b0_*[Xx]_*[A-F_a-f\\d]*(?:[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\b0_*[Xx]_*[A-Fa-f\\d][A-F_a-f\\d]*i?",
           "name": "constant.numeric.hex.luau"
         },
         {
-          "match": "\\b0_*[Bb][01_]+(?:[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\b0_*[Bb]_*[01][01_]*i?",
           "name": "constant.numeric.binary.luau"
         },
         {
-          "match": "(?:\\d[_\\d]*(?:\\.[_\\d]*)?|\\.\\d[_\\d]*)(?:[Ee][-+]?_*\\d[_\\d]*(?:\\.[_\\d]*)?)?",
+          "match": "\\d[_\\d]*i",
+          "name": "constant.numeric.decimal.luau"
+        },
+        {
+          "match": "(?:\\d[_\\d]*(?:\\.[_\\d]*)?|\\.\\d[_\\d]*)(?:[Ee][-+]?_*\\d[_\\d]*)?",
           "name": "constant.numeric.decimal.luau"
         }
       ]
@@ -424,7 +515,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "==|~=|!=|<=?|>=?",
+          "match": "==|~=|<=?|>=?",
           "name": "keyword.operator.comparison.luau"
         },
         {
@@ -484,11 +575,11 @@
           "name": "constant.language.luau"
         },
         {
-          "match": "(?<![^.]\\.|:)\\b(bit32\\.(?:arshift|band|bnot|bor|btest|bxor|extract|lrotate|lshift|replace|rrotate|rshift|countlz|countrz|byteswap)|coroutine\\.(?:create|isyieldable|resume|running|status|wrap|yield|close)|debug\\.(?:info|loadmodule|profilebegin|profileend|traceback)|math\\.(?:abs|acos|asin|atan2??|ceil|clamp|cosh??|deg|exp|floor|fmod|frexp|ldexp|log|log10|max|min|modf|noise|pow|rad|random|randomseed|round|sign|sinh??|sqrt|tanh??)|os\\.(?:clock|date|difftime|time)|string\\.(?:byte|char|find|format|gmatch|gsub|len|lower|match|pack|packsize|rep|reverse|split|sub|unpack|upper)|table\\.(?:concat|create|find|foreachi??|getn|insert|maxn|move|pack|remove|sort|unpack|clear|freeze|isfrozen|clone)|task\\.(?:spawn|synchronize|desynchronize|wait|defer|delay)|utf8\\.(?:char|codepoint|codes|graphemes|len|nfcnormalize|nfdnormalize|offset)|buffer\\.(?:create|fromstring|tostring|len|readi8|readu8|readi16|readu16|readi32|readu32|readf32|readf64|writei8|writeu8|writei16|writeu16|writei32|writeu32|writef32|writef64|readstring|writestring|copy|fill)|vector\\.(?:abs|angle|ceil|clamp|create|cross|dot|floor|lerp|magnitude|max|min|normalize|sign))\\b",
+          "match": "(?<![^.]\\.|:)\\b(bit32\\.(?:arshift|band|bnot|bor|btest|bxor|extract|lrotate|lshift|replace|rrotate|rshift|countlz|countrz|byteswap)|coroutine\\.(?:create|isyieldable|resume|running|status|wrap|yield|close)|debug\\.(?:info|loadmodule|profilebegin|profileend|traceback)|integer\\.(?:add|arshift|band|bnot|bor|bswap|btest|bxor|clamp|countlz|countrz|create|div|extract|fromstring|ge|gt|idiv|le|lrotate|lshift|lt|max|min|mod|mul|neg|rem|replace|rrotate|rshift|sub|tonumber|udiv|uge|ugt|ule|ult|urem)|math\\.(?:abs|acos|asin|atan2??|ceil|clamp|cosh??|deg|exp|floor|fmod|frexp|isfinite|isinf|isnan|ldexp|lerp|log|log10|map|max|min|modf|noise|pow|rad|random|randomseed|round|sign|sinh??|sqrt|tanh??)|os\\.(?:clock|date|difftime|time)|string\\.(?:byte|char|find|format|gmatch|gsub|len|lower|match|pack|packsize|rep|reverse|split|sub|unpack|upper)|table\\.(?:concat|create|find|foreachi??|getn|insert|maxn|move|pack|remove|sort|unpack|clear|freeze|isfrozen|clone)|task\\.(?:spawn|synchronize|desynchronize|wait|defer|delay)|utf8\\.(?:char|codepoint|codes|graphemes|len|nfcnormalize|nfdnormalize|offset)|buffer\\.(?:create|fromstring|tostring|len|readbits|readi8|readu8|readi16|readu16|readi32|readu32|readinteger|readf32|readf64|writebits|writei8|writeu8|writei16|writeu16|writei32|writeu32|writeinteger|writef32|writef64|readstring|writestring|copy|fill)|vector\\.(?:abs|angle|ceil|clamp|create|cross|dot|floor|lerp|magnitude|max|min|normalize|sign))\\b",
           "name": "support.function.luau"
         },
         {
-          "match": "(?<![^.]\\.|:)\\b(bit32|buffer|coroutine|debug|math(\\.(huge|pi))?|os|string|table|task|utf8(\\.charpattern)?|vector(\\.(one|zero))?)\\b",
+          "match": "(?<![^.]\\.|:)\\b(bit32|buffer|coroutine|debug|integer(\\.(m(?:ax|in)signed))?|math(\\.(huge|pi|nan|e|phi|sqrt2|tau))?|os|string|table|task|utf8(\\.charpattern)?|vector(\\.(one|zero))?)\\b",
           "name": "support.constant.luau"
         },
         {
@@ -591,7 +682,7 @@
       ]
     },
     "type-alias-declaration": {
-      "begin": "^\\b(?:(export)\\s+)?(type)\\b",
+      "begin": "(?<![^.]\\.|:)\\b(?:(export)\\s+)?(type)\\b(?=\\s+(?!function\\b)[A-Z_a-z][0-9A-Z_a-z]*)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.visibility.luau"
@@ -600,7 +691,7 @@
           "name": "storage.type.luau"
         }
       },
-      "end": "(?=\\s*$)|(?=\\s*;)",
+      "end": "(?=[]),}](?!\\s*[\\&|]))|(?=\\s*;)|(?=\\s*(?:[%*+^]|//?|(?<!\\.)\\.\\.(?!\\.)|-(?![->`])|~=|==))|(?=\\s*\\b(?:and|or|break|const|continue|do|else|elseif|end|for|function|if|in|local|repeat|return|then|until|while)\\b)|(?=^\\s*$)|(?=^\\s*(?:@|\\b(?:export\\s+)?type\\b))|(?=^\\s*[A-Z_a-z][0-9A-Z_a-z]*(?:\\.[A-Z_a-z][0-9A-Z_a-z]*)*\\s*(?:(?:[-%*+/^]|\\.\\.)?=(?!=)|[(:\\[]))",
       "patterns": [
         {
           "include": "#type_literal"
@@ -612,7 +703,7 @@
       ]
     },
     "type-function": {
-      "begin": "^\\b(?:(export)\\s+)?(type)\\s+(function)\\b",
+      "begin": "(?<![^.]\\.|:)\\b(?:(export)\\s+)?(type)\\s+(function)\\b",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.visibility.luau"
@@ -686,7 +777,7 @@
       ]
     },
     "type_annotation": {
-      "begin": ":(?!\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:[\"'({]|\\[\\[)))",
+      "begin": ":(?!\\b([A-Z_a-z][0-9A-Z_a-z]*)\\b(?=\\s*(?:<<|[\"'({]|\\[\\[)))",
       "end": "(?<=\\))(?!\\s*->)|[;=]|$|(?=\\breturn\\b)|(?=\\bend\\b)",
       "patterns": [
         {
@@ -704,7 +795,7 @@
           "name": "keyword.operator.typecast.luau"
         }
       },
-      "end": "(?=^|[-\\])+,:;>?}](?!\\s*[\\&|])|$|\\b(break|do|else|for|if|elseif|return|then|repeat|while|until|end|in|continue)\\b)",
+      "end": "(?=[]),}](?!\\s*[\\&|]))|(?=\\s*;)|(?=\\s*(?:[%*+^]|//?|(?<!\\.)\\.\\.(?!\\.)|-(?![->`])|~=|==))|(?=\\s*\\b(?:and|or|break|const|continue|do|else|elseif|end|for|function|if|in|local|repeat|return|then|until|while)\\b)|(?=^\\s*$)|(?=^\\s*(?:@|\\b(?:export\\s+)?type\\b))|(?=^\\s*[A-Z_a-z][0-9A-Z_a-z]*(?:\\.[A-Z_a-z][0-9A-Z_a-z]*)*\\s*(?:(?:[-%*+/^]|\\.\\.)?=(?!=)|[(:\\[]))",
       "patterns": [
         {
           "include": "#type_literal"
@@ -736,7 +827,7 @@
           "name": "constant.language.boolean.true.luau"
         },
         {
-          "match": "\\b(nil|string|number|boolean|thread|userdata|symbol|vector|buffer|unknown|never|any)\\b",
+          "match": "\\b(nil|string|number|integer|boolean|thread|vector|buffer|unknown|never|any)\\b",
           "name": "support.type.primitive.luau"
         },
         {

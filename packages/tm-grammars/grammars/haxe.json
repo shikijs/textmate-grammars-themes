@@ -91,6 +91,20 @@
           "include": "#global"
         },
         {
+          "begin": "\\b(from|to)\\b(?=\\s*\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.hx"
+            }
+          },
+          "end": "(?<=})",
+          "patterns": [
+            {
+              "include": "#type"
+            }
+          ]
+        },
+        {
           "match": "\\b(from|to)\\b",
           "name": "keyword.other.hx"
         },
@@ -322,6 +336,49 @@
         },
         {
           "include": "#punctuation-accessor"
+        },
+        {
+          "include": "#identifiers"
+        },
+        {
+          "include": "#method-return-type-hint"
+        }
+      ]
+    },
+    "case-object-pattern": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "meta.brace.curly.hx"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.curly.hx"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#global"
+        },
+        {
+          "include": "#case-object-pattern"
+        },
+        {
+          "include": "#array"
+        },
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#macro-reification"
+        },
+        {
+          "include": "#punctuation-comma"
         },
         {
           "include": "#identifiers"
@@ -1085,6 +1142,9 @@
               "include": "#global"
             },
             {
+              "include": "#case-object-pattern"
+            },
+            {
               "include": "#metadata"
             },
             {
@@ -1299,8 +1359,9 @@
       ]
     },
     "method": {
+      "applyEndPatternLast": true,
       "begin": "(?=\\bfunction\\b)",
-      "end": "(?<=[;}])",
+      "end": "(?<=})|(?=\\s*[^{\\s])",
       "name": "meta.method.hx",
       "patterns": [
         {
@@ -1310,7 +1371,18 @@
           "include": "#method-name"
         },
         {
-          "include": "#method-name-post"
+          "include": "#parameters"
+        },
+        {
+          "include": "#method-return"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.block.begin.hx"
+            }
+          },
+          "match": "(\\{)"
         },
         {
           "include": "#method-block"
@@ -1391,40 +1463,28 @@
         }
       ]
     },
-    "method-name-post": {
-      "begin": "(?<=[>\\w\\s])",
-      "end": "(\\{)|(;)",
-      "endCaptures": {
-        "1": {
-          "name": "punctuation.definition.block.begin.hx"
-        },
-        "2": {
-          "name": "punctuation.terminator.hx"
-        }
-      },
-      "patterns": [
-        {
-          "include": "#parameters"
-        },
-        {
-          "include": "#method-return-type-hint"
-        },
-        {
-          "include": "#block"
-        },
-        {
-          "include": "#block-contents"
-        }
-      ]
-    },
-    "method-return-type-hint": {
+    "method-return": {
       "begin": "(?<=\\))\\s*(:)",
       "beginCaptures": {
         "1": {
           "name": "keyword.operator.type.annotation.hx"
         }
       },
-      "end": "(?=[0-9;a-{])",
+      "end": "(?=[;{])|(?<=\\s)(?=[0-9a-z]\\w*\\b(?!\\s*\\.))",
+      "patterns": [
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "method-return-type-hint": {
+      "begin": "(?<=\\bfunction\\b.+\\))\\s*(:)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.type.annotation.hx"
+        }
+      },
+      "end": "(?=[;{])|(?<=\\s)(?=[0-9a-z]\\w*\\b(?!\\s*\\.))",
       "patterns": [
         {
           "include": "#type"
@@ -1978,6 +2038,9 @@
               },
               "patterns": [
                 {
+                  "include": "#block"
+                },
+                {
                   "include": "#block-contents"
                 }
               ]
@@ -2056,7 +2119,7 @@
     },
     "type-check": {
       "begin": "(?<!macro)(?=:)",
-      "end": "(?=\\))",
+      "end": "(?=[),])",
       "patterns": [
         {
           "include": "#operator-type-hint"
@@ -2248,6 +2311,9 @@
           "include": "#punctuation-comma"
         },
         {
+          "include": "#punctuation-terminator"
+        },
+        {
           "include": "#operator-optional"
         },
         {
@@ -2413,7 +2479,7 @@
           "name": "keyword.operator.assignment.hx"
         }
       },
-      "end": "(?=[,;])",
+      "end": "(?=[,;]|$)",
       "patterns": [
         {
           "include": "#block"

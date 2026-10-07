@@ -1,0 +1,73 @@
+#B8A965        #+title:
+#DBD7CACC        Example Org File
+#B8A965        #+author:
+#DBD7CACC       TEC
+#B8A965        #+date:
+#DBD7CACC         2020-10-27
+#4D9375        * Revamp orgmode.org website
+#DBD7CACC      The
+#DBD7CACC       /beauty/ 
+#DBD7CACC      of org
+#DBD7CACC       *must* 
+#DBD7CACC      be shared.
+#C98A7D77      [[
+#DBD7CACC      https://upload.wikimedia.org/wikipedia/commons/b/bd/Share_Icon.svg
+#C98A7D77      ]]
+#5DA994        ** 
+#4D9375        DONE
+#5DA994         Make screenshots
+#DBD7CACC      CLOSED: [2020-09-03 Thu 18:24]
+#5DA994        ** 
+#4D9375        DONE
+#5DA994         Restyle Site 
+#C98A7D        CSS
+#DBD7CACC      Go through 
+#C98A7D77      [[
+#DBD7CACC      file:style.scss
+#C98A7D77      ][
+#C98A7D        stylesheet
+#C98A7D77      ]]
+#5DA994        ** 
+#FDAEB7        TODO
+#5DA994         Check 
+#C98A7D        CSS
+#5DA994         on main pages [42%]
+#DBD7CACC      - [X] Index page
+#DBD7CACC      - [X] Quickstart
+#DBD7CACC      - [ ] Features
+#DBD7CACC      - [ ] Releases
+#DBD7CACC      - [X] Install
+#DBD7CACC      - [ ] Manual
+#DBD7CACC      - [ ] Contribute
+#4D9375        * Learn Org
+#DBD7CACC      Org makes easy things trivial and complex things practical.
+#DBD7CACC      You don't need to learn Org before using Org: read the quickstart
+#DBD7CACC      page and you should be good to go.  If you need more, Org will be
+#DBD7CACC      here for you as well: dive into the manual and join the community!
+#5DA994        ** Feedback
+#B8A965        #+include:
+#DBD7CACC       "other/feedback.org*manual" :only-contents t
+#4D9375        * Check 
+#C98A7D        CSS
+#4D9375         minification ratios
+#4D9375        #+begin_src
+#DBD7CACC       
+#C99076        python
+#DBD7CACC      from pathlib import Path
+#DBD7CACC      cssRatios = []
+#DBD7CACC      for css_min in Path("resources/style").glob("*.min.css"):
+#DBD7CACC          css = css_min.with_suffix('').with_suffix('.css')
+#DBD7CACC          cssRatios.append([css.name,
+#DBD7CACC          "{:.0f}% minified ({:4.1f} KiB)".format( 100 *
+#DBD7CACC                            css_min.stat().st_size / css.stat().st_size,
+#DBD7CACC                            css_min.stat().st_size / 1000)])
+#DBD7CACC      return cssRatios
+#4D9375        #+end_src
+#B8A965        #+RESULTS:
+#DBD7CACC      | index.css    | 76% minified ( 1.4 KiB) |
+#DBD7CACC      | org-demo.css | 77% minified ( 2.8 KiB) |
+#DBD7CACC      | errors.css   | 74% minified ( 4.9 KiB) |
+#DBD7CACC      | org.css      | 75% minified (10.7 KiB) |
+#4D9375        * 
+#C98A7D        COMMENT
+#DBD7CACC      From https://orgmode.org/index.html.

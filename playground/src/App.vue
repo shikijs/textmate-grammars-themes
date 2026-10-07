@@ -32,14 +32,14 @@ const wasmEngine = createOnigurumaEngine(() => import('@shikijs/engine-oniguruma
 const filteredGrammars = computed(() => {
   const searchTerm = searchInputGrammar.value.trim().toLowerCase()
   return grammars.filter(g =>
-    g.displayName.toLowerCase().includes(searchTerm),
+    g.displayName?.toLowerCase().includes(searchTerm),
   )
 })
 
 const filteredThemes = computed(() => {
   const searchTerm = searchInputTheme.value.trim().toLowerCase()
   return themes.filter(t =>
-    t.displayName.toLowerCase().includes(searchTerm),
+    t.displayName?.toLowerCase().includes(searchTerm),
   )
 })
 

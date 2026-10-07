@@ -1,114 +1,163 @@
 {
-  "fileTypes": [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "html",
-    "vue",
-    "svelte",
-    "php",
-    "res"
-  ],
+  "__COMMENT__": "TypeScript patterns are taken from https://github.com/microsoft/vscode/blob/74623bc93c5482cbf6fbb78346167cb39717b703/extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json",
   "injectTo": [
     "source.ts",
     "source.js"
   ],
-  "injectionSelector": "L:source.js -comment -string, L:source.jsx -comment -string,  L:source.js.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string, L:source.rescript -comment -string",
-  "injections": {
-    "L:source": {
-      "patterns": [
-        {
-          "match": "<",
-          "name": "invalid.illegal.bad-angle-bracket.html"
-        }
-      ]
-    }
-  },
+  "injectionSelector": "L:source -comment -string",
   "name": "es-tag-sql",
   "patterns": [
     {
-      "begin": "(?i)\\b(\\w+\\.sql)\\s*(`)",
+      "__COMMENT__": "Literals tagged with an sql function (including optional accessors and types), e.g. sql<User>('user-by-id')`SELECT ...`",
+      "begin": "(?:([_$[:alpha:]][_$[:alnum:]]*)(?:\\s*(\\??\\.)\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*))*\\s*(\\??\\.))?\\s*(#?(?i)sql|sqlFragment(?-i))\\s*(?=(?:(\\?\\.\\s*)|(\\!))?((<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))(([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>)*(?<!=)\\>))*(?<!=)\\>)*(?<!=)>\\s*)?\\())",
       "beginCaptures": {
         "1": {
-          "name": "variable.parameter"
+          "name": "meta.function-call.ts variable.other.object.ts"
+        },
+        "2": {
+          "name": "meta.function-call.ts punctuation.accessor.optional.ts"
+        },
+        "3": {
+          "name": "meta.function-call.ts variable.other.object.ts"
+        },
+        "4": {
+          "name": "meta.function-call.ts punctuation.accessor.optional.ts"
+        },
+        "5": {
+          "name": "meta.function-call.ts entity.name.function.ts"
         }
       },
-      "end": "(`)",
+      "end": "(?<=(`|\\)\\s*[^\\s`]))",
       "patterns": [
         {
-          "include": "source.ts#template-substitution-element"
+          "include": "source.ts#comment"
         },
         {
-          "include": "source.ts#string-character-escape"
+          "include": "source.ts#function-call-optionals"
         },
         {
-          "include": "source.sql"
+          "include": "source.ts#type-arguments"
         },
         {
-          "include": "source.plpgsql.postgres"
+          "include": "source.ts#paren-expression"
         },
         {
-          "match": "."
+          "include": "#embedded-sql"
         }
       ]
     },
     {
-      "begin": "(?i)(\\s?\\/?\\*?\\s?(sql|inline-sql)\\s?\\*?\\/?\\s?)(`)",
+      "__COMMENT__": "Literals tagged with an sql comment, e.g. /*sql*/`SELECT ...`",
+      "begin": "(/\\*\\s*(?i)sql(?-i)\\s*\\*/)\\s*(?=`)",
       "beginCaptures": {
         "1": {
-          "name": "comment.block"
+          "name": "comment.block.ts"
         }
       },
-      "end": "(`)",
+      "end": "(?<=`)",
       "patterns": [
         {
-          "include": "source.ts#template-substitution-element"
-        },
-        {
-          "include": "source.ts#string-character-escape"
-        },
-        {
-          "include": "source.sql"
-        },
-        {
-          "include": "source.plpgsql.postgres"
-        },
-        {
-          "match": "."
+          "include": "#embedded-sql"
         }
       ]
     },
     {
-      "begin": "(?i)(?<=\\s|\\,|\\=|\\:|\\(|\\$\\()\\s{0,}(((\\/\\*)|(\\/\\/))\\s?(sql|inline-sql)[ ]{0,1000}\\*?\\/?)[ ]{0,1000}$",
-      "beginCaptures": {
-        "1": {
-          "name": "comment.line"
-        }
-      },
-      "end": "(`)",
+      "__COMMENT__": "Literals tagged with sql (including optional accessors and types), e.g. my.object?.sql<User>`SELECT ...`. This is based on the 1st #template-call pattern in TypeScript.tmLanguage.json",
+      "begin": "(?=(([_$[:alpha:]][_$[:alnum:]]*\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)(#?(?i)sql|sqlFragment(?-i))(<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))(([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>)*(?<!=)\\>))*(?<!=)\\>)*(?<!=)>\\s*)?`)",
+      "end": "(?<=`)",
+      "name": "string.template.ts",
       "patterns": [
         {
-          "begin": "(\\G)",
-          "end": "(`)"
+          "begin": "(?=(([_$[:alpha:]][_$[:alnum:]]*\\s*\\??\\.\\s*)*|(\\??\\.\\s*)?)(#?(?i)sql|sqlFragment(?-i)))",
+          "end": "(?=(<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))(([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>)*(?<!=)\\>))*(?<!=)\\>)*(?<!=)>\\s*)?`)",
+          "patterns": [
+            {
+              "include": "source.ts#support-function-call-identifiers"
+            },
+            {
+              "match": "(#?(?i)sql|sqlFragment(?-i))",
+              "name": "entity.name.function.tagged-template.ts"
+            }
+          ]
         },
         {
-          "include": "source.ts#template-substitution-element"
+          "include": "source.ts#type-arguments"
         },
         {
-          "include": "source.ts#string-character-escape"
+          "include": "#embedded-sql"
+        }
+      ]
+    },
+    {
+      "__COMMENT__": "Literals tagged with sql (including optional types), e.g. sql<User>`SELECT ...`. This is based on the 2nd #template-call pattern in TypeScript.tmLanguage.json",
+      "begin": "\\b((?i)sql|sqlFragment(?-i))\\s*(?=(<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))(([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>|\\<\\s*(((keyof|infer|awaited|typeof|readonly)\\s+)|(([_$[:alpha:]][_$[:alnum:]]*|(\\{([^\\{\\}]|(\\{([^\\{\\}]|\\{[^\\{\\}]*\\})*\\}))*\\})|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(\\[([^\\[\\]]|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])*\\]))*\\])|(\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`))(?=\\s*([\\<\\>\\,\\.\\[]|=>|&(?!&)|\\|(?!\\|)))))([^<>\\(]|(\\(([^\\(\\)]|(\\(([^\\(\\)]|\\([^\\(\\)]*\\))*\\)))*\\))|(?<==)\\>)*(?<!=)\\>))*(?<!=)\\>)*(?<!=)>\\s*)`)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.tagged-template.ts"
+        }
+      },
+      "end": "(?<=`)",
+      "name": "string.template.ts",
+      "patterns": [
+        {
+          "include": "source.ts#type-arguments"
         },
         {
-          "include": "source.sql"
-        },
+          "include": "#embedded-sql"
+        }
+      ]
+    },
+    {
+      "__COMMENT__": "Literals tagged with sql, e.g. sql`SELECT ...`. This is based on the 2nd #template pattern in TypeScript.tmLanguage.json",
+      "begin": "\\b((?i)sql|sqlFragment(?-i))\\s*(?=`)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.tagged-template.ts"
+        }
+      },
+      "end": "(?<=`)",
+      "name": "string.template.ts",
+      "patterns": [
         {
-          "include": "source.plpgsql.postgres"
-        },
-        {
-          "match": "."
+          "include": "#embedded-sql"
         }
       ]
     }
   ],
-  "scopeName": "inline.es6-sql"
+  "repository": {
+    "embedded-sql": {
+      "begin": "`",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.begin.js"
+        }
+      },
+      "contentName": "meta.embedded.block.sql",
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+      "name": "string.template.ts",
+      "patterns": [
+        {
+          "include": "source.ts#template-substitution-element"
+        },
+        {
+          "include": "source.ts#string-character-escape"
+        },
+        {
+          "include": "source.sql"
+        },
+        {
+          "include": "source.plpgsql.postgres"
+        },
+        {
+          "match": "."
+        }
+      ]
+    }
+  },
+  "scopeName": "inline.tagged-template-sql"
 }
