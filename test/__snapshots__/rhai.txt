@@ -1,0 +1,259 @@
+#758575DD      // Build a small order with maps, arrays, closures, and string interpolation.
+#4D9375        import
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        inventory
+#C98A7D77      "
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#BD976A        inventory
+#444444        ;
+#CB7676        const
+#DBD7CACC       
+#BD976A        TAX_RATE
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0.2
+#444444        ;
+#CB7676        fn
+#DBD7CACC       
+#80A665        total
+#DBD7CACC      (items) 
+#444444        {
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#BD976A        subtotal
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0.0
+#444444        ;
+#DBD7CACC        
+#4D9375        for
+#DBD7CACC       
+#BD976A        item
+#DBD7CACC       
+#4D9375        in
+#DBD7CACC       
+#BD976A        items
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        subtotal
+#DBD7CACC       
+#444444        +=
+#DBD7CACC       
+#BD976A        item
+#444444        .
+#80A665        price
+#444444        ;
+#DBD7CACC        
+#444444        }
+#DBD7CACC        
+#BD976A        subtotal
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#444444        (
+#4C9A91        1.0
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        TAX_RATE
+#444444        )
+#444444        }
+#CB7676        let
+#DBD7CACC       
+#BD976A        cart
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#444444        [
+#DBD7CACC        #
+#444444        {
+#DBD7CACC       
+#C98A7D        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        tea
+#C98A7D77      "
+#DBD7CACC      , 
+#C98A7D        price
+#444444        :
+#DBD7CACC       
+#4C9A91        4.5
+#DBD7CACC      , 
+#C98A7D        tags
+#444444        :
+#DBD7CACC       
+#444444        [
+#C98A7D77      "
+#C98A7D        drink
+#C98A7D77      "
+#444444        ]
+#DBD7CACC       
+#444444        }
+#DBD7CACC      ,
+#DBD7CACC        #
+#444444        {
+#DBD7CACC       
+#C98A7D        name
+#444444        :
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        cake
+#C98A7D77      "
+#DBD7CACC      , 
+#C98A7D        price
+#444444        :
+#DBD7CACC       
+#4C9A91        7.0
+#DBD7CACC      , 
+#C98A7D        tags
+#444444        :
+#DBD7CACC       
+#444444        [
+#C98A7D77      "
+#C98A7D        dessert
+#C98A7D77      "
+#444444        ]
+#DBD7CACC       
+#444444        }
+#DBD7CACC      ,
+#444444        ];
+#BD976A        cart
+#444444        [
+#4C9A91        0
+#444444        ].
+#80A665        price
+#DBD7CACC       
+#444444        +=
+#DBD7CACC       
+#4C9A91        0.5
+#444444        ;
+#CB7676        let
+#DBD7CACC       
+#BD976A        affordable
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        cart
+#444444        .
+#80A665        filter
+#444444        (|
+#DBD7CACC      item
+#444444        |
+#DBD7CACC       
+#BD976A        item
+#444444        .
+#80A665        price
+#DBD7CACC       
+#444444        <
+#DBD7CACC       
+#4C9A91        10.0
+#444444        );
+#CB7676        let
+#DBD7CACC       
+#BD976A        featured
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        cart
+#444444        [
+#4C9A91        0
+#444444        ]?.
+#80A665        name
+#DBD7CACC       
+#CB7676        ??
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        none
+#C98A7D77      "
+#444444        ;
+#CB7676        let
+#DBD7CACC       
+#BD976A        label
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4D9375        switch
+#DBD7CACC       
+#BD976A        affordable
+#444444        .
+#80A665        len
+#DBD7CACC      () 
+#444444        {
+#DBD7CACC        
+#4C9A91        0
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        empty
+#C98A7D77      "
+#DBD7CACC      ,
+#DBD7CACC        
+#4C9A91        1
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        one item
+#C98A7D77      "
+#DBD7CACC      ,
+#DBD7CACC        
+#BD976A        _
+#DBD7CACC       
+#444444        =>
+#DBD7CACC       
+#C98A7D77      `
+#444444        ${
+#C98A7D        affordable
+#444444        .
+#80A665        len
+#C98A7D        ()
+#444444        }
+#C98A7D         items
+#C98A7D77      `
+#DBD7CACC      ,
+#444444        };
+#4D9375        if
+#DBD7CACC       
+#CB7676        !
+#BD976A        affordable
+#444444        .
+#80A665        is_empty
+#DBD7CACC      () 
+#444444        {
+#DBD7CACC        
+#B8A965        print
+#444444        (
+#C98A7D77      `
+#444444        ${
+#C98A7D        label
+#444444        }
+#C98A7D        ; featured: 
+#444444        ${
+#C98A7D        featured
+#444444        }
+#C98A7D        ; total: 
+#444444        ${
+#80A665        total
+#444444        (
+#C98A7D        affordable
+#444444        )}
+#C98A7D77      `
+#444444        );
+#DBD7CACC        
+#80A665        inventory
+#444444        ::
+#80A665        reserve
+#444444        (
+#BD976A        affordable
+#444444        );
+#444444        }
+#758575DD      // From https://rhai.rs/book/language/
