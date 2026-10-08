@@ -1,0 +1,53 @@
+import { Details } from './Details.tsrx';
+
+type Todo = { id: string; title: string; status: 'open' | 'done' };
+
+const theme = <style>
+  .done {
+    text-decoration: line-through;
+  }
+</style>;
+
+export function TodoList({ items, as = 'section' }: { items: Todo[]; as?: string }) @{
+  const open = items.filter((item) => item.status === 'open');
+
+  <{as} class="todos">
+    <style apply={theme}>
+      li {
+        color: #42b883;
+      }
+    </style>
+
+    <h1>Todos</h1> // comments sit between children
+    @if (open.length > 0) {
+      <p>{open.length} items remaining</p>
+    } @else {
+      <p>All done!</p>
+    }
+
+    <ul>
+      @for (const item of items; index i; key item.id) {
+        @switch (item.status) {
+          @case 'done': {
+            <li class={theme.done}>{item.title}</li>
+          }
+          @default: {
+            <li>{i + 1}. {item.title}</li>
+          }
+        }
+      } @empty {
+        <li>No todos yet</li>
+      }
+    </ul>
+
+    @try {
+      <Details {items} />
+    } @pending {
+      <p>Loading...</p>
+    } @catch (error, reset) {
+      <button onClick={() => reset()}>Retry</button>
+    }
+  </{as}>
+}
+
+// Adapted from https://tsrx.dev/features

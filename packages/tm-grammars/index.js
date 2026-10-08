@@ -4547,6 +4547,28 @@ export const grammars = [
     scopeName: 'source.ts.tags',
   },
   {
+    byteSize: 179539,
+    categories: [
+      'web',
+    ],
+    displayName: 'TSRX',
+    embedded: [
+      'css',
+      'typescript',
+    ],
+    funding: [
+    ],
+    hash: 'oS5s8_Ed23dSLGWH4vvedwXBT3uNBYSGo-aolmJjuzg',
+    lastUpdate: '2026-10-05T17:53:03Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/tsrx-org/tsrx/main/LICENSE',
+    name: 'tsrx',
+    scopeName: 'source.tsrx',
+    sha: 'aa133921a960761f79ee69adf18ab225eaf7a440',
+    source: 'https://github.com/tsrx-org/tsrx/blob/aa133921a960761f79ee69adf18ab225eaf7a440/grammars/textmate/tsrx.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/tsrx-org/tsrx/contents/grammars/textmate/tsrx.tmLanguage.json?ref=aa133921a960761f79ee69adf18ab225eaf7a440',
+  },
+  {
     byteSize: 633,
     categories: [
       'data',
