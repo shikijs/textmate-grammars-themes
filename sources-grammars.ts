@@ -604,6 +604,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/edge-js/edge-vscode/blob/main/syntaxes/edge.tmLanguage.json',
   },
   {
+    name: 'effekt',
+    displayName: 'Effekt',
+    source: 'https://github.com/effekt-lang/effekt-vscode/blob/main/syntaxes/effekt.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'elixir',
     source: 'https://github.com/elixir-editors/elixir-tmbundle/blob/master/Syntaxes/Elixir.tmLanguage',
   },

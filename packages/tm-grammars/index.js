@@ -1162,6 +1162,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/edge-js/edge-vscode/contents/syntaxes/edge.tmLanguage.json?ref=04352c41981ca664598674556afa63bd393a10f3',
   },
   {
+    byteSize: 8158,
+    categories: [
+      'general',
+    ],
+    displayName: 'Effekt',
+    funding: [
+    ],
+    hash: '9mHxSjeileOG-464R3MetgNNq5EY2rVQDcermwovbYw',
+    lastUpdate: '2026-09-20T22:00:31Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/effekt-lang/effekt-vscode/main/LICENSE',
+    name: 'effekt',
+    scopeName: 'source.effekt',
+    sha: '083725f6c856b3b902535e6f9ed5dfb8649b74ba',
+    source: 'https://github.com/effekt-lang/effekt-vscode/blob/083725f6c856b3b902535e6f9ed5dfb8649b74ba/syntaxes/effekt.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/effekt-lang/effekt-vscode/contents/syntaxes/effekt.tmLanguage.json?ref=083725f6c856b3b902535e6f9ed5dfb8649b74ba',
+  },
+  {
     byteSize: 15558,
     displayName: 'Elixir',
     embedded: [
