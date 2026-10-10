@@ -437,6 +437,14 @@ export const sourcesCommunity: GrammarSource[] = [
     licenseUrl: 'https://raw.githubusercontent.com/thqby/vscode-autohotkey2-lsp/main/LICENSE',
   },
   {
+    name: 'al',
+    displayName: 'AL',
+    source: 'https://github.com/microsoft/AL/blob/master/grammar/alsyntax.tmlanguage',
+    categories: ['general'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/microsoft/AL/master/LICENSE.TXT',
+  },
+  {
     name: 'apache',
     source: 'https://github.com/colinta/ApacheConf.tmLanguage/blob/main/ApacheConf.tmLanguage',
   },
