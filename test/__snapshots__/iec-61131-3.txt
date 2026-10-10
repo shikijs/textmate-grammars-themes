@@ -1,0 +1,216 @@
+#758575DD      // sample.iec — IEC 61131-3 syntax highlighting sample
+#444444        {
+#C98A7D        Pragma: enable strict mode
+#444444        }
+#4D9375        type
+#DBD7CACC          TrafficLight : (Red, Yellow, Green) 
+#CB7676        :=
+#DBD7CACC       Red;
+#4D9375        end_type
+#4D9375        function_block
+#DBD7CACC       Blinker
+#4D9375        var_input
+#DBD7CACC          Enable    : 
+#CB7676        bool
+#DBD7CACC      ;
+#DBD7CACC          Interval  : 
+#CB7676        time
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#C99076        t#500ms
+#DBD7CACC      ;
+#4D9375        end_var
+#4D9375        var_output
+#DBD7CACC          Output    : 
+#CB7676        bool
+#DBD7CACC      ;
+#4D9375        end_var
+#4D9375        var
+#DBD7CACC          _timer    : TON;
+#4D9375        end_var
+#DBD7CACC      _timer(IN 
+#CB7676        :=
+#DBD7CACC       Enable, PT 
+#CB7676        :=
+#DBD7CACC       Interval);
+#4D9375        if
+#DBD7CACC       _timer
+#CB7676        .
+#DBD7CACC      Q 
+#4D9375        then
+#DBD7CACC          Output 
+#CB7676        :=
+#DBD7CACC       
+#CB7676        not
+#DBD7CACC       Output;
+#DBD7CACC          _timer(IN 
+#CB7676        :=
+#DBD7CACC       
+#4D9375        false
+#DBD7CACC      );       
+#758575DD      // reset
+#4D9375        end_if
+#DBD7CACC      ;
+#4D9375        end_function_block
+#4D9375        program
+#DBD7CACC       Main
+#4D9375        var
+#DBD7CACC          counter   : 
+#CB7676        dint
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC      ;
+#DBD7CACC          limit     : 
+#CB7676        dint
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        16#FF
+#DBD7CACC      ;
+#DBD7CACC          flag      : 
+#CB7676        bool
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4D9375        false
+#DBD7CACC      ;
+#DBD7CACC          ratio     : 
+#CB7676        lreal
+#DBD7CACC       
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        1.5e-3
+#DBD7CACC      ;
+#DBD7CACC          addr      : 
+#CB7676        byte
+#DBD7CACC       
+#CB7676        at
+#DBD7CACC       %QB0;
+#DBD7CACC          msg       : 
+#CB7676        string
+#DBD7CACC      [
+#4C9A91        80
+#DBD7CACC      ] 
+#CB7676        :=
+#DBD7CACC       
+#C98A7D77      '
+#C98A7D        Hello, 
+#C99076        $'
+#C98A7D        IEC 61131-3
+#C99076        $'
+#C98A7D        !
+#C98A7D77      '
+#DBD7CACC      ;
+#DBD7CACC          light     : TrafficLight;
+#DBD7CACC          blinker   : Blinker;
+#4D9375        end_var
+#DBD7CACC      blinker(Enable 
+#CB7676        :=
+#DBD7CACC       
+#4D9375        true
+#DBD7CACC      , Interval 
+#CB7676        :=
+#DBD7CACC       
+#C99076        t#250ms
+#DBD7CACC      );
+#4D9375        for
+#DBD7CACC       counter 
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#4D9375        to
+#DBD7CACC       
+#4C9A91        9
+#DBD7CACC       
+#4D9375        do
+#DBD7CACC          
+#4D9375        case
+#DBD7CACC       light 
+#4D9375        of
+#DBD7CACC              Red    : light 
+#CB7676        :=
+#DBD7CACC       Green;
+#DBD7CACC              Green  : light 
+#CB7676        :=
+#DBD7CACC       Yellow;
+#DBD7CACC              Yellow : light 
+#CB7676        :=
+#DBD7CACC       Red;
+#DBD7CACC          
+#4D9375        end_case
+#DBD7CACC      ;
+#4D9375        end_for
+#DBD7CACC      ;
+#4D9375        while
+#DBD7CACC       counter 
+#CB7676        >
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC       
+#4D9375        do
+#DBD7CACC          counter 
+#CB7676        :=
+#DBD7CACC       counter 
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#4D9375        end_while
+#DBD7CACC      ;
+#4D9375        repeat
+#DBD7CACC          flag 
+#CB7676        :=
+#DBD7CACC       
+#CB7676        not
+#DBD7CACC       flag;
+#DBD7CACC          counter 
+#CB7676        :=
+#DBD7CACC       counter 
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC      ;
+#4D9375        until
+#DBD7CACC       counter 
+#CB7676        >=
+#DBD7CACC       
+#4C9A91        5
+#4D9375        end_repeat
+#DBD7CACC      ;
+#4D9375        if
+#DBD7CACC       flag 
+#CB7676        and
+#DBD7CACC       (counter 
+#CB7676        <
+#DBD7CACC       limit) 
+#4D9375        then
+#DBD7CACC          addr 
+#CB7676        :=
+#DBD7CACC       
+#CB7676        byte#
+#4C9A91        16#A5
+#DBD7CACC      ;
+#4D9375        elsif
+#DBD7CACC       
+#CB7676        not
+#DBD7CACC       flag 
+#4D9375        then
+#DBD7CACC          addr 
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        2#10101010
+#DBD7CACC      ;
+#4D9375        else
+#DBD7CACC          addr 
+#CB7676        :=
+#DBD7CACC       
+#4C9A91        8#377
+#DBD7CACC      ;
+#4D9375        end_if
+#DBD7CACC      ;
+#4D9375        end_program
+#758575DD      // From https://github.com/yunos0987/vscode-iec-61131-3-lang/blob/main/sample.iec

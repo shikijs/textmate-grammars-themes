@@ -1,0 +1,72 @@
+// sample.iec — IEC 61131-3 syntax highlighting sample
+
+{Pragma: enable strict mode}
+
+type
+    TrafficLight : (Red, Yellow, Green) := Red;
+end_type
+
+function_block Blinker
+var_input
+    Enable    : bool;
+    Interval  : time := t#500ms;
+end_var
+var_output
+    Output    : bool;
+end_var
+var
+    _timer    : TON;
+end_var
+
+_timer(IN := Enable, PT := Interval);
+
+if _timer.Q then
+    Output := not Output;
+    _timer(IN := false);       // reset
+end_if;
+
+end_function_block
+
+program Main
+var
+    counter   : dint := 0;
+    limit     : dint := 16#FF;
+    flag      : bool := false;
+    ratio     : lreal := 1.5e-3;
+    addr      : byte at %QB0;
+    msg       : string[80] := 'Hello, $'IEC 61131-3$'!';
+    light     : TrafficLight;
+    blinker   : Blinker;
+end_var
+
+blinker(Enable := true, Interval := t#250ms);
+
+for counter := 0 to 9 do
+    case light of
+        Red    : light := Green;
+        Green  : light := Yellow;
+        Yellow : light := Red;
+    end_case;
+end_for;
+
+while counter > 0 do
+    counter := counter - 1;
+end_while;
+
+repeat
+    flag := not flag;
+    counter := counter + 1;
+until counter >= 5
+end_repeat;
+
+if flag and (counter < limit) then
+    addr := byte#16#A5;
+elsif not flag then
+    addr := 2#10101010;
+else
+    addr := 8#377;
+end_if;
+
+end_program
+
+// From https://github.com/yunos0987/vscode-iec-61131-3-lang/blob/main/sample.iec
