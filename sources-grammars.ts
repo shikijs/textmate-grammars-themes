@@ -1143,6 +1143,8 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'system-verilog',
+    displayName: 'SystemVerilog',
+    aliases: ['sv', 'systemverilog'],
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/main/syntaxes/systemverilog.tmLanguage.json',
   },
   {
