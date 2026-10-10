@@ -471,7 +471,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'astro',
-    source: 'https://github.com/withastro/language-tools/blob/main/packages/vscode/syntaxes/astro.tmLanguage.src.yaml',
+    source: 'https://github.com/withastro/astro/blob/main/packages/language-tools/vscode/syntaxes/astro.tmLanguage.src.yaml',
     categories: ['web'],
   },
   {
