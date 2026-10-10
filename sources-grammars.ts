@@ -789,6 +789,12 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['data', 'web'],
   },
   {
+    name: 'jq',
+    displayName: 'jq',
+    source: 'https://github.com/wader/vscode-jq/blob/master/syntaxes/jq.tmLanguage.json',
+    categories: ['data', 'scripting'],
+  },
+  {
     name: 'json5',
     source: 'https://github.com/mrmlnc/vscode-json5/blob/master/syntaxes/json5.json',
     categories: ['data', 'web'],

@@ -1,0 +1,108 @@
+#758575DD      # Select active users and reshape the result.
+#CB7676        def
+#DBD7CACC       
+#80A665        normalize_name
+#444444        :
+#DBD7CACC        
+#B8A965        ascii_downcase
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        gsub
+#444444        (
+#C98A7D        "
+#C99076        \\
+#C98A7D        s+"
+#444444        ;
+#DBD7CACC       
+#C98A7D        "-"
+#444444        );
+#BD976A        .users
+#CB7676        |
+#DBD7CACC       
+#B8A965        map
+#444444        (
+#B8A965        select
+#444444        (
+#BD976A        .active
+#DBD7CACC       
+#4D9375        and
+#DBD7CACC       
+#444444        (
+#BD976A        .roles
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        index
+#444444        (
+#C98A7D        "admin"
+#444444        ))))
+#CB7676        |
+#DBD7CACC       
+#B8A965        sort_by
+#444444        (
+#BD976A        .name
+#444444        )
+#CB7676        |
+#DBD7CACC       
+#CB7676        .
+#444444        []
+#DBD7CACC       
+#4D9375        as
+#DBD7CACC       
+#BD976A        $user
+#CB7676        |
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#BD976A        $user.id
+#444444        ,
+#DBD7CACC          
+#BD976A        slug
+#444444        :
+#DBD7CACC       
+#444444        (
+#BD976A        $user.name
+#DBD7CACC       
+#CB7676        |
+#DBD7CACC       
+#B8A965        normalize_name
+#444444        ),
+#DBD7CACC          
+#BD976A        label
+#444444        :
+#DBD7CACC       
+#C98A7D        "
+#444444        \(
+#C98A7D        $user
+#BD976A        .name
+#444444        )
+#C98A7D         (#
+#444444        \(
+#C98A7D        $user
+#BD976A        .id
+#444444        )
+#C98A7D        )"
+#444444        ,
+#DBD7CACC          
+#BD976A        access
+#444444        :
+#DBD7CACC       
+#4D9375        if
+#DBD7CACC       
+#BD976A        $user.disabled
+#DBD7CACC       
+#4D9375        then
+#DBD7CACC       
+#C98A7D        "blocked"
+#DBD7CACC       
+#4D9375        else
+#DBD7CACC       
+#C98A7D        "granted"
+#DBD7CACC       
+#4D9375        end
+#DBD7CACC        
+#444444        }
