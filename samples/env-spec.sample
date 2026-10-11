@@ -1,0 +1,46 @@
+# Varlock schema: document config and resolve values without hardcoding secrets.
+# @currentEnv=$APP_ENV
+# @defaultRequired=false @defaultSensitive=false
+# @generateTsTypes(path=./env.d.ts)
+# ---
+
+# Deployment environment
+# @required @type=enum(dev, test, staging, prod)
+APP_ENV=dev
+
+# Public key with validation and documentation
+# @required @type=string(startsWith=pk-)
+# @docs(https://example.com/docs/keys)
+PUBLIC_KEY=pk-example
+
+# @sensitive @required=forEnv(prod)
+API_KEY=op("op://${VAULT}/service/api-key")
+
+# @type=number(min=1, max=65535)
+PORT=3000
+ENABLED=true
+OPTIONAL=
+EMPTY=""
+LITERAL='$APP_ENV'
+API_URL="https://${APP_ENV}.example.com"
+
+# @import(./.env.shared, pick=[
+#   DATABASE_URL,
+#   # REDIS_URL, excluded from this import
+#   #frontend,
+# ])
+
+# @sensitive={preventLeaks=false}
+LOCAL_TOKEN=fallback($OTHER_TOKEN, "development-only")
+
+ALLOWED=fn([
+  dev,
+  staging,
+  prod,
+])
+
+MESSAGE="""
+Multiple lines with $APP_ENV expansion.
+"""
+
+# From https://varlock.dev/env-spec/reference/

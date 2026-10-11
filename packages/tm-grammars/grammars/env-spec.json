@@ -1,0 +1,1195 @@
+{
+  "displayName": "@env-spec",
+  "name": "env-spec",
+  "patterns": [
+    {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "match": "^\\s?(#)\\s?([-#=~]{3,})\\s*$",
+      "name": "comment.line.env-spec"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        },
+        "2": {
+          "name": "markup.bold.env-spec"
+        }
+      },
+      "match": "^\\s?(#)\\s?([-#=~]{3,}.*)$",
+      "name": "comment.line.env-spec"
+    },
+    {
+      "begin": "^\\s?(#)\\s?(?=@)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment comment.line.env-spec"
+        }
+      },
+      "end": "(\\s*#.*)?$",
+      "endCaptures": {
+        "1": {
+          "name": "comment.line.env-spec"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#decorator"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(#)\\s?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "$",
+      "name": "comment.line.env-spec",
+      "patterns": [
+        {
+          "include": "#comment-markup"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s?(\"\"\")",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        },
+        "4": {
+          "name": "punctuation.definition.string.begin"
+        }
+      },
+      "contentName": "string.quoted.triple.env-spec",
+      "end": "(\"\"\")(.*)$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end"
+        },
+        "2": {
+          "name": "invalid",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "include": "#expansion"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s?(```)",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        },
+        "4": {
+          "name": "punctuation.definition.string.begin"
+        }
+      },
+      "contentName": "string.quoted.triple.env-spec",
+      "end": "(```)(.*)$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end"
+        },
+        "2": {
+          "name": "invalid",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "include": "#expansion"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s?(')",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        },
+        "4": {
+          "name": "punctuation.definition.string.begin"
+        }
+      },
+      "contentName": "string.quoted.single.env-spec",
+      "end": "(')(.*)$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end"
+        },
+        "2": {
+          "name": "invalid",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s?(\")",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        },
+        "4": {
+          "name": "punctuation.definition.string.begin"
+        }
+      },
+      "contentName": "string.quoted.double.env-spec",
+      "end": "(\")(.*)$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end"
+        },
+        "2": {
+          "name": "invalid",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "include": "#expansion"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s?(`)",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        },
+        "4": {
+          "name": "punctuation.definition.string.begin"
+        }
+      },
+      "contentName": "string.quoted.other.env-spec",
+      "end": "\\n|(`)(.*)$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end"
+        },
+        "2": {
+          "name": "invalid",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escape-characters"
+        },
+        {
+          "include": "#expansion"
+        }
+      ]
+    },
+    {
+      "begin": "^\\s?(export\\s)?([A-Z_a-z]+[-.0-9A-Z_a-z]*)\\s?(=)\\s*",
+      "beginCaptures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#export-item-prefix"
+            }
+          ]
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#env-item-name"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.assignment.env-spec"
+        }
+      },
+      "end": "(\\s?#.*)?$",
+      "endCaptures": {
+        "1": {
+          "name": "comment.line.env-spec",
+          "patterns": [
+            {
+              "include": "#post-value-comment"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#bracket-literal-inline"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#escape-characters"
+                }
+              ]
+            }
+          },
+          "match": "([^#$]+)",
+          "name": "string.unquoted.env-spec"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        }
+      ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.parameters.end.env-spec"
+        }
+      },
+      "match": "^\\s*(\\))\\s*$",
+      "name": "meta.function-call.env-spec"
+    },
+    {
+      "begin": "^(\\s+)(?!#)",
+      "end": "$",
+      "name": "meta.function-call.env-spec",
+      "patterns": [
+        {
+          "match": "#.*$",
+          "name": "comment.line.env-spec"
+        },
+        {
+          "include": "#bracket-literal-item"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#key-value-pair-item"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#unquoted-string-within-fn-call"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        },
+        {
+          "match": "\\s*,\\s*",
+          "name": "punctuation.separator.comma.env-spec"
+        },
+        {
+          "match": "\\)",
+          "name": "punctuation.definition.parameters.end.env-spec"
+        }
+      ]
+    },
+    {
+      "match": ".*",
+      "name": "invalid"
+    }
+  ],
+  "repository": {
+    "bracket-literal": {
+      "patterns": [
+        {
+          "include": "#bracket-literal--object"
+        },
+        {
+          "include": "#bracket-literal--array"
+        }
+      ]
+    },
+    "bracket-literal--array": {
+      "begin": "(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.begin.env-spec"
+        }
+      },
+      "end": "(])",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.end.env-spec"
+        }
+      },
+      "name": "meta.structure.array.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents"
+        }
+      ]
+    },
+    "bracket-literal--array-inline": {
+      "begin": "(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.begin.env-spec"
+        }
+      },
+      "end": "(])|(?=\\n)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.end.env-spec"
+        }
+      },
+      "name": "meta.structure.array.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents-item"
+        }
+      ]
+    },
+    "bracket-literal--array-item": {
+      "begin": "(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.begin.env-spec"
+        }
+      },
+      "end": "(])",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.array.end.env-spec"
+        }
+      },
+      "name": "meta.structure.array.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents-item"
+        }
+      ]
+    },
+    "bracket-literal--contents": {
+      "patterns": [
+        {
+          "match": "^\\s?#\\s*",
+          "name": "comment.line.env-spec punctuation.definition.comment"
+        },
+        {
+          "match": "#(?![0-9A-Za-z]).*$",
+          "name": "comment.line.env-spec"
+        },
+        {
+          "include": "#bracket-literal"
+        },
+        {
+          "include": "#key-value-pair"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#unquoted-string-within-literal"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        },
+        {
+          "match": "\\s*,\\s*",
+          "name": "punctuation.separator.comma.env-spec"
+        }
+      ]
+    },
+    "bracket-literal--contents-item": {
+      "patterns": [
+        {
+          "match": "#.*$",
+          "name": "comment.line.env-spec"
+        },
+        {
+          "include": "#bracket-literal-item"
+        },
+        {
+          "include": "#key-value-pair-item"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#unquoted-string-within-literal"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        },
+        {
+          "match": "\\s*,\\s*",
+          "name": "punctuation.separator.comma.env-spec"
+        }
+      ]
+    },
+    "bracket-literal--object": {
+      "begin": "(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.begin.env-spec"
+        }
+      },
+      "end": "(})",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.end.env-spec"
+        }
+      },
+      "name": "meta.structure.dictionary.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents"
+        }
+      ]
+    },
+    "bracket-literal--object-inline": {
+      "begin": "(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.begin.env-spec"
+        }
+      },
+      "end": "(})|(?=\\n)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.end.env-spec"
+        }
+      },
+      "name": "meta.structure.dictionary.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents-item"
+        }
+      ]
+    },
+    "bracket-literal--object-item": {
+      "begin": "(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.begin.env-spec"
+        }
+      },
+      "end": "(})",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.dictionary.end.env-spec"
+        }
+      },
+      "name": "meta.structure.dictionary.env-spec",
+      "patterns": [
+        {
+          "include": "#bracket-literal--contents-item"
+        }
+      ]
+    },
+    "bracket-literal-inline": {
+      "patterns": [
+        {
+          "include": "#bracket-literal--object-inline"
+        },
+        {
+          "include": "#bracket-literal--array-inline"
+        }
+      ]
+    },
+    "bracket-literal-item": {
+      "patterns": [
+        {
+          "include": "#bracket-literal--object-item"
+        },
+        {
+          "include": "#bracket-literal--array-item"
+        }
+      ]
+    },
+    "comment-markup": {
+      "patterns": [
+        {
+          "match": "__.+__",
+          "name": "markup.italic.env-spec"
+        },
+        {
+          "match": "(?<= )_[^_]+_(?=[\\n ])",
+          "name": "markup.italic.env-spec"
+        },
+        {
+          "match": "\\*\\*.+\\*\\*",
+          "name": "markup.bold.env-spec"
+        },
+        {
+          "match": "\\*.+\\*",
+          "name": "markup.bold.env-spec"
+        }
+      ]
+    },
+    "decorator": {
+      "name": "meta.annotation.decorator.env-spec",
+      "patterns": [
+        {
+          "include": "#decorator--bare"
+        },
+        {
+          "include": "#decorator--fn-call"
+        },
+        {
+          "include": "#decorator--with-value"
+        }
+      ],
+      "repository": {
+        "decorator--bare": {
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#decorator--name"
+                }
+              ]
+            }
+          },
+          "match": "(@[A-Za-z][0-9A-Za-z]+)(?=[\\n #])"
+        },
+        "decorator--fn-call": {
+          "begin": "(@[A-Za-z][0-9A-Za-z]+)(\\()",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#decorator--name"
+                }
+              ]
+            },
+            "2": {
+              "name": "punctuation.section.parens.begin.env-spec"
+            }
+          },
+          "contentName": "variable.parameters.env-spec",
+          "end": "(\\))",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.section.parens.end.env-spec"
+            }
+          },
+          "name": "meta.function-call.env-spec",
+          "patterns": [
+            {
+              "match": "^\\s*#\\s*",
+              "name": "comment.line.env-spec punctuation.definition.comment"
+            },
+            {
+              "match": "#(?![0-9A-Za-z]).*$",
+              "name": "comment.line.env-spec"
+            },
+            {
+              "include": "#bracket-literal"
+            },
+            {
+              "include": "#literal-value"
+            },
+            {
+              "include": "#quoted-value"
+            },
+            {
+              "include": "#key-value-pair"
+            },
+            {
+              "include": "#decorator-fn-call-value"
+            },
+            {
+              "include": "#expansion"
+            },
+            {
+              "include": "#unquoted-string-within-fn-call"
+            },
+            {
+              "match": "\\$",
+              "name": "string.unquoted.env-spec"
+            },
+            {
+              "match": "\\s*,\\s*",
+              "name": "punctuation.separator.comma.env-spec"
+            }
+          ]
+        },
+        "decorator--name": {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.annotation.env-spec"
+            }
+          },
+          "match": "(@)([A-Za-z][0-9A-Za-z]+)",
+          "name": "variable.annotation.env-spec"
+        },
+        "decorator--with-value": {
+          "begin": "(@[A-Za-z][0-9A-Za-z]+)(=)?",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#decorator--name"
+                }
+              ]
+            },
+            "2": {
+              "name": "keyword.operator.assignment.env-spec"
+            }
+          },
+          "end": "(?=[\\n #)])",
+          "patterns": [
+            {
+              "include": "#literal-value"
+            },
+            {
+              "include": "#quoted-value"
+            },
+            {
+              "include": "#decorator-fn-call-value"
+            },
+            {
+              "include": "#bracket-literal"
+            },
+            {
+              "captures": {
+                "1": {
+                  "patterns": [
+                    {
+                      "include": "#escape-characters"
+                    }
+                  ]
+                }
+              },
+              "match": "([^\\n #]+)",
+              "name": "string.unquoted.env-spec"
+            }
+          ]
+        }
+      }
+    },
+    "decorator-fn-call-value": {
+      "begin": "([A-Za-z][0-9A-Za-z]+)(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.function.env-spec"
+        },
+        "2": {
+          "name": "punctuation.section.parens.begin.env-spec"
+        }
+      },
+      "contentName": "variable.parameters.env-spec",
+      "end": "(\\))",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.section.parens.end.env-spec"
+        }
+      },
+      "name": "meta.function-call.env-spec variable.function.env-spec",
+      "patterns": [
+        {
+          "match": "^\\s*#\\s*",
+          "name": "comment.line.env-spec punctuation.definition.comment"
+        },
+        {
+          "match": "#(?![0-9A-Za-z]).*$",
+          "name": "comment.line.env-spec"
+        },
+        {
+          "include": "#bracket-literal"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#key-value-pair"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#unquoted-string-within-fn-call"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        },
+        {
+          "match": "\\s*,\\s*",
+          "name": "punctuation.separator.comma.env-spec"
+        }
+      ]
+    },
+    "env-item-name": {
+      "match": ".*",
+      "name": "entity.name.tag.env-spec"
+    },
+    "env-item-value-fn-call": {
+      "begin": "([A-Za-z][0-9A-Za-z]+)(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.function.env-spec"
+        },
+        "2": {
+          "name": "punctuation.definition.parameters.begin.env-spec"
+        }
+      },
+      "end": "(\\))|$",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.parameters.end.env-spec"
+        }
+      },
+      "name": "meta.function-call.env-spec",
+      "patterns": [
+        {
+          "include": "#env-item-value-fn-call-arg"
+        },
+        {
+          "match": "\\s*,\\s*",
+          "name": "punctuation.separator.comma.env-spec"
+        }
+      ]
+    },
+    "env-item-value-fn-call-arg": {
+      "patterns": [
+        {
+          "include": "#bracket-literal-item"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#key-value-pair-item"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#unquoted-string-within-fn-call"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        }
+      ]
+    },
+    "escape-characters": {
+      "match": "\\\\(?:[\"'\\\\`bfnrt]|u[0-9A-F]{4})",
+      "name": "constant.character.escape.env-spec"
+    },
+    "expansion": {
+      "patterns": [
+        {
+          "include": "#expansion--ref-bracketed"
+        },
+        {
+          "include": "#expansion--ref-simple"
+        },
+        {
+          "include": "#expansion--exec"
+        }
+      ],
+      "repository": {
+        "expansion--exec": {
+          "begin": "\\$\\(",
+          "contentName": "variable.function.env-spec",
+          "end": "\\)",
+          "name": "punctuation.section.interpolation.env-spec"
+        },
+        "expansion--ref-bracketed": {
+          "begin": "\\$\\{",
+          "contentName": "variable.function.env-spec",
+          "end": "}",
+          "name": "punctuation.section.interpolation.env-spec"
+        },
+        "expansion--ref-simple": {
+          "match": "\\$([A-Z_a-z]+[0-9A-Z_a-z]*)",
+          "name": "variable.function.env-spec"
+        }
+      }
+    },
+    "export-item-prefix": {
+      "match": ".*",
+      "name": "markup.italic.env-spec keyword.control.export.env-spec"
+    },
+    "key-value-pair": {
+      "begin": "([A-Za-z][0-9A-Za-z]+)(=)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.other.attribute-name.env-spec"
+        },
+        "2": {
+          "name": "keyword.operator.assignment.env-spec"
+        }
+      },
+      "end": "(?=[]\\n#),}])",
+      "patterns": [
+        {
+          "include": "#bracket-literal"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#unquoted-string-within-fn-call"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        }
+      ]
+    },
+    "key-value-pair-item": {
+      "begin": "([A-Za-z][0-9A-Za-z]+)(=)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.other.attribute-name.env-spec"
+        },
+        "2": {
+          "name": "keyword.operator.assignment.env-spec"
+        }
+      },
+      "end": "(?=[]\\n#),}])",
+      "patterns": [
+        {
+          "include": "#bracket-literal-item"
+        },
+        {
+          "include": "#env-item-value-fn-call"
+        },
+        {
+          "include": "#literal-value"
+        },
+        {
+          "include": "#quoted-value"
+        },
+        {
+          "include": "#expansion"
+        },
+        {
+          "include": "#unquoted-string-within-fn-call"
+        },
+        {
+          "match": "\\$",
+          "name": "string.unquoted.env-spec"
+        }
+      ]
+    },
+    "literal-value": {
+      "patterns": [
+        {
+          "include": "#literal-value--boolean"
+        },
+        {
+          "include": "#literal-value--undefined"
+        },
+        {
+          "include": "#literal-value--numeric"
+        }
+      ],
+      "repository": {
+        "literal-value--boolean": {
+          "match": "(true|false)",
+          "name": "constant.language.boolean.env-spec"
+        },
+        "literal-value--numeric": {
+          "match": "[0-9]+(\\.[0-9]+)?(?=[]\\n ),}])",
+          "name": "constant.numeric.env-spec"
+        },
+        "literal-value--undefined": {
+          "match": "(undefined)",
+          "name": "constant.language.undefined.env-spec"
+        }
+      }
+    },
+    "post-value-comment": {
+      "begin": "(#)\\s?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      },
+      "end": "(\\s*#.*)?$",
+      "endCaptures": {
+        "1": {
+          "name": "comment.line.env-spec"
+        }
+      },
+      "name": "comment.line.env-spec",
+      "patterns": [
+        {
+          "include": "#decorator"
+        },
+        {
+          "include": "#comment-markup"
+        }
+      ]
+    },
+    "quoted-value": {
+      "patterns": [
+        {
+          "include": "#quoted-value--single"
+        },
+        {
+          "include": "#quoted-value--double"
+        },
+        {
+          "include": "#quoted-value--backtick"
+        }
+      ],
+      "repository": {
+        "quoted-value--backtick": {
+          "begin": "(`)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin"
+            }
+          },
+          "end": "(`)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end"
+            }
+          },
+          "name": "string.quoted.backtick.env-spec",
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            },
+            {
+              "include": "#expansion"
+            }
+          ]
+        },
+        "quoted-value--double": {
+          "begin": "(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin"
+            }
+          },
+          "end": "(\")",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end"
+            }
+          },
+          "name": "string.quoted.double.env-spec",
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            },
+            {
+              "include": "#expansion"
+            }
+          ]
+        },
+        "quoted-value--single": {
+          "begin": "(')",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin"
+            }
+          },
+          "end": "(')",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end"
+            }
+          },
+          "name": "string.quoted.single.env-spec",
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            }
+          ]
+        }
+      }
+    },
+    "unquoted-string-within-fn-call": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            }
+          ]
+        }
+      },
+      "match": "([^\\n $),]+)",
+      "name": "string.unquoted.env-spec"
+    },
+    "unquoted-string-within-literal": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#escape-characters"
+            }
+          ]
+        }
+      },
+      "match": "([^]\\n $),}]+)",
+      "name": "string.unquoted.env-spec"
+    }
+  },
+  "scopeName": "source.env-spec"
+}

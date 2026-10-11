@@ -618,6 +618,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['lisp'],
   },
   {
+    name: 'env-spec',
+    displayName: '@env-spec',
+    aliases: ['varlock'],
+    source: 'https://github.com/dmno-dev/varlock/blob/main/packages/vscode-plugin/syntaxes/env-spec.tmLanguage.json',
+    categories: ['config'],
+  },
+  {
     name: 'erb',
     displayName: 'ERB',
     source: 'https://github.com/textmate/ruby.tmbundle/blob/master/Syntaxes/HTML%20(Ruby%20-%20ERB).tmLanguage',

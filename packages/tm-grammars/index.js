@@ -1234,6 +1234,27 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/Alhadis/language-emacs-lisp/contents/grammars/emacs-lisp.cson?ref=b38b69f684e7750b35f370fe567e7d9431f5fbc8',
   },
   {
+    aliases: [
+      'varlock',
+    ],
+    byteSize: 15774,
+    categories: [
+      'config',
+    ],
+    displayName: '@env-spec',
+    funding: [
+    ],
+    hash: 'e3NSWClJ2J3b82fMYj6eYz1VCeFWZkrXsdoYue7KD6M',
+    lastUpdate: '2026-09-25T20:57:21Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/dmno-dev/varlock/main/LICENSE',
+    name: 'env-spec',
+    scopeName: 'source.env-spec',
+    sha: 'd7e93f4b650f840cb762e76deda8049e87ef58fa',
+    source: 'https://github.com/dmno-dev/varlock/blob/d7e93f4b650f840cb762e76deda8049e87ef58fa/packages/vscode-plugin/syntaxes/env-spec.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/dmno-dev/varlock/contents/packages/vscode-plugin/syntaxes/env-spec.tmLanguage.json?ref=d7e93f4b650f840cb762e76deda8049e87ef58fa',
+  },
+  {
     byteSize: 1942,
     displayName: 'ERB',
     embedded: [

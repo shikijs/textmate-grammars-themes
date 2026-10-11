@@ -1,0 +1,196 @@
+#758575DD      # Varlock schema: document config and resolve values without hardcoding secrets.
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        currentEnv
+#444444        =
+#C98A7D        $APP_ENV
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        defaultRequired
+#444444        =
+#4D9375        false
+#DBD7CACC       
+#444444        @
+#BD976A        defaultSensitive
+#444444        =
+#4D9375        false
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        generateTsTypes
+#444444        (
+#BD976A        path
+#444444        =
+#C98A7D        ./env.d.ts
+#444444        )
+#758575DD      # ---
+#758575DD      # Deployment environment
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        required
+#DBD7CACC       
+#444444        @
+#BD976A        type
+#444444        =
+#BD976A        enum
+#444444        (
+#C98A7D        dev
+#444444        , 
+#C98A7D        test
+#444444        , 
+#C98A7D        staging
+#444444        , 
+#C98A7D        prod
+#444444        )
+#4D9375        APP_ENV
+#444444        =
+#C98A7D        dev
+#758575DD      # Public key with validation and documentation
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        required
+#DBD7CACC       
+#444444        @
+#BD976A        type
+#444444        =
+#BD976A        string
+#444444        (
+#BD976A        startsWith
+#444444        =
+#C98A7D        pk-
+#444444        )
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        docs
+#444444        (
+#C98A7D        https://example.com/docs/keys
+#444444        )
+#4D9375        PUBLIC_KEY
+#444444        =
+#C98A7D        pk-example
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        sensitive
+#DBD7CACC       
+#444444        @
+#BD976A        required
+#444444        =
+#BD976A        forEnv
+#444444        (
+#C98A7D        prod
+#444444        )
+#4D9375        API_KEY
+#444444        =
+#BD976A        op
+#444444        (
+#C98A7D77      "
+#C98A7D        op://
+#444444        ${
+#C98A7D        VAULT
+#444444        }
+#C98A7D        /service/api-key
+#C98A7D77      "
+#444444        )
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        type
+#444444        =
+#BD976A        number
+#444444        (
+#BD976A        min
+#444444        =
+#4C9A91        1
+#444444        , 
+#BD976A        max
+#444444        =
+#4C9A91        65535
+#444444        )
+#4D9375        PORT
+#444444        =
+#4C9A91        3000
+#4D9375        ENABLED
+#444444        =
+#4D9375        true
+#4D9375        OPTIONAL
+#444444        =
+#4D9375        EMPTY
+#444444        =
+#C98A7D77      ""
+#4D9375        LITERAL
+#444444        =
+#C98A7D77      '
+#C98A7D        $APP_ENV
+#C98A7D77      '
+#4D9375        API_URL
+#444444        =
+#C98A7D77      "
+#C98A7D        https://
+#444444        ${
+#C98A7D        APP_ENV
+#444444        }
+#C98A7D        .example.com
+#C98A7D77      "
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        import
+#444444        (
+#C98A7D        ./.env.shared
+#444444        , 
+#BD976A        pick
+#444444        =[
+#758575DD      #   
+#C98A7D        DATABASE_URL
+#444444        ,
+#758575DD      #   # REDIS_URL, excluded from this import
+#758575DD      #   
+#C98A7D        #frontend
+#444444        ,
+#758575DD      # 
+#444444        ])
+#758575DD      #
+#DBD7CACC       
+#444444        @
+#BD976A        sensitive
+#444444        ={
+#BD976A        preventLeaks
+#444444        =
+#4D9375        false
+#444444        }
+#4D9375        LOCAL_TOKEN
+#444444        =
+#BD976A        fallback
+#444444        (
+#BD976A        $OTHER_TOKEN
+#444444        , 
+#C98A7D77      "
+#C98A7D        development-only
+#C98A7D77      "
+#444444        )
+#4D9375        ALLOWED
+#444444        =
+#BD976A        fn
+#444444        ([
+#DBD7CACC        
+#C98A7D        dev
+#444444        ,
+#DBD7CACC        
+#C98A7D        staging
+#444444        ,
+#DBD7CACC        
+#C98A7D        prod
+#444444        ,
+#444444        ])
+#4D9375        MESSAGE
+#444444        =
+#C98A7D77      """
+#C98A7D        Multiple lines with $APP_ENV expansion.
+#C98A7D77      """
+#758575DD      # From https://varlock.dev/env-spec/reference/
