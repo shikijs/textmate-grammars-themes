@@ -919,7 +919,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'nsis',
     displayName: 'NSIS',
-    source: 'https://github.com/idleberg/vscode-nsis/blob/main/syntaxes/nsis.tmLanguage',
+    source: 'https://github.com/idleberg/nsis-org/blob/main/packages/textmate/data/nsis.json',
   },
   {
     name: 'nushell',
