@@ -1,0 +1,200 @@
+#4D9375        interface
+#DBD7CACC       
+#5DA994        Yield
+#DBD7CACC      [
+#5DA994        A
+#DBD7CACC      ] {
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        yield
+#DBD7CACC      (
+#BD976A        x
+#DBD7CACC      : 
+#5DA994        A
+#DBD7CACC      ): 
+#5DA994        Unit
+#DBD7CACC      }
+#758575DD      // Generate an infinite sequence of Fibonacci numbers.
+#4D9375        def
+#DBD7CACC       
+#80A665        fib
+#DBD7CACC      (): 
+#5DA994        Unit
+#DBD7CACC       / { 
+#5DA994        Yield
+#DBD7CACC      [
+#5DA994        Int
+#DBD7CACC      ] } 
+#444444        =
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        def
+#DBD7CACC       
+#80A665        inner
+#DBD7CACC      (
+#BD976A        a
+#DBD7CACC      : 
+#5DA994        Int
+#DBD7CACC      , 
+#BD976A        b
+#DBD7CACC      : 
+#5DA994        Int
+#DBD7CACC      ): 
+#5DA994        Unit
+#DBD7CACC       
+#444444        =
+#DBD7CACC       {
+#DBD7CACC          
+#4D9375        do
+#DBD7CACC       
+#80A665        yield
+#DBD7CACC      (
+#BD976A        a
+#DBD7CACC      )
+#DBD7CACC          
+#80A665        inner
+#DBD7CACC      (
+#BD976A        b
+#DBD7CACC      , 
+#BD976A        a
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#BD976A        b
+#DBD7CACC      )
+#DBD7CACC        }
+#DBD7CACC        
+#80A665        inner
+#DBD7CACC      (
+#4C9A91        0
+#DBD7CACC      , 
+#4C9A91        1
+#DBD7CACC      )
+#DBD7CACC      }
+#4D9375        def
+#DBD7CACC       
+#80A665        genFibs
+#DBD7CACC      (
+#BD976A        limit
+#DBD7CACC      : 
+#5DA994        Int
+#DBD7CACC      ): 
+#5DA994        List
+#DBD7CACC      [
+#5DA994        Int
+#DBD7CACC      ] / {} 
+#444444        =
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        var
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        0
+#DBD7CACC        
+#4D9375        var
+#DBD7CACC       
+#BD976A        fibs
+#DBD7CACC       
+#444444        =
+#DBD7CACC       []
+#DBD7CACC        
+#4D9375        try
+#DBD7CACC       {
+#DBD7CACC          
+#80A665        fib
+#DBD7CACC      ()
+#DBD7CACC        } 
+#4D9375        with
+#DBD7CACC       
+#5DA994        Yield
+#DBD7CACC      [
+#5DA994        Int
+#DBD7CACC      ] {
+#DBD7CACC          
+#4D9375        def
+#DBD7CACC       
+#80A665        yield
+#DBD7CACC      (
+#BD976A        x
+#DBD7CACC      ) 
+#444444        =
+#DBD7CACC            
+#4D9375        if
+#DBD7CACC       (
+#BD976A        count
+#DBD7CACC       
+#CB7676        <
+#DBD7CACC       
+#BD976A        limit
+#DBD7CACC      ) {
+#DBD7CACC              
+#BD976A        count
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#BD976A        count
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC              
+#BD976A        fibs
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#5DA994        Cons
+#DBD7CACC      (
+#BD976A        x
+#DBD7CACC      , 
+#BD976A        fibs
+#DBD7CACC      )
+#DBD7CACC              
+#4D9375        resume
+#DBD7CACC      (())
+#DBD7CACC            }
+#DBD7CACC        }
+#DBD7CACC        
+#BD976A        fibs
+#DBD7CACC      }
+#4D9375        def
+#DBD7CACC       
+#80A665        main
+#DBD7CACC      () 
+#444444        =
+#DBD7CACC       {
+#DBD7CACC        
+#4D9375        val
+#DBD7CACC       
+#BD976A        limit
+#DBD7CACC       
+#444444        =
+#DBD7CACC       
+#4C9A91        15
+#DBD7CACC        
+#80A665        println
+#DBD7CACC      (
+#C98A7D77      "
+#C98A7D        Fibonacci numbers:
+#C98A7D77      "
+#DBD7CACC      )
+#DBD7CACC        
+#80A665        genFibs
+#DBD7CACC      (
+#BD976A        limit
+#DBD7CACC      ).
+#80A665        foreach
+#DBD7CACC       { 
+#BD976A        x
+#DBD7CACC       
+#CB7676        =>
+#DBD7CACC       
+#80A665        println
+#DBD7CACC      (
+#BD976A        x
+#DBD7CACC      ) }
+#DBD7CACC      }
+#758575DD      // From https://effekt-lang.org/tour/effects

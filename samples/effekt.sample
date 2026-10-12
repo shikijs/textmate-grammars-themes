@@ -1,0 +1,36 @@
+interface Yield[A] {
+  def yield(x: A): Unit
+}
+
+// Generate an infinite sequence of Fibonacci numbers.
+def fib(): Unit / { Yield[Int] } = {
+  def inner(a: Int, b: Int): Unit = {
+    do yield(a)
+    inner(b, a + b)
+  }
+  inner(0, 1)
+}
+
+def genFibs(limit: Int): List[Int] / {} = {
+  var count = 0
+  var fibs = []
+  try {
+    fib()
+  } with Yield[Int] {
+    def yield(x) =
+      if (count < limit) {
+        count = count + 1
+        fibs = Cons(x, fibs)
+        resume(())
+      }
+  }
+  fibs
+}
+
+def main() = {
+  val limit = 15
+  println("Fibonacci numbers:")
+  genFibs(limit).foreach { x => println(x) }
+}
+
+// From https://effekt-lang.org/tour/effects
