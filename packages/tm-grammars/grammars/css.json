@@ -29,6 +29,94 @@
     "at-rules": {
       "patterns": [
         {
+          "begin": "(?i)(?=@property(?:[;{\\s]|/\\*|$))",
+          "end": "(?<=})(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?i)\\G(@)property",
+              "beginCaptures": {
+                "0": {
+                  "name": "keyword.control.at-rule.property.css"
+                },
+                "1": {
+                  "name": "punctuation.definition.keyword.css"
+                }
+              },
+              "end": "(?=\\s*\\{)",
+              "name": "meta.at-rule.property.header.css",
+              "patterns": [
+                {
+                  "include": "#comment-block"
+                },
+                {
+                  "include": "#escapes"
+                },
+                {
+                  "match": "--[-A-Z_a-z[^\\x00-\\x7F]](?:[-0-9A-Z_a-z[^\\x00-\\x7F]]|\\\\(?:\\h{1,6}|.))*",
+                  "name": "variable.parameter.property-name.css"
+                }
+              ]
+            },
+            {
+              "begin": "\\{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.property.begin.bracket.curly.css"
+                }
+              },
+              "end": "}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.property.end.bracket.curly.css"
+                }
+              },
+              "name": "meta.at-rule.property.body.css",
+              "patterns": [
+                {
+                  "begin": "(?i)(?<![-\\w])(syntax|inherits|initial-value)(?=\\s*:)",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "meta.property-name.css support.type.property-name.css"
+                    }
+                  },
+                  "end": "(?=[;}])",
+                  "name": "meta.property.css",
+                  "patterns": [
+                    {
+                      "begin": "(:)\\s*",
+                      "beginCaptures": {
+                        "1": {
+                          "name": "punctuation.separator.key-value.css"
+                        }
+                      },
+                      "contentName": "meta.property-value.css",
+                      "end": "(?=[;}])",
+                      "patterns": [
+                        {
+                          "include": "#comment-block"
+                        },
+                        {
+                          "match": "(?i)(?<![-\\w])(true|false)(?![-\\w])",
+                          "name": "constant.language.boolean.css"
+                        },
+                        {
+                          "include": "#property-values"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "include": "#rule-list-innards"
+                },
+                {
+                  "include": "$self"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "begin": "\\A\\uFEFF?(?i:(?=\\s*@charset\\b))",
           "end": ";|(?=$)",
           "endCaptures": {
