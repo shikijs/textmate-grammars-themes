@@ -1211,6 +1211,14 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/mshr-h/vscode-verilog-hdl-support/blob/main/syntaxes/verilog.tmLanguage.json',
   },
   {
+    name: 'verse',
+    displayName: 'Verse',
+    source: 'https://github.com/simnJS/verse-grammar/blob/main/grammars/verse.tmLanguage.json',
+    categories: ['general'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/simnJS/verse-grammar/main/LICENSE',
+  },
+  {
     name: 'vhdl',
     source: 'https://github.com/jonasjj/awesome-vhdl/blob/master/syntaxes/vhdl.tmLanguage',
   },
