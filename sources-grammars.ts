@@ -605,7 +605,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'elixir',
-    source: 'https://github.com/elixir-editors/elixir-tmbundle/blob/master/Syntaxes/Elixir.tmLanguage',
+    source: 'https://github.com/expert-lsp/vscode-expert/blob/main/syntaxes/elixir.json',
   },
   {
     name: 'elm',
@@ -748,6 +748,12 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'hcl',
     source: 'https://github.com/hashicorp/syntax/blob/main/syntaxes/hcl.tmGrammar.json',
+  },
+  {
+    name: 'heex',
+    displayName: 'HEEx',
+    source: 'https://github.com/phoenixframework/vscode-phoenix/blob/main/syntaxes/heex.json',
+    categories: ['web'],
   },
   {
     name: 'hjson',
@@ -1533,6 +1539,12 @@ export const sourcesInjections: GrammarSource[] = [
     injectTo: ['source.ts', 'source.js'],
   },
   // ========== Others ==========
+  {
+    name: 'elixir-heex',
+    source: 'https://github.com/phoenixframework/vscode-phoenix/blob/main/syntaxes/elixir-heex.json',
+    embeddedIn: ['elixir'],
+    injectTo: ['source.elixir'],
+  },
   {
     name: 'markdown-nix',
     source: 'https://github.com/nix-community/vscode-nix-ide/blob/main/dist/injection.json',
