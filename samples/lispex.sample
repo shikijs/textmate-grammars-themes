@@ -1,0 +1,15 @@
+; Definitions, exact arithmetic, quoted lists and a decision rule.
+(define (place lines-left)
+  (if (< lines-left 2) 'next-page 'keep))
+
+(define results
+  (map place '(1 2 3)))
+(display results)
+(newline)
+; (next-page keep keep)
+
+#| Block comments can nest: #| inner comment |# done. |#
+(display (+ 1/3 2/3))
+(newline)
+; 1
+; From https://www.lispex.com
