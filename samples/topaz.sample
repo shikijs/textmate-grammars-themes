@@ -1,0 +1,17 @@
+import std.io
+
+/* Bindings, typed functions and string interpolation. */
+const minimum = 2
+function double(value: int) -> int {
+    value * 2
+}
+let scores: Array<int> = [1, 2, 3]
+let selected = [ for score in scores if score >= minimum => double(score) ]
+io.writeLine("Selected: {selected}") // Selected: [4, 6]
+let result: Option<int> = scores.get(9)
+let label = match result {
+    case Some(value) => "found {value}"
+    case None => "missing"
+}
+io.writeLine(label) // missing
+// From https://topaz.ooo

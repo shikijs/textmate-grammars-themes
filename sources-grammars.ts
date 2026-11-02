@@ -837,6 +837,14 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/Shopify/liquid-tm-grammar/blob/main/grammars/liquid.tmLanguage.json',
   },
   {
+    name: 'lispex',
+    displayName: 'Lispex',
+    source: 'https://github.com/studiohaze/vscode-lispex/blob/4d198e93c34f6388e34eb304c6a02feb84cdb5a8/extension/syntaxes/lispex.tmLanguage.json',
+    categories: ['general', 'lisp'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/studiohaze/vscode-lispex/4d198e93c34f6388e34eb304c6a02feb84cdb5a8/extension/LICENSE.txt',
+  },
+  {
     name: 'log',
     displayName: 'Log file',
     source: 'https://github.com/emilast/vscode-logfile-highlighter/blob/master/syntaxes/log.tmLanguage',
@@ -1182,6 +1190,14 @@ export const sourcesCommunity: GrammarSource[] = [
     name: 'toml',
     source: 'https://github.com/textmate/toml.tmbundle/blob/master/Syntaxes/TOML.tmLanguage',
     categories: ['data'],
+  },
+  {
+    name: 'topaz',
+    displayName: 'Topaz',
+    source: 'https://github.com/studiohaze/vscode-topaz/blob/0510f41021b6bb10d81be0b1ae33de774e406ba6/extension/syntaxes/topaz.tmLanguage.json',
+    categories: ['general'],
+    license: 'Apache-2.0',
+    licenseUrl: 'https://raw.githubusercontent.com/studiohaze/vscode-topaz/0510f41021b6bb10d81be0b1ae33de774e406ba6/extension/LICENSE.txt',
   },
   {
     name: 'turtle',
