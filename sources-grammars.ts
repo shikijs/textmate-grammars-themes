@@ -1083,6 +1083,11 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['scripting'],
   },
   {
+    name: 'slim',
+    source: 'https://github.com/borama/vscode-ruby-slim/blob/main/syntaxes/slim.tmLanguage.json',
+    categories: ['web', 'markup'],
+  },
+  {
     name: 'smalltalk',
     source: 'https://github.com/leocamello/vscode-smalltalk/blob/master/syntaxes/gnu-smalltalk.YAML-tmLanguage',
   },
@@ -1398,6 +1403,14 @@ export const sourcesInjections: GrammarSource[] = [
     name: 'jinja-html',
     source: 'https://github.com/samuelcolvin/jinjahtml-vscode/blob/main/syntaxes/jinja-html.tmLanguage.json',
     embeddedIn: ['jinja'],
+  },
+  {
+    name: 'slim-interpolated-ruby',
+    source: 'https://github.com/borama/vscode-ruby-slim/blob/main/syntaxes/interpolated-ruby.json',
+    embeddedIn: ['slim'],
+    injectTo: [
+      'text.slim',
+    ],
   },
   // ========== Vue ==========
   {

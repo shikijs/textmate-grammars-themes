@@ -4097,6 +4097,37 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/hronro/sublime-linguist-syntax/contents/syntaxes/ShellSession.tmLanguage?ref=9c84f1d69dbe89bc23292f129cf2d408a9c7afe1',
   },
   {
+    byteSize: 12203,
+    categories: [
+      'web',
+      'markup',
+    ],
+    displayName: 'Slim',
+    embedded: [
+      'ruby',
+      'javascript',
+      'coffee',
+      'markdown',
+      'css',
+      'sass',
+      'scss',
+      'erb',
+      'html',
+      'slim-interpolated-ruby',
+    ],
+    funding: [
+    ],
+    hash: 'ynNs05J10IEo9g9D0Kx1ON9ODsVJ85sca2GKcAbpVUE',
+    lastUpdate: '2025-02-07T04:22:34Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/borama/vscode-ruby-slim/main/LICENSE',
+    name: 'slim',
+    scopeName: 'text.slim',
+    sha: '20f7db574cb613a4bedee81ebf1194a9d311932a',
+    source: 'https://github.com/borama/vscode-ruby-slim/blob/20f7db574cb613a4bedee81ebf1194a9d311932a/syntaxes/slim.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/borama/vscode-ruby-slim/contents/syntaxes/slim.tmLanguage.json?ref=20f7db574cb613a4bedee81ebf1194a9d311932a',
+  },
+  {
     byteSize: 13860,
     displayName: 'GNU Smalltalk',
     funding: [
@@ -5640,6 +5671,29 @@ export const injections = [
     sha: '784dd56026e07f1dadb9ef2498418eccbb3dee29',
     source: 'https://github.com/vuejs/language-tools/blob/784dd56026e07f1dadb9ef2498418eccbb3dee29/extensions/vscode/syntaxes/markdown-vue.json',
     sourceApi: 'https://api.github.com/repos/vuejs/language-tools/contents/extensions/vscode/syntaxes/markdown-vue.json?ref=784dd56026e07f1dadb9ef2498418eccbb3dee29',
+  },
+  {
+    byteSize: 599,
+    embedded: [
+      'ruby',
+    ],
+    embeddedIn: [
+      'slim',
+    ],
+    funding: [
+    ],
+    hash: 'GLQmFY9yy_E3CGsukgf7XOVx5XG0gRyPbiEjaJjmU6Y',
+    injectTo: [
+      'text.slim',
+    ],
+    lastUpdate: '2023-11-04T08:32:15Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/borama/vscode-ruby-slim/main/LICENSE',
+    name: 'slim-interpolated-ruby',
+    scopeName: 'injection.interpolated-ruby',
+    sha: 'd50472c4b73d953074b9f74bb27e48d0e99947a2',
+    source: 'https://github.com/borama/vscode-ruby-slim/blob/d50472c4b73d953074b9f74bb27e48d0e99947a2/syntaxes/interpolated-ruby.json',
+    sourceApi: 'https://api.github.com/repos/borama/vscode-ruby-slim/contents/syntaxes/interpolated-ruby.json?ref=d50472c4b73d953074b9f74bb27e48d0e99947a2',
   },
   {
     byteSize: 369,
