@@ -1,0 +1,149 @@
+#DBD7CACC      doctype html
+#4D9375        html
+#DBD7CACC        
+#4D9375        head
+#DBD7CACC          
+#4D9375        title
+#DBD7CACC       
+#80A665        Slim Examples
+#DBD7CACC          
+#4D9375        meta
+#DBD7CACC       
+#BD976A        name
+#444444        =
+#C98A7D77      "
+#C98A7D        keywords
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        content
+#444444        =
+#C98A7D77      "
+#C98A7D        template language
+#C98A7D77      "
+#DBD7CACC          
+#4D9375        meta
+#DBD7CACC       
+#BD976A        name
+#444444        =
+#C98A7D77      "
+#C98A7D        author
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        content
+#444444        =
+#DBD7CACC      author
+#DBD7CACC          
+#4D9375        link
+#DBD7CACC       
+#BD976A        rel
+#444444        =
+#C98A7D77      "
+#C98A7D        icon
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        type
+#444444        =
+#C98A7D77      "
+#C98A7D        image/png
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        href
+#444444        =
+#DBD7CACC      file_path(
+#C98A7D77      "
+#C98A7D        favicon.png
+#C98A7D77      "
+#DBD7CACC      )
+#DBD7CACC          
+#4D9375        javascript
+#444444        :
+#DBD7CACC            
+#4D9375        alert
+#444444        (
+#DBD7CACC      '
+#BD976A        Slim supports
+#DBD7CACC       
+#BD976A        embedded javascript!'
+#444444        )
+#DBD7CACC        
+#4D9375        body
+#DBD7CACC          
+#4D9375        h1
+#DBD7CACC       
+#80A665        Markup examples
+#DBD7CACC          
+#444444        #
+#BD976A        content
+#DBD7CACC            
+#4D9375        p
+#DBD7CACC       
+#80A665        This example shows you how a basic Slim file looks.
+#DBD7CACC          
+#444444        ==
+#80A665         yield
+#DBD7CACC          
+#444444        - 
+#80A665        if items.any?
+#DBD7CACC            
+#4D9375        table
+#444444        #
+#BD976A        items
+#DBD7CACC              
+#444444        - 
+#80A665        for item in items
+#DBD7CACC                
+#4D9375        tr
+#DBD7CACC                  
+#4D9375        td
+#444444        .
+#BD976A        name
+#DBD7CACC       
+#444444        =
+#80A665         item.name
+#DBD7CACC                  
+#4D9375        td
+#444444        .
+#BD976A        price
+#DBD7CACC       
+#444444        =
+#80A665         item.price
+#DBD7CACC          
+#444444        - 
+#80A665        else
+#DBD7CACC            
+#4D9375        p
+#DBD7CACC       
+#80A665        No items found. Please add some inventory.
+#DBD7CACC              
+#4D9375        Thank
+#DBD7CACC       
+#80A665        you!
+#DBD7CACC          
+#4D9375        div
+#DBD7CACC       
+#BD976A        id
+#444444        =
+#C98A7D77      "
+#C98A7D        footer
+#C98A7D77      "
+#DBD7CACC            
+#444444        ==
+#80A665         render 'footer'
+#80A665              | Copyright &copy; #{@year} #{@author}
+#758575DD          / This is a code comment and is not rendered
+#758575DD          /! This is an HTML comment
+#DBD7CACC          
+#4D9375        css
+#444444        :
+#DBD7CACC            
+#444444        .
+#BD976A        footer
+#DBD7CACC       
+#444444        {
+#DBD7CACC       
+#BD976A        color
+#DBD7CACC      : #
+#BD976A        666;
+#DBD7CACC       
+#444444        }
+#758575DD      / From https://github.com/slim-template/slim/blob/main/README.md

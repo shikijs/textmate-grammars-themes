@@ -1,0 +1,40 @@
+{
+  "injectTo": [
+    "text.slim"
+  ],
+  "injectionSelector": [
+    "L:source.css",
+    "L:source.js",
+    "L:text.html.markdown",
+    "L:text.html.derived.markdown"
+  ],
+  "name": "slim-interpolated-ruby",
+  "patterns": [
+    {
+      "include": "#interpolated-ruby"
+    }
+  ],
+  "repository": {
+    "interpolated-ruby": {
+      "begin": "(?<!\\\\)#\\{{1,2}",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.interpolation.begin.slim"
+        }
+      },
+      "end": "}{1,2}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.interpolation.end.slim"
+        }
+      },
+      "name": "meta.interpolation.slim meta.string.ruby source.ruby.embedded.slim",
+      "patterns": [
+        {
+          "include": "source.ruby"
+        }
+      ]
+    }
+  },
+  "scopeName": "injection.interpolated-ruby"
+}
