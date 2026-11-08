@@ -483,6 +483,12 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/ballerina-platform/ballerina-grammar/blob/master/syntaxes/ballerina.tmLanguage',
   },
   {
+    name: 'baml',
+    displayName: 'BAML',
+    source: 'https://github.com/BoundaryML/textMate-baml/blob/main/grammars/baml.tmLanguage.json',
+    categories: ['general'],
+  },
+  {
     name: 'beancount',
     source: 'https://github.com/Lencerf/vscode-beancount/blob/master/syntaxes/beancount.tmLanguage',
   },
