@@ -1049,6 +1049,15 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/master/syntaxes/riscv.tmLanguage',
   },
   {
+    name: 'routeros',
+    displayName: 'RouterOS Script',
+    aliases: ['rsc', 'mikrotik'],
+    source: 'https://github.com/cperezabo/vscode-language-routeros/blob/main/syntaxes/routeros.tmLanguage.json',
+    categories: ['scripting'],
+    license: 'MIT',
+    licenseUrl: 'https://github.com/cperezabo/vscode-language-routeros/blob/main/LICENSE',
+  },
+  {
     name: 'sas',
     displayName: 'SAS',
     source: 'https://github.com/rpardee/sas/blob/master/syntaxes/sas.tmLanguage',
