@@ -1,0 +1,52 @@
+# Configuration, export style
+/interface bridge
+add name=bridge-lan comment="LAN bridge" protocol-mode=rstp
+/interface bridge port
+add bridge=bridge-lan interface=ether2
+add bridge=bridge-lan interface=ether3 pvid=10
+/ip address
+add address=192.168.88.1/24 interface=bridge-lan network=192.168.88.0
+/ipv6 address
+add address=2001:db8::1/64 interface=bridge-lan advertise=yes
+/ip dhcp-server lease
+add address=192.168.88.20 mac-address=4C:5E:0C:12:34:56 lease-time=1d12h
+/ip firewall filter
+add chain=input action=accept connection-state=established,related
+add chain=input action=drop in-interface=ether1 comment="drop WAN input"
+/ppp profile
+set *0 address-list="" !bridge !bridge-horizon use-encryption=yes
+/system scheduler
+add name=nightly interval=1d start-time=03:30:00 on-event="/system script run backup"
+
+# Slash-separated paths and commands after a path
+/ip/dns/cache/flush
+/system script run backup
+/log info "configuration loaded"
+
+# Scripting
+:global wanName "ether1"
+:local counter 0
+:local limits {"rx"="10M"; "tx"="2M"}
+
+:foreach id in=[/interface find where type="ether" and running] do={
+    :local name [/interface get $id name]
+    :if ($name != $wanName) do={
+        :set counter ($counter + 1)
+        :put ("LAN port: " . $name)
+    } else={
+        :log warning "skipping $name"
+    }
+}
+
+:for i from=1 to=3 step=1 do={
+    :if ([/ping 8.8.8.8 count=1] = 0) do={ :delay 5s } else={ :put "online" }
+}
+
+:local result [:toarray ""]
+:set ($result->"total") $counter
+:put ("Total: " . ($result->"total") . ", rx limit: " . ($limits->"rx"))
+
+:do {
+    /tool fetch url="https://example.com/status" keep-result=no
+} on-error={ :log error "fetch failed" }
+# Written for this sample; syntax: https://manual.mikrotik.com/docs/developer-guides/scripting/
