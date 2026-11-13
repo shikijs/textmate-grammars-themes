@@ -127,6 +127,7 @@ export const grammars = [
       'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
+      'angular-template-tag',
     ],
     funding: [
     ],
@@ -148,11 +149,13 @@ export const grammars = [
     displayName: 'Angular TypeScript',
     embedded: [
       'angular-expression',
+      'angular-host-object-literal',
       'angular-inline-style',
       'angular-inline-template',
       'angular-let-declaration',
       'angular-template',
       'angular-template-blocks',
+      'angular-template-tag',
     ],
     funding: [
     ],
@@ -5266,6 +5269,30 @@ export const injections = [
     sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/expression.json?ref=39057fc2dbb37125778fb2c5c517c661f9399996',
   },
   {
+    byteSize: 1474,
+    embedded: [
+      'typescript',
+      'angular-expression',
+    ],
+    embeddedIn: [
+      'angular-ts',
+    ],
+    funding: [
+    ],
+    hash: 'Xf4kNkKqli1M3_Ut7p74Ta-mrcigja2gdOwdg6j5jXM',
+    injectTo: [
+      'source.ts.ng',
+    ],
+    lastUpdate: '2025-03-17T08:02:40Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-host-object-literal',
+    scopeName: 'host-object-literal.ng',
+    sha: '3986db58b6f7d7b96560ecf9e19e97e956968f00',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/3986db58b6f7d7b96560ecf9e19e97e956968f00/syntaxes/host-object-literal.json',
+    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/host-object-literal.json?ref=3986db58b6f7d7b96560ecf9e19e97e956968f00',
+  },
+  {
     byteSize: 1196,
     embedded: [
       'scss',
@@ -5390,6 +5417,32 @@ export const injections = [
     sha: '8c84410f61ed87e261a83458af10af18cbf669a9',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/8c84410f61ed87e261a83458af10af18cbf669a9/syntaxes/template-blocks.json',
     sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template-blocks.json?ref=8c84410f61ed87e261a83458af10af18cbf669a9',
+  },
+  {
+    byteSize: 2924,
+    embedded: [
+      'angular-expression',
+    ],
+    embeddedIn: [
+      'angular-ts',
+      'angular-html',
+    ],
+    funding: [
+    ],
+    hash: 'CBelQZydnF0UZQbsKDIPdIoepiuOGCC0rKPS0tkaCiQ',
+    injectTo: [
+      'text.html.derivative',
+      'text.html.derivative.ng',
+      'source.ts.ng',
+    ],
+    lastUpdate: '2024-02-02T18:05:10Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/angular/vscode-ng-language-service/main/LICENSE',
+    name: 'angular-template-tag',
+    scopeName: 'template.tag.ng',
+    sha: '28739e438742bee69faceda5fd15445682451397',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/28739e438742bee69faceda5fd15445682451397/syntaxes/template-tag.json',
+    sourceApi: 'https://api.github.com/repos/angular/vscode-ng-language-service/contents/syntaxes/template-tag.json?ref=28739e438742bee69faceda5fd15445682451397',
   },
   {
     byteSize: 270362,

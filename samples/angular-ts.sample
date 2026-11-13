@@ -6,6 +6,11 @@ import { CartService } from './cart.service';
   selector: 'app-cart-button',
   standalone: true,
   imports: [RouterLink],
+  host: {
+    'role': 'navigation',
+    '[class.empty]': 'cartService.length === 0',
+    '(keydown.escape)': 'close()',
+  },
   template: `
     <button type="button" [routerLink]="'/cart'">
       @if (cartService.length > 0) {
