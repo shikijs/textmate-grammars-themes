@@ -1466,6 +1466,25 @@ export const sourcesInjections: GrammarSource[] = [
     },
   },
   {
+    name: 'angular-template-tag',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template-tag.json',
+    embeddedIn: ['angular-ts', 'angular-html'],
+    injectTo: [
+      'text.html.derivative',
+      'text.html.derivative.ng',
+      'source.ts.ng',
+    ],
+    patch(grammar) {
+      return JSON.parse(JSON.stringify(grammar, null, 2).replace(/(text\.html\.derivative)/g, 'text.html.derivative.ng'))
+    },
+  },
+  {
+    name: 'angular-host-object-literal',
+    source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/host-object-literal.json',
+    embeddedIn: ['angular-ts'],
+    injectTo: ['source.ts.ng'],
+  },
+  {
     name: 'angular-template',
     source: 'https://github.com/angular/vscode-ng-language-service/blob/main/syntaxes/template.json',
     embeddedIn: ['angular-ts', 'angular-html'],

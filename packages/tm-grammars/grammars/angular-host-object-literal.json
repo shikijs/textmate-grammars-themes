@@ -1,0 +1,106 @@
+{
+  "injectTo": [
+    "source.ts.ng"
+  ],
+  "injectionSelector": "L:meta.decorator.ts -comment -text.html -expression.ng",
+  "name": "angular-host-object-literal",
+  "patterns": [
+    {
+      "include": "#hostObjectLiteral"
+    }
+  ],
+  "repository": {
+    "hostObjectLiteral": {
+      "begin": "(host)\\s*(:)\\s*\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "meta.object-literal.key.ts"
+        },
+        "2": {
+          "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts"
+        }
+      },
+      "contentName": "hostbindings.ng",
+      "end": "}",
+      "patterns": [
+        {
+          "include": "#ngHostBindingDynamic"
+        },
+        {
+          "include": "#ngHostBindingStatic"
+        },
+        {
+          "include": "source.ts"
+        }
+      ]
+    },
+    "ngHostBindingDynamic": {
+      "begin": "\\s*([\"'])([(\\[].*?[])])(\\1)(:)",
+      "beginCaptures": {
+        "1": {
+          "name": "string"
+        },
+        "2": {
+          "name": "entity.other.attribute-name.html"
+        },
+        "3": {
+          "name": "string"
+        },
+        "4": {
+          "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts"
+        }
+      },
+      "contentName": "hostbinding.dynamic.ng",
+      "end": "(?=[,}])",
+      "patterns": [
+        {
+          "include": "#ngHostBindingDynamicValue"
+        }
+      ]
+    },
+    "ngHostBindingDynamicValue": {
+      "begin": "\\s*([\"'`])",
+      "beginCaptures": {
+        "1": {
+          "name": "string"
+        }
+      },
+      "end": "\\1",
+      "endCaptures": {
+        "0": {
+          "name": "string"
+        }
+      },
+      "patterns": [
+        {
+          "include": "expression.ng"
+        }
+      ]
+    },
+    "ngHostBindingStatic": {
+      "begin": "\\s*([\"'])?(.*?)(\\1)?\\s*:",
+      "beginCaptures": {
+        "1": {
+          "name": "string"
+        },
+        "2": {
+          "name": "entity.other.attribute-name.html"
+        },
+        "3": {
+          "name": "string"
+        },
+        "4": {
+          "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts"
+        }
+      },
+      "contentName": "hostbinding.static.ng",
+      "end": "(?=[,}])",
+      "patterns": [
+        {
+          "include": "source.ts"
+        }
+      ]
+    }
+  },
+  "scopeName": "host-object-literal.ng"
+}
