@@ -1,0 +1,862 @@
+#80A665        rulelist
+#DBD7CACC             
+#444444        =
+#DBD7CACC        
+#4C9A91        1
+#CB7676        *
+#444444        (
+#DBD7CACC       
+#BD976A        rule
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#BD976A        c-nl
+#444444        )
+#DBD7CACC       
+#444444        )
+#80A665        rule
+#DBD7CACC                 
+#444444        =
+#DBD7CACC        
+#BD976A        rulename
+#DBD7CACC       
+#BD976A        defined-as
+#DBD7CACC       
+#BD976A        elements
+#DBD7CACC       
+#BD976A        c-nl
+#DBD7CACC                             
+#758575DD      ; continues if next line starts
+#DBD7CACC                             
+#758575DD      ;  with white space
+#80A665        rulename
+#DBD7CACC             
+#444444        =
+#DBD7CACC        
+#C99076        ALPHA
+#DBD7CACC       
+#CB7676        *
+#444444        (
+#C99076        ALPHA
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C99076        DIGIT
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#444444        )
+#80A665        defined-as
+#DBD7CACC           
+#444444        =
+#DBD7CACC        
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#444444        (
+#C98A7D77      "
+#C98A7D        =
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        =/
+#C98A7D77      "
+#444444        )
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC                             
+#758575DD      ; basic rules definition and
+#DBD7CACC                             
+#758575DD      ;  incremental alternatives
+#80A665        elements
+#DBD7CACC             
+#444444        =
+#DBD7CACC        
+#BD976A        alternation
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#80A665        c-wsp
+#DBD7CACC                
+#444444        =
+#DBD7CACC        
+#C99076        WSP
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#BD976A        c-nl
+#DBD7CACC       
+#C99076        WSP
+#444444        )
+#80A665        c-nl
+#DBD7CACC                 
+#444444        =
+#DBD7CACC        
+#BD976A        comment
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C99076        CRLF
+#DBD7CACC                             
+#758575DD      ; comment or newline
+#80A665        comment
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        ;
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#444444        (
+#C99076        WSP
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#C99076        VCHAR
+#444444        )
+#DBD7CACC       
+#C99076        CRLF
+#80A665        alternation
+#DBD7CACC          
+#444444        =
+#DBD7CACC        
+#BD976A        concatenation
+#DBD7CACC                        
+#CB7676        *
+#444444        (
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        /
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#BD976A        concatenation
+#444444        )
+#80A665        concatenation
+#DBD7CACC        
+#444444        =
+#DBD7CACC        
+#BD976A        repetition
+#DBD7CACC       
+#CB7676        *
+#444444        (
+#4C9A91        1
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#BD976A        repetition
+#444444        )
+#80A665        repetition
+#DBD7CACC           
+#444444        =
+#DBD7CACC        
+#444444        [
+#BD976A        repeat
+#444444        ]
+#DBD7CACC       
+#BD976A        element
+#80A665        repeat
+#DBD7CACC               
+#444444        =
+#DBD7CACC        
+#4C9A91        1
+#CB7676        *
+#C99076        DIGIT
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#CB7676        *
+#C99076        DIGIT
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        *
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#C99076        DIGIT
+#444444        )
+#80A665        element
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#BD976A        rulename
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        group
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        option
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC                        
+#BD976A        char-val
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        num-val
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        prose-val
+#80A665        group
+#DBD7CACC                
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        (
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#BD976A        alternation
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        )
+#C98A7D77      "
+#80A665        option
+#DBD7CACC               
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        [
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#BD976A        alternation
+#DBD7CACC       
+#CB7676        *
+#BD976A        c-wsp
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ]
+#C98A7D77      "
+#80A665        char-val
+#DBD7CACC             
+#444444        =
+#DBD7CACC        
+#BD976A        case-insensitive-string
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC                        
+#BD976A        case-sensitive-string
+#80A665        case-insensitive-string
+#DBD7CACC       
+#444444        =
+#DBD7CACC                        
+#444444        [
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        %i
+#C98A7D77      "
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#BD976A        quoted-string
+#80A665        case-sensitive-string
+#DBD7CACC       
+#444444        =
+#DBD7CACC                        
+#C98A7D77      "
+#C98A7D        %s
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        quoted-string
+#80A665        quoted-string
+#DBD7CACC        
+#444444        =
+#DBD7CACC        
+#C99076        DQUOTE
+#DBD7CACC       
+#CB7676        *
+#444444        (%
+#CB7676        x
+#4C9A91        20
+#444444        -
+#4C9A91        21
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        %
+#CB7676        x
+#4C9A91        23
+#444444        -
+#4C9A91        7E
+#444444        )
+#DBD7CACC       
+#C99076        DQUOTE
+#DBD7CACC                             
+#758575DD      ; quoted string of SP and VCHAR
+#DBD7CACC                             
+#758575DD      ;  without DQUOTE
+#80A665        num-val
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        %
+#C98A7D77      "
+#DBD7CACC       
+#444444        (
+#BD976A        bin-val
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        dec-val
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        hex-val
+#444444        )
+#80A665        bin-val
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        b
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        BIT
+#DBD7CACC                        
+#444444        [
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#444444        (
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        BIT
+#444444        )
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        BIT
+#444444        )
+#DBD7CACC       
+#444444        ]
+#DBD7CACC                             
+#758575DD      ; series of concatenated bit values
+#DBD7CACC                             
+#758575DD      ;  or single ONEOF range
+#80A665        dec-val
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        d
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        DIGIT
+#DBD7CACC                        
+#444444        [
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#444444        (
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        DIGIT
+#444444        )
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        DIGIT
+#444444        )
+#DBD7CACC       
+#444444        ]
+#80A665        hex-val
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        x
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        HEXDIG
+#DBD7CACC                        
+#444444        [
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#444444        (
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        HEXDIG
+#444444        )
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        (
+#C98A7D77      "
+#C98A7D        -
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#C99076        HEXDIG
+#444444        )
+#DBD7CACC       
+#444444        ]
+#80A665        prose-val
+#DBD7CACC            
+#444444        =
+#DBD7CACC        
+#C98A7D77      "
+#C98A7D        <
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        *
+#444444        (%
+#CB7676        x
+#4C9A91        20
+#444444        -
+#4C9A91        3D
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        %
+#CB7676        x
+#4C9A91        3F
+#444444        -
+#4C9A91        7E
+#444444        )
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        >
+#C98A7D77      "
+#DBD7CACC                             
+#758575DD      ; bracketed string of SP and VCHAR
+#DBD7CACC                             
+#758575DD      ;  without angles
+#DBD7CACC                             
+#758575DD      ; prose description, to be used as
+#DBD7CACC                             
+#758575DD      ;  last resort
+#80A665        command
+#DBD7CACC              
+#444444        =
+#DBD7CACC        
+#444444        %
+#CB7676        s
+#C98A7D77      "
+#C98A7D        aBc
+#C98A7D77      "
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#444444        %
+#CB7676        i
+#C98A7D77      "
+#C98A7D        aBc
+#C98A7D77      "
+#80A665        IPv6address
+#DBD7CACC         
+#444444        =
+#DBD7CACC                                  
+#4C9A91        6
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC                             
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        5
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC                     
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        4
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        1
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        3
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        2
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        2
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        3
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC          
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC         
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        4
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC                    
+#BD976A        ls32
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        5
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#DBD7CACC                    
+#BD976A        h16
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        [
+#DBD7CACC       
+#CB7676        *
+#4C9A91        6
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        ]
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        ::
+#C98A7D77      "
+#80A665        h16
+#DBD7CACC                 
+#444444        =
+#DBD7CACC       
+#4C9A91        1
+#CB7676        *
+#4C9A91        4
+#C99076        HEXDIG
+#80A665        ls32
+#DBD7CACC                
+#444444        =
+#DBD7CACC       
+#444444        (
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        :
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        h16
+#DBD7CACC       
+#444444        )
+#DBD7CACC       
+#CB7676        /
+#DBD7CACC       
+#BD976A        IPv4address
+#80A665        IPv4address
+#DBD7CACC         
+#444444        =
+#DBD7CACC       
+#BD976A        dec-octet
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        dec-octet
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        dec-octet
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        .
+#C98A7D77      "
+#DBD7CACC       
+#BD976A        dec-octet
+#80A665        dec-octet
+#DBD7CACC           
+#444444        =
+#DBD7CACC       
+#C99076        DIGIT
+#DBD7CACC                       
+#758575DD      ; 0-9
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#444444        %
+#CB7676        x
+#4C9A91        31
+#444444        -
+#4C9A91        39
+#DBD7CACC       
+#C99076        DIGIT
+#DBD7CACC               
+#758575DD      ; 10-99
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        1
+#C98A7D77      "
+#DBD7CACC       
+#4C9A91        2
+#C99076        DIGIT
+#DBD7CACC                  
+#758575DD      ; 100-199
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        2
+#C98A7D77      "
+#DBD7CACC       
+#444444        %
+#CB7676        x
+#4C9A91        30
+#444444        -
+#4C9A91        34
+#DBD7CACC       
+#C99076        DIGIT
+#DBD7CACC           
+#758575DD      ; 200-249
+#DBD7CACC                    
+#CB7676        /
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        25
+#C98A7D77      "
+#DBD7CACC       
+#444444        %
+#CB7676        x
+#4C9A91        30
+#444444        -
+#4C9A91        35
+#DBD7CACC                
+#758575DD      ; 250-255
+#758575DD      ; From https://www.rfc-editor.org/rfc/rfc5234#section-4 (updated by RFC 7405),
+#758575DD      ; https://www.rfc-editor.org/rfc/rfc7405#section-2, and
+#758575DD      ; https://www.rfc-editor.org/rfc/rfc3986#appendix-A

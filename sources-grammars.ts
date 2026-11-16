@@ -409,6 +409,11 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/pvl/abap.tmbundle/blob/master/Syntaxes/ABAP.tmLanguage',
   },
   {
+    name: 'abnf',
+    displayName: 'ABNF',
+    source: 'https://github.com/Alhadis/language-grammars/blob/master/grammars/abnf.cson',
+  },
+  {
     name: 'actionscript-3',
     displayName: 'ActionScript',
     aliases: ['actionscript', 'as3'],
