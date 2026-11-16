@@ -21,6 +21,7 @@ import { grammars } from 'tm-grammars'
 | Name | Alias | Source | License | Sponsor | Deps On | File Size |
 | ---- | ----- | ------ | ------- | ------- | ------- | --------- |
 | `abap` |  | [pvl/abap.tmbundle](https://github.com/pvl/abap.tmbundle/blob/92e17e62a9449d2a6f87bfb30b4f920986c24018/Syntaxes/ABAP.tmLanguage) |  |  |  | 15.12 kB |
+| `abnf` |  | [Alhadis/language-grammars](https://github.com/Alhadis/language-grammars/blob/73454f52293dabf35f0bdd707390155534a5124b/grammars/abnf.cson) | [ISC](https://raw.githubusercontent.com/Alhadis/language-grammars/master/LICENSE.md) |  |  | 5.44 kB |
 | `actionscript-3` | `actionscript` `as3` | [BowlerHatLLC/vscode-as3mxml](https://github.com/BowlerHatLLC/vscode-as3mxml/blob/11ccf88dc1ec08a55c262a96676d507b354f19b5/distribution/src/assembly/syntaxes/AS3.tmLanguage) | [Apache-2.0](https://raw.githubusercontent.com/BowlerHatLLC/vscode-as3mxml/main/LICENSE) | [Patreon: **josht**](https://patreon.com/josht) |  | 14.73 kB |
 | `ada` |  | [AdaCore/ada_language_server](https://github.com/AdaCore/ada_language_server/blob/e984d2233630f0a3ea422e86bfa97b36f80fe038/integration/vscode/ada/advanced/ada.tmLanguage.json) | [GPL-3.0](https://raw.githubusercontent.com/AdaCore/ada_language_server/master/LICENSE) |  |  | 45.39 kB |
 | `ahk` | `ahk1` | [mark-wiemer/ahkpp](https://github.com/mark-wiemer/ahkpp/blob/63c1fd4d675e9ea98f60083786afe94505bdd57b/language/ahk.tmLanguage.yaml) | [MIT](https://raw.githubusercontent.com/mark-wiemer/ahkpp/main/license.md) |  |  | 29.08 kB |

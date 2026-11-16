@@ -18,6 +18,21 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/pvl/abap.tmbundle/contents/Syntaxes/ABAP.tmLanguage?ref=92e17e62a9449d2a6f87bfb30b4f920986c24018',
   },
   {
+    byteSize: 5570,
+    displayName: 'ABNF',
+    funding: [
+    ],
+    hash: 'JVXLXq63DbLZICoXTyTsu8aJmJpHmD1EKZyTHPr8b1Y',
+    lastUpdate: '2026-11-16T00:53:59Z',
+    license: 'ISC',
+    licenseUrl: 'https://raw.githubusercontent.com/Alhadis/language-grammars/master/LICENSE.md',
+    name: 'abnf',
+    scopeName: 'source.abnf',
+    sha: '73454f52293dabf35f0bdd707390155534a5124b',
+    source: 'https://github.com/Alhadis/language-grammars/blob/73454f52293dabf35f0bdd707390155534a5124b/grammars/abnf.cson',
+    sourceApi: 'https://api.github.com/repos/Alhadis/language-grammars/contents/grammars/abnf.cson?ref=73454f52293dabf35f0bdd707390155534a5124b',
+  },
+  {
     aliases: [
       'actionscript',
       'as3',
