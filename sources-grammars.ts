@@ -318,7 +318,7 @@ export const sourcesVSCode: GrammarSource[] = [
   {
     name: 'rst',
     displayName: 'reStructuredText',
-    source: 'https://github.com/microsoft/vscode/blob/main/extensions/restructuredtext/syntaxes/rst.tmLanguage.json',
+    source: 'https://github.com/Lukasa/language-restructuredtext/blob/master/grammars/restructuredtext.cson',
     categories: ['markup'],
   },
   {
@@ -447,7 +447,7 @@ export const sourcesCommunity: GrammarSource[] = [
   {
     name: 'apl',
     displayName: 'APL',
-    source: 'https://github.com/kimmolinna/vscode-apl-language/blob/master/syntaxes/apl.tmLanguage.json',
+    source: 'https://github.com/Alhadis/language-apl/blob/master/grammars/apl.cson',
   },
   {
     name: 'applescript',
@@ -871,6 +871,13 @@ export const sourcesCommunity: GrammarSource[] = [
     categories: ['web', 'markup'],
   },
   {
+    name: 'mermaid',
+    displayName: 'Mermaid',
+    aliases: ['mmd'],
+    source: 'https://github.com/Alhadis/language-mermaid/blob/master/grammars/all.cson',
+    categories: ['web', 'markup']
+  },
+  {
     name: 'mipsasm',
     displayName: 'MIPS Assembly',
     aliases: ['mips'],
@@ -1116,7 +1123,7 @@ export const sourcesCommunity: GrammarSource[] = [
   },
   {
     name: 'ssh-config',
-    source: 'https://github.com/textmate/ssh-config.tmbundle/blob/master/Syntaxes/SSH-Config.tmLanguage',
+    source: 'https://github.com/Alhadis/language-etc/blob/master/grammars/ssh-config.cson',
   },
   {
     name: 'stata',
@@ -1301,22 +1308,6 @@ export const sourcesCommunity: GrammarSource[] = [
  */
 // @keep-sorted { "keys": ["name"] }
 export const sourcesMarketplace: GrammarSource[] = [
-  {
-    name: 'mermaid',
-    displayName: 'Mermaid',
-    aliases: ['mmd'],
-    source: 'https://github.com/bpruitt-goddard/vscode-mermaid-syntax-highlight/blob/master/syntaxes/mermaid.tmLanguage.yaml',
-    marketplace: {
-      name: 'bpruitt-goddard.mermaid-markdown-syntax-highlighting',
-      grammar: 'mermaid',
-    },
-    // TODO: Remove this once the upstream grammar treats the entire injected
-    // block as mermaid without requiring a fenced code block wrapper.
-    // See https://github.com/shikijs/textmate-grammars-themes/pull/131
-    patch: (grammar) => {
-      (grammar.patterns as any[]).push({ include: '#mermaid' })
-    },
-  },
   {
     name: 'moonbit',
     displayName: 'MoonBit',
