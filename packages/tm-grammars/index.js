@@ -60,6 +60,24 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/AdaCore/ada_language_server/contents/integration/vscode/ada/advanced/ada.tmLanguage.json?ref=e984d2233630f0a3ea422e86bfa97b36f80fe038',
   },
   {
+    byteSize: 107522,
+    categories: [
+      'general',
+    ],
+    displayName: 'Agda',
+    funding: [
+    ],
+    hash: 'MLqg3yH5XCokVOFUOB9l7grCmzM_vgG55wOmCvb9w9I',
+    lastUpdate: '2026-09-08T14:39:38Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/fredrik-bakke/agda-syntax-vscode/main/LICENSE',
+    name: 'agda',
+    scopeName: 'source.agda',
+    sha: 'd1271f07e723a3c61405cca7cf7af82318e6f563',
+    source: 'https://github.com/fredrik-bakke/agda-syntax-vscode/blob/d1271f07e723a3c61405cca7cf7af82318e6f563/package.json',
+    sourceApi: 'https://api.github.com/repos/fredrik-bakke/agda-syntax-vscode/contents/package.json?ref=d1271f07e723a3c61405cca7cf7af82318e6f563',
+  },
+  {
     aliases: [
       'ahk1',
     ],

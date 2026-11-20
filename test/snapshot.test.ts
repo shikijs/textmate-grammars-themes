@@ -16,6 +16,8 @@ const JS_ENGINE_EXPECT_FAIL: string[] = [
 ]
 
 const JS_ENGINE_INDEPENDENT_SNAPSHOT: string[] = [
+  // Constructor and record-field signature types differ between the engines.
+  'agda',
   'emacs-lisp',
   'pascal',
   'sparql',

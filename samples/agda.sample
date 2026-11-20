@@ -1,0 +1,42 @@
+{-# OPTIONS --safe --without-K #-}
+module Sample where
+
+-- Unicode identifiers, mixfix operators, and constructor signatures.
+data ℕ : Set where
+  zero : ℕ
+  suc : ℕ → ℕ
+
+_+_ : ℕ → ℕ → ℕ
+zero + n = n
+suc m + n = suc (m + n)
+infixl 6 _+_
+
+{- A block comment
+   {- with a nested comment -}
+   still inside the outer comment. -}
+record Pair (A B : Set) : Set where
+  constructor _,_
+  field
+    fst : A
+    snd : B
+open Pair public
+
+id : {A : Set} → A → A
+id x = x
+
+-- Interaction holes and literals (syntax examples, not a complete program).
+example : ℕ
+example = {! suc zero !}
+
+open import Agda.Builtin.String using (String)
+open import Agda.Builtin.Char using (Char)
+open import Agda.Builtin.Float using (Float)
+
+message : String
+message = "Agda: λ → ∀ \"quoted\"\n"
+letter : Char
+letter = 'λ'
+amount : Float
+amount = 3.14
+answer : ℕ
+answer = 42

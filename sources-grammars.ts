@@ -1302,6 +1302,16 @@ export const sourcesCommunity: GrammarSource[] = [
 // @keep-sorted { "keys": ["name"] }
 export const sourcesMarketplace: GrammarSource[] = [
   {
+    name: 'agda',
+    displayName: 'Agda',
+    source: 'https://github.com/fredrik-bakke/agda-syntax-vscode/blob/main/package.json',
+    marketplace: {
+      name: 'FredrikBakke.agda-syntax',
+      grammar: 'agda',
+    },
+    categories: ['general'],
+  },
+  {
     name: 'mermaid',
     displayName: 'Mermaid',
     aliases: ['mmd'],
