@@ -1,0 +1,2270 @@
+{
+  "displayName": "Agda",
+  "fileTypes": [
+    "agda"
+  ],
+  "name": "agda",
+  "patterns": [
+    {
+      "include": "#the_usual"
+    }
+  ],
+  "repository": {
+    "agda_attributes": {
+      "patterns": [
+        {
+          "include": "#agda_modality"
+        },
+        {
+          "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])@",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.operator.attribute.agda"
+            }
+          },
+          "captures": {
+            "0": {
+              "name": "meta.attribute.agda"
+            }
+          },
+          "end": "_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+(?=$|!}|[\"().;@{}\\s])",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.control.attribute.agda"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#agda_comments"
+            }
+          ]
+        }
+      ]
+    },
+    "agda_block_declarations": {
+      "patterns": [
+        {
+          "include": "#module_declaration"
+        },
+        {
+          "include": "#data_declaration"
+        },
+        {
+          "include": "#data_declaration_name_on_separate_line"
+        },
+        {
+          "include": "#record_declaration"
+        },
+        {
+          "include": "#record_declaration_name_on_separate_line"
+        }
+      ]
+    },
+    "agda_builtin": {
+      "patterns": [
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((S?Set|Prop|S?Type)ω?([0-9]*|[₀-₉]*))(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])LevelUniv(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])Level(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])IUniv(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])SizeUniv(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])primLockUniv(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.type.sort.agda"
+        }
+      ]
+    },
+    "agda_code": {
+      "patterns": [
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#qualified_name"
+        }
+      ]
+    },
+    "agda_comments": {
+      "patterns": [
+        {
+          "include": "#block_comment"
+        },
+        {
+          "include": "#dash_comment"
+        }
+      ]
+    },
+    "agda_constants": {
+      "patterns": [
+        {
+          "include": "#agda_literals"
+        },
+        {
+          "include": "#agda_builtin"
+        }
+      ]
+    },
+    "agda_expression_keywords": {
+      "patterns": [
+        {
+          "include": "#agda_attributes"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.operator.agda"
+            },
+            "2": {
+              "name": "keyword.operator.absurd.agda"
+            }
+          },
+          "match": "((?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s])))|(\\(\\s*\\))"
+        }
+      ]
+    },
+    "agda_expressions": {
+      "patterns": [
+        {
+          "include": "#hole"
+        },
+        {
+          "include": "#record_expression"
+        },
+        {
+          "include": "#type_let_expression"
+        },
+        {
+          "include": "#local_module_declaration"
+        },
+        {
+          "include": "#local_open_declaration"
+        },
+        {
+          "include": "#forall_abstraction_start"
+        },
+        {
+          "include": "#lambda_abstraction_start"
+        },
+        {
+          "include": "#agda_constants"
+        },
+        {
+          "include": "#wildcard"
+        },
+        {
+          "include": "#agda_expression_keywords"
+        }
+      ]
+    },
+    "agda_keywords": {
+      "patterns": [
+        {
+          "include": "#agda_expression_keywords"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:⦇⦈|[⦇⦈])(?=$|!}|[\"().;@{}\\s])",
+          "name": "support.function.applicative_functor.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])([:=|←⦃⦄]|<-|\\.\\.\\.?)(?=$|!}|[\"().;@{}\\s])|@",
+          "name": "keyword.operator.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(abstract|constructor|do|field|forall|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|pattern|postulate|primitive|record|rewrite|syntax|tactic|unfolding|variable|where|with)(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((co)?inductive|(no-)?eta-equality|private|public)(?=$|!}|[\"().;@{}\\s])",
+          "name": "storage.modifier.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(overlap|quote(Term)?|unquote(De(?:cl|f))?)(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(hiding|public|renaming|using)(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.import.agda"
+        }
+      ]
+    },
+    "agda_layout_blocks": {
+      "patterns": [
+        {
+          "include": "#agda_block_declarations"
+        },
+        {
+          "include": "#infix_block"
+        },
+        {
+          "include": "#constructor_block"
+        },
+        {
+          "include": "#agda_simple_blocks"
+        }
+      ]
+    },
+    "agda_literals": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.agda"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.agda"
+            }
+          },
+          "name": "string.quoted.double.agda",
+          "patterns": [
+            {
+              "include": "#string_gap_line"
+            },
+            {
+              "include": "#escape_character"
+            },
+            {
+              "include": "#escape_control_character"
+            }
+          ]
+        },
+        {
+          "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.character.begin.agda"
+            }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.character.end.agda"
+            }
+          },
+          "name": "constant.character.quoted.single.agda",
+          "patterns": [
+            {
+              "include": "#escape_character"
+            },
+            {
+              "include": "#escape_control_character"
+            }
+          ]
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|!}|[\"().;@{}\\s])",
+          "name": "constant.numeric.integer.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+))(?=$|!}|[\"().;@{}\\s])",
+          "name": "constant.numeric.float.agda"
+        }
+      ]
+    },
+    "agda_modality": {
+      "captures": {
+        "1": {
+          "name": "keyword.operator.attribute.agda"
+        },
+        "2": {
+          "name": "keyword.control.attribute.agda"
+        }
+      },
+      "match": "(@)(irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused)(?=$|!}|[\"().;@{}\\s])"
+    },
+    "agda_names_syntactic_sugar": {
+      "patterns": [
+        {
+          "match": "(?<=\\.)do(?=$|!}|[\"().;@_{}\\s])",
+          "name": "keyword.control.agda"
+        },
+        {
+          "match": "(?<=\\.)⦇⦈?(?=$|!}|[\"().;@_{}\\s])",
+          "name": "support.function.applicative_functor.agda"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "variable.language.wildcard.agda"
+            },
+            "2": {
+              "name": "support.function.monad.agda"
+            },
+            "3": {
+              "name": "variable.language.wildcard.agda"
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])(_?)(>>=?)(_?)(?=$|!}|[\"();@{}\\s])"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "variable.language.wildcard.agda"
+            },
+            "2": {
+              "name": "support.function.applicative_functor.agda"
+            },
+            "3": {
+              "name": "variable.language.wildcard.agda"
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])(_?)(<*>|<\\|>)(_?)(?=$|!}|[\"();@{}\\s])"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])pure|empty(?=$|!}|[\"();@{}\\s])",
+          "name": "support.function.applicative_functor.agda"
+        }
+      ]
+    },
+    "agda_preprocessing_syntax": {
+      "patterns": [
+        {
+          "include": "#pragma"
+        },
+        {
+          "include": "#agda_comments"
+        }
+      ]
+    },
+    "agda_simple_blocks": {
+      "patterns": [
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(abstract)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.abstract.agda"
+            }
+          },
+          "name": "meta.block.abstract.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(field)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.field.agda"
+            }
+          },
+          "name": "meta.block.field.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(instance)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.instance.agda"
+            }
+          },
+          "name": "meta.block.instance.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(macro)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.macro.agda"
+            }
+          },
+          "name": "meta.block.macro.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(mutual)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.mutual.agda"
+            }
+          },
+          "name": "meta.block.mutual.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(opaque)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.opaque.agda"
+            }
+          },
+          "name": "meta.block.opaque.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(postulate)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.postulate.agda"
+            }
+          },
+          "name": "meta.block.postulate.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(primitive)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.primitive.agda"
+            }
+          },
+          "name": "meta.block.primitive.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(private)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.private.agda"
+            }
+          },
+          "name": "meta.block.private.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(variable)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.variable.agda"
+            }
+          },
+          "name": "meta.block.variable.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        },
+        {
+          "begin": "(^|\\G|(?<=;))(\\s*)(where)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "3": {
+              "name": "keyword.control.where.agda"
+            }
+          },
+          "name": "meta.block.where.agda",
+          "patterns": [
+            {
+              "include": "#the_usual"
+            }
+          ],
+          "while": "(^|\\G)(?:\\2(?=\\s)|\\s*$)"
+        }
+      ]
+    },
+    "agda_statements": {
+      "patterns": [
+        {
+          "include": "#open_module_statement"
+        },
+        {
+          "include": "#open_import_statement"
+        },
+        {
+          "include": "#open_statement"
+        },
+        {
+          "include": "#term_type_signature_colon_on_first_line"
+        },
+        {
+          "include": "#term_type_signature_colon_on_separate_line"
+        }
+      ]
+    },
+    "agda_syntax": {
+      "patterns": [
+        {
+          "include": "#agda_preprocessing_syntax"
+        },
+        {
+          "include": "#unquote_data_declaration"
+        },
+        {
+          "include": "#agda_expressions"
+        },
+        {
+          "include": "#dot_pattern"
+        },
+        {
+          "include": "#agda_keywords"
+        }
+      ]
+    },
+    "binder_declaration": {
+      "patterns": [
+        {
+          "include": "#implicit_untyped_parameter_declaration"
+        },
+        {
+          "include": "#instance_double_brace_untyped_parameter_declaration"
+        },
+        {
+          "include": "#instance_unicode_untyped_parameter_declaration"
+        },
+        {
+          "include": "#parameter_declaration"
+        }
+      ]
+    },
+    "block_comment": {
+      "begin": "\\{-",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.agda"
+        }
+      },
+      "end": "-}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.agda"
+        }
+      },
+      "name": "comment.block.agda",
+      "patterns": [
+        {
+          "include": "#block_comment"
+        }
+      ]
+    },
+    "constructor_block": {
+      "begin": "^(\\s*)(constructor)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "2": {
+          "name": "keyword.control.constructor.agda"
+        }
+      },
+      "end": "(?=;)|^(?!\\1(?=\\s))",
+      "name": "meta.statement.constructor.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#agda_literals"
+        },
+        {
+          "include": "#term_name"
+        }
+      ]
+    },
+    "dash_comment": {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment.agda"
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(--).*$",
+      "name": "comment.line.double_dash.agda"
+    },
+    "data_declaration": {
+      "begin": "(^|\\G|(?<=;)|(?<=^let\\s+|[\"().;@{}\\s]let\\s+))(\\s*)(data)(?=$|!}|[\"().;@{}\\s])(\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "3": {
+          "name": "storage.type.class.data.agda"
+        },
+        "5": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "6": {
+          "name": "entity.name.type.data.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "contentName": "meta.declaration.parameters.data.agda",
+      "end": "(?:^\\s*)?((?<=^|\\{!|\\{-#|[\"().;@{}\\s])where(?=$|!}|[\"().;@{}\\s]))|(?=;)|^(?=\\2\\S)",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.where.data.agda"
+        }
+      },
+      "name": "meta.declaration.data.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#data_record_telescope"
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "data_declaration_name_on_separate_line": {
+      "begin": "(^|\\G|(?<=;))(\\s*)(data)\\s*$",
+      "beginCaptures": {
+        "3": {
+          "name": "storage.type.class.data.agda"
+        }
+      },
+      "contentName": "meta.declaration.parameters.data.agda",
+      "end": "(?:^\\s*)?((?<=^|\\{!|\\{-#|[\"().;@{}\\s])where(?=$|!}|[\"().;@{}\\s]))|(?=;)|^(?=\\2\\S)",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.where.data.agda"
+        }
+      },
+      "name": "meta.declaration.data.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "begin": "^(\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "2": {
+              "patterns": [
+                {
+                  "include": "#agda_attributes"
+                }
+              ]
+            },
+            "3": {
+              "name": "entity.name.type.data.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "end": "(?=(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?::|where)(?=$|!}|[\"().;@{}\\s]))",
+          "patterns": [
+            {
+              "include": "#declaration_telescope"
+            }
+          ]
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "data_record_telescope": {
+      "begin": "\\G(?!\\s*where(?=$|!}|[\"().;@{}\\s]))(?:(?=\\s*\\S)|(?<=\\S)(?=\\s*$))",
+      "end": "(?=(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?::|where)(?=$|!}|[\"().;@{}\\s]))",
+      "patterns": [
+        {
+          "include": "#declaration_telescope"
+        }
+      ]
+    },
+    "declaration_telescope": {
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])",
+          "name": "invalid.illegal.keyword.agda"
+        },
+        {
+          "include": "#multiline_parameter_declaration"
+        },
+        {
+          "include": "#binder_declaration"
+        },
+        {
+          "include": "#typed_parameter_parenthesized_expression"
+        },
+        {
+          "include": "#agda_attributes"
+        },
+        {
+          "include": "#visible_untyped_parameter_declaration"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#type_token"
+        }
+      ]
+    },
+    "discard": {
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])_(?=$|!}|[\"().;@{}\\s])",
+      "name": "variable.language.discard.agda"
+    },
+    "dot_pattern": {
+      "patterns": [
+        {
+          "include": "#dot_pattern_single_token"
+        },
+        {
+          "include": "#dot_pattern_parenthesized"
+        }
+      ]
+    },
+    "dot_pattern_internal_parentheses": {
+      "begin": "\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#dot_pattern_internal_parentheses"
+        },
+        {
+          "include": "#dot_pattern_qualified_name"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "dot_pattern_parenthesized": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?<!\\.)(\\.)\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.dot_pattern.period.agda"
+        },
+        "2": {
+          "name": "punctuation.definition.dot_pattern.begin.agda"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.dot_pattern.begin.agda"
+        }
+      },
+      "name": "meta.block.dot_pattern.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#dot_pattern_internal_parentheses"
+        }
+      ]
+    },
+    "dot_pattern_qualified_name": {
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#agda_names_syntactic_sugar"
+            },
+            {
+              "match": "\\.",
+              "name": "keyword.operator.dot_pattern.period.agda"
+            },
+            {
+              "match": "_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+",
+              "name": "comment.block.dot_pattern.agda"
+            }
+          ]
+        }
+      },
+      "match": "_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+"
+    },
+    "dot_pattern_single_token": {
+      "captures": {
+        "1": {
+          "name": "keyword.operator.dot_pattern.period.agda"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#dot_pattern_qualified_name"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?<!\\.)(\\.)\\s*(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)(?=$|!}|[\"();@{}\\s])",
+      "name": "meta.block.dot_pattern.agda"
+    },
+    "escape_character": {
+      "match": "\\\\([0-9]+|0[Xx]\\h+|[\"'\\\\abfntv]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL)",
+      "name": "constant.character.escape.agda"
+    },
+    "escape_control_character": {
+      "match": "\\^[@-_]",
+      "name": "constant.character.escape.control.agda"
+    },
+    "forall_abstraction_start": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(forall|∀)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.forall.agda"
+        }
+      },
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((->|→))(?=$|!}|[\"().;@{}\\s])",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.operator.forall.mapsto.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.forall.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#binder_declaration"
+        },
+        {
+          "include": "#typed_parameter_parenthesized_expression"
+        },
+        {
+          "include": "#agda_expressions"
+        },
+        {
+          "include": "#variable_label"
+        }
+      ]
+    },
+    "hole": {
+      "patterns": [
+        {
+          "captures": {
+            "0": {
+              "name": "punctuation.hole.questionmark.agda"
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])\\?(?=$|!}|[\"().;@{}\\s])",
+          "name": "variable.language.questionmark.agda"
+        },
+        {
+          "include": "#hole_parenthesized"
+        }
+      ]
+    },
+    "hole_parenthesized": {
+      "begin": "\\{!",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.hole.begin.agda"
+        }
+      },
+      "contentName": "meta.block.hole.content.agda",
+      "end": "!}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.hole.end.agda"
+        }
+      },
+      "name": "meta.block.hole.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#hole_parenthesized"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ]
+    },
+    "illegal_name_parts": {
+      "match": "((?<=^|\\{!|\\{-#|[\"().;@_{}\\s])([':;=?\\\\|λ→∀⦃⦄⦇⦈]|->|--|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@_{}\\s]))",
+      "name": "invalid.illegal.name.part.keyword.agda"
+    },
+    "illegal_unqualified_name_parts": {
+      "match": "(?<!\\.)(?<=^|\\{!|\\{-#|[\"().;@_{}\\s])constructor(?=$|!}|[\"().;@_{}\\s])",
+      "name": "invalid.illegal.name.part.keyword.agda"
+    },
+    "implicit_parameter_declaration": {
+      "begin": "\\{(?!-)(?![^\\n:{}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.implicit.begin.agda"
+        }
+      },
+      "end": "(?<!-)}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.implicit.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.implicit.agda",
+      "patterns": [
+        {
+          "include": "#variable_type_signature"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "implicit_untyped_parameter_declaration": {
+      "begin": "\\{(?!-)(?![^\\n:{}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?![^\\n}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s]))(?![^\\n:}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?![^\\n}]*(?:[(){]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])))(?=\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*\\s*(?<!-)})",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.implicit.begin.agda"
+        }
+      },
+      "contentName": "meta.declaration.parameters.implicit.pattern.agda",
+      "end": "(?<!-)}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.implicit.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.implicit.agda",
+      "patterns": [
+        {
+          "include": "#variable_label"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "import_directive": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((?:us|hid|renam)ing)(?:\\s*(\\())?",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.import.agda"
+        },
+        "2": {
+          "name": "punctuation.section.parens.begin.agda"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.end.agda"
+        }
+      },
+      "name": "meta.statement.import.names.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])module(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.module.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])to(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.other.to.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])infix[lr]?(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.infix.agda"
+        },
+        {
+          "include": "#agda_literals"
+        },
+        {
+          "include": "#term_name"
+        }
+      ]
+    },
+    "infix_block": {
+      "begin": "(^|\\G|(?<=;))(\\s*)(infix[lr]?)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.infix.agda"
+        }
+      },
+      "contentName": "meta.declaration.infix.arguments.agda",
+      "name": "meta.statement.infix.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#agda_literals"
+        },
+        {
+          "include": "#term_name"
+        }
+      ],
+      "while": "(^|\\G)\\2(?=\\s)"
+    },
+    "instance_double_brace_parameter_declaration": {
+      "begin": "\\{\\{(?!-)(?![^\\n:{}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_double_brace.begin.agda"
+        }
+      },
+      "end": "(?<!-)}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_double_brace.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.instance_double_brace.agda",
+      "patterns": [
+        {
+          "include": "#variable_type_signature"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "instance_double_brace_untyped_parameter_declaration": {
+      "begin": "\\{\\{(?!-)(?![^\\n:{}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?![^\\n}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s]))(?![^\\n:}]*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?![^\\n}]*(?:[(){]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])))(?=\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*\\s*(?<!-)}})",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_double_brace.begin.agda"
+        }
+      },
+      "contentName": "meta.declaration.parameters.instance_double_brace.pattern.agda",
+      "end": "(?<!-)}}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_double_brace.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.instance_double_brace.agda",
+      "patterns": [
+        {
+          "include": "#variable_label"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "instance_unicode_parameter_declaration": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_unicode.begin.agda"
+        }
+      },
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_unicode.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.instance_unicode.agda",
+      "patterns": [
+        {
+          "include": "#variable_type_signature"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "instance_unicode_untyped_parameter_declaration": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?!(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))\\N)*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s]))(?!(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))[^\\n:])*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?!(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))\\N)*(?:[(){}]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])))(?=\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_unicode.begin.agda"
+        }
+      },
+      "contentName": "meta.declaration.parameters.instance_unicode.pattern.agda",
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.instance_unicode.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.instance_unicode.agda",
+      "patterns": [
+        {
+          "include": "#variable_label"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "lambda_abstraction_start": {
+      "begin": "((?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s])))",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.lambda.agda"
+        }
+      },
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((->|→)|(where))(?=$|!}|[\"().;@{}\\s])|(\\(\\s*\\))|(?=\\s*\\{(?!\\{)(?!\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*\\s*(?<!-)})(?!\\s*(?:(?!\\s+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s])))(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|(?:\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s])))|(?=\\s*\\{\\{(?!\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*\\s*}})(?!\\s*(?:(?!\\s+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s])))(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|(?:\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s])))",
+      "endCaptures": {
+        "2": {
+          "name": "keyword.operator.lambda.mapsto.agda"
+        },
+        "3": {
+          "name": "keyword.control.where.lambda.agda"
+        },
+        "4": {
+          "name": "keyword.operator.lambda.absurd.agda"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#binder_declaration"
+        },
+        {
+          "include": "#agda_expressions"
+        },
+        {
+          "include": "#variable_label"
+        }
+      ]
+    },
+    "local_module_declaration": {
+      "captures": {
+        "1": {
+          "name": "keyword.control.import.agda"
+        },
+        "3": {
+          "name": "keyword.control.module.agda"
+        },
+        "5": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "6": {
+          "name": "entity.name.namespace.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        },
+        "8": {
+          "name": "keyword.operator.assignment.agda"
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:(open)(\\s+))?(module)(?=$|!}|[\"().;@{}\\s])(\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)(\\s*)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(=)(?=$|!}|[\"().;@{}\\s])"
+    },
+    "local_open_declaration": {
+      "captures": {
+        "1": {
+          "name": "keyword.control.import.agda"
+        },
+        "3": {
+          "name": "entity.name.namespace.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(open)(?=$|!}|[\"().;@{}\\s])(\\s+)(?!(?:import|module)(?=$|!}|[\"().;@{}\\s]))(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)"
+    },
+    "module_declaration": {
+      "begin": "(?:(^|\\G|(?<=;)|(?<=^let\\s+|[\"().;@{}\\s]let\\s+))|(?<=\\S)(?=\\s+module(?=$|!}|[\"().;@{}\\s])))(\\s*)(module)(?=$|!}|[\"().;@{}\\s])(?!\\s+_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?=[);]|to(?=$|!}|[\"().;@{}\\s])))",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.module.agda"
+        }
+      },
+      "contentName": "meta.declaration.module.agda",
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(where)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(=)(?=$|!}|[\"().;@{}\\s])|(?=;)|^(?!\\2\\s)",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.where.module.agda"
+        },
+        "2": {
+          "name": "keyword.operator.assignment.agda"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "begin": "(?:\\G\\s*|^\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+|_)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#agda_attributes"
+                }
+              ]
+            },
+            "2": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#module_label"
+                }
+              ]
+            }
+          },
+          "contentName": "meta.declaration.parameters.module.agda",
+          "end": "(?=(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(where)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(=)(?=$|!}|[\"().;@{}\\s]))",
+          "patterns": [
+            {
+              "include": "#declaration_telescope"
+            }
+          ]
+        }
+      ]
+    },
+    "module_label": {
+      "patterns": [
+        {
+          "include": "#discard"
+        },
+        {
+          "captures": {
+            "0": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+(?=$|!}|[\"();@{}\\s])"
+        }
+      ]
+    },
+    "multiline_parameter_declaration": {
+      "begin": "(\\{\\{|[({]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s]))(?=(\\s*(?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*)\\s*$)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.parens.begin.agda"
+        },
+        "2": {
+          "name": "meta.declaration.parameters.pattern.agda",
+          "patterns": [
+            {
+              "include": "#variable_label"
+            },
+            {
+              "include": "#agda_syntax"
+            }
+          ]
+        }
+      },
+      "end": "}}|[)}]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.agda",
+      "patterns": [
+        {
+          "include": "#typed_parameter_parenthesized_expression"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "name_part": {
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "match": "(?<=^|\\{!|\\{-#|[\"().;@_{}\\s])(<-|←)(?=$|!}|[\"().;@_{}\\s])",
+              "name": "keyword.operator.overloaded.agda"
+            },
+            {
+              "include": "#illegal_unqualified_name_parts"
+            },
+            {
+              "include": "#illegal_name_parts"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@_{}\\s])(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?=$|!}|[\"().;@_{}\\s])"
+    },
+    "name_token": {
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#name_part"
+            },
+            {
+              "include": "#agda_builtin"
+            },
+            {
+              "match": "_",
+              "name": "variable.language.placeholder.agda"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?=$|!}|[\"().;@{}\\s])"
+    },
+    "open_as_clause": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.other.as.agda"
+            },
+            "3": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(as)(?=$|!}|[\"().;@{}\\s])(\\s+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)(?=$|!}|[\"().;@{}\\s])"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])as(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.other.as.agda"
+        }
+      ]
+    },
+    "open_import_statement": {
+      "begin": "(^|\\G|(?<=;))(\\s*)((?:|open\\s+)import)(?=$|\\s)(\\s*)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)?",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.import.agda"
+        },
+        "5": {
+          "name": "entity.name.namespace.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#open_statement_content"
+        },
+        {
+          "include": "#open_as_clause"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])public(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.import.agda"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])module(?=$|!}|[\"().;@{}\\s])",
+          "name": "invalid.illegal.name.part.keyword.agda"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?:^|\\G)(?<!\\S)(?=\\s*(?!\\{|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s]))\\S)\\s*(?!(?:module|record|using|hiding|renaming|as|public|in)(?=$|!}|[\"().;@{}\\s]))(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ],
+      "while": "(^|\\G)\\2(?=\\s)(?:(?=\\s*module\\s+_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?=[);]|to(?=$|!}|[\"().;@{}\\s])))|(?!\\s*(?:open|abstract|constructor|data|field|infix[lr]?|instance|macro|module|mutual|opaque|postulate|primitive|private|record|variable|where)(?=$|!}|[\"().;@{}\\s])))"
+    },
+    "open_module_statement": {
+      "begin": "(^|\\G|(?<=;))(\\s*)(open)(?=$|!}|[\"().;@{}\\s])(\\s+)(module)(?=$|!}|[\"().;@{}\\s])(\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.import.agda"
+        },
+        "5": {
+          "name": "keyword.control.module.agda"
+        },
+        "7": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "8": {
+          "name": "entity.name.namespace.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#open_statement_content"
+        },
+        {
+          "include": "#open_as_clause"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ],
+      "while": "(^|\\G)\\2(?=\\s)(?:(?=\\s*module\\s+_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?=[);]|to(?=$|!}|[\"().;@{}\\s])))|(?!\\s*(?:open|abstract|constructor|data|field|infix[lr]?|instance|macro|module|mutual|opaque|postulate|primitive|private|record|variable|where)(?=$|!}|[\"().;@{}\\s])))"
+    },
+    "open_statement": {
+      "begin": "(^|\\G|(?<=;))(\\s*)(open)(?=$|\\s)(?!\\s+import(?=$|!}|[\"().;@{}\\s]))(\\s*)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)?",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.import.agda"
+        },
+        "5": {
+          "name": "entity.name.namespace.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "patterns": [
+        {
+          "include": "#open_statement_content"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.import.agda"
+            },
+            "3": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(import)(?=$|!}|[\"().;@{}\\s])(\\s+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])import(?=$|!}|[\"().;@{}\\s])",
+          "name": "keyword.control.import.agda"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.control.module.agda"
+            },
+            "3": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(module)(?=$|!}|[\"().;@{}\\s])(\\s+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)(?=\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])=(?=$|!}|[\"().;@{}\\s]))"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])module(?=$|!}|[\"().;@{}\\s])",
+          "name": "invalid.illegal.name.part.keyword.agda"
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.agda"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.namespace.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "match": "(?:^|\\G)(?<!\\S)(?=\\s*(?!\\{|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s]))\\S)\\s*(?!(?:import|module|record|using|hiding|renaming|as|public|in)(?=$|!}|[\"().;@{}\\s]))(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)"
+        },
+        {
+          "include": "#open_as_clause"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ],
+      "while": "(^|\\G)\\2(?=\\s)(?:(?=\\s*module\\s+_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?=[);]|to(?=$|!}|[\"().;@{}\\s])))|(?!\\s*(?:open|abstract|constructor|data|field|infix[lr]?|instance|macro|module|mutual|opaque|postulate|primitive|private|record|variable|where)(?=$|!}|[\"().;@{}\\s])))"
+    },
+    "open_statement_content": {
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#import_directive"
+        },
+        {
+          "include": "#open_module_statement"
+        },
+        {
+          "include": "#open_import_statement"
+        },
+        {
+          "include": "#open_statement"
+        }
+      ]
+    },
+    "parameter_declaration": {
+      "patterns": [
+        {
+          "include": "#forall_abstraction_start"
+        },
+        {
+          "include": "#telescope_local_declaration"
+        },
+        {
+          "include": "#typed_parameter_declaration"
+        },
+        {
+          "include": "#implicit_parameter_declaration"
+        },
+        {
+          "include": "#instance_double_brace_parameter_declaration"
+        },
+        {
+          "include": "#instance_unicode_parameter_declaration"
+        }
+      ]
+    },
+    "pragma": {
+      "begin": "(\\{-#)(?:(\\s*)(BUILTIN|CATCHALL|COMPILE|DISPLAY|ETA(?:_EQUALITY)?|FOREIGN|IMPOSSIBLE|INCOHERENT|INJECTIVE(?:_FOR_INFERENCE)?|INLINE|LINE|MEASURE|NOINLINE|NON_(?:COVER|TERMINAT)ING|NOT_PROJECTION_LIKE|NO_(?:POSITIVITY|TERMINATION|UNIVERSE)_CHECK|OPTIONS|OVERLAP(?:PABLE|PING|S)|POLARITY|REWRITE|STATIC|TERMINATING|WARNING_ON_(?:IMPORT|USAGE))(?=$|!}|[\"().;@{}\\s]))?",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.pragma.agda"
+        },
+        "3": {
+          "name": "keyword.control.directive.agda"
+        }
+      },
+      "contentName": "meta.preprocessor.pragma.block.content.agda support.other.pragma.agda",
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(#-})(?=$|!}|[\"().;@{}\\s])",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.pragma.agda"
+        }
+      },
+      "name": "meta.preprocessor.pragma.block.agda",
+      "patterns": [
+        {
+          "include": "#pragma"
+        }
+      ]
+    },
+    "qualified_name": {
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#agda_names_syntactic_sugar"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.period.agda"
+            },
+            {
+              "include": "#name_token"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+(?=$|!}|[\"();@{}\\s])"
+    },
+    "record_declaration": {
+      "begin": "(^|\\G|(?<=;)|(?<=^let\\s+|[\"().;@{}\\s]let\\s+))(\\s*)(record)(?=$|!}|[\"().;@{}\\s])(?!\\s*(?:\\{|where(?=$|!}|[\"().;@{}\\s])))(\\s+)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "3": {
+          "name": "storage.type.class.record.agda"
+        },
+        "5": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "6": {
+          "name": "entity.name.type.record.agda",
+          "patterns": [
+            {
+              "include": "#qualified_name"
+            }
+          ]
+        }
+      },
+      "contentName": "meta.declaration.parameters.record.agda",
+      "end": "(?:^\\s*)?((?<=^|\\{!|\\{-#|[\"().;@{}\\s])where(?=$|!}|[\"().;@{}\\s]))|(?=;)|^(?=\\2\\S)",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.where.record.agda"
+        }
+      },
+      "name": "meta.declaration.record.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#data_record_telescope"
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "record_declaration_name_on_separate_line": {
+      "begin": "(^|\\G|(?<=;))(\\s*)(record)\\s*$",
+      "beginCaptures": {
+        "3": {
+          "name": "storage.type.class.record.agda"
+        }
+      },
+      "contentName": "meta.declaration.parameters.record.agda",
+      "end": "(?:^\\s*)?((?<=^|\\{!|\\{-#|[\"().;@{}\\s])where(?=$|!}|[\"().;@{}\\s]))|(?=;)|^(?=\\s*\\{)|^(?=\\2\\S)",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.where.record.agda"
+        }
+      },
+      "name": "meta.declaration.record.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "begin": "^(\\s+)(?!\\s*(?:where|:)(?=$|!}|[\"().;@{}\\s]))((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])",
+          "beginCaptures": {
+            "2": {
+              "patterns": [
+                {
+                  "include": "#agda_attributes"
+                }
+              ]
+            },
+            "3": {
+              "name": "entity.name.type.record.agda",
+              "patterns": [
+                {
+                  "include": "#qualified_name"
+                }
+              ]
+            }
+          },
+          "end": "(?=(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?::|where)(?=$|!}|[\"().;@{}\\s]))",
+          "patterns": [
+            {
+              "include": "#declaration_telescope"
+            }
+          ]
+        },
+        {
+          "include": "#type"
+        },
+        {
+          "include": "#agda_syntax"
+        }
+      ]
+    },
+    "record_expression": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(record)(?=$|!}|[\"().;@{}\\s])(\\s*)(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.record.agda"
+        },
+        "3": {
+          "name": "punctuation.section.braces.begin.agda"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.braces.end.agda"
+        }
+      },
+      "name": "meta.expression.record.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ]
+    },
+    "string_gap_line": {
+      "captures": {
+        "2": {
+          "name": "constant.character.escape.string-gap.agda"
+        },
+        "4": {
+          "name": "constant.character.escape.string-gap.agda"
+        }
+      },
+      "match": "^(\\s*)(\\\\)(\\s*)(\\\\)"
+    },
+    "telescope_local_declaration": {
+      "begin": "(\\()(?=\\s*(?:let|open)(?=$|!}|[\"().;@{}\\s]))",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.parens.begin.agda"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.end.agda"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#term_type_signature_colon_on_first_line"
+        },
+        {
+          "captures": {
+            "2": {
+              "name": "keyword.control.agda"
+            }
+          },
+          "match": "\\G(\\s*)(let)(?=$|!}|[\"().;@{}\\s])"
+        },
+        {
+          "include": "#telescope_term"
+        }
+      ]
+    },
+    "telescope_term": {
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#import_directive"
+        },
+        {
+          "include": "#local_module_declaration"
+        },
+        {
+          "include": "#local_open_declaration"
+        },
+        {
+          "include": "#type_let_expression"
+        },
+        {
+          "include": "#telescope_local_declaration"
+        },
+        {
+          "include": "#telescope_term_parenthesized_expression"
+        },
+        {
+          "include": "#agda_layout_blocks"
+        },
+        {
+          "include": "#agda_code"
+        }
+      ]
+    },
+    "telescope_term_parenthesized_expression": {
+      "begin": "\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#telescope_term"
+        }
+      ]
+    },
+    "term_definition_equals_on_first_line": {
+      "captures": {
+        "3": {
+          "patterns": [
+            {
+              "include": "#agda_syntax"
+            },
+            {
+              "include": "#term_name"
+            }
+          ]
+        },
+        "4": {
+          "name": "keyword.operator.agda"
+        }
+      },
+      "match": "(^|\\G|(?<=;))(\\s*)(\\S.*)\\s+(=)(?=$|!}|[\"().;@{}\\s])",
+      "name": "meta.declaration.function.agda"
+    },
+    "term_name": {
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "include": "#discard"
+            },
+            {
+              "include": "#name_token"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])"
+    },
+    "term_type_signature_colon_on_first_line": {
+      "begin": "(?:(^|\\G|(?<=;))|(?<=(?:^|[\"().;@{}\\s])where)(?=$|[\"().;@{}\\s]))(\\s*)(?:(let)\\s+)?((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(?!(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))\\N)*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])=(?=$|!}|[\"().;@{}\\s]))(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))((?:(?:(?:\\.{1,2}\\s*)?(?:\\{\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}}|\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))|(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)\\s*+)++)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(:)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "3": {
+          "name": "keyword.control.agda"
+        },
+        "4": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "5": {
+          "patterns": [
+            {
+              "include": "#agda_comments"
+            },
+            {
+              "match": "\\.{1,2}",
+              "name": "keyword.operator.attribute.agda"
+            },
+            {
+              "match": "\\{\\{|}}|[{}]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])",
+              "name": "punctuation.section.parens.agda"
+            },
+            {
+              "include": "#agda_builtin"
+            },
+            {
+              "include": "#term_name"
+            }
+          ]
+        },
+        "6": {
+          "name": "keyword.operator.colon.agda"
+        }
+      },
+      "end": "(?=;)|(?:^|\\G(?<!\\S))(?:(?=\\s*(?:data|record)(?=$|!}|[\"().;@{}\\s]))|(?=\\s*(?!let(?=$|!}|[\"().;@{}\\s]))(?:(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))\\N)*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])=(?=$|!}|[\"().;@{}\\s]))|(?!\\2(?=\\s)|(?=\\\\(?:\\s*\\\\|[0-9]+|0[Xx]\\h+|[\"'\\\\abfntv]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|\\^[@-_]))|(?=\\s*(?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))(?:(?:(?:\\.{1,2}\\s*)?(?:\\{\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}}|\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))|(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)\\s*+)++(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))))",
+      "name": "meta.declaration.function.agda",
+      "patterns": [
+        {
+          "include": "#term_type_signature_header"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "term_type_signature_colon_on_separate_line": {
+      "begin": "(?:(^|\\G|(?<=;))|(?<=(?:^|[\"().;@{}\\s])where)(?=$|[\"().;@{}\\s]))(\\s*)(:)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "4": {
+          "name": "keyword.operator.colon.agda"
+        }
+      },
+      "name": "meta.declaration.function.agda",
+      "patterns": [
+        {
+          "include": "#type"
+        }
+      ],
+      "while": "(^|\\G)(?:\\2|(?=\\\\(?:\\s*\\\\|[0-9]+|0[Xx]\\h+|[\"'\\\\abfntv]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|\\^[@-_])))"
+    },
+    "term_type_signature_header": {
+      "captures": {
+        "2": {
+          "patterns": [
+            {
+              "include": "#agda_attributes"
+            }
+          ]
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "#agda_comments"
+            },
+            {
+              "match": "\\.{1,2}",
+              "name": "keyword.operator.attribute.agda"
+            },
+            {
+              "match": "\\{\\{|}}|[{}]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s])",
+              "name": "punctuation.section.parens.agda"
+            },
+            {
+              "include": "#agda_builtin"
+            },
+            {
+              "include": "#term_name"
+            }
+          ]
+        },
+        "4": {
+          "name": "keyword.operator.colon.agda"
+        }
+      },
+      "match": "(?:^|\\G(?<!\\S))(\\s*)((?:@(?:0|_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+)\\s++)*+)(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))((?:(?:(?:\\.{1,2}\\s*)?(?:\\{\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}}|\\{\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])\\s*(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?:\\s++(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+\\s*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))|(?:\\.{1,2}\\s*)?(?!\\s*(?:(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:[λ∀]|->|→)(?=$|!}|[\"().;@{}\\s])))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(?:_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)\\s*+)++)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(:)(?=$|!}|[\"().;@{}\\s])"
+    },
+    "the_usual": {
+      "patterns": [
+        {
+          "include": "#agda_preprocessing_syntax"
+        },
+        {
+          "include": "#agda_statements"
+        },
+        {
+          "include": "#agda_layout_blocks"
+        },
+        {
+          "include": "#agda_code"
+        },
+        {
+          "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(data|module|record|where)(?=$|!}|[\"().;@{}\\s])",
+          "name": "invalid.illegal.keyword.agda"
+        }
+      ]
+    },
+    "type": {
+      "patterns": [
+        {
+          "include": "#open_module_statement"
+        },
+        {
+          "include": "#open_import_statement"
+        },
+        {
+          "include": "#open_statement"
+        },
+        {
+          "include": "#type_let_expression"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#type_token"
+        }
+      ]
+    },
+    "type_let_expression": {
+      "begin": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(let)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.agda"
+        }
+      },
+      "end": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(in)(?=$|!}|[\"().;@{}\\s])|(?=\\))",
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.agda"
+        }
+      },
+      "patterns": [
+        {
+          "captures": {
+            "2": {
+              "name": "keyword.control.infix.agda"
+            }
+          },
+          "match": "(\\s*)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(infix[lr]?)(?=$|!}|[\"().;@{}\\s])"
+        },
+        {
+          "include": "#telescope_term"
+        }
+      ]
+    },
+    "type_token": {
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "include": "#agda_syntax"
+            },
+            {
+              "include": "#agda_builtin"
+            },
+            {
+              "include": "#lambda_abstraction_start"
+            },
+            {
+              "include": "#wildcard"
+            },
+            {
+              "captures": {
+                "0": {
+                  "patterns": [
+                    {
+                      "include": "#qualified_name"
+                    }
+                  ]
+                }
+              },
+              "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+(?=$|!}|[\"();@{}\\s])",
+              "name": "storage.type.qualified.agda"
+            },
+            {
+              "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((?!\\.)[\"().;@{}\\s])+(?=$|!}|[\"().;@{}\\s])",
+              "name": "invalid.name.type.token.agda"
+            }
+          ]
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"();@{}\\s])(_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(\\._?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+)*+|_)(?=$|!}|[\"();@{}\\s])"
+    },
+    "typed_parameter_declaration": {
+      "begin": "(\\()(?!(?:[^\\n):}⦄]|(?<!^|[\"().;@{}\\s])[:⦄]|(?<=^|[\"().;@{}\\s])[:⦄](?!$|[\"().;@{}\\s]))*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])=(?=$|!}|[\"().;@{}\\s]))(\\s*(?:(?!\\s+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s])))(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄]|(?:\\((?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\)|(?:\\{(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+}|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])(?:(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s]):(?=$|!}|[\"().;@{}\\s]))[^\\n(){}⦃⦄])*+(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))))*+\\s*)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(:)(?=$|!}|[\"().;@{}\\s])",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.section.parens.explicit.begin.agda"
+        },
+        "2": {
+          "name": "meta.declaration.parameters.explicit.pattern.agda",
+          "patterns": [
+            {
+              "include": "#variable_label"
+            },
+            {
+              "include": "#agda_syntax"
+            }
+          ]
+        },
+        "3": {
+          "name": "keyword.operator.colon.agda"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.parens.explicit.end.agda"
+        }
+      },
+      "name": "meta.declaration.parameters.explicit.agda",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#typed_parameter_declaration"
+        },
+        {
+          "include": "#typed_parameter_parenthesized_expression"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "typed_parameter_parenthesized_expression": {
+      "begin": "\\(",
+      "end": "\\)",
+      "patterns": [
+        {
+          "include": "#agda_comments"
+        },
+        {
+          "include": "#typed_parameter_parenthesized_expression"
+        },
+        {
+          "include": "#parameter_declaration"
+        },
+        {
+          "include": "#agda_syntax"
+        },
+        {
+          "include": "#type"
+        }
+      ]
+    },
+    "unquote_data_declaration": {
+      "captures": {
+        "1": {
+          "name": "keyword.control.agda"
+        },
+        "3": {
+          "name": "storage.type.class.data.agda"
+        }
+      },
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(unquoteDecl)(?=$|!}|[\"().;@{}\\s])(\\s+)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(data)(?=$|!}|[\"().;@{}\\s])"
+    },
+    "variable_label": {
+      "patterns": [
+        {
+          "include": "#discard"
+        },
+        {
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "include": "#agda_constants"
+                },
+                {
+                  "include": "#name_token"
+                }
+              ]
+            }
+          },
+          "match": "(?:\\G|(?<=^|\\{!|\\{-#|[\"().;@{}\\s]))_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+(?=$|!}|[\"().;@{}\\s])",
+          "name": "variable.parameter.term.agda"
+        }
+      ]
+    },
+    "variable_type_signature": {
+      "captures": {
+        "2": {
+          "patterns": [
+            {
+              "include": "#agda_syntax"
+            },
+            {
+              "include": "#variable_label"
+            },
+            {
+              "match": "\\s+"
+            },
+            {
+              "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])((?!\\.)[\"().;@{}\\s])+(?=$|!}|[\"().;@{}\\s])",
+              "name": "invalid.name.variable.agda"
+            }
+          ]
+        },
+        "4": {
+          "name": "keyword.operator.colon.agda"
+        }
+      },
+      "match": "(^|\\G)(?!(?:[^\\n):}⦄]|(?<!^|[\"().;@{}\\s])[:⦄]|(?<=^|[\"().;@{}\\s])[:⦄](?!$|[\"().;@{}\\s]))*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])=(?=$|!}|[\"().;@{}\\s]))(?!(?:[^\\n):}⦄]|(?<!^|[\"().;@{}\\s])[:⦄]|(?<=^|[\"().;@{}\\s])[:⦄](?!$|[\"().;@{}\\s]))*(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s]))(?!\\s*(?:[({]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])))(([^\\n):}⦄]|(?<!^|[\"().;@{}\\s])[:⦄]|(?<=^|[\"().;@{}\\s])[:⦄](?!$|[\"().;@{}\\s]))+)[\"().;@{}\\s](:)(?=$|!}|[\"().;@{}\\s])",
+      "name": "meta.declaration.variable_type_signature.agda"
+    },
+    "visible_untyped_parameter_declaration": {
+      "captures": {
+        "2": {
+          "name": "meta.declaration.parameters.explicit.pattern.agda",
+          "patterns": [
+            {
+              "include": "#agda_modality"
+            },
+            {
+              "include": "#variable_label"
+            }
+          ]
+        }
+      },
+      "match": "(?<!\\s)(?<!->)(?<!→)(\\s*)(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?![({]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s]))(?!(?:(?:open|abstract|constructor|data|field|infix[lr]?|instance|macro|module|mutual|opaque|postulate|primitive|private|record|variable|where)|module)(?=$|!}|[\"().;@{}\\s]))((?:(?:\\.|@(?:irr|irrelevant|shirr|shape-irrelevant|relevant|0|erased|[ω♭]|\\+\\+|[-+]|mixed|unused))\\s*)*(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_)(?:\\s+(?!(?<=^|\\{!|\\{-#|[\"().;@{}\\s])[:=](?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:->|→)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:\\\\(?=[_\\p{L}]|$|!}|[\"().;@{}\\s])|λ(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?:forall|∀)(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s])|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦄(?=$|!}|[\"().;@{}\\s]))(?!(?:constructor|(?:abstract|(?:co)?inductive|data|do|(?:no-)?eta-equality|field|forall|hiding|import|in|infix[lr]?|instance|interleaved|let|macro|module|mutual|opaque|open|overlap|pattern|postulate|primitive|private|public|quote(?:Term)?|record|renaming|rewrite|syntax|tactic|unquote(?:De(?:cl|f))?|unfolding|using|variable|where|with))(?=$|!}|[\"().;@{}\\s]))(?:_?+(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++(_(?!'|--)(?!(?:-?(?:[0-9]+\\.[0-9]+(?:[Ee][-+]?[0-9]+)?|[0-9]+[Ee][-+]?[0-9]+)|-?(?:0[Xx]\\h+|0[Bb][01]+|[0-9]+(?:_[0-9]+)*))(?=$|[\"().;@_{}\\s]))[^\"().;@_{}\\s]++)*+_?+|_))*)(?=\\s*(?:$|(?:[({]|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])⦃(?=$|!}|[\"().;@{}\\s]))|(?<=^|\\{!|\\{-#|[\"().;@{}\\s])(?::|where|=)(?=$|!}|[\"().;@{}\\s])))"
+    },
+    "wildcard": {
+      "match": "(?<=^|\\{!|\\{-#|[\"().;@{}\\s])_(?=$|!}|[\"().;@{}\\s])",
+      "name": "variable.language.wildcard.agda"
+    }
+  },
+  "scopeName": "source.agda"
+}

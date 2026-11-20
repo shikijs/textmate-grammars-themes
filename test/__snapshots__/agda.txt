@@ -1,0 +1,215 @@
+#444444        {-#
+#DBD7CACC       
+#4D9375        OPTIONS
+#B8A965         --safe --without-K 
+#444444        #-}
+#4D9375        module
+#DBD7CACC       
+#80A665        Sample
+#DBD7CACC       
+#4D9375        where
+#758575DD      -- Unicode identifiers, mixfix operators, and constructor signatures.
+#CB7676        data
+#DBD7CACC       
+#5DA994        ℕ
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#B8A965        Set
+#DBD7CACC       
+#4D9375        where
+#DBD7CACC        zero 
+#CB7676        :
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC        suc 
+#CB7676        :
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC       
+#CB7676        →
+#DBD7CACC       
+#CB7676        ℕ
+#C99076        _
+#DBD7CACC      +
+#C99076        _
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC       
+#CB7676        →
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC       
+#CB7676        →
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC      zero + n 
+#CB7676        =
+#DBD7CACC       n
+#DBD7CACC      suc m + n 
+#CB7676        =
+#DBD7CACC       suc (m + n)
+#4D9375        infixl
+#DBD7CACC       
+#4C9A91        6
+#DBD7CACC       
+#C99076        _
+#DBD7CACC      +
+#C99076        _
+#758575DD      {- A block comment
+#758575DD         {- with a nested comment -}
+#758575DD         still inside the outer comment. -}
+#CB7676        record
+#DBD7CACC       
+#5DA994        Pair
+#DBD7CACC       
+#444444        (
+#BD976A        A
+#DBD7CACC       
+#BD976A        B
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#B8A965        Set
+#444444        )
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#B8A965        Set
+#DBD7CACC       
+#4D9375        where
+#DBD7CACC        
+#4D9375        constructor
+#DBD7CACC       
+#C99076        _
+#DBD7CACC      ,
+#C99076        _
+#DBD7CACC        
+#4D9375        field
+#DBD7CACC          fst 
+#CB7676        :
+#DBD7CACC       
+#CB7676        A
+#DBD7CACC          snd 
+#CB7676        :
+#DBD7CACC       
+#CB7676        B
+#4D9375        open
+#DBD7CACC       
+#80A665        Pair
+#DBD7CACC       
+#CB7676        public
+#DBD7CACC      id 
+#CB7676        :
+#DBD7CACC       
+#444444        {
+#BD976A        A
+#DBD7CACC       
+#CB7676        :
+#DBD7CACC       
+#B8A965        Set
+#444444        }
+#DBD7CACC       
+#CB7676        →
+#DBD7CACC       
+#CB7676        A
+#DBD7CACC       
+#CB7676        →
+#DBD7CACC       
+#CB7676        A
+#DBD7CACC      id x 
+#CB7676        =
+#DBD7CACC       x
+#758575DD      -- Interaction holes and literals (syntax examples, not a complete program).
+#DBD7CACC      example 
+#CB7676        :
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC      example 
+#CB7676        =
+#DBD7CACC       
+#444444        {!
+#DBD7CACC       suc zero 
+#444444        !}
+#4D9375        open import
+#DBD7CACC       
+#80A665        Agda
+#444444        .
+#80A665        Builtin
+#444444        .
+#80A665        String
+#DBD7CACC       
+#4D9375        using
+#DBD7CACC       
+#444444        (
+#DBD7CACC      String
+#444444        )
+#4D9375        open import
+#DBD7CACC       
+#80A665        Agda
+#444444        .
+#80A665        Builtin
+#444444        .
+#80A665        Char
+#DBD7CACC       
+#4D9375        using
+#DBD7CACC       
+#444444        (
+#DBD7CACC      Char
+#444444        )
+#4D9375        open import
+#DBD7CACC       
+#80A665        Agda
+#444444        .
+#80A665        Builtin
+#444444        .
+#80A665        Float
+#DBD7CACC       
+#4D9375        using
+#DBD7CACC       
+#444444        (
+#DBD7CACC      Float
+#444444        )
+#DBD7CACC      message 
+#CB7676        :
+#DBD7CACC       
+#CB7676        String
+#DBD7CACC      message 
+#CB7676        =
+#DBD7CACC       
+#C98A7D77      "
+#C98A7D        Agda: λ → ∀ 
+#C99076        \"
+#C98A7D        quoted
+#C99076        \"\n
+#C98A7D77      "
+#DBD7CACC      letter 
+#CB7676        :
+#DBD7CACC       
+#CB7676        Char
+#DBD7CACC      letter 
+#CB7676        =
+#DBD7CACC       
+#444444        '
+#C99076        λ
+#444444        '
+#DBD7CACC      amount 
+#CB7676        :
+#DBD7CACC       
+#CB7676        Float
+#DBD7CACC      amount 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        3
+#DBD7CACC      .
+#4C9A91        14
+#DBD7CACC      answer 
+#CB7676        :
+#DBD7CACC       
+#CB7676        ℕ
+#DBD7CACC      answer 
+#CB7676        =
+#DBD7CACC       
+#4C9A91        42
