@@ -150,6 +150,14 @@ export const sourcesVSCode: GrammarSource[] = [
     categories: ['data'],
   },
   {
+    name: 'janet',
+    displayName: 'Janet',
+    source: 'https://github.com/janet-lang/vscode-janet/blob/master/syntaxes/janet.tmLanguage',
+    categories: ['general', 'lisp'],
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/janet-lang/vscode-janet/refs/heads/master/LICENSE',
+  },
+  {
     name: 'java',
     source: 'https://github.com/microsoft/vscode/blob/main/extensions/java/syntaxes/java.tmLanguage.json',
     categories: ['general'],
