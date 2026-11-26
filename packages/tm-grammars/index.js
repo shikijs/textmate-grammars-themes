@@ -3768,6 +3768,30 @@ export const grammars = [
     sourceApi: 'https://api.github.com/repos/relationalai-oss/rel_vscode/contents/syntaxes/rel.tmLanguage.json?ref=63dda4dee48c67b037357f47b562185484555ea9',
   },
   {
+    aliases: [
+      'res',
+    ],
+    byteSize: 7424,
+    categories: [
+      'web',
+    ],
+    displayName: 'ReScript',
+    embedded: [
+      'javascript',
+    ],
+    funding: [
+    ],
+    hash: 'eLMkhwhaAmw2ccfEWehIsft3W7dAqbzho3PIVQbDjv4',
+    lastUpdate: '2025-04-28T13:25:43Z',
+    license: 'MIT',
+    licenseUrl: 'https://raw.githubusercontent.com/rescript-lang/rescript-vscode/master/LICENSE.txt',
+    name: 'rescript',
+    scopeName: 'source.rescript',
+    sha: '1bf87b386e6331ca85459df3bc03b8e4c3fc50ab',
+    source: 'https://github.com/rescript-lang/rescript-vscode/blob/1bf87b386e6331ca85459df3bc03b8e4c3fc50ab/grammars/rescript.tmLanguage.json',
+    sourceApi: 'https://api.github.com/repos/rescript-lang/rescript-vscode/contents/grammars/rescript.tmLanguage.json?ref=1bf87b386e6331ca85459df3bc03b8e4c3fc50ab',
+  },
+  {
     byteSize: 6482,
     displayName: 'RISC-V',
     funding: [

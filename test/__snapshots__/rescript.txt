@@ -1,0 +1,532 @@
+#758575DD      // Variants, records and pattern matching
+#CB7676        type
+#DBD7CACC       
+#BD976A        status
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        Active
+#DBD7CACC       
+#444444        |
+#DBD7CACC       
+#BD976A        Suspended
+#444444        ({
+#BD976A        reason
+#444444        :
+#DBD7CACC       
+#BD976A        string
+#444444        })
+#DBD7CACC       
+#444444        |
+#DBD7CACC       
+#BD976A        Deleted
+#CB7676        type
+#DBD7CACC       
+#BD976A        user
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#BD976A        int
+#444444        ,
+#DBD7CACC        
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#BD976A        string
+#444444        ,
+#DBD7CACC        
+#BD976A        email
+#444444        :
+#DBD7CACC       
+#BD976A        option
+#DBD7CACC      <
+#BD976A        string
+#DBD7CACC      >
+#444444        ,
+#DBD7CACC        
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        status
+#444444        ,
+#444444        }
+#758575DD      /* Labeled and optional arguments */
+#CB7676        let
+#DBD7CACC       
+#BD976A        greet
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        (~
+#BD976A        name
+#444444        ,
+#DBD7CACC       
+#444444        ~
+#BD976A        greeting
+#CB7676        =
+#C98A7D        "Hello"
+#444444        ,
+#DBD7CACC       
+#444444        ())
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#C98A7D77      `
+#4D9375        ${
+#C98A7D        greeting
+#4D9375        }
+#C98A7D        , 
+#4D9375        ${
+#C98A7D        name
+#4D9375        }
+#C98A7D        !`
+#CB7676        let
+#DBD7CACC       
+#BD976A        describe
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        user
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC        
+#4D9375        switch
+#DBD7CACC       
+#BD976A        user
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#444444        |
+#DBD7CACC       
+#444444        {
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        Active
+#444444        ,
+#DBD7CACC       
+#BD976A        email
+#444444        :
+#DBD7CACC       
+#BD976A        Some
+#444444        (
+#BD976A        email
+#444444        )}
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#C98A7D77      `
+#4D9375        ${
+#C98A7D        user
+#444444        .
+#C98A7D        name
+#4D9375        }
+#C98A7D         <
+#4D9375        ${
+#C98A7D        email
+#4D9375        }
+#C98A7D        >`
+#DBD7CACC        
+#444444        |
+#DBD7CACC       
+#444444        {
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        Active
+#444444        ,
+#DBD7CACC       
+#BD976A        email
+#444444        :
+#DBD7CACC       
+#BD976A        None
+#444444        }
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        user
+#444444        .
+#BD976A        name
+#DBD7CACC        
+#444444        |
+#DBD7CACC       
+#444444        {
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        Suspended
+#444444        ({
+#BD976A        reason
+#444444        })}
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#C98A7D77      `
+#C98A7D        Suspended: 
+#4D9375        ${
+#C98A7D        reason
+#4D9375        }
+#C98A7D        `
+#DBD7CACC        
+#444444        |
+#DBD7CACC       
+#444444        {
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        Deleted
+#444444        }
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#C98A7D        "Deleted user"
+#DBD7CACC        
+#444444        }
+#4D9375        module
+#DBD7CACC       
+#80A665        Math
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#BD976A        pi
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4C9A91        3.14159
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#BD976A        square
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC       
+#CB7676        *.
+#DBD7CACC       
+#BD976A        x
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#4D9375        rec
+#DBD7CACC       
+#BD976A        factorial
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#CB7676        <=
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#444444        ?
+#DBD7CACC       
+#4C9A91        1
+#DBD7CACC       
+#444444        :
+#DBD7CACC       
+#BD976A        n
+#DBD7CACC       
+#CB7676        *
+#DBD7CACC       
+#BD976A        factorial
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#CB7676        -
+#DBD7CACC       
+#4C9A91        1
+#444444        )
+#444444        }
+#444444        @
+#80A665        val
+#DBD7CACC       
+#4D9375        external
+#DBD7CACC       
+#BD976A        setTimeout
+#444444        :
+#DBD7CACC       
+#444444        (
+#BD976A        unit
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        unit
+#444444        ,
+#DBD7CACC       
+#BD976A        int
+#444444        )
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        float
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#C98A7D        "setTimeout"
+#CB7676        let
+#DBD7CACC       
+#BD976A        fetchUser
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#4D9375        async
+#DBD7CACC       
+#444444        (
+#BD976A        id
+#444444        :
+#DBD7CACC       
+#BD976A        int
+#444444        ):
+#DBD7CACC       
+#BD976A        result
+#DBD7CACC      <
+#BD976A        user
+#444444        ,
+#DBD7CACC       
+#BD976A        string
+#DBD7CACC      > 
+#4D9375        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#4D9375        await
+#DBD7CACC       
+#80A665        Promise
+#444444        .
+#BD976A        make
+#444444        ((
+#BD976A        resolve
+#444444        ,
+#DBD7CACC       
+#BD976A        _
+#444444        )
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC          
+#CB7676        let
+#DBD7CACC       
+#BD976A        _
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        setTimeout
+#444444        (()
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        resolve
+#444444        (),
+#DBD7CACC       
+#4C9A91        100
+#444444        )
+#DBD7CACC        
+#444444        })
+#DBD7CACC        
+#BD976A        id
+#DBD7CACC       > 
+#4C9A91        0
+#DBD7CACC          
+#444444        ?
+#DBD7CACC       
+#BD976A        Ok
+#444444        ({
+#BD976A        id
+#444444        ,
+#DBD7CACC       
+#BD976A        name
+#444444        :
+#DBD7CACC       
+#C98A7D        "Ada"
+#444444        ,
+#DBD7CACC       
+#BD976A        email
+#444444        :
+#DBD7CACC       
+#BD976A        Some
+#444444        (
+#C98A7D        "ada@example.com"
+#444444        ),
+#DBD7CACC       
+#BD976A        status
+#444444        :
+#DBD7CACC       
+#BD976A        Active
+#444444        })
+#DBD7CACC          
+#444444        :
+#DBD7CACC       
+#BD976A        Error
+#444444        (
+#C98A7D        "Invalid id"
+#444444        )
+#444444        }
+#CB7676        let
+#DBD7CACC       
+#BD976A        names
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC        
+#444444        [
+#4C9A91        1
+#444444        ,
+#DBD7CACC       
+#4C9A91        2
+#444444        ,
+#DBD7CACC       
+#4C9A91        3
+#444444        ]
+#DBD7CACC        
+#CB7676        ->
+#80A665        Array
+#444444        .
+#BD976A        map
+#444444        (
+#BD976A        n
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        n
+#CB7676        ->
+#80A665        Int
+#444444        .
+#BD976A        toString
+#444444        )
+#DBD7CACC        
+#CB7676        ->
+#80A665        Array
+#444444        .
+#BD976A        joinWith
+#444444        (
+#C98A7D        ", "
+#444444        )
+#CB7676        let
+#DBD7CACC       
+#BD976A        color
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#BD976A        #Red
+#CB7676        let
+#DBD7CACC       
+#BD976A        area
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        Math
+#444444        .
+#BD976A        square
+#444444        (
+#4C9A91        2.0
+#444444        )
+#DBD7CACC       
+#CB7676        *.
+#DBD7CACC       
+#80A665        Math
+#444444        .
+#BD976A        pi
+#444444        @
+#80A665        react.component
+#CB7676        let
+#DBD7CACC       
+#BD976A        make
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#444444        (~
+#BD976A        count
+#444444        :
+#DBD7CACC       
+#BD976A        int
+#444444        )
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#444444        {
+#DBD7CACC        
+#CB7676        let
+#DBD7CACC       
+#444444        (
+#BD976A        value
+#444444        ,
+#DBD7CACC       
+#BD976A        setValue
+#444444        )
+#DBD7CACC       
+#CB7676        =
+#DBD7CACC       
+#80A665        React
+#444444        .
+#BD976A        useState
+#444444        (()
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        count
+#444444        )
+#DBD7CACC        <
+#BD976A        button
+#DBD7CACC       
+#BD976A        onClick
+#CB7676        =
+#444444        {
+#BD976A        _
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        setValue
+#444444        (
+#BD976A        v
+#DBD7CACC       
+#4D9375        =>
+#DBD7CACC       
+#BD976A        v
+#DBD7CACC       
+#CB7676        +
+#DBD7CACC       
+#4C9A91        1
+#444444        )}
+#DBD7CACC      >
+#DBD7CACC          
+#444444        {
+#80A665        React
+#444444        .
+#BD976A        string
+#444444        (
+#C98A7D77      `
+#C98A7D        Clicked 
+#4D9375        ${
+#C98A7D        value
+#CB7676        ->
+#C98A7D        Int
+#444444        .
+#C98A7D        toString
+#4D9375        }
+#C98A7D         times`
+#444444        )}
+#DBD7CACC        
+#444444        </
+#BD976A        button
+#DBD7CACC      >
+#444444        }
+#758575DD      // Adapted from examples in https://rescript-lang.org/docs/manual/
