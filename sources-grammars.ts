@@ -1044,6 +1044,13 @@ export const sourcesCommunity: GrammarSource[] = [
     source: 'https://github.com/relationalai-oss/rel_vscode/blob/master/syntaxes/rel.tmLanguage.json',
   },
   {
+    name: 'rescript',
+    displayName: 'ReScript',
+    aliases: ['res'],
+    source: 'https://github.com/rescript-lang/rescript-vscode/blob/master/grammars/rescript.tmLanguage.json',
+    categories: ['web'],
+  },
+  {
     name: 'riscv',
     displayName: 'RISC-V',
     source: 'https://github.com/zhuanhao-wu/vscode-riscv-support/blob/master/syntaxes/riscv.tmLanguage',

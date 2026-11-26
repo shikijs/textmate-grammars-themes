@@ -1,0 +1,55 @@
+// Variants, records and pattern matching
+type status = Active | Suspended({reason: string}) | Deleted
+
+type user = {
+  id: int,
+  name: string,
+  email: option<string>,
+  status: status,
+}
+
+/* Labeled and optional arguments */
+let greet = (~name, ~greeting="Hello", ()) => `${greeting}, ${name}!`
+
+let describe = user =>
+  switch user {
+  | {status: Active, email: Some(email)} => `${user.name} <${email}>`
+  | {status: Active, email: None} => user.name
+  | {status: Suspended({reason})} => `Suspended: ${reason}`
+  | {status: Deleted} => "Deleted user"
+  }
+
+module Math = {
+  let pi = 3.14159
+  let square = x => x *. x
+  let rec factorial = n => n <= 1 ? 1 : n * factorial(n - 1)
+}
+
+@val external setTimeout: (unit => unit, int) => float = "setTimeout"
+
+let fetchUser = async (id: int): result<user, string> => {
+  await Promise.make((resolve, _) => {
+    let _ = setTimeout(() => resolve(), 100)
+  })
+  id > 0
+    ? Ok({id, name: "Ada", email: Some("ada@example.com"), status: Active})
+    : Error("Invalid id")
+}
+
+let names =
+  [1, 2, 3]
+  ->Array.map(n => n->Int.toString)
+  ->Array.joinWith(", ")
+
+let color = #Red
+let area = Math.square(2.0) *. Math.pi
+
+@react.component
+let make = (~count: int) => {
+  let (value, setValue) = React.useState(() => count)
+  <button onClick={_ => setValue(v => v + 1)}>
+    {React.string(`Clicked ${value->Int.toString} times`)}
+  </button>
+}
+
+// Adapted from examples in https://rescript-lang.org/docs/manual/
